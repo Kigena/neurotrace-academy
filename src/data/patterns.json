@@ -1,0 +1,666 @@
+[
+  {
+    "id": "pdr",
+    "name": "Posterior Dominant Rhythm (PDR)",
+    "category": "normal",
+    "morphology": "Sinusoidal, symmetric",
+    "frequency": "8–13 Hz (age-dependent)",
+    "topography": ["occipital", "posterior"],
+    "polarity": "negative",
+    "duration": "Continuous during relaxed wakefulness",
+    "patient_state": ["awake", "eyes closed"],
+    "reactivity": ["attenuates with eye opening"],
+    "prevalence": "Universal normal pattern",
+    "clinical_correlation": ["Normal cortical organization"],
+    "linked_syndromes": [],
+    "notes": "PDR frequency matures with age; absent PDR in wakefulness may indicate diffuse dysfunction.",
+    "commonConfusions": [
+      {
+        "patternId": "oirda",
+        "patternName": "Occipital Intermittent Rhythmic Delta Activity (OIRDA)",
+        "distinguishingFeature": "OIRDA is slower (1–3 Hz) and intermittent, while PDR is faster (8–13 Hz) and continuous"
+      },
+      {
+        "patternId": "eye_blink_artifact",
+        "patternName": "Eye Blink Artifact",
+        "distinguishingFeature": "Eye blink artifact is frontally maximal and synchronous with eye movements; PDR is posterior and attenuates with eye opening"
+      },
+      {
+        "patternId": "drowsy_slowing",
+        "patternName": "Drowsy Slowing",
+        "distinguishingFeature": "Drowsy slowing is slower (theta/delta) and diffuse; PDR is faster (alpha) and posterior"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["all ages"],
+      "state": ["awake", "eyes closed"],
+      "syndromicRelevance": "Normal pattern; absence may indicate encephalopathy"
+    },
+    "abretPearl": "PDR frequency increases with age: 6–8 Hz in children, 8–13 Hz in adults. Absent PDR in wakefulness suggests diffuse dysfunction.",
+    "eegSettingsSensitivity": {
+      "filters": "High LFF (>0.5 Hz) may attenuate PDR; use standard 0.1–0.3 Hz LFF",
+      "montage": "Best seen in referential montages (average reference); bipolar may show phase reversals",
+      "sensitivity": "Standard sensitivity (7–10 µV/mm) adequate",
+      "state": "Requires relaxed wakefulness with eyes closed; disappears with eye opening or alertness"
+    }
+  },
+  {
+    "id": "mu_rhythm",
+    "name": "Mu Rhythm",
+    "category": "normal_variant",
+    "morphology": "Arch-like, wicket-shaped",
+    "frequency": "8–10 Hz",
+    "topography": ["central"],
+    "polarity": "mixed",
+    "duration": "Intermittent",
+    "patient_state": ["awake"],
+    "reactivity": ["blocked by movement or intention to move"],
+    "prevalence": "Common",
+    "clinical_correlation": ["Normal central rhythm; benign variant"],
+    "linked_syndromes": [],
+    "notes": "Not epileptiform; important not to misinterpret as focal spikes.",
+    "commonConfusions": [
+      {
+        "patternId": "focal_spikes_central",
+        "patternName": "Focal Spikes (Central)",
+        "distinguishingFeature": "Mu rhythm blocks with movement; focal spikes do not. Mu is arch-shaped and rhythmic; spikes are sharp and isolated."
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["adult"],
+      "state": ["awake"],
+      "syndromicRelevance": "Benign variant; no clinical significance"
+    },
+    "abretPearl": "Mu rhythm is blocked by movement or intention to move. This reactivity distinguishes it from epileptiform activity.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate",
+      "montage": "Best seen in central electrodes (C3, C4, Cz); referential montages show field better",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Present during wakefulness; blocked by movement"
+    }
+  },
+  {
+    "id": "wicket_spikes",
+    "name": "Wicket Spikes",
+    "category": "normal_variant",
+    "morphology": "Arc-shaped monophasic spikes in trains",
+    "frequency": "6–11 Hz",
+    "topography": ["temporal"],
+    "polarity": "negative",
+    "duration": "Brief runs",
+    "patient_state": ["drowsy", "N2 sleep"],
+    "reactivity": ["no specific activation"],
+    "prevalence": "Common in adults",
+    "clinical_correlation": ["Benign temporal variant without epileptiform significance"],
+    "linked_syndromes": [],
+    "notes": "High-yield ABRET point: wicket spikes lack a following slow wave and occur in trains.",
+    "commonConfusions": [
+      {
+        "patternId": "temporal_sharp_waves",
+        "patternName": "Temporal Sharp Waves (Epileptiform)",
+        "distinguishingFeature": "Epileptiform sharp waves have aftergoing slow waves and disrupt background; wicket spikes lack slow waves and do not disrupt background"
+      },
+      {
+        "patternId": "small_epileptiform_spikes",
+        "patternName": "Small Epileptiform Spikes",
+        "distinguishingFeature": "Epileptiform spikes are isolated or in brief bursts with slow waves; wicket spikes occur in trains without slow waves"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["adult"],
+      "state": ["drowsy", "N2 sleep"],
+      "syndromicRelevance": "Benign variant; no clinical significance"
+    },
+    "abretPearl": "Wicket spikes lack aftergoing slow waves and do not disrupt background rhythm. This is the key distinguishing feature from epileptiform activity.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate; high HFF may smooth the arc shape",
+      "montage": "Best seen in temporal chain (F7–T3–T5 or F8–T4–T6); referential montages may show field better",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Most common during drowsiness and light sleep (N2)"
+    }
+  },
+  {
+    "id": "three_hz_gsw",
+    "name": "3 Hz Generalized Spike-and-Wave",
+    "category": "epileptiform",
+    "morphology": "Spike followed by slow wave complexes",
+    "frequency": "3 Hz",
+    "topography": ["generalized", "frontally predominant"],
+    "polarity": "negative spikes",
+    "duration": "1–10 second bursts",
+    "patient_state": ["awake", "drowsy"],
+    "reactivity": ["enhanced by hyperventilation"],
+    "prevalence": "Common in typical absence epilepsy",
+    "clinical_correlation": [
+      "Childhood absence epilepsy",
+      "Juvenile absence epilepsy",
+      "Idiopathic generalized epilepsy"
+    ],
+    "linked_syndromes": ["cae", "ige"],
+    "notes": "Abrupt onset and offset; correlates with clinical absence events.",
+    "commonConfusions": [
+      {
+        "patternId": "slow_spike_wave",
+        "patternName": "Slow Spike-and-Wave (2 Hz)",
+        "distinguishingFeature": "3 Hz GSW is faster (3 Hz) and regular; slow spike-and-wave is slower (2 Hz) and irregular, associated with Lennox-Gastaut"
+      },
+      {
+        "patternId": "photic_driving",
+        "patternName": "Photic Driving",
+        "distinguishingFeature": "Photic driving is time-locked to flash rate and occipital; 3 Hz GSW is generalized, frontally predominant, and not time-locked"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["child", "adolescent"],
+      "state": ["awake", "drowsy"],
+      "syndromicRelevance": "Childhood absence epilepsy, juvenile absence epilepsy"
+    },
+    "abretPearl": "3 Hz GSW shows abrupt onset and offset, is enhanced by hyperventilation, and correlates with clinical absence events. The 3 Hz frequency is characteristic.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate; high HFF may attenuate spikes",
+      "montage": "Best seen in referential montages; bipolar may show phase reversals",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Enhanced by hyperventilation; may be present in wakefulness or drowsiness"
+    }
+  },
+  {
+    "id": "hypsarrhythmia",
+    "name": "Hypsarrhythmia",
+    "category": "epileptiform",
+    "morphology": "Chaotic, high-amplitude slow waves with multifocal spikes",
+    "frequency": "Irregular",
+    "topography": ["diffuse", "multifocal"],
+    "polarity": "mixed",
+    "duration": "Continuous pattern, more prominent in sleep",
+    "patient_state": ["wakefulness", "sleep"],
+    "reactivity": ["often attenuates with REM sleep"],
+    "prevalence": "Seen in infants",
+    "clinical_correlation": ["Infantile spasms (West syndrome)"],
+    "linked_syndromes": ["west_syndrome"],
+    "notes": "High-yield ABRET pattern; associated with developmental regression and spasms.",
+    "commonConfusions": [
+      {
+        "patternId": "diffuse_slowing",
+        "patternName": "Diffuse Slowing",
+        "distinguishingFeature": "Hypsarrhythmia has chaotic high-amplitude slow waves WITH multifocal spikes; diffuse slowing lacks spikes"
+      },
+      {
+        "patternId": "multifocal_spikes",
+        "patternName": "Multifocal Spikes",
+        "distinguishingFeature": "Hypsarrhythmia is continuous chaotic pattern; multifocal spikes are discrete events"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["infant"],
+      "state": ["wakefulness", "sleep"],
+      "syndromicRelevance": "West syndrome (infantile spasms)"
+    },
+    "abretPearl": "Hypsarrhythmia is characterized by chaotic, high-amplitude slow waves with multifocal spikes. It is pathognomonic for infantile spasms (West syndrome).",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate; high LFF may mask slow components",
+      "montage": "Best seen in referential montages to show diffuse nature",
+      "sensitivity": "May require lower sensitivity due to high amplitude",
+      "state": "More prominent in sleep; may attenuate in REM"
+    }
+  },
+  {
+    "id": "lambda_waves",
+    "name": "Lambda Waves",
+    "category": "normal_variant",
+    "morphology": "Sharp, triangular waves",
+    "frequency": "Variable",
+    "topography": ["occipital"],
+    "polarity": "positive",
+    "duration": "Brief, intermittent",
+    "patient_state": ["awake"],
+    "reactivity": ["seen during visual scanning; disappear with eye closure"],
+    "prevalence": "Common",
+    "clinical_correlation": ["Normal occipital variant during visual scanning"],
+    "linked_syndromes": [],
+    "notes": "Lambda waves are positive occipital sharp transients seen during visual scanning.",
+    "commonConfusions": [
+      {
+        "patternId": "positive_occipital_sharp_transients",
+        "patternName": "Positive Occipital Sharp Transients (POSTS)",
+        "distinguishingFeature": "Lambda waves occur during visual scanning; POSTS occur during sleep"
+      },
+      {
+        "patternId": "occipital_spikes",
+        "patternName": "Occipital Spikes (Epileptiform)",
+        "distinguishingFeature": "Lambda waves are positive and disappear with eye closure; epileptiform spikes are negative and persist"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["all ages"],
+      "state": ["awake"],
+      "syndromicRelevance": "Normal variant; no clinical significance"
+    },
+    "abretPearl": "Lambda waves are positive occipital sharp transients that appear during visual scanning and disappear with eye closure. This reactivity distinguishes them from epileptiform activity.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate",
+      "montage": "Best seen in occipital electrodes (O1, O2); referential montages show field better",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Present during visual scanning; disappear with eye closure"
+    }
+  },
+  {
+    "id": "rmtd",
+    "name": "Rhythmic Mid-Temporal Theta (RMTD)",
+    "category": "normal_variant",
+    "morphology": "Rhythmic theta activity",
+    "frequency": "5–7 Hz",
+    "topography": ["mid-temporal"],
+    "polarity": "negative",
+    "duration": "Brief runs",
+    "patient_state": ["drowsy", "light sleep"],
+    "reactivity": ["no specific activation"],
+    "prevalence": "Common in adults",
+    "clinical_correlation": ["Benign temporal variant"],
+    "linked_syndromes": [],
+    "notes": "Rhythmic mid-temporal theta is a benign variant seen during drowsiness.",
+    "commonConfusions": [
+      {
+        "patternId": "temporal_slowing",
+        "patternName": "Temporal Slowing (Pathologic)",
+        "distinguishingFeature": "RMTD is rhythmic and symmetric; pathologic temporal slowing is irregular and asymmetric"
+      },
+      {
+        "patternId": "temporal_spikes",
+        "patternName": "Temporal Spikes",
+        "distinguishingFeature": "RMTD is rhythmic theta; spikes are sharp and isolated"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["adult"],
+      "state": ["drowsy", "light sleep"],
+      "syndromicRelevance": "Benign variant; no clinical significance"
+    },
+    "abretPearl": "RMTD is rhythmic, symmetric, and occurs during drowsiness. It lacks the irregularity and asymmetry of pathologic temporal slowing.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate; high LFF may attenuate",
+      "montage": "Best seen in temporal chain (T3, T4); referential montages show field better",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Most common during drowsiness and light sleep"
+    }
+  },
+  {
+    "id": "bets",
+    "name": "Benign Epileptiform Transients of Sleep (BETS)",
+    "category": "normal_variant",
+    "morphology": "Small sharp spikes",
+    "frequency": "Variable",
+    "topography": ["temporal"],
+    "polarity": "negative",
+    "duration": "Brief, isolated",
+    "patient_state": ["drowsy", "light sleep"],
+    "reactivity": ["no specific activation"],
+    "prevalence": "Common in adults",
+    "clinical_correlation": ["Benign sleep variant"],
+    "linked_syndromes": [],
+    "notes": "BETS are small sharp spikes seen during drowsiness and light sleep.",
+    "commonConfusions": [
+      {
+        "patternId": "small_epileptiform_spikes",
+        "patternName": "Small Epileptiform Spikes",
+        "distinguishingFeature": "BETS lack aftergoing slow waves; epileptiform spikes have slow waves"
+      },
+      {
+        "patternId": "wicket_spikes",
+        "patternName": "Wicket Spikes",
+        "distinguishingFeature": "BETS are isolated small spikes; wicket spikes occur in trains"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["adult"],
+      "state": ["drowsy", "light sleep"],
+      "syndromicRelevance": "Benign variant; no clinical significance"
+    },
+    "abretPearl": "BETS are small sharp spikes that lack aftergoing slow waves. This distinguishes them from epileptiform activity.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate; high HFF may smooth spikes",
+      "montage": "Best seen in temporal chain; referential montages show field better",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Most common during drowsiness and light sleep"
+    }
+  },
+  {
+    "id": "focal_spikes_temporal",
+    "name": "Focal Spikes (Temporal)",
+    "category": "epileptiform",
+    "morphology": "Sharp waves with aftergoing slow waves",
+    "frequency": "Variable",
+    "topography": ["temporal"],
+    "polarity": "negative",
+    "duration": "Brief, isolated or in brief bursts",
+    "patient_state": ["awake", "sleep"],
+    "reactivity": ["may be enhanced by sleep"],
+    "prevalence": "Common in focal epilepsy",
+    "clinical_correlation": ["Temporal lobe epilepsy"],
+    "linked_syndromes": [],
+    "notes": "Focal temporal spikes are the most common epileptiform pattern in adults.",
+    "commonConfusions": [
+      {
+        "patternId": "wicket_spikes",
+        "patternName": "Wicket Spikes",
+        "distinguishingFeature": "Focal spikes have aftergoing slow waves and disrupt background; wicket spikes lack slow waves and do not disrupt background"
+      },
+      {
+        "patternId": "bets",
+        "patternName": "BETS",
+        "distinguishingFeature": "Focal spikes have aftergoing slow waves; BETS lack slow waves"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["all ages"],
+      "state": ["awake", "sleep"],
+      "syndromicRelevance": "Temporal lobe epilepsy"
+    },
+    "abretPearl": "Focal temporal spikes have aftergoing slow waves and may disrupt background rhythm. This distinguishes them from benign variants.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate; high HFF may attenuate spikes",
+      "montage": "Best seen in temporal chain; referential montages show field better",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "May be enhanced by sleep"
+    }
+  },
+  {
+    "id": "focal_spikes_frontal",
+    "name": "Focal Spikes (Frontal)",
+    "category": "epileptiform",
+    "morphology": "Sharp waves with aftergoing slow waves",
+    "frequency": "Variable",
+    "topography": ["frontal"],
+    "polarity": "negative",
+    "duration": "Brief, isolated or in brief bursts",
+    "patient_state": ["awake", "sleep"],
+    "reactivity": ["may be enhanced by sleep"],
+    "prevalence": "Common in focal epilepsy",
+    "clinical_correlation": ["Frontal lobe epilepsy"],
+    "linked_syndromes": [],
+    "notes": "Frontal spikes are common in frontal lobe epilepsy.",
+    "commonConfusions": [
+      {
+        "patternId": "mu_rhythm",
+        "patternName": "Mu Rhythm",
+        "distinguishingFeature": "Frontal spikes have aftergoing slow waves; mu rhythm is arch-shaped and blocks with movement"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["all ages"],
+      "state": ["awake", "sleep"],
+      "syndromicRelevance": "Frontal lobe epilepsy"
+    },
+    "abretPearl": "Frontal spikes have aftergoing slow waves and may disrupt background. They are enhanced by sleep.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate; high HFF may attenuate spikes",
+      "montage": "Best seen in frontal electrodes; referential montages show field better",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "May be enhanced by sleep"
+    }
+  },
+  {
+    "id": "polyspikes",
+    "name": "Polyspikes",
+    "category": "epileptiform",
+    "morphology": "Multiple spikes in rapid succession",
+    "frequency": "Variable, fast",
+    "topography": ["focal", "generalized"],
+    "polarity": "negative",
+    "duration": "Brief bursts",
+    "patient_state": ["awake", "sleep"],
+    "reactivity": ["may be enhanced by photic stimulation"],
+    "prevalence": "Common in myoclonic epilepsy",
+    "clinical_correlation": ["Juvenile myoclonic epilepsy", "Progressive myoclonus epilepsy"],
+    "linked_syndromes": [],
+    "notes": "Polyspikes are multiple spikes in rapid succession, often associated with myoclonic seizures.",
+    "commonConfusions": [
+      {
+        "patternId": "spike_wave",
+        "patternName": "Spike-and-Wave",
+        "distinguishingFeature": "Polyspikes are multiple spikes without slow waves; spike-and-wave has slow waves after spikes"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["adolescent", "adult"],
+      "state": ["awake", "sleep"],
+      "syndromicRelevance": "Juvenile myoclonic epilepsy"
+    },
+    "abretPearl": "Polyspikes are multiple spikes in rapid succession without slow waves. They are characteristic of myoclonic epilepsy.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate; high HFF may attenuate spikes",
+      "montage": "Best seen in referential montages",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "May be enhanced by photic stimulation"
+    }
+  },
+  {
+    "id": "slow_spike_wave",
+    "name": "Slow Spike-and-Wave (2 Hz)",
+    "category": "epileptiform",
+    "morphology": "Spike followed by slow wave complexes",
+    "frequency": "2 Hz",
+    "topography": ["generalized"],
+    "polarity": "negative spikes",
+    "duration": "Continuous or prolonged bursts",
+    "patient_state": ["awake", "sleep"],
+    "reactivity": ["enhanced by sleep"],
+    "prevalence": "Common in Lennox-Gastaut syndrome",
+    "clinical_correlation": ["Lennox-Gastaut syndrome"],
+    "linked_syndromes": [],
+    "notes": "Slow spike-and-wave is characteristic of Lennox-Gastaut syndrome.",
+    "commonConfusions": [
+      {
+        "patternId": "three_hz_gsw",
+        "patternName": "3 Hz Generalized Spike-and-Wave",
+        "distinguishingFeature": "Slow spike-and-wave is 2 Hz and irregular; 3 Hz GSW is faster and regular"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["child"],
+      "state": ["awake", "sleep"],
+      "syndromicRelevance": "Lennox-Gastaut syndrome"
+    },
+    "abretPearl": "Slow spike-and-wave (2 Hz) is irregular and characteristic of Lennox-Gastaut syndrome. It is slower than 3 Hz GSW.",
+    "eegSettingsSensitivity": {
+      "filters": "Standard filters adequate; high LFF may attenuate slow waves",
+      "montage": "Best seen in referential montages",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Enhanced by sleep"
+    }
+  },
+  {
+    "id": "focal_slowing",
+    "name": "Focal Slowing",
+    "category": "slowing",
+    "morphology": "Slow waves (theta/delta)",
+    "frequency": "4–7 Hz (theta) or <4 Hz (delta)",
+    "topography": ["focal"],
+    "polarity": "mixed",
+    "duration": "Continuous or intermittent",
+    "patient_state": ["awake", "sleep"],
+    "reactivity": ["no specific activation"],
+    "prevalence": "Common in structural lesions",
+    "clinical_correlation": ["Structural lesions", "Focal cortical dysfunction"],
+    "linked_syndromes": [],
+    "notes": "Focal slowing indicates focal cortical dysfunction.",
+    "commonConfusions": [
+      {
+        "patternId": "diffuse_slowing",
+        "patternName": "Diffuse Slowing",
+        "distinguishingFeature": "Focal slowing is regional; diffuse slowing is bilateral and symmetric"
+      },
+      {
+        "patternId": "drowsy_slowing",
+        "patternName": "Drowsy Slowing",
+        "distinguishingFeature": "Focal slowing persists in wakefulness; drowsy slowing is state-dependent"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["all ages"],
+      "state": ["awake", "sleep"],
+      "syndromicRelevance": "Structural lesions, focal cortical dysfunction"
+    },
+    "abretPearl": "Focal slowing is regional and indicates focal cortical dysfunction. It persists across states, unlike drowsy slowing.",
+    "eegSettingsSensitivity": {
+      "filters": "High LFF may mask focal slowing; use standard 0.1–0.3 Hz LFF",
+      "montage": "Best seen in referential montages; bipolar may show phase reversals",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Persists across states"
+    }
+  },
+  {
+    "id": "diffuse_slowing",
+    "name": "Diffuse Slowing",
+    "category": "slowing",
+    "morphology": "Slow waves (theta/delta)",
+    "frequency": "4–7 Hz (theta) or <4 Hz (delta)",
+    "topography": ["generalized", "bilateral"],
+    "polarity": "mixed",
+    "duration": "Continuous",
+    "patient_state": ["awake", "sleep"],
+    "reactivity": ["no specific activation"],
+    "prevalence": "Common in encephalopathy",
+    "clinical_correlation": ["Encephalopathy", "Metabolic disorders", "Toxic states"],
+    "linked_syndromes": [],
+    "notes": "Diffuse slowing indicates generalized cerebral dysfunction.",
+    "commonConfusions": [
+      {
+        "patternId": "focal_slowing",
+        "patternName": "Focal Slowing",
+        "distinguishingFeature": "Diffuse slowing is bilateral and symmetric; focal slowing is regional"
+      },
+      {
+        "patternId": "drowsy_slowing",
+        "patternName": "Drowsy Slowing",
+        "distinguishingFeature": "Diffuse slowing persists in alert wakefulness; drowsy slowing is state-dependent"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["all ages"],
+      "state": ["awake", "sleep"],
+      "syndromicRelevance": "Encephalopathy, metabolic disorders"
+    },
+    "abretPearl": "Diffuse slowing is bilateral and symmetric, indicating generalized cerebral dysfunction. It persists in alert wakefulness, unlike drowsy slowing.",
+    "eegSettingsSensitivity": {
+      "filters": "High LFF may mask diffuse slowing; use standard 0.1–0.3 Hz LFF",
+      "montage": "Best seen in referential montages",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Persists across states"
+    }
+  },
+  {
+    "id": "firda",
+    "name": "Frontal Intermittent Rhythmic Delta Activity (FIRDA)",
+    "category": "slowing",
+    "morphology": "Rhythmic delta activity",
+    "frequency": "1–3 Hz",
+    "topography": ["frontal"],
+    "polarity": "negative",
+    "duration": "Intermittent bursts",
+    "patient_state": ["awake", "sleep"],
+    "reactivity": ["no specific activation"],
+    "prevalence": "Common in adults with encephalopathy",
+    "clinical_correlation": ["Encephalopathy", "Metabolic disorders"],
+    "linked_syndromes": [],
+    "notes": "FIRDA is rhythmic frontal delta activity seen in encephalopathy.",
+    "commonConfusions": [
+      {
+        "patternId": "frontal_slowing",
+        "patternName": "Frontal Slowing (Pathologic)",
+        "distinguishingFeature": "FIRDA is rhythmic and intermittent; pathologic frontal slowing is irregular and continuous"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["adult"],
+      "state": ["awake", "sleep"],
+      "syndromicRelevance": "Encephalopathy, metabolic disorders"
+    },
+    "abretPearl": "FIRDA is rhythmic, intermittent frontal delta activity. It is seen in encephalopathy and is distinct from irregular pathologic slowing.",
+    "eegSettingsSensitivity": {
+      "filters": "High LFF may mask FIRDA; use standard 0.1–0.3 Hz LFF",
+      "montage": "Best seen in frontal electrodes; referential montages show field better",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "May be present in wakefulness or sleep"
+    }
+  },
+  {
+    "id": "oirda",
+    "name": "Occipital Intermittent Rhythmic Delta Activity (OIRDA)",
+    "category": "slowing",
+    "morphology": "Rhythmic delta activity",
+    "frequency": "1–3 Hz",
+    "topography": ["occipital"],
+    "polarity": "negative",
+    "duration": "Intermittent bursts",
+    "patient_state": ["awake", "sleep"],
+    "reactivity": ["no specific activation"],
+    "prevalence": "Common in children with encephalopathy",
+    "clinical_correlation": ["Encephalopathy", "Metabolic disorders"],
+    "linked_syndromes": [],
+    "notes": "OIRDA is rhythmic occipital delta activity seen in encephalopathy, more common in children.",
+    "commonConfusions": [
+      {
+        "patternId": "pdr",
+        "patternName": "Posterior Dominant Rhythm (PDR)",
+        "distinguishingFeature": "OIRDA is slower (1–3 Hz) and intermittent; PDR is faster (8–13 Hz) and continuous"
+      },
+      {
+        "patternId": "occipital_slowing",
+        "patternName": "Occipital Slowing (Pathologic)",
+        "distinguishingFeature": "OIRDA is rhythmic and intermittent; pathologic occipital slowing is irregular and continuous"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["child"],
+      "state": ["awake", "sleep"],
+      "syndromicRelevance": "Encephalopathy, metabolic disorders"
+    },
+    "abretPearl": "OIRDA is rhythmic, intermittent occipital delta activity. It is more common in children and indicates encephalopathy.",
+    "eegSettingsSensitivity": {
+      "filters": "High LFF may mask OIRDA; use standard 0.1–0.3 Hz LFF",
+      "montage": "Best seen in occipital electrodes; referential montages show field better",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "May be present in wakefulness or sleep"
+    }
+  },
+  {
+    "id": "postictal_slowing",
+    "name": "Postictal Slowing",
+    "category": "slowing",
+    "morphology": "Slow waves (delta)",
+    "frequency": "<4 Hz",
+    "topography": ["focal", "generalized"],
+    "polarity": "mixed",
+    "duration": "Temporary, resolves over minutes to hours",
+    "patient_state": ["postictal"],
+    "reactivity": ["no specific activation"],
+    "prevalence": "Common after seizures",
+    "clinical_correlation": ["Postictal state"],
+    "linked_syndromes": [],
+    "notes": "Postictal slowing is temporary slowing seen after seizures.",
+    "commonConfusions": [
+      {
+        "patternId": "focal_slowing",
+        "patternName": "Focal Slowing (Persistent)",
+        "distinguishingFeature": "Postictal slowing is temporary and resolves; focal slowing is persistent"
+      },
+      {
+        "patternId": "diffuse_slowing",
+        "patternName": "Diffuse Slowing (Persistent)",
+        "distinguishingFeature": "Postictal slowing is temporary and resolves; diffuse slowing is persistent"
+      }
+    ],
+    "clinicalContext": {
+      "ageGroup": ["all ages"],
+      "state": ["postictal"],
+      "syndromicRelevance": "Postictal state"
+    },
+    "abretPearl": "Postictal slowing is temporary and resolves over minutes to hours. It indicates recent seizure activity.",
+    "eegSettingsSensitivity": {
+      "filters": "High LFF may mask postictal slowing; use standard 0.1–0.3 Hz LFF",
+      "montage": "Best seen in referential montages",
+      "sensitivity": "Standard sensitivity adequate",
+      "state": "Present in postictal state; resolves over time"
+    }
+  }
+]

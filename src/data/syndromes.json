@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cae",
+    "name": "Childhood Absence Epilepsy",
+    "typical_patterns": ["three_hz_gsw"],
+    "age_group": ["child"],
+    "clinical_features": [
+      "Frequent brief staring spells",
+      "Abrupt onset and offset of impaired awareness",
+      "Often provoked by hyperventilation"
+    ],
+    "notes": "EEG shows generalized 3 Hz spike-and-wave; background usually normal."
+  },
+  {
+    "id": "ige",
+    "name": "Idiopathic Generalized Epilepsy",
+    "typical_patterns": ["three_hz_gsw"],
+    "age_group": ["child", "adolescent"],
+    "clinical_features": [
+      "Absence, myoclonic and/or generalized tonic-clonic seizures",
+      "Normal neurologic exam and imaging"
+    ],
+    "notes": "Includes CAE, JAE, JME and GTCA; patterns may vary in frequency and morphology."
+  },
+  {
+    "id": "west_syndrome",
+    "name": "West Syndrome (Infantile Spasms)",
+    "typical_patterns": ["hypsarrhythmia"],
+    "age_group": ["infant"],
+    "clinical_features": [
+      "Clusters of epileptic spasms",
+      "Developmental delay or regression",
+      "Onset typically in first year of life"
+    ],
+    "notes": "High-yield association: infantile spasms + hypsarrhythmia."
+  }
+]

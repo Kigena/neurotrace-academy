@@ -1,0 +1,927 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2025-12-18T08:38:03.110169Z",
+  "source": "NeuroTrace Academy",
+  "domains": [
+    {
+      "id": "domain-1",
+      "title": "Domain I: Pre-Study Procedures",
+      "examWeightPercent": 15,
+      "summary": "Prepare the patient, environment, documentation, and recording strategy to ensure safety and diagnostic yield.",
+      "tags": [
+        "workflow",
+        "patient-care",
+        "history",
+        "documentation",
+        "safety"
+      ],
+      "sections": [
+        {
+          "id": "d1-neuroanatomy-eeg-localization",
+          "title": "Neuroanatomy for EEG Localization",
+          "tags": [
+            "neuroanatomy",
+            "localization",
+            "cortex",
+            "lobes",
+            "frontal",
+            "temporal",
+            "parietal",
+            "occipital",
+            "central",
+            "rolandic",
+            "focal-slowing",
+            "lateralization"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-I/D1-05-Neuroanatomy-EEG-Localization.pdf"
+        },
+        {
+          "id": "d1-brain-structures-functions",
+          "title": "Brain Structures & Functions",
+          "tags": [
+            "neuroanatomy",
+            "brain-structures",
+            "cerebrum",
+            "lobes",
+            "brainstem",
+            "cerebellum",
+            "thalamus",
+            "limbic-system",
+            "functions",
+            "clinical-correlation",
+            "blood-supply",
+            "stroke",
+            "mca",
+            "aca",
+            "pca",
+            "basilar",
+            "circle-of-willis"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-I/D1-12-Neuroanatomy-Brain-Structures.pdf"
+        },
+        {
+          "id": "d1-neurophysiology-seizure-mechanisms",
+          "title": "Neurophysiology & Seizure Mechanisms",
+          "tags": [
+            "eeg-generation",
+            "synchronization",
+            "seizure-mechanisms",
+            "neurophysiology",
+            "postsynaptic-potentials",
+            "pyramidal-neurons",
+            "thalamocortical",
+            "hyperexcitability"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-I/D1-02-Neurophysiology-Seizure-Mechanisms.pdf"
+        },
+        {
+          "id": "d1-normal-eeg-rhythms",
+          "title": "Normal EEG Rhythms",
+          "tags": [
+            "alpha",
+            "beta",
+            "theta",
+            "delta",
+            "background",
+            "normal-rhythms",
+            "pdr",
+            "age-norms",
+            "state-dependent"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-I/D1-03-Normal-EEG-Rhythms.pdf"
+        },
+        {
+          "id": "d1-eeg-10-20-system",
+          "title": "EEG Electrode Placement: The International 10–20 System",
+          "tags": [
+            "electrode-placement",
+            "10-20",
+            "localization",
+            "hemispheres",
+            "electrode-naming",
+            "measurement",
+            "standard-placement"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-I/D1-04-EEG-10-20-System.pdf"
+        },
+        {
+          "id": "d1-basic-eeg-physics-instrumentation",
+          "title": "Basic EEG Physics & Instrumentation",
+          "tags": [
+            "voltage",
+            "current",
+            "instrumentation",
+            "polarity",
+            "signal-measurement",
+            "amplification",
+            "noise-rejection",
+            "eeg-physics"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-I/D1-06-Basic-EEG-Physics-Instrumentation.pdf"
+        },
+        {
+          "id": "d1-age-related-eeg-development",
+          "title": "Age-Related EEG Development",
+          "tags": [
+            "pediatric-eeg",
+            "development",
+            "age-related",
+            "maturation",
+            "neonatal",
+            "infant",
+            "childhood",
+            "adolescent",
+            "adult",
+            "background-rhythm",
+            "age-norms"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-I/D1-07-Age-Related-EEG-Development.pdf"
+        },
+        {
+          "id": "d1-medical-terminology",
+          "title": "Medical Terminology Reference",
+          "tags": [
+            "medical-terminology",
+            "general-medical",
+            "neurological-disorders",
+            "tumors",
+            "oncology",
+            "ophthalmology",
+            "liver",
+            "respiratory",
+            "spinal-cord",
+            "spine",
+            "cranial-nerves",
+            "emergency",
+            "clinical-syndromes"
+          ],
+          "sectionType": "detailed",
+          "subsections": [
+            {
+              "id": "mt-01-general",
+              "title": "General Medical Terminology",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-01-General-Medical-Terminology.pdf"
+            },
+            {
+              "id": "mt-02-neurological",
+              "title": "Neurological Disorders",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-02-Neurological-Disorders.pdf"
+            },
+            {
+              "id": "mt-03-tumors",
+              "title": "Tumors & Oncology",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-03-Tumors-Oncology.pdf"
+            },
+            {
+              "id": "mt-04-ophthalmology",
+              "title": "Ophthalmology",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-04-Ophthalmology.pdf"
+            },
+            {
+              "id": "mt-05-liver",
+              "title": "Liver & Hepatology",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-05-Liver-Hepatology.pdf"
+            },
+            {
+              "id": "mt-06-respiratory",
+              "title": "Respiratory Terms",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-06-Respiratory-Terms.pdf"
+            },
+            {
+              "id": "mt-07-spinal-muscle",
+              "title": "Spinal Cord & Muscle Terms",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-07-Spinal-Cord-Muscle-Terms.pdf"
+            },
+            {
+              "id": "mt-08-spine",
+              "title": "Spine Terms",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-08-Spine-Terms.pdf"
+            },
+            {
+              "id": "mt-09-cranial-sensory",
+              "title": "Cranial Nerves & Sensory Systems",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-09-Cranial-Nerves-Sensory.pdf"
+            },
+            {
+              "id": "mt-10-emergency",
+              "title": "Emergency & Clinical Syndromes",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-10-Emergency-Clinical-Syndromes.pdf"
+            },
+            {
+              "id": "mt-11-normal-variants",
+              "title": "Normal EEG Variants",
+              "pdfGuide": "/study-guides/Medical-Terminology/MT-11-Normal-EEG-Variants.pdf"
+            }
+          ]
+        },
+        {
+          "id": "d1-s1",
+          "title": "Patient Identification & Order Verification",
+          "tags": [
+            "identifiers",
+            "order-review",
+            "safety",
+            "ethics",
+            "documentation"
+          ]
+        },
+        {
+          "id": "d1-s2",
+          "title": "Environment & Equipment Preparation",
+          "tags": [
+            "setup",
+            "infection-control",
+            "electrical-noise",
+            "supplies"
+          ]
+        },
+        {
+          "id": "d1-s3",
+          "title": "Establish Patient Rapport",
+          "tags": [
+            "rapport",
+            "communication",
+            "pediatrics",
+            "asd",
+            "anxiety"
+          ]
+        },
+        {
+          "id": "d1-s4",
+          "title": "Patient Instructions (Pre-Test)",
+          "tags": [
+            "instructions",
+            "sleep-deprivation",
+            "medications",
+            "consent"
+          ]
+        },
+        {
+          "id": "d1-s5",
+          "title": "History Taking & Documentation Basics",
+          "tags": [
+            "history",
+            "semiology",
+            "medications",
+            "timing",
+            "documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domain-2",
+      "title": "Domain II: Performing the EEG Study",
+      "examWeightPercent": 46,
+      "summary": "Electrode application, montages, settings, activation procedures, artifacts, waveform identification, event monitoring, and special protocols.",
+      "tags": [
+        "recording",
+        "montages",
+        "filters",
+        "activation",
+        "artifacts",
+        "localization"
+      ],
+      "sections": [
+        {
+          "id": "d2-s1",
+          "title": "Electrode Application & 10–20 System",
+          "tags": [
+            "10-20",
+            "measurements",
+            "impedance",
+            "ground",
+            "reference"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-10-Electrode-Application-10-20-System.pdf"
+        },
+        {
+          "id": "d2-complete-electrode-placement",
+          "title": "Complete Electrode Placement Guide: Standard & Exotic Electrodes",
+          "tags": [
+            "10-20",
+            "10-10",
+            "exotic-electrodes",
+            "T1-T2",
+            "F9-F10",
+            "P9-P10",
+            "sphenoidal",
+            "nasopharyngeal",
+            "temporal-epilepsy",
+            "presurgical-evaluation",
+            "electrode-placement"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-16-Electrode-Placement-Complete-Guide.pdf"
+        },
+        {
+          "id": "d2-electrodes-impedance",
+          "title": "Electrodes & Impedance",
+          "tags": [
+            "impedance",
+            "electrodes",
+            "artifact",
+            "noise",
+            "signal-quality",
+            "electrode-types",
+            "instrumentation"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-02-Electrodes-Impedance.pdf"
+        },
+        {
+          "id": "d2-amplifiers-sensitivity",
+          "title": "Amplifiers & Sensitivity",
+          "tags": [
+            "amplifier",
+            "sensitivity",
+            "gain",
+            "amplitude",
+            "display",
+            "instrumentation",
+            "signal-amplification"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-03-Amplifiers-Sensitivity.pdf"
+        },
+        {
+          "id": "d2-timebase-sampling",
+          "title": "Timebase & Sampling Rate",
+          "tags": [
+            "timebase",
+            "sampling-rate",
+            "aliasing",
+            "nyquist",
+            "frequency",
+            "temporal-resolution",
+            "instrumentation"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-04-Timebase-Sampling.pdf"
+        },
+        {
+          "id": "d2-s2",
+          "title": "Instrumentation & Display Settings",
+          "tags": [
+            "sensitivity",
+            "lff",
+            "hff",
+            "notch",
+            "timebase",
+            "sampling"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-03-Amplifiers-Sensitivity.pdf"
+        },
+        {
+          "id": "d2-filters-time-constants",
+          "title": "Filters & Time Constants",
+          "tags": [
+            "lff",
+            "hff",
+            "time-constant",
+            "signal-distortion",
+            "abret-trap",
+            "filters",
+            "instrumentation"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-01-Filters-Time-Constants.pdf"
+        },
+        {
+          "id": "d2-s3",
+          "title": "Montages & Strategy During Recording",
+          "tags": [
+            "montages",
+            "referential",
+            "bipolar",
+            "phase-reversal",
+            "strategy"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-05-Montages-Referencing.pdf"
+        },
+        {
+          "id": "d2-montages-referencing",
+          "title": "Montages & Referencing",
+          "tags": [
+            "montage",
+            "referencing",
+            "phase-reversal",
+            "polarity",
+            "localization",
+            "bipolar",
+            "referential"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-05-Montages-Referencing.pdf"
+        },
+        {
+          "id": "d2-recording-procedures-patient-preparation",
+          "title": "EEG Recording Procedures & Patient Preparation",
+          "tags": [
+            "patient-preparation",
+            "recording-procedures",
+            "artifacts",
+            "pre-study-checks",
+            "patient-instructions",
+            "equipment-checks",
+            "workflow"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-06-Recording-Procedures-Patient-Preparation.pdf"
+        },
+        {
+          "id": "d2-filters-sensitivity-time-constants",
+          "title": "Filters, Sensitivity & Time Constants",
+          "tags": [
+            "lff",
+            "hff",
+            "sensitivity",
+            "time-constant",
+            "distortion",
+            "gain",
+            "filters",
+            "waveform-appearance"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-07-Filters-Sensitivity-TimeConstants.pdf"
+        },
+        {
+          "id": "d2-amplifiers-impedance-grounding",
+          "title": "Amplifiers, Impedance & Grounding",
+          "tags": [
+            "amplifier",
+            "impedance",
+            "grounding",
+            "cmrr",
+            "noise",
+            "signal-integrity",
+            "common-mode-rejection",
+            "electrode-impedance"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-08-Amplifiers-Impedance-Grounding.pdf"
+        },
+        {
+          "id": "d2-electrode-types-application",
+          "title": "EEG Electrode Types & Application",
+          "tags": [
+            "electrodes",
+            "application",
+            "impedance",
+            "electrode-types",
+            "cup-electrodes",
+            "disk-electrodes",
+            "needle-electrodes",
+            "electrode-materials",
+            "electrode-artifacts"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-09-Electrode-Types-Application.pdf"
+        },
+        {
+          "id": "d2-s4",
+          "title": "Activation Procedures",
+          "tags": [
+            "activation",
+            "hv",
+            "photic",
+            "sleep",
+            "contraindications"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-11-Activation-Procedures.pdf"
+        },
+        {
+          "id": "d2-s5",
+          "title": "Artifacts & Troubleshooting",
+          "tags": [
+            "artifacts",
+            "muscle",
+            "ecg",
+            "movement",
+            "electrode-pop",
+            "60hz"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-12-Artifacts-Troubleshooting.pdf"
+        },
+        {
+          "id": "d2-s6",
+          "title": "Waveform Identification & Pattern Recognition",
+          "tags": [
+            "pdr",
+            "sleep",
+            "normal-variants",
+            "epileptiform",
+            "slowing",
+            "periodic"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-13-Waveform-Identification-Pattern-Recognition.pdf"
+        },
+        {
+          "id": "d2-s7",
+          "title": "Event Monitoring & Emergency Response",
+          "tags": [
+            "events",
+            "annotation",
+            "seizures",
+            "bls",
+            "safety"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-14-Event-Monitoring-Emergency-Response.pdf"
+        },
+        {
+          "id": "d2-s8",
+          "title": "Special Protocols (Neonatal/ICU/ECI)",
+          "tags": [
+            "neonatal",
+            "icu",
+            "eci",
+            "special-protocols"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-II/D2-15-Special-Protocols-Neonatal-ICU-ECI.pdf"
+        }
+      ]
+    },
+    {
+      "id": "domain-3",
+      "title": "Domain III: Post-Study Procedures",
+      "examWeightPercent": 19,
+      "summary": "Aftercare, infection control, technical reporting, and secure data management.",
+      "tags": [
+        "post-study",
+        "infection-control",
+        "reporting",
+        "data"
+      ],
+      "sections": [
+        {
+          "id": "d3-artifacts-recognition",
+          "title": "EEG Artifacts: Recognition & Differentiation",
+          "tags": [
+            "artifact",
+            "emg",
+            "eog",
+            "ecg",
+            "60hz",
+            "electrode-pop",
+            "pattern-recognition",
+            "troubleshooting"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-01-EEG-Artifacts.pdf"
+        },
+        {
+          "id": "d3-epileptiform-discharges",
+          "title": "Epileptiform Discharges",
+          "tags": [
+            "spike",
+            "sharp-wave",
+            "spike-and-wave",
+            "focal",
+            "generalized",
+            "epileptiform",
+            "ied",
+            "pattern-recognition"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-02-Epileptiform-Discharges.pdf"
+        },
+        {
+          "id": "d3-sleep-graphoelements",
+          "title": "Sleep & Graphoelements",
+          "tags": [
+            "sleep",
+            "spindle",
+            "k-complex",
+            "vertex-wave",
+            "activation",
+            "sleep-stages",
+            "graphoelements",
+            "pattern-recognition"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-03-Sleep-Graphoelements.pdf"
+        },
+        {
+          "id": "d3-focal-generalized-patterns",
+          "title": "Focal vs Generalized EEG Patterns",
+          "tags": [
+            "focal",
+            "generalized",
+            "asymmetry",
+            "localization",
+            "distribution",
+            "pattern-classification",
+            "lateralization"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-04-Focal-Generalized-Patterns.pdf"
+        },
+        {
+          "id": "d3-diffuse-slowing",
+          "title": "Diffuse Slowing",
+          "tags": [
+            "diffuse-slowing",
+            "encephalopathy",
+            "background",
+            "pdr",
+            "theta",
+            "delta",
+            "metabolic",
+            "toxic",
+            "hypoxic"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-05-Diffuse-Slowing.pdf"
+        },
+        {
+          "id": "d3-normal-variants",
+          "title": "Normal EEG Variants",
+          "tags": [
+            "normal-variant",
+            "wicket",
+            "mu",
+            "lambda",
+            "benign-sharp",
+            "small-sharp-spikes",
+            "bets",
+            "pattern-differentiation",
+            "benign"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-06-Normal-Variants.pdf"
+        },
+        {
+          "id": "d3-activation-procedures",
+          "title": "EEG Activation Procedures",
+          "tags": [
+            "hyperventilation",
+            "photic",
+            "sleep",
+            "activation",
+            "photosensitivity",
+            "hv",
+            "ips",
+            "sleep-deprivation",
+            "diagnostic-yield"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-07-Activation-Procedures.pdf"
+        },
+        {
+          "id": "d3-ictal-eeg-seizure-patterns",
+          "title": "Ictal EEG Patterns & Seizure Evolution",
+          "tags": [
+            "ictal",
+            "seizure",
+            "evolution",
+            "postictal",
+            "ictal-onset",
+            "seizure-evolution",
+            "ictal-termination",
+            "seizure-patterns"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-08-Ictal-EEG-Seizure-Patterns.pdf"
+        },
+        {
+          "id": "d3-encephalopathy-differentials",
+          "title": "Encephalopathy Differentials & EEG Patterns",
+          "tags": [
+            "encephalopathy",
+            "metabolic",
+            "toxic",
+            "hypoxic-ischemic",
+            "infectious",
+            "autoimmune",
+            "triphasic-waves",
+            "burst-suppression",
+            "alpha-coma",
+            "pswcs",
+            "extreme-delta-brush",
+            "differential-diagnosis",
+            "clinical-correlation"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-09-Encephalopathy-Differentials.pdf"
+        },
+        {
+          "id": "d3-eeg-syndromes-classification",
+          "title": "EEG Syndromes Classification & Diagnostic Yield",
+          "tags": [
+            "syndromes",
+            "epilepsy-syndromes",
+            "cae",
+            "jme",
+            "west-syndrome",
+            "lgs",
+            "rolandic",
+            "temporal-lobe-epilepsy",
+            "frontal-lobe-epilepsy",
+            "diagnostic-yield",
+            "activation-procedures",
+            "hyperventilation",
+            "sleep",
+            "sleep-deprivation",
+            "morphology",
+            "clinical-correlation"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-III/D3-10-EEG-Syndromes-Classification.pdf"
+        },
+        {
+          "id": "d3-s1",
+          "title": "Electrode Removal & Patient Aftercare",
+          "tags": [
+            "aftercare",
+            "skin",
+            "comfort",
+            "safety"
+          ]
+        },
+        {
+          "id": "d3-s2",
+          "title": "Infection Control & Equipment Cleaning",
+          "tags": [
+            "infection-control",
+            "disinfection",
+            "cdc",
+            "who",
+            "policies"
+          ]
+        },
+        {
+          "id": "d3-s3",
+          "title": "Technical Description & Reporting",
+          "tags": [
+            "tech-report",
+            "annotation",
+            "observations",
+            "no-diagnosis"
+          ]
+        },
+        {
+          "id": "d3-s4",
+          "title": "Data Management & Archiving",
+          "tags": [
+            "storage",
+            "archive",
+            "privacy",
+            "hipaa",
+            "media"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domain-4",
+      "title": "Domain IV: Ethics & Professional Issues",
+      "examWeightPercent": 20,
+      "summary": "Confidentiality, professionalism, safety/regulatory awareness, and emergency response.",
+      "tags": [
+        "ethics",
+        "professionalism",
+        "hipaa",
+        "osha",
+        "safety"
+      ],
+      "sections": [
+        {
+          "id": "d4-patient-safety-standards",
+          "title": "Patient Safety & Professional Standards",
+          "tags": [
+            "patient-safety",
+            "electrical-safety",
+            "infection-control",
+            "ethics",
+            "contraindications",
+            "emergency-response",
+            "professional-standards"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-IV/D4-01-Patient-Safety-Standards.pdf"
+        },
+        {
+          "id": "d4-documentation-reporting",
+          "title": "EEG Documentation & Reporting Standards",
+          "tags": [
+            "reporting",
+            "documentation",
+            "scope-of-practice",
+            "ethics",
+            "technical-report",
+            "terminology",
+            "objectivity"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-IV/D4-02-Documentation-Reporting.pdf"
+        },
+        {
+          "id": "d4-ethics-confidentiality-professionalism",
+          "title": "Ethics, Confidentiality & Professional Conduct",
+          "tags": [
+            "ethics",
+            "confidentiality",
+            "professionalism",
+            "consent",
+            "privacy",
+            "hipaa",
+            "professional-boundaries",
+            "ethical-dilemmas"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-IV/D4-03-Ethics-Confidentiality-Professionalism.pdf"
+        },
+        {
+          "id": "d4-quality-assurance-equipment-maintenance",
+          "title": "Quality Assurance & Equipment Maintenance",
+          "tags": [
+            "qa",
+            "quality-assurance",
+            "equipment-maintenance",
+            "calibration",
+            "troubleshooting",
+            "equipment-checks",
+            "preventive-maintenance"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-IV/D4-04-Quality-Assurance-Equipment.pdf"
+        },
+        {
+          "id": "d4-abret-exam-strategy-mocks",
+          "title": "ABRET Exam Strategy & Mock Exams",
+          "tags": [
+            "abret-exam",
+            "exam-strategy",
+            "mock-exams",
+            "time-management",
+            "exam-readiness",
+            "weak-topics",
+            "performance-analytics",
+            "domain-i",
+            "domain-ii",
+            "domain-iii",
+            "domain-iv"
+          ],
+          "sectionType": "detailed",
+          "pdfGuide": "/study-guides/Domain-IV/D4-05-ABRET-Exam-Strategy-Mocks.pdf"
+        },
+        {
+          "id": "d4-s1",
+          "title": "Confidentiality & Patient Rights",
+          "tags": [
+            "confidentiality",
+            "consent",
+            "rights",
+            "privacy"
+          ]
+        },
+        {
+          "id": "d4-s2",
+          "title": "Scope of Practice & Professional Conduct",
+          "tags": [
+            "scope",
+            "teamwork",
+            "documentation",
+            "communication"
+          ]
+        },
+        {
+          "id": "d4-s3",
+          "title": "Workplace Safety & Regulatory Awareness",
+          "tags": [
+            "osha",
+            "msds",
+            "electrical-safety",
+            "infection-control"
+          ]
+        },
+        {
+          "id": "d4-s4",
+          "title": "Emergency Response & BLS",
+          "tags": [
+            "emergency",
+            "bls",
+            "cpr",
+            "seizure-response"
+          ]
+        }
+      ]
+    }
+  ]
+}
+

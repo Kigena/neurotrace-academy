@@ -1,0 +1,2099 @@
+[
+  {
+    "id": "pattern_pdr",
+    "name": "Posterior Dominant Rhythm (PDR)",
+    "category": "NORMAL",
+    "topography": ["occipital", "posterior"],
+    "state": ["wake", "eyes-closed"],
+    "age_notes": "Typical adult 8–13 Hz; age-dependent in children/elderly",
+    "morphology": "Sinusoidal, symmetric rhythm maximal posteriorly",
+    "frequency_hz": "8–13",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/pdr.png",
+    "key_features": [
+      "Posterior maximum",
+      "Reactive to eye opening"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_oirda",
+        "why_confused": "Both are posterior rhythmic activity",
+        "how_to_distinguish": "PDR attenuates with eye opening; OIRDA is slower (1–3 Hz) and often intermittent"
+      },
+      {
+        "pattern_id": "artifact_eye_blink",
+        "why_confused": "Eye activity can contaminate posterior leads",
+        "how_to_distinguish": "Eye blinks are frontally maximal and time-locked to blinking"
+      },
+      {
+        "pattern_id": "pattern_drowsy_slowing",
+        "why_confused": "Both involve posterior activity",
+        "how_to_distinguish": "PDR is faster (8–13 Hz) and reactive; drowsy slowing is slower (theta/delta) and state-dependent"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal wakefulness"],
+      "associated_with": [],
+      "when_concerning": ["Absent or poorly reactive PDR may suggest diffuse dysfunction depending on context"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "High LFF (>0.5 Hz) may attenuate PDR; use standard 0.1–0.3 Hz LFF",
+        "Low HFF may smooth fast activity"
+      ],
+      "montage_effects": [
+        "Reference choice can change apparent amplitude distribution",
+        "Best seen in referential montages (average reference); bipolar may show phase reversals"
+      ],
+      "sensitivity_notes": "Standard sensitivity (7–10 µV/mm) adequate; too low sensitivity can hide low-amplitude rhythm"
+    },
+    "abret_exam_pearls": [
+      "PDR should attenuate with eye opening; lack of reactivity may be significant in context.",
+      "PDR frequency is age-dependent; slower PDR may be normal in children.",
+      "PDR is best assessed with eyes closed and should attenuate with eye opening."
+    ],
+    "report_language": {
+      "how_to_describe": "Well-formed posterior dominant rhythm at 9–10 Hz, symmetric, reactive to eye opening.",
+      "avoid_saying": ["Normal EEG solely based on presence of PDR"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D1-NORMAL-EEG-RHYTHMS", "D2-FILTERS-SENSITIVITY-TIME-CONSTANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["pdr", "background", "reactivity"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_mu_rhythm",
+    "name": "Mu Rhythm",
+    "category": "NORMAL_VARIANT",
+    "topography": ["central"],
+    "state": ["awake"],
+    "age_notes": "Common in adults",
+    "morphology": "Arch-like, wicket-shaped rhythm",
+    "frequency_hz": "8–10",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/mu-rhythm.png",
+    "key_features": [
+      "Central location (C3, C4, Cz)",
+      "Blocks with movement or intention to move"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_spikes_central",
+        "why_confused": "Both are central sharp activity",
+        "how_to_distinguish": "Mu rhythm blocks with movement; focal spikes do not. Mu is arch-shaped and rhythmic; spikes are sharp and isolated with aftergoing slow waves"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal wakefulness"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": ["Standard filters adequate"],
+      "montage_effects": [
+        "Best seen in central electrodes (C3, C4, Cz); referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Mu rhythm is central, arch-shaped, and attenuates with movement of the contralateral limb.",
+      "Mu can mimic epileptiform activity but typically lacks aftergoing slow waves."
+    ],
+    "report_language": {
+      "how_to_describe": "Central mu rhythm, arch-shaped, reactive to movement.",
+      "avoid_saying": ["Epileptiform activity when describing mu rhythm"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D1-NORMAL-EEG-RHYTHMS", "D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["mu-rhythm", "normal-variant", "central"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_wicket_spikes",
+    "name": "Wicket Spikes",
+    "category": "NORMAL_VARIANT",
+    "topography": ["temporal"],
+    "state": ["wake", "drowsy", "light sleep"],
+    "age_notes": "Common in adults",
+    "morphology": "Intermittent trains of monophasic arciform waveforms or single spike-like waveforms",
+    "frequency_hz": "6–11",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/wicket-spikes.png",
+    "key_features": [
+      "Intermittent trains of monophasic arciform waveforms",
+      "May occur as single spike-like waveforms",
+      "Occur exclusively on one side (left > right) or bilaterally with shifting predominance",
+      "Frequency 6–11 Hz",
+      "Possibly represent fragments of temporal alpha activity or the third rhythm",
+      "Seen during wakefulness, drowsiness, and light sleep",
+      "Disappear in deeper sleep",
+      "Lack aftergoing slow waves",
+      "Do not disrupt background"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_temporal_sharp_waves",
+        "why_confused": "Both are temporal sharp activity",
+        "how_to_distinguish": "Wicket spikes lack aftergoing slow waves and do not disrupt background; epileptiform sharp waves have slow waves and disrupt background"
+      },
+      {
+        "pattern_id": "pattern_small_epileptiform_spikes",
+        "why_confused": "Both are small sharp temporal activity",
+        "how_to_distinguish": "Wicket spikes occur in trains without slow waves; epileptiform spikes are isolated or in brief bursts with slow waves"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["drowsiness", "light sleep"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate; high HFF may smooth the arc shape"
+      ],
+      "montage_effects": [
+        "Best seen in temporal chain (F7–T3–T5 or F8–T4–T6); referential montages may show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Wicket spikes occur in trains, are arciform, and do not disrupt the background.",
+      "Absence of aftergoing slow wave supports benign wicket spikes vs epileptiform temporal spikes.",
+      "If a single spike is found, it should be compared with a train of wicket spikes on other pages to confirm identification.",
+      "Should not be mistaken for temporal seizure discharge or spikes."
+    ],
+    "report_language": {
+      "how_to_describe": "Temporal wicket spikes, arciform, occurring in trains, without aftergoing slow waves.",
+      "avoid_saying": ["Epileptiform discharges when describing wicket spikes"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["wicket-spikes", "normal-variant", "temporal"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_three_hz_gsw",
+    "name": "3 Hz Generalized Spike-and-Wave",
+    "category": "EPILEPTIFORM",
+    "topography": ["generalized", "frontally predominant"],
+    "state": ["awake", "drowsy"],
+    "age_notes": "Common in children and adolescents",
+    "morphology": "Spike followed by slow wave complexes",
+    "frequency_hz": "3",
+    "amplitude_uv": "high",
+    "image": "/images/patterns/3-hz-generalized-spike-wave.png",
+    "key_features": [
+      "Generalized and synchronous",
+      "Abrupt onset and offset",
+      "Enhanced by hyperventilation"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_slow_spike_wave",
+        "why_confused": "Both are generalized spike-and-wave patterns",
+        "how_to_distinguish": "3 Hz GSW is faster (3 Hz) and regular; slow spike-and-wave is slower (2 Hz) and irregular, associated with Lennox-Gastaut"
+      },
+      {
+        "pattern_id": "pattern_photic_driving",
+        "why_confused": "Both can be rhythmic",
+        "how_to_distinguish": "Photic driving is time-locked to flash rate and occipital; 3 Hz GSW is generalized, frontally predominant, and not time-locked"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["childhood absence epilepsy", "juvenile absence epilepsy"],
+      "associated_with": ["Childhood absence epilepsy", "Juvenile absence epilepsy", "Idiopathic generalized epilepsy"],
+      "when_concerning": ["Correlates with clinical absence events"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate; high HFF may attenuate spikes"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages; bipolar may show phase reversals"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Classic 3 Hz spike-and-wave is associated with typical absence seizures; often provoked by hyperventilation.",
+      "Generalized onset and synchrony help distinguish from focal discharges.",
+      "3 Hz GSW shows abrupt onset and offset, is enhanced by hyperventilation, and correlates with clinical absence events."
+    ],
+    "report_language": {
+      "how_to_describe": "Generalized 3 Hz spike-and-wave complexes, frontally predominant, enhanced by hyperventilation.",
+      "avoid_saying": ["Focal epilepsy when describing generalized spike-and-wave"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-EPILEPTIFORM-DISCHARGES", "D3-ACTIVATION-PROCEDURES"],
+      "standards_sections": [],
+      "quiz_tags": ["spike-wave", "generalized", "absence"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_hypsarrhythmia",
+    "name": "Hypsarrhythmia",
+    "category": "EPILEPTIFORM",
+    "topography": ["diffuse", "multifocal"],
+    "state": ["wakefulness", "sleep"],
+    "age_notes": "Seen in infants",
+    "morphology": "Chaotic, high-amplitude slow waves with multifocal spikes",
+    "frequency_hz": "irregular",
+    "amplitude_uv": "very high",
+    "image": "/images/patterns/hypsarrhythmia.png",
+    "key_features": [
+      "Chaotic pattern",
+      "High-amplitude slow waves",
+      "Multifocal spikes"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_diffuse_slowing",
+        "why_confused": "Both involve diffuse slow activity",
+        "how_to_distinguish": "Hypsarrhythmia has chaotic high-amplitude slow waves WITH multifocal spikes; diffuse slowing lacks spikes"
+      },
+      {
+        "pattern_id": "pattern_multifocal_spikes",
+        "why_confused": "Both have multifocal spikes",
+        "how_to_distinguish": "Hypsarrhythmia is continuous chaotic pattern; multifocal spikes are discrete events"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["infantile spasms", "West syndrome", "tuberous sclerosis complex (TSC)"],
+      "associated_with": [
+        "West syndrome (infantile spasms)",
+        "Tuberous sclerosis complex (TSC) - common cause, vigabatrin is first-line for TSC-related spasms",
+        "Urgent treatment required (delayed control associated with poor neurodevelopmental outcomes)",
+        "First-line treatment: ACTH or high-dose corticosteroids (prednisolone), and vigabatrin (especially for tuberous sclerosis)"
+      ],
+      "when_concerning": [
+        "Associated with developmental regression and spasms",
+        "Requires urgent treatment as delayed control is associated with poor neurodevelopmental outcomes",
+        "Successful treatment indicated by cessation of spasms and resolution of hypsarrhythmia on EEG",
+        "Persistent hypsarrhythmia indicates poor prognosis"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate; high LFF may mask slow components"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages to show diffuse nature"
+      ],
+      "sensitivity_notes": "May require lower sensitivity due to high amplitude"
+    },
+    "abret_exam_pearls": [
+      "Hypsarrhythmia: chaotic high-amplitude slow waves with multifocal spikes; associated with infantile spasms.",
+      "Modified hypsarrhythmia variants exist—clinical correlation is essential.",
+      "Infantile spasms require urgent treatment (ACTH or high-dose corticosteroids, vigabatrin) as delayed control is associated with poor neurodevelopmental outcomes.",
+      "Successful treatment is indicated by cessation of spasms AND resolution of hypsarrhythmia on EEG. Persistent hypsarrhythmia indicates poor prognosis.",
+      "Vigabatrin requires ophthalmologic monitoring due to risk of irreversible peripheral visual field constriction."
+    ],
+    "report_language": {
+      "how_to_describe": "Hypsarrhythmia: chaotic, high-amplitude slow waves with multifocal spikes, more prominent in sleep.",
+      "avoid_saying": ["Normal infant EEG when hypsarrhythmia is present"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-EPILEPTIFORM-DISCHARGES"],
+      "standards_sections": [],
+      "quiz_tags": ["hypsarrhythmia", "infantile-spasms", "west-syndrome"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_lambda_waves",
+    "name": "Lambda Waves",
+    "category": "NORMAL_VARIANT",
+    "topography": ["occipital"],
+    "state": ["awake"],
+    "age_notes": "Common in all ages",
+    "morphology": "Sharp, triangular positive waves",
+    "frequency_hz": "variable",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/lambda-waves.png",
+    "key_features": [
+      "Positive polarity",
+      "Occipital location",
+      "Seen during visual scanning",
+      "Disappear with eye closure"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_posts",
+        "why_confused": "Both are positive occipital sharp transients",
+        "how_to_distinguish": "Lambda waves occur during visual scanning; POSTS occur during sleep"
+      },
+      {
+        "pattern_id": "pattern_occipital_spikes",
+        "why_confused": "Both are occipital sharp activity",
+        "how_to_distinguish": "Lambda waves are positive and disappear with eye closure; epileptiform spikes are negative and persist"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal wakefulness during visual scanning"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": ["Standard filters adequate"],
+      "montage_effects": [
+        "Best seen in occipital electrodes (O1, O2); referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Lambda waves are positive occipital sharp transients that appear during visual scanning and disappear with eye closure. This reactivity distinguishes them from epileptiform activity."
+    ],
+    "report_language": {
+      "how_to_describe": "Positive occipital sharp transients (lambda waves) seen during visual scanning, reactive to eye closure.",
+      "avoid_saying": ["Epileptiform discharges when describing lambda waves"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["lambda-waves", "normal-variant", "occipital"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_posts",
+    "name": "Positive Occipital Sharp Transients of Sleep (POSTS)",
+    "category": "NORMAL_VARIANT",
+    "topography": ["occipital"],
+    "state": ["sleep", "N2", "N3"],
+    "age_notes": "Common in adults, less common in children",
+    "morphology": "Sharp, positive triangular waves",
+    "frequency_hz": "variable",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/posts.png",
+    "key_features": [
+      "Positive polarity",
+      "Occipital location",
+      "Occur during sleep",
+      "Bilateral or unilateral"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_lambda_waves",
+        "why_confused": "Both are positive occipital sharp transients",
+        "how_to_distinguish": "POSTS occur during sleep; lambda waves occur during wakefulness and visual scanning"
+      },
+      {
+        "pattern_id": "pattern_occipital_spikes",
+        "why_confused": "Both are occipital sharp activity",
+        "how_to_distinguish": "POSTS are positive and occur during sleep; epileptiform spikes are negative and may occur in wakefulness"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal sleep"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": ["Standard filters adequate"],
+      "montage_effects": [
+        "Best seen in occipital electrodes; referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "POSTS are positive occipital sharp transients seen during sleep. They are normal variants and should not be confused with epileptiform activity."
+    ],
+    "report_language": {
+      "how_to_describe": "Positive occipital sharp transients of sleep (POSTS), normal variant.",
+      "avoid_saying": ["Epileptiform discharges when describing POSTS"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-SLEEP-GRAPHOELEMENTS", "D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["posts", "normal-variant", "sleep"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_rmtd",
+    "name": "Rhythmic Mid-Temporal Theta Bursts of Drowsiness (RMTD)",
+    "category": "NORMAL_VARIANT",
+    "topography": ["mid-temporal"],
+    "state": ["drowsy", "light sleep"],
+    "age_notes": "Common in adults",
+    "morphology": "Rhythmic bursts or trains of theta waves (5–7 Hz) usually with a notched appearance",
+    "frequency_hz": "5–7",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/rmtd.png",
+    "key_features": [
+      "Also known as Rhythmic Mid-Temporal Discharges (RMTD) and psychomotor variant",
+      "Composed of rhythmic bursts or trains of theta waves",
+      "Usually has notched appearance",
+      "Maximal in mid-temporal regions",
+      "Occurs bilaterally with shifting emphasis from side to side",
+      "Monomorphic and monorhythmic",
+      "Does not evolve into other waveforms or frequencies",
+      "Occurs during relaxed wakefulness and drowsiness"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_temporal_slowing",
+        "why_confused": "Both involve temporal theta activity",
+        "how_to_distinguish": "RMTD is rhythmic and symmetric; pathologic temporal slowing is irregular and asymmetric"
+      },
+      {
+        "pattern_id": "pattern_temporal_spikes",
+        "why_confused": "Both are temporal activity",
+        "how_to_distinguish": "RMTD is rhythmic theta; spikes are sharp and isolated"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["drowsiness", "light sleep"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate; high LFF may attenuate"
+      ],
+      "montage_effects": [
+        "Best seen in temporal chain (T3, T4); referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "RMTD is rhythmic, symmetric, and occurs during drowsiness. It lacks the irregularity and asymmetry of pathologic temporal slowing.",
+      "RMTD is monomorphic and monorhythmic and does not evolve - this distinguishes it from epileptiform activity which shows evolution.",
+      "The notched appearance can resemble fast/slow alpha variants except that RMTD occurs over mid-temporal regions rather than posterior head regions."
+    ],
+    "report_language": {
+      "how_to_describe": "Rhythmic mid-temporal theta of drowsiness (RMTD), normal variant.",
+      "avoid_saying": ["Temporal slowing or Pathologic activity when describing RMTD"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["rmtd", "normal-variant", "temporal"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_bets",
+    "name": "Benign Sporadic Sleep Spikes (BSSS) / Benign Epileptiform Transients of Sleep (BETS)",
+    "category": "NORMAL_VARIANT",
+    "topography": ["temporal"],
+    "state": ["drowsy", "light sleep"],
+    "age_notes": "Common in adults",
+    "morphology": "Low-voltage (<50 µV) and short-duration (<50 ms) monophasic or diphasic spike with abrupt ascending limb and steep descending limb",
+    "frequency_hz": "variable",
+    "amplitude_uv": "<50",
+    "image": "/images/patterns/bets-bsss.png",
+    "key_features": [
+      "Also known as small sharp spikes (SSS) or benign epileptiform transients of sleep (BETS)",
+      "Seen in adults during drowsiness and light sleep",
+      "Disappear with deeper sleep",
+      "Low-voltage (<50 µV)",
+      "Short-duration (<50 ms)",
+      "Monophasic or diphasic",
+      "Abrupt ascending limb and steep descending limb",
+      "Usually do not have a slow-wave component",
+      "Do not occur in repetitive trains",
+      "Commonly occur unilaterally but can independently involve the opposite hemisphere",
+      "Lack aftergoing slow waves"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_small_epileptiform_spikes",
+        "why_confused": "Both are small sharp temporal spikes",
+        "how_to_distinguish": "BETS lack aftergoing slow waves; epileptiform spikes have slow waves"
+      },
+      {
+        "pattern_id": "pattern_wicket_spikes",
+        "why_confused": "Both are temporal sharp activity",
+        "how_to_distinguish": "BETS are isolated small spikes; wicket spikes occur in trains"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["drowsiness", "light sleep"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate; high HFF may smooth spikes"
+      ],
+      "montage_effects": [
+        "Best seen in temporal chain; referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "BETS are small sharp spikes that lack aftergoing slow waves. This distinguishes them from epileptiform activity."
+    ],
+    "report_language": {
+      "how_to_describe": "Benign epileptiform transients of sleep (BETS), normal variant.",
+      "avoid_saying": ["Epileptiform discharges when describing BETS"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["bets", "normal-variant", "temporal"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_vertex_sharp_waves",
+    "name": "Vertex Sharp Waves",
+    "category": "NORMAL_VARIANT",
+    "topography": ["vertex", "central"],
+    "state": ["sleep", "N2"],
+    "age_notes": "Common in all ages during sleep",
+    "morphology": "Sharp waves maximal at vertex",
+    "frequency_hz": "variable",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/vertex-sharp-waves.png",
+    "key_features": [
+      "Vertex maximum (Cz)",
+      "Occur during sleep",
+      "Normal sleep element",
+      "May be asymmetric"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_central_spikes",
+        "why_confused": "Both are central sharp activity",
+        "how_to_distinguish": "Vertex sharp waves are normal sleep elements; central spikes are epileptiform and may occur in wakefulness"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal sleep"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": ["Standard filters adequate"],
+      "montage_effects": [
+        "Best seen at vertex (Cz); referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Vertex sharp waves are normal sleep elements maximal at Cz. They are part of normal sleep architecture."
+    ],
+    "report_language": {
+      "how_to_describe": "Vertex sharp waves, normal sleep element.",
+      "avoid_saying": ["Epileptiform activity when describing vertex sharp waves"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-SLEEP-GRAPHOELEMENTS"],
+      "standards_sections": [],
+      "quiz_tags": ["vertex-sharp-waves", "sleep", "normal"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_sleep_spindles",
+    "name": "Sleep Spindles",
+    "category": "NORMAL",
+    "topography": ["central", "frontal"],
+    "state": ["sleep", "N2", "N3"],
+    "age_notes": "Present in normal sleep from infancy",
+    "morphology": "Rhythmic 11–15 Hz activity in brief bursts",
+    "frequency_hz": "11–15",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/sleep-spindles.png",
+    "key_features": [
+      "Rhythmic 11–15 Hz",
+      "Brief bursts (0.5–2 seconds)",
+      "Central/frontal maximum",
+      "Normal sleep element"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_beta_activity",
+        "why_confused": "Both are fast rhythmic activity",
+        "how_to_distinguish": "Sleep spindles are 11–15 Hz bursts during sleep; beta is continuous and may be medication-related"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal sleep"],
+      "associated_with": [],
+      "when_concerning": ["Absent spindles may indicate sleep disruption"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate; high HFF may attenuate"
+      ],
+      "montage_effects": [
+        "Best seen in central/frontal electrodes; referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Sleep spindles are 11–15 Hz rhythmic bursts seen during N2 and N3 sleep. They are normal sleep elements."
+    ],
+    "report_language": {
+      "how_to_describe": "Sleep spindles, 11–15 Hz, normal sleep element.",
+      "avoid_saying": ["Abnormal activity when describing sleep spindles"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-SLEEP-GRAPHOELEMENTS"],
+      "standards_sections": [],
+      "quiz_tags": ["sleep-spindles", "sleep", "normal"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_k_complex",
+    "name": "K-Complex",
+    "category": "NORMAL",
+    "topography": ["frontal", "central"],
+    "state": ["sleep", "N2"],
+    "age_notes": "Present in normal sleep",
+    "morphology": "Sharp negative wave followed by positive wave",
+    "frequency_hz": "variable",
+    "amplitude_uv": "high",
+    "image": "/images/patterns/k-complex.png",
+    "key_features": [
+      "Sharp negative-positive complex",
+      "Frontal/central maximum",
+      "Normal sleep element",
+      "May be spontaneous or evoked"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_sharp_wave_complex",
+        "why_confused": "Both are sharp wave complexes",
+        "how_to_distinguish": "K-complexes are normal sleep elements; sharp wave complexes are epileptiform and may disrupt background"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal sleep"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": ["Standard filters adequate"],
+      "montage_effects": [
+        "Best seen in frontal/central electrodes; referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "K-complexes are normal sleep elements consisting of a sharp negative wave followed by a positive wave, maximal frontally."
+    ],
+    "report_language": {
+      "how_to_describe": "K-complexes, normal sleep element.",
+      "avoid_saying": ["Epileptiform activity when describing K-complexes"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-SLEEP-GRAPHOELEMENTS"],
+      "standards_sections": [],
+      "quiz_tags": ["k-complex", "sleep", "normal"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_focal_spikes_temporal",
+    "name": "Focal Spikes (Temporal)",
+    "category": "EPILEPTIFORM",
+    "topography": ["temporal"],
+    "state": ["awake", "sleep"],
+    "age_notes": "Common in all ages with temporal lobe epilepsy",
+    "morphology": "Sharp waves with aftergoing slow waves",
+    "frequency_hz": "variable",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/focal-spikes-temporal.png",
+    "key_features": [
+      "Sharp morphology",
+      "Aftergoing slow waves",
+      "May disrupt background",
+      "Temporal location"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_wicket_spikes",
+        "why_confused": "Both are temporal sharp activity",
+        "how_to_distinguish": "Focal spikes have aftergoing slow waves and disrupt background; wicket spikes lack slow waves and do not disrupt background"
+      },
+      {
+        "pattern_id": "pattern_bets",
+        "why_confused": "Both are temporal sharp spikes",
+        "how_to_distinguish": "Focal spikes have aftergoing slow waves; BETS lack slow waves"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["temporal lobe epilepsy"],
+      "associated_with": ["Temporal lobe epilepsy"],
+      "when_concerning": ["Correlates with seizure risk"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate; high HFF may attenuate spikes"
+      ],
+      "montage_effects": [
+        "Best seen in temporal chain; referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Focal temporal spikes have aftergoing slow waves and may disrupt background rhythm. This distinguishes them from benign variants."
+    ],
+    "report_language": {
+      "how_to_describe": "Focal sharp waves over the temporal region with aftergoing slow waves.",
+      "avoid_saying": ["Benign variant when describing epileptiform spikes"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-EPILEPTIFORM-DISCHARGES"],
+      "standards_sections": [],
+      "quiz_tags": ["focal-spikes", "temporal", "epileptiform"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_focal_spikes_frontal",
+    "name": "Focal Spikes (Frontal)",
+    "category": "EPILEPTIFORM",
+    "topography": ["frontal"],
+    "state": ["awake", "sleep"],
+    "age_notes": "Common in all ages with frontal lobe epilepsy",
+    "morphology": "Sharp waves with aftergoing slow waves",
+    "frequency_hz": "variable",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/focal-spikes-frontal.png",
+    "key_features": [
+      "Sharp morphology",
+      "Aftergoing slow waves",
+      "May disrupt background",
+      "Frontal location"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_mu_rhythm",
+        "why_confused": "Both are central/frontal activity",
+        "how_to_distinguish": "Frontal spikes have aftergoing slow waves; mu rhythm is arch-shaped and blocks with movement"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["frontal lobe epilepsy"],
+      "associated_with": ["Frontal lobe epilepsy"],
+      "when_concerning": ["Correlates with seizure risk"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate; high HFF may attenuate spikes"
+      ],
+      "montage_effects": [
+        "Best seen in frontal electrodes; referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Frontal spikes have aftergoing slow waves and may disrupt background. They are enhanced by sleep."
+    ],
+    "report_language": {
+      "how_to_describe": "Focal sharp waves over the frontal region with aftergoing slow waves.",
+      "avoid_saying": ["Benign variant when describing epileptiform spikes"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-EPILEPTIFORM-DISCHARGES"],
+      "standards_sections": [],
+      "quiz_tags": ["focal-spikes", "frontal", "epileptiform"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_diffuse_slowing",
+    "name": "Diffuse Slowing",
+    "category": "SLOWING",
+    "topography": ["generalized", "bilateral"],
+    "state": ["awake", "sleep"],
+    "age_notes": "Abnormal in alert wakefulness at any age",
+    "morphology": "Slow waves (theta/delta)",
+    "frequency_hz": "4–7 (theta) or <4 (delta)",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/diffuse-slowing.png",
+    "key_features": [
+      "Bilateral and symmetric",
+      "Persists in alert wakefulness",
+      "Indicates generalized dysfunction"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both involve slow activity",
+        "how_to_distinguish": "Diffuse slowing is bilateral and symmetric; focal slowing is regional"
+      },
+      {
+        "pattern_id": "pattern_drowsy_slowing",
+        "why_confused": "Both involve slow activity",
+        "how_to_distinguish": "Diffuse slowing persists in alert wakefulness; drowsy slowing is state-dependent"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["encephalopathy", "metabolic disorders", "toxic states"],
+      "associated_with": ["Encephalopathy", "Metabolic disorders", "Toxic states"],
+      "when_concerning": ["Indicates generalized cerebral dysfunction"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "High LFF may mask diffuse slowing; use standard 0.1–0.3 Hz LFF"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Diffuse slowing is bilateral and symmetric, indicating generalized cerebral dysfunction. It persists in alert wakefulness, unlike drowsy slowing."
+    ],
+    "report_language": {
+      "how_to_describe": "Diffuse slowing with theta/delta activity, bilateral and symmetric.",
+      "avoid_saying": ["Normal drowsy slowing when describing persistent diffuse slowing in alert wakefulness"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-DIFFUSE-SLOWING"],
+      "standards_sections": [],
+      "quiz_tags": ["diffuse-slowing", "encephalopathy"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_focal_slowing",
+    "name": "Focal Slowing",
+    "category": "SLOWING",
+    "topography": ["focal"],
+    "state": ["awake", "sleep"],
+    "age_notes": "Indicates focal cortical dysfunction",
+    "morphology": "Slow waves (theta/delta)",
+    "frequency_hz": "4–7 (theta) or <4 (delta)",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/focal-slowing.png",
+    "key_features": [
+      "Regional",
+      "Persists across states",
+      "Indicates focal dysfunction"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_diffuse_slowing",
+        "why_confused": "Both involve slow activity",
+        "how_to_distinguish": "Focal slowing is regional; diffuse slowing is bilateral and symmetric"
+      },
+      {
+        "pattern_id": "pattern_drowsy_slowing",
+        "why_confused": "Both involve slow activity",
+        "how_to_distinguish": "Focal slowing persists in wakefulness; drowsy slowing is state-dependent"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["structural lesions", "focal cortical dysfunction"],
+      "associated_with": ["Structural lesions", "Focal cortical dysfunction"],
+      "when_concerning": ["Indicates focal cortical dysfunction"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "High LFF may mask focal slowing; use standard 0.1–0.3 Hz LFF"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages; bipolar may show phase reversals"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Focal slowing is regional and indicates focal cortical dysfunction. It persists across states, unlike drowsy slowing."
+    ],
+    "report_language": {
+      "how_to_describe": "Focal slowing over the [region] with theta/delta activity.",
+      "avoid_saying": ["Normal variant when describing persistent focal slowing"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-FOCAL-GENERALIZED-PATTERNS"],
+      "standards_sections": [],
+      "quiz_tags": ["focal-slowing", "structural-lesion"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_firda",
+    "name": "Frontal Intermittent Rhythmic Delta Activity (FIRDA)",
+    "category": "SLOWING",
+    "topography": ["frontal"],
+    "state": ["awake", "sleep"],
+    "age_notes": "Common in adults with encephalopathy",
+    "morphology": "Rhythmic delta activity",
+    "frequency_hz": "1–3",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/firda.png",
+    "key_features": [
+      "Rhythmic",
+      "Intermittent bursts",
+      "Frontal location",
+      "Indicates encephalopathy"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_frontal_slowing",
+        "why_confused": "Both are frontal slow activity",
+        "how_to_distinguish": "FIRDA is rhythmic and intermittent; pathologic frontal slowing is irregular and continuous"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["encephalopathy", "metabolic disorders"],
+      "associated_with": ["Encephalopathy", "Metabolic disorders"],
+      "when_concerning": ["Indicates encephalopathy"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "High LFF may mask FIRDA; use standard 0.1–0.3 Hz LFF"
+      ],
+      "montage_effects": [
+        "Best seen in frontal electrodes; referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "FIRDA is rhythmic, intermittent frontal delta activity. It is seen in encephalopathy and is distinct from irregular pathologic slowing."
+    ],
+    "report_language": {
+      "how_to_describe": "Frontal intermittent rhythmic delta activity (FIRDA), consistent with encephalopathy.",
+      "avoid_saying": ["Normal variant when describing FIRDA"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-DIFFUSE-SLOWING"],
+      "standards_sections": [],
+      "quiz_tags": ["firda", "encephalopathy", "slowing"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_oirda",
+    "name": "Occipital Intermittent Rhythmic Delta Activity (OIRDA)",
+    "category": "SLOWING",
+    "topography": ["occipital"],
+    "state": ["awake", "sleep"],
+    "age_notes": "Common in children with encephalopathy",
+    "morphology": "Rhythmic delta activity",
+    "frequency_hz": "1–3",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/oirda.png",
+    "key_features": [
+      "Rhythmic",
+      "Intermittent bursts",
+      "Occipital location",
+      "Indicates encephalopathy"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_pdr",
+        "why_confused": "Both are posterior rhythmic activity",
+        "how_to_distinguish": "OIRDA is slower (1–3 Hz) and intermittent; PDR is faster (8–13 Hz) and continuous"
+      },
+      {
+        "pattern_id": "pattern_occipital_slowing",
+        "why_confused": "Both are occipital slow activity",
+        "how_to_distinguish": "OIRDA is rhythmic and intermittent; pathologic occipital slowing is irregular and continuous"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["encephalopathy", "metabolic disorders"],
+      "associated_with": ["Encephalopathy", "Metabolic disorders"],
+      "when_concerning": ["Indicates encephalopathy"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "High LFF may mask OIRDA; use standard 0.1–0.3 Hz LFF"
+      ],
+      "montage_effects": [
+        "Best seen in occipital electrodes; referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "OIRDA is rhythmic, intermittent occipital delta activity. It is more common in children and indicates encephalopathy."
+    ],
+    "report_language": {
+      "how_to_describe": "Occipital intermittent rhythmic delta activity (OIRDA), consistent with encephalopathy.",
+      "avoid_saying": ["Normal variant when describing OIRDA"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-DIFFUSE-SLOWING"],
+      "standards_sections": [],
+      "quiz_tags": ["oirda", "encephalopathy", "slowing"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_fast_alpha_variant",
+    "name": "Fast Alpha Variant",
+    "category": "NORMAL_VARIANT",
+    "topography": ["occipital", "posterior"],
+    "state": ["wake", "eyes-closed"],
+    "age_notes": "Harmonic of posterior background rhythm",
+    "morphology": "Notched appearance, twice as fast as PDR",
+    "frequency_hz": "16–26",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/fast-alpha-variant.png",
+    "key_features": [
+      "Harmonic of PDR (twice as fast)",
+      "Posterior location",
+      "Notched appearance",
+      "Reactive to eye opening and closure"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_rmtd",
+        "why_confused": "Both have notched appearance",
+        "how_to_distinguish": "Fast alpha variant is posterior and reactive to eye opening; RMTD is mid-temporal and occurs during drowsiness"
+      },
+      {
+        "pattern_id": "pattern_beta_rhythm",
+        "why_confused": "Both are fast rhythms",
+        "how_to_distinguish": "Fast alpha variant is occipital; beta rhythm is frontal, central, and parietal"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal wakefulness"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters (LFF 1 Hz, HFF 70 Hz) adequate",
+        "High LFF may attenuate"
+      ],
+      "montage_effects": [
+        "Best seen in posterior referential montages"
+      ],
+      "sensitivity_notes": "Standard sensitivity (7 µV/mm) adequate"
+    },
+    "abret_exam_pearls": [
+      "Fast alpha variant is a harmonic of PDR (twice as fast). It is posterior and reactive to eye opening, distinguishing it from beta rhythm (frontal/central) and RMTD (temporal)."
+    ],
+    "report_language": {
+      "how_to_describe": "Fast alpha variant, harmonic of posterior dominant rhythm, reactive to eye opening.",
+      "avoid_saying": ["Beta rhythm when describing fast alpha variant"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["alpha-variant", "normal-variant", "posterior"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_slow_alpha_variant",
+    "name": "Slow Alpha Variant",
+    "category": "NORMAL_VARIANT",
+    "topography": ["occipital", "posterior"],
+    "state": ["wake", "eyes-closed"],
+    "age_notes": "Harmonic of posterior background rhythm",
+    "morphology": "Notched appearance, half as fast as PDR",
+    "frequency_hz": "4–6.5",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/slow-alpha-variant.png",
+    "key_features": [
+      "Harmonic of PDR (half as fast)",
+      "Posterior location",
+      "Notched appearance",
+      "Reactive to eye opening and closure",
+      "More difficult to discern without clear reactivity"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_rmtd",
+        "why_confused": "Both have notched appearance and similar frequency",
+        "how_to_distinguish": "Slow alpha variant is posterior and reactive to eye opening; RMTD is mid-temporal and occurs during drowsiness"
+      },
+      {
+        "pattern_id": "pattern_drowsy_slowing",
+        "why_confused": "Both are slower posterior activity",
+        "how_to_distinguish": "Slow alpha variant is reactive to eye opening; drowsy slowing is state-dependent and not reactive"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal wakefulness"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters (LFF 1 Hz, HFF 70 Hz) adequate",
+        "High LFF may attenuate"
+      ],
+      "montage_effects": [
+        "Best seen in posterior referential montages"
+      ],
+      "sensitivity_notes": "Standard sensitivity (7 µV/mm) adequate"
+    },
+    "abret_exam_pearls": [
+      "Slow alpha variant is a harmonic of PDR (half as fast). Reactivity to eye opening and closure is key for identification. Without clear reactivity, it can be difficult to distinguish from pathologic slowing."
+    ],
+    "report_language": {
+      "how_to_describe": "Slow alpha variant, harmonic of posterior dominant rhythm, reactive to eye opening.",
+      "avoid_saying": ["Posterior slowing when describing slow alpha variant"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["alpha-variant", "normal-variant", "posterior"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_alpha_squeak",
+    "name": "Alpha Squeak",
+    "category": "NORMAL_VARIANT",
+    "topography": ["occipital", "posterior"],
+    "state": ["wake", "eyes-closed"],
+    "age_notes": "Transient frequency increase",
+    "morphology": "Transient increase in frequency immediately after eye closure",
+    "frequency_hz": "transient increase",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/alpha-squeak.png",
+    "key_features": [
+      "Transient frequency increase",
+      "Occurs immediately after eye closure (first 0.5–1 s)",
+      "Posterior location",
+      "Should be excluded from PDR frequency assessment"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_pdr",
+        "why_confused": "Both are posterior alpha activity",
+        "how_to_distinguish": "Alpha squeak is transient (first 0.5–1 s after eye closure); PDR is sustained. Exclude alpha squeak when assessing PDR frequency."
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["normal wakefulness"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate"
+      ],
+      "montage_effects": [
+        "Best seen in posterior referential montages"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Alpha squeak is a transient frequency increase immediately after eye closure. Assessment of PDR frequency should exclude the first 0.5–1 s after eye closure to avoid overestimation."
+    ],
+    "report_language": {
+      "how_to_describe": "Transient frequency increase in posterior rhythm immediately after eye closure (alpha squeak), normal variant.",
+      "avoid_saying": ["Abnormal frequency when describing alpha squeak"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["alpha-squeak", "normal-variant", "posterior"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_midline_theta",
+    "name": "Midline Theta Rhythm (Ciganek Rhythm)",
+    "category": "NORMAL_VARIANT",
+    "topography": ["central", "vertex"],
+    "state": ["wake", "drowsy"],
+    "age_notes": "Common in adults",
+    "morphology": "Rhythmic train of 5–7 Hz smooth, sinusoidal, arciform, spiky, or mu-like activity",
+    "frequency_hz": "5–7",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/midline-theta.png",
+    "key_features": [
+      "Most prominent in central vertex lead (Cz)",
+      "Rhythmic 5–7 Hz",
+      "Variable morphology (smooth, sinusoidal, arciform, spiky, or mu-like)",
+      "Variable reactivity to eye opening and alerting"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_mu_rhythm",
+        "why_confused": "Both are central rhythms with similar morphology",
+        "how_to_distinguish": "Midline theta is 5–7 Hz and variable reactivity; mu rhythm is 8–10 Hz and blocks with movement"
+      },
+      {
+        "pattern_id": "pattern_central_spikes",
+        "why_confused": "Both are central activity",
+        "how_to_distinguish": "Midline theta is rhythmic and sustained; central spikes are isolated and epileptiform"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["wakefulness", "drowsiness"],
+      "associated_with": [],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate"
+      ],
+      "montage_effects": [
+        "Best seen at vertex (Cz); referential montages show field better"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Midline theta rhythm (Ciganek rhythm) is most prominent at Cz, 5–7 Hz, with variable reactivity. It is a normal variant and should not be confused with mu rhythm (8–10 Hz, blocks with movement) or epileptiform activity."
+    ],
+    "report_language": {
+      "how_to_describe": "Midline theta rhythm (Ciganek rhythm), normal variant, maximal at vertex.",
+      "avoid_saying": ["Central slowing or Epileptiform activity when describing midline theta"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["midline-theta", "ciganek", "normal-variant", "central"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_sreda",
+    "name": "Subclinical Rhythmic Electrographic Discharge in Adults (SREDA)",
+    "category": "NORMAL_VARIANT",
+    "topography": ["parietal", "posterior-temporal"],
+    "state": ["rest", "drowsy", "hyperventilation"],
+    "age_notes": "Seen in people older than 50 years",
+    "morphology": "Abrupt onset of mixed frequencies in delta and theta ranges that evolve into rhythmic pattern with sharp-contoured components 5–7 Hz",
+    "frequency_hz": "5–7 (evolving from mixed delta/theta)",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/sreda.png",
+    "images": [
+      "/images/patterns/sreda-1.png",
+      "/images/patterns/sreda-2.png",
+      "/images/patterns/sreda-3.png",
+      "/images/patterns/sreda-4.png"
+    ],
+    "key_features": [
+      "Uncommon pattern",
+      "Age >50 years",
+      "Abrupt onset",
+      "Evolves from mixed delta/theta to rhythmic 5–7 Hz",
+      "Lasts 20 s to a few minutes",
+      "Widespread with parietal-posterior temporal maximum",
+      "Usually bilateral but may be asymmetric",
+      "May resemble subclinical seizure but typically no clinical correlation"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_seizure_discharge",
+        "why_confused": "Both show rhythmic evolving activity",
+        "how_to_distinguish": "SREDA typically has no clinical seizure correlation; seizure discharges show evolution and clinical correlation"
+      },
+      {
+        "pattern_id": "pattern_encephalopathy",
+        "why_confused": "Both show rhythmic slowing",
+        "how_to_distinguish": "SREDA is abrupt onset, evolves, and resolves; encephalopathy is sustained and correlates with clinical state"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["rest", "drowsiness", "hyperventilation"],
+      "associated_with": ["age >50 years"],
+      "when_concerning": ["Controversial - may or may not correlate with clinical seizures"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages; parietal-posterior temporal maximum"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "SREDA is an uncommon pattern in people >50 years. It shows abrupt onset, evolution from mixed frequencies to rhythmic 5–7 Hz, and typically lacks clinical seizure correlation (though this is controversial)."
+    ],
+    "report_language": {
+      "how_to_describe": "Subclinical rhythmic electrographic discharge in adults (SREDA), normal variant, maximal over parietal-posterior temporal regions.",
+      "avoid_saying": ["Seizure discharge when describing SREDA without clinical correlation"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["sreda", "normal-variant", "parietal"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_14_6_hz_positive_bursts",
+    "name": "14- and 6-Hz Positive Bursts (Ctenoids)",
+    "category": "NORMAL_VARIANT",
+    "topography": ["posterior-temporal"],
+    "state": ["drowsy", "light sleep"],
+    "age_notes": "Peak at age 13–14, decrease with increasing age",
+    "morphology": "Short trains of arch-shaped waveforms with alternating positive spiky components and negative smooth rounded waveform resembling sleep spindle with sharp positive phase",
+    "frequency_hz": "14 (predominant), 6 (can occur independently or with 14)",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/14-6-hz-positive-bursts.png",
+    "key_features": [
+      "Also known as ctenoids",
+      "Occurs during drowsiness and light sleep",
+      "Arch-shaped waveforms",
+      "Alternating positive spiky and negative smooth components",
+      "Mostly asynchronous, bilateral with shifting predominance",
+      "Maximal over posterior temporal region",
+      "Better seen in referential montage (ear references)",
+      "Peak incidence at age 13–14 years",
+      "May be enhanced in Reye's syndrome"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_sleep_spindles",
+        "why_confused": "Both are sleep-related rhythmic activity",
+        "how_to_distinguish": "14&6 Hz positive bursts are posterior-temporal with positive spiky components; sleep spindles are central, 12–14 Hz, and lack positive spiky components"
+      },
+      {
+        "pattern_id": "pattern_temporal_spikes",
+        "why_confused": "Both are temporal activity",
+        "how_to_distinguish": "14&6 Hz positive bursts are rhythmic trains with positive spiky components; temporal spikes are isolated and epileptiform"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["drowsiness", "light sleep"],
+      "associated_with": ["Reye's syndrome (may be enhanced)"],
+      "when_concerning": []
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate",
+        "Low HFF may attenuate 14 Hz component"
+      ],
+      "montage_effects": [
+        "Better seen in referential montage (ear references)",
+        "Posterior temporal maximum"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "14&6 Hz positive bursts (ctenoids) are arch-shaped waveforms with positive spiky components, maximal posterior-temporally, peak at age 13–14. Better seen in referential montages. May be enhanced in Reye's syndrome."
+    ],
+    "report_language": {
+      "how_to_describe": "14- and 6-Hz positive bursts (ctenoids), normal variant, maximal over posterior temporal regions.",
+      "avoid_saying": ["Epileptiform activity when describing 14&6 Hz positive bursts"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["14-6-hz", "ctenoids", "normal-variant", "temporal"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_6_hz_spike_wave",
+    "name": "6-Hz Spike-and-Wave Bursts (Phantom Spike-and-Wave)",
+    "category": "NORMAL_VARIANT",
+    "topography": ["generalized"],
+    "state": ["wake", "drowsy"],
+    "age_notes": "Common in adults",
+    "morphology": "Brief bursts of subtle low-amplitude spikes followed by more prominent slow wave",
+    "frequency_hz": "5–7",
+    "amplitude_uv": "low",
+    "image": "/images/patterns/6-hz-spike-wave.png",
+    "key_features": [
+      "Also known as phantom spike-and-wave",
+      "Brief bursts of 5–7 Hz",
+      "Subtle low-amplitude spikes followed by prominent slow wave",
+      "Occurs during relaxed wakefulness and drowsiness",
+      "Disappears with deep sleep (unlike epileptiform spike-and-wave which persists)",
+      "Usually bilateral and synchronous",
+      "Two types: FOLD (Female Occipital Low-amplitude Drowsiness) and WHAM (Wake High-amplitude Anterior Male)"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_3_hz_spike_wave",
+        "why_confused": "Both are spike-and-wave patterns",
+        "how_to_distinguish": "6 Hz spike-and-wave is low amplitude, brief, disappears in deep sleep; 3 Hz spike-and-wave is higher amplitude, sustained, persists in sleep, and associated with absence seizures"
+      },
+      {
+        "pattern_id": "pattern_generalized_spike_wave",
+        "why_confused": "Both are generalized spike-and-wave",
+        "how_to_distinguish": "6 Hz spike-and-wave is low amplitude and disappears in deep sleep; epileptiform spike-and-wave persists in sleep and has clinical correlation"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["relaxed wakefulness", "drowsiness"],
+      "associated_with": [],
+      "when_concerning": ["WHAM type more likely associated with seizures than FOLD type"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate",
+        "Low sensitivity may hide low-amplitude spikes"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages",
+        "FOLD: occipital; WHAM: anterior"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate; low-amplitude spikes may require higher sensitivity"
+    },
+    "abret_exam_pearls": [
+      "6 Hz spike-and-wave (phantom spike-and-wave) is low amplitude, brief, and disappears in deep sleep (unlike epileptiform spike-and-wave). FOLD type is benign; WHAM type may be more associated with seizures."
+    ],
+    "report_language": {
+      "how_to_describe": "6-Hz spike-and-wave bursts (phantom spike-and-wave), normal variant, low amplitude.",
+      "avoid_saying": ["Epileptiform spike-and-wave when describing 6 Hz phantom spike-and-wave"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-NORMAL-VARIANTS"],
+      "standards_sections": [],
+      "quiz_tags": ["6-hz-spike-wave", "phantom", "normal-variant"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_triphasic_waves",
+    "name": "Triphasic Waves",
+    "category": "SLOWING",
+    "topography": ["frontal", "generalized"],
+    "state": ["wake", "drowsy"],
+    "age_notes": "Common in adults with metabolic encephalopathy",
+    "morphology": "Three-phase waveform: negative-positive-negative",
+    "frequency_hz": "1.5–2.5",
+    "amplitude_uv": "high",
+    "image": "/images/patterns/triphasic-waves.png",
+    "key_features": [
+      "Three-phase morphology (negative-positive-negative)",
+      "Frontal-predominant",
+      "May be reactive to stimulation",
+      "Highly characteristic of hepatic encephalopathy"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_firda",
+        "why_confused": "Both are frontal rhythmic delta",
+        "how_to_distinguish": "Triphasic waves have three-phase morphology; FIRDA is monophasic rhythmic delta"
+      },
+      {
+        "pattern_id": "pattern_diffuse_slowing",
+        "why_confused": "Both indicate encephalopathy",
+        "how_to_distinguish": "Triphasic waves have characteristic three-phase morphology; diffuse slowing is polymorphic"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["hepatic encephalopathy", "uremic encephalopathy", "hyperglycemic encephalopathy", "lithium toxicity"],
+      "associated_with": ["Liver failure", "Renal failure", "Metabolic disorders"],
+      "when_concerning": ["Indicates metabolic encephalopathy, most commonly hepatic"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate",
+        "High LFF may attenuate slow components"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages",
+        "Frontal-predominant distribution"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Triphasic waves are highly characteristic of hepatic encephalopathy but can occur in other metabolic encephalopathies (uremic, hyperglycemic, lithium toxicity).",
+      "Triphasic waves are frontal-predominant and may be reactive to stimulation, distinguishing them from other encephalopathic patterns."
+    ],
+    "report_language": {
+      "how_to_describe": "Triphasic waves, frontal-predominant, consistent with metabolic encephalopathy.",
+      "avoid_saying": ["Pathognomonic of hepatic encephalopathy (can occur in other conditions)"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-09-ENCEPHALOPATHY-DIFFERENTIALS"],
+      "standards_sections": [],
+      "quiz_tags": ["triphasic-waves", "hepatic-encephalopathy", "metabolic-encephalopathy"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_burst_suppression",
+    "name": "Burst Suppression",
+    "category": "SLOWING",
+    "topography": ["generalized"],
+    "state": ["coma", "deep anesthesia"],
+    "age_notes": "All ages, indicates severe cortical dysfunction",
+    "morphology": "Alternating bursts of activity and suppression periods",
+    "frequency_hz": "variable (bursts)",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/burst-suppression.png",
+    "key_features": [
+      "Alternating bursts and suppression",
+      "Bursts contain mixed frequencies",
+      "Suppression periods are flat or near-flat",
+      "Indicates severe cortical dysfunction"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_diffuse_slowing",
+        "why_confused": "Both indicate severe encephalopathy",
+        "how_to_distinguish": "Burst suppression has alternating bursts and suppression; diffuse slowing is continuous"
+      },
+      {
+        "pattern_id": "pattern_alpha_coma",
+        "why_confused": "Both indicate severe encephalopathy",
+        "how_to_distinguish": "Burst suppression has alternating bursts/suppression; alpha coma shows continuous alpha frequency"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["severe hypoxic-ischemic encephalopathy", "deep anesthesia", "severe metabolic encephalopathy", "severe toxic encephalopathy"],
+      "associated_with": ["Cardiac arrest", "Severe anoxia", "Deep anesthesia", "Poor prognosis if persistent"],
+      "when_concerning": ["Indicates severe cortical dysfunction; persistent pattern has poor prognosis"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate",
+        "High LFF may mask suppression periods"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages",
+        "Generalized distribution"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate; may need higher sensitivity to see suppression periods clearly"
+    },
+    "abret_exam_pearls": [
+      "Burst suppression indicates severe cortical dysfunction; persistent pattern has poor prognosis.",
+      "Burst suppression shows alternating bursts of activity and suppression periods, distinguishing it from continuous slowing patterns."
+    ],
+    "report_language": {
+      "how_to_describe": "Burst suppression pattern, indicating severe cortical dysfunction.",
+      "avoid_saying": ["Normal pattern (burst suppression is always abnormal)"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-09-ENCEPHALOPATHY-DIFFERENTIALS"],
+      "standards_sections": [],
+      "quiz_tags": ["burst-suppression", "hie", "severe-encephalopathy"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_alpha_coma",
+    "name": "Alpha Coma Pattern",
+    "category": "SLOWING",
+    "topography": ["generalized"],
+    "state": ["coma"],
+    "age_notes": "All ages, indicates severe brainstem dysfunction",
+    "morphology": "Alpha frequency (8-13 Hz) but non-reactive",
+    "frequency_hz": "8–13",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/alpha-coma.png",
+    "key_features": [
+      "Alpha frequency (8-13 Hz)",
+      "Non-reactive to stimulation",
+      "Generalized distribution",
+      "Indicates severe brainstem dysfunction",
+      "Poor prognosis"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_pdr",
+        "why_confused": "Both show alpha frequency",
+        "how_to_distinguish": "Alpha coma is non-reactive and generalized; PDR is reactive and posterior"
+      },
+      {
+        "pattern_id": "pattern_burst_suppression",
+        "why_confused": "Both indicate severe encephalopathy",
+        "how_to_distinguish": "Alpha coma shows continuous alpha frequency; burst suppression has alternating bursts/suppression"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["severe hypoxic-ischemic encephalopathy", "severe brainstem dysfunction"],
+      "associated_with": ["Cardiac arrest", "Severe anoxia", "Brainstem injury", "Very poor prognosis"],
+      "when_concerning": ["Indicates severe brainstem dysfunction with very poor prognosis"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages",
+        "Generalized distribution"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Alpha coma pattern shows alpha frequency but is non-reactive, indicating severe brainstem dysfunction with poor prognosis.",
+      "Alpha coma is generalized and non-reactive, distinguishing it from normal PDR which is posterior and reactive."
+    ],
+    "report_language": {
+      "how_to_describe": "Alpha coma pattern, non-reactive, indicating severe brainstem dysfunction.",
+      "avoid_saying": ["Normal alpha rhythm (alpha coma is always abnormal)"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-09-ENCEPHALOPATHY-DIFFERENTIALS"],
+      "standards_sections": [],
+      "quiz_tags": ["alpha-coma", "hie", "brainstem-dysfunction"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_pswcs",
+    "name": "Periodic Sharp Wave Complexes (PSWCs)",
+    "category": "EPILEPTIFORM",
+    "topography": ["generalized"],
+    "state": ["wake", "sleep"],
+    "age_notes": "Adults, highly characteristic of CJD",
+    "morphology": "Periodic sharp waves at 1-2 Hz, bilateral and synchronous",
+    "frequency_hz": "1–2",
+    "amplitude_uv": "high",
+    "image": "/images/patterns/pswcs.png",
+    "key_features": [
+      "Periodic sharp waves",
+      "1-2 Hz frequency",
+      "Bilateral and synchronous",
+      "Highly characteristic of CJD",
+      "Background slowing"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_pleds",
+        "why_confused": "Both are periodic patterns",
+        "how_to_distinguish": "PSWCs are bilateral and synchronous; PLEDs are lateralized"
+      },
+      {
+        "pattern_id": "pattern_gpds",
+        "why_confused": "Both are periodic generalized patterns",
+        "how_to_distinguish": "PSWCs are 1-2 Hz and characteristic of CJD; GPDs are more variable"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["Creutzfeldt-Jakob disease (CJD)", "other prion diseases"],
+      "associated_with": [
+        "Rapidly progressive dementia (weeks to months, not years)",
+        "Myoclonus (often stimulus-sensitive: sound, touch, light)",
+        "Cerebellar dysfunction (gait ataxia, limb incoordination, dysarthria)",
+        "Pyramidal and extrapyramidal signs (hyperreflexia, spasticity, rigidity, bradykinesia)",
+        "Visual-spatial impairment",
+        "Akinetic mutism (advanced disease)",
+        "Death usually within 6-12 months of symptom onset"
+      ],
+      "when_concerning": ["Highly characteristic of CJD, though not pathognomonic. Rapidly progressive dementia over weeks to months with myoclonus is CJD until proven otherwise."]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages",
+        "Bilateral, synchronous distribution"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Periodic sharp wave complexes (PSWCs) at 1-2 Hz are highly characteristic of CJD but can occur in other prion diseases.",
+      "PSWCs are bilateral and synchronous, distinguishing them from lateralized periodic patterns like PLEDs.",
+      "CJD is characterized by rapidly progressive dementia over weeks to months (not years), with myoclonus, cerebellar dysfunction, and PSWCs on EEG.",
+      "EEG may be normal or nonspecific early in CJD, becoming diagnostic later with PSWCs. Absence of PSWCs does not exclude CJD, especially early or in variant forms.",
+      "Myoclonus in CJD is often stimulus-sensitive (sound, touch, light) and correlates with PSWCs on EEG."
+    ],
+    "report_language": {
+      "how_to_describe": "Periodic sharp wave complexes (PSWCs) at 1-2 Hz, bilateral and synchronous, highly characteristic of CJD.",
+      "avoid_saying": ["Pathognomonic of CJD (can occur in other prion diseases)"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-09-ENCEPHALOPATHY-DIFFERENTIALS"],
+      "standards_sections": [],
+      "quiz_tags": ["pswcs", "cjd", "prion-disease", "periodic-patterns"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_extreme_delta_brush",
+    "name": "Extreme Delta Brush",
+    "category": "SLOWING",
+    "topography": ["generalized", "focal"],
+    "state": ["wake", "sleep"],
+    "age_notes": "All ages, characteristic of anti-NMDA receptor encephalitis",
+    "morphology": "Rhythmic delta with superimposed beta activity",
+    "frequency_hz": "1–3 (delta) with 20–30 (beta)",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/extreme-delta-brush.png",
+    "key_features": [
+      "Rhythmic delta activity",
+      "Superimposed beta activity",
+      "May be focal or generalized",
+      "Characteristic of anti-NMDA receptor encephalitis"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_diffuse_slowing",
+        "why_confused": "Both show slow activity",
+        "how_to_distinguish": "Extreme delta brush has superimposed beta; diffuse slowing is polymorphic without beta"
+      },
+      {
+        "pattern_id": "pattern_firda",
+        "why_confused": "Both show rhythmic delta",
+        "how_to_distinguish": "Extreme delta brush has superimposed beta; FIRDA is monophasic delta"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["anti-NMDA receptor encephalitis", "other autoimmune encephalitis"],
+      "associated_with": ["Psychiatric symptoms", "Movement disorders", "Seizures", "Anti-NMDA receptor encephalitis"],
+      "when_concerning": ["Characteristic of anti-NMDA receptor encephalitis"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate",
+        "Low HFF may mask beta component"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages",
+        "May be focal or generalized"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Extreme delta brush (rhythmic delta with superimposed beta) is characteristic of anti-NMDA receptor encephalitis.",
+      "Extreme delta brush has both slow (delta) and fast (beta) components, distinguishing it from other slowing patterns."
+    ],
+    "report_language": {
+      "how_to_describe": "Extreme delta brush pattern, rhythmic delta with superimposed beta, characteristic of anti-NMDA receptor encephalitis.",
+      "avoid_saying": ["Pathognomonic of anti-NMDA (can occur in other autoimmune encephalitis)"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-09-ENCEPHALOPATHY-DIFFERENTIALS"],
+      "standards_sections": [],
+      "quiz_tags": ["extreme-delta-brush", "anti-nmda", "autoimmune-encephalitis"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_slow_spike_wave",
+    "name": "Slow Spike-and-Wave (LGS Pattern)",
+    "category": "EPILEPTIFORM",
+    "topography": ["generalized"],
+    "state": ["wake", "sleep"],
+    "age_notes": "Characteristic of Lennox-Gastaut Syndrome (LGS), 1-8 years",
+    "morphology": "Slow spike-and-wave complexes at 1.5-2.5 Hz",
+    "frequency_hz": "1.5–2.5",
+    "amplitude_uv": "high",
+    "image": "/images/patterns/slow-spike-wave.png",
+    "key_features": [
+      "Slower than typical 3 Hz spike-and-wave",
+      "1.5-2.5 Hz frequency",
+      "Generalized distribution",
+      "May be asymmetric",
+      "Most prominent during sleep",
+      "Characteristic of LGS"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_three_hz_gsw",
+        "why_confused": "Both are generalized spike-and-wave",
+        "how_to_distinguish": "Slow spike-and-wave is 1.5-2.5 Hz; 3 Hz spike-and-wave is 3 Hz. Slow spike-and-wave is characteristic of LGS."
+      },
+      {
+        "pattern_id": "pattern_diffuse_slowing",
+        "why_confused": "Both show slow activity",
+        "how_to_distinguish": "Slow spike-and-wave has spike component; diffuse slowing is polymorphic without spikes"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["Lennox-Gastaut Syndrome (LGS)"],
+      "associated_with": ["LGS", "Multiple seizure types", "Cognitive impairment"],
+      "when_concerning": ["Indicates LGS, poor prognosis"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate",
+        "High LFF may attenuate slow components"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages",
+        "Generalized distribution"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Slow spike-and-wave (1.5-2.5 Hz) is characteristic of LGS - slower than typical 3 Hz spike-and-wave.",
+      "Slow spike-and-wave is most prominent during sleep - sleep recording is critical for LGS diagnosis."
+    ],
+    "report_language": {
+      "how_to_describe": "Slow spike-and-wave complexes at 1.5-2.5 Hz, generalized, characteristic of Lennox-Gastaut Syndrome.",
+      "avoid_saying": ["3 Hz spike-and-wave when describing slow spike-and-wave (different frequency)"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-10-EEG-SYNDROMES-CLASSIFICATION"],
+      "standards_sections": [],
+      "quiz_tags": ["slow-spike-wave", "lgs", "lennox-gastaut"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_polyspike_wave",
+    "name": "Polyspike-and-Wave",
+    "category": "EPILEPTIFORM",
+    "topography": ["generalized"],
+    "state": ["wake", "sleep"],
+    "age_notes": "Common in Juvenile Myoclonic Epilepsy (JME), adolescents",
+    "morphology": "Multiple spikes followed by slow wave",
+    "frequency_hz": "3–6",
+    "amplitude_uv": "high",
+    "image": "/images/patterns/polyspike-wave.png",
+    "key_features": [
+      "Multiple spikes (2-5+) followed by slow wave",
+      "Generalized distribution",
+      "Symmetric and synchronous",
+      "More common in JME than pure 3 Hz spike-and-wave",
+      "May be activated by sleep deprivation and awakening"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_three_hz_gsw",
+        "why_confused": "Both are generalized spike-and-wave patterns",
+        "how_to_distinguish": "Polyspike-and-wave has multiple spikes (2-5+); 3 Hz spike-and-wave has single spike. Polyspike-and-wave is more common in JME."
+      },
+      {
+        "pattern_id": "pattern_slow_spike_wave",
+        "why_confused": "Both are generalized patterns",
+        "how_to_distinguish": "Polyspike-and-wave has multiple spikes; slow spike-and-wave has single spike at slower frequency (1.5-2.5 Hz)"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["Juvenile Myoclonic Epilepsy (JME)"],
+      "associated_with": ["JME", "Myoclonic seizures", "Generalized tonic-clonic seizures"],
+      "when_concerning": ["Indicates JME, requires lifelong treatment"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate",
+        "Low HFF may mask multiple spikes"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages",
+        "Generalized distribution"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Polyspike-and-wave (multiple spikes followed by slow wave) is more common in JME than pure 3 Hz spike-and-wave.",
+      "Polyspike-and-wave is activated by sleep deprivation and awakening - critical for JME diagnosis."
+    ],
+    "report_language": {
+      "how_to_describe": "Polyspike-and-wave complexes, generalized, symmetric, consistent with Juvenile Myoclonic Epilepsy.",
+      "avoid_saying": ["3 Hz spike-and-wave when describing polyspike-and-wave (different morphology)"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-10-EEG-SYNDROMES-CLASSIFICATION"],
+      "standards_sections": [],
+      "quiz_tags": ["polyspike-wave", "jme", "juvenile-myoclonic"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_gpfa",
+    "name": "Generalized Paroxysmal Fast Activity (GPFA)",
+    "category": "EPILEPTIFORM",
+    "topography": ["generalized"],
+    "state": ["sleep"],
+    "age_notes": "Characteristic of Lennox-Gastaut Syndrome (LGS), 1-8 years",
+    "morphology": "Generalized fast activity (beta/gamma range) in paroxysmal bursts",
+    "frequency_hz": "20–50",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/gpfa.png",
+    "key_features": [
+      "Fast activity (beta/gamma range, 20-50 Hz)",
+      "Paroxysmal bursts",
+      "Generalized distribution",
+      "Most prominent during sleep",
+      "Highly characteristic of LGS",
+      "Often associated with tonic seizures"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_beta_rhythm",
+        "why_confused": "Both show fast activity",
+        "how_to_distinguish": "GPFA is paroxysmal bursts; beta rhythm is continuous. GPFA is most prominent during sleep and associated with LGS."
+      },
+      {
+        "pattern_id": "pattern_sleep_spindles",
+        "why_confused": "Both occur during sleep",
+        "how_to_distinguish": "GPFA is faster (20-50 Hz) and paroxysmal; sleep spindles are 12-14 Hz and rhythmic"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["Lennox-Gastaut Syndrome (LGS)"],
+      "associated_with": ["LGS", "Tonic seizures", "Multiple seizure types"],
+      "when_concerning": ["Indicates LGS, often associated with tonic seizures during sleep"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate",
+        "Low HFF may mask fast activity",
+        "High HFF (70 Hz) recommended to see full frequency range"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages",
+        "Generalized distribution"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "GPFA (generalized paroxysmal fast activity) during sleep is highly characteristic of LGS.",
+      "GPFA is fast activity (20-50 Hz) in paroxysmal bursts, most prominent during sleep, often associated with tonic seizures."
+    ],
+    "report_language": {
+      "how_to_describe": "Generalized paroxysmal fast activity (GPFA) during sleep, characteristic of Lennox-Gastaut Syndrome.",
+      "avoid_saying": ["Beta rhythm when describing GPFA (different morphology and clinical significance)"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-10-EEG-SYNDROMES-CLASSIFICATION"],
+      "standards_sections": [],
+      "quiz_tags": ["gpfa", "lgs", "lennox-gastaut", "tonic-seizures"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_pleds",
+    "name": "Periodic Lateralized Epileptiform Discharges (PLEDs)",
+    "category": "EPILEPTIFORM",
+    "topography": ["lateralized", "unilateral"],
+    "state": ["wake", "sleep"],
+    "age_notes": "All ages, most common in adults",
+    "morphology": "Periodic sharp waves or spikes, lateralized to one hemisphere, occurring at regular intervals (typically 0.5–2 Hz)",
+    "frequency_hz": "0.5–2",
+    "amplitude_uv": "variable, often high",
+    "image": "/images/patterns/pleds.png",
+    "key_features": [
+      "Periodic (recurring at regular intervals)",
+      "Lateralized (unilateral or predominantly one hemisphere)",
+      "Epileptiform (sharp/spike morphology)",
+      "Typically 0.5–2 Hz frequency",
+      "Often associated with focal slowing",
+      "Background suppression in affected region"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_pswcs",
+        "why_confused": "Both are periodic patterns",
+        "how_to_distinguish": "PLEDs are lateralized (unilateral); PSWCs are bilateral and synchronous"
+      },
+      {
+        "pattern_id": "pattern_gpds",
+        "why_confused": "Both are periodic patterns",
+        "how_to_distinguish": "PLEDs are lateralized (unilateral); GPDs are generalized (bilateral)"
+      },
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both involve focal/lateralized activity",
+        "how_to_distinguish": "PLEDs are periodic epileptiform discharges; focal slowing is continuous polymorphic delta without periodic spikes"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["acute stroke", "brain tumors", "herpes simplex encephalitis", "traumatic brain injury", "intracerebral hemorrhage", "recent neurosurgery", "post-ictal states"],
+      "associated_with": [
+        "Acute structural lesions (stroke, tumor, trauma)",
+        "Herpes simplex encephalitis (HSE) - classic association",
+        "Infectious/inflammatory conditions",
+        "Metabolic/toxic encephalopathy",
+        "Post-ictal states",
+        "Recent neurosurgery"
+      ],
+      "when_concerning": ["Indicates acute/subacute focal cortical dysfunction; requires clinical correlation for diagnosis"]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate (0.5–70 Hz)",
+        "High LFF may mask slow components"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages to show lateralization",
+        "Bipolar montages may show phase reversals at boundaries"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate; may need adjustment for high-amplitude discharges"
+    },
+    "abret_exam_pearls": [
+      "PLEDs are periodic, lateralized epileptiform discharges indicating acute/subacute focal cortical dysfunction.",
+      "Most commonly seen in acute stroke, but also in HSE, brain tumors, trauma, and other acute structural lesions.",
+      "PLEDs are lateralized (unilateral), distinguishing them from bilateral periodic patterns like PSWCs (CJD) or GPDs.",
+      "May be ictal or interictal; clinical correlation is essential for interpretation.",
+      "Often seen in ICU settings; requires immediate notification of medical team."
+    ],
+    "report_language": {
+      "how_to_describe": "Periodic lateralized epileptiform discharges (PLEDs) over the [hemisphere/region] at [frequency] Hz, consistent with acute/subacute focal cortical dysfunction.",
+      "avoid_saying": ["Diagnostic of [specific condition] - PLEDs are seen in multiple conditions and require clinical correlation"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D2-S8-SPECIAL-PROTOCOLS", "D3-09-ENCEPHALOPATHY-DIFFERENTIALS"],
+      "standards_sections": [],
+      "quiz_tags": ["pleds", "periodic-discharges", "icu", "stroke", "hse", "lateralized", "acute-lesion"]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_sturge_weber",
+    "name": "Sturge-Weber Syndrome (SWS) EEG Pattern",
+    "category": "EPILEPTIFORM",
+    "topography": ["focal", "unilateral"],
+    "state": ["wake", "sleep"],
+    "age_notes": "Onset in infancy, often at birth or within the first year of life (port-wine stain at birth, seizures typically begin in infancy)",
+    "morphology": "Focal slowing and epileptiform discharges, background asymmetry",
+    "frequency_hz": "variable",
+    "amplitude_uv": "variable",
+    "image": "/images/patterns/sturge-weber.png",
+    "key_features": [
+      "Unilateral focal abnormalities",
+      "Focal slowing",
+      "Focal epileptiform discharges",
+      "Background asymmetry (affected hemisphere)",
+      "Corresponds to side of leptomeningeal angioma",
+      "Progressive worsening with cortical injury"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both show focal slowing",
+        "how_to_distinguish": "SWS shows focal slowing WITH epileptiform discharges and background asymmetry, corresponding to leptomeningeal angioma side"
+      },
+      {
+        "pattern_id": "pattern_hypsarrhythmia",
+        "why_confused": "Both may present in infancy",
+        "how_to_distinguish": "SWS is unilateral and focal; hypsarrhythmia is diffuse and multifocal"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": ["Sturge-Weber syndrome"],
+      "associated_with": [
+        "Facial port-wine stain (trigeminal V1 distribution) - usually visible from birth",
+        "Leptomeningeal angiomas (usually unilateral)",
+        "Early-onset focal seizures (often refractory) - typically begin in infancy, often before 1 year of age",
+        "Contralateral hemiparesis",
+        "Developmental delay or intellectual disability",
+        "Stroke-like episodes due to venous congestion",
+        "Glaucoma (congenital or acquired)"
+      ],
+      "when_concerning": [
+        "Early-onset seizures → worse prognosis",
+        "Progressive neurological deficits",
+        "EEG abnormalities correspond to side of leptomeningeal angioma"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters adequate",
+        "High LFF may mask focal slowing"
+      ],
+      "montage_effects": [
+        "Best seen in referential montages to show asymmetry",
+        "Bipolar montages may show phase reversals at boundaries"
+      ],
+      "sensitivity_notes": "Standard sensitivity adequate"
+    },
+    "abret_exam_pearls": [
+      "Sturge-Weber syndrome shows unilateral focal EEG abnormalities corresponding to the side of the leptomeningeal angioma.",
+      "Port-wine stain present at birth + seizures starting in infancy (within the first year of life) = Sturge-Weber syndrome (sporadic, not inherited).",
+      "Onset in infancy, often at birth or within the first year of life - port-wine stain at birth, seizures typically begin in infancy.",
+      "EEG shows focal abnormalities (slowing, spikes), not generalized patterns.",
+      "Early seizure control improves outcome in SWS.",
+      "Progressive worsening of EEG correlates with cortical injury."
+    ],
+    "report_language": {
+      "how_to_describe": "Unilateral focal slowing and epileptiform discharges over the [hemisphere], with background asymmetry, consistent with Sturge-Weber syndrome.",
+      "avoid_saying": ["Generalized pattern when describing SWS (it's focal/unilateral)"]
+    },
+    "cross_links": {
+      "workflow_sections": ["D3-10-EEG-SYNDROMES-CLASSIFICATION"],
+      "standards_sections": [],
+      "quiz_tags": ["sturge-weber", "sws", "neurocutaneous", "focal-seizures", "port-wine-stain"]
+    },
+    "micro_quiz": []
+  }
+]
+

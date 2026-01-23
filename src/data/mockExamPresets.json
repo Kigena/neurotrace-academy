@@ -1,0 +1,187 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2025-12-18T08:38:03.120000Z",
+  "description": "ABRET Mock Exam Presets - Full length and sectional mock exams",
+  "presets": [
+    {
+      "id": "mock-full-130",
+      "title": "Full ABRET Mock Exam (130 Questions)",
+      "description": "Complete 2-hour mock exam covering all domains",
+      "questionCount": 130,
+      "timeLimitMinutes": 120,
+      "domainDistribution": [
+        { "domainId": "domain-1", "count": 20, "weight": 15 },
+        { "domainId": "domain-2", "count": 50, "weight": 40 },
+        { "domainId": "domain-3", "count": 45, "weight": 35 },
+        { "domainId": "domain-4", "count": 15, "weight": 10 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.20,
+        "medium": 0.50,
+        "hard": 0.30
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-1",
+      "title": "Mock Exam Set 1 (30 Questions)",
+      "description": "First set of 30 questions - Domain I & II focus",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "domainDistribution": [
+        { "domainId": "domain-1", "count": 8, "weight": 15 },
+        { "domainId": "domain-2", "count": 12, "weight": 40 },
+        { "domainId": "domain-3", "count": 8, "weight": 35 },
+        { "domainId": "domain-4", "count": 2, "weight": 10 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.20,
+        "medium": 0.50,
+        "hard": 0.30
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-2",
+      "title": "Mock Exam Set 2 (30 Questions)",
+      "description": "Second set of 30 questions - Domain II & III focus",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "domainDistribution": [
+        { "domainId": "domain-1", "count": 4, "weight": 15 },
+        { "domainId": "domain-2", "count": 12, "weight": 40 },
+        { "domainId": "domain-3", "count": 12, "weight": 35 },
+        { "domainId": "domain-4", "count": 2, "weight": 10 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.20,
+        "medium": 0.50,
+        "hard": 0.30
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-3",
+      "title": "Mock Exam Set 3 (30 Questions)",
+      "description": "Third set of 30 questions - Domain III focus",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "domainDistribution": [
+        { "domainId": "domain-1", "count": 4, "weight": 15 },
+        { "domainId": "domain-2", "count": 12, "weight": 40 },
+        { "domainId": "domain-3", "count": 12, "weight": 35 },
+        { "domainId": "domain-4", "count": 2, "weight": 10 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.20,
+        "medium": 0.50,
+        "hard": 0.30
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-4",
+      "title": "Mock Exam Set 4 (30 Questions)",
+      "description": "Fourth set of 30 questions - Mixed domains",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "domainDistribution": [
+        { "domainId": "domain-1", "count": 4, "weight": 15 },
+        { "domainId": "domain-2", "count": 12, "weight": 40 },
+        { "domainId": "domain-3", "count": 10, "weight": 35 },
+        { "domainId": "domain-4", "count": 4, "weight": 10 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.20,
+        "medium": 0.50,
+        "hard": 0.30
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-5",
+      "title": "Mock Exam Set 5 (30 Questions)",
+      "description": "Fifth set of 30 questions - Final review",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "domainDistribution": [
+        { "domainId": "domain-1", "count": 4, "weight": 15 },
+        { "domainId": "domain-2", "count": 12, "weight": 40 },
+        { "domainId": "domain-3", "count": 10, "weight": 35 },
+        { "domainId": "domain-4", "count": 4, "weight": 10 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.20,
+        "medium": 0.50,
+        "hard": 0.30
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-domain-1",
+      "title": "Domain I Mock Exam (30 Questions)",
+      "description": "Domain I focused mock - Pre-Study Procedures",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "domainDistribution": [
+        { "domainId": "domain-1", "count": 30, "weight": 100 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.25,
+        "medium": 0.50,
+        "hard": 0.25
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-domain-2",
+      "title": "Domain II Mock Exam (40 Questions)",
+      "description": "Domain II focused mock - Performing EEG Study",
+      "questionCount": 40,
+      "timeLimitMinutes": 45,
+      "domainDistribution": [
+        { "domainId": "domain-2", "count": 40, "weight": 100 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.20,
+        "medium": 0.50,
+        "hard": 0.30
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-domain-3",
+      "title": "Domain III Mock Exam (35 Questions)",
+      "description": "Domain III focused mock - Post-Study Procedures",
+      "questionCount": 35,
+      "timeLimitMinutes": 40,
+      "domainDistribution": [
+        { "domainId": "domain-3", "count": 35, "weight": 100 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.20,
+        "medium": 0.50,
+        "hard": 0.30
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-domain-4",
+      "title": "Domain IV Mock Exam (25 Questions)",
+      "description": "Domain IV focused mock - Ethics & Professional Issues",
+      "questionCount": 25,
+      "timeLimitMinutes": 25,
+      "domainDistribution": [
+        { "domainId": "domain-4", "count": 25, "weight": 100 }
+      ],
+      "difficultyDistribution": {
+        "easy": 0.25,
+        "medium": 0.50,
+        "hard": 0.25
+      },
+      "shuffle": true
+    }
+  ]
+}
+
+

@@ -1,0 +1,1924 @@
+[
+  {
+    "id": "cae",
+    "name": "Childhood Absence Epilepsy (CAE) - Typical Absence",
+    "classification": "Idiopathic Generalized Epilepsy",
+    "age_group": ["child"],
+    "age_range": "4-10 years",
+    "typical_patterns": ["pattern_three_hz_gsw"],
+    "morphology": {
+      "interictal": "Normal background, occasional 3 Hz spike-and-wave",
+      "ictal": "Generalized 3 Hz spike-and-wave, abrupt onset/offset, synchronous",
+      "frequency": "3 Hz (may vary 2.5-4 Hz)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, symmetric, synchronous",
+      "duration": "5-30 seconds",
+      "image": "/images/patterns/syndrome-cae.png",
+      "subtype": "Typical absence - no motor features"
+    },
+    "diagnostic_yield_enhancement": {
+      "hyperventilation": {
+        "effectiveness": "Very high (90-95% yield)",
+        "protocol": "3-5 minutes of deep breathing",
+        "notes": "Most effective activation procedure for CAE. Provokes absence seizures in most patients."
+      },
+      "photic_stimulation": {
+        "effectiveness": "Low (10-15% yield)",
+        "protocol": "Standard IPS protocol",
+        "notes": "Less effective than hyperventilation for CAE"
+      },
+      "sleep": {
+        "effectiveness": "Moderate (30-40% yield)",
+        "protocol": "Natural sleep or sleep-deprived",
+        "notes": "May show different morphology during sleep (faster frequency)"
+      },
+      "sleep_deprivation": {
+        "effectiveness": "Moderate (40-50% yield)",
+        "protocol": "4-6 hours sleep deprivation",
+        "notes": "Increases likelihood of capturing events"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 20-30 minutes awake, include sleep",
+        "notes": "Longer recordings increase yield"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      }
+    },
+    "clinical_features": {
+      "seizure_type": "Typical absence seizures (pure absence)",
+      "manifestation": [
+        "Brief staring spells (5-30 seconds)",
+        "Abrupt onset and offset",
+        "Impaired awareness",
+        "May have eye fluttering or automatisms",
+        "NO eyelid myoclonus (distinguishes from Jeavons)",
+        "NO myoclonic jerks (distinguishes from JME)",
+        "No postictal confusion",
+        "Multiple episodes per day (10-100+)"
+      ],
+      "triggers": ["Hyperventilation", "Stress", "Fatigue"],
+      "neurological_exam": "Normal",
+      "imaging": "Normal",
+      "development": "Usually normal, may have mild learning difficulties"
+    },
+    "clinical_course": {
+      "onset": "Childhood (4-10 years)",
+      "progression": "May persist into adolescence, often remits",
+      "outcome": "Good prognosis, 60-70% remit by adolescence",
+      "treatment": "Ethosuximide, valproate, lamotrigine",
+      "prognosis": "Excellent if treated early"
+    },
+    "abret_pearls": [
+      "Hyperventilation is the most effective activation procedure for CAE (90-95% yield).",
+      "3 Hz spike-and-wave is generalized, symmetric, and synchronous - distinguishing it from focal discharges.",
+      "Background is usually normal in CAE, distinguishing it from symptomatic generalized epilepsies."
+    ],
+    "differential_diagnosis": [
+      "Juvenile Absence Epilepsy (JAE) - older age, faster frequency",
+      "Absence with Eyelid Myoclonus (Jeavons) - has eyelid myoclonus, photosensitive",
+      "Juvenile Myoclonic Epilepsy (JME) - includes myoclonus",
+      "Atypical Absence (LGS) - gradual onset/offset, slower frequency, cognitive impairment",
+      "Focal epilepsy with secondary generalization - asymmetric onset"
+    ]
+  },
+  {
+    "id": "jae",
+    "name": "Juvenile Absence Epilepsy (JAE) - Typical Absence",
+    "classification": "Idiopathic Generalized Epilepsy",
+    "age_group": ["adolescent"],
+    "age_range": "10-17 years",
+    "typical_patterns": ["pattern_three_hz_gsw"],
+    "morphology": {
+      "interictal": "Normal background, occasional 3-4 Hz spike-and-wave",
+      "ictal": "Generalized 3-4 Hz spike-and-wave, may be faster than CAE",
+      "frequency": "3-4 Hz (faster than CAE)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, symmetric, synchronous",
+      "duration": "5-30 seconds",
+      "image": "/images/patterns/syndrome-jae.png",
+      "subtype": "Typical absence - no motor features"
+    },
+    "diagnostic_yield_enhancement": {
+      "hyperventilation": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "3-5 minutes of deep breathing",
+        "notes": "Less effective than in CAE but still useful"
+      },
+      "photic_stimulation": {
+        "effectiveness": "Low (10-15% yield)",
+        "protocol": "Standard IPS protocol",
+        "notes": "Less effective than hyperventilation"
+      },
+      "sleep": {
+        "effectiveness": "Moderate (40-50% yield)",
+        "protocol": "Natural sleep or sleep-deprived",
+        "notes": "May show different morphology during sleep"
+      },
+      "sleep_deprivation": {
+        "effectiveness": "Moderate (50-60% yield)",
+        "protocol": "4-6 hours sleep deprivation",
+        "notes": "Increases likelihood of capturing events"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 20-30 minutes awake, include sleep",
+        "notes": "Longer recordings increase yield"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      }
+    },
+    "clinical_features": {
+      "seizure_type": "Typical absence seizures",
+      "manifestation": [
+        "Brief staring spells (5-30 seconds)",
+        "Less frequent than CAE (fewer per day)",
+        "May have generalized tonic-clonic seizures",
+        "Impaired awareness",
+        "No postictal confusion"
+      ],
+      "triggers": ["Hyperventilation", "Stress", "Fatigue", "Sleep deprivation"],
+      "neurological_exam": "Normal",
+      "imaging": "Normal",
+      "development": "Usually normal"
+    },
+    "clinical_course": {
+      "onset": "Adolescence (10-17 years)",
+      "progression": "May persist into adulthood",
+      "outcome": "Good prognosis, may remit or persist",
+      "treatment": "Valproate, lamotrigine, ethosuximide",
+      "prognosis": "Good, but may be less likely to remit than CAE"
+    },
+    "abret_pearls": [
+      "JAE has faster spike-and-wave frequency (3-4 Hz) compared to CAE (3 Hz).",
+      "JAE patients are older (adolescents) compared to CAE (children).",
+      "JAE may have associated generalized tonic-clonic seizures, unlike pure CAE."
+    ],
+    "differential_diagnosis": [
+      "Childhood Absence Epilepsy (CAE) - younger age, slower frequency",
+      "Absence with Eyelid Myoclonus (Jeavons) - has eyelid myoclonus, photosensitive",
+      "Juvenile Myoclonic Epilepsy (JME) - includes myoclonus",
+      "Atypical Absence (LGS) - gradual onset/offset, slower frequency, cognitive impairment",
+      "Focal epilepsy with secondary generalization"
+    ]
+  },
+  {
+    "id": "jme",
+    "name": "Juvenile Myoclonic Epilepsy (JME)",
+    "classification": "Idiopathic Generalized Epilepsy",
+    "age_group": ["adolescent", "young_adult"],
+    "age_range": "12-18 years",
+    "typical_patterns": ["pattern_three_hz_gsw", "pattern_polyspike_wave"],
+    "morphology": {
+      "interictal": "Normal background, polyspike-and-wave, 4-6 Hz spike-and-wave",
+      "ictal": "Polyspike-and-wave or 4-6 Hz spike-and-wave",
+      "frequency": "4-6 Hz (variable, faster than CAE)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, symmetric, synchronous",
+      "duration": "Brief (1-3 seconds for myoclonus)",
+      "image": "/images/patterns/jme-polyspike-wave.png",
+      "subtype": "Juvenile Myoclonic Epilepsy - polyspike-and-wave characteristic",
+      "special_features": "Polyspike-and-wave (multiple spikes followed by slow wave) is more common in JME than pure 3 Hz spike-and-wave. Myoclonus often occurs upon awakening."
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep_deprivation": {
+        "effectiveness": "Very high (90-95% yield)",
+        "protocol": "4-6 hours sleep deprivation, record upon awakening",
+        "notes": "Most effective for JME. Myoclonus often occurs upon awakening."
+      },
+      "photic_stimulation": {
+        "effectiveness": "Moderate (30-40% yield)",
+        "protocol": "Standard IPS protocol, especially 15-20 Hz",
+        "notes": "May provoke myoclonic jerks in photosensitive patients"
+      },
+      "hyperventilation": {
+        "effectiveness": "Low (20-30% yield)",
+        "protocol": "3-5 minutes of deep breathing",
+        "notes": "Less effective than sleep deprivation for JME"
+      },
+      "sleep": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "Natural sleep, especially upon awakening",
+        "notes": "Myoclonus often occurs upon awakening from sleep"
+      },
+      "recording_duration": {
+        "recommended": "Include sleep and awakening, minimum 30 minutes",
+        "notes": "Record upon awakening - critical for JME"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      },
+      "special_notes": "Record upon awakening - myoclonus is most common at this time"
+    },
+    "clinical_features": {
+      "seizure_type": ["Myoclonic seizures", "Generalized tonic-clonic seizures", "Absence seizures (less common)"],
+      "manifestation": [
+        "Myoclonic jerks upon awakening (most characteristic)",
+        "Bilateral, symmetric jerks",
+        "Upper extremities more common",
+        "May drop objects",
+        "Generalized tonic-clonic seizures (often upon awakening)",
+        "Absence seizures (less common, 10-30%)"
+      ],
+      "triggers": ["Sleep deprivation", "Awakening", "Photic stimulation (in photosensitive)", "Stress", "Fatigue", "Alcohol"],
+      "neurological_exam": "Normal",
+      "imaging": "Normal",
+      "development": "Usually normal"
+    },
+    "clinical_course": {
+      "onset": "Adolescence (12-18 years)",
+      "progression": "Lifelong condition, rarely remits",
+      "outcome": "Good response to treatment but requires lifelong medication",
+      "treatment": "Valproate (first line), lamotrigine, levetiracetam, topiramate",
+      "prognosis": "Good with treatment, but medication non-compliance leads to recurrence"
+    },
+    "abret_pearls": [
+      "Sleep deprivation with recording upon awakening is the most effective activation procedure for JME (90-95% yield).",
+      "Myoclonus upon awakening is the most characteristic feature of JME.",
+      "Polyspike-and-wave is more common in JME than pure 3 Hz spike-and-wave."
+    ],
+    "differential_diagnosis": [
+      "Childhood Absence Epilepsy (CAE) - no myoclonus, younger age",
+      "Juvenile Absence Epilepsy (JAE) - no myoclonus",
+      "Progressive myoclonus epilepsies - progressive course, abnormal exam"
+    ]
+  },
+  {
+    "id": "west_syndrome",
+    "name": "West Syndrome (Infantile Spasms)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["infant"],
+    "age_range": "3-12 months",
+    "typical_patterns": ["pattern_hypsarrhythmia"],
+    "morphology": {
+      "interictal": "Hypsarrhythmia - chaotic high-amplitude slow waves with multifocal spikes",
+      "ictal": "Electrodecremental pattern - generalized attenuation",
+      "frequency": "Irregular, chaotic",
+      "amplitude": "Very high (200-1000+ µV)",
+      "distribution": "Generalized, asymmetric, multifocal",
+      "duration": "Brief (0.5-2 seconds for spasms)",
+      "image": "/images/patterns/hypsarrhythmia.png"
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Natural sleep, especially NREM sleep",
+        "notes": "Hypsarrhythmia is most prominent during sleep. Essential to record sleep."
+      },
+      "awake": {
+        "effectiveness": "High (80-90% yield)",
+        "protocol": "Awake recording",
+        "notes": "Hypsarrhythmia present but may be less prominent"
+      },
+      "ictal_recording": {
+        "effectiveness": "Critical for diagnosis",
+        "protocol": "Video-EEG with clinical correlation",
+        "notes": "Electrodecremental pattern during spasms. Must correlate with clinical events."
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1 hour, must include sleep",
+        "notes": "Sleep is essential - hypsarrhythmia is most prominent during sleep"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows multifocal distribution"
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG changes with clinical spasms"
+      },
+      "special_notes": "Sleep recording is CRITICAL - hypsarrhythmia is most prominent during sleep"
+    },
+    "clinical_features": {
+      "seizure_type": "Epileptic spasms (infantile spasms)",
+      "manifestation": [
+        "Clusters of epileptic spasms",
+        "Flexor, extensor, or mixed",
+        "Brief (0.5-2 seconds)",
+        "Occur in clusters (5-50+ per cluster)",
+        "Often upon awakening",
+        "Developmental delay or regression"
+      ],
+      "triggers": ["Awakening", "Sleep transitions"],
+      "neurological_exam": "May be abnormal (developmental delay)",
+      "imaging": "May show structural abnormalities",
+      "development": "Developmental delay or regression is common"
+    },
+    "clinical_course": {
+      "onset": "Infancy (3-12 months, peak 4-6 months)",
+      "progression": "May evolve to other seizure types",
+      "outcome": "Variable - depends on underlying cause",
+      "treatment": "ACTH, vigabatrin, prednisolone, ketogenic diet",
+      "prognosis": "Variable - poor if symptomatic, better if cryptogenic. Early treatment improves outcome."
+    },
+    "abret_pearls": [
+      "Hypsarrhythmia is most prominent during sleep - sleep recording is CRITICAL for diagnosis.",
+      "Electrodecremental pattern during spasms - generalized attenuation correlates with clinical events.",
+      "West Syndrome = Infantile Spasms + Hypsarrhythmia + Developmental Delay/Regression (triad)."
+    ],
+    "differential_diagnosis": [
+      "Benign myoclonus of infancy - normal EEG",
+      "Other infantile epilepsies - different EEG patterns",
+      "Non-epileptic events - normal EEG"
+    ]
+  },
+  {
+    "id": "lennox_gastaut",
+    "name": "Lennox-Gastaut Syndrome (LGS)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["child"],
+    "age_range": "1-8 years (peak 3-5 years)",
+    "typical_patterns": ["pattern_slow_spike_wave", "pattern_gpds", "pattern_burst_suppression"],
+    "morphology": {
+      "interictal": "Slow spike-and-wave (1.5-2.5 Hz), generalized paroxysmal fast activity (GPFA)",
+      "ictal": "Slow spike-and-wave, tonic seizures show GPFA or electrodecremental pattern",
+      "frequency": "1.5-2.5 Hz (slow spike-and-wave)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, may be asymmetric",
+      "duration": "Variable (brief to prolonged)",
+      "image": "/images/patterns/syndrome-lgs.png"
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Natural sleep, especially NREM sleep",
+        "notes": "Slow spike-and-wave and GPFA are most prominent during sleep. Essential to record sleep."
+      },
+      "awake": {
+        "effectiveness": "High (80-90% yield)",
+        "protocol": "Awake recording",
+        "notes": "Slow spike-and-wave present but may be less frequent"
+      },
+      "ictal_recording": {
+        "effectiveness": "Critical for diagnosis",
+        "protocol": "Video-EEG with clinical correlation",
+        "notes": "GPFA or electrodecremental pattern during tonic seizures. Must correlate with clinical events."
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1-2 hours, must include sleep",
+        "notes": "Sleep is essential - patterns are most prominent during sleep"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG changes with multiple seizure types"
+      },
+      "special_notes": "Sleep recording is CRITICAL - slow spike-and-wave and GPFA are most prominent during sleep"
+    },
+    "clinical_features": {
+      "seizure_type": ["Tonic seizures", "Atypical absence", "Atonic seizures (drop attacks)", "Myoclonic seizures", "Generalized tonic-clonic seizures", "Status epilepticus"],
+      "manifestation": [
+        "Multiple seizure types (characteristic)",
+        "Tonic seizures (most characteristic) - brief, often during sleep",
+        "Atypical absence - gradual onset/offset, longer than typical absence",
+        "Atonic seizures - drop attacks (sudden loss of tone, falls)",
+        "Status epilepticus - may occur (non-convulsive or convulsive)",
+        "Cognitive impairment",
+        "Resistant to treatment"
+      ],
+      "triggers": ["Sleep", "Awakening", "Stress", "Illness"],
+      "neurological_exam": "Often abnormal (cognitive impairment, ataxia)",
+      "imaging": "May show structural abnormalities",
+      "development": "Developmental delay and regression common"
+    },
+    "clinical_course": {
+      "onset": "Childhood (1-8 years, peak 3-5 years)",
+      "progression": "Chronic, persistent",
+      "outcome": "Poor - resistant to treatment, persistent seizures",
+      "treatment": "Valproate, lamotrigine, rufinamide, felbamate, ketogenic diet, VNS",
+      "prognosis": "Poor - persistent seizures, cognitive impairment, poor quality of life"
+    },
+    "abret_pearls": [
+      "Slow spike-and-wave (1.5-2.5 Hz) is characteristic of LGS - slower than typical 3 Hz spike-and-wave.",
+      "GPFA (generalized paroxysmal fast activity) during sleep is highly characteristic of LGS.",
+      "Multiple seizure types + slow spike-and-wave + cognitive impairment = LGS triad.",
+      "Drop attacks (atonic seizures) are common in LGS - sudden loss of tone causing falls.",
+      "Status epilepticus may occur in LGS - both non-convulsive (atypical absence status) and convulsive forms."
+    ],
+    "differential_diagnosis": [
+      "Childhood Absence Epilepsy (CAE) - 3 Hz spike-and-wave, normal cognition",
+      "Doose Syndrome (MAE) - myoclonic-astatic, different EEG",
+      "Other developmental epileptic encephalopathies"
+    ]
+  },
+  {
+    "id": "rolandic",
+    "name": "Benign Rolandic Epilepsy (BRE) / Benign Epilepsy with Centrotemporal Spikes (BECTS)",
+    "classification": "Idiopathic Focal Epilepsy",
+    "age_group": ["child"],
+    "age_range": "3-13 years (peak 7-10 years)",
+    "typical_patterns": ["pattern_focal_spikes_central", "pattern_focal_spikes_temporal"],
+    "morphology": {
+      "interictal": "Centrotemporal spikes (C3, C4, T3, T4) - high amplitude, diphasic",
+      "ictal": "Focal onset in centrotemporal region, may spread",
+      "frequency": "Variable",
+      "amplitude": "High amplitude (100-300 µV)",
+      "distribution": "Focal - centrotemporal (C3, C4, T3, T4), may be bilateral independent",
+      "duration": "Brief (seconds to minutes)",
+      "image": "/images/patterns/syndrome-bre.png"
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Natural sleep, especially NREM sleep",
+        "notes": "Centrotemporal spikes are dramatically activated by sleep. Essential to record sleep."
+      },
+      "awake": {
+        "effectiveness": "Moderate (40-60% yield)",
+        "protocol": "Awake recording",
+        "notes": "Spikes may be present but less frequent"
+      },
+      "sleep_deprivation": {
+        "effectiveness": "High (80-90% yield)",
+        "protocol": "4-6 hours sleep deprivation",
+        "notes": "Increases spike frequency"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 30 minutes, must include sleep",
+        "notes": "Sleep is essential - spikes are dramatically activated by sleep"
+      },
+      "montage": {
+        "recommended": "Bipolar montage (longitudinal and transverse)",
+        "notes": "Better localizes centrotemporal spikes"
+      },
+      "special_notes": "Sleep recording is CRITICAL - centrotemporal spikes are dramatically activated by sleep (10-100x increase)"
+    },
+    "clinical_features": {
+      "seizure_type": "Focal seizures with or without impaired awareness",
+      "manifestation": [
+        "Facial twitching (most characteristic)",
+        "Speech arrest",
+        "Drooling",
+        "Sensory symptoms (tingling in face/tongue)",
+        "Often occur during sleep (nocturnal)",
+        "May secondarily generalize"
+      ],
+      "triggers": ["Sleep", "Awakening"],
+      "neurological_exam": "Normal",
+      "imaging": "Normal",
+      "development": "Normal"
+    },
+    "clinical_course": {
+      "onset": "Childhood (3-13 years, peak 7-10 years)",
+      "progression": "Benign - remits by adolescence",
+      "outcome": "Excellent - remits by age 13-16 years",
+      "treatment": "May not require treatment if infrequent. If treated: carbamazepine, oxcarbazepine, levetiracetam",
+      "prognosis": "Excellent - complete remission by adolescence, normal development"
+    },
+    "abret_pearls": [
+      "Centrotemporal spikes are dramatically activated by sleep (10-100x increase) - sleep recording is CRITICAL.",
+      "High-amplitude, diphasic spikes in centrotemporal region (C3, C4, T3, T4) are characteristic.",
+      "BRE is benign - remits by adolescence with normal development, distinguishing it from symptomatic focal epilepsies."
+    ],
+    "differential_diagnosis": [
+      "Symptomatic focal epilepsy - abnormal exam/imaging, persistent",
+      "Other benign focal epilepsies - different locations",
+      "Panayiotopoulos syndrome - occipital spikes"
+    ]
+  },
+  {
+    "id": "temporal_lobe_epilepsy",
+    "name": "Temporal Lobe Epilepsy (TLE)",
+    "classification": "Focal Epilepsy",
+    "age_group": ["adolescent", "adult"],
+    "age_range": "Adolescence to adulthood",
+    "typical_patterns": ["pattern_focal_spikes_temporal", "pattern_focal_slowing"],
+    "morphology": {
+      "interictal": "Temporal spikes/sharp waves, temporal slowing",
+      "ictal": "Focal onset in temporal region, rhythmic theta/delta evolving to faster frequencies",
+      "frequency": "Variable - theta/delta evolving to alpha/beta",
+      "amplitude": "Variable (50-200 µV)",
+      "distribution": "Focal - temporal (T3, T4, T5, T6, F7, F8), may be mesial or lateral",
+      "duration": "Variable (30 seconds to minutes)",
+      "image": "/images/patterns/syndrome-tle.png"
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "Natural sleep, especially NREM sleep",
+        "notes": "Temporal spikes are activated by sleep. Important to record sleep."
+      },
+      "awake": {
+        "effectiveness": "Moderate (50-60% yield)",
+        "protocol": "Awake recording",
+        "notes": "Spikes may be present but less frequent"
+      },
+      "sleep_deprivation": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "4-6 hours sleep deprivation",
+        "notes": "Increases spike frequency"
+      },
+      "ictal_recording": {
+        "effectiveness": "Critical for localization",
+        "protocol": "Video-EEG with clinical correlation",
+        "notes": "Ictal onset pattern is critical for localization. Must correlate with clinical semiology."
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1-2 hours, must include sleep",
+        "notes": "Longer recordings increase yield, sleep is important"
+      },
+      "montage": {
+        "recommended": "Bipolar montage (longitudinal and transverse), referential for field analysis",
+        "notes": "Better localizes temporal spikes and ictal onset"
+      },
+      "video_recording": {
+        "recommended": "Essential for ictal recording",
+        "notes": "Must correlate EEG changes with clinical semiology"
+      },
+      "special_notes": "Sleep recording increases yield. Ictal recording is critical for surgical planning."
+    },
+    "clinical_features": {
+      "seizure_type": "Focal seizures with or without impaired awareness",
+      "manifestation": [
+        "Aura (epigastric, déjà vu, fear, olfactory)",
+        "Staring, unresponsiveness",
+        "Automatisms (lip smacking, fumbling, picking)",
+        "May have dystonic posturing",
+        "Postictal confusion",
+        "Often secondarily generalizes"
+      ],
+      "triggers": ["Sleep", "Stress", "Fatigue"],
+      "neurological_exam": "Usually normal (unless structural lesion)",
+      "imaging": "May show hippocampal sclerosis, mesial temporal sclerosis, or other lesions",
+      "development": "Usually normal"
+    },
+    "clinical_course": {
+      "onset": "Adolescence to adulthood",
+      "progression": "Chronic, may be progressive if structural lesion",
+      "outcome": "Variable - may be controlled with medication or require surgery",
+      "treatment": "Carbamazepine, oxcarbazepine, levetiracetam, lamotrigine. Surgery if medication-resistant.",
+      "prognosis": "Variable - good if medication-responsive, excellent if surgery-responsive"
+    },
+    "abret_pearls": [
+      "Temporal spikes are activated by sleep - sleep recording increases yield.",
+      "Ictal onset pattern (rhythmic theta/delta evolving to faster frequencies) is critical for localization.",
+      "Mesial temporal sclerosis is the most common cause of TLE - look for hippocampal atrophy on MRI."
+    ],
+    "differential_diagnosis": [
+      "Frontal lobe epilepsy - different semiology, different ictal pattern",
+      "Parietal lobe epilepsy - different semiology",
+      "Occipital lobe epilepsy - different semiology"
+    ]
+  },
+  {
+    "id": "frontal_lobe_epilepsy",
+    "name": "Frontal Lobe Epilepsy (FLE)",
+    "classification": "Focal Epilepsy",
+    "age_group": ["child", "adolescent", "adult"],
+    "age_range": "All ages",
+    "typical_patterns": ["pattern_focal_spikes_frontal", "pattern_focal_slowing"],
+    "morphology": {
+      "interictal": "Frontal spikes/sharp waves, frontal slowing",
+      "ictal": "Focal onset in frontal region, rapid evolution, may be brief",
+      "frequency": "Variable - may be very fast (beta/gamma) or slower",
+      "amplitude": "Variable (50-200 µV)",
+      "distribution": "Focal - frontal (F3, F4, Fz, F7, F8), may be mesial or lateral",
+      "duration": "Often brief (seconds to <1 minute)",
+      "image": "/images/patterns/syndrome-fle.png"
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "Natural sleep, especially NREM sleep",
+        "notes": "Frontal spikes are activated by sleep. Important to record sleep."
+      },
+      "awake": {
+        "effectiveness": "Moderate (50-60% yield)",
+        "protocol": "Awake recording",
+        "notes": "Spikes may be present but less frequent"
+      },
+      "sleep_deprivation": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "4-6 hours sleep deprivation",
+        "notes": "Increases spike frequency"
+      },
+      "ictal_recording": {
+        "effectiveness": "Critical for localization",
+        "protocol": "Video-EEG with clinical correlation",
+        "notes": "Ictal onset pattern is critical for localization. Seizures may be brief and frequent."
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1-2 hours, must include sleep",
+        "notes": "Longer recordings increase yield, sleep is important"
+      },
+      "montage": {
+        "recommended": "Bipolar montage (longitudinal and transverse), referential for field analysis",
+        "notes": "Better localizes frontal spikes and ictal onset. May need additional frontal electrodes."
+      },
+      "video_recording": {
+        "recommended": "Essential for ictal recording",
+        "notes": "Must correlate EEG changes with clinical semiology. Seizures may be brief."
+      },
+      "special_notes": "Sleep recording increases yield. Ictal recording is critical - seizures may be brief and frequent."
+    },
+    "clinical_features": {
+      "seizure_type": "Focal seizures with or without impaired awareness",
+      "manifestation": [
+        "Brief seizures (seconds to <1 minute)",
+        "Frequent (multiple per day)",
+        "Motor manifestations (tonic, clonic, hypermotor)",
+        "May have vocalizations",
+        "Often occur during sleep",
+        "Rapid recovery, minimal postictal confusion",
+        "May secondarily generalize"
+      ],
+      "triggers": ["Sleep", "Stress"],
+      "neurological_exam": "Usually normal (unless structural lesion)",
+      "imaging": "May show structural lesions (tumors, cortical dysplasia, etc.)",
+      "development": "Usually normal"
+    },
+    "clinical_course": {
+      "onset": "All ages",
+      "progression": "Variable - depends on underlying cause",
+      "outcome": "Variable - may be controlled with medication or require surgery",
+      "treatment": "Carbamazepine, oxcarbazepine, levetiracetam, lamotrigine. Surgery if medication-resistant.",
+      "prognosis": "Variable - good if medication-responsive, excellent if surgery-responsive"
+    },
+    "abret_pearls": [
+      "Frontal spikes are activated by sleep - sleep recording increases yield.",
+      "Frontal seizures are often brief and frequent - longer recordings may be needed.",
+      "Ictal onset pattern is critical for localization - may be very fast (beta/gamma) or slower."
+    ],
+    "differential_diagnosis": [
+      "Temporal lobe epilepsy - different semiology, different ictal pattern",
+      "Non-epileptic events - normal EEG",
+      "Other focal epilepsies - different locations"
+    ]
+  },
+  {
+    "id": "jeavons",
+    "name": "Absence with Eyelid Myoclonus (Jeavons Syndrome)",
+    "classification": "Idiopathic Generalized Epilepsy",
+    "age_group": ["child"],
+    "age_range": "2-14 years (peak 6-8 years)",
+    "typical_patterns": ["pattern_three_hz_gsw", "pattern_polyspike_wave"],
+    "morphology": {
+      "interictal": "Normal background, occasional 3-4 Hz spike-and-wave or polyspike-and-wave",
+      "ictal": "Generalized 3-4 Hz spike-and-wave or polyspike-and-wave, often triggered by eye closure or photic stimulation",
+      "frequency": "3-4 Hz (may be faster than typical absence)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, symmetric, synchronous",
+      "duration": "Brief (3-6 seconds, shorter than typical absence)",
+      "image": "/images/patterns/syndrome-jeavons.png",
+      "subtype": "Absence with eyelid myoclonus - photosensitive",
+      "special_features": "Eyelid myoclonus (rhythmic jerking of eyelids), often triggered by eye closure or photic stimulation"
+    },
+    "diagnostic_yield_enhancement": {
+      "photic_stimulation": {
+        "effectiveness": "Very high (90-95% yield)",
+        "protocol": "Standard IPS protocol, especially 10-20 Hz",
+        "notes": "MOST EFFECTIVE for Jeavons. Highly photosensitive. Eye closure during IPS may trigger events."
+      },
+      "eye_closure": {
+        "effectiveness": "Very high (85-90% yield)",
+        "protocol": "Repeated eye closure and opening",
+        "notes": "Eye closure often triggers eyelid myoclonus and absence. Critical activation procedure."
+      },
+      "hyperventilation": {
+        "effectiveness": "Moderate (50-60% yield)",
+        "protocol": "3-5 minutes of deep breathing",
+        "notes": "Less effective than photic stimulation for Jeavons"
+      },
+      "sleep": {
+        "effectiveness": "Low (20-30% yield)",
+        "protocol": "Natural sleep",
+        "notes": "Less effective than photic stimulation"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 20-30 minutes awake, include photic stimulation and eye closure",
+        "notes": "Must include photic stimulation and eye closure testing"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution. May need EOG channels to see eyelid myoclonus."
+      },
+      "special_notes": "Photic stimulation and eye closure are CRITICAL - Jeavons is highly photosensitive and eye closure triggers events"
+    },
+    "clinical_features": {
+      "seizure_type": "Absence seizures with eyelid myoclonus",
+      "manifestation": [
+        "Eyelid myoclonus (rhythmic jerking of eyelids) - MOST CHARACTERISTIC",
+        "Brief absence seizures (3-6 seconds, shorter than typical absence)",
+        "Often triggered by eye closure",
+        "Often triggered by photic stimulation (highly photosensitive)",
+        "Upward deviation of eyes during eyelid myoclonus",
+        "Impaired awareness during absence",
+        "May have brief myoclonic jerks of upper extremities",
+        "No postictal confusion"
+      ],
+      "triggers": ["Eye closure", "Photic stimulation", "Bright lights", "Television", "Computer screens"],
+      "neurological_exam": "Normal",
+      "imaging": "Normal",
+      "development": "Usually normal"
+    },
+    "clinical_course": {
+      "onset": "Childhood (2-14 years, peak 6-8 years)",
+      "progression": "May persist into adulthood, often lifelong",
+      "outcome": "Variable - may remit or persist",
+      "treatment": "Valproate (first line), lamotrigine, levetiracetam, ethosuximide. Avoid photosensitivity triggers.",
+      "prognosis": "Good with treatment, but photosensitivity may persist. Avoidance of triggers is important."
+    },
+    "abret_pearls": [
+      "Photic stimulation is the most effective activation procedure for Jeavons (90-95% yield) - highly photosensitive.",
+      "Eye closure often triggers eyelid myoclonus and absence - repeated eye closure testing is critical.",
+      "Eyelid myoclonus (rhythmic jerking of eyelids) is the most characteristic feature - distinguishes from typical absence.",
+      "Jeavons has shorter absence duration (3-6 seconds) compared to typical absence (5-30 seconds)."
+    ],
+    "differential_diagnosis": [
+      "Childhood Absence Epilepsy (CAE) - no eyelid myoclonus, not photosensitive",
+      "Juvenile Absence Epilepsy (JAE) - no eyelid myoclonus, less photosensitive",
+      "Juvenile Myoclonic Epilepsy (JME) - myoclonus of limbs, not just eyelids",
+      "Atypical Absence (LGS) - gradual onset/offset, slower frequency, cognitive impairment"
+    ]
+  },
+  {
+    "id": "atypical_absence",
+    "name": "Atypical Absence Seizures",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["child"],
+    "age_range": "1-8 years (typically in LGS context)",
+    "typical_patterns": ["pattern_slow_spike_wave", "pattern_gpfa"],
+    "morphology": {
+      "interictal": "Slow spike-and-wave (1.5-2.5 Hz), GPFA, abnormal background",
+      "ictal": "Slow spike-and-wave (1.5-2.5 Hz), gradual onset/offset, may be asymmetric",
+      "frequency": "1.5-2.5 Hz (slower than typical 3 Hz)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, may be asymmetric",
+      "duration": "Longer than typical absence (10-60+ seconds)",
+      "image": "/images/patterns/syndrome-atypical-absence.png",
+      "subtype": "Atypical absence - gradual onset/offset, slower frequency",
+      "special_features": "Gradual onset and offset (unlike abrupt typical absence), slower frequency, abnormal background"
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Natural sleep, especially NREM sleep",
+        "notes": "MOST EFFECTIVE. Slow spike-and-wave and GPFA are most prominent during sleep. Essential to record sleep."
+      },
+      "awake": {
+        "effectiveness": "High (80-90% yield)",
+        "protocol": "Awake recording",
+        "notes": "Slow spike-and-wave present but may be less frequent"
+      },
+      "hyperventilation": {
+        "effectiveness": "Low (20-30% yield)",
+        "protocol": "3-5 minutes of deep breathing",
+        "notes": "Less effective than in typical absence"
+      },
+      "photic_stimulation": {
+        "effectiveness": "Low (10-20% yield)",
+        "protocol": "Standard IPS protocol",
+        "notes": "Less effective than in typical absence"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1-2 hours, must include sleep",
+        "notes": "Sleep is essential - patterns are most prominent during sleep"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      },
+      "special_notes": "Sleep recording is CRITICAL - slow spike-and-wave and GPFA are most prominent during sleep. Atypical absence is part of LGS syndrome."
+    },
+    "clinical_features": {
+      "seizure_type": "Atypical absence seizures",
+      "manifestation": [
+        "Gradual onset and offset (unlike abrupt typical absence)",
+        "Longer duration (10-60+ seconds, longer than typical absence)",
+        "Impaired awareness (may be incomplete)",
+        "May have automatisms",
+        "May have atonic components (head drop, loss of tone)",
+        "May have myoclonic components",
+        "Often occurs in context of LGS",
+        "Cognitive impairment (unlike typical absence)"
+      ],
+      "triggers": ["Sleep", "Awakening", "Stress", "Illness"],
+      "neurological_exam": "Often abnormal (cognitive impairment, ataxia)",
+      "imaging": "May show structural abnormalities",
+      "development": "Developmental delay and regression common"
+    },
+    "clinical_course": {
+      "onset": "Childhood (1-8 years, typically in LGS context)",
+      "progression": "Chronic, persistent (part of LGS)",
+      "outcome": "Poor - resistant to treatment, persistent seizures",
+      "treatment": "Valproate, lamotrigine, rufinamide, felbamate, ketogenic diet, VNS (same as LGS)",
+      "prognosis": "Poor - part of LGS syndrome, persistent seizures, cognitive impairment"
+    },
+    "abret_pearls": [
+      "Atypical absence has gradual onset/offset (unlike abrupt typical absence) - key distinguishing feature.",
+      "Atypical absence has slower frequency (1.5-2.5 Hz) compared to typical absence (3 Hz).",
+      "Atypical absence occurs in context of LGS with cognitive impairment - distinguishing it from typical absence.",
+      "Sleep recording is CRITICAL - slow spike-and-wave is most prominent during sleep."
+    ],
+    "differential_diagnosis": [
+      "Typical Absence (CAE/JAE) - abrupt onset/offset, 3 Hz, normal cognition",
+      "Absence with Eyelid Myoclonus (Jeavons) - has eyelid myoclonus, photosensitive, normal cognition",
+      "Complex partial seizures - focal onset, different semiology"
+    ]
+  },
+  {
+    "id": "ige",
+    "name": "Idiopathic Generalized Epilepsy (IGE)",
+    "classification": "Idiopathic Generalized Epilepsy",
+    "age_group": ["child", "adolescent", "young_adult"],
+    "age_range": "Childhood to young adulthood",
+    "typical_patterns": ["pattern_three_hz_gsw", "pattern_polyspike_wave", "pattern_slow_spike_wave"],
+    "morphology": {
+      "interictal": "Normal background, generalized spike-and-wave patterns (3 Hz, polyspike-and-wave, or slow spike-and-wave)",
+      "ictal": "Generalized spike-and-wave patterns, symmetric, synchronous",
+      "frequency": "Variable: 3-4 Hz (typical absence), 4-6 Hz (JME), 1.5-2.5 Hz (atypical absence/LGS)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, symmetric, synchronous",
+      "duration": "Variable (brief to prolonged)",
+      "image": "/images/patterns/syndrome-ige.png",
+      "images": [
+        "/images/patterns/syndrome-ige.png",
+        "/images/patterns/slow-spike-wave.png"
+      ],
+      "subtype": "Umbrella term for multiple IGE syndromes",
+      "special_features": "Includes CAE, JAE, JME, Jeavons, GTCA. Patterns vary by specific syndrome."
+    },
+    "diagnostic_yield_enhancement": {
+      "hyperventilation": {
+        "effectiveness": "High (70-95% yield depending on syndrome)",
+        "protocol": "3-5 minutes of deep breathing",
+        "notes": "Most effective for CAE (90-95%), less effective for JME (20-30%)"
+      },
+      "photic_stimulation": {
+        "effectiveness": "Variable (10-95% yield depending on syndrome)",
+        "protocol": "Standard IPS protocol",
+        "notes": "Very effective for Jeavons (90-95%), less effective for CAE (10-15%)"
+      },
+      "sleep_deprivation": {
+        "effectiveness": "High (40-95% yield depending on syndrome)",
+        "protocol": "4-6 hours sleep deprivation",
+        "notes": "Most effective for JME (90-95% with awakening), moderate for CAE (40-50%)"
+      },
+      "sleep": {
+        "effectiveness": "Variable (20-95% yield depending on syndrome)",
+        "protocol": "Natural sleep or sleep-deprived",
+        "notes": "Essential for LGS/atypical absence (95-100%), less critical for CAE (30-40%)"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 20-30 minutes awake, include sleep",
+        "notes": "Longer recordings increase yield. Include activation procedures specific to suspected syndrome."
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      },
+      "special_notes": "IGE is an umbrella term. Activation procedures vary by specific syndrome (CAE, JAE, JME, Jeavons). Choose activation based on clinical suspicion."
+    },
+    "clinical_features": {
+      "seizure_type": ["Typical absence", "Atypical absence", "Myoclonic seizures", "Generalized tonic-clonic seizures"],
+      "manifestation": [
+        "Multiple seizure types possible (absence, myoclonic, GTC)",
+        "Normal neurological exam",
+        "Normal imaging",
+        "Genetic predisposition",
+        "Age-dependent onset",
+        "Specific manifestations vary by syndrome (CAE, JAE, JME, Jeavons)"
+      ],
+      "triggers": ["Hyperventilation", "Photic stimulation", "Sleep deprivation", "Awakening", "Stress", "Fatigue"],
+      "neurological_exam": "Normal",
+      "imaging": "Normal",
+      "development": "Usually normal"
+    },
+    "clinical_course": {
+      "onset": "Childhood to young adulthood (varies by specific syndrome)",
+      "progression": "Variable - depends on specific syndrome",
+      "outcome": "Variable - excellent for CAE, good for JAE/JME/Jeavons, poor for LGS",
+      "treatment": "Valproate, lamotrigine, ethosuximide, levetiracetam (varies by syndrome)",
+      "prognosis": "Variable - excellent for typical absence (CAE/JAE), good for JME/Jeavons with treatment, poor for LGS"
+    },
+    "abret_pearls": [
+      "IGE is an umbrella term including CAE, JAE, JME, Jeavons, and GTCA - each has specific activation procedures.",
+      "Hyperventilation is most effective for CAE (90-95% yield) but less effective for JME (20-30% yield).",
+      "Photic stimulation is most effective for Jeavons (90-95% yield) but less effective for CAE (10-15% yield).",
+      "Sleep deprivation + awakening is most effective for JME (90-95% yield).",
+      "All IGE syndromes show generalized, symmetric, synchronous patterns - distinguishing them from focal epilepsies.",
+      "Normal background and normal exam/imaging are characteristic of IGE - distinguishing from symptomatic generalized epilepsies."
+    ],
+    "differential_diagnosis": [
+      "Symptomatic generalized epilepsies - abnormal exam/imaging, abnormal background",
+      "Focal epilepsies - asymmetric onset, focal patterns",
+      "Progressive myoclonus epilepsies - progressive course, abnormal exam",
+      "Non-epileptic events - normal EEG"
+    ],
+    "related_syndromes": [
+      "cae",
+      "jae",
+      "jme",
+      "jeavons"
+    ],
+    "cross_links": {
+      "workflow_sections": ["D3-10-EEG-SYNDROMES-CLASSIFICATION", "D3-07-ACTIVATION-PROCEDURES"],
+      "standards_sections": [],
+      "quiz_tags": ["ige", "idiopathic-generalized-epilepsy", "generalized-spike-wave", "absence", "myoclonic", "cae", "jae", "jme", "jeavons"]
+    }
+  },
+  {
+    "id": "ohtahara",
+    "name": "Ohtahara Syndrome (Early Infantile Epileptic Encephalopathy - EIEE)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["neonatal", "infant"],
+    "age_range": "First few days to 3 months (peak: first 2 weeks)",
+    "typical_patterns": ["pattern_burst_suppression"],
+    "morphology": {
+      "interictal": "Burst-suppression pattern - alternating bursts of high-amplitude activity and suppression",
+      "ictal": "Burst-suppression pattern, tonic seizures show bursts or electrodecremental pattern",
+      "frequency": "Variable - bursts contain mixed frequencies (delta, theta, spikes)",
+      "amplitude": "Very high amplitude bursts (200-1000+ µV), suppression periods near isoelectric",
+      "distribution": "Generalized, may be asymmetric",
+      "duration": "Bursts: 1-3 seconds; Suppression: 2-10 seconds",
+      "image": "/images/patterns/syndrome-ohtahara.png",
+      "subtype": "Neonatal/infantile epileptic encephalopathy - burst-suppression",
+      "special_features": "Burst-suppression pattern is continuous (present in both wake and sleep), distinguishing it from normal neonatal trace alternant (sleep only)"
+    },
+    "diagnostic_yield_enhancement": {
+      "awake": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Awake recording",
+        "notes": "Burst-suppression pattern is continuous and present in both wake and sleep - CRITICAL for diagnosis"
+      },
+      "sleep": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Natural sleep",
+        "notes": "Burst-suppression pattern persists in sleep (unlike normal trace alternant which is sleep-only)"
+      },
+      "ictal_recording": {
+        "effectiveness": "Critical for diagnosis",
+        "protocol": "Video-EEG with clinical correlation",
+        "notes": "Tonic seizures correlate with bursts or electrodecremental pattern. Must correlate with clinical events."
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1-2 hours, include both wake and sleep",
+        "notes": "Must record both wake and sleep to confirm burst-suppression is continuous (not just sleep)"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution and suppression periods"
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG bursts with clinical tonic seizures"
+      },
+      "special_notes": "Burst-suppression pattern is CONTINUOUS (wake and sleep) - distinguishing it from normal neonatal trace alternant (sleep only). This is CRITICAL for diagnosis."
+    },
+    "clinical_features": {
+      "seizure_type": "Tonic seizures (most characteristic), may have focal seizures",
+      "manifestation": [
+        "Tonic seizures (most characteristic) - brief, frequent",
+        "Onset in first few days to 3 months (peak: first 2 weeks)",
+        "Severe developmental delay",
+        "Poor prognosis",
+        "May evolve to West Syndrome (hypsarrhythmia) or LGS"
+      ],
+      "triggers": ["Spontaneous", "May be triggered by stimulation"],
+      "neurological_exam": "Severely abnormal (hypotonia, poor feeding, developmental arrest)",
+      "imaging": "May show structural abnormalities (cortical malformations, hemimegalencephaly, etc.)",
+      "development": "Severe developmental delay and arrest"
+    },
+    "clinical_course": {
+      "onset": "Neonatal period (first few days to 3 months, peak: first 2 weeks)",
+      "progression": "May evolve to West Syndrome (hypsarrhythmia) around 3-6 months, or to LGS",
+      "outcome": "Very poor - severe developmental delay, high mortality, resistant to treatment",
+      "treatment": "ACTH, vigabatrin, ketogenic diet, antiepileptic drugs. Often resistant to treatment.",
+      "prognosis": "Very poor - severe developmental delay, high mortality, persistent seizures"
+    },
+    "abret_pearls": [
+      "Ohtahara syndrome shows burst-suppression pattern that is CONTINUOUS (present in both wake and sleep) - distinguishing it from normal neonatal trace alternant (sleep only).",
+      "Burst-suppression pattern in Ohtahara is continuous and pathologic - not just during sleep like normal trace alternant.",
+      "Onset in first few days to 3 months (peak: first 2 weeks) - earliest onset of epileptic encephalopathies.",
+      "Tonic seizures are most characteristic - brief, frequent, correlate with bursts or electrodecremental pattern.",
+      "May evolve to West Syndrome (hypsarrhythmia) around 3-6 months, or to LGS - part of epileptic encephalopathy spectrum."
+    ],
+    "differential_diagnosis": [
+      "Normal neonatal trace alternant - sleep only, not continuous, normal development",
+      "Early Myoclonic Encephalopathy (EME) - has myoclonic seizures, burst-suppression pattern",
+      "West Syndrome - later onset (3-12 months), hypsarrhythmia pattern",
+      "Severe HIE - history of hypoxic-ischemic injury, burst-suppression pattern"
+    ]
+  },
+  {
+    "id": "eme",
+    "name": "Early Myoclonic Encephalopathy (EME)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["neonatal", "infant"],
+    "age_range": "First few days to 3 months (peak: first week)",
+    "typical_patterns": ["pattern_burst_suppression"],
+    "morphology": {
+      "interictal": "Burst-suppression pattern - alternating bursts of high-amplitude activity and suppression",
+      "ictal": "Burst-suppression pattern, myoclonic seizures may show bursts or spikes",
+      "frequency": "Variable - bursts contain mixed frequencies (delta, theta, spikes)",
+      "amplitude": "Very high amplitude bursts (200-1000+ µV), suppression periods near isoelectric",
+      "distribution": "Generalized, may be asymmetric or multifocal",
+      "duration": "Bursts: 1-3 seconds; Suppression: 2-10 seconds",
+      "image": "/images/patterns/syndrome-eme.png",
+      "subtype": "Neonatal/infantile epileptic encephalopathy - burst-suppression with myoclonus",
+      "special_features": "Burst-suppression pattern with myoclonic seizures. Pattern may be more irregular than Ohtahara. Often associated with metabolic disorders."
+    },
+    "diagnostic_yield_enhancement": {
+      "awake": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Awake recording",
+        "notes": "Burst-suppression pattern is continuous and present in both wake and sleep - CRITICAL for diagnosis"
+      },
+      "sleep": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Natural sleep",
+        "notes": "Burst-suppression pattern persists in sleep"
+      },
+      "ictal_recording": {
+        "effectiveness": "Critical for diagnosis",
+        "protocol": "Video-EEG with clinical correlation",
+        "notes": "Myoclonic seizures correlate with bursts or spikes. Must correlate with clinical myoclonus."
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1-2 hours, include both wake and sleep",
+        "notes": "Must record both wake and sleep to confirm burst-suppression is continuous"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution and suppression periods. May need EMG channels to see myoclonus."
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG bursts/spikes with clinical myoclonic jerks"
+      },
+      "special_notes": "Burst-suppression pattern is CONTINUOUS (wake and sleep). Myoclonic seizures are most characteristic. Often associated with metabolic disorders (non-ketotic hyperglycinemia, etc.)."
+    },
+    "clinical_features": {
+      "seizure_type": "Myoclonic seizures (most characteristic), may have focal seizures, tonic seizures less common",
+      "manifestation": [
+        "Myoclonic seizures (most characteristic) - fragmentary, erratic, multifocal",
+        "Onset in first few days to 3 months (peak: first week)",
+        "Severe developmental delay",
+        "Poor prognosis",
+        "Often associated with metabolic disorders (non-ketotic hyperglycinemia, etc.)",
+        "May have erratic eye movements"
+      ],
+      "triggers": ["Spontaneous", "May be triggered by stimulation"],
+      "neurological_exam": "Severely abnormal (hypotonia, poor feeding, developmental arrest)",
+      "imaging": "May show structural abnormalities, but often normal (metabolic etiology)",
+      "development": "Severe developmental delay and arrest"
+    },
+    "clinical_course": {
+      "onset": "Neonatal period (first few days to 3 months, peak: first week)",
+      "progression": "May persist or evolve to other patterns, rarely evolves to West Syndrome",
+      "outcome": "Very poor - severe developmental delay, high mortality, resistant to treatment",
+      "treatment": "Address underlying metabolic disorder if present, antiepileptic drugs, ketogenic diet. Often resistant to treatment.",
+      "prognosis": "Very poor - severe developmental delay, high mortality, persistent seizures"
+    },
+    "abret_pearls": [
+      "EME shows burst-suppression pattern with MYOCLONIC SEIZURES (most characteristic) - distinguishing it from Ohtahara (tonic seizures).",
+      "Burst-suppression pattern in EME is continuous (wake and sleep) - distinguishing it from normal neonatal trace alternant (sleep only).",
+      "Onset in first few days to 3 months (peak: first week) - earliest onset, often first week of life.",
+      "Myoclonic seizures are fragmentary, erratic, and multifocal - characteristic of EME.",
+      "Often associated with metabolic disorders (non-ketotic hyperglycinemia) - check metabolic workup.",
+      "EME vs Ohtahara: EME has myoclonic seizures; Ohtahara has tonic seizures. Both have burst-suppression pattern."
+    ],
+    "differential_diagnosis": [
+      "Ohtahara Syndrome - tonic seizures (not myoclonic), similar burst-suppression pattern",
+      "Normal neonatal trace alternant - sleep only, not continuous, normal development",
+      "West Syndrome - later onset (3-12 months), hypsarrhythmia pattern, infantile spasms",
+      "Metabolic encephalopathies - similar pattern, check metabolic workup"
+    ]
+  },
+  {
+    "id": "eses_csws",
+    "name": "ESES/CSWS (Electrical Status Epilepticus in Sleep / Continuous Spike-and-Wave during Slow Sleep)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["child"],
+    "age_range": "3-14 years (peak 5-7 years)",
+    "typical_patterns": ["pattern_three_hz_gsw"],
+    "morphology": {
+      "interictal": "Awake: may show focal or multifocal spikes, normal or mildly abnormal background",
+      "ictal": "Sleep: continuous spike-and-wave during slow-wave sleep (≥85% of NREM sleep)",
+      "frequency": "1.5-3 Hz (spike-and-wave during sleep)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized or bilateral, may be asymmetric, maximal in centrotemporal or frontocentral regions",
+      "duration": "Continuous during slow-wave sleep (≥85% of NREM sleep)",
+      "image": "/images/patterns/syndrome-eses-csws.png",
+      "subtype": "Electrical status epilepticus in sleep - continuous spike-and-wave during NREM sleep",
+      "special_features": "Continuous spike-and-wave during slow-wave sleep (≥85% of NREM sleep). Pattern disappears or dramatically decreases in REM sleep and wakefulness. CRITICAL: Must record sleep to diagnose."
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Natural sleep, especially NREM sleep (slow-wave sleep)",
+        "notes": "MOST EFFECTIVE. ESES pattern is ONLY seen during sleep. Pattern appears in NREM sleep and disappears in REM sleep. Essential to record sleep."
+      },
+      "awake": {
+        "effectiveness": "Low (20-40% yield)",
+        "protocol": "Awake recording",
+        "notes": "May show focal or multifocal spikes, but ESES pattern (continuous spike-and-wave) is NOT present during wakefulness"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 2-3 hours, must include full sleep cycle (NREM and REM)",
+        "notes": "Must record full sleep cycle to see ESES in NREM and disappearance in REM. Longer recordings increase yield."
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized/bilateral distribution"
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG with clinical seizures and cognitive/behavioral changes"
+      },
+      "special_notes": "Sleep recording is CRITICAL - ESES pattern is ONLY seen during NREM sleep (≥85% of slow-wave sleep). Pattern disappears in REM sleep and wakefulness. This is the defining feature."
+    },
+    "clinical_features": {
+      "seizure_type": ["Focal seizures", "Generalized tonic-clonic seizures", "Atypical absence", "Myoclonic seizures"],
+      "manifestation": [
+        "Cognitive regression (most characteristic)",
+        "Behavioral problems (hyperactivity, aggression, attention deficits)",
+        "Language regression (may occur)",
+        "Motor deficits (ataxia, dyspraxia)",
+        "Seizures may be infrequent or absent",
+        "Seizures when present: focal, GTC, atypical absence, myoclonic"
+      ],
+      "triggers": ["Sleep (pattern appears)", "Awakening (pattern disappears)"],
+      "neurological_exam": "May be normal or show cognitive/behavioral deficits",
+      "imaging": "Usually normal",
+      "development": "Developmental regression (cognitive, language, motor)"
+    },
+    "clinical_course": {
+      "onset": "Childhood (3-14 years, peak 5-7 years)",
+      "progression": "Variable - may remit by adolescence, may persist",
+      "outcome": "Variable - depends on duration and treatment response",
+      "treatment": "Benzodiazepines (clobazam, diazepam), valproate, ethosuximide, ketogenic diet, corticosteroids, IVIG. Avoid carbamazepine (may worsen seizures - AED-induced seizure worsening). Treatment aimed at suppressing ESES pattern.",
+      "prognosis": "Variable - better if treated early, worse if ESES pattern persists long-term"
+    },
+    "abret_pearls": [
+      "ESES pattern is ONLY seen during NREM sleep (≥85% of slow-wave sleep) - sleep recording is CRITICAL for diagnosis.",
+      "ESES pattern disappears in REM sleep and wakefulness - must record full sleep cycle to see this pattern.",
+      "Cognitive regression is the most characteristic clinical feature - may occur even without frequent seizures.",
+      "ESES = Continuous spike-and-wave during slow-wave sleep (≥85% of NREM sleep) - this is the defining EEG feature.",
+      "Landau-Kleffner Syndrome is a specific form of ESES with acquired aphasia (language loss) as the primary feature."
+    ],
+    "differential_diagnosis": [
+      "Landau-Kleffner Syndrome - ESES with acquired aphasia (language loss)",
+      "Benign Rolandic Epilepsy - centrotemporal spikes, normal cognition, remits by adolescence",
+      "LGS - slow spike-and-wave, multiple seizure types, cognitive impairment, pattern present in wake and sleep",
+      "Normal sleep patterns - ESES is pathologic, not normal sleep activity"
+    ]
+  },
+  {
+    "id": "landau_kleffner",
+    "name": "Landau-Kleffner Syndrome (LKS)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["child"],
+    "age_range": "3-8 years (peak 4-6 years)",
+    "typical_patterns": ["pattern_three_hz_gsw"],
+    "morphology": {
+      "interictal": "Awake: may show focal or multifocal spikes (often temporal or perisylvian), normal or mildly abnormal background",
+      "ictal": "Sleep: ESES pattern - continuous spike-and-wave during slow-wave sleep (≥85% of NREM sleep)",
+      "frequency": "1.5-3 Hz (spike-and-wave during sleep)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized or bilateral, often maximal in temporal or perisylvian regions",
+      "duration": "Continuous during slow-wave sleep (≥85% of NREM sleep)",
+      "image": "/images/patterns/syndrome-landau-kleffner.png",
+      "subtype": "ESES with acquired aphasia - Landau-Kleffner Syndrome",
+      "special_features": "ESES pattern (continuous spike-and-wave during NREM sleep) with ACQUIRED APHASIA (language loss). Pattern disappears in REM sleep and wakefulness. CRITICAL: Must record sleep to diagnose."
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "Very high (95-100% yield)",
+        "protocol": "Natural sleep, especially NREM sleep (slow-wave sleep)",
+        "notes": "MOST EFFECTIVE. ESES pattern is ONLY seen during sleep. Pattern appears in NREM sleep and disappears in REM sleep. Essential to record sleep."
+      },
+      "awake": {
+        "effectiveness": "Low (20-40% yield)",
+        "protocol": "Awake recording",
+        "notes": "May show focal or multifocal spikes (often temporal/perisylvian), but ESES pattern is NOT present during wakefulness"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 2-3 hours, must include full sleep cycle (NREM and REM)",
+        "notes": "Must record full sleep cycle to see ESES in NREM and disappearance in REM. Longer recordings increase yield."
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized/bilateral distribution. Temporal/perisylvian emphasis may be seen."
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG with clinical seizures and language regression"
+      },
+      "special_notes": "Sleep recording is CRITICAL - ESES pattern is ONLY seen during NREM sleep. Landau-Kleffner is ESES with acquired aphasia (language loss) as the primary feature."
+    },
+    "clinical_features": {
+      "seizure_type": ["Focal seizures", "Generalized tonic-clonic seizures", "Atypical absence", "Myoclonic seizures"],
+      "manifestation": [
+        "Acquired aphasia (language loss) - MOST CHARACTERISTIC",
+        "Verbal auditory agnosia (inability to understand spoken language)",
+        "Expressive language loss",
+        "Behavioral problems (hyperactivity, aggression, attention deficits)",
+        "Seizures may be infrequent or absent (paradoxical - seizures rare but EEG shows ESES)",
+        "Seizures when present: focal (often temporal), GTC, atypical absence"
+      ],
+      "triggers": ["Sleep (pattern appears)", "Awakening (pattern disappears)"],
+      "neurological_exam": "May be normal except for language deficits",
+      "imaging": "Usually normal",
+      "development": "Acquired language regression (previously normal language development)"
+    },
+    "clinical_course": {
+      "onset": "Childhood (3-8 years, peak 4-6 years)",
+      "progression": "Variable - language may improve with treatment, may persist",
+      "outcome": "Variable - depends on duration of ESES and treatment response. Language recovery may be incomplete.",
+      "treatment": "Benzodiazepines (clobazam, diazepam), valproate, ethosuximide, ketogenic diet, corticosteroids, IVIG, multiple subpial transection (MST) in severe cases. Avoid carbamazepine (may worsen seizures - AED-induced seizure worsening). Treatment aimed at suppressing ESES pattern.",
+      "prognosis": "Variable - better if treated early, worse if ESES pattern persists long-term. Language recovery may be incomplete."
+    },
+    "abret_pearls": [
+      "Landau-Kleffner Syndrome = ESES pattern + ACQUIRED APHASIA (language loss) - this is the defining clinical feature.",
+      "ESES pattern is ONLY seen during NREM sleep (≥85% of slow-wave sleep) - sleep recording is CRITICAL for diagnosis.",
+      "Acquired aphasia (language loss) is the most characteristic clinical feature - distinguishes LKS from other ESES cases.",
+      "Paradoxical: Seizures may be infrequent or absent, but EEG shows continuous spike-and-wave during sleep (ESES).",
+      "ESES pattern disappears in REM sleep and wakefulness - must record full sleep cycle to see this pattern."
+    ],
+    "differential_diagnosis": [
+      "ESES/CSWS without aphasia - similar EEG pattern but no language loss",
+      "Autism spectrum disorder - language delay from onset, not acquired loss",
+      "Benign Rolandic Epilepsy - centrotemporal spikes, normal cognition, remits by adolescence",
+      "LGS - slow spike-and-wave, multiple seizure types, pattern present in wake and sleep"
+    ]
+  },
+  {
+    "id": "dravet",
+    "name": "Dravet Syndrome (Severe Myoclonic Epilepsy of Infancy - SMEI)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["infant", "child"],
+    "age_range": "First year of life (peak 6 months), persists into childhood",
+    "typical_patterns": ["pattern_three_hz_gsw", "pattern_polyspike_wave"],
+    "morphology": {
+      "interictal": "Early: may be normal. Later: generalized spike-and-wave, polyspike-and-wave, multifocal spikes, photosensitive",
+      "ictal": "Generalized spike-and-wave, polyspike-and-wave, focal/multifocal patterns",
+      "frequency": "Variable - 2-5 Hz spike-and-wave, polyspike-and-wave",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, may be asymmetric, may be multifocal",
+      "duration": "Variable (brief to prolonged)",
+      "image": "/images/patterns/syndrome-dravet.png",
+      "subtype": "Severe myoclonic epilepsy of infancy - photosensitive, fever-sensitive",
+      "special_features": "Photosensitive (pattern triggered by photic stimulation). Fever-sensitive (seizures triggered by fever). Pattern evolves over time - early may be normal, later shows generalized/multifocal abnormalities."
+    },
+    "diagnostic_yield_enhancement": {
+      "photic_stimulation": {
+        "effectiveness": "High (60-80% yield)",
+        "protocol": "Standard IPS protocol",
+        "notes": "Dravet is photosensitive - photic stimulation may trigger seizures or EEG abnormalities"
+      },
+      "sleep": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "Natural sleep",
+        "notes": "May show generalized spike-and-wave, polyspike-and-wave during sleep"
+      },
+      "awake": {
+        "effectiveness": "Moderate (50-70% yield)",
+        "protocol": "Awake recording",
+        "notes": "May show generalized or multifocal spikes"
+      },
+      "ictal_recording": {
+        "effectiveness": "Critical for diagnosis",
+        "protocol": "Video-EEG with clinical correlation",
+        "notes": "Must correlate EEG with clinical seizures (febrile, myoclonic, focal, GTC)"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1-2 hours, include sleep",
+        "notes": "Longer recordings increase yield. Include photic stimulation."
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG with multiple seizure types"
+      },
+      "special_notes": "Dravet is photosensitive and fever-sensitive. Photic stimulation may trigger seizures. Early EEG may be normal, pattern evolves over time."
+    },
+    "clinical_features": {
+      "seizure_type": ["Febrile seizures (early)", "Myoclonic seizures", "Focal seizures", "Generalized tonic-clonic seizures", "Atypical absence", "Status epilepticus"],
+      "manifestation": [
+        "Febrile seizures in first year (most characteristic early feature)",
+        "Myoclonic seizures (develop later)",
+        "Focal seizures (hemiclonic, unilateral)",
+        "Generalized tonic-clonic seizures",
+        "Status epilepticus (common, may be prolonged)",
+        "Developmental delay and regression",
+        "Ataxia, hypotonia",
+        "Photosensitive (seizures triggered by lights, patterns)",
+        "Fever-sensitive (seizures triggered by fever, illness)"
+      ],
+      "triggers": ["Fever (most common)", "Photic stimulation", "Hot baths", "Illness", "Stress"],
+      "neurological_exam": "Abnormal (ataxia, hypotonia, developmental delay)",
+      "imaging": "Usually normal (may show mild atrophy later)",
+      "development": "Developmental delay and regression (after initial normal development)"
+    },
+    "clinical_course": {
+      "onset": "First year of life (peak 6 months) - febrile seizures",
+      "progression": "Chronic, persistent, may worsen over time",
+      "outcome": "Poor - resistant to treatment, persistent seizures, developmental delay",
+      "treatment": "Valproate, clobazam, stiripentol, topiramate, ketogenic diet, fenfluramine, cannabidiol. Avoid lamotrigine and carbamazepine (may worsen seizures - AED-induced seizure worsening).",
+      "prognosis": "Poor - persistent seizures, developmental delay, cognitive impairment, high mortality risk"
+    },
+    "abret_pearls": [
+      "Dravet syndrome begins with febrile seizures in first year of life (peak 6 months) - this is the most characteristic early feature.",
+      "Dravet is photosensitive - photic stimulation may trigger seizures or EEG abnormalities (60-80% yield).",
+      "Dravet is fever-sensitive - seizures triggered by fever, hot baths, illness. Avoid fever triggers.",
+      "Early EEG may be normal - pattern evolves over time to show generalized spike-and-wave, polyspike-and-wave, multifocal spikes.",
+      "Status epilepticus is common in Dravet - may be prolonged and difficult to control.",
+      "Multiple seizure types develop over time: febrile → myoclonic → focal → GTC → atypical absence."
+    ],
+    "differential_diagnosis": [
+      "Simple febrile seizures - no developmental delay, normal EEG, remits",
+      "GEFS+ (Genetic Epilepsy with Febrile Seizures Plus) - milder, better prognosis",
+      "LGS - later onset, slow spike-and-wave, different pattern",
+      "Other myoclonic epilepsies - different age of onset, different triggers"
+    ]
+  },
+  {
+    "id": "gtca",
+    "name": "Epilepsy with Generalized Tonic-Clonic Seizures Alone (GTCA)",
+    "classification": "Idiopathic Generalized Epilepsy",
+    "age_group": ["adolescent", "young_adult"],
+    "age_range": "Adolescence to young adulthood (peak 15-25 years)",
+    "typical_patterns": ["pattern_three_hz_gsw", "pattern_polyspike_wave"],
+    "morphology": {
+      "interictal": "Normal background, occasional generalized spike-and-wave or polyspike-and-wave",
+      "ictal": "Generalized spike-and-wave or polyspike-and-wave, may show fast activity during GTC",
+      "frequency": "Variable - 3-6 Hz spike-and-wave or polyspike-and-wave",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, symmetric, synchronous",
+      "duration": "Brief to prolonged (GTC seizures)",
+      "image": "/images/patterns/syndrome-gtca.png",
+      "subtype": "Generalized tonic-clonic seizures only - no absence, no myoclonus",
+      "special_features": "Seizures often occur upon awakening or during sleep. No absence seizures, no myoclonic seizures - only GTC."
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep_deprivation": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "4-6 hours sleep deprivation, record upon awakening",
+        "notes": "GTC seizures often occur upon awakening - critical activation procedure"
+      },
+      "sleep": {
+        "effectiveness": "High (60-70% yield)",
+        "protocol": "Natural sleep, especially upon awakening",
+        "notes": "GTC seizures often occur during sleep or upon awakening"
+      },
+      "awake": {
+        "effectiveness": "Moderate (40-50% yield)",
+        "protocol": "Awake recording",
+        "notes": "May show interictal spikes but seizures less common during wakefulness"
+      },
+      "recording_duration": {
+        "recommended": "Include sleep and awakening, minimum 30 minutes",
+        "notes": "Record upon awakening - critical for GTCA"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      },
+      "special_notes": "GTC seizures often occur upon awakening or during sleep. Sleep deprivation with recording upon awakening is most effective."
+    },
+    "clinical_features": {
+      "seizure_type": ["Generalized tonic-clonic seizures only"],
+      "manifestation": [
+        "Generalized tonic-clonic seizures (only seizure type)",
+        "Often occur upon awakening (most characteristic)",
+        "May occur during sleep",
+        "No absence seizures",
+        "No myoclonic seizures",
+        "Normal neurological exam",
+        "Normal imaging"
+      ],
+      "triggers": ["Sleep deprivation", "Awakening", "Stress", "Fatigue", "Alcohol"],
+      "neurological_exam": "Normal",
+      "imaging": "Normal",
+      "development": "Normal"
+    },
+    "clinical_course": {
+      "onset": "Adolescence to young adulthood (peak 15-25 years)",
+      "progression": "Variable - may remit or persist",
+      "outcome": "Good with treatment",
+      "treatment": "Valproate, lamotrigine, levetiracetam, topiramate",
+      "prognosis": "Good with treatment, may remit or require lifelong medication"
+    },
+    "abret_pearls": [
+      "GTCA = Generalized tonic-clonic seizures ONLY - no absence, no myoclonus. This distinguishes it from JME (has myoclonus) and CAE (has absence).",
+      "GTC seizures often occur upon awakening - sleep deprivation with recording upon awakening is most effective (70-80% yield).",
+      "Normal background and normal exam/imaging are characteristic - distinguishing from symptomatic generalized epilepsies."
+    ],
+    "differential_diagnosis": [
+      "JME - has myoclonic seizures, GTC upon awakening",
+      "CAE/JAE - has absence seizures, not just GTC",
+      "Symptomatic generalized epilepsies - abnormal exam/imaging, abnormal background"
+    ]
+  },
+  {
+    "id": "bmei",
+    "name": "Benign Myoclonic Epilepsy of Infancy (BMEI)",
+    "classification": "Idiopathic Generalized Epilepsy",
+    "age_group": ["infant"],
+    "age_range": "6 months to 3 years (peak 1-2 years)",
+    "typical_patterns": ["pattern_polyspike_wave", "pattern_three_hz_gsw"],
+    "morphology": {
+      "interictal": "Normal background, occasional generalized spike-and-wave or polyspike-and-wave",
+      "ictal": "Generalized spike-and-wave or polyspike-and-wave during myoclonic jerks",
+      "frequency": "3-5 Hz (spike-and-wave or polyspike-and-wave)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, symmetric, synchronous",
+      "duration": "Brief (1-3 seconds for myoclonus)",
+      "image": "/images/patterns/syndrome-bmei.png",
+      "subtype": "Benign myoclonic epilepsy of infancy - myoclonic seizures only",
+      "special_features": "Myoclonic seizures only (no GTC, no absence). Normal development. Good prognosis. Distinguishes from Dravet (severe, developmental delay)."
+    },
+    "diagnostic_yield_enhancement": {
+      "awake": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "Awake recording",
+        "notes": "Myoclonic jerks occur during wakefulness"
+      },
+      "sleep": {
+        "effectiveness": "Moderate (40-50% yield)",
+        "protocol": "Natural sleep",
+        "notes": "May show spikes during sleep but myoclonus less common"
+      },
+      "photic_stimulation": {
+        "effectiveness": "Low to moderate (20-40% yield)",
+        "protocol": "Standard IPS protocol",
+        "notes": "Some patients may be photosensitive"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 20-30 minutes awake",
+        "notes": "Myoclonic jerks occur during wakefulness"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution. May need EMG channels to see myoclonus."
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG spikes with clinical myoclonic jerks"
+      },
+      "special_notes": "Myoclonic seizures only (no GTC, no absence). Normal development. Good prognosis. Distinguishes from Dravet (severe, developmental delay, multiple seizure types)."
+    },
+    "clinical_features": {
+      "seizure_type": ["Myoclonic seizures only"],
+      "manifestation": [
+        "Myoclonic seizures (only seizure type)",
+        "Brief myoclonic jerks (1-3 seconds)",
+        "Bilateral, symmetric",
+        "No GTC seizures",
+        "No absence seizures",
+        "Normal neurological exam",
+        "Normal imaging",
+        "Normal development"
+      ],
+      "triggers": ["Spontaneous", "May be triggered by photic stimulation (in photosensitive)"],
+      "neurological_exam": "Normal",
+      "imaging": "Normal",
+      "development": "Normal"
+    },
+    "clinical_course": {
+      "onset": "Infancy (6 months to 3 years, peak 1-2 years)",
+      "progression": "Benign - remits by age 3-5 years",
+      "outcome": "Excellent - remits by age 3-5 years, normal development",
+      "treatment": "Valproate, levetiracetam. May not require treatment if infrequent.",
+      "prognosis": "Excellent - complete remission, normal development, no cognitive impairment"
+    },
+    "abret_pearls": [
+      "BMEI = Myoclonic seizures ONLY (no GTC, no absence) - this distinguishes it from Dravet (multiple seizure types, developmental delay).",
+      "Normal development is characteristic - distinguishing it from Dravet (developmental delay) and other severe myoclonic epilepsies.",
+      "Excellent prognosis - remits by age 3-5 years, normal development. This is a benign condition.",
+      "BMEI vs Dravet: BMEI has normal development and good prognosis; Dravet has developmental delay and poor prognosis."
+    ],
+    "differential_diagnosis": [
+      "Dravet Syndrome - multiple seizure types, developmental delay, poor prognosis, fever-sensitive",
+      "JME - later onset (adolescence), GTC seizures, persists into adulthood",
+      "Progressive myoclonus epilepsies - progressive course, abnormal exam"
+    ]
+  },
+  {
+    "id": "doose_mae",
+    "name": "Doose Syndrome (Myoclonic-Astatic Epilepsy - MAE)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["child"],
+    "age_range": "1-5 years (peak 2-4 years)",
+    "typical_patterns": ["pattern_three_hz_gsw", "pattern_polyspike_wave"],
+    "morphology": {
+      "interictal": "Normal or mildly abnormal background, generalized spike-and-wave or polyspike-and-wave",
+      "ictal": "Generalized spike-and-wave or polyspike-and-wave during myoclonic-astatic seizures",
+      "frequency": "2-4 Hz (spike-and-wave or polyspike-and-wave)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, symmetric, synchronous",
+      "duration": "Brief (1-3 seconds for myoclonic-astatic seizures)",
+      "image": "/images/patterns/syndrome-doose-mae.png",
+      "subtype": "Myoclonic-astatic epilepsy - myoclonic followed by atonic (drop attacks)",
+      "special_features": "Myoclonic-astatic seizures (myoclonic jerk followed by atonic drop). May have absence seizures. Variable prognosis - may remit or evolve to LGS."
+    },
+    "diagnostic_yield_enhancement": {
+      "awake": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "Awake recording",
+        "notes": "Myoclonic-astatic seizures occur during wakefulness"
+      },
+      "sleep": {
+        "effectiveness": "Moderate (50-60% yield)",
+        "protocol": "Natural sleep",
+        "notes": "May show spikes during sleep"
+      },
+      "hyperventilation": {
+        "effectiveness": "Moderate (40-50% yield)",
+        "protocol": "3-5 minutes of deep breathing",
+        "notes": "May provoke absence seizures"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 30 minutes awake, include sleep",
+        "notes": "Longer recordings increase yield"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG with myoclonic-astatic seizures (myoclonic jerk followed by atonic drop)"
+      },
+      "special_notes": "Myoclonic-astatic seizures (myoclonic jerk followed by atonic drop) are characteristic. Variable prognosis - may remit or evolve to LGS."
+    },
+    "clinical_features": {
+      "seizure_type": ["Myoclonic-astatic seizures (most characteristic)", "Atypical absence", "Generalized tonic-clonic seizures", "Status epilepticus"],
+      "manifestation": [
+        "Myoclonic-astatic seizures (most characteristic) - myoclonic jerk followed by atonic drop (drop attacks)",
+        "Atypical absence seizures",
+        "Generalized tonic-clonic seizures",
+        "Status epilepticus (may occur)",
+        "Normal neurological exam initially",
+        "May develop cognitive impairment",
+        "Variable course - may remit or evolve to LGS"
+      ],
+      "triggers": ["Spontaneous", "May be triggered by hyperventilation"],
+      "neurological_exam": "Normal initially, may become abnormal",
+      "imaging": "Normal",
+      "development": "Normal initially, may develop delay if evolves to LGS"
+    },
+    "clinical_course": {
+      "onset": "Childhood (1-5 years, peak 2-4 years)",
+      "progression": "Variable - may remit by age 5-10 years, may evolve to LGS",
+      "outcome": "Variable - good if remits, poor if evolves to LGS",
+      "treatment": "Valproate, lamotrigine, ethosuximide, ketogenic diet. Avoid carbamazepine (may worsen).",
+      "prognosis": "Variable - good if remits, poor if evolves to LGS with cognitive impairment"
+    },
+    "abret_pearls": [
+      "Doose Syndrome (MAE) = Myoclonic-astatic seizures (myoclonic jerk followed by atonic drop) - this is the most characteristic feature.",
+      "Myoclonic-astatic seizures are characteristic - myoclonic jerk immediately followed by atonic drop (drop attacks).",
+      "Variable prognosis - may remit by age 5-10 years (good), or may evolve to LGS (poor).",
+      "Avoid carbamazepine in Doose Syndrome - may worsen seizures (AED-induced seizure worsening).",
+      "Doose vs LGS: Doose may remit; LGS is chronic. Both have multiple seizure types and drop attacks."
+    ],
+    "differential_diagnosis": [
+      "LGS - chronic, persistent, slow spike-and-wave, cognitive impairment",
+      "BMEI - myoclonic only, normal development, remits by age 3-5 years",
+      "Dravet Syndrome - earlier onset, febrile seizures, developmental delay, photosensitive"
+    ]
+  },
+  {
+    "id": "eye_closure_sensitivity",
+    "name": "Eye Closure Sensitivity Epilepsy",
+    "classification": "Idiopathic Generalized Epilepsy",
+    "age_group": ["child", "adolescent"],
+    "age_range": "2-14 years (peak 6-10 years)",
+    "typical_patterns": ["pattern_three_hz_gsw", "pattern_polyspike_wave"],
+    "morphology": {
+      "interictal": "Normal background, occasional generalized spike-and-wave or polyspike-and-wave",
+      "ictal": "Generalized spike-and-wave or polyspike-and-wave, triggered by eye closure",
+      "frequency": "3-4 Hz (spike-and-wave or polyspike-and-wave)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, symmetric, synchronous",
+      "duration": "Brief (3-10 seconds)",
+      "image": "/images/patterns/syndrome-eye-closure-sensitivity.png",
+      "subtype": "Eye closure sensitive - seizures triggered by eye closure",
+      "special_features": "Seizures triggered by eye closure. May be associated with Jeavons (eyelid myoclonus) or may be broader eye closure sensitivity. Pattern appears immediately after eye closure."
+    },
+    "diagnostic_yield_enhancement": {
+      "eye_closure": {
+        "effectiveness": "Very high (85-95% yield)",
+        "protocol": "Repeated eye closure and opening",
+        "notes": "MOST EFFECTIVE. Eye closure triggers seizures or EEG abnormalities. Critical activation procedure."
+      },
+      "photic_stimulation": {
+        "effectiveness": "High (60-80% yield)",
+        "protocol": "Standard IPS protocol, especially with eye closure",
+        "notes": "Eye closure during photic stimulation may enhance response"
+      },
+      "awake": {
+        "effectiveness": "Moderate (50-60% yield)",
+        "protocol": "Awake recording with eye closure testing",
+        "notes": "Must include repeated eye closure testing"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 20-30 minutes awake, include eye closure testing",
+        "notes": "Must include repeated eye closure testing - critical for diagnosis"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution. May need EOG channels to see eye closure."
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG changes with eye closure and clinical events"
+      },
+      "special_notes": "Eye closure is CRITICAL activation procedure (85-95% yield). Repeated eye closure testing is essential. May be associated with Jeavons (eyelid myoclonus) or may be broader eye closure sensitivity."
+    },
+    "clinical_features": {
+      "seizure_type": ["Absence seizures", "Myoclonic seizures", "Eyelid myoclonus (if Jeavons variant)"],
+      "manifestation": [
+        "Seizures triggered by eye closure (most characteristic)",
+        "Absence seizures (may occur)",
+        "Eyelid myoclonus (if Jeavons variant)",
+        "May be photosensitive",
+        "Normal neurological exam",
+        "Normal imaging"
+      ],
+      "triggers": ["Eye closure (most common)", "Photic stimulation", "Bright lights"],
+      "neurological_exam": "Normal",
+      "imaging": "Normal",
+      "development": "Normal"
+    },
+    "clinical_course": {
+      "onset": "Childhood to adolescence (2-14 years, peak 6-10 years)",
+      "progression": "Variable - may persist or remit",
+      "outcome": "Variable - good with treatment, may persist",
+      "treatment": "Valproate, lamotrigine, levetiracetam. Avoidance of eye closure triggers.",
+      "prognosis": "Good with treatment, but eye closure sensitivity may persist"
+    },
+    "abret_pearls": [
+      "Eye closure is the most effective activation procedure for eye closure sensitivity epilepsy (85-95% yield) - repeated eye closure testing is CRITICAL.",
+      "Seizures triggered by eye closure - pattern appears immediately after eye closure.",
+      "May be associated with Jeavons (eyelid myoclonus) or may be broader eye closure sensitivity.",
+      "Eye closure during photic stimulation may enhance response - test both together."
+    ],
+    "differential_diagnosis": [
+      "Jeavons Syndrome - has eyelid myoclonus, highly photosensitive, eye closure triggers",
+      "CAE/JAE - absence seizures, not triggered by eye closure",
+      "Other photosensitive epilepsies - triggered by photic, not eye closure"
+    ]
+  },
+  {
+    "id": "angelman",
+    "name": "Angelman Syndrome (with Epilepsy)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["infant", "child"],
+    "age_range": "Infancy to childhood (seizures onset 1-3 years)",
+    "typical_patterns": ["pattern_three_hz_gsw", "pattern_slow_spike_wave"],
+    "morphology": {
+      "interictal": "Abnormal background, generalized spike-and-wave or slow spike-and-wave, may be photosensitive",
+      "ictal": "Generalized spike-and-wave, slow spike-and-wave, may show fast activity",
+      "frequency": "Variable - 2-4 Hz spike-and-wave or slow spike-and-wave (1.5-2.5 Hz)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, may be asymmetric",
+      "duration": "Variable (brief to prolonged)",
+      "image": "/images/patterns/syndrome-angelman.png",
+      "subtype": "Genetic syndrome with epilepsy - Angelman Syndrome",
+      "special_features": "Genetic condition (15q11-13 deletion/mutation). Characteristic clinical features (happy demeanor, ataxia, developmental delay). EEG shows generalized spike-and-wave or slow spike-and-wave. May be photosensitive."
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "Natural sleep",
+        "notes": "May show slow spike-and-wave during sleep"
+      },
+      "photic_stimulation": {
+        "effectiveness": "Moderate (40-60% yield)",
+        "protocol": "Standard IPS protocol",
+        "notes": "May be photosensitive - photic stimulation may trigger seizures"
+      },
+      "awake": {
+        "effectiveness": "Moderate (50-70% yield)",
+        "protocol": "Awake recording",
+        "notes": "May show generalized spike-and-wave"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1 hour, include sleep",
+        "notes": "Longer recordings increase yield"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG with clinical seizures and characteristic clinical features"
+      },
+      "special_notes": "Genetic condition with characteristic clinical features (happy demeanor, ataxia, developmental delay). EEG shows generalized patterns. May be photosensitive."
+    },
+    "clinical_features": {
+      "seizure_type": ["Atypical absence", "Myoclonic seizures", "Generalized tonic-clonic seizures", "Atonic seizures"],
+      "manifestation": [
+        "Characteristic clinical features: happy demeanor, frequent laughter, ataxia, developmental delay",
+        "Atypical absence seizures",
+        "Myoclonic seizures",
+        "Generalized tonic-clonic seizures",
+        "Atonic seizures (drop attacks)",
+        "Microcephaly",
+        "Characteristic facial features",
+        "Sleep disturbances"
+      ],
+      "triggers": ["Photic stimulation (if photosensitive)", "Sleep", "Awakening"],
+      "neurological_exam": "Abnormal (ataxia, developmental delay, characteristic features)",
+      "imaging": "Usually normal (may show mild atrophy)",
+      "development": "Severe developmental delay"
+    },
+    "clinical_course": {
+      "onset": "Infancy to childhood (seizures onset 1-3 years)",
+      "progression": "Chronic, persistent",
+      "outcome": "Poor - persistent seizures, severe developmental delay",
+      "treatment": "Valproate, clobazam, levetiracetam, ketogenic diet. Avoid carbamazepine (may worsen).",
+      "prognosis": "Poor - persistent seizures, severe developmental delay, lifelong condition"
+    },
+    "abret_pearls": [
+      "Angelman Syndrome is a genetic condition (15q11-13 deletion/mutation) with characteristic clinical features: happy demeanor, frequent laughter, ataxia, developmental delay.",
+      "EEG shows generalized spike-and-wave or slow spike-and-wave - may be photosensitive.",
+      "Avoid carbamazepine in Angelman Syndrome - may worsen seizures (AED-induced seizure worsening).",
+      "Characteristic clinical features (happy demeanor, ataxia) help distinguish from other epileptic encephalopathies."
+    ],
+    "differential_diagnosis": [
+      "LGS - similar EEG pattern but different clinical features (no happy demeanor)",
+      "Other genetic epileptic encephalopathies - different genetic causes, different clinical features",
+      "Rett Syndrome - different clinical features (hand wringing, regression)"
+    ]
+  },
+  {
+    "id": "rett",
+    "name": "Rett Syndrome (with Epilepsy)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["infant", "child"],
+    "age_range": "Infancy to childhood (seizures onset 2-5 years, after regression)",
+    "typical_patterns": ["pattern_three_hz_gsw", "pattern_slow_spike_wave"],
+    "morphology": {
+      "interictal": "Abnormal background, generalized spike-and-wave or slow spike-and-wave, may show focal spikes",
+      "ictal": "Generalized spike-and-wave, slow spike-and-wave, may show focal patterns",
+      "frequency": "Variable - 2-4 Hz spike-and-wave or slow spike-and-wave (1.5-2.5 Hz)",
+      "amplitude": "High amplitude (200-500 µV)",
+      "distribution": "Generalized, may be asymmetric, may be multifocal",
+      "duration": "Variable (brief to prolonged)",
+      "image": "/images/patterns/syndrome-rett.png",
+      "subtype": "Genetic syndrome with epilepsy - Rett Syndrome",
+      "special_features": "Genetic condition (MECP2 mutation). Characteristic clinical features (hand wringing, developmental regression, loss of purposeful hand use). EEG shows generalized or multifocal patterns. Pattern may worsen over time."
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "High (70-80% yield)",
+        "protocol": "Natural sleep",
+        "notes": "May show slow spike-and-wave or multifocal spikes during sleep"
+      },
+      "awake": {
+        "effectiveness": "Moderate (50-70% yield)",
+        "protocol": "Awake recording",
+        "notes": "May show generalized or multifocal spikes"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1 hour, include sleep",
+        "notes": "Longer recordings increase yield"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized/multifocal distribution"
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG with clinical seizures and characteristic clinical features (hand wringing, etc.)"
+      },
+      "special_notes": "Genetic condition (MECP2 mutation) with characteristic clinical features (hand wringing, developmental regression). EEG shows generalized or multifocal patterns. Pattern may worsen over time."
+    },
+    "clinical_features": {
+      "seizure_type": ["Atypical absence", "Myoclonic seizures", "Generalized tonic-clonic seizures", "Focal seizures"],
+      "manifestation": [
+        "Characteristic clinical features: hand wringing, loss of purposeful hand use, developmental regression",
+        "Atypical absence seizures",
+        "Myoclonic seizures",
+        "Generalized tonic-clonic seizures",
+        "Focal seizures",
+        "Breathing abnormalities (apnea, hyperventilation)",
+        "Autistic features",
+        "Severe developmental delay and regression"
+      ],
+      "triggers": ["Sleep", "Awakening", "Stress"],
+      "neurological_exam": "Abnormal (ataxia, developmental delay, characteristic hand wringing)",
+      "imaging": "May show mild atrophy",
+      "development": "Severe developmental delay and regression (after initial normal development)"
+    },
+    "clinical_course": {
+      "onset": "Infancy to childhood (seizures onset 2-5 years, after regression)",
+      "progression": "Chronic, persistent, may worsen over time",
+      "outcome": "Poor - persistent seizures, severe developmental delay and regression",
+      "treatment": "Valproate, clobazam, levetiracetam, ketogenic diet. Avoid carbamazepine (may worsen).",
+      "prognosis": "Poor - persistent seizures, severe developmental delay and regression, lifelong condition"
+    },
+    "abret_pearls": [
+      "Rett Syndrome is a genetic condition (MECP2 mutation) with characteristic clinical features: hand wringing, loss of purposeful hand use, developmental regression.",
+      "EEG shows generalized spike-and-wave or slow spike-and-wave - may be multifocal. Pattern may worsen over time.",
+      "Avoid carbamazepine in Rett Syndrome - may worsen seizures (AED-induced seizure worsening).",
+      "Characteristic clinical features (hand wringing, developmental regression) help distinguish from other epileptic encephalopathies.",
+      "Developmental regression after initial normal development is characteristic - distinguishes from conditions with delay from onset."
+    ],
+    "differential_diagnosis": [
+      "LGS - similar EEG pattern but different clinical features (no hand wringing)",
+      "Angelman Syndrome - different clinical features (happy demeanor, no hand wringing)",
+      "Other genetic epileptic encephalopathies - different genetic causes, different clinical features"
+    ]
+  },
+  {
+    "id": "lissencephaly",
+    "name": "Lissencephaly and Subcortical Band Heterotopia (with Epilepsy)",
+    "classification": "Developmental and Epileptic Encephalopathy",
+    "age_group": ["infant", "child"],
+    "age_range": "Infancy to childhood (seizures onset variable, often early)",
+    "typical_patterns": ["pattern_slow_spike_wave", "pattern_three_hz_gsw"],
+    "morphology": {
+      "interictal": "Abnormal background, generalized spike-and-wave or slow spike-and-wave, may show hypsarrhythmia",
+      "ictal": "Generalized spike-and-wave, slow spike-and-wave, may show fast activity or electrodecremental pattern",
+      "frequency": "Variable - 1.5-4 Hz spike-and-wave or slow spike-and-wave",
+      "amplitude": "High amplitude (200-1000+ µV)",
+      "distribution": "Generalized, may be asymmetric, may be multifocal",
+      "duration": "Variable (brief to prolonged)",
+      "image": "/images/patterns/syndrome-lissencephaly.png",
+      "subtype": "Structural brain malformation with epilepsy - lissencephaly/band heterotopia",
+      "special_features": "Structural brain malformation (smooth brain - lissencephaly, or subcortical band heterotopia). EEG shows generalized patterns. May show hypsarrhythmia in infancy. Pattern correlates with severity of malformation."
+    },
+    "diagnostic_yield_enhancement": {
+      "sleep": {
+        "effectiveness": "High (70-90% yield)",
+        "protocol": "Natural sleep",
+        "notes": "May show slow spike-and-wave or hypsarrhythmia during sleep"
+      },
+      "awake": {
+        "effectiveness": "Moderate (50-70% yield)",
+        "protocol": "Awake recording",
+        "notes": "May show generalized spike-and-wave or slow spike-and-wave"
+      },
+      "ictal_recording": {
+        "effectiveness": "Critical for diagnosis",
+        "protocol": "Video-EEG with clinical correlation",
+        "notes": "Must correlate EEG with clinical seizures and structural imaging findings"
+      },
+      "recording_duration": {
+        "recommended": "Minimum 1-2 hours, include sleep",
+        "notes": "Longer recordings increase yield"
+      },
+      "montage": {
+        "recommended": "Referential montage (average reference)",
+        "notes": "Better shows generalized distribution"
+      },
+      "video_recording": {
+        "recommended": "Essential",
+        "notes": "Must correlate EEG with clinical seizures and structural imaging findings"
+      },
+      "special_notes": "Structural brain malformation (lissencephaly = smooth brain, or subcortical band heterotopia). EEG shows generalized patterns. May show hypsarrhythmia in infancy. Pattern correlates with severity of malformation."
+    },
+    "clinical_features": {
+      "seizure_type": ["Infantile spasms (early)", "Atypical absence", "Tonic seizures", "Generalized tonic-clonic seizures", "Focal seizures"],
+      "manifestation": [
+        "Structural brain malformation (lissencephaly = smooth brain, or subcortical band heterotopia)",
+        "Infantile spasms (may occur early)",
+        "Atypical absence seizures",
+        "Tonic seizures",
+        "Generalized tonic-clonic seizures",
+        "Focal seizures",
+        "Severe developmental delay",
+        "Microcephaly",
+        "Characteristic facial features (in some forms)"
+      ],
+      "triggers": ["Sleep", "Awakening", "Spontaneous"],
+      "neurological_exam": "Severely abnormal (developmental delay, microcephaly, hypotonia)",
+      "imaging": "Abnormal - shows lissencephaly (smooth brain) or subcortical band heterotopia",
+      "development": "Severe developmental delay"
+    },
+    "clinical_course": {
+      "onset": "Infancy to childhood (seizures onset variable, often early)",
+      "progression": "Chronic, persistent, severe",
+      "outcome": "Very poor - persistent seizures, severe developmental delay",
+      "treatment": "ACTH, vigabatrin, valproate, ketogenic diet. Treatment of underlying structural malformation not possible. Seizure management only.",
+      "prognosis": "Very poor - persistent seizures, severe developmental delay, high mortality, lifelong condition"
+    },
+    "abret_pearls": [
+      "Lissencephaly = smooth brain (lack of gyri and sulci). Subcortical band heterotopia = band of gray matter in white matter. Both are structural malformations with epilepsy.",
+      "EEG shows generalized spike-and-wave or slow spike-and-wave - may show hypsarrhythmia in infancy.",
+      "Structural imaging (MRI) is essential for diagnosis - shows lissencephaly or subcortical band heterotopia.",
+      "Pattern correlates with severity of malformation - more severe malformation = more severe EEG abnormalities.",
+      "May show infantile spasms early - may evolve to other seizure types over time."
+    ],
+    "differential_diagnosis": [
+      "West Syndrome - hypsarrhythmia, infantile spasms, but no structural malformation on imaging",
+      "LGS - slow spike-and-wave, multiple seizure types, but no structural malformation on imaging",
+      "Other structural malformations - different imaging findings"
+    ]
+  }
+]
+

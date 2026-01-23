@@ -1,0 +1,2499 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2025-12-18T08:38:03.113124Z",
+  "notes": [
+    "Cases must be de-identified before import (remove names, MRNs, exact dates, locations).",
+    "Attach PDF wave analysis as a resource reference; extract structured fields for app use."
+  ],
+    "caseFormat": {
+    "id": "case-0001",
+    "title": "Short human-readable title",
+    "difficulty": "easy|medium|hard",
+    "domainFocus": [
+      "domain-1",
+      "domain-2"
+    ],
+    "tags": [
+      "history",
+      "filters_settings",
+      "artifacts"
+    ],
+    "syndromeIds": [
+      "cae",
+      "jae"
+    ],
+    "patternIds": [
+      "pattern_three_hz_gsw",
+      "pattern_pdr"
+    ],
+    "patient": {
+      "ageYears": 0,
+      "sex": "unspecified|male|female",
+      "context": "outpatient|inpatient|icu|ed"
+    },
+    "chiefComplaint": "string",
+    "history": {
+      "eventDescription": "string",
+      "lastEventTiming": "string (relative, de-identified)",
+      "comorbidities": [],
+      "medications": []
+    },
+    "eegSummary": {
+      "state": [
+        "wake",
+        "drowsy",
+        "sleep"
+      ],
+      "background": "string",
+      "pdrHz": "string",
+      "epileptiform": "string",
+      "focalFindings": "string",
+      "activations": {
+        "hv": "done|not-done|contraindicated",
+        "photic": "string",
+        "sleep": "string"
+      },
+      "artifacts": "string"
+    },
+    "resources": [
+      {
+        "type": "pdf",
+        "label": "Wave analysis PDF (de-identified)",
+        "pathOrUrl": "string"
+      }
+    ],
+    "taskFlow": [
+      {
+        "stepId": "case-0001-step1",
+        "type": "history-questions|recording-strategy|settings-choice|pattern-recognition|report-writing|safety-response",
+        "prompt": "string",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "answerIndex": 0,
+        "explanation": "string"
+      }
+    ],
+    "learningLinks": [
+      {
+        "label": "Standards",
+        "to": "/standards"
+      }
+    ]
+  },
+  "starterCases": [
+    {
+      "id": "case-0001",
+      "title": "Childhood Absence Epilepsy - Typical Presentation",
+      "difficulty": "easy",
+      "domainFocus": [
+        "domain-1",
+        "domain-2"
+      ],
+      "tags": [
+        "history",
+        "activation",
+        "epileptiform",
+        "pediatrics"
+      ],
+      "syndromeIds": ["cae"],
+      "patternIds": ["pattern_three_hz_gsw", "pattern_pdr"],
+      "patient": {
+        "ageYears": 6,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Brief staring spells and unresponsiveness multiple times per day",
+      "history": {
+        "eventDescription": "Patient experiences brief episodes of staring and unresponsiveness, lasting 5-10 seconds, occurring multiple times daily. Events are abrupt in onset and offset.",
+        "lastEventTiming": "Most recent event occurred earlier today",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "drowsy"
+        ],
+        "background": "Normal background for age",
+        "pdrHz": "9 Hz",
+        "epileptiform": "Generalized 3 Hz spike-and-wave discharges, frontally predominant",
+        "focalFindings": "None",
+        "activations": {
+          "hv": "done",
+          "photic": "No photoparoxysmal response",
+          "sleep": "Not recorded"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0001-step1",
+          "type": "history-questions",
+          "prompt": "Which activation procedure is most likely to increase yield for this patient?",
+          "options": [
+            "Photic stimulation",
+            "Hyperventilation",
+            "Sleep deprivation",
+            "Eye opening/closure"
+          ],
+          "answerIndex": 1,
+          "explanation": "Hyperventilation commonly provokes generalized 3 Hz spike-and-wave in typical absence epilepsy, making it the most appropriate activation procedure for this case."
+        },
+        {
+          "stepId": "case-0001-step2",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows generalized 3 Hz spike-and-wave discharges. What is the most likely diagnosis?",
+          "options": [
+            "Focal epilepsy",
+            "Typical absence epilepsy",
+            "Juvenile myoclonic epilepsy",
+            "Lennox-Gastaut syndrome"
+          ],
+          "answerIndex": 1,
+          "explanation": "Generalized 3 Hz spike-and-wave is the classic pattern for typical absence epilepsy (childhood absence epilepsy), especially when provoked by hyperventilation."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Patterns: 3 Hz Generalized Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        },
+        {
+          "label": "Syndrome: Childhood Absence Epilepsy",
+          "to": "/syndromes/cae"
+        },
+        {
+          "label": "Standards: Activation Procedures",
+          "to": "/standards"
+        }
+      ]
+    },
+    {
+      "id": "case-0002",
+      "title": "Infantile Spasms with Hypsarrhythmia",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "neonatal",
+        "epileptiform",
+        "hypsarrhythmia",
+        "pediatrics"
+      ],
+      "syndromeIds": ["west_syndrome"],
+      "patternIds": ["pattern_hypsarrhythmia"],
+      "patient": {
+        "ageYears": 0.4,
+        "sex": "unspecified",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Clusters of flexor spasms on awakening and developmental regression",
+      "history": {
+        "eventDescription": "5-month-old infant presents with clusters of flexor spasms occurring on awakening. Parents report developmental regression over the past month.",
+        "lastEventTiming": "Events occurred this morning",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wakefulness",
+          "sleep"
+        ],
+        "background": "Chaotic, high-amplitude slow waves with multifocal spikes",
+        "pdrHz": "Not applicable (infant)",
+        "epileptiform": "Multifocal spikes and sharp waves in chaotic background",
+        "focalFindings": "Multifocal epileptiform activity",
+        "activations": {
+          "hv": "not-done",
+          "photic": "Not performed",
+          "sleep": "Recorded"
+        },
+        "artifacts": "Pattern more evident in sleep"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0002-step1",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows a chaotic, high-amplitude pattern with multifocal spikes. What is this pattern called?",
+          "options": [
+            "Hypsarrhythmia",
+            "3 Hz spike-and-wave",
+            "Periodic lateralized epileptiform discharges (PLEDs)",
+            "Normal infantile pattern"
+          ],
+          "answerIndex": 0,
+          "explanation": "Hypsarrhythmia is characterized by chaotic, high-amplitude slow waves with multifocal spikes, typically seen in infantile spasms (West syndrome)."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Hypsarrhythmia",
+          "to": "/patterns/pattern_hypsarrhythmia"
+        },
+        {
+          "label": "Syndrome: West Syndrome",
+          "to": "/syndromes/west_syndrome"
+        }
+      ]
+    },
+    {
+      "id": "case-0003",
+      "title": "Normal EEG with Benign Variants",
+      "difficulty": "easy",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "normal-variants",
+        "mu-rhythm",
+        "wicket-spikes",
+        "adult"
+      ],
+      "syndromeIds": [],
+      "patternIds": ["pattern_mu_rhythm", "pattern_wicket_spikes", "pattern_pdr"],
+      "patient": {
+        "ageYears": 28,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Normal clinical exam referred for evaluation of possible epilepsy; no spells reported",
+      "history": {
+        "eventDescription": "Patient referred for routine EEG evaluation. No clinical events or spells reported. Normal neurological examination.",
+        "lastEventTiming": "No events reported",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "drowsy"
+        ],
+        "background": "Normal background for age",
+        "pdrHz": "10 Hz",
+        "epileptiform": "None",
+        "focalFindings": "Benign variants: mu rhythm (central), wicket spikes (temporal)",
+        "activations": {
+          "hv": "done",
+          "photic": "No photoparoxysmal response",
+          "sleep": "Not recorded"
+        },
+        "artifacts": "Minimal"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0003-step1",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows arch-like waveforms over central regions that block with movement. What is this pattern?",
+          "options": [
+            "Focal spikes",
+            "Mu rhythm",
+            "Rolandic spikes",
+            "Artifact"
+          ],
+          "answerIndex": 1,
+          "explanation": "Mu rhythm is a normal variant characterized by arch-like waveforms over central regions that block with movement or intention to move. It is not epileptiform."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Mu Rhythm",
+          "to": "/patterns/pattern_mu_rhythm"
+        },
+        {
+          "label": "Pattern: Wicket Spikes",
+          "to": "/patterns/pattern_wicket_spikes"
+        },
+        {
+          "label": "Pattern: PDR",
+          "to": "/patterns/pattern_pdr"
+        }
+      ]
+    },
+    {
+      "id": "case-0004",
+      "title": "School-age child with GTC seizures and occipital sharp waves",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "peds",
+        "focal-epileptiform",
+        "occipital",
+        "sharp-waves",
+        "wake-sleep",
+        "photic-negative"
+      ],
+      "syndromeIds": ["tle"],
+      "patternIds": ["pattern_focal_spikes_temporal", "pattern_pdr"],
+      "patient": {
+        "ageYears": 8,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Recent onset generalized tonic-clonic convulsions associated with headaches. EEG requested to assess for epileptiform activity.",
+      "history": {
+        "eventDescription": "School-age child with recent onset generalized tonic-clonic convulsions associated with headaches. EEG ordered to assess for epileptiform activity.",
+        "lastEventTiming": "Recent onset",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wakefulness",
+          "sleep"
+        ],
+        "background": "Well-organized background, medium amplitude",
+        "pdrHz": "8-10 Hz",
+        "epileptiform": "Focal sharp waves in brief bursts, occipital, bilateral with left predominance, present in wake and sleep",
+        "focalFindings": "Focal interictal epileptiform discharges in occipital regions bilaterally with left predominance",
+        "activations": {
+          "hv": "not-done",
+          "photic": "Performed, no additional abnormalities",
+          "sleep": "Recorded"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [
+        {
+          "type": "pdf",
+          "label": "Wave analysis PDF (de-identified)",
+          "pathOrUrl": "/assets/cases/case-0004-eeg-waves.pdf"
+        }
+      ],
+      "taskFlow": [
+        {
+          "stepId": "case-0004-step1",
+          "type": "history-questions",
+          "prompt": "Which features in the history increase suspicion for epilepsy vs provoked seizure?",
+          "options": [
+            "Recent onset recurrent convulsions with headache",
+            "Single brief fainting spell after dehydration",
+            "Only nocturnal snoring without spells",
+            "Isolated migraine aura without loss of consciousness"
+          ],
+          "answerIndex": 0,
+          "explanation": "Recurrent GTC-type convulsions justify EEG assessment for epileptiform activity."
+        },
+        {
+          "stepId": "case-0004-step2",
+          "type": "settings-choice",
+          "prompt": "Which setting change is MOST likely to distort slow-wave activity and make diffuse slowing harder to appreciate?",
+          "options": [
+            "Raising the low-frequency filter too high",
+            "Lowering the high-frequency filter slightly",
+            "Reducing sensitivity (higher µV/mm)",
+            "Turning off photic stimulation"
+          ],
+          "answerIndex": 0,
+          "explanation": "Raising LFF attenuates slow activity and can mask diffuse slowing."
+        },
+        {
+          "stepId": "case-0004-step3",
+          "type": "pattern-recognition",
+          "prompt": "Based on the report description, what is the BEST classification of the abnormality?",
+          "options": [
+            "Generalized 3 Hz spike-and-wave",
+            "Focal occipital interictal sharp waves (left predominant)",
+            "Burst-suppression pattern",
+            "Triphasic waves"
+          ],
+          "answerIndex": 1,
+          "explanation": "Described as brief bursts of sharp-wave activity maximal over occipital regions, bilateral but left predominant."
+        },
+        {
+          "stepId": "case-0004-step4",
+          "type": "clinical-correlation",
+          "prompt": "Which next step is MOST appropriate based on focal occipital epileptiform discharges in a child?",
+          "options": [
+            "No further evaluation is needed if photic is normal",
+            "Brain MRI to evaluate occipital structural lesions",
+            "Stop antiseizure medication immediately",
+            "Diagnose non-epileptic events definitively"
+          ],
+          "answerIndex": 1,
+          "explanation": "Focal epileptiform discharges often warrant structural evaluation, especially with new onset seizures."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Focal Spikes (Temporal)",
+          "to": "/patterns/pattern_focal_spikes_temporal"
+        },
+        {
+          "label": "Syndrome: Temporal Lobe Epilepsy",
+          "to": "/syndromes/tle"
+        },
+        {
+          "label": "Workflow: Instrumentation & Settings",
+          "to": "/workflow"
+        },
+        {
+          "label": "Standards: Filters & Settings",
+          "to": "/standards"
+        }
+      ]
+    },
+    {
+      "id": "case-0005",
+      "title": "Juvenile Myoclonic Epilepsy - Myoclonus on Awakening",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-1",
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "adolescent",
+        "myoclonic",
+        "activation",
+        "sleep-deprivation",
+        "polyspike-wave"
+      ],
+      "syndromeIds": ["jme"],
+      "patternIds": ["pattern_polyspike_wave", "pattern_pdr"],
+      "patient": {
+        "ageYears": 16,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Morning myoclonic jerks and occasional generalized tonic-clonic seizures upon awakening",
+      "history": {
+        "eventDescription": "16-year-old patient reports bilateral myoclonic jerks in the morning, especially after sleep deprivation. Has had 3 generalized tonic-clonic seizures, all occurring within 30 minutes of awakening. Events are worse with sleep deprivation and alcohol consumption.",
+        "lastEventTiming": "Most recent GTC seizure occurred 2 weeks ago after a late night",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "drowsy"
+        ],
+        "background": "Normal background for age",
+        "pdrHz": "10 Hz",
+        "epileptiform": "Generalized polyspike-and-wave discharges, frontally predominant, activated by sleep deprivation and awakening",
+        "focalFindings": "None",
+        "activations": {
+          "hv": "done",
+          "photic": "No photoparoxysmal response",
+          "sleep": "Sleep deprivation performed, recording upon awakening"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0005-step1",
+          "type": "history-questions",
+          "prompt": "Which activation procedure is most effective for this patient's syndrome?",
+          "options": [
+            "Hyperventilation",
+            "Sleep deprivation with recording upon awakening",
+            "Photic stimulation",
+            "Eye closure testing"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sleep deprivation with recording upon awakening is the most effective activation procedure for JME (90-95% yield). Myoclonic jerks and seizures typically occur upon awakening."
+        },
+        {
+          "stepId": "case-0005-step2",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows generalized polyspike-and-wave discharges. What is the most likely diagnosis?",
+          "options": [
+            "Childhood Absence Epilepsy",
+            "Juvenile Myoclonic Epilepsy",
+            "Lennox-Gastaut Syndrome",
+            "Temporal Lobe Epilepsy"
+          ],
+          "answerIndex": 1,
+          "explanation": "Generalized polyspike-and-wave is characteristic of JME, especially when combined with myoclonic jerks upon awakening and GTC seizures. Polyspike-and-wave is more common in JME than pure 3 Hz spike-and-wave."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Polyspike-and-Wave",
+          "to": "/patterns/pattern_polyspike_wave"
+        },
+        {
+          "label": "Syndrome: Juvenile Myoclonic Epilepsy",
+          "to": "/syndromes/jme"
+        }
+      ]
+    },
+    {
+      "id": "case-0006",
+      "title": "Lennox-Gastaut Syndrome - Multiple Seizure Types",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "pediatrics",
+        "lgs",
+        "slow-spike-wave",
+        "gpfa",
+        "multiple-seizure-types",
+        "sleep"
+      ],
+      "syndromeIds": ["lgs"],
+      "patternIds": ["pattern_slow_spike_wave", "pattern_gpfa"],
+      "patient": {
+        "ageYears": 5,
+        "sex": "unspecified",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Multiple seizure types including drop attacks, atypical absence, and generalized tonic-clonic seizures with developmental delay",
+      "history": {
+        "eventDescription": "5-year-old child with history of multiple seizure types: atonic seizures (drop attacks), atypical absence seizures, and generalized tonic-clonic seizures. Significant developmental delay and cognitive impairment. Seizures are frequent and difficult to control.",
+        "lastEventTiming": "Multiple daily events",
+        "comorbidities": ["Developmental delay", "Cognitive impairment"],
+        "medications": ["Valproate", "Lamotrigine"]
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "sleep"
+        ],
+        "background": "Abnormal background with slow spike-and-wave",
+        "pdrHz": "Poorly formed, slow",
+        "epileptiform": "Slow spike-and-wave (1.5-2.5 Hz), generalized paroxysmal fast activity (GPFA) during sleep",
+        "focalFindings": "Generalized slow spike-and-wave, GPFA during sleep",
+        "activations": {
+          "hv": "done",
+          "photic": "No photoparoxysmal response",
+          "sleep": "Recorded - GPFA most prominent during sleep"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0006-step1",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows slow spike-and-wave (1.5-2.5 Hz) and GPFA during sleep. What is the most likely diagnosis?",
+          "options": [
+            "Childhood Absence Epilepsy",
+            "Juvenile Myoclonic Epilepsy",
+            "Lennox-Gastaut Syndrome",
+            "Benign Rolandic Epilepsy"
+          ],
+          "answerIndex": 2,
+          "explanation": "Slow spike-and-wave (1.5-2.5 Hz) and GPFA during sleep are characteristic of LGS. The triad of multiple seizure types, slow spike-and-wave, and cognitive impairment is diagnostic of LGS."
+        },
+        {
+          "stepId": "case-0006-step2",
+          "type": "recording-strategy",
+          "prompt": "Which recording strategy is MOST critical for this patient?",
+          "options": [
+            "Awake recording only",
+            "Sleep recording (essential)",
+            "Hyperventilation only",
+            "Photic stimulation only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sleep recording is CRITICAL for LGS - slow spike-and-wave and GPFA are most prominent during sleep (95-100% yield). GPFA is highly characteristic of LGS and is best seen during sleep."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Slow Spike-and-Wave",
+          "to": "/patterns/pattern_slow_spike_wave"
+        },
+        {
+          "label": "Pattern: GPFA",
+          "to": "/patterns/pattern_gpfa"
+        },
+        {
+          "label": "Syndrome: Lennox-Gastaut Syndrome",
+          "to": "/syndromes/lgs"
+        }
+      ]
+    },
+    {
+      "id": "case-0007",
+      "title": "Benign Rolandic Epilepsy - Centrotemporal Spikes",
+      "difficulty": "easy",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "pediatrics",
+        "bre",
+        "centrotemporal",
+        "sleep-activation",
+        "benign"
+      ],
+      "syndromeIds": ["bre"],
+      "patternIds": ["pattern_focal_spikes_temporal", "pattern_pdr"],
+      "patient": {
+        "ageYears": 8,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Nocturnal facial twitching and speech arrest, normal development",
+      "history": {
+        "eventDescription": "8-year-old child with episodes of facial twitching and speech arrest occurring during sleep. Events are brief and do not cause significant disruption. Normal neurological examination and development. No daytime events reported.",
+        "lastEventTiming": "Events occur occasionally during sleep",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "sleep"
+        ],
+        "background": "Normal background for age",
+        "pdrHz": "9 Hz",
+        "epileptiform": "Centrotemporal spikes (C3, C4, T3, T4), dramatically activated by sleep (10-100x increase)",
+        "focalFindings": "Centrotemporal spikes, high amplitude, diphasic, activated by sleep",
+        "activations": {
+          "hv": "not-done",
+          "photic": "No photoparoxysmal response",
+          "sleep": "Recorded - spikes dramatically activated (10-100x increase)"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0007-step1",
+          "type": "recording-strategy",
+          "prompt": "Which recording strategy is MOST critical for this patient?",
+          "options": [
+            "Awake recording only",
+            "Sleep recording (essential)",
+            "Hyperventilation only",
+            "Photic stimulation only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sleep recording is CRITICAL for BRE - centrotemporal spikes are dramatically activated by sleep (10-100x increase). Spikes may be rare or absent during wakefulness but become frequent during sleep."
+        },
+        {
+          "stepId": "case-0007-step2",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows centrotemporal spikes dramatically activated by sleep. What is the most likely diagnosis?",
+          "options": [
+            "Temporal Lobe Epilepsy",
+            "Benign Rolandic Epilepsy",
+            "Lennox-Gastaut Syndrome",
+            "Juvenile Myoclonic Epilepsy"
+          ],
+          "answerIndex": 1,
+          "explanation": "Centrotemporal spikes dramatically activated by sleep, combined with normal development and nocturnal facial twitching/speech arrest, is characteristic of Benign Rolandic Epilepsy (BRE). BRE has excellent prognosis and remits by adolescence."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Focal Spikes (Temporal)",
+          "to": "/patterns/pattern_focal_spikes_temporal"
+        },
+        {
+          "label": "Syndrome: Benign Rolandic Epilepsy",
+          "to": "/syndromes/bre"
+        }
+      ]
+    },
+    {
+      "id": "case-0008",
+      "title": "Dravet Syndrome - Febrile Seizures and Photosensitivity",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "infant",
+        "dravet",
+        "febrile",
+        "photosensitive",
+        "fever-sensitive",
+        "developmental-delay"
+      ],
+      "syndromeIds": ["dravet"],
+      "patternIds": ["pattern_three_hz_gsw", "pattern_polyspike_wave"],
+      "patient": {
+        "ageYears": 0.8,
+        "sex": "unspecified",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Recurrent febrile seizures in first year of life, now with myoclonic seizures and developmental delay",
+      "history": {
+        "eventDescription": "8-month-old infant with history of febrile seizures beginning at 6 months. Now developing myoclonic seizures and showing signs of developmental delay. Seizures triggered by fever, hot baths, and photic stimulation. Status epilepticus occurred once.",
+        "lastEventTiming": "Recent myoclonic seizures",
+        "comorbidities": ["Developmental delay"],
+        "medications": ["Valproate"]
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "sleep"
+        ],
+        "background": "Early: may be normal. Later: generalized spike-and-wave, polyspike-and-wave, multifocal spikes",
+        "pdrHz": "Not well-formed",
+        "epileptiform": "Generalized spike-and-wave, polyspike-and-wave, photosensitive (pattern triggered by photic stimulation)",
+        "focalFindings": "Generalized and multifocal patterns",
+        "activations": {
+          "hv": "not-done",
+          "photic": "Performed - photosensitive (pattern triggered by photic stimulation, 60-80% yield)",
+          "sleep": "Recorded"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0008-step1",
+          "type": "history-questions",
+          "prompt": "Which feature is MOST characteristic of Dravet syndrome?",
+          "options": [
+            "Absence seizures in adolescence",
+            "Febrile seizures in first year of life (peak 6 months)",
+            "Centrotemporal spikes activated by sleep",
+            "Slow spike-and-wave with GPFA"
+          ],
+          "answerIndex": 1,
+          "explanation": "Dravet syndrome begins with febrile seizures in first year of life (peak 6 months) - this is the most characteristic early feature. The syndrome is also photosensitive and fever-sensitive."
+        },
+        {
+          "stepId": "case-0008-step2",
+          "type": "recording-strategy",
+          "prompt": "Which activation procedure is most effective for this patient?",
+          "options": [
+            "Hyperventilation",
+            "Photic stimulation (60-80% yield)",
+            "Sleep deprivation",
+            "Eye closure testing"
+          ],
+          "answerIndex": 1,
+          "explanation": "Dravet is photosensitive - photic stimulation may trigger seizures or EEG abnormalities (60-80% yield). Photic stimulation is the most effective activation procedure for Dravet."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: 3 Hz Generalized Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        },
+        {
+          "label": "Pattern: Polyspike-and-Wave",
+          "to": "/patterns/pattern_polyspike_wave"
+        },
+        {
+          "label": "Syndrome: Dravet Syndrome",
+          "to": "/syndromes/dravet"
+        }
+      ]
+    },
+    {
+      "id": "case-0009",
+      "title": "ESES/CSWS - Cognitive Regression",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "pediatrics",
+        "eses",
+        "csws",
+        "sleep",
+        "cognitive-regression",
+        "continuous-spike-wave"
+      ],
+      "syndromeIds": ["eses_csws"],
+      "patternIds": ["pattern_three_hz_gsw"],
+      "patient": {
+        "ageYears": 6,
+        "sex": "unspecified",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Cognitive regression and behavioral problems, infrequent seizures",
+      "history": {
+        "eventDescription": "6-year-old child with recent cognitive regression and behavioral problems (hyperactivity, attention deficits). Seizures are infrequent. Parents report decline in school performance and language skills over past 6 months.",
+        "lastEventTiming": "Seizures occur infrequently",
+        "comorbidities": ["Cognitive regression", "Behavioral problems"],
+        "medications": ["Clobazam"]
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "sleep"
+        ],
+        "background": "Awake: may show focal or multifocal spikes. Sleep: continuous spike-and-wave during slow-wave sleep (≥85% of NREM sleep)",
+        "pdrHz": "8 Hz",
+        "epileptiform": "Continuous spike-and-wave during slow-wave sleep (≥85% of NREM sleep). Pattern disappears in REM sleep and wakefulness.",
+        "focalFindings": "Generalized or bilateral, maximal in centrotemporal or frontocentral regions during sleep",
+        "activations": {
+          "hv": "not-done",
+          "photic": "No photoparoxysmal response",
+          "sleep": "Recorded - ESES pattern ONLY in NREM sleep (≥85% of slow-wave sleep), disappears in REM and wake"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0009-step1",
+          "type": "recording-strategy",
+          "prompt": "Which recording strategy is MOST critical for this patient?",
+          "options": [
+            "Awake recording only",
+            "Sleep recording with full sleep cycle (NREM and REM) - CRITICAL",
+            "Hyperventilation only",
+            "Photic stimulation only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sleep recording with full sleep cycle (NREM and REM) is CRITICAL for ESES/CSWS - the ESES pattern is ONLY seen during NREM sleep (≥85% of slow-wave sleep) and disappears in REM sleep and wakefulness. This is the defining feature."
+        },
+        {
+          "stepId": "case-0009-step2",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows continuous spike-and-wave during NREM sleep (≥85% of slow-wave sleep) that disappears in REM and wake. What is this pattern?",
+          "options": [
+            "Normal sleep pattern",
+            "ESES/CSWS (Electrical Status Epilepticus in Sleep)",
+            "Lennox-Gastaut Syndrome pattern",
+            "Benign Rolandic Epilepsy pattern"
+          ],
+          "answerIndex": 1,
+          "explanation": "ESES/CSWS is characterized by continuous spike-and-wave during slow-wave sleep (≥85% of NREM sleep) that disappears in REM sleep and wakefulness. Cognitive regression is the most characteristic clinical feature."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: 3 Hz Generalized Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        },
+        {
+          "label": "Syndrome: ESES/CSWS",
+          "to": "/syndromes/eses_csws"
+        }
+      ]
+    },
+    {
+      "id": "case-0010",
+      "title": "Jeavons Syndrome - Eyelid Myoclonus with Eye Closure",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "pediatrics",
+        "jeavons",
+        "eyelid-myoclonus",
+        "eye-closure",
+        "photosensitive",
+        "photic"
+      ],
+      "syndromeIds": ["jeavons"],
+      "patternIds": ["pattern_three_hz_gsw", "pattern_polyspike_wave"],
+      "patient": {
+        "ageYears": 7,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Rhythmic eyelid jerking with eye closure and brief staring spells",
+      "history": {
+        "eventDescription": "7-year-old child with rhythmic eyelid jerking (eyelid myoclonus) that occurs with eye closure. Brief staring spells (3-6 seconds) also occur. Events are triggered by eye closure, photic stimulation, and bright lights. Normal development.",
+        "lastEventTiming": "Events occur multiple times daily",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Normal background for age",
+        "pdrHz": "9 Hz",
+        "epileptiform": "Generalized 3-4 Hz spike-and-wave or polyspike-and-wave, triggered by eye closure and photic stimulation",
+        "focalFindings": "None",
+        "activations": {
+          "hv": "done",
+          "photic": "Highly photosensitive (90-95% yield) - eye closure during IPS may trigger events",
+          "sleep": "Not recorded"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0010-step1",
+          "type": "recording-strategy",
+          "prompt": "Which activation procedures are MOST critical for this patient?",
+          "options": [
+            "Hyperventilation only",
+            "Photic stimulation and eye closure testing (CRITICAL)",
+            "Sleep deprivation only",
+            "Awake recording only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Photic stimulation and eye closure testing are CRITICAL for Jeavons - the syndrome is highly photosensitive (90-95% yield) and eye closure triggers events. Eye closure during photic stimulation may enhance response."
+        },
+        {
+          "stepId": "case-0010-step2",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows eyelid myoclonus with eye closure and generalized spike-and-wave triggered by photic stimulation. What is the most likely diagnosis?",
+          "options": [
+            "Childhood Absence Epilepsy",
+            "Jeavons Syndrome (Absence with Eyelid Myoclonus)",
+            "Juvenile Myoclonic Epilepsy",
+            "Lennox-Gastaut Syndrome"
+          ],
+          "answerIndex": 1,
+          "explanation": "Eyelid myoclonus with eye closure, combined with highly photosensitive generalized spike-and-wave, is characteristic of Jeavons Syndrome (Absence with Eyelid Myoclonus). Eye closure triggers events and photic stimulation is highly effective (90-95% yield)."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: 3 Hz Generalized Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        },
+        {
+          "label": "Pattern: Polyspike-and-Wave",
+          "to": "/patterns/pattern_polyspike_wave"
+        },
+        {
+          "label": "Syndrome: Jeavons Syndrome",
+          "to": "/syndromes/jeavons"
+        }
+      ]
+    },
+    {
+      "id": "case-0011",
+      "title": "Frontal Lobe Epilepsy - Brief Nocturnal Seizures",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "adult",
+        "fle",
+        "frontal",
+        "nocturnal",
+        "brief-seizures",
+        "sleep"
+      ],
+      "syndromeIds": ["fle"],
+      "patternIds": ["pattern_focal_spikes_frontal", "pattern_pdr"],
+      "patient": {
+        "ageYears": 25,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Brief nocturnal seizures with hypermotor behavior and vocalizations",
+      "history": {
+        "eventDescription": "25-year-old adult with brief nocturnal seizures characterized by hypermotor behavior, vocalizations, and bilateral movements. Seizures are very brief (seconds to <1 minute) and occur during sleep. Normal daytime function.",
+        "lastEventTiming": "Events occur during sleep, multiple times per month",
+        "comorbidities": [],
+        "medications": ["Carbamazepine"]
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "sleep"
+        ],
+        "background": "Normal background for age",
+        "pdrHz": "10 Hz",
+        "epileptiform": "Frontal spikes/sharp waves, activated by sleep. Ictal: Focal onset in frontal region, may show fast activity (beta/gamma) or rhythmic patterns",
+        "focalFindings": "Frontal spikes/sharp waves (F3, F4, Fz, F7, F8), activated by sleep",
+        "activations": {
+          "hv": "not-done",
+          "photic": "No photoparoxysmal response",
+          "sleep": "Recorded - frontal spikes activated by sleep (70-80% yield)"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0011-step1",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows frontal spikes activated by sleep, with brief nocturnal seizures showing hypermotor behavior. What is the most likely diagnosis?",
+          "options": [
+            "Temporal Lobe Epilepsy",
+            "Frontal Lobe Epilepsy",
+            "Benign Rolandic Epilepsy",
+            "Juvenile Myoclonic Epilepsy"
+          ],
+          "answerIndex": 1,
+          "explanation": "Frontal spikes activated by sleep, combined with brief nocturnal seizures showing hypermotor behavior and vocalizations, is characteristic of Frontal Lobe Epilepsy. FLE seizures are often brief and may show fast activity (beta/gamma)."
+        },
+        {
+          "stepId": "case-0011-step2",
+          "type": "recording-strategy",
+          "prompt": "Which recording strategy is most effective for this patient?",
+          "options": [
+            "Awake recording only",
+            "Sleep recording (70-80% yield)",
+            "Hyperventilation only",
+            "Photic stimulation only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sleep recording is effective for FLE (70-80% yield) - frontal spikes are activated by sleep. Sleep deprivation may also increase yield. Ictal recording during sleep is critical for capturing seizures."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Focal Spikes (Frontal)",
+          "to": "/patterns/pattern_focal_spikes_frontal"
+        },
+        {
+          "label": "Syndrome: Frontal Lobe Epilepsy",
+          "to": "/syndromes/fle"
+        }
+      ]
+    },
+    {
+      "id": "case-0012",
+      "title": "Doose Syndrome (MAE) - Myoclonic-Astatic Seizures",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "pediatrics",
+        "doose",
+        "mae",
+        "myoclonic-astatic",
+        "drop-attacks",
+        "variable-prognosis"
+      ],
+      "syndromeIds": ["doose_mae"],
+      "patternIds": ["pattern_polyspike_wave", "pattern_three_hz_gsw"],
+      "patient": {
+        "ageYears": 3,
+        "sex": "unspecified",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Myoclonic jerks followed by drop attacks and atypical absence seizures",
+      "history": {
+        "eventDescription": "3-year-old child with myoclonic-astatic seizures (myoclonic jerk immediately followed by atonic drop - drop attacks). Also has atypical absence seizures. Normal neurological exam initially. Variable course - may remit or evolve to LGS.",
+        "lastEventTiming": "Multiple daily events",
+        "comorbidities": [],
+        "medications": ["Valproate"]
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "sleep"
+        ],
+        "background": "Normal or mildly abnormal background",
+        "pdrHz": "8 Hz",
+        "epileptiform": "Generalized spike-and-wave or polyspike-and-wave (2-4 Hz) during myoclonic-astatic seizures",
+        "focalFindings": "Generalized patterns",
+        "activations": {
+          "hv": "done",
+          "photic": "No photoparoxysmal response",
+          "sleep": "Recorded"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0012-step1",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows myoclonic-astatic seizures (myoclonic jerk followed by atonic drop). What is the most likely diagnosis?",
+          "options": [
+            "Juvenile Myoclonic Epilepsy",
+            "Doose Syndrome (Myoclonic-Astatic Epilepsy - MAE)",
+            "Lennox-Gastaut Syndrome",
+            "Benign Myoclonic Epilepsy of Infancy"
+          ],
+          "answerIndex": 1,
+          "explanation": "Myoclonic-astatic seizures (myoclonic jerk immediately followed by atonic drop) are characteristic of Doose Syndrome (MAE). The syndrome has variable prognosis - may remit by age 5-10 years or evolve to LGS."
+        },
+        {
+          "stepId": "case-0012-step2",
+          "type": "clinical-correlation",
+          "prompt": "Which medication should be AVOIDED in this syndrome?",
+          "options": [
+            "Valproate",
+            "Lamotrigine",
+            "Carbamazepine (may worsen seizures - AED-induced seizure worsening)",
+            "Levetiracetam"
+          ],
+          "answerIndex": 2,
+          "explanation": "Carbamazepine should be AVOIDED in Doose Syndrome - it may worsen seizures (AED-induced seizure worsening). Valproate, lamotrigine, and ethosuximide are preferred treatments."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Polyspike-and-Wave",
+          "to": "/patterns/pattern_polyspike_wave"
+        },
+        {
+          "label": "Pattern: 3 Hz Generalized Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        },
+        {
+          "label": "Syndrome: Doose Syndrome (MAE)",
+          "to": "/syndromes/doose_mae"
+        }
+      ]
+    },
+    {
+      "id": "case-0013",
+      "title": "Ohtahara Syndrome - Burst-Suppression with Tonic Seizures",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "neonatal",
+        "infant",
+        "ohtahara",
+        "burst-suppression",
+        "tonic-seizures",
+        "early-onset"
+      ],
+      "syndromeIds": ["ohtahara"],
+      "patternIds": ["pattern_burst_suppression"],
+      "patient": {
+        "ageYears": 0.05,
+        "sex": "unspecified",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Burst-suppression pattern with frequent tonic seizures in first weeks of life",
+      "history": {
+        "eventDescription": "2-week-old neonate with burst-suppression pattern on EEG and frequent tonic seizures. Onset in first few days of life. Severe developmental delay. Pattern is continuous (present in both wake and sleep).",
+        "lastEventTiming": "Frequent daily events",
+        "comorbidities": ["Severe developmental delay"],
+        "medications": ["ACTH", "Vigabatrin"]
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "sleep"
+        ],
+        "background": "Burst-suppression pattern - alternating bursts of high-amplitude activity and suppression",
+        "pdrHz": "Not applicable (neonate)",
+        "epileptiform": "Burst-suppression pattern, continuous (wake and sleep). Tonic seizures show bursts or electrodecremental pattern.",
+        "focalFindings": "Burst-suppression pattern, generalized",
+        "activations": {
+          "hv": "not-done",
+          "photic": "Not performed",
+          "sleep": "Recorded - burst-suppression continuous (wake and sleep)"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0013-step1",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows burst-suppression pattern that is continuous (present in both wake and sleep) with tonic seizures. What is the most likely diagnosis?",
+          "options": [
+            "Normal neonatal trace alternant",
+            "Ohtahara Syndrome (Early Infantile Epileptic Encephalopathy)",
+            "Early Myoclonic Encephalopathy (EME)",
+            "West Syndrome"
+          ],
+          "answerIndex": 1,
+          "explanation": "Burst-suppression pattern that is continuous (present in both wake and sleep) with tonic seizures is characteristic of Ohtahara Syndrome. This distinguishes it from normal neonatal trace alternant (sleep only) and EME (myoclonic seizures, not tonic)."
+        },
+        {
+          "stepId": "case-0013-step2",
+          "type": "recording-strategy",
+          "prompt": "Which recording strategy is critical for this patient?",
+          "options": [
+            "Awake recording only",
+            "Both awake and sleep recording (burst-suppression is continuous)",
+            "Sleep recording only",
+            "Hyperventilation only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Both awake and sleep recording are critical - the burst-suppression pattern is continuous (present in both wake and sleep), distinguishing it from normal neonatal trace alternant (sleep only). This is a key diagnostic feature."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Burst Suppression",
+          "to": "/patterns/pattern_burst_suppression"
+        },
+        {
+          "label": "Syndrome: Ohtahara Syndrome",
+          "to": "/syndromes/ohtahara"
+        }
+      ]
+    },
+    {
+      "id": "case-0014",
+      "title": "Benign Myoclonic Epilepsy of Infancy (BMEI)",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "infant",
+        "bmei",
+        "myoclonic",
+        "benign",
+        "normal-development"
+      ],
+      "syndromeIds": ["bmei"],
+      "patternIds": ["pattern_polyspike_wave"],
+      "patient": {
+        "ageYears": 1.5,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Brief myoclonic jerks, normal development",
+      "history": {
+        "eventDescription": "18-month-old infant with brief myoclonic jerks (1-3 seconds) occurring during wakefulness. No GTC seizures, no absence seizures. Normal neurological examination and normal development. Events are infrequent.",
+        "lastEventTiming": "Events occur occasionally",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Normal background (characteristic)",
+        "pdrHz": "Not well-formed (infant)",
+        "epileptiform": "Generalized spike-and-wave or polyspike-and-wave during myoclonic jerks. Normal background (distinguishes from Dravet).",
+        "focalFindings": "Generalized patterns during myoclonus",
+        "activations": {
+          "hv": "not-done",
+          "photic": "May be photosensitive (20-40% yield)",
+          "sleep": "Not recorded"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0014-step1",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows myoclonic seizures only with normal background and normal development. What is the most likely diagnosis?",
+          "options": [
+            "Dravet Syndrome",
+            "Benign Myoclonic Epilepsy of Infancy (BMEI)",
+            "Juvenile Myoclonic Epilepsy",
+            "Doose Syndrome (MAE)"
+          ],
+          "answerIndex": 1,
+          "explanation": "Myoclonic seizures only with normal background and normal development is characteristic of BMEI. This distinguishes it from Dravet (abnormal background, developmental delay, multiple seizure types) and JME (later onset, GTC seizures). BMEI has excellent prognosis and remits by age 3-5 years."
+        },
+        {
+          "stepId": "case-0014-step2",
+          "type": "clinical-correlation",
+          "prompt": "What is the prognosis for this syndrome?",
+          "options": [
+            "Poor - persistent seizures, developmental delay",
+            "Excellent - remits by age 3-5 years, normal development",
+            "Variable - may remit or evolve to LGS",
+            "Good but requires lifelong medication"
+          ],
+          "answerIndex": 1,
+          "explanation": "BMEI has excellent prognosis - remits by age 3-5 years with normal development and no cognitive impairment. This is a benign condition, distinguishing it from severe myoclonic epilepsies like Dravet."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Polyspike-and-Wave",
+          "to": "/patterns/pattern_polyspike_wave"
+        },
+        {
+          "label": "Syndrome: Benign Myoclonic Epilepsy of Infancy",
+          "to": "/syndromes/bmei"
+        }
+      ]
+    },
+    {
+      "id": "case-0015",
+      "title": "Landau-Kleffner Syndrome - Acquired Aphasia",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "pediatrics",
+        "landau-kleffner",
+        "eses",
+        "acquired-aphasia",
+        "language-loss",
+        "sleep"
+      ],
+      "syndromeIds": ["landau_kleffner"],
+      "patternIds": ["pattern_three_hz_gsw"],
+      "patient": {
+        "ageYears": 5,
+        "sex": "unspecified",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Acquired language loss (aphasia) and infrequent seizures",
+      "history": {
+        "eventDescription": "5-year-old child with acquired aphasia (language loss) - previously normal language development. Verbal auditory agnosia (inability to understand spoken language) and expressive language loss. Seizures are infrequent or absent (paradoxical - seizures rare but EEG shows ESES). Behavioral problems also present.",
+        "lastEventTiming": "Seizures occur infrequently",
+        "comorbidities": ["Acquired aphasia", "Behavioral problems"],
+        "medications": ["Clobazam", "Valproate"]
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "sleep"
+        ],
+        "background": "Awake: may show focal or multifocal spikes (often temporal or perisylvian). Sleep: ESES pattern - continuous spike-and-wave during slow-wave sleep (≥85% of NREM sleep)",
+        "pdrHz": "8 Hz",
+        "epileptiform": "ESES pattern - continuous spike-and-wave during slow-wave sleep (≥85% of NREM sleep), often maximal in temporal or perisylvian regions. Pattern disappears in REM sleep and wakefulness.",
+        "focalFindings": "Temporal/perisylvian emphasis during sleep",
+        "activations": {
+          "hv": "not-done",
+          "photic": "No photoparoxysmal response",
+          "sleep": "Recorded - ESES pattern ONLY in NREM sleep (≥85% of slow-wave sleep), disappears in REM and wake"
+        },
+        "artifacts": "Minimal artifacts"
+      },
+      "resources": [],
+      "taskFlow": [
+        {
+          "stepId": "case-0015-step1",
+          "type": "pattern-recognition",
+          "prompt": "The EEG shows ESES pattern (continuous spike-and-wave during NREM sleep) with acquired aphasia (language loss). What is the most likely diagnosis?",
+          "options": [
+            "ESES/CSWS without aphasia",
+            "Landau-Kleffner Syndrome (ESES with acquired aphasia)",
+            "Autism spectrum disorder",
+            "Benign Rolandic Epilepsy"
+          ],
+          "answerIndex": 1,
+          "explanation": "ESES pattern + ACQUIRED APHASIA (language loss) is the defining feature of Landau-Kleffner Syndrome. The acquired aphasia distinguishes LKS from other ESES cases. Paradoxical: seizures may be infrequent or absent, but EEG shows continuous spike-and-wave during sleep."
+        },
+        {
+          "stepId": "case-0015-step2",
+          "type": "recording-strategy",
+          "prompt": "Which recording strategy is MOST critical for this patient?",
+          "options": [
+            "Awake recording only",
+            "Sleep recording with full sleep cycle (NREM and REM) - CRITICAL",
+            "Hyperventilation only",
+            "Photic stimulation only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Sleep recording with full sleep cycle (NREM and REM) is CRITICAL - ESES pattern is ONLY seen during NREM sleep (≥85% of slow-wave sleep) and disappears in REM sleep and wakefulness. Must record full sleep cycle to see this pattern."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: 3 Hz Generalized Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        },
+        {
+          "label": "Syndrome: Landau-Kleffner Syndrome",
+          "to": "/syndromes/landau_kleffner"
+        },
+        {
+          "label": "Syndrome: ESES/CSWS",
+          "to": "/syndromes/eses_csws"
+        }
+      ]
+    },
+    {
+      "id": "case-0016",
+      "title": "HIPAA Violation: Unauthorized Discussion",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-4"
+      ],
+      "tags": [
+        "hipaa",
+        "confidentiality",
+        "ethics",
+        "professionalism",
+        "patient-privacy"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 35,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG for evaluation of possible seizures",
+      "history": {
+        "eventDescription": "Patient reports episodes of staring and confusion",
+        "lastEventTiming": "Several weeks ago",
+        "comorbidities": ["None"],
+        "medications": ["None"]
+      },
+      "eegSummary": {
+        "state": ["wake", "drowsy"],
+        "background": "Normal posterior dominant rhythm at 10 Hz, reactive",
+        "pdrHz": "10 Hz",
+        "epileptiform": "No epileptiform discharges",
+        "focalFindings": "No focal slowing or asymmetry",
+        "activation": "Hyperventilation and photic stimulation performed, no activation",
+        "artifacts": "Minimal muscle artifact during wakefulness"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Identify the Ethical Issue",
+          "description": "During the EEG, the technologist discusses the patient's case with a colleague in the hallway where other patients and visitors can overhear. The discussion includes the patient's name, symptoms, and preliminary findings.",
+          "question": "What ethical principle is being violated?",
+          "options": [
+            "Patient autonomy",
+            "HIPAA confidentiality and patient privacy",
+            "Scope of practice",
+            "Quality assurance"
+          ],
+          "correctAnswer": 1,
+          "explanation": "HIPAA requires patient information to be discussed only with authorized personnel in appropriate settings. Discussing patient information in a public hallway violates confidentiality and patient privacy."
+        },
+        {
+          "step": 2,
+          "title": "Determine Appropriate Action",
+          "description": "The technologist realizes the discussion was inappropriate and wants to address the situation.",
+          "question": "What should the technologist do?",
+          "options": [
+            "Ignore it since no harm was done",
+            "Document the incident, report through appropriate channels, and complete HIPAA training",
+            "Only apologize to the patient",
+            "Continue with the study without addressing it"
+          ],
+          "correctAnswer": 1,
+          "explanation": "HIPAA violations must be reported through appropriate channels. The technologist should document the incident, report it to the supervisor/privacy officer, and complete additional HIPAA training. This ensures compliance and prevents future violations."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain IV: Ethics, Confidentiality & Professionalism",
+          "to": "/workflow/domain-4/d4-ethics-confidentiality-professionalism"
+        },
+        {
+          "label": "Study Guide: Ethics & Confidentiality",
+          "to": "/study-guides/Domain-IV/D4-03-Ethics-Confidentiality-Professionalism.pdf"
+        }
+      ]
+    },
+    {
+      "id": "case-0017",
+      "title": "Patient Safety: Equipment Malfunction",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-4"
+      ],
+      "tags": [
+        "patient-safety",
+        "electrical-safety",
+        "equipment-malfunction",
+        "quality-assurance",
+        "emergency-response"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 8,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG for evaluation of staring episodes",
+      "history": {
+        "eventDescription": "Episodes of staring and unresponsiveness",
+        "lastEventTiming": "Recent",
+        "comorbidities": ["None"],
+        "medications": ["None"]
+      },
+      "eegSummary": {
+        "state": ["wake", "drowsy", "sleep"],
+        "background": "Normal age-appropriate background",
+        "pdrHz": "9 Hz",
+        "epileptiform": "No epileptiform discharges",
+        "focalFindings": "No focal findings",
+        "activation": "Hyperventilation and photic stimulation performed",
+        "artifacts": "None"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Identify Safety Issue",
+          "description": "During electrode application, the technologist notices a small spark when connecting an electrode cable. The cable appears intact but the spark is concerning.",
+          "question": "What is the MOST appropriate immediate action?",
+          "options": [
+            "Continue with the study if the spark was minor",
+            "Stop immediately, disconnect equipment, tag as out of service, and use backup equipment",
+            "Check if the patient was harmed first",
+            "Reduce sensitivity settings and continue"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Electrical safety is paramount. Any sign of electrical malfunction (sparks, damaged cables) requires immediate action: stop the study, disconnect equipment, tag as out of service, notify supervisor, and use backup equipment. Patient safety overrides diagnostic yield."
+        },
+        {
+          "step": 2,
+          "title": "Document and Report",
+          "description": "After ensuring patient safety and switching to backup equipment, the technologist needs to document the incident.",
+          "question": "What should be documented?",
+          "options": [
+            "Only the equipment issue",
+            "The equipment malfunction, actions taken, patient safety measures, and notification of supervisor",
+            "Nothing if no patient harm occurred",
+            "Only if the patient complains"
+          ],
+          "correctAnswer": 1,
+          "explanation": "All safety incidents must be fully documented: the malfunction, immediate actions taken, patient safety measures, equipment tagged out, backup equipment used, and supervisor notification. Complete documentation protects patients and facilities."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain IV: Patient Safety & Professional Standards",
+          "to": "/workflow/domain-4/d4-patient-safety-standards"
+        },
+        {
+          "label": "Domain IV: Quality Assurance & Equipment Maintenance",
+          "to": "/workflow/domain-4/d4-quality-assurance-equipment-maintenance"
+        }
+      ]
+    },
+    {
+      "id": "case-0018",
+      "title": "Scope of Practice: Clinical Interpretation",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-4"
+      ],
+      "tags": [
+        "scope-of-practice",
+        "documentation",
+        "ethics",
+        "professionalism",
+        "technical-report"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_three_hz_gsw"
+      ],
+      "patient": {
+        "ageYears": 12,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "EEG for evaluation of absence seizures",
+      "history": {
+        "eventDescription": "Episodes of staring and unresponsiveness, triggered by hyperventilation",
+        "lastEventTiming": "Frequent, multiple times per day",
+        "comorbidities": ["None"],
+        "medications": ["Ethosuximide"]
+      },
+      "eegSummary": {
+        "state": ["wake", "drowsy"],
+        "background": "Normal posterior dominant rhythm at 10 Hz",
+        "pdrHz": "10 Hz",
+        "epileptiform": "Generalized 3 Hz spike-and-wave discharges, activated by hyperventilation",
+        "focalFindings": "No focal findings",
+        "activation": "Hyperventilation activated generalized 3 Hz spike-and-wave discharges",
+        "artifacts": "Minimal"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Identify Scope of Practice Violation",
+          "description": "The technologist writes in the technical report: 'This EEG is consistent with childhood absence epilepsy. The patient has absence seizures.'",
+          "question": "What is wrong with this documentation?",
+          "options": [
+            "Nothing - technologists can diagnose",
+            "Technologists should describe patterns objectively, not diagnose conditions",
+            "The terminology is incorrect",
+            "Only physicians can document findings"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Technologists document objective observations using standardized terminology. They describe patterns (e.g., 'generalized 3 Hz spike-and-wave discharges') but do NOT diagnose conditions (e.g., 'childhood absence epilepsy'). Scope of practice: observe and document, do not interpret clinically."
+        },
+        {
+          "step": 2,
+          "title": "Correct Documentation",
+          "description": "The technologist needs to rewrite the report using appropriate terminology.",
+          "question": "What is the CORRECT way to document these findings?",
+          "options": [
+            "\"Generalized 3 Hz spike-and-wave discharges, activated by hyperventilation. No focal findings.\"",
+            "\"The patient has absence epilepsy with 3 Hz spike-and-wave\"",
+            "\"EEG shows seizure disorder\"",
+            "\"Abnormal EEG consistent with epilepsy\""
+          ],
+          "correctAnswer": 0,
+          "explanation": "Correct documentation uses objective, standardized terminology to describe observable patterns: 'Generalized 3 Hz spike-and-wave discharges, activated by hyperventilation. No focal findings.' Avoid clinical diagnoses, interpretations, or conclusions."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain IV: EEG Documentation & Reporting Standards",
+          "to": "/workflow/domain-4/d4-documentation-reporting"
+        },
+        {
+          "label": "Pattern: 3 Hz Generalized Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        }
+      ]
+    },
+    {
+      "id": "case-0019",
+      "title": "Emergency Response: Status Epilepticus",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-4"
+      ],
+      "tags": [
+        "emergency-response",
+        "patient-safety",
+        "seizure-response",
+        "bls",
+        "status-epilepticus"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 25,
+        "sex": "male",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Continuous EEG monitoring in ICU",
+      "history": {
+        "eventDescription": "Patient admitted with altered mental status, continuous EEG ordered",
+        "lastEventTiming": "Ongoing",
+        "comorbidities": ["Traumatic brain injury"],
+        "medications": ["Levetiracetam", "Lorazepam"]
+      },
+      "eegSummary": {
+        "state": ["wake", "drowsy"],
+        "background": "Diffuse slowing, 4-6 Hz theta range",
+        "pdrHz": "Not well-formed",
+        "epileptiform": "Generalized periodic discharges",
+        "focalFindings": "Diffuse slowing",
+        "activation": "Not applicable",
+        "artifacts": "Minimal"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Recognize Emergency",
+          "description": "During continuous EEG monitoring, the technologist observes on the EEG screen a pattern that suggests nonconvulsive status epilepticus. The patient appears unresponsive but is not convulsing.",
+          "question": "What is the FIRST priority?",
+          "options": [
+            "Continue monitoring to confirm the pattern",
+            "Ensure patient safety, initiate emergency response per protocol, and notify the physician immediately",
+            "Wait for the physician's routine rounds",
+            "Document it in the report only"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Patient safety is the first priority. If nonconvulsive status epilepticus is suspected, ensure patient safety, initiate emergency response per institutional protocol, and notify the physician immediately. Do not wait - status epilepticus is a medical emergency."
+        },
+        {
+          "step": 2,
+          "title": "Maintain Recording During Emergency",
+          "description": "While emergency response is activated, the technologist should:",
+          "question": "What should the technologist do with the EEG recording?",
+          "options": [
+            "Stop the recording to focus on patient care",
+            "Continue recording if it can be done safely - the data is valuable for treatment",
+            "Disconnect all electrodes",
+            "Only record if the physician requests it"
+          ],
+          "correctAnswer": 1,
+          "explanation": "If recording can be maintained safely during emergency response, continue recording. The EEG data during status epilepticus is valuable for treatment decisions. However, patient safety always comes first - if maintaining recording compromises safety, prioritize patient care."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain IV: Patient Safety & Professional Standards",
+          "to": "/workflow/domain-4/d4-patient-safety-standards"
+        },
+        {
+          "label": "Domain IV: Emergency Response & BLS",
+          "to": "/workflow/domain-4/d4-s4"
+        }
+      ]
+    },
+    {
+      "id": "case-0020",
+      "title": "Quality Assurance: Calibration Failure",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-4"
+      ],
+      "tags": [
+        "quality-assurance",
+        "equipment-calibration",
+        "equipment-maintenance",
+        "troubleshooting",
+        "signal-accuracy"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 45,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG for evaluation of headaches",
+      "history": {
+        "eventDescription": "Recurrent headaches, EEG ordered to rule out seizures",
+        "lastEventTiming": "Ongoing",
+        "comorbidities": ["Migraine"],
+        "medications": ["Topiramate"]
+      },
+      "eegSummary": {
+        "state": ["wake", "drowsy"],
+        "background": "Normal posterior dominant rhythm at 9 Hz",
+        "pdrHz": "9 Hz",
+        "epileptiform": "No epileptiform discharges",
+        "focalFindings": "No focal findings",
+        "activation": "Hyperventilation and photic stimulation performed",
+        "artifacts": "None"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Identify Calibration Issue",
+          "description": "Before starting the study, the technologist performs routine calibration check and notices that the calibration signal amplitude is inconsistent across channels - some channels show 50 μV, others show 45 μV or 55 μV when they should all show 50 μV.",
+          "question": "What should the technologist do?",
+          "options": [
+            "Proceed with the study and note the calibration issue in the report",
+            "Tag equipment as out of service, notify supervisor, and use backup equipment",
+            "Adjust settings manually to compensate",
+            "Ignore if the difference is small"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Calibration inconsistencies indicate equipment malfunction and affect signal accuracy. Equipment with calibration problems must be taken out of service immediately, supervisor notified, and backup equipment used. Never use malfunctioning equipment or attempt to compensate with settings."
+        },
+        {
+          "step": 2,
+          "title": "Document Equipment Issue",
+          "description": "After switching to backup equipment and completing the study, the technologist needs to document the equipment issue.",
+          "question": "What should be documented?",
+          "options": [
+            "Only that backup equipment was used",
+            "The calibration failure, equipment tagged out, backup equipment used, supervisor notification, and study completion",
+            "Nothing if the study was completed successfully",
+            "Only if the patient asks about it"
+          ],
+          "correctAnswer": 1,
+          "explanation": "All equipment issues must be fully documented: the calibration failure, equipment tagged out of service, backup equipment used, supervisor notification, and successful study completion. This ensures quality assurance, equipment maintenance tracking, and regulatory compliance."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain IV: Quality Assurance & Equipment Maintenance",
+          "to": "/workflow/domain-4/d4-quality-assurance-equipment-maintenance"
+        }
+      ]
+    },
+    {
+      "id": "case-0021",
+      "title": "High Impedance Troubleshooting - Multiple Electrodes",
+      "difficulty": "medium",
+      "domainFocus": ["domain-2"],
+      "tags": ["impedance", "electrodes", "troubleshooting", "signal-quality", "instrumentation"],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 45,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG for evaluation of headaches",
+      "history": {
+        "eventDescription": "Patient reports frequent headaches over past 3 months",
+        "lastEventTiming": "2 days ago",
+        "comorbidities": ["Hypertension"],
+        "medications": ["Lisinopril"]
+      },
+      "eegSummary": {
+        "state": ["wake"],
+        "background": "Unable to assess due to artifacts",
+        "pdrHz": "Unable to assess",
+        "epileptiform": "Unable to assess",
+        "focalFindings": "Unable to assess",
+        "activation": "Not performed",
+        "artifacts": "High impedance artifacts in multiple electrodes"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Identify High Impedance Problem",
+          "description": "After applying electrodes, the technologist checks impedance and finds that 8 electrodes (Fp1, Fp2, F3, F4, C3, C4, P3, P4) show impedance >10 kΩ, while other electrodes are <2 kΩ.",
+          "question": "What should the technologist do?",
+          "options": [
+            "Proceed with recording and document high impedance",
+            "Re-prepare all affected electrodes systematically (clean, abrade, reapply paste/gel)",
+            "Increase amplifier gain to compensate",
+            "Use different montage to avoid affected electrodes"
+          ],
+          "correctAnswer": 1,
+          "explanation": "High impedance in multiple electrodes requires systematic re-preparation: clean skin thoroughly, abrade if necessary, reapply paste/gel. Do not compensate with settings - fix the source. High impedance causes artifacts, noise, and reduced signal quality."
+        },
+        {
+          "step": 2,
+          "title": "Verify Impedance Resolution",
+          "description": "After re-preparing electrodes, the technologist re-checks impedance and finds all electrodes are now <3 kΩ and balanced.",
+          "question": "What should the technologist do next?",
+          "options": [
+            "Start recording immediately",
+            "Verify impedance is stable, then start recording",
+            "Re-prepare again to get <1 kΩ",
+            "Document and proceed regardless"
+          ],
+          "correctAnswer": 1,
+          "explanation": "After re-preparation, verify impedance is low (<5 kΩ, ideally <2 kΩ) and balanced before starting recording. Stable, low impedance ensures optimal signal quality. <3 kΩ is acceptable for routine EEG."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain II: Electrodes & Impedance",
+          "to": "/workflow/domain-2/d2-electrodes-impedance"
+        },
+        {
+          "label": "Domain II: Artifacts & Troubleshooting",
+          "to": "/workflow/domain-2/d2-s5"
+        }
+      ]
+    },
+    {
+      "id": "case-0022",
+      "title": "Montage Selection - Phase Reversal Localization",
+      "difficulty": "hard",
+      "domainFocus": ["domain-2"],
+      "tags": ["montages", "phase-reversal", "localization", "bipolar", "referential", "instrumentation"],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 28,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "EEG for evaluation of possible seizures",
+      "history": {
+        "eventDescription": "Patient reports episodes of staring and unresponsiveness",
+        "lastEventTiming": "1 week ago",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": ["wake", "drowsy", "sleep"],
+        "background": "Normal posterior dominant rhythm at 10 Hz",
+        "pdrHz": "10 Hz",
+        "epileptiform": "Focal spikes in left temporal region",
+        "focalFindings": "Left temporal spikes with phase reversal at T3",
+        "activation": "Hyperventilation and sleep performed",
+        "artifacts": "None"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Initial Montage Observation",
+          "description": "In referential montage (A1+A2 linked ears), the technologist observes sharp waves appearing in T3 channel. The activity appears equal in amplitude in T3 compared to surrounding channels.",
+          "question": "What should the technologist do next?",
+          "options": [
+            "Document focal activity at T3 based on referential montage only",
+            "Switch to bipolar montage to confirm localization with phase reversal",
+            "Change reference to Cz",
+            "Increase sensitivity"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Referential montage shows the field of activity but doesn't confirm localization. Bipolar montage with phase reversal confirms the exact electrode location. Always compare montages for accurate localization."
+        },
+        {
+          "step": 2,
+          "title": "Phase Reversal Confirmation",
+          "description": "In bipolar longitudinal montage (Fp1-F7, F7-T3, T3-T5, T5-O1), the technologist observes clear phase reversal at T3 - the spike appears negative in F7-T3 and positive in T3-T5.",
+          "question": "What does this phase reversal indicate?",
+          "options": [
+            "Generalized activity",
+            "Focal activity localized at T3 electrode (left mid-temporal)",
+            "Artifact",
+            "Reference contamination"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Phase reversal in bipolar montage indicates the electrode where the activity is localized. Negative in F7-T3 and positive in T3-T5 means the activity is at T3 (the common electrode). This confirms focal left temporal localization."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain II: Montages & Referencing",
+          "to": "/workflow/domain-2/d2-montages-referencing"
+        },
+        {
+          "label": "Domain II: Montages & Strategy During Recording",
+          "to": "/workflow/domain-2/d2-s3"
+        }
+      ]
+    },
+    {
+      "id": "case-0023",
+      "title": "Activation Procedures - Hyperventilation Response",
+      "difficulty": "medium",
+      "domainFocus": ["domain-2"],
+      "tags": ["activation", "hyperventilation", "protocol", "instrumentation"],
+      "syndromeIds": [],
+      "patternIds": ["pattern_three_hz_gsw"],
+      "patient": {
+        "ageYears": 12,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "EEG for evaluation of absence seizures",
+      "history": {
+        "eventDescription": "Teacher reports episodes of staring and unresponsiveness lasting 10-15 seconds",
+        "lastEventTiming": "3 days ago",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": ["wake"],
+        "background": "Normal posterior dominant rhythm at 9 Hz",
+        "pdrHz": "9 Hz",
+        "epileptiform": "Generalized 3 Hz spike-and-wave during hyperventilation",
+        "focalFindings": "No focal findings",
+        "activation": "Hyperventilation activated generalized spike-and-wave",
+        "artifacts": "None"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Hyperventilation Technique",
+          "description": "The technologist begins hyperventilation activation. The patient is instructed to breathe deeply and regularly.",
+          "question": "What is the appropriate hyperventilation technique?",
+          "options": [
+            "Rapid, shallow breathing for 1 minute",
+            "Deep, regular breathing at 20-30 breaths per minute for 3-5 minutes or until activation occurs",
+            "Patient's choice of breathing pattern",
+            "As fast as possible for 2 minutes"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Hyperventilation should be deep, regular breathing at 20-30 breaths per minute for 3-5 minutes or until activation occurs. This creates hypocapnia (low CO2) and cerebral vasoconstriction, which can activate epileptiform discharges, particularly in absence epilepsy."
+        },
+        {
+          "step": 2,
+          "title": "Hyperventilation Response",
+          "description": "After 2 minutes of hyperventilation, the technologist observes generalized 3 Hz spike-and-wave discharges on the EEG, correlating with clinical staring episodes.",
+          "question": "What should the technologist do?",
+          "options": [
+            "Continue hyperventilation for full 5 minutes regardless",
+            "Continue hyperventilation for a few more seconds to document the pattern, then stop and allow patient to recover",
+            "Stop immediately and skip documentation",
+            "Increase hyperventilation rate"
+          ],
+          "correctAnswer": 1,
+          "explanation": "When activation occurs, continue for a few more seconds to document the pattern, then stop hyperventilation and allow patient to recover. Document the response, timing, and clinical correlation. The build-up will gradually resolve over 1-2 minutes as CO2 returns to normal."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain II: Activation Procedures",
+          "to": "/workflow/domain-2/d2-s4"
+        },
+        {
+          "label": "Pattern: 3 Hz Generalized Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        }
+      ]
+    },
+    {
+      "id": "case-0024",
+      "title": "Artifact Troubleshooting - 60 Hz Line Noise",
+      "difficulty": "medium",
+      "domainFocus": ["domain-2"],
+      "tags": ["artifacts", "60hz", "troubleshooting", "line-noise", "instrumentation"],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 35,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG for evaluation",
+      "history": {
+        "eventDescription": "Routine evaluation",
+        "lastEventTiming": "N/A",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": ["wake"],
+        "background": "Obscured by 60 Hz artifact",
+        "pdrHz": "Unable to assess",
+        "epileptiform": "Unable to assess",
+        "focalFindings": "Unable to assess",
+        "activation": "Not performed",
+        "artifacts": "60 Hz line noise in all channels"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Identify 60 Hz Artifact",
+          "description": "The technologist notices regular 60 Hz sinusoidal activity in all channels, obscuring the underlying EEG.",
+          "question": "What is the most likely cause?",
+          "options": [
+            "Brain activity",
+            "Electrical interference from power lines or unshielded equipment, possibly exacerbated by high electrode impedance",
+            "Muscle artifact",
+            "Eye movement"
+          ],
+          "correctAnswer": 1,
+          "explanation": "60 Hz line noise is caused by electrical interference from power lines or unshielded equipment. High electrode impedance increases susceptibility to 60 Hz interference. This is NOT brain activity - it's environmental electrical interference."
+        },
+        {
+          "step": 2,
+          "title": "Troubleshoot 60 Hz Artifact",
+          "description": "The technologist needs to eliminate the 60 Hz artifact.",
+          "question": "What should the technologist do?",
+          "options": [
+            "Use notch filter immediately",
+            "Check grounding, verify electrode impedance is low, eliminate sources (unshielded equipment, fluorescent lights), then use notch filter only if necessary",
+            "Increase amplifier gain",
+            "Change montage"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Eliminate 60 Hz at the source first: check grounding, verify low impedance (<5 kΩ), eliminate sources (unshielded equipment, fluorescent lights). Notch filter is last resort as it affects signals near 60 Hz. Do not compensate with settings - fix the source."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain II: Artifacts & Troubleshooting",
+          "to": "/workflow/domain-2/d2-s5"
+        },
+        {
+          "label": "Domain II: Electrodes & Impedance",
+          "to": "/workflow/domain-2/d2-electrodes-impedance"
+        }
+      ]
+    },
+    {
+      "id": "case-0025",
+      "title": "Special Protocols - ICU Continuous Monitoring",
+      "difficulty": "hard",
+      "domainFocus": ["domain-2"],
+      "tags": ["icu", "continuous-monitoring", "special-protocols", "ictal-patterns", "instrumentation"],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 55,
+        "sex": "male",
+        "context": "icu"
+      },
+      "chiefComplaint": "Continuous EEG monitoring for altered mental status",
+      "history": {
+        "eventDescription": "Patient with altered mental status, possible nonconvulsive status epilepticus",
+        "lastEventTiming": "Ongoing",
+        "comorbidities": ["Stroke", "Seizure disorder"],
+        "medications": ["Levetiracetam", "Phenytoin"]
+      },
+      "eegSummary": {
+        "state": ["unresponsive"],
+        "background": "Diffuse slowing, theta-delta range",
+        "pdrHz": "Absent",
+        "epileptiform": "Generalized periodic discharges (GPDs) at 1-2 Hz",
+        "focalFindings": "Generalized pattern",
+        "activation": "Not applicable",
+        "artifacts": "Minimal, well-controlled"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Recognize Ictal Pattern",
+          "description": "During continuous monitoring, the technologist observes rhythmic delta activity that evolves in frequency (starting at 2 Hz, increasing to 4 Hz) and amplitude (increasing over 30 seconds), with spread from frontal to generalized distribution.",
+          "question": "What does this pattern suggest?",
+          "options": [
+            "Normal sleep pattern",
+            "Ictal pattern (seizure activity) - evolution is characteristic of ictal patterns",
+            "Artifact",
+            "Normal background"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Ictal patterns evolve in frequency, amplitude, and distribution. Evolution is a key characteristic of ictal patterns. This requires immediate notification of the medical team as it suggests ongoing seizure activity (possibly nonconvulsive status epilepticus)."
+        },
+        {
+          "step": 2,
+          "title": "Notify Medical Team",
+          "description": "The technologist has identified an evolving ictal pattern suggesting seizure activity.",
+          "question": "What should the technologist do?",
+          "options": [
+            "Document and wait for routine review",
+            "Immediately notify the medical team (physician, nursing) of the ictal pattern",
+            "Continue monitoring without notification",
+            "Only notify if patient has clinical symptoms"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Ictal patterns require immediate notification of the medical team (physician, nursing). Nonconvulsive status epilepticus is a medical emergency requiring prompt treatment. Do not wait for routine review - notify immediately when ictal patterns are identified."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain II: Special Protocols (Neonatal/ICU/ECI)",
+          "to": "/workflow/domain-2/d2-s8"
+        },
+        {
+          "label": "Domain II: Event Monitoring & Emergency Response",
+          "to": "/workflow/domain-2/d2-s7"
+        }
+      ]
+    },
+    {
+      "id": "case-0026",
+      "title": "Middle Cerebral Artery (MCA) Stroke - Most Common Stroke",
+      "difficulty": "medium",
+      "domainFocus": ["domain-1", "domain-3"],
+      "tags": ["stroke", "mca", "neuroanatomy", "blood-supply", "focal-slowing", "aphasia"],
+      "syndromeIds": [],
+      "patternIds": ["pattern_focal_slowing"],
+      "patient": {
+        "ageYears": 68,
+        "sex": "male",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Acute onset right-sided weakness and speech difficulty",
+      "history": {
+        "eventDescription": "Patient presented with sudden onset right-sided weakness (face and arm > leg) and non-fluent speech. History of hypertension and atrial fibrillation.",
+        "lastEventTiming": "2 hours ago",
+        "comorbidities": ["Hypertension", "Atrial fibrillation", "Diabetes"],
+        "medications": ["Warfarin", "Metformin"]
+      },
+      "eegSummary": {
+        "state": ["wake", "drowsy"],
+        "background": "Focal polymorphic delta slowing over left frontal/temporal/parietal regions (F3, T3, P3)",
+        "pdrHz": "8-9 Hz (right hemisphere normal)",
+        "epileptiform": "None",
+        "focalFindings": "Focal slowing over left MCA territory (F3, F4, T3, T4, P3, P4) - consistent with acute MCA stroke",
+        "activation": "Not performed (acute stroke)",
+        "artifacts": "Minimal"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Recognize MCA Stroke Pattern",
+          "description": "The EEG shows focal polymorphic delta slowing over left frontal/temporal/parietal regions (F3, T3, P3). The patient has right-sided weakness (face/arm > leg) and non-fluent speech.",
+          "question": "What does this pattern suggest?",
+          "options": [
+            "Normal background",
+            "Acute left MCA stroke - focal slowing over MCA territory with contralateral face/arm weakness and aphasia",
+            "Temporal lobe epilepsy",
+            "Artifact"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Focal polymorphic delta slowing over left frontal/temporal/parietal regions (F3, T3, P3) with contralateral face/arm weakness and aphasia is characteristic of acute left MCA stroke. MCA is the most common stroke type and supplies lateral frontal, parietal, and temporal lobes."
+        },
+        {
+          "step": 2,
+          "title": "Localize the Stroke",
+          "description": "The EEG shows focal slowing over F3, T3, P3 (left hemisphere). The patient has Broca aphasia (non-fluent speech, preserved comprehension).",
+          "question": "Which MCA division is affected?",
+          "options": [
+            "Posterior MCA (Wernicke area)",
+            "Anterior MCA (Broca area) - anterior MCA supplies Broca area in left frontal lobe",
+            "Entire MCA (global aphasia)",
+            "Only temporal branch"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Broca aphasia (non-fluent speech, preserved comprehension) indicates anterior MCA stroke affecting Broca area (left frontal lobe). Posterior MCA affects Wernicke area (fluent aphasia with poor comprehension). Entire MCA causes global aphasia."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain I: Brain Structures & Functions - Blood Supply",
+          "to": "/workflow/domain-1/d1-brain-structures-functions"
+        },
+        {
+          "label": "Domain III: Focal Slowing Patterns",
+          "to": "/workflow/domain-3/d3-focal-slowing"
+        }
+      ]
+    },
+    {
+      "id": "case-0027",
+      "title": "Anterior Cerebral Artery (ACA) Stroke",
+      "difficulty": "hard",
+      "domainFocus": ["domain-1", "domain-3"],
+      "tags": ["stroke", "aca", "neuroanatomy", "blood-supply", "frontal-lobe", "urinary-incontinence"],
+      "syndromeIds": [],
+      "patternIds": ["pattern_focal_slowing"],
+      "patient": {
+        "ageYears": 72,
+        "sex": "female",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Acute onset left leg weakness and urinary incontinence",
+      "history": {
+        "eventDescription": "Patient presented with sudden onset left leg weakness (leg > arm > face), urinary incontinence, and behavioral changes (apathy, abulia). History of hypertension.",
+        "lastEventTiming": "4 hours ago",
+        "comorbidities": ["Hypertension", "Hyperlipidemia"],
+        "medications": ["Lisinopril", "Atorvastatin"]
+      },
+      "eegSummary": {
+        "state": ["wake"],
+        "background": "Focal polymorphic delta slowing over medial frontal regions (Fp1, Fp2, Fz)",
+        "pdrHz": "9 Hz (normal)",
+        "epileptiform": "None",
+        "focalFindings": "Focal slowing over medial frontal regions (Fp1, Fp2, Fz) - consistent with right ACA stroke",
+        "activation": "Not performed (acute stroke)",
+        "artifacts": "Minimal"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Recognize ACA Stroke Pattern",
+          "description": "The EEG shows focal polymorphic delta slowing over medial frontal regions (Fp1, Fp2, Fz). The patient has left leg weakness (leg > arm > face), urinary incontinence, and behavioral changes.",
+          "question": "What does this pattern suggest?",
+          "options": [
+            "Normal background",
+            "Acute right ACA stroke - focal slowing over medial frontal regions with contralateral leg weakness and urinary incontinence",
+            "Temporal lobe epilepsy",
+            "Artifact"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Focal polymorphic delta slowing over medial frontal regions (Fp1, Fp2, Fz) with contralateral leg weakness (leg > arm > face), urinary incontinence, and behavioral changes is characteristic of acute ACA stroke. ACA supplies medial frontal and parietal lobes (leg motor/sensory cortex)."
+        },
+        {
+          "step": 2,
+          "title": "Distinguish ACA from MCA Stroke",
+          "description": "The patient has leg weakness (leg > arm > face) and urinary incontinence. The EEG shows medial frontal slowing.",
+          "question": "How does this differ from MCA stroke?",
+          "options": [
+            "Same pattern",
+            "ACA stroke: leg > arm > face weakness, medial frontal slowing, urinary incontinence. MCA stroke: face/arm > leg weakness, lateral temporal-parietal slowing, aphasia",
+            "Only location differs",
+            "Only severity differs"
+          ],
+          "correctAnswer": 1,
+          "explanation": "ACA stroke: leg > arm > face weakness, medial frontal slowing (Fp1, Fp2, Fz), urinary incontinence, behavioral changes. MCA stroke: face/arm > leg weakness, lateral temporal-parietal slowing (F3, F4, T3, T4, P3, P4), aphasia (if dominant hemisphere)."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain I: Brain Structures & Functions - Blood Supply",
+          "to": "/workflow/domain-1/d1-brain-structures-functions"
+        },
+        {
+          "label": "Domain III: Focal Slowing Patterns",
+          "to": "/workflow/domain-3/d3-focal-slowing"
+        }
+      ]
+    },
+    {
+      "id": "case-0028",
+      "title": "Posterior Cerebral Artery (PCA) Stroke",
+      "difficulty": "medium",
+      "domainFocus": ["domain-1", "domain-3"],
+      "tags": ["stroke", "pca", "neuroanatomy", "blood-supply", "occipital-lobe", "visual-field", "pdr"],
+      "syndromeIds": [],
+      "patternIds": ["pattern_focal_slowing"],
+      "patient": {
+        "ageYears": 65,
+        "sex": "male",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Acute onset visual field defect",
+      "history": {
+        "eventDescription": "Patient presented with sudden onset left homonymous hemianopia (visual field defect). History of hypertension and hyperlipidemia.",
+        "lastEventTiming": "6 hours ago",
+        "comorbidities": ["Hypertension", "Hyperlipidemia"],
+        "medications": ["Amlodipine", "Rosuvastatin"]
+      },
+      "eegSummary": {
+        "state": ["wake"],
+        "background": "Focal slowing over right occipital regions (O2, Oz), loss of PDR (posterior dominant rhythm)",
+        "pdrHz": "Absent (right hemisphere), 9 Hz (left hemisphere)",
+        "epileptiform": "None",
+        "focalFindings": "Focal slowing over right occipital regions (O2, Oz) with loss of PDR - consistent with right PCA stroke",
+        "activation": "Not performed (acute stroke)",
+        "artifacts": "Minimal"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Recognize PCA Stroke Pattern",
+          "description": "The EEG shows focal slowing over right occipital regions (O2, Oz) with loss of PDR. The patient has left homonymous hemianopia.",
+          "question": "What does this pattern suggest?",
+          "options": [
+            "Normal background",
+            "Acute right PCA stroke - focal slowing over occipital regions with loss of PDR and contralateral homonymous hemianopia",
+            "Temporal lobe epilepsy",
+            "Artifact"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Focal slowing over occipital regions (O2, Oz) with loss of PDR and contralateral homonymous hemianopia is characteristic of acute PCA stroke. PCA supplies occipital lobe (visual cortex). Loss of PDR reflects visual cortex dysfunction."
+        },
+        {
+          "step": 2,
+          "title": "Understand PCA Territory",
+          "description": "The patient has left homonymous hemianopia. The EEG shows right occipital slowing and loss of PDR.",
+          "question": "What else can PCA stroke affect?",
+          "options": [
+            "Only visual cortex",
+            "Occipital lobe (visual cortex), inferior temporal lobe, thalamus (via thalamoperforating branches), and midbrain - can cause memory impairment if affects hippocampus/thalamus",
+            "Only frontal lobe",
+            "Only parietal lobe"
+          ],
+          "correctAnswer": 1,
+          "explanation": "PCA supplies occipital lobe (visual cortex), inferior temporal lobe, thalamus (via thalamoperforating branches), and midbrain. PCA stroke can cause memory impairment if it affects hippocampus/thalamus, visual hallucinations, and thalamic syndromes (sensory loss, pain)."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain I: Brain Structures & Functions - Blood Supply",
+          "to": "/workflow/domain-1/d1-brain-structures-functions"
+        },
+        {
+          "label": "Domain III: Focal Slowing Patterns",
+          "to": "/workflow/domain-3/d3-focal-slowing"
+        }
+      ]
+    },
+    {
+      "id": "case-0029",
+      "title": "Basilar Artery Stroke - Brainstem Signs",
+      "difficulty": "hard",
+      "domainFocus": ["domain-1", "domain-3"],
+      "tags": ["stroke", "basilar", "brainstem", "neuroanatomy", "blood-supply", "diffuse-slowing", "diplopia"],
+      "syndromeIds": [],
+      "patternIds": ["pattern_diffuse_slowing"],
+      "patient": {
+        "ageYears": 58,
+        "sex": "male",
+        "context": "icu"
+      },
+      "chiefComplaint": "Acute onset diplopia, dysarthria, and decreased consciousness",
+      "history": {
+        "eventDescription": "Patient presented with sudden onset diplopia (double vision), dysarthria (slurred speech), vertigo, ataxia, and decreased consciousness. History of hypertension and diabetes.",
+        "lastEventTiming": "3 hours ago",
+        "comorbidities": ["Hypertension", "Diabetes", "Hyperlipidemia"],
+        "medications": ["Metformin", "Lisinopril"]
+      },
+      "eegSummary": {
+        "state": ["unresponsive"],
+        "background": "Diffuse slowing, theta-delta range, reduced reactivity",
+        "pdrHz": "Absent",
+        "epileptiform": "None",
+        "focalFindings": "Diffuse slowing with reduced reactivity - consistent with basilar artery stroke affecting brainstem",
+        "activation": "Not applicable (unresponsive)",
+        "artifacts": "Minimal"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Recognize Basilar Artery Stroke",
+          "description": "The EEG shows diffuse slowing with reduced reactivity. The patient has diplopia, dysarthria, vertigo, ataxia, and decreased consciousness.",
+          "question": "What does this pattern suggest?",
+          "options": [
+            "Normal background",
+            "Basilar artery stroke - diffuse slowing with reduced reactivity due to brainstem involvement affecting consciousness",
+            "Temporal lobe epilepsy",
+            "Artifact"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Diffuse slowing with reduced reactivity and brainstem signs (diplopia, dysarthria, vertigo, ataxia, decreased consciousness) is characteristic of basilar artery stroke. Basilar artery supplies pons, brainstem nuclei, and cerebellum. Severe cases can cause locked-in syndrome."
+        },
+        {
+          "step": 2,
+          "title": "Understand Basilar Territory",
+          "description": "The patient has brainstem signs: diplopia, dysarthria, vertigo, ataxia, and decreased consciousness.",
+          "question": "What does basilar artery supply?",
+          "options": [
+            "Only occipital lobe",
+            "Pons, brainstem nuclei, cerebellum (via AICA, SCA), and midbrain - affects consciousness, eye movements, coordination",
+            "Only frontal lobe",
+            "Only temporal lobe"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Basilar artery supplies pons, brainstem nuclei, cerebellum (via AICA, SCA), and midbrain. Basilar stroke causes brainstem signs: diplopia (cranial nerve palsies), dysarthria, vertigo, ataxia, decreased consciousness. Severe cases → locked-in syndrome (quadriplegia, preserved consciousness, only vertical eye movements)."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain I: Brain Structures & Functions - Blood Supply",
+          "to": "/workflow/domain-1/d1-brain-structures-functions"
+        },
+        {
+          "label": "Domain III: Diffuse Slowing Patterns",
+          "to": "/workflow/domain-3/d3-diffuse-slowing"
+        }
+      ]
+    },
+    {
+      "id": "case-0030",
+      "title": "Lateral Medullary (Wallenberg) Syndrome - PICA Occlusion",
+      "difficulty": "hard",
+      "domainFocus": ["domain-1", "domain-3"],
+      "tags": ["stroke", "wallenberg", "pica", "vertebral", "brainstem", "neuroanatomy", "blood-supply"],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 62,
+        "sex": "female",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Acute onset vertigo, dysphagia, and hoarseness",
+      "history": {
+        "eventDescription": "Patient presented with sudden onset vertigo, nystagmus, dysphagia, hoarseness, ipsilateral facial pain loss, contralateral body pain/temperature loss, ipsilateral Horner syndrome, and ataxia. History of hypertension.",
+        "lastEventTiming": "5 hours ago",
+        "comorbidities": ["Hypertension", "Hyperlipidemia"],
+        "medications": ["Lisinopril", "Atorvastatin"]
+      },
+      "eegSummary": {
+        "state": ["wake"],
+        "background": "Mild diffuse slowing, may show abnormalities if severe",
+        "pdrHz": "8-9 Hz (preserved)",
+        "epileptiform": "None",
+        "focalFindings": "May show mild abnormalities, but Wallenberg syndrome primarily affects brainstem (not well-seen on scalp EEG)",
+        "activation": "Not performed (acute stroke)",
+        "artifacts": "Minimal"
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "title": "Recognize Wallenberg Syndrome",
+          "description": "The patient has vertigo, nystagmus, dysphagia, hoarseness, ipsilateral facial pain loss, contralateral body pain/temperature loss, ipsilateral Horner syndrome, and ataxia.",
+          "question": "What does this pattern suggest?",
+          "options": [
+            "Normal findings",
+            "Lateral medullary (Wallenberg) syndrome - PICA occlusion affecting lateral medulla",
+            "Temporal lobe epilepsy",
+            "Artifact"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Wallenberg syndrome is caused by PICA occlusion (branch of vertebral artery), affecting lateral medulla. Features: vertigo, nystagmus, dysphagia, hoarseness (CN IX, X), ipsilateral facial pain loss, contralateral body pain/temperature loss, ipsilateral Horner syndrome, ataxia."
+        },
+        {
+          "step": 2,
+          "title": "Understand PICA Territory",
+          "description": "The patient has Wallenberg syndrome with brainstem signs.",
+          "question": "What does PICA supply?",
+          "options": [
+            "Only occipital lobe",
+            "Posterior and inferior cerebellum, medulla - PICA is branch of vertebral artery",
+            "Only frontal lobe",
+            "Only temporal lobe"
+          ],
+          "correctAnswer": 1,
+          "explanation": "PICA (Posterior Inferior Cerebellar Artery) is a branch of vertebral artery. It supplies posterior and inferior cerebellum and medulla. Occlusion causes Wallenberg syndrome (lateral medullary syndrome)."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain I: Brain Structures & Functions - Blood Supply",
+          "to": "/workflow/domain-1/d1-brain-structures-functions"
+        },
+        {
+          "label": "Domain I: Brainstem Structures",
+          "to": "/workflow/domain-1/d1-brain-structures-functions"
+        }
+      ]
+    }
+  ]
+}
