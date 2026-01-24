@@ -49,6 +49,18 @@ app.post('/api/sessions', async (req, res) => {
     }
 });
 
+// Get user sessions (history)
+app.get('/api/sessions', async (req, res) => {
+    try {
+        const query = req.query.userId ? { userId: req.query.userId } : {};
+        // Sort by startTime descending (newest first)
+        const sessions = await QuizSession.find(query).sort({ startTime: -1 }).limit(50);
+        res.json(sessions);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // Get session by ID
 app.get('/api/sessions/:sessionId', async (req, res) => {
     try {

@@ -18,7 +18,8 @@ export async function saveAttemptEvent(event) {
   try {
     const enrichedEvent = {
       ...event,
-      timestamp: event.timestamp || Date.now()
+      timestamp: event.timestamp || Date.now(),
+      userId: storageService.userId, // Critical: Attach user ID for backend association
     };
 
     // Save to API
@@ -250,9 +251,43 @@ export async function addScoreToHistory(scoreRecord) {
 /**
  * Load score history
  */
+/**
+ * Load score history (synced from API)
+ */
 export async function loadScoreHistory() {
-  // Fallback to local
-  return storageService.getItem(SCORE_HISTORY_KEY, []);
+  try {
+    if (!storageService.userId) return []; // No user, no history (or return local if anonymous supported)
+
+    // Fetch sessions from API
+    // We trust the API to return sorted by date desc
+    const sessions = await apiService.get(`/sessions?userId=${storageService.userId}`);
+
+    // map sessions to score history format
+    // Note: We need to calculate score for each session? Or just trust what's there?
+    // The session object has answers but not the 'score' summary explicitly stored in top-level. 
+    // We can compute it on the fly or just return simplified history.
+    // For now, let's map it.
+
+    return sessions.filter(s => s.endTime).map(s => {
+      const correct = Object.values(s.answers || {}).filter(a => a.isCorrect).length;
+      const total = s.questionIds.length;
+      const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+      return {
+        percent,
+        correct,
+        total,
+        attempted: Object.keys(s.answers || {}).length,
+        mode: s.mode,
+        date: s.endTime,
+        timestamp: s.endTime // compat
+      };
+    });
+
+  } catch (err) {
+    console.warn("Failed to load history from API, falling back to local", err);
+    return storageService.getItem(SCORE_HISTORY_KEY, []);
+  }
 }
 
 /**

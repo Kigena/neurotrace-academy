@@ -1,13 +1,14 @@
 import mongoose from 'mongoose';
 
 const quizSessionSchema = new mongoose.Schema({
-    userId: { type: String, required: false }, // Optional for guest/anonymous
+    userId: { type: String, required: false, index: true }, // Link to user
     sessionId: { type: String, required: true, unique: true },
     mode: { type: String, enum: ['practice', 'timed', 'mock'], required: true },
     questionIds: [{ type: String }],
     currentIndex: { type: Number, default: 0 },
     answers: {
-        type: Map, of: new mongoose.Schema({
+        type: Map,
+        of: new mongoose.Schema({
             chosenIndex: Number,
             isCorrect: Boolean,
             timeMs: Number

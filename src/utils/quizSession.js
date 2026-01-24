@@ -58,6 +58,7 @@ export async function createQuizSession(config) {
     answers: {},
     startTime: Date.now(),
     endTime: null,
+    userId: storageService.userId, // Attach user ID
     timeLimitSec,
     config: {
       domains,
