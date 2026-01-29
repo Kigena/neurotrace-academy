@@ -18,6 +18,8 @@ import SyndromeDetail from "./pages/SyndromeDetail.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
+import ChatButton from "./components/Chatbot/ChatButton.jsx";
+import ChatWindow from "./components/Chatbot/ChatWindow.jsx";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -36,6 +38,7 @@ const ProtectedRoute = ({ children }) => {
 
 function AppContent() {
   const { user } = useAuth();
+  const [showChat, setShowChat] = React.useState(false);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -123,6 +126,14 @@ function AppContent() {
         <footer className="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
           NeuroTrace Academy · EEG Patterns · Cases · ABRET Prep
         </footer>
+      )}
+
+      {/* Chatbot */}
+      {user && (
+        <>
+          {showChat && <ChatWindow onClose={() => setShowChat(false)} />}
+          <ChatButton onClick={() => setShowChat(!showChat)} />
+        </>
       )}
     </div>
   );
