@@ -20,16 +20,16 @@ export const THEMES = {
     dark: {
         name: 'Dark',
         colors: {
-            primary: '#3b82f6',      // blue-500
-            primaryHover: '#2563eb', // blue-600
+            primary: '#60a5fa',      // blue-400 (brighter for dark mode)
+            primaryHover: '#3b82f6', // blue-500
             background: '#0f172a',   // slate-900
             surface: '#1e293b',      // slate-800
-            text: '#f1f5f9',         // slate-100
-            textSecondary: '#cbd5e1', // slate-300
-            border: '#334155',       // slate-700
-            success: '#10b981',
-            error: '#ef4444',
-            warning: '#f59e0b',
+            text: '#f8fafc',         // slate-50 (very bright white)
+            textSecondary: '#e2e8f0', // slate-200 (lighter gray for better contrast)
+            border: '#475569',       // slate-600 (more visible borders)
+            success: '#34d399',      // green-400 (brighter)
+            error: '#f87171',        // red-400 (brighter)
+            warning: '#fbbf24',      // amber-400 (brighter)
         }
     },
     blue: {
