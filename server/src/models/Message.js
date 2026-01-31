@@ -7,14 +7,12 @@ const messageSchema = new mongoose.Schema({
         required: true
     },
     senderId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        type: String, // Changed from ObjectId to String to match frontend user.id
         required: true
     },
     senderName: String, // Denormalized for quick access
     recipientId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        type: String // Changed from ObjectId to String
     },
     roomId: {
         type: mongoose.Schema.Types.ObjectId,

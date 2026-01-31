@@ -66,7 +66,8 @@ const MessageBubble = ({ message, isOwn, isSequence }) => {
                     </div> {/* Close message content wrapper */}
                 </div>
             </div>
-            );
+        </div>
+    );
 };
 
-            export default MessageBubble;
+export default MessageBubble;

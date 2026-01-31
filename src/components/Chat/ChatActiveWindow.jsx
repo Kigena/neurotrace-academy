@@ -29,9 +29,13 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
     useEffect(() => {
         if (!activeChat) return;
 
+        console.log('Filtering messages. Total messages:', messages.length, 'Active chat:', activeChat);
         const chatMessages = messages.filter(msg => {
+            console.log('Checking message:', msg);
             if (activeChat.type === 'public') {
-                return msg.type === 'public' || !msg.type; // Backward compat
+                const matches = msg.type === 'public' || !msg.type;
+                console.log('Public chat filter result:', matches, 'msg.type:', msg.type);
+                return matches;
             } else if (activeChat.type === 'private') {
                 return (msg.type === 'private' && (
                     (msg.senderId === user.id && msg.recipientId === activeChat.id) ||
@@ -44,6 +48,7 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
             return false;
         });
 
+        console.log('Filtered messages:', chatMessages.length, chatMessages);
         setLocalMessages(chatMessages);
     }, [messages, activeChat, user.id]);
 

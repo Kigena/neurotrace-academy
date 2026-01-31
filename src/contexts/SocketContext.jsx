@@ -45,24 +45,29 @@ export const SocketProvider = ({ children }) => {
         });
 
         newSocket.on('message:received', (message) => {
+            console.log('message:received event', message);
             setMessages(prev => [...prev, message]);
             // Optional: Play sound
         });
 
         newSocket.on('message:public', (message) => {
+            console.log('message:public event', message);
             setMessages(prev => [...prev, message]);
         });
 
         newSocket.on('message:group', (message) => {
+            console.log('message:group event', message);
             setMessages(prev => [...prev, message]);
         });
 
         newSocket.on('message:ai', (message) => {
+            console.log('message:ai event', message);
             setMessages(prev => [...prev, message]);
         });
 
         // Confirmation of own message sent (if not optimistically added)
         newSocket.on('message:sent', (message) => {
+            console.log('message:sent event', message);
             // Check if already added (if we do optimistic UI)
             // For now, simple append if not duplicate check
             setMessages(prev => {
@@ -109,6 +114,26 @@ export const SocketProvider = ({ children }) => {
         console.log('Emitting message:public', msgData);
         socket.emit('message:public', msgData);
     };
+
+    // TEST FUNCTION - Remove after debugging
+    const sendTestMessage = () => {
+        if (!socket || !user) {
+            console.error('Cannot send test - socket or user missing');
+            return;
+        }
+        const testMsg = {
+            senderId: user.id,
+            senderName: user.name,
+            content: 'TEST MESSAGE - ' + new Date().toISOString()
+        };
+        console.log('🧪 Sending test message:', testMsg);
+        socket.emit('message:public', testMsg);
+    };
+
+    // Expose test function globally for debugging
+    if (typeof window !== 'undefined') {
+        window.sendTestMessage = sendTestMessage;
+    }
 
     const sendGroupMessage = (roomId, content, attachments = []) => {
         if (!socket) return;

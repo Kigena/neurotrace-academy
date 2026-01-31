@@ -81,6 +81,7 @@ export const initializeSocket = (httpServer) => {
 
         // Public chat message
         socket.on('message:public', async ({ senderId, senderName, content }) => {
+            console.log('📥 Received message:public event', { senderId, senderName, content });
             try {
                 const message = new Message({
                     type: 'public',
@@ -90,6 +91,7 @@ export const initializeSocket = (httpServer) => {
                     roomId: null
                 });
                 await message.save();
+                console.log('💾 Message saved to DB:', message._id);
 
                 // Broadcast to all
                 io.emit('message:public', message);

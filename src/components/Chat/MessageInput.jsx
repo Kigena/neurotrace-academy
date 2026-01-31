@@ -9,31 +9,20 @@ const MessageInput = ({ onSend }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if ((!message.trim() && !file) || isSending) return;
+        console.log('handleSubmit called', { message, file, isSending });
+
+        if ((!message.trim() && !file) || isSending) {
+            console.log('Validation failed - empty message or already sending');
+            return;
+        }
 
         setIsSending(true);
         try {
-            let attachments = [];
-
-            // Handle file upload first if present
-            if (file) {
-                const formData = new FormData();
-                formData.append('file', file);
-
-                // You'll need to add this upload method to apiService or fetch directly
-                // Assuming direct fetch for now based on previous route setup
-                const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5003'}/api/chat/upload`, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    attachments.push(data); // { url, filename, type, ... }
-                }
-            }
-
-            await onSend(message, attachments);
+            // For now, skip file upload to get basic messaging working
+            // TODO: Re-enable file upload after basic chat is working
+            console.log('Calling onSend with message:', message);
+            await onSend(message, []);
+            console.log('onSend completed successfully');
             setMessage('');
             setFile(null);
         } catch (error) {
