@@ -117,6 +117,23 @@ export const SocketProvider = ({ children }) => {
         socket.emit('message:group', msgData);
     };
 
+    const sendAiMessage = (content, attachments = [], userContext = {}) => {
+        if (!socket) return;
+        const msgData = {
+            senderId: user.id,
+            senderName: user.name,
+            roomId: null,
+            content,
+            attachments,
+            userContext: {
+                ...userContext,
+                name: user.name,
+                userId: user.id
+            }
+        };
+        socket.emit('message:ai', msgData);
+    };
+
     return (
         <SocketContext.Provider value={{
             socket,
