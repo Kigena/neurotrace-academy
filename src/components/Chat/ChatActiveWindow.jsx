@@ -121,13 +121,8 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
 
             {/* Messages Area */}
             <div
-                ref={messagesEndRef}
                 className="flex-1 overflow-y-auto p-4 space-y-4"
-                style={{
-                    minHeight: 0,  // Critical for flex child with overflow
-                    display: 'flex',
-                    flexDirection: 'column'
-                }}
+                style={{ minHeight: 0 }}
             >
                 {localMessages.length === 0 ? (
                     <div className="h-full flex flex-col items-center justify-center text-textSecondary opacity-50">
