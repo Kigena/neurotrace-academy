@@ -7,6 +7,17 @@ class ApiService {
     }
 
     /**
+     * Get authentication headers from localStorage
+     */
+    getAuthHeaders() {
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+        if (user._id) {
+            return { 'Authorization': `Bearer ${user._id}` };
+        }
+        return {};
+    }
+
+    /**
      * Fetch with timeout
      */
     async fetchWithTimeout(url, options = {}) {
@@ -51,6 +62,7 @@ class ApiService {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
+                ...this.getAuthHeaders()
             },
         });
 
@@ -69,7 +81,10 @@ class ApiService {
 
             const response = await this.fetchWithTimeout(`${API_URL}${endpoint}`, {
                 method: 'POST',
-                headers,
+                headers: {
+                    ...headers,
+                    ...this.getAuthHeaders()
+                },
                 body,
             });
 
@@ -94,6 +109,7 @@ class ApiService {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
+                ...this.getAuthHeaders()
             },
             body: JSON.stringify(data),
         });
