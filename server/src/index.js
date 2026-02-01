@@ -26,6 +26,7 @@ mongoose.connect(MONGODB_URI)
 
 import authRoutes from './routes/auth.js';
 import chatRoutes from './routes/chat.js';
+import casesRoutes from './routes/cases.js';
 
 // Routes
 app.get('/', (req, res) => {
@@ -47,6 +48,9 @@ app.use('/api/auth', authRoutes);
 
 // Chat Routes
 app.use('/api/chat', chatRoutes);
+
+// Case Routes
+app.use('/api/cases', casesRoutes);
 
 import { QuizSession } from './models/QuizSession.js';
 import { AttemptEvent } from './models/AttemptEvent.js';
