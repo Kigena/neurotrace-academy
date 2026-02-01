@@ -213,7 +213,7 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
             </div>
 
             {/* Input Area */}
-            <div className="border-t border-border bg-surface p-4">
+            <div className="flex-shrink-0 border-t border-border bg-surface p-4">
                 <MessageInput onSend={handleSendMessage} />
             </div>
         </div>
