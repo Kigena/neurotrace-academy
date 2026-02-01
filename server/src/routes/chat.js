@@ -73,7 +73,8 @@ router.post('/upload', upload.single('file'), (req, res) => {
 // Get messages for Chat System (Unified)
 router.get('/messages', async (req, res) => {
     try {
-        const { roomId, type, userId, otherUserId } = req.query;
+        const { roomId, type, userId, otherUserId, limit } = req.query;
+        const messageLimit = parseInt(limit) || 50;
         let query = {};
 
         if (type === 'private' && userId && otherUserId) {
@@ -84,18 +85,34 @@ router.get('/messages', async (req, res) => {
                     { senderId: otherUserId, recipientId: userId }
                 ]
             };
+            console.log(`📥 Fetching private messages between ${userId} and ${otherUserId}`);
+        } else if (type === 'ai' && userId) {
+            query = {
+                type: 'ai',
+                $or: [
+                    { senderId: userId },
+                    { senderId: 'ai-bot', recipientId: userId }
+                ]
+            };
+            console.log(`📥 Fetching AI messages for user ${userId}`);
+        } else if (type === 'public') {
+            query = { type: 'public' };
+            console.log(`📥 Fetching public messages`);
         } else if (roomId) {
             query = { roomId };
+            console.log(`📥 Fetching messages for room ${roomId}`);
         } else {
             // Default to public chat
             query = { type: 'public' };
+            console.log(`📥 Fetching public messages (default)`);
         }
 
         const messages = await Message.find(query)
             .sort({ timestamp: -1 }) // Newest first for pagination
-            .limit(50)
+            .limit(messageLimit)
             .lean();
 
+        console.log(`✅ Found ${messages.length} messages`);
         res.json(messages.reverse()); // Return oldest first for display
     } catch (error) {
         console.error('Fetch messages error:', error);

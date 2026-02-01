@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState, useRef } from 'r
 import io from 'socket.io-client';
 import { useAuth } from './AuthContext';
 import { showNotification, updateDocumentTitle, requestNotificationPermission } from '../utils/notifications';
+import chatService from '../services/chatService';
 
 const SocketContext = createContext();
 
@@ -21,8 +22,19 @@ export const SocketProvider = ({ children }) => {
     // but functional updates setMessages(prev => ...) are usually sufficient.
     const socketInitialized = useRef(false);
 
-    // Helper to add message and trigger re-render
+    // Helper to add message and trigger re-render (with duplicate prevention)
     const addMessage = (message) => {
+        // Check if message already exists (by _id or temp id)
+        const exists = messagesRef.current.some(m =>
+            (m._id && message._id && m._id.toString() === message._id.toString()) ||
+            (m._id && m._id.toString().startsWith('temp-') && m.content === message.content && m.senderId === message.senderId)
+        );
+
+        if (exists) {
+            console.log('⚠️ Message already exists, skipping:', message._id);
+            return;
+        }
+
         console.log('📨 Adding message to ref:', message);
         messagesRef.current = [...messagesRef.current, message];
         console.log('📊 Total messages in ref:', messagesRef.current.length);
@@ -258,6 +270,32 @@ export const SocketProvider = ({ children }) => {
         socket.emit('message:ai', msgData);
     };
 
+    // Load message history from database
+    const loadMessageHistory = async (chatType, chatId) => {
+        if (!user) return;
+
+        try {
+            console.log(`📚 Loading message history for ${chatType} chat:`, chatId);
+            let messages = [];
+
+            if (chatType === 'private') {
+                messages = await chatService.getPrivateMessages(user.id, chatId);
+            } else if (chatType === 'public') {
+                messages = await chatService.getPublicMessages();
+            } else if (chatType === 'ai') {
+                messages = await chatService.getAiMessages(user.id);
+            }
+
+            console.log(`✅ Loaded ${messages.length} messages from database`);
+
+            // Replace messages in ref (don't append, replace)
+            messagesRef.current = messages;
+            setMessagesTrigger(prev => prev + 1);
+        } catch (error) {
+            console.error('Failed to load message history:', error);
+        }
+    };
+
     // Mark messages as read for a specific chat
     const markAsRead = (chatId) => {
         console.log('📖 Marking chat as read:', chatId);
@@ -296,6 +334,7 @@ export const SocketProvider = ({ children }) => {
         isConnected,
         unreadCounts,
         markAsRead,
+        loadMessageHistory,
         sendPrivateMessage,
         sendPublicMessage,
         sendGroupMessage,

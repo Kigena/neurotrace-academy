@@ -6,7 +6,7 @@ import MessageInput from './MessageInput';
 
 const ChatActiveWindow = ({ activeChat, onBack }) => {
     const { user } = useAuth();
-    const { messages, sendPublicMessage, sendPrivateMessage, sendAiMessage, markAsRead } = useSocket();
+    const { messages, sendPublicMessage, sendPrivateMessage, sendAiMessage, markAsRead, loadMessageHistory } = useSocket();
     const [localMessages, setLocalMessages] = useState([]);
     const [isTyping, setIsTyping] = useState(false);
     const messagesEndRef = useRef(null);
@@ -60,6 +60,14 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
         console.log('✅ Filtered messages:', filtered.length, filtered);
         setLocalMessages(filtered);
     }, [messages, activeChat, user.id]);
+
+    // Load message history when chat is opened
+    useEffect(() => {
+        if (activeChat && loadMessageHistory) {
+            console.log('🔄 Loading history for chat:', activeChat.type, activeChat.id);
+            loadMessageHistory(activeChat.type, activeChat.id);
+        }
+    }, [activeChat?.id, activeChat?.type, loadMessageHistory]);
 
     // Mark messages as read when chat is opened
     useEffect(() => {
