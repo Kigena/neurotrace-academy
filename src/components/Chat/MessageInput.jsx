@@ -151,8 +151,15 @@ const MessageInput = ({ onSend }) => {
                         type="text"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' && !e.shiftKey) {
+                                e.preventDefault();
+                                handleSubmit(e);
+                            }
+                        }}
                         placeholder={file ? "Add a caption (optional)..." : "Type a message..."}
                         className="flex-1 bg-transparent px-2 py-2 text-text focus:outline-none placeholder:text-textSecondary"
+                        disabled={isSending}
                     />
 
                     {/* Send Button */}
