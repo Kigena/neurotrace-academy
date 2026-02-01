@@ -131,6 +131,9 @@ export const SocketProvider = ({ children }) => {
 
     const sendPrivateMessage = (recipientId, content, attachments = []) => {
         if (!socket) return;
+
+        console.log('📤 sendPrivateMessage called with recipientId:', recipientId, 'senderId:', user.id);
+
         const msgData = {
             type: 'private',
             senderId: user.id,
