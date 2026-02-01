@@ -4,6 +4,7 @@ import casesData from "../data/cases.json";
 import syndromesData from "../data/syndromes_v2.json";
 import patternsData from "../data/neurotrace_patterns_library_v2.json";
 import CaseRunner from "../components/CaseRunner.jsx";
+import CaseDiscussion from "../components/CaseDiscussion.jsx";
 import caseService from "../services/caseService";
 
 // --- Components ---
@@ -82,7 +83,7 @@ const StaticCaseView = ({ eegCase }) => {
   );
 };
 
-const CommunityCaseView = ({ eegCase }) => {
+const CommunityCaseView = ({ eegCase, setEegCase }) => {
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-2">
@@ -185,6 +186,19 @@ const CommunityCaseView = ({ eegCase }) => {
           ))}
         </div>
       )}
+
+      {/* Discussion Section */}
+      <CaseDiscussion
+        caseId={eegCase._id}
+        comments={eegCase.comments || []}
+        onCommentAdded={(newComment) => {
+          // Optimistically update UI
+          setEegCase(prev => ({
+            ...prev,
+            comments: [...(prev.comments || []), newComment]
+          }));
+        }}
+      />
     </div>
   );
 }
@@ -255,7 +269,7 @@ function CaseDetail() {
       {caseType === 'static' ? (
         <StaticCaseView eegCase={eegCase} />
       ) : (
-        <CommunityCaseView eegCase={eegCase} />
+        <CommunityCaseView eegCase={eegCase} setEegCase={setEegCase} />
       )}
     </section>
   );
