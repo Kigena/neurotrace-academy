@@ -16,25 +16,44 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
         console.log('🔍 ChatActiveWindow: Filtering messages', {
             totalMessages: messages?.length,
             activeChat: activeChat?.type,
+            activeChatId: activeChat?.id,
+            userId: user.id,
             messagesArray: messages
         });
 
         if (!activeChat || !messages) {
+            console.log('⚠️ No activeChat or messages, clearing localMessages');
             setLocalMessages([]);
             return;
         }
 
         const filtered = messages.filter(msg => {
+            console.log('🔎 Checking message:', {
+                msgType: msg.type,
+                msgSenderId: msg.senderId,
+                msgRecipientId: msg.recipientId,
+                activeChatType: activeChat.type,
+                userId: user.id,
+                activeChatId: activeChat.id
+            });
+
             if (activeChat.type === 'public') {
-                return msg.type === 'public' || !msg.type;
+                const passes = msg.type === 'public' || !msg.type;
+                console.log(`  → Public filter: ${passes}`);
+                return passes;
             } else if (activeChat.type === 'private') {
-                return msg.type === 'private' && (
+                const passes = msg.type === 'private' && (
                     (msg.senderId === user.id && msg.recipientId === activeChat.id) ||
                     (msg.senderId === activeChat.id && msg.recipientId === user.id)
                 );
+                console.log(`  → Private filter: ${passes}`);
+                return passes;
             } else if (activeChat.type === 'ai') {
-                return msg.type === 'ai' && (msg.senderId === user.id || msg.senderId === 'ai-bot');
+                const passes = msg.type === 'ai' && (msg.senderId === user.id || msg.senderId === 'ai-bot');
+                console.log(`  → AI filter: ${passes} (type=${msg.type}, senderId=${msg.senderId})`);
+                return passes;
             }
+            console.log('  → No filter matched, returning false');
             return false;
         });
 
