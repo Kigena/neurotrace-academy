@@ -46,9 +46,11 @@ export const SocketProvider = ({ children }) => {
         socketInitialized.current = true;
 
         // Initialize Socket
-        // Use environment variable or default to window.location.origin for production if served together, 
-        // or the specific backend URL.
-        const socketUrl = import.meta.env.VITE_API_URL || 'http://localhost:5003';
+        // Socket.IO connects to base URL, not the /api endpoint
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5003';
+        const socketUrl = apiUrl.replace('/api', ''); // Remove /api suffix for socket connection
+
+        console.log('🔌 Connecting socket to:', socketUrl);
 
         const newSocket = io(socketUrl, {
             query: { userId: user.id },
