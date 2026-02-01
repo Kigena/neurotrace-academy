@@ -63,12 +63,14 @@ class ApiService {
 
     async post(endpoint, data, retryCount = 0) {
         try {
+            const isFormData = data instanceof FormData;
+            const headers = isFormData ? {} : { 'Content-Type': 'application/json' };
+            const body = isFormData ? data : JSON.stringify(data);
+
             const response = await this.fetchWithTimeout(`${API_URL}${endpoint}`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
+                headers,
+                body,
             });
 
             if (!response.ok) {

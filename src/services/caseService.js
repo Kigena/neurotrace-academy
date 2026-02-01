@@ -8,9 +8,7 @@ class CaseService {
     async uploadAttachment(file) {
         const formData = new FormData();
         formData.append('file', file);
-        return await apiService.post('/cases/upload', formData, {
-            headers: { 'Content-Type': 'multipart/form-data' }
-        });
+        return await apiService.post('/cases/upload', formData);
     }
 
     /**
