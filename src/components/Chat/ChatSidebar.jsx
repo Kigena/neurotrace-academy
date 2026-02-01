@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/AuthContext';
 
 const ChatSidebar = ({ activeChat, onChatSelect, onlineUsers = [] }) => {
     const { user } = useAuth();
+    const { unreadCounts = {} } = useSocket();
     const [activeTab, setActiveTab] = useState('dms'); // 'dms', 'groups'
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -116,9 +117,16 @@ const ChatSidebar = ({ activeChat, onChatSelect, onlineUsers = [] }) => {
                                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-success rounded-full border-2 border-surface"></span>
                             </div>
                             <div className="flex-1 min-w-0">
-                                <h3 className="font-medium text-text truncate">{u.name}</h3>
+                                <h3 className={`font-medium text-text truncate ${unreadCounts[u.id] ? 'font-bold' : ''}`}>
+                                    {u.name}
+                                </h3>
                                 <p className="text-xs text-textSecondary truncate">Online</p>
                             </div>
+                            {unreadCounts[u.id] > 0 && (
+                                <div className="bg-primary text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+                                    {unreadCounts[u.id]}
+                                </div>
+                            )}
                         </div>
                     ))
                 )}

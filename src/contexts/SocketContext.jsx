@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import io from 'socket.io-client';
 import { useAuth } from './AuthContext';
+import { showNotification, updateDocumentTitle, requestNotificationPermission } from '../utils/notifications';
 
 const SocketContext = createContext();
 
@@ -13,6 +14,8 @@ export const SocketProvider = ({ children }) => {
     const messagesRef = useRef([]);
     const [messagesTrigger, setMessagesTrigger] = useState(0); // Trigger re-renders
     const [isConnected, setIsConnected] = useState(false);
+    const [unreadCounts, setUnreadCounts] = useState({}); // { chatId: count }
+    const [activeChatId, setActiveChatId] = useState(null); // Track which chat is currently open
 
     // Use a ref for messages to avoid dependency cycles in useEffect listeners if needed, 
     // but functional updates setMessages(prev => ...) are usually sufficient.
@@ -75,6 +78,39 @@ export const SocketProvider = ({ children }) => {
         newSocket.on('message:received', (message) => {
             console.log('message:received event', message);
             addMessage(message);
+
+            // Determine chat ID for this message
+            const chatId = message.type === 'private'
+                ? message.senderId  // For private messages, use sender's ID
+                : message.type === 'ai'
+                    ? 'ai-bot'
+                    : 'public';
+
+            // Only increment unread and notify if this chat is not currently active
+            if (chatId !== activeChatId) {
+                // Increment unread count
+                setUnreadCounts(prev => ({
+                    ...prev,
+                    [chatId]: (prev[chatId] || 0) + 1
+                }));
+
+                // Show browser notification
+                const title = message.type === 'private'
+                    ? `${message.senderName}`
+                    : message.type === 'ai'
+                        ? 'NeuroTrace AI'
+                        : 'Public Chat';
+
+                showNotification(
+                    title,
+                    message.content.substring(0, 100),
+                    () => {
+                        // Focus window and open chat when notification clicked
+                        window.focus();
+                        // You can add logic here to switch to this chat
+                    }
+                );
+            }
         });
 
         newSocket.on('message:public', (message) => {
@@ -222,6 +258,32 @@ export const SocketProvider = ({ children }) => {
         socket.emit('message:ai', msgData);
     };
 
+    // Mark messages as read for a specific chat
+    const markAsRead = (chatId) => {
+        console.log('📖 Marking chat as read:', chatId);
+        setActiveChatId(chatId);
+        setUnreadCounts(prev => {
+            const updated = { ...prev };
+            delete updated[chatId];
+            return updated;
+        });
+
+        // Update document title
+        const totalUnread = Object.values(unreadCounts).reduce((sum, count) => sum + count, 0) - (unreadCounts[chatId] || 0);
+        updateDocumentTitle(totalUnread);
+    };
+
+    // Request notification permission on mount
+    useEffect(() => {
+        requestNotificationPermission();
+    }, []);
+
+    // Update document title when unread counts change
+    useEffect(() => {
+        const totalUnread = Object.values(unreadCounts).reduce((sum, count) => sum + count, 0);
+        updateDocumentTitle(totalUnread);
+    }, [unreadCounts]);
+
     // Create reactive messages value that updates when messagesTrigger changes
     // IMPORTANT: Return a NEW array copy so React detects the change
     const messages = React.useMemo(() => [...messagesRef.current], [messagesTrigger]);
@@ -232,11 +294,13 @@ export const SocketProvider = ({ children }) => {
         messages,
         onlineUsers,
         isConnected,
+        unreadCounts,
+        markAsRead,
         sendPrivateMessage,
         sendPublicMessage,
         sendGroupMessage,
         sendAiMessage
-    }), [socket, messages, onlineUsers, isConnected, sendPrivateMessage, sendPublicMessage, sendGroupMessage, sendAiMessage]);
+    }), [socket, messages, onlineUsers, isConnected, unreadCounts, sendPrivateMessage, sendPublicMessage, sendGroupMessage, sendAiMessage]);
 
     return (
         <SocketContext.Provider value={contextValue}>

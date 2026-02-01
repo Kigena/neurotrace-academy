@@ -6,7 +6,7 @@ import MessageInput from './MessageInput';
 
 const ChatActiveWindow = ({ activeChat, onBack }) => {
     const { user } = useAuth();
-    const { messages, sendPublicMessage, sendPrivateMessage, sendAiMessage } = useSocket();
+    const { messages, sendPublicMessage, sendPrivateMessage, sendAiMessage, markAsRead } = useSocket();
     const [localMessages, setLocalMessages] = useState([]);
     const [isTyping, setIsTyping] = useState(false);
     const messagesEndRef = useRef(null);
@@ -60,6 +60,13 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
         console.log('✅ Filtered messages:', filtered.length, filtered);
         setLocalMessages(filtered);
     }, [messages, activeChat, user.id]);
+
+    // Mark messages as read when chat is opened
+    useEffect(() => {
+        if (activeChat && markAsRead) {
+            markAsRead(activeChat.id);
+        }
+    }, [activeChat?.id, markAsRead]);
 
     // Auto-scroll to bottom
     useEffect(() => {
