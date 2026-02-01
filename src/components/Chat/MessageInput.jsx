@@ -18,10 +18,29 @@ const MessageInput = ({ onSend }) => {
 
         setIsSending(true);
         try {
-            // For now, skip file upload to get basic messaging working
-            // TODO: Re-enable file upload after basic chat is working
-            console.log('Calling onSend with message:', message);
-            await onSend(message, []);
+            let attachments = [];
+
+            // Upload file if present
+            if (file) {
+                console.log('📎 Uploading file:', file.name);
+                const formData = new FormData();
+                formData.append('file', file);
+
+                try {
+                    const uploadResponse = await apiService.post('/chat/upload', formData, {
+                        headers: { 'Content-Type': 'multipart/form-data' }
+                    });
+
+                    console.log('✅ File uploaded:', uploadResponse);
+                    attachments = [uploadResponse];
+                } catch (uploadError) {
+                    console.error('❌ File upload failed:', uploadError);
+                    // Continue sending message even if file upload fails
+                }
+            }
+
+            console.log('Calling onSend with message and attachments:', { message, attachments });
+            await onSend(message, attachments);
             console.log('onSend completed successfully');
             setMessage('');
             setFile(null);
