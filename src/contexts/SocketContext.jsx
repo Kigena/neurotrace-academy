@@ -120,13 +120,20 @@ export const SocketProvider = ({ children }) => {
     const sendPrivateMessage = (recipientId, content, attachments = []) => {
         if (!socket) return;
         const msgData = {
+            type: 'private',
             senderId: user.id,
             senderName: user.name,
             recipientId,
             content,
-            attachments
+            attachments,
+            timestamp: new Date(),
+            _id: `temp-${Date.now()}` // Temporary ID for optimistic update
         };
-        // Optimistic update could happen here
+
+        // Optimistic update - add message immediately for sender
+        console.log('📤 Sending private message (optimistic):', msgData);
+        addMessage(msgData);
+
         socket.emit('message:private', msgData);
     };
 
