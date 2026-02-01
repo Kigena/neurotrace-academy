@@ -13,6 +13,10 @@ const ChatSidebar = ({ activeChat, onChatSelect, onlineUsers = [] }) => {
         u.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    console.log('👥 Online users:', onlineUsers);
+    console.log('👤 Current user:', user.id);
+    console.log('✅ Filtered users:', filteredUsers);
+
     return (
         <div className="flex flex-col h-full bg-surface border-r border-border">
             {/* Header */}
