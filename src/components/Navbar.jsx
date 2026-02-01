@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { useSocket } from "../contexts/SocketContext";
 import ThemeSelector from "./ThemeSelector";
 
 const navLinkClasses = ({ isActive }) =>
@@ -13,6 +14,7 @@ const navLinkClasses = ({ isActive }) =>
 
 function Navbar() {
   const { user, logout } = useAuth();
+  const { isConnected } = useSocket();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showThemeSelector, setShowThemeSelector] = useState(false);

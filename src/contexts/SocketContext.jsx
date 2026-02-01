@@ -69,7 +69,12 @@ export const SocketProvider = ({ children }) => {
 
         const newSocket = io(socketUrl, {
             query: { userId: user.id },
-            transports: ['websocket', 'polling']
+            transports: ['websocket', 'polling'],
+            reconnection: true,
+            reconnectionAttempts: 10,
+            reconnectionDelay: 1000,
+            reconnectionDelayMax: 5000,
+            timeout: 20000
         });
 
         newSocket.on('connect', () => {
@@ -78,8 +83,40 @@ export const SocketProvider = ({ children }) => {
             newSocket.emit('user:online', { userId: user.id, userName: user.name });
         });
 
-        newSocket.on('disconnect', () => {
-            console.log('Socket disconnected');
+        newSocket.on('disconnect', (reason) => {
+            console.log('🔌 Socket disconnected:', reason);
+            setIsConnected(false);
+
+            // Auto-reconnect for certain disconnect reasons
+            if (reason === 'io server disconnect') {
+                // Server disconnected, manually reconnect
+                console.log('🔄 Server disconnected, attempting reconnect...');
+                setTimeout(() => newSocket.connect(), 1000);
+            }
+        });
+
+        newSocket.on('connect_error', (error) => {
+            console.error('❌ Socket connection error:', error.message);
+            setIsConnected(false);
+        });
+
+        newSocket.on('reconnect', (attemptNumber) => {
+            console.log('✅ Socket reconnected after', attemptNumber, 'attempts');
+            setIsConnected(true);
+            // Re-announce user online status
+            newSocket.emit('user:online', { userId: user.id, userName: user.name });
+        });
+
+        newSocket.on('reconnect_attempt', (attemptNumber) => {
+            console.log('🔄 Reconnection attempt', attemptNumber);
+        });
+
+        newSocket.on('reconnect_error', (error) => {
+            console.error('❌ Reconnection error:', error.message);
+        });
+
+        newSocket.on('reconnect_failed', () => {
+            console.error('❌ Failed to reconnect after all attempts');
             setIsConnected(false);
         });
 

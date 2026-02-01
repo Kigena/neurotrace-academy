@@ -67,14 +67,16 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
             console.log('🔄 Loading history for chat:', activeChat.type, activeChat.id);
             loadMessageHistory(activeChat.type, activeChat.id);
         }
-    }, [activeChat?.id, activeChat?.type, loadMessageHistory]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeChat?.id, activeChat?.type]); // Only reload when chat ID/type changes, not when function changes
 
     // Mark messages as read when chat is opened
     useEffect(() => {
         if (activeChat && markAsRead) {
             markAsRead(activeChat.id);
         }
-    }, [activeChat?.id, markAsRead]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeChat?.id]); // Only mark as read when chat ID changes
 
     // Auto-scroll to bottom
     useEffect(() => {
