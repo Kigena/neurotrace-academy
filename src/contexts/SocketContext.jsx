@@ -100,8 +100,20 @@ export const SocketProvider = ({ children }) => {
         // Confirmation of own message sent (if not optimistically added)
         newSocket.on('message:sent', (message) => {
             console.log('message:sent event', message);
-            // Check if already added to avoid duplicates
-            if (!messagesRef.current.some(m => m._id === message._id)) {
+            // Replace optimistic message with server-confirmed one
+            const tempIndex = messagesRef.current.findIndex(m =>
+                m._id && m._id.toString().startsWith('temp-') &&
+                m.content === message.content &&
+                m.senderId === message.senderId
+            );
+
+            if (tempIndex !== -1) {
+                // Replace temp message with real one
+                messagesRef.current[tempIndex] = message;
+                setMessagesTrigger(prev => prev + 1);
+                console.log('✅ Replaced temp message with server-confirmed message');
+            } else if (!messagesRef.current.some(m => m._id === message._id)) {
+                // Only add if not already present
                 addMessage(message);
             }
         });

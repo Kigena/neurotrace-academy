@@ -55,6 +55,7 @@ export const initializeSocket = (httpServer) => {
 
         // Private message
         socket.on('message:private', async ({ senderId, senderName, recipientId, content }) => {
+            console.log('📥 Received private message:', { senderId, senderName, recipientId, content });
             try {
                 const message = new Message({
                     type: 'private',
@@ -65,12 +66,16 @@ export const initializeSocket = (httpServer) => {
                     read: false
                 });
                 await message.save();
+                console.log('💾 Private message saved:', message._id);
 
                 // Send to recipient
-                io.to(`user:${recipientId}`).emit('message:received', message);
+                const recipientRoom = `user:${recipientId}`;
+                console.log(`📤 Sending to recipient room: ${recipientRoom}`);
+                io.to(recipientRoom).emit('message:received', message);
 
                 // Confirm to sender
                 socket.emit('message:sent', message);
+                console.log(`✅ Confirmed to sender: ${senderId}`);
 
                 console.log(`💬 Private message: ${senderName} → ${recipientId}`);
             } catch (error) {
