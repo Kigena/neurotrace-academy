@@ -98,12 +98,10 @@ export const SocketProvider = ({ children }) => {
         // Confirmation of own message sent (if not optimistically added)
         newSocket.on('message:sent', (message) => {
             console.log('message:sent event', message);
-            // Check if already added (if we do optimistic UI)
-            // For now, simple append if not duplicate check
-            setMessages(prev => {
-                if (prev.some(m => m._id === message._id)) return prev;
-                return [...prev, message];
-            });
+            // Check if already added to avoid duplicates
+            if (!messagesRef.current.some(m => m._id === message._id)) {
+                addMessage(message);
+            }
         });
 
         setSocket(newSocket);
