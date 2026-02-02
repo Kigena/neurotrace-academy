@@ -79,11 +79,17 @@ router.post('/', auth, async (req, res) => {
             attachments
         } = req.body;
 
+        // Sanitize patientInfo to handle empty strings for numeric fields
+        const sanitizedPatientInfo = { ...patientInfo };
+        if (sanitizedPatientInfo.age === '') {
+            sanitizedPatientInfo.age = null;
+        }
+
         const newCase = new CommunityCase({
             title,
-            author: req.user.id, // Auth middleware adds user to req
+            author: req.user.id,
             history,
-            patientInfo,
+            patientInfo: sanitizedPatientInfo,
             medications,
             findings,
             tags,
@@ -93,12 +99,12 @@ router.post('/', auth, async (req, res) => {
         const savedCase = await newCase.save();
 
         // Populate author info for the response
-        await savedCase.populate('author', 'name username');
+        await savedCase.populate('author', 'name');
 
         res.status(201).json(savedCase);
     } catch (error) {
         console.error('Create case error:', error);
-        res.status(500).json({ error: 'Failed to create case' });
+        res.status(500).json({ error: error.message || 'Failed to create case' });
     }
 });
 
@@ -113,7 +119,7 @@ router.get('/', async (req, res) => {
         }
 
         let cases = CommunityCase.find(query)
-            .populate('author', 'name username')
+            .populate('author', 'name')
             .select('-history'); // Exclude full history for list view to save bandwidth
 
         // Sorting
@@ -135,8 +141,8 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const communityCase = await CommunityCase.findById(req.params.id)
-            .populate('author', 'name username')
-            .populate('comments.userId', 'name username');
+            .populate('author', 'name')
+            .populate('comments.userId', 'name');
 
         if (!communityCase) {
             return res.status(404).json({ error: 'Case not found' });

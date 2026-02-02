@@ -36,8 +36,8 @@ const communityCaseSchema = new mongoose.Schema({
     patientInfo: {
         age: { type: Number }, // e.g., 25
         ageUnit: { type: String, enum: ['years', 'months', 'days'], default: 'years' },
-        gender: { type: String, enum: ['Male', 'Female', 'Other', 'Unknown'] },
-        handedness: { type: String, enum: ['Right', 'Left', 'Ambidextrous', 'Unknown'] }
+        gender: { type: String, enum: ['', 'Male', 'Female', 'Other', 'Unknown'], default: '' },
+        handedness: { type: String, enum: ['', 'Right', 'Left', 'Ambidextrous', 'Unknown'], default: '' }
     },
     // Clinical Details
     history: {
