@@ -1,30 +1,27 @@
 // Simple auth middleware
-// Extracts user info from Authorization header (Bearer token with userId)
-// or from x-user-id header as fallback
+// Verifies JWT tokens and attaches user info to request
 
+import jwt from 'jsonwebtoken';
 import { User } from '../models/User.js';
 
 const auth = async (req, res, next) => {
     try {
-        // Check for Authorization header (Bearer <userId>)
+        // Check for Authorization header (Bearer <token>)
         const authHeader = req.headers.authorization;
-        let userId = null;
 
-        if (authHeader && authHeader.startsWith('Bearer ')) {
-            userId = authHeader.substring(7); // Remove 'Bearer ' prefix
-        } else if (req.headers['x-user-id']) {
-            // Fallback to x-user-id header
-            userId = req.headers['x-user-id'];
-        }
-
-        if (!userId) {
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return res.status(401).json({ error: 'Authentication required' });
         }
 
-        // Verify user exists
-        const user = await User.findById(userId);
+        const token = authHeader.substring(7); // Remove 'Bearer ' prefix
+
+        // Verify JWT token
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+        // Get user from database
+        const user = await User.findById(decoded.userId);
         if (!user) {
-            return res.status(401).json({ error: 'Invalid authentication token' });
+            return res.status(401).json({ error: 'User not found' });
         }
 
         // Attach user to request
@@ -36,6 +33,12 @@ const auth = async (req, res, next) => {
 
         next();
     } catch (error) {
+        if (error.name === 'JsonWebTokenError') {
+            return res.status(401).json({ error: 'Invalid token' });
+        }
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({ error: 'Token expired' });
+        }
         console.error('Auth middleware error:', error);
         res.status(401).json({ error: 'Authentication failed' });
     }

@@ -51,12 +51,13 @@ class AuthService {
         const passwordHash = await this._hashPassword(password);
 
         try {
-            const user = await apiService.post('/auth/register', {
+            const response = await apiService.post('/auth/register', {
                 name,
                 email,
                 passwordHash
             });
-            return this._setSession(user);
+            // Backend now returns { token, user }
+            return this._setSession(response.user, response.token);
         } catch (err) {
             throw err;
         }
@@ -69,11 +70,12 @@ class AuthService {
         const passwordHash = await this._hashPassword(password);
 
         try {
-            const user = await apiService.post('/auth/login', {
+            const response = await apiService.post('/auth/login', {
                 email,
                 passwordHash
             });
-            return this._setSession(user);
+            // Backend now returns { token, user }
+            return this._setSession(response.user, response.token);
         } catch (err) {
             throw err;
         }
@@ -82,13 +84,18 @@ class AuthService {
     /**
      * Internal: Set active session
      */
-    _setSession(user) {
+    _setSession(user, token) {
         // Normalize ID (Mongo uses _id)
         const userId = user._id || user.id;
         user.id = userId; // Ensure .id exists for frontend compatibility
 
         this.currentUser = user;
         storageService.setUserId(userId);
+
+        // Store JWT token
+        if (token) {
+            localStorage.setItem('token', token);
+        }
 
         // Save minimal session info
         storageService.constructor.setGlobalItem(SESSION_KEY, {
@@ -106,6 +113,7 @@ class AuthService {
         this.currentUser = null;
         storageService.setUserId(null);
         storageService.constructor.setGlobalItem(SESSION_KEY, null);
+        localStorage.removeItem('token'); // Clear JWT token
     }
 
     /**

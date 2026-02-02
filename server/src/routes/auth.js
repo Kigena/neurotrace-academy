@@ -1,4 +1,5 @@
 import express from 'express';
+import jwt from 'jsonwebtoken';
 import { User } from '../models/User.js';
 
 const router = express.Router();
@@ -22,11 +23,18 @@ router.post('/register', async (req, res) => {
 
         await user.save();
 
-        // Return user without sensitive data if possible, or just the basics
+        // Generate JWT token
+        const token = jwt.sign(
+            { userId: user._id, email: user.email },
+            process.env.JWT_SECRET,
+            { expiresIn: '7d' }
+        );
+
+        // Return token and user data
         const userObj = user.toObject();
         delete userObj.passwordHash;
 
-        res.status(201).json(userObj);
+        res.status(201).json({ token, user: userObj });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
@@ -54,10 +62,18 @@ router.post('/login', async (req, res) => {
         user.lastLogin = Date.now();
         await user.save();
 
+        // Generate JWT token
+        const token = jwt.sign(
+            { userId: user._id, email: user.email },
+            process.env.JWT_SECRET,
+            { expiresIn: '7d' }
+        );
+
+        // Return token and user data
         const userObj = user.toObject();
         delete userObj.passwordHash;
 
-        res.json(userObj);
+        res.json({ token, user: userObj });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }

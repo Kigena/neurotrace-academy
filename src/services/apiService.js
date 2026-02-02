@@ -10,9 +10,9 @@ class ApiService {
      * Get authentication headers from localStorage
      */
     getAuthHeaders() {
-        const user = JSON.parse(localStorage.getItem('user') || '{}');
-        if (user._id) {
-            return { 'Authorization': `Bearer ${user._id}` };
+        const token = localStorage.getItem('token');
+        if (token) {
+            return { 'Authorization': `Bearer ${token}` };
         }
         return {};
     }
