@@ -3,6 +3,7 @@ import { useSocket } from '../../contexts/SocketContext';
 import { useAuth } from '../../contexts/AuthContext';
 import MessageBubble from './MessageBubble';
 import MessageInput from './MessageInput';
+import apiService from '../../services/apiService';
 
 const ChatActiveWindow = ({ activeChat, onBack }) => {
     const { user } = useAuth();
@@ -182,7 +183,41 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                                         color: isOwn ? 'white' : '#111827',
                                         wordBreak: 'break-word'
                                     }}>
-                                        <p style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{msg.content}</p>
+                                        {/* Attachments */}
+                                        {msg.attachments && msg.attachments.length > 0 && (
+                                            <div style={{ marginBottom: msg.content ? '8px' : 0 }}>
+                                                {msg.attachments.map((att, attIdx) => (
+                                                    <div key={attIdx} style={{ marginBottom: '4px' }}>
+                                                        {att.type === 'image' ? (
+                                                            <img
+                                                                src={att.url.startsWith('http') ? att.url : `${apiService.getBaseUrl()}${att.url}`}
+                                                                alt={att.filename}
+                                                                style={{
+                                                                    maxWidth: '300px',
+                                                                    width: '100%',
+                                                                    borderRadius: '8px',
+                                                                    marginTop: '4px'
+                                                                }}
+                                                            />
+                                                        ) : (
+                                                            <a
+                                                                href={att.url.startsWith('http') ? att.url : `${apiService.getBaseUrl()}${att.url}`}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                style={{
+                                                                    color: isOwn ? 'white' : '#4F46E5',
+                                                                    textDecoration: 'underline',
+                                                                    fontSize: '14px'
+                                                                }}
+                                                            >
+                                                                📎 {att.filename}
+                                                            </a>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                        {msg.content && <p style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{msg.content}</p>}
                                         <div style={{
                                             fontSize: '10px',
                                             marginTop: '4px',

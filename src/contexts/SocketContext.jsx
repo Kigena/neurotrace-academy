@@ -217,7 +217,7 @@ export const SocketProvider = ({ children }) => {
     const sendPrivateMessage = (recipientId, content, attachments = []) => {
         if (!socket) return;
 
-        console.log('📤 sendPrivateMessage called with recipientId:', recipientId, 'senderId:', user.id);
+        console.log('📤 sendPrivateMessage called', { recipientId, content, attachments });
 
         const msgData = {
             type: 'private',
@@ -225,7 +225,7 @@ export const SocketProvider = ({ children }) => {
             senderName: user.name,
             recipientId,
             content,
-            attachments,
+            attachments: attachments || [],
             timestamp: new Date(),
             _id: `temp-${Date.now()}` // Temporary ID for optimistic update
         };
@@ -238,7 +238,7 @@ export const SocketProvider = ({ children }) => {
     };
 
     const sendPublicMessage = (content, attachments = []) => {
-        console.log('sendPublicMessage called', { socket: !!socket, content, user });
+        console.log('sendPublicMessage called', { socket: !!socket, content, attachments, user });
         if (!socket) {
             console.error('Socket not connected!');
             return;
@@ -247,7 +247,7 @@ export const SocketProvider = ({ children }) => {
             senderId: user.id,
             senderName: user.name,
             content,
-            attachments
+            attachments: attachments || []
         };
         console.log('Emitting message:public', msgData);
         socket.emit('message:public', msgData);
@@ -280,13 +280,14 @@ export const SocketProvider = ({ children }) => {
             senderName: user.name,
             roomId,
             content,
-            attachments
+            attachments: attachments || []
         };
+        console.log('Emitting message:group', msgData);
         socket.emit('message:group', msgData);
     };
 
     const sendAiMessage = (content, attachments = [], userContext = {}) => {
-        console.log('sendAiMessage called', { socket: !!socket, content, user });
+        console.log('sendAiMessage called', { socket: !!socket, content, attachments, user });
         if (!socket) {
             console.error('Socket not connected for AI message!');
             return;
@@ -296,14 +297,14 @@ export const SocketProvider = ({ children }) => {
             senderName: user.name,
             roomId: null,
             content,
-            attachments,
+            attachments: attachments || [],
             userContext: {
                 ...userContext,
                 name: user.name,
                 userId: user.id
             }
         };
-        console.log('Emitting message:ai', msgData);
+        console.log('Emitting message:ai with attachments:', msgData);
         socket.emit('message:ai', msgData);
     };
 

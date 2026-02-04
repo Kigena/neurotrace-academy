@@ -54,8 +54,8 @@ export const initializeSocket = (httpServer) => {
         });
 
         // Private message
-        socket.on('message:private', async ({ senderId, senderName, recipientId, content }) => {
-            console.log('📥 Received private message:', { senderId, senderName, recipientId, content });
+        socket.on('message:private', async ({ senderId, senderName, recipientId, content, attachments }) => {
+            console.log('📥 Received private message:', { senderId, senderName, recipientId, content, attachments });
             try {
                 const message = new Message({
                     type: 'private',
@@ -63,7 +63,8 @@ export const initializeSocket = (httpServer) => {
                     senderName,
                     recipientId,
                     content,
-                    read: false
+                    read: false,
+                    attachments: attachments || []
                 });
                 await message.save();
                 console.log('💾 Private message saved:', message._id);
@@ -85,15 +86,16 @@ export const initializeSocket = (httpServer) => {
         });
 
         // Public chat message
-        socket.on('message:public', async ({ senderId, senderName, content }) => {
-            console.log('📥 Received message:public event', { senderId, senderName, content });
+        socket.on('message:public', async ({ senderId, senderName, content, attachments }) => {
+            console.log('📥 Received message:public event', { senderId, senderName, content, attachments });
             try {
                 const message = new Message({
                     type: 'public',
                     senderId,
                     senderName,
                     content,
-                    roomId: null
+                    roomId: null,
+                    attachments: attachments || []
                 });
                 await message.save();
                 console.log('💾 Message saved to DB:', message._id);
@@ -109,7 +111,7 @@ export const initializeSocket = (httpServer) => {
         });
 
         // Group chat message
-        socket.on('message:group', async ({ senderId, senderName, roomId, content, mentions }) => {
+        socket.on('message:group', async ({ senderId, senderName, roomId, content, mentions, attachments }) => {
             try {
                 const message = new Message({
                     type: 'group',
@@ -117,7 +119,8 @@ export const initializeSocket = (httpServer) => {
                     senderName,
                     roomId,
                     content,
-                    mentions: mentions || []
+                    mentions: mentions || [],
+                    attachments: attachments || []
                 });
                 await message.save();
 
@@ -141,8 +144,8 @@ export const initializeSocket = (httpServer) => {
         });
 
         // AI bot message
-        socket.on('message:ai', async ({ senderId, senderName, roomId, content, userContext }) => {
-            console.log('📥 Received message:ai event', { senderId, senderName, content });
+        socket.on('message:ai', async ({ senderId, senderName, roomId, content, userContext, attachments }) => {
+            console.log('📥 Received message:ai event', { senderId, senderName, content, attachments });
             try {
                 // Save user's message
                 const userMessage = new Message({
@@ -150,7 +153,8 @@ export const initializeSocket = (httpServer) => {
                     senderId,
                     senderName,
                     roomId,
-                    content
+                    content,
+                    attachments: attachments || []
                 });
                 await userMessage.save();
                 console.log('💾 User AI message saved:', userMessage._id);
@@ -166,16 +170,17 @@ export const initializeSocket = (httpServer) => {
                 socket.emit('ai:typing', true);
                 const aiResponse = await geminiService.generateResponse(content, userContext);
 
-                // Save AI response
+                // Save AI response WITH recipientId so it persists on refresh
                 const aiMessage = new Message({
                     type: 'ai',
                     senderId: 'ai-bot',
                     senderName: 'EEG Assistant 🤖',
+                    recipientId: senderId, // CRITICAL FIX: Add recipientId to persist AI response
                     roomId,
                     content: aiResponse
                 });
                 await aiMessage.save();
-                console.log('💾 AI response saved:', aiMessage._id);
+                console.log('💾 AI response saved:', aiMessage._id, 'for user:', senderId);
 
                 socket.emit('ai:typing', false);
 
