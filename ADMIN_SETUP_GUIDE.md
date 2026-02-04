@@ -6,7 +6,24 @@ The case moderation system requires at least one admin user to review and approv
 
 ## Making a User an Admin
 
-Since role assignment isn't in the UI yet, you'll need to update the database directly.
+### ✨ **NEW: UI Method (Easiest)**
+
+**If you already have an admin account**, you can now create other admins from the UI:
+
+1. Log in as an admin
+2. Navigate to **Admin Dashboard** → **👥 User Management** tab
+3. Find the user you want to promote
+4. Click **"Promote to Admin"** button
+5. Confirm the action
+6. ✅ Done! They are now an admin
+
+**For your FIRST admin user**, use one of the database methods below.
+
+---
+
+## Creating Your First Admin (Database Methods)
+
+Since you need at least one admin to use the UI method, create your first admin using one of these approaches:
 
 ### Option 1: MongoDB Compass / Studio 3T
 
@@ -104,6 +121,10 @@ node scripts/makeAdmin.js your-email@example.com
 
 ### Access: `/admin/moderation`
 
+The admin dashboard has two main tabs:
+
+### Tab 1: 📋 Case Moderation
+
 **Filter Tabs:**
 - **Pending Review** - Cases waiting for approval
 - **All Cases** - All cases regardless of status
@@ -126,6 +147,31 @@ node scripts/makeAdmin.js your-email@example.com
 - `rejected` - Rejected due to PHI or other issues
 - `draft` - Saved but not submitted
 - `archived` - Removed from active listings
+
+### Tab 2: 👥 User Management
+
+**Overview Stats:**
+- Total Users count
+- Admin Users count
+- Regular Users count
+
+**User Table:**
+- View all registered users
+- See current roles (Admin 👑 or User 👤)
+- Join date for each user
+
+**Actions:**
+- **Promote to Admin** - Elevate user to admin role
+- **Demote to User** - Remove admin privileges
+- Cannot change your own role (safety feature)
+
+**How to Create More Admins:**
+1. Go to User Management tab
+2. Find the user in the table
+3. Click "Promote to Admin" button
+4. Confirm the action
+5. User immediately gains admin access
+6. User should log out and back in to see admin UI features
 
 ## User Experience
 

@@ -6,12 +6,22 @@ import apiService from '../services/apiService';
 const AdminModeration = () => {
     const { user } = useAuth();
     const navigate = useNavigate();
+    
+    // View state
+    const [activeTab, setActiveTab] = useState('cases'); // 'cases' or 'users'
+    
+    // Cases state
     const [cases, setCases] = useState([]);
     const [loading, setLoading] = useState(true);
     const [filter, setFilter] = useState('pending'); // 'pending', 'all', 'rejected'
     const [selectedCase, setSelectedCase] = useState(null);
     const [moderationNotes, setModerationNotes] = useState('');
     const [processing, setProcessing] = useState(false);
+    
+    // Users state
+    const [users, setUsers] = useState([]);
+    const [usersLoading, setUsersLoading] = useState(false);
+    const [stats, setStats] = useState({ totalUsers: 0, adminUsers: 0, regularUsers: 0 });
 
     // Check if user is admin
     useEffect(() => {
@@ -23,8 +33,18 @@ const AdminModeration = () => {
 
     // Fetch cases for moderation
     useEffect(() => {
-        fetchCases();
-    }, [filter]);
+        if (activeTab === 'cases') {
+            fetchCases();
+        }
+    }, [filter, activeTab]);
+
+    // Fetch users when switching to users tab
+    useEffect(() => {
+        if (activeTab === 'users') {
+            fetchUsers();
+            fetchStats();
+        }
+    }, [activeTab]);
 
     const fetchCases = async () => {
         setLoading(true);
@@ -35,6 +55,44 @@ const AdminModeration = () => {
             console.error('Failed to fetch cases:', error);
         } finally {
             setLoading(false);
+        }
+    };
+
+    const fetchUsers = async () => {
+        setUsersLoading(true);
+        try {
+            const data = await apiService.get('/admin/users');
+            setUsers(data);
+        } catch (error) {
+            console.error('Failed to fetch users:', error);
+            alert(`❌ Failed to fetch users: ${error.message}`);
+        } finally {
+            setUsersLoading(false);
+        }
+    };
+
+    const fetchStats = async () => {
+        try {
+            const data = await apiService.get('/admin/stats');
+            setStats(data);
+        } catch (error) {
+            console.error('Failed to fetch stats:', error);
+        }
+    };
+
+    const handleRoleChange = async (userId, newRole, userName) => {
+        const action = newRole === 'admin' ? 'promote' : 'demote';
+        const confirmMsg = `${action === 'promote' ? '👑' : '👤'} Are you sure you want to ${action} ${userName} to ${newRole}?`;
+        
+        if (!window.confirm(confirmMsg)) return;
+
+        try {
+            const response = await apiService.put(`/admin/users/${userId}/role`, { role: newRole });
+            alert(`✅ ${response.message}`);
+            fetchUsers();
+            fetchStats();
+        } catch (error) {
+            alert(`❌ Failed to update role: ${error.message}`);
         }
     };
 
@@ -99,12 +157,42 @@ const AdminModeration = () => {
     return (
         <div className="max-w-7xl mx-auto p-6">
             <div className="mb-6">
-                <h1 className="text-3xl font-bold text-slate-900 mb-2">Case Moderation Dashboard</h1>
-                <p className="text-slate-600">Review submitted cases for HIPAA compliance and de-identification</p>
+                <h1 className="text-3xl font-bold text-slate-900 mb-2">Admin Dashboard</h1>
+                <p className="text-slate-600">Manage cases and user permissions</p>
             </div>
 
-            {/* Filter Tabs */}
-            <div className="flex gap-2 mb-6 border-b border-slate-200">
+            {/* Main Tabs: Cases vs Users */}
+            <div className="flex gap-4 mb-6 border-b-2 border-slate-200">
+                <button
+                    onClick={() => {
+                        setActiveTab('cases');
+                        setSelectedCase(null);
+                    }}
+                    className={`px-6 py-3 font-semibold transition-all border-b-2 -mb-0.5 ${
+                        activeTab === 'cases'
+                            ? 'text-purple-600 border-purple-600'
+                            : 'text-slate-500 border-transparent hover:text-slate-700'
+                    }`}
+                >
+                    📋 Case Moderation
+                </button>
+                <button
+                    onClick={() => setActiveTab('users')}
+                    className={`px-6 py-3 font-semibold transition-all border-b-2 -mb-0.5 ${
+                        activeTab === 'users'
+                            ? 'text-purple-600 border-purple-600'
+                            : 'text-slate-500 border-transparent hover:text-slate-700'
+                    }`}
+                >
+                    👥 User Management
+                </button>
+            </div>
+
+            {/* Cases Tab Content */}
+            {activeTab === 'cases' && (
+                <>
+                    {/* Filter Tabs */}
+                    <div className="flex gap-2 mb-6 border-b border-slate-200">
                 {[
                     { key: 'pending', label: 'Pending Review', color: 'text-amber-600' },
                     { key: 'all', label: 'All Cases', color: 'text-slate-600' },
@@ -302,6 +390,150 @@ const AdminModeration = () => {
                                 </button>
                             </div>
                         )}
+                    </div>
+                </div>
+            )}
+                </>
+            )}
+
+            {/* Users Tab Content */}
+            {activeTab === 'users' && (
+                <div className="space-y-6">
+                    {/* Stats Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <p className="text-sm text-blue-600 font-medium">Total Users</p>
+                                    <p className="text-3xl font-bold text-blue-900">{stats.totalUsers}</p>
+                                </div>
+                                <svg className="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-lg p-6">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <p className="text-sm text-purple-600 font-medium">Admin Users</p>
+                                    <p className="text-3xl font-bold text-purple-900">{stats.adminUsers}</p>
+                                </div>
+                                <svg className="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-lg p-6">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <p className="text-sm text-green-600 font-medium">Regular Users</p>
+                                    <p className="text-3xl font-bold text-green-900">{stats.regularUsers}</p>
+                                </div>
+                                <svg className="w-12 h-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Users Table */}
+                    <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+                        <div className="px-6 py-4 bg-slate-50 border-b border-slate-200">
+                            <h2 className="text-lg font-bold text-slate-900">User Management</h2>
+                            <p className="text-sm text-slate-600">Promote users to admin or demote admins to regular users</p>
+                        </div>
+
+                        {usersLoading ? (
+                            <div className="flex justify-center py-12">
+                                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
+                            </div>
+                        ) : (
+                            <div className="overflow-x-auto">
+                                <table className="w-full">
+                                    <thead className="bg-slate-50 border-b border-slate-200">
+                                        <tr>
+                                            <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">User</th>
+                                            <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Email</th>
+                                            <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Role</th>
+                                            <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Joined</th>
+                                            <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-200">
+                                        {users.map((userItem) => (
+                                            <tr key={userItem._id} className="hover:bg-slate-50 transition-colors">
+                                                <td className="px-6 py-4">
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center text-white font-bold">
+                                                            {userItem.name.charAt(0).toUpperCase()}
+                                                        </div>
+                                                        <div>
+                                                            <p className="font-medium text-slate-900">{userItem.name}</p>
+                                                            {userItem._id === user.id && (
+                                                                <span className="text-xs text-purple-600 font-semibold">(You)</span>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="px-6 py-4 text-sm text-slate-600">{userItem.email}</td>
+                                                <td className="px-6 py-4">
+                                                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                                                        userItem.role === 'admin'
+                                                            ? 'bg-purple-100 text-purple-800'
+                                                            : 'bg-slate-100 text-slate-700'
+                                                    }`}>
+                                                        {userItem.role === 'admin' ? '👑 Admin' : '👤 User'}
+                                                    </span>
+                                                </td>
+                                                <td className="px-6 py-4 text-sm text-slate-600">
+                                                    {new Date(userItem.createdAt).toLocaleDateString()}
+                                                </td>
+                                                <td className="px-6 py-4">
+                                                    {userItem._id === user.id ? (
+                                                        <span className="text-xs text-slate-400 italic">Cannot change own role</span>
+                                                    ) : (
+                                                        <button
+                                                            onClick={() => handleRoleChange(
+                                                                userItem._id,
+                                                                userItem.role === 'admin' ? 'user' : 'admin',
+                                                                userItem.name
+                                                            )}
+                                                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                                                                userItem.role === 'admin'
+                                                                    ? 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                                                                    : 'bg-purple-600 text-white hover:bg-purple-700'
+                                                            }`}
+                                                        >
+                                                            {userItem.role === 'admin' ? 'Demote to User' : 'Promote to Admin'}
+                                                        </button>
+                                                    )}
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Info Box */}
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <div className="flex gap-3">
+                            <svg className="w-6 h-6 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div className="text-sm text-blue-900">
+                                <p className="font-semibold mb-1">About User Roles:</p>
+                                <ul className="list-disc list-inside space-y-1">
+                                    <li><strong>Admin:</strong> Can moderate cases, manage users, and access admin dashboard</li>
+                                    <li><strong>User:</strong> Can submit cases, view approved cases, and use all learning features</li>
+                                    <li>You cannot change your own role - ask another admin to modify your permissions</li>
+                                    <li>Role changes take effect immediately (user may need to log out/in to see UI changes)</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}
