@@ -75,9 +75,14 @@ Ask me anything about this pattern!`;
 
             case 'syndrome-detail':
                 return `You are viewing the syndrome: "${syndromeData?.name || 'Unknown'}".
+Classification: ${syndromeData?.classification || 'N/A'}
+Age Range: ${syndromeData?.age_range || 'N/A'}
 ${syndromeData?.description ? `Description: ${syndromeData.description}` : ''}
 
-What would you like to know?`;
+What would you like to know about this syndrome?`;
+
+            case 'syndromes':
+                return `You are browsing EEG syndromes and epilepsy classifications. I can help you understand syndrome characteristics, diagnostic criteria, and clinical features!`;
 
             case 'quiz':
                 return `You are taking a quiz. I can help explain concepts, but I won't give you direct answers! Ask me to explain any EEG patterns or concepts you're unsure about.`;
@@ -94,7 +99,7 @@ What would you like to know?`;
     };
 
     const getSuggestedQuestions = () => {
-        const { page, caseData, patternData } = context;
+        const { page, caseData, patternData, syndromeData } = context;
 
         switch (page) {
             case 'case-detail':
@@ -111,6 +116,22 @@ What would you like to know?`;
                     "What causes this pattern?",
                     "How do I identify it?",
                     "What is the clinical significance?"
+                ];
+
+            case 'syndrome-detail':
+                return [
+                    `What is ${syndromeData?.name}?`,
+                    "What are the typical EEG patterns?",
+                    "What is the age of onset?",
+                    "How is it diagnosed?"
+                ];
+
+            case 'syndromes':
+                return [
+                    "What are the main epilepsy syndrome classifications?",
+                    "How do I differentiate similar syndromes?",
+                    "What are the most common syndromes?",
+                    "Explain the ILAE classification"
                 ];
 
             case 'quiz':

@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import syndromesV2Data from "../data/syndromes_v2.json";
 import syndromesData from "../data/syndromes.json";
 import patternsV2Data from "../data/neurotrace_patterns_library_v2.json";
+import ContextualAI from "../components/ContextualAI.jsx";
 
 function SyndromeDetail() {
   const { id } = useParams();
@@ -44,6 +45,7 @@ function SyndromeDetail() {
   };
 
   return (
+    <>
     <div className="space-y-6">
       {/* Header */}
       <div>
@@ -508,6 +510,15 @@ function SyndromeDetail() {
         )}
       </div>
     </div>
+
+    {/* Contextual AI Assistant */}
+    <ContextualAI
+      context={{
+        page: 'syndrome-detail',
+        syndromeData: syndrome
+      }}
+    />
+    </>
   );
 }
 

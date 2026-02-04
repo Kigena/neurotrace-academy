@@ -4,6 +4,7 @@ import syndromesV2Data from "../data/syndromes_v2.json";
 import syndromesData from "../data/syndromes.json";
 import patternsV2Data from "../data/neurotrace_patterns_library_v2.json";
 import SearchBar from "../components/SearchBar.jsx";
+import ContextualAI from "../components/ContextualAI.jsx";
 
 function Syndromes() {
   const [search, setSearch] = useState("");
@@ -77,6 +78,7 @@ function Syndromes() {
   };
 
   return (
+    <>
     <section className="space-y-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -231,6 +233,14 @@ function Syndromes() {
         </div>
       )}
     </section>
+
+    {/* Contextual AI Assistant */}
+    <ContextualAI
+      context={{
+        page: 'syndromes'
+      }}
+    />
+    </>
   );
 }
 
