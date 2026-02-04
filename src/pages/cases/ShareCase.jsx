@@ -103,13 +103,28 @@ const ShareCase = () => {
             console.log('📤 Uploading file:', file.name, file.type, file.size);
             const response = await caseService.uploadAttachment(file);
             console.log('✅ Upload response:', response);
+            
+            // Add to attachments
             setFormData(prev => ({
                 ...prev,
                 attachments: [...prev.attachments, response]
             }));
+            
+            // Clear the file input for next upload
             setFile(null);
             setFilePreview(null);
-            alert('✅ File uploaded successfully!');
+            
+            // Show success message
+            const msg = `✅ File uploaded successfully!\n\n"${file.name}" has been added to your case.\n\nYou can see the preview below in the "Attached Files" section.`;
+            alert(msg);
+            
+            // Scroll to attachments list to show the uploaded file
+            setTimeout(() => {
+                const attachmentsList = document.querySelector('.bg-green-50');
+                if (attachmentsList) {
+                    attachmentsList.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }, 300);
         } catch (error) {
             console.error('❌ Upload failed:', error);
             const errorMessage = error.message || 'Unknown error occurred';
@@ -385,39 +400,46 @@ const ShareCase = () => {
 
                     {/* Attachment List */}
                     {formData.attachments.length > 0 && (
-                        <div className="space-y-2">
-                            <h3 className="text-sm font-semibold text-slate-600">✅ Attached Files ({formData.attachments.length})</h3>
+                        <div className="space-y-3">
+                            <div className="flex items-center gap-2">
+                                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <h3 className="text-sm font-semibold text-green-700">Attached Files ({formData.attachments.length})</h3>
+                            </div>
                             {formData.attachments.map((att, idx) => (
-                                <div key={idx} className="bg-green-50 border border-green-200 rounded-lg shadow-sm overflow-hidden">
-                                    {att.type === 'image' && (
-                                        <div className="p-2 bg-slate-50 border-b border-green-200">
+                                <div key={idx} className="bg-green-50 border border-green-300 rounded-lg shadow-sm overflow-hidden">
+                                    {att.type === 'image' && att.url && (
+                                        <div className="p-3 bg-white border-b border-green-200">
                                             <img 
                                                 src={att.url.startsWith('http') ? att.url : `${apiService.getBaseUrl()}${att.url}`}
                                                 alt={att.filename}
-                                                className="w-full h-32 object-contain"
+                                                className="w-full max-h-64 object-contain rounded border border-slate-200"
+                                                onLoad={() => console.log('✅ Image loaded successfully:', att.filename)}
                                                 onError={(e) => {
-                                                    console.error('Preview failed:', att.url);
+                                                    console.error('❌ Image preview failed:', att.url);
                                                     console.log('Full URL:', e.target.src);
+                                                    console.log('Base URL:', apiService.getBaseUrl());
                                                 }}
                                             />
                                         </div>
                                     )}
                                     <div className="flex items-center justify-between p-3">
-                                        <div className="flex items-center gap-2">
-                                            <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                        <div className="flex items-center gap-2 flex-1 min-w-0">
+                                            <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                             <span className="text-sm text-slate-900 truncate font-medium">{att.filename}</span>
                                         </div>
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-xs text-slate-500 uppercase bg-white px-2 py-1 rounded">{att.type}</span>
+                                        <div className="flex items-center gap-2 flex-shrink-0">
+                                            <span className="text-xs text-slate-500 uppercase bg-white px-2 py-1 rounded border border-slate-200">{att.type}</span>
                                             <button
                                                 type="button"
                                                 onClick={() => {
-                                                    setFormData(prev => ({
-                                                        ...prev,
-                                                        attachments: prev.attachments.filter((_, i) => i !== idx)
-                                                    }));
+                                                    if (window.confirm(`Remove "${att.filename}"?`)) {
+                                                        setFormData(prev => ({
+                                                            ...prev,
+                                                            attachments: prev.attachments.filter((_, i) => i !== idx)
+                                                        }));
+                                                    }
                                                 }}
-                                                className="text-red-500 hover:text-red-700 text-xs"
+                                                className="text-red-600 hover:text-red-800 text-xs font-medium hover:bg-red-50 px-2 py-1 rounded transition-colors"
                                             >
                                                 Remove
                                             </button>
