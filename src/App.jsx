@@ -21,6 +21,7 @@ import Navbar from "./components/Navbar.jsx";
 import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Chat from "./pages/Chat.jsx";
+import AdminModeration from "./pages/AdminModeration.jsx";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -128,6 +129,11 @@ function AppContent() {
           <Route path="/chat" element={
             <ProtectedRoute>
               <Chat />
+            </ProtectedRoute>
+          } />
+          <Route path="/admin/moderation" element={
+            <ProtectedRoute>
+              <AdminModeration />
             </ProtectedRoute>
           } />
         </Routes>

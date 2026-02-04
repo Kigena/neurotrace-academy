@@ -159,7 +159,69 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// 5. Add Comment
+// 5. Get Cases for Moderation (Admin Only)
+router.get('/moderation', auth, async (req, res) => {
+    try {
+        // Check if user is admin
+        if (req.user.role !== 'admin') {
+            return res.status(403).json({ error: 'Admin access required' });
+        }
+
+        const { status } = req.query;
+        let query = {};
+
+        if (status === 'pending') {
+            query.status = 'pending';
+        } else if (status === 'rejected') {
+            query.status = 'rejected';
+        }
+        // 'all' returns everything
+
+        const cases = await CommunityCase.find(query)
+            .populate('author', 'name email')
+            .sort({ createdAt: -1 });
+
+        res.json(cases);
+    } catch (error) {
+        console.error('Get moderation cases error:', error);
+        res.status(500).json({ error: 'Failed to fetch cases for moderation' });
+    }
+});
+
+// 6. Moderate Case (Admin Only)
+router.put('/:id/moderate', auth, async (req, res) => {
+    try {
+        // Check if user is admin
+        if (req.user.role !== 'admin') {
+            return res.status(403).json({ error: 'Admin access required' });
+        }
+
+        const { status, moderationNotes } = req.body;
+
+        if (!['published', 'rejected'].includes(status)) {
+            return res.status(400).json({ error: 'Invalid status' });
+        }
+
+        const communityCase = await CommunityCase.findById(req.params.id);
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        communityCase.status = status;
+        communityCase.moderationNotes = moderationNotes || '';
+        communityCase.reviewedBy = req.user.id;
+        communityCase.reviewedAt = new Date();
+
+        await communityCase.save();
+
+        res.json(communityCase);
+    } catch (error) {
+        console.error('Moderate case error:', error);
+        res.status(500).json({ error: 'Failed to moderate case' });
+    }
+});
+
+// 7. Add Comment
 router.post('/:id/comment', auth, async (req, res) => {
     try {
         const { content } = req.body;

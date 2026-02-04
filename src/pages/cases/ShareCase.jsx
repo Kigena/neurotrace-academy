@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import caseService from '../../services/caseService';
 import apiService from '../../services/apiService';
+import CaseDisclaimerModal from '../../components/CaseDisclaimerModal';
 
 const ShareCase = () => {
     const navigate = useNavigate();
     const [step, setStep] = useState(1);
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Disclaimer Modal State
+    const [showDisclaimer, setShowDisclaimer] = useState(true);
+    const [hasAgreedToTerms, setHasAgreedToTerms] = useState(false);
 
     // Form State
     const [formData, setFormData] = useState({
@@ -23,6 +28,26 @@ const ShareCase = () => {
     const [file, setFile] = useState(null);
     const [filePreview, setFilePreview] = useState(null);
     const [uploading, setUploading] = useState(false);
+
+    // Check if user has already agreed in this session
+    useEffect(() => {
+        const agreedInSession = sessionStorage.getItem('caseDisclaimerAgreed');
+        if (agreedInSession === 'true') {
+            setShowDisclaimer(false);
+            setHasAgreedToTerms(true);
+        }
+    }, []);
+
+    // Disclaimer handlers
+    const handleAcceptDisclaimer = () => {
+        setShowDisclaimer(false);
+        setHasAgreedToTerms(true);
+        sessionStorage.setItem('caseDisclaimerAgreed', 'true');
+    };
+
+    const handleDeclineDisclaimer = () => {
+        navigate('/cases');
+    };
 
     // Debug helper - can be removed later
     const runDiagnostics = () => {
@@ -115,7 +140,7 @@ const ShareCase = () => {
             const response = await caseService.createCase(finalData);
             console.log('✅ Case created:', response);
             
-            alert('✅ Case published successfully!');
+            alert('✅ Case submitted successfully!\n\n📋 Your case is now pending admin review.\n\nOur team will verify that all patient information is properly de-identified before publishing to the community feed.\n\nYou will be notified once your case is approved.');
             navigate('/cases'); // Redirect to feed
         } catch (error) {
             console.error('❌ Submission failed:', error);
@@ -127,18 +152,35 @@ const ShareCase = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto p-4 md:p-8">
-            <div className="flex items-center justify-between mb-6">
-                <h1 className="text-3xl font-bold text-text">Share a Clinical Case</h1>
-                <button
-                    onClick={runDiagnostics}
-                    className="text-xs px-3 py-1 bg-slate-200 text-slate-700 rounded hover:bg-slate-300 transition-colors"
-                    type="button"
-                    title="Run diagnostics if you're experiencing issues"
-                >
-                    🔍 Debug
-                </button>
-            </div>
+        <>
+            {/* Disclaimer Modal */}
+            <CaseDisclaimerModal
+                isOpen={showDisclaimer}
+                onAccept={handleAcceptDisclaimer}
+                onDecline={handleDeclineDisclaimer}
+            />
+
+            <div className="max-w-4xl mx-auto p-4 md:p-8">
+                <div className="flex items-center justify-between mb-6">
+                    <h1 className="text-3xl font-bold text-text">Share a Clinical Case</h1>
+                    <button
+                        onClick={runDiagnostics}
+                        className="text-xs px-3 py-1 bg-slate-200 text-slate-700 rounded hover:bg-slate-300 transition-colors"
+                        type="button"
+                        title="Run diagnostics if you're experiencing issues"
+                    >
+                        🔍 Debug
+                    </button>
+                </div>
+
+                {/* Show reminder after disclaimer accepted */}
+                {hasAgreedToTerms && (
+                    <div className="mb-6 bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
+                        <p className="text-sm text-amber-900">
+                            <strong>⚠️ Reminder:</strong> Ensure all patient identifiers are removed. Your case will undergo admin review before publication.
+                        </p>
+                    </div>
+                )}
 
             {/* Stepper */}
             <div className="flex items-center mb-8 w-full max-w-lg mx-auto">
@@ -407,7 +449,8 @@ const ShareCase = () => {
                     </div>
                 </div>
             )}
-        </div>
+            </div>
+        </>
     );
 };
 

@@ -87,6 +87,11 @@ function Navbar() {
             <NavLink to="/chat" className={navLinkClasses}>
               Chat
             </NavLink>
+            {user?.role === 'admin' && (
+              <NavLink to="/admin/moderation" className={navLinkClasses}>
+                🛡️ Moderation
+              </NavLink>
+            )}
           </nav>
         </div>
 
@@ -154,6 +159,11 @@ function Navbar() {
             <NavLink to="/chat" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Chat
             </NavLink>
+            {user?.role === 'admin' && (
+              <NavLink to="/admin/moderation" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
+                🛡️ Moderation
+              </NavLink>
+            )}
           </nav>
         </div>
       )}

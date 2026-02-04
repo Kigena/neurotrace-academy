@@ -29,8 +29,21 @@ const communityCaseSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['draft', 'published', 'archived'],
-        default: 'published'
+        enum: ['draft', 'pending', 'published', 'rejected', 'archived'],
+        default: 'pending' // Changed: Now requires admin approval
+    },
+    moderationNotes: {
+        type: String,
+        default: ''
+    },
+    reviewedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        default: null
+    },
+    reviewedAt: {
+        type: Date,
+        default: null
     },
     // Patient Demographics (Anonymized)
     patientInfo: {
