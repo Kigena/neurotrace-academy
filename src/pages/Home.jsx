@@ -44,12 +44,12 @@ function Home() {
             🎓 Welcome to NeuroTrace Academy
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Master EEG Interpretation with{" "}
-            <span className="text-yellow-300">AI-Powered Learning</span>
+            Become an Expert{" "}
+            <span className="text-yellow-300">EEG Technologist</span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-6 max-w-2xl">
             {user ? `Welcome back, ${user.name}! ` : ''}
-            Explore clinical cases, study EEG patterns, and prepare for ABRET certification with our comprehensive learning platform.
+            Master EEG recording techniques, pattern recognition, and technical skills. Prepare for ABRET R. EEG T. certification with comprehensive training modules.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -73,25 +73,25 @@ function Home() {
         <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
           <div className="text-3xl md:text-4xl font-bold mb-2">{stats.patterns}</div>
           <div className="text-blue-100 text-sm font-medium">EEG Patterns</div>
-          <div className="mt-3 text-xs text-blue-200">Learn & Identify</div>
+          <div className="mt-3 text-xs text-blue-200">Recognize & Document</div>
         </div>
         
         <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
           <div className="text-3xl md:text-4xl font-bold mb-2">{stats.syndromes}</div>
           <div className="text-purple-100 text-sm font-medium">Syndromes</div>
-          <div className="mt-3 text-xs text-purple-200">Master Classifications</div>
+          <div className="mt-3 text-xs text-purple-200">Know the Patterns</div>
         </div>
         
         <div className="bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
           <div className="text-3xl md:text-4xl font-bold mb-2">{stats.cases}</div>
-          <div className="text-pink-100 text-sm font-medium">Clinical Cases</div>
-          <div className="mt-3 text-xs text-pink-200">Real-world Learning</div>
+          <div className="text-pink-100 text-sm font-medium">Training Cases</div>
+          <div className="mt-3 text-xs text-pink-200">Technical Practice</div>
         </div>
         
         <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
           <div className="text-3xl md:text-4xl font-bold mb-2">{stats.quizzes}+</div>
           <div className="text-amber-100 text-sm font-medium">Quiz Questions</div>
-          <div className="mt-3 text-xs text-amber-200">ABRET Prep</div>
+          <div className="mt-3 text-xs text-amber-200">R. EEG T. Prep</div>
         </div>
       </div>
 
@@ -153,15 +153,15 @@ function Home() {
               <ul className="space-y-1.5 text-sm text-slate-700">
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-500 mt-0.5">✓</span>
-                  <span>Practice pattern recognition</span>
+                  <span>Identify EEG patterns accurately</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-500 mt-0.5">✓</span>
-                  <span>Apply clinical correlation</span>
+                  <span>Recognize technical artifacts</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-500 mt-0.5">✓</span>
-                  <span>Develop differential diagnosis</span>
+                  <span>Apply proper documentation</span>
                 </li>
               </ul>
             </div>
@@ -182,10 +182,10 @@ function Home() {
       {/* Featured Patterns */}
       <div>
         <div className="flex items-center justify-between mb-6">
-          <div>
-            <h2 className="text-2xl font-bold text-slate-900">Featured EEG Patterns</h2>
-            <p className="text-sm text-slate-600 mt-1">Master these essential patterns for ABRET</p>
-          </div>
+        <div>
+          <h2 className="text-2xl font-bold text-slate-900">Featured EEG Patterns</h2>
+          <p className="text-sm text-slate-600 mt-1">Learn to recognize these essential patterns as an EEG tech</p>
+        </div>
           <Link to="/patterns" className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
             View All
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -208,7 +208,7 @@ function Home() {
                 {pattern.name}
               </h3>
               <p className="text-sm text-slate-600 mb-3 line-clamp-2">
-                {pattern.description || 'Learn to identify this important EEG pattern'}
+                {pattern.description || 'Master recognition of this essential EEG pattern for technologists'}
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {pattern.category && (
@@ -241,7 +241,7 @@ function Home() {
               <div className="text-4xl mb-3">🏥</div>
               <h3 className="text-xl font-bold mb-2">Clinical Cases</h3>
               <p className="text-sm text-blue-100 mb-4">
-                Real-world scenarios with detailed findings and expert analysis
+                Real-world EEG recordings with technical challenges and learning points
               </p>
               <div className="flex items-center gap-2 text-sm font-semibold">
                 Explore Cases
@@ -261,7 +261,7 @@ function Home() {
               <div className="text-4xl mb-3">🧠</div>
               <h3 className="text-xl font-bold mb-2">Pattern Library</h3>
               <p className="text-sm text-purple-100 mb-4">
-                Comprehensive atlas of normal and abnormal EEG patterns
+                Learn to recognize and identify EEG patterns as a skilled technologist
               </p>
               <div className="flex items-center gap-2 text-sm font-semibold">
                 Browse Patterns
@@ -281,7 +281,7 @@ function Home() {
               <div className="text-4xl mb-3">🔬</div>
               <h3 className="text-xl font-bold mb-2">Syndromes</h3>
               <p className="text-sm text-pink-100 mb-4">
-                Epilepsy syndromes with EEG correlations and diagnostic criteria
+                Understand epilepsy syndromes and their characteristic EEG patterns
               </p>
               <div className="flex items-center gap-2 text-sm font-semibold">
                 Study Syndromes
@@ -301,7 +301,7 @@ function Home() {
               <div className="text-4xl mb-3">✏️</div>
               <h3 className="text-xl font-bold mb-2">Practice Quizzes</h3>
               <p className="text-sm text-amber-100 mb-4">
-                Test your knowledge with ABRET-style questions
+                Test your technical knowledge with ABRET R. EEG T. exam-style questions
               </p>
               <div className="flex items-center gap-2 text-sm font-semibold">
                 Start Quiz
@@ -319,9 +319,9 @@ function Home() {
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full"></div>
             <div className="relative z-10">
               <div className="text-4xl mb-3">📋</div>
-              <h3 className="text-xl font-bold mb-2">Clinical Workflow</h3>
+              <h3 className="text-xl font-bold mb-2">Technical Workflow</h3>
               <p className="text-sm text-emerald-100 mb-4">
-                Best practices for recording and interpretation
+                Master recording techniques, electrode application, and quality control
               </p>
               <div className="flex items-center gap-2 text-sm font-semibold">
                 Learn Workflow
@@ -363,15 +363,15 @@ function Home() {
           <div className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
             💬 Community Powered
           </div>
-          <h2 className="text-3xl font-bold mb-4">Join the Learning Community</h2>
+          <h2 className="text-3xl font-bold mb-4">Join the EEG Tech Community</h2>
           <div className="grid md:grid-cols-2 gap-6 text-sm">
             <div className="flex gap-3">
               <div className="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 ✓
               </div>
               <div>
-                <div className="font-semibold mb-1">Share Clinical Cases</div>
-                <div className="text-slate-300">Contribute anonymized cases to help peers learn</div>
+                <div className="font-semibold mb-1">Share Technical Cases</div>
+                <div className="text-slate-300">Contribute challenging recordings to help fellow techs learn</div>
               </div>
             </div>
             <div className="flex gap-3">
@@ -379,8 +379,8 @@ function Home() {
                 ✓
               </div>
               <div>
-                <div className="font-semibold mb-1">Discuss with Experts</div>
-                <div className="text-slate-300">Engage in case discussions and ask questions</div>
+                <div className="font-semibold mb-1">Learn from Peers</div>
+                <div className="text-slate-300">Discuss technical challenges and best practices</div>
               </div>
             </div>
             <div className="flex gap-3">
@@ -388,8 +388,8 @@ function Home() {
                 ✓
               </div>
               <div>
-                <div className="font-semibold mb-1">Track Your Progress</div>
-                <div className="text-slate-300">Monitor learning achievements and milestones</div>
+                <div className="font-semibold mb-1">Track Your Skills</div>
+                <div className="text-slate-300">Monitor your technical competency and certification prep</div>
               </div>
             </div>
             <div className="flex gap-3">
@@ -397,8 +397,8 @@ function Home() {
                 ✓
               </div>
               <div>
-                <div className="font-semibold mb-1">AI-Powered Assistant</div>
-                <div className="text-slate-300">Get instant help with context-aware AI</div>
+                <div className="font-semibold mb-1">AI Study Assistant</div>
+                <div className="text-slate-300">Get instant help with pattern recognition and technical questions</div>
               </div>
             </div>
           </div>
