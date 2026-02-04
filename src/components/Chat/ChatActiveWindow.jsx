@@ -92,6 +92,18 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
         } else {
             await sendPrivateMessage(activeChat.id, content, attachments);
         }
+        
+        // Force scroll to bottom after sending (immediate)
+        setTimeout(() => {
+            messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        
+        // Force scroll again after images load (delayed for attachments)
+        if (attachments && attachments.length > 0) {
+            setTimeout(() => {
+                messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        }
     };
 
     if (!activeChat) {
@@ -139,7 +151,7 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
 
             {/* Messages Area */}
             <div
-                className="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth"
+                className="flex-1 overflow-y-auto px-4 pt-4 pb-20 space-y-4 scroll-smooth"
                 style={{ minHeight: 0 }}
             >
                 {localMessages.length === 0 ? (
@@ -192,11 +204,18 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                                                             <img
                                                                 src={att.url.startsWith('http') ? att.url : `${apiService.getBaseUrl()}${att.url}`}
                                                                 alt={att.filename}
+                                                                onLoad={() => {
+                                                                    // Scroll to bottom after image loads
+                                                                    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+                                                                }}
                                                                 style={{
                                                                     maxWidth: '300px',
+                                                                    maxHeight: '400px',
                                                                     width: '100%',
+                                                                    objectFit: 'contain',
                                                                     borderRadius: '8px',
-                                                                    marginTop: '4px'
+                                                                    marginTop: '4px',
+                                                                    backgroundColor: '#f3f4f6'
                                                                 }}
                                                             />
                                                         ) : (
