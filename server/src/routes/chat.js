@@ -256,6 +256,86 @@ router.post('/message', async (req, res) => {
     }
 });
 
+// Contextual AI endpoint - handles page-specific context
+router.post('/ai-context', async (req, res) => {
+    try {
+        const { userId, message, context } = req.body;
+
+        if (!userId || !message) {
+            return res.status(400).json({ error: 'userId and message are required' });
+        }
+
+        // Build enhanced system prompt with page context
+        let systemPrompt = `You are an expert EEG technologist and educator helping users learn EEG interpretation and ABRET exam preparation.
+
+Current Page Context: ${context.page || 'general'}
+${context.pageContext || ''}
+
+`;
+
+        // Add case-specific context if available
+        if (context.caseData) {
+            systemPrompt += `\nClinical Case Context:
+- Title: ${context.caseData.title}
+- Patient: ${context.caseData.patientInfo?.age} ${context.caseData.patientInfo?.ageUnit}, ${context.caseData.patientInfo?.gender}
+- History: ${context.caseData.history}
+- Findings: ${JSON.stringify(context.caseData.findings, null, 2)}
+
+Please help the user understand this specific case.`;
+        }
+
+        // Add pattern context if available
+        if (context.patternData) {
+            systemPrompt += `\nEEG Pattern Context:
+- Pattern: ${context.patternData.name}
+- Description: ${context.patternData.description || 'N/A'}
+
+Please help the user understand this specific EEG pattern.`;
+        }
+
+        // Save user message to Message model (for chat history persistence)
+        const userMessage = new Message({
+            type: 'ai',
+            senderId: userId,
+            senderName: context.name || 'User',
+            content: message,
+            timestamp: new Date()
+        });
+        await userMessage.save();
+
+        // Generate AI response with enhanced context
+        const aiResponse = await geminiService.generateContextualResponse(
+            message,
+            {
+                name: context.name || 'User',
+                page: context.page,
+                ...context
+            },
+            systemPrompt
+        );
+
+        // Save AI response to database
+        const aiMessage = new Message({
+            type: 'ai',
+            senderId: 'ai-bot',
+            senderName: 'EEG Assistant 🤖',
+            recipientId: userId,
+            content: aiResponse,
+            timestamp: new Date()
+        });
+        await aiMessage.save();
+
+        res.json({
+            response: aiResponse,
+            _id: aiMessage._id,
+            timestamp: aiMessage.timestamp
+        });
+    } catch (error) {
+        console.error('Contextual AI error:', error);
+        res.status(500).json({ error: error.message || 'Failed to generate AI response' });
+    }
+});
+
 router.get('/suggestions', (req, res) => {
     const suggestions = geminiService.getSuggestedQuestions();
     res.json({ suggestions });

@@ -4,6 +4,7 @@ import patternsV2Data from "../data/neurotrace_patterns_library_v2.json";
 import patternsData from "../data/patterns.json";
 import workflowData from "../data/workflow-domains.json";
 import { getPatternQuizTags } from "../utils/patternQuizTags";
+import ContextualAI from "../components/ContextualAI.jsx";
 
 function PatternDetail() {
   const { id } = useParams();
@@ -106,6 +107,7 @@ function PatternDetail() {
   }).filter(Boolean) || [];
 
   return (
+    <>
     <div className="relative z-0">
       <section className="space-y-6">
         {/* Header */}
@@ -533,6 +535,15 @@ function PatternDetail() {
         )}
       </section>
     </div>
+
+    {/* Contextual AI Assistant */}
+    <ContextualAI
+      context={{
+        page: 'pattern-detail',
+        patternData: pattern
+      }}
+    />
+    </>
   );
 }
 

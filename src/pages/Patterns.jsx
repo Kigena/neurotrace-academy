@@ -9,6 +9,7 @@ import PatternCard from "../components/PatternCard.jsx";
 import FilterPanel from "../components/FilterPanel.jsx";
 import { getPatternQuizTags } from "../utils/patternQuizTags";
 import CrossLinks from "../components/CrossLinks.jsx";
+import ContextualAI from "../components/ContextualAI.jsx";
 
 function Patterns() {
   const navigate = useNavigate();
@@ -168,6 +169,7 @@ function Patterns() {
   }
 
   return (
+    <>
     <section className="space-y-4">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -730,6 +732,14 @@ function Patterns() {
         </>
       )}
     </section>
+
+    {/* Contextual AI Assistant */}
+    <ContextualAI
+      context={{
+        page: 'patterns'
+      }}
+    />
+    </>
   );
 }
 

@@ -94,6 +94,38 @@ Guidelines:
     }
 
     /**
+     * Generate contextual AI response with page-specific context
+     * Used by the floating AI widget that appears on different pages
+     */
+    async generateContextualResponse(userMessage, userContext = {}, customSystemPrompt = null) {
+        try {
+            // Use custom system prompt if provided, otherwise build default
+            const systemPrompt = customSystemPrompt || this.buildSystemPrompt(
+                userContext,
+                this.buildPatternsContext()
+            );
+
+            // Start chat with context
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 2000,
+                    temperature: 0.7,
+                },
+            });
+
+            // Combine system prompt with user message
+            const contextualMessage = `${systemPrompt}\n\nUser: ${userMessage}`;
+
+            const result = await chat.sendMessage(contextualMessage);
+            const response = result.response;
+            return response.text();
+        } catch (error) {
+            console.error('Gemini API contextual error:', error);
+            throw new Error('Failed to generate contextual AI response. Please try again.');
+        }
+    }
+
+    /**
      * Generate quick suggestions for new users
      */
     getSuggestedQuestions() {

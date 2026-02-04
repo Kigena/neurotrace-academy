@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import abretQuestionsData from "../data/abret-questions.json";
 import workflowData from "../data/workflow-domains.json";
 import mockExamPresets from "../data/mockExamPresets.json";
+import ContextualAI from "../components/ContextualAI.jsx";
 import {
   createQuizSession,
   loadQuizSession,
@@ -1059,6 +1060,7 @@ function QuizSession() {
 
   // Quiz in Progress
   return (
+    <>
     <section className="space-y-4">
       {/* Header */}
       <div className="flex items-center justify-between">
@@ -1199,6 +1201,14 @@ function QuizSession() {
         </button>
       </div>
     </section>
+
+    {/* Contextual AI Assistant */}
+    <ContextualAI
+      context={{
+        page: 'quiz'
+      }}
+    />
+    </>
   );
 }
 

@@ -5,6 +5,7 @@ import syndromesData from "../data/syndromes_v2.json";
 import patternsData from "../data/neurotrace_patterns_library_v2.json";
 import CaseRunner from "../components/CaseRunner.jsx";
 import CaseDiscussion from "../components/CaseDiscussion.jsx";
+import ContextualAI from "../components/ContextualAI.jsx";
 import caseService from "../services/caseService";
 import apiService from "../services/apiService";
 
@@ -266,17 +267,27 @@ function CaseDetail() {
   }
 
   return (
-    <section className="space-y-4 max-w-4xl mx-auto pb-12">
-      <Link to="/cases" className="text-xs text-blue-600 hover:underline inline-flex items-center gap-1">
-        <span>←</span> Back to cases
-      </Link>
+    <>
+      <section className="space-y-4 max-w-4xl mx-auto pb-12">
+        <Link to="/cases" className="text-xs text-blue-600 hover:underline inline-flex items-center gap-1">
+          <span>←</span> Back to cases
+        </Link>
 
-      {caseType === 'static' ? (
-        <StaticCaseView eegCase={eegCase} />
-      ) : (
-        <CommunityCaseView eegCase={eegCase} setEegCase={setEegCase} />
-      )}
-    </section>
+        {caseType === 'static' ? (
+          <StaticCaseView eegCase={eegCase} />
+        ) : (
+          <CommunityCaseView eegCase={eegCase} setEegCase={setEegCase} />
+        )}
+      </section>
+
+      {/* Contextual AI Assistant */}
+      <ContextualAI
+        context={{
+          page: 'case-detail',
+          caseData: eegCase
+        }}
+      />
+    </>
   );
 }
 

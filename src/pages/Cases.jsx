@@ -4,6 +4,7 @@ import casesData from "../data/cases.json";
 import workflowData from "../data/workflow-domains.json";
 import SearchBar from "../components/SearchBar.jsx";
 import CaseCard from "../components/CaseCard.jsx";
+import ContextualAI from "../components/ContextualAI.jsx";
 import caseService from "../services/caseService";
 
 function Cases() {
@@ -100,6 +101,7 @@ function Cases() {
   }, [sectionParam]);
 
   return (
+    <>
     <section className="space-y-6">
       {/* Header */}
       <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
@@ -238,6 +240,14 @@ function Cases() {
         )}
       </div>
     </section>
+
+    {/* Contextual AI Assistant */}
+    <ContextualAI
+      context={{
+        page: 'cases'
+      }}
+    />
+    </>
   );
 }
 
