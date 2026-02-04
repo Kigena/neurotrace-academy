@@ -1,170 +1,425 @@
-import React from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import casesData from "../data/cases.json";
+import patternsData from "../data/neurotrace_patterns_library_v2.json";
+import syndromesData from "../data/syndromes_v2.json";
 
 function Home() {
+  const { user } = useAuth();
+  const [caseOfTheWeek, setCaseOfTheWeek] = useState(null);
+
+  // Get case of the week (changes weekly)
+  useEffect(() => {
+    if (casesData.starterCases && casesData.starterCases.length > 0) {
+      // Use week number to select a consistent case for the week
+      const weekNumber = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
+      const caseIndex = weekNumber % casesData.starterCases.length;
+      setCaseOfTheWeek(casesData.starterCases[caseIndex]);
+    }
+  }, []);
+
+  // Platform stats
+  const stats = useMemo(() => ({
+    patterns: patternsData.length,
+    syndromes: syndromesData.length,
+    cases: casesData.starterCases?.length || 0,
+    quizzes: 450 // Placeholder
+  }), []);
+
+  // Featured patterns
+  const featuredPatterns = useMemo(() => {
+    return patternsData.slice(0, 3);
+  }, []);
+
   return (
-    <section className="space-y-6">
-      <div className="space-y-2">
-        <h1 className="text-2xl font-bold text-slate-900">
-          NeuroTrace Academy
-        </h1>
-        <p className="text-sm text-slate-700 max-w-3xl">
-          The collaborative EEG learning community. Share unique cases, access clinical resources,
-          and earn CME credits through interactive modules and peer discussions.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Link
-          to="/cases"
-          className="rounded-lg border border-slate-200 bg-white p-6 hover:shadow-md transition-shadow relative overflow-hidden group"
-        >
-          <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
-            <svg className="w-24 h-24 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" /></svg>
+    <div className="space-y-8 pb-12">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 p-8 md:p-12 text-white shadow-2xl">
+        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+        
+        <div className="relative z-10 max-w-3xl">
+          <div className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
+            🎓 Welcome to NeuroTrace Academy
           </div>
-          <div className="text-3xl mb-3">🏥</div>
-          <h2 className="text-lg font-semibold text-slate-900 mb-2">
-            Community Cases
-          </h2>
-          <p className="text-sm text-slate-600 mb-3">
-            Explore and share detailed clinical cases. Review patient history, MRI/CT correlation,
-            and EEG findings contributed by the community.
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            Master EEG Interpretation with{" "}
+            <span className="text-yellow-300">AI-Powered Learning</span>
+          </h1>
+          <p className="text-lg md:text-xl text-white/90 mb-6 max-w-2xl">
+            {user ? `Welcome back, ${user.name}! ` : ''}
+            Explore clinical cases, study EEG patterns, and prepare for ABRET certification with our comprehensive learning platform.
           </p>
-          <div className="flex flex-wrap gap-1">
-            <span className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-800">
-              New Feature
-            </span>
-            <span className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-800">
-              Contribution
-            </span>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              to="/cases"
+              className="px-6 py-3 bg-white text-indigo-600 rounded-xl font-semibold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              Explore Cases 🏥
+            </Link>
+            <Link
+              to="/quiz"
+              className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-xl font-semibold hover:bg-white/20 transition-all border border-white/30"
+            >
+              Start Quiz ✏️
+            </Link>
           </div>
-        </Link>
-
-        <Link
-          to="/patterns"
-          className="rounded-lg border border-slate-200 bg-white p-6 hover:shadow-md transition-shadow"
-        >
-          <div className="text-3xl mb-3">🧠</div>
-          <h2 className="text-lg font-semibold text-slate-900 mb-2">
-            Pattern Library
-          </h2>
-          <p className="text-sm text-slate-600 mb-3">
-            Searchable reference of EEG patterns: normal variants, epileptiform discharges,
-            and artifacts. Visual learning for clinical competence.
-          </p>
-          <div className="flex flex-wrap gap-1">
-            <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800">
-              Visual Reference
-            </span>
-            <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800">
-              Atlas
-            </span>
-          </div>
-        </Link>
-
-        <Link
-          to="/standards"
-          className="rounded-lg border border-slate-200 bg-white p-6 hover:shadow-md transition-shadow"
-        >
-          <div className="text-3xl mb-3">📐</div>
-          <h2 className="text-lg font-semibold text-slate-900 mb-2">
-            Guidelines & Standards
-          </h2>
-          <p className="text-sm text-slate-600 mb-3">
-            ACNS technical requirements, electrode placement guides, and professional
-            practice standards.
-          </p>
-          <div className="flex flex-wrap gap-1">
-            <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-800">
-              ACNS Guidelines
-            </span>
-            <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-800">
-              Reference
-            </span>
-          </div>
-        </Link>
-
-        <Link
-          to="/workflow"
-          className="rounded-lg border border-slate-200 bg-white p-6 hover:shadow-md transition-shadow"
-        >
-          <div className="text-3xl mb-3">📋</div>
-          <h2 className="text-lg font-semibold text-slate-900 mb-2">
-            Clinical Workflow
-          </h2>
-          <p className="text-sm text-slate-600 mb-3">
-            Best practices for Pre-study setup, Recording, and Post-study processing.
-            Ethics and professional conduct modules.
-          </p>
-          <div className="flex flex-wrap gap-1">
-            <span className="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-800">
-              Procedures
-            </span>
-          </div>
-        </Link>
-
-        <Link
-          to="/quiz"
-          className="rounded-lg border border-slate-200 bg-white p-6 hover:shadow-md transition-shadow"
-        >
-          <div className="text-3xl mb-3">✏️</div>
-          <h2 className="text-lg font-semibold text-slate-900 mb-2">
-            CME Knowledge Checks
-          </h2>
-          <p className="text-sm text-slate-600 mb-3">
-            Test your understanding with topic-based quizzes. Earn recognition for
-            mastering different neurodiagnostic domains.
-          </p>
-          <div className="flex flex-wrap gap-1">
-            <span className="text-xs px-2 py-1 rounded-full bg-orange-100 text-orange-800">
-              Self-Assessment
-            </span>
-            <span className="text-xs px-2 py-1 rounded-full bg-orange-100 text-orange-800">
-              CME
-            </span>
-          </div>
-        </Link>
-
-        <Link
-          to="/progress"
-          className="rounded-lg border border-slate-200 bg-white p-6 hover:shadow-md transition-shadow"
-        >
-          <div className="text-3xl mb-3">📊</div>
-          <h2 className="text-lg font-semibold text-slate-900 mb-2">
-            Learning Portfolio
-          </h2>
-          <p className="text-sm text-slate-600 mb-3">
-            Track your continuous professional development. Monitor completed modules
-            and case contributions.
-          </p>
-          <div className="flex flex-wrap gap-1">
-            <span className="text-xs px-2 py-1 rounded-full bg-indigo-100 text-indigo-800">
-              Portfolio
-            </span>
-          </div>
-        </Link>
-      </div>
-
-      <div className="rounded-lg border border-slate-200 bg-white p-6">
-        <h2 className="text-lg font-semibold text-slate-900 mb-3">
-          Join the Conversation
-        </h2>
-        <div className="space-y-2 text-sm text-slate-700">
-          <p>
-            <span className="font-semibold">1. Explore Cases:</span> Review unique clinical scenarios in the Community Cases library.
-          </p>
-          <p>
-            <span className="font-semibold">2. Share Knowledge:</span> Contribute your own anonymized case studies to help peers learn.
-          </p>
-          <p>
-            <span className="font-semibold">3. Verify Skills:</span> Complete CME modules to validate your expertise.
-          </p>
-          <p>
-            <span className="font-semibold">4. Stay Updated:</span> Access the latest ACNS guidelines and technical standards.
-          </p>
         </div>
       </div>
-    </section>
+
+      {/* Quick Stats Dashboard */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+          <div className="text-3xl md:text-4xl font-bold mb-2">{stats.patterns}</div>
+          <div className="text-blue-100 text-sm font-medium">EEG Patterns</div>
+          <div className="mt-3 text-xs text-blue-200">Learn & Identify</div>
+        </div>
+        
+        <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+          <div className="text-3xl md:text-4xl font-bold mb-2">{stats.syndromes}</div>
+          <div className="text-purple-100 text-sm font-medium">Syndromes</div>
+          <div className="mt-3 text-xs text-purple-200">Master Classifications</div>
+        </div>
+        
+        <div className="bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+          <div className="text-3xl md:text-4xl font-bold mb-2">{stats.cases}</div>
+          <div className="text-pink-100 text-sm font-medium">Clinical Cases</div>
+          <div className="mt-3 text-xs text-pink-200">Real-world Learning</div>
+        </div>
+        
+        <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+          <div className="text-3xl md:text-4xl font-bold mb-2">{stats.quizzes}+</div>
+          <div className="text-amber-100 text-sm font-medium">Quiz Questions</div>
+          <div className="mt-3 text-xs text-amber-200">ABRET Prep</div>
+        </div>
+      </div>
+
+      {/* Case of the Week */}
+      {caseOfTheWeek && (
+        <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 border-2 border-emerald-200 shadow-xl">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full text-sm font-bold shadow-md">
+              ⭐ CASE OF THE WEEK
+            </div>
+            <div className="text-xs text-emerald-700 font-medium">Updated Weekly</div>
+          </div>
+          
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+            {caseOfTheWeek.title}
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-sm">
+                <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                  👤
+                </div>
+                <div>
+                  <div className="text-xs text-slate-500">Patient</div>
+                  <div className="font-semibold text-slate-900">
+                    {caseOfTheWeek.patient.ageYears < 1 
+                      ? `${Math.round(caseOfTheWeek.patient.ageYears * 12)} months` 
+                      : `${caseOfTheWeek.patient.ageYears} years`}, {caseOfTheWeek.patient.context}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 text-sm">
+                <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
+                  🔍
+                </div>
+                <div>
+                  <div className="text-xs text-slate-500">Chief Complaint</div>
+                  <div className="font-semibold text-slate-900">{caseOfTheWeek.chiefComplaint}</div>
+                </div>
+              </div>
+
+              {caseOfTheWeek.difficulty && (
+                <div className="flex items-center gap-3 text-sm">
+                  <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
+                    📊
+                  </div>
+                  <div>
+                    <div className="text-xs text-slate-500">Difficulty</div>
+                    <div className="font-semibold capitalize text-slate-900">{caseOfTheWeek.difficulty}</div>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <div className="bg-white rounded-2xl p-4 shadow-md">
+              <div className="text-xs font-semibold text-emerald-600 mb-2">LEARNING OBJECTIVES</div>
+              <ul className="space-y-1.5 text-sm text-slate-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-500 mt-0.5">✓</span>
+                  <span>Practice pattern recognition</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-500 mt-0.5">✓</span>
+                  <span>Apply clinical correlation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-500 mt-0.5">✓</span>
+                  <span>Develop differential diagnosis</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <Link
+            to={`/cases/${caseOfTheWeek.id}`}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-xl font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            Study This Case
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
+        </div>
+      )}
+
+      {/* Featured Patterns */}
+      <div>
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900">Featured EEG Patterns</h2>
+            <p className="text-sm text-slate-600 mt-1">Master these essential patterns for ABRET</p>
+          </div>
+          <Link to="/patterns" className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+            View All
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-6">
+          {featuredPatterns.map((pattern) => (
+            <Link
+              key={pattern.id}
+              to={`/patterns/${pattern.id}`}
+              className="group bg-white rounded-2xl p-6 border-2 border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all transform hover:scale-105"
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center text-white text-2xl mb-4 group-hover:scale-110 transition-transform">
+                🧠
+              </div>
+              <h3 className="font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                {pattern.name}
+              </h3>
+              <p className="text-sm text-slate-600 mb-3 line-clamp-2">
+                {pattern.description || 'Learn to identify this important EEG pattern'}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {pattern.category && (
+                  <span className="text-xs px-2 py-1 rounded-full bg-indigo-100 text-indigo-700 font-medium">
+                    {pattern.category}
+                  </span>
+                )}
+                {pattern.frequency_band && (
+                  <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-700 font-medium">
+                    {pattern.frequency_band}
+                  </span>
+                )}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Learning Paths Grid */}
+      <div>
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">Explore Learning Paths</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Link
+            to="/cases"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 p-6 text-white hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full"></div>
+            <div className="relative z-10">
+              <div className="text-4xl mb-3">🏥</div>
+              <h3 className="text-xl font-bold mb-2">Clinical Cases</h3>
+              <p className="text-sm text-blue-100 mb-4">
+                Real-world scenarios with detailed findings and expert analysis
+              </p>
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                Explore Cases
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            to="/patterns"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 p-6 text-white hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full"></div>
+            <div className="relative z-10">
+              <div className="text-4xl mb-3">🧠</div>
+              <h3 className="text-xl font-bold mb-2">Pattern Library</h3>
+              <p className="text-sm text-purple-100 mb-4">
+                Comprehensive atlas of normal and abnormal EEG patterns
+              </p>
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                Browse Patterns
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            to="/syndromes"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 p-6 text-white hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full"></div>
+            <div className="relative z-10">
+              <div className="text-4xl mb-3">🔬</div>
+              <h3 className="text-xl font-bold mb-2">Syndromes</h3>
+              <p className="text-sm text-pink-100 mb-4">
+                Epilepsy syndromes with EEG correlations and diagnostic criteria
+              </p>
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                Study Syndromes
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            to="/quiz"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 p-6 text-white hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full"></div>
+            <div className="relative z-10">
+              <div className="text-4xl mb-3">✏️</div>
+              <h3 className="text-xl font-bold mb-2">Practice Quizzes</h3>
+              <p className="text-sm text-amber-100 mb-4">
+                Test your knowledge with ABRET-style questions
+              </p>
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                Start Quiz
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            to="/workflow"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 p-6 text-white hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full"></div>
+            <div className="relative z-10">
+              <div className="text-4xl mb-3">📋</div>
+              <h3 className="text-xl font-bold mb-2">Clinical Workflow</h3>
+              <p className="text-sm text-emerald-100 mb-4">
+                Best practices for recording and interpretation
+              </p>
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                Learn Workflow
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            to="/progress"
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 p-6 text-white hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full"></div>
+            <div className="relative z-10">
+              <div className="text-4xl mb-3">📊</div>
+              <h3 className="text-xl font-bold mb-2">Track Progress</h3>
+              <p className="text-sm text-indigo-100 mb-4">
+                Monitor your learning journey and achievements
+              </p>
+              <div className="flex items-center gap-2 text-sm font-semibold">
+                View Progress
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </div>
+
+      {/* Community Highlight */}
+      <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"></div>
+        
+        <div className="relative z-10 max-w-3xl">
+          <div className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
+            💬 Community Powered
+          </div>
+          <h2 className="text-3xl font-bold mb-4">Join the Learning Community</h2>
+          <div className="grid md:grid-cols-2 gap-6 text-sm">
+            <div className="flex gap-3">
+              <div className="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                ✓
+              </div>
+              <div>
+                <div className="font-semibold mb-1">Share Clinical Cases</div>
+                <div className="text-slate-300">Contribute anonymized cases to help peers learn</div>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                ✓
+              </div>
+              <div>
+                <div className="font-semibold mb-1">Discuss with Experts</div>
+                <div className="text-slate-300">Engage in case discussions and ask questions</div>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                ✓
+              </div>
+              <div>
+                <div className="font-semibold mb-1">Track Your Progress</div>
+                <div className="text-slate-300">Monitor learning achievements and milestones</div>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                ✓
+              </div>
+              <div>
+                <div className="font-semibold mb-1">AI-Powered Assistant</div>
+                <div className="text-slate-300">Get instant help with context-aware AI</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/share-case"
+              className="px-6 py-3 bg-white text-slate-900 rounded-xl font-semibold hover:bg-gray-100 transition-all shadow-lg"
+            >
+              Share a Case
+            </Link>
+            <Link
+              to="/chat"
+              className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-xl font-semibold hover:bg-white/20 transition-all border border-white/30"
+            >
+              Join Discussion
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
