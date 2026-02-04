@@ -139,7 +139,7 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
 
             {/* Messages Area */}
             <div
-                className="flex-1 overflow-y-auto p-4 space-y-4"
+                className="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth"
                 style={{ minHeight: 0 }}
             >
                 {localMessages.length === 0 ? (
@@ -247,8 +247,8 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                 <div ref={messagesEndRef} />
             </div>
 
-            {/* Input Area */}
-            <div className="flex-shrink-0 border-t border-border bg-surface p-4">
+            {/* Input Area - with max height to prevent overflow */}
+            <div className="flex-shrink-0 border-t border-border bg-surface p-4 max-h-[300px] overflow-y-auto">
                 <MessageInput onSend={handleSendMessage} />
             </div>
         </div>

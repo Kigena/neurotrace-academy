@@ -83,16 +83,16 @@ const MessageInput = ({ onSend }) => {
         <form onSubmit={handleSubmit} className="w-full">
             {/* Main Input Container */}
             <div className="bg-background border border-border rounded-2xl p-2 shadow-sm">
-                {/* File Preview - Inside the container */}
+                {/* File Preview - Inside the container with constrained size */}
                 {file && (
-                    <div className="bg-surface p-2 rounded-lg mb-2 border border-border">
+                    <div className="bg-surface p-2 rounded-lg mb-2 border border-border max-h-[150px]">
                         {filePreview ? (
-                            // Image preview
+                            // Image preview - with smaller, fixed size
                             <div className="flex items-start gap-2">
                                 <img
                                     src={filePreview}
                                     alt="Preview"
-                                    className="w-20 h-20 object-cover rounded border border-border"
+                                    className="w-16 h-16 object-cover rounded border border-border flex-shrink-0"
                                 />
                                 <div className="flex-1 min-w-0">
                                     <span className="text-sm text-text block truncate">{file.name}</span>
