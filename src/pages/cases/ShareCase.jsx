@@ -23,6 +23,27 @@ const ShareCase = () => {
     const [filePreview, setFilePreview] = useState(null);
     const [uploading, setUploading] = useState(false);
 
+    // Debug helper - can be removed later
+    const runDiagnostics = () => {
+        const token = localStorage.getItem('token');
+        const apiUrl = import.meta.env.VITE_API_URL || 'https://neurotrace-academy.onrender.com/api';
+        
+        console.log('=== CASE SHARING DIAGNOSTICS ===');
+        console.log('1. Authentication:');
+        console.log('   Token present:', !!token);
+        console.log('   Token:', token ? `${token.substring(0, 20)}...` : 'MISSING');
+        console.log('2. API Configuration:');
+        console.log('   API URL:', apiUrl);
+        console.log('3. Form State:');
+        console.log('   Title:', formData.title);
+        console.log('   History:', formData.history ? 'Present' : 'Missing');
+        console.log('   Attachments:', formData.attachments.length);
+        console.log('4. Current Step:', step);
+        console.log('================================');
+        
+        alert(`Diagnostics logged to console (F12).\n\nToken: ${token ? '✅ Present' : '❌ Missing'}\nAttachments: ${formData.attachments.length}`);
+    };
+
     const handleChange = (e, section = null) => {
         const { name, value } = e.target;
         if (section) {
@@ -53,16 +74,20 @@ const ShareCase = () => {
         if (!file) return;
         setUploading(true);
         try {
+            console.log('📤 Uploading file:', file.name, file.type, file.size);
             const response = await caseService.uploadAttachment(file);
+            console.log('✅ Upload response:', response);
             setFormData(prev => ({
                 ...prev,
                 attachments: [...prev.attachments, response]
             }));
             setFile(null);
             setFilePreview(null);
+            alert('✅ File uploaded successfully!');
         } catch (error) {
-            console.error('Upload failed:', error);
-            alert('Failed to upload file');
+            console.error('❌ Upload failed:', error);
+            const errorMessage = error.message || 'Unknown error occurred';
+            alert(`Failed to upload file:\n${errorMessage}\n\nPlease check console for details.`);
         } finally {
             setUploading(false);
         }
@@ -71,6 +96,13 @@ const ShareCase = () => {
     const handleSubmit = async () => {
         setIsSubmitting(true);
         try {
+            // Validation
+            if (!formData.title || !formData.history) {
+                alert('❌ Title and History are required!');
+                setIsSubmitting(false);
+                return;
+            }
+
             // Process tags and medications
             const finalData = {
                 ...formData,
@@ -78,11 +110,16 @@ const ShareCase = () => {
                 tags: formData.tags.split(',').map(t => t.trim()).filter(Boolean)
             };
 
-            await caseService.createCase(finalData);
+            console.log('📤 Submitting case:', finalData);
+            const response = await caseService.createCase(finalData);
+            console.log('✅ Case created:', response);
+            
+            alert('✅ Case published successfully!');
             navigate('/cases'); // Redirect to feed
         } catch (error) {
-            console.error('Submission failed:', error);
-            alert('Failed to create case');
+            console.error('❌ Submission failed:', error);
+            const errorMessage = error.message || 'Unknown error occurred';
+            alert(`Failed to create case:\n${errorMessage}\n\nPlease check console for details.`);
         } finally {
             setIsSubmitting(false);
         }
@@ -90,7 +127,17 @@ const ShareCase = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-4 md:p-8">
-            <h1 className="text-3xl font-bold text-text mb-6">Share a Clinical Case</h1>
+            <div className="flex items-center justify-between mb-6">
+                <h1 className="text-3xl font-bold text-text">Share a Clinical Case</h1>
+                <button
+                    onClick={runDiagnostics}
+                    className="text-xs px-3 py-1 bg-slate-200 text-slate-700 rounded hover:bg-slate-300 transition-colors"
+                    type="button"
+                    title="Run diagnostics if you're experiencing issues"
+                >
+                    🔍 Debug
+                </button>
+            </div>
 
             {/* Stepper */}
             <div className="flex items-center mb-8 w-full max-w-lg mx-auto">
@@ -243,45 +290,81 @@ const ShareCase = () => {
                     <h2 className="text-xl font-semibold text-slate-900">Media & Publish</h2>
 
                     {/* File Uploader */}
-                    <div className="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col items-center justify-center bg-slate-50 hover:bg-slate-100 transition-colors">
-                        <input
-                            type="file"
-                            onChange={handleFileSelect}
-                            className="hidden"
-                            id="case-upload"
-                            accept="image/*,.pdf"
-                        />
-                        {file ? (
-                            <div className="text-center">
-                                {filePreview && <img src={filePreview} alt="Preview" className="h-32 mx-auto mb-2 rounded shadow-sm border border-slate-200" />}
-                                <p className="text-slate-900 font-medium">{file.name}</p>
-                                <button
-                                    onClick={handleAddAttachment}
-                                    disabled={uploading}
-                                    className="mt-2 px-4 py-1.5 bg-purple-600 text-white rounded-md text-sm hover:bg-purple-700 shadow-sm"
-                                >
-                                    {uploading ? 'Uploading...' : 'Confirm Upload'}
-                                </button>
-                            </div>
-                        ) : (
-                            <label htmlFor="case-upload" className="cursor-pointer text-center w-full h-full flex flex-col items-center justify-center">
-                                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2 text-purple-600">
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
+                    <div>
+                        <div className="flex items-center justify-between mb-2">
+                            <h3 className="text-sm font-medium text-slate-700">Upload EEG Images/PDFs</h3>
+                            {formData.attachments.length === 0 && (
+                                <span className="text-xs text-amber-600 bg-amber-50 px-2 py-1 rounded">Recommended</span>
+                            )}
+                        </div>
+                        <div className="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col items-center justify-center bg-slate-50 hover:bg-slate-100 transition-colors">
+                            <input
+                                type="file"
+                                onChange={handleFileSelect}
+                                className="hidden"
+                                id="case-upload"
+                                accept="image/*,.pdf"
+                            />
+                            {file ? (
+                                <div className="text-center">
+                                    {filePreview && <img src={filePreview} alt="Preview" className="h-32 mx-auto mb-2 rounded shadow-sm border border-slate-200" />}
+                                    <p className="text-slate-900 font-medium">{file.name}</p>
+                                    <div className="flex gap-2 mt-2">
+                                        <button
+                                            onClick={handleAddAttachment}
+                                            disabled={uploading}
+                                            className="px-4 py-1.5 bg-purple-600 text-white rounded-md text-sm hover:bg-purple-700 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                                        >
+                                            {uploading ? 'Uploading...' : 'Confirm Upload'}
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                setFile(null);
+                                                setFilePreview(null);
+                                            }}
+                                            className="px-4 py-1.5 bg-slate-200 text-slate-700 rounded-md text-sm hover:bg-slate-300"
+                                        >
+                                            Cancel
+                                        </button>
+                                    </div>
                                 </div>
-                                <p className="text-purple-700 font-medium">Click to upload EEG trace or PDF</p>
-                                <p className="text-xs text-slate-500 mt-1">Supported: Images, PDF</p>
-                            </label>
-                        )}
+                            ) : (
+                                <label htmlFor="case-upload" className="cursor-pointer text-center w-full h-full flex flex-col items-center justify-center">
+                                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2 text-purple-600">
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" /></svg>
+                                    </div>
+                                    <p className="text-purple-700 font-medium">Click to upload EEG trace or PDF</p>
+                                    <p className="text-xs text-slate-500 mt-1">Supported: Images, PDF (Max 10MB)</p>
+                                </label>
+                            )}
+                        </div>
                     </div>
 
                     {/* Attachment List */}
                     {formData.attachments.length > 0 && (
                         <div className="space-y-2">
-                            <h3 className="text-sm font-semibold text-slate-600">Attached Files ({formData.attachments.length})</h3>
+                            <h3 className="text-sm font-semibold text-slate-600">✅ Attached Files ({formData.attachments.length})</h3>
                             {formData.attachments.map((att, idx) => (
-                                <div key={idx} className="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg shadow-sm">
-                                    <span className="text-sm text-slate-900 truncate">{att.filename}</span>
-                                    <span className="text-xs text-slate-500 uppercase">{att.type}</span>
+                                <div key={idx} className="flex items-center justify-between p-3 bg-green-50 border border-green-200 rounded-lg shadow-sm">
+                                    <div className="flex items-center gap-2">
+                                        <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                        <span className="text-sm text-slate-900 truncate font-medium">{att.filename}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-xs text-slate-500 uppercase bg-white px-2 py-1 rounded">{att.type}</span>
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                setFormData(prev => ({
+                                                    ...prev,
+                                                    attachments: prev.attachments.filter((_, i) => i !== idx)
+                                                }));
+                                            }}
+                                            className="text-red-500 hover:text-red-700 text-xs"
+                                        >
+                                            Remove
+                                        </button>
+                                    </div>
                                 </div>
                             ))}
                         </div>
