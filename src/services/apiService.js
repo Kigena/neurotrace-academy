@@ -1,9 +1,22 @@
 const API_URL = import.meta.env.VITE_API_URL || 'https://neurotrace-academy.onrender.com/api';
 
+// Get base URL without /api suffix for static files (uploads)
+const getBaseUrl = () => {
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://neurotrace-academy.onrender.com/api';
+    return apiUrl.replace(/\/api$/, '');
+};
+
 class ApiService {
     constructor() {
         this.timeout = 90000; // 90 seconds to handle Render cold starts
         this.maxRetries = 2;
+    }
+
+    /**
+     * Get base URL for static file serving (without /api)
+     */
+    getBaseUrl() {
+        return getBaseUrl();
     }
 
     /**

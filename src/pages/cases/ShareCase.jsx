@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import caseService from '../../services/caseService';
+import apiService from '../../services/apiService';
 
 const ShareCase = () => {
     const navigate = useNavigate();
@@ -345,25 +346,40 @@ const ShareCase = () => {
                         <div className="space-y-2">
                             <h3 className="text-sm font-semibold text-slate-600">✅ Attached Files ({formData.attachments.length})</h3>
                             {formData.attachments.map((att, idx) => (
-                                <div key={idx} className="flex items-center justify-between p-3 bg-green-50 border border-green-200 rounded-lg shadow-sm">
-                                    <div className="flex items-center gap-2">
-                                        <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                        <span className="text-sm text-slate-900 truncate font-medium">{att.filename}</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="text-xs text-slate-500 uppercase bg-white px-2 py-1 rounded">{att.type}</span>
-                                        <button
-                                            type="button"
-                                            onClick={() => {
-                                                setFormData(prev => ({
-                                                    ...prev,
-                                                    attachments: prev.attachments.filter((_, i) => i !== idx)
-                                                }));
-                                            }}
-                                            className="text-red-500 hover:text-red-700 text-xs"
-                                        >
-                                            Remove
-                                        </button>
+                                <div key={idx} className="bg-green-50 border border-green-200 rounded-lg shadow-sm overflow-hidden">
+                                    {att.type === 'image' && (
+                                        <div className="p-2 bg-slate-50 border-b border-green-200">
+                                            <img 
+                                                src={att.url.startsWith('http') ? att.url : `${apiService.getBaseUrl()}${att.url}`}
+                                                alt={att.filename}
+                                                className="w-full h-32 object-contain"
+                                                onError={(e) => {
+                                                    console.error('Preview failed:', att.url);
+                                                    console.log('Full URL:', e.target.src);
+                                                }}
+                                            />
+                                        </div>
+                                    )}
+                                    <div className="flex items-center justify-between p-3">
+                                        <div className="flex items-center gap-2">
+                                            <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                            <span className="text-sm text-slate-900 truncate font-medium">{att.filename}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-xs text-slate-500 uppercase bg-white px-2 py-1 rounded">{att.type}</span>
+                                            <button
+                                                type="button"
+                                                onClick={() => {
+                                                    setFormData(prev => ({
+                                                        ...prev,
+                                                        attachments: prev.attachments.filter((_, i) => i !== idx)
+                                                    }));
+                                                }}
+                                                className="text-red-500 hover:text-red-700 text-xs"
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             ))}

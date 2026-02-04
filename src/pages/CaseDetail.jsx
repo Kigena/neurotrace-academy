@@ -6,6 +6,7 @@ import patternsData from "../data/neurotrace_patterns_library_v2.json";
 import CaseRunner from "../components/CaseRunner.jsx";
 import CaseDiscussion from "../components/CaseDiscussion.jsx";
 import caseService from "../services/caseService";
+import apiService from "../services/apiService";
 
 // --- Components ---
 
@@ -159,9 +160,13 @@ const CommunityCaseView = ({ eegCase, setEegCase }) => {
                 {att.type === 'image' ? (
                   <div className="relative group">
                     <img
-                      src={att.url.startsWith('http') ? att.url : `${import.meta.env.VITE_API_URL}${att.url}`}
+                      src={att.url.startsWith('http') ? att.url : `${apiService.getBaseUrl()}${att.url}`}
                       alt={att.filename}
                       className="w-full h-auto object-contain bg-slate-50 max-h-[400px]"
+                      onError={(e) => {
+                        console.error('Image failed to load:', att.url);
+                        console.log('Constructed URL:', e.target.src);
+                      }}
                     />
                   </div>
                 ) : (
