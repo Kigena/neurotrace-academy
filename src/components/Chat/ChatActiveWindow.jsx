@@ -115,7 +115,7 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
     }
 
     return (
-        <div className="flex-1 flex flex-col bg-background">
+        <div className="flex-1 flex flex-col bg-background overflow-hidden" style={{ maxWidth: '100%' }}>
             {/* Header */}
             <div className="h-16 border-b border-border bg-surface px-4 flex items-center gap-3 shadow-sm">
                 <button
@@ -151,8 +151,8 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
 
             {/* Messages Area */}
             <div
-                className="flex-1 overflow-y-auto px-4 pt-4 pb-20 space-y-4 scroll-smooth"
-                style={{ minHeight: 0 }}
+                className="flex-1 overflow-y-auto overflow-x-hidden px-4 pt-4 pb-20 space-y-4 scroll-smooth"
+                style={{ minHeight: 0, maxWidth: '100%' }}
             >
                 {localMessages.length === 0 ? (
                     <div className="h-full flex flex-col items-center justify-center text-textSecondary opacity-50">
@@ -179,6 +179,7 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                             >
                                 <div style={{
                                     maxWidth: '70%',
+                                    minWidth: '120px',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: isOwn ? 'flex-end' : 'flex-start'
@@ -193,7 +194,10 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                                         borderRadius: '16px',
                                         background: isOwn ? '#4F46E5' : '#F3F4F6',
                                         color: isOwn ? 'white' : '#111827',
-                                        wordBreak: 'break-word'
+                                        wordBreak: 'break-word',
+                                        width: '100%',
+                                        boxSizing: 'border-box',
+                                        overflow: 'hidden'
                                     }}>
                                         {/* Attachments */}
                                         {msg.attachments && msg.attachments.length > 0 && (
@@ -209,13 +213,15 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                                                                     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
                                                                 }}
                                                                 style={{
-                                                                    maxWidth: '300px',
-                                                                    maxHeight: '400px',
-                                                                    width: '100%',
+                                                                    maxWidth: '100%',
+                                                                    maxHeight: '300px',
+                                                                    width: 'auto',
+                                                                    height: 'auto',
                                                                     objectFit: 'contain',
                                                                     borderRadius: '8px',
                                                                     marginTop: '4px',
-                                                                    backgroundColor: '#f3f4f6'
+                                                                    backgroundColor: '#f3f4f6',
+                                                                    display: 'block'
                                                                 }}
                                                             />
                                                         ) : (
@@ -226,7 +232,8 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                                                                 style={{
                                                                     color: isOwn ? 'white' : '#4F46E5',
                                                                     textDecoration: 'underline',
-                                                                    fontSize: '14px'
+                                                                    fontSize: '14px',
+                                                                    wordBreak: 'break-all'
                                                                 }}
                                                             >
                                                                 📎 {att.filename}
@@ -236,7 +243,7 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                                                 ))}
                                             </div>
                                         )}
-                                        {msg.content && <p style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{msg.content}</p>}
+                                        {msg.content && <p style={{ margin: 0, whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>{msg.content}</p>}
                                         <div style={{
                                             fontSize: '10px',
                                             marginTop: '4px',
