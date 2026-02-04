@@ -14,6 +14,7 @@ const ContextualAI = ({ context = {} }) => {
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [showSuggestions, setShowSuggestions] = useState(true);
+    const [showMenu, setShowMenu] = useState(false);
     const messagesEndRef = useRef(null);
 
     // Load chat history for this context
@@ -25,11 +26,24 @@ const ContextualAI = ({ context = {} }) => {
 
     const loadContextHistory = async () => {
         try {
-            // Load AI messages for this user
-            const response = await apiService.get(`/chat/messages?type=ai&userId=${user.id}&limit=20`);
+            // Load AI messages for this user (limit to last 50 for performance)
+            const response = await apiService.get(`/chat/messages?type=ai&userId=${user.id}&limit=50`);
             setMessages(response || []);
         } catch (error) {
             console.error('Failed to load AI history:', error);
+        }
+    };
+
+    const clearChatHistory = async () => {
+        if (window.confirm('Are you sure you want to clear your AI chat history? This cannot be undone.')) {
+            try {
+                await apiService.delete(`/chat/history?userId=${user.id}`);
+                setMessages([]);
+                alert('Chat history cleared successfully!');
+            } catch (error) {
+                console.error('Failed to clear chat history:', error);
+                alert('Failed to clear chat history. Please try again.');
+            }
         }
     };
 
@@ -286,16 +300,69 @@ What would you like to know?`;
                                 <p className="text-xs opacity-90">
                                     {context.page ? `Helping with: ${context.page.replace('-', ' ')}` : 'Ready to help'}
                                 </p>
+                                {messages.length > 0 && (
+                                    <p className="text-[10px] opacity-75">
+                                        {messages.length} message{messages.length !== 1 ? 's' : ''} (last 50)
+                                    </p>
+                                )}
                             </div>
                         </div>
-                        <button
-                            onClick={() => setIsOpen(false)}
-                            className="p-1 hover:bg-white/20 rounded-full transition-colors"
-                        >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
+                        <div className="flex items-center gap-2">
+                            {/* Menu Button */}
+                            <div className="relative">
+                                <button
+                                    onClick={() => setShowMenu(!showMenu)}
+                                    className="p-1 hover:bg-white/20 rounded-full transition-colors"
+                                    title="Menu"
+                                >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                    </svg>
+                                </button>
+                                {showMenu && (
+                                    <>
+                                        {/* Backdrop */}
+                                        <div 
+                                            className="fixed inset-0 z-40" 
+                                            onClick={() => setShowMenu(false)}
+                                        />
+                                        {/* Dropdown Menu */}
+                                        <div className="absolute right-0 top-10 w-56 bg-white rounded-lg shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                                            <button
+                                                onClick={() => {
+                                                    setShowMenu(false);
+                                                    clearChatHistory();
+                                                }}
+                                                className="w-full px-4 py-2.5 text-left text-sm text-slate-700 hover:bg-red-50 hover:text-red-600 flex items-center gap-3 transition-colors"
+                                            >
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg>
+                                                <div>
+                                                    <div className="font-medium">Clear Chat History</div>
+                                                    <div className="text-xs text-slate-500">Delete all messages</div>
+                                                </div>
+                                            </button>
+                                            <div className="border-t border-slate-200 my-2"></div>
+                                            <div className="px-4 py-2 text-xs text-slate-500">
+                                                <p className="font-medium mb-1">💡 Tip</p>
+                                                <p>Chat history is shared across all pages. Messages are limited to the last 50 for performance.</p>
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setIsOpen(false)}
+                                className="p-1 hover:bg-white/20 rounded-full transition-colors"
+                                title="Close"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
                     {/* Context Banner */}
