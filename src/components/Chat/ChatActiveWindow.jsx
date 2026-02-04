@@ -248,7 +248,7 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
             </div>
 
             {/* Input Area - with max height to prevent overflow */}
-            <div className="flex-shrink-0 border-t border-border bg-surface p-4 max-h-[300px] overflow-y-auto">
+            <div className="flex-shrink-0 border-t border-border bg-surface p-3 max-h-[200px] overflow-y-auto">
                 <MessageInput onSend={handleSendMessage} />
             </div>
         </div>
