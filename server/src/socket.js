@@ -55,7 +55,13 @@ export const initializeSocket = (httpServer) => {
 
         // Private message
         socket.on('message:private', async ({ senderId, senderName, recipientId, content, attachments }) => {
-            console.log('📥 Received private message:', { senderId, senderName, recipientId, content, attachments });
+            console.log('📥 Received private message:', { 
+                senderId, 
+                senderName, 
+                recipientId, 
+                content: content?.substring(0, 50),
+                attachmentsCount: attachments?.length || 0 
+            });
             try {
                 const message = new Message({
                     type: 'private',
@@ -66,8 +72,13 @@ export const initializeSocket = (httpServer) => {
                     read: false,
                     attachments: attachments || []
                 });
+                
+                console.log('💾 Saving private message with attachments:', {
+                    attachmentsCount: message.attachments?.length || 0
+                });
+                
                 await message.save();
-                console.log('💾 Private message saved:', message._id);
+                console.log('✅ Private message saved:', message._id, 'attachments:', message.attachments?.length || 0);
 
                 // Send to recipient
                 const recipientRoom = `user:${recipientId}`;
@@ -87,7 +98,13 @@ export const initializeSocket = (httpServer) => {
 
         // Public chat message
         socket.on('message:public', async ({ senderId, senderName, content, attachments }) => {
-            console.log('📥 Received message:public event', { senderId, senderName, content, attachments });
+            console.log('📥 Received message:public event', { 
+                senderId, 
+                senderName, 
+                content: content?.substring(0, 50), 
+                attachmentsCount: attachments?.length || 0,
+                attachments: attachments 
+            });
             try {
                 const message = new Message({
                     type: 'public',
@@ -97,15 +114,32 @@ export const initializeSocket = (httpServer) => {
                     roomId: null,
                     attachments: attachments || []
                 });
+                
+                console.log('💾 Saving message with attachments:', {
+                    messageId: message._id,
+                    attachmentsCount: message.attachments?.length || 0,
+                    attachmentDetails: message.attachments
+                });
+                
                 await message.save();
-                console.log('💾 Message saved to DB:', message._id);
+                
+                console.log('✅ Message saved to DB:', {
+                    id: message._id,
+                    hasAttachments: message.attachments && message.attachments.length > 0,
+                    attachmentsCount: message.attachments?.length || 0
+                });
 
                 // Broadcast to all
+                console.log('📤 Broadcasting message with attachments:', {
+                    messageId: message._id,
+                    attachmentsCount: message.attachments?.length || 0
+                });
                 io.emit('message:public', message);
 
-                console.log(`📢 Public message: ${senderName}`);
+                console.log(`📢 Public message broadcast complete: ${senderName}`);
             } catch (error) {
-                console.error('Public message error:', error);
+                console.error('❌ Public message error:', error);
+                console.error('Error details:', error.stack);
                 socket.emit('error', { message: 'Failed to send message' });
             }
         });
@@ -145,7 +179,12 @@ export const initializeSocket = (httpServer) => {
 
         // AI bot message
         socket.on('message:ai', async ({ senderId, senderName, roomId, content, userContext, attachments }) => {
-            console.log('📥 Received message:ai event', { senderId, senderName, content, attachments });
+            console.log('📥 Received message:ai event', { 
+                senderId, 
+                senderName, 
+                content: content?.substring(0, 50),
+                attachmentsCount: attachments?.length || 0 
+            });
             try {
                 // Save user's message
                 const userMessage = new Message({
@@ -156,8 +195,13 @@ export const initializeSocket = (httpServer) => {
                     content,
                     attachments: attachments || []
                 });
+                
+                console.log('💾 Saving AI message with attachments:', {
+                    attachmentsCount: userMessage.attachments?.length || 0
+                });
+                
                 await userMessage.save();
-                console.log('💾 User AI message saved:', userMessage._id);
+                console.log('✅ User AI message saved:', userMessage._id, 'attachments:', userMessage.attachments?.length || 0);
 
                 // Broadcast user message - FIXED: use message:ai event
                 if (roomId) {

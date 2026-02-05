@@ -118,6 +118,16 @@ router.get('/messages', async (req, res) => {
             .lean();
 
         console.log(`✅ Found ${messages.length} messages`);
+        
+        // Log attachment info
+        const messagesWithAttachments = messages.filter(m => m.attachments && m.attachments.length > 0);
+        if (messagesWithAttachments.length > 0) {
+            console.log(`📎 ${messagesWithAttachments.length} messages have attachments`);
+            messagesWithAttachments.forEach(m => {
+                console.log(`   Message ${m._id}: ${m.attachments.length} attachments`, m.attachments);
+            });
+        }
+        
         res.json(messages.reverse()); // Return oldest first for display
     } catch (error) {
         console.error('Fetch messages error:', error);
