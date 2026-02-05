@@ -45,26 +45,30 @@ const upload = multer({
 
 // --- Endpoints ---
 
-// 1. Upload Attachment (Cloudinary)
+// 1. Upload Attachment (Cloudinary or Local)
 router.post('/upload', auth, caseUpload.single('file'), (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
 
-        // Cloudinary provides the URL directly in req.file.path
-        const fileUrl = req.file.path;
+        // Cloudinary provides URL in req.file.path, local storage uses filename
+        const isCloudinary = req.file.path && req.file.path.startsWith('http');
+        let fileUrl;
 
-        console.log('📎 Case file uploaded successfully to Cloudinary:', fileUrl);
-        console.log('File details:', {
-            url: fileUrl,
-            originalName: req.file.originalname,
-            format: req.file.format,
-            size: req.file.size
-        });
+        if (isCloudinary) {
+            fileUrl = req.file.path;
+            console.log('📎 Case file uploaded to Cloudinary:', fileUrl);
+        } else {
+            // Local storage - build URL
+            const host = req.get('host') || 'neurotrace-academy.onrender.com';
+            const protocol = host.includes('localhost') ? 'http' : 'https';
+            fileUrl = `${protocol}://${host}/uploads/cases/${req.file.filename}`;
+            console.log('📎 Case file uploaded to local disk (ephemeral):', fileUrl);
+        }
 
         res.json({
-            url: fileUrl, // Cloudinary URL (https://res.cloudinary.com/...)
+            url: fileUrl,
             filename: req.file.originalname,
             type: req.file.mimetype?.startsWith('image/') ? 'image' : 'pdf',
             size: req.file.size

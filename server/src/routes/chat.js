@@ -12,26 +12,30 @@ const router = express.Router();
 
 // --- New Chat System Endpoints ---
 
-// Upload file (Cloudinary)
+// Upload file (Cloudinary or Local)
 router.post('/upload', chatUpload.single('file'), (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
 
-        // Cloudinary provides the URL directly in req.file.path
-        const fileUrl = req.file.path;
+        // Cloudinary provides URL in req.file.path, local storage uses filename
+        const isCloudinary = req.file.path && req.file.path.startsWith('http');
+        let fileUrl;
 
-        console.log('📎 Chat file uploaded successfully to Cloudinary:', fileUrl);
-        console.log('File details:', {
-            url: fileUrl,
-            originalName: req.file.originalname,
-            format: req.file.format,
-            size: req.file.size
-        });
+        if (isCloudinary) {
+            fileUrl = req.file.path;
+            console.log('📎 Chat file uploaded to Cloudinary:', fileUrl);
+        } else {
+            // Local storage - build URL
+            const host = req.get('host') || 'neurotrace-academy.onrender.com';
+            const protocol = host.includes('localhost') ? 'http' : 'https';
+            fileUrl = `${protocol}://${host}/uploads/${req.file.filename}`;
+            console.log('📎 Chat file uploaded to local disk (ephemeral):', fileUrl);
+        }
 
         res.json({
-            url: fileUrl, // Cloudinary URL (https://res.cloudinary.com/...)
+            url: fileUrl,
             filename: req.file.originalname,
             type: req.file.mimetype?.startsWith('image/') ? 'image' : 'file',
             size: req.file.size,
