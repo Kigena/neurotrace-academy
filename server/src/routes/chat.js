@@ -8,6 +8,7 @@ import ChatRoom from '../models/ChatRoom.js';
 import geminiService from '../services/gemini.js';
 import { User } from '../models/User.js';
 import { QuizSession } from '../models/QuizSession.js';
+import auth from '../middleware/auth.js';
 
 const router = express.Router();
 
