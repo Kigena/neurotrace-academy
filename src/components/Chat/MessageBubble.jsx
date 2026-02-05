@@ -45,18 +45,37 @@ const MessageBubble = ({ message, isOwn, isSequence }) => {
                         <div className="mb-2 space-y-2">
                             {message.attachments.map((file, idx) => {
                                 const fileUrl = getFileUrl(file.url);
+                                console.log('📎 MessageBubble rendering attachment:', {
+                                    filename: file.filename,
+                                    type: file.type,
+                                    originalUrl: file.url,
+                                    fullUrl: fileUrl
+                                });
+                                
                                 return (
                                     <div key={idx} className="bg-black/10 rounded p-1">
                                         {file.type === 'image' ? (
                                             <a href={fileUrl} target="_blank" rel="noopener noreferrer">
-                                                <img src={fileUrl} alt="attachment" className="max-w-full rounded h-auto max-h-60 object-contain" />
+                                                <img 
+                                                    src={fileUrl} 
+                                                    alt={file.filename || 'attachment'} 
+                                                    className="max-w-full rounded h-auto max-h-60 object-contain"
+                                                    onLoad={() => console.log('✅ MessageBubble image loaded:', file.filename)}
+                                                    onError={(e) => {
+                                                        console.error('❌ MessageBubble image failed:', {
+                                                            filename: file.filename,
+                                                            url: fileUrl
+                                                        });
+                                                        e.target.style.display = 'none';
+                                                    }}
+                                                />
                                             </a>
                                         ) : (
                                             <a href={fileUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-2 hover:bg-black/5 rounded">
                                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                                                 </svg>
-                                                <span className="text-sm underline truncate">{file.filename}</span>
+                                                <span className="text-sm underline truncate">{file.filename || 'Download file'}</span>
                                             </a>
                                         )}
                                     </div>

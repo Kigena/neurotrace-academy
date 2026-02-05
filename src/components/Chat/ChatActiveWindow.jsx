@@ -202,45 +202,63 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                                         {/* Attachments */}
                                         {msg.attachments && msg.attachments.length > 0 && (
                                             <div style={{ marginBottom: msg.content ? '8px' : 0 }}>
-                                                {msg.attachments.map((att, attIdx) => (
-                                                    <div key={attIdx} style={{ marginBottom: '4px' }}>
-                                                        {att.type === 'image' ? (
-                                                            <img
-                                                                src={att.url.startsWith('http') ? att.url : `${apiService.getBaseUrl()}${att.url}`}
-                                                                alt={att.filename}
-                                                                onLoad={() => {
-                                                                    // Scroll to bottom after image loads
-                                                                    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-                                                                }}
-                                                                style={{
-                                                                    maxWidth: '100%',
-                                                                    maxHeight: '300px',
-                                                                    width: 'auto',
-                                                                    height: 'auto',
-                                                                    objectFit: 'contain',
-                                                                    borderRadius: '8px',
-                                                                    marginTop: '4px',
-                                                                    backgroundColor: '#f3f4f6',
-                                                                    display: 'block'
-                                                                }}
-                                                            />
-                                                        ) : (
-                                                            <a
-                                                                href={att.url.startsWith('http') ? att.url : `${apiService.getBaseUrl()}${att.url}`}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                style={{
-                                                                    color: isOwn ? 'white' : '#4F46E5',
-                                                                    textDecoration: 'underline',
-                                                                    fontSize: '14px',
-                                                                    wordBreak: 'break-all'
-                                                                }}
-                                                            >
-                                                                📎 {att.filename}
-                                                            </a>
-                                                        )}
-                                                    </div>
-                                                ))}
+                                                {msg.attachments.map((att, attIdx) => {
+                                                    const fullUrl = att.url?.startsWith('http') ? att.url : `${apiService.getBaseUrl()}${att.url}`;
+                                                    console.log('📎 Rendering attachment:', {
+                                                        filename: att.filename,
+                                                        type: att.type,
+                                                        originalUrl: att.url,
+                                                        fullUrl: fullUrl
+                                                    });
+                                                    
+                                                    return (
+                                                        <div key={attIdx} style={{ marginBottom: '4px' }}>
+                                                            {att.type === 'image' ? (
+                                                                <img
+                                                                    src={fullUrl}
+                                                                    alt={att.filename || 'attachment'}
+                                                                    onLoad={() => {
+                                                                        console.log('✅ Image loaded successfully:', att.filename);
+                                                                        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+                                                                    }}
+                                                                    onError={(e) => {
+                                                                        console.error('❌ Image failed to load:', {
+                                                                            filename: att.filename,
+                                                                            url: fullUrl,
+                                                                            error: e
+                                                                        });
+                                                                        e.target.style.display = 'none';
+                                                                    }}
+                                                                    style={{
+                                                                        maxWidth: '100%',
+                                                                        maxHeight: '300px',
+                                                                        width: 'auto',
+                                                                        height: 'auto',
+                                                                        objectFit: 'contain',
+                                                                        borderRadius: '8px',
+                                                                        marginTop: '4px',
+                                                                        backgroundColor: '#f3f4f6',
+                                                                        display: 'block'
+                                                                    }}
+                                                                />
+                                                            ) : (
+                                                                <a
+                                                                    href={fullUrl}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    style={{
+                                                                        color: isOwn ? 'white' : '#4F46E5',
+                                                                        textDecoration: 'underline',
+                                                                        fontSize: '14px',
+                                                                        wordBreak: 'break-all'
+                                                                    }}
+                                                                >
+                                                                    📎 {att.filename || 'Download file'}
+                                                                </a>
+                                                            )}
+                                                        </div>
+                                                    );
+                                                })}
                                             </div>
                                         )}
                                         {msg.content && <p style={{ margin: 0, whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>{msg.content}</p>}
