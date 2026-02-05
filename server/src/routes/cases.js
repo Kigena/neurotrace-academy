@@ -477,6 +477,17 @@ router.delete('/:id/comment/:commentId', auth, async (req, res) => {
     }
 });
 
+// 7b. Test endpoint to verify routes are working
+router.get('/:id/test-edit', auth, (req, res) => {
+    res.json({ 
+        message: 'Edit route is accessible',
+        caseId: req.params.id,
+        userId: req.user.id,
+        userRole: req.user.role,
+        timestamp: new Date().toISOString()
+    });
+});
+
 // 8. Feature/Unfeature Case (Admin Only)
 router.put('/:id/feature', auth, async (req, res) => {
     try {
@@ -511,8 +522,13 @@ router.put('/:id/feature', auth, async (req, res) => {
 // 8b. Update Case (Owner or Admin Only)
 router.put('/:id', auth, async (req, res) => {
     try {
-        console.log('📝 Update case request:', req.params.id);
-        console.log('User:', req.user.id, 'Role:', req.user.role);
+        console.log('========================================');
+        console.log('📝 UPDATE CASE REQUEST RECEIVED');
+        console.log('Case ID:', req.params.id);
+        console.log('User ID:', req.user.id);
+        console.log('User Role:', req.user.role);
+        console.log('Request Body Keys:', Object.keys(req.body));
+        console.log('========================================');
 
         const communityCase = await CommunityCase.findById(req.params.id);
         
@@ -561,9 +577,15 @@ router.put('/:id', auth, async (req, res) => {
         await communityCase.populate('author', 'name');
         
         console.log('✅ Case updated successfully');
+        console.log('========================================');
         res.json(communityCase);
     } catch (error) {
-        console.error('❌ Update case error:', error);
+        console.error('========================================');
+        console.error('❌ UPDATE CASE ERROR');
+        console.error('Error name:', error.name);
+        console.error('Error message:', error.message);
+        console.error('Error stack:', error.stack);
+        console.error('========================================');
         res.status(500).json({ error: error.message || 'Failed to update case' });
     }
 });

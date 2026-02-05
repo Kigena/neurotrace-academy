@@ -127,9 +127,21 @@ const EditCase = () => {
 
     const handleSubmit = async () => {
         console.log('🚀 handleSubmit called for edit');
+        console.log('📋 Case ID:', id);
+        console.log('👤 Current user:', user);
         setIsSubmitting(true);
         
         try {
+            // First, test if the route is accessible
+            console.log('🧪 Testing route accessibility...');
+            try {
+                const testResponse = await apiService.get(`/cases/${id}/test-edit`);
+                console.log('✅ Route test successful:', testResponse);
+            } catch (testError) {
+                console.error('❌ Route test failed:', testError);
+                console.error('This means the backend update route may not be deployed yet');
+            }
+
             // Validation
             if (!formData.title || !formData.history) {
                 alert('❌ Title and History are required!');
