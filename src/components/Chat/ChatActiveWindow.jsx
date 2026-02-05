@@ -106,6 +106,22 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
         }
     };
 
+    const handleDeleteMessage = async (messageId) => {
+        if (!window.confirm('Delete this message? This cannot be undone.')) {
+            return;
+        }
+
+        try {
+            await apiService.delete(`/chat/messages/${messageId}`);
+            // Remove from local state optimistically
+            const updatedMessages = messages.filter(m => m._id !== messageId);
+            // This will be synced via socket, but we update locally for immediate feedback
+        } catch (error) {
+            console.error('Failed to delete message:', error);
+            alert('Failed to delete message: ' + error.message);
+        }
+    };
+
     if (!activeChat) {
         return (
             <div className="flex-1 flex items-center justify-center text-textSecondary">
@@ -265,9 +281,28 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                                         <div style={{
                                             fontSize: '10px',
                                             marginTop: '4px',
-                                            opacity: 0.7
+                                            opacity: 0.7,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '8px'
                                         }}>
-                                            {new Date(msg.timestamp || msg.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                            <span>{new Date(msg.timestamp || msg.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                                            {isOwn && msg._id && !msg._id.startsWith('temp-') && (
+                                                <button
+                                                    onClick={() => handleDeleteMessage(msg._id)}
+                                                    style={{
+                                                        background: 'none',
+                                                        border: 'none',
+                                                        color: isOwn ? 'rgba(255,255,255,0.7)' : '#ef4444',
+                                                        cursor: 'pointer',
+                                                        padding: '2px',
+                                                        fontSize: '10px'
+                                                    }}
+                                                    title="Delete message"
+                                                >
+                                                    🗑️
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

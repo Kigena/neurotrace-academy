@@ -432,6 +432,51 @@ router.post('/:id/structure', auth, async (req, res) => {
     }
 });
 
+// 7d. Delete Comment
+router.delete('/:id/comment/:commentId', auth, async (req, res) => {
+    try {
+        console.log('🗑️ Delete comment request:', {
+            caseId: req.params.id,
+            commentId: req.params.commentId,
+            userId: req.user.id
+        });
+
+        const communityCase = await CommunityCase.findById(req.params.id);
+
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        // Find the comment
+        const comment = communityCase.comments.id(req.params.commentId);
+        
+        if (!comment) {
+            return res.status(404).json({ error: 'Comment not found' });
+        }
+
+        // Check if user owns the comment or is admin
+        const isOwner = comment.userId && comment.userId.toString() === req.user.id;
+        const isAdmin = req.user.role === 'admin';
+
+        if (!isOwner && !isAdmin) {
+            return res.status(403).json({ error: 'You can only delete your own comments' });
+        }
+
+        // Remove the comment
+        communityCase.comments.pull(req.params.commentId);
+        await communityCase.save();
+
+        console.log('✅ Comment deleted successfully');
+
+        // Return updated comments
+        await communityCase.populate('comments.userId', 'name');
+        res.json(communityCase.comments);
+    } catch (error) {
+        console.error('❌ Delete comment error:', error);
+        res.status(500).json({ error: 'Failed to delete comment' });
+    }
+});
+
 // 8. Feature/Unfeature Case (Admin Only)
 router.put('/:id/feature', auth, async (req, res) => {
     try {
@@ -460,6 +505,40 @@ router.put('/:id/feature', auth, async (req, res) => {
     } catch (error) {
         console.error('Feature case error:', error);
         res.status(500).json({ error: 'Failed to feature case' });
+    }
+});
+
+// 9. Delete Case (Admin Only)
+router.delete('/:id', auth, async (req, res) => {
+    try {
+        console.log('🗑️ Delete case request:', req.params.id);
+        console.log('User:', req.user.id, 'Role:', req.user.role);
+        
+        // Check if user is admin
+        if (req.user.role !== 'admin') {
+            return res.status(403).json({ error: 'Admin access required' });
+        }
+
+        const communityCase = await CommunityCase.findById(req.params.id);
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        // Log case being deleted
+        console.log('🗑️ Deleting case:', {
+            id: communityCase._id,
+            title: communityCase.title,
+            author: communityCase.author,
+            status: communityCase.status
+        });
+
+        await CommunityCase.findByIdAndDelete(req.params.id);
+
+        console.log('✅ Case deleted successfully');
+        res.json({ message: 'Case deleted successfully', id: req.params.id });
+    } catch (error) {
+        console.error('❌ Delete case error:', error);
+        res.status(500).json({ error: 'Failed to delete case' });
     }
 });
 

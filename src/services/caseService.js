@@ -63,6 +63,15 @@ class CaseService {
     async requestStructure(caseId) {
         return await apiService.post(`/cases/${caseId}/structure`, {});
     }
+
+    /**
+     * Delete a comment from a case
+     * @param {string} caseId 
+     * @param {string} commentId 
+     */
+    async deleteComment(caseId, commentId) {
+        return await apiService.delete(`/cases/${caseId}/comment/${commentId}`);
+    }
 }
 
 export default new CaseService();

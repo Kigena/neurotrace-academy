@@ -161,6 +161,31 @@ const AdminModeration = () => {
         }
     };
 
+    const handleDeleteCase = async (caseId, caseTitle) => {
+        const confirmMessage = `⚠️ PERMANENTLY DELETE THIS CASE?\n\n"${caseTitle}"\n\nThis action CANNOT be undone!\n- Case will be removed from database\n- All discussions will be deleted\n- Attachments will remain on server\n\nType "DELETE" to confirm:`;
+        
+        const userInput = window.prompt(confirmMessage);
+        
+        if (userInput !== 'DELETE') {
+            if (userInput !== null) {
+                alert('Deletion cancelled - confirmation text did not match.');
+            }
+            return;
+        }
+
+        setProcessing(true);
+        try {
+            await apiService.delete(`/cases/${caseId}`);
+            alert('✅ Case deleted successfully');
+            setSelectedCase(null);
+            fetchCases();
+        } catch (error) {
+            alert(`❌ Failed to delete case: ${error.message}`);
+        } finally {
+            setProcessing(false);
+        }
+    };
+
     const viewCaseDetail = (caseItem) => {
         setSelectedCase(caseItem);
         setModerationNotes(caseItem.moderationNotes || '');
@@ -432,6 +457,24 @@ const AdminModeration = () => {
                                 )}
                             </div>
                         )}
+
+                        {/* Delete Case Button - Danger Zone */}
+                        <div className="pt-4 border-t border-red-200 bg-red-50 rounded-lg p-4 mt-4">
+                            <p className="text-sm font-semibold text-red-900 mb-2">⚠️ Danger Zone</p>
+                            <p className="text-xs text-red-700 mb-3">
+                                Permanently delete this case. This action cannot be undone.
+                            </p>
+                            <button
+                                onClick={() => handleDeleteCase(selectedCase._id, selectedCase.title)}
+                                disabled={processing}
+                                className="w-full px-6 py-3 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                                {processing ? 'Deleting...' : '🗑️ Delete Case Permanently'}
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}

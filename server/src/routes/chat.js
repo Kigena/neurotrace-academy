@@ -357,4 +357,41 @@ router.delete('/history', async (req, res) => {
     }
 });
 
+// Delete a specific message
+router.delete('/messages/:messageId', auth, async (req, res) => {
+    try {
+        console.log('🗑️ Delete message request:', {
+            messageId: req.params.messageId,
+            userId: req.user.id,
+            userRole: req.user.role
+        });
+
+        const message = await Message.findById(req.params.messageId);
+
+        if (!message) {
+            return res.status(404).json({ error: 'Message not found' });
+        }
+
+        // Check if user owns the message or is admin
+        const isOwner = message.senderId === req.user.id;
+        const isAdmin = req.user.role === 'admin';
+
+        if (!isOwner && !isAdmin) {
+            return res.status(403).json({ error: 'You can only delete your own messages' });
+        }
+
+        await Message.findByIdAndDelete(req.params.messageId);
+
+        console.log('✅ Message deleted successfully');
+        
+        // Broadcast deletion via socket (if socket is available)
+        // This will be handled by socket.io in the future
+        
+        res.json({ message: 'Message deleted successfully', id: req.params.messageId });
+    } catch (error) {
+        console.error('❌ Delete message error:', error);
+        res.status(500).json({ error: 'Failed to delete message' });
+    }
+});
+
 export default router;

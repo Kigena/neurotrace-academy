@@ -133,6 +133,22 @@ class ApiService {
 
         return response.json();
     }
+
+    async delete(endpoint) {
+        const response = await this.fetchWithTimeout(`${API_URL}${endpoint}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                ...this.getAuthHeaders()
+            },
+        });
+
+        if (!response.ok) {
+            await this.handleErrorResponse(response);
+        }
+
+        return response.json();
+    }
 }
 
 export default new ApiService();
