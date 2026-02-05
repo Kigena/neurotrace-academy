@@ -53,9 +53,9 @@ router.post('/upload', auth, upload.single('file'), (req, res) => {
         }
 
         // Build absolute URL for the uploaded file
-        // Use protocol and host from the request, or fallback to environment variable
-        const protocol = req.protocol || 'https';
+        // Always use HTTPS in production (Render serves over HTTPS)
         const host = req.get('host') || process.env.API_URL || 'neurotrace-academy.onrender.com';
+        const protocol = host.includes('localhost') ? 'http' : 'https';
         const fileUrl = `${protocol}://${host}/uploads/cases/${req.file.filename}`;
 
         console.log('📎 Case file uploaded successfully:', fileUrl);
