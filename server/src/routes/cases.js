@@ -45,25 +45,28 @@ const upload = multer({
 
 // --- Endpoints ---
 
-// 1. Upload Attachment
-router.post('/upload', auth, upload.single('file'), (req, res) => {
+// 1. Upload Attachment (Cloudinary)
+router.post('/upload', auth, caseUpload.single('file'), (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
 
-        // Build absolute URL for the uploaded file
-        // Always use HTTPS in production (Render serves over HTTPS)
-        const host = req.get('host') || process.env.API_URL || 'neurotrace-academy.onrender.com';
-        const protocol = host.includes('localhost') ? 'http' : 'https';
-        const fileUrl = `${protocol}://${host}/uploads/cases/${req.file.filename}`;
+        // Cloudinary provides the URL directly in req.file.path
+        const fileUrl = req.file.path;
 
-        console.log('📎 Case file uploaded successfully:', fileUrl);
+        console.log('📎 Case file uploaded successfully to Cloudinary:', fileUrl);
+        console.log('File details:', {
+            url: fileUrl,
+            originalName: req.file.originalname,
+            format: req.file.format,
+            size: req.file.size
+        });
 
         res.json({
-            url: fileUrl,
+            url: fileUrl, // Cloudinary URL (https://res.cloudinary.com/...)
             filename: req.file.originalname,
-            type: req.file.mimetype.startsWith('image/') ? 'image' : 'pdf',
+            type: req.file.mimetype?.startsWith('image/') ? 'image' : 'pdf',
             size: req.file.size
         });
     } catch (error) {

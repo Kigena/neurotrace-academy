@@ -48,25 +48,28 @@ const upload = multer({
 
 // --- New Chat System Endpoints ---
 
-// Upload file
-router.post('/upload', upload.single('file'), (req, res) => {
+// Upload file (Cloudinary)
+router.post('/upload', chatUpload.single('file'), (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
 
-        // Build absolute URL for the uploaded file
-        // Always use HTTPS in production (Render serves over HTTPS)
-        const host = req.get('host') || process.env.API_URL || 'neurotrace-academy.onrender.com';
-        const protocol = host.includes('localhost') ? 'http' : 'https';
-        const fileUrl = `${protocol}://${host}/uploads/${req.file.filename}`;
+        // Cloudinary provides the URL directly in req.file.path
+        const fileUrl = req.file.path;
 
-        console.log('📎 File uploaded successfully:', fileUrl);
+        console.log('📎 Chat file uploaded successfully to Cloudinary:', fileUrl);
+        console.log('File details:', {
+            url: fileUrl,
+            originalName: req.file.originalname,
+            format: req.file.format,
+            size: req.file.size
+        });
 
         res.json({
-            url: fileUrl,
+            url: fileUrl, // Cloudinary URL (https://res.cloudinary.com/...)
             filename: req.file.originalname,
-            type: req.file.mimetype.startsWith('image/') ? 'image' : 'file',
+            type: req.file.mimetype?.startsWith('image/') ? 'image' : 'file',
             size: req.file.size,
             mimetype: req.file.mimetype
         });
