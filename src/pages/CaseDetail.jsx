@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import casesData from "../data/cases.json";
 import syndromesData from "../data/syndromes_v2.json";
 import patternsData from "../data/neurotrace_patterns_library_v2.json";
