@@ -111,6 +111,10 @@ router.get('/featured', async (req, res) => {
 // 3. Create Case
 router.post('/', auth, async (req, res) => {
     try {
+        console.log('📥 Creating new case...');
+        console.log('User:', req.user?.id);
+        console.log('Request body keys:', Object.keys(req.body));
+        
         const {
             title,
             history,
@@ -120,6 +124,19 @@ router.post('/', auth, async (req, res) => {
             tags,
             attachments
         } = req.body;
+
+        // Validation
+        if (!title || !history) {
+            console.error('❌ Validation failed: missing required fields');
+            return res.status(400).json({ error: 'Title and history are required fields' });
+        }
+
+        if (!req.user || !req.user.id) {
+            console.error('❌ No user found in request');
+            return res.status(401).json({ error: 'User not authenticated' });
+        }
+
+        console.log('✅ Validation passed');
 
         // Sanitize patientInfo to handle empty strings for numeric fields
         const sanitizedPatientInfo = { ...patientInfo };
@@ -138,14 +155,18 @@ router.post('/', auth, async (req, res) => {
             attachments
         });
 
+        console.log('💾 Saving case to database...');
         const savedCase = await newCase.save();
+        console.log('✅ Case saved with ID:', savedCase._id);
 
         // Populate author info for the response
         await savedCase.populate('author', 'name');
 
+        console.log('✅ Case created successfully');
         res.status(201).json(savedCase);
     } catch (error) {
-        console.error('Create case error:', error);
+        console.error('❌ Create case error:', error);
+        console.error('Error stack:', error.stack);
         res.status(500).json({ error: error.message || 'Failed to create case' });
     }
 });

@@ -135,12 +135,24 @@ const ShareCase = () => {
     };
 
     const handleSubmit = async () => {
+        console.log('🚀 handleSubmit called');
         setIsSubmitting(true);
+        
         try {
             // Validation
             if (!formData.title || !formData.history) {
+                console.warn('⚠️ Validation failed: missing required fields');
                 alert('❌ Title and History are required!');
                 setIsSubmitting(false);
+                return;
+            }
+
+            // Check authentication
+            const token = localStorage.getItem('token');
+            if (!token) {
+                console.error('❌ No authentication token found');
+                alert('❌ You must be logged in to submit a case.\n\nPlease log in and try again.');
+                navigate('/login');
                 return;
             }
 
@@ -151,18 +163,57 @@ const ShareCase = () => {
                 tags: formData.tags.split(',').map(t => t.trim()).filter(Boolean)
             };
 
-            console.log('📤 Submitting case:', finalData);
-            const response = await caseService.createCase(finalData);
-            console.log('✅ Case created:', response);
+            console.log('📤 Submitting case data:', {
+                title: finalData.title,
+                hasHistory: !!finalData.history,
+                attachmentsCount: finalData.attachments.length,
+                tagsCount: finalData.tags.length
+            });
             
+            // Add timeout handling
+            const timeoutPromise = new Promise((_, reject) => 
+                setTimeout(() => reject(new Error('Request timeout - server may be cold starting. Please try again in 30 seconds.')), 90000)
+            );
+            
+            const response = await Promise.race([
+                caseService.createCase(finalData),
+                timeoutPromise
+            ]);
+            
+            console.log('✅ Case created successfully:', response);
+            
+            // Show success message
             alert('✅ Case submitted successfully!\n\n📋 Your case is now pending admin review.\n\nOur team will verify that all patient information is properly de-identified before publishing to the community feed.\n\nYou will be notified once your case is approved.');
-            navigate('/cases'); // Redirect to feed
+            
+            // Redirect to cases page
+            navigate('/cases');
         } catch (error) {
             console.error('❌ Submission failed:', error);
-            const errorMessage = error.message || 'Unknown error occurred';
-            alert(`Failed to create case:\n${errorMessage}\n\nPlease check console for details.`);
+            console.error('Error details:', {
+                message: error.message,
+                stack: error.stack,
+                response: error.response
+            });
+            
+            let errorMessage = 'Unknown error occurred';
+            
+            if (error.message) {
+                errorMessage = error.message;
+            }
+            
+            if (error.message?.includes('timeout') || error.message?.includes('cold start')) {
+                errorMessage = 'Request timeout - the server is starting up.\n\nPlease wait 30 seconds and try again.';
+            } else if (error.message?.includes('Network')) {
+                errorMessage = 'Network error - please check your internet connection.';
+            } else if (error.message?.includes('401') || error.message?.includes('Unauthorized')) {
+                errorMessage = 'Session expired - please log in again.';
+                setTimeout(() => navigate('/login'), 2000);
+            }
+            
+            alert(`❌ Failed to submit case:\n\n${errorMessage}\n\nPlease check the console (F12) for more details or contact support.`);
         } finally {
             setIsSubmitting(false);
+            console.log('✅ handleSubmit completed');
         }
     };
 
@@ -174,6 +225,27 @@ const ShareCase = () => {
                 onAccept={handleAcceptDisclaimer}
                 onDecline={handleDeclineDisclaimer}
             />
+
+            {/* Submitting Overlay */}
+            {isSubmitting && (
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center">
+                    <div className="bg-white rounded-xl p-8 shadow-2xl max-w-md mx-4 text-center">
+                        <div className="flex justify-center mb-4">
+                            <svg className="animate-spin h-12 w-12 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-2">Publishing Your Case</h3>
+                        <p className="text-slate-600 text-sm">
+                            Please wait while we submit your case for review...
+                        </p>
+                        <p className="text-xs text-slate-500 mt-3">
+                            This may take up to 60 seconds if the server is starting up.
+                        </p>
+                    </div>
+                </div>
+            )}
 
             <div className="max-w-4xl mx-auto p-4 md:p-8">
                 <div className="flex items-center justify-between mb-6">
@@ -460,13 +532,34 @@ const ShareCase = () => {
                     />
 
                     <div className="flex justify-between pt-4">
-                        <button onClick={() => setStep(2)} className="px-6 py-2 text-slate-600 hover:text-slate-900 font-medium">Back</button>
+                        <button 
+                            onClick={() => setStep(2)} 
+                            disabled={isSubmitting}
+                            className="px-6 py-2 text-slate-600 hover:text-slate-900 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            Back
+                        </button>
                         <button
                             onClick={handleSubmit}
                             disabled={isSubmitting}
-                            className="px-8 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg hover:from-purple-700 hover:to-indigo-700 shadow-lg disabled:opacity-50 transition-all transform hover:scale-[1.02]"
+                            className="px-8 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg hover:from-purple-700 hover:to-indigo-700 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all transform hover:scale-[1.02] flex items-center gap-2"
                         >
-                            {isSubmitting ? 'Publishing...' : 'Publish Case'}
+                            {isSubmitting ? (
+                                <>
+                                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    <span>Publishing Case...</span>
+                                </>
+                            ) : (
+                                <>
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>Publish Case</span>
+                                </>
+                            )}
                         </button>
                     </div>
                 </div>
