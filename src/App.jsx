@@ -10,6 +10,7 @@ import PatternCompare from "./pages/PatternCompare.jsx";
 import Cases from "./pages/Cases.jsx";
 import CaseDetail from "./pages/CaseDetail.jsx";
 import ShareCase from "./pages/cases/ShareCase.jsx";
+import EditCase from "./pages/cases/EditCase.jsx";
 import Workflow from "./pages/Workflow.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
@@ -89,6 +90,11 @@ function AppContent() {
           <Route path="/cases/:id" element={
             <ProtectedRoute>
               <CaseDetail />
+            </ProtectedRoute>
+          } />
+          <Route path="/cases/:id/edit" element={
+            <ProtectedRoute>
+              <EditCase />
             </ProtectedRoute>
           } />
           <Route path="/share-case" element={

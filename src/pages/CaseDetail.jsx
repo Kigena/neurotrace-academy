@@ -86,14 +86,31 @@ const StaticCaseView = ({ eegCase }) => {
 };
 
 const CommunityCaseView = ({ eegCase, setEegCase }) => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const canEdit = user && (user.id === eegCase.author?._id || user.role === 'admin');
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">Community Case</span>
-          <span className="text-xs text-slate-500">
-            Posted by {eegCase.author?.name || 'Anonymous'} on {new Date(eegCase.createdAt).toLocaleDateString()}
-          </span>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">Community Case</span>
+            <span className="text-xs text-slate-500">
+              Posted by {eegCase.author?.name || 'Anonymous'} on {new Date(eegCase.createdAt).toLocaleDateString()}
+            </span>
+          </div>
+          {canEdit && (
+            <button
+              onClick={() => navigate(`/cases/${eegCase._id}/edit`)}
+              className="flex items-center gap-2 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              Edit
+            </button>
+          )}
         </div>
         <h1 className="text-2xl font-bold text-slate-900">{eegCase.title}</h1>
       </div>

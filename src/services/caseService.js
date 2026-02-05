@@ -37,6 +37,15 @@ class CaseService {
     }
 
     /**
+     * Update an existing case
+     * @param {string} id 
+     * @param {Object} caseData 
+     */
+    async updateCase(id, caseData) {
+        return await apiService.put(`/cases/${id}`, caseData);
+    }
+
+    /**
      * Add a comment to a case
      * @param {string} caseId 
      * @param {string} content 

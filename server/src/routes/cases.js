@@ -508,6 +508,66 @@ router.put('/:id/feature', auth, async (req, res) => {
     }
 });
 
+// 8b. Update Case (Owner or Admin Only)
+router.put('/:id', auth, async (req, res) => {
+    try {
+        console.log('📝 Update case request:', req.params.id);
+        console.log('User:', req.user.id, 'Role:', req.user.role);
+
+        const communityCase = await CommunityCase.findById(req.params.id);
+        
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        // Check if user is owner or admin
+        const isOwner = communityCase.author.toString() === req.user.id;
+        const isAdmin = req.user.role === 'admin';
+
+        if (!isOwner && !isAdmin) {
+            return res.status(403).json({ error: 'You can only edit your own cases' });
+        }
+
+        const {
+            title,
+            history,
+            patientInfo,
+            medications,
+            findings,
+            tags,
+            attachments
+        } = req.body;
+
+        // Sanitize patientInfo
+        const sanitizedPatientInfo = { ...patientInfo };
+        if (sanitizedPatientInfo.age === '') {
+            sanitizedPatientInfo.age = null;
+        }
+
+        // Update fields
+        if (title) communityCase.title = title;
+        if (history) communityCase.history = history;
+        if (patientInfo) communityCase.patientInfo = sanitizedPatientInfo;
+        if (medications !== undefined) communityCase.medications = medications;
+        if (findings) communityCase.findings = findings;
+        if (tags !== undefined) communityCase.tags = tags;
+        if (attachments !== undefined) communityCase.attachments = attachments;
+        
+        communityCase.updatedAt = Date.now();
+
+        console.log('💾 Saving updated case...');
+        await communityCase.save();
+        
+        await communityCase.populate('author', 'name');
+        
+        console.log('✅ Case updated successfully');
+        res.json(communityCase);
+    } catch (error) {
+        console.error('❌ Update case error:', error);
+        res.status(500).json({ error: error.message || 'Failed to update case' });
+    }
+});
+
 // 9. Delete Case (Admin Only)
 router.delete('/:id', auth, async (req, res) => {
     try {
