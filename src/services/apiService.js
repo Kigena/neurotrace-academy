@@ -118,6 +118,9 @@ class ApiService {
     }
 
     async put(endpoint, data) {
+        console.log(`🔄 PUT request to: ${API_URL}${endpoint}`);
+        console.log('📦 Request body:', data);
+        
         const response = await this.fetchWithTimeout(`${API_URL}${endpoint}`, {
             method: 'PUT',
             headers: {
@@ -127,11 +130,16 @@ class ApiService {
             body: JSON.stringify(data),
         });
 
+        console.log(`📡 Response status: ${response.status} ${response.statusText}`);
+
         if (!response.ok) {
+            console.error('❌ PUT request failed');
             await this.handleErrorResponse(response);
         }
 
-        return response.json();
+        const result = await response.json();
+        console.log('✅ PUT response:', result);
+        return result;
     }
 
     async delete(endpoint) {

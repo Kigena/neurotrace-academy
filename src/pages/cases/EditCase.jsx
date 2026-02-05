@@ -137,22 +137,40 @@ const EditCase = () => {
                 return;
             }
 
-            // Process tags and medications
+            // Process tags and medications - handle both comma and space separated
+            const processTags = (tagString) => {
+                if (!tagString) return [];
+                // First try comma separation
+                if (tagString.includes(',')) {
+                    return tagString.split(',').map(t => t.trim()).filter(Boolean);
+                }
+                // Otherwise split by spaces and filter out empty strings
+                return tagString.split(/\s+/).filter(Boolean);
+            };
+
             const finalData = {
                 ...formData,
-                medications: formData.medications.split(',').map(m => m.trim()).filter(Boolean),
-                tags: formData.tags.split(',').map(t => t.trim()).filter(Boolean)
+                medications: formData.medications ? 
+                    formData.medications.split(',').map(m => m.trim()).filter(Boolean) : [],
+                tags: processTags(formData.tags)
             };
 
             console.log('📤 Updating case:', id);
-            await caseService.updateCase(id, finalData);
-            console.log('✅ Case updated successfully');
+            console.log('📦 Final data being sent:', JSON.stringify(finalData, null, 2));
+            
+            const result = await caseService.updateCase(id, finalData);
+            console.log('✅ Case updated successfully:', result);
             
             alert('✅ Case updated successfully!');
             navigate(`/cases/${id}`);
         } catch (error) {
             console.error('❌ Update failed:', error);
-            alert(`❌ Failed to update case: ${error.message}`);
+            console.error('Error details:', {
+                message: error.message,
+                stack: error.stack,
+                name: error.name
+            });
+            alert(`❌ Failed to update case: ${error.message || 'Unknown error'}`);
         } finally {
             setIsSubmitting(false);
         }
