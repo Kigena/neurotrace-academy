@@ -4,12 +4,29 @@ const commentSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        required: false // Allow AI comments without user
     },
     content: {
         type: String,
         required: true
     },
+    isAI: {
+        type: Boolean,
+        default: false
+    },
+    aiType: {
+        type: String,
+        enum: ['response', 'reconciliation', 'structure', null],
+        default: null
+    },
+    replyTo: {
+        type: mongoose.Schema.Types.ObjectId,
+        default: null // Reference to parent comment
+    },
+    mentionedUsers: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
     createdAt: {
         type: Date,
         default: Date.now

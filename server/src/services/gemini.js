@@ -137,6 +137,163 @@ Guidelines:
             "Create a study plan for me"
         ];
     }
+
+    /**
+     * Generate AI response to @mentions in case discussions
+     */
+    async generateCaseDiscussionResponse(mentionText, caseData, recentComments = []) {
+        try {
+            const systemPrompt = `You are NeuroTrace AI, an expert EEG technologist assistant helping with case discussions.
+
+Case Context:
+- Title: ${caseData.title}
+- Patient: ${caseData.patientInfo?.age} ${caseData.patientInfo?.ageUnit}, ${caseData.patientInfo?.gender}
+- History: ${caseData.history}
+- Findings:
+  Background: ${caseData.findings?.background || 'Not specified'}
+  Interictal: ${caseData.findings?.interictal || 'Not specified'}
+  Ictal: ${caseData.findings?.ictal || 'Not specified'}
+  Classification: ${caseData.findings?.classification || 'Not specified'}
+
+Recent Discussion:
+${recentComments.map((c, i) => `${i + 1}. ${c.userId?.name || 'User'}: ${c.content}`).join('\n')}
+
+Your role in case discussions:
+1. Answer specific questions about EEG patterns, rhythms, and findings
+2. Explain clinical significance and differential diagnoses
+3. Help identify artifacts vs. true patterns
+4. Provide educational context without giving definitive diagnoses
+5. Reference ABRET standards and best practices
+6. Be concise but thorough (2-4 paragraphs max)
+
+Guidelines:
+- Focus on teaching EEG interpretation skills
+- Acknowledge uncertainty when appropriate
+- Encourage critical thinking
+- Use proper terminology
+- Be respectful of all discussion participants`;
+
+            // Remove @mention from text
+            const cleanedText = mentionText.replace(/@(Neurotrace|AI|NeurotraceAI)/gi, '').trim();
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 1500,
+                    temperature: 0.7,
+                },
+            });
+
+            const result = await chat.sendMessage(`${systemPrompt}\n\nQuestion: ${cleanedText}`);
+            return result.response.text();
+        } catch (error) {
+            console.error('Case discussion AI error:', error);
+            throw new Error('Failed to generate discussion response');
+        }
+    }
+
+    /**
+     * Reconcile conflicting opinions in case discussions
+     */
+    async reconcileOpinions(question, conflictingComments, caseData) {
+        try {
+            const systemPrompt = `You are NeuroTrace AI, helping reconcile different interpretations in an EEG case discussion.
+
+Case: ${caseData.title}
+
+Conflicting Views:
+${conflictingComments.map((c, i) => 
+    `View ${String.fromCharCode(65 + i)} (${c.userId?.name || 'User'}): ${c.content}`
+).join('\n\n')}
+
+Your task:
+1. Identify the key differences between these interpretations
+2. Explain which EEG features or clinical factors are decisive
+3. Discuss which view is more consistent with the case data
+4. Acknowledge if both views have merit in certain contexts
+5. Provide educational insights about the differential diagnosis
+
+Format your response as:
+**Key Differences:**
+[Brief summary of what differs]
+
+**Decisive Features:**
+[What EEG findings or clinical factors resolve the conflict]
+
+**Analysis:**
+[Which interpretation is better supported and why]
+
+**Learning Point:**
+[Educational takeaway from this discussion]
+
+Be objective, educational, and reference EEG interpretation principles.`;
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 2000,
+                    temperature: 0.7,
+                },
+            });
+
+            const result = await chat.sendMessage(`${systemPrompt}\n\nQuestion: ${question}`);
+            return result.response.text();
+        } catch (error) {
+            console.error('Opinion reconciliation AI error:', error);
+            throw new Error('Failed to reconcile opinions');
+        }
+    }
+
+    /**
+     * Structure case discussion into organized sections
+     */
+    async structureDiscussion(comments, caseData) {
+        try {
+            const systemPrompt = `You are NeuroTrace AI, organizing a case discussion into a structured format.
+
+Case: ${caseData.title}
+
+Discussion Comments:
+${comments.filter(c => !c.isAI).map((c, i) => 
+    `${i + 1}. ${c.userId?.name || 'User'}: ${c.content}`
+).join('\n')}
+
+Your task: Organize this discussion into three clear sections:
+
+**What We Know (Established Findings):**
+- List agreed-upon EEG findings
+- Note clear patterns/rhythms identified
+- Include relevant clinical history points
+
+**What We Need (Questions & Gaps):**
+- Unanswered questions raised
+- Additional information needed
+- Areas of uncertainty or debate
+
+**Working Impression (Current Consensus):**
+- Most likely interpretation based on discussion
+- Key differential diagnoses mentioned
+- Next steps or recommendations if discussed
+
+Guidelines:
+- Be concise and organized
+- Use bullet points for clarity
+- Synthesize multiple similar points
+- Maintain objectivity
+- Highlight areas where more discussion is needed`;
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 1500,
+                    temperature: 0.7,
+                },
+            });
+
+            const result = await chat.sendMessage(systemPrompt);
+            return result.response.text();
+        } catch (error) {
+            console.error('Discussion structure AI error:', error);
+            throw new Error('Failed to structure discussion');
+        }
+    }
 }
 
 export default new GeminiService();

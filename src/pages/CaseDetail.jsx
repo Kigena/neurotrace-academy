@@ -197,11 +197,11 @@ const CommunityCaseView = ({ eegCase, setEegCase }) => {
       <CaseDiscussion
         caseId={eegCase._id}
         comments={eegCase.comments || []}
-        onCommentAdded={(newComment) => {
-          // Optimistically update UI
+        onCommentAdded={(updatedComments) => {
+          // Update with full comment list (includes AI responses)
           setEegCase(prev => ({
             ...prev,
-            comments: [...(prev.comments || []), newComment]
+            comments: Array.isArray(updatedComments) ? updatedComments : [...(prev.comments || []), updatedComments]
           }));
         }}
       />

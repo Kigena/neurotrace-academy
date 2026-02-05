@@ -266,26 +266,148 @@ router.put('/:id/moderate', auth, async (req, res) => {
 // 7. Add Comment
 router.post('/:id/comment', auth, async (req, res) => {
     try {
-        const { content } = req.body;
+        const { content, replyTo } = req.body;
         const communityCase = await CommunityCase.findById(req.params.id);
 
         if (!communityCase) {
             return res.status(404).json({ error: 'Case not found' });
         }
 
-        communityCase.comments.push({
-            userId: req.user.id,
-            content
-        });
+        // Check for AI mentions
+        const aiMentionRegex = /@(Neurotrace|AI|NeurotraceAI)/gi;
+        const hasAIMention = aiMentionRegex.test(content);
 
+        const newComment = {
+            userId: req.user.id,
+            content,
+            replyTo: replyTo || null
+        };
+
+        communityCase.comments.push(newComment);
         await communityCase.save();
 
-        // Return the new comment with populated user
-        const newComment = communityCase.comments[communityCase.comments.length - 1];
-        res.json(newComment);
+        // Populate the new comment
+        await communityCase.populate('comments.userId', 'name');
+        const addedComment = communityCase.comments[communityCase.comments.length - 1];
+
+        // If AI is mentioned, trigger AI response
+        if (hasAIMention) {
+            // Import gemini service at the top if not already imported
+            const geminiService = (await import('../services/gemini.js')).default;
+            
+            try {
+                // Generate AI response
+                const aiResponse = await geminiService.generateCaseDiscussionResponse(
+                    content,
+                    communityCase,
+                    communityCase.comments.slice(-10) // Last 10 comments for context
+                );
+
+                // Add AI comment
+                communityCase.comments.push({
+                    userId: null,
+                    content: aiResponse,
+                    isAI: true,
+                    aiType: 'response',
+                    replyTo: addedComment._id
+                });
+
+                await communityCase.save();
+            } catch (aiError) {
+                console.error('AI response generation failed:', aiError);
+                // Continue without AI response
+            }
+        }
+
+        // Return updated comments
+        await communityCase.populate('comments.userId', 'name');
+        res.json(communityCase.comments);
     } catch (error) {
         console.error('Add comment error:', error);
         res.status(500).json({ error: 'Failed to add comment' });
+    }
+});
+
+// 7b. Request AI Reconciliation
+router.post('/:id/reconcile', auth, async (req, res) => {
+    try {
+        const { commentIds, question } = req.body;
+        const communityCase = await CommunityCase.findById(req.params.id)
+            .populate('comments.userId', 'name');
+
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        // Get the specific comments to reconcile
+        const commentsToReconcile = communityCase.comments.filter(c => 
+            commentIds.includes(c._id.toString())
+        );
+
+        if (commentsToReconcile.length < 2) {
+            return res.status(400).json({ error: 'Need at least 2 comments to reconcile' });
+        }
+
+        const geminiService = (await import('../services/gemini.js')).default;
+
+        // Generate reconciliation response
+        const reconciliation = await geminiService.reconcileOpinions(
+            question || 'What are the key differences and what features decide between these views?',
+            commentsToReconcile,
+            communityCase
+        );
+
+        // Add AI reconciliation comment
+        communityCase.comments.push({
+            userId: null,
+            content: reconciliation,
+            isAI: true,
+            aiType: 'reconciliation'
+        });
+
+        await communityCase.save();
+        await communityCase.populate('comments.userId', 'name');
+        
+        res.json(communityCase.comments);
+    } catch (error) {
+        console.error('Reconciliation error:', error);
+        res.status(500).json({ error: 'Failed to generate reconciliation' });
+    }
+});
+
+// 7c. Request Discussion Structure
+router.post('/:id/structure', auth, async (req, res) => {
+    try {
+        const communityCase = await CommunityCase.findById(req.params.id)
+            .populate('comments.userId', 'name');
+
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        const geminiService = (await import('../services/gemini.js')).default;
+
+        // Generate structured summary
+        const structure = await geminiService.structureDiscussion(
+            communityCase.comments,
+            communityCase
+        );
+
+        // Add AI structure comment
+        communityCase.comments.push({
+            userId: null,
+            content: structure,
+            isAI: true,
+            aiType: 'structure'
+        });
+
+        await communityCase.save();
+        await communityCase.populate('comments.userId', 'name');
+        
+        res.json(communityCase.comments);
+    } catch (error) {
+        console.error('Structure generation error:', error);
+        res.status(500).json({ error: 'Failed to generate structure' });
     }
 });
 

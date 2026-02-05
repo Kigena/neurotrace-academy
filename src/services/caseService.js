@@ -40,9 +40,28 @@ class CaseService {
      * Add a comment to a case
      * @param {string} caseId 
      * @param {string} content 
+     * @param {string} replyTo - Optional comment ID being replied to
      */
-    async addComment(caseId, content) {
-        return await apiService.post(`/cases/${caseId}/comment`, { content });
+    async addComment(caseId, content, replyTo = null) {
+        return await apiService.post(`/cases/${caseId}/comment`, { content, replyTo });
+    }
+
+    /**
+     * Request AI to reconcile conflicting opinions
+     * @param {string} caseId 
+     * @param {Array<string>} commentIds - IDs of comments to reconcile
+     * @param {string} question - Optional custom question
+     */
+    async requestReconciliation(caseId, commentIds, question = null) {
+        return await apiService.post(`/cases/${caseId}/reconcile`, { commentIds, question });
+    }
+
+    /**
+     * Request AI to structure the discussion
+     * @param {string} caseId 
+     */
+    async requestStructure(caseId) {
+        return await apiService.post(`/cases/${caseId}/structure`, {});
     }
 }
 
