@@ -141,6 +141,26 @@ const AdminModeration = () => {
         }
     };
 
+    const handleFeatureToggle = async (caseId, currentFeaturedStatus) => {
+        const action = currentFeaturedStatus ? 'unfeature' : 'feature';
+        if (!window.confirm(`${currentFeaturedStatus ? '📌 Remove' : '⭐ Set'} this case as Case of the Week?`)) return;
+        
+        setProcessing(true);
+        try {
+            await apiService.put(`/cases/${caseId}/feature`, {
+                featured: !currentFeaturedStatus
+            });
+            alert(`${currentFeaturedStatus ? '📌 Case removed from featured' : '⭐ Case set as featured!'}`);
+            // Update the selected case to reflect the change
+            setSelectedCase(prev => ({ ...prev, featured: !currentFeaturedStatus }));
+            fetchCases();
+        } catch (error) {
+            alert(`❌ Failed to ${action} case: ${error.message}`);
+        } finally {
+            setProcessing(false);
+        }
+    };
+
     const viewCaseDetail = (caseItem) => {
         setSelectedCase(caseItem);
         setModerationNotes(caseItem.moderationNotes || '');
@@ -388,6 +408,28 @@ const AdminModeration = () => {
                                 >
                                     {processing ? 'Processing...' : '✅ Approve & Publish'}
                                 </button>
+                            </div>
+                        )}
+
+                        {/* Feature/Unfeature Button - Only for published cases */}
+                        {selectedCase.status === 'published' && (
+                            <div className="pt-4 border-t border-slate-200">
+                                <button
+                                    onClick={() => handleFeatureToggle(selectedCase._id, selectedCase.featured)}
+                                    disabled={processing}
+                                    className={`w-full px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
+                                        selectedCase.featured
+                                            ? 'bg-slate-200 text-slate-700 hover:bg-slate-300'
+                                            : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                                    }`}
+                                >
+                                    {processing ? 'Processing...' : selectedCase.featured ? '📌 Remove from Featured' : '⭐ Feature as Case of the Week'}
+                                </button>
+                                {selectedCase.featured && (
+                                    <p className="text-xs text-indigo-600 mt-2 text-center">
+                                        ⭐ This case is currently featured as Case of the Week
+                                    </p>
+                                )}
                             </div>
                         )}
                     </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import apiService from "../services/apiService";
 import casesData from "../data/cases.json";
 import patternsData from "../data/neurotrace_patterns_library_v2.json";
 import syndromesData from "../data/syndromes_v2.json";
@@ -8,24 +9,56 @@ import syndromesData from "../data/syndromes_v2.json";
 function Home() {
   const { user } = useAuth();
   const [caseOfTheWeek, setCaseOfTheWeek] = useState(null);
+  const [loadingCase, setLoadingCase] = useState(true);
+  const [communityCasesCount, setCommunityCasesCount] = useState(0);
 
-  // Get case of the week (changes weekly)
+  // Get featured community case of the week
   useEffect(() => {
-    if (casesData.starterCases && casesData.starterCases.length > 0) {
-      // Use week number to select a consistent case for the week
-      const weekNumber = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
-      const caseIndex = weekNumber % casesData.starterCases.length;
-      setCaseOfTheWeek(casesData.starterCases[caseIndex]);
-    }
+    const fetchFeaturedCase = async () => {
+      try {
+        const response = await apiService.get('/cases/featured');
+        setCaseOfTheWeek(response);
+      } catch (error) {
+        console.error('Failed to fetch featured case:', error);
+        // Fallback to static cases if community case fetch fails
+        if (casesData.starterCases && casesData.starterCases.length > 0) {
+          const weekNumber = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
+          const caseIndex = weekNumber % casesData.starterCases.length;
+          setCaseOfTheWeek({ ...casesData.starterCases[caseIndex], isStatic: true });
+        }
+      } finally {
+        setLoadingCase(false);
+      }
+    };
+
+    fetchFeaturedCase();
+  }, []);
+
+  // Fetch community cases count
+  useEffect(() => {
+    const fetchCasesCount = async () => {
+      try {
+        const cases = await apiService.get('/cases');
+        setCommunityCasesCount(cases.length);
+      } catch (error) {
+        console.error('Failed to fetch community cases count:', error);
+      }
+    };
+
+    fetchCasesCount();
   }, []);
 
   // Platform stats
-  const stats = useMemo(() => ({
-    patterns: patternsData.length,
-    syndromes: syndromesData.length,
-    cases: casesData.starterCases?.length || 0,
-    quizzes: 450 // Placeholder
-  }), []);
+  const stats = useMemo(() => {
+    const staticCases = casesData.starterCases?.length || 0;
+    const totalCases = staticCases + communityCasesCount;
+    return {
+      patterns: patternsData.length,
+      syndromes: syndromesData.length,
+      cases: totalCases,
+      quizzes: 450 // Placeholder
+    };
+  }, [communityCasesCount]);
 
   // Featured patterns
   const featuredPatterns = useMemo(() => {
@@ -95,13 +128,20 @@ function Home() {
       </div>
 
       {/* Case of the Week */}
-      {caseOfTheWeek && (
+      {!loadingCase && caseOfTheWeek && (
         <div className="bg-white rounded-2xl p-8 border-2 border-indigo-200 shadow-lg">
           <div className="flex items-center gap-3 mb-4">
             <div className="px-4 py-1.5 bg-indigo-600 text-white rounded-full text-sm font-bold">
               ⭐ CASE OF THE WEEK
             </div>
-            <div className="text-xs text-slate-500 font-medium">Updated Weekly</div>
+            <div className="text-xs text-slate-500 font-medium">
+              {caseOfTheWeek.isStatic ? 'Updated Weekly' : 'From Our Community'}
+            </div>
+            {caseOfTheWeek.author && (
+              <div className="text-xs text-slate-500">
+                by <span className="font-semibold">{caseOfTheWeek.author.name}</span>
+              </div>
+            )}
           </div>
           
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
@@ -110,31 +150,53 @@ function Home() {
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm">
-                <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                  👤
-                </div>
-                <div>
-                  <div className="text-xs text-slate-500">Patient</div>
-                  <div className="font-semibold text-slate-900">
-                    {caseOfTheWeek.patient.ageYears < 1 
-                      ? `${Math.round(caseOfTheWeek.patient.ageYears * 12)} months` 
-                      : `${caseOfTheWeek.patient.ageYears} years`}, {caseOfTheWeek.patient.context}
+              {/* Patient Info - handle both community and static cases */}
+              {(caseOfTheWeek.patientInfo || caseOfTheWeek.patient) && (
+                <div className="flex items-center gap-3 text-sm">
+                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    👤
+                  </div>
+                  <div>
+                    <div className="text-xs text-slate-500">Patient</div>
+                    <div className="font-semibold text-slate-900">
+                      {caseOfTheWeek.isStatic ? (
+                        <>
+                          {caseOfTheWeek.patient.ageYears < 1 
+                            ? `${Math.round(caseOfTheWeek.patient.ageYears * 12)} months` 
+                            : `${caseOfTheWeek.patient.ageYears} years`}, {caseOfTheWeek.patient.context}
+                        </>
+                      ) : (
+                        <>
+                          {caseOfTheWeek.patientInfo?.age && (
+                            <>{caseOfTheWeek.patientInfo.age} {caseOfTheWeek.patientInfo.ageUnit}</>
+                          )}
+                          {caseOfTheWeek.patientInfo?.gender && `, ${caseOfTheWeek.patientInfo.gender}`}
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
               
-              <div className="flex items-center gap-3 text-sm">
-                <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                  🔍
+              {/* History/Chief Complaint */}
+              {(caseOfTheWeek.history || caseOfTheWeek.chiefComplaint) && (
+                <div className="flex items-center gap-3 text-sm">
+                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    🔍
+                  </div>
+                  <div>
+                    <div className="text-xs text-slate-500">
+                      {caseOfTheWeek.isStatic ? 'Chief Complaint' : 'Clinical History'}
+                    </div>
+                    <div className="font-semibold text-slate-900 line-clamp-2">
+                      {caseOfTheWeek.isStatic ? caseOfTheWeek.chiefComplaint : caseOfTheWeek.history}
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-xs text-slate-500">Chief Complaint</div>
-                  <div className="font-semibold text-slate-900">{caseOfTheWeek.chiefComplaint}</div>
-                </div>
-              </div>
+              )}
 
-              {caseOfTheWeek.difficulty && (
+              {/* Views or Difficulty */}
+              {caseOfTheWeek.isStatic && caseOfTheWeek.difficulty && (
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
                     📊
@@ -145,10 +207,26 @@ function Home() {
                   </div>
                 </div>
               )}
+              
+              {!caseOfTheWeek.isStatic && (
+                <div className="flex items-center gap-3 text-sm">
+                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    👁️
+                  </div>
+                  <div>
+                    <div className="text-xs text-slate-500">Engagement</div>
+                    <div className="font-semibold text-slate-900">
+                      {caseOfTheWeek.views || 0} views • {caseOfTheWeek.likes?.length || 0} likes
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
             
             <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-              <div className="text-xs font-semibold text-indigo-600 mb-2">LEARNING OBJECTIVES</div>
+              <div className="text-xs font-semibold text-indigo-600 mb-2">
+                {caseOfTheWeek.isStatic ? 'LEARNING OBJECTIVES' : 'WHAT YOU\'LL LEARN'}
+              </div>
               <ul className="space-y-1.5 text-sm text-slate-700">
                 <li className="flex items-start gap-2">
                   <span className="text-indigo-500 mt-0.5">✓</span>
@@ -163,11 +241,22 @@ function Home() {
                   <span>Apply proper documentation</span>
                 </li>
               </ul>
+              {!caseOfTheWeek.isStatic && caseOfTheWeek.tags && caseOfTheWeek.tags.length > 0 && (
+                <div className="mt-3 pt-3 border-t border-slate-200">
+                  <div className="flex flex-wrap gap-1.5">
+                    {caseOfTheWeek.tags.slice(0, 3).map((tag, idx) => (
+                      <span key={idx} className="text-xs px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           
           <Link
-            to={`/cases/${caseOfTheWeek.id}`}
+            to={`/cases/${caseOfTheWeek.isStatic ? caseOfTheWeek.id : caseOfTheWeek._id}`}
             className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-all shadow-md"
           >
             Study This Case

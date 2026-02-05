@@ -87,6 +87,14 @@ const communityCaseSchema = new mongoose.Schema({
         ref: 'User'
     }],
     comments: [commentSchema],
+    featured: {
+        type: Boolean,
+        default: false
+    },
+    featuredAt: {
+        type: Date,
+        default: null
+    },
 
     createdAt: {
         type: Date,

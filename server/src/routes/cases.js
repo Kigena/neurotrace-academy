@@ -66,7 +66,43 @@ router.post('/upload', auth, upload.single('file'), (req, res) => {
     }
 });
 
-// 2. Create Case
+// 2. Get Featured Case of the Week
+router.get('/featured', async (req, res) => {
+    try {
+        // First, try to get a manually featured case
+        let featuredCase = await CommunityCase.findOne({ 
+            status: 'published', 
+            featured: true 
+        })
+        .populate('author', 'name')
+        .sort({ featuredAt: -1 });
+
+        // If no manually featured case, pick one based on weekly rotation
+        if (!featuredCase) {
+            const publishedCases = await CommunityCase.find({ status: 'published' })
+                .populate('author', 'name')
+                .sort({ createdAt: -1 });
+
+            if (publishedCases.length > 0) {
+                // Use week number to rotate through community cases
+                const weekNumber = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
+                const caseIndex = weekNumber % publishedCases.length;
+                featuredCase = publishedCases[caseIndex];
+            }
+        }
+
+        if (!featuredCase) {
+            return res.status(404).json({ error: 'No featured case available' });
+        }
+
+        res.json(featuredCase);
+    } catch (error) {
+        console.error('Get featured case error:', error);
+        res.status(500).json({ error: 'Failed to fetch featured case' });
+    }
+});
+
+// 3. Create Case
 router.post('/', auth, async (req, res) => {
     try {
         const {
@@ -244,6 +280,37 @@ router.post('/:id/comment', auth, async (req, res) => {
     } catch (error) {
         console.error('Add comment error:', error);
         res.status(500).json({ error: 'Failed to add comment' });
+    }
+});
+
+// 8. Feature/Unfeature Case (Admin Only)
+router.put('/:id/feature', auth, async (req, res) => {
+    try {
+        // Check if user is admin
+        if (req.user.role !== 'admin') {
+            return res.status(403).json({ error: 'Admin access required' });
+        }
+
+        const { featured } = req.body;
+
+        const communityCase = await CommunityCase.findById(req.params.id);
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        if (communityCase.status !== 'published') {
+            return res.status(400).json({ error: 'Only published cases can be featured' });
+        }
+
+        communityCase.featured = featured;
+        communityCase.featuredAt = featured ? new Date() : null;
+
+        await communityCase.save();
+
+        res.json(communityCase);
+    } catch (error) {
+        console.error('Feature case error:', error);
+        res.status(500).json({ error: 'Failed to feature case' });
     }
 });
 
