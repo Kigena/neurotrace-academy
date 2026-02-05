@@ -52,7 +52,13 @@ router.post('/upload', auth, upload.single('file'), (req, res) => {
             return res.status(400).json({ error: 'No file uploaded' });
         }
 
-        const fileUrl = `/uploads/cases/${req.file.filename}`;
+        // Build absolute URL for the uploaded file
+        // Use protocol and host from the request, or fallback to environment variable
+        const protocol = req.protocol || 'https';
+        const host = req.get('host') || process.env.API_URL || 'neurotrace-academy.onrender.com';
+        const fileUrl = `${protocol}://${host}/uploads/cases/${req.file.filename}`;
+
+        console.log('📎 Case file uploaded successfully:', fileUrl);
 
         res.json({
             url: fileUrl,
