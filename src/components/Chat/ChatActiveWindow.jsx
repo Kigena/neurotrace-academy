@@ -290,13 +290,17 @@ const ChatActiveWindow = ({ activeChat, onBack }) => {
                                             {isOwn && msg._id && !msg._id.startsWith('temp-') && (
                                                 <button
                                                     onClick={() => handleDeleteMessage(msg._id)}
+                                                    onMouseEnter={(e) => e.target.style.transform = 'scale(1.2)'}
+                                                    onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                                                     style={{
                                                         background: 'none',
                                                         border: 'none',
-                                                        color: isOwn ? 'rgba(255,255,255,0.7)' : '#ef4444',
+                                                        color: '#ef4444',
                                                         cursor: 'pointer',
                                                         padding: '2px',
-                                                        fontSize: '10px'
+                                                        fontSize: '12px',
+                                                        transition: 'transform 0.2s ease',
+                                                        filter: 'drop-shadow(0 0 2px rgba(239, 68, 68, 0.5))'
                                                     }}
                                                     title="Delete message"
                                                 >
