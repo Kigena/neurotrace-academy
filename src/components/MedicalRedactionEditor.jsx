@@ -10,7 +10,7 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
     const [ctx, setCtx] = useState(null);
     const [originalImage, setOriginalImage] = useState(null);
     const [isDrawing, setIsDrawing] = useState(false);
-    const [tool, setTool] = useState('rectangle'); // rectangle, blur, pixelate, text
+    const [tool, setTool] = useState('rectangle'); // rectangle, blur, pixelate, text, crop
     const [startPos, setStartPos] = useState({ x: 0, y: 0 });
     const [redactions, setRedactions] = useState([]);
     const [currentRedaction, setCurrentRedaction] = useState(null);
@@ -18,6 +18,8 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
     const [textInput, setTextInput] = useState('');
     const [showTextModal, setShowTextModal] = useState(false);
     const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
+    const [cropArea, setCropArea] = useState(null);
+    const [isCropped, setIsCropped] = useState(false);
 
     // Load image or PDF
     useEffect(() => {
@@ -112,6 +114,13 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
         if (tool === 'text') {
             setTextPosition(pos);
             setShowTextModal(true);
+        } else if (tool === 'crop') {
+            setCropArea({
+                startX: pos.x,
+                startY: pos.y,
+                endX: pos.x,
+                endY: pos.y
+            });
         } else {
             setCurrentRedaction({
                 type: tool,
@@ -127,20 +136,45 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
         if (!isDrawing || tool === 'text') return;
 
         const pos = getMousePos(e);
-        setCurrentRedaction(prev => ({
-            ...prev,
-            endX: pos.x,
-            endY: pos.y
-        }));
-
-        redrawCanvas();
-        drawCurrentRedaction(pos);
+        
+        if (tool === 'crop') {
+            setCropArea(prev => ({
+                ...prev,
+                endX: pos.x,
+                endY: pos.y
+            }));
+            redrawCanvas();
+            drawCropPreview();
+        } else {
+            setCurrentRedaction(prev => ({
+                ...prev,
+                endX: pos.x,
+                endY: pos.y
+            }));
+            redrawCanvas();
+            drawCurrentRedaction(pos);
+        }
     };
 
     const handleMouseUp = () => {
         if (!isDrawing) return;
         
-        if (currentRedaction && tool !== 'text') {
+        if (tool === 'crop' && cropArea) {
+            // Confirm and apply crop
+            const shouldCrop = window.confirm(
+                '✂️ Crop Image?\n\n' +
+                'This will permanently crop the image to the selected area, removing everything outside.\n\n' +
+                'This is useful for removing headers/footers with PHI.\n\n' +
+                'Click OK to crop, or Cancel to continue drawing.'
+            );
+            
+            if (shouldCrop) {
+                applyCrop();
+            } else {
+                setCropArea(null);
+                redrawCanvas();
+            }
+        } else if (currentRedaction && tool !== 'text') {
             setRedactions([...redactions, currentRedaction]);
         }
         
@@ -200,6 +234,85 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
         }
         
         ctx.putImageData(imageData, x, y);
+    };
+
+    const drawCropPreview = () => {
+        if (!cropArea || !ctx) return;
+
+        const canvas = canvasRef.current;
+        
+        // Darken everything outside crop area
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Clear the crop area to show what will remain
+        const x = Math.min(cropArea.startX, cropArea.endX);
+        const y = Math.min(cropArea.startY, cropArea.endY);
+        const width = Math.abs(cropArea.endX - cropArea.startX);
+        const height = Math.abs(cropArea.endY - cropArea.startY);
+        
+        ctx.clearRect(x, y, width, height);
+        ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
+        
+        // Draw crop border
+        ctx.strokeStyle = '#10b981'; // Green
+        ctx.lineWidth = 3;
+        ctx.setLineDash([10, 5]);
+        ctx.strokeRect(x, y, width, height);
+        ctx.setLineDash([]);
+        
+        // Draw corner handles
+        const handleSize = 10;
+        ctx.fillStyle = '#10b981';
+        ctx.fillRect(x - handleSize/2, y - handleSize/2, handleSize, handleSize);
+        ctx.fillRect(x + width - handleSize/2, y - handleSize/2, handleSize, handleSize);
+        ctx.fillRect(x - handleSize/2, y + height - handleSize/2, handleSize, handleSize);
+        ctx.fillRect(x + width - handleSize/2, y + height - handleSize/2, handleSize, handleSize);
+        
+        // Add "KEEP THIS AREA" text
+        ctx.fillStyle = '#10b981';
+        ctx.font = 'bold 20px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('KEEP THIS AREA', x + width/2, y + height/2);
+    };
+
+    const applyCrop = () => {
+        if (!cropArea || !ctx || !originalImage) return;
+
+        const canvas = canvasRef.current;
+        const x = Math.min(cropArea.startX, cropArea.endX);
+        const y = Math.min(cropArea.startY, cropArea.endY);
+        const width = Math.abs(cropArea.endX - cropArea.startX);
+        const height = Math.abs(cropArea.endY - cropArea.startY);
+
+        // Create new canvas with cropped dimensions
+        const croppedCanvas = document.createElement('canvas');
+        croppedCanvas.width = width;
+        croppedCanvas.height = height;
+        const croppedCtx = croppedCanvas.getContext('2d');
+
+        // Draw cropped area
+        croppedCtx.drawImage(
+            canvas,
+            x, y, width, height,
+            0, 0, width, height
+        );
+
+        // Update main canvas
+        canvas.width = width;
+        canvas.height = height;
+        ctx.drawImage(croppedCanvas, 0, 0);
+
+        // Update original image for future redrawing
+        const img = new Image();
+        img.onload = () => {
+            setOriginalImage(img);
+            setIsCropped(true);
+            setCropArea(null);
+            setRedactions([]); // Clear previous redactions as they're now invalid
+            setTool('rectangle'); // Switch back to rectangle tool
+        };
+        img.src = croppedCanvas.toDataURL();
     };
 
     const addTextRedaction = () => {
@@ -271,6 +384,10 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
     };
 
     const handleReset = () => {
+        if (isCropped) {
+            alert('Cannot reset after cropping. Crop is permanent. Cancel and start over if needed.');
+            return;
+        }
         setRedactions([]);
         if (ctx && originalImage) {
             const canvas = canvasRef.current;
@@ -313,6 +430,21 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                     <div className="flex flex-wrap items-center gap-3">
                         <div className="flex items-center gap-2">
                             <span className="text-sm font-semibold text-slate-700">Tools:</span>
+                            <button
+                                onClick={() => setTool('crop')}
+                                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                                    tool === 'crop'
+                                        ? 'bg-green-600 text-white shadow-md'
+                                        : 'bg-white text-slate-700 hover:bg-slate-200'
+                                }`}
+                                title="Crop to remove headers/footers"
+                                disabled={isCropped}
+                            >
+                                <svg className="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+                                </svg>
+                                Crop
+                            </button>
                             <button
                                 onClick={() => setTool('rectangle')}
                                 className={`px-4 py-2 rounded-lg font-medium transition-all ${
@@ -377,7 +509,7 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                         <div className="flex items-center gap-2">
                             <button
                                 onClick={handleUndo}
-                                disabled={redactions.length === 0}
+                                disabled={redactions.length === 0 || isCropped}
                                 className="px-4 py-2 bg-white text-slate-700 rounded-lg font-medium hover:bg-slate-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                 title="Undo last redaction"
                             >
@@ -388,7 +520,7 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                             </button>
                             <button
                                 onClick={handleReset}
-                                disabled={redactions.length === 0}
+                                disabled={redactions.length === 0 || isCropped}
                                 className="px-4 py-2 bg-white text-slate-700 rounded-lg font-medium hover:bg-slate-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                 title="Reset all redactions"
                             >
@@ -400,6 +532,14 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                         </div>
 
                         <div className="ml-auto flex items-center gap-2">
+                            {isCropped && (
+                                <span className="text-xs px-3 py-1 bg-green-100 text-green-800 rounded-full font-semibold flex items-center gap-1">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    Cropped
+                                </span>
+                            )}
                             <span className="text-sm text-slate-600">
                                 {redactions.length} redaction{redactions.length !== 1 ? 's' : ''}
                             </span>
@@ -427,8 +567,8 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                 {/* Footer */}
                 <div className="bg-white border-t border-slate-200 p-4 flex items-center justify-between flex-shrink-0">
                     <div className="text-xs text-slate-600">
-                        <p className="font-semibold mb-1">💡 <strong>Scroll</strong> to see entire image</p>
-                        <p>• Black Box for names/MRNs • Blur for sensitive areas • Drag to redact</p>
+                        <p className="font-semibold mb-1">💡 <strong>{tool === 'crop' ? 'Draw box around waveforms to keep' : 'Scroll to see entire image'}</strong></p>
+                        <p>• <strong>Crop</strong> to remove headers/footers • <strong>Black Box</strong> for specific PHI • Drag to {tool === 'crop' ? 'crop' : 'redact'}</p>
                     </div>
                     <div className="flex items-center gap-3">
                         <button
