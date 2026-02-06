@@ -9,6 +9,7 @@ import CaseDiscussion from "../components/CaseDiscussion.jsx";
 import ContextualAI from "../components/ContextualAI.jsx";
 import CaseAIAssistant from "../components/CaseAIAssistant.jsx";
 import StudyNotesButton from "../components/StudyNotesButton.jsx";
+import SimilarCasesButton from "../components/SimilarCasesButton.jsx";
 import caseService from "../services/caseService";
 import apiService from "../services/apiService";
 
@@ -223,6 +224,12 @@ const CommunityCaseView = ({ eegCase, setEegCase }) => {
       <StudyNotesButton 
         pageTitle={eegCase.title}
         caseId={eegCase._id}
+      />
+
+      {/* Similar Cases */}
+      <SimilarCasesButton 
+        currentCaseId={eegCase._id}
+        currentCaseTitle={eegCase.title}
       />
 
       {/* Discussion Section */}

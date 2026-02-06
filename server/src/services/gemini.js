@@ -498,6 +498,168 @@ Provide a thorough, educational analysis. Use markdown formatting for clarity.`;
     }
 
     /**
+     * Smart search - Find similar cases based on description
+     */
+    async findSimilarCases(query, allCases, currentCaseId = null) {
+        try {
+            const systemPrompt = `You are NeuroTrace AI helping search for EEG cases.
+
+User Query: "${query}"
+
+Available Cases:
+${allCases.filter(c => c._id !== currentCaseId).slice(0, 50).map((c, i) => 
+    `${i + 1}. ${c.title}
+   Patient: ${c.patientInfo?.age} ${c.patientInfo?.ageUnit}, ${c.patientInfo?.gender}
+   History: ${c.history?.substring(0, 150)}...
+   Findings: ${c.findings?.classification || 'Not classified'}
+   ID: ${c._id}`
+).join('\n\n')}
+
+Your task: Identify the 3-5 most relevant cases based on the query.
+
+Return ONLY a JSON array with this exact format:
+[
+  {
+    "caseId": "case-id-from-list",
+    "title": "case title",
+    "relevance": "Brief explanation of why this case matches",
+    "score": 0-100
+  }
+]
+
+Focus on: EEG patterns, clinical context, age, findings similarity. Return valid JSON only.`;
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 2000,
+                    temperature: 0.3, // Lower for more consistent results
+                },
+            });
+
+            const result = await chat.sendMessage(systemPrompt);
+            const responseText = result.response.text();
+            
+            // Extract JSON from response
+            const jsonMatch = responseText.match(/\[[\s\S]*\]/);
+            if (jsonMatch) {
+                return JSON.parse(jsonMatch[0]);
+            }
+            
+            return [];
+        } catch (error) {
+            console.error('Similar cases search error:', error);
+            throw new Error('Failed to find similar cases');
+        }
+    }
+
+    /**
+     * Smart pattern comparison search
+     */
+    async comparePatterns(query, allPatterns) {
+        try {
+            const systemPrompt = `You are NeuroTrace AI helping compare EEG patterns.
+
+User Query: "${query}"
+
+Available Patterns:
+${allPatterns.slice(0, 30).map((p, i) => 
+    `${i + 1}. ${p.name}
+   Category: ${p.category || 'Uncategorized'}
+   Description: ${p.description?.substring(0, 100)}...
+   ID: ${p.id}`
+).join('\n\n')}
+
+Your task: Identify relevant patterns for comparison based on the query.
+
+Return ONLY a JSON array:
+[
+  {
+    "patternId": "pattern-id",
+    "name": "pattern name",
+    "reason": "Why this pattern is relevant for comparison",
+    "key_differences": "Main distinguishing features"
+  }
+]
+
+Return valid JSON only.`;
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 2000,
+                    temperature: 0.3,
+                },
+            });
+
+            const result = await chat.sendMessage(systemPrompt);
+            const responseText = result.response.text();
+            
+            const jsonMatch = responseText.match(/\[[\s\S]*\]/);
+            if (jsonMatch) {
+                return JSON.parse(jsonMatch[0]);
+            }
+            
+            return [];
+        } catch (error) {
+            console.error('Pattern comparison error:', error);
+            throw new Error('Failed to compare patterns');
+        }
+    }
+
+    /**
+     * Smart resource finder - Find where topics are covered
+     */
+    async findResourcesForTopic(query, resourceIndex) {
+        try {
+            const systemPrompt = `You are NeuroTrace AI helping find educational resources.
+
+User Query: "${query}"
+
+Available Resources:
+${resourceIndex.map((r, i) => 
+    `${i + 1}. ${r.title} (${r.type})
+   Path: ${r.path}
+   Topics: ${r.topics?.join(', ')}
+   Content preview: ${r.preview?.substring(0, 100)}...`
+).join('\n\n')}
+
+Your task: Find resources that cover this topic.
+
+Return ONLY a JSON array:
+[
+  {
+    "title": "resource title",
+    "type": "pattern|syndrome|workflow|standard|case",
+    "path": "/path/to/resource",
+    "relevance": "Why this resource helps answer the query",
+    "section": "Specific section if applicable"
+  }
+]
+
+Return valid JSON only.`;
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 1500,
+                    temperature: 0.3,
+                },
+            });
+
+            const result = await chat.sendMessage(systemPrompt);
+            const responseText = result.response.text();
+            
+            const jsonMatch = responseText.match(/\[[\s\S]*\]/);
+            if (jsonMatch) {
+                return JSON.parse(jsonMatch[0]);
+            }
+            
+            return [];
+        } catch (error) {
+            console.error('Resource finder error:', error);
+            throw new Error('Failed to find resources');
+        }
+    }
+
+    /**
      * Structure case discussion into organized sections
      */
     async structureDiscussion(comments, caseData) {

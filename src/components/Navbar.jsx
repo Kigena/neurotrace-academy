@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { useSocket } from "../contexts/SocketContext";
 import ThemeSelector from "./ThemeSelector";
+import SmartSearch from "./SmartSearch";
 
 const navLinkClasses = ({ isActive }) =>
   [
@@ -96,6 +97,9 @@ function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
+          {/* Smart Search */}
+          <SmartSearch />
+
           {/* Theme Selector Button */}
           <button
             onClick={() => setShowThemeSelector(true)}
