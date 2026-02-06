@@ -10,7 +10,7 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
     const [ctx, setCtx] = useState(null);
     const [originalImage, setOriginalImage] = useState(null);
     const [isDrawing, setIsDrawing] = useState(false);
-    const [tool, setTool] = useState('rectangle'); // rectangle, blur, pixelate, text, crop
+    const [tool, setTool] = useState('rectangle'); // rectangle, blur, pixelate, text, crop, highlight-box, highlight-circle, arrow
     const [startPos, setStartPos] = useState({ x: 0, y: 0 });
     const [redactions, setRedactions] = useState([]);
     const [currentRedaction, setCurrentRedaction] = useState(null);
@@ -18,8 +18,11 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
     const [textInput, setTextInput] = useState('');
     const [showTextModal, setShowTextModal] = useState(false);
     const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
+    const [textColor, setTextColor] = useState('#FF0000'); // Red for visibility
+    const [textSize, setTextSize] = useState(24);
     const [cropArea, setCropArea] = useState(null);
     const [isCropped, setIsCropped] = useState(false);
+    const [highlightColor, setHighlightColor] = useState('#FFFF00'); // Yellow
 
     // Load image or PDF
     useEffect(() => {
@@ -114,6 +117,7 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
         if (tool === 'text') {
             setTextPosition(pos);
             setShowTextModal(true);
+            setIsDrawing(false);
         } else if (tool === 'crop') {
             setCropArea({
                 startX: pos.x,
@@ -175,6 +179,10 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                 redrawCanvas();
             }
         } else if (currentRedaction && tool !== 'text') {
+            // Add color to highlight tools
+            if (tool.startsWith('highlight') || tool === 'arrow') {
+                currentRedaction.color = highlightColor;
+            }
             setRedactions([...redactions, currentRedaction]);
         }
         
@@ -208,7 +216,69 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
             ctx.strokeStyle = '#8b5cf6';
             ctx.lineWidth = 2;
             ctx.strokeRect(startX, startY, width, height);
+        } else if (tool === 'highlight-box') {
+            // Translucent rectangle highlight
+            const rgb = hexToRgb(highlightColor);
+            ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
+            ctx.fillRect(startX, startY, width, height);
+            ctx.strokeStyle = highlightColor;
+            ctx.lineWidth = 3;
+            ctx.strokeRect(startX, startY, width, height);
+        } else if (tool === 'highlight-circle') {
+            // Translucent circle highlight
+            const centerX = startX + width / 2;
+            const centerY = startY + height / 2;
+            const radius = Math.sqrt(width * width + height * height) / 2;
+            const rgb = hexToRgb(highlightColor);
+            
+            ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.strokeStyle = highlightColor;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        } else if (tool === 'arrow') {
+            // Draw arrow
+            drawArrow(startX, startY, pos.x, pos.y, highlightColor);
         }
+    };
+
+    const hexToRgb = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : { r: 255, g: 255, b: 0 };
+    };
+
+    const drawArrow = (fromX, fromY, toX, toY, color) => {
+        const headLength = 20;
+        const angle = Math.atan2(toY - fromY, toX - fromX);
+
+        // Draw line
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(fromX, fromY);
+        ctx.lineTo(toX, toY);
+        ctx.stroke();
+
+        // Draw arrowhead
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.moveTo(toX, toY);
+        ctx.lineTo(
+            toX - headLength * Math.cos(angle - Math.PI / 6),
+            toY - headLength * Math.sin(angle - Math.PI / 6)
+        );
+        ctx.lineTo(
+            toX - headLength * Math.cos(angle + Math.PI / 6),
+            toY - headLength * Math.sin(angle + Math.PI / 6)
+        );
+        ctx.closePath();
+        ctx.fill();
     };
 
     const pixelateArea = (x, y, width, height) => {
@@ -322,7 +392,9 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
             type: 'text',
             text: textInput,
             x: textPosition.x,
-            y: textPosition.y
+            y: textPosition.y,
+            color: textColor,
+            size: textSize
         };
 
         setRedactions([...redactions, textRedaction]);
@@ -370,9 +442,43 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                     redaction.endY - redaction.startY
                 );
             } else if (redaction.type === 'text') {
-                ctx.font = 'bold 24px Arial';
-                ctx.fillStyle = '#000000';
+                ctx.font = `bold ${redaction.size || 24}px Arial`;
+                ctx.fillStyle = redaction.color || '#000000';
                 ctx.fillText(redaction.text, redaction.x, redaction.y);
+            } else if (redaction.type === 'highlight-box') {
+                const rgb = hexToRgb(redaction.color || highlightColor);
+                ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
+                ctx.fillRect(
+                    redaction.startX,
+                    redaction.startY,
+                    redaction.endX - redaction.startX,
+                    redaction.endY - redaction.startY
+                );
+                ctx.strokeStyle = redaction.color || highlightColor;
+                ctx.lineWidth = 3;
+                ctx.strokeRect(
+                    redaction.startX,
+                    redaction.startY,
+                    redaction.endX - redaction.startX,
+                    redaction.endY - redaction.startY
+                );
+            } else if (redaction.type === 'highlight-circle') {
+                const centerX = redaction.startX + (redaction.endX - redaction.startX) / 2;
+                const centerY = redaction.startY + (redaction.endY - redaction.startY) / 2;
+                const width = redaction.endX - redaction.startX;
+                const height = redaction.endY - redaction.startY;
+                const radius = Math.sqrt(width * width + height * height) / 2;
+                const rgb = hexToRgb(redaction.color || highlightColor);
+                
+                ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.strokeStyle = redaction.color || highlightColor;
+                ctx.lineWidth = 3;
+                ctx.stroke();
+            } else if (redaction.type === 'arrow') {
+                drawArrow(redaction.startX, redaction.startY, redaction.endX, redaction.endY, redaction.color || highlightColor);
             }
         });
     };
@@ -492,16 +598,72 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                                 onClick={() => setTool('text')}
                                 className={`px-4 py-2 rounded-lg font-medium transition-all ${
                                     tool === 'text'
-                                        ? 'bg-green-600 text-white shadow-md'
+                                        ? 'bg-blue-600 text-white shadow-md'
                                         : 'bg-white text-slate-700 hover:bg-slate-200'
                                 }`}
-                                title="Add text overlay"
+                                title="Add text label"
                             >
                                 <svg className="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                                 </svg>
                                 Text
                             </button>
+                        </div>
+
+                        <div className="h-8 w-px bg-slate-300"></div>
+
+                        {/* Highlight Tools */}
+                        <div className="flex items-center gap-2">
+                            <span className="text-sm font-semibold text-slate-700">Highlight:</span>
+                            <button
+                                onClick={() => setTool('highlight-box')}
+                                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                                    tool === 'highlight-box'
+                                        ? 'bg-yellow-500 text-white shadow-md'
+                                        : 'bg-white text-slate-700 hover:bg-slate-200'
+                                }`}
+                                title="Highlight with translucent box"
+                            >
+                                <svg className="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <rect x="4" y="4" width="16" height="16" strokeWidth="2" />
+                                </svg>
+                                Box
+                            </button>
+                            <button
+                                onClick={() => setTool('highlight-circle')}
+                                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                                    tool === 'highlight-circle'
+                                        ? 'bg-yellow-500 text-white shadow-md'
+                                        : 'bg-white text-slate-700 hover:bg-slate-200'
+                                }`}
+                                title="Highlight with translucent circle"
+                            >
+                                <svg className="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="8" strokeWidth="2" />
+                                </svg>
+                                Circle
+                            </button>
+                            <button
+                                onClick={() => setTool('arrow')}
+                                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                                    tool === 'arrow'
+                                        ? 'bg-yellow-500 text-white shadow-md'
+                                        : 'bg-white text-slate-700 hover:bg-slate-200'
+                                }`}
+                                title="Draw arrow pointer"
+                            >
+                                <svg className="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                                Arrow
+                            </button>
+                            <input
+                                type="color"
+                                value={highlightColor}
+                                onChange={(e) => setHighlightColor(e.target.value)}
+                                className="w-10 h-10 rounded-lg cursor-pointer border-2 border-slate-300"
+                                title="Choose highlight color"
+                            />
                         </div>
 
                         <div className="h-8 w-px bg-slate-300"></div>
@@ -567,8 +729,14 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                 {/* Footer */}
                 <div className="bg-white border-t border-slate-200 p-4 flex items-center justify-between flex-shrink-0">
                     <div className="text-xs text-slate-600">
-                        <p className="font-semibold mb-1">💡 <strong>{tool === 'crop' ? 'Draw box around waveforms to keep' : 'Scroll to see entire image'}</strong></p>
-                        <p>• <strong>Crop</strong> to remove headers/footers • <strong>Black Box</strong> for specific PHI • Drag to {tool === 'crop' ? 'crop' : 'redact'}</p>
+                        <p className="font-semibold mb-1">💡 <strong>
+                            {tool === 'crop' && 'Draw box around waveforms to keep'}
+                            {tool === 'text' && 'Click where you want to place text'}
+                            {tool.startsWith('highlight') && 'Draw to highlight areas of interest'}
+                            {tool === 'arrow' && 'Draw arrow to point at features'}
+                            {!tool.startsWith('highlight') && tool !== 'crop' && tool !== 'text' && tool !== 'arrow' && 'Drag to redact PHI'}
+                        </strong></p>
+                        <p>• <strong>Crop</strong> first to remove headers • <strong>Highlight</strong> to annotate • <strong>Black Box</strong> to redact PHI</p>
                     </div>
                     <div className="flex items-center gap-3">
                         <button
@@ -590,16 +758,62 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                 {showTextModal && (
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10">
                         <div className="bg-white rounded-xl p-6 shadow-2xl max-w-md w-full mx-4">
-                            <h3 className="text-lg font-bold text-slate-900 mb-4">Add Text Overlay</h3>
+                            <h3 className="text-lg font-bold text-slate-900 mb-4">Add Text Label</h3>
                             <input
                                 type="text"
                                 value={textInput}
                                 onChange={(e) => setTextInput(e.target.value)}
                                 onKeyPress={(e) => e.key === 'Enter' && addTextRedaction()}
-                                placeholder="Enter text (e.g., REDACTED)"
-                                className="w-full px-4 py-2 border-2 border-slate-300 rounded-lg focus:border-green-500 focus:outline-none mb-4"
+                                placeholder="Enter text (e.g., Spike, Artifact, Note)"
+                                className="w-full px-4 py-2 border-2 border-slate-300 rounded-lg focus:border-blue-500 focus:outline-none mb-4"
                                 autoFocus
                             />
+                            
+                            {/* Text Customization */}
+                            <div className="grid grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label className="block text-xs font-semibold text-slate-700 mb-2">Text Color</label>
+                                    <div className="flex items-center gap-2">
+                                        <input
+                                            type="color"
+                                            value={textColor}
+                                            onChange={(e) => setTextColor(e.target.value)}
+                                            className="w-12 h-10 rounded cursor-pointer border-2 border-slate-300"
+                                        />
+                                        <div className="flex gap-1">
+                                            {['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#000000', '#FFFFFF'].map(color => (
+                                                <button
+                                                    key={color}
+                                                    onClick={() => setTextColor(color)}
+                                                    className="w-6 h-6 rounded border-2 border-slate-300 hover:scale-110 transition-transform"
+                                                    style={{ backgroundColor: color }}
+                                                    title={color}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label className="block text-xs font-semibold text-slate-700 mb-2">Text Size: {textSize}px</label>
+                                    <input
+                                        type="range"
+                                        min="12"
+                                        max="48"
+                                        value={textSize}
+                                        onChange={(e) => setTextSize(Number(e.target.value))}
+                                        className="w-full"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Preview */}
+                            <div className="mb-4 p-3 bg-slate-100 rounded-lg text-center">
+                                <p className="text-xs text-slate-600 mb-2">Preview:</p>
+                                <p style={{ color: textColor, fontSize: `${textSize}px`, fontWeight: 'bold' }}>
+                                    {textInput || 'Sample Text'}
+                                </p>
+                            </div>
+
                             <div className="flex gap-3">
                                 <button
                                     onClick={() => {
@@ -613,7 +827,7 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                                 <button
                                     onClick={addTextRedaction}
                                     disabled={!textInput.trim()}
-                                    className="flex-1 px-4 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     Add Text
                                 </button>
