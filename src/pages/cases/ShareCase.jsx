@@ -4,6 +4,7 @@ import caseService from '../../services/caseService';
 import apiService from '../../services/apiService';
 import CaseDisclaimerModal from '../../components/CaseDisclaimerModal';
 import PHIWarning from '../../components/PHIWarning';
+import MedicalRedactionEditor from '../../components/MedicalRedactionEditor';
 
 const ShareCase = () => {
     const navigate = useNavigate();
@@ -30,6 +31,11 @@ const ShareCase = () => {
     const [file, setFile] = useState(null);
     const [filePreview, setFilePreview] = useState(null);
     const [uploading, setUploading] = useState(false);
+    
+    // Redaction Editor State
+    const [showRedactionEditor, setShowRedactionEditor] = useState(false);
+    const [fileToRedact, setFileToRedact] = useState(null);
+    const [redactingIndex, setRedactingIndex] = useState(null);
 
     // Check if user has already agreed in this session
     useEffect(() => {
@@ -85,17 +91,99 @@ const ShareCase = () => {
     };
 
     const handleFileSelect = (e) => {
-        if (e.target.files && e.target.files[0]) {
-            setFile(e.target.files[0]);
-            // Preview
-            if (e.target.files[0].type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onloadend = () => setFilePreview(reader.result);
-                reader.readAsDataURL(e.target.files[0]);
-            } else {
-                setFilePreview(null);
+        const selectedFile = e.target.files?.[0];
+        if (!selectedFile) return;
+
+        // Check if file contains PHI-like data and suggest redaction
+        if (selectedFile.type.startsWith('image/') || selectedFile.type === 'application/pdf') {
+            const shouldRedact = window.confirm(
+                '🔒 Medical Image Detected\n\n' +
+                'Does this image contain Protected Health Information (PHI) like:\n' +
+                '• Patient names or initials\n' +
+                '• Medical record numbers (MRN)\n' +
+                '• Dates of birth or service\n' +
+                '• Hospital/facility identifiers\n\n' +
+                'Click OK to open the Redaction Editor, or Cancel to upload as-is.'
+            );
+            
+            if (shouldRedact) {
+                setFileToRedact(selectedFile);
+                setShowRedactionEditor(true);
+                return;
             }
         }
+        
+        setFile(selectedFile);
+        
+        // Create preview
+        if (selectedFile.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onloadend = () => setFilePreview(reader.result);
+            reader.readAsDataURL(selectedFile);
+        } else {
+            setFilePreview(null);
+        }
+    };
+
+    const handleRedactExistingFile = (index, attachment) => {
+        // Fetch the file for redaction
+        const url = attachment.url.startsWith('http') ? attachment.url : `${apiService.getBaseUrl()}${attachment.url}`;
+        fetch(url)
+            .then(res => res.blob())
+            .then(blob => {
+                const file = new File([blob], attachment.filename, { type: attachment.type === 'image' ? 'image/png' : 'application/pdf' });
+                setFileToRedact(file);
+                setRedactingIndex(index);
+                setShowRedactionEditor(true);
+            })
+            .catch(error => {
+                console.error('Failed to fetch file for redaction:', error);
+                alert('Failed to load file for redaction. Please try again.');
+            });
+    };
+    
+    const handleSaveRedactedFile = async (redactedFile) => {
+        setShowRedactionEditor(false);
+        setFileToRedact(null);
+        
+        if (redactingIndex !== null) {
+            // Replace existing attachment
+            try {
+                setUploading(true);
+                const response = await caseService.uploadAttachment(redactedFile);
+                
+                setFormData(prev => ({
+                    ...prev,
+                    attachments: prev.attachments.map((att, idx) => 
+                        idx === redactingIndex ? response : att
+                    )
+                }));
+                
+                setRedactingIndex(null);
+                alert('✅ File redacted and replaced successfully!');
+            } catch (error) {
+                console.error('Failed to upload redacted file:', error);
+                alert('Failed to upload redacted file. Please try again.');
+            } finally {
+                setUploading(false);
+            }
+        } else {
+            // New file upload after redaction
+            setFile(redactedFile);
+            
+            // Create preview
+            const reader = new FileReader();
+            reader.onloadend = () => setFilePreview(reader.result);
+            reader.readAsDataURL(redactedFile);
+            
+            alert('✅ File redacted! Click "Upload" to add it to your case.');
+        }
+    };
+    
+    const handleCancelRedaction = () => {
+        setShowRedactionEditor(false);
+        setFileToRedact(null);
+        setRedactingIndex(null);
     };
 
     const handleAddAttachment = async () => {
@@ -541,6 +629,17 @@ const ShareCase = () => {
                                             <span className="text-xs text-slate-500 uppercase bg-white px-2 py-1 rounded border border-slate-200">{att.type}</span>
                                             <button
                                                 type="button"
+                                                onClick={() => handleRedactExistingFile(idx, att)}
+                                                className="text-orange-600 hover:text-orange-800 text-xs font-medium hover:bg-orange-50 px-2 py-1 rounded transition-colors flex items-center gap-1"
+                                                title="Redact PHI from this file"
+                                            >
+                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                                </svg>
+                                                Redact
+                                            </button>
+                                            <button
+                                                type="button"
                                                 onClick={() => {
                                                     if (window.confirm(`Remove "${att.filename}"?`)) {
                                                         setFormData(prev => ({
@@ -601,6 +700,15 @@ const ShareCase = () => {
                         </button>
                     </div>
                 </div>
+            )}
+
+            {/* Medical Redaction Editor */}
+            {showRedactionEditor && fileToRedact && (
+                <MedicalRedactionEditor
+                    file={fileToRedact}
+                    onSave={handleSaveRedactedFile}
+                    onCancel={handleCancelRedaction}
+                />
             )}
             </div>
         </>
