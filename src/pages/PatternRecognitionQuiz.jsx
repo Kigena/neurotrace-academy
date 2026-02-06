@@ -20,7 +20,21 @@ const PatternRecognitionQuiz = () => {
 
     // Filter patterns that have images
     const getPatternsWithImages = () => {
-        return patternsData.filter(p => p.image && p.image !== '');
+        return patternsData.filter(p => {
+            // Check if pattern has either a single image or an images array
+            const hasSingleImage = p.image && p.image !== '';
+            const hasImagesArray = p.images && Array.isArray(p.images) && p.images.length > 0;
+            return hasSingleImage || hasImagesArray;
+        });
+    };
+
+    // Get the best image to display for a pattern
+    const getPatternImage = (pattern) => {
+        // Prefer images array first (more likely to exist), then fall back to single image
+        if (pattern.images && Array.isArray(pattern.images) && pattern.images.length > 0) {
+            return pattern.images[0]; // Use first image from array
+        }
+        return pattern.image || '';
     };
 
     // Generate quiz questions
@@ -412,7 +426,7 @@ const PatternRecognitionQuiz = () => {
                     <div className="p-8 bg-slate-50">
                         <div className="bg-white border-4 border-slate-300 rounded-xl overflow-hidden shadow-lg">
                             <img
-                                src={question.pattern.image}
+                                src={getPatternImage(question.pattern)}
                                 alt="EEG Pattern"
                                 className="w-full h-auto"
                                 onError={(e) => {
@@ -421,6 +435,9 @@ const PatternRecognitionQuiz = () => {
                                 }}
                             />
                         </div>
+                        <p className="text-xs text-slate-500 mt-2 text-center italic">
+                            Tip: Look for key features like frequency, morphology, and location
+                        </p>
                     </div>
 
                     {/* Answer Options */}
