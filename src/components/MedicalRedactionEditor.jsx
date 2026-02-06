@@ -260,11 +260,12 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                 setCropArea(null);
                 redrawCanvas();
             }
-        } else if (currentRedaction && tool !== 'text') {
+        } else if (currentRedaction && tool !== 'text' && tool !== 'crop') {
             // Add color to highlight tools
             if (tool.startsWith('highlight') || tool === 'arrow') {
                 currentRedaction.color = highlightColor;
             }
+            console.log('💾 Saving redaction:', currentRedaction);
             setRedactions([...redactions, currentRedaction]);
         }
         
@@ -300,28 +301,31 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
             ctx.strokeRect(startX, startY, width, height);
         } else if (tool === 'highlight-box') {
             // Translucent rectangle highlight
+            console.log('🟨 Drawing highlight box:', { startX, startY, width, height, color: highlightColor });
             const rgb = hexToRgb(highlightColor);
-            ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
+            ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.4)`;
             ctx.fillRect(startX, startY, width, height);
             ctx.strokeStyle = highlightColor;
-            ctx.lineWidth = 3;
+            ctx.lineWidth = 4;
             ctx.strokeRect(startX, startY, width, height);
         } else if (tool === 'highlight-circle') {
             // Translucent circle highlight
             const centerX = startX + width / 2;
             const centerY = startY + height / 2;
             const radius = Math.sqrt(width * width + height * height) / 2;
+            console.log('⭕ Drawing highlight circle:', { centerX, centerY, radius, color: highlightColor });
             const rgb = hexToRgb(highlightColor);
             
-            ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
+            ctx.fillStyle = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.4)`;
             ctx.beginPath();
             ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
             ctx.fill();
             ctx.strokeStyle = highlightColor;
-            ctx.lineWidth = 3;
+            ctx.lineWidth = 4;
             ctx.stroke();
         } else if (tool === 'arrow') {
             // Draw arrow
+            console.log('➡️ Drawing arrow:', { startX, startY, endX: pos.x, endY: pos.y });
             drawArrow(startX, startY, pos.x, pos.y, highlightColor);
         }
     };
@@ -510,8 +514,11 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
 
+        console.log('🎨 Redrawing canvas with', redactions.length, 'redactions');
+
         // Apply all redactions
-        redactions.forEach(redaction => {
+        redactions.forEach((redaction, idx) => {
+            console.log(`  ${idx + 1}. ${redaction.type}`, redaction);
             if (redaction.type === 'rectangle') {
                 ctx.fillStyle = 'rgba(0, 0, 0, 1)';
                 ctx.fillRect(
