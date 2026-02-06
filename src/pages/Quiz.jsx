@@ -116,24 +116,41 @@ function Quiz() {
           </div>
         </div>
 
-        {/* Full Mock Exam (Coming Soon) */}
-        <div className="rounded-lg border border-slate-200 bg-slate-50 p-6">
-          <h2 className="text-lg font-semibold text-slate-900 mb-2">
-            Full ABRET Mock Exam
-          </h2>
-          <p className="text-sm text-slate-600 mb-4">
-            Complete timed mock exam covering all four ABRET domains with
-            realistic exam conditions. (Coming soon)
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="text-xs px-2 py-1 rounded-full bg-slate-200 text-slate-600">
-              Mock Exam
-            </span>
-            <span className="text-xs px-2 py-1 rounded-full bg-slate-200 text-slate-600">
-              120 min
+        {/* NeuroTrace Certification Exam */}
+        <Link
+          to="/certification-exam"
+          className="rounded-lg border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 p-6 hover:shadow-lg transition-all hover:border-purple-300"
+        >
+          <div className="flex items-start justify-between mb-2">
+            <h2 className="text-lg font-semibold text-slate-900">
+              NeuroTrace Certification Exam
+            </h2>
+            <span className="px-2 py-1 bg-purple-600 text-white text-xs font-bold rounded">
+              NEW
             </span>
           </div>
-        </div>
+          <p className="text-sm text-slate-600 mb-4">
+            Comprehensive 120-minute timed assessment covering all EEG domains. 
+            Test your knowledge with realistic exam conditions and get detailed performance analysis.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-3">
+            <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-700 font-medium">
+              100 Questions
+            </span>
+            <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-700 font-medium">
+              120 Minutes
+            </span>
+            <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-700 font-medium">
+              All Domains
+            </span>
+          </div>
+          <div className="flex items-center gap-2 text-xs text-purple-700 font-medium">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Realistic exam simulation</span>
+          </div>
+        </Link>
       </div>
 
       <div className="rounded-lg border border-slate-200 bg-white p-4">

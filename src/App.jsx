@@ -15,6 +15,7 @@ import Workflow from "./pages/Workflow.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
+import CertificationExam from "./pages/CertificationExam.jsx";
 import Progress from "./pages/Progress.jsx";
 import Syndromes from "./pages/Syndromes.jsx";
 import SyndromeDetail from "./pages/SyndromeDetail.jsx";
@@ -115,6 +116,11 @@ function AppContent() {
           <Route path="/quiz/session" element={
             <ProtectedRoute>
               <QuizSession />
+            </ProtectedRoute>
+          } />
+          <Route path="/certification-exam" element={
+            <ProtectedRoute>
+              <CertificationExam />
             </ProtectedRoute>
           } />
           <Route path="/progress" element={
