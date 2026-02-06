@@ -288,12 +288,12 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
     };
 
     return (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl shadow-2xl max-w-7xl w-full max-h-[95vh] overflow-hidden flex flex-col">
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-7xl w-full h-[95vh] overflow-hidden flex flex-col">
                 {/* Header */}
-                <div className="bg-gradient-to-r from-red-600 to-pink-600 text-white p-6">
-                    <div className="flex items-center justify-between mb-2">
-                        <h2 className="text-2xl font-bold">Medical Redaction Editor</h2>
+                <div className="bg-gradient-to-r from-red-600 to-pink-600 text-white p-4 flex-shrink-0">
+                    <div className="flex items-center justify-between mb-1">
+                        <h2 className="text-xl font-bold">Medical Redaction Editor</h2>
                         <button
                             onClick={onCancel}
                             className="text-white hover:bg-white/20 p-2 rounded-lg transition-colors"
@@ -303,13 +303,13 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                             </svg>
                         </button>
                     </div>
-                    <p className="text-red-100 text-sm">
-                        Remove Protected Health Information (PHI) before uploading. Draw boxes to redact names, dates, MRNs, and other identifiers.
+                    <p className="text-red-100 text-xs">
+                        Remove PHI (names, dates, MRNs) before uploading. Scroll down to access entire image.
                     </p>
                 </div>
 
                 {/* Toolbar */}
-                <div className="bg-slate-100 p-4 border-b border-slate-200">
+                <div className="bg-slate-100 p-4 border-b border-slate-200 flex-shrink-0">
                     <div className="flex flex-wrap items-center gap-3">
                         <div className="flex items-center gap-2">
                             <span className="text-sm font-semibold text-slate-700">Tools:</span>
@@ -408,40 +408,38 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                 </div>
 
                 {/* Canvas */}
-                <div className="flex-1 overflow-auto bg-slate-200 p-8 flex items-center justify-center">
-                    <div className="bg-white shadow-2xl rounded-lg overflow-hidden">
-                        <canvas
-                            ref={canvasRef}
-                            onMouseDown={handleMouseDown}
-                            onMouseMove={handleMouseMove}
-                            onMouseUp={handleMouseUp}
-                            onMouseLeave={handleMouseUp}
-                            className="cursor-crosshair"
-                            style={{ maxWidth: '100%', height: 'auto' }}
-                        />
+                <div className="flex-1 overflow-auto bg-slate-200 p-8">
+                    <div className="min-h-full flex items-start justify-center pt-8">
+                        <div className="bg-white shadow-2xl rounded-lg overflow-hidden mb-8">
+                            <canvas
+                                ref={canvasRef}
+                                onMouseDown={handleMouseDown}
+                                onMouseMove={handleMouseMove}
+                                onMouseUp={handleMouseUp}
+                                onMouseLeave={handleMouseUp}
+                                className="cursor-crosshair block"
+                                style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+                            />
+                        </div>
                     </div>
                 </div>
 
                 {/* Footer */}
-                <div className="bg-white border-t border-slate-200 p-6 flex items-center justify-between">
-                    <div className="text-sm text-slate-600">
-                        <p className="font-semibold mb-1">💡 Tips:</p>
-                        <ul className="text-xs space-y-1">
-                            <li>• Use <strong>Black Box</strong> for complete redaction (names, MRNs, dates)</li>
-                            <li>• Use <strong>Blur</strong> or <strong>Pixelate</strong> for less sensitive areas</li>
-                            <li>• Click and drag to create redaction areas</li>
-                        </ul>
+                <div className="bg-white border-t border-slate-200 p-4 flex items-center justify-between flex-shrink-0">
+                    <div className="text-xs text-slate-600">
+                        <p className="font-semibold mb-1">💡 <strong>Scroll</strong> to see entire image</p>
+                        <p>• Black Box for names/MRNs • Blur for sensitive areas • Drag to redact</p>
                     </div>
                     <div className="flex items-center gap-3">
                         <button
                             onClick={onCancel}
-                            className="px-6 py-3 bg-slate-200 text-slate-700 rounded-lg font-medium hover:bg-slate-300 transition-colors"
+                            className="px-4 py-2 bg-slate-200 text-slate-700 rounded-lg font-medium hover:bg-slate-300 transition-colors text-sm"
                         >
                             Cancel
                         </button>
                         <button
                             onClick={handleSave}
-                            className="px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-bold hover:from-green-700 hover:to-emerald-700 transition-all shadow-lg"
+                            className="px-4 py-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-bold hover:from-green-700 hover:to-emerald-700 transition-all shadow-lg text-sm"
                         >
                             Save & Use Redacted Image
                         </button>
