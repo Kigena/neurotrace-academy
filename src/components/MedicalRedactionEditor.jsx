@@ -23,6 +23,9 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
     const [cropArea, setCropArea] = useState(null);
     const [isCropped, setIsCropped] = useState(false);
     const [highlightColor, setHighlightColor] = useState('#FFFF00'); // Yellow
+    const [zoom, setZoom] = useState(100); // Zoom percentage
+    const [canvasScale, setCanvasScale] = useState(1);
+    const containerRef = useRef(null);
 
     // Load image or PDF
     useEffect(() => {
@@ -41,36 +44,112 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
         }
     }, [file]);
 
+    // Keyboard shortcuts for zoom
+    useEffect(() => {
+        const handleKeyboard = (e) => {
+            if ((e.ctrlKey || e.metaKey)) {
+                if (e.key === '=' || e.key === '+') {
+                    e.preventDefault();
+                    handleZoomIn();
+                } else if (e.key === '-' || e.key === '_') {
+                    e.preventDefault();
+                    handleZoomOut();
+                } else if (e.key === '0') {
+                    e.preventDefault();
+                    handleZoomReset();
+                }
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyboard);
+        return () => window.removeEventListener('keydown', handleKeyboard);
+    }, []);
+
+    // Mouse wheel zoom
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+
+        const handleWheel = (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                e.preventDefault();
+                if (e.deltaY < 0) {
+                    handleZoomIn();
+                } else {
+                    handleZoomOut();
+                }
+            }
+        };
+
+        canvas.addEventListener('wheel', handleWheel, { passive: false });
+        return () => canvas.removeEventListener('wheel', handleWheel);
+    }, []);
+
     const loadImage = (file, canvas, context) => {
         const reader = new FileReader();
         reader.onload = (e) => {
             const img = new Image();
             img.onload = () => {
-                // Scale canvas to fit viewport while maintaining aspect ratio
-                const maxWidth = 1200;
-                const maxHeight = 800;
-                let width = img.width;
-                let height = img.height;
+                // Store original dimensions
+                const originalWidth = img.width;
+                const originalHeight = img.height;
 
-                if (width > maxWidth) {
-                    height = (height * maxWidth) / width;
-                    width = maxWidth;
-                }
-                if (height > maxHeight) {
-                    width = (width * maxHeight) / height;
-                    height = maxHeight;
-                }
-
-                canvas.width = width;
-                canvas.height = height;
-                context.drawImage(img, 0, 0, width, height);
+                // Set canvas to original size initially
+                canvas.width = originalWidth;
+                canvas.height = originalHeight;
+                context.drawImage(img, 0, 0, originalWidth, originalHeight);
                 setOriginalImage(img);
-                setScale(width / img.width);
+                setScale(1);
+                
+                // Auto fit to window on load
+                setTimeout(() => handleFitToWindow(originalWidth, originalHeight), 100);
             };
             img.src = e.target.result;
         };
         reader.readAsDataURL(file);
     };
+
+    const handleFitToWindow = (imgWidth, imgHeight) => {
+        if (!containerRef.current) return;
+        
+        const container = containerRef.current;
+        const containerWidth = container.clientWidth - 64; // Account for padding
+        const containerHeight = container.clientHeight - 64;
+        
+        const width = imgWidth || originalImage?.width || canvasRef.current?.width;
+        const height = imgHeight || originalImage?.height || canvasRef.current?.height;
+        
+        if (!width || !height) return;
+        
+        const widthRatio = containerWidth / width;
+        const heightRatio = containerHeight / height;
+        const fitRatio = Math.min(widthRatio, heightRatio, 1); // Don't zoom beyond 100%
+        
+        const newZoom = Math.floor(fitRatio * 100);
+        setZoom(Math.max(10, Math.min(200, newZoom)));
+    };
+
+    const handleZoomIn = () => {
+        setZoom(prev => Math.min(200, prev + 10));
+    };
+
+    const handleZoomOut = () => {
+        setZoom(prev => Math.max(10, prev - 10));
+    };
+
+    const handleZoomReset = () => {
+        setZoom(100);
+    };
+
+    const handleZoomChange = (e) => {
+        const value = parseInt(e.target.value) || 100;
+        setZoom(Math.max(10, Math.min(200, value)));
+    };
+
+    // Update canvas scale when zoom changes
+    useEffect(() => {
+        setCanvasScale(zoom / 100);
+    }, [zoom]);
 
     const loadPDF = async (file, canvas, context) => {
         try {
@@ -103,9 +182,12 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
     const getMousePos = (e) => {
         const canvas = canvasRef.current;
         const rect = canvas.getBoundingClientRect();
+        // Adjust for zoom/scale
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
         return {
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top
+            x: (e.clientX - rect.left) * scaleX,
+            y: (e.clientY - rect.top) * scaleY
         };
     };
 
@@ -693,7 +775,54 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                             </button>
                         </div>
 
-                        <div className="ml-auto flex items-center gap-2">
+                        <div className="ml-auto flex items-center gap-3">
+                            {/* Zoom Controls */}
+                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-300">
+                                <button
+                                    onClick={handleZoomOut}
+                                    className="p-1 hover:bg-slate-100 rounded transition-colors"
+                                    title="Zoom Out (Ctrl + -)"
+                                >
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" />
+                                    </svg>
+                                </button>
+                                <input
+                                    type="number"
+                                    value={zoom}
+                                    onChange={handleZoomChange}
+                                    className="w-14 text-center text-sm font-medium border border-slate-200 rounded px-1 py-0.5"
+                                    min="10"
+                                    max="200"
+                                    step="10"
+                                />
+                                <span className="text-xs text-slate-600 font-medium">%</span>
+                                <button
+                                    onClick={handleZoomIn}
+                                    className="p-1 hover:bg-slate-100 rounded transition-colors"
+                                    title="Zoom In (Ctrl + +)"
+                                >
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>
+                                </button>
+                                <div className="h-4 w-px bg-slate-300"></div>
+                                <button
+                                    onClick={() => handleFitToWindow()}
+                                    className="text-xs px-2 py-1 hover:bg-slate-100 rounded transition-colors font-medium text-slate-700"
+                                    title="Fit to Window"
+                                >
+                                    Fit
+                                </button>
+                                <button
+                                    onClick={handleZoomReset}
+                                    className="text-xs px-2 py-1 hover:bg-slate-100 rounded transition-colors font-medium text-slate-700"
+                                    title="Reset to 100%"
+                                >
+                                    100%
+                                </button>
+                            </div>
+                            
                             {isCropped && (
                                 <span className="text-xs px-3 py-1 bg-green-100 text-green-800 rounded-full font-semibold flex items-center gap-1">
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -703,14 +832,17 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                                 </span>
                             )}
                             <span className="text-sm text-slate-600">
-                                {redactions.length} redaction{redactions.length !== 1 ? 's' : ''}
+                                {redactions.length} mark{redactions.length !== 1 ? 's' : ''}
                             </span>
                         </div>
                     </div>
                 </div>
 
                 {/* Canvas */}
-                <div className="flex-1 overflow-auto bg-slate-200 p-8">
+                <div 
+                    ref={containerRef}
+                    className="flex-1 overflow-auto bg-slate-200 p-8"
+                >
                     <div className="min-h-full flex items-start justify-center pt-8">
                         <div className="bg-white shadow-2xl rounded-lg overflow-hidden mb-8">
                             <canvas
@@ -720,7 +852,12 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                                 onMouseUp={handleMouseUp}
                                 onMouseLeave={handleMouseUp}
                                 className="cursor-crosshair block"
-                                style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+                                style={{ 
+                                    width: `${canvasScale * 100}%`,
+                                    height: 'auto',
+                                    display: 'block',
+                                    imageRendering: canvasScale < 1 ? 'auto' : 'crisp-edges'
+                                }}
                             />
                         </div>
                     </div>
@@ -736,7 +873,7 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
                             {tool === 'arrow' && 'Draw arrow to point at features'}
                             {!tool.startsWith('highlight') && tool !== 'crop' && tool !== 'text' && tool !== 'arrow' && 'Drag to redact PHI'}
                         </strong></p>
-                        <p>• <strong>Crop</strong> first to remove headers • <strong>Highlight</strong> to annotate • <strong>Black Box</strong> to redact PHI</p>
+                        <p>• Use <strong>Zoom</strong> to fit image • <strong>Ctrl+Scroll</strong> to zoom • <strong>Ctrl+0</strong> to reset</p>
                     </div>
                     <div className="flex items-center gap-3">
                         <button
