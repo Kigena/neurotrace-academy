@@ -28,6 +28,7 @@ import authRoutes from './routes/auth.js';
 import chatRoutes from './routes/chat.js';
 import casesRoutes from './routes/cases.js';
 import adminRoutes from './routes/admin.js';
+import aiRoutes from './routes/ai.js';
 
 // Routes
 app.get('/', (req, res) => {
@@ -55,6 +56,9 @@ app.use('/api/cases', casesRoutes);
 
 // Admin Routes
 app.use('/api/admin', adminRoutes);
+
+// AI Routes
+app.use('/api/ai', aiRoutes);
 
 import { QuizSession } from './models/QuizSession.js';
 import { AttemptEvent } from './models/AttemptEvent.js';

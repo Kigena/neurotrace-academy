@@ -563,6 +563,72 @@ router.put('/:id', auth, async (req, res) => {
     }
 });
 
+// 8c. AI Case Analysis with Pre-filled Prompts
+router.post('/:id/ai-analyze', auth, async (req, res) => {
+    try {
+        const { promptType } = req.body; // 'findings', 'differentials', 'artifacts', 'history'
+        
+        const communityCase = await CommunityCase.findById(req.params.id);
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        const analysis = await geminiService.analyzeCaseWithPrompt(promptType, communityCase);
+        
+        res.json({ analysis, promptType });
+    } catch (error) {
+        console.error('AI case analysis error:', error);
+        res.status(500).json({ error: 'Failed to analyze case' });
+    }
+});
+
+// 8d. Convert Case to Study Notes
+router.post('/:id/study-notes', auth, async (req, res) => {
+    try {
+        const communityCase = await CommunityCase.findById(req.params.id);
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        const pageContent = `
+Title: ${communityCase.title}
+Patient: ${communityCase.patientInfo?.age} ${communityCase.patientInfo?.ageUnit}, ${communityCase.patientInfo?.gender}
+History: ${communityCase.history}
+Medications: ${communityCase.medications?.join(', ')}
+EEG Findings:
+- Background: ${communityCase.findings?.background}
+- Interictal: ${communityCase.findings?.interictal}
+- Ictal: ${communityCase.findings?.ictal}
+- Classification: ${communityCase.findings?.classification}
+        `.trim();
+
+        const studyNotes = await geminiService.convertToStudyNotes(communityCase.title, pageContent);
+        
+        res.json({ studyNotes });
+    } catch (error) {
+        console.error('Study notes generation error:', error);
+        res.status(500).json({ error: 'Failed to generate study notes' });
+    }
+});
+
+// 8e. Check for PHI in Content
+router.post('/check-phi', auth, async (req, res) => {
+    try {
+        const { content } = req.body;
+        
+        if (!content) {
+            return res.status(400).json({ error: 'Content required' });
+        }
+
+        const phiCheck = geminiService.detectPHI(content);
+        
+        res.json(phiCheck);
+    } catch (error) {
+        console.error('PHI check error:', error);
+        res.status(500).json({ error: 'Failed to check for PHI' });
+    }
+});
+
 // 9. Delete Case (Admin Only)
 router.delete('/:id', auth, async (req, res) => {
     try {

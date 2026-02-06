@@ -243,6 +243,261 @@ Be objective, educational, and reference EEG interpretation principles.`;
     }
 
     /**
+     * Explain a page/content with key takeaways
+     */
+    async explainPage(pageTitle, pageContent, contentType = 'page') {
+        try {
+            const systemPrompt = `You are NeuroTrace AI, explaining educational content to EEG technologist students.
+
+Page: ${pageTitle}
+Type: ${contentType}
+
+Your task: Provide a clear, concise explanation with:
+1. **Summary** (2-3 sentences)
+2. **Key Takeaways** (3-5 bullet points)
+3. **Why This Matters** (1-2 sentences about clinical relevance)
+
+Keep it focused, actionable, and educational.`;
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 1000, // Shorter for quick explanations
+                    temperature: 0.7,
+                },
+            });
+
+            const result = await chat.sendMessage(`${systemPrompt}\n\nContent:\n${pageContent}`);
+            return result.response.text();
+        } catch (error) {
+            console.error('Explain page AI error:', error);
+            throw new Error('Failed to explain page');
+        }
+    }
+
+    /**
+     * Generate quiz questions based on page content
+     */
+    async generateQuizFromPage(pageTitle, pageContent) {
+        try {
+            const systemPrompt = `You are NeuroTrace AI, creating quiz questions from educational content.
+
+Page: ${pageTitle}
+
+Your task: Create 5 multiple-choice questions that test understanding of the key concepts.
+
+Format each question as:
+Q1: [Question text]
+A) [Option]
+B) [Option]
+C) [Option]
+D) [Option]
+Answer: [Letter]
+Explanation: [Brief explanation]
+
+Make questions practical and clinically relevant.`;
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 2000,
+                    temperature: 0.8,
+                },
+            });
+
+            const result = await chat.sendMessage(`${systemPrompt}\n\nContent:\n${pageContent}`);
+            return result.response.text();
+        } catch (error) {
+            console.error('Quiz generation AI error:', error);
+            throw new Error('Failed to generate quiz');
+        }
+    }
+
+    /**
+     * Convert content to study notes
+     */
+    async convertToStudyNotes(pageTitle, pageContent) {
+        try {
+            const systemPrompt = `You are NeuroTrace AI, creating study notes from educational content.
+
+Page: ${pageTitle}
+
+Your task: Create comprehensive study notes with:
+
+**📝 Cleaned Notes**
+[Organized summary with main points, structured logically]
+
+**📖 Glossary of Terms**
+- Term 1: Definition
+- Term 2: Definition
+(Include 5-8 key terms)
+
+**🎯 5 Flashcards**
+Front: [Question/Term]
+Back: [Answer/Definition]
+(Create 5 flashcards for key concepts)
+
+**💡 Study Tips**
+[1-2 sentences on how to remember this material]
+
+Make it concise, memorable, and exam-focused.`;
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 3000, // Longer for comprehensive notes
+                    temperature: 0.7,
+                },
+            });
+
+            const result = await chat.sendMessage(`${systemPrompt}\n\nContent:\n${pageContent}`);
+            return result.response.text();
+        } catch (error) {
+            console.error('Study notes AI error:', error);
+            throw new Error('Failed to generate study notes');
+        }
+    }
+
+    /**
+     * Analyze case with pre-filled prompts
+     */
+    async analyzeCaseWithPrompt(promptType, caseData) {
+        try {
+            const prompts = {
+                'findings': `Review this EEG case and identify:
+1. Key findings that stand out
+2. Significant patterns or rhythms
+3. Any notable artifacts
+4. Clinical significance of findings`,
+
+                'differentials': `Based on this EEG case, discuss:
+1. Most likely diagnoses
+2. Key differentiating features
+3. What findings support each diagnosis
+4. What additional information would help narrow it down`,
+
+                'artifacts': `Analyze potential artifacts in this case:
+1. What artifacts should we rule out?
+2. How can we differentiate artifact from true findings?
+3. What technical factors might affect interpretation?
+4. Recommendations for artifact reduction`,
+
+                'history': `What additional clinical history would be helpful:
+1. Specific questions to ask the patient
+2. Relevant medical history to obtain
+3. Medications or factors that could affect EEG
+4. Context that would refine interpretation`
+            };
+
+            const promptText = prompts[promptType] || prompts['findings'];
+
+            const systemPrompt = `You are NeuroTrace AI, an expert EEG analyst helping with case interpretation.
+
+Case Details:
+- Title: ${caseData.title}
+- Patient: ${caseData.patientInfo?.age} ${caseData.patientInfo?.ageUnit}, ${caseData.patientInfo?.gender}
+- History: ${caseData.history}
+- Medications: ${caseData.medications?.join(', ') || 'None specified'}
+- Findings:
+  Background: ${caseData.findings?.background || 'Not specified'}
+  Interictal: ${caseData.findings?.interictal || 'Not specified'}
+  Ictal: ${caseData.findings?.ictal || 'Not specified'}
+  Classification: ${caseData.findings?.classification || 'Not specified'}
+
+Provide a thorough, educational analysis. Use markdown formatting for clarity.`;
+
+            const chat = this.model.startChat({
+                generationConfig: {
+                    maxOutputTokens: 2500,
+                    temperature: 0.7,
+                },
+            });
+
+            const result = await chat.sendMessage(`${systemPrompt}\n\n${promptText}`);
+            return result.response.text();
+        } catch (error) {
+            console.error('Case analysis AI error:', error);
+            throw new Error('Failed to analyze case');
+        }
+    }
+
+    /**
+     * Detect and flag potential PHI (Protected Health Information)
+     */
+    detectPHI(text) {
+        const phiPatterns = {
+            names: {
+                // Detect potential names (proper capitalization patterns)
+                pattern: /\b[A-Z][a-z]+\s+[A-Z][a-z]+\b/g,
+                severity: 'medium',
+                message: 'Possible patient/provider name detected'
+            },
+            mrn: {
+                // Medical Record Numbers (various formats)
+                pattern: /\b(MR|MRN|MEDICAL\s*RECORD|PATIENT\s*ID)[:\s#]*[A-Z0-9]{6,12}\b/gi,
+                severity: 'high',
+                message: 'Possible Medical Record Number detected'
+            },
+            phone: {
+                // Phone numbers
+                pattern: /\b(\+?1[-.]?)?\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})\b/g,
+                severity: 'high',
+                message: 'Phone number detected'
+            },
+            ssn: {
+                // Social Security Numbers
+                pattern: /\b\d{3}[-]?\d{2}[-]?\d{4}\b/g,
+                severity: 'critical',
+                message: 'Possible Social Security Number detected'
+            },
+            dates: {
+                // Specific dates (except year alone)
+                pattern: /\b(0?[1-9]|1[0-2])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-](19|20)\d{2}\b/g,
+                severity: 'medium',
+                message: 'Specific date detected (consider using age/year only)'
+            },
+            email: {
+                // Email addresses
+                pattern: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g,
+                severity: 'high',
+                message: 'Email address detected'
+            },
+            facility: {
+                // Hospital/facility identifiers
+                pattern: /\b(Hospital|Medical Center|Clinic|Healthcare|Health System)\s+[A-Z][a-z]+/gi,
+                severity: 'medium',
+                message: 'Facility name detected (consider anonymizing)'
+            },
+            address: {
+                // Street addresses
+                pattern: /\b\d+\s+[A-Z][a-z]+\s+(Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Drive|Dr|Lane|Ln)\b/gi,
+                severity: 'high',
+                message: 'Address detected'
+            }
+        };
+
+        const detectedPHI = [];
+
+        for (const [type, config] of Object.entries(phiPatterns)) {
+            const matches = text.match(config.pattern);
+            if (matches && matches.length > 0) {
+                detectedPHI.push({
+                    type,
+                    severity: config.severity,
+                    message: config.message,
+                    count: matches.length,
+                    examples: matches.slice(0, 3) // Show up to 3 examples
+                });
+            }
+        }
+
+        return {
+            hasPHI: detectedPHI.length > 0,
+            detections: detectedPHI,
+            riskLevel: detectedPHI.some(d => d.severity === 'critical') ? 'critical' :
+                      detectedPHI.some(d => d.severity === 'high') ? 'high' :
+                      detectedPHI.length > 0 ? 'medium' : 'none'
+        };
+    }
+
+    /**
      * Structure case discussion into organized sections
      */
     async structureDiscussion(comments, caseData) {

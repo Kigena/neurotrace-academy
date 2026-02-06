@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import caseService from '../../services/caseService';
 import apiService from '../../services/apiService';
 import CaseDisclaimerModal from '../../components/CaseDisclaimerModal';
+import PHIWarning from '../../components/PHIWarning';
 
 const ShareCase = () => {
     const navigate = useNavigate();
     const [step, setStep] = useState(1);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [phiWarning, setPhiWarning] = useState(null);
 
     // Disclaimer Modal State
     const [showDisclaimer, setShowDisclaimer] = useState(true);
@@ -134,11 +136,47 @@ const ShareCase = () => {
         }
     };
 
+    const checkForPHI = async () => {
+        const contentToCheck = `${formData.title} ${formData.history} ${formData.medications}`;
+        try {
+            const result = await apiService.post('/ai/check-phi', { content: contentToCheck });
+            setPhiWarning(result);
+            return result;
+        } catch (error) {
+            console.error('PHI check error:', error);
+            return null; // Don't block submission on check error
+        }
+    };
+
     const handleSubmit = async () => {
         console.log('🚀 handleSubmit called');
         setIsSubmitting(true);
         
         try {
+            // Check for PHI before submitting
+            console.log('🔍 Checking for PHI...');
+            const phiResult = await checkForPHI();
+            
+            if (phiResult && phiResult.hasPHI && phiResult.riskLevel !== 'none') {
+                // Show warning and ask for confirmation
+                const confirmed = window.confirm(
+                    `⚠️ Potential Protected Health Information (PHI) detected!\n\n` +
+                    `${phiResult.detections.map(d => `• ${d.message}`).join('\n')}\n\n` +
+                    `Please anonymize patient information before sharing.\n\n` +
+                    `Do you want to go back and edit your content?`
+                );
+                
+                if (confirmed) {
+                    // User wants to edit
+                    setIsSubmitting(false);
+                    return;
+                }
+                // User wants to proceed anyway (not recommended but allowed)
+            }
+
+            console.log('✅ PHI check complete');
+            
+            // Continue with original submission logic
             // Validation
             if (!formData.title || !formData.history) {
                 console.warn('⚠️ Validation failed: missing required fields');

@@ -7,6 +7,8 @@ import patternsData from "../data/neurotrace_patterns_library_v2.json";
 import CaseRunner from "../components/CaseRunner.jsx";
 import CaseDiscussion from "../components/CaseDiscussion.jsx";
 import ContextualAI from "../components/ContextualAI.jsx";
+import CaseAIAssistant from "../components/CaseAIAssistant.jsx";
+import StudyNotesButton from "../components/StudyNotesButton.jsx";
 import caseService from "../services/caseService";
 import apiService from "../services/apiService";
 
@@ -210,6 +212,18 @@ const CommunityCaseView = ({ eegCase, setEegCase }) => {
           ))}
         </div>
       )}
+
+      {/* AI Assistant Panel */}
+      <CaseAIAssistant 
+        caseId={eegCase._id} 
+        caseData={eegCase} 
+      />
+
+      {/* Study Notes Button */}
+      <StudyNotesButton 
+        pageTitle={eegCase.title}
+        caseId={eegCase._id}
+      />
 
       {/* Discussion Section */}
       <CaseDiscussion

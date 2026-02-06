@@ -81,6 +81,24 @@ class CaseService {
     async deleteComment(caseId, commentId) {
         return await apiService.delete(`/cases/${caseId}/comment/${commentId}`);
     }
+
+    /**
+     * AI-powered case analysis with pre-filled prompts
+     * @param {string} caseId 
+     * @param {string} promptType - 'findings', 'differentials', 'artifacts', 'history'
+     */
+    async analyzeCaseWithAI(caseId, promptType) {
+        return await apiService.post(`/cases/${caseId}/ai-analyze`, { promptType });
+    }
+
+    /**
+     * Generate study notes from case
+     * @param {string} caseId 
+     */
+    async generateStudyNotes(caseId) {
+        return await apiService.post(`/cases/${caseId}/study-notes`, {});
+    }
 }
 
 export default new CaseService();
+
