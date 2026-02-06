@@ -97,24 +97,40 @@ function Quiz() {
           </div>
         </Link>
 
-        {/* Pattern Quiz (Coming Soon) */}
-        <div className="rounded-lg border border-slate-200 bg-slate-50 p-6">
-          <h2 className="text-lg font-semibold text-slate-900 mb-2">
-            Pattern Recognition Quiz
-          </h2>
-          <p className="text-sm text-slate-600 mb-4">
-            Test your ability to identify EEG patterns, normal variants, and
-            epileptiform discharges. (Coming soon)
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="text-xs px-2 py-1 rounded-full bg-slate-200 text-slate-600">
-              Patterns
-            </span>
-            <span className="text-xs px-2 py-1 rounded-full bg-slate-200 text-slate-600">
-              Recognition
+        {/* Pattern Recognition Quiz */}
+        <Link
+          to="/quiz/pattern-recognition"
+          className="rounded-lg border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 p-6 hover:shadow-lg transition-all relative overflow-hidden group"
+        >
+          <div className="absolute top-3 right-3">
+            <span className="px-3 py-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold rounded-full shadow-md">
+              NEW
             </span>
           </div>
-        </div>
+          <h2 className="text-lg font-semibold text-purple-900 mb-2 flex items-center gap-2">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            Pattern Recognition Quiz
+          </h2>
+          <p className="text-sm text-purple-800 mb-4">
+            Test your ability to identify EEG patterns, normal variants, and epileptiform discharges from real EEG images. Visual pattern identification with instant feedback.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="text-xs px-2 py-1 rounded-full bg-purple-200 text-purple-900 font-medium">
+              Visual Recognition
+            </span>
+            <span className="text-xs px-2 py-1 rounded-full bg-pink-200 text-pink-900 font-medium">
+              EEG Images
+            </span>
+            <span className="text-xs px-2 py-1 rounded-full bg-purple-200 text-purple-900 font-medium">
+              20 Questions
+            </span>
+          </div>
+          <div className="mt-3 text-xs text-purple-700 font-medium group-hover:text-purple-900 transition-colors">
+            Start Quiz →
+          </div>
+        </Link>
 
         {/* NeuroTrace Certification Exam */}
         <Link

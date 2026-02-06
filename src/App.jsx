@@ -16,6 +16,7 @@ import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
 import CertificationExam from "./pages/CertificationExam.jsx";
+import PatternRecognitionQuiz from "./pages/PatternRecognitionQuiz.jsx";
 import Progress from "./pages/Progress.jsx";
 import Syndromes from "./pages/Syndromes.jsx";
 import SyndromeDetail from "./pages/SyndromeDetail.jsx";
@@ -116,6 +117,11 @@ function AppContent() {
           <Route path="/quiz/session" element={
             <ProtectedRoute>
               <QuizSession />
+            </ProtectedRoute>
+          } />
+          <Route path="/quiz/pattern-recognition" element={
+            <ProtectedRoute>
+              <PatternRecognitionQuiz />
             </ProtectedRoute>
           } />
           <Route path="/certification-exam" element={
