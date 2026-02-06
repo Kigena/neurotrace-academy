@@ -389,22 +389,31 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
     };
 
     const drawCropPreview = () => {
-        if (!cropArea || !ctx) return;
+        if (!cropArea || !ctx || !originalImage) return;
 
         const canvas = canvasRef.current;
         
-        // Darken everything outside crop area
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // First, redraw the clean original image
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
         
-        // Clear the crop area to show what will remain
+        // Calculate crop dimensions
         const x = Math.min(cropArea.startX, cropArea.endX);
         const y = Math.min(cropArea.startY, cropArea.endY);
         const width = Math.abs(cropArea.endX - cropArea.startX);
         const height = Math.abs(cropArea.endY - cropArea.startY);
         
-        ctx.clearRect(x, y, width, height);
-        ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
+        // Draw semi-transparent overlay outside crop area (in 4 rectangles)
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+        
+        // Top rectangle
+        ctx.fillRect(0, 0, canvas.width, y);
+        // Bottom rectangle
+        ctx.fillRect(0, y + height, canvas.width, canvas.height - (y + height));
+        // Left rectangle
+        ctx.fillRect(0, y, x, height);
+        // Right rectangle
+        ctx.fillRect(x + width, y, canvas.width - (x + width), height);
         
         // Draw crop border
         ctx.strokeStyle = '#10b981'; // Green
@@ -421,7 +430,7 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
         ctx.fillRect(x - handleSize/2, y + height - handleSize/2, handleSize, handleSize);
         ctx.fillRect(x + width - handleSize/2, y + height - handleSize/2, handleSize, handleSize);
         
-        // Add "KEEP THIS AREA" text
+        // Add "KEEP THIS AREA" text (only in preview, won't be in final crop)
         ctx.fillStyle = '#10b981';
         ctx.font = 'bold 20px Arial';
         ctx.textAlign = 'center';
@@ -437,15 +446,24 @@ const MedicalRedactionEditor = ({ file, onSave, onCancel }) => {
         const width = Math.abs(cropArea.endX - cropArea.startX);
         const height = Math.abs(cropArea.endY - cropArea.startY);
 
+        // Create temporary canvas with clean original image
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = canvas.width;
+        tempCanvas.height = canvas.height;
+        const tempCtx = tempCanvas.getContext('2d');
+        
+        // Draw clean original image (without any preview overlays)
+        tempCtx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
+
         // Create new canvas with cropped dimensions
         const croppedCanvas = document.createElement('canvas');
         croppedCanvas.width = width;
         croppedCanvas.height = height;
         const croppedCtx = croppedCanvas.getContext('2d');
 
-        // Draw cropped area
+        // Draw cropped area from clean temp canvas (not the preview canvas)
         croppedCtx.drawImage(
-            canvas,
+            tempCanvas,
             x, y, width, height,
             0, 0, width, height
         );
