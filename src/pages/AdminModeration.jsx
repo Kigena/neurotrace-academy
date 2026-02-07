@@ -49,19 +49,11 @@ const AdminModeration = () => {
     const fetchCases = async () => {
         setLoading(true);
         try {
-            console.log('🔍 Fetching cases with filter:', filter);
             const data = await apiService.get('/cases/moderation', { status: filter });
-            console.log('📦 Received cases:', data.length, 'cases');
-            console.log('📦 Cases data:', data);
-            console.log('📦 Is data an array?', Array.isArray(data));
-            if (Array.isArray(data) && data.length > 0) {
-                console.log('📦 First case:', data[0]);
-            }
             setCases(data);
         } catch (error) {
-            console.error('❌ Failed to fetch cases:', error);
-            console.error('❌ Error details:', error.message);
-            setCases([]); // Ensure empty array on error
+            console.error('Failed to fetch cases:', error);
+            setCases([]);
         } finally {
             setLoading(false);
         }

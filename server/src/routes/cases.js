@@ -174,17 +174,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// 4a. Test endpoint - no database queries (MUST BE BEFORE /:id)
-router.get('/moderation/test', auth, (req, res) => {
-    res.json({ 
-        message: 'Moderation endpoint is working!',
-        user: req.user,
-        timestamp: new Date().toISOString(),
-        version: 'v1.0-debug'
-    });
-});
-
-// 4b. Get pending cases count (for notification badge) (MUST BE BEFORE /:id)
+// 4a. Get pending cases count (for notification badge) (MUST BE BEFORE /:id)
 router.get('/moderation/pending-count', auth, async (req, res) => {
     try {
         // Check if user is admin
@@ -200,22 +190,15 @@ router.get('/moderation/pending-count', auth, async (req, res) => {
     }
 });
 
-// 4c. Get Cases for Moderation (Admin Only) (MUST BE BEFORE /:id)
+// 4b. Get Cases for Moderation (Admin Only) (MUST BE BEFORE /:id)
 router.get('/moderation', auth, async (req, res) => {
     try {
-        console.log('🔍 Moderation endpoint hit');
-        console.log('🔍 User:', req.user);
-        
         // Check if user is admin
         if (req.user.role !== 'admin') {
-            console.log('⛔ Access denied - user is not admin');
             return res.status(403).json({ error: 'Admin access required' });
         }
 
         const { status } = req.query;
-        console.log('🔍 Query params:', req.query);
-        console.log('🔍 Status filter:', status);
-        
         let query = {};
 
         if (status === 'pending') {
@@ -225,82 +208,48 @@ router.get('/moderation', auth, async (req, res) => {
         }
         // 'all' returns everything
 
-        console.log('🔍 MongoDB query object:', JSON.stringify(query));
-
-        // Step 1: Try to get raw cases without any population
-        console.log('📥 Attempting to fetch cases...');
+        // Fetch cases without population first
         const rawCases = await CommunityCase.find(query)
             .sort({ createdAt: -1 })
-            .lean()
-            .catch(err => {
-                console.error('❌ Find failed:', err);
-                throw err;
-            });
-
-        console.log('✅ Raw cases fetched:', rawCases.length);
+            .lean();
         
         if (rawCases.length === 0) {
-            console.log('📭 No cases found matching query');
             return res.json([]);
         }
 
-        console.log('📦 First case structure:', JSON.stringify(rawCases[0], null, 2).substring(0, 500));
-
-        // Step 2: Get User model safely
-        let User;
-        try {
-            User = mongoose.model('User');
-            console.log('✅ User model loaded');
-        } catch (modelErr) {
-            console.error('⚠️ Could not load User model:', modelErr);
-            // Return cases with placeholder authors
-            const casesWithPlaceholder = rawCases.map(c => ({
-                ...c,
-                author: { name: 'Unknown User', email: 'pending@user.com' }
-            }));
-            return res.json(casesWithPlaceholder);
-        }
-
-        // Step 3: Manually populate authors with ObjectId validation
-        console.log('👤 Populating authors...');
+        // Get User model and manually populate authors with validation
+        const User = mongoose.model('User');
         const casesWithAuthors = await Promise.all(
             rawCases.map(async (caseItem) => {
                 try {
                     if (!caseItem.author) {
-                        console.log('⚠️ Case has no author:', caseItem._id);
                         return {
                             ...caseItem,
                             author: { name: 'No Author', email: 'none@user.com' }
                         };
                     }
 
-                    // Validate ObjectId format
+                    // Validate ObjectId format to prevent CastError
                     if (!mongoose.Types.ObjectId.isValid(caseItem.author)) {
-                        console.error('⚠️ Invalid author ObjectId for case:', caseItem._id, 'Author:', caseItem.author);
                         return {
                             ...caseItem,
                             author: { 
                                 name: 'Invalid User ID', 
-                                email: 'corrupted@user.com',
-                                _corruptedId: String(caseItem.author)
+                                email: 'corrupted@user.com'
                             }
                         };
                     }
 
                     const author = await User.findById(caseItem.author)
                         .select('name email')
-                        .lean()
-                        .catch(err => {
-                            console.error('⚠️ Failed to fetch author:', err);
-                            return null;
-                        });
+                        .lean();
 
                     return {
                         ...caseItem,
                         author: author || { name: 'Unknown User', email: 'deleted@user.com' }
                     };
                 } catch (err) {
-                    console.error('⚠️ Error processing case author:', err);
+                    console.error('Error processing case author:', err);
                     return {
                         ...caseItem,
                         author: { name: 'Error Loading User', email: 'error@user.com' }
@@ -308,23 +257,14 @@ router.get('/moderation', auth, async (req, res) => {
                 }
             })
         );
-
-        console.log('✅ All authors populated');
-        console.log('📦 Returning', casesWithAuthors.length, 'cases');
         
         res.json(casesWithAuthors);
         
     } catch (error) {
-        console.error('❌❌❌ FATAL ERROR in /moderation endpoint ❌❌❌');
-        console.error('Error name:', error.name);
-        console.error('Error message:', error.message);
-        console.error('Error stack:', error.stack);
-        
+        console.error('Get moderation cases error:', error);
         res.status(500).json({ 
             error: 'Failed to fetch cases for moderation', 
-            details: error.message,
-            errorType: error.name,
-            stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+            details: error.message
         });
     }
 });
