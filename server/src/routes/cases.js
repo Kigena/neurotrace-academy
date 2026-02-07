@@ -1,4 +1,5 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import CommunityCase from '../models/CommunityCase.js';
 import auth from '../middleware/auth.js';
 import { caseUpload } from '../config/cloudinary.js';
@@ -232,52 +233,70 @@ router.get('/moderation', auth, async (req, res) => {
 
         console.log('🔍 MongoDB query:', JSON.stringify(query));
 
-        // Fetch cases without populate first to debug
-        const cases = await CommunityCase.find(query)
-            .sort({ createdAt: -1 })
-            .lean(); // Use lean() for better error handling
+        try {
+            // Try to populate normally first
+            const cases = await CommunityCase.find(query)
+                .populate({
+                    path: 'author',
+                    select: 'name email',
+                    options: { strictPopulate: false } // Don't throw on missing refs
+                })
+                .sort({ createdAt: -1 })
+                .lean();
 
-        console.log('📦 Found cases (raw):', cases.length);
-
-        // Manually populate author to handle missing references
-        const casesWithAuthors = await Promise.all(
-            cases.map(async (caseItem) => {
-                try {
-                    if (caseItem.author) {
-                        const User = mongoose.model('User');
-                        const author = await User.findById(caseItem.author).select('name email').lean();
-                        return {
-                            ...caseItem,
-                            author: author || { name: 'Unknown User', email: 'deleted@user.com' }
-                        };
-                    }
+            console.log('📦 Found cases:', cases.length);
+            
+            // Clean up cases with missing authors
+            const cleanedCases = cases.map(caseItem => {
+                if (!caseItem.author || typeof caseItem.author === 'string') {
+                    // Author is missing or wasn't populated
                     return {
                         ...caseItem,
-                        author: { name: 'Unknown User', email: 'no-author@user.com' }
-                    };
-                } catch (authorError) {
-                    console.error('⚠️ Error fetching author for case:', caseItem._id, authorError);
-                    return {
-                        ...caseItem,
-                        author: { name: 'Unknown User', email: 'error@user.com' }
+                        author: { 
+                            _id: caseItem.author || null,
+                            name: 'Unknown User', 
+                            email: 'deleted@user.com' 
+                        }
                     };
                 }
-            })
-        );
+                return caseItem;
+            });
 
-        console.log('📦 Cases with authors:', casesWithAuthors.length);
-        console.log('📦 Case details:', casesWithAuthors.map(c => ({ 
-            id: c._id, 
-            title: c.title, 
-            status: c.status, 
-            author: c.author?.name 
-        })));
+            console.log('📦 Cleaned cases:', cleanedCases.length);
+            console.log('📦 Case details:', cleanedCases.slice(0, 3).map(c => ({ 
+                id: c._id, 
+                title: c.title, 
+                status: c.status, 
+                author: c.author?.name 
+            })));
 
-        res.json(casesWithAuthors);
+            res.json(cleanedCases);
+        } catch (populateError) {
+            console.error('⚠️ Populate failed, fetching without author:', populateError);
+            
+            // Fallback: fetch without populating
+            const cases = await CommunityCase.find(query)
+                .sort({ createdAt: -1 })
+                .lean();
+            
+            // Add placeholder authors
+            const casesWithPlaceholder = cases.map(caseItem => ({
+                ...caseItem,
+                author: { name: 'Unknown User', email: 'system@user.com' }
+            }));
+            
+            res.json(casesWithPlaceholder);
+        }
     } catch (error) {
         console.error('❌ Get moderation cases error:', error);
+        console.error('❌ Error name:', error.name);
+        console.error('❌ Error message:', error.message);
         console.error('❌ Error stack:', error.stack);
-        res.status(500).json({ error: 'Failed to fetch cases for moderation', details: error.message });
+        res.status(500).json({ 
+            error: 'Failed to fetch cases for moderation', 
+            details: error.message,
+            errorType: error.name 
+        });
     }
 });
 
