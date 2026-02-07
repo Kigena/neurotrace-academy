@@ -220,6 +220,7 @@ router.get('/moderation', auth, async (req, res) => {
         }
 
         const { status } = req.query;
+        console.log('🔍 Moderation query - status param:', status);
         let query = {};
 
         if (status === 'pending') {
@@ -229,13 +230,18 @@ router.get('/moderation', auth, async (req, res) => {
         }
         // 'all' returns everything
 
+        console.log('🔍 MongoDB query:', JSON.stringify(query));
+
         const cases = await CommunityCase.find(query)
             .populate('author', 'name email')
             .sort({ createdAt: -1 });
 
+        console.log('📦 Found cases:', cases.length);
+        console.log('📦 Case details:', cases.map(c => ({ id: c._id, title: c.title, status: c.status, author: c.author?.name })));
+
         res.json(cases);
     } catch (error) {
-        console.error('Get moderation cases error:', error);
+        console.error('❌ Get moderation cases error:', error);
         res.status(500).json({ error: 'Failed to fetch cases for moderation' });
     }
 });
