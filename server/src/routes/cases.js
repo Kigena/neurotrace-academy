@@ -174,29 +174,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// 4. Get Single Case Detail
-router.get('/:id', async (req, res) => {
-    try {
-        const communityCase = await CommunityCase.findById(req.params.id)
-            .populate('author', 'name')
-            .populate('comments.userId', 'name');
-
-        if (!communityCase) {
-            return res.status(404).json({ error: 'Case not found' });
-        }
-
-        // Increment view count
-        communityCase.views += 1;
-        await communityCase.save();
-
-        res.json(communityCase);
-    } catch (error) {
-        console.error('Get case detail error:', error);
-        res.status(500).json({ error: 'Failed to fetch case details' });
-    }
-});
-
-// 5a. Test endpoint - no database queries
+// 4a. Test endpoint - no database queries (MUST BE BEFORE /:id)
 router.get('/moderation/test', auth, (req, res) => {
     res.json({ 
         message: 'Moderation endpoint is working!',
@@ -206,7 +184,7 @@ router.get('/moderation/test', auth, (req, res) => {
     });
 });
 
-// 5b. Get pending cases count (for notification badge) - MUST BE BEFORE /moderation
+// 4b. Get pending cases count (for notification badge) (MUST BE BEFORE /:id)
 router.get('/moderation/pending-count', auth, async (req, res) => {
     try {
         // Check if user is admin
@@ -222,7 +200,7 @@ router.get('/moderation/pending-count', auth, async (req, res) => {
     }
 });
 
-// 5b. Get Cases for Moderation (Admin Only)
+// 4c. Get Cases for Moderation (Admin Only) (MUST BE BEFORE /:id)
 router.get('/moderation', auth, async (req, res) => {
     try {
         console.log('🔍 Moderation endpoint hit');
@@ -348,6 +326,28 @@ router.get('/moderation', auth, async (req, res) => {
             errorType: error.name,
             stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
         });
+    }
+});
+
+// 5. Get Single Case Detail (AFTER moderation routes to avoid conflict)
+router.get('/:id', async (req, res) => {
+    try {
+        const communityCase = await CommunityCase.findById(req.params.id)
+            .populate('author', 'name')
+            .populate('comments.userId', 'name');
+
+        if (!communityCase) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
+
+        // Increment view count
+        communityCase.views += 1;
+        await communityCase.save();
+
+        res.json(communityCase);
+    } catch (error) {
+        console.error('Get case detail error:', error);
+        res.status(500).json({ error: 'Failed to fetch case details' });
     }
 });
 
