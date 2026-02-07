@@ -196,7 +196,17 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// 5a. Get pending cases count (for notification badge) - MUST BE BEFORE /moderation
+// 5a. Test endpoint - no database queries
+router.get('/moderation/test', auth, (req, res) => {
+    res.json({ 
+        message: 'Moderation endpoint is working!',
+        user: req.user,
+        timestamp: new Date().toISOString(),
+        version: 'v1.0-debug'
+    });
+});
+
+// 5b. Get pending cases count (for notification badge) - MUST BE BEFORE /moderation
 router.get('/moderation/pending-count', auth, async (req, res) => {
     try {
         // Check if user is admin
