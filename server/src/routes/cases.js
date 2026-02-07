@@ -283,15 +283,29 @@ router.get('/moderation', auth, async (req, res) => {
             return res.json(casesWithPlaceholder);
         }
 
-        // Step 3: Manually populate authors
+        // Step 3: Manually populate authors with ObjectId validation
         console.log('👤 Populating authors...');
         const casesWithAuthors = await Promise.all(
             rawCases.map(async (caseItem) => {
                 try {
                     if (!caseItem.author) {
+                        console.log('⚠️ Case has no author:', caseItem._id);
                         return {
                             ...caseItem,
                             author: { name: 'No Author', email: 'none@user.com' }
+                        };
+                    }
+
+                    // Validate ObjectId format
+                    if (!mongoose.Types.ObjectId.isValid(caseItem.author)) {
+                        console.error('⚠️ Invalid author ObjectId for case:', caseItem._id, 'Author:', caseItem.author);
+                        return {
+                            ...caseItem,
+                            author: { 
+                                name: 'Invalid User ID', 
+                                email: 'corrupted@user.com',
+                                _corruptedId: String(caseItem.author)
+                            }
                         };
                     }
 
