@@ -33,9 +33,13 @@ function Navbar() {
       const fetchPendingCount = async () => {
         try {
           const data = await apiService.get('/cases/moderation/pending-count');
-          setPendingCasesCount(data.count || 0);
+          console.log('📊 Pending cases count from API:', data);
+          const count = data.count || 0;
+          console.log('📊 Setting pending count to:', count);
+          setPendingCasesCount(count);
         } catch (error) {
-          console.error('Failed to fetch pending cases count:', error);
+          console.error('❌ Failed to fetch pending cases count:', error);
+          setPendingCasesCount(0); // Reset to 0 on error
         }
       };
 
