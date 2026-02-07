@@ -490,7 +490,7 @@ function Home() {
               Share a Case
             </Link>
             <Link
-              to="/chat"
+              to="/cases"
               className="px-6 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20"
             >
               Join Discussion
