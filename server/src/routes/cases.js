@@ -232,17 +232,52 @@ router.get('/moderation', auth, async (req, res) => {
 
         console.log('🔍 MongoDB query:', JSON.stringify(query));
 
+        // Fetch cases without populate first to debug
         const cases = await CommunityCase.find(query)
-            .populate('author', 'name email')
-            .sort({ createdAt: -1 });
+            .sort({ createdAt: -1 })
+            .lean(); // Use lean() for better error handling
 
-        console.log('📦 Found cases:', cases.length);
-        console.log('📦 Case details:', cases.map(c => ({ id: c._id, title: c.title, status: c.status, author: c.author?.name })));
+        console.log('📦 Found cases (raw):', cases.length);
 
-        res.json(cases);
+        // Manually populate author to handle missing references
+        const casesWithAuthors = await Promise.all(
+            cases.map(async (caseItem) => {
+                try {
+                    if (caseItem.author) {
+                        const User = mongoose.model('User');
+                        const author = await User.findById(caseItem.author).select('name email').lean();
+                        return {
+                            ...caseItem,
+                            author: author || { name: 'Unknown User', email: 'deleted@user.com' }
+                        };
+                    }
+                    return {
+                        ...caseItem,
+                        author: { name: 'Unknown User', email: 'no-author@user.com' }
+                    };
+                } catch (authorError) {
+                    console.error('⚠️ Error fetching author for case:', caseItem._id, authorError);
+                    return {
+                        ...caseItem,
+                        author: { name: 'Unknown User', email: 'error@user.com' }
+                    };
+                }
+            })
+        );
+
+        console.log('📦 Cases with authors:', casesWithAuthors.length);
+        console.log('📦 Case details:', casesWithAuthors.map(c => ({ 
+            id: c._id, 
+            title: c.title, 
+            status: c.status, 
+            author: c.author?.name 
+        })));
+
+        res.json(casesWithAuthors);
     } catch (error) {
         console.error('❌ Get moderation cases error:', error);
-        res.status(500).json({ error: 'Failed to fetch cases for moderation' });
+        console.error('❌ Error stack:', error.stack);
+        res.status(500).json({ error: 'Failed to fetch cases for moderation', details: error.message });
     }
 });
 
