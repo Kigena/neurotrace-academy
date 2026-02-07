@@ -195,7 +195,23 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// 5. Get Cases for Moderation (Admin Only)
+// 5a. Get pending cases count (for notification badge) - MUST BE BEFORE /moderation
+router.get('/moderation/pending-count', auth, async (req, res) => {
+    try {
+        // Check if user is admin
+        if (req.user.role !== 'admin') {
+            return res.status(403).json({ error: 'Admin access required' });
+        }
+
+        const count = await CommunityCase.countDocuments({ status: 'pending' });
+        res.json({ count });
+    } catch (error) {
+        console.error('Get pending count error:', error);
+        res.status(500).json({ error: 'Failed to fetch pending count' });
+    }
+});
+
+// 5b. Get Cases for Moderation (Admin Only)
 router.get('/moderation', auth, async (req, res) => {
     try {
         // Check if user is admin

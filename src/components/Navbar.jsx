@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { useSocket } from "../contexts/SocketContext";
 import ThemeSelector from "./ThemeSelector";
 import SmartSearch from "./SmartSearch";
+import apiService from "../services/apiService";
 
 const navLinkClasses = ({ isActive }) =>
   [
@@ -19,11 +20,32 @@ function Navbar() {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showThemeSelector, setShowThemeSelector] = useState(false);
+  const [pendingCasesCount, setPendingCasesCount] = useState(0);
 
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
+
+  // Fetch pending cases count for admin users
+  useEffect(() => {
+    if (user?.role === 'admin') {
+      const fetchPendingCount = async () => {
+        try {
+          const data = await apiService.get('/cases/moderation/pending-count');
+          setPendingCasesCount(data.count || 0);
+        } catch (error) {
+          console.error('Failed to fetch pending cases count:', error);
+        }
+      };
+
+      fetchPendingCount();
+      
+      // Refresh count every 30 seconds
+      const interval = setInterval(fetchPendingCount, 30000);
+      return () => clearInterval(interval);
+    }
+  }, [user]);
 
   return (
     <header className="border-b border-slate-200 bg-white">
@@ -90,7 +112,14 @@ function Navbar() {
             </NavLink>
             {user?.role === 'admin' && (
               <NavLink to="/admin/moderation" className={navLinkClasses}>
-                🛡️ Moderation
+                <span className="flex items-center gap-1.5">
+                  🛡️ Moderation
+                  {pendingCasesCount > 0 && (
+                    <span className="inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-600 rounded-full animate-pulse">
+                      {pendingCasesCount > 9 ? '9+' : pendingCasesCount}
+                    </span>
+                  )}
+                </span>
               </NavLink>
             )}
           </nav>
@@ -165,7 +194,14 @@ function Navbar() {
             </NavLink>
             {user?.role === 'admin' && (
               <NavLink to="/admin/moderation" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
-                🛡️ Moderation
+                <span className="flex items-center gap-1.5">
+                  🛡️ Moderation
+                  {pendingCasesCount > 0 && (
+                    <span className="inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-600 rounded-full animate-pulse">
+                      {pendingCasesCount > 9 ? '9+' : pendingCasesCount}
+                    </span>
+                  )}
+                </span>
               </NavLink>
             )}
           </nav>
