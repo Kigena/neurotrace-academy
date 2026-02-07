@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 function ChatMessage({ message, isUser }) {
     return (
@@ -16,7 +17,13 @@ function ChatMessage({ message, isUser }) {
             </div>
             <div className="chat-message-content">
                 <div className={`chat-bubble ${isUser ? 'bubble-user' : 'bubble-ai'}`}>
-                    {message.content}
+                    {isUser ? (
+                        message.content
+                    ) : (
+                        <div className="prose prose-sm max-w-none prose-p:my-2 prose-strong:font-bold prose-ul:my-2 prose-li:my-1">
+                            <ReactMarkdown>{message.content}</ReactMarkdown>
+                        </div>
+                    )}
                 </div>
                 <div className="chat-message-time">
                     {new Date(message.timestamp).toLocaleTimeString([], {

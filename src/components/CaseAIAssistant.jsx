@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import apiService from '../services/apiService';
 
 /**
@@ -150,17 +151,11 @@ const CaseAIAssistant = ({ caseId, caseData }) => {
                                 </button>
                             </div>
 
-                            {/* Response Content with unlimited text */}
-                            <div className="prose prose-sm max-w-none">
-                                <div 
-                                    className="whitespace-pre-wrap text-slate-700 leading-relaxed"
-                                    style={{ 
-                                        maxHeight: 'none', // Remove height limit
-                                        overflow: 'visible' // Show all content
-                                    }}
-                                >
+                            {/* Response Content with markdown rendering */}
+                            <div className="prose prose-sm max-w-none prose-p:text-slate-700 prose-p:leading-relaxed prose-headings:text-slate-900 prose-strong:text-slate-900 prose-strong:font-bold">
+                                <ReactMarkdown>
                                     {response}
-                                </div>
+                                </ReactMarkdown>
                             </div>
 
                             {/* Copy Button */}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import apiService from '../services/apiService';
 
 /**
@@ -98,17 +99,9 @@ const StudyNotesButton = ({ pageTitle, pageContent, caseId = null }) => {
                         </div>
                     </div>
                     
-                    {/* Notes Content - No character limit */}
-                    <div 
-                        className="prose prose-sm max-w-none bg-white rounded-lg p-6 border border-emerald-200"
-                        style={{ 
-                            maxHeight: 'none',
-                            overflow: 'visible'
-                        }}
-                    >
-                        <div className="whitespace-pre-wrap text-slate-800 leading-relaxed">
-                            {studyNotes}
-                        </div>
+                    {/* Notes Content - No character limit, with markdown rendering */}
+                    <div className="prose prose-sm max-w-none bg-white rounded-lg p-6 border border-emerald-200 prose-p:text-slate-800 prose-headings:text-slate-900 prose-strong:font-bold prose-ul:text-slate-800 prose-li:text-slate-800">
+                        <ReactMarkdown>{studyNotes}</ReactMarkdown>
                     </div>
 
                     <div className="flex justify-end">

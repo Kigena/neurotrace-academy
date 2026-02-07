@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import apiService from '../services/apiService';
 
 /**
@@ -88,8 +89,8 @@ const ExplainPageButton = ({ pageTitle, pageContent, contentType = 'page' }) => 
                         </button>
                     </div>
                     
-                    <div className="prose prose-sm max-w-none text-purple-900">
-                        <div className="whitespace-pre-wrap">{explanation}</div>
+                    <div className="prose prose-sm max-w-none prose-p:text-purple-900 prose-headings:text-purple-900 prose-strong:text-purple-900 prose-strong:font-bold prose-ul:text-purple-900 prose-li:text-purple-900">
+                        <ReactMarkdown>{explanation}</ReactMarkdown>
                     </div>
 
                     <div className="flex gap-3 pt-4 border-t border-purple-200">
