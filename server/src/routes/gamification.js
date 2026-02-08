@@ -6,6 +6,7 @@ import UserProgress from '../models/UserProgress.js';
 import Achievement from '../models/Achievement.js';
 import CommunityCase from '../models/CommunityCase.js';
 import { QuizSession } from '../models/QuizSession.js';
+import { User } from '../models/User.js';
 
 const router = express.Router();
 
@@ -191,22 +192,44 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         console.log(`🔍 User ID type: ${typeof userId}`);
         console.log(`🔍 User object:`, req.user);
         
+        // Verify the user exists in the database
+        const userObjectId = new mongoose.Types.ObjectId(userId);
+        const userExists = await User.findById(userObjectId);
+        if (!userExists) {
+            console.error(`❌ User ${userId} not found in database!`);
+            return res.status(404).json({ 
+                error: 'User not found in database',
+                userId,
+                suggestion: 'User might have been deleted or ID is incorrect'
+            });
+        }
+        console.log(`✅ User exists in database:`, userExists.name);
+        
         // FIRST: Ensure UserProgress exists for this user
         // UserProgress uses 'user' field (ObjectId), not 'userId'
-        const userObjectId = new mongoose.Types.ObjectId(userId);
         let progress = await UserProgress.findOne({ user: userObjectId });
         
         if (!progress) {
             console.log(`📝 Creating new UserProgress for user ${userId}...`);
-            progress = new UserProgress({
-                user: userObjectId,  // Use 'user' field, not 'userId'
-                xp: 0,
-                level: 1
-            });
-            await progress.save();
-            console.log(`✅ UserProgress created successfully`);
+            try {
+                progress = new UserProgress({
+                    user: userObjectId,  // Use 'user' field, not 'userId'
+                    xp: 0,
+                    level: 1
+                });
+                await progress.save();
+                console.log(`✅ UserProgress created successfully:`, progress._id);
+            } catch (createError) {
+                console.error(`❌ Failed to create UserProgress:`, createError);
+                return res.status(500).json({ 
+                    error: 'Failed to create user progress',
+                    details: createError.message,
+                    userId,
+                    userObjectId: userObjectId.toString()
+                });
+            }
         } else {
-            console.log(`✅ UserProgress already exists`);
+            console.log(`✅ UserProgress already exists:`, progress._id);
         }
         
         // 1. Award XP for existing published cases
