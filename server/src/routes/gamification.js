@@ -26,7 +26,7 @@ router.get('/achievements', auth, async (req, res) => {
     try {
         const userProgress = await UserProgress.findOne({ user: req.user.id });
         const allAchievements = await Achievement.find({ isActive: true }).sort({ order: 1, category: 1 });
-        
+
         // Add unlock status to each achievement
         // UserProgress uses 'unlockedAchievements' field
         const achievementsWithStatus = allAchievements.map(achievement => {
@@ -36,14 +36,14 @@ router.get('/achievements', auth, async (req, res) => {
             const unlockedData = userProgress?.unlockedAchievements?.find(
                 a => a.achievement.toString() === achievement._id.toString()
             );
-            
+
             return {
                 ...achievement.toObject(),
                 unlocked: !!unlocked,
                 unlockedAt: unlockedData?.unlockedAt || null
             };
         });
-        
+
         res.json(achievementsWithStatus);
     } catch (error) {
         console.error('Get achievements error:', error);
@@ -56,10 +56,10 @@ router.get('/leaderboard/:type?', auth, async (req, res) => {
     try {
         const { type = 'overall' } = req.params;
         const limit = parseInt(req.query.limit) || 50;
-        
+
         const leaderboard = await GamificationService.getLeaderboard(type, limit);
         const userRank = await GamificationService.getUserRank(req.user.id);
-        
+
         res.json({
             leaderboard,
             userRank
@@ -75,24 +75,24 @@ router.post('/achievements/:id/claim', auth, async (req, res) => {
     try {
         const achievementId = req.params.id;
         const progress = await UserProgress.findOne({ user: req.user.id });
-        
+
         if (!progress) {
             return res.status(404).json({ error: 'User progress not found' });
         }
-        
+
         // Check if already unlocked
         const alreadyUnlocked = progress.achievements.some(
             a => a.achievementId.toString() === achievementId
         );
-        
+
         if (alreadyUnlocked) {
             return res.status(400).json({ error: 'Achievement already unlocked' });
         }
-        
+
         // Unlock the achievement
         await progress.unlockAchievement(achievementId);
         await progress.save();
-        
+
         res.json({ message: 'Achievement claimed successfully', progress });
     } catch (error) {
         console.error('Claim achievement error:', error);
@@ -115,16 +115,16 @@ router.post('/initialize-achievements', auth, async (req, res) => {
 router.get('/activity-history', auth, async (req, res) => {
     try {
         const progress = await UserProgress.findOne({ user: req.user.id });
-        
+
         if (!progress) {
             return res.json({ activities: [] });
         }
-        
+
         // Get recent activities from activityLog
         const recentActivities = progress.activityLog
             .sort((a, b) => b.timestamp - a.timestamp)
             .slice(0, 50);
-        
+
         res.json({ activities: recentActivities });
     } catch (error) {
         console.error('Get activity history error:', error);
@@ -136,32 +136,32 @@ router.get('/activity-history', auth, async (req, res) => {
 router.get('/debug-migration', auth, async (req, res) => {
     try {
         const userId = req.user.id;
-        
+
         console.log('🔍 DEBUG: User ID from auth:', userId);
         console.log('🔍 DEBUG: User ID type:', typeof userId);
-        
+
         // Try multiple query formats
         const allCases = await CommunityCase.find({ status: 'published' }).lean();
         console.log('🔍 DEBUG: Total published cases:', allCases.length);
-        
+
         // Try direct string comparison
         const casesStringMatch = allCases.filter(c => c.author.toString() === userId);
         console.log('🔍 DEBUG: Cases with string match:', casesStringMatch.length);
-        
+
         // Try ObjectId comparison
         const userObjectId = new mongoose.Types.ObjectId(userId);
         const casesObjectIdMatch = allCases.filter(c => c.author.toString() === userObjectId.toString());
         console.log('🔍 DEBUG: Cases with ObjectId match:', casesObjectIdMatch.length);
-        
+
         // Try using .equals()
         const casesEqualsMatch = allCases.filter(c => {
-            const authorId = mongoose.Types.ObjectId.isValid(c.author) 
-                ? new mongoose.Types.ObjectId(c.author) 
+            const authorId = mongoose.Types.ObjectId.isValid(c.author)
+                ? new mongoose.Types.ObjectId(c.author)
                 : c.author;
             return authorId.equals(userObjectId);
         });
         console.log('🔍 DEBUG: Cases with .equals() match:', casesEqualsMatch.length);
-        
+
         res.json({
             userId,
             userIdType: typeof userId,
@@ -193,28 +193,28 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         const userId = req.user.id;
         let totalXP = 0;
         const activities = [];
-        
+
         console.log(`🔄 Starting migration for user ${userId}...`);
         console.log(`🔍 User ID type: ${typeof userId}`);
         console.log(`🔍 User object:`, req.user);
-        
+
         // Verify the user exists in the database
         const userObjectId = new mongoose.Types.ObjectId(userId);
         const userExists = await User.findById(userObjectId);
         if (!userExists) {
             console.error(`❌ User ${userId} not found in database!`);
-            return res.status(404).json({ 
+            return res.status(404).json({
                 error: 'User not found in database',
                 userId,
                 suggestion: 'User might have been deleted or ID is incorrect'
             });
         }
         console.log(`✅ User exists in database:`, userExists.name);
-        
+
         // FIRST: Ensure UserProgress exists for this user
         // UserProgress uses 'user' field (ObjectId), not 'userId'
         let progress = await UserProgress.findOne({ user: userObjectId });
-        
+
         if (!progress) {
             console.log(`📝 Creating new UserProgress for user ${userId}...`);
             try {
@@ -227,7 +227,7 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
                 console.log(`✅ UserProgress created successfully:`, progress._id);
             } catch (createError) {
                 console.error(`❌ Failed to create UserProgress:`, createError);
-                return res.status(500).json({ 
+                return res.status(500).json({
                     error: 'Failed to create user progress',
                     details: createError.message,
                     userId,
@@ -237,20 +237,20 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         } else {
             console.log(`✅ UserProgress already exists:`, progress._id);
         }
-        
+
         // 1. Award XP for existing published cases
         // Get all published cases first
         const allPublishedCases = await CommunityCase.find({ status: 'published' }).lean();
         console.log(`📋 Total published cases in DB: ${allPublishedCases.length}`);
-        
+
         // Filter for user's cases using string comparison (most reliable)
         const userCases = allPublishedCases.filter(c => c.author.toString() === userId);
         console.log(`📋 Found ${userCases.length} published cases for user ${userId}`);
-        
+
         // Debug: Show all case authors
         console.log(`🔍 All case authors:`, allPublishedCases.map(c => c.author.toString()));
         console.log(`🔍 Looking for:`, userId);
-        
+
         for (const caseItem of userCases) {
             // These cases are already published, so award XP for both share and approval
             // Award 50 XP for sharing
@@ -259,14 +259,14 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
                 title: caseItem.title,
                 retroactive: true
             });
-            
+
             // Award 25 XP bonus for being approved (updates casesApproved stat)
             await GamificationService.awardXP(userId, 25, 'case_approved', {
                 caseId: caseItem._id.toString(),
                 title: caseItem.title,
                 retroactive: true
             });
-            
+
             const xpForCase = 75; // Total
             totalXP += xpForCase;
             activities.push({
@@ -275,12 +275,12 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
                 caseTitle: caseItem.title
             });
         }
-        
+
         // 2. Award XP for existing comments
         const casesWithComments = await CommunityCase.find({}).lean();
-        
+
         let commentCount = 0;
-        
+
         for (const caseItem of casesWithComments) {
             if (caseItem.comments) {
                 const userComments = caseItem.comments.filter(
@@ -289,9 +289,9 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
                 commentCount += userComments.length;
             }
         }
-        
+
         console.log(`💬 Found ${commentCount} comments from user ${userId}`);
-        
+
         if (commentCount > 0) {
             const xpForComments = commentCount * 10; // 10 XP per comment
             await GamificationService.awardXP(userId, xpForComments, 'comment_post', {
@@ -305,15 +305,15 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
                 count: commentCount
             });
         }
-        
+
         // 3. Award XP for completed quizzes
         const completedQuizzes = await QuizSession.find({
             userId: userId, // QuizSession stores userId as string
             endTime: { $ne: null } // Only completed quizzes
         }).lean();
-        
+
         console.log(`📝 Found ${completedQuizzes.length} completed quizzes for user ${userId}`);
-        
+
         for (const quiz of completedQuizzes) {
             if (quiz.answers && quiz.answers.size > 0) {
                 // Calculate score from answers
@@ -321,11 +321,11 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
                 const correct = answers.filter(a => a.isCorrect).length;
                 const total = answers.length;
                 const percent = total > 0 ? (correct / total) * 100 : 0;
-                
+
                 // XP calculation based on score percentage
                 let xpReward = 0;
                 let activityType = 'quiz_completion';
-                
+
                 if (percent === 100) {
                     xpReward = 100; // Perfect score bonus
                     activityType = 'quiz_perfect';
@@ -340,14 +340,14 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
                 } else {
                     xpReward = 20; // Participation XP
                 }
-                
+
                 await GamificationService.awardXP(userId, xpReward, activityType, {
                     sessionId: quiz.sessionId,
                     mode: quiz.mode,
                     score: { correct, total, percent },
                     retroactive: true
                 });
-                
+
                 totalXP += xpReward;
                 activities.push({
                     type: 'quiz',
@@ -356,20 +356,20 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
                 });
             }
         }
-        
+
         // 4. Reload progress and check achievements after migration
         progress = await UserProgress.findOne({ user: userObjectId });
-        
+
         if (progress) {
             await GamificationService.checkAchievements(userId, progress);
             console.log(`✅ Migration complete! Total XP awarded: ${totalXP}`);
         } else {
             console.error(`❌ UserProgress not found after migration!`);
         }
-        
+
         // Fetch final updated progress to return
         const updatedProgress = await UserProgress.findOne({ user: userObjectId });
-        
+
         res.json({
             message: 'Migration successful',
             totalXPAwarded: totalXP,
@@ -401,24 +401,24 @@ router.post('/fix-stats', auth, async (req, res) => {
     try {
         const userId = req.user.id;
         const userObjectId = new mongoose.Types.ObjectId(userId);
-        
+
         console.log(`🔧 Fixing stats for user ${userId}...`);
-        
+
         // Get user progress
         const progress = await UserProgress.findOne({ user: userObjectId });
-        
+
         if (!progress) {
             return res.status(404).json({ error: 'UserProgress not found' });
         }
-        
+
         console.log('📊 Current stats:', progress.stats);
-        
+
         // Count actual activities
-        const userCases = await CommunityCase.find({ 
+        const userCases = await CommunityCase.find({
             author: userObjectId,
             status: 'published'
         }).lean();
-        
+
         const casesWithComments = await CommunityCase.find({}).lean();
         let commentCount = 0;
         for (const caseItem of casesWithComments) {
@@ -429,12 +429,12 @@ router.post('/fix-stats', auth, async (req, res) => {
                 commentCount += userComments.length;
             }
         }
-        
+
         const completedQuizzes = await QuizSession.find({
             userId: userId,
             endTime: { $ne: null }
         }).lean();
-        
+
         let perfectQuizzes = 0;
         for (const quiz of completedQuizzes) {
             if (quiz.answers && quiz.answers.size > 0) {
@@ -446,20 +446,20 @@ router.post('/fix-stats', auth, async (req, res) => {
                 }
             }
         }
-        
+
         console.log(`📋 Found: ${userCases.length} cases, ${commentCount} comments, ${completedQuizzes.length} quizzes (${perfectQuizzes} perfect)`);
-        
+
         // Update stats (WITHOUT awarding XP)
         progress.stats.casesShared = userCases.length;
         progress.stats.casesApproved = userCases.length; // All published cases are approved
         progress.stats.commentsPosted = commentCount;
         progress.stats.quizzesCompleted = completedQuizzes.length;
         progress.stats.perfectScores = perfectQuizzes;
-        
+
         await progress.save();
-        
+
         console.log('✅ Stats updated:', progress.stats);
-        
+
         res.json({
             message: 'Stats fixed successfully',
             stats: progress.stats,
@@ -481,27 +481,27 @@ router.post('/recalculate-xp', auth, async (req, res) => {
     try {
         const userId = req.user.id;
         const userObjectId = new mongoose.Types.ObjectId(userId);
-        
+
         console.log(`🔧 Recalculating XP for user ${userId}...`);
-        
+
         const progress = await UserProgress.findOne({ user: userObjectId });
-        
+
         if (!progress) {
             return res.status(404).json({ error: 'UserProgress not found' });
         }
-        
+
         const oldXP = progress.xp;
         const oldLevel = progress.level;
-        
+
         console.log('📊 Current progress:', {
             level: oldLevel,
             xp: oldXP,
             stats: progress.stats
         });
-        
+
         // Calculate expected XP based on stats (with null-safety)
         let calculatedXP = 0;
-        
+
         // Safely get stat values with default of 0
         const casesShared = progress.stats?.casesShared || 0;
         const casesApproved = progress.stats?.casesApproved || 0;
@@ -509,57 +509,57 @@ router.post('/recalculate-xp', auth, async (req, res) => {
         const quizzesCompleted = progress.stats?.quizzesCompleted || 0;
         const perfectScores = progress.stats?.perfectScores || 0;
         const achievementsCount = progress.unlockedAchievements?.length || 0;
-        
+
         // Cases: 50 XP per share + 25 XP per approval
         const casesXP = (casesShared * 50) + (casesApproved * 25);
         calculatedXP += casesXP;
         console.log(`📋 Cases: ${casesShared} shared (${casesShared * 50} XP) + ${casesApproved} approved (${casesApproved * 25} XP) = ${casesXP} XP`);
-        
+
         // Comments: 10 XP each
         const commentsXP = commentsPosted * 10;
         calculatedXP += commentsXP;
         console.log(`💬 Comments: ${commentsPosted} × 10 = ${commentsXP} XP`);
-        
+
         // Quizzes: Average 50 XP per quiz (since we don't have exact scores)
         // But if they have perfect scores, count those as 100 XP
         const regularQuizzes = quizzesCompleted - perfectScores;
         const quizzesXP = (regularQuizzes * 50) + (perfectScores * 100);
         calculatedXP += quizzesXP;
         console.log(`📝 Quizzes: ${regularQuizzes} regular (${regularQuizzes * 50} XP) + ${perfectScores} perfect (${perfectScores * 100} XP) = ${quizzesXP} XP`);
-        
+
         // Achievement bonuses (estimate ~50 XP per achievement unlocked)
         const achievementBonus = achievementsCount * 50;
         calculatedXP += achievementBonus;
         console.log(`🏅 Achievement bonuses: ${achievementsCount} × 50 = ${achievementBonus} XP`);
-        
+
         console.log(`\n💰 Total Calculated XP: ${calculatedXP}`);
         console.log(`📊 Current XP in DB: ${oldXP}`);
         console.log(`📈 Difference: ${calculatedXP - oldXP}`);
-        
+
         // Ensure calculatedXP is a valid number
         if (isNaN(calculatedXP) || !isFinite(calculatedXP)) {
             console.error('❌ Calculated XP is not a valid number:', calculatedXP);
-            return res.status(500).json({ 
+            return res.status(500).json({
                 error: 'Failed to calculate valid XP',
                 calculatedXP,
                 stats: progress.stats
             });
         }
-        
+
         // Recalculate level based on XP
         let newLevel = 1;
         let xpForNextLevel = 100;
         let remainingXP = calculatedXP;
-        
+
         while (remainingXP >= xpForNextLevel) {
             remainingXP -= xpForNextLevel;
             newLevel++;
             xpForNextLevel = newLevel * 100;
         }
-        
+
         console.log(`🎮 Calculated Level: ${newLevel}`);
         console.log(`📈 XP to Next Level: ${xpForNextLevel}`);
-        
+
         // DIRECT database update using findByIdAndUpdate to bypass model methods
         const updated = await UserProgress.findByIdAndUpdate(
             progress._id,
@@ -572,7 +572,7 @@ router.post('/recalculate-xp', auth, async (req, res) => {
             },
             { new: true } // Return updated document
         );
-        
+
         console.log(`✅ XP forcefully updated! Level ${oldLevel} → ${newLevel}, XP ${oldXP} → ${calculatedXP}`);
         console.log('✅ Updated document:', {
             _id: updated._id,
@@ -580,15 +580,26 @@ router.post('/recalculate-xp', auth, async (req, res) => {
             xp: updated.xp,
             xpToNextLevel: updated.xpToNextLevel
         });
-        
+
+        // Check for newly unlocked achievements based on updated stats
+        console.log('🏅 Checking for achievements...');
+        const newAchievements = await GamificationService.checkAchievements(userId, updated);
+        if (newAchievements.length > 0) {
+            console.log(`🎉 Unlocked ${newAchievements.length} new achievements:`, newAchievements.map(a => a.name));
+        }
+
+        // Re-fetch progress to get any achievement updates
+        const finalProgress = await UserProgress.findOne({ user: userObjectId });
+
         res.json({
             message: 'XP recalculated and updated successfully',
             oldXP,
             newXP: calculatedXP,
             oldLevel,
             newLevel,
-            stats: updated.stats,
-            achievements: updated.unlockedAchievements.length,
+            stats: finalProgress.stats,
+            achievements: finalProgress.unlockedAchievements.length,
+            newlyUnlocked: newAchievements,
             breakdown: {
                 casesXP,
                 commentsXP,
