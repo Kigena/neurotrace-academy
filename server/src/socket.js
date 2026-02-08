@@ -9,8 +9,19 @@ const onlineUsers = new Map();
 // Store typing status: Map<roomId, Set<userId>>
 const typingUsers = new Map();
 
+// Store Socket.io instance globally for access by other services
+let io = null;
+
+// Export function to get Socket.io instance
+export const getIO = () => {
+    if (!io) {
+        throw new Error('Socket.io not initialized. Call initializeSocket first.');
+    }
+    return io;
+};
+
 export const initializeSocket = (httpServer) => {
-    const io = new Server(httpServer, {
+    io = new Server(httpServer, {
         cors: {
             origin: process.env.CLIENT_URL || ['http://localhost:5002', 'https://neurotrace-academy2.vercel.app'],
             methods: ['GET', 'POST'],
@@ -55,12 +66,12 @@ export const initializeSocket = (httpServer) => {
 
         // Private message
         socket.on('message:private', async ({ senderId, senderName, recipientId, content, attachments }) => {
-            console.log('📥 Received private message:', { 
-                senderId, 
-                senderName, 
-                recipientId, 
+            console.log('📥 Received private message:', {
+                senderId,
+                senderName,
+                recipientId,
                 content: content?.substring(0, 50),
-                attachmentsCount: attachments?.length || 0 
+                attachmentsCount: attachments?.length || 0
             });
             try {
                 const message = new Message({
@@ -72,11 +83,11 @@ export const initializeSocket = (httpServer) => {
                     read: false,
                     attachments: attachments || []
                 });
-                
+
                 console.log('💾 Saving private message with attachments:', {
                     attachmentsCount: message.attachments?.length || 0
                 });
-                
+
                 await message.save();
                 console.log('✅ Private message saved:', message._id, 'attachments:', message.attachments?.length || 0);
 
@@ -98,12 +109,12 @@ export const initializeSocket = (httpServer) => {
 
         // Public chat message
         socket.on('message:public', async ({ senderId, senderName, content, attachments }) => {
-            console.log('📥 Received message:public event', { 
-                senderId, 
-                senderName, 
-                content: content?.substring(0, 50), 
+            console.log('📥 Received message:public event', {
+                senderId,
+                senderName,
+                content: content?.substring(0, 50),
                 attachmentsCount: attachments?.length || 0,
-                attachments: attachments 
+                attachments: attachments
             });
             try {
                 const message = new Message({
@@ -114,15 +125,15 @@ export const initializeSocket = (httpServer) => {
                     roomId: null,
                     attachments: attachments || []
                 });
-                
+
                 console.log('💾 Saving message with attachments:', {
                     messageId: message._id,
                     attachmentsCount: message.attachments?.length || 0,
                     attachmentDetails: message.attachments
                 });
-                
+
                 await message.save();
-                
+
                 console.log('✅ Message saved to DB:', {
                     id: message._id,
                     hasAttachments: message.attachments && message.attachments.length > 0,
@@ -179,11 +190,11 @@ export const initializeSocket = (httpServer) => {
 
         // AI bot message
         socket.on('message:ai', async ({ senderId, senderName, roomId, content, userContext, attachments }) => {
-            console.log('📥 Received message:ai event', { 
-                senderId, 
-                senderName, 
+            console.log('📥 Received message:ai event', {
+                senderId,
+                senderName,
                 content: content?.substring(0, 50),
-                attachmentsCount: attachments?.length || 0 
+                attachmentsCount: attachments?.length || 0
             });
             try {
                 // Save user's message
@@ -195,11 +206,11 @@ export const initializeSocket = (httpServer) => {
                     content,
                     attachments: attachments || []
                 });
-                
+
                 console.log('💾 Saving AI message with attachments:', {
                     attachmentsCount: userMessage.attachments?.length || 0
                 });
-                
+
                 await userMessage.save();
                 console.log('✅ User AI message saved:', userMessage._id, 'attachments:', userMessage.attachments?.length || 0);
 

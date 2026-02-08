@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import apiService from '../services/apiService';
-import { getSocket } from '../services/socket';
+import { useSocket } from './SocketContext';
 
 const SystemNotificationContext = createContext();
 
@@ -15,6 +15,7 @@ export const useSystemNotifications = () => {
 
 export const SystemNotificationProvider = ({ children }) => {
     const { user } = useAuth();
+    const { socket } = useSocket();
     const [notifications, setNotifications] = useState([]);
     const [unreadCount, setUnreadCount] = useState(0);
     const [loading, setLoading] = useState(false);
@@ -32,10 +33,7 @@ export const SystemNotificationProvider = ({ children }) => {
 
     // Setup Socket.io listener for real-time notifications
     useEffect(() => {
-        if (!user) return;
-
-        const socket = getSocket();
-        if (!socket) return;
+        if (!user || !socket) return;
 
         const handleNotification = (notification) => {
             console.log('📬 New notification received:', notification);
@@ -55,7 +53,7 @@ export const SystemNotificationProvider = ({ children }) => {
         return () => {
             socket.off('notification', handleNotification);
         };
-    }, [user]);
+    }, [user, socket]);
 
     const loadNotifications = async () => {
         try {
