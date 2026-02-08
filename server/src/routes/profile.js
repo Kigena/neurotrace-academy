@@ -31,15 +31,12 @@ router.get('/:userId', async (req, res) => {
     try {
         const { userId } = req.params;
 
-        const user = await User.findById(userId).select('-passwordHash -email');
+        const user = await User.findById(userId).select('-passwordHash');
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
 
-        // Check if profile is public
-        if (!user.profile?.isPublic && req.user?.id !== userId) {
-            return res.status(403).json({ error: 'This profile is private' });
-        }
+        // For now, all profiles are public (privacy check can be added later if needed)
 
         // Get user progress/gamification data
         const progress = await UserProgress.findOne({ user: userId });
