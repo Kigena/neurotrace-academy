@@ -3,10 +3,11 @@ import auth from '../middleware/auth.js';
 import GamificationService from '../services/gamificationService.js';
 import UserProgress from '../models/UserProgress.js';
 import Achievement from '../models/Achievement.js';
+import CommunityCase from '../models/CommunityCase.js';
 
 const router = express.Router();
 
-// Get user's progress and achievements
+// Get user's gamification progress
 router.get('/progress', auth, async (req, res) => {
     try {
         const progress = await GamificationService.getUserProgress(req.user.id);
@@ -17,22 +18,27 @@ router.get('/progress', auth, async (req, res) => {
     }
 });
 
-// Get all available achievements
+// Get all achievements (with user's unlock status)
 router.get('/achievements', auth, async (req, res) => {
     try {
-        const achievements = await Achievement.find({ isActive: true })
-            .sort({ category: 1, order: 1 });
+        const userProgress = await UserProgress.findOne({ userId: req.user.id });
+        const allAchievements = await Achievement.find({ isActive: true }).sort({ order: 1, category: 1 });
         
-        // Get user's unlocked achievements
-        const userProgress = await UserProgress.findOne({ user: req.user.id });
-        const unlockedIds = userProgress 
-            ? userProgress.unlockedAchievements.map(a => a.achievement.toString())
-            : [];
-        
-        const achievementsWithStatus = achievements.map(a => ({
-            ...a.toObject(),
-            unlocked: unlockedIds.includes(a._id.toString())
-        }));
+        // Add unlock status to each achievement
+        const achievementsWithStatus = allAchievements.map(achievement => {
+            const unlocked = userProgress?.achievements.some(
+                a => a.achievementId.toString() === achievement._id.toString()
+            );
+            const unlockedDate = userProgress?.achievements.find(
+                a => a.achievementId.toString() === achievement._id.toString()
+            )?.unlockedAt;
+            
+            return {
+                ...achievement.toObject(),
+                unlocked,
+                unlockedAt: unlockedDate || null
+            };
+        });
         
         res.json(achievementsWithStatus);
     } catch (error) {
@@ -44,130 +50,162 @@ router.get('/achievements', auth, async (req, res) => {
 // Get leaderboard
 router.get('/leaderboard/:type?', auth, async (req, res) => {
     try {
-        const type = req.params.type || 'overall';
+        const { type = 'overall' } = req.params;
         const limit = parseInt(req.query.limit) || 50;
         
         const leaderboard = await GamificationService.getLeaderboard(type, limit);
-        
-        // Get current user's rank
-        const userRank = await GamificationService.getUserRank(req.user.id);
-        
-        res.json({
-            leaderboard,
-            userRank
-        });
+        res.json(leaderboard);
     } catch (error) {
         console.error('Get leaderboard error:', error);
         res.status(500).json({ error: 'Failed to fetch leaderboard' });
     }
 });
 
-// Get user's rank
-router.get('/rank', auth, async (req, res) => {
-    try {
-        const rank = await GamificationService.getUserRank(req.user.id);
-        res.json(rank);
-    } catch (error) {
-        console.error('Get rank error:', error);
-        res.status(500).json({ error: 'Failed to fetch rank' });
-    }
-});
-
-// Claim achievement (mark as viewed)
+// Claim an achievement (for manual claims)
 router.post('/achievements/:id/claim', auth, async (req, res) => {
     try {
-        const userProgress = await UserProgress.findOne({ user: req.user.id });
+        const achievementId = req.params.id;
+        const progress = await UserProgress.findOne({ userId: req.user.id });
         
-        if (!userProgress) {
-            return res.status(404).json({ error: 'Progress not found' });
+        if (!progress) {
+            return res.status(404).json({ error: 'User progress not found' });
         }
         
-        const achievement = userProgress.unlockedAchievements.find(
-            a => a.achievement.toString() === req.params.id
+        // Check if already unlocked
+        const alreadyUnlocked = progress.achievements.some(
+            a => a.achievementId.toString() === achievementId
         );
         
-        if (!achievement) {
-            return res.status(404).json({ error: 'Achievement not unlocked' });
+        if (alreadyUnlocked) {
+            return res.status(400).json({ error: 'Achievement already unlocked' });
         }
         
-        achievement.claimed = true;
-        await userProgress.save();
+        // Unlock the achievement
+        await progress.unlockAchievement(achievementId);
+        await progress.save();
         
-        res.json({ success: true, message: 'Achievement claimed' });
+        res.json({ message: 'Achievement claimed successfully', progress });
     } catch (error) {
         console.error('Claim achievement error:', error);
         res.status(500).json({ error: 'Failed to claim achievement' });
     }
 });
 
-// Manual XP award (admin only - for testing or special events)
-router.post('/award-xp', auth, async (req, res) => {
-    try {
-        // Check if user is admin
-        if (req.user.role !== 'admin') {
-            return res.status(403).json({ error: 'Admin access required' });
-        }
-        
-        const { userId, xp, reason } = req.body;
-        
-        if (!userId || !xp) {
-            return res.status(400).json({ error: 'userId and xp are required' });
-        }
-        
-        const result = await GamificationService.awardXP(
-            userId, 
-            xp, 
-            'admin_award', 
-            { reason }
-        );
-        
-        res.json(result);
-    } catch (error) {
-        console.error('Award XP error:', error);
-        res.status(500).json({ error: 'Failed to award XP' });
-    }
-});
-
-// Initialize achievements (admin only)
+// Initialize default achievements (admin only, one-time setup)
 router.post('/initialize-achievements', auth, async (req, res) => {
     try {
-        // Check if user is admin
-        if (req.user.role !== 'admin') {
-            return res.status(403).json({ error: 'Admin access required' });
-        }
+        // Optional: Check if user is admin
+        // if (req.user.role !== 'admin') {
+        //     return res.status(403).json({ error: 'Admin access required' });
+        // }
         
         await GamificationService.initializeDefaultAchievements();
-        
-        res.json({ success: true, message: 'Achievements initialized' });
+        res.json({ message: 'Achievements initialized successfully' });
     } catch (error) {
         console.error('Initialize achievements error:', error);
         res.status(500).json({ error: 'Failed to initialize achievements' });
     }
 });
 
-// Get activity history (for contribution graph)
+// Get user's activity history
 router.get('/activity-history', auth, async (req, res) => {
     try {
-        const days = parseInt(req.query.days) || 365;
+        const progress = await UserProgress.findOne({ userId: req.user.id });
         
-        const userProgress = await UserProgress.findOne({ user: req.user.id });
-        
-        if (!userProgress) {
-            return res.json({ activityHistory: [] });
+        if (!progress) {
+            return res.json({ activities: [] });
         }
         
-        // Get recent activity
-        const cutoffDate = new Date();
-        cutoffDate.setDate(cutoffDate.getDate() - days);
+        // Get recent activities from activityLog
+        const recentActivities = progress.activityLog
+            .sort((a, b) => b.timestamp - a.timestamp)
+            .slice(0, 50);
         
-        const recentActivity = userProgress.activityHistory.filter(
-            a => new Date(a.date) >= cutoffDate
-        );
-        
-        res.json({ activityHistory: recentActivity });
+        res.json({ activities: recentActivities });
     } catch (error) {
         console.error('Get activity history error:', error);
         res.status(500).json({ error: 'Failed to fetch activity history' });
+    }
+});
+
+// **NEW: Migrate existing user activities (one-time)**
+router.post('/migrate-existing-activities', auth, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        let totalXP = 0;
+        const activities = [];
+        
+        console.log(`🔄 Starting migration for user ${userId}...`);
+        
+        // 1. Award XP for existing published cases
+        const userCases = await CommunityCase.find({ 
+            author: userId,
+            status: 'published'
+        });
+        
+        console.log(`📋 Found ${userCases.length} published cases`);
+        
+        for (const caseItem of userCases) {
+            // Award 50 XP for sharing + 25 XP bonus for being approved
+            const xpForCase = 75; // 50 + 25 bonus
+            await GamificationService.awardXP(userId, xpForCase, 'case_share', {
+                caseId: caseItem._id.toString(),
+                title: caseItem.title,
+                retroactive: true
+            });
+            totalXP += xpForCase;
+            activities.push({
+                type: 'case_share',
+                xp: xpForCase,
+                caseTitle: caseItem.title
+            });
+        }
+        
+        // 2. Award XP for existing comments
+        const allCases = await CommunityCase.find({});
+        let commentCount = 0;
+        
+        for (const caseItem of allCases) {
+            const userComments = caseItem.comments.filter(
+                c => c.userId?.toString() === userId && !c.isAI
+            );
+            commentCount += userComments.length;
+        }
+        
+        console.log(`💬 Found ${commentCount} comments`);
+        
+        if (commentCount > 0) {
+            const xpForComments = commentCount * 10; // 10 XP per comment
+            await GamificationService.awardXP(userId, xpForComments, 'comment_post', {
+                count: commentCount,
+                retroactive: true
+            });
+            totalXP += xpForComments;
+            activities.push({
+                type: 'comments',
+                xp: xpForComments,
+                count: commentCount
+            });
+        }
+        
+        // 3. Check achievements after migration
+        const progress = await UserProgress.findOne({ userId });
+        await GamificationService.checkAchievements(userId, progress);
+        
+        console.log(`✅ Migration complete! Total XP awarded: ${totalXP}`);
+        
+        res.json({
+            message: 'Migration successful',
+            totalXPAwarded: totalXP,
+            activities,
+            casesCount: userCases.length,
+            commentsCount: commentCount,
+            newLevel: progress.level,
+            totalXP: progress.xp
+        });
+    } catch (error) {
+        console.error('❌ Migration error:', error);
+        res.status(500).json({ error: 'Failed to migrate activities', details: error.message });
     }
 });
 
