@@ -96,11 +96,6 @@ router.post('/achievements/:id/claim', auth, async (req, res) => {
 // Initialize default achievements (admin only, one-time setup)
 router.post('/initialize-achievements', auth, async (req, res) => {
     try {
-        // Optional: Check if user is admin
-        // if (req.user.role !== 'admin') {
-        //     return res.status(403).json({ error: 'Admin access required' });
-        // }
-        
         await GamificationService.initializeDefaultAchievements();
         res.json({ message: 'Achievements initialized successfully' });
     } catch (error) {
@@ -127,6 +122,61 @@ router.get('/activity-history', auth, async (req, res) => {
     } catch (error) {
         console.error('Get activity history error:', error);
         res.status(500).json({ error: 'Failed to fetch activity history' });
+    }
+});
+
+// **DEBUG ENDPOINT: Check what's in the database**
+router.get('/debug-migration', auth, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        
+        console.log('🔍 DEBUG: User ID from auth:', userId);
+        console.log('🔍 DEBUG: User ID type:', typeof userId);
+        
+        // Try multiple query formats
+        const allCases = await CommunityCase.find({ status: 'published' }).lean();
+        console.log('🔍 DEBUG: Total published cases:', allCases.length);
+        
+        // Try direct string comparison
+        const casesStringMatch = allCases.filter(c => c.author.toString() === userId);
+        console.log('🔍 DEBUG: Cases with string match:', casesStringMatch.length);
+        
+        // Try ObjectId comparison
+        const userObjectId = new mongoose.Types.ObjectId(userId);
+        const casesObjectIdMatch = allCases.filter(c => c.author.toString() === userObjectId.toString());
+        console.log('🔍 DEBUG: Cases with ObjectId match:', casesObjectIdMatch.length);
+        
+        // Try using .equals()
+        const casesEqualsMatch = allCases.filter(c => {
+            const authorId = mongoose.Types.ObjectId.isValid(c.author) 
+                ? new mongoose.Types.ObjectId(c.author) 
+                : c.author;
+            return authorId.equals(userObjectId);
+        });
+        console.log('🔍 DEBUG: Cases with .equals() match:', casesEqualsMatch.length);
+        
+        res.json({
+            userId,
+            userIdType: typeof userId,
+            userObjectId: userObjectId.toString(),
+            totalPublishedCases: allCases.length,
+            casesStringMatch: casesStringMatch.length,
+            casesObjectIdMatch: casesObjectIdMatch.length,
+            casesEqualsMatch: casesEqualsMatch.length,
+            sampleCases: allCases.slice(0, 3).map(c => ({
+                title: c.title,
+                author: c.author.toString(),
+                authorType: typeof c.author,
+                matches: c.author.toString() === userId
+            })),
+            yourCases: casesStringMatch.map(c => ({
+                title: c.title,
+                status: c.status
+            }))
+        });
+    } catch (error) {
+        console.error('Debug error:', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
@@ -173,24 +223,17 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         }
         
         // 1. Award XP for existing published cases
-        // Convert userId to ObjectId for proper comparison
-        const userObjectId = mongoose.Types.ObjectId.isValid(userId) 
-            ? new mongoose.Types.ObjectId(userId) 
-            : userId;
+        // Get all published cases first
+        const allPublishedCases = await CommunityCase.find({ status: 'published' }).lean();
+        console.log(`📋 Total published cases in DB: ${allPublishedCases.length}`);
         
-        const userCases = await CommunityCase.find({ 
-            author: userObjectId,
-            status: 'published'
-        });
-        
+        // Filter for user's cases using string comparison (most reliable)
+        const userCases = allPublishedCases.filter(c => c.author.toString() === userId);
         console.log(`📋 Found ${userCases.length} published cases for user ${userId}`);
         
-        // Debug: Check all cases to see what authors exist
-        const allCases = await CommunityCase.find({ status: 'published' }).select('author title').limit(10);
-        console.log(`🔍 Sample of all published cases:`, allCases.map(c => ({ 
-            title: c.title, 
-            author: c.author?.toString() 
-        })));
+        // Debug: Show all case authors
+        console.log(`🔍 All case authors:`, allPublishedCases.map(c => c.author.toString()));
+        console.log(`🔍 Looking for:`, userId);
         
         for (const caseItem of userCases) {
             // Award 50 XP for sharing + 25 XP bonus for being approved
@@ -209,17 +252,17 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         }
         
         // 2. Award XP for existing comments
-        const casesWithComments = await CommunityCase.find({
-            'comments.userId': userObjectId
-        });
+        const casesWithComments = await CommunityCase.find({}).lean();
         
         let commentCount = 0;
         
         for (const caseItem of casesWithComments) {
-            const userComments = caseItem.comments.filter(
-                c => c.userId && c.userId.toString() === userId && !c.isAI
-            );
-            commentCount += userComments.length;
+            if (caseItem.comments) {
+                const userComments = caseItem.comments.filter(
+                    c => c.userId && c.userId.toString() === userId && !c.isAI
+                );
+                commentCount += userComments.length;
+            }
         }
         
         console.log(`💬 Found ${commentCount} comments from user ${userId}`);
@@ -242,13 +285,9 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         const completedQuizzes = await QuizSession.find({
             userId: userId, // QuizSession stores userId as string
             endTime: { $ne: null } // Only completed quizzes
-        });
+        }).lean();
         
         console.log(`📝 Found ${completedQuizzes.length} completed quizzes for user ${userId}`);
-        
-        // Debug: Check sample of quiz sessions
-        const sampleQuizzes = await QuizSession.find({ endTime: { $ne: null } }).select('userId').limit(5);
-        console.log(`🔍 Sample quiz userIds:`, sampleQuizzes.map(q => q.userId));
         
         for (const quiz of completedQuizzes) {
             if (quiz.answers && quiz.answers.size > 0) {
@@ -317,8 +356,10 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
             totalXP: updatedProgress?.xp || 0,
             debug: {
                 userId,
-                userObjectId: userObjectId.toString(),
-                sampleCases: allCases.slice(0, 3).map(c => ({
+                totalPublishedCases: allPublishedCases.length,
+                userCasesFound: userCases.length,
+                allCaseAuthors: allPublishedCases.map(c => c.author.toString()),
+                matchingCases: userCases.map(c => ({
                     title: c.title,
                     author: c.author.toString()
                 }))
@@ -326,7 +367,7 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         });
     } catch (error) {
         console.error('❌ Migration error:', error);
-        res.status(500).json({ error: 'Failed to migrate activities', details: error.message });
+        res.status(500).json({ error: 'Failed to migrate activities', details: error.message, stack: error.stack });
     }
 });
 
