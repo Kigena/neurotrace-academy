@@ -1,4 +1,5 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import auth from '../middleware/auth.js';
 import GamificationService from '../services/gamificationService.js';
 import UserProgress from '../models/UserProgress.js';
@@ -137,14 +138,28 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         const activities = [];
         
         console.log(`🔄 Starting migration for user ${userId}...`);
+        console.log(`🔍 User ID type: ${typeof userId}`);
+        console.log(`🔍 User object:`, req.user);
         
         // 1. Award XP for existing published cases
+        // Convert userId to ObjectId for proper comparison
+        const userObjectId = mongoose.Types.ObjectId.isValid(userId) 
+            ? new mongoose.Types.ObjectId(userId) 
+            : userId;
+        
         const userCases = await CommunityCase.find({ 
-            author: userId,
+            author: userObjectId,
             status: 'published'
         });
         
-        console.log(`📋 Found ${userCases.length} published cases`);
+        console.log(`📋 Found ${userCases.length} published cases for user ${userId}`);
+        
+        // Debug: Check all cases to see what authors exist
+        const allCases = await CommunityCase.find({ status: 'published' }).select('author title').limit(10);
+        console.log(`🔍 Sample of all published cases:`, allCases.map(c => ({ 
+            title: c.title, 
+            author: c.author?.toString() 
+        })));
         
         for (const caseItem of userCases) {
             // Award 50 XP for sharing + 25 XP bonus for being approved
@@ -163,17 +178,20 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         }
         
         // 2. Award XP for existing comments
-        const allCases = await CommunityCase.find({});
+        const casesWithComments = await CommunityCase.find({
+            'comments.userId': userObjectId
+        });
+        
         let commentCount = 0;
         
-        for (const caseItem of allCases) {
+        for (const caseItem of casesWithComments) {
             const userComments = caseItem.comments.filter(
-                c => c.userId?.toString() === userId && !c.isAI
+                c => c.userId && c.userId.toString() === userId && !c.isAI
             );
             commentCount += userComments.length;
         }
         
-        console.log(`💬 Found ${commentCount} comments`);
+        console.log(`💬 Found ${commentCount} comments from user ${userId}`);
         
         if (commentCount > 0) {
             const xpForComments = commentCount * 10; // 10 XP per comment
@@ -191,11 +209,15 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         
         // 3. Award XP for completed quizzes
         const completedQuizzes = await QuizSession.find({
-            userId,
+            userId: userId, // QuizSession stores userId as string
             endTime: { $ne: null } // Only completed quizzes
         });
         
-        console.log(`📝 Found ${completedQuizzes.length} completed quizzes`);
+        console.log(`📝 Found ${completedQuizzes.length} completed quizzes for user ${userId}`);
+        
+        // Debug: Check sample of quiz sessions
+        const sampleQuizzes = await QuizSession.find({ endTime: { $ne: null } }).select('userId').limit(5);
+        console.log(`🔍 Sample quiz userIds:`, sampleQuizzes.map(q => q.userId));
         
         for (const quiz of completedQuizzes) {
             if (quiz.answers && quiz.answers.size > 0) {
@@ -246,6 +268,9 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         
         console.log(`✅ Migration complete! Total XP awarded: ${totalXP}`);
         
+        // Fetch updated progress to return
+        const updatedProgress = await UserProgress.findOne({ userId });
+        
         res.json({
             message: 'Migration successful',
             totalXPAwarded: totalXP,
@@ -253,8 +278,16 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
             casesCount: userCases.length,
             commentsCount: commentCount,
             quizzesCount: completedQuizzes.length,
-            newLevel: progress.level,
-            totalXP: progress.xp
+            newLevel: updatedProgress?.level || 1,
+            totalXP: updatedProgress?.xp || 0,
+            debug: {
+                userId,
+                userObjectId: userObjectId.toString(),
+                sampleCases: allCases.slice(0, 3).map(c => ({
+                    title: c.title,
+                    author: c.author.toString()
+                }))
+            }
         });
     } catch (error) {
         console.error('❌ Migration error:', error);
