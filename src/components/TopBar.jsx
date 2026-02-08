@@ -5,7 +5,7 @@ import ThemeSelector from "./ThemeSelector";
 import SmartSearch from "./SmartSearch";
 
 function TopBar({ onMenuClick }) {
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
   const navigate = useNavigate();
   const [showThemeSelector, setShowThemeSelector] = useState(false);
 
@@ -83,6 +83,17 @@ function TopBar({ onMenuClick }) {
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
             </svg>
+          </button>
+
+          {/* My Profile Button */}
+          <button
+            onClick={() => navigate(`/profile/${user?.id || user?._id}`)}
+            className="hidden sm:flex items-center gap-2 text-xs px-3 py-2 rounded-lg border border-slate-200 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200 text-slate-600 transition-colors font-medium"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            Profile
           </button>
 
           {/* Logout Button */}
