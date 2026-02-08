@@ -244,13 +244,23 @@ const Achievements = () => {
                 </div>
             )}
 
-            {/* Bottom CTA */}
-            <div className="mt-8 text-center">
+            {/* Bottom Navigation */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link 
+                    to="/dashboard"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-xl font-semibold hover:bg-slate-200 transition-colors shadow-sm"
+                >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back to Dashboard
+                </Link>
+                
                 <Link 
                     to="/leaderboard"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
                 >
-                    <span>View Leaderboard</span>
+                    🏆 View Leaderboard
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                     </svg>
