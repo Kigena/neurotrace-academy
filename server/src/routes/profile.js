@@ -130,9 +130,9 @@ router.get('/:userId/activity', async (req, res) => {
 
         quizSessions.forEach(session => {
             if (session.answers) {
-                const answers = Object.values(session.answers);
+                const answers = Array.from(session.answers.values());
                 quizStats.totalQuestions += answers.length;
-                quizStats.correctAnswers += answers.filter(a => a.isCorrect).length;
+                quizStats.correctAnswers += answers.filter(a => a && a.isCorrect).length;
             }
         });
 
