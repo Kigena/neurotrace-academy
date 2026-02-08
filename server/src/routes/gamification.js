@@ -252,16 +252,25 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         console.log(`🔍 Looking for:`, userId);
         
         for (const caseItem of userCases) {
-            // Award 50 XP for sharing + 25 XP bonus for being approved
-            const xpForCase = 75; // 50 + 25 bonus
-            await GamificationService.awardXP(userId, xpForCase, 'case_share', {
+            // These cases are already published, so award XP for both share and approval
+            // Award 50 XP for sharing
+            await GamificationService.awardXP(userId, 50, 'case_share', {
                 caseId: caseItem._id.toString(),
                 title: caseItem.title,
                 retroactive: true
             });
+            
+            // Award 25 XP bonus for being approved (updates casesApproved stat)
+            await GamificationService.awardXP(userId, 25, 'case_approved', {
+                caseId: caseItem._id.toString(),
+                title: caseItem.title,
+                retroactive: true
+            });
+            
+            const xpForCase = 75; // Total
             totalXP += xpForCase;
             activities.push({
-                type: 'case_share',
+                type: 'case_published',
                 xp: xpForCase,
                 caseTitle: caseItem.title
             });
