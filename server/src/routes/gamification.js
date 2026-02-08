@@ -499,33 +499,52 @@ router.post('/recalculate-xp', auth, async (req, res) => {
             stats: progress.stats
         });
         
-        // Calculate expected XP based on stats
+        // Calculate expected XP based on stats (with null-safety)
         let calculatedXP = 0;
         
+        // Safely get stat values with default of 0
+        const casesShared = progress.stats?.casesShared || 0;
+        const casesApproved = progress.stats?.casesApproved || 0;
+        const commentsPosted = progress.stats?.commentsPosted || 0;
+        const quizzesCompleted = progress.stats?.quizzesCompleted || 0;
+        const perfectScores = progress.stats?.perfectScores || 0;
+        const achievementsCount = progress.unlockedAchievements?.length || 0;
+        
         // Cases: 50 XP per share + 25 XP per approval
-        calculatedXP += (progress.stats.casesShared * 50);
-        calculatedXP += (progress.stats.casesApproved * 25);
-        console.log(`📋 Cases: ${progress.stats.casesShared} shared (${progress.stats.casesShared * 50} XP) + ${progress.stats.casesApproved} approved (${progress.stats.casesApproved * 25} XP)`);
+        const casesXP = (casesShared * 50) + (casesApproved * 25);
+        calculatedXP += casesXP;
+        console.log(`📋 Cases: ${casesShared} shared (${casesShared * 50} XP) + ${casesApproved} approved (${casesApproved * 25} XP) = ${casesXP} XP`);
         
         // Comments: 10 XP each
-        calculatedXP += (progress.stats.commentsPosted * 10);
-        console.log(`💬 Comments: ${progress.stats.commentsPosted} × 10 = ${progress.stats.commentsPosted * 10} XP`);
+        const commentsXP = commentsPosted * 10;
+        calculatedXP += commentsXP;
+        console.log(`💬 Comments: ${commentsPosted} × 10 = ${commentsXP} XP`);
         
         // Quizzes: Average 50 XP per quiz (since we don't have exact scores)
         // But if they have perfect scores, count those as 100 XP
-        const regularQuizzes = progress.stats.quizzesCompleted - progress.stats.perfectScores;
-        calculatedXP += (regularQuizzes * 50); // Average for non-perfect
-        calculatedXP += (progress.stats.perfectScores * 100); // Perfect scores
-        console.log(`📝 Quizzes: ${regularQuizzes} regular (${regularQuizzes * 50} XP) + ${progress.stats.perfectScores} perfect (${progress.stats.perfectScores * 100} XP)`);
+        const regularQuizzes = quizzesCompleted - perfectScores;
+        const quizzesXP = (regularQuizzes * 50) + (perfectScores * 100);
+        calculatedXP += quizzesXP;
+        console.log(`📝 Quizzes: ${regularQuizzes} regular (${regularQuizzes * 50} XP) + ${perfectScores} perfect (${perfectScores * 100} XP) = ${quizzesXP} XP`);
         
         // Achievement bonuses (estimate ~50 XP per achievement unlocked)
-        const achievementBonus = progress.unlockedAchievements.length * 50;
+        const achievementBonus = achievementsCount * 50;
         calculatedXP += achievementBonus;
-        console.log(`🏅 Achievement bonuses: ${progress.unlockedAchievements.length} × 50 = ${achievementBonus} XP`);
+        console.log(`🏅 Achievement bonuses: ${achievementsCount} × 50 = ${achievementBonus} XP`);
         
         console.log(`\n💰 Total Calculated XP: ${calculatedXP}`);
         console.log(`📊 Current XP in DB: ${oldXP}`);
         console.log(`📈 Difference: ${calculatedXP - oldXP}`);
+        
+        // Ensure calculatedXP is a valid number
+        if (isNaN(calculatedXP) || !isFinite(calculatedXP)) {
+            console.error('❌ Calculated XP is not a valid number:', calculatedXP);
+            return res.status(500).json({ 
+                error: 'Failed to calculate valid XP',
+                calculatedXP,
+                stats: progress.stats
+            });
+        }
         
         // Recalculate level based on XP
         let newLevel = 1;
@@ -571,9 +590,9 @@ router.post('/recalculate-xp', auth, async (req, res) => {
             stats: updated.stats,
             achievements: updated.unlockedAchievements.length,
             breakdown: {
-                casesXP: (progress.stats.casesShared * 50) + (progress.stats.casesApproved * 25),
-                commentsXP: progress.stats.commentsPosted * 10,
-                quizzesXP: (regularQuizzes * 50) + (progress.stats.perfectScores * 100),
+                casesXP,
+                commentsXP,
+                quizzesXP,
                 achievementBonusXP: achievementBonus
             }
         });
