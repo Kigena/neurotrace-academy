@@ -476,4 +476,88 @@ router.post('/fix-stats', auth, async (req, res) => {
     }
 });
 
+// **RECALCULATE XP: Calculate correct XP from stats and set it**
+router.post('/recalculate-xp', auth, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const userObjectId = new mongoose.Types.ObjectId(userId);
+        
+        console.log(`🔧 Recalculating XP for user ${userId}...`);
+        
+        const progress = await UserProgress.findOne({ user: userObjectId });
+        
+        if (!progress) {
+            return res.status(404).json({ error: 'UserProgress not found' });
+        }
+        
+        console.log('📊 Current progress:', {
+            level: progress.level,
+            xp: progress.xp,
+            stats: progress.stats
+        });
+        
+        // Calculate expected XP based on stats
+        let calculatedXP = 0;
+        
+        // Cases: 50 XP per share + 25 XP per approval
+        calculatedXP += (progress.stats.casesShared * 50);
+        calculatedXP += (progress.stats.casesApproved * 25);
+        console.log(`📋 Cases: ${progress.stats.casesShared} shared (${progress.stats.casesShared * 50} XP) + ${progress.stats.casesApproved} approved (${progress.stats.casesApproved * 25} XP)`);
+        
+        // Comments: 10 XP each
+        calculatedXP += (progress.stats.commentsPosted * 10);
+        console.log(`💬 Comments: ${progress.stats.commentsPosted} × 10 = ${progress.stats.commentsPosted * 10} XP`);
+        
+        // Quizzes: Average 50 XP per quiz (since we don't have exact scores)
+        // But if they have perfect scores, count those as 100 XP
+        const regularQuizzes = progress.stats.quizzesCompleted - progress.stats.perfectScores;
+        calculatedXP += (regularQuizzes * 50); // Average for non-perfect
+        calculatedXP += (progress.stats.perfectScores * 100); // Perfect scores
+        console.log(`📝 Quizzes: ${regularQuizzes} regular (${regularQuizzes * 50} XP) + ${progress.stats.perfectScores} perfect (${progress.stats.perfectScores * 100} XP)`);
+        
+        // Achievement bonuses (estimate ~50 XP per achievement unlocked)
+        const achievementBonus = progress.unlockedAchievements.length * 50;
+        calculatedXP += achievementBonus;
+        console.log(`🏅 Achievement bonuses: ${progress.unlockedAchievements.length} × 50 = ${achievementBonus} XP`);
+        
+        console.log(`\n💰 Total Calculated XP: ${calculatedXP}`);
+        console.log(`📊 Current XP: ${progress.xp}`);
+        console.log(`📈 Difference: ${calculatedXP - progress.xp}`);
+        
+        // Set the correct XP
+        progress.xp = calculatedXP;
+        
+        // Recalculate level based on XP
+        let newLevel = 1;
+        let xpForNextLevel = 100;
+        let remainingXP = calculatedXP;
+        
+        while (remainingXP >= xpForNextLevel) {
+            remainingXP -= xpForNextLevel;
+            newLevel++;
+            xpForNextLevel = newLevel * 100;
+        }
+        
+        progress.level = newLevel;
+        progress.xpToNextLevel = xpForNextLevel;
+        
+        await progress.save();
+        
+        console.log(`✅ XP recalculated! New level: ${newLevel}, New XP: ${calculatedXP}`);
+        
+        res.json({
+            message: 'XP recalculated successfully',
+            oldXP: progress.xp,
+            newXP: calculatedXP,
+            oldLevel: progress.level,
+            newLevel: newLevel,
+            stats: progress.stats,
+            achievements: progress.unlockedAchievements.length
+        });
+    } catch (error) {
+        console.error('❌ Recalculate XP error:', error);
+        res.status(500).json({ error: 'Failed to recalculate XP', details: error.message });
+    }
+});
+
 export default router;
