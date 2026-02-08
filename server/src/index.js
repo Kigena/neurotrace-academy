@@ -19,7 +19,7 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/neurot
 mongoose.connect(MONGODB_URI)
     .then(async () => {
         console.log('✅ Connected to MongoDB');
-        
+
         // Initialize default achievements on startup
         try {
             await GamificationService.initializeDefaultAchievements();
@@ -39,6 +39,7 @@ import adminRoutes from './routes/admin.js';
 import aiRoutes from './routes/ai.js';
 import gamificationRoutes from './routes/gamification.js';
 import quizRoutes from './routes/quiz.js';
+import profileRoutes from './routes/profile.js';
 import GamificationService from './services/gamificationService.js';
 
 // Routes
@@ -76,6 +77,9 @@ app.use('/api/gamification', gamificationRoutes);
 
 // Quiz Routes (with gamification integration)
 app.use('/api/quiz', quizRoutes);
+
+// Profile Routes
+app.use('/api/profile', profileRoutes);
 
 import { QuizSession } from './models/QuizSession.js';
 import { AttemptEvent } from './models/AttemptEvent.js';

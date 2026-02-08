@@ -22,6 +22,51 @@ const userSchema = new mongoose.Schema({
         enum: ['user', 'admin'],
         default: 'user'
     },
+    profile: {
+        avatar: {
+            type: String,
+            default: null
+        },
+        bio: {
+            type: String,
+            maxlength: 500,
+            default: ''
+        },
+        location: {
+            type: String,
+            default: ''
+        },
+        institution: {
+            type: String,
+            default: ''
+        },
+        certifications: {
+            type: [String],
+            default: []
+        },
+        specializations: {
+            type: [String],
+            default: []
+        },
+        socialLinks: {
+            linkedin: {
+                type: String,
+                default: ''
+            },
+            twitter: {
+                type: String,
+                default: ''
+            },
+            website: {
+                type: String,
+                default: ''
+            }
+        },
+        isPublic: {
+            type: Boolean,
+            default: true
+        }
+    },
     createdAt: {
         type: Date,
         default: Date.now
