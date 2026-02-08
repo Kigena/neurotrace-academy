@@ -490,9 +490,12 @@ router.post('/recalculate-xp', auth, async (req, res) => {
             return res.status(404).json({ error: 'UserProgress not found' });
         }
         
+        const oldXP = progress.xp;
+        const oldLevel = progress.level;
+        
         console.log('📊 Current progress:', {
-            level: progress.level,
-            xp: progress.xp,
+            level: oldLevel,
+            xp: oldXP,
             stats: progress.stats
         });
         
@@ -521,11 +524,8 @@ router.post('/recalculate-xp', auth, async (req, res) => {
         console.log(`🏅 Achievement bonuses: ${progress.unlockedAchievements.length} × 50 = ${achievementBonus} XP`);
         
         console.log(`\n💰 Total Calculated XP: ${calculatedXP}`);
-        console.log(`📊 Current XP: ${progress.xp}`);
-        console.log(`📈 Difference: ${calculatedXP - progress.xp}`);
-        
-        // Set the correct XP
-        progress.xp = calculatedXP;
+        console.log(`📊 Current XP in DB: ${oldXP}`);
+        console.log(`📈 Difference: ${calculatedXP - oldXP}`);
         
         // Recalculate level based on XP
         let newLevel = 1;
@@ -538,25 +538,48 @@ router.post('/recalculate-xp', auth, async (req, res) => {
             xpForNextLevel = newLevel * 100;
         }
         
-        progress.level = newLevel;
-        progress.xpToNextLevel = xpForNextLevel;
+        console.log(`🎮 Calculated Level: ${newLevel}`);
+        console.log(`📈 XP to Next Level: ${xpForNextLevel}`);
         
-        await progress.save();
+        // DIRECT database update using findByIdAndUpdate to bypass model methods
+        const updated = await UserProgress.findByIdAndUpdate(
+            progress._id,
+            {
+                $set: {
+                    xp: calculatedXP,
+                    level: newLevel,
+                    xpToNextLevel: xpForNextLevel
+                }
+            },
+            { new: true } // Return updated document
+        );
         
-        console.log(`✅ XP recalculated! New level: ${newLevel}, New XP: ${calculatedXP}`);
+        console.log(`✅ XP forcefully updated! Level ${oldLevel} → ${newLevel}, XP ${oldXP} → ${calculatedXP}`);
+        console.log('✅ Updated document:', {
+            _id: updated._id,
+            level: updated.level,
+            xp: updated.xp,
+            xpToNextLevel: updated.xpToNextLevel
+        });
         
         res.json({
-            message: 'XP recalculated successfully',
-            oldXP: progress.xp,
+            message: 'XP recalculated and updated successfully',
+            oldXP,
             newXP: calculatedXP,
-            oldLevel: progress.level,
-            newLevel: newLevel,
-            stats: progress.stats,
-            achievements: progress.unlockedAchievements.length
+            oldLevel,
+            newLevel,
+            stats: updated.stats,
+            achievements: updated.unlockedAchievements.length,
+            breakdown: {
+                casesXP: (progress.stats.casesShared * 50) + (progress.stats.casesApproved * 25),
+                commentsXP: progress.stats.commentsPosted * 10,
+                quizzesXP: (regularQuizzes * 50) + (progress.stats.perfectScores * 100),
+                achievementBonusXP: achievementBonus
+            }
         });
     } catch (error) {
         console.error('❌ Recalculate XP error:', error);
-        res.status(500).json({ error: 'Failed to recalculate XP', details: error.message });
+        res.status(500).json({ error: 'Failed to recalculate XP', details: error.message, stack: error.stack });
     }
 });
 
