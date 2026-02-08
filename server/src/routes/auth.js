@@ -1,6 +1,7 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/User.js';
+import UserProgress from '../models/UserProgress.js';
 
 const router = express.Router();
 
@@ -22,6 +23,12 @@ router.post('/register', async (req, res) => {
         });
 
         await user.save();
+
+        // Create UserProgress for the new user
+        const userProgress = new UserProgress({
+            user: user._id
+        });
+        await userProgress.save();
 
         // Generate JWT token
         const token = jwt.sign(
