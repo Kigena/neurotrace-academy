@@ -57,7 +57,12 @@ router.get('/leaderboard/:type?', auth, async (req, res) => {
         const limit = parseInt(req.query.limit) || 50;
         
         const leaderboard = await GamificationService.getLeaderboard(type, limit);
-        res.json(leaderboard);
+        const userRank = await GamificationService.getUserRank(req.user.id);
+        
+        res.json({
+            leaderboard,
+            userRank
+        });
     } catch (error) {
         console.error('Get leaderboard error:', error);
         res.status(500).json({ error: 'Failed to fetch leaderboard' });
