@@ -21,7 +21,8 @@ import PatternRecognitionQuiz from "./pages/PatternRecognitionQuiz.jsx";
 import Progress from "./pages/Progress.jsx";
 import Syndromes from "./pages/Syndromes.jsx";
 import SyndromeDetail from "./pages/SyndromeDetail.jsx";
-import Navbar from "./components/Navbar.jsx";
+import Sidebar from "./components/Sidebar.jsx";
+import TopBar from "./components/TopBar.jsx";
 import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Chat from "./pages/Chat.jsx";
@@ -47,134 +48,150 @@ const ProtectedRoute = ({ children }) => {
 function AppContent() {
   const { user } = useAuth();
   const location = useLocation();
+  const [sidebarOpen, setSidebarOpen] = React.useState(true);
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      {user && <Navbar />}
-
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
+  // Show login page without sidebar
+  if (!user && location.pathname === '/login') {
+    return (
+      <div className="min-h-screen">
         <Routes>
           <Route path="/login" element={<Login />} />
-
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          } />
-
-          <Route path="/" element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          } />
-          <Route path="/workflow" element={
-            <ProtectedRoute>
-              <Workflow />
-            </ProtectedRoute>
-          } />
-          <Route path="/patterns" element={
-            <ProtectedRoute>
-              <Patterns />
-            </ProtectedRoute>
-          } />
-          <Route path="/patterns/:id" element={
-            <ProtectedRoute>
-              <PatternDetail />
-            </ProtectedRoute>
-          } />
-          <Route path="/patterns/compare" element={
-            <ProtectedRoute>
-              <PatternCompare />
-            </ProtectedRoute>
-          } />
-          <Route path="/cases" element={
-            <ProtectedRoute>
-              <Cases />
-            </ProtectedRoute>
-          } />
-          <Route path="/cases/:id" element={
-            <ProtectedRoute>
-              <CaseDetail />
-            </ProtectedRoute>
-          } />
-          <Route path="/cases/:id/edit" element={
-            <ProtectedRoute>
-              <EditCase />
-            </ProtectedRoute>
-          } />
-          <Route path="/share-case" element={
-            <ProtectedRoute>
-              <ShareCase />
-            </ProtectedRoute>
-          } />
-          <Route path="/standards" element={
-            <ProtectedRoute>
-              <Standards />
-            </ProtectedRoute>
-          } />
-          <Route path="/quiz" element={
-            <ProtectedRoute>
-              <Quiz />
-            </ProtectedRoute>
-          } />
-          <Route path="/quiz/session" element={
-            <ProtectedRoute>
-              <QuizSession />
-            </ProtectedRoute>
-          } />
-          <Route path="/quiz/pattern-recognition" element={
-            <ProtectedRoute>
-              <PatternRecognitionQuiz />
-            </ProtectedRoute>
-          } />
-          <Route path="/certification-exam" element={
-            <ProtectedRoute>
-              <CertificationExam />
-            </ProtectedRoute>
-          } />
-          <Route path="/progress" element={
-            <ProtectedRoute>
-              <Progress />
-            </ProtectedRoute>
-          } />
-          <Route path="/leaderboard" element={
-            <ProtectedRoute>
-              <Leaderboard />
-            </ProtectedRoute>
-          } />
-          <Route path="/achievements" element={
-            <ProtectedRoute>
-              <Achievements />
-            </ProtectedRoute>
-          } />
-          <Route path="/syndromes" element={
-            <ProtectedRoute>
-              <Syndromes />
-            </ProtectedRoute>
-          } />
-          <Route path="/syndromes/:id" element={
-            <ProtectedRoute>
-              <SyndromeDetail />
-            </ProtectedRoute>
-          } />
-          <Route path="/chat" element={
-            <ProtectedRoute>
-              <Chat />
-            </ProtectedRoute>
-          } />
-          <Route path="/admin/moderation" element={
-            <ProtectedRoute>
-              <AdminModeration />
-            </ProtectedRoute>
-          } />
         </Routes>
-      </main>
+      </div>
+    );
+  }
 
-      {user && (
-        <footer className="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
-          NeuroTrace Academy · EEG Patterns · Cases · ABRET Prep
-        </footer>
-      )}
+  return (
+    <div className="min-h-screen flex">
+      {user && <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />}
+      
+      <div className="flex-1 flex flex-col min-w-0">
+        {user && <TopBar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />}
+        
+        <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6">
+          <Routes>
+              <Route path="/login" element={<Login />} />
+
+            <Route path="/dashboard" element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/" element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            } />
+            <Route path="/workflow" element={
+              <ProtectedRoute>
+                <Workflow />
+              </ProtectedRoute>
+            } />
+            <Route path="/patterns" element={
+              <ProtectedRoute>
+                <Patterns />
+              </ProtectedRoute>
+            } />
+            <Route path="/patterns/:id" element={
+              <ProtectedRoute>
+                <PatternDetail />
+              </ProtectedRoute>
+            } />
+            <Route path="/patterns/compare" element={
+              <ProtectedRoute>
+                <PatternCompare />
+              </ProtectedRoute>
+            } />
+            <Route path="/cases" element={
+              <ProtectedRoute>
+                <Cases />
+              </ProtectedRoute>
+            } />
+            <Route path="/cases/:id" element={
+              <ProtectedRoute>
+                <CaseDetail />
+              </ProtectedRoute>
+            } />
+            <Route path="/cases/:id/edit" element={
+              <ProtectedRoute>
+                <EditCase />
+              </ProtectedRoute>
+            } />
+            <Route path="/share-case" element={
+              <ProtectedRoute>
+                <ShareCase />
+              </ProtectedRoute>
+            } />
+            <Route path="/standards" element={
+              <ProtectedRoute>
+                <Standards />
+              </ProtectedRoute>
+            } />
+            <Route path="/quiz" element={
+              <ProtectedRoute>
+                <Quiz />
+              </ProtectedRoute>
+            } />
+            <Route path="/quiz/session" element={
+              <ProtectedRoute>
+                <QuizSession />
+              </ProtectedRoute>
+            } />
+            <Route path="/quiz/pattern-recognition" element={
+              <ProtectedRoute>
+                <PatternRecognitionQuiz />
+              </ProtectedRoute>
+            } />
+            <Route path="/certification-exam" element={
+              <ProtectedRoute>
+                <CertificationExam />
+              </ProtectedRoute>
+            } />
+            <Route path="/progress" element={
+              <ProtectedRoute>
+                <Progress />
+              </ProtectedRoute>
+            } />
+            <Route path="/leaderboard" element={
+              <ProtectedRoute>
+                <Leaderboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/achievements" element={
+              <ProtectedRoute>
+                <Achievements />
+              </ProtectedRoute>
+            } />
+            <Route path="/syndromes" element={
+              <ProtectedRoute>
+                <Syndromes />
+              </ProtectedRoute>
+            } />
+            <Route path="/syndromes/:id" element={
+              <ProtectedRoute>
+                <SyndromeDetail />
+              </ProtectedRoute>
+            } />
+            <Route path="/chat" element={
+              <ProtectedRoute>
+                <Chat />
+              </ProtectedRoute>
+            } />
+            <Route path="/admin/moderation" element={
+              <ProtectedRoute>
+                <AdminModeration />
+              </ProtectedRoute>
+            } />
+          </Routes>
+        </main>
+
+        {user && (
+          <footer className="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+            NeuroTrace Academy · EEG Patterns · Cases · ABRET Prep
+          </footer>
+        )}
+      </div>
     </div>
   );
 }
