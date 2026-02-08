@@ -39,7 +39,8 @@ class NotificationService {
         try {
             const io = getIO();
             if (io) {
-                io.to(userId).emit('notification', {
+                // Emit to user's personal room (format: user:userId)
+                io.to(`user:${userId}`).emit('notification', {
                     _id: notification._id,
                     type: notification.type,
                     title: notification.title,
@@ -49,6 +50,7 @@ class NotificationService {
                     metadata: notification.metadata,
                     createdAt: notification.createdAt
                 });
+                console.log(`📬 Notification sent to user:${userId}`, notification.type);
             }
         } catch (error) {
             console.error('Send realtime notification error:', error);

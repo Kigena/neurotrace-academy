@@ -9,8 +9,9 @@ const notificationSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ['comment', 'reply', 'case_status', 'achievement', 'level_up', 'mention'],
-        required: true
+        enum: ['message', 'comment', 'reply', 'case_status', 'achievement', 'level_up', 'mention'],
+        required: true,
+        index: true
     },
     title: {
         type: String,
