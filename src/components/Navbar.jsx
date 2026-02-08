@@ -108,6 +108,9 @@ function Navbar() {
             <NavLink to="/progress" className={navLinkClasses}>
               Progress
             </NavLink>
+            <NavLink to="/leaderboard" className={navLinkClasses}>
+              🏆 Ranks
+            </NavLink>
             <NavLink to="/chat" className={navLinkClasses}>
               Chat
             </NavLink>
@@ -189,6 +192,9 @@ function Navbar() {
             </NavLink>
             <NavLink to="/progress" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Progress
+            </NavLink>
+            <NavLink to="/leaderboard" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
+              🏆 Ranks
             </NavLink>
             <NavLink to="/chat" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Chat

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
 import apiService from '../services/apiService';
 import ProfileEditModal from '../components/ProfileEditModal';
 import PasswordChangeModal from '../components/PasswordChangeModal';
+import ProgressBar from '../components/Gamification/ProgressBar';
+import StreakDisplay from '../components/Gamification/StreakDisplay';
+import AchievementBadge from '../components/Gamification/AchievementBadge';
 
 function Dashboard() {
     const { user, updateUser } = useAuth();
@@ -12,9 +16,14 @@ function Dashboard() {
     const [loading, setLoading] = useState(true);
     const [showProfileEdit, setShowProfileEdit] = useState(false);
     const [showPasswordChange, setShowPasswordChange] = useState(false);
+    
+    // Gamification state
+    const [progress, setProgress] = useState(null);
+    const [recentAchievements, setRecentAchievements] = useState([]);
 
     useEffect(() => {
         loadStats();
+        loadGamificationProgress();
     }, []);
 
     const loadStats = async () => {
@@ -56,6 +65,23 @@ function Dashboard() {
             console.error('Failed to load stats:', error);
         } finally {
             setLoading(false);
+        }
+    };
+
+    const loadGamificationProgress = async () => {
+        try {
+            const progressData = await apiService.get('/gamification/progress');
+            setProgress(progressData);
+            
+            // Get recent achievements (last 5)
+            if (progressData.achievements) {
+                const recent = progressData.achievements
+                    .sort((a, b) => new Date(b.unlockedAt) - new Date(a.unlockedAt))
+                    .slice(0, 5);
+                setRecentAchievements(recent);
+            }
+        } catch (error) {
+            console.error('Failed to load gamification progress:', error);
         }
     };
 
@@ -108,15 +134,69 @@ function Dashboard() {
             {/* Header */}
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                 <div className="flex items-center justify-between">
-                    <div>
+                    <div className="flex-1">
                         <h1 className="text-3xl font-bold text-slate-900">Dashboard</h1>
-                        <p className="text-slate-600 mt-1">Manage your account and preferences</p>
+                        <p className="text-slate-600 mt-1">Manage your account and track your progress</p>
                     </div>
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white flex items-center justify-center text-3xl font-bold">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white flex items-center justify-center text-3xl font-bold shadow-lg">
                         {user?.name?.charAt(0).toUpperCase()}
                     </div>
                 </div>
             </div>
+
+            {/* Gamification Overview */}
+            {progress && (
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* Level Progress */}
+                    <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                        <h2 className="text-xl font-bold text-slate-900 mb-4">Your Level</h2>
+                        <ProgressBar 
+                            level={progress.level}
+                            xp={progress.xp}
+                            xpToNextLevel={progress.xpToNextLevel}
+                            showDetails={true}
+                        />
+                        <Link 
+                            to="/leaderboard"
+                            className="mt-4 block text-center text-sm text-indigo-600 hover:text-indigo-800 font-medium"
+                        >
+                            View Leaderboard →
+                        </Link>
+                    </div>
+
+                    {/* Streak */}
+                    <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                        <h2 className="text-xl font-bold text-slate-900 mb-4">Learning Streak</h2>
+                        <StreakDisplay 
+                            currentStreak={progress.streak?.current || 0}
+                            longestStreak={progress.streak?.longest || 0}
+                            compact={false}
+                        />
+                    </div>
+                </div>
+            )}
+
+            {/* Recent Achievements */}
+            {recentAchievements.length > 0 && (
+                <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div className="flex items-center justify-between mb-4">
+                        <h2 className="text-xl font-bold text-slate-900">Recent Achievements</h2>
+                        <Link 
+                            to="/achievements"
+                            className="text-sm text-indigo-600 hover:text-indigo-800 font-medium"
+                        >
+                            View All →
+                        </Link>
+                    </div>
+                    <div className="flex gap-4 overflow-x-auto pb-2">
+                        {recentAchievements.map((achievement) => (
+                            <div key={achievement._id} className="flex-shrink-0">
+                                <AchievementBadge achievement={achievement} unlocked={true} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
 
             {/* Profile Section */}
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">

@@ -25,6 +25,7 @@ import Login from "./pages/Login.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Chat from "./pages/Chat.jsx";
 import AdminModeration from "./pages/AdminModeration.jsx";
+import Leaderboard from "./pages/Leaderboard.jsx";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -132,6 +133,11 @@ function AppContent() {
           <Route path="/progress" element={
             <ProtectedRoute>
               <Progress />
+            </ProtectedRoute>
+          } />
+          <Route path="/leaderboard" element={
+            <ProtectedRoute>
+              <Leaderboard />
             </ProtectedRoute>
           } />
           <Route path="/syndromes" element={
