@@ -396,4 +396,84 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
     }
 });
 
+// **FIX STATS: Update stat counters without awarding duplicate XP**
+router.post('/fix-stats', auth, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        const userObjectId = new mongoose.Types.ObjectId(userId);
+        
+        console.log(`🔧 Fixing stats for user ${userId}...`);
+        
+        // Get user progress
+        const progress = await UserProgress.findOne({ user: userObjectId });
+        
+        if (!progress) {
+            return res.status(404).json({ error: 'UserProgress not found' });
+        }
+        
+        console.log('📊 Current stats:', progress.stats);
+        
+        // Count actual activities
+        const userCases = await CommunityCase.find({ 
+            author: userObjectId,
+            status: 'published'
+        }).lean();
+        
+        const casesWithComments = await CommunityCase.find({}).lean();
+        let commentCount = 0;
+        for (const caseItem of casesWithComments) {
+            if (caseItem.comments) {
+                const userComments = caseItem.comments.filter(
+                    c => c.userId && c.userId.toString() === userId && !c.isAI
+                );
+                commentCount += userComments.length;
+            }
+        }
+        
+        const completedQuizzes = await QuizSession.find({
+            userId: userId,
+            endTime: { $ne: null }
+        }).lean();
+        
+        let perfectQuizzes = 0;
+        for (const quiz of completedQuizzes) {
+            if (quiz.answers && quiz.answers.size > 0) {
+                const answers = Array.from(quiz.answers.values());
+                const correct = answers.filter(a => a.isCorrect).length;
+                const total = answers.length;
+                if (total > 0 && correct === total) {
+                    perfectQuizzes++;
+                }
+            }
+        }
+        
+        console.log(`📋 Found: ${userCases.length} cases, ${commentCount} comments, ${completedQuizzes.length} quizzes (${perfectQuizzes} perfect)`);
+        
+        // Update stats (WITHOUT awarding XP)
+        progress.stats.casesShared = userCases.length;
+        progress.stats.casesApproved = userCases.length; // All published cases are approved
+        progress.stats.commentsPosted = commentCount;
+        progress.stats.quizzesCompleted = completedQuizzes.length;
+        progress.stats.perfectScores = perfectQuizzes;
+        
+        await progress.save();
+        
+        console.log('✅ Stats updated:', progress.stats);
+        
+        res.json({
+            message: 'Stats fixed successfully',
+            stats: progress.stats,
+            found: {
+                cases: userCases.length,
+                comments: commentCount,
+                quizzes: completedQuizzes.length,
+                perfectQuizzes
+            }
+        });
+    } catch (error) {
+        console.error('❌ Fix stats error:', error);
+        res.status(500).json({ error: 'Failed to fix stats', details: error.message });
+    }
+});
+
 export default router;
