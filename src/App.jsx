@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from "./contexts/AuthContext.jsx";
 import { ThemeProvider } from "./contexts/ThemeContext.jsx";
 import { SocketProvider } from "./contexts/SocketContext.jsx";
 import { NotificationProvider } from "./contexts/NotificationContext.jsx";
+import { SystemNotificationProvider } from "./contexts/SystemNotificationContext.jsx";
 import Home from "./pages/Home.jsx";
 import Patterns from "./pages/Patterns.jsx";
 import PatternDetail from "./pages/PatternDetail.jsx";
@@ -30,6 +31,7 @@ import AdminModeration from "./pages/AdminModeration.jsx";
 import Leaderboard from "./pages/Leaderboard.jsx";
 import Achievements from "./pages/Achievements.jsx";
 import UserProfile from "./pages/UserProfile.jsx";
+import Notifications from "./pages/Notifications.jsx";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -189,6 +191,12 @@ function AppContent() {
                 <UserProfile />
               </ProtectedRoute>
             } />
+
+            <Route path="/notifications" element={
+              <ProtectedRoute>
+                <Notifications />
+              </ProtectedRoute>
+            } />
           </Routes>
         </main>
 
@@ -208,7 +216,9 @@ function App() {
       <AuthProvider>
         <SocketProvider>
           <NotificationProvider>
-            <AppContent />
+            <SystemNotificationProvider>
+              <AppContent />
+            </SystemNotificationProvider>
           </NotificationProvider>
         </SocketProvider>
       </AuthProvider>
