@@ -29,6 +29,7 @@ import Chat from "./pages/Chat.jsx";
 import AdminModeration from "./pages/AdminModeration.jsx";
 import Leaderboard from "./pages/Leaderboard.jsx";
 import Achievements from "./pages/Achievements.jsx";
+import UserProfile from "./pages/UserProfile.jsx";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -64,13 +65,13 @@ function AppContent() {
   return (
     <div className="min-h-screen flex">
       {user && <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />}
-      
+
       <div className="flex-1 flex flex-col min-w-0">
         {user && <TopBar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />}
-        
+
         <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6">
           <Routes>
-              <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
 
             <Route path="/dashboard" element={
               <ProtectedRoute>
@@ -181,6 +182,11 @@ function AppContent() {
             <Route path="/admin/moderation" element={
               <ProtectedRoute>
                 <AdminModeration />
+              </ProtectedRoute>
+            } />
+            <Route path="/profile/:userId" element={
+              <ProtectedRoute>
+                <UserProfile />
               </ProtectedRoute>
             } />
           </Routes>
