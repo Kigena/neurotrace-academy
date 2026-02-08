@@ -141,6 +141,37 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         console.log(`🔍 User ID type: ${typeof userId}`);
         console.log(`🔍 User object:`, req.user);
         
+        // FIRST: Ensure UserProgress exists for this user
+        let progress = await UserProgress.findOne({ userId });
+        
+        if (!progress) {
+            console.log(`📝 Creating new UserProgress for user ${userId}...`);
+            progress = new UserProgress({
+                userId,
+                xp: 0,
+                level: 1,
+                streak: {
+                    current: 0,
+                    longest: 0,
+                    lastActiveDate: null
+                },
+                achievements: [],
+                stats: {
+                    casesShared: 0,
+                    casesApproved: 0,
+                    commentsPosted: 0,
+                    quizzesCompleted: 0,
+                    perfectScores: 0,
+                    studySessions: 0,
+                    helpfulVotes: 0
+                }
+            });
+            await progress.save();
+            console.log(`✅ UserProgress created successfully`);
+        } else {
+            console.log(`✅ UserProgress already exists`);
+        }
+        
         // 1. Award XP for existing published cases
         // Convert userId to ObjectId for proper comparison
         const userObjectId = mongoose.Types.ObjectId.isValid(userId) 
@@ -262,13 +293,17 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
             }
         }
         
-        // 4. Check achievements after migration
-        const progress = await UserProgress.findOne({ userId });
-        await GamificationService.checkAchievements(userId, progress);
+        // 4. Reload progress and check achievements after migration
+        progress = await UserProgress.findOne({ userId });
         
-        console.log(`✅ Migration complete! Total XP awarded: ${totalXP}`);
+        if (progress) {
+            await GamificationService.checkAchievements(userId, progress);
+            console.log(`✅ Migration complete! Total XP awarded: ${totalXP}`);
+        } else {
+            console.error(`❌ UserProgress not found after migration!`);
+        }
         
-        // Fetch updated progress to return
+        // Fetch final updated progress to return
         const updatedProgress = await UserProgress.findOne({ userId });
         
         res.json({
