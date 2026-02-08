@@ -23,7 +23,7 @@ router.get('/progress', auth, async (req, res) => {
 // Get all achievements (with user's unlock status)
 router.get('/achievements', auth, async (req, res) => {
     try {
-        const userProgress = await UserProgress.findOne({ userId: req.user.id });
+        const userProgress = await UserProgress.findOne({ user: req.user.id });
         const allAchievements = await Achievement.find({ isActive: true }).sort({ order: 1, category: 1 });
         
         // Add unlock status to each achievement
@@ -67,7 +67,7 @@ router.get('/leaderboard/:type?', auth, async (req, res) => {
 router.post('/achievements/:id/claim', auth, async (req, res) => {
     try {
         const achievementId = req.params.id;
-        const progress = await UserProgress.findOne({ userId: req.user.id });
+        const progress = await UserProgress.findOne({ user: req.user.id });
         
         if (!progress) {
             return res.status(404).json({ error: 'User progress not found' });
@@ -107,7 +107,7 @@ router.post('/initialize-achievements', auth, async (req, res) => {
 // Get user's activity history
 router.get('/activity-history', auth, async (req, res) => {
     try {
-        const progress = await UserProgress.findOne({ userId: req.user.id });
+        const progress = await UserProgress.findOne({ user: req.user.id });
         
         if (!progress) {
             return res.json({ activities: [] });
@@ -192,29 +192,16 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         console.log(`🔍 User object:`, req.user);
         
         // FIRST: Ensure UserProgress exists for this user
-        let progress = await UserProgress.findOne({ userId });
+        // UserProgress uses 'user' field (ObjectId), not 'userId'
+        const userObjectId = new mongoose.Types.ObjectId(userId);
+        let progress = await UserProgress.findOne({ user: userObjectId });
         
         if (!progress) {
             console.log(`📝 Creating new UserProgress for user ${userId}...`);
             progress = new UserProgress({
-                userId,
+                user: userObjectId,  // Use 'user' field, not 'userId'
                 xp: 0,
-                level: 1,
-                streak: {
-                    current: 0,
-                    longest: 0,
-                    lastActiveDate: null
-                },
-                achievements: [],
-                stats: {
-                    casesShared: 0,
-                    casesApproved: 0,
-                    commentsPosted: 0,
-                    quizzesCompleted: 0,
-                    perfectScores: 0,
-                    studySessions: 0,
-                    helpfulVotes: 0
-                }
+                level: 1
             });
             await progress.save();
             console.log(`✅ UserProgress created successfully`);
@@ -333,7 +320,7 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         }
         
         // 4. Reload progress and check achievements after migration
-        progress = await UserProgress.findOne({ userId });
+        progress = await UserProgress.findOne({ user: userObjectId });
         
         if (progress) {
             await GamificationService.checkAchievements(userId, progress);
@@ -343,7 +330,7 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
         }
         
         // Fetch final updated progress to return
-        const updatedProgress = await UserProgress.findOne({ userId });
+        const updatedProgress = await UserProgress.findOne({ user: userObjectId });
         
         res.json({
             message: 'Migration successful',
