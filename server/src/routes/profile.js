@@ -6,6 +6,7 @@ import auth from '../middleware/auth.js';
 import UserProgress from '../models/UserProgress.js';
 import CommunityCase from '../models/CommunityCase.js';
 import { QuizSession } from '../models/QuizSession.js';
+import '../config/cloudinary.js'; // Initialize Cloudinary config
 
 const router = express.Router();
 
