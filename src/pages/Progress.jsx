@@ -8,6 +8,8 @@ import {
   getProgressBySubsection,
 } from "../utils/progressTracking.js";
 import workflowData from "../data/workflow-domains.json";
+import apiService from "../services/apiService";
+import ProgressBar from "../components/Gamification/ProgressBar";
 
 /**
  * Progress Page - Track weak topics and score history
@@ -24,6 +26,8 @@ function Progress() {
     totalCorrect: 0,
     totalTime: 0,
   });
+  const [gamificationProgress, setGamificationProgress] = useState(null);
+  const [achievements, setAchievements] = useState([]);
   const [refreshKey, setRefreshKey] = useState(0);
 
   const loadProgressData = async () => {
@@ -56,6 +60,19 @@ function Progress() {
         { totalAttempts: 0, totalCorrect: 0, totalTime: 0 }
       );
       setAttemptStats(stats);
+
+      // Load gamification data
+      try {
+        const [progressData, achievementsData] = await Promise.all([
+          apiService.get('/gamification/progress'),
+          apiService.get('/gamification/achievements')
+        ]);
+        setGamificationProgress(progressData);
+        setAchievements(achievementsData);
+      } catch (gamError) {
+        console.error("Error loading gamification data:", gamError);
+        // Don't fail the whole page if gamification fails
+      }
     } catch (e) {
       console.error("Error loading progress data:", e);
     }
@@ -135,6 +152,83 @@ function Progress() {
           improvement over time.
         </p>
       </div>
+
+      {/* Gamification Overview */}
+      {gamificationProgress && (
+        <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-indigo-600 to-purple-600 text-white p-6 shadow-xl">
+          <h2 className="text-lg font-semibold mb-4">🎯 Your Learning Journey</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Level & XP */}
+            <div>
+              <p className="text-indigo-200 text-sm font-medium mb-3">Level & XP</p>
+              <ProgressBar
+                level={gamificationProgress.level}
+                xp={gamificationProgress.xp}
+                xpToNextLevel={gamificationProgress.xpToNextLevel}
+                showDetails={true}
+              />
+            </div>
+
+            {/* Achievements */}
+            <div>
+              <p className="text-indigo-200 text-sm font-medium mb-3">Achievements</p>
+              <div className="flex items-center gap-3">
+                <div className="text-4xl font-bold">
+                  {achievements.filter(a => a.unlocked).length}
+                </div>
+                <div className="text-indigo-200">/</div>
+                <div className="text-2xl font-semibold text-indigo-200">
+                  {achievements.length}
+                </div>
+              </div>
+              <Link
+                to="/achievements"
+                className="inline-flex items-center gap-1 text-xs font-medium text-white hover:text-indigo-100 mt-2"
+              >
+                View all achievements
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Streak */}
+            <div>
+              <p className="text-indigo-200 text-sm font-medium mb-3">Current Streak</p>
+              <div className="flex items-center gap-3">
+                <span className="text-5xl">🔥</span>
+                <div>
+                  <div className="text-4xl font-bold">
+                    {gamificationProgress.streak?.current || 0}
+                  </div>
+                  <p className="text-indigo-200 text-sm">days</p>
+                </div>
+              </div>
+              {gamificationProgress.streak?.longest > 0 && (
+                <p className="text-xs text-indigo-200 mt-2">
+                  Best: {gamificationProgress.streak.longest} days
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="mt-6 pt-6 border-t border-indigo-400/30 flex flex-wrap gap-3">
+            <Link
+              to="/leaderboard"
+              className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition-colors backdrop-blur-sm"
+            >
+              🏆 Leaderboard
+            </Link>
+            <Link
+              to="/achievements"
+              className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition-colors backdrop-blur-sm"
+            >
+              🏅 Achievements
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* Overall Stats */}
       {attemptStats.totalAttempts > 0 && (
