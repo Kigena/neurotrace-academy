@@ -4,6 +4,7 @@ import GamificationService from '../services/gamificationService.js';
 import UserProgress from '../models/UserProgress.js';
 import Achievement from '../models/Achievement.js';
 import CommunityCase from '../models/CommunityCase.js';
+import { QuizSession } from '../models/QuizSession.js';
 
 const router = express.Router();
 
@@ -188,7 +189,58 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
             });
         }
         
-        // 3. Check achievements after migration
+        // 3. Award XP for completed quizzes
+        const completedQuizzes = await QuizSession.find({
+            userId,
+            endTime: { $ne: null } // Only completed quizzes
+        });
+        
+        console.log(`📝 Found ${completedQuizzes.length} completed quizzes`);
+        
+        for (const quiz of completedQuizzes) {
+            if (quiz.answers && quiz.answers.size > 0) {
+                // Calculate score from answers
+                const answers = Array.from(quiz.answers.values());
+                const correct = answers.filter(a => a.isCorrect).length;
+                const total = answers.length;
+                const percent = total > 0 ? (correct / total) * 100 : 0;
+                
+                // XP calculation based on score percentage
+                let xpReward = 0;
+                let activityType = 'quiz_completion';
+                
+                if (percent === 100) {
+                    xpReward = 100; // Perfect score bonus
+                    activityType = 'quiz_perfect';
+                } else if (percent >= 90) {
+                    xpReward = 80;
+                } else if (percent >= 80) {
+                    xpReward = 60;
+                } else if (percent >= 70) {
+                    xpReward = 40;
+                } else if (percent >= 60) {
+                    xpReward = 30;
+                } else {
+                    xpReward = 20; // Participation XP
+                }
+                
+                await GamificationService.awardXP(userId, xpReward, activityType, {
+                    sessionId: quiz.sessionId,
+                    mode: quiz.mode,
+                    score: { correct, total, percent },
+                    retroactive: true
+                });
+                
+                totalXP += xpReward;
+                activities.push({
+                    type: 'quiz',
+                    xp: xpReward,
+                    score: `${correct}/${total} (${Math.round(percent)}%)`
+                });
+            }
+        }
+        
+        // 4. Check achievements after migration
         const progress = await UserProgress.findOne({ userId });
         await GamificationService.checkAchievements(userId, progress);
         
@@ -200,6 +252,7 @@ router.post('/migrate-existing-activities', auth, async (req, res) => {
             activities,
             casesCount: userCases.length,
             commentsCount: commentCount,
+            quizzesCount: completedQuizzes.length,
             newLevel: progress.level,
             totalXP: progress.xp
         });

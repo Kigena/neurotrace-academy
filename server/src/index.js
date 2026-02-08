@@ -38,6 +38,7 @@ import casesRoutes from './routes/cases.js';
 import adminRoutes from './routes/admin.js';
 import aiRoutes from './routes/ai.js';
 import gamificationRoutes from './routes/gamification.js';
+import quizRoutes from './routes/quiz.js';
 import GamificationService from './services/gamificationService.js';
 
 // Routes
@@ -72,6 +73,9 @@ app.use('/api/ai', aiRoutes);
 
 // Gamification Routes
 app.use('/api/gamification', gamificationRoutes);
+
+// Quiz Routes (with gamification integration)
+app.use('/api/quiz', quizRoutes);
 
 import { QuizSession } from './models/QuizSession.js';
 import { AttemptEvent } from './models/AttemptEvent.js';

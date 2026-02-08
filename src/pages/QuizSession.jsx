@@ -5,6 +5,7 @@ import workflowData from "../data/workflow-domains.json";
 import mockExamPresets from "../data/mockExamPresets.json";
 import ContextualAI from "../components/ContextualAI.jsx";
 import useGamification from "../hooks/useGamification";
+import apiService from "../services/apiService";
 import {
   createQuizSession,
   loadQuizSession,
@@ -493,6 +494,30 @@ function QuizSession() {
           mode: session.mode,
           timestamp: Date.now(),
         });
+        
+        // Send quiz completion to backend for gamification tracking
+        try {
+          await apiService.post('/quiz/sessions/complete', {
+            sessionId: finalSessionForScore.sessionId,
+            mode: finalSessionForScore.mode,
+            questionIds: finalSessionForScore.questionIds,
+            answers: finalSessionForScore.answers,
+            startTime: finalSessionForScore.startTime,
+            endTime: finalSessionForScore.endTime,
+            timeLimitSec: finalSessionForScore.timeLimitSec,
+            config: finalSessionForScore.config,
+            score: {
+              correct: score.correct,
+              total: score.total,
+              percent: score.percent,
+              attempted: score.attempted
+            }
+          });
+          console.log('✅ Quiz completion sent to backend for XP tracking');
+        } catch (backendError) {
+          console.error('⚠️ Failed to track quiz in backend (XP may not be awarded):', backendError);
+          // Don't block the UI, just log the error
+        }
         
         // Check for gamification progress after quiz completion
         await checkProgress();
