@@ -44,8 +44,8 @@ router.get('/:userId', async (req, res) => {
 
         // Get basic stats
         const casesCount = await CommunityCase.countDocuments({
-            submittedBy: userId,
-            status: 'approved'
+            author: userId,
+            status: 'published'
         });
 
         const quizSessions = await QuizSession.find({ userId });
