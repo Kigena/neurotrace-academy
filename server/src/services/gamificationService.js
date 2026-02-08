@@ -1,5 +1,6 @@
 import Achievement from '../models/Achievement.js';
 import UserProgress from '../models/UserProgress.js';
+import notificationService from './notificationService.js';
 
 class GamificationService {
     // XP rewards for different actions
@@ -45,6 +46,24 @@ class GamificationService {
 
             // Check for newly unlocked achievements
             const newAchievements = await this.checkAchievements(userId, progress);
+
+            // Send notifications for level-ups
+            if (levelUpdate.levelsGained.length > 0) {
+                const newLevel = levelUpdate.levelsGained[levelUpdate.levelsGained.length - 1];
+                await notificationService.notifyLevelUp({
+                    userId,
+                    newLevel
+                }).catch(err => console.error('Level-up notification error:', err));
+            }
+
+            // Send notifications for new achievements
+            for (const achievement of newAchievements) {
+                await notificationService.notifyAchievement({
+                    userId,
+                    achievementName: achievement.name,
+                    achievementIcon: achievement.icon
+                }).catch(err => console.error('Achievement notification error:', err));
+            }
 
             return {
                 success: true,

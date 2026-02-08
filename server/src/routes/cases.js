@@ -5,6 +5,7 @@ import auth from '../middleware/auth.js';
 import { caseUpload } from '../config/cloudinary.js';
 import geminiService from '../services/gemini.js';
 import { trackCaseShare, trackCaseApproval, trackCommentPost } from '../middleware/trackActivity.js';
+import notificationService from '../services/notificationService.js';
 
 const router = express.Router();
 
@@ -51,12 +52,12 @@ router.post('/upload', auth, caseUpload.single('file'), (req, res) => {
 router.get('/featured', async (req, res) => {
     try {
         // First, try to get a manually featured case
-        let featuredCase = await CommunityCase.findOne({ 
-            status: 'published', 
-            featured: true 
+        let featuredCase = await CommunityCase.findOne({
+            status: 'published',
+            featured: true
         })
-        .populate('author', 'name')
-        .sort({ featuredAt: -1 });
+            .populate('author', 'name')
+            .sort({ featuredAt: -1 });
 
         // If no manually featured case, pick one based on weekly rotation
         if (!featuredCase) {
@@ -89,7 +90,7 @@ router.post('/', auth, trackCaseShare, async (req, res) => {
         console.log('📥 Creating new case...');
         console.log('User:', req.user?.id);
         console.log('Request body keys:', Object.keys(req.body));
-        
+
         const {
             title,
             history,
@@ -213,7 +214,7 @@ router.get('/moderation', auth, async (req, res) => {
         const rawCases = await CommunityCase.find(query)
             .sort({ createdAt: -1 })
             .lean();
-        
+
         if (rawCases.length === 0) {
             return res.json([]);
         }
@@ -234,8 +235,8 @@ router.get('/moderation', auth, async (req, res) => {
                     if (!mongoose.Types.ObjectId.isValid(caseItem.author)) {
                         return {
                             ...caseItem,
-                            author: { 
-                                name: 'Invalid User ID', 
+                            author: {
+                                name: 'Invalid User ID',
                                 email: 'corrupted@user.com'
                             }
                         };
@@ -258,13 +259,13 @@ router.get('/moderation', auth, async (req, res) => {
                 }
             })
         );
-        
+
         res.json(casesWithAuthors);
-        
+
     } catch (error) {
         console.error('Get moderation cases error:', error);
-        res.status(500).json({ 
-            error: 'Failed to fetch cases for moderation', 
+        res.status(500).json({
+            error: 'Failed to fetch cases for moderation',
             details: error.message
         });
     }
@@ -323,6 +324,17 @@ router.put('/:id/moderate', auth, async (req, res) => {
             await trackCaseApproval(communityCase.author.toString());
         }
 
+        // Send notification to case author
+        if (communityCase.author) {
+            await notificationService.notifyCaseStatus({
+                caseId: communityCase._id,
+                caseTitle: communityCase.title,
+                caseAuthorId: communityCase.author,
+                status,
+                moderationNotes
+            }).catch(err => console.error('Notification error:', err));
+        }
+
         res.json(communityCase);
     } catch (error) {
         console.error('Moderate case error:', error);
@@ -357,11 +369,37 @@ router.post('/:id/comment', auth, trackCommentPost, async (req, res) => {
         await communityCase.populate('comments.userId', 'name');
         const addedComment = communityCase.comments[communityCase.comments.length - 1];
 
+        // Send notifications
+        const commenterName = req.user.name || 'Someone';
+
+        // If this is a reply, notify the original commenter
+        if (replyTo) {
+            const originalComment = communityCase.comments.id(replyTo);
+            if (originalComment && originalComment.userId && originalComment.userId.toString() !== req.user.id) {
+                await notificationService.notifyCommentReply({
+                    caseId: communityCase._id,
+                    commentId: addedComment._id,
+                    originalCommentAuthorId: originalComment.userId,
+                    replierName: commenterName
+                }).catch(err => console.error('Notification error:', err));
+            }
+        } else {
+            // If this is a top-level comment, notify the case author
+            if (communityCase.author && communityCase.author.toString() !== req.user.id) {
+                await notificationService.notifyCaseComment({
+                    caseId: communityCase._id,
+                    caseTitle: communityCase.title,
+                    caseAuthorId: communityCase.author,
+                    commenterName
+                }).catch(err => console.error('Notification error:', err));
+            }
+        }
+
         // If AI is mentioned, trigger AI response
         if (hasAIMention) {
             // Import gemini service at the top if not already imported
             const geminiService = (await import('../services/gemini.js')).default;
-            
+
             try {
                 // Generate AI response
                 const aiResponse = await geminiService.generateCaseDiscussionResponse(
@@ -407,7 +445,7 @@ router.post('/:id/reconcile', auth, async (req, res) => {
         }
 
         // Get the specific comments to reconcile
-        const commentsToReconcile = communityCase.comments.filter(c => 
+        const commentsToReconcile = communityCase.comments.filter(c =>
             commentIds.includes(c._id.toString())
         );
 
@@ -434,7 +472,7 @@ router.post('/:id/reconcile', auth, async (req, res) => {
 
         await communityCase.save();
         await communityCase.populate('comments.userId', 'name');
-        
+
         res.json(communityCase.comments);
     } catch (error) {
         console.error('Reconciliation error:', error);
@@ -470,7 +508,7 @@ router.post('/:id/structure', auth, async (req, res) => {
 
         await communityCase.save();
         await communityCase.populate('comments.userId', 'name');
-        
+
         res.json(communityCase.comments);
     } catch (error) {
         console.error('Structure generation error:', error);
@@ -495,7 +533,7 @@ router.delete('/:id/comment/:commentId', auth, async (req, res) => {
 
         // Find the comment
         const comment = communityCase.comments.id(req.params.commentId);
-        
+
         if (!comment) {
             return res.status(404).json({ error: 'Comment not found' });
         }
@@ -525,7 +563,7 @@ router.delete('/:id/comment/:commentId', auth, async (req, res) => {
 
 // 7b. Test endpoint to verify routes are working
 router.get('/:id/test-edit', auth, (req, res) => {
-    res.json({ 
+    res.json({
         message: 'Edit route is accessible',
         caseId: req.params.id,
         userId: req.user.id,
@@ -577,7 +615,7 @@ router.put('/:id', auth, async (req, res) => {
         console.log('========================================');
 
         const communityCase = await CommunityCase.findById(req.params.id);
-        
+
         if (!communityCase) {
             return res.status(404).json({ error: 'Case not found' });
         }
@@ -614,14 +652,14 @@ router.put('/:id', auth, async (req, res) => {
         if (findings) communityCase.findings = findings;
         if (tags !== undefined) communityCase.tags = tags;
         if (attachments !== undefined) communityCase.attachments = attachments;
-        
+
         communityCase.updatedAt = Date.now();
 
         console.log('💾 Saving updated case...');
         await communityCase.save();
-        
+
         await communityCase.populate('author', 'name');
-        
+
         console.log('✅ Case updated successfully');
         console.log('========================================');
         res.json(communityCase);
@@ -640,14 +678,14 @@ router.put('/:id', auth, async (req, res) => {
 router.post('/:id/ai-analyze', auth, async (req, res) => {
     try {
         const { promptType } = req.body; // 'findings', 'differentials', 'artifacts', 'history'
-        
+
         const communityCase = await CommunityCase.findById(req.params.id);
         if (!communityCase) {
             return res.status(404).json({ error: 'Case not found' });
         }
 
         const analysis = await geminiService.analyzeCaseWithPrompt(promptType, communityCase);
-        
+
         res.json({ analysis, promptType });
     } catch (error) {
         console.error('AI case analysis error:', error);
@@ -676,7 +714,7 @@ EEG Findings:
         `.trim();
 
         const studyNotes = await geminiService.convertToStudyNotes(communityCase.title, pageContent);
-        
+
         res.json({ studyNotes });
     } catch (error) {
         console.error('Study notes generation error:', error);
@@ -688,13 +726,13 @@ EEG Findings:
 router.post('/check-phi', auth, async (req, res) => {
     try {
         const { content } = req.body;
-        
+
         if (!content) {
             return res.status(400).json({ error: 'Content required' });
         }
 
         const phiCheck = geminiService.detectPHI(content);
-        
+
         res.json(phiCheck);
     } catch (error) {
         console.error('PHI check error:', error);
@@ -707,7 +745,7 @@ router.delete('/:id', auth, async (req, res) => {
     try {
         console.log('🗑️ Delete case request:', req.params.id);
         console.log('User:', req.user.id, 'Role:', req.user.role);
-        
+
         // Check if user is admin
         if (req.user.role !== 'admin') {
             return res.status(403).json({ error: 'Admin access required' });
