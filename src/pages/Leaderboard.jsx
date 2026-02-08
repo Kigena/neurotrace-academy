@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import apiService from '../services/apiService';
 
@@ -92,16 +93,14 @@ const Leaderboard = () => {
                         <button
                             key={type.key}
                             onClick={() => setLeaderboardType(type.key)}
-                            className={`flex-1 min-w-[120px] px-4 py-4 text-center transition-all ${
-                                leaderboardType === type.key
+                            className={`flex-1 min-w-[120px] px-4 py-4 text-center transition-all ${leaderboardType === type.key
                                     ? 'bg-indigo-50 border-b-4 border-indigo-600'
                                     : 'bg-white hover:bg-slate-50 border-b-4 border-transparent'
-                            }`}
+                                }`}
                         >
                             <div className="text-2xl mb-1">{type.icon}</div>
-                            <div className={`font-bold text-sm ${
-                                leaderboardType === type.key ? 'text-indigo-900' : 'text-slate-700'
-                            }`}>
+                            <div className={`font-bold text-sm ${leaderboardType === type.key ? 'text-indigo-900' : 'text-slate-700'
+                                }`}>
                                 {type.label}
                             </div>
                             <div className="text-[10px] text-slate-500 mt-1">
@@ -126,27 +125,24 @@ const Leaderboard = () => {
                     <div className="divide-y divide-slate-100">
                         {leaderboard.map((entry, index) => {
                             const isCurrentUser = entry.userId === user?.id;
-                            
+
                             return (
                                 <div
                                     key={entry.userId}
-                                    className={`flex items-center gap-4 p-4 transition-colors ${
-                                        isCurrentUser ? 'bg-indigo-50' : 'hover:bg-slate-50'
-                                    }`}
+                                    className={`flex items-center gap-4 p-4 transition-colors ${isCurrentUser ? 'bg-indigo-50' : 'hover:bg-slate-50'
+                                        }`}
                                 >
                                     {/* Rank */}
-                                    <div className={`w-12 text-center font-bold text-lg ${
-                                        entry.rank <= 3 ? 'text-2xl' : 'text-slate-600'
-                                    }`}>
+                                    <div className={`w-12 text-center font-bold text-lg ${entry.rank <= 3 ? 'text-2xl' : 'text-slate-600'
+                                        }`}>
                                         {getRankBadge(entry.rank)}
                                     </div>
 
                                     {/* User Info */}
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
-                                            <p className={`font-bold text-slate-900 truncate ${
-                                                isCurrentUser ? 'text-indigo-900' : ''
-                                            }`}>
+                                            <p className={`font-bold text-slate-900 truncate ${isCurrentUser ? 'text-indigo-900' : ''
+                                                }`}>
                                                 {entry.userName}
                                                 {isCurrentUser && (
                                                     <span className="ml-2 text-xs bg-indigo-600 text-white px-2 py-0.5 rounded-full">
