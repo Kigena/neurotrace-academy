@@ -9,7 +9,7 @@ class GamificationService {
         CASE_SHARE: 25,
         CASE_APPROVED: 50,
         CASE_HELPFUL_VOTE: 5,
-        COMMENT_POST: 5,
+        COMMENT_POST: 10,
         COMMENT_HELPFUL: 10,
         PATTERN_STUDY: 2,
         SYNDROME_STUDY: 3,
@@ -26,7 +26,7 @@ class GamificationService {
         try {
             // Get or create user progress
             let progress = await UserProgress.findOne({ user: userId });
-            
+
             if (!progress) {
                 progress = new UserProgress({ user: userId });
             }
@@ -74,51 +74,51 @@ class GamificationService {
                 stats.quizzesCompleted += 1;
                 if (metadata.score) stats.totalQuizScore += metadata.score;
                 break;
-            
+
             case 'quiz_perfect':
                 stats.quizzesPerfect += 1;
                 break;
-            
+
             case 'case_share':
                 stats.casesShared += 1;
                 break;
-            
+
             case 'case_approved':
                 stats.casesApproved += 1;
                 break;
-            
+
             case 'case_helpful_vote':
                 stats.casesHelpfulVotes += 1;
                 break;
-            
+
             case 'comment_post':
                 stats.commentsPosted += 1;
                 break;
-            
+
             case 'comment_helpful':
                 stats.helpfulComments += 1;
                 break;
-            
+
             case 'discussion_start':
                 stats.discussionsStarted += 1;
                 break;
-            
+
             case 'pattern_study':
                 stats.patternsStudied += 1;
                 break;
-            
+
             case 'syndrome_study':
                 stats.syndromesStudied += 1;
                 break;
-            
+
             case 'video_watch':
                 stats.videosWatched += 1;
                 break;
-            
+
             case 'resource_download':
                 stats.resourcesDownloaded += 1;
                 break;
-            
+
             case 'study_session':
                 stats.sessionsCount += 1;
                 if (metadata.duration) {
@@ -144,14 +144,14 @@ class GamificationService {
 
             // Check if criteria is met
             const unlocked = this.checkAchievementCriteria(achievement, progress);
-            
+
             if (unlocked) {
                 // Unlock achievement
                 progress.unlockAchievement(achievement._id);
-                
+
                 // Award XP
                 progress.addXP(achievement.xpReward, 'achievement_unlock');
-                
+
                 newlyUnlocked.push({
                     id: achievement._id,
                     key: achievement.key,
@@ -180,17 +180,17 @@ class GamificationService {
         switch (criteria.type) {
             case 'count':
                 return stats[criteria.metric] >= criteria.target;
-            
+
             case 'threshold':
                 return progress[criteria.metric] >= criteria.target;
-            
+
             case 'streak':
                 return streak.current >= criteria.target;
-            
+
             case 'perfect':
                 // For "perfect" type, check if user has N perfect scores
                 return stats.quizzesPerfect >= criteria.target;
-            
+
             default:
                 return false;
         }
@@ -202,7 +202,7 @@ class GamificationService {
     static async getUserProgress(userId) {
         let progress = await UserProgress.findOne({ user: userId })
             .populate('unlockedAchievements.achievement');
-        
+
         if (!progress) {
             progress = await UserProgress.create({ user: userId });
         }
@@ -228,7 +228,7 @@ class GamificationService {
      */
     static async getLeaderboard(type = 'overall', limit = 50) {
         let sortCriteria = {};
-        
+
         switch (type) {
             case 'overall':
                 sortCriteria = { level: -1, xp: -1 };
