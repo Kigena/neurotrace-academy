@@ -17,8 +17,16 @@ app.use('/uploads', express.static('uploads'));
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/neurotrace';
 
 mongoose.connect(MONGODB_URI)
-    .then(() => {
+    .then(async () => {
         console.log('✅ Connected to MongoDB');
+        
+        // Initialize default achievements on startup
+        try {
+            await GamificationService.initializeDefaultAchievements();
+            console.log('✅ Gamification system initialized');
+        } catch (error) {
+            console.error('⚠️ Failed to initialize gamification:', error);
+        }
     })
     .catch((err) => {
         console.error('❌ MongoDB connection error:', err);
@@ -29,6 +37,8 @@ import chatRoutes from './routes/chat.js';
 import casesRoutes from './routes/cases.js';
 import adminRoutes from './routes/admin.js';
 import aiRoutes from './routes/ai.js';
+import gamificationRoutes from './routes/gamification.js';
+import GamificationService from './services/gamificationService.js';
 
 // Routes
 app.get('/', (req, res) => {
@@ -59,6 +69,9 @@ app.use('/api/admin', adminRoutes);
 
 // AI Routes
 app.use('/api/ai', aiRoutes);
+
+// Gamification Routes
+app.use('/api/gamification', gamificationRoutes);
 
 import { QuizSession } from './models/QuizSession.js';
 import { AttemptEvent } from './models/AttemptEvent.js';
