@@ -28,18 +28,19 @@ router.get('/achievements', auth, async (req, res) => {
         const allAchievements = await Achievement.find({ isActive: true }).sort({ order: 1, category: 1 });
         
         // Add unlock status to each achievement
+        // UserProgress uses 'unlockedAchievements' field
         const achievementsWithStatus = allAchievements.map(achievement => {
-            const unlocked = userProgress?.achievements.some(
-                a => a.achievementId.toString() === achievement._id.toString()
+            const unlocked = userProgress?.unlockedAchievements?.some(
+                a => a.achievement.toString() === achievement._id.toString()
             );
-            const unlockedDate = userProgress?.achievements.find(
-                a => a.achievementId.toString() === achievement._id.toString()
-            )?.unlockedAt;
+            const unlockedData = userProgress?.unlockedAchievements?.find(
+                a => a.achievement.toString() === achievement._id.toString()
+            );
             
             return {
                 ...achievement.toObject(),
-                unlocked,
-                unlockedAt: unlockedDate || null
+                unlocked: !!unlocked,
+                unlockedAt: unlockedData?.unlockedAt || null
             };
         });
         
