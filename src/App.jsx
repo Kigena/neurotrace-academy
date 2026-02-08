@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AuthProvider, useAuth } from "./contexts/AuthContext.jsx";
 import { ThemeProvider } from "./contexts/ThemeContext.jsx";
 import { SocketProvider } from "./contexts/SocketContext.jsx";
+import { NotificationProvider } from "./contexts/NotificationContext.jsx";
 import Home from "./pages/Home.jsx";
 import Patterns from "./pages/Patterns.jsx";
 import PatternDetail from "./pages/PatternDetail.jsx";
@@ -26,6 +27,7 @@ import Dashboard from "./pages/Dashboard.jsx";
 import Chat from "./pages/Chat.jsx";
 import AdminModeration from "./pages/AdminModeration.jsx";
 import Leaderboard from "./pages/Leaderboard.jsx";
+import Achievements from "./pages/Achievements.jsx";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -140,6 +142,11 @@ function AppContent() {
               <Leaderboard />
             </ProtectedRoute>
           } />
+          <Route path="/achievements" element={
+            <ProtectedRoute>
+              <Achievements />
+            </ProtectedRoute>
+          } />
           <Route path="/syndromes" element={
             <ProtectedRoute>
               <Syndromes />
@@ -177,7 +184,9 @@ function App() {
     <ThemeProvider>
       <AuthProvider>
         <SocketProvider>
-          <AppContent />
+          <NotificationProvider>
+            <AppContent />
+          </NotificationProvider>
         </SocketProvider>
       </AuthProvider>
     </ThemeProvider>

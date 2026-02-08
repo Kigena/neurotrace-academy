@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import caseService from '../services/caseService';
+import useGamification from '../hooks/useGamification';
 
 const CaseDiscussion = ({ caseId, comments = [], onCommentAdded }) => {
     const navigate = useNavigate();
+    const { checkProgress } = useGamification();
     const [newComment, setNewComment] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState(null);
@@ -26,6 +28,10 @@ const CaseDiscussion = ({ caseId, comments = [], onCommentAdded }) => {
             const updatedComments = await caseService.addComment(caseId, newComment.trim(), replyTo);
             setNewComment('');
             setReplyTo(null);
+            
+            // Check for gamification progress after posting comment
+            await checkProgress();
+            
             if (onCommentAdded) {
                 onCommentAdded(updatedComments);
             }

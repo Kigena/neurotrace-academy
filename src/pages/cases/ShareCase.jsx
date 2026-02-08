@@ -5,9 +5,11 @@ import apiService from '../../services/apiService';
 import CaseDisclaimerModal from '../../components/CaseDisclaimerModal';
 import PHIWarning from '../../components/PHIWarning';
 import MedicalRedactionEditor from '../../components/MedicalRedactionEditor';
+import useGamification from '../../hooks/useGamification';
 
 const ShareCase = () => {
     const navigate = useNavigate();
+    const { checkProgress } = useGamification();
     const [step, setStep] = useState(1);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [phiWarning, setPhiWarning] = useState(null);
@@ -307,6 +309,9 @@ const ShareCase = () => {
             ]);
             
             console.log('✅ Case created successfully:', response);
+            
+            // Check for gamification progress (achievements, level up)
+            await checkProgress();
             
             // Show success message
             alert('✅ Case submitted successfully!\n\n📋 Your case is now pending admin review.\n\nOur team will verify that all patient information is properly de-identified before publishing to the community feed.\n\nYou will be notified once your case is approved.');

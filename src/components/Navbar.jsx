@@ -111,6 +111,9 @@ function Navbar() {
             <NavLink to="/leaderboard" className={navLinkClasses}>
               🏆 Ranks
             </NavLink>
+            <NavLink to="/achievements" className={navLinkClasses}>
+              🎖️ Badges
+            </NavLink>
             <NavLink to="/chat" className={navLinkClasses}>
               Chat
             </NavLink>
@@ -195,6 +198,9 @@ function Navbar() {
             </NavLink>
             <NavLink to="/leaderboard" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
               🏆 Ranks
+            </NavLink>
+            <NavLink to="/achievements" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
+              🎖️ Badges
             </NavLink>
             <NavLink to="/chat" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Chat

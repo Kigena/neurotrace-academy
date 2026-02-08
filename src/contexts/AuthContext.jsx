@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import authService from "../services/authService";
+import GamificationClient from "../services/gamificationClient";
 
 const AuthContext = createContext(null);
 
@@ -32,6 +33,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         authService.logout();
+        GamificationClient.clearStoredProgress();
         setUser(null);
     };
 

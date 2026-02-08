@@ -4,6 +4,7 @@ import CommunityCase from '../models/CommunityCase.js';
 import auth from '../middleware/auth.js';
 import { caseUpload } from '../config/cloudinary.js';
 import geminiService from '../services/gemini.js';
+import { trackCaseShare, trackCaseApproval, trackCommentPost } from '../middleware/trackActivity.js';
 
 const router = express.Router();
 
@@ -83,7 +84,7 @@ router.get('/featured', async (req, res) => {
 });
 
 // 3. Create Case
-router.post('/', auth, async (req, res) => {
+router.post('/', auth, trackCaseShare, async (req, res) => {
     try {
         console.log('📥 Creating new case...');
         console.log('User:', req.user?.id);
@@ -317,6 +318,11 @@ router.put('/:id/moderate', auth, async (req, res) => {
 
         await communityCase.save();
 
+        // Track case approval for XP
+        if (status === 'published' && communityCase.author) {
+            await trackCaseApproval(communityCase.author.toString());
+        }
+
         res.json(communityCase);
     } catch (error) {
         console.error('Moderate case error:', error);
@@ -325,7 +331,7 @@ router.put('/:id/moderate', auth, async (req, res) => {
 });
 
 // 7. Add Comment
-router.post('/:id/comment', auth, async (req, res) => {
+router.post('/:id/comment', auth, trackCommentPost, async (req, res) => {
     try {
         const { content, replyTo } = req.body;
         const communityCase = await CommunityCase.findById(req.params.id);

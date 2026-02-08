@@ -4,6 +4,7 @@ import abretQuestionsData from "../data/abret-questions.json";
 import workflowData from "../data/workflow-domains.json";
 import mockExamPresets from "../data/mockExamPresets.json";
 import ContextualAI from "../components/ContextualAI.jsx";
+import useGamification from "../hooks/useGamification";
 import {
   createQuizSession,
   loadQuizSession,
@@ -26,6 +27,7 @@ import {
 
 function QuizSession() {
   const navigate = useNavigate();
+  const { checkProgress } = useGamification();
   const [searchParams] = useSearchParams();
 
   // Configuration state
@@ -491,6 +493,9 @@ function QuizSession() {
           mode: session.mode,
           timestamp: Date.now(),
         });
+        
+        // Check for gamification progress after quiz completion
+        await checkProgress();
       }
     } catch (error) {
       console.error("Error during quiz finish:", error);
