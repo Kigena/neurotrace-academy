@@ -219,6 +219,26 @@ class NotificationService {
             metadata: { newLevel }
         });
     }
+
+    /**
+     * Helper: Create chat message notification
+     */
+    async notifyChatMessage({ recipientId, senderName, messagePreview, chatType = 'private' }) {
+        if (!recipientId) return;
+
+        const title = chatType === 'private'
+            ? `New message from ${senderName}`
+            : `New message in ${chatType} chat`;
+
+        return this.createNotification({
+            userId: recipientId,
+            type: 'message',
+            title,
+            message: messagePreview.substring(0, 100),
+            link: '/chat',
+            metadata: { senderName, chatType }
+        });
+    }
 }
 
 export default new NotificationService();

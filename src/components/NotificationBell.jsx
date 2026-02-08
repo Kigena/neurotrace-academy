@@ -43,6 +43,7 @@ const NotificationBell = () => {
 
     const getNotificationIcon = (type) => {
         switch (type) {
+            case 'message': return '💬';
             case 'comment': return '💬';
             case 'reply': return '↩️';
             case 'case_status': return '📋';

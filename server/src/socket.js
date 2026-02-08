@@ -2,6 +2,7 @@ import { Server } from 'socket.io';
 import Message from './models/Message.js';
 import ChatRoom from './models/ChatRoom.js';
 import geminiService from './services/gemini.js';
+import notificationService from './services/notificationService.js';
 
 // Store online users: Map<userId, { socketId, name, lastSeen }>
 const onlineUsers = new Map();
@@ -90,6 +91,14 @@ export const initializeSocket = (httpServer) => {
 
                 await message.save();
                 console.log('✅ Private message saved:', message._id, 'attachments:', message.attachments?.length || 0);
+
+                // Send notification to recipient (if not already handled by browser notification)
+                await notificationService.notifyChatMessage({
+                    recipientId,
+                    senderName,
+                    messagePreview: content,
+                    chatType: 'private'
+                }).catch(err => console.error('Chat notification error:', err));
 
                 // Send to recipient
                 const recipientRoom = `user:${recipientId}`;

@@ -21,6 +21,7 @@ const Notifications = () => {
 
     const getNotificationIcon = (type) => {
         switch (type) {
+            case 'message': return '💬';
             case 'comment': return '💬';
             case 'reply': return '↩️';
             case 'case_status': return '📋';
@@ -51,6 +52,7 @@ const Notifications = () => {
     const filterOptions = [
         { value: 'all', label: 'All', icon: '📬' },
         { value: 'unread', label: 'Unread', icon: '🔴' },
+        { value: 'message', label: 'Messages', icon: '💬' },
         { value: 'comment', label: 'Comments', icon: '💬' },
         { value: 'case_status', label: 'Cases', icon: '📋' },
         { value: 'achievement', label: 'Achievements', icon: '🏆' },
@@ -77,8 +79,8 @@ const Notifications = () => {
                                     key={option.value}
                                     onClick={() => setFilter(option.value)}
                                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${filter === option.value
-                                            ? 'bg-indigo-600 text-white'
-                                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                        ? 'bg-indigo-600 text-white'
+                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                                         }`}
                                 >
                                     <span className="mr-2">{option.icon}</span>

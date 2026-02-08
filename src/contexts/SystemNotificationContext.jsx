@@ -169,6 +169,7 @@ export const SystemNotificationProvider = ({ children }) => {
 
     const getNotificationIcon = (type) => {
         switch (type) {
+            case 'message': return '💬';
             case 'comment': return '💬';
             case 'reply': return '↩️';
             case 'case_status': return '📋';
