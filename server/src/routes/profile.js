@@ -2,7 +2,7 @@ import express from 'express';
 import multer from 'multer';
 import { v2 as cloudinary } from 'cloudinary';
 import { User } from '../models/User.js';
-import { auth } from '../middleware/auth.js';
+import auth from '../middleware/auth.js';
 import UserProgress from '../models/UserProgress.js';
 import CommunityCase from '../models/CommunityCase.js';
 import { QuizSession } from '../models/QuizSession.js';
