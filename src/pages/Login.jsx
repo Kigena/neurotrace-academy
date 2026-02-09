@@ -76,10 +76,11 @@ function Login() {
                 <div className="relative text-center text-white space-y-6 max-w-lg z-10">
                     <img
                         src="/logo.png"
-                        alt="NeuroTrace Logo"
+                        alt="NeuroLinea Logo"
                         className="w-32 h-32 object-contain mx-auto mb-4 drop-shadow-md"
                     />
-                    <h1 className="text-4xl font-bold tracking-tight">NeuroTrace Academy</h1>
+                    <h1 className="text-4xl font-bold tracking-tight">NeuroLinea</h1>
+                    <p className="text-lg text-blue-100 font-medium">Tracing insight. Advancing practice.</p>
                     <p className="text-blue-100 text-lg leading-relaxed">
                         Master EEG interpretation and neurodiagnostics with our comprehensive interactive training platform.
                     </p>
@@ -93,10 +94,11 @@ function Login() {
                     <div className="lg:hidden text-center mb-8">
                         <img
                             src="/logo.png"
-                            alt="NeuroTrace Logo"
+                            alt="NeuroLinea Logo"
                             className="w-16 h-16 object-contain mx-auto mb-2"
                         />
-                        <h2 className="text-2xl font-bold text-blue-900">NeuroTrace Academy</h2>
+                        <h2 className="text-2xl font-bold text-blue-900">NeuroLinea</h2>
+                        <p className="text-sm text-slate-600 mt-1">Tracing insight. Advancing practice.</p>
                     </div>
 
                     <div className="text-center lg:text-left">
@@ -282,7 +284,7 @@ function Login() {
                             </div>
                             <div className="relative flex justify-center text-sm">
                                 <span className="px-2 bg-white text-slate-500">
-                                    {isLogin ? "New to NeuroTrace?" : "Already valid user?"}
+                                    {isLogin ? "New to NeuroLinea?" : "Already valid user?"}
                                 </span>
                             </div>
                         </div>

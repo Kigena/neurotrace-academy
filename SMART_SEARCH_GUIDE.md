@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Smart Search feature provides AI-powered natural language search across NeuroTrace Academy's content, including cases, patterns, and educational resources. Users can ask questions in plain English and get relevant results instantly.
+The Smart Search feature provides AI-powered natural language search across NeuroLinea's content, including cases, patterns, and educational resources. Users can ask questions in plain English and get relevant results instantly.
 
 ---
 

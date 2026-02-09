@@ -1,4 +1,4 @@
-# NeuroTrace Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain IV – Professional Practice, Ethics & Legal Issues  
 **Section:** Ethics, Confidentiality & Professional Conduct  

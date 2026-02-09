@@ -81,7 +81,7 @@ const ChatSidebar = ({ activeChat, onChatSelect, onlineUsers = [] }) => {
                 </div>
 
                 <div
-                    onClick={() => onChatSelect({ type: 'ai', id: 'ai-bot', name: 'NeuroTrace AI', isOnline: true })}
+                    onClick={() => onChatSelect({ type: 'ai', id: 'ai-bot', name: 'NeuroLinea AI', isOnline: true })}
                     className={`p-4 flex items-center gap-3 cursor-pointer hover:bg-background transition-colors ${activeChat.id === 'ai-bot' ? 'bg-primary/5 border-l-4 border-primary' : ''
                         }`}
                 >
@@ -89,7 +89,7 @@ const ChatSidebar = ({ activeChat, onChatSelect, onlineUsers = [] }) => {
                         AI
                     </div>
                     <div>
-                        <h3 className="font-semibold text-text">NeuroTrace AI</h3>
+                        <h3 className="font-semibold text-text">NeuroLinea AI</h3>
                         <p className="text-xs text-textSecondary">Always here to help</p>
                     </div>
                 </div>

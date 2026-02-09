@@ -1,4 +1,4 @@
-# NeuroTrace Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain IV – Professional Practice, Quality Assurance & Safety  
 **Section:** Quality Assurance & Equipment Maintenance  

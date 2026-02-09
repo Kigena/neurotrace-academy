@@ -78,7 +78,7 @@ export const playNotificationSound = () => {
  * @param {number} count - Number of unread messages
  */
 export const updateDocumentTitle = (count) => {
-    const baseTitle = 'NeuroTrace Academy';
+    const baseTitle = 'NeuroLinea';
     if (count > 0) {
         document.title = `(${count}) ${baseTitle}`;
     } else {

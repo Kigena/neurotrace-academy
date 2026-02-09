@@ -70,15 +70,16 @@ function Home() {
       {/* Hero Section */}
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-700 p-8 md:p-12 text-white shadow-lg">
         <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-        
+
         <div className="relative z-10 max-w-3xl">
           <div className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
-            🎓 Welcome to NeuroTrace Academy
+            🎓 Welcome to NeuroLinea
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2 leading-tight">
             Become an Expert{" "}
             <span className="text-indigo-200">EEG Technologist</span>
           </h1>
+          <p className="text-lg text-indigo-100 font-medium mb-4">Tracing insight. Advancing practice.</p>
           <p className="text-lg text-white/90 mb-6 max-w-2xl">
             {user ? `Welcome back, ${user.name}! ` : ''}
             Master EEG recording techniques, pattern recognition, and technical skills. Prepare for ABRET R. EEG T. certification with comprehensive training modules.
@@ -107,19 +108,19 @@ function Home() {
           <div className="text-slate-700 text-sm font-medium">EEG Patterns</div>
           <div className="mt-2 text-xs text-slate-500">Recognize & Document</div>
         </div>
-        
+
         <div className="bg-white rounded-xl p-6 border-2 border-indigo-100 hover:border-indigo-300 hover:shadow-lg transition-all">
           <div className="text-3xl md:text-4xl font-bold text-indigo-600 mb-2">{stats.syndromes}</div>
           <div className="text-slate-700 text-sm font-medium">Syndromes</div>
           <div className="mt-2 text-xs text-slate-500">Know the Patterns</div>
         </div>
-        
+
         <div className="bg-white rounded-xl p-6 border-2 border-indigo-100 hover:border-indigo-300 hover:shadow-lg transition-all">
           <div className="text-3xl md:text-4xl font-bold text-indigo-600 mb-2">{stats.cases}</div>
           <div className="text-slate-700 text-sm font-medium">Training Cases</div>
           <div className="mt-2 text-xs text-slate-500">Technical Practice</div>
         </div>
-        
+
         <div className="bg-white rounded-xl p-6 border-2 border-indigo-100 hover:border-indigo-300 hover:shadow-lg transition-all">
           <div className="text-3xl md:text-4xl font-bold text-indigo-600 mb-2">{stats.quizzes}+</div>
           <div className="text-slate-700 text-sm font-medium">Quiz Questions</div>
@@ -143,11 +144,11 @@ function Home() {
               </div>
             )}
           </div>
-          
+
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
             {caseOfTheWeek.title}
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="space-y-3">
               {/* Patient Info - handle both community and static cases */}
@@ -161,8 +162,8 @@ function Home() {
                     <div className="font-semibold text-slate-900">
                       {caseOfTheWeek.isStatic ? (
                         <>
-                          {caseOfTheWeek.patient.ageYears < 1 
-                            ? `${Math.round(caseOfTheWeek.patient.ageYears * 12)} months` 
+                          {caseOfTheWeek.patient.ageYears < 1
+                            ? `${Math.round(caseOfTheWeek.patient.ageYears * 12)} months`
                             : `${caseOfTheWeek.patient.ageYears} years`}, {caseOfTheWeek.patient.context}
                         </>
                       ) : (
@@ -177,7 +178,7 @@ function Home() {
                   </div>
                 </div>
               )}
-              
+
               {/* History/Chief Complaint */}
               {(caseOfTheWeek.history || caseOfTheWeek.chiefComplaint) && (
                 <div className="flex items-center gap-3 text-sm">
@@ -207,7 +208,7 @@ function Home() {
                   </div>
                 </div>
               )}
-              
+
               {!caseOfTheWeek.isStatic && (
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
@@ -222,7 +223,7 @@ function Home() {
                 </div>
               )}
             </div>
-            
+
             <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
               <div className="text-xs font-semibold text-indigo-600 mb-2">
                 {caseOfTheWeek.isStatic ? 'LEARNING OBJECTIVES' : 'WHAT YOU\'LL LEARN'}
@@ -254,7 +255,7 @@ function Home() {
               )}
             </div>
           </div>
-          
+
           <Link
             to={`/cases/${caseOfTheWeek.isStatic ? caseOfTheWeek.id : caseOfTheWeek._id}`}
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-bold hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -270,10 +271,10 @@ function Home() {
       {/* Featured Patterns */}
       <div>
         <div className="flex items-center justify-between mb-6">
-        <div>
-          <h2 className="text-2xl font-bold text-slate-900">Featured EEG Patterns</h2>
-          <p className="text-sm text-slate-600 mt-1">Learn to recognize these essential patterns as an EEG tech</p>
-        </div>
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900">Featured EEG Patterns</h2>
+            <p className="text-sm text-slate-600 mt-1">Learn to recognize these essential patterns as an EEG tech</p>
+          </div>
           <Link to="/patterns" className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
             View All
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -281,7 +282,7 @@ function Home() {
             </svg>
           </Link>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-6">
           {featuredPatterns.map((pattern) => (
             <Link
@@ -318,7 +319,7 @@ function Home() {
       {/* Learning Paths Grid */}
       <div>
         <h2 className="text-2xl font-bold text-slate-900 mb-6">Explore Learning Paths</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <Link
             to="/cases"
@@ -481,7 +482,7 @@ function Home() {
               </div>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-3">
             <Link
               to="/share-case"

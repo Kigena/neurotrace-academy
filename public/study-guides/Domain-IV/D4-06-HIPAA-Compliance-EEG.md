@@ -1,4 +1,4 @@
-# NeuroTrace Academy Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain IV – Professional Practice, Ethics & Legal Issues  
 **Section:** HIPAA Compliance in EEG Practice  

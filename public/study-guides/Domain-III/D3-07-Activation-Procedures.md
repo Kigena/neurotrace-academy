@@ -1,4 +1,4 @@
-# NeuroTrace Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain III – EEG Patterns & Clinical Correlation  
 **Section:** EEG Activation Procedures  

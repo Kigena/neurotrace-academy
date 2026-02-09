@@ -1,4 +1,4 @@
-# NeuroTrace Academy Study Guide
+# NeuroLinea Study Guide
 
 **Category:** Domain I - Neuroanatomy & EEG Localization  
 **Topic:** Brain Structures & Functions  

@@ -1,4 +1,4 @@
-# NeuroTrace Academy Study Guide
+# NeuroLinea Study Guide
 
 **Category:** Domain III - Pattern Recognition  
 **Topic:** EEG Syndromes Classification & Diagnostic Yield Enhancement  

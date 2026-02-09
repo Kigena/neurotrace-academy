@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 /**
- * NeuroTrace Academy — Standards Page (Pro Quiz Mode)
+ * NeuroLinea — Standards Page (Pro Quiz Mode)
  * Includes:
  * - Standards content with "Learn more" drawers
  * - Study Mode (self-check)

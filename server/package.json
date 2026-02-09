@@ -1,7 +1,7 @@
 {
     "name": "neurotrace-academy-server",
     "version": "1.0.0",
-    "description": "Backend API for NeuroTrace Academy",
+    "description": "Backend API for NeuroLinea",
     "main": "src/index.js",
     "type": "module",
     "scripts": {

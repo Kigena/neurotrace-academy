@@ -1,6 +1,6 @@
 # Neuroanatomy Images Directory
 
-This directory contains anatomical brain images used in the NeuroTrace Academy study guides.
+This directory contains anatomical brain images used in the NeuroLinea study guides.
 
 ## Image Files Required
 

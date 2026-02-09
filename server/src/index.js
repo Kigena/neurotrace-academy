@@ -45,7 +45,7 @@ import GamificationService from './services/gamificationService.js';
 
 // Routes
 app.get('/', (req, res) => {
-    res.send('NeuroTrace Academy API is running');
+    res.send('NeuroLinea API is running');
 });
 
 // Health check endpoint for uptime monitoring

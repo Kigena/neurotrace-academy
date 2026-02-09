@@ -1,6 +1,6 @@
-# NeuroTrace Academy - Learning Images
+# NeuroLinea - Learning Images
 
-This directory contains educational images for the NeuroTrace Academy platform.
+This directory contains educational images for the NeuroLinea platform.
 
 ## Current Images
 

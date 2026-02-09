@@ -41,7 +41,7 @@ function Navbar() {
       };
 
       fetchPendingCount();
-      
+
       // Refresh count every 30 seconds
       const interval = setInterval(fetchPendingCount, 30000);
       return () => clearInterval(interval);
@@ -75,7 +75,7 @@ function Navbar() {
           <NavLink to="/" className="flex items-center gap-2">
             <img src="/logo.png" alt="Logo" className="w-8 h-8 object-contain" />
             <span className="text-lg font-semibold text-blue-700">
-              NeuroTrace
+              NeuroLinea
             </span>
             <span className="hidden sm:inline text-xs text-slate-500">
               neurotrace.academy

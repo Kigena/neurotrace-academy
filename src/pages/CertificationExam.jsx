@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import abretQuestionsData from '../data/abret-questions.json';
 
 /**
- * NeuroTrace Certification Exam
+ * NeuroLinea Certification Exam
  * Comprehensive timed assessment covering all EEG domains
  * 120-minute exam with realistic testing conditions
  */
@@ -46,7 +46,7 @@ const CertificationExam = () => {
 
     const generateExamQuestions = () => {
         const allQuestions = abretQuestionsData.questions || [];
-        
+
         // Distribute questions across domains
         const domainQuestions = {
             'domain-1': [],
@@ -125,7 +125,7 @@ const CertificationExam = () => {
         examQuestions.forEach(q => {
             const userAnswer = answers[q.id];
             const correctAnswer = q.options.findIndex(opt => opt.isCorrect);
-            
+
             if (userAnswer === correctAnswer) {
                 correct++;
                 domainScores[q.domainId].correct++;
@@ -146,7 +146,7 @@ const CertificationExam = () => {
         const hours = Math.floor(seconds / 3600);
         const mins = Math.floor((seconds % 3600) / 60);
         const secs = seconds % 60;
-        return hours > 0 
+        return hours > 0
             ? `${hours}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
             : `${mins}:${secs.toString().padStart(2, '0')}`;
     };
@@ -156,7 +156,7 @@ const CertificationExam = () => {
         return (
             <div className="max-w-4xl mx-auto p-8">
                 <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl p-8 text-white mb-8">
-                    <h1 className="text-3xl font-bold mb-2">NeuroTrace Certification Exam</h1>
+                    <h1 className="text-3xl font-bold mb-2">NeuroLinea Certification Exam</h1>
                     <p className="text-purple-100">Comprehensive EEG Technologist Assessment</p>
                 </div>
 
@@ -265,7 +265,7 @@ const CertificationExam = () => {
                     <div className="max-w-6xl mx-auto px-4 py-4">
                         <div className="flex items-center justify-between">
                             <div>
-                                <h1 className="text-lg font-bold text-slate-900">NeuroTrace Certification Exam</h1>
+                                <h1 className="text-lg font-bold text-slate-900">NeuroLinea Certification Exam</h1>
                                 <p className="text-sm text-slate-600">
                                     Question {currentQuestion + 1} of {examQuestions.length}
                                 </p>
@@ -285,11 +285,11 @@ const CertificationExam = () => {
                                 </button>
                             </div>
                         </div>
-                        
+
                         {/* Progress Bar */}
                         <div className="mt-4">
                             <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                                <div 
+                                <div
                                     className="h-full bg-gradient-to-r from-purple-600 to-indigo-600 transition-all duration-300"
                                     style={{ width: `${progress}%` }}
                                 />
@@ -321,11 +321,10 @@ const CertificationExam = () => {
                             </div>
                             <button
                                 onClick={() => toggleFlag(question.id)}
-                                className={`ml-4 p-2 rounded-lg transition-colors ${
-                                    flagged.has(question.id)
+                                className={`ml-4 p-2 rounded-lg transition-colors ${flagged.has(question.id)
                                         ? 'bg-yellow-100 text-yellow-600'
                                         : 'bg-slate-100 text-slate-400 hover:text-yellow-600'
-                                }`}
+                                    }`}
                                 title={flagged.has(question.id) ? 'Unflag' : 'Flag for review'}
                             >
                                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -342,18 +341,16 @@ const CertificationExam = () => {
                                     <button
                                         key={index}
                                         onClick={() => selectAnswer(question.id, index)}
-                                        className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
-                                            isSelected
+                                        className={`w-full text-left p-4 rounded-lg border-2 transition-all ${isSelected
                                                 ? 'border-purple-600 bg-purple-50'
                                                 : 'border-slate-200 hover:border-purple-300 bg-white'
-                                        }`}
+                                            }`}
                                     >
                                         <div className="flex items-start gap-3">
-                                            <div className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                                                isSelected
+                                            <div className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center ${isSelected
                                                     ? 'border-purple-600 bg-purple-600'
                                                     : 'border-slate-300'
-                                            }`}>
+                                                }`}>
                                                 {isSelected && (
                                                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -376,7 +373,7 @@ const CertificationExam = () => {
                             >
                                 ← Previous
                             </button>
-                            
+
                             <div className="text-sm text-slate-600">
                                 {answers[question.id] !== undefined ? '✓ Answered' : 'Not answered'}
                             </div>
@@ -404,18 +401,17 @@ const CertificationExam = () => {
                                 const isAnswered = answers[q.id] !== undefined;
                                 const isFlagged = flagged.has(q.id);
                                 const isCurrent = index === currentQuestion;
-                                
+
                                 return (
                                     <button
                                         key={index}
                                         onClick={() => setCurrentQuestion(index)}
-                                        className={`relative aspect-square rounded-lg text-sm font-medium transition-all ${
-                                            isCurrent
+                                        className={`relative aspect-square rounded-lg text-sm font-medium transition-all ${isCurrent
                                                 ? 'bg-purple-600 text-white ring-2 ring-purple-600 ring-offset-2'
                                                 : isAnswered
-                                                ? 'bg-green-100 text-green-700 hover:bg-green-200'
-                                                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                                        }`}
+                                                    ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                                                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                                            }`}
                                     >
                                         {index + 1}
                                         {isFlagged && (
@@ -509,8 +505,8 @@ const CertificationExam = () => {
                             {passed ? 'Congratulations!' : 'Keep Practicing!'}
                         </h1>
                         <p className="text-xl opacity-90">
-                            {passed 
-                                ? 'You passed the NeuroTrace Certification Exam!' 
+                            {passed
+                                ? 'You passed the NeuroLinea Certification Exam!'
                                 : 'You\'re on the right track - keep studying!'}
                         </p>
                     </div>
@@ -540,7 +536,7 @@ const CertificationExam = () => {
                             {Object.entries(results.domainScores).map(([domainId, scores]) => {
                                 const percentage = scores.total > 0 ? ((scores.correct / scores.total) * 100).toFixed(1) : 0;
                                 const isStrong = percentage >= 75;
-                                
+
                                 return (
                                     <div key={domainId} className="border border-slate-200 rounded-lg p-4">
                                         <div className="flex items-center justify-between mb-2">
@@ -553,7 +549,7 @@ const CertificationExam = () => {
                                         </div>
                                         <div className="flex items-center gap-3">
                                             <div className="flex-1 h-3 bg-slate-200 rounded-full overflow-hidden">
-                                                <div 
+                                                <div
                                                     className={`h-full ${isStrong ? 'bg-green-500' : 'bg-amber-500'}`}
                                                     style={{ width: `${percentage}%` }}
                                                 />

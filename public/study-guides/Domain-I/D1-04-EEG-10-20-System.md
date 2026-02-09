@@ -1,4 +1,4 @@
-# NeuroTrace Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain I – Basic Concepts & Principles  
 **Section:** EEG Electrode Placement: The 10–20 System  

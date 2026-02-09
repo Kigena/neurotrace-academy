@@ -1,4 +1,4 @@
-# NeuroTrace Academy Study Guide
+# NeuroLinea Study Guide
 
 **Category:** Medical Terminology  
 **Topic:** Ophthalmology  

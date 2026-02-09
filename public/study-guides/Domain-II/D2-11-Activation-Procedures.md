@@ -1,4 +1,4 @@
-# NeuroTrace Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain II – Performing the EEG Study  
 **Section:** Activation Procedures  

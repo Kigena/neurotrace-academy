@@ -202,7 +202,7 @@ function AppContent() {
 
         {user && (
           <footer className="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
-            NeuroTrace Academy · EEG Patterns · Cases · ABRET Prep
+            NeuroLinea · EEG Patterns · Cases · ABRET Prep
           </footer>
         )}
       </div>

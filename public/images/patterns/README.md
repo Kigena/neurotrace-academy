@@ -1,10 +1,10 @@
 # Pattern EEG Images Directory
 
-This directory contains EEG images for pattern examples in the NeuroTrace Academy Pattern Library.
+This directory contains EEG images for pattern examples in the NeuroLinea Academy Pattern Library.
 
 ## Image Naming Convention
 
-Images should be named using the pattern ID from `neurotrace_patterns_library_v2.json`:
+Images should be named using the pattern ID from `NeuroLinea_patterns_library_v2.json`:
 
 - `fast-alpha-variant.png` → pattern_fast_alpha_variant
 - `slow-alpha-variant.png` → pattern_slow_alpha_variant
@@ -34,7 +34,7 @@ Images should be named using the pattern ID from `neurotrace_patterns_library_v2
 
 1. Save the image file in this directory (`public/images/patterns/`)
 2. Name it according to the pattern ID (see naming convention above)
-3. Update the pattern in `neurotrace_patterns_library_v2.json` to include the `image` field:
+3. Update the pattern in `NeuroLinea_patterns_library_v2.json` to include the `image` field:
    ```json
    "image": "/images/patterns/your-image-name.png"
    ```

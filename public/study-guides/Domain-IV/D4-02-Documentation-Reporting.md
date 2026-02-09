@@ -1,4 +1,4 @@
-# NeuroTrace Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain IV – Professional Practice, Documentation & Ethics  
 **Section:** EEG Documentation & Reporting Standards  

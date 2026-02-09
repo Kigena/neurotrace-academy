@@ -28,10 +28,10 @@ const CaseDiscussion = ({ caseId, comments = [], onCommentAdded }) => {
             const updatedComments = await caseService.addComment(caseId, newComment.trim(), replyTo);
             setNewComment('');
             setReplyTo(null);
-            
+
             // Check for gamification progress after posting comment
             await checkProgress();
-            
+
             if (onCommentAdded) {
                 onCommentAdded(updatedComments);
             }
@@ -83,8 +83,8 @@ const CaseDiscussion = ({ caseId, comments = [], onCommentAdded }) => {
     };
 
     const toggleReconcileSelection = (commentId) => {
-        setSelectedForReconcile(prev => 
-            prev.includes(commentId) 
+        setSelectedForReconcile(prev =>
+            prev.includes(commentId)
                 ? prev.filter(id => id !== commentId)
                 : [...prev, commentId]
         );
@@ -132,7 +132,7 @@ const CaseDiscussion = ({ caseId, comments = [], onCommentAdded }) => {
                 <h3 className="text-xl font-semibold text-slate-900">
                     Discussion ({comments.filter(c => !c.isAI).length})
                 </h3>
-                
+
                 {/* AI Tools */}
                 {isLoggedIn && comments.length > 0 && (
                     <div className="flex gap-2">
@@ -187,13 +187,12 @@ const CaseDiscussion = ({ caseId, comments = [], onCommentAdded }) => {
                     comments.map((comment, idx) => {
                         const isAI = comment.isAI;
                         const isSelected = selectedForReconcile.includes(comment._id);
-                        
+
                         return (
-                            <div 
-                                key={comment._id || idx} 
-                                className={`flex gap-3 pb-4 border-b border-slate-100 last:border-0 ${
-                                    isAI ? 'bg-gradient-to-r from-indigo-50 to-purple-50 -mx-3 px-3 py-3 rounded-lg' : ''
-                                } ${isSelected ? 'ring-2 ring-purple-400 rounded-lg p-2' : ''}`}
+                            <div
+                                key={comment._id || idx}
+                                className={`flex gap-3 pb-4 border-b border-slate-100 last:border-0 ${isAI ? 'bg-gradient-to-r from-indigo-50 to-purple-50 -mx-3 px-3 py-3 rounded-lg' : ''
+                                    } ${isSelected ? 'ring-2 ring-purple-400 rounded-lg p-2' : ''}`}
                             >
                                 {/* Selection Checkbox (Reconcile Mode) */}
                                 {showReconcileMode && !isAI && (
@@ -225,7 +224,7 @@ const CaseDiscussion = ({ caseId, comments = [], onCommentAdded }) => {
                                             {isAI ? (
                                                 <>
                                                     <span className="inline-flex items-center gap-1">
-                                                        NeuroTrace AI
+                                                        NeuroLinea AI
                                                         {comment.aiType === 'reconciliation' && (
                                                             <span className="text-xs px-1.5 py-0.5 bg-purple-600 text-white rounded">Reconciliation</span>
                                                         )}
@@ -245,7 +244,7 @@ const CaseDiscussion = ({ caseId, comments = [], onCommentAdded }) => {
                                     <p className={`text-sm leading-relaxed whitespace-pre-wrap ${isAI ? 'text-slate-800' : 'text-slate-700'}`}>
                                         {comment.content}
                                     </p>
-                                    
+
                                     {/* Action Buttons */}
                                     {!isAI && isLoggedIn && !showReconcileMode && (
                                         <div className="mt-2 flex items-center gap-3">
@@ -297,7 +296,7 @@ const CaseDiscussion = ({ caseId, comments = [], onCommentAdded }) => {
                             </button>
                         </div>
                     )}
-                    
+
                     <div className="relative">
                         <textarea
                             value={newComment}

@@ -42,7 +42,7 @@ const CaseAIAssistant = ({ caseId, caseData }) => {
         setActivePrompt(promptType);
         setIsLoading(true);
         setResponse(null);
-        
+
         try {
             const result = await apiService.post(`/cases/${caseId}/ai-analyze`, {
                 promptType
@@ -74,10 +74,10 @@ const CaseAIAssistant = ({ caseId, caseData }) => {
                         <p className="text-xs text-indigo-600">Get instant analysis and insights</p>
                     </div>
                 </div>
-                <svg 
-                    className={`w-5 h-5 text-indigo-600 transition-transform ${showPanel ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                <svg
+                    className={`w-5 h-5 text-indigo-600 transition-transform ${showPanel ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                 >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -96,11 +96,10 @@ const CaseAIAssistant = ({ caseId, caseData }) => {
                                     key={prompt.id}
                                     onClick={() => handlePromptClick(prompt.id)}
                                     disabled={isLoading}
-                                    className={`p-4 rounded-lg border-2 transition-all text-left ${
-                                        activePrompt === prompt.id
+                                    className={`p-4 rounded-lg border-2 transition-all text-left ${activePrompt === prompt.id
                                             ? 'border-indigo-500 bg-indigo-50'
                                             : 'border-slate-200 hover:border-indigo-300 bg-white'
-                                    } disabled:opacity-50`}
+                                        } disabled:opacity-50`}
                                 >
                                     <div className="flex items-start gap-3">
                                         <span className="text-2xl">{prompt.icon}</span>
@@ -137,7 +136,7 @@ const CaseAIAssistant = ({ caseId, caseData }) => {
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="font-bold text-slate-900">NeuroTrace AI</p>
+                                        <p className="font-bold text-slate-900">NeuroLinea AI</p>
                                         <p className="text-xs text-slate-500">Analysis Response</p>
                                     </div>
                                 </div>

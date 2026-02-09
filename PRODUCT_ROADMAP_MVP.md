@@ -1,4 +1,4 @@
-# NeuroTrace Academy - Product Roadmap & MVP Features
+# NeuroLinea - Product Roadmap & MVP Features
 
 **Document Version:** 1.0  
 **Last Updated:** February 8, 2026  
@@ -8,7 +8,7 @@
 
 ## 🎯 Vision Statement
 
-NeuroTrace Academy aims to be the premier online learning platform for EEG technologists, combining interactive learning, community collaboration, and AI-powered assistance to prepare students for certification and career success.
+NeuroLinea aims to be the premier online learning platform for EEG technologists, combining interactive learning, community collaboration, and AI-powered assistance to prepare students for certification and career success.
 
 ---
 

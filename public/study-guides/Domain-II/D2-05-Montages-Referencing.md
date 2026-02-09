@@ -1,4 +1,4 @@
-# NeuroTrace Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain II – EEG Procedures & Instrumentation  
 **Section:** Montages & Referencing  

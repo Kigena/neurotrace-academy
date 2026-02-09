@@ -1,4 +1,4 @@
-# NeuroTrace Academy Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain II – Performing the EEG Study  
 **Section:** Complete Electrode Placement Guide: Standard & Exotic Electrodes  

@@ -1,4 +1,4 @@
-# NeuroTrace Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain IV – Professional Practice, Safety & Emergency Response  
 **Section:** Emergency Response & Basic Life Support (BLS)  

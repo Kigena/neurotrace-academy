@@ -132,21 +132,21 @@ function Quiz() {
           </div>
         </Link>
 
-        {/* NeuroTrace Certification Exam */}
+        {/* NeuroLinea Certification Exam */}
         <Link
           to="/certification-exam"
           className="rounded-lg border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 p-6 hover:shadow-lg transition-all hover:border-purple-300"
         >
           <div className="flex items-start justify-between mb-2">
             <h2 className="text-lg font-semibold text-slate-900">
-              NeuroTrace Certification Exam
+              NeuroLinea Certification Exam
             </h2>
             <span className="px-2 py-1 bg-purple-600 text-white text-xs font-bold rounded">
               NEW
             </span>
           </div>
           <p className="text-sm text-slate-600 mb-4">
-            Comprehensive 120-minute timed assessment covering all EEG domains. 
+            Comprehensive 120-minute timed assessment covering all EEG domains.
             Test your knowledge with realistic exam conditions and get detailed performance analysis.
           </p>
           <div className="flex flex-wrap gap-2 mb-3">

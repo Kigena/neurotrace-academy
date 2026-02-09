@@ -147,7 +147,7 @@ export const SocketProvider = ({ children }) => {
                 const title = message.type === 'private'
                     ? `${message.senderName}`
                     : message.type === 'ai'
-                        ? 'NeuroTrace AI'
+                        ? 'NeuroLinea AI'
                         : 'Public Chat';
 
                 showNotification(

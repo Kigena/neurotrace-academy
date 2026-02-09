@@ -44,7 +44,7 @@ function TopBar({ onMenuClick }) {
           <div className="flex items-center gap-2 md:hidden">
             <img src="/logo.png" alt="Logo" className="w-8 h-8 object-contain" />
             <span className="text-lg font-semibold text-blue-700">
-              NeuroTrace
+              NeuroLinea
             </span>
           </div>
 

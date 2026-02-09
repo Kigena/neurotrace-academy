@@ -1,4 +1,4 @@
-# NeuroTrace Study Guide
+# NeuroLinea Study Guide
 
 **Domain:** Domain II – EEG Procedures & Data Acquisition  
 **Section:** Filters, Sensitivity & Time Constants  

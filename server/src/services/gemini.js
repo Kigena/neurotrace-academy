@@ -11,7 +11,7 @@ class GeminiService {
      * Build context-aware system prompt
      */
     buildSystemPrompt(userContext, eegPatterns) {
-        return `You are an EEG teaching assistant for NeuroTrace Academy, an interactive platform for learning EEG interpretation.
+        return `You are an EEG teaching assistant for NeuroLinea, an interactive platform for learning EEG interpretation.
 
 User Context:
 - Name: ${userContext.name || 'Student'}
@@ -143,7 +143,7 @@ Guidelines:
      */
     async generateCaseDiscussionResponse(mentionText, caseData, recentComments = []) {
         try {
-            const systemPrompt = `You are NeuroTrace AI, an expert EEG technologist assistant helping with case discussions.
+            const systemPrompt = `You are NeuroLinea AI, an expert EEG technologist assistant helping with case discussions.
 
 Case Context:
 - Title: ${caseData.title}
@@ -196,7 +196,7 @@ Guidelines:
      */
     async reconcileOpinions(question, conflictingComments, caseData) {
         try {
-            const systemPrompt = `You are NeuroTrace AI, helping reconcile different interpretations in an EEG case discussion.
+            const systemPrompt = `You are NeuroLinea AI, helping reconcile different interpretations in an EEG case discussion.
 
 Case: ${caseData.title}
 
@@ -247,7 +247,7 @@ Be objective, educational, and reference EEG interpretation principles.`;
      */
     async explainPage(pageTitle, pageContent, contentType = 'page') {
         try {
-            const systemPrompt = `You are NeuroTrace AI, explaining educational content to EEG technologist students.
+            const systemPrompt = `You are NeuroLinea AI, explaining educational content to EEG technologist students.
 
 Page: ${pageTitle}
 Type: ${contentType}
@@ -279,7 +279,7 @@ Keep it focused, actionable, and educational.`;
      */
     async generateQuizFromPage(pageTitle, pageContent) {
         try {
-            const systemPrompt = `You are NeuroTrace AI, creating quiz questions from educational content.
+            const systemPrompt = `You are NeuroLinea AI, creating quiz questions from educational content.
 
 Page: ${pageTitle}
 
@@ -316,7 +316,7 @@ Make questions practical and clinically relevant.`;
      */
     async convertToStudyNotes(pageTitle, pageContent) {
         try {
-            const systemPrompt = `You are NeuroTrace AI, creating study notes from educational content.
+            const systemPrompt = `You are NeuroLinea AI, creating study notes from educational content.
 
 Page: ${pageTitle}
 
@@ -388,7 +388,7 @@ Make it concise, memorable, and exam-focused.`;
 
             const promptText = prompts[promptType] || prompts['findings'];
 
-            const systemPrompt = `You are NeuroTrace AI, an expert EEG analyst helping with case interpretation.
+            const systemPrompt = `You are NeuroLinea AI, an expert EEG analyst helping with case interpretation.
 
 Case Details:
 - Title: ${caseData.title}
@@ -502,7 +502,7 @@ Provide a thorough, educational analysis. Use markdown formatting for clarity.`;
      */
     async findSimilarCases(query, allCases, currentCaseId = null) {
         try {
-            const systemPrompt = `You are NeuroTrace AI helping search for EEG cases.
+            const systemPrompt = `You are NeuroLinea AI helping search for EEG cases.
 
 User Query: "${query}"
 
@@ -557,7 +557,7 @@ Focus on: EEG patterns, clinical context, age, findings similarity. Return valid
      */
     async comparePatterns(query, allPatterns) {
         try {
-            const systemPrompt = `You are NeuroTrace AI helping compare EEG patterns.
+            const systemPrompt = `You are NeuroLinea AI helping compare EEG patterns.
 
 User Query: "${query}"
 
@@ -610,7 +610,7 @@ Return valid JSON only.`;
      */
     async findResourcesForTopic(query, resourceIndex) {
         try {
-            const systemPrompt = `You are NeuroTrace AI helping find educational resources.
+            const systemPrompt = `You are NeuroLinea AI helping find educational resources.
 
 User Query: "${query}"
 
@@ -664,7 +664,7 @@ Return valid JSON only.`;
      */
     async structureDiscussion(comments, caseData) {
         try {
-            const systemPrompt = `You are NeuroTrace AI, organizing a case discussion into a structured format.
+            const systemPrompt = `You are NeuroLinea AI, organizing a case discussion into a structured format.
 
 Case: ${caseData.title}
 

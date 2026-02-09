@@ -29,7 +29,7 @@ function Sidebar({ isOpen, onClose }) {
       };
 
       fetchPendingCount();
-      
+
       // Refresh count every 30 seconds
       const interval = setInterval(fetchPendingCount, 30000);
       return () => clearInterval(interval);
@@ -47,7 +47,7 @@ function Sidebar({ isOpen, onClose }) {
     <>
       {/* Backdrop for mobile */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
           onClick={onClose}
         />
@@ -55,20 +55,19 @@ function Sidebar({ isOpen, onClose }) {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full bg-white border-r border-slate-200 z-50 transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        } w-64 md:translate-x-0 md:sticky md:top-0 overflow-y-auto flex flex-col`}
+        className={`fixed top-0 left-0 h-full bg-white border-r border-slate-200 z-50 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
+          } w-64 md:translate-x-0 md:sticky md:top-0 overflow-y-auto flex flex-col`}
       >
         {/* Sidebar Header */}
         <div className="p-4 border-b border-slate-200 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="Logo" className="w-8 h-8 object-contain" />
             <div>
-              <h2 className="text-lg font-bold text-blue-700">NeuroTrace</h2>
+              <h2 className="text-lg font-bold text-blue-700">NeuroLinea</h2>
               <p className="text-xs text-slate-500">Academy</p>
             </div>
           </div>
-          
+
           {/* Close button for mobile */}
           <button
             onClick={onClose}
