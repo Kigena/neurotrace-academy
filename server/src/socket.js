@@ -24,7 +24,7 @@ export const getIO = () => {
 export const initializeSocket = (httpServer) => {
     io = new Server(httpServer, {
         cors: {
-            origin: process.env.CLIENT_URL || ['http://localhost:5002', 'https://neurotrace-academy2.vercel.app'],
+            origin: process.env.CLIENT_URL || ['http://localhost:5002', 'https://neurolinea.vercel.app'],
             methods: ['GET', 'POST'],
             credentials: true
         },
