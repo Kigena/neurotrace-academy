@@ -76,7 +76,7 @@ function Home() {
         ></div>
 
         {/* Gradient Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-indigo-700/80 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/50 to-indigo-700/50 z-10"></div>
 
         {/* Decorative blur element */}
         <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl z-20"></div>
