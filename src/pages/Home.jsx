@@ -71,15 +71,15 @@ function Home() {
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-700 p-8 md:p-12 text-white shadow-lg">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
           style={{ backgroundImage: 'url(/eeg-hero-background.png)' }}
         ></div>
 
         {/* Gradient Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/90 to-indigo-700/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/80 to-indigo-700/80 z-10"></div>
 
         {/* Decorative blur element */}
-        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl z-20"></div>
 
         <div className="relative z-10 max-w-3xl">
           <div className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
