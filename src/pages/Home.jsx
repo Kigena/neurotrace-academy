@@ -448,8 +448,17 @@ function Home() {
       </div>
 
       {/* Community Highlight */}
-      <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-white">
-        <div className="max-w-3xl">
+      <div className="relative bg-slate-900 rounded-2xl p-8 md:p-12 text-white overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+          style={{ backgroundImage: 'url(/eeg-hero-background.png)' }}
+        ></div>
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 to-slate-800/70 z-10"></div>
+
+        <div className="relative z-20 max-w-3xl">
           <div className="inline-block px-4 py-1.5 bg-white/10 rounded-full text-sm font-medium mb-4">
             💬 Community Powered
           </div>
