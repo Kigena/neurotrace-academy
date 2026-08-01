@@ -32,6 +32,7 @@ import Leaderboard from "./pages/Leaderboard.jsx";
 import Achievements from "./pages/Achievements.jsx";
 import UserProfile from "./pages/UserProfile.jsx";
 import Notifications from "./pages/Notifications.jsx";
+import EmgNcsStudy from "./pages/EmgNcsStudy.jsx";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -197,12 +198,18 @@ function AppContent() {
                 <Notifications />
               </ProtectedRoute>
             } />
+
+            <Route path="/emg-ncs" element={
+              <ProtectedRoute>
+                <EmgNcsStudy />
+              </ProtectedRoute>
+            } />
           </Routes>
         </main>
 
         {user && (
           <footer className="border-t border-slate-200 py-4 text-center text-xs text-slate-500">
-            NeuroLinea · EEG Patterns · Cases · ABRET Prep
+            NeuroLinea · EEG Patterns · Cases · EMG/NCS · ABRET Prep
           </footer>
         )}
       </div>

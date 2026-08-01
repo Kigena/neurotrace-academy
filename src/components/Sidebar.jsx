@@ -143,6 +143,18 @@ function Sidebar({ isOpen, onClose }) {
 
           <div className="mb-4">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-4 mb-2">
+              EMG/NCS
+            </p>
+            <NavLink to="/emg-ncs" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              NCS/EMG Study Hub
+            </NavLink>
+          </div>
+
+          <div className="mb-4">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-4 mb-2">
               Practice
             </p>
             <NavLink to="/quiz" className={navLinkClasses} onClick={handleNavClick}>
