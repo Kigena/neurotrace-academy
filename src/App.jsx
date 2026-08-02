@@ -54,6 +54,11 @@ function AppContent() {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = React.useState(true);
 
+  // Full-bleed routes break out of the centered max-w-7xl content column
+  // so embedded full-window experiences (e.g. the EMG/NCS study hub) can
+  // use the entire available width and height.
+  const isFullBleed = location.pathname === "/emg-ncs";
+
   // Show login page without sidebar
   if (!user && location.pathname === '/login') {
     return (
@@ -72,7 +77,13 @@ function AppContent() {
       <div className="flex-1 flex flex-col min-w-0">
         {user && <TopBar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />}
 
-        <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-6">
+        <main
+          className={
+            isFullBleed
+              ? "flex-1 w-full flex flex-col min-h-0"
+              : "flex-1 max-w-7xl w-full mx-auto px-4 py-6"
+          }
+        >
           <Routes>
             <Route path="/login" element={<Login />} />
 

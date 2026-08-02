@@ -33,9 +33,9 @@ function EmgNcsStudy() {
   }, []);
 
   return (
-    <div className="space-y-4 pb-4">
+    <div className="flex flex-col flex-1 min-h-0">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 px-4 pt-6 pb-3">
         <div>
           <div className="flex items-center gap-2 text-sm text-slate-500 mb-1">
             <Link to="/" className="hover:text-slate-700">
@@ -112,7 +112,7 @@ function EmgNcsStudy() {
       </div>
 
       {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 px-4 pb-3">
         <div className="bg-white rounded-lg p-4 border border-slate-200">
           <div className="text-2xl font-bold text-indigo-600">160</div>
           <div className="text-xs text-slate-600 font-medium">
@@ -140,8 +140,8 @@ function EmgNcsStudy() {
       {/* Iframe Container */}
       <div
         ref={containerRef}
-        className="relative bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm"
-        style={{ height: isFullscreen ? "100vh" : "calc(100vh - 260px)" }}
+        className="relative bg-white border-t border-slate-200 overflow-hidden flex-1 min-h-0"
+        style={isFullscreen ? { height: "100vh" } : undefined}
       >
         {isLoading && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-50 z-10">
