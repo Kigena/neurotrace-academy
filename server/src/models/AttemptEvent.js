@@ -16,7 +16,8 @@ const attemptEventSchema = new mongoose.Schema({
     isCorrect: { type: Boolean, required: true },
     timestamp: { type: Number, required: true },
     timeMs: { type: Number },
-    mode: { type: String, enum: ['practice', 'timed', 'mock'] },
+    // 'review' = a retry from Review Incorrect (a new attempt; history is kept)
+    mode: { type: String, enum: ['practice', 'timed', 'mock', 'review'] },
     sessionId: { type: String }, // Link back to the quiz session
     scoredBy: { type: String, enum: ['server'], default: undefined },
 });

@@ -7,6 +7,7 @@ import { AttemptEvent } from '../models/AttemptEvent.js';
 import { Question } from '../models/Question.js';
 import GamificationService from '../services/gamificationService.js';
 import { BLUEPRINT_KEY } from '../blueprint/abret2026.js';
+import { buildStudyProfile, selectWeakAreas } from '../services/studyAnalytics.js';
 import {
     DOMAIN_QUICKSTART,
     EXPIRY_GRACE_MS,
@@ -30,6 +31,7 @@ const router = express.Router();
 router.use(auth);
 
 const MODES = ['practice', 'timed', 'mock'];
+const WEAK_AREA_SIZES = [10, 20, 30];
 const POOL_FIELDS = 'questionId domainId sectionId topicTags difficulty origin.sourceOrder';
 const CONTENT_FIELDS = 'questionId domainId sectionId topicTags difficulty stem options version';
 const KEY_FIELDS = `${CONTENT_FIELDS} +answerIndex +explanation`;
@@ -326,6 +328,20 @@ router.post('/sessions', async (req, res) => {
             timeLimitSec = DOMAIN_QUICKSTART.timeLimitSec;
             selected = selectDomainQuickStart(pool, domainId);
             config = { domains: [domainId], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
+        } else if (kind === 'weak-areas') {
+            const size = Number.parseInt(body.questionCount, 10);
+            if (!WEAK_AREA_SIZES.includes(size)) {
+                return res.status(400).json({ error: 'questionCount must be 10, 20 or 30' });
+            }
+            const events = await AttemptEvent.find({ userId: req.user.id })
+                .sort({ timestamp: -1 })
+                .limit(5000)
+                .select('questionId domainId sectionId topicTags isCorrect timestamp')
+                .lean();
+            mode = 'practice';
+            timeLimitSec = null;
+            selected = selectWeakAreas(pool, buildStudyProfile(events), size);
+            config = { domains: [], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
         } else if (kind === 'custom') {
             mode = MODES.includes(body.mode) ? body.mode : null;
             if (!mode) return res.status(400).json({ error: 'mode must be practice, timed or mock' });

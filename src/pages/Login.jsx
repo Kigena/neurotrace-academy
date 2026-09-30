@@ -19,7 +19,7 @@ function Login() {
 
     useEffect(() => {
         if (user) {
-            navigate("/");
+            navigate("/study");
         }
     }, [user, navigate]);
 
@@ -45,7 +45,7 @@ function Login() {
                 }
                 await createUser(formData.name, formData.email, formData.password);
             }
-            navigate("/");
+            navigate("/study");
         } catch (e) {
             // Display user-friendly error messages
             const message = e.message || "An error occurred";

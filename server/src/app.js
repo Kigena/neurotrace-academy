@@ -13,6 +13,7 @@ import gamificationRoutes from './routes/gamification.js';
 import quizRoutes from './routes/quiz.js';
 import progressRoutes from './routes/progress.js';
 import blueprintRoutes from './routes/blueprint.js';
+import studyRoutes from './routes/study.js';
 import profileRoutes from './routes/profile.js';
 import notificationRoutes from './routes/notifications.js';
 import { createRateLimiters } from './middleware/rateLimit.js';
@@ -78,6 +79,7 @@ export function createApp(options = {}) {
     app.use('/api/gamification', gamificationRoutes);
     app.use('/api/quiz', quizRoutes);
     app.use('/api/blueprint', blueprintRoutes);
+    app.use('/api/study', studyRoutes);
     app.use('/api/profile', profileRoutes);
     app.use('/api/notifications', notificationRoutes);
     // /api/progress, /api/progress/weak-topics, /api/sessions, /api/sessions/:id

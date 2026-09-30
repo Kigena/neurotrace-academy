@@ -32,6 +32,8 @@ import Achievements from "./pages/Achievements.jsx";
 import UserProfile from "./pages/UserProfile.jsx";
 import Notifications from "./pages/Notifications.jsx";
 import EmgNcsStudy from "./pages/EmgNcsStudy.jsx";
+import StudyDashboard from "./pages/StudyDashboard.jsx";
+import ReviewIncorrect from "./pages/ReviewIncorrect.jsx";
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -161,6 +163,16 @@ function AppContent() {
                 broken exam engine. It now opens the canonical full mock exam. */}
             <Route path="/certification-exam" element={
               <Navigate to="/quiz/session?preset=mock-full-130" replace />
+            } />
+            <Route path="/study" element={
+              <ProtectedRoute>
+                <StudyDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/review" element={
+              <ProtectedRoute>
+                <ReviewIncorrect />
+              </ProtectedRoute>
             } />
             <Route path="/progress" element={
               <ProtectedRoute>
