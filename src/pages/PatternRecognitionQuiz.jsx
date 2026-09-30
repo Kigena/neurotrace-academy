@@ -15,6 +15,8 @@ const PatternRecognitionQuiz = () => {
     const [showExplanation, setShowExplanation] = useState(false);
     const [quizQuestions, setQuizQuestions] = useState([]);
     const [quizComplete, setQuizComplete] = useState(false);
+    // Questions whose EEG image failed to load are skipped and not scored.
+    const [skippedQuestions, setSkippedQuestions] = useState(() => new Set());
     const [difficulty, setDifficulty] = useState('mixed'); // easy, medium, hard, mixed
     const [categoryFilter, setCategoryFilter] = useState('all'); // all, normal, variants, epileptiform, artifacts
 
@@ -110,6 +112,7 @@ const PatternRecognitionQuiz = () => {
         setCurrentQuestion(0);
         setScore(0);
         setQuizComplete(false);
+        setSkippedQuestions(new Set());
     };
 
     const handleAnswerSelect = (patternId) => {
@@ -148,6 +151,7 @@ const PatternRecognitionQuiz = () => {
         setShowExplanation(false);
         setQuizComplete(false);
         setQuizQuestions([]);
+        setSkippedQuestions(new Set());
     };
 
     const getCategoryBadgeColor = (category) => {
@@ -311,7 +315,8 @@ const PatternRecognitionQuiz = () => {
 
     // Quiz Complete Screen
     if (quizComplete) {
-        const percentage = Math.round((score / quizQuestions.length) * 100);
+        const scoredCount = quizQuestions.length - skippedQuestions.size;
+        const percentage = scoredCount > 0 ? Math.round((score / scoredCount) * 100) : 0;
         const passed = percentage >= 70;
 
         return (
@@ -343,7 +348,10 @@ const PatternRecognitionQuiz = () => {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                                 <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                                     <p className="text-sm text-blue-700 font-medium mb-2">Your Score</p>
-                                    <p className="text-4xl font-bold text-blue-900">{score}/{quizQuestions.length}</p>
+                                    <p className="text-4xl font-bold text-blue-900">{score}/{scoredCount}</p>
+                                    {skippedQuestions.size > 0 && (
+                                        <p className="text-xs text-blue-700 mt-1">{skippedQuestions.size} skipped (image unavailable)</p>
+                                    )}
                                 </div>
                                 <div className="bg-purple-50 p-6 rounded-xl border border-purple-200">
                                     <p className="text-sm text-purple-700 font-medium mb-2">Percentage</p>
@@ -402,7 +410,7 @@ const PatternRecognitionQuiz = () => {
                             Question {currentQuestion + 1} of {quizQuestions.length}
                         </span>
                         <span className="text-sm font-medium text-purple-700">
-                            Score: {score}/{currentQuestion + (showExplanation ? 1 : 0)}
+                            Score: {score}/{currentQuestion + (showExplanation ? 1 : 0) - [...skippedQuestions].filter((i) => i <= currentQuestion).length}
                         </span>
                     </div>
                     <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
@@ -431,6 +439,7 @@ const PatternRecognitionQuiz = () => {
                                 className="w-full h-auto"
                                 onError={(e) => {
                                     e.target.onerror = null;
+                                    setSkippedQuestions((prev) => new Set(prev).add(currentQuestion));
                                     e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2YxZjVmOSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NDc0OGIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FRUcgUGF0dGVybiBJbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg==';
                                 }}
                             />
@@ -549,8 +558,20 @@ const PatternRecognitionQuiz = () => {
                         )}
 
                         {/* Action Buttons */}
+                        {skippedQuestions.has(currentQuestion) && (
+                            <p className="mt-6 text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                                The EEG image for this question could not be loaded, so it will be skipped and not scored.
+                            </p>
+                        )}
                         <div className="mt-6 flex gap-3">
-                            {!showExplanation ? (
+                            {skippedQuestions.has(currentQuestion) ? (
+                                <button
+                                    onClick={handleNextQuestion}
+                                    className="flex-1 py-3 bg-slate-600 text-white font-bold rounded-lg hover:bg-slate-700 transition-all"
+                                >
+                                    {currentQuestion < quizQuestions.length - 1 ? 'Skip Question →' : 'View Results'}
+                                </button>
+                            ) : !showExplanation ? (
                                 <button
                                     onClick={handleSubmitAnswer}
                                     disabled={!selectedAnswer}

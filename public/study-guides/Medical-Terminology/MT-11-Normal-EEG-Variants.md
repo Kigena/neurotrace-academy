@@ -168,7 +168,7 @@
 
 ### 6-Hz Spike-and-Wave Bursts (Phantom Spike-and-Wave)
 
-![6 Hz Spike-and-Wave EEG Example](/images/patterns/6-hz-spike-wave.png)
+![6 Hz Spike-and-Wave EEG Example](/images/patterns/6-hz-spike-wave.jpg)
 
 *Figure: 6-Hz spike-and-wave bursts (arrow); sensitivity 7 μV/mm, LFF 1 Hz, HFF 70 Hz*
 

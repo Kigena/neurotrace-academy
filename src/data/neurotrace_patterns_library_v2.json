@@ -1260,7 +1260,7 @@
     "morphology": "Abrupt onset of mixed frequencies in delta and theta ranges that evolve into rhythmic pattern with sharp-contoured components 5–7 Hz",
     "frequency_hz": "5–7 (evolving from mixed delta/theta)",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/sreda.png",
+    "image": "/images/patterns/sreda-1.png",
     "images": [
       "/images/patterns/sreda-1.png",
       "/images/patterns/sreda-2.png",
@@ -1391,7 +1391,7 @@
     "morphology": "Brief bursts of subtle low-amplitude spikes followed by more prominent slow wave",
     "frequency_hz": "5–7",
     "amplitude_uv": "low",
-    "image": "/images/patterns/6-hz-spike-wave.png",
+    "image": "/images/patterns/6-hz-spike-wave.jpg",
     "key_features": [
       "Also known as phantom spike-and-wave",
       "Brief bursts of 5–7 Hz",

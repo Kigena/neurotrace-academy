@@ -13,7 +13,7 @@ Images should be named using the pattern ID from `NeuroLinea_patterns_library_v2
 - `midline-theta.png` → pattern_midline_theta
 - `sreda.png` → pattern_sreda
 - `14-6-hz-positive-bursts.png` → pattern_14_6_hz_positive_bursts
-- `6-hz-spike-wave.png` → pattern_6_hz_spike_wave
+- `6-hz-spike-wave.jpg` → pattern_6_hz_spike_wave
 - `bets-bsss.png` → pattern_bets
 - `wicket-spikes.png` → pattern_wicket_spikes
 
@@ -51,7 +51,7 @@ Based on the Normal EEG Variants content provided, the following images are need
 - ✅ `midline-theta.png` - Midline Theta (Fig. 3.5)
 - ✅ `sreda.png` - SREDA (Fig. 3.6a-d)
 - ✅ `14-6-hz-positive-bursts.png` - 14&6 Hz Positive Bursts (Fig. 3.7)
-- ✅ `6-hz-spike-wave.png` - 6 Hz Spike-and-Wave (Fig. 3.8)
+- ✅ `6-hz-spike-wave.jpg` - 6 Hz Spike-and-Wave (Fig. 3.8)
 - ✅ `bets-bsss.png` - BSSS/BETS (Fig. 3.9)
 - ✅ `wicket-spikes.png` - Wicket Spikes (Fig. 3.10)
 
