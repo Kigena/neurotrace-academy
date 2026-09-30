@@ -1,0 +1,150 @@
+{
+  "version": "2.0.0",
+  "description": "Server-authoritative mock exam presets. Multi-domain presets derive their per-domain question counts from the canonical ABRET R. EEG T. 2026 blueprint (see src/blueprint/abret2026.js); they do not carry their own weights.",
+  "presets": [
+    {
+      "id": "mock-full-130",
+      "title": "Full ABRET Mock Exam (130 Questions)",
+      "description": "130 questions allocated across all four domains using the 2026 blueprint weights.",
+      "questionCount": 130,
+      "timeLimitMinutes": 120,
+      "allocation": "blueprint",
+      "difficultyDistribution": {
+        "easy": 0.2,
+        "medium": 0.5,
+        "hard": 0.3
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-1",
+      "title": "Mock Exam Set 1 (30 Questions)",
+      "description": "30-question mixed set using the 2026 blueprint weights.",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "allocation": "blueprint",
+      "difficultyDistribution": {
+        "easy": 0.2,
+        "medium": 0.5,
+        "hard": 0.3
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-2",
+      "title": "Mock Exam Set 2 (30 Questions)",
+      "description": "30-question mixed set using the 2026 blueprint weights.",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "allocation": "blueprint",
+      "difficultyDistribution": {
+        "easy": 0.2,
+        "medium": 0.5,
+        "hard": 0.3
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-3",
+      "title": "Mock Exam Set 3 (30 Questions)",
+      "description": "30-question mixed set using the 2026 blueprint weights.",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "allocation": "blueprint",
+      "difficultyDistribution": {
+        "easy": 0.2,
+        "medium": 0.5,
+        "hard": 0.3
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-4",
+      "title": "Mock Exam Set 4 (30 Questions)",
+      "description": "30-question mixed set using the 2026 blueprint weights.",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "allocation": "blueprint",
+      "difficultyDistribution": {
+        "easy": 0.2,
+        "medium": 0.5,
+        "hard": 0.3
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-set-5",
+      "title": "Mock Exam Set 5 (30 Questions)",
+      "description": "30-question mixed set using the 2026 blueprint weights.",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "allocation": "blueprint",
+      "difficultyDistribution": {
+        "easy": 0.2,
+        "medium": 0.5,
+        "hard": 0.3
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-domain-1",
+      "title": "Domain I Mock Exam (30 Questions)",
+      "description": "Domain I focused mock - Pre-Study Procedures",
+      "questionCount": 30,
+      "timeLimitMinutes": 30,
+      "allocation": "single-domain",
+      "domainId": "domain-1",
+      "difficultyDistribution": {
+        "easy": 0.25,
+        "medium": 0.5,
+        "hard": 0.25
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-domain-2",
+      "title": "Domain II Mock Exam (40 Questions)",
+      "description": "Domain II focused mock - Performing EEG Study",
+      "questionCount": 40,
+      "timeLimitMinutes": 45,
+      "allocation": "single-domain",
+      "domainId": "domain-2",
+      "difficultyDistribution": {
+        "easy": 0.2,
+        "medium": 0.5,
+        "hard": 0.3
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-domain-3",
+      "title": "Domain III Mock Exam (35 Questions)",
+      "description": "Domain III focused mock - Post-Study Procedures",
+      "questionCount": 35,
+      "timeLimitMinutes": 40,
+      "allocation": "single-domain",
+      "domainId": "domain-3",
+      "difficultyDistribution": {
+        "easy": 0.2,
+        "medium": 0.5,
+        "hard": 0.3
+      },
+      "shuffle": true
+    },
+    {
+      "id": "mock-domain-4",
+      "title": "Domain IV Mock Exam (25 Questions)",
+      "description": "Domain IV focused mock - Ethics & Professional Issues",
+      "questionCount": 25,
+      "timeLimitMinutes": 25,
+      "allocation": "single-domain",
+      "domainId": "domain-4",
+      "difficultyDistribution": {
+        "easy": 0.25,
+        "medium": 0.5,
+        "hard": 0.25
+      },
+      "shuffle": true
+    }
+  ]
+}

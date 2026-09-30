@@ -1,178 +1,39 @@
-import express from 'express';
+// Load environment variables BEFORE any other module reads process.env.
+// (ES module imports are evaluated in order, so this must stay first.)
+import 'dotenv/config';
+
 import mongoose from 'mongoose';
-import cors from 'cors';
-import dotenv from 'dotenv';
+import { createServer } from 'http';
+import { assertRequiredEnv } from './config/env.js';
+import { createApp } from './app.js';
+import { initializeSocket } from './socket.js';
+import GamificationService from './services/gamificationService.js';
+import { seedBlueprint } from './services/questionImport.js';
 
-dotenv.config();
+assertRequiredEnv();
 
-const app = express();
 const PORT = process.env.PORT || 5003;
-
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use('/uploads', express.static('uploads'));
-
-// MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/neurotrace';
 
 mongoose.connect(MONGODB_URI)
     .then(async () => {
         console.log('✅ Connected to MongoDB');
-
-        // Initialize default achievements on startup
         try {
             await GamificationService.initializeDefaultAchievements();
-            console.log('✅ Gamification system initialized');
+            await seedBlueprint();
+            console.log('✅ Achievements and blueprint initialized');
         } catch (error) {
-            console.error('⚠️ Failed to initialize gamification:', error);
+            console.error('⚠️ Startup seeding failed:', error.message);
         }
     })
     .catch((err) => {
-        console.error('❌ MongoDB connection error:', err);
+        console.error('❌ MongoDB connection error:', err.message);
     });
 
-import authRoutes from './routes/auth.js';
-import chatRoutes from './routes/chat.js';
-import casesRoutes from './routes/cases.js';
-import adminRoutes from './routes/admin.js';
-import aiRoutes from './routes/ai.js';
-import gamificationRoutes from './routes/gamification.js';
-import quizRoutes from './routes/quiz.js';
-import profileRoutes from './routes/profile.js';
-import notificationRoutes from './routes/notifications.js';
-import GamificationService from './services/gamificationService.js';
-
-// Routes
-app.get('/', (req, res) => {
-    res.send('NeuroLinea API is running');
-});
-
-// Health check endpoint for uptime monitoring
-app.get('/health', (req, res) => {
-    res.status(200).json({
-        status: 'ok',
-        timestamp: new Date().toISOString(),
-        uptime: process.uptime(),
-        mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
-    });
-});
-
-// Auth Routes
-app.use('/api/auth', authRoutes);
-
-// Chat Routes
-app.use('/api/chat', chatRoutes);
-
-// Case Routes
-app.use('/api/cases', casesRoutes);
-
-// Admin Routes
-app.use('/api/admin', adminRoutes);
-
-// AI Routes
-app.use('/api/ai', aiRoutes);
-
-// Gamification Routes
-app.use('/api/gamification', gamificationRoutes);
-
-// Quiz Routes (with gamification integration)
-app.use('/api/quiz', quizRoutes);
-
-// Profile Routes
-app.use('/api/profile', profileRoutes);
-
-// Notification Routes
-app.use('/api/notifications', notificationRoutes);
-
-import { QuizSession } from './models/QuizSession.js';
-import { AttemptEvent } from './models/AttemptEvent.js';
-
-// --- Quiz Session Routes ---
-
-// Create new session
-app.post('/api/sessions', async (req, res) => {
-    try {
-        const session = new QuizSession(req.body);
-        await session.save();
-        res.status(201).json(session);
-    } catch (error) {
-        res.status(400).json({ error: error.message });
-    }
-});
-
-// Get user sessions (history)
-app.get('/api/sessions', async (req, res) => {
-    try {
-        const query = req.query.userId ? { userId: req.query.userId } : {};
-        // Sort by startTime descending (newest first)
-        const sessions = await QuizSession.find(query).sort({ startTime: -1 }).limit(50);
-        res.json(sessions);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
-// Get session by ID
-app.get('/api/sessions/:sessionId', async (req, res) => {
-    try {
-        const session = await QuizSession.findOne({ sessionId: req.params.sessionId });
-        if (!session) return res.status(404).json({ error: 'Session not found' });
-        res.json(session);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
-// Update session
-app.put('/api/sessions/:sessionId', async (req, res) => {
-    try {
-        const session = await QuizSession.findOneAndUpdate(
-            { sessionId: req.params.sessionId },
-            { ...req.body, updatedAt: Date.now() },
-            { new: true }
-        );
-        if (!session) return res.status(404).json({ error: 'Session not found' });
-        res.json(session);
-    } catch (error) {
-        res.status(400).json({ error: error.message });
-    }
-});
-
-// --- Progress Routes ---
-
-// Save attempt event
-app.post('/api/progress', async (req, res) => {
-    try {
-        const attempt = new AttemptEvent(req.body);
-        await attempt.save();
-        res.status(201).json(attempt);
-    } catch (error) {
-        res.status(400).json({ error: error.message });
-    }
-});
-
-// Get progress events (optional user filter)
-app.get('/api/progress', async (req, res) => {
-    try {
-        const query = req.query.userId ? { userId: req.query.userId } : {};
-        const attempts = await AttemptEvent.find(query).sort({ timestamp: -1 });
-        res.json(attempts);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
-// Socket.io setup
-import { createServer } from 'http';
-import { initializeSocket } from './socket.js';
-
+const app = createApp();
 const httpServer = createServer(app);
-const io = initializeSocket(httpServer);
+initializeSocket(httpServer);
 
-// Start Server
 httpServer.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`🌐 WebSocket ready for real-time chat`);
 });
-

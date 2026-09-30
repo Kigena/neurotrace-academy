@@ -1,0 +1,45 @@
+{
+  "blueprintKey": "abret-reegt-2026",
+  "title": "ABRET R. EEG T. Examination Blueprint (2026)",
+  "source": {
+    "organization": "ABRET",
+    "credential": "R. EEG T.",
+    "document": "2026 ABRET R. EEG T. Candidate Handbook",
+    "year": 2026,
+    "notes": "Top-level domain weights only. Fine-grained objective mapping is a later content milestone."
+  },
+  "domains": [
+    {
+      "code": "ABRET-REEGT-2026-D1",
+      "romanNumeral": "I",
+      "title": "Pre-Study Procedures",
+      "legacyDomainId": "domain-1",
+      "weightPercent": 15,
+      "sortOrder": 1
+    },
+    {
+      "code": "ABRET-REEGT-2026-D2",
+      "romanNumeral": "II",
+      "title": "Performing the EEG Study",
+      "legacyDomainId": "domain-2",
+      "weightPercent": 46,
+      "sortOrder": 2
+    },
+    {
+      "code": "ABRET-REEGT-2026-D3",
+      "romanNumeral": "III",
+      "title": "Post-Study Procedures",
+      "legacyDomainId": "domain-3",
+      "weightPercent": 19,
+      "sortOrder": 3
+    },
+    {
+      "code": "ABRET-REEGT-2026-D4",
+      "romanNumeral": "IV",
+      "title": "Ethics and Professional Issues",
+      "legacyDomainId": "domain-4",
+      "weightPercent": 20,
+      "sortOrder": 4
+    }
+  ]
+}

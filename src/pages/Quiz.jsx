@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import abretQuestionsData from "../data/abret-questions.json";
+import questionCatalog from "../data/question-catalog.json";
 
 /**
  * Quiz Page - Centralized quiz hub
@@ -8,7 +8,7 @@ import abretQuestionsData from "../data/abret-questions.json";
  */
 
 function Quiz() {
-  const questionCount = abretQuestionsData.questions?.length || 0;
+  const questionCount = questionCatalog.questions?.length || 0;
   const domains = {
     "domain-1": "Domain I: Pre-Study Procedures",
     "domain-2": "Domain II: Performing the EEG Study",
@@ -18,8 +18,8 @@ function Quiz() {
 
   // Count questions by domain
   const domainCounts = {};
-  if (abretQuestionsData.questions) {
-    abretQuestionsData.questions.forEach((q) => {
+  if (questionCatalog.questions) {
+    questionCatalog.questions.forEach((q) => {
       domainCounts[q.domainId] = (domainCounts[q.domainId] || 0) + 1;
     });
   }
@@ -132,26 +132,26 @@ function Quiz() {
           </div>
         </Link>
 
-        {/* NeuroLinea Certification Exam */}
+        {/* Full ABRET mock exam (served by the canonical QuizSession engine) */}
         <Link
-          to="/certification-exam"
+          to="/quiz/session?preset=mock-full-130"
           className="rounded-lg border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 p-6 hover:shadow-lg transition-all hover:border-purple-300"
         >
           <div className="flex items-start justify-between mb-2">
             <h2 className="text-lg font-semibold text-slate-900">
-              NeuroLinea Certification Exam
+              Full ABRET Mock Exam
             </h2>
             <span className="px-2 py-1 bg-purple-600 text-white text-xs font-bold rounded">
               NEW
             </span>
           </div>
           <p className="text-sm text-slate-600 mb-4">
-            Comprehensive 120-minute timed assessment covering all EEG domains.
-            Test your knowledge with realistic exam conditions and get detailed performance analysis.
+            Timed 120-minute mock exam with domains weighted per the 2026 ABRET R. EEG T.
+            blueprint (15% / 46% / 19% / 20%). Scored on the server with a per-domain breakdown.
           </p>
           <div className="flex flex-wrap gap-2 mb-3">
             <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-700 font-medium">
-              100 Questions
+              130 Questions
             </span>
             <span className="text-xs px-2 py-1 rounded-full bg-purple-100 text-purple-700 font-medium">
               120 Minutes

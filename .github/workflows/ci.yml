@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main, 'foundation/**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    name: Frontend (lint, test, build, bundle guard)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Pre-existing violations are baselined in eslint-suppressions.json;
+      # any NEW violation fails the build.
+      - run: npm run lint
+      - run: npm run check:catalog
+      - run: npm test
+      - run: npm run build
+      # Fails if the ABRET answer key is found in the shipped bundle.
+      - run: npm run check:bundle
+
+  server:
+    name: API server (tests)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - name: Cache MongoDB test binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/mongodb-binaries
+          key: mongodb-binaries-${{ runner.os }}-${{ hashFiles('server/package-lock.json') }}
+      - run: npm ci
+      - run: npm test

@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import auth from '../middleware/auth.js';
+import auth, { requireAdmin } from '../middleware/auth.js';
 import GamificationService from '../services/gamificationService.js';
 import UserProgress from '../models/UserProgress.js';
 import Achievement from '../models/Achievement.js';
@@ -101,7 +101,7 @@ router.post('/achievements/:id/claim', auth, async (req, res) => {
 });
 
 // Initialize default achievements (admin only, one-time setup)
-router.post('/initialize-achievements', auth, async (req, res) => {
+router.post('/initialize-achievements', auth, requireAdmin, async (req, res) => {
     try {
         await GamificationService.initializeDefaultAchievements();
         res.json({ message: 'Achievements initialized successfully' });
@@ -133,7 +133,7 @@ router.get('/activity-history', auth, async (req, res) => {
 });
 
 // **DEBUG ENDPOINT: Check what's in the database**
-router.get('/debug-migration', auth, async (req, res) => {
+router.get('/debug-migration', auth, requireAdmin, async (req, res) => {
     try {
         const userId = req.user.id;
 
@@ -188,7 +188,7 @@ router.get('/debug-migration', auth, async (req, res) => {
 });
 
 // **NEW: Migrate existing user activities (one-time)**
-router.post('/migrate-existing-activities', auth, async (req, res) => {
+router.post('/migrate-existing-activities', auth, requireAdmin, async (req, res) => {
     try {
         const userId = req.user.id;
         let totalXP = 0;

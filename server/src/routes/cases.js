@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import CommunityCase from '../models/CommunityCase.js';
-import auth from '../middleware/auth.js';
+import auth, { optionalAuth } from '../middleware/auth.js';
 import { caseUpload } from '../config/cloudinary.js';
 import geminiService from '../services/gemini.js';
 import { trackCaseShare, trackCaseApproval, trackCommentPost } from '../middleware/trackActivity.js';
@@ -272,14 +272,28 @@ router.get('/moderation', auth, async (req, res) => {
 });
 
 // 5. Get Single Case Detail (AFTER moderation routes to avoid conflict)
-router.get('/:id', async (req, res) => {
+router.get('/:id', optionalAuth, async (req, res) => {
     try {
+        if (!mongoose.isValidObjectId(req.params.id)) {
+            return res.status(404).json({ error: 'Case not found' });
+        }
         const communityCase = await CommunityCase.findById(req.params.id)
             .populate('author', 'name')
             .populate('comments.userId', 'name');
 
         if (!communityCase) {
             return res.status(404).json({ error: 'Case not found' });
+        }
+
+        // Unpublished (pending/rejected/draft/archived) cases are visible only
+        // to their author and to admins.
+        if (communityCase.status !== 'published') {
+            const authorId = communityCase.author?._id?.toString() || communityCase.author?.toString();
+            const isAuthor = req.user && authorId === req.user.id;
+            const isAdmin = req.user?.role === 'admin';
+            if (!isAuthor && !isAdmin) {
+                return res.status(404).json({ error: 'Case not found' });
+            }
         }
 
         // Increment view count

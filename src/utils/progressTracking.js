@@ -1,321 +1,115 @@
 /**
- * Progress Tracking with AttemptEvent structure
- * Stores attempt history events for analytics and weak-topic calculation
- * Persists via API
+ * Progress tracking (read-only on the client).
+ *
+ * AttemptEvents and quiz results are written exclusively by the server's quiz
+ * engine. Every request below is scoped by the server to the signed-in user
+ * (identity comes from the JWT, not from any client-supplied user id).
  */
 
 import apiService from "../services/apiService";
-import storageService from "../services/storageService";
-
-const ATTEMPT_EVENTS_KEY = "attempt_events_v1";
-const SCORE_HISTORY_KEY = "score_history_v1";
-const BEST_SCORE_KEY = "best_score_v1";
 
 /**
- * Save an attempt event
- */
-export async function saveAttemptEvent(event) {
-  try {
-    const enrichedEvent = {
-      ...event,
-      timestamp: event.timestamp || Date.now(),
-      userId: storageService.userId, // Critical: Attach user ID for backend association
-    };
-
-    // Save to API
-    await apiService.post('/progress', enrichedEvent);
-
-    // Also save locally for offline/cache if needed, but for now we rely on API
-    // We can append to local cache to keep it in sync without full reload
-    const events = storageService.getItem(ATTEMPT_EVENTS_KEY, []);
-    events.push(enrichedEvent);
-    // Limit local storage size
-    if (events.length > 100) events.splice(0, events.length - 100);
-    storageService.setItem(ATTEMPT_EVENTS_KEY, events);
-
-    return true;
-  } catch (e) {
-    console.error("Failed to save attempt event:", e);
-    // Fallback?
-    return false;
-  }
-}
-
-/**
- * Load all attempt events
+ * Load the signed-in user's attempt events (newest first).
  */
 export async function loadAttemptEvents() {
   try {
-    const events = await apiService.get('/progress');
-    // Update local cache
-    storageService.setItem(ATTEMPT_EVENTS_KEY, events);
-    return events;
+    return await apiService.get("/progress");
   } catch (err) {
-    console.warn("Failed to load progress from API, using cache", err);
-    return storageService.getItem(ATTEMPT_EVENTS_KEY, []);
+    console.warn("Failed to load progress from API", err);
+    return [];
   }
 }
 
 /**
- * Calculate weak topics using recent-weighted accuracy
+ * Weak topics for the signed-in user, computed on the server.
+ * Rule: last `k` attempts per tag, at least `minAttempts`, accuracy < 70%.
  */
 export async function calculateWeakTopics(k = 30, minAttempts = 10) {
-  const events = await loadAttemptEvents();
-
-  // Group events by tag
-  const tagStats = {};
-
-  events.forEach((event) => {
-    event.topicTags.forEach((tag) => {
-      if (!tagStats[tag]) {
-        tagStats[tag] = [];
-      }
-      tagStats[tag].push(event);
-    });
-  });
-
-  const weakTopics = {};
-
-  Object.entries(tagStats).forEach(([tag, tagEvents]) => {
-    // Sort by timestamp (most recent first)
-    const sorted = [...tagEvents].sort((a, b) => b.timestamp - a.timestamp);
-
-    // Take last K attempts
-    const recent = sorted.slice(0, k);
-
-    if (recent.length < minAttempts) {
-      return;
-    }
-
-    // Calculate accuracy
-    const correct = recent.filter((e) => e.isCorrect).length;
-    const accuracy = correct / recent.length;
-
-    // Weak topic: accuracy < 70% AND attempts ≥ 10
-    if (accuracy >= 0.70 || recent.length < 10) {
-      return;
-    }
-
-    const weakScore = 1 - accuracy;
-
-    // Calculate trend (last 10 vs previous 10)
-    const last10 = sorted.slice(0, 10);
-    const prev10 = sorted.slice(10, 20);
-
-    const last10Accuracy = last10.length > 0
-      ? last10.filter((e) => e.isCorrect).length / last10.length
-      : 0;
-    const prev10Accuracy = prev10.length > 0
-      ? prev10.filter((e) => e.isCorrect).length / prev10.length
-      : 0;
-
-    const trend = last10Accuracy - prev10Accuracy;
-    const wrong = recent.length - correct;
-
-    weakTopics[tag] = {
-      accuracy: Math.round(accuracy * 100),
-      weakScore: Math.round(weakScore * 100),
-      wrong: wrong,
-      total: recent.length,
-      pctWrong: Math.round(weakScore * 100),
-      attempts: recent.length,
-      totalAttempts: tagEvents.length,
-      trend: Math.round(trend * 100),
-      last10Accuracy: Math.round(last10Accuracy * 100),
-      prev10Accuracy: Math.round(prev10Accuracy * 100),
-    };
-  });
-
-  return weakTopics;
+  try {
+    const res = await apiService.get("/progress/weak-topics", { k, minAttempts });
+    return res.weakTopics || {};
+  } catch (err) {
+    console.warn("Failed to load weak topics", err);
+    return {};
+  }
 }
 
-/**
- * Get progress by domain
- */
+function groupStats(events, keyFn) {
+  const stats = {};
+  events.forEach((event) => {
+    const key = keyFn(event);
+    if (key === undefined || key === null) return;
+    if (!stats[key]) stats[key] = { correct: 0, total: 0 };
+    stats[key].total++;
+    if (event.isCorrect) stats[key].correct++;
+  });
+  return stats;
+}
+
 export async function getProgressByDomain() {
-  const events = await loadAttemptEvents();
-  const domainStats = {};
+  return groupStats(await loadAttemptEvents(), (e) => e.domainId);
+}
 
-  events.forEach((event) => {
-    if (!domainStats[event.domainId]) {
-      domainStats[event.domainId] = { correct: 0, total: 0 };
-    }
-    domainStats[event.domainId].total++;
-    if (event.isCorrect) domainStats[event.domainId].correct++;
-  });
+export async function getProgressBySection() {
+  return groupStats(await loadAttemptEvents(), (e) => e.sectionId);
+}
 
-  return domainStats;
+export async function getProgressByDifficulty() {
+  return groupStats(await loadAttemptEvents(), (e) => e.difficulty);
 }
 
 /**
- * Get progress by subsection (sectionId)
+ * Accuracy per subsection (sectionId), weakest first.
  */
 export async function getProgressBySubsection() {
-  const events = await loadAttemptEvents();
-  const subsectionStats = {};
-
-  events.forEach((event) => {
-    if (!event.sectionId) return;
-
-    if (!subsectionStats[event.sectionId]) {
-      subsectionStats[event.sectionId] = { correct: 0, total: 0 };
-    }
-    subsectionStats[event.sectionId].total++;
-    if (event.isCorrect) subsectionStats[event.sectionId].correct++;
+  const stats = groupStats(await loadAttemptEvents(), (e) => e.sectionId);
+  const result = Object.entries(stats).map(([sectionId, s]) => {
+    const accuracy = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
+    return { sectionId, accuracy, attempts: s.total, isWeak: accuracy < 70 };
   });
-
-  const result = Object.entries(subsectionStats).map(([sectionId, stats]) => {
-    const accuracy = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
-    return {
-      sectionId,
-      accuracy,
-      attempts: stats.total,
-      isWeak: accuracy < 70,
-    };
-  });
-
   result.sort((a, b) => a.accuracy - b.accuracy);
-
   return result;
 }
 
 /**
- * Get progress by section
- */
-export async function getProgressBySection() {
-  const events = await loadAttemptEvents();
-  const sectionStats = {};
-
-  events.forEach((event) => {
-    if (!sectionStats[event.sectionId]) {
-      sectionStats[event.sectionId] = { correct: 0, total: 0 };
-    }
-    sectionStats[event.sectionId].total++;
-    if (event.isCorrect) sectionStats[event.sectionId].correct++;
-  });
-
-  return sectionStats;
-}
-
-/**
- * Get progress by difficulty
- */
-export async function getProgressByDifficulty() {
-  const events = await loadAttemptEvents();
-  const difficultyStats = {};
-
-  events.forEach((event) => {
-    if (!difficultyStats[event.difficulty]) {
-      difficultyStats[event.difficulty] = { correct: 0, total: 0 };
-    }
-    difficultyStats[event.difficulty].total++;
-    if (event.isCorrect) difficultyStats[event.difficulty].correct++;
-  });
-
-  return difficultyStats;
-}
-
-/**
- * Clear all attempt events
- */
-export function clearAttemptEvents() {
-  // TODO: Add API endpoint for clearing if needed
-  return storageService.removeItem(ATTEMPT_EVENTS_KEY);
-}
-
-// --- Score History ---
-
-/**
- * Add a score to history
- */
-export async function addScoreToHistory(scoreRecord) {
-  // For now we just use local storage for score history list as attempts are the source of truth
-  // But ideally we'd have a /scores endpoint.
-  // To match the task, we'll keep this local or just rely on attempts aggregation?
-  // The prompt asked for "database management", so let's stick to storing what we can.
-  // Since we don't have a specific Score model yet (only AttemptEvent and QuizSession),
-  // we can rely on QuizSession for history.
-
-  // Fallback to local storage for now to avoid breaking UI that expects this list
-  try {
-    const history = storageService.getItem(SCORE_HISTORY_KEY, []);
-    history.unshift({ ...scoreRecord, timestamp: Date.now() });
-    if (history.length > 100) history.splice(100);
-    storageService.setItem(SCORE_HISTORY_KEY, history);
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-/**
- * Load score history
- */
-/**
- * Load score history (synced from API)
+ * Completed-session history for the signed-in user.
+ * Uses the server-computed result where available (engine v2); legacy
+ * sessions fall back to counting their stored answers.
  */
 export async function loadScoreHistory() {
   try {
-    if (!storageService.userId) return []; // No user, no history (or return local if anonymous supported)
-
-    // Fetch sessions from API
-    // We trust the API to return sorted by date desc
-    const sessions = await apiService.get(`/sessions?userId=${storageService.userId}`);
-
-    // map sessions to score history format
-    // Note: We need to calculate score for each session? Or just trust what's there?
-    // The session object has answers but not the 'score' summary explicitly stored in top-level. 
-    // We can compute it on the fly or just return simplified history.
-    // For now, let's map it.
-
-    return sessions.filter(s => s.endTime).map(s => {
-      const correct = Object.values(s.answers || {}).filter(a => a.isCorrect).length;
-      const total = s.questionIds.length;
-      const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
-
-      return {
-        percent,
-        correct,
-        total,
-        attempted: Object.keys(s.answers || {}).length,
-        mode: s.mode,
-        date: s.endTime,
-        timestamp: s.endTime // compat
-      };
-    });
-
+    const sessions = await apiService.get("/sessions");
+    return sessions
+      .filter((s) => s.endTime)
+      .map((s) => {
+        let correct;
+        let total;
+        let attempted;
+        if (s.result) {
+          ({ correct, total, attempted } = s.result);
+        } else {
+          const answers = Object.values(s.answers || {});
+          correct = answers.filter((a) => a.isCorrect).length;
+          total = s.questionIds?.length || 0;
+          attempted = answers.length;
+        }
+        return {
+          percent: total > 0 ? Math.round((correct / total) * 100) : 0,
+          correct,
+          total,
+          attempted,
+          mode: s.mode,
+          date: s.endTime,
+          timestamp: s.endTime,
+        };
+      });
   } catch (err) {
-    console.warn("Failed to load history from API, falling back to local", err);
-    return storageService.getItem(SCORE_HISTORY_KEY, []);
+    console.warn("Failed to load score history", err);
+    return [];
   }
 }
 
-/**
- * Get best score
- */
-export function getBestScore() {
-  return storageService.getItem(BEST_SCORE_KEY, null);
-}
-
-/**
- * Save best score
- */
-export async function saveBestScore(scoreRecord) {
-  // Local only for now as it's a derived stat
-  try {
-    const currentBest = getBestScore();
-    const newPercent = scoreRecord.percent || 0;
-
-    if (!currentBest || newPercent > (currentBest.percent || 0)) {
-      const bestRecord = {
-        ...scoreRecord,
-        timestamp: scoreRecord.timestamp || Date.now(),
-      };
-      storageService.setItem(BEST_SCORE_KEY, bestRecord);
-      return bestRecord;
-    }
-    return currentBest;
-  } catch (e) {
-    return null;
-  }
+export function bestScoreFromHistory(history) {
+  if (!history || history.length === 0) return null;
+  return history.reduce((best, h) => (!best || h.percent > best.percent ? h : best), null);
 }

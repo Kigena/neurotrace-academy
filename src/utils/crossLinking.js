@@ -4,7 +4,7 @@
  */
 
 import workflowData from "../data/workflow-domains.json";
-import questionsData from "../data/abret-questions.json";
+import questionsData from "../data/question-catalog.json";
 import patternsDataArray from "../data/patterns.json";
 import casesData from "../data/cases.json";
 

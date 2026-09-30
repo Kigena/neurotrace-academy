@@ -87,7 +87,6 @@ function ProfileEditModal({ user, onClose, onSave }) {
 
             // Update basic profile
             await apiService.put('/auth/profile', {
-                userId: user._id || user.id,
                 name: formData.name,
                 email: formData.email,
             });

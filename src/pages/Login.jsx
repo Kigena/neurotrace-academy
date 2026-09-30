@@ -40,8 +40,8 @@ function Login() {
                 if (formData.password !== formData.confirmPassword) {
                     throw new Error("Passwords do not match");
                 }
-                if (formData.password.length < 6) {
-                    throw new Error("Password must be at least 6 characters");
+                if (formData.password.length < 8) {
+                    throw new Error("Password must be at least 8 characters");
                 }
                 await createUser(formData.name, formData.email, formData.password);
             }

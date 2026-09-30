@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
 import apiService from '../services/apiService';
 
 function PasswordChangeModal({ onClose, onSuccess }) {
-    const { user } = useAuth();
     const [formData, setFormData] = useState({
         currentPassword: '',
         newPassword: '',
@@ -51,8 +49,8 @@ function PasswordChangeModal({ onClose, onSuccess }) {
 
         try {
             // Validate inputs
-            if (formData.newPassword.length < 6) {
-                throw new Error('New password must be at least 6 characters');
+            if (formData.newPassword.length < 8) {
+                throw new Error('New password must be at least 8 characters');
             }
             if (formData.newPassword !== formData.confirmPassword) {
                 throw new Error('New passwords do not match');
@@ -61,25 +59,11 @@ function PasswordChangeModal({ onClose, onSuccess }) {
                 throw new Error('New password must be different from current password');
             }
 
-            // Hash passwords (same as login/register)
-            const encoder = new TextEncoder();
-            const currentData = encoder.encode(formData.currentPassword);
-            const newData = encoder.encode(formData.newPassword);
-
-            const currentHashBuffer = await crypto.subtle.digest('SHA-256', currentData);
-            const newHashBuffer = await crypto.subtle.digest('SHA-256', newData);
-
-            const currentHashArray = Array.from(new Uint8Array(currentHashBuffer));
-            const newHashArray = Array.from(new Uint8Array(newHashBuffer));
-
-            const currentPasswordHash = currentHashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-            const newPasswordHash = newHashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-
-            // Update password via API
+            // Sent over HTTPS; the server verifies and hashes (Argon2id).
+            // The account is identified by the auth token, not the request body.
             await apiService.put('/auth/password', {
-                userId: user._id || user.id,
-                currentPasswordHash,
-                newPasswordHash,
+                currentPassword: formData.currentPassword,
+                newPassword: formData.newPassword,
             });
 
             onSuccess();

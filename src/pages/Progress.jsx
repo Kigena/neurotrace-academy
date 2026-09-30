@@ -4,7 +4,7 @@ import {
   loadAttemptEvents,
   calculateWeakTopics,
   loadScoreHistory,
-  getBestScore,
+  bestScoreFromHistory,
   getProgressBySubsection,
 } from "../utils/progressTracking.js";
 import workflowData from "../data/workflow-domains.json";
@@ -30,56 +30,54 @@ function Progress() {
   const [achievements, setAchievements] = useState([]);
   const [refreshKey, setRefreshKey] = useState(0);
 
-  const loadProgressData = async () => {
-    try {
-      // Load best score (sync - local only)
-      const best = getBestScore();
-      if (best) setBestScore(best);
+  useEffect(() => {
+    let cancelled = false;
 
-      // Load score history
-      const history = await loadScoreHistory();
-      setScoreHistory(history);
+    (async () => {
+      try {
+        // All data is server-computed and scoped to the signed-in user.
+        const [history, weak, subsection, events] = await Promise.all([
+          loadScoreHistory(),
+          calculateWeakTopics(30, 5), // Last 30 attempts, min 5 per topic
+          getProgressBySubsection(),
+          loadAttemptEvents(),
+        ]);
+        if (cancelled) return;
 
-      // Calculate weak topics from attempt events
-      const weak = await calculateWeakTopics(30, 5); // Last 30 attempts, min 5 per topic
-      setWeakTopics(weak);
+        setScoreHistory(history);
+        setBestScore(bestScoreFromHistory(history));
+        setWeakTopics(weak);
+        setSubsectionProgress(subsection);
+        setAttemptStats(events.reduce(
+          (acc, event) => {
+            acc.totalAttempts++;
+            if (event.isCorrect) acc.totalCorrect++;
+            acc.totalTime += event.timeMs || 0;
+            return acc;
+          },
+          { totalAttempts: 0, totalCorrect: 0, totalTime: 0 }
+        ));
+      } catch (e) {
+        console.error("Error loading progress data:", e);
+      }
 
-      // Calculate subsection progress
-      const subsection = await getProgressBySubsection();
-      setSubsectionProgress(subsection);
-
-      // Calculate overall stats from attempt events
-      const events = await loadAttemptEvents();
-      const stats = events.reduce(
-        (acc, event) => {
-          acc.totalAttempts++;
-          if (event.isCorrect) acc.totalCorrect++;
-          acc.totalTime += event.timeMs || 0;
-          return acc;
-        },
-        { totalAttempts: 0, totalCorrect: 0, totalTime: 0 }
-      );
-      setAttemptStats(stats);
-
-      // Load gamification data
+      // Gamification data (non-critical)
       try {
         const [progressData, achievementsData] = await Promise.all([
           apiService.get('/gamification/progress'),
           apiService.get('/gamification/achievements')
         ]);
+        if (cancelled) return;
         setGamificationProgress(progressData);
         setAchievements(achievementsData);
       } catch (gamError) {
         console.error("Error loading gamification data:", gamError);
-        // Don't fail the whole page if gamification fails
       }
-    } catch (e) {
-      console.error("Error loading progress data:", e);
-    }
-  };
+    })();
 
-  useEffect(() => {
-    loadProgressData();
+    return () => {
+      cancelled = true;
+    };
   }, [refreshKey]);
 
   // Refresh when page becomes visible (user navigates back)

@@ -31,54 +31,52 @@ class AuthService {
     }
 
     /**
-     * Helper: Hash password using Web Crypto API
-     * (We keep this client-side hashing to match the schema expected by new backend which expects pre-hashed/raw password logic)
-     * Ideally we'd send raw password over HTTPS and hash on server, but to minimize friction we keep the logic similar but send to API.
-     */
-    async _hashPassword(password) {
-        const encoder = new TextEncoder();
-        const data = encoder.encode(password);
-        const hash = await crypto.subtle.digest('SHA-256', data);
-        return Array.from(new Uint8Array(hash))
-            .map(b => b.toString(16).padStart(2, '0'))
-            .join('');
-    }
-
-    /**
-     * Create a new user profile with email and password
+     * Create a new user profile with email and password.
+     * The password is sent over HTTPS and hashed on the server (Argon2id);
+     * the browser never derives the stored credential.
      */
     async createUser(name, email, password) {
-        const passwordHash = await this._hashPassword(password);
-
-        try {
-            const response = await apiService.post('/auth/register', {
-                name,
-                email,
-                passwordHash
-            });
-            // Backend now returns { token, user }
-            return this._setSession(response.user, response.token);
-        } catch (err) {
-            throw err;
-        }
+        const response = await apiService.post('/auth/register', { name, email, password });
+        return this._setSession(response.user, response.token);
     }
 
     /**
      * Login with email and password
      */
     async login(email, password) {
-        const passwordHash = await this._hashPassword(password);
+        const response = await apiService.post('/auth/login', { email, password });
+        return this._setSession(response.user, response.token);
+    }
 
-        try {
-            const response = await apiService.post('/auth/login', {
-                email,
-                passwordHash
-            });
-            // Backend now returns { token, user }
-            return this._setSession(response.user, response.token);
-        } catch (err) {
-            throw err;
+    /**
+     * Re-validate the stored token with the server and refresh the cached
+     * user (including role). Returns null and clears the session if the
+     * token is missing, expired or invalid.
+     */
+    async refreshCurrentUser() {
+        if (!localStorage.getItem('token')) {
+            this.logout();
+            return null;
         }
+        try {
+            const { user } = await apiService.get('/auth/me');
+            return this._setSession(user, null);
+        } catch (err) {
+            if (/401|auth|token/i.test(err.message || '')) {
+                this.logout();
+                return null;
+            }
+            // Network/cold-start failure: keep the cached session for now.
+            return this.currentUser;
+        }
+    }
+
+    /**
+     * Update the cached user after a profile edit.
+     */
+    updateUserInStorage(user) {
+        if (!user) return;
+        this._setSession({ ...user }, null);
     }
 
     /**

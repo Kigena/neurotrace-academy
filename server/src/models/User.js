@@ -13,9 +13,26 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         trim: true
     },
+    // Never selected by default; auth code opts in with `.select('+passwordHash')`.
     passwordHash: {
         type: String,
-        required: true
+        required: true,
+        select: false
+    },
+    // 'argon2id'      - server-side Argon2id hash (current)
+    // 'legacy-sha256' - unsalted SHA-256 hex computed by the old browser client.
+    //                   Accounts with no scheme and a 64-hex hash are also legacy.
+    //                   Upgraded to argon2id on the next successful login.
+    passwordScheme: {
+        type: String,
+        enum: ['argon2id', 'legacy-sha256'],
+        default: undefined,
+        select: false
+    },
+    passwordUpdatedAt: {
+        type: Date,
+        default: null,
+        select: false
     },
     role: {
         type: String,
@@ -76,5 +93,15 @@ const userSchema = new mongoose.Schema({
         default: null
     }
 });
+
+const stripSecrets = (doc, ret) => {
+    delete ret.passwordHash;
+    delete ret.passwordScheme;
+    delete ret.passwordUpdatedAt;
+    delete ret.__v;
+    return ret;
+};
+userSchema.set('toJSON', { transform: stripSecrets });
+userSchema.set('toObject', { transform: stripSecrets });
 
 export const User = mongoose.model('User', userSchema);

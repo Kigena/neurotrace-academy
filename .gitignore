@@ -12,13 +12,23 @@ dist
 dist-ssr
 *.local
 
-# Environment Variables
+# Environment Variables (never commit real values)
 .env
 .env.production
 .env.development
 .env.local
 **/.env
 **/.env.*
+# ...but DO commit the placeholder templates
+!.env.example
+!**/.env.example
+
+# Runtime artefacts
+uploads/
+server/uploads/
+server/reports/
+*.pem
+*.key
 
 # Editor directories and files
 .vscode/*

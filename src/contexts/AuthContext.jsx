@@ -4,6 +4,8 @@ import GamificationClient from "../services/gamificationClient";
 
 const AuthContext = createContext(null);
 
+// Hook co-located with its provider (imported app-wide); only affects HMR granularity.
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
     const context = useContext(AuthContext);
     if (!context) {
@@ -13,16 +15,21 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
+    // The service restores the cached session synchronously on construction.
+    const [user, setUser] = useState(() => authService.getCurrentUser());
+    const loading = false;
 
     useEffect(() => {
-        // Try to restore session on mount
-        const restoredUser = authService.tryRestoreSession();
-        if (restoredUser) {
-            setUser(restoredUser);
-        }
-        setLoading(false);
+        // Confirm the cached session with the server. The server is
+        // authoritative for identity and role; an invalid token logs out.
+        if (!authService.getCurrentUser()) return undefined;
+        let cancelled = false;
+        authService.refreshCurrentUser().then((fresh) => {
+            if (!cancelled) setUser(fresh);
+        });
+        return () => {
+            cancelled = true;
+        };
     }, []);
 
     const login = async (email, password) => {
@@ -43,10 +50,6 @@ export const AuthProvider = ({ children }) => {
         return newUser;
     };
 
-    const getAllUsers = () => {
-        return authService.getUsers();
-    };
-
     const updateUser = (updatedUserData) => {
         setUser(updatedUserData);
         // Also update in storage
@@ -59,7 +62,6 @@ export const AuthProvider = ({ children }) => {
         login,
         logout,
         createUser,
-        getAllUsers,
         updateUser,
     };
 

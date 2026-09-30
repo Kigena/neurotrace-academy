@@ -17,7 +17,6 @@ import Workflow from "./pages/Workflow.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
-import CertificationExam from "./pages/CertificationExam.jsx";
 import PatternRecognitionQuiz from "./pages/PatternRecognitionQuiz.jsx";
 import Progress from "./pages/Progress.jsx";
 import Syndromes from "./pages/Syndromes.jsx";
@@ -158,10 +157,10 @@ function AppContent() {
                 <PatternRecognitionQuiz />
               </ProtectedRoute>
             } />
+            {/* Legacy route: the former CertificationExam page was a separate,
+                broken exam engine. It now opens the canonical full mock exam. */}
             <Route path="/certification-exam" element={
-              <ProtectedRoute>
-                <CertificationExam />
-              </ProtectedRoute>
+              <Navigate to="/quiz/session?preset=mock-full-130" replace />
             } />
             <Route path="/progress" element={
               <ProtectedRoute>

@@ -1,35 +1,51 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
-import { useNavigate, useSearchParams, Link } from "react-router-dom";
-import abretQuestionsData from "../data/abret-questions.json";
+import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import questionCatalog from "../data/question-catalog.json";
 import workflowData from "../data/workflow-domains.json";
-import mockExamPresets from "../data/mockExamPresets.json";
 import ContextualAI from "../components/ContextualAI.jsx";
 import useGamification from "../hooks/useGamification";
-import apiService from "../services/apiService";
-import {
-  createQuizSession,
-  loadQuizSession,
-  updateQuizSession,
-  saveAnswer,
-  finishQuizSession,
-  calculateSessionScore,
-  clearQuizSession,
-} from "../utils/quizSession.js";
-import {
-  saveAttemptEvent,
-  addScoreToHistory,
-  saveBestScore,
-} from "../utils/progressTracking.js";
+import quizApi, { secondsRemaining } from "../services/quizApi";
 
 /**
  * QuizSession Page - ABRET Domain Practice Quiz
- * Full quiz interface with configuration, question display, and results
+ *
+ * The server owns question selection, the answer key, timing and scoring.
+ * This page renders answer-free questions, sends selected option indexes,
+ * and resumes the active session after a reload.
  */
+
+const FLAGS_KEY = (sessionId) => `quiz_flags_${sessionId}`;
+
+function loadFlags(sessionId) {
+  try {
+    const raw = localStorage.getItem(FLAGS_KEY(sessionId));
+    return new Set(raw ? JSON.parse(raw) : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function saveFlags(sessionId, flags) {
+  try {
+    localStorage.setItem(FLAGS_KEY(sessionId), JSON.stringify([...flags]));
+  } catch {
+    // Flags are a convenience; ignore storage failures.
+  }
+}
+
+function clearFlags(sessionId) {
+  try {
+    localStorage.removeItem(FLAGS_KEY(sessionId));
+  } catch {
+    // ignore
+  }
+}
 
 function QuizSession() {
   const navigate = useNavigate();
   const { checkProgress } = useGamification();
   const [searchParams] = useSearchParams();
+  const presetParam = searchParams.get("preset");
 
   // Configuration state
   const [config, setConfig] = useState({
@@ -40,27 +56,32 @@ function QuizSession() {
     difficulty: [],
     shuffle: true,
     questionCount: 10,
-    timeLimitSec: null,
   });
+  const [presets, setPresets] = useState([]);
 
-  // Quiz state
+  // Session state (server-authoritative)
   const [session, setSession] = useState(null);
   const [questions, setQuestions] = useState([]);
+  const [answers, setAnswers] = useState({}); // questionId -> { selectedIndex, isCorrect?, correctIndex?, explanation? }
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [startTime, setStartTime] = useState(null);
-  const [timeSpent, setTimeSpent] = useState({}); // questionId -> timeMs
   const [flagged, setFlagged] = useState(new Set());
+  const [result, setResult] = useState(null);
+  const [review, setReview] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const [reviewMode, setReviewMode] = useState(false);
-  const [answeredQuestions, setAnsweredQuestions] = useState(new Set()); // Track answered questions for immediate feedback
 
-  // Timer
+  const [loading, setLoading] = useState(true);
+  const [busy, setBusy] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Timer (server clock)
   const [timeLeft, setTimeLeft] = useState(null);
+  const clockOffsetRef = useRef(0);
   const timerRef = useRef(null);
-  const questionStartTimeRef = useRef(null);
+  const submittingRef = useRef(false);
+  const questionStartTimeRef = useRef(Date.now());
 
-  // Get all domains and sections for filters
   const allDomains = useMemo(() => workflowData.domains || [], []);
   const allSections = useMemo(() => {
     const sections = [];
@@ -72,321 +93,230 @@ function QuizSession() {
     return sections;
   }, [allDomains]);
 
-  // Get all unique tags from questions
+  const catalog = useMemo(() => questionCatalog.questions || [], []);
+
   const allTags = useMemo(() => {
     const tagSet = new Set();
-    abretQuestionsData.questions?.forEach((q) => {
-      q.topicTags?.forEach((tag) => tagSet.add(tag));
-    });
+    catalog.forEach((q) => q.topicTags?.forEach((tag) => tagSet.add(tag)));
     return Array.from(tagSet).sort();
-  }, []);
+  }, [catalog]);
 
-  // Shuffle array helper
-  const shuffleArray = (array) => {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  };
-
-  // Filter available questions based on config
+  // Counts only; the server re-applies the same filters when selecting.
   const availableQuestions = useMemo(() => {
-    if (!abretQuestionsData.questions) return [];
-
-    return abretQuestionsData.questions.filter((q) => {
+    return catalog.filter((q) => {
       if (config.domains.length > 0 && !config.domains.includes(q.domainId)) return false;
       if (config.sections.length > 0 && !config.sections.includes(q.sectionId)) return false;
       if (config.difficulty.length > 0 && !config.difficulty.includes(q.difficulty)) return false;
       if (config.tags.length > 0 && !config.tags.some((tag) => q.topicTags?.includes(tag))) return false;
       return true;
     });
-  }, [config]);
+  }, [catalog, config]);
 
-  // Initialize from URL params
+  // ------------------------------------------------------------ loading ---
+
+  const applyActivePayload = useCallback((payload) => {
+    const s = payload.session;
+    clockOffsetRef.current = (s.serverNow || Date.now()) - Date.now();
+    setSession(s);
+    setQuestions(payload.questions || []);
+    setAnswers(payload.answers || {});
+    setFlagged(loadFlags(s.sessionId));
+    setResult(null);
+    setReview([]);
+    setShowResults(false);
+    setReviewMode(false);
+    setTimeLeft(secondsRemaining(s, clockOffsetRef.current));
+    const firstUnanswered = (payload.questions || []).findIndex((q) => !payload.answers?.[q.questionId]);
+    setCurrentIndex(firstUnanswered >= 0 ? firstUnanswered : 0);
+    questionStartTimeRef.current = Date.now();
+    submittingRef.current = false;
+  }, []);
+
+  const applySubmission = useCallback((res) => {
+    setSession(res.session);
+    setResult(res.result);
+    setReview(res.review || []);
+    setShowResults(true);
+    setReviewMode(false);
+    setTimeLeft(null);
+    if (timerRef.current) clearInterval(timerRef.current);
+    clearFlags(res.session.sessionId);
+  }, []);
+
+  const submitSession = useCallback(async (sessionId) => {
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+    setIsSubmitting(true);
+    setError(null);
+    try {
+      const res = await quizApi.submit(sessionId);
+      applySubmission(res);
+      try {
+        await checkProgress();
+      } catch {
+        // Gamification refresh is non-critical.
+      }
+    } catch (err) {
+      submittingRef.current = false;
+      setError(err.message || "Failed to submit. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [applySubmission, checkProgress]);
+
+  // Stable handle so effects below run once and never re-trigger when the
+  // gamification/notification context re-renders.
+  const submitRef = useRef(submitSession);
+  useEffect(() => {
+    submitRef.current = submitSession;
+  }, [submitSession]);
+
+  // Resume an active session (survives page reloads) and load presets.
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const [active, presetData] = await Promise.all([
+          quizApi.getActiveSession(),
+          quizApi.getPresets().catch(() => ({ presets: [] })),
+        ]);
+        if (cancelled) return;
+        setPresets(presetData.presets || []);
+        if (active?.session) {
+          applyActivePayload(active);
+          if (active.session.expired) submitRef.current(active.session.sessionId);
+        }
+      } catch (err) {
+        if (!cancelled) setError(err.message || "Unable to reach the quiz service.");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [applyActivePayload]);
+
+  // Initialize config from URL params
   useEffect(() => {
     const sectionParam = searchParams.get("section");
     const tagsParam = searchParams.get("tags");
     const questionsParam = searchParams.get("questions");
     const modeParam = searchParams.get("mode");
 
-    if (sectionParam) {
-      setConfig((prev) => ({ ...prev, sections: [sectionParam] }));
-    }
-    if (tagsParam) {
-      // Filter out empty tags
-      const tags = tagsParam.split(",").filter(tag => tag.trim() !== "");
-      if (tags.length > 0) {
-        setConfig((prev) => ({ ...prev, tags }));
+    setConfig((prev) => {
+      const next = { ...prev };
+      if (sectionParam) next.sections = [sectionParam];
+      if (tagsParam) {
+        const tags = tagsParam.split(",").filter((tag) => tag.trim() !== "");
+        if (tags.length > 0) next.tags = tags;
       }
-    }
-    if (questionsParam) {
-      const count = parseInt(questionsParam, 10);
-      if (!isNaN(count) && count > 0) {
-        setConfig((prev) => ({ ...prev, questionCount: count }));
+      if (questionsParam) {
+        const count = parseInt(questionsParam, 10);
+        if (!isNaN(count) && count > 0) next.questionCount = count;
       }
-    }
-    if (modeParam && ["practice", "timed", "mock"].includes(modeParam)) {
-      setConfig((prev) => ({ ...prev, mode: modeParam }));
-    }
+      if (modeParam && ["practice", "timed", "mock"].includes(modeParam)) next.mode = modeParam;
+      return next;
+    });
   }, [searchParams]);
 
-  // Timer effect
+  // Timer: always derived from the server's expiresAt, so a reload cannot reset it.
   useEffect(() => {
-    if (!session || session.mode === "practice" || !session.timeLimitSec) {
-      if (timerRef.current) clearInterval(timerRef.current);
-      return;
-    }
+    if (timerRef.current) clearInterval(timerRef.current);
+    if (!session || showResults || !session.expiresAt || session.status !== "active") return undefined;
 
-    const updateTimer = () => {
-      if (!session.startTime) return;
-
-      const elapsed = Math.floor((Date.now() - session.startTime) / 1000);
-      const remaining = session.timeLimitSec - elapsed;
-
-      if (remaining <= 0) {
-        handleFinishQuiz();
-        return;
-      }
-
+    const tick = () => {
+      const remaining = secondsRemaining(session, clockOffsetRef.current);
       setTimeLeft(remaining);
+      if (remaining <= 0) {
+        clearInterval(timerRef.current);
+        submitRef.current(session.sessionId);
+      }
     };
+    timerRef.current = setInterval(tick, 1000);
+    return () => clearInterval(timerRef.current);
+  }, [session, showResults]);
 
-    updateTimer();
-    timerRef.current = setInterval(updateTimer, 1000);
-
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [session]);
-
-  // Track question start time
   useEffect(() => {
-    if (session && questions.length > 0 && currentIndex < questions.length) {
-      questionStartTimeRef.current = Date.now();
-    }
-  }, [currentIndex, session, questions]);
+    questionStartTimeRef.current = Date.now();
+  }, [currentIndex]);
+
+  // ------------------------------------------------------------ actions ---
 
   const handleConfigChange = (key, value) => {
     setConfig((prev) => ({ ...prev, [key]: value }));
   };
 
-  // Handler for starting mock exam from preset
-  const handleMockExam = async (presetId) => {
-    const preset = mockExamPresets.presets.find((p) => p.id === presetId);
-    if (!preset) return;
-
-    // Select questions based on preset configuration
-    const selectedQuestions = selectQuestionsForMockExam(preset);
-
-    if (selectedQuestions.length === 0) {
-      alert("No questions available for this mock exam. Please try another preset.");
-      return;
+  const startSession = async (body) => {
+    setBusy(true);
+    setError(null);
+    try {
+      const payload = await quizApi.createSession(body);
+      applyActivePayload(payload);
+    } catch (err) {
+      setError(err.message || "Failed to start quiz.");
+    } finally {
+      setBusy(false);
     }
-
-    const timeLimit = preset.timeLimitMinutes * 60; // Convert to seconds
-
-    const newSession = await createQuizSession({
-      mode: "mock",
-      domains: preset.domainDistribution.map((d) => d.domainId),
-      sections: [],
-      tags: [],
-      difficulty: [],
-      shuffle: preset.shuffle,
-      questionCount: selectedQuestions.length,
-      timeLimitSec: timeLimit,
-      questions: selectedQuestions,
-    });
-
-    const questionIds = newSession.questionIds;
-    const questionMap = new Map(selectedQuestions.map((q) => [q.id, q]));
-    const sessionQuestions = questionIds.map((id) => questionMap.get(id)).filter(Boolean);
-
-    // Shuffle options for each question (if enabled)
-    // BUT skip shuffling for questions with "Both X and Y" patterns to preserve meaning
-    const shuffledQuestions = preset.shuffle ? sessionQuestions.map((q) => {
-      // Check if question has "Both X and Y" pattern
-      const hasBothPattern = q.options.some(opt => {
-        if (typeof opt !== 'string') return false;
-        const bothPattern = /Both\s+[A-D]\s+and\s+[A-D]/i.test(opt);
-        const otherPatterns =
-          opt.includes('All of the above') ||
-          opt.includes('None of the above') ||
-          opt.includes('All of above') ||
-          opt.includes('None of above');
-        return bothPattern || otherPatterns;
-      });
-
-      if (hasBothPattern) {
-        return q;
-      }
-
-      const options = [...q.options];
-      const answerIndex = q.answerIndex;
-      const shuffledIndices = shuffleArray([...Array(options.length).keys()]);
-      const shuffledOptions = shuffledIndices.map((i) => options[i]);
-      const newAnswerIndex = shuffledIndices.indexOf(answerIndex);
-      return { ...q, options: shuffledOptions, answerIndex: newAnswerIndex };
-    }) : sessionQuestions;
-
-    setSession(newSession);
-    setQuestions(shuffledQuestions);
-    setCurrentIndex(0);
-    setSelectedAnswers({});
-    setStartTime(Date.now());
-    setTimeSpent({});
-    setFlagged(new Set());
-    setShowResults(false);
-    setReviewMode(false);
-    setAnsweredQuestions(new Set());
-    setTimeLeft(timeLimit);
   };
 
-  // Select questions based on mock exam preset configuration
-  const selectQuestionsForMockExam = (preset) => {
-    const allQuestions = abretQuestionsData.questions || [];
-    const selected = [];
+  const handleMockExam = (presetId) => startSession({ kind: "preset", presetId });
 
-    // Group questions by domain and difficulty
-    const domainGroups = {};
-    preset.domainDistribution.forEach((dist) => {
-      domainGroups[dist.domainId] = {
-        easy: [],
-        medium: [],
-        hard: [],
-      };
-    });
+  const handleDomainQuiz = (domainId) => startSession({ kind: "domain-quickstart", domainId });
 
-    // Categorize all questions
-    allQuestions.forEach((q) => {
-      if (domainGroups[q.domainId]) {
-        domainGroups[q.domainId][q.difficulty].push(q);
-      }
-    });
-
-    // Select questions for each domain according to distribution
-    preset.domainDistribution.forEach((dist) => {
-      const domainQs = domainGroups[dist.domainId];
-      if (!domainQs) return;
-
-      const targetCount = dist.count;
-      const easyCount = Math.round(targetCount * preset.difficultyDistribution.easy);
-      const mediumCount = Math.round(targetCount * preset.difficultyDistribution.medium);
-      const hardCount = targetCount - easyCount - mediumCount;
-
-      // Shuffle and select from each difficulty
-      const easySelected = shuffleArray([...domainQs.easy]).slice(0, Math.min(easyCount, domainQs.easy.length));
-      const mediumSelected = shuffleArray([...domainQs.medium]).slice(0, Math.min(mediumCount, domainQs.medium.length));
-      const hardSelected = shuffleArray([...domainQs.hard]).slice(0, Math.min(hardCount, domainQs.hard.length));
-
-      selected.push(...easySelected, ...mediumSelected, ...hardSelected);
-    });
-
-    // Final shuffle
-    return shuffleArray(selected).slice(0, preset.questionCount);
-  };
-
-  const handleStartQuiz = async () => {
+  const handleStartQuiz = () => {
     if (availableQuestions.length === 0) {
-      alert("No questions match the selected filters. Please adjust your selection.");
+      setError("No questions match the selected filters. Please adjust your selection.");
       return;
     }
-
-    const count = Math.min(config.questionCount, availableQuestions.length);
-    const timeLimit = config.mode === "timed" ? 60 * 60 : config.mode === "mock" ? 120 * 60 : null;
-
-    const newSession = await createQuizSession({
+    startSession({
+      kind: "custom",
       mode: config.mode,
-      domains: config.domains,
-      sections: config.sections,
-      tags: config.tags,
-      difficulty: config.difficulty,
+      questionCount: Math.min(config.questionCount, availableQuestions.length),
       shuffle: config.shuffle,
-      questionCount: count,
-      timeLimitSec: timeLimit,
-      questions: availableQuestions,
+      filters: {
+        domains: config.domains,
+        sections: config.sections,
+        tags: config.tags,
+        difficulty: config.difficulty,
+      },
     });
-
-    const questionIds = newSession.questionIds;
-    const questionMap = new Map(availableQuestions.map((q) => [q.id, q]));
-    const sessionQuestions = questionIds.map((id) => questionMap.get(id)).filter(Boolean);
-
-    // Shuffle options for each question (if shuffle is enabled)
-    // BUT skip shuffling for questions with "Both X and Y" patterns to preserve meaning
-    const shuffledQuestions = config.shuffle ? sessionQuestions.map((q) => {
-      // Check if question has "Both X and Y" pattern (where X and Y are any letters A-D)
-      // or other patterns that reference specific option positions
-      const hasBothPattern = q.options.some(opt => {
-        if (typeof opt !== 'string') return false;
-        // Match "Both [A-D] and [A-D]" pattern (case insensitive)
-        const bothPattern = /Both\s+[A-D]\s+and\s+[A-D]/i.test(opt);
-        // Also check for other position-dependent patterns
-        const otherPatterns =
-          opt.includes('All of the above') ||
-          opt.includes('None of the above') ||
-          opt.includes('All of above') ||
-          opt.includes('None of above');
-        return bothPattern || otherPatterns;
-      });
-
-      // Don't shuffle options for questions with "Both" patterns or position-dependent options
-      if (hasBothPattern) {
-        return q; // Return question unchanged
-      }
-
-      const options = [...q.options];
-      const answerIndex = q.answerIndex;
-      const shuffledIndices = shuffleArray([...Array(options.length).keys()]);
-      const shuffledOptions = shuffledIndices.map((i) => options[i]);
-      const newAnswerIndex = shuffledIndices.indexOf(answerIndex);
-      return { ...q, options: shuffledOptions, answerIndex: newAnswerIndex };
-    }) : sessionQuestions;
-
-    setSession(newSession);
-    setQuestions(shuffledQuestions);
-    setCurrentIndex(0);
-    setSelectedAnswers({});
-    setStartTime(Date.now());
-    setTimeSpent({});
-    setFlagged(new Set());
-    setShowResults(false);
-    setReviewMode(false);
-    setAnsweredQuestions(new Set());
-    setTimeLeft(timeLimit);
   };
 
-  const handleAnswerSelect = async (questionId, answerIndex) => {
-    if (!session || showResults) return;
+  const handleAnswerSelect = async (questionId, selectedIndex) => {
+    if (!session || showResults || isSubmitting) return;
+    const isPractice = session.mode === "practice";
+    const previous = answers[questionId];
+    if (isPractice && previous) return; // practice answers are final
 
-    // Track time spent on this question
-    if (questionStartTimeRef.current) {
-      const timeMs = Date.now() - questionStartTimeRef.current;
-      setTimeSpent((prev) => ({ ...prev, [questionId]: (prev[questionId] || 0) + timeMs }));
-      questionStartTimeRef.current = Date.now();
-    }
+    const timeMs = Date.now() - questionStartTimeRef.current;
+    questionStartTimeRef.current = Date.now();
 
-    setSelectedAnswers((prev) => ({ ...prev, [questionId]: answerIndex }));
-    setAnsweredQuestions((prev) => new Set([...prev, questionId])); // Mark as answered for feedback
-
-    const question = questions.find((q) => q.id === questionId);
-    if (question) {
-      const isCorrect = answerIndex === question.answerIndex;
-      await saveAnswer(questionId, answerIndex, isCorrect, timeSpent[questionId] || 0);
-
-      // Save attempt event immediately for practice mode
-      if (session.mode === "practice") {
-        await saveAttemptEvent({
-          questionId: question.id,
-          domainId: question.domainId,
-          sectionId: question.sectionId,
-          topicTags: question.topicTags || [],
-          difficulty: question.difficulty,
-          isCorrect,
-          timestamp: Date.now(),
-          timeMs: timeSpent[questionId] || 0,
-          mode: session.mode,
-        });
+    setAnswers((prev) => ({ ...prev, [questionId]: { selectedIndex } }));
+    try {
+      const res = await quizApi.answer(session.sessionId, questionId, selectedIndex, timeMs);
+      if (isPractice) {
+        setAnswers((prev) => ({
+          ...prev,
+          [questionId]: {
+            selectedIndex: res.selectedIndex,
+            isCorrect: res.isCorrect,
+            correctIndex: res.correctIndex,
+            explanation: res.explanation,
+          },
+        }));
+      }
+    } catch (err) {
+      setAnswers((prev) => {
+        const next = { ...prev };
+        if (previous) next[questionId] = previous;
+        else delete next[questionId];
+        return next;
+      });
+      if (/expired/i.test(err.message || "")) {
+        submitSession(session.sessionId);
+      } else {
+        setError(err.message || "Failed to save answer.");
       }
     }
   };
@@ -394,264 +324,70 @@ function QuizSession() {
   const handleToggleFlag = (questionId) => {
     setFlagged((prev) => {
       const next = new Set(prev);
-      if (next.has(questionId)) {
-        next.delete(questionId);
-      } else {
-        next.add(questionId);
-      }
+      if (next.has(questionId)) next.delete(questionId);
+      else next.add(questionId);
+      if (session) saveFlags(session.sessionId, next);
       return next;
     });
   };
 
   const handleNext = () => {
-    if (currentIndex < questions.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
+    if (currentIndex < questions.length - 1) setCurrentIndex(currentIndex + 1);
   };
 
   const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+    if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
   };
 
-  const handleJumpToQuestion = (index) => {
-    setCurrentIndex(index);
+  const handleFinishQuiz = () => {
+    if (session) submitSession(session.sessionId);
   };
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleFinishQuiz = async () => {
-    if (!session || isSubmitting) return;
-    setIsSubmitting(true);
-
-    try {
-      // Save all attempt events
-      // Use Promise.allSettled to ensure one failure doesn't block the rest
-      await Promise.allSettled(questions.map(async (q) => {
-        const answer = selectedAnswers[q.id];
-        if (answer !== undefined) {
-          const isCorrect = answer === q.answerIndex;
-          const timeMs = timeSpent[q.id] || 0;
-
-          await saveAttemptEvent({
-            questionId: q.id,
-            domainId: q.domainId,
-            sectionId: q.sectionId,
-            topicTags: q.topicTags || [],
-            difficulty: q.difficulty,
-            isCorrect,
-            timestamp: Date.now(),
-            timeMs,
-            mode: session.mode,
-          });
-        }
-      }));
-
-      const finishedSession = await finishQuizSession();
-
-      // Construct a reliable session object for scoring using local state
-      // This ensures results show even if backend sync failed or is stale
-      const finalSessionForScore = {
-        ...session,
-        ...(finishedSession || {}),
-        answers: {
-          ...(session?.answers || {}),
-          ...Object.entries(selectedAnswers).reduce((acc, [qId, idx]) => {
-            const q = questions.find(question => question.id === qId);
-            acc[qId] = {
-              chosenIndex: idx,
-              isCorrect: q ? idx === q.answerIndex : false,
-              timeMs: timeSpent[qId] || 0
-            };
-            return acc;
-          }, {})
-        },
-        endTime: Date.now()
-      };
-
-      setSession(finalSessionForScore);
-
-      // Calculate and save score
-      const score = calculateSessionScore(finalSessionForScore, questions);
-      if (score) {
-        // Save to score history
-        await addScoreToHistory({
-          percent: score.percent,
-          correct: score.correct,
-          total: score.total,
-          attempted: score.attempted,
-          mode: session.mode,
-          timestamp: Date.now(),
-        });
-
-        // Save best score if better
-        await saveBestScore({
-          percent: score.percent,
-          correct: score.correct,
-          total: score.total,
-          attempted: score.attempted,
-          mode: session.mode,
-          timestamp: Date.now(),
-        });
-        
-        // Send quiz completion to backend for gamification tracking
-        try {
-          await apiService.post('/quiz/sessions/complete', {
-            sessionId: finalSessionForScore.sessionId,
-            mode: finalSessionForScore.mode,
-            questionIds: finalSessionForScore.questionIds,
-            answers: finalSessionForScore.answers,
-            startTime: finalSessionForScore.startTime,
-            endTime: finalSessionForScore.endTime,
-            timeLimitSec: finalSessionForScore.timeLimitSec,
-            config: finalSessionForScore.config,
-            score: {
-              correct: score.correct,
-              total: score.total,
-              percent: score.percent,
-              attempted: score.attempted
-            }
-          });
-          console.log('✅ Quiz completion sent to backend for XP tracking');
-        } catch (backendError) {
-          console.error('⚠️ Failed to track quiz in backend (XP may not be awarded):', backendError);
-          // Don't block the UI, just log the error
-        }
-        
-        // Check for gamification progress after quiz completion
-        await checkProgress();
-      }
-    } catch (error) {
-      console.error("Error during quiz finish:", error);
-      // Fallback: Show results anyway using local state calculation if needed
-    } finally {
-      setIsSubmitting(false);
-      setShowResults(true);
-      setReviewMode(false);
-      if (timerRef.current) clearInterval(timerRef.current);
-    }
-  };
-
-  const handleReset = () => {
-    clearQuizSession();
+  const resetLocalState = () => {
     setSession(null);
     setQuestions([]);
+    setAnswers({});
     setCurrentIndex(0);
-    setSelectedAnswers({});
-    setStartTime(null);
-    setTimeSpent({});
     setFlagged(new Set());
+    setResult(null);
+    setReview([]);
     setShowResults(false);
     setReviewMode(false);
     setTimeLeft(null);
+    setError(null);
+    submittingRef.current = false;
   };
 
-  const score = useMemo(() => {
-    if (!session || !showResults) return null;
-    return calculateSessionScore(session, questions);
-  }, [session, questions, showResults]);
+  const handleAbandon = async () => {
+    if (!session) return;
+    if (!window.confirm("Discard this quiz? Unsubmitted answers will not be scored.")) return;
+    try {
+      await quizApi.abandon(session.sessionId);
+    } catch {
+      // Already inactive on the server; clear locally either way.
+    }
+    clearFlags(session.sessionId);
+    resetLocalState();
+  };
+
+  const handleReset = () => resetLocalState();
 
   const currentQuestion = questions[currentIndex];
-  const unansweredIds = useMemo(() => {
-    return questions.filter((q) => selectedAnswers[q.id] === undefined).map((q) => q.id);
-  }, [questions, selectedAnswers]);
+  const unansweredCount = questions.filter((q) => !answers[q.questionId]).length;
 
-  // Quick-start domain quiz
-  const handleDomainQuiz = async (domainId) => {
-    const domain = allDomains.find((d) => d.id === domainId);
-    if (!domain) return;
+  const presetById = (id) => presets.find((p) => p.id === id);
+  const requestedPreset = presetParam ? presetById(presetParam) : null;
 
-    // Get all questions from this domain
-    const domainQuestions = availableQuestions.filter((q) => q.domainId === domainId);
-    if (domainQuestions.length === 0) {
-      alert(`No questions available for ${domain.title}. Please check your question bank.`);
-      return;
-    }
+  if (loading) {
+    return <div className="p-6 text-sm text-slate-600">Loading quiz…</div>;
+  }
 
-    // Balance across subsections (25-40 questions)
-    const questionCount = Math.min(35, domainQuestions.length);
-
-    // Group by section and balance
-    const sectionGroups = {};
-    domainQuestions.forEach((q) => {
-      if (!sectionGroups[q.sectionId]) {
-        sectionGroups[q.sectionId] = [];
-      }
-      sectionGroups[q.sectionId].push(q);
-    });
-
-    // Distribute questions across sections
-    const questionsPerSection = Math.ceil(questionCount / Object.keys(sectionGroups).length);
-    const selectedQuestions = [];
-
-    Object.values(sectionGroups).forEach((sectionQs) => {
-      const shuffled = shuffleArray([...sectionQs]);
-      selectedQuestions.push(...shuffled.slice(0, Math.min(questionsPerSection, sectionQs.length)));
-    });
-
-    // Shuffle final selection
-    const finalQuestions = shuffleArray(selectedQuestions).slice(0, questionCount);
-
-    const newSession = await createQuizSession({
-      mode: "timed",
-      domains: [domainId],
-      sections: [],
-      tags: [],
-      difficulty: [],
-      shuffle: true,
-      questionCount: finalQuestions.length,
-      timeLimitSec: 60 * 60, // 1 hour
-      questions: finalQuestions,
-    });
-
-    const questionIds = newSession.questionIds;
-    const questionMap = new Map(finalQuestions.map((q) => [q.id, q]));
-    const sessionQuestions = questionIds.map((id) => questionMap.get(id)).filter(Boolean);
-
-    // Shuffle options for each question
-    // BUT skip shuffling for questions with "Both X and Y" patterns to preserve meaning
-    const shuffledQuestions = sessionQuestions.map((q) => {
-      // Check if question has "Both X and Y" pattern (where X and Y are any letters A-D)
-      // or other patterns that reference specific option positions
-      const hasBothPattern = q.options.some(opt => {
-        if (typeof opt !== 'string') return false;
-        // Match "Both [A-D] and [A-D]" pattern (case insensitive)
-        const bothPattern = /Both\s+[A-D]\s+and\s+[A-D]/i.test(opt);
-        // Also check for other position-dependent patterns
-        const otherPatterns =
-          opt.includes('All of the above') ||
-          opt.includes('None of the above') ||
-          opt.includes('All of above') ||
-          opt.includes('None of above');
-        return bothPattern || otherPatterns;
-      });
-
-      // Don't shuffle options for questions with "Both" patterns or position-dependent options
-      if (hasBothPattern) {
-        return q; // Return question unchanged
-      }
-
-      const options = [...q.options];
-      const answerIndex = q.answerIndex;
-      const shuffledIndices = shuffleArray([...Array(options.length).keys()]);
-      const shuffledOptions = shuffledIndices.map((i) => options[i]);
-      const newAnswerIndex = shuffledIndices.indexOf(answerIndex);
-      return { ...q, options: shuffledOptions, answerIndex: newAnswerIndex };
-    });
-
-    setSession(newSession);
-    setQuestions(shuffledQuestions);
-    setCurrentIndex(0);
-    setSelectedAnswers({});
-    setStartTime(Date.now());
-    setTimeSpent({});
-    setFlagged(new Set());
-    setShowResults(false);
-    setReviewMode(false);
-    setAnsweredQuestions(new Set());
-    setTimeLeft(60 * 60);
-  };
+  const errorBanner = error && (
+    <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 flex items-start justify-between gap-4">
+      <span>{error}</span>
+      <button onClick={() => setError(null)} className="text-xs underline">Dismiss</button>
+    </div>
+  );
 
   // Configuration Screen
   if (!session) {
@@ -664,17 +400,39 @@ function QuizSession() {
           </p>
         </div>
 
+        {errorBanner}
+
+        {/* Requested preset (e.g. from /certification-exam) */}
+        {requestedPreset && (
+          <div className="rounded-lg border-2 border-blue-200 bg-blue-50 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div>
+              <h2 className="text-sm font-semibold text-slate-900">{requestedPreset.title}</h2>
+              <p className="text-xs text-slate-600">
+                {requestedPreset.questionCount} questions · {requestedPreset.timeLimitMinutes} minutes · domain allocation{" "}
+                {requestedPreset.domainAllocation.map((a) => a.count).join(" / ")} (ABRET R. EEG T. 2026 blueprint)
+              </p>
+            </div>
+            <button
+              onClick={() => handleMockExam(requestedPreset.id)}
+              disabled={busy}
+              className="px-4 py-2 rounded-md bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 disabled:opacity-60"
+            >
+              Start Exam
+            </button>
+          </div>
+        )}
+
         {/* Quick Start: Domain Quizzes */}
         <div className="rounded-lg border border-slate-200 bg-white p-4">
           <h2 className="text-sm font-semibold text-slate-900 mb-3">Quick Start: Domain Quizzes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {allDomains.map((domain) => {
-              const domainQuestionCount = availableQuestions.filter((q) => q.domainId === domain.id).length;
+              const domainQuestionCount = catalog.filter((q) => q.domainId === domain.id).length;
               return (
                 <button
                   key={domain.id}
                   onClick={() => handleDomainQuiz(domain.id)}
-                  disabled={domainQuestionCount === 0}
+                  disabled={domainQuestionCount === 0 || busy}
                   className="px-4 py-3 rounded-md border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed text-sm font-medium transition-colors"
                 >
                   <div className="font-semibold">{domain.title}</div>
@@ -695,12 +453,15 @@ function QuizSession() {
           <div className="mb-4">
             <button
               onClick={() => handleMockExam("mock-full-130")}
-              className="w-full px-4 py-3 rounded-md bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors"
+              disabled={busy}
+              className="w-full px-4 py-3 rounded-md bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors disabled:opacity-60"
             >
               Full ABRET Mock Exam (130 Questions, 2 hours)
             </button>
             <p className="text-xs text-slate-600 mt-1 text-center">
-              Complete exam covering all domains with official distribution
+              Domains weighted 15% / 46% / 19% / 20% per the 2026 ABRET R. EEG T. blueprint
+              {presetById("mock-full-130") &&
+                ` (${presetById("mock-full-130").domainAllocation.map((a) => a.count).join(" / ")} questions)`}
             </p>
           </div>
 
@@ -708,13 +469,14 @@ function QuizSession() {
           <div className="mb-4">
             <h3 className="text-xs font-medium text-slate-700 mb-2">Mock Exam Sets (30 Questions Each)</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-              {mockExamPresets.presets
+              {presets
                 .filter((p) => p.id.startsWith("mock-set-"))
                 .map((preset) => (
                   <button
                     key={preset.id}
                     onClick={() => handleMockExam(preset.id)}
-                    className="px-3 py-2 rounded-md bg-green-600 text-white text-xs font-medium hover:bg-green-700 transition-colors"
+                    disabled={busy}
+                    className="px-3 py-2 rounded-md bg-green-600 text-white text-xs font-medium hover:bg-green-700 transition-colors disabled:opacity-60"
                   >
                     {preset.title}
                   </button>
@@ -726,13 +488,14 @@ function QuizSession() {
           <div>
             <h3 className="text-xs font-medium text-slate-700 mb-2">Domain-Specific Mock Exams</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-              {mockExamPresets.presets
+              {presets
                 .filter((p) => p.id.startsWith("mock-domain-"))
                 .map((preset) => (
                   <button
                     key={preset.id}
                     onClick={() => handleMockExam(preset.id)}
-                    className="px-3 py-2 rounded-md bg-purple-600 text-white text-xs font-medium hover:bg-purple-700 transition-colors"
+                    disabled={busy}
+                    className="px-3 py-2 rounded-md bg-purple-600 text-white text-xs font-medium hover:bg-purple-700 transition-colors disabled:opacity-60"
                   >
                     {preset.title}
                   </button>
@@ -765,18 +528,23 @@ function QuizSession() {
                     </button>
                   ))}
                 </div>
+                <p className="text-xs text-slate-500 mt-1">
+                  {config.mode === "practice"
+                    ? "Immediate feedback and explanations after each answer."
+                    : "Answers are scored when you submit; no feedback until then."}
+                </p>
               </div>
 
               {/* Question Count */}
               <div className="mb-4">
                 <label className="block text-xs font-medium text-slate-700 mb-2">
-                  Number of Questions: {config.questionCount}
+                  Number of Questions: {Math.min(config.questionCount, availableQuestions.length)}
                 </label>
                 <input
                   type="range"
-                  min="5"
-                  max={Math.min(50, availableQuestions.length)}
-                  value={config.questionCount}
+                  min="1"
+                  max={Math.max(1, Math.min(50, availableQuestions.length))}
+                  value={Math.min(config.questionCount, availableQuestions.length)}
                   onChange={(e) => handleConfigChange("questionCount", parseInt(e.target.value))}
                   className="w-full"
                 />
@@ -886,17 +654,17 @@ function QuizSession() {
                     onChange={(e) => handleConfigChange("shuffle", e.target.checked)}
                     className="rounded"
                   />
-                  <span>Shuffle questions</span>
+                  <span>Shuffle question and answer order</span>
                 </label>
               </div>
 
               {/* Start Button */}
               <button
                 onClick={handleStartQuiz}
-                disabled={availableQuestions.length === 0}
+                disabled={availableQuestions.length === 0 || busy}
                 className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed"
               >
-                Start Quiz ({config.questionCount} questions)
+                {busy ? "Starting..." : `Start Quiz (${Math.min(config.questionCount, availableQuestions.length)} questions)`}
               </button>
             </div>
           </div>
@@ -912,7 +680,7 @@ function QuizSession() {
                 <span className="font-medium">Questions Available:</span> {availableQuestions.length}
               </div>
               <div>
-                <span className="font-medium">Selected:</span> {config.questionCount}
+                <span className="font-medium">Selected:</span> {Math.min(config.questionCount, availableQuestions.length)}
               </div>
               {config.domains.length > 0 && (
                 <div>
@@ -943,7 +711,14 @@ function QuizSession() {
   }
 
   // Results Screen
-  if (showResults && score) {
+  if (showResults && result) {
+    const breakdownRows = (map) =>
+      Object.entries(map || {}).map(([key, stats]) => ({
+        key,
+        ...stats,
+        percent: stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0,
+      }));
+
     return (
       <section className="space-y-6">
         <div className="space-y-2">
@@ -952,6 +727,8 @@ function QuizSession() {
             {session.mode === "practice" ? "Practice" : session.mode === "timed" ? "Timed" : "Mock Exam"} completed
           </p>
         </div>
+
+        {errorBanner}
 
         {/* Score Summary */}
         <div className="rounded-lg border border-slate-200 bg-white p-6">
@@ -966,32 +743,31 @@ function QuizSession() {
           </div>
           <div className="flex items-center gap-6">
             <div className="text-5xl font-bold text-blue-700 bg-blue-50 px-6 py-4 rounded-lg border border-blue-200">
-              {score.percent}%
+              {result.percent}%
             </div>
             <div className="text-sm text-slate-700">
               <div className="font-medium text-slate-900 mb-1">
-                {score.correct} / {score.attempted} correct
+                {result.correct} / {result.total} correct
               </div>
               <div className="text-xs text-slate-500">
-                {score.total - score.attempted} unanswered
+                {result.total - result.attempted} unanswered · {result.percentOfAttempted}% of answered questions correct
               </div>
             </div>
           </div>
         </div>
 
         {/* Breakdown by Domain */}
-        {Object.keys(score.breakdown.byDomain).length > 0 && (
+        {breakdownRows(result.breakdown.byDomain).length > 0 && (
           <div className="rounded-lg border border-slate-200 bg-white p-4">
             <h3 className="text-sm font-semibold text-slate-900 mb-3">Performance by Domain</h3>
             <div className="space-y-2">
-              {Object.entries(score.breakdown.byDomain).map(([domainId, stats]) => {
-                const domain = allDomains.find((d) => d.id === domainId);
-                const percent = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
+              {breakdownRows(result.breakdown.byDomain).map((row) => {
+                const domain = allDomains.find((d) => d.id === row.key);
                 return (
-                  <div key={domainId} className="flex items-center justify-between text-xs">
-                    <span className="text-slate-700">{domain?.title || domainId}</span>
+                  <div key={row.key} className="flex items-center justify-between text-xs">
+                    <span className="text-slate-700">{domain?.title || row.key}</span>
                     <span className="font-medium text-slate-900">
-                      {stats.correct}/{stats.total} ({percent}%)
+                      {row.correct}/{row.total} ({row.percent}%)
                     </span>
                   </div>
                 );
@@ -1001,21 +777,18 @@ function QuizSession() {
         )}
 
         {/* Breakdown by Difficulty */}
-        {Object.keys(score.breakdown.byDifficulty).length > 0 && (
+        {breakdownRows(result.breakdown.byDifficulty).length > 0 && (
           <div className="rounded-lg border border-slate-200 bg-white p-4">
             <h3 className="text-sm font-semibold text-slate-900 mb-3">Performance by Difficulty</h3>
             <div className="space-y-2">
-              {Object.entries(score.breakdown.byDifficulty).map(([difficulty, stats]) => {
-                const percent = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
-                return (
-                  <div key={difficulty} className="flex items-center justify-between text-xs">
-                    <span className="text-slate-700 capitalize">{difficulty}</span>
-                    <span className="font-medium text-slate-900">
-                      {stats.correct}/{stats.total} ({percent}%)
-                    </span>
-                  </div>
-                );
-              })}
+              {breakdownRows(result.breakdown.byDifficulty).map((row) => (
+                <div key={row.key} className="flex items-center justify-between text-xs">
+                  <span className="text-slate-700 capitalize">{row.key}</span>
+                  <span className="font-medium text-slate-900">
+                    {row.correct}/{row.total} ({row.percent}%)
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         )}
@@ -1036,52 +809,48 @@ function QuizSession() {
           </button>
         </div>
 
-        {/* Review Questions */}
+        {/* Review Questions (answer key provided by the server after submission) */}
         {reviewMode && (
           <div className="space-y-4">
-            {questions.map((q, idx) => {
-              const selected = selectedAnswers[q.id];
-              const isCorrect = selected === q.answerIndex;
-              return (
-                <div key={q.id} className="rounded-lg border border-slate-200 bg-white p-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium text-slate-500">Question {idx + 1}</span>
-                    <span
-                      className={`text-xs px-2 py-1 rounded ${isCorrect ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
-                        }`}
-                    >
-                      {isCorrect ? "Correct" : "Incorrect"}
-                    </span>
-                  </div>
-                  <p className="text-sm font-medium text-slate-900 mb-3">{q.stem}</p>
-                  <div className="space-y-2">
-                    {q.options.map((option, optIdx) => {
-                      const isSelected = selected === optIdx;
-                      const isAnswer = optIdx === q.answerIndex;
-                      let optionClass = "w-full text-left rounded-md border px-3 py-2 text-sm";
-                      if (isAnswer) {
-                        optionClass += " border-green-500 bg-green-50";
-                      } else if (isSelected && !isAnswer) {
-                        optionClass += " border-red-500 bg-red-50";
-                      } else {
-                        optionClass += " border-slate-200 bg-white";
-                      }
-                      return (
-                        <div key={optIdx} className={optionClass}>
-                          <span className="font-semibold mr-2">{String.fromCharCode(65 + optIdx)}.</span>
-                          {option}
-                        </div>
-                      );
-                    })}
-                  </div>
-                  {q.explanation && (
-                    <div className="mt-3 text-sm text-slate-700 bg-slate-50 p-3 rounded">
-                      <span className="font-semibold">Explanation:</span> {q.explanation}
-                    </div>
-                  )}
+            {review.map((q, idx) => (
+              <div key={q.questionId} className="rounded-lg border border-slate-200 bg-white p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-medium text-slate-500">Question {idx + 1}</span>
+                  <span
+                    className={`text-xs px-2 py-1 rounded ${q.isCorrect ? "bg-green-100 text-green-800" : q.selectedIndex === null ? "bg-slate-100 text-slate-700" : "bg-red-100 text-red-800"
+                      }`}
+                  >
+                    {q.isCorrect ? "Correct" : q.selectedIndex === null ? "Unanswered" : "Incorrect"}
+                  </span>
                 </div>
-              );
-            })}
+                <p className="text-sm font-medium text-slate-900 mb-3">{q.stem}</p>
+                <div className="space-y-2">
+                  {q.options.map((option, optIdx) => {
+                    const isSelected = q.selectedIndex === optIdx;
+                    const isAnswer = optIdx === q.correctIndex;
+                    let optionClass = "w-full text-left rounded-md border px-3 py-2 text-sm";
+                    if (isAnswer) {
+                      optionClass += " border-green-500 bg-green-50";
+                    } else if (isSelected) {
+                      optionClass += " border-red-500 bg-red-50";
+                    } else {
+                      optionClass += " border-slate-200 bg-white";
+                    }
+                    return (
+                      <div key={optIdx} className={optionClass}>
+                        <span className="font-semibold mr-2">{String.fromCharCode(65 + optIdx)}.</span>
+                        {option}
+                      </div>
+                    );
+                  })}
+                </div>
+                {q.explanation && (
+                  <div className="mt-3 text-sm text-slate-700 bg-slate-50 p-3 rounded">
+                    <span className="font-semibold">Explanation:</span> {q.explanation}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         )}
       </section>
@@ -1089,46 +858,59 @@ function QuizSession() {
   }
 
   // Quiz in Progress
+  const isPractice = session.mode === "practice";
+
   return (
     <>
     <section className="space-y-4">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-2 flex-wrap">
         <div>
-          <h1 className="text-xl font-bold text-slate-900">ABRET Practice Quiz</h1>
+          <h1 className="text-xl font-bold text-slate-900">
+            {isPractice ? "ABRET Practice Quiz" : session.mode === "timed" ? "ABRET Timed Quiz" : "ABRET Mock Exam"}
+          </h1>
           <p className="text-xs text-slate-500">
             Question {currentIndex + 1} of {questions.length}
           </p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {timeLeft !== null && (
-            <div className="text-sm font-medium text-slate-700">
+            <div className={`text-sm font-medium ${timeLeft < 600 ? "text-red-600" : "text-slate-700"}`}>
               Time: {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, "0")}
             </div>
           )}
+          <button
+            onClick={handleAbandon}
+            disabled={isSubmitting}
+            className="px-3 py-1.5 rounded-md text-xs text-slate-500 hover:text-slate-700 hover:bg-slate-50"
+          >
+            Exit
+          </button>
           <button
             onClick={handleFinishQuiz}
             disabled={isSubmitting}
             className="px-3 py-1.5 rounded-md border border-slate-300 text-sm text-slate-700 hover:bg-slate-50 disabled:opacity-70 disabled:cursor-wait"
           >
-            {isSubmitting ? "Saving..." : "Finish Quiz"}
+            {isSubmitting ? "Submitting..." : "Finish Quiz"}
           </button>
         </div>
       </div>
+
+      {errorBanner}
 
       {/* Progress Bar */}
       <div className="w-full bg-slate-200 rounded-full h-2">
         <div
           className="bg-blue-600 h-2 rounded-full transition-all"
-          style={{ width: `${((currentIndex + 1) / questions.length) * 100}%` }}
+          style={{ width: `${((currentIndex + 1) / Math.max(questions.length, 1)) * 100}%` }}
         />
       </div>
 
       {/* Question Navigation Grid */}
       <div className="flex flex-wrap gap-1">
         {questions.map((q, idx) => {
-          const isAnswered = selectedAnswers[q.id] !== undefined;
-          const isFlagged = flagged.has(q.id);
+          const isAnswered = !!answers[q.questionId];
+          const isFlagged = flagged.has(q.questionId);
           const isCurrent = idx === currentIndex;
           let buttonClass = "w-8 h-8 rounded text-xs font-medium transition-colors";
           if (isCurrent) {
@@ -1142,8 +924,8 @@ function QuizSession() {
           }
           return (
             <button
-              key={q.id}
-              onClick={() => handleJumpToQuestion(idx)}
+              key={q.questionId}
+              onClick={() => setCurrentIndex(idx)}
               className={buttonClass}
               title={q.stem.substring(0, 50)}
             >
@@ -1155,7 +937,9 @@ function QuizSession() {
 
       {/* Current Question */}
       {currentQuestion && (() => {
-        const selectedAnswer = selectedAnswers[currentQuestion.id];
+        const answer = answers[currentQuestion.questionId];
+        const selectedAnswer = answer?.selectedIndex;
+        const hasFeedback = isPractice && answer && answer.correctIndex !== undefined;
 
         return (
           <div className="rounded-lg border border-slate-200 bg-white p-6">
@@ -1169,10 +953,10 @@ function QuizSession() {
                 </span>
               </div>
               <button
-                onClick={() => handleToggleFlag(currentQuestion.id)}
+                onClick={() => handleToggleFlag(currentQuestion.questionId)}
                 className="text-xs px-2 py-1 rounded border border-slate-300 hover:bg-slate-50"
               >
-                {flagged.has(currentQuestion.id) ? "★ Flagged" : "☆ Flag"}
+                {flagged.has(currentQuestion.questionId) ? "★ Flagged" : "☆ Flag"}
               </button>
             </div>
 
@@ -1181,11 +965,13 @@ function QuizSession() {
             <div className="space-y-2">
               {currentQuestion.options.map((option, idx) => {
                 const isSelected = selectedAnswer === idx;
-                let optionClass =
-                  "w-full text-left rounded-md border px-4 py-3 text-sm transition";
+                let optionClass = "w-full text-left rounded-md border px-4 py-3 text-sm transition";
 
-                // Only show selection state, no correct/incorrect feedback during quiz
-                if (isSelected) {
+                if (hasFeedback && idx === answer.correctIndex) {
+                  optionClass += " border-green-500 bg-green-50 text-green-900 font-medium";
+                } else if (hasFeedback && isSelected) {
+                  optionClass += " border-red-500 bg-red-50 text-red-900 font-medium";
+                } else if (isSelected) {
                   optionClass += " border-blue-400 bg-blue-50 text-blue-900 font-medium";
                 } else {
                   optionClass += " border-slate-200 hover:bg-slate-50";
@@ -1195,7 +981,8 @@ function QuizSession() {
                   <button
                     key={idx}
                     type="button"
-                    onClick={() => handleAnswerSelect(currentQuestion.id, idx)}
+                    disabled={isPractice && !!answer}
+                    onClick={() => handleAnswerSelect(currentQuestion.questionId, idx)}
                     className={optionClass}
                   >
                     <span className="font-semibold mr-2">{String.fromCharCode(65 + idx)}.</span>
@@ -1204,6 +991,13 @@ function QuizSession() {
                 );
               })}
             </div>
+
+            {hasFeedback && (
+              <div className={`mt-4 text-sm p-3 rounded ${answer.isCorrect ? "bg-green-50 text-green-900" : "bg-red-50 text-red-900"}`}>
+                <div className="font-semibold mb-1">{answer.isCorrect ? "Correct" : "Incorrect"}</div>
+                {answer.explanation && <div className="text-slate-700">{answer.explanation}</div>}
+              </div>
+            )}
           </div>
         );
       })()}
@@ -1219,7 +1013,7 @@ function QuizSession() {
         </button>
 
         <div className="text-xs text-slate-500">
-          {unansweredIds.length} unanswered
+          {unansweredCount} unanswered
         </div>
 
         <button
@@ -1243,4 +1037,3 @@ function QuizSession() {
 }
 
 export default QuizSession;
-
