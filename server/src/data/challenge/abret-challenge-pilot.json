@@ -12,7 +12,8 @@
       "topicTags": [
         "10-20",
         "measurement",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -45,7 +46,8 @@
       "topicTags": [
         "time-constant",
         "lff",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -259,7 +261,8 @@
       "topicTags": [
         "sensitivity",
         "amplitude",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -288,7 +291,8 @@
         "duration",
         "spike",
         "sharp-wave",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -317,7 +321,8 @@
         "aliasing",
         "nyquist",
         "sampling",
-        "calculation"
+        "calculation",
+        "calc-beyond"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -346,7 +351,8 @@
         "hff",
         "roll-off",
         "cutoff",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -408,7 +414,8 @@
         "eci",
         "brain-death",
         "sensitivity",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -1054,7 +1061,8 @@
         "technical-description",
         "frequency",
         "amplitude",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",

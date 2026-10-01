@@ -44,6 +44,22 @@ back-filled from L4–L6 first. Within a level, domains are favoured in
 proportion to ABRET weight. While the pilot is under review, the Challenge
 Bank is served only here, not in standard quizzes or mocks.
 
+## Calculation items: core vs beyond exam depth
+
+Every Challenge calculation item carries exactly one tag:
+
+- `calc-core`: the arithmetic the R.EEG T. realistically asks: amplitude =
+  sensitivity × deflection, frequency and duration from the page, TC ↔ LFF
+  (`TC = 1/(2π·LFF)`), ~70% passed at a filter cutoff, Nyquist, 10-20
+  measuring, bipolar subtraction, and frequency/duration for ACNS criteria.
+- `calc-beyond`: engineering depth (dB → ratio, single-pole gain formulas,
+  alias folding). Still served, but drawn with weight × 0.25 in Challenge Me,
+  and shown with a "Beyond exam depth" badge.
+
+**Calculation drill** (dashboard, 10 / 20): `kind: "challenge"`,
+`focus: "calc-core"`; serves only `calc-core` items (24 in
+`abret-challenge-calc.json` plus 19 tagged pilot/batch-2 items).
+
 ## Question QA
 
 `qaStatus`: UNREVIEWED · VERIFIED · NEEDS_REVISION · REJECTED. NEEDS_REVISION

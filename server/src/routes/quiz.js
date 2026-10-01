@@ -13,6 +13,7 @@ import {
     EXPIRY_GRACE_MS,
     MAX_CUSTOM_QUESTIONS,
     TIME_LIMITS_SEC,
+    CALC_CORE_TAG,
     buildOptionOrder,
     displayIndexOf,
     resolvePresetAllocation,
@@ -349,16 +350,19 @@ router.post('/sessions', async (req, res) => {
             if (!CHALLENGE_SIZES.includes(size)) {
                 return res.status(400).json({ error: `questionCount must be one of ${CHALLENGE_SIZES.join(', ')}` });
             }
-            // Optional focus on one or more competencies (used by Today's Study).
+            // Optional focus on one or more competencies (used by Today's Study),
+            // or on the core exam calculations (the calculation drill).
             const competencies = asStringArray(body.competencies);
-            const challengePool = competencies.length ? pool.filter((q) => competencies.includes(q.competency)) : pool;
+            const calcDrill = body.focus === 'calc-core';
+            let challengePool = competencies.length ? pool.filter((q) => competencies.includes(q.competency)) : pool;
+            if (calcDrill) challengePool = challengePool.filter((q) => (q.topicTags || []).includes(CALC_CORE_TAG));
             if (!challengePool.length) {
                 return res.status(400).json({ error: 'No Challenge questions match that focus' });
             }
             mode = 'practice';
             timeLimitSec = null;
             selected = selectChallenge(challengePool, size);
-            config = { domains: [], sections: [], tags: competencies, difficulty: [], shuffle: true, questionCount: selected.length };
+            config = { domains: [], sections: [], tags: calcDrill ? [...competencies, CALC_CORE_TAG] : competencies, difficulty: [], shuffle: true, questionCount: selected.length };
         } else if (kind === 'weak-areas') {
             const size = Number.parseInt(body.questionCount, 10);
             if (!WEAK_AREA_SIZES.includes(size)) {

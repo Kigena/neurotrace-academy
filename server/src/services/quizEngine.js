@@ -161,10 +161,21 @@ export function allocateChallengeLevels(n, mix = CHALLENGE_LEVEL_MIX) {
 
 const DOMAIN_WEIGHT = Object.fromEntries(DOMAINS.map((d) => [d.legacyDomainId, d.weightPercent]));
 
+// Tag for calculations deeper than the exam realistically asks (dB ratios,
+// single-pole gain formulas). Still servable, but drawn a quarter as often.
+export const CALC_BEYOND_TAG = 'calc-beyond';
+export const CALC_CORE_TAG = 'calc-core';
+export const CALC_BEYOND_FACTOR = 0.25;
+
+function selectionWeight(q) {
+    const w = DOMAIN_WEIGHT[q.domainId] || 10;
+    return (q.topicTags || []).includes(CALC_BEYOND_TAG) ? w * CALC_BEYOND_FACTOR : w;
+}
+
 /** Weighted sample without replacement, weighted by ABRET domain weight. */
 function sampleByDomainWeight(list, k, rng) {
     return list
-        .map((q) => ({ q, key: Math.pow(rng(), 1 / (DOMAIN_WEIGHT[q.domainId] || 10)) }))
+        .map((q) => ({ q, key: Math.pow(rng(), 1 / selectionWeight(q)) }))
         .sort((a, b) => b.key - a.key)
         .slice(0, k)
         .map((x) => x.q);
@@ -174,7 +185,8 @@ function sampleByDomainWeight(list, k, rng) {
  * Select a Challenge session from challenge-bank questions (L3-L6 only).
  * Each level gets its allocated share; shortfalls are back-filled from the
  * remaining L4-L6 questions first, then L3. Within a level, domains are
- * favoured in proportion to their ABRET weight.
+ * favoured in proportion to their ABRET weight, and beyond-exam calculations
+ * are down-weighted.
  */
 export function selectChallenge(pool, n, rng = Math.random) {
     const eligible = pool.filter((q) => Number.isInteger(q.cognitiveLevel) && q.cognitiveLevel >= 3 && q.cognitiveLevel <= 6);

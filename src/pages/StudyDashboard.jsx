@@ -17,6 +17,7 @@ function StudyDashboard() {
   const [busy, setBusy] = useState(false);
   const [weakSize, setWeakSize] = useState(20);
   const [challengeSize, setChallengeSize] = useState(20);
+  const [calcSize, setCalcSize] = useState(10);
   const days = daysUntilExam();
 
   useEffect(() => {
@@ -81,7 +82,7 @@ function StudyDashboard() {
       )}
 
       {/* Primary actions */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         <button
           onClick={continueStudying}
           disabled={busy || !data}
@@ -127,6 +128,25 @@ function StudyDashboard() {
             <option value={20}>20</option>
             <option value={30}>30</option>
             <option value={50}>50</option>
+          </select>
+        </div>
+        <div className="flex rounded-lg border border-teal-300 bg-teal-50 overflow-hidden">
+          <button
+            onClick={() => run({ kind: "challenge", count: calcSize, focus: "calc-core" })}
+            disabled={busy || !data}
+            title="Exam-style calculations: sensitivity, page speed, duration, time constant/LFF, 70% at cutoff, Nyquist, 10-20 measuring"
+            className="flex-1 px-3 py-3 text-sm font-semibold text-teal-900 hover:bg-teal-100 disabled:opacity-60"
+          >
+            CALCULATION DRILL
+          </button>
+          <select
+            aria-label="Calculation drill size"
+            value={calcSize}
+            onChange={(e) => setCalcSize(Number(e.target.value))}
+            className="border-l border-teal-300 bg-teal-50 px-2 text-sm text-teal-900"
+          >
+            <option value={10}>10</option>
+            <option value={20}>20</option>
           </select>
         </div>
         <Link

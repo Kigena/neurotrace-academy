@@ -957,8 +957,16 @@ function QuizSession() {
                     {currentQuestion.difficulty}
                   </span>
                 )}
+                {currentQuestion.topicTags?.includes("calc-beyond") && (
+                  <span
+                    className="text-xs px-2 py-1 rounded bg-slate-100 text-slate-600"
+                    title="Deeper arithmetic than the ABRET exam usually asks. Good for understanding; don't worry if you miss it."
+                  >
+                    Beyond exam depth
+                  </span>
+                )}
                 <span className="text-xs text-slate-500">
-                  {currentQuestion.topicTags?.slice(0, 2).join(", ")}
+                  {currentQuestion.topicTags?.filter((t) => !t.startsWith("calc-")).slice(0, 2).join(", ")}
                 </span>
               </div>
               <button

@@ -1,0 +1,726 @@
+{
+  "version": "calc-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "focus": "core-calculations",
+  "description": "ABRET Challenge Bank: the exam-realistic calculations (sensitivity, page speed, duration, time constant/LFF, ~70% at cutoff, Nyquist, 10-20 measuring). Not yet medically verified.",
+  "totalQuestions": 24,
+  "questions": [
+    {
+      "id": "ch-calc-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "sensitivity",
+        "amplitude",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "At a sensitivity of 7 µV/mm, a posterior rhythm measures 9 mm peak to peak. What is its amplitude?",
+      "explanation": "Amplitude = sensitivity × deflection = 7 µV/mm × 9 mm = 63 µV. 6.3 µV is a decimal slip, 126 µV doubles a value that is already peak to peak, and 32 µV halves it as if only the peak were wanted.",
+      "learningObjective": "Convert a measured deflection to amplitude.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 6.3 µV",
+        "About 126 µV",
+        "About 32 µV",
+        "About 63 µV"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "sensitivity",
+        "deflection",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A 100-µV spike is displayed first at 10 µV/mm and then at 15 µV/mm. How tall is it on the page at each setting?",
+      "explanation": "Deflection = voltage ÷ sensitivity: 100/10 = 10 mm and 100/15 ≈ 6.7 mm. A larger µV/mm number means LOWER sensitivity, so the spike gets smaller, not larger (15 mm). 5 mm would need 20 µV/mm.",
+      "learningObjective": "Predict deflection when sensitivity changes.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "10 mm, then 15 mm",
+        "10 mm, then about 5 mm",
+        "10 mm, then about 6.7 mm",
+        "15 mm, then about 6.7 mm"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "sensitivity",
+        "annotation",
+        "amplitude",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 3,
+      "stem": "Mid-recording, sensitivity is changed from 7 to 5 µV/mm but the change is not annotated. A reviewer measures 14-mm waves after the change and assumes 7 µV/mm. What amplitude do they report, and what is the true amplitude?",
+      "explanation": "The reviewer computes 14 × 7 = 98 µV, but the true setting gives 14 × 5 = 70 µV, so the waves are overestimated by 40%. This is why every sensitivity change must be annotated. 140 µV doubles the value; 50 µV divides 70 by 1.4 a second time.",
+      "learningObjective": "Recognise the effect of unannotated sensitivity changes.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "70 µV reported; 98 µV true",
+        "98 µV reported; 140 µV true",
+        "98 µV reported; 70 µV true",
+        "50 µV reported; 70 µV true"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "frequency",
+        "paper-speed",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "At a display speed of 30 mm/s, 7 complete waves of a posterior rhythm span 21 mm. What is its frequency?",
+      "explanation": "21 mm at 30 mm/s = 0.7 s; 7 waves ÷ 0.7 s = 10 Hz. 7 Hz treats the wave count as if it covered 1 s; 5 Hz assumes 15 mm/s (21 mm = 1.4 s); 20 Hz assumes 60 mm/s.",
+      "learningObjective": "Calculate frequency from waves counted over a measured distance.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "7 Hz",
+        "10 Hz",
+        "5 Hz",
+        "20 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "frequency",
+        "paper-speed",
+        "display",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 3,
+      "stem": "The display is running at 15 mm/s. A rhythm shows 6 complete waves in 30 mm. What is its true frequency, and what would a reader report who assumed the usual 30 mm/s?",
+      "explanation": "At 15 mm/s, 30 mm = 2 s, so 6 waves = 3 Hz. Assuming 30 mm/s makes 30 mm look like 1 s, doubling the apparent frequency to 6 Hz: slowing can be misread as faster activity. A slower display never makes the reported frequency lower.",
+      "learningObjective": "Check display speed before measuring frequency.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "6 Hz; they would report 3 Hz",
+        "3 Hz; they would report 6 Hz",
+        "3 Hz; they would report 1.5 Hz",
+        "6 Hz; they would report 12 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "duration",
+        "spike",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "At 30 mm/s, a transient measures 1.8 mm at its base. What is its duration, and how is it classified by duration?",
+      "explanation": "1.8 mm ÷ 30 mm/s = 0.06 s = 60 ms, under the 70-ms spike limit. 90 ms assumes 20 mm/s, 180 ms assumes 10 mm/s, and 600 ms is a decimal error.",
+      "learningObjective": "Convert width to duration and classify the transient.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 90 ms; a sharp wave",
+        "About 180 ms; a sharp wave",
+        "About 60 ms; a spike",
+        "About 600 ms; a slow wave"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "duration",
+        "spike",
+        "sharp-wave",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 3,
+      "stem": "At 30 mm/s, transient A is 5 mm wide at its base and transient B is 1.5 mm wide. How are they classified by duration?",
+      "explanation": "A: 5/30 s ≈ 167 ms, within 70-200 ms (sharp wave). B: 1.5/30 s = 50 ms, under 70 ms (spike). Misreading the display speed shifts both durations and produces the other combinations.",
+      "learningObjective": "Classify transients by measured duration.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A is a sharp wave; B is a spike",
+        "A and B are both sharp waves",
+        "A is a slow wave; B is a sharp wave",
+        "A and B are both spikes"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "time-constant",
+        "lff",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A recording's time constant is 0.1 s. Which low-frequency filter setting does this correspond to?",
+      "explanation": "LFF = 1/(2π × TC) = 1/0.628 ≈ 1.6 Hz. 0.16 Hz corresponds to TC = 1 s, 10 Hz is 1/TC without 2π, and 0.1 Hz confuses seconds with hertz. Useful anchors: 1 s ↔ 0.16 Hz, 0.3 s ↔ 0.53 Hz, 0.1 s ↔ 1.6 Hz.",
+      "learningObjective": "Convert a time constant to the LFF setting.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 0.16 Hz",
+        "About 1.6 Hz",
+        "About 10 Hz",
+        "About 0.1 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "time-constant",
+        "lff",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "The low-frequency filter is changed from 1 Hz to 0.3 Hz. What happens to the time constant?",
+      "explanation": "TC = 1/(2π × LFF): 1 Hz gives 0.16 s and 0.3 Hz gives 0.53 s. A lower LFF means a longer TC, so slow waves are preserved better. 1 s and 3.3 s use 1/LFF without 2π; 0.3 s confuses hertz with seconds.",
+      "learningObjective": "Relate LFF changes to time-constant changes.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "It shortens from about 0.53 s to about 0.16 s",
+        "It lengthens from about 1 s to about 3.3 s",
+        "It lengthens from about 0.16 s to about 0.3 s",
+        "It lengthens from about 0.16 s to about 0.53 s"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "calibration",
+        "time-constant",
+        "lff",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "reasoningSteps": 3,
+      "stem": "The montage label shows LFF 0.5 Hz. On the square-wave calibration, the trace decays to 37% of its initial deflection in 0.16 s. What should you conclude?",
+      "explanation": "Decay to 37% defines the time constant, so TC = 0.16 s, and LFF = 1/(2π × 0.16) ≈ 1 Hz. A 0.5-Hz LFF would give TC ≈ 0.32 s. 0.16 Hz reads the TC as hertz; 6 Hz is 1/TC without 2π.",
+      "learningObjective": "Verify the LFF from the calibration decay.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The actual LFF is about 1 Hz, not the 0.5 Hz shown",
+        "The LFF is 0.5 Hz as shown; the decay matches it",
+        "The actual LFF is about 0.16 Hz, lower than shown",
+        "The actual LFF is about 6 Hz, far higher than shown"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "calibration",
+        "time-constant",
+        "decay",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A square-wave calibration step produces an initial deflection of 10 mm. The time constant is 0.3 s. About how tall is the trace 0.3 s after the step?",
+      "explanation": "One time constant after the step, the trace has decayed to about 37% of its starting height: 10 × 0.37 ≈ 3.7 mm. 6.3 mm is the 63% that has been lost, 5 mm assumes half, and 1.4 mm (13.5%) is reached only after two time constants.",
+      "learningObjective": "Apply the 37% definition of the time constant.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 5 mm",
+        "About 3.7 mm",
+        "About 6.3 mm",
+        "About 1.4 mm"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "lff",
+        "cutoff",
+        "amplitude",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "The low-frequency filter is set at 1 Hz. A 1-Hz delta wave has a true amplitude of 150 µV. Approximately what amplitude is displayed?",
+      "explanation": "At the cutoff frequency a filter passes about 70% of the amplitude (−3 dB): 150 × 0.7 ≈ 105 µV. 75 µV assumes 50%, 150 µV assumes the cutoff is passed unchanged, and 45 µV takes away 70% instead of keeping it.",
+      "learningObjective": "Apply the ~70% rule at the LFF cutoff.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 75 µV",
+        "About 150 µV",
+        "About 105 µV",
+        "About 45 µV"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "lff",
+        "cutoff",
+        "settings",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "You want 0.5-Hz slow activity displayed at no less than about 70% of its true amplitude. What is the highest LFF setting that achieves this?",
+      "explanation": "A filter passes about 70% at its own cutoff and more below it, so an LFF of 0.5 Hz keeps 0.5-Hz activity at about 70%. 0.3 Hz and 0.16 Hz also meet the requirement but are not the highest such setting; 1 Hz attenuates 0.5-Hz activity to well under 70%.",
+      "learningObjective": "Choose an LFF setting from the 70% rule.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "0.5 Hz",
+        "1 Hz",
+        "0.3 Hz",
+        "0.16 Hz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "hff",
+        "cutoff",
+        "beta",
+        "amplitude",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "The high-frequency filter was left at 15 Hz throughout a study. A 15-Hz beta rhythm measures about 20 µV on the display. What is the best estimate of its true amplitude?",
+      "explanation": "At the cutoff about 70% is displayed, so true ≈ 20 ÷ 0.7 ≈ 28 µV. 20 µV ignores the filter, 14 µV applies the 70% a second time, and 40 µV assumes only 50% was passed.",
+      "learningObjective": "Back-calculate true amplitude at a filter cutoff.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 20 µV",
+        "About 14 µV",
+        "About 28 µV",
+        "About 40 µV"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "nyquist",
+        "sampling",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Activity up to 100 Hz must be represented without aliasing. What is the theoretical minimum sampling rate?",
+      "explanation": "Nyquist: the sampling rate must exceed twice the highest frequency, so more than 2 × 100 = 200 Hz. 100 Hz matches the frequency without doubling, 400 Hz uses four samples per cycle, and 50 Hz halves instead of doubling.",
+      "learningObjective": "Apply the Nyquist criterion.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Just over 100 Hz",
+        "Just over 200 Hz",
+        "Just over 400 Hz",
+        "Just over 50 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "nyquist",
+        "sampling",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A digital EEG system samples at 256 Hz. What is the highest frequency it can represent without aliasing (its Nyquist frequency)?",
+      "explanation": "The Nyquist frequency is half the sampling rate: 256 ÷ 2 = 128 Hz. 256 Hz forgets to halve, 512 Hz doubles instead, and 64 Hz halves twice.",
+      "learningObjective": "Find the Nyquist frequency from the sampling rate.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "256 Hz",
+        "512 Hz",
+        "64 Hz",
+        "128 Hz"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "nyquist",
+        "anti-aliasing",
+        "hff",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A system samples at 200 Hz. Which high-frequency (anti-aliasing) filter setting best protects against aliasing while preserving clinically relevant activity?",
+      "explanation": "The Nyquist frequency is 100 Hz. Because filters roll off gradually, the anti-aliasing filter must sit well below it; 70 Hz leaves a margin while keeping beta and most muscle detail. 100 Hz still passes much activity above Nyquist, and 150 or 200 Hz give no protection.",
+      "learningObjective": "Set the HFF relative to the Nyquist frequency.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "70 Hz",
+        "100 Hz",
+        "150 Hz",
+        "200 Hz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-018",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "10-20",
+        "measurement",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "The nasion-to-inion distance is 34 cm. Measured along the midline, how far is Fpz from Cz?",
+      "explanation": "Fpz is at 10% (3.4 cm) and Cz at 50% (17.0 cm), so Fpz-Cz = 40% = 13.6 cm. 17.0 cm is nasion to Cz, 6.8 cm is one 20% interval (Fpz-Fz), and 10.2 cm is 30%.",
+      "learningObjective": "Calculate midline 10-20 intervals.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "17.0 cm",
+        "13.6 cm",
+        "6.8 cm",
+        "10.2 cm"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-019",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "10-20",
+        "circumference",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Head circumference measured through Fpz, T3 and Oz is 54 cm. Along this line, how far is T3 from Fpz?",
+      "explanation": "Along the circumference Fpz-Fp1 is 5%, then Fp1-F7 and F7-T3 are 10% each: 25% of 54 cm = 13.5 cm. 10.8 cm is 20%, 16.2 cm is 30%, and 27.0 cm is half the circumference (Fpz to Oz).",
+      "learningObjective": "Calculate circumferential 10-20 positions.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "10.8 cm",
+        "16.2 cm",
+        "27.0 cm",
+        "13.5 cm"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-020",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "10-20",
+        "measurement",
+        "placement-error",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 3,
+      "stem": "The preauricular-to-preauricular distance over the vertex is 36 cm. C3 has been marked 7.2 cm above the left preauricular point along this line. What is wrong?",
+      "explanation": "T3 is at 10% (3.6 cm) and C3 at 30% (10.8 cm) from the preauricular point. 7.2 cm is 20%, halfway between T3 and C3, so C3 is 3.6 cm too low. 10% is T3 and 50% is Cz.",
+      "learningObjective": "Detect a coronal 10-20 measuring error.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "C3 is 3.6 cm too low; 20% was used instead of 30%",
+        "Nothing; C3 lies 20% above the preauricular point",
+        "C3 is 3.6 cm too high; 10% should have been used",
+        "C3 is 10.8 cm too low; 50% should have been used"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "bipolar",
+        "subtraction",
+        "phase-reversal",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 3,
+      "stem": "At the peak of a sharp wave, referential values against a quiet reference are F8 −60 µV, T4 −100 µV and T6 −40 µV. In channels F8-T4 and T4-T6 (negative up), what is displayed?",
+      "explanation": "F8-T4 = −60 − (−100) = +40 µV (positive, so down); T4-T6 = −100 − (−40) = −60 µV (negative, so up). The pair points at each other: a negative phase reversal at T4. Adding instead of subtracting gives 160 and 140.",
+      "learningObjective": "Derive bipolar deflections from referential values.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Up 40 µV, then down 60 µV",
+        "Down 160 µV, then up 140 µV",
+        "Down 40 µV, then up 60 µV",
+        "Up 60 µV, then down 40 µV"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-022",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-2021",
+        "frequency",
+        "electrographic-seizure",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "Generalized sharp discharges occur at 9 discharges in every 3 s and continue unchanged for 15 s. Using ACNS 2021 criteria, how should this be classified?",
+      "explanation": "9 discharges in 3 s = 3 Hz. Discharges averaging more than 2.5 Hz for at least 10 s meet the ACNS 2021 definition of an electrographic seizure even without evolution. IIC applies to slower (1-2.5 Hz) patterns, and BIRDs last under 10 s.",
+      "learningObjective": "Use measured frequency and duration to apply seizure criteria.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "questionType": "calculation",
+      "difficulty": "hard",
+      "options": [
+        "Ictal-interictal continuum GPDs",
+        "Brief potentially ictal rhythmic discharges",
+        "Generalized periodic discharges at 1 Hz",
+        "An electrographic seizure"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-023",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "duration",
+        "paging",
+        "electrographic-seizure",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "Pages are 10 s long at 30 mm/s. An evolving rhythmic discharge begins 120 mm into page 4 and ends 60 mm into page 6. How long does it last?",
+      "explanation": "120 mm = 4 s, leaving 6 s of page 4; all 10 s of page 5; then 60 mm = 2 s of page 6: 6 + 10 + 2 = 18 s, which exceeds the 10-s threshold. 8 s omits page 5, 28 s counts two full pages in between, and 6 s stops at the end of page 4.",
+      "learningObjective": "Measure event duration across pages.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 8 s, a brief rhythmic discharge",
+        "About 28 s, long enough for a seizure",
+        "About 6 s, a brief rhythmic discharge",
+        "About 18 s, long enough for a seizure"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-calc-024",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "calibration",
+        "gain",
+        "quality-control",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "During a QA check, a 100-µV calibration signal is applied at 10 µV/mm. Every channel deflects 10 mm except one, which deflects 8 mm. By how much is that channel's gain off?",
+      "explanation": "Expected deflection is 100/10 = 10 mm; 8 mm is 2 mm (20%) short, so the gain is about 20% low. 25% compares the shortfall to 8 mm instead of the expected 10 mm, 'high' reverses the direction, and 2% is a decimal error.",
+      "learningObjective": "Quantify a channel gain error from calibration.",
+      "questionType": "calculation",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 20% low",
+        "About 20% high",
+        "About 25% low",
+        "About 2% low"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea core calculations set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

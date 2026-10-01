@@ -48,8 +48,13 @@ export function domainTitle(id) {
   return domainTitles[id] || id;
 }
 
+const TAG_TITLES = {
+  "calc-core": "core exam calculations",
+  "calc-beyond": "beyond-exam calculations",
+};
+
 export function tagTitle(tag) {
-  return String(tag).replace(/-/g, " ");
+  return TAG_TITLES[tag] || String(tag).replace(/-/g, " ");
 }
 
 /** Tailwind classes for a mastery/readiness score (null = no data). */

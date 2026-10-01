@@ -58,7 +58,13 @@ describe('QA audit heuristics', () => {
 describe.each(challengeSets.map((c) => [c.file, c.data]))('Challenge Bank quality: %s', (file, data) => {
     const qs = data.questions;
 
-    it('has L3-L6 questions across all four ABRET domains, no L1/L2', () => {
+    it.runIf(data.focus === 'core-calculations')('is a focused set of tagged core calculations at L3-L6', () => {
+        expect(qs.length).toBeGreaterThanOrEqual(20);
+        expect(qs.every((q) => q.cognitiveLevel >= 3 && q.cognitiveLevel <= 6)).toBe(true);
+        expect(qs.every((q) => q.topicTags.includes('calc-core') && q.questionType === 'calculation')).toBe(true);
+    });
+
+    it.runIf(!data.focus)('has L3-L6 questions across all four ABRET domains, no L1/L2', () => {
         expect(qs.length).toBeGreaterThanOrEqual(40);
         expect(qs.every((q) => q.cognitiveLevel >= 3 && q.cognitiveLevel <= 6)).toBe(true);
         expect(new Set(qs.map((q) => q.domainId))).toEqual(new Set(['domain-1', 'domain-2', 'domain-3', 'domain-4']));
@@ -112,6 +118,18 @@ describe('Challenge Bank as a whole', () => {
         expect(new Set(allChallenge.map((q) => q.id)).size).toBe(allChallenge.length);
         expect(new Set(allChallenge.map((q) => q.stem.toLowerCase())).size).toBe(allChallenge.length);
     });
+
+    it('labels every calculation item as core or beyond exam depth, never both', () => {
+        const calc = allChallenge.filter((q) => q.topicTags.includes('calculation'));
+        expect(calc.length).toBeGreaterThanOrEqual(40);
+        for (const q of calc) {
+            const n = ['calc-core', 'calc-beyond'].filter((t) => q.topicTags.includes(t)).length;
+            expect(n, q.id).toBe(1);
+        }
+        // dB ratios and single-pole gain formulas are beyond typical exam depth
+        const beyond = allChallenge.filter((q) => q.topicTags.includes('calc-beyond')).map((q) => q.id).sort();
+        expect(beyond).toEqual(['ch-b2-004', 'ch-b2-005', 'ch-b2-007', 'ch-pilot-011']);
+    });
 });
 
 // ------------------------------------------------------ challenge mix ---
@@ -124,6 +142,22 @@ describe('challenge level allocation', () => {
         for (const n of [10, 20, 30, 50]) {
             expect(Object.values(allocateChallengeLevels(n)).reduce((a, b) => a + b, 0)).toBe(n);
         }
+    });
+
+    it('draws beyond-exam calculations about a quarter as often as core items', () => {
+        const pool = Array.from({ length: 40 }, (_, i) => ({
+            questionId: `q${i}`, cognitiveLevel: 4, domainId: 'domain-2',
+            topicTags: i < 20 ? ['calculation', 'calc-beyond'] : ['calculation', 'calc-core'],
+        }));
+        let seed = 7;
+        const rng = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+        let beyond = 0;
+        for (let run = 0; run < 200; run++) {
+            beyond += selectChallenge(pool, 10, rng).filter((q) => q.topicTags.includes('calc-beyond')).length;
+        }
+        const share = beyond / 2000;
+        expect(share).toBeGreaterThan(0.05); // still served
+        expect(share).toBeLessThan(0.3); // vs 0.5 unweighted
     });
 
     it('never selects L1 or L2 items', () => {
@@ -243,6 +277,20 @@ describe('Challenge mode and QA statuses (API)', () => {
         expect(ans.body.isCorrect).toBe(true);
         const ev = await AttemptEvent.findOne({ sessionId: s.body.session.sessionId }).lean();
         expect(ev).toMatchObject({ bank: 'challenge', cognitiveLevel: src.cognitiveLevel, competency: src.competency });
+    });
+
+    it('the calculation drill serves only core exam calculations', async () => {
+        const u = await registerUser(app);
+        const core = allChallenge.filter((q) => q.topicTags.includes('calc-core')).length;
+        for (const n of [10, 20]) {
+            const s = await request(app).post('/api/quiz/sessions').set(bearer(u.token))
+                .send({ kind: 'challenge', questionCount: n, focus: 'calc-core' });
+            expect(s.status).toBe(201);
+            expect(s.body.questions).toHaveLength(Math.min(n, core));
+            expect(s.body.questions.every((q) => q.topicTags.includes('calc-core'))).toBe(true);
+            expect(s.body.session.config?.tags ?? ['calc-core']).toContain('calc-core');
+            await request(app).post(`/api/quiz/sessions/${s.body.session.sessionId}/abandon`).set(bearer(u.token));
+        }
     });
 
     it('challenge answers feed the higher-order readiness components', async () => {

@@ -20,6 +20,7 @@ export async function startPlanItem(item, navigate) {
   } else if (item.kind === "challenge") {
     body = { kind: "challenge", questionCount: count };
     if (item.competency) body.competencies = [item.competency];
+    if (item.focus) body.focus = item.focus;
   } else {
     body = { kind: "custom", mode: "practice", questionCount: count };
   }

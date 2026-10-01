@@ -12,7 +12,8 @@
       "topicTags": [
         "sensitivity",
         "clipping",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -40,7 +41,8 @@
       "topicTags": [
         "timebase",
         "frequency",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -68,7 +70,8 @@
       "topicTags": [
         "duration",
         "sharp-wave",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -96,7 +99,8 @@
       "topicTags": [
         "lff",
         "roll-off",
-        "calculation"
+        "calculation",
+        "calc-beyond"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -125,7 +129,8 @@
         "hff",
         "roll-off",
         "beta",
-        "calculation"
+        "calculation",
+        "calc-beyond"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -153,7 +158,9 @@
       "topicTags": [
         "sampling",
         "spike",
-        "digitization"
+        "digitization",
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -186,7 +193,8 @@
       "topicTags": [
         "cmrr",
         "common-mode",
-        "calculation"
+        "calculation",
+        "calc-beyond"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -214,7 +222,8 @@
       "topicTags": [
         "calibration",
         "time-constant",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -373,7 +382,8 @@
       "topicTags": [
         "referential-to-bipolar",
         "phase-reversal",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 5,
       "competency": "montage",
@@ -406,7 +416,8 @@
       "topicTags": [
         "bipolar",
         "subtraction",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 5,
       "competency": "montage",
@@ -1215,7 +1226,8 @@
       "topicTags": [
         "10-20",
         "measurement",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -1248,7 +1260,8 @@
       "topicTags": [
         "10-20",
         "circumference",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "technical",
@@ -1549,7 +1562,8 @@
         "sleep-staging",
         "n2",
         "n3",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "clinical",
@@ -1755,7 +1769,8 @@
       "topicTags": [
         "lpd",
         "frequency",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 3,
       "competency": "clinical",
@@ -1821,7 +1836,8 @@
       "topicTags": [
         "electrographic-status",
         "acns-2021",
-        "calculation"
+        "calculation",
+        "calc-core"
       ],
       "cognitiveLevel": 6,
       "competency": "clinical",
