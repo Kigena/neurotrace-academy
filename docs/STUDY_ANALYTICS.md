@@ -62,8 +62,9 @@ Bank; 24 of them in the focused `abret-challenge-calc.json`).
 
 ## Challenge Bank size
 
-500 items in 10 files (pilot, batch 2-9, calc). Domains 78 / 246 / 98 / 78,
-levels L3 97 · L4 170 · L5 107 · L6 126. New batches are gated by
+540 items in 12 files (pilot, batch 2-11, calc). Domains 78 / 246 / 98 / 118
+(batches 10-11 are focused Domain IV sets, `focus: "domain-4"`),
+levels L3 103 · L4 182 · L5 117 · L6 138. New batches are gated by
 `node scripts/check-challenge-file.mjs <file>` (same rules as the tests, plus
 section-id and cross-file duplicate checks) before the test suite.
 

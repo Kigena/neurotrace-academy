@@ -1,0 +1,650 @@
+{
+  "version": "batch11-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "focus": "domain-4",
+  "description": "ABRET Challenge Bank batch 11 (focused Domain IV): quality assurance and equipment maintenance, workplace safety, patient safety standards and emergency response. Not yet medically verified.",
+  "totalQuestions": 20,
+  "questions": [
+    {
+      "id": "ch-b11-001",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "calibration",
+        "quality-control",
+        "tolerance",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "Weekly QA applies a 50-µV calibration signal at 5 µV/mm, so each channel should deflect 10 mm. The lab fails any channel whose deflection differs from the expected value by more than 10%. Channels A, B, C and D deflect 9.3, 11.2, 8.8 and 10.8 mm. Which channels fail?",
+      "explanation": "Expected 50 ÷ 5 = 10 mm. Deviations: A 7%, B 12%, C 12%, D 8%. Only B (too large) and C (too small) exceed 10%. 'C only' checks only for low gain, although a channel deflecting too much is equally out of tolerance; 'B, C and D' treats D's 8% as failing; 'A, B and C' counts A's 7% as failing.",
+      "learningObjective": "Apply a percentage tolerance to calibration deflections in both directions.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Channel C only",
+        "Channels B, C and D",
+        "Channels B and C",
+        "Channels A, B and C"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-002",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "preventive-maintenance",
+        "electrical-safety-inspection",
+        "equipment-out-of-service"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "An urgent portable ICU EEG is requested. The lab's usual portable unit carries a biomedical engineering electrical-safety inspection sticker that expired 3 weeks ago; a second unit with a current sticker is 10 minutes away. Calibration and impedance checks on the first unit look normal. What is the most appropriate course?",
+      "explanation": "Scheduled electrical-safety inspection (leakage current, ground integrity) is the only check of patient isolation; a unit past its due date should not be used on patients while a current unit is available within minutes. Calibration and impedance test the signal path, not leakage current. Deferring inspection to the next routine service leaves an unverified unit in clinical use. Ground placement does not compensate for an unverified chassis or isolation barrier.",
+      "learningObjective": "Keep equipment with a lapsed safety inspection out of patient use.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Fetch the in-date unit and send the overdue one for inspection before reuse",
+        "Use the overdue unit, as normal calibration shows its isolation is intact",
+        "Use the overdue unit and book its inspection for the next routine service",
+        "Use the overdue unit with its ground well away from the bedside monitors"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-003",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrode-inspection",
+        "lead-wire",
+        "intermittent-artifact"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 3,
+      "stem": "During a routine EEG, T4 shows bursts of high-amplitude irregular artifact only when the patient turns her head, although its impedance reads 4 kΩ at rest. Re-gelling T4 does not help. Inspection finds the lead wire's insulation cracked 2 cm from its connector. What is the best action?",
+      "explanation": "Movement-dependent artifact with normal resting impedance that persists after re-gelling points to an intermittent break in the wire; visible cracked insulation confirms a defective lead, which also exposes conductor. It should be replaced and tagged out of service so no one reuses it. Tape is a temporary patch that leaves a damaged part in circulation; lowering the HFF hides a fault while distorting real activity; rerouting reduces flexing but leaves the defect in use.",
+      "learningObjective": "Identify a damaged lead wire and take it out of service.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Wrap the crack firmly with tape and keep using the lead until a spare arrives",
+        "Keep the lead and set T4's HFF lower so the movement bursts are attenuated",
+        "Keep the lead and reroute it so the cracked part cannot flex during the study",
+        "Swap in a new lead and tag the cracked one out of service for repair or discard"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-004",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "software-validation",
+        "time-constant",
+        "lff",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 3,
+      "stem": "After a vendor software update, pre-study calibration with the display set to LFF 1 Hz shows the square wave decaying to 37% of its peak in about 1 s on every channel. Before the update, the same setting gave a decay to 37% in about 0.16 s. What is the best interpretation and action?",
+      "explanation": "The time to decay to 37% is the time constant. TC 1 s gives LFF = 1/(2π × 1) ≈ 0.16 Hz, whereas the labelled 1 Hz corresponds to TC ≈ 0.16 s, which the system produced before the update. The software now applies a different filter from the one it displays, so post-update validation has failed and the vendor and biomedical engineering must resolve it. '6 Hz' multiplies by 2π instead of dividing (2π × 1 ≈ 6.3 Hz), and a 6-Hz LFF would give a decay far shorter than 1 s; display scaling does not change the decay time; a 0.16-Hz LFF is acceptable in itself, but a label that misstates the filter misleads every reader.",
+      "learningObjective": "Use the calibration decay to validate filter settings after a software change.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "True LFF is about 0.16 Hz; treat the update as failing validation and escalate it",
+        "True LFF is about 1 Hz; the longer decay reflects new display scaling only",
+        "True LFF is about 6 Hz; slow activity will be heavily attenuated until fixed",
+        "True LFF is about 0.16 Hz; this meets ACNS minimums, so record as usual"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-005",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "peer-review",
+        "quality-improvement",
+        "audit",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "technical",
+      "questionType": "professional",
+      "reasoningSteps": 3,
+      "stem": "A lab's technical-quality peer review samples 40 routine EEGs from last quarter. Its threshold is fewer than 5% of studies with a significant technical deficiency. Reviewers find three: two lacking any recorded impedance check and one with hyperventilation omitted and no reason given. What is the deficiency rate and the most appropriate response?",
+      "explanation": "3 ÷ 40 = 7.5%, above the 5% threshold. Quality improvement looks for a common cause (here, two missing impedance records suggest a workflow or template gap), corrects it with targeted education or process change, and re-audits to confirm improvement. Repeating the studies fixes three records but not the process; 3.0% misreads 3 deficiencies as 3%; 13.3% divides 40 by 3, and suspending all studies is disproportionate.",
+      "learningObjective": "Calculate a QA deficiency rate and choose a quality-improvement response.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "7.5%; repeat the three studies and close the audit as fully corrected",
+        "3.0%; this is below the threshold, so file the audit without further action",
+        "7.5%; look for a shared cause, give targeted training and re-audit next quarter",
+        "13.3%; suspend routine studies until every technologist has been retrained"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-006",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "biological-calibration",
+        "montage-validation",
+        "polarity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "To check a newly edited montage file, a biological calibration is run with every channel connected to the same Fp1-O2 pair. Eighteen channels show identical waveforms; channel 9 shows the same waveform at the same amplitude but mirror-imaged, with every peak pointing the opposite way. What is the most likely cause?",
+      "explanation": "With identical inputs, an exact mirror image at the same amplitude means channel 9 computes O2 - Fp1 instead of Fp1 - O2: its inputs are reversed in the montage definition. A gain error changes amplitude, not polarity; a poor Fp1 contact would affect all channels equally because they share the same pair; a different LFF alters the shape of slow components rather than inverting every peak.",
+      "learningObjective": "Use biological calibration to detect a reversed-input montage definition.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Channel 9's amplifier gain is set lower than that of the other channels",
+        "The Fp1 electrode has a high impedance that affects channel 9 the most",
+        "Channel 9 has a different low-frequency filter setting from the rest",
+        "Channel 9's two inputs are entered in reverse order in the montage file"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-007",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "transmission-based-precautions",
+        "airborne",
+        "ppe"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Four ICU patients need EEG hookups today. For which one does CDC transmission-based guidance call for a fit-tested N95 or higher-level respirator during the hookup?",
+      "explanation": "Suspected or confirmed pulmonary TB requires airborne precautions: a fit-tested N95 or higher respirator and, ideally, an airborne infection isolation room. Seasonal influenza calls for droplet precautions with a surgical mask; MRSA and C. difficile call for contact precautions (gown and gloves, with soap-and-water hand hygiene for C. difficile), not a respirator.",
+      "learningObjective": "Match PPE to the transmission category.",
+      "references": [
+        {
+          "citation": "CDC/HICPAC Guideline for Isolation Precautions: Preventing Transmission of Infectious Agents in Healthcare Settings (2007, updated)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Influenza A, on day 2 of illness",
+        "Suspected pulmonary tuberculosis",
+        "MRSA colonisation of a leg wound",
+        "Clostridioides difficile diarrhoea"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-008",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "fire-safety",
+        "race"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "During a routine EEG, smoke and small flames rise from a wastebasket beside the patient's stretcher. You are alone with the patient, who is awake. A fire alarm pull station is in the corridor and an extinguisher hangs by the door. Which sequence follows the RACE approach?",
+      "explanation": "RACE is Rescue (move anyone in immediate danger), Alarm, Contain/Confine (close the door), then Extinguish if the fire is small and you are trained (PASS). Each distractor puts the patient's removal after another step, leaving the patient beside the fire; the last also closes the door with the patient still inside.",
+      "learningObjective": "Apply RACE order when a fire starts beside a patient.",
+      "references": [
+        {
+          "citation": "NFPA 101 Life Safety Code and NFPA 99 Health Care Facilities Code (RACE/PASS fire response training)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Pull the alarm, tackle the fire if small, move the patient out, then close the door",
+        "Tackle the fire if small, move the patient out, pull the alarm, then close the door",
+        "Close the door, pull the alarm, tackle the fire if small, then move the patient out",
+        "Move the patient out, pull the alarm, close the door, then tackle the fire if small"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-009",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "chemical-storage",
+        "collodion",
+        "acetone",
+        "flammables"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "A delivery of 12 bottles of collodion and four 1-L bottles of acetone arrives for the EEG lab. The supply room has open shelving, a household-type refrigerator, a lockable cage that holds oxygen cylinders, and a labelled flammable-liquids cabinet. Where should the stock be kept?",
+      "explanation": "Collodion (ether/alcohol solvent) and acetone are highly flammable liquids; stock quantities belong in an approved flammable-liquids storage cabinet away from ignition sources and oxidisers. A household refrigerator has internal ignition sources (thermostat, light switch) that can ignite vapours; open shelving leaves bulk flammables exposed to spills and ignition; storing them with oxygen places fuel beside an oxidiser.",
+      "learningObjective": "Store flammable EEG chemicals correctly.",
+      "references": [
+        {
+          "citation": "OSHA 29 CFR 1910.106 Flammable Liquids and NFPA 30 / NFPA 45",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "In the household-type refrigerator, to slow solvent evaporation",
+        "In the labelled flammable-liquids cabinet, away from heat and oxygen",
+        "On the open shelving, capped tightly, in the ventilated supply room",
+        "In the lockable cage with the oxygen cylinders, to restrict access"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-010",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "safe-patient-handling",
+        "ergonomics",
+        "repositioning"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "After a seizure, a drowsy 85-kg EMU patient has slid down the bed, and his electrode leads are pulled taut toward the headbox mounted on the wall above the bed. He cannot help move himself. A nurse will be free in 2 minutes. How should he be moved up the bed?",
+      "explanation": "Safe patient handling guidance holds that manual lifting of more than about 35 lb (16 kg) of patient weight is unsafe even with good body mechanics, so a dependent 85-kg patient needs assistive equipment (friction-reducing sheet or lift) and at least two caregivers (three, or a ceiling lift, for patients over about 90 kg), with the bed flat so gravity does not work against the move. Good posture alone does not make a solo pull safe; the underarm (drag) lift injures both staff and patient shoulders; pulling uphill on a raised bed head increases friction and load.",
+      "learningObjective": "Choose equipment-assisted repositioning for a dependent patient.",
+      "references": [
+        {
+          "citation": "NIOSH Safe Patient Handling and Mobility resources (Waters, revised lifting equation applied to patient handling, 2007)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "On your own, pull him up by the draw sheet, bending your knees, back straight",
+        "With the nurse, lift him up the bed with your arms hooked under his armpits",
+        "With the nurse, slide him up on a friction-reducing sheet with the bed flat",
+        "On your own, raise the bed head to 45 degrees and pull him up by his shoulders"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-011",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "mri-safety",
+        "mr-zones",
+        "ferromagnetic"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "technical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "A cEEG patient with MR-conditional electrodes has just been scanned and is still on the table in the magnet room (Zone IV). The MR technologist has stepped out and is due back in 5 minutes. The EEG cart is labelled MR-unsafe. A colleague suggests wheeling the cart in to reconnect now because 'the scanner isn't running'. What is the correct response?",
+      "explanation": "A clinical superconducting magnet's static field is on continuously, whether or not images are being acquired, so an MR-unsafe cart in Zone IV is a projectile hazard; entry to Zone IV is controlled by MR personnel. The 5-gauss line marks a threshold for implanted devices, not a safe parking zone for ferromagnetic equipment; locked wheels do not resist the attractive force; the field is not ramped down between patients.",
+      "learningObjective": "Apply MR zone rules to EEG equipment.",
+      "references": [
+        {
+          "citation": "ACR Manual on MR Safety (2020 and later updates): MR zones I-IV",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Bring the cart in, but keep it behind the 5-gauss line marked on the floor",
+        "Bring the cart in, locking its wheels as soon as it reaches the patient table",
+        "Bring the cart in, since the field is ramped down between patients' scans",
+        "Keep the cart out of Zone IV; the static field is present even when no scan runs"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-012",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "patient-identification",
+        "two-identifiers",
+        "npsg"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "A portable EEG order reads 'J. Martinez, Room 412, MRN 0072215'. In Room 412 the patient is intubated and sedated; his wristband shows full name, date of birth and MRN. A relative at the bedside confirms his name. Which check meets the two-identifier standard?",
+      "explanation": "Two person-specific identifiers (such as full name and MRN or date of birth) are compared against the order, using the wristband when the patient cannot state them. A room or bed number is a location, not an identifier, so neither room-based option qualifies; a door sign and a relative's account both give only the name, which is one identifier from unverified sources.",
+      "learningObjective": "Apply the two-identifier rule to a patient who cannot respond.",
+      "references": [
+        {
+          "citation": "The Joint Commission National Patient Safety Goals (hospital program): NPSG.01.01.01 patient identification, NPSG.06.01.01 alarm safety",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Matching the room number and the name the relative gives",
+        "Matching the room number and the name on the door sign",
+        "Matching the door sign's name and the relative's account",
+        "Matching the wristband's full name and MRN to the order"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-013",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "fall-prevention",
+        "emu",
+        "medication-taper"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 3,
+      "stem": "On day 2 of an EMU admission with medication tapering, a 68-year-old with a bed alarm, who had a seizure 3 hours ago, asks to walk to the bathroom 4 m away. The nurse is with another patient for the next 10 minutes. The patient says she feels fine. What is the best action?",
+      "explanation": "Age, recent seizure and medication taper make her high fall risk, so ambulation needs hands-on standby assistance with the headbox cable managed. Video shows a fall but does not prevent one; unplugging the headbox loses recording and still leaves her unaccompanied; four raised side rails act as a restraint and increase injury risk when patients climb over them.",
+      "learningObjective": "Apply EMU fall-prevention measures to a high-risk patient.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Let her walk alone, as the camera covers the route and she feels steady",
+        "Walk with her, staying within arm's reach and keeping the cable off the floor",
+        "Unplug the headbox so she can walk alone without the cable tripping her",
+        "Raise all four side rails and ask her to use a bedpan until the nurse returns"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-014",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "latex-allergy",
+        "allergy-precautions"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 3,
+      "stem": "Before an outpatient EEG, a 26-year-old says she gets hives and wheezing after blowing up balloons. Powdered latex gloves are stocked at the bedside, nitrile gloves are in the supply room, and some of the lab's elastic head caps contain natural rubber. What is the best approach?",
+      "explanation": "Hives and wheeze after balloon contact suggest IgE-mediated latex allergy, so all latex-containing items must be avoided and the room checked before starting; powdered latex gloves also release airborne allergen. Brief or hair-level contact is still exposure; an elastic cap still touches the forehead and scalp; an antihistamine does not prevent bronchospasm or anaphylaxis.",
+      "learningObjective": "Create a latex-safe environment for an allergic patient.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Use the latex gloves, as contact is brief and mainly through her hair",
+        "Use nitrile gloves but keep the rubber cap, as it sits over her hair only",
+        "Use nitrile gloves and a latex-free cap, and check every other supply first",
+        "Use the latex gloves once she has taken her own antihistamine tablet"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-015",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "alarm-safety",
+        "npsg",
+        "pulse-oximetry"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Overnight in the EMU, a patient's SpO2 alarm sounds about every 10 minutes; each time the reading recovers within seconds, and the probe is found loose on a restless finger. A colleague proposes silencing it until morning so other patients can sleep. Which response best fits Joint Commission alarm-safety goals?",
+      "explanation": "Alarm-safety goals target alarm fatigue by fixing the cause of nuisance alarms (here, a loose probe) while keeping clinically important alarms audible and active. Silencing relies on someone watching a screen; lowering the limit hides real desaturation, especially during seizures; a barely audible alarm defeats its purpose. Limit changes are also a nursing or medical decision.",
+      "learningObjective": "Manage nuisance alarms without disabling them.",
+      "references": [
+        {
+          "citation": "The Joint Commission National Patient Safety Goals (hospital program): NPSG.01.01.01 patient identification, NPSG.06.01.01 alarm safety",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Silence it until morning and watch the SpO2 value on the video screen",
+        "Keep it fully active and have the nurse re-site or replace the loose probe",
+        "Lower its alarm limit to 80% so that brief dips no longer set it off",
+        "Turn its volume to the lowest level but leave the alarm itself enabled"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-016",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "oxygen",
+        "flammables",
+        "collodion"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "In an ICU, the compressed-air unit used to dry collodion fails mid-hookup. A colleague suggests attaching the drying nozzle to the wall oxygen flowmeter at a low flow. The room also has a medical-air outlet. What is the best response?",
+      "explanation": "Collodion and its ether/alcohol solvents are highly flammable, and blowing oxygen onto them creates an oxygen-enriched zone at the scalp where any spark can start an intense fire. Medical air does the same drying job safely. Low flow still enriches the immediate area; the absence of smell does not mean the collodion vapours or film are gone; distance does not stop oxygen from reaching the solvent.",
+      "learningObjective": "Avoid oxygen enrichment around flammable electrode materials.",
+      "references": [
+        {
+          "citation": "NFPA 99 Health Care Facilities Code (oxygen-enriched atmospheres)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Use the medical-air outlet; oxygen must not be used to dry collodion",
+        "Use oxygen at no more than 2 L/min, keeping local enrichment small",
+        "Use oxygen only after the acetone smell around the head has cleared",
+        "Use oxygen, holding the nozzle at least 30 cm from the patient's face"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-017",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "aed",
+        "cardiac-arrest",
+        "pad-placement"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "During a routine EEG, a 58-year-old becomes unresponsive and is not breathing normally; no pulse is felt. CPR is under way when the AED arrives. He has 21 collodion scalp electrodes and two ECG electrodes on the upper chest, one just below the right clavicle. What is the best approach?",
+      "explanation": "Defibrillation should not be delayed: CPR continues while pads go on, and the right pad belongs below the right clavicle, so the ECG electrode there is peeled off quickly because a pad must not sit over an electrode or patch. Scalp electrodes do not interfere with pad placement and need not be removed; pausing CPR for them wastes critical time; a pad over an electrode impairs contact and can cause burns or arcing; waiting for a manual defibrillator delays the first shock.",
+      "learningObjective": "Use an AED promptly on a patient wearing EEG and ECG electrodes.",
+      "references": [
+        {
+          "citation": "American Heart Association Guidelines for CPR and Emergency Cardiovascular Care (2020, with 2025 update): Adult Basic Life Support",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Take off the scalp electrodes first, pausing CPR, then apply the pads",
+        "Put the right pad straight over the ECG electrode to save time, then shock",
+        "Peel off the right chest ECG electrode, apply the pads and leave the scalp leads",
+        "Unplug all leads at the headbox and await the code team's manual defibrillator"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-018",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "anaphylaxis",
+        "epinephrine",
+        "first-aid"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "Fifteen minutes into an EEG, after eating a snack from the waiting room, a 30-year-old develops widespread hives, swollen lips, a hoarse voice and wheeze; his heart rate is 120 beats/min. He carries a prescribed epinephrine auto-injector. What is the best action?",
+      "explanation": "Skin signs plus airway involvement (hoarse voice, wheeze) after a likely food trigger meet the criteria for anaphylaxis, which needs emergency help and prompt epinephrine; first-aid guidance supports helping a person use their own prescribed auto-injector. Antihistamines do not treat airway swelling or shock; waiting for further deterioration delays epinephrine; calling an allergist wastes time.",
+      "learningObjective": "Recognise anaphylaxis and act within first-aid scope.",
+      "references": [
+        {
+          "citation": "AHA/American Red Cross Guidelines for First Aid (2020/2024): anaphylaxis and epinephrine auto-injector",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Call the emergency team now and help him use his own auto-injector",
+        "Give his antihistamine tablets now and watch him closely for 10 min",
+        "Lay him flat, legs raised, and call the team only if his pulse rises",
+        "Sit him up to ease breathing and phone his allergist for guidance"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-019",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "rescue-medication",
+        "seizure-cluster",
+        "emu"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "An EMU rescue order reads: 'Give lorazepam 2 mg IV for any seizure lasting 5 minutes or longer, or for 3 or more seizures within 1 hour.' A patient has focal-to-bilateral tonic-clonic seizures at 13:05, 13:40 and 13:58, each lasting about 70 s, and recovers between them. The nurse asks whether the order now applies. What is the best answer?",
+      "explanation": "13:05 to 13:58 is 53 minutes, so three seizures fall within 1 hour and the order's cluster arm applies (the nurse gives the drug; the technologist supplies accurate times). The 5-minute duration arm is a separate, alternative criterion; a fourth seizure is not required; lack of recovery between seizures defines status epilepticus, which is not what this criterion uses.",
+      "learningObjective": "Apply a rescue-medication order to timed seizure data.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Yes; three seizures within 53 minutes meet the cluster criterion",
+        "No; none of the seizures has reached the 5-minute time limit",
+        "Not yet; it applies only if a fourth seizure occurs by 14:05",
+        "No; it applies only if she does not recover between seizures"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b11-020",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "post-ictal",
+        "airway",
+        "aspiration"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "Two minutes after a 90-s generalized tonic-clonic seizure, a patient lying supine on the EEG stretcher is unresponsive, breathing at 16 per minute, and begins to vomit. Suction is at the bedside. What is the best immediate action?",
+      "explanation": "An unresponsive post-ictal patient who vomits is at high risk of aspiration; turning him onto his side lets vomit drain, and suction clears the mouth. Sitting an unresponsive patient bolt upright does not protect the airway and he may slump forward; nothing should be put between the teeth; a supine position with head tilt keeps vomit in the pharynx.",
+      "learningObjective": "Protect the airway of a vomiting post-ictal patient.",
+      "references": [
+        {
+          "citation": "AHA/American Red Cross Guidelines for First Aid (2020/2024): recovery position; Epilepsy Foundation seizure first aid",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Raise the stretcher head to 90 degrees and hold his head upright",
+        "Turn him onto his side and clear his mouth, using suction as needed",
+        "Place a bite block between his teeth to keep his airway open",
+        "Give a head-tilt chin-lift and keep him on his back to vomit"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 11 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

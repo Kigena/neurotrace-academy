@@ -64,6 +64,12 @@ describe.each(challengeSets.map((c) => [c.file, c.data]))('Challenge Bank qualit
         expect(qs.every((q) => q.topicTags.includes('calc-core') && q.questionType === 'calculation')).toBe(true);
     });
 
+    it.runIf(/^domain-[1-4]$/.test(data.focus || ''))('is a focused single-domain set covering L3-L6', () => {
+        expect(qs.length).toBeGreaterThanOrEqual(20);
+        expect(qs.every((q) => q.domainId === data.focus)).toBe(true);
+        for (const level of [3, 4, 5, 6]) expect(qs.some((q) => q.cognitiveLevel === level)).toBe(true);
+    });
+
     it.runIf(!data.focus)('has L3-L6 questions across all four ABRET domains, no L1/L2', () => {
         expect(qs.length).toBeGreaterThanOrEqual(40);
         expect(qs.every((q) => q.cognitiveLevel >= 3 && q.cognitiveLevel <= 6)).toBe(true);

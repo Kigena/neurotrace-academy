@@ -40,10 +40,17 @@ for (const q of qs) {
     if (q.topicTags?.includes('calculation') && calcTags !== 1) err(`${id}: calculation item needs exactly one of calc-core/calc-beyond`);
     if (!q.topicTags?.includes('calculation') && calcTags) err(`${id}: calc-* tag without "calculation"`);
 }
-if (qs.length < 40) err(`only ${qs.length} questions (need >= 40)`);
-for (const d of ['domain-1', 'domain-2', 'domain-3', 'domain-4']) if (!qs.some((q) => q.domainId === d)) err(`no ${d}`);
-for (const l of LEVELS) if (!qs.some((q) => q.cognitiveLevel === l)) err(`no L${l}`);
-for (const c of COMPS) if (!qs.some((q) => q.competency === c)) err(`no ${c}`);
+// Broad batches cover every domain and competency; focused sets (data.focus)
+// cover one domain or skill and only need 20+ items.
+const domainFocus = /^domain-[1-4]$/.test(data.focus || '') ? data.focus : null;
+if (qs.length < (data.focus ? 20 : 40)) err(`only ${qs.length} questions (need >= ${data.focus ? 20 : 40})`);
+if (domainFocus) {
+    for (const q of qs) if (q.domainId !== domainFocus) err(`${q.id}: not in focus ${domainFocus}`);
+} else if (!data.focus) {
+    for (const d of ['domain-1', 'domain-2', 'domain-3', 'domain-4']) if (!qs.some((q) => q.domainId === d)) err(`no ${d}`);
+    for (const c of COMPS) if (!qs.some((q) => q.competency === c)) err(`no ${c}`);
+}
+if (!data.focus || domainFocus) for (const l of LEVELS) if (!qs.some((q) => q.cognitiveLevel === l)) err(`no L${l}`);
 const higher = qs.filter((q) => q.cognitiveLevel >= 4);
 if (higher.filter((q) => q.reasoningSteps >= 2).length / higher.length < 0.5) err('fewer than half of L4-L6 have reasoningSteps >= 2');
 

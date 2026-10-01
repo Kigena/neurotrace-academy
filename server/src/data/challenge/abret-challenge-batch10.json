@@ -1,0 +1,650 @@
+{
+  "version": "batch10-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "focus": "domain-4",
+  "description": "ABRET Challenge Bank batch 10: focused Domain IV set on scope of practice, documentation, confidentiality and ethics. Not yet medically verified.",
+  "totalQuestions": 20,
+  "questions": [
+    {
+      "id": "ch-b10-001",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "verbal-orders",
+        "scope-of-practice",
+        "read-back"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "Hospital policy lets EEG technologists accept telephone orders for EEG procedures only, with read-back; medication orders may be taken only by licensed nurses or pharmacists. During an EMU study the neurologist phones you: 'Add a second photic run tonight, and give him an extra 500 mg of levetiracetam now.' What should you do?",
+      "explanation": "Under the stated policy the technologist may take the EEG procedure order (with read-back) but not the medication order, which must go directly from the physician to a licensed nurse or pharmacist. Relaying the dose second-hand, or having the nurse act on the technologist's account, inserts an unauthorised link where errors occur. Refusing both parts delays an order the technologist is permitted to take.",
+      "learningObjective": "Accept only those verbal orders that fall within the technologist's authorised scope.",
+      "references": [
+        {
+          "citation": "The Joint Commission National Patient Safety Goals and Record of Care standards (verbal/telephone orders and critical results read-back)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Take both parts with read-back, then pass the physician's dose order on to the nurse in person",
+        "Take the photic change with read-back; ask the physician to give the dose order to the nurse",
+        "Take the photic change with read-back; have the nurse give the dose on the physician's say-so",
+        "Take neither part, and ask the physician to enter both as written orders later this evening"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-002",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "student-supervision",
+        "delegation",
+        "education"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 3,
+      "stem": "A second-year EEG program student has applied electrodes well under supervision on 10 patients. The clinical instructor, the only credentialed technologist on site, is called to an ICU emergency and suggests the student start the next outpatient EEG alone, with the instructor reachable by phone. The patient is in the waiting room. What is the best course?",
+      "explanation": "Students in clinical training work under direct supervision of a qualified technologist and are not substituted for staff. Remote phone access is not direct supervision; the patient's agreement does not change the supervision requirement; and reviewing the record afterwards cannot correct a poor application or respond to a seizure or other event during the study.",
+      "learningObjective": "Apply supervision requirements for students in clinical training.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Let the student run it, as phone access to the instructor counts as supervision",
+        "Hold the study until a credentialed technologist can directly supervise the student",
+        "Let the student run it, provided the patient agrees to be recorded by a student",
+        "Let the student apply electrodes alone, and have the instructor check the record later"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-003",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "competence",
+        "scope-of-practice",
+        "ionm"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A technologist whose training and experience are in routine and ICU EEG only is asked by the night supervisor to set up motor and somatosensory evoked potential monitoring for an emergency spine operation, because the IONM technologist is ill. What is the most appropriate response?",
+      "explanation": "Technologists perform only procedures for which they are trained and competent. IONM is a separate specialty with its own credentials (e.g. CNIM), and the R. EEG T. does not cover it. Default settings and remote vendor advice do not supply the competence needed to interpret changes during surgery, and SSEP monitoring is not 'close to EEG' in the skills it requires.",
+      "learningObjective": "Recognise and decline tasks outside one's competence while supporting the team.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Accept, and use the system's default IONM settings with the vendor on the phone",
+        "Accept, since the R. EEG T. credential also covers evoked potential monitoring",
+        "Accept the SSEP part, since it is close to routine EEG, and decline only the MEPs",
+        "Decline that task, explain the competence gap, and help reach a qualified IONM provider"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-004",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "hyperventilation",
+        "contraindications",
+        "unsafe-orders"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 3,
+      "stem": "A routine EEG requisition specifically requests 3 minutes of hyperventilation. In the history, the 68-year-old tells you he had a stroke 12 days ago and is awaiting surgery for severe carotid stenosis. The ordering neurologist is reachable by phone. What should you do about hyperventilation?",
+      "explanation": "Recent stroke and significant cerebrovascular disease are recognised contraindications to hyperventilation, so it should not be done as ordered. Because the physician explicitly requested it, the technologist should raise the concern directly before the study ends. Shortening HV still exposes him to hypocapnic vasoconstriction; assuming the physician knew of the stroke is unsafe; a worksheet note alone does not communicate the deviation in time to change the plan.",
+      "learningObjective": "Respond to an order that conflicts with a contraindication.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Do 90 s instead of 3 min, and tell the ordering physician about it afterwards",
+        "Do it as requested, since the ordering physician has accepted the risk",
+        "Skip it, and note the reason on the worksheet for the physician to read",
+        "Withhold it and discuss the stroke and stenosis with the ordering physician first"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-005",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "harassment",
+        "professional-conduct",
+        "supervision"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "You are the lead technologist. A newly hired technologist tells you that a senior colleague keeps commenting on her body and sends her late-night texts; you have overheard one of the comments yourself. She asks you to keep it to yourself because she fears retaliation. What is the most appropriate response?",
+      "explanation": "A person with supervisory responsibility who learns of possible sexual harassment generally has a duty to report it so the employer can investigate and stop it; this cannot be promised away, but the employee can be reassured that retaliation is prohibited. Keeping it confidential, handling it with an informal warning, or waiting all leave the conduct (which you have witnessed) unaddressed and expose staff to further harm.",
+      "learningObjective": "Respond to workplace harassment as a technologist with supervisory duties.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Tell her you must report it to HR as her lead, and that retaliation is prohibited",
+        "Keep it confidential as asked, and help her keep a log she can report later",
+        "Warn the senior colleague privately, and report it only if the conduct continues",
+        "Wait until she feels ready, and then help her report it as a formal complaint"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-006",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "credentials",
+        "recertification",
+        "abret"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A technologist who passed the R. EEG T. examination years ago learns that her credential has lapsed because she did not complete ABRET's recertification requirements by the deadline. She has since finished most of the missing continuing education. Which statement is correct?",
+      "explanation": "A credential is valid only while the credentialing body recognises it as current. Once lapsed, displaying it misrepresents qualifications to patients and employers, whatever qualifiers are added or whoever already knows. Having passed the original examination, or nearly finishing the missing continuing education, does not restore the credential until ABRET does so.",
+      "learningObjective": "Maintain and represent professional credentials honestly.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "She may keep using it while completing the credits, as she passed the exam",
+        "She may keep using it with 'inactive' after the initials until renewal",
+        "She may keep using it within her own lab, since the employer knows",
+        "She should stop using the credential until ABRET reinstates it"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-007",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "late-entry",
+        "medications",
+        "worksheet"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "At 16:30 you realise that you did not record a medication the patient mentioned during the history: lorazepam 1 mg taken at 08:00, before her 09:00 EEG. The technologist worksheet was signed and submitted at 10:15. What is the correct way to record this?",
+      "explanation": "Late information is added as a clearly labelled late entry or addendum carrying the actual date and time it is written, referring to when the event occurred. Silently changing a signed record or back-timing an entry misrepresents when the information was recorded. A phone call is helpful (a benzodiazepine affects interpretation), but the information must still be documented in the record.",
+      "learningObjective": "Make late entries in the record correctly.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Add an addendum marked as a late entry, timed 16:30, documenting the 08:00 dose",
+        "Reopen the signed worksheet and document the 08:00 dose in the medication field",
+        "Add an entry timed 09:00 documenting the dose, so it sits with the history",
+        "Phone the reader, since a signed worksheet cannot be documented further"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-008",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "electrode-substitution",
+        "interelectrode-distance",
+        "annotation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "A sutured scalp laceration (no skull defect) covers the C4 site, so C4 is placed 2 cm anterior to its measured position, along the F4-C4 line. All other electrodes are standard. If this shift is not annotated, which longitudinal bipolar asymmetry could the reader misinterpret in the posterior dominant rhythm, whose amplitude falls steadily from parietal to frontal regions?",
+      "explanation": "Moving C4 toward F4 shortens the F4-C4 distance and lengthens the C4-P4 distance. For a field with a steady anterior-posterior gradient, a shorter interelectrode distance records a smaller potential difference and a longer one a larger difference, so F4-C4 falls and C4-P4 rises relative to the left. The reversed pattern swaps the direction; uniform increases or decreases would need a change affecting both derivations alike, such as a skull defect or fluid collection. (For a field maximal at C4 itself, both derivations would fall instead.)",
+      "learningObjective": "Document electrode substitutions because of their predictable effect on bipolar amplitudes.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "F4-C4 higher and C4-P4 lower than F3-C3 and C3-P3",
+        "F4-C4 lower and C4-P4 higher than F3-C3 and C3-P3",
+        "F4-C4 and C4-P4 both higher than F3-C3 and C3-P3",
+        "F4-C4 and C4-P4 both lower than F3-C3 and C3-P3"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-009",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "incident-report",
+        "medical-record",
+        "falls"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "An outpatient slips while stepping down from the EEG bed after the study. You help her to a chair; she reports no pain, has no visible injury, and the reading neurologist sees her before she leaves. You complete the facility's incident report. What belongs in the patient's medical record?",
+      "explanation": "The medical record holds the objective facts of what happened to the patient, what was found and what care followed. The incident report is a confidential quality-improvement document kept separately; referring to it in the chart or attaching it can undermine that protection, and omitting the event from the chart leaves the clinical record incomplete.",
+      "learningObjective": "Distinguish the medical record from the incident report.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Document the slip, your findings and who assessed her, without citing the incident report",
+        "Document the slip and your findings, and note that an incident report has been filed",
+        "Document nothing in the chart, since the incident report holds the full account",
+        "Document the slip and your findings, and attach a copy of the incident report to it"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-010",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "read-back",
+        "telephone-communication",
+        "cEEG"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "At 01:50 the on-call neurologist returns your page about a cEEG patient and says: 'Keep the current settings, and call me again if there are more than three seizures in any hour or any seizure lasting over 2 minutes.' The ICU is noisy. What is the best way to handle this instruction?",
+      "explanation": "Instructions received by phone should be written down and read back in full, with the caller confirming, before the call ends; this closed loop catches mishearing, especially of numbers in a noisy environment. Repeating only one threshold misses the 2-minute criterion; reading back only when the line seems unclear assumes errors are noticeable; asynchronous text confirmation leaves a window for acting on a misheard threshold.",
+      "learningObjective": "Use full read-back and prompt documentation for telephone instructions.",
+      "references": [
+        {
+          "citation": "The Joint Commission National Patient Safety Goals and Record of Care standards (verbal/telephone orders and critical results read-back)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Repeat 'three an hour' back to her, and document the call once the shift notes are done",
+        "Document it during the call, and read it back to her only if the line seems unclear",
+        "Read back both thresholds, get her confirmation, then document it with time and her name",
+        "Document it as heard, then text her the wording so that she can confirm it later"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-011",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "hyperventilation",
+        "protocol-deviation",
+        "patient-refusal"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "technical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "After 70 s of good hyperventilation, a 25-year-old reports tingling lips and light-headedness and asks to stop. You stop HV, the symptoms settle within a minute, and he declines to resume. The EEG showed diffuse slowing building up during HV. Which worksheet entry is most accurate?",
+      "explanation": "The worksheet should state what was actually done (70 s), the quality of effort, why it stopped and the symptoms reported, so the reader can judge the adequacy of the activation. 'Performed' implies a full run; 'not performed' discards 70 s of valid activation and its build-up; 'poor effort' mislabels a good effort ended by symptoms and the patient's decision. Interpreting the slowing is the reader's task.",
+      "learningObjective": "Document deviations from a standard activation procedure accurately.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Document HV as 70 s of good effort, stopped at his request for tingling and light-headedness",
+        "Document HV as performed, with good effort and diffuse slowing building up during it",
+        "Document HV as not performed, since less than the full protocol time was completed",
+        "Document HV as 70 s with poor effort, since the patient chose to stop before 3 minutes"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-012",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "event-documentation",
+        "video-failure",
+        "emu"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "professional",
+      "reasoningSteps": 3,
+      "stem": "At 03:40 in the EMU, a patient's wife reports that he had 'one of his usual spells' about 03:00 while she was awake with him. You find the camera feed stopped at 02:15 after a cable came loose; the EEG kept recording. What should be documented?",
+      "explanation": "The record should show the source of the information (the wife's report), the approximate time she gave, and the technical failure that left it without video, so the reader can search the EEG around 03:00 knowing that the timing is approximate and that no video exists. Charting it as an observed event at an exact time overstates its reliability; omitting it loses clinically important information; waiting for an EEG correlate filters the report by the technologist's interpretation.",
+      "learningObjective": "Document reported events and technical failures accurately in long-term monitoring.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Document a clinical event at 03:00, and the video outage separately in the log",
+        "Document only the video outage, since unwitnessed events are not documented",
+        "Document the event once the EEG near 03:00 has been checked for a correlate",
+        "Document her account as reported, its stated time, and the video outage from 02:15"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-013",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "minors",
+        "assent",
+        "pediatrics"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A 9-year-old's father has given consent for a routine outpatient EEG. When you start measuring, the boy cries, pulls away and says he does not want 'wires on his head'. He is not sedated and the study is not urgent. What is the most appropriate approach?",
+      "explanation": "For a minor, the parent or guardian gives legal permission, but the child's assent should be sought in an age-appropriate way, and holding a child down for a non-urgent study is not appropriate first. A 9-year-old's refusal does not legally override parental consent, and paperwork does not address the child's distress. If cooperation cannot be gained, the ordering clinician decides on alternatives such as rescheduling or sedation.",
+      "learningObjective": "Seek a child's assent alongside parental consent.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Pause, explain at his level with his father's help, and work to gain his cooperation",
+        "Proceed with his father holding him, since the parent's consent is legally sufficient",
+        "Cancel the study, since a child's refusal legally overrides his father's consent",
+        "Ask the father to sign an added consent form covering the child's refusal first"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-014",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "research",
+        "de-identification",
+        "hipaa"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 3,
+      "stem": "A neurologist in your department asks you to export the last 50 clinical EEG files for a study she plans to publish. She asks you to strip names and record numbers but keep the dates of service and the patients' 5-digit ZIP codes. She has not yet applied to the IRB. What is the appropriate response?",
+      "explanation": "Dates of service and 5-digit ZIP codes are among the HIPAA Safe Harbor identifiers, so the files would still be protected health information. Research use of PHI needs patient authorization, an IRB or privacy-board waiver, or a limited data set released under a data use agreement through the privacy office; working for the same organisation does not make research a treatment, payment or operations use. Deleting the dates alone still leaves the ZIP codes as identifiers.",
+      "learningObjective": "Separate research use of EEG data from clinical use under HIPAA.",
+      "references": [
+        {
+          "citation": "HIPAA Privacy Rule, 45 CFR Parts 160 and 164 (minimum necessary standard; de-identification; research uses)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Export them, since removing names and record numbers makes the files de-identified",
+        "Decline to export them until the research use is approved through the IRB or privacy office",
+        "Export them, since she belongs to the same covered entity as the clinical lab",
+        "Export them after deleting the dates of service, but keep the 5-digit ZIP codes"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-015",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "interpreter",
+        "deaf",
+        "effective-communication"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 3,
+      "stem": "A Deaf adult who uses American Sign Language arrives for an EEG with hyperventilation and photic stimulation. No interpreter was booked. She lip-reads a little and writes that she would prefer a professional interpreter; the hearing friend who drove her offers to sign. What is the most appropriate action?",
+      "explanation": "Under the ADA and Section 1557 the facility must provide effective communication, normally a qualified interpreter (in person or video remote), at no cost to the patient. An accompanying adult may interpret only if the patient specifically requests it, and here she asked for a professional. Notes and lip-reading are unreliable for consent and for instructions during HV and photic, and the patient cannot be required to supply her own interpreter.",
+      "learningObjective": "Provide qualified interpreters for patients who are Deaf or hard of hearing.",
+      "references": [
+        {
+          "citation": "ADA Title III / Section 1557 of the Affordable Care Act: effective communication and qualified interpreters",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Use the friend to sign, since she is willing and the patient knows her well",
+        "Use written notes and lip-reading, and demonstrate hyperventilation yourself",
+        "Arrange a qualified interpreter, in person or by video, before giving instructions",
+        "Reschedule for a later date when the patient can bring her own interpreter"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-016",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "minimum-necessary",
+        "billing",
+        "hipaa"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A hospital coding specialist emails you asking for the full 72-hour EEG and video files of an EMU admission, to confirm the billing code for long-term monitoring. Which response best follows the minimum-necessary standard?",
+      "explanation": "Billing is a payment use, so no patient authorization is needed, but access should be limited to the minimum necessary: the report and documentation of duration and services. Being in the workforce does not justify access to 72 hours of video. EEG files carry identifiers in their headers and are still PHI.",
+      "learningObjective": "Apply the minimum-necessary standard to internal requests.",
+      "references": [
+        {
+          "citation": "HIPAA Privacy Rule, 45 CFR Parts 160 and 164 (minimum necessary standard; de-identification; research uses)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Send the full files, since coders are part of the hospital's own workforce",
+        "Point her to the signed interpretation and the logs showing monitoring duration",
+        "Send nothing until the patient signs an authorization for billing access",
+        "Send the EEG files without the video, since EEG data identify no one"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-017",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "error-disclosure",
+        "skin-injury",
+        "honesty"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "While prepping Fp1 with abrasive gel you rub too hard, and the patient's forehead now has a small raw area that is oozing slightly. She asks why it stings. What is the most appropriate response?",
+      "explanation": "Honest, prompt disclosure of an error that affected the patient, with an apology and appropriate care, is the ethical standard, followed by reporting through the usual channel. Reporting while withholding it from the patient, attributing it to a 'usual reaction', or deferring the explanation to the physician each avoid telling her truthfully what happened to her.",
+      "learningObjective": "Disclose errors honestly to patients.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Dress it, and report it to your supervisor without raising it with her",
+        "Tell her it is a usual reaction to prep gel, dress it, and report it later",
+        "Tell her the reader will explain it, dress it, and report it to the physician",
+        "Tell her plainly that you rubbed too hard, apologise, dress it, and report it"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-018",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "conflict-of-interest",
+        "scheduling",
+        "equitable-care"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "You do paid weekend work scanning records for a private neurology practice. The neurologist who owns it also refers patients to your hospital EEG lab, where you manage the schedule, and he asks you to move his patients ahead of the waiting list. What is the most appropriate response?",
+      "explanation": "Paid outside work for a referring physician is a conflict of interest that should be disclosed so the employer can manage it, and scheduling should follow clinical priority and fair order rather than who referred the patient. Moving his patients up treats others inequitably; keeping the job private leaves the conflict unmanaged; quietly handing the decision to a colleague avoids it without disclosing it.",
+      "learningObjective": "Recognise and disclose conflicts of interest.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Move his patients up, since earlier testing benefits those patients clinically",
+        "Keep his patients in queue order, and keep the off-site job a private matter",
+        "Disclose the outside job to your manager and keep his patients in queue order",
+        "Let a colleague schedule his patients, so you have no part in the decision"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-019",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "equitable-care",
+        "standard-precautions",
+        "hiv"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A colleague sees on the requisition that her next patient has HIV and asks to swap with your patient, saying she is uncomfortable doing the hookup. Both are routine outpatient EEGs with intact scalp. What is the most appropriate response?",
+      "explanation": "Refusing or reassigning care because of a patient's HIV status is discriminatory, and standard precautions are the appropriate infection-control approach for every patient, so no extra isolation is needed for an intact-scalp hookup. Quietly swapping accommodates the discrimination; extra gowns and gloves or isolation are not indicated by HIV status and reinforce stigma. Involving the supervisor allows education and support.",
+      "learningObjective": "Provide equitable care and apply standard precautions consistently.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Agree to the swap, since a willing technologist gives that patient better care",
+        "Agree to the swap, and suggest she wear a gown and double gloves for such patients",
+        "Decline the swap, explain that standard precautions apply, and involve the supervisor",
+        "Decline the swap, and suggest she use full isolation precautions for this patient"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b10-020",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "error-disclosure",
+        "electrode-swap",
+        "reporting"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "professional",
+      "reasoningSteps": 3,
+      "stem": "On day 2 of an EMU admission you discover that the T3 and T4 leads were plugged into each other's headbox inputs for the first 6 hours, until a lead change. The preliminary report, written from those hours, describes left temporal slowing. What should you do?",
+      "explanation": "The error has changed the side of a reported abnormality, which may already be guiding care, so the reading physician needs to know promptly and in person, and the record should be annotated with what happened and when. A silent note or waiting for the final report leaves a wrong preliminary report in use; altering the stored data without disclosure conceals the error, even if the montage display can later be corrected under the physician's direction.",
+      "learningObjective": "Disclose recording errors that affect reported findings promptly.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Annotate the record now, and let the physician find the note at final reporting",
+        "Tell the physician only if the final report still mentions the left-sided slowing",
+        "Tell the reading physician now, give the swap and its timing, and annotate the record",
+        "Relabel the stored channels so the physician sees the 6 hours correctly sited"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 10 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}
