@@ -26,7 +26,7 @@ function ownEvents(userId) {
     return AttemptEvent.find({ userId })
         .sort({ timestamp: -1 })
         .limit(MAX_EVENTS)
-        .select('questionId domainId sectionId topicTags difficulty isCorrect timestamp mode selectedIndex')
+        .select('questionId domainId sectionId topicTags difficulty isCorrect timestamp mode selectedIndex bank cognitiveLevel competency')
         .lean();
 }
 
@@ -69,8 +69,7 @@ router.get('/dashboard', async (req, res) => {
         const mastery = computeMastery(events);
         const performance = recentPerformance(events);
         const incorrect = outstandingIncorrect(events);
-        const totalSections = Object.keys(sectionDomains).length;
-        const readiness = computeReadiness({ mastery, performance, events, totalSections, mockResults: mocks });
+        const readiness = computeReadiness({ events, mockResults: mocks });
 
         const ranked = (table) => Object.entries(table)
             .filter(([, m]) => m.sufficient)
@@ -165,7 +164,7 @@ router.post('/retry/:questionId', async (req, res) => {
         if (!(await hasPriorIncorrect(req.user.id, questionId))) {
             return res.status(404).json({ error: 'No incorrect attempt found for this question' });
         }
-        const q = await Question.findOne({ questionId }).select('questionId domainId sectionId topicTags difficulty version options +answerIndex +explanation').lean();
+        const q = await Question.findOne({ questionId }).select('questionId domainId sectionId topicTags difficulty version options bank cognitiveLevel competency +answerIndex +explanation').lean();
         if (!q) return res.status(404).json({ error: 'Question not found' });
         if (!Number.isInteger(selectedIndex) || selectedIndex < 0 || selectedIndex >= q.options.length) {
             return res.status(400).json({ error: 'selectedIndex is out of range' });
@@ -180,6 +179,9 @@ router.post('/retry/:questionId', async (req, res) => {
             sectionId: q.sectionId,
             topicTags: q.topicTags || [],
             difficulty: q.difficulty,
+            bank: q.bank || 'foundation',
+            cognitiveLevel: q.cognitiveLevel ?? undefined,
+            competency: q.competency ?? undefined,
             selectedIndex,
             isCorrect,
             timestamp: Date.now(),

@@ -13,6 +13,8 @@ const snapshotSchema = new mongoose.Schema({
     options: [String],
     answerIndex: Number,
     explanation: String,
+    cognitiveLevel: Number,
+    competency: String,
 }, { _id: false });
 
 const questionVersionSchema = new mongoose.Schema({

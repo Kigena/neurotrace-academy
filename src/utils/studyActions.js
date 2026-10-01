@@ -17,6 +17,8 @@ export async function startPlanItem(item, navigate) {
     body = { kind: "custom", mode: "practice", questionCount: count, filters: { domains: [item.domainId] } };
   } else if (item.kind === "weak") {
     body = { kind: "weak-areas", questionCount: count };
+  } else if (item.kind === "challenge") {
+    body = { kind: "challenge", questionCount: count };
   } else {
     body = { kind: "custom", mode: "practice", questionCount: count };
   }

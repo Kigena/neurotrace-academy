@@ -1,0 +1,23 @@
+{
+  "description": "Human-identified QA issues. These are the ONLY entries that change qaStatus. Content is never rewritten automatically; questions marked NEEDS_REVISION or REJECTED are withheld from quiz sessions until revised.",
+  "issues": [
+    {
+      "questionId": "d2-batch1-005",
+      "qaStatus": "NEEDS_REVISION",
+      "code": "SENSITIVITY_TERMINOLOGY",
+      "detail": "Keyed answer says changing 7 µV/mm to 14 µV/mm makes waveforms larger. A larger µV/mm value is LOWER display sensitivity: the same voltage gives a smaller deflection. The stem also calls this an increase in sensitivity, and the explanation contradicts the keyed answer."
+    },
+    {
+      "questionId": "d2-batch1-030",
+      "qaStatus": "NEEDS_REVISION",
+      "code": "CONTRADICTORY_EXPLANATION",
+      "detail": "Keyed option is '0.16 Hz' but its own text and the explanation compute LFF = 1/(2π × 0.1 s) ≈ 1.6 Hz. The option '1.6 Hz' is the correct value."
+    },
+    {
+      "questionId": "d2-batch7-001",
+      "qaStatus": "NEEDS_REVISION",
+      "code": "QUESTIONABLE_FACT",
+      "detail": "Keyed answer places P3 at '20% of the distance from Cz to the left ear, along the parietal line'. P3 lies on the left parasagittal line between C3 and O1 (posterior to C3), not on the Cz-to-ear line."
+    }
+  ]
+}

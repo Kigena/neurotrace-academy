@@ -1,7 +1,7 @@
 // Server-authoritative quiz engine: pure selection, ordering, projection and
 // scoring helpers. Database access lives in routes/quiz.js.
 
-import { allocateByBlueprint } from '../blueprint/abret2026.js';
+import { allocateByBlueprint, DOMAINS } from '../blueprint/abret2026.js';
 
 export const DIFFICULTIES = ['easy', 'medium', 'hard'];
 export const TIME_LIMITS_SEC = { practice: null, timed: 60 * 60, mock: 120 * 60 };
@@ -138,6 +138,63 @@ export function buildOptionOrder(options, shuffleOptions, rng = Math.random) {
     return shuffle(identity, rng);
 }
 
+// ------------------------------------------------------- challenge mode ---
+
+export const CHALLENGE_SIZES = [10, 20, 30, 50];
+// Default cognitive-level mix for "Challenge me" (no L1; L2 never selected).
+export const CHALLENGE_LEVEL_MIX = { 3: 0.15, 4: 0.3, 5: 0.25, 6: 0.3 };
+
+/** Largest-remainder split of n across the level mix (ties -> higher level). */
+export function allocateChallengeLevels(n, mix = CHALLENGE_LEVEL_MIX) {
+    const rows = Object.entries(mix).map(([level, share]) => {
+        const quota = n * share;
+        return { level: Number(level), quota, count: Math.floor(quota), rem: quota - Math.floor(quota) };
+    });
+    let left = n - rows.reduce((s, r) => s + r.count, 0);
+    for (const r of [...rows].sort((a, b) => b.rem - a.rem || b.level - a.level)) {
+        if (left <= 0) break;
+        r.count += 1;
+        left -= 1;
+    }
+    return Object.fromEntries(rows.map((r) => [r.level, r.count]));
+}
+
+const DOMAIN_WEIGHT = Object.fromEntries(DOMAINS.map((d) => [d.legacyDomainId, d.weightPercent]));
+
+/** Weighted sample without replacement, weighted by ABRET domain weight. */
+function sampleByDomainWeight(list, k, rng) {
+    return list
+        .map((q) => ({ q, key: Math.pow(rng(), 1 / (DOMAIN_WEIGHT[q.domainId] || 10)) }))
+        .sort((a, b) => b.key - a.key)
+        .slice(0, k)
+        .map((x) => x.q);
+}
+
+/**
+ * Select a Challenge session from challenge-bank questions (L3-L6 only).
+ * Each level gets its allocated share; shortfalls are back-filled from the
+ * remaining L4-L6 questions first, then L3. Within a level, domains are
+ * favoured in proportion to their ABRET weight.
+ */
+export function selectChallenge(pool, n, rng = Math.random) {
+    const eligible = pool.filter((q) => Number.isInteger(q.cognitiveLevel) && q.cognitiveLevel >= 3 && q.cognitiveLevel <= 6);
+    const target = Math.min(n, eligible.length);
+    const alloc = allocateChallengeLevels(target);
+    const picked = [];
+    for (const [level, count] of Object.entries(alloc)) {
+        picked.push(...sampleByDomainWeight(eligible.filter((q) => q.cognitiveLevel === Number(level)), count, rng));
+    }
+    if (picked.length < target) {
+        const have = new Set(picked.map((q) => q.questionId));
+        const rest = eligible.filter((q) => !have.has(q.questionId));
+        const higher = rest.filter((q) => q.cognitiveLevel >= 4);
+        const lower = rest.filter((q) => q.cognitiveLevel < 4);
+        picked.push(...sampleByDomainWeight(higher, target - picked.length, rng));
+        if (picked.length < target) picked.push(...sampleByDomainWeight(lower, target - picked.length, rng));
+    }
+    return shuffle(picked, rng);
+}
+
 // ------------------------------------------------------------ projection ---
 
 /**
@@ -151,6 +208,9 @@ export function toPublicQuestion(q, optionOrder) {
         sectionId: q.sectionId,
         topicTags: q.topicTags || [],
         difficulty: q.difficulty,
+        bank: q.bank || 'foundation',
+        cognitiveLevel: q.cognitiveLevel ?? null,
+        competency: q.competency ?? null,
         stem: q.stem,
         options: optionOrder.map((i) => q.options[i]),
     };

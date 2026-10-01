@@ -3,7 +3,10 @@
 // canonical ABRET 2026 blueprint nodes.
 //
 // Usage (from server/):
-//   node scripts/importQuestions.js [--source <path>] [--dry-run] [--report <file>]
+//   node scripts/importQuestions.js [--source <path>] [--bank foundation|challenge] [--dry-run] [--report <file>]
+//
+// Challenge Bank pilot:
+//   node scripts/importQuestions.js --source src/data/challenge/abret-challenge-pilot.json --bank challenge
 //
 // Requires MONGODB_URI in the environment (server/.env is loaded).
 // Prints a reconciliation report; exits non-zero if the counts do not
@@ -31,6 +34,7 @@ function arg(name) {
 const sourcePath = path.resolve(arg('--source') || defaultSourcePath(serverRoot));
 const reportPath = arg('--report');
 const dryRun = process.argv.includes('--dry-run');
+const bankArg = arg('--bank');
 
 if (!process.env.MONGODB_URI) {
     console.error('MONGODB_URI is not set.');
@@ -47,11 +51,12 @@ try {
 
     const data = loadSourceFile(sourcePath);
     const sourceLabel = path.relative(path.resolve(serverRoot, '..'), sourcePath).replace(/\\/g, '/');
-    const report = await importQuestions({ data, sourceFile: sourceLabel, dryRun });
+    const report = await importQuestions({ data, sourceFile: sourceLabel, dryRun, bank: bankArg });
     const blueprintNodes = dryRun ? 0 : await seedBlueprint();
 
     const summary = {
         sourceFile: report.sourceFile,
+        bank: report.bank,
         dryRun: report.dryRun,
         sourceCount: report.sourceCount,
         declaredTotal: report.declaredTotal,

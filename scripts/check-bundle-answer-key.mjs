@@ -17,8 +17,16 @@ if (!fs.existsSync(distDir)) {
 }
 
 const bank = JSON.parse(fs.readFileSync(path.join(root, 'src/data/abret-questions.json'), 'utf8'));
+// The Challenge Bank (server-only) must never reach the browser either.
+const challengeDir = path.join(root, 'server/src/data/challenge');
+const challengeQuestions = fs.existsSync(challengeDir)
+  ? fs.readdirSync(challengeDir).filter((f) => f.endsWith('.json'))
+      .flatMap((f) => JSON.parse(fs.readFileSync(path.join(challengeDir, f), 'utf8')).questions || [])
+  : [];
 // Long, distinctive explanation strings only (short ones could collide with other copy).
-const candidates = bank.questions.map((q) => q.explanation).filter((e) => typeof e === 'string' && e.length >= 60);
+const candidates = [...bank.questions, ...challengeQuestions]
+  .map((q) => q.explanation)
+  .filter((e) => typeof e === 'string' && e.length >= 60);
 
 // Explanations that are ALSO part of deliberately public study content
 // (e.g. a teaching case in cases.json reusing the same text) are expected in

@@ -86,10 +86,14 @@ export function masteryTable(events, keysFn) {
 }
 
 export function computeMastery(events) {
+    const challenge = events.filter((e) => e.bank === 'challenge');
     return {
         byDomain: masteryTable(events, (e) => [e.domainId]),
         bySection: masteryTable(events, (e) => [e.sectionId]),
         byTag: masteryTable(events, (e) => e.topicTags || []),
+        // Challenge Bank only
+        byCompetency: masteryTable(challenge, (e) => [e.competency]),
+        byLevel: masteryTable(challenge, (e) => (e.cognitiveLevel ? [`L${e.cognitiveLevel}`] : [])),
     };
 }
 
@@ -132,9 +136,27 @@ export function outstandingIncorrect(events) {
 
 // ---------------------------------------------------------------- readiness
 
-export const READINESS_WEIGHTS = { domainMastery: 0.5, recentPerformance: 0.25, coverage: 0.15, mock: 0.1 };
-const RECENT_MIN = 10;
-const COVERAGE_MIN_ATTEMPTS_PER_SECTION = 3;
+/**
+ * Higher-order competencies. Evidence comes only from Challenge Bank
+ * attempts (L3-L6), so foundation-bank recall cannot inflate them.
+ */
+export const HIGHER_ORDER_COMPETENCIES = [
+    { key: 'technical', label: 'Technical reasoning' },
+    { key: 'montage', label: 'Montage / localization' },
+    { key: 'troubleshooting', label: 'Troubleshooting' },
+    { key: 'clinical', label: 'Clinical integration' },
+];
+
+export const READINESS_WEIGHTS = {
+    foundation: 0.2,
+    technical: 0.15,
+    montage: 0.15,
+    troubleshooting: 0.15,
+    clinical: 0.15,
+    mock: 0.2,
+};
+
+export const isChallengeEvent = (e) => e.bank === 'challenge';
 
 export function readinessLabel(score) {
     if (score === null) return 'Not enough data';
@@ -147,97 +169,92 @@ export function readinessLabel(score) {
 /**
  * Study readiness (0-100). NOT a probability of passing.
  *
- *   50%  ABRET-weighted domain mastery: sum(weight_d * mastery_d) over the
- *        four 2026 domains. A domain with fewer than 5 attempts is counted
- *        as 0 ("not yet demonstrated"). Available once any domain has
- *        sufficient data.
- *   25%  Recent performance: accuracy over the last 20 scored attempts
- *        (needs >= 10 attempts).
- *   15%  Content coverage: share of the bank's sections with >= 3 scored
- *        attempts (needs >= 1 attempt).
- *   10%  Mock-exam performance: mean score of the last 3 submitted mock
- *        exams (needs >= 1 mock).
+ *   20%  Foundation mastery - ABRET-weighted (15/46/19/20) domain mastery on
+ *        the foundation (legacy) bank.
+ *   15%  Technical reasoning      \
+ *   15%  Montage / localization    |  mastery on Challenge Bank (L3-L6)
+ *   15%  Troubleshooting           |  questions of that competency
+ *   15%  Clinical integration     /
+ *   20%  Mock performance - mean of the last 3 submitted mock exams.
  *
- * Unavailable components are excluded and the remaining weights are
- * re-normalised; the response lists every component, its availability,
- * and the share of the full weight that was actually measured.
+ * Anything not yet assessed (a domain or competency with < 5 answers, or no
+ * mock) counts as 0 and is labelled as such. Unassessed components are not
+ * re-normalised away: perfect foundation-bank scores alone can reach at most
+ * 20, and foundation plus mocks at most 40 ("Building Foundation").
+ * The score is null only when there is no data at all.
  */
-export function computeReadiness({ mastery, performance, events, totalSections, mockResults }) {
+export function computeReadiness({ events, mockResults }) {
+    const foundationEvents = events.filter((e) => !isChallengeEvent(e));
+    const challengeEvents = events.filter((e) => isChallengeEvent(e) && (e.cognitiveLevel ?? 3) >= 3);
     const components = [];
 
-    // Domain mastery
+    // Foundation mastery (domain-weighted)
+    const foundationByDomain = masteryTable(foundationEvents, (e) => [e.domainId]);
     const perDomain = DOMAINS.map((d) => {
-        const m = mastery.byDomain[d.legacyDomainId];
+        const m = foundationByDomain[d.legacyDomainId];
         return {
             domainId: d.legacyDomainId,
             title: d.title,
             weightPercent: d.weightPercent,
             mastery: m?.sufficient ? m.score : null,
-            counted: m?.sufficient ? m.score : 0,
         };
     });
-    const anyDomain = perDomain.some((d) => d.mastery !== null);
+    const assessedDomains = perDomain.filter((d) => d.mastery !== null).length;
     components.push({
-        key: 'domainMastery',
-        label: 'ABRET-weighted domain mastery',
-        weight: READINESS_WEIGHTS.domainMastery,
-        available: anyDomain,
-        score: anyDomain ? Math.round(perDomain.reduce((s, d) => s + (d.weightPercent / 100) * d.counted, 0)) : null,
-        detail: anyDomain
-            ? `${perDomain.filter((d) => d.mastery === null).length} of 4 domains not yet assessed (counted as 0)`
-            : 'No domain has 5+ scored attempts yet',
+        key: 'foundation',
+        label: 'Foundation mastery',
+        weight: READINESS_WEIGHTS.foundation,
+        assessed: assessedDomains > 0,
+        score: Math.round(perDomain.reduce((s, d) => s + (d.weightPercent / 100) * (d.mastery ?? 0), 0)),
+        detail: assessedDomains
+            ? `Foundation bank; ${4 - assessedDomains} of 4 domains not yet assessed (counted as 0)`
+            : 'Foundation bank: no domain has 5+ answers yet (counted as 0)',
         domains: perDomain,
     });
 
-    // Recent performance
-    const recentOk = performance.last20Count >= RECENT_MIN;
-    components.push({
-        key: 'recentPerformance',
-        label: 'Recent performance (last 20 answers)',
-        weight: READINESS_WEIGHTS.recentPerformance,
-        available: recentOk,
-        score: recentOk ? performance.last20Accuracy : null,
-        detail: recentOk ? `${performance.last20Count} recent answers` : `Needs ${RECENT_MIN} answers (have ${performance.last20Count})`,
-    });
-
-    // Coverage
-    const sectionCounts = new Map();
-    for (const e of events) sectionCounts.set(e.sectionId, (sectionCounts.get(e.sectionId) || 0) + 1);
-    const covered = [...sectionCounts.values()].filter((c) => c >= COVERAGE_MIN_ATTEMPTS_PER_SECTION).length;
-    const coverageOk = events.length > 0 && totalSections > 0;
-    components.push({
-        key: 'coverage',
-        label: 'Content coverage',
-        weight: READINESS_WEIGHTS.coverage,
-        available: coverageOk,
-        score: coverageOk ? Math.round((Math.min(covered, totalSections) / totalSections) * 100) : null,
-        detail: coverageOk ? `${covered} of ${totalSections} sections with ${COVERAGE_MIN_ATTEMPTS_PER_SECTION}+ answers` : 'No answers yet',
-    });
+    // Higher-order competencies (Challenge Bank only)
+    const byCompetency = masteryTable(challengeEvents, (e) => [e.competency]);
+    for (const c of HIGHER_ORDER_COMPETENCIES) {
+        const m = byCompetency[c.key];
+        const assessed = !!m?.sufficient;
+        components.push({
+            key: c.key,
+            label: c.label,
+            weight: READINESS_WEIGHTS[c.key],
+            assessed,
+            score: assessed ? m.score : 0,
+            detail: assessed
+                ? `${m.attempts} recent Challenge answers, ${m.accuracy}% correct`
+                : `Challenge Bank: ${m?.attempts || 0}/5 answers - not yet assessed (counted as 0)`,
+        });
+    }
 
     // Mock exams
     const lastMocks = mockResults.slice(0, 3);
-    const mockOk = lastMocks.length > 0;
     components.push({
         key: 'mock',
-        label: 'Mock-exam performance',
+        label: 'Mock performance',
         weight: READINESS_WEIGHTS.mock,
-        available: mockOk,
-        score: mockOk ? Math.round(lastMocks.reduce((s, m) => s + m.percent, 0) / lastMocks.length) : null,
-        detail: mockOk ? `Mean of last ${lastMocks.length} mock exam(s)` : 'No mock exam submitted yet',
+        assessed: lastMocks.length > 0,
+        score: lastMocks.length ? Math.round(lastMocks.reduce((s, m) => s + m.percent, 0) / lastMocks.length) : 0,
+        detail: lastMocks.length
+            ? `Mean of last ${lastMocks.length} mock exam(s)`
+            : 'No mock exam submitted yet (counted as 0)',
     });
 
-    const available = components.filter((c) => c.available);
-    const measuredWeight = available.reduce((s, c) => s + c.weight, 0);
-    const score = available.length
-        ? Math.round(available.reduce((s, c) => s + c.weight * c.score, 0) / measuredWeight)
-        : null;
+    // Backwards-compatible field used by the UI breakdown
+    for (const c of components) c.available = c.assessed;
+
+    const anyData = events.length > 0 || mockResults.length > 0;
+    const score = anyData ? Math.round(components.reduce((s, c) => s + c.weight * c.score, 0)) : null;
+    const assessedWeight = components.filter((c) => c.assessed).reduce((s, c) => s + c.weight, 0);
 
     return {
         score,
         label: readinessLabel(score),
-        measuredWeightPercent: Math.round(measuredWeight * 100),
+        measuredWeightPercent: Math.round(assessedWeight * 100),
         components,
-        disclaimer: 'Study readiness summarises your practice data. It is not a probability of passing the exam.',
+        disclaimer: 'Study readiness summarises your practice data. It is not a probability of passing the exam. Unassessed parts count as 0.',
     };
 }
 

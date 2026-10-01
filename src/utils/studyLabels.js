@@ -20,6 +20,19 @@ export const DOMAIN_SHORT = {
   "domain-4": "D4 Ethics & Professional Issues",
 };
 
+export const LEVEL_NAMES = {
+  1: "Recall",
+  2: "Understanding",
+  3: "Application / Calculation",
+  4: "Troubleshooting",
+  5: "Montage / Localization",
+  6: "Clinical Integration",
+};
+
+export function levelLabel(level) {
+  return level ? `L${level} · ${LEVEL_NAMES[level] || ""}` : null;
+}
+
 export function sectionTitle(id) {
   return sectionTitles[id] || id;
 }

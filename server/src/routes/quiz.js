@@ -20,6 +20,8 @@ import {
     selectCustom,
     selectDomainQuickStart,
     selectForPreset,
+    selectChallenge,
+    CHALLENGE_SIZES,
     toPublicQuestion,
     xpForPercent,
 } from '../services/quizEngine.js';
@@ -32,8 +34,16 @@ router.use(auth);
 
 const MODES = ['practice', 'timed', 'mock'];
 const WEAK_AREA_SIZES = [10, 20, 30];
-const POOL_FIELDS = 'questionId domainId sectionId topicTags difficulty origin.sourceOrder';
-const CONTENT_FIELDS = 'questionId domainId sectionId topicTags difficulty stem options version';
+const POOL_FIELDS = 'questionId domainId sectionId topicTags difficulty origin.sourceOrder bank cognitiveLevel competency';
+const CONTENT_FIELDS = 'questionId domainId sectionId topicTags difficulty stem options version bank cognitiveLevel competency';
+
+// Questions withheld from every session until revised.
+const SERVABLE = { status: 'active', qaStatus: { $nin: ['NEEDS_REVISION', 'REJECTED'] } };
+// Standard sessions (practice, timed, mocks, weak areas) use the foundation
+// bank; the Challenge Bank is served only by "Challenge me" while its pilot
+// is under human review.
+const FOUNDATION_POOL = { ...SERVABLE, bank: { $ne: 'challenge' } };
+const CHALLENGE_POOL = { ...SERVABLE, bank: 'challenge' };
 const KEY_FIELDS = `${CONTENT_FIELDS} +answerIndex +explanation`;
 
 export function getPresets() {
@@ -159,6 +169,9 @@ function attemptEventFor(session, userId, q, answer) {
         sectionId: q.sectionId,
         topicTags: q.topicTags || [],
         difficulty: q.difficulty,
+        bank: q.bank || 'foundation',
+        cognitiveLevel: q.cognitiveLevel ?? undefined,
+        competency: q.competency ?? undefined,
         selectedIndex: answer.originalIndex,
         isCorrect: answer.originalIndex === q.answerIndex,
         timestamp: Date.now(),
@@ -303,8 +316,11 @@ router.post('/sessions', async (req, res) => {
         let shuffleOptions = true;
         let config;
 
-        const pool = await Question.find({ status: 'active' }).select(POOL_FIELDS).lean();
+        const pool = await Question.find(kind === 'challenge' ? CHALLENGE_POOL : FOUNDATION_POOL).select(POOL_FIELDS).lean();
         if (!pool.length) {
+            if (kind === 'challenge') {
+                return res.status(503).json({ error: 'The ABRET Challenge Bank has not been imported yet.' });
+            }
             return res.status(503).json({ error: 'Question bank is not available. The server operator must run the question import.' });
         }
 
@@ -328,6 +344,15 @@ router.post('/sessions', async (req, res) => {
             timeLimitSec = DOMAIN_QUICKSTART.timeLimitSec;
             selected = selectDomainQuickStart(pool, domainId);
             config = { domains: [domainId], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
+        } else if (kind === 'challenge') {
+            const size = Number.parseInt(body.questionCount, 10);
+            if (!CHALLENGE_SIZES.includes(size)) {
+                return res.status(400).json({ error: `questionCount must be one of ${CHALLENGE_SIZES.join(', ')}` });
+            }
+            mode = 'practice';
+            timeLimitSec = null;
+            selected = selectChallenge(pool, size);
+            config = { domains: [], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
         } else if (kind === 'weak-areas') {
             const size = Number.parseInt(body.questionCount, 10);
             if (!WEAK_AREA_SIZES.includes(size)) {

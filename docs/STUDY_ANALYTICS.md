@@ -17,17 +17,43 @@ Examples: 5/5 correct → 81 (Good), 12/12 → 90, 30/30 → 95 (Strong),
 
 ## Study readiness
 
-| Weight | Component | Available when |
-|---|---|---|
-| 50% | ABRET-weighted domain mastery `Σ weight_d·mastery_d` (15/46/19/20); domains with < 5 attempts count as 0 | any domain has ≥ 5 attempts |
-| 25% | Accuracy over the last 20 answers | ≥ 10 answers |
-| 15% | Coverage: share of the bank's sections with ≥ 3 answers | ≥ 1 answer |
-| 10% | Mean of the last 3 submitted mock exams | ≥ 1 mock |
+Revised in the Challenge Bank milestone so that high scores on the
+foundation (legacy, mostly L1/L2) bank cannot produce a falsely high score.
 
-Unavailable components are excluded and the rest re-normalised; the UI shows
-every component and the share of the formula actually measured. Bands:
-0–49 Building Foundation, 50–69 Developing, 70–84 Approaching Ready,
+| Weight | Component | Evidence |
+|---|---|---|
+| 20% | Foundation mastery: `Σ weight_d·mastery_d` (15/46/19/20) | foundation-bank attempts |
+| 15% | Technical reasoning | Challenge Bank (L3–L6) attempts, competency `technical` |
+| 15% | Montage / localization | Challenge Bank, competency `montage` |
+| 15% | Troubleshooting | Challenge Bank, competency `troubleshooting` |
+| 15% | Clinical integration | Challenge Bank, competency `clinical` |
+| 20% | Mock performance: mean of the last 3 submitted mocks | mock exams |
+
+Anything not yet assessed (fewer than 5 answers, or no mock) counts as **0**
+and is labelled "not assessed"; nothing is re-normalised away. Perfect
+foundation-bank scores alone therefore reach at most 20, and foundation plus
+mocks at most 40 ("Building Foundation"). The score is null only with no data.
+Bands: 0–49 Building Foundation, 50–69 Developing, 70–84 Approaching Ready,
 85–100 Strong Preparation.
+
+## Challenge me (10 / 20 / 30 / 50, practice mode)
+
+Challenge Bank only, never L1/L2. Level mix L3 15% · L4 30% · L5 25% · L6 30%
+(largest remainder, ties to the higher level; 20 → 3/6/5/6). Shortfalls are
+back-filled from L4–L6 first. Within a level, domains are favoured in
+proportion to ABRET weight. While the pilot is under review, the Challenge
+Bank is served only here, not in standard quizzes or mocks.
+
+## Question QA
+
+`qaStatus`: UNREVIEWED · VERIFIED · NEEDS_REVISION · REJECTED. NEEDS_REVISION
+and REJECTED items are never served. `npm run audit:questions` (dry run) /
+`-- --apply` adds automatic flags (obvious distractors, Both-A-and-B,
+All/None of the above, duplicate stems, longest-answer bias, numeric
+contradictions, sensitivity terminology, categorical filter claims, absolute
+keyed answers) and applies the reviewed list in
+`server/src/data/qa/known-issues.json`. Automatic flags never change status
+or content.
 
 ## Study my weak areas (10 / 20 / 30, practice mode)
 

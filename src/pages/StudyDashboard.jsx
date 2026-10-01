@@ -16,6 +16,7 @@ function StudyDashboard() {
   const [error, setError] = useState(null);
   const [busy, setBusy] = useState(false);
   const [weakSize, setWeakSize] = useState(20);
+  const [challengeSize, setChallengeSize] = useState(20);
   const days = daysUntilExam();
 
   useEffect(() => {
@@ -80,7 +81,7 @@ function StudyDashboard() {
       )}
 
       {/* Primary actions */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
         <button
           onClick={continueStudying}
           disabled={busy || !data}
@@ -105,6 +106,27 @@ function StudyDashboard() {
             <option value={10}>10</option>
             <option value={20}>20</option>
             <option value={30}>30</option>
+          </select>
+        </div>
+        <div className="flex rounded-lg border border-indigo-300 bg-indigo-50 overflow-hidden">
+          <button
+            onClick={() => run({ kind: "challenge", count: challengeSize })}
+            disabled={busy || !data}
+            title="Higher-order L3-L6 questions from the ABRET Challenge Bank (pilot, under expert review)"
+            className="flex-1 px-3 py-3 text-sm font-semibold text-indigo-900 hover:bg-indigo-100 disabled:opacity-60"
+          >
+            CHALLENGE ME
+          </button>
+          <select
+            aria-label="Challenge session size"
+            value={challengeSize}
+            onChange={(e) => setChallengeSize(Number(e.target.value))}
+            className="border-l border-indigo-300 bg-indigo-50 px-2 text-sm text-indigo-900"
+          >
+            <option value={10}>10</option>
+            <option value={20}>20</option>
+            <option value={30}>30</option>
+            <option value={50}>50</option>
           </select>
         </div>
         <Link

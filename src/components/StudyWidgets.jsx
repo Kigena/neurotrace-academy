@@ -40,13 +40,16 @@ export function ReadinessBreakdown({ readiness }) {
               </div>
               <div className="text-slate-500">{c.detail}</div>
             </div>
-            <div className={`font-semibold ${tone.text}`}>{c.available ? `${c.score}%` : "n/a"}</div>
+            <div className={`font-semibold whitespace-nowrap ${tone.text}`}>
+              {c.available ? `${c.score}%` : "0% · not assessed"}
+            </div>
           </div>
         );
       })}
       {readiness.measuredWeightPercent < 100 && readiness.score !== null && (
         <p className="text-xs text-slate-500">
-          Based on {readiness.measuredWeightPercent}% of the full formula; unavailable parts are excluded, not guessed.
+          {readiness.measuredWeightPercent}% of the formula is assessed so far; unassessed parts count as 0 rather than being guessed.
+          Higher-order parts are measured only with Challenge Bank questions.
         </p>
       )}
       <p className="text-xs text-slate-400">{readiness.disclaimer}</p>

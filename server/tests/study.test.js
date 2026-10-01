@@ -8,7 +8,6 @@ import {
     computeMastery,
     computeReadiness,
     masteryFromAttempts,
-    recentPerformance,
     selectWeakAreas,
 } from '../src/services/studyAnalytics.js';
 
@@ -54,40 +53,50 @@ describe('mastery', () => {
 });
 
 describe('readiness', () => {
-    it('is null with no data and never invents components', () => {
-        const events = [];
-        const r = computeReadiness({ mastery: computeMastery(events), performance: recentPerformance(events), events, totalSections: 47, mockResults: [] });
+    const challengeEvents = (competency, correct, total) =>
+        Array.from({ length: total }, (_, i) => ev(i < correct, 1000 + i, { bank: 'challenge', competency, cognitiveLevel: 5, sectionId: 'd2-x' }));
+
+    it('is null with no data at all', () => {
+        const r = computeReadiness({ events: [], mockResults: [] });
         expect(r.score).toBeNull();
         expect(r.label).toBe('Not enough data');
-        expect(r.components.every((c) => !c.available && c.score === null)).toBe(true);
         expect(r.disclaimer).toMatch(/not a probability of passing/i);
+        expect(r.components.map((c) => c.key)).toEqual(['foundation', 'technical', 'montage', 'troubleshooting', 'clinical', 'mock']);
     });
 
-    it('combines available components with 50/25/15/10 weights and counts unassessed domains as 0', () => {
-        // 10 correct answers in domain-2 only, 1 section, one 60% mock.
-        const events = Array.from({ length: 10 }, (_, i) => ev(true, i, { sectionId: 'd2-x' }));
-        const r = computeReadiness({
-            mastery: computeMastery(events),
-            performance: recentPerformance(events),
-            events,
-            totalSections: 10,
-            mockResults: [{ percent: 60 }],
-        });
+    it('perfect foundation-bank scores alone cannot produce a high readiness', () => {
+        const events = [];
+        for (const d of ['domain-1', 'domain-2', 'domain-3', 'domain-4']) {
+            for (let i = 0; i < 30; i++) events.push(ev(true, i, { domainId: d, sectionId: `${d}-s` }));
+        }
+        const r = computeReadiness({ events, mockResults: [] });
         const c = Object.fromEntries(r.components.map((x) => [x.key, x]));
-        // domain-2 mastery (10/10) = round(100*(10+1.5)/13)=88; weighted 0.46*88 = 40.5 -> 40
-        expect(c.domainMastery.score).toBe(40);
-        expect(c.recentPerformance.score).toBe(100);
-        expect(c.coverage.score).toBe(10);
-        expect(c.mock.score).toBe(60);
-        expect(r.measuredWeightPercent).toBe(100);
-        expect(r.score).toBe(Math.round(0.5 * 40 + 0.25 * 100 + 0.15 * 10 + 0.1 * 60));
+        expect(c.foundation.score).toBe(95);
+        for (const k of ['technical', 'montage', 'troubleshooting', 'clinical', 'mock']) {
+            expect(c[k].assessed).toBe(false);
+            expect(c[k].score).toBe(0);
+        }
+        expect(r.score).toBe(Math.round(0.2 * 95)); // 19
+        expect(r.label).toBe('Building Foundation');
+        // Even with a perfect mock, foundation + mock cannot exceed 40.
+        expect(computeReadiness({ events, mockResults: [{ percent: 100 }] }).score).toBe(Math.round(0.2 * 95 + 0.2 * 100));
     });
 
-    it('re-normalises when components are missing', () => {
-        const events = Array.from({ length: 3 }, (_, i) => ev(true, i, { sectionId: 'd2-x' }));
-        const r = computeReadiness({ mastery: computeMastery(events), performance: recentPerformance(events), events, totalSections: 10, mockResults: [] });
-        expect(r.measuredWeightPercent).toBe(15); // coverage only
-        expect(r.score).toBe(10); // 1 section with 3+ of 10
+    it('higher-order competencies come only from Challenge Bank attempts', () => {
+        // Foundation questions tagged with a competency do not count toward it.
+        const foundationTagged = Array.from({ length: 10 }, (_, i) => ev(true, i, { competency: 'montage' }));
+        const r1 = computeReadiness({ events: foundationTagged, mockResults: [] });
+        expect(r1.components.find((c) => c.key === 'montage').assessed).toBe(false);
+
+        const events = [...challengeEvents('montage', 10, 10), ...challengeEvents('technical', 2, 4)];
+        const r2 = computeReadiness({ events, mockResults: [{ percent: 70 }] });
+        const c = Object.fromEntries(r2.components.map((x) => [x.key, x]));
+        expect(c.montage.assessed).toBe(true);
+        expect(c.montage.score).toBe(88); // 10/10 -> round(100*(10+1.5)/13)
+        expect(c.technical.assessed).toBe(false); // only 4 answers
+        expect(c.mock.score).toBe(70);
+        expect(r2.score).toBe(Math.round(0.15 * 88 + 0.2 * 70));
+        expect(r2.measuredWeightPercent).toBe(35);
     });
 });
 

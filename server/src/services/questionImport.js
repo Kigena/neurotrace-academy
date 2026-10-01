@@ -19,6 +19,9 @@ import { BlueprintNode } from '../models/BlueprintNode.js';
 import { BLUEPRINT_KEY, BLUEPRINT_SOURCE, DOMAINS, getBlueprint } from '../blueprint/abret2026.js';
 
 export const LEGACY_ORIGIN = 'legacy-neurolinea-bank';
+export const CHALLENGE_ORIGIN = 'neurolinea-challenge-bank';
+export const BANKS = ['foundation', 'challenge'];
+const COMPETENCIES = ['foundation', 'technical', 'montage', 'troubleshooting', 'clinical'];
 const SAFE_ID = /^[A-Za-z0-9_-]{1,120}$/;
 
 /** Canonical scored content of a question, in a fixed key order. */
@@ -32,6 +35,10 @@ export function contentSnapshot(q) {
         options: [...q.options],
         answerIndex: q.answerIndex,
         explanation: q.explanation ?? '',
+        // Only present for questions that declare them; undefined keys are
+        // dropped by JSON.stringify, so legacy hashes are unchanged.
+        cognitiveLevel: q.cognitiveLevel ?? undefined,
+        competency: q.competency ?? undefined,
     };
 }
 
@@ -39,9 +46,19 @@ export function contentHash(q) {
     return crypto.createHash('sha256').update(JSON.stringify(contentSnapshot(q))).digest('hex');
 }
 
-export function validateSourceQuestion(q) {
+export function validateSourceQuestion(q, { bank = 'foundation' } = {}) {
     const problems = [];
     if (!q || typeof q !== 'object') return ['not an object'];
+    if (bank === 'challenge') {
+        if (!Number.isInteger(q.cognitiveLevel) || q.cognitiveLevel < 2 || q.cognitiveLevel > 6) {
+            problems.push('challenge questions need cognitiveLevel 2-6');
+        }
+        if (!COMPETENCIES.includes(q.competency) || q.competency === 'foundation') {
+            problems.push('challenge questions need a higher-order competency');
+        }
+    } else if (q.cognitiveLevel !== undefined && (!Number.isInteger(q.cognitiveLevel) || q.cognitiveLevel < 1 || q.cognitiveLevel > 6)) {
+        problems.push('cognitiveLevel must be 1-6');
+    }
     if (typeof q.id !== 'string' || !SAFE_ID.test(q.id)) problems.push('invalid id');
     for (const f of ['domainId', 'sectionId', 'difficulty', 'stem']) {
         if (typeof q[f] !== 'string' || !q[f].trim()) problems.push(`missing ${f}`);
@@ -141,8 +158,11 @@ export function loadSourceFile(sourcePath) {
  * @param {string}  opts.sourceFile  label stored in origin/source metadata
  * @param {boolean} opts.dryRun      compute the reconciliation without writing
  */
-export async function importQuestions({ data, sourceFile = 'src/data/abret-questions.json', dryRun = false }) {
+export async function importQuestions({ data, sourceFile = 'src/data/abret-questions.json', dryRun = false, bank }) {
     const questions = data.questions;
+    const targetBank = bank || data.bank || 'foundation';
+    if (!BANKS.includes(targetBank)) throw new Error(`Unknown bank: ${targetBank}`);
+    const originType = targetBank === 'challenge' ? CHALLENGE_ORIGIN : LEGACY_ORIGIN;
     const sourceVersion = data.version ?? null;
     const report = {
         sourceFile,
@@ -150,6 +170,7 @@ export async function importQuestions({ data, sourceFile = 'src/data/abret-quest
         sourceGeneratedAt: data.generatedAt ?? null,
         declaredTotal: data.totalQuestions ?? null,
         sourceCount: questions.length,
+        bank: targetBank,
         dryRun,
         inserted: 0,
         unchanged: 0,
@@ -168,7 +189,7 @@ export async function importQuestions({ data, sourceFile = 'src/data/abret-quest
 
     for (let order = 0; order < questions.length; order++) {
         const q = questions[order];
-        const problems = validateSourceQuestion(q);
+        const problems = validateSourceQuestion(q, { bank: targetBank });
         if (!problems.length && seen.has(q.id)) problems.push('duplicate id in source (first occurrence imported)');
         if (problems.length) {
             report.failed += 1;
@@ -183,7 +204,7 @@ export async function importQuestions({ data, sourceFile = 'src/data/abret-quest
         const hash = contentHash(q);
         const snapshot = contentSnapshot(q);
         const current = existing.get(q.id);
-        const versionSource = { type: LEGACY_ORIGIN, sourceFile, sourceVersion };
+        const versionSource = { type: originType, sourceFile, sourceVersion };
 
         if (current && current.contentHash === hash) {
             report.unchanged += 1;
@@ -214,6 +235,7 @@ export async function importQuestions({ data, sourceFile = 'src/data/abret-quest
                 {
                     $set: {
                         ...snapshot,
+                        ...metadataOf(q),
                         version,
                         contentHash: hash,
                         'origin.sourceFile': sourceFile,
@@ -225,7 +247,9 @@ export async function importQuestions({ data, sourceFile = 'src/data/abret-quest
                     $setOnInsert: {
                         questionId: q.id,
                         status: 'active',
-                        'origin.type': LEGACY_ORIGIN,
+                        bank: targetBank,
+                        qaStatus: q.qaStatus || 'UNREVIEWED',
+                        'origin.type': originType,
                         reviewStatus: 'unreviewed',
                     },
                 },
@@ -239,6 +263,16 @@ export async function importQuestions({ data, sourceFile = 'src/data/abret-quest
     report.reconciled =
         report.inserted + report.unchanged + report.updated + report.failed === report.sourceCount;
     return report;
+}
+
+/** Optional authoring metadata copied onto the question when present. */
+function metadataOf(q) {
+    const out = {};
+    for (const key of ['questionType', 'reasoningSteps', 'learningObjective', 'author', 'clinicalVignette']) {
+        if (q[key] !== undefined) out[key] = q[key];
+    }
+    if (Array.isArray(q.references)) out.references = q.references;
+    return out;
 }
 
 export function defaultSourcePath(serverRoot) {

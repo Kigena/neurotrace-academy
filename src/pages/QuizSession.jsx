@@ -5,6 +5,7 @@ import workflowData from "../data/workflow-domains.json";
 import ContextualAI from "../components/ContextualAI.jsx";
 import useGamification from "../hooks/useGamification";
 import quizApi, { secondsRemaining } from "../services/quizApi";
+import { levelLabel } from "../utils/studyLabels";
 
 /**
  * QuizSession Page - ABRET Domain Practice Quiz
@@ -867,7 +868,9 @@ function QuizSession() {
       <div className="flex items-center justify-between gap-2 flex-wrap">
         <div>
           <h1 className="text-xl font-bold text-slate-900">
-            {isPractice ? "ABRET Practice Quiz" : session.mode === "timed" ? "ABRET Timed Quiz" : "ABRET Mock Exam"}
+            {session.kind === "challenge"
+              ? "ABRET Challenge"
+              : isPractice ? "ABRET Practice Quiz" : session.mode === "timed" ? "ABRET Timed Quiz" : "ABRET Mock Exam"}
           </h1>
           <p className="text-xs text-slate-500">
             Question {currentIndex + 1} of {questions.length}
@@ -945,9 +948,15 @@ function QuizSession() {
           <div className="rounded-lg border border-slate-200 bg-white p-6">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <span className="text-xs px-2 py-1 rounded bg-blue-100 text-blue-800">
-                  {currentQuestion.difficulty}
-                </span>
+                {currentQuestion.cognitiveLevel ? (
+                  <span className="text-xs px-2 py-1 rounded bg-indigo-100 text-indigo-800">
+                    {levelLabel(currentQuestion.cognitiveLevel)}
+                  </span>
+                ) : (
+                  <span className="text-xs px-2 py-1 rounded bg-blue-100 text-blue-800">
+                    {currentQuestion.difficulty}
+                  </span>
+                )}
                 <span className="text-xs text-slate-500">
                   {currentQuestion.topicTags?.slice(0, 2).join(", ")}
                 </span>

@@ -9,7 +9,8 @@
         "dev": "nodemon src/index.js",
         "build": "echo \"No build step required\"",
         "test": "vitest run",
-        "import:questions": "node scripts/importQuestions.js"
+        "import:questions": "node scripts/importQuestions.js",
+        "audit:questions": "node scripts/auditQuestions.js"
     },
     "dependencies": {
         "@google/generative-ai": "^0.24.1",

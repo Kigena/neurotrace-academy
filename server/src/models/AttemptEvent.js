@@ -12,6 +12,10 @@ const attemptEventSchema = new mongoose.Schema({
     sectionId: { type: String, required: true },
     topicTags: [{ type: String }],
     difficulty: { type: String },
+    // Copied from the question at scoring time (missing on older events = foundation)
+    bank: { type: String, default: undefined },
+    cognitiveLevel: { type: Number, default: undefined },
+    competency: { type: String, default: undefined },
     selectedIndex: { type: Number, default: null }, // canonical option index
     isCorrect: { type: Boolean, required: true },
     timestamp: { type: Number, required: true },

@@ -34,6 +34,30 @@ const questionSchema = new mongoose.Schema({
         index: true,
     },
 
+    // Which bank the question belongs to.
+    //   foundation - the legacy NeuroLinea bank (mostly recall/understanding);
+    //                documents imported before this field existed count as foundation
+    //   challenge  - higher-order ABRET Challenge Bank (L3-L6)
+    bank: { type: String, enum: ['foundation', 'challenge'], default: 'foundation', index: true },
+
+    // Editorial QA state. NEEDS_REVISION and REJECTED questions are never
+    // served in quiz sessions. Automatic audit flags never change this field.
+    qaStatus: {
+        type: String,
+        enum: ['UNREVIEWED', 'VERIFIED', 'NEEDS_REVISION', 'REJECTED'],
+        default: 'UNREVIEWED',
+        index: true,
+    },
+    qaFlags: {
+        type: [new mongoose.Schema({
+            code: { type: String, required: true },
+            detail: { type: String, default: null },
+            source: { type: String, enum: ['auto', 'manual'], required: true },
+            createdAt: { type: Date, default: Date.now },
+        }, { _id: false })],
+        default: [],
+    },
+
     origin: {
         type: { type: String, required: true }, // e.g. 'legacy-neurolinea-bank'
         sourceFile: { type: String, default: null },
@@ -67,7 +91,17 @@ const questionSchema = new mongoose.Schema({
     blueprintNodeCode: { type: String, default: null },
     abretObjectiveId: { type: String, default: null },
     learningObjective: { type: String, default: null },
+    // L1 Recall, L2 Understanding, L3 Application/Calculation, L4 Troubleshooting,
+    // L5 Montage/Localization, L6 Clinical Integration
     cognitiveLevel: { type: Number, min: 1, max: 6, default: null },
+    // Readiness competency the question evidences
+    competency: {
+        type: String,
+        enum: ['foundation', 'technical', 'montage', 'troubleshooting', 'clinical', null],
+        default: null,
+    },
+    questionType: { type: String, default: null }, // e.g. calculation, instrumentation, artifact
+    reasoningSteps: { type: Number, min: 1, max: 6, default: null },
     clinicalVignette: { type: String, default: null },
     media: { type: [mediaSchema], default: [] },
     references: { type: [referenceSchema], default: [] },
@@ -82,5 +116,6 @@ const questionSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 questionSchema.index({ domainId: 1, status: 1 });
+questionSchema.index({ bank: 1, cognitiveLevel: 1 });
 
 export const Question = mongoose.model('Question', questionSchema);
