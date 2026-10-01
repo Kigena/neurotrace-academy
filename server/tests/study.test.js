@@ -333,3 +333,26 @@ describe('study API', () => {
         expect(dash.body.readiness.components.find((c) => c.key === 'mock').score).toBe(10);
     });
 });
+
+describe('daily plan with the Challenge Bank available', () => {
+    it('leads with the weakest (or unassessed) higher-order competency, then mixed Challenge', () => {
+        const events = [
+            ...Array.from({ length: 10 }, (_, i) => ev(i < 9, i, { bank: 'challenge', competency: 'technical', cognitiveLevel: 3 })),
+            ...Array.from({ length: 10 }, (_, i) => ev(i < 3, 100 + i, { bank: 'challenge', competency: 'montage', cognitiveLevel: 5 })),
+            ...Array.from({ length: 10 }, (_, i) => ev(i < 8, 200 + i, { bank: 'challenge', competency: 'troubleshooting', cognitiveLevel: 4 })),
+            ...Array.from({ length: 10 }, (_, i) => ev(i < 8, 300 + i, { bank: 'challenge', competency: 'clinical', cognitiveLevel: 6 })),
+        ];
+        const plan = buildDailyPlan({ mastery: computeMastery(events), incorrectCount: 2, challengeAvailable: 50 });
+        expect(plan[0]).toMatchObject({ kind: 'challenge', competency: 'montage', count: 10 });
+        expect(plan[1]).toMatchObject({ kind: 'challenge', count: 10 });
+        expect(plan[1].competency).toBeUndefined();
+        expect(plan[2]).toMatchObject({ kind: 'review', count: 2 });
+        expect(plan.some((p) => p.kind === 'section' || p.kind === 'mixed')).toBe(false);
+    });
+
+    it('starts with an unassessed competency when there is no Challenge history', () => {
+        const plan = buildDailyPlan({ mastery: computeMastery([]), incorrectCount: 0, challengeAvailable: 50 });
+        expect(plan[0]).toMatchObject({ kind: 'challenge', competency: 'technical' });
+        expect(plan[0].reason).toMatch(/not yet assessed/);
+    });
+});

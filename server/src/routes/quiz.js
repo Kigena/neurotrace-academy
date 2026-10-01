@@ -349,10 +349,16 @@ router.post('/sessions', async (req, res) => {
             if (!CHALLENGE_SIZES.includes(size)) {
                 return res.status(400).json({ error: `questionCount must be one of ${CHALLENGE_SIZES.join(', ')}` });
             }
+            // Optional focus on one or more competencies (used by Today's Study).
+            const competencies = asStringArray(body.competencies);
+            const challengePool = competencies.length ? pool.filter((q) => competencies.includes(q.competency)) : pool;
+            if (!challengePool.length) {
+                return res.status(400).json({ error: 'No Challenge questions match that focus' });
+            }
             mode = 'practice';
             timeLimitSec = null;
-            selected = selectChallenge(pool, size);
-            config = { domains: [], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
+            selected = selectChallenge(challengePool, size);
+            config = { domains: [], sections: [], tags: competencies, difficulty: [], shuffle: true, questionCount: selected.length };
         } else if (kind === 'weak-areas') {
             const size = Number.parseInt(body.questionCount, 10);
             if (!WEAK_AREA_SIZES.includes(size)) {

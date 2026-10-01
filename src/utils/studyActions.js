@@ -19,6 +19,7 @@ export async function startPlanItem(item, navigate) {
     body = { kind: "weak-areas", questionCount: count };
   } else if (item.kind === "challenge") {
     body = { kind: "challenge", questionCount: count };
+    if (item.competency) body.competencies = [item.competency];
   } else {
     body = { kind: "custom", mode: "practice", questionCount: count };
   }

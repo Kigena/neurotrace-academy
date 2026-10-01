@@ -14,7 +14,13 @@ export const FLAG_CODES = {
     SENSITIVITY_TERMINOLOGY: 'Sensitivity (µV/mm) direction may be stated incorrectly',
     FILTER_ROLLOFF_REVIEW: 'Filter effect stated categorically; behaviour depends on roll-off',
     UNSUPPORTED_ABSOLUTE: 'Keyed answer makes an absolute claim',
+    KEYED_RATIONALE_IN_OPTION: 'Keyed option carries its own explanation or formula',
+    PROCEDURAL_CUE: 'Only the keyed option uses safe/procedural wording',
 };
+
+// Wording that signals "the responsible, by-the-book answer". If only the keyed
+// option uses it, test-wise candidates can pick it without subject knowledge.
+const PROCEDURAL = /\b(document\w*|notify|inform|report\w*|verify|verified|safety|safely|per (policy|protocol)|physician|protocol)\b/i;
 
 const OBVIOUS_PATTERNS = [
     /\b(settings?|filters?|montages?|impedances?)\b[^.]{0,40}\bnever matters?\b/i,
@@ -70,7 +76,8 @@ function contradictionProblem(q) {
     // The keyed option's leading value disagrees with a result computed
     // ("≈ X") in the keyed option or the explanation.
     const leading = /^\D*?(\d+(?:\.\d+)?)/.exec(keyed);
-    const computed = /≈\s*(\d+(?:\.\d+)?)/.exec(`${q.options[q.answerIndex]} ${q.explanation || ''}`);
+    // Only the keyed option itself: explanations legitimately show intermediate steps.
+    const computed = /≈\s*(\d+(?:\.\d+)?)/.exec(q.options[q.answerIndex] || '');
     if (leading && computed && Number(leading[1]) !== Number(computed[1])) {
         return `keyed value ${leading[1]} but computed value ${computed[1]}`;
     }
@@ -114,6 +121,18 @@ export function auditQuestion(q, context = {}) {
     }
 
     if (ABSOLUTE.test(options[q.answerIndex] || '')) add('UNSUPPORTED_ABSOLUTE');
+
+    // "(high LFF removes slow components)", "(TC = 1/(2π × LFF) ...)"
+    const keyedOpt = options[q.answerIndex] || '';
+    const paren = /\(([^)]{12,})\)/.exec(keyedOpt);
+    const distractorParens = distractors.some((o) => /\([^)]{12,}\)/.test(o));
+    if ((paren && !distractorParens) || /[=≈]/.test(keyedOpt) && !distractors.some((o) => /[=≈]/.test(o))) {
+        add('KEYED_RATIONALE_IN_OPTION', paren ? paren[1].slice(0, 60) : 'formula in keyed option');
+    }
+
+    if (PROCEDURAL.test(keyedOpt) && !distractors.some((o) => PROCEDURAL.test(o))) {
+        add('PROCEDURAL_CUE', keyedOpt.slice(0, 60));
+    }
 
     return flags;
 }

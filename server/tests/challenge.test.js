@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import request from 'supertest';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { setupTestDb, makeApp, registerUser, bearer } from './helpers.js';
 import { auditBank, auditQuestion } from '../src/services/questionAudit.js';
@@ -13,7 +14,11 @@ import { AttemptEvent } from '../src/models/AttemptEvent.js';
 
 const serverRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const legacy = loadSourceFile(defaultSourcePath(serverRoot));
-const pilot = loadSourceFile(path.join(serverRoot, 'src/data/challenge/abret-challenge-pilot.json'));
+const challengeDir = path.join(serverRoot, 'src/data/challenge');
+const challengeFiles = fs.readdirSync(challengeDir).filter((f) => f.endsWith('.json')).sort();
+const challengeSets = challengeFiles.map((f) => ({ file: f, data: loadSourceFile(path.join(challengeDir, f)) }));
+const pilot = challengeSets.find((c) => c.file === 'abret-challenge-pilot.json').data;
+const allChallenge = challengeSets.flatMap((c) => c.data.questions);
 
 // ------------------------------------------------------------ pure audit ---
 
@@ -50,12 +55,11 @@ describe('QA audit heuristics', () => {
 
 // ----------------------------------------------------- pilot quality bar ---
 
-describe('Challenge Bank pilot quality', () => {
-    const qs = pilot.questions;
+describe.each(challengeSets.map((c) => [c.file, c.data]))('Challenge Bank quality: %s', (file, data) => {
+    const qs = data.questions;
 
-    it('has 40-60 L3-L6 questions across all four ABRET domains, no L1/L2', () => {
+    it('has L3-L6 questions across all four ABRET domains, no L1/L2', () => {
         expect(qs.length).toBeGreaterThanOrEqual(40);
-        expect(qs.length).toBeLessThanOrEqual(60);
         expect(qs.every((q) => q.cognitiveLevel >= 3 && q.cognitiveLevel <= 6)).toBe(true);
         expect(new Set(qs.map((q) => q.domainId))).toEqual(new Set(['domain-1', 'domain-2', 'domain-3', 'domain-4']));
         for (const level of [3, 4, 5, 6]) expect(qs.some((q) => q.cognitiveLevel === level)).toBe(true);
@@ -93,12 +97,20 @@ describe('Challenge Bank pilot quality', () => {
 
     it('every item has four options, an explanation, a learning objective and an unreviewed status', () => {
         for (const q of qs) {
+            expect(q.id.startsWith('ch-')).toBe(true);
             expect(q.options).toHaveLength(4);
             expect(new Set(q.options).size).toBe(4);
             expect(q.explanation.length).toBeGreaterThan(80);
             expect(q.learningObjective).toBeTruthy();
             expect(q.qaStatus).toBe('UNREVIEWED');
         }
+    });
+});
+
+describe('Challenge Bank as a whole', () => {
+    it('has unique ids and stems across all files', () => {
+        expect(new Set(allChallenge.map((q) => q.id)).size).toBe(allChallenge.length);
+        expect(new Set(allChallenge.map((q) => q.stem.toLowerCase())).size).toBe(allChallenge.length);
     });
 });
 
@@ -131,14 +143,16 @@ describe('challenge level allocation', () => {
 describe('Challenge mode and QA statuses (API)', () => {
     setupTestDb();
     const app = makeApp();
-    const key = new Map(pilot.questions.map((q) => [q.id, q]));
+    const key = new Map(allChallenge.map((q) => [q.id, q]));
 
     beforeAll(async () => {
         await importQuestions({ data: legacy });
-        const r = await importQuestions({ data: pilot, sourceFile: 'server/src/data/challenge/abret-challenge-pilot.json' });
-        expect(r.bank).toBe('challenge');
-        expect(r.inserted).toBe(pilot.questions.length);
-        expect(r.failed).toBe(0);
+        for (const c of challengeSets) {
+            const r = await importQuestions({ data: c.data, sourceFile: `server/src/data/challenge/${c.file}` });
+            expect(r.bank).toBe('challenge');
+            expect(r.inserted).toBe(c.data.questions.length);
+            expect(r.failed).toBe(0);
+        }
     });
 
     it('stores pilot questions in the challenge bank with their metadata; legacy stays foundation', async () => {
@@ -211,7 +225,7 @@ describe('Challenge mode and QA statuses (API)', () => {
         for (const n of [10, 20, 30, 50]) {
             const s = await request(app).post('/api/quiz/sessions').set(bearer(u.token)).send({ kind: 'challenge', questionCount: n });
             expect(s.status).toBe(201);
-            expect(s.body.questions).toHaveLength(Math.min(n, pilot.questions.length));
+            expect(s.body.questions).toHaveLength(Math.min(n, allChallenge.length));
             expect(s.body.questions.every((q) => q.questionId.startsWith('ch-') && q.bank === 'challenge')).toBe(true);
             expect(s.body.questions.every((q) => q.cognitiveLevel >= 3)).toBe(true);
             expect(s.body.questions.every((x) => !('answerIndex' in x) && !('explanation' in x) && !('correctIndex' in x))).toBe(true);
@@ -233,11 +247,16 @@ describe('Challenge mode and QA statuses (API)', () => {
 
     it('challenge answers feed the higher-order readiness components', async () => {
         const u = await registerUser(app);
-        const s = await request(app).post('/api/quiz/sessions').set(bearer(u.token)).send({ kind: 'challenge', questionCount: 50 });
-        for (const q of s.body.questions) {
-            const src = key.get(q.questionId);
-            await request(app).post(`/api/quiz/sessions/${s.body.session.sessionId}/answers`).set(bearer(u.token))
-                .send({ questionId: q.questionId, selectedIndex: q.options.indexOf(src.options[src.answerIndex]) });
+        // One focused 10-question session per competency guarantees 5+ answers each.
+        for (const competency of ['technical', 'montage', 'troubleshooting', 'clinical']) {
+            const s = await request(app).post('/api/quiz/sessions').set(bearer(u.token))
+                .send({ kind: 'challenge', questionCount: 10, competencies: [competency] });
+            expect(s.status).toBe(201);
+            for (const q of s.body.questions) {
+                const src = key.get(q.questionId);
+                await request(app).post(`/api/quiz/sessions/${s.body.session.sessionId}/answers`).set(bearer(u.token))
+                    .send({ questionId: q.questionId, selectedIndex: q.options.indexOf(src.options[src.answerIndex]) });
+            }
         }
         const dash = await request(app).get('/api/study/dashboard').set(bearer(u.token));
         const c = Object.fromEntries(dash.body.readiness.components.map((x) => [x.key, x]));
@@ -247,5 +266,12 @@ describe('Challenge mode and QA statuses (API)', () => {
         }
         expect(c.foundation.assessed).toBe(false);
         expect(dash.body.mastery.byCompetency.montage.sufficient).toBe(true);
+        // Today's Study is Challenge-first when the bank is available
+        expect(dash.body.challengeAvailable).toBeGreaterThan(0);
+        expect(dash.body.todaysStudy[0].kind).toBe('challenge');
+        const focus = dash.body.todaysStudy[0].competency;
+        const focused = await request(app).post('/api/quiz/sessions').set(bearer(u.token)).send({ kind: 'challenge', questionCount: 10, competencies: [focus] });
+        expect(focused.status).toBe(201);
+        expect(focused.body.questions.every((q) => q.competency === focus)).toBe(true);
     });
 });

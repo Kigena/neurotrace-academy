@@ -29,6 +29,13 @@ export const LEVEL_NAMES = {
   6: "Clinical Integration",
 };
 
+export const COMPETENCY_NAMES = {
+  technical: "Technical reasoning",
+  montage: "Montage / localization",
+  troubleshooting: "Troubleshooting",
+  clinical: "Clinical integration",
+};
+
 export function levelLabel(level) {
   return level ? `L${level} · ${LEVEL_NAMES[level] || ""}` : null;
 }
@@ -65,6 +72,10 @@ export function planItemLabel(item) {
       return `Review ${item.count} incorrect question${item.count === 1 ? "" : "s"}`;
     case "mixed":
       return `${item.count}-question mixed ABRET quiz`;
+    case "challenge":
+      return item.competency
+        ? `${item.count} Challenge questions: ${COMPETENCY_NAMES[item.competency] || item.competency}`
+        : `${item.count} mixed Challenge questions (L3-L6)`;
     default:
       return `${item.count} questions`;
   }

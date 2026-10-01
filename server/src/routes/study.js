@@ -60,11 +60,12 @@ async function sectionDomainMap() {
 // Everything the study dashboard and progress page need, in one call.
 router.get('/dashboard', async (req, res) => {
     try {
-        const [events, mocks, sectionDomains, activeSession] = await Promise.all([
+        const [events, mocks, sectionDomains, activeSession, challengeAvailable] = await Promise.all([
             ownEvents(req.user.id),
             mockResults(req.user.id),
             sectionDomainMap(),
             QuizSession.exists({ userId: req.user.id, status: 'active', engineVersion: 2 }),
+            Question.countDocuments({ bank: 'challenge', status: 'active', qaStatus: { $nin: ['NEEDS_REVISION', 'REJECTED'] } }),
         ]);
         const mastery = computeMastery(events);
         const performance = recentPerformance(events);
@@ -88,7 +89,8 @@ router.get('/dashboard', async (req, res) => {
             lastMock: mocks[0] || null,
             incorrectOutstanding: incorrect.length,
             hasActiveSession: !!activeSession,
-            todaysStudy: buildDailyPlan({ mastery, incorrectCount: incorrect.length, sectionDomains }),
+            challengeAvailable,
+            todaysStudy: buildDailyPlan({ mastery, incorrectCount: incorrect.length, sectionDomains, challengeAvailable }),
         });
     } catch (error) {
         console.error('Study dashboard error:', error.message);

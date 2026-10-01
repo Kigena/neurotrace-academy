@@ -343,8 +343,35 @@ const D2_PREFERENCE_POINTS = 5; // D2 sections sort as if 5 mastery points weake
  *   - review up to 5 outstanding incorrect questions
  *   - a 10-question mixed ABRET quiz
  */
-export function buildDailyPlan({ mastery, incorrectCount, sectionDomains = {} }) {
+export function buildDailyPlan({ mastery, incorrectCount, sectionDomains = {}, challengeAvailable = 0 }) {
     const items = [];
+
+    // Challenge-first plan: the foundation bank is mostly recall, so when the
+    // Challenge Bank is available, Today's Study is built from it.
+    if (challengeAvailable > 0) {
+        const competencies = HIGHER_ORDER_COMPETENCIES.map((c, order) => {
+            const m = mastery.byCompetency?.[c.key];
+            // Unassessed competencies rank as weakest; Technical/Montage first on ties
+            const rank = m?.sufficient ? m.score : -1;
+            return { ...c, order, rank, mastery: m?.sufficient ? m.score : null, attempts: m?.attempts || 0 };
+        }).sort((x, y) => x.rank - y.rank || x.order - y.order);
+        const focus = competencies[0];
+        items.push({
+            kind: 'challenge',
+            count: 10,
+            competency: focus.key,
+            mastery: focus.mastery,
+            reason: focus.mastery === null
+                ? `${focus.label}: not yet assessed (${focus.attempts}/5 Challenge answers)`
+                : `${focus.label}: weakest higher-order skill (${focus.mastery}%)`,
+        });
+        items.push({ kind: 'challenge', count: 10, reason: 'Mixed L3-L6 Challenge questions across all competencies' });
+        if (incorrectCount > 0) {
+            items.push({ kind: 'review', count: Math.min(5, incorrectCount), reason: `${incorrectCount} question(s) still answered incorrectly` });
+        }
+        return items;
+    }
+
     const sections = Object.entries(mastery.bySection)
         .filter(([, m]) => m.sufficient && m.score < 85)
         .map(([sectionId, m]) => ({

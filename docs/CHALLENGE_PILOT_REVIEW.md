@@ -2,7 +2,9 @@
 
 Generated from `server/src/data/challenge/abret-challenge-pilot.json` (50 questions, version pilot-1).
 
-**Status: every item is `UNREVIEWED` and AI-drafted. Do not treat any item as verified until an expert has reviewed it.** For each item, mark VERIFIED / NEEDS_REVISION / REJECTED with notes.
+**Status: every item is `UNREVIEWED` and AI-drafted. Do not treat any item as verified until an expert has reviewed it.** Mark each VERIFIED / NEEDS_REVISION / REJECTED.
+
+> Tip: to test yourself first, read only the stems and options; keyed answers are marked with ✅.
 
 | | Counts |
 |---|---|
@@ -98,10 +100,10 @@ A neonate born at 38 weeks gestation is recorded at 2 days of age. In quiet slee
 
 Before a routine EEG, a 62-year-old reports an episode of right-arm weakness and slurred speech 5 days ago that resolved within an hour. No imaging has been done yet. The order includes hyperventilation. What is the best course?
 
-- **A.** Hyperventilate for 1 minute instead of 3 to limit the risk
-- **B.** Hyperventilate as ordered, because the symptoms fully resolved
-- **C.** Hyperventilate only if the resting EEG shows no focal slowing
-- **D.** Withhold HV, document the reason, and tell the physician  ✅ *keyed answer*
+- **A.** Do 1 minute of HV, record the TIA history, and inform the physician
+- **B.** Do HV as ordered, record the TIA history, and inform the physician
+- **C.** Do HV only after a normal baseline, and record the TIA history
+- **D.** Omit HV, record the TIA history, and inform the reading physician  ✅ *keyed answer*
 
 **Explanation:** A recent TIA or stroke is a contraindication to hyperventilation because hypocapnia causes cerebral vasoconstriction. A shorter period still produces hypocapnia, symptom resolution does not remove the risk, and a normal resting EEG does not exclude cerebrovascular disease. The technologist withholds HV, documents the reason and communicates with the physician.
 
@@ -616,10 +618,10 @@ Vertex sharp waves are maximal at Cz. In a longitudinal bipolar montage without 
 
 During 15-Hz photic stimulation, generalized spike-and-wave discharges begin and continue for a second after the flash train stops. What is the most appropriate technologist response?
 
-- **A.** Complete the full frequency sequence to map the sensitive range
-- **B.** Decrease sensitivity so the discharge amplitude can be measured
-- **C.** Stop the flashes promptly, observe, and document the response  ✅ *keyed answer*
-- **D.** Repeat the 15-Hz train with the eyes open to confirm reproducibility
+- **A.** Complete the frequency sequence, documenting each response
+- **B.** Repeat 15 Hz with eyes open and document reproducibility
+- **C.** Stop the train at once and document the clinical response  ✅ *keyed answer*
+- **D.** Pause briefly, resume at 15 Hz, and document the response
 
 **Explanation:** Generalized epileptiform discharges that outlast the stimulus are a photoparoxysmal response. Stimulation is stopped promptly to avoid provoking a seizure; the patient's clinical state is observed and documented. Continuing or repeating the provoking frequency adds risk without benefit.
 
@@ -638,7 +640,7 @@ During 15-Hz photic stimulation, generalized spike-and-wave discharges begin and
 During photic stimulation, frontal high-frequency spiky potentials appear time-locked to each flash, stop immediately when the flashes stop, and the eyelids flutter. What is this?
 
 - **A.** A photoparoxysmal response
-- **B.** A photomyogenic (photomyoclonic) response  ✅ *keyed answer*
+- **B.** A photomyogenic response  ✅ *keyed answer*
 - **C.** Photic driving of the posterior rhythm
 - **D.** Frontal intermittent rhythmic delta activity
 
@@ -911,10 +913,10 @@ An ICU patient is connected to the EEG and to a bedside monitor, each with its o
 
 An EEG is ordered for a patient with suspected Creutzfeldt-Jakob disease. Which infection-control approach is most appropriate?
 
-- **A.** Use reusable electrodes and clean them with routine low-level disinfectant
-- **B.** Disposable electrodes, discarded according to the prion protocol  ✅ *keyed answer*
-- **C.** Use reusable electrodes and autoclave them on the standard cycle
-- **D.** Use subdermal needle electrodes so fewer items need reprocessing
+- **A.** Reusable electrodes, low-level disinfection per protocol
+- **B.** Disposable electrodes, discarded under the prion protocol  ✅ *keyed answer*
+- **C.** Reusable electrodes, standard autoclave cycle per protocol
+- **D.** Subdermal needles, discarded as sharps per protocol
 
 **Explanation:** Prions resist routine disinfection and standard sterilisation cycles, so single-use electrodes disposed of according to the institution's prion policy are used. Needle electrodes add sharps and tissue-contact risk rather than reducing it.
 
@@ -930,10 +932,10 @@ An EEG is ordered for a patient with suspected Creutzfeldt-Jakob disease. Which 
 
 After an outpatient EEG, the patient's spouse asks whether the recording 'showed seizures', noting that you watched it the whole time. What is the most appropriate response?
 
-- **A.** Offer a general impression, provided it is labelled as unofficial
-- **B.** Explain that the physician will interpret and report the results  ✅ *keyed answer*
-- **C.** Say the recording looked normal so the family is not worried
-- **D.** Obtain the patient's verbal consent and then summarise the findings
+- **A.** Share a general impression, then say the physician will report
+- **B.** Explain that the interpreting physician will report the results  ✅ *keyed answer*
+- **C.** Say it looked reassuring but that the physician will report it
+- **D.** With the patient's consent, report your impression to them now
 
 **Explanation:** Interpretation and communication of results are the physician's role. The technologist can explain the process and how results will be delivered. Informal impressions, reassurance or consent-based summaries still amount to interpretation outside the technologist's scope.
 
@@ -949,9 +951,9 @@ After an outpatient EEG, the patient's spouse asks whether the recording 'showed
 
 During pre-study calibration, one channel shows a calibration pulse of half the expected amplitude with a different decay from all other channels, although settings are identical. What is the most appropriate action?
 
-- **A.** Adjust that channel's sensitivity until it matches and then proceed
-- **B.** Proceed, because the biological calibration will correct it later
-- **C.** Apply a 60-Hz notch filter to that channel only and then proceed
+- **A.** Document it, raise that channel's gain to match, then record
+- **B.** Document it and rely on biological calibration to correct it
+- **C.** Document it and apply a notch filter to that channel only
 - **D.** Document it and repair or remove that channel before recording  ✅ *keyed answer*
 
 **Explanation:** A calibration pulse with abnormal amplitude and decay shows a fault in that channel's amplifier or filters. It must be documented and the channel repaired or taken out of use; compensating with settings hides a hardware problem, and a notch filter does not address it.
@@ -989,9 +991,9 @@ During a routine outpatient EEG, a 50-year-old suddenly stops responding with ri
 
 While reviewing a stored study, a technologist notices that the patient name and date of birth in the file header do not match the requisition, although the medical record number does. What should be done?
 
-- **A.** Correct the header to match the requisition and then release the study
-- **B.** Release the study, because the medical record number matches the order
-- **C.** Delete the stored study and arrange a repeat recording for the patient
+- **A.** Correct the header to the requisition and document the change
+- **B.** Release it, documenting that the record number matched the order
+- **C.** Report the discrepancy and repeat the recording under the order
 - **D.** Report the discrepancy per policy and verify identity before release  ✅ *keyed answer*
 
 **Explanation:** Conflicting identifiers mean the study may belong to another patient. It must not be edited, released or deleted until identity is verified through the institution's process; unilateral changes risk misattributing results and destroying data.

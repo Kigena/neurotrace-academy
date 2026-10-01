@@ -85,3 +85,25 @@ retry removes the question from the list and feeds mastery.
 `src/config/examConfig.js`: ABRET R.EEG T., 2026-12-14 12:30,
 America/New_York, Asheville, North Carolina. Days are counted in the exam's
 time zone.
+
+## Challenge Bank authoring rules (enforced by tests)
+
+Written after feedback that answers were "too obvious":
+
+1. All four options come from the same family (four plausible actions, four
+   look-alike patterns, four values from classic calculation errors). No option
+   should be rejectable on sight.
+2. Procedural wording (document / notify / verify / per policy / physician)
+   appears in every option or in none (audit rule `PROCEDURAL_CUE`).
+3. The keyed option never carries its own rationale or formula
+   (`KEYED_RATIONALE_IN_OPTION`).
+4. Stems provide data to work through (referential voltages, page widths,
+   timings, settings) rather than keywords echoed in the answer.
+5. No answer-position or answer-length cue: each position 15-35% of items;
+   keyed option noticeably longest/shortest in under 20% of items.
+6. No always/never, Both-A-and-B or All/None templates.
+
+Today's Study and Continue Studying are Challenge-first whenever the
+Challenge Bank is available: 10 questions in the weakest (or not yet
+assessed) higher-order competency, 10 mixed Challenge questions, then review
+of incorrect answers.

@@ -153,10 +153,10 @@
       ],
       "difficulty": "hard",
       "options": [
-        "Hyperventilate for 1 minute instead of 3 to limit the risk",
-        "Hyperventilate as ordered, because the symptoms fully resolved",
-        "Hyperventilate only if the resting EEG shows no focal slowing",
-        "Withhold HV, document the reason, and tell the physician"
+        "Do 1 minute of HV, record the TIA history, and inform the physician",
+        "Do HV as ordered, record the TIA history, and inform the physician",
+        "Do HV only after a normal baseline, and record the TIA history",
+        "Omit HV, record the TIA history, and inform the reading physician"
       ],
       "answerIndex": 3,
       "author": "NeuroLinea challenge pilot (AI-drafted; requires expert review)",
@@ -947,10 +947,10 @@
       ],
       "difficulty": "hard",
       "options": [
-        "Complete the full frequency sequence to map the sensitive range",
-        "Decrease sensitivity so the discharge amplitude can be measured",
-        "Stop the flashes promptly, observe, and document the response",
-        "Repeat the 15-Hz train with the eyes open to confirm reproducibility"
+        "Complete the frequency sequence, documenting each response",
+        "Repeat 15 Hz with eyes open and document reproducibility",
+        "Stop the train at once and document the clinical response",
+        "Pause briefly, resume at 15 Hz, and document the response"
       ],
       "answerIndex": 2,
       "author": "NeuroLinea challenge pilot (AI-drafted; requires expert review)",
@@ -976,7 +976,7 @@
       "difficulty": "hard",
       "options": [
         "A photoparoxysmal response",
-        "A photomyogenic (photomyoclonic) response",
+        "A photomyogenic response",
         "Photic driving of the posterior rhythm",
         "Frontal intermittent rhythmic delta activity"
       ],
@@ -1391,10 +1391,10 @@
       "references": [],
       "difficulty": "hard",
       "options": [
-        "Use reusable electrodes and clean them with routine low-level disinfectant",
-        "Disposable electrodes, discarded according to the prion protocol",
-        "Use reusable electrodes and autoclave them on the standard cycle",
-        "Use subdermal needle electrodes so fewer items need reprocessing"
+        "Reusable electrodes, low-level disinfection per protocol",
+        "Disposable electrodes, discarded under the prion protocol",
+        "Reusable electrodes, standard autoclave cycle per protocol",
+        "Subdermal needles, discarded as sharps per protocol"
       ],
       "answerIndex": 1,
       "author": "NeuroLinea challenge pilot (AI-drafted; requires expert review)",
@@ -1419,10 +1419,10 @@
       "references": [],
       "difficulty": "hard",
       "options": [
-        "Offer a general impression, provided it is labelled as unofficial",
-        "Explain that the physician will interpret and report the results",
-        "Say the recording looked normal so the family is not worried",
-        "Obtain the patient's verbal consent and then summarise the findings"
+        "Share a general impression, then say the physician will report",
+        "Explain that the interpreting physician will report the results",
+        "Say it looked reassuring but that the physician will report it",
+        "With the patient's consent, report your impression to them now"
       ],
       "answerIndex": 1,
       "author": "NeuroLinea challenge pilot (AI-drafted; requires expert review)",
@@ -1452,9 +1452,9 @@
       ],
       "difficulty": "hard",
       "options": [
-        "Adjust that channel's sensitivity until it matches and then proceed",
-        "Proceed, because the biological calibration will correct it later",
-        "Apply a 60-Hz notch filter to that channel only and then proceed",
+        "Document it, raise that channel's gain to match, then record",
+        "Document it and rely on biological calibration to correct it",
+        "Document it and apply a notch filter to that channel only",
         "Document it and repair or remove that channel before recording"
       ],
       "answerIndex": 3,
@@ -1508,9 +1508,9 @@
       "references": [],
       "difficulty": "hard",
       "options": [
-        "Correct the header to match the requisition and then release the study",
-        "Release the study, because the medical record number matches the order",
-        "Delete the stored study and arrange a repeat recording for the patient",
+        "Correct the header to the requisition and document the change",
+        "Release it, documenting that the record number matched the order",
+        "Report the discrepancy and repeat the recording under the order",
         "Report the discrepancy per policy and verify identity before release"
       ],
       "answerIndex": 3,

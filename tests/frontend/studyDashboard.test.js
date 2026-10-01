@@ -35,3 +35,10 @@ describe("today's study labels", () => {
     expect(scoreTone(30, true).bar).toBe('bg-red-500');
   });
 });
+
+describe('challenge plan labels', () => {
+  it('describes challenge-focused plan items', () => {
+    expect(planItemLabel({ kind: 'challenge', count: 10, competency: 'troubleshooting' })).toBe('10 Challenge questions: Troubleshooting');
+    expect(planItemLabel({ kind: 'challenge', count: 10 })).toBe('10 mixed Challenge questions (L3-L6)');
+  });
+});

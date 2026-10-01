@@ -1,0 +1,2263 @@
+{
+  "version": "batch2-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "description": "ABRET Challenge Bank batch 2: stricter same-family distractors and data-rich stems. Not yet medically verified.",
+  "totalQuestions": 75,
+  "questions": [
+    {
+      "id": "ch-b2-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "sensitivity",
+        "clipping",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A display channel allows 30 mm of vertical excursion before traces overlap their neighbours. A 250-µV spike is expected. Of the standard settings 5, 7, 10 and 15 µV/mm, which is the most sensitive one that keeps the spike within 30 mm?",
+      "explanation": "Deflection = voltage ÷ sensitivity. At 7 µV/mm the spike is 250/7 ≈ 36 mm (overlaps); at 10 µV/mm it is 25 mm (fits). 15 µV/mm also fits (≈17 mm) but is less sensitive than needed; 5 µV/mm gives 50 mm.",
+      "learningObjective": "Choose a sensitivity that displays large discharges without overlap.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "7 µV/mm",
+        "15 µV/mm",
+        "10 µV/mm",
+        "5 µV/mm"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "timebase",
+        "frequency",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A 20-second page is displayed 300 mm wide. A rhythmic posterior pattern has a cycle width of 2 mm. What is its frequency?",
+      "explanation": "300 mm per 20 s = 15 mm/s, so one 2-mm cycle lasts 2/15 ≈ 0.133 s, i.e. 7.5 Hz. 15 Hz assumes the standard 30 mm/s; 3.75 Hz inverts the scaling; 10 Hz is a guess at 'normal alpha'.",
+      "learningObjective": "Measure frequency on non-standard page widths.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "15 Hz",
+        "3.75 Hz",
+        "7.5 Hz",
+        "10 Hz"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "duration",
+        "sharp-wave",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A 10-second page is displayed 250 mm wide. A transient measures 4 mm at its base. What are its duration and its classification by duration?",
+      "explanation": "250 mm per 10 s = 25 mm/s, so 4 mm = 0.16 s = 160 ms, within the 70-200 ms sharp-wave range. 133 ms comes from wrongly assuming 30 mm/s; 40 ms and 400 ms are decimal errors.",
+      "learningObjective": "Convert width to duration at the actual display speed.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 40 ms; a spike",
+        "About 133 ms; a sharp wave",
+        "About 160 ms; a sharp wave",
+        "About 400 ms; a slow wave"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "lff",
+        "roll-off",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A 100-µV, 1-Hz delta wave passes through a single-pole (6 dB/octave) low-frequency filter. Approximately what amplitude is displayed with the LFF at 1 Hz, and with the LFF at 0.5 Hz?",
+      "explanation": "For a single-pole high-pass filter, gain = f/√(f² + fc²). At fc = 1 Hz: 1/√2 ≈ 0.71 (71 µV). At fc = 0.5 Hz: 1/√1.25 ≈ 0.89 (89 µV). Attenuation is gradual, never all-or-none, and still present below the cutoff.",
+      "learningObjective": "Quantify partial attenuation by a low-frequency filter.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 50 µV, and about 71 µV",
+        "About 71 µV, and about 100 µV",
+        "About 0 µV, and about 50 µV",
+        "About 71 µV, and about 89 µV"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "hff",
+        "roll-off",
+        "beta",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A single-pole high-frequency filter is set at 15 Hz. Approximately what fraction of a 20-Hz beta component's amplitude is displayed?",
+      "explanation": "For a single-pole low-pass filter, gain = 1/√(1 + (f/fc)²) = 1/√(1 + 1.78) ≈ 0.60. 75% is the ratio 15/20 used linearly; activity above the cutoff is attenuated progressively rather than blocked or passed unchanged.",
+      "learningObjective": "Quantify attenuation above a high-frequency filter setting.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 75%",
+        "About 33%",
+        "About 60%",
+        "About 100%"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "sampling",
+        "spike",
+        "digitization"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A 25-ms spike is digitised at 128 samples per second. About how many samples fall within the spike, and what is the main consequence?",
+      "explanation": "0.025 s × 128 /s ≈ 3.2 samples. So few points can miss the true peak, under-representing amplitude and sharpness. Aliasing concerns frequency content above Nyquist, not under-sampling of a transient's shape; sampling does not invert polarity.",
+      "learningObjective": "Relate sampling rate to fidelity of brief transients.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 32; there is no meaningful distortion",
+        "About 3; it will be aliased to a lower frequency",
+        "About 3; its peak amplitude may be underestimated",
+        "About 5; its polarity may appear inverted"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "cmrr",
+        "common-mode",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "60-Hz interference reaches both inputs of a channel equally at 10 mV. The amplifier's CMRR is 100 dB (100,000:1) and electrode impedances are perfectly balanced. About how large is the residual differential signal?",
+      "explanation": "10 mV = 10,000 µV; 10,000 ÷ 100,000 = 0.1 µV. In practice impedance imbalance, not the amplifier's CMRR, is what lets interference through.",
+      "learningObjective": "Compute residual common-mode interference from CMRR.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 0.1 µV",
+        "About 1 µV",
+        "About 10 µV",
+        "About 100 µV"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "calibration",
+        "time-constant",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "After a square-wave calibration step, the trace decays to 37% of its initial deflection in 0.3 s. Approximately what low-frequency filter setting does this time constant represent?",
+      "explanation": "The time constant is the time to decay to 37%: TC = 0.3 s. LFF = 1/(2π × 0.3) ≈ 0.53 Hz. 0.3 Hz confuses seconds with hertz; 3.3 Hz is 1/TC without 2π; 0.16 Hz corresponds to TC = 1 s.",
+      "learningObjective": "Derive the LFF from the calibration decay.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 0.3 Hz",
+        "About 3.3 Hz",
+        "About 0.53 Hz",
+        "About 0.16 Hz"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "calibration",
+        "gain",
+        "quality-control"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "All channels are set to 7 µV/mm. A 50-µV calibration pulse deflects about 7.1 mm in every channel except one, which deflects 5 mm. Which conclusion is correct?",
+      "explanation": "Expected deflection = 50/7 ≈ 7.1 mm; 5 mm is about 70% of that, so the channel's gain is roughly 30% low. Calibration is injected at the amplifier, so electrode impedance cannot explain it, and a 30% gain error is not acceptable.",
+      "learningObjective": "Interpret calibration amplitude errors.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Its gain is about 40% high; reduce its sensitivity to compensate",
+        "Its gain is about 30% low; it needs correction before recording",
+        "It reflects a higher electrode impedance at that head position",
+        "It is within tolerance, because the deviation is under 2 mm"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "biological-calibration",
+        "polarity",
+        "montage"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "During biological calibration (every channel Fp1-O2), all channels show eye blinks of the same polarity and similar size except channel 6, whose blink is the same size but inverted. What is the most likely cause?",
+      "explanation": "Identical input pairs should give identical output; an equal-amplitude but inverted waveform means input 1 and input 2 are swapped for that channel. Impedance or filter differences change size or shape, and saturation clips rather than inverts.",
+      "learningObjective": "Use biological calibration to find input reversals.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Fp1 has high impedance only in channel 6's connection",
+        "Channel 6 has a different high-frequency filter setting",
+        "Channel 6's amplifier is saturating during each blink",
+        "The two inputs of channel 6 are reversed in the montage"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "notch",
+        "impedance",
+        "icu"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "In a multi-day ICU recording, the 60-Hz notch filter is switched on from the start. What is its main technical drawback?",
+      "explanation": "A notch attenuates a narrow band around 60 Hz. Its main cost is concealment: 60-Hz pickup is an early sign that an electrode is drying out or loosening. It has negligible effect on beta, delta phase or overall gain.",
+      "learningObjective": "Weigh the trade-off of routine notch filtering.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "It attenuates 15-25 Hz beta enough to change sedation assessment",
+        "It shifts delta-band phase enough to create false phase reversals",
+        "It lowers the gain of every channel by a fixed 3 dB at all frequencies",
+        "It can hide rising impedance that 60-Hz pickup would otherwise reveal"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrodes-impedance",
+      "topicTags": [
+        "impedance",
+        "electrode-preparation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "Before a routine outpatient EEG, impedances are 3-4 kΩ at every electrode except O2, which reads 14 kΩ. What is the best course?",
+      "explanation": "High and unbalanced impedance degrades common-mode rejection and invites 60-Hz and noise in every channel using O2. Standard practice is impedances below about 5 kΩ and balanced; workarounds do not fix the source.",
+      "learningObjective": "Apply impedance standards before recording.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Accept it, since a single high electrode only reduces amplitude",
+        "Re-prepare O2 until it is below 5 kΩ and similar to the others",
+        "Accept it, and raise the HFF to suppress any noise from O2",
+        "Accept it, and use O2 only in referential derivations"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "referential-to-bipolar",
+        "phase-reversal",
+        "calculation"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "At the peak of a sharp wave, referential values (against a quiet reference) are Fp1 −10 µV, F7 −40 µV, T3 −90 µV, T5 −60 µV, O1 −15 µV. In the chain Fp1-F7, F7-T3, T3-T5, T5-O1 (negative up), which pattern results?",
+      "explanation": "Each channel = input 1 − input 2: Fp1-F7 = +30 (down), F7-T3 = +50 (down), T3-T5 = −30 (up), T5-O1 = −45 (up). The polarity change between F7-T3 and T3-T5 places the negative maximum at their shared electrode, T3.",
+      "learningObjective": "Derive bipolar deflections from referential voltages.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Up, up, down, down; negative phase reversal at T3",
+        "Down, down, up, up; negative phase reversal at T5",
+        "Down, up, down, up; two independent maxima present",
+        "Down, down, up, up; negative phase reversal at T3"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "bipolar",
+        "subtraction",
+        "calculation"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "At one instant the referential values are F7 −80 µV and T3 −60 µV. What does channel F7-T3 display (negative up)?",
+      "explanation": "F7 − T3 = −80 − (−60) = −20 µV. Input 1 more negative than input 2 deflects upward. 140 µV comes from adding instead of subtracting.",
+      "learningObjective": "Apply the differential amplifier rule to referential data.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A 20-µV downward deflection",
+        "A 140-µV upward deflection",
+        "A 20-µV upward deflection",
+        "A 140-µV downward deflection"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "in-phase-cancellation",
+        "interelectrode-distance"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "A generalized 3-Hz spike-and-wave burst measures about 250 µV in an ear-referenced montage but only 30-40 µV in a transverse bipolar chain of adjacent electrodes. What best explains the difference?",
+      "explanation": "A widespread field gives similar voltages at neighbouring electrodes, so bipolar subtraction cancels most of it (in-phase cancellation). The referential channel compares each site with a distant, relatively quiet ear. Gain and time constant are unchanged by montage.",
+      "learningObjective": "Explain amplitude differences between montages for broad fields.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Bipolar channels are displayed at a lower gain than referential ones",
+        "The ear reference adds volume-conducted ECG to the generalized burst",
+        "Neighbouring electrodes have nearly equal potentials, which cancel",
+        "Short interelectrode distances shorten the effective time constant"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "triangulation",
+        "phase-reversal",
+        "central"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "A negative sharp wave produces deflections pointing toward each other in F3-C3 / C3-P3 (longitudinal) and in T3-C3 / C3-Cz (transverse). Where is the maximum?",
+      "explanation": "Both chains show a negative phase reversal at the same shared electrode, C3. A centroparietal maximum would reverse between C3-P3 and P3-O1; Cz or T3 maxima would reverse at those electrodes in the transverse chain.",
+      "learningObjective": "Localise by intersecting phase reversals in two directions.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Between C3 and P3, left centroparietal",
+        "At Cz, the vertex",
+        "At C3, the left central region",
+        "At T3, the left mid-temporal region"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "average-reference",
+        "contamination",
+        "widespread"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "A left-hemisphere discharge involves about half of all electrodes. In an average-reference montage, right-hemisphere channels show small deflections of opposite polarity at the same moment. How should these be interpreted?",
+      "explanation": "When a large share of electrodes is involved, the average itself carries the discharge. Uninvolved channels (input − average) then show an inverted copy. Volume conduction would give same-polarity, decaying deflections.",
+      "learningObjective": "Recognise average-reference contamination by widespread activity.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "As independent right-sided positive discharges occurring simultaneously",
+        "As volume conduction of the discharge across the midline to the right",
+        "As the discharge entering the average, not as right-sided activity",
+        "As high impedance across the right-hemisphere electrodes at that moment"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "cz-reference",
+        "vertex-waves",
+        "contamination"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "During stage N2 sleep, a Cz-referenced montage shows sharply contoured transients of opposite polarity in nearly every channel, largest at the frontal poles and occipital electrodes. What is the best explanation and remedy?",
+      "explanation": "Vertex waves are maximal at Cz. With Cz as the reference, every channel (X − Cz) shows the reference's negativity inverted, most visibly where X is far from the vertex and quiet. A non-vertex reference shows their true distribution.",
+      "learningObjective": "Recognise reference contamination by vertex sleep transients.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Generalized positive sharp transients; annotate them as abnormal",
+        "Occipital POSTS spreading forward; review the same montage at 10 µV/mm",
+        "Vertex waves contaminating the Cz reference; use ear or bipolar montages",
+        "Frontal eye-movement artifact; add infraorbital electrodes to confirm"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "anterior-temporal",
+        "t1-t2",
+        "localization"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "A sharp wave is maximal at F7 in the standard 10-20 array. After T1 is added, T1 shows a larger negativity than F7. What is the most likely generator?",
+      "explanation": "F7 often records anterior temporal activity. T1 lies lower and closer to the anterior/basal temporal lobe, so a larger negativity at T1 than at F7 favours an anterior basal temporal source over a frontal one; a mid-temporal source would be maximal at T3.",
+      "learningObjective": "Use supplementary electrodes to refine temporal localisation.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "The anterior basal temporal region",
+        "The inferior frontal gyrus",
+        "The left frontal pole",
+        "The left mid-temporal neocortex"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "isopotential",
+        "transverse",
+        "localization"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "A negative spike shows a phase reversal at T4 in the right temporal chain, but in the transverse chain the T4-C4 channel is nearly flat while C4-Cz deflects upward (negative up). Where is the field maximum?",
+      "explanation": "T4-C4 near zero means T4 and C4 are about equally negative. C4-Cz upward means C4 (input 1) is more negative than Cz, so the field falls off toward the vertex. Together with the longitudinal phase reversal at T4, the maximum spans T4 and C4 rather than either electrode alone.",
+      "learningObjective": "Combine longitudinal and transverse chains to define a broad field.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "At T4 alone, with C4 uninvolved",
+        "At Cz, the vertex",
+        "Spanning T4 and C4 about equally",
+        "At C4 alone, with T4 uninvolved"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "eye-blink",
+        "polarity",
+        "bell-phenomenon"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "With each eye blink, channel Fp1-F3 deflects downward (negative up). What does this indicate about the potential at Fp1?",
+      "explanation": "The cornea is positive relative to the retina. During a blink the eyes roll up (Bell's phenomenon), bringing the cornea toward Fp1, which becomes positive; Fp1 − F3 is then positive, deflecting downward.",
+      "learningObjective": "Derive eye-artifact polarity from the corneoretinal dipole.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Fp1 becomes positive relative to F3 as the cornea turns upward",
+        "Fp1 becomes negative relative to F3 as the retina turns upward",
+        "F3 becomes positive relative to Fp1 from frontalis contraction",
+        "Fp1 impedance rises briefly as the eyelid closes over it"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "60hz",
+        "reference",
+        "troubleshooting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "60-Hz interference appears in every channel referenced to A2, but in none of the bipolar channels. What is the most likely cause?",
+      "explanation": "Only derivations that include A2 are affected, which localises the fault to A2. A ground fault or environmental source would also affect bipolar channels; the notch filter acts on all channels.",
+      "learningObjective": "Localise interference using the montages that show it.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A disconnected patient ground electrode",
+        "High or unbalanced impedance at A2 itself",
+        "A nearby device radiating 60-Hz fields",
+        "An incorrectly configured notch filter"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "60hz",
+        "lead-wire",
+        "troubleshooting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "Intermittent 60-Hz interference appears in every channel containing T5, worse when the patient turns the head, although T5's measured impedance is 3 kΩ. What is the most likely cause?",
+      "explanation": "Affected channels share T5, and the impedance at rest is good, so the electrode-skin junction is not the problem. Movement-dependent interference points to an intermittent break or poor shielding in that lead or its connector. A ground fault would affect all channels.",
+      "learningObjective": "Distinguish electrode from lead-wire faults.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A damaged T5 lead wire or connector",
+        "High impedance at the patient ground",
+        "Unbalanced impedance between T5 and O1",
+        "A failing 60-Hz notch filter circuit"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "respiration",
+        "movement",
+        "slow-artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "In a supine adult, 0.25-Hz slow waves appear in posterior channels whose electrodes rest on the pillow, in phase with a respiratory belt showing 15 breaths per minute. What is the most likely source?",
+      "explanation": "15 breaths/min is 0.25 Hz, and the waves are phase-locked to respiration and confined to electrodes pressed on the pillow. Sweat artifact is slow but not locked to breathing; the cerebral patterns have different frequencies and contexts.",
+      "learningObjective": "Use timing correlation to identify respiratory artifact.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Sweat artifact from posterior scalp electrodes",
+        "Posterior slow waves of youth",
+        "Occipital intermittent rhythmic delta activity",
+        "Respiration-related head and electrode movement"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "emg",
+        "temporalis",
+        "beta"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "Irregular 30-70 Hz activity is maximal over both temporal regions, increases when the jaw is clenched and decreases when the patient lets the mouth hang slightly open. What is it?",
+      "explanation": "Very fast, irregular activity over the temporal muscles that changes with jaw tension is myogenic. Drug-related beta is rhythmic, frontally predominant and 18-25 Hz; a breach rhythm needs a skull defect; mains interference is a fixed 60 Hz.",
+      "learningObjective": "Separate muscle artifact from cerebral fast activity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Temporalis and masseter muscle artifact",
+        "Medication-induced beta activity",
+        "A breach rhythm over both temporal regions",
+        "60-Hz interference from the room"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "eyelid-flutter",
+        "frontal-delta",
+        "eog"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "Rhythmic 3-4 Hz activity at Fp1 and Fp2 appears only while the eyes are closed and the eyelids are visibly fluttering. Which step best determines whether it is ocular?",
+      "explanation": "Ocular potentials reverse polarity across the eye, so electrodes below the eye show the opposite polarity to Fp1/Fp2; cerebral frontal delta does not. Filter changes, HV or a reference change do not establish the source.",
+      "learningObjective": "Use supplementary electrodes to confirm ocular artifact.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Review the segment again with the HFF set at 70 Hz",
+        "Begin hyperventilation to see whether the activity builds up",
+        "Add infraorbital electrodes and look for reversed polarity",
+        "Switch to a Cz-referenced montage for the frontal channels"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "salt-bridge",
+        "referential",
+        "troubleshooting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "Channel Fp1-F3 is nearly flat. In a referential montage, Fp1 and F3 each show normal-amplitude activity with identical waveforms. What is the most likely explanation?",
+      "explanation": "Identical waveforms at two electrodes mean they are short-circuited together, so their bipolar difference is near zero. An amplifier fault would not make the referential traces identical; cortical suppression would lower F3's referential amplitude.",
+      "learningObjective": "Confirm an electrolyte bridge with referential data.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A failed amplifier in the Fp1-F3 channel",
+        "High impedance at the Fp1 electrode",
+        "Focal cortical suppression beneath F3",
+        "An electrolyte bridge between Fp1 and F3"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-028",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "electrode-pop",
+        "field",
+        "average-reference"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "At the peak of a transient, average-reference values are T4 −220 µV, F8 −6 µV, T6 −4 µV, C4 −3 µV. What is the best interpretation?",
+      "explanation": "Cerebral discharges have a field that falls off gradually across neighbouring electrodes. A 220-µV deflection with almost nothing 2-3 cm away is not physiological and indicates an electrode event at T4. Lateral rectus spikes appear at F7/F8 with eye movements.",
+      "learningObjective": "Use field distribution to separate artifact from cerebral transients.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A right mid-temporal spike with an unusually steep field",
+        "Electrode artifact at T4, because there is no field to neighbours",
+        "A right temporal sharp wave that has contaminated the average",
+        "A lateral rectus spike recorded at the T4 electrode"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-029",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "photoelectric",
+        "photic",
+        "artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "During photic stimulation, sharp transients appear at Fp1 and Fp2 with zero latency to each flash, persist with the eyes covered, and disappear when the electrodes are shielded from the lamp. What are they?",
+      "explanation": "Light striking the electrode produces a photoelectric potential with no latency, independent of the eyes, and abolished by shielding. Photomyogenic responses have a short latency and need visible muscle activity; cerebral responses do not depend on electrode shielding.",
+      "learningObjective": "Identify photoelectric artifact during photic stimulation.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A photomyogenic response of frontal muscles",
+        "A photoparoxysmal response",
+        "Photic driving of a frontal rhythm",
+        "Photoelectric artifact at Fp1 and Fp2"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-030",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "icu",
+        "infusion-pump",
+        "artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "In an ICU recording, sharp transients recur every 1.5 s in a single channel. When the infusion pump rate is changed, their rate changes accordingly. What are they?",
+      "explanation": "A rhythm that follows the pump setting is external. LPDs have a field across several electrodes and do not track equipment; pops are irregular; ECG artifact follows the heart rate.",
+      "learningObjective": "Correlate ICU artifacts with equipment.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Infusion-related artifact",
+        "Lateralized periodic discharges",
+        "Electrode pops from a drying electrode",
+        "ECG artifact"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-031",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "ecg",
+        "pulse",
+        "timing"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "Small sharp transients appear in several left-sided referential channels at regular 0.8-s intervals, each coinciding exactly with the QRS complex. What are they?",
+      "explanation": "Exact coincidence with the QRS identifies the cardiac electrical field. Pulse and ballistocardiographic artifacts are mechanical and follow the QRS by roughly 200-300 ms with slower waveforms; LPDs are not locked to the heartbeat.",
+      "learningObjective": "Use QRS timing to identify ECG artifact.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Cardiac ECG artifact",
+        "Pulse artifact",
+        "Lateralized periodic discharges",
+        "Ballistocardiographic movement"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-032",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "lateral-rectus",
+        "saccades",
+        "reading"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "While the patient reads, brief spiky potentials appear at F7 and F8 at the onset of each horizontal saccade. What are they?",
+      "explanation": "Lateral rectus contraction at the start of horizontal saccades produces brief spikes at F7/F8. Lambda waves also follow saccades during reading but are occipital, positive and slower; pops are not locked to eye movements.",
+      "learningObjective": "Recognise myogenic eye-movement spikes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Bifrontal epileptiform spikes",
+        "Lateral rectus muscle spikes",
+        "Lambda waves",
+        "Electrode pops at F7 and F8"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-033",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "chewing",
+        "ltm",
+        "video"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "During LTM, bitemporal bursts of very fast activity with rhythmic slow components recur at 1-2 Hz for 20 s while video shows the patient eating. There is no change in frequency over time, and the background is unchanged afterwards. What is this?",
+      "explanation": "Rhythmic bursts of muscle activity at the chewing rate, synchronous with jaw movement on video and without evolution or postictal change, are chewing artifact. Glossokinetic artifact is slow without muscle bursts; a seizure evolves; RMTD is a drowsy theta pattern.",
+      "learningObjective": "Use video and evolution to exclude seizures.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A bitemporal electrographic seizure",
+        "Rhythmic midtemporal theta of drowsiness",
+        "Glossokinetic artifact",
+        "Chewing-related muscle artifact"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-034",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "adult",
+        "buildup"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "activation",
+      "reasoningSteps": 2,
+      "stem": "A 35-year-old performs vigorous hyperventilation for 3 minutes and reports perioral tingling; no slowing appears. What is the best course?",
+      "explanation": "Tingling indicates effective hypocapnia. Many healthy adults show little or no buildup, so the response is acceptable once effort is documented. Extending or repeating HV adds little, and breath-holding is not an activation procedure.",
+      "learningObjective": "Judge adequacy of hyperventilation in adults.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Repeat HV for a further 5 minutes to try to provoke buildup",
+        "Annotate the HV portion as technically inadequate and repeat it",
+        "Ask the patient to breath-hold afterwards to raise the CO2",
+        "Accept it and annotate the effort; absent buildup is common in adults"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-035",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "hypoglycemia",
+        "pediatric"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "activation",
+      "reasoningSteps": 2,
+      "stem": "A 9-year-old who skipped breakfast shows unusually marked HV buildup that persists for over a minute after HV ends. Which factor most likely exaggerated it?",
+      "explanation": "Hypoglycaemia enhances and prolongs the slowing response to hyperventilation; this is why patients are advised to eat before an EEG. A recent meal reduces, rather than increases, the effect.",
+      "learningObjective": "Identify factors that alter the HV response.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Caffeine taken earlier that morning",
+        "Mild sleep deprivation the night before",
+        "Low blood glucose after an overnight fast",
+        "A carbohydrate-rich snack before testing"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-036",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-driving",
+        "subharmonic"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "activation",
+      "reasoningSteps": 2,
+      "stem": "During 18-Hz photic stimulation, a rhythmic 9-Hz occipital response appears, time-locked to the flashes, and stops when the train ends. What is it?",
+      "explanation": "Occipital responses locked to the flash train at the flash rate or a harmonic/subharmonic (here half) are photic driving. A photoparoxysmal response is epileptiform; photomyogenic and photoelectric responses are frontal and not rhythmic occipital waves.",
+      "learningObjective": "Recognise harmonic and subharmonic photic driving.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A photoparoxysmal response at half the flash rate",
+        "A photomyogenic response of the frontal muscles",
+        "Photic driving at a subharmonic, a normal response",
+        "Photoelectric artifact from the photic lamp"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-037",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "duration",
+        "sleep-cycle"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "age-dependent",
+      "reasoningSteps": 2,
+      "stem": "For a routine EEG on a term neonate in the NICU, which recording duration best captures the information needed for interpretation?",
+      "explanation": "Neonatal interpretation depends on seeing the expected states (wake, active and quiet sleep) and their cycling, which typically requires about an hour. Shorter recordings risk missing quiet sleep or state change.",
+      "learningObjective": "Plan neonatal recording duration.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "At least 60 minutes, covering a full sleep-wake cycle",
+        "20 minutes, matching a routine adult outpatient study",
+        "30 minutes, stopping as soon as quiet sleep is seen",
+        "10 minutes after settling, to minimise movement artifact"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-038",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "eci",
+        "confounders",
+        "hypothermia"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "Which of the following prevents an EEG from being used to support a determination of electrocerebral inactivity?",
+      "explanation": "Marked hypothermia (like sedative drug effects) is a confounder that can suppress EEG activity, so inactivity under those conditions cannot be attributed to brain death. The other three are required or recommended technical conditions.",
+      "learningObjective": "Recognise physiological confounders of ECI.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 3: Minimum Technical Standards for EEG Recording in Suspected Cerebral Death (Stecker et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A sensitivity of 2 µV/mm for part of the recording",
+        "A recording duration of 35 minutes",
+        "Interelectrode distances of 10 cm or more",
+        "A core temperature of 30 °C at the time of recording"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-039",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "burst-suppression",
+        "propofol",
+        "icu"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A patient on a high-dose propofol infusion shows 1-2 s bursts of mixed activity separated by 5-s periods below 10 µV. How should this pattern be classified?",
+      "explanation": "Alternating bursts and suppression (<10 µV) during anaesthetic infusion is burst-suppression, typically dose-related. ECI requires no cerebral activity; GPDs are discharges with regular intervals over a continuous background; this is not a normal adult sleep pattern.",
+      "learningObjective": "Classify medication-related burst-suppression.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Electrocerebral inactivity with intermittent artifact",
+        "Burst-suppression, likely medication-related",
+        "Generalized periodic discharges",
+        "A normal discontinuous sleep pattern"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-040",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "alpha-coma",
+        "reactivity",
+        "post-anoxic"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A comatose patient after cardiac arrest shows diffuse 9-Hz activity, most prominent frontally, unreactive to noxious stimulation. What is this pattern?",
+      "explanation": "Diffuse, often frontally predominant alpha-frequency activity that does not react to stimulation in a comatose patient is alpha coma. Normal alpha is posterior and reactive to eye opening; mu is central; drug beta is faster.",
+      "learningObjective": "Recognise alpha coma by distribution and reactivity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A normal, widely distributed posterior alpha rhythm",
+        "Mu rhythm spreading over the frontal regions",
+        "Medication-induced beta activity of sedation",
+        "Alpha coma, an unreactive alpha-frequency pattern"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-041",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "10-20",
+        "measurement",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "The preauricular-to-preauricular distance measured over the vertex is 38 cm. How far above the left preauricular point should C3 be marked along this line?",
+      "explanation": "T3 is at 10% (3.8 cm) above the preauricular point and C3 a further 20%, i.e. 30% = 11.4 cm. 19.0 cm (50%) is Cz; 7.6 cm (20%) is not a standard position.",
+      "learningObjective": "Calculate coronal 10-20 positions.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "7.6 cm",
+        "11.4 cm",
+        "3.8 cm",
+        "19.0 cm"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-042",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "10-20",
+        "circumference",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "Head circumference measured through Fpz, T3 and Oz is 56 cm. Measured along this line, how far from Fpz is F7?",
+      "explanation": "Fp1 lies 5% of the circumference (2.8 cm) from Fpz and F7 a further 10% (5.6 cm), i.e. 15% = 8.4 cm. 2.8 cm is Fp1; 11.2 cm (20%) is not a standard position.",
+      "learningObjective": "Calculate circumferential 10-20 positions.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "5.6 cm",
+        "11.2 cm",
+        "2.8 cm",
+        "8.4 cm"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-043",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "semiology",
+        "motor-cortex",
+        "localization"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A patient has clonic jerking of the right face and hand with preserved awareness. If a scalp ictal correlate is present, where is it most likely to be maximal?",
+      "explanation": "Clonic activity of the right face and hand arises from the contralateral (left) primary motor cortex, which lies under the left central electrodes. Temporal or occipital onsets produce other semiology.",
+      "learningObjective": "Predict electrode localisation from seizure semiology.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The left central (C3) region",
+        "The right central (C4) region",
+        "The left occipital (O1) region",
+        "The left anterior temporal (F7/T1) region"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-044",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "history",
+        "photosensitivity",
+        "pre-study"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "activation",
+      "reasoningSteps": 2,
+      "stem": "An EEG is ordered with photic stimulation. Which item in the pre-study history most changes how photic stimulation should be performed?",
+      "explanation": "A history of photically triggered seizures means a photoparoxysmal or clinical response is likely, so the technologist prepares to stop stimulation immediately and observes closely. The other items do not change the procedure in the same way.",
+      "learningObjective": "Use history to plan activation procedures.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Migraine with a visual aura triggered by bright light",
+        "Seizures triggered by flashing lights or screens",
+        "Cataract surgery on both eyes last year",
+        "Red-green colour blindness since childhood"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-045",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "neonatal",
+        "active-sleep",
+        "state"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "age-dependent",
+      "reasoningSteps": 2,
+      "stem": "A 40-week PMA infant shows continuous mixed-frequency activity, irregular respiration, rapid eye movements and occasional facial twitches. Which state is this?",
+      "explanation": "Active (REM-like) sleep at term has continuous activity, irregular breathing, rapid eye movements and small movements. Quiet sleep at term shows tracé alternant or continuous slow activity with regular breathing and no REMs.",
+      "learningObjective": "Identify neonatal sleep states from combined signs.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Active sleep",
+        "Quiet sleep",
+        "Indeterminate sleep",
+        "Wakefulness with eyes closed"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-046",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "neonatal",
+        "delta-brushes",
+        "maturation"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "age-dependent",
+      "reasoningSteps": 2,
+      "stem": "An infant at 46 weeks PMA shows frequent delta brushes during sleep. How should this be regarded?",
+      "explanation": "Delta brushes are most abundant in premature infants (around 32-35 weeks PMA), decline toward term and have largely disappeared by about 44 weeks PMA. Their persistence suggests dysmaturity. They are a developmental pattern, not ictal or artifactual.",
+      "learningObjective": "Use maturational timetables to judge neonatal patterns.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Normal, because delta brushes are most abundant near term",
+        "Dysmature, since delta brushes should largely have gone",
+        "Ictal, because delta brushes represent brief seizures",
+        "Artifactual, because neonatal montages exaggerate them"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-047",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "elderly",
+        "temporal-slowing",
+        "drowsiness"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "age-dependent",
+      "reasoningSteps": 2,
+      "stem": "A 78-year-old has a 9-Hz posterior rhythm and sporadic left mid-temporal theta seen only during drowsiness, without sharp features. How should this be regarded?",
+      "explanation": "Occasional temporal (often left) theta in drowsiness is common in older adults with a normal background and is not by itself evidence of a lesion. Wicket waves are arciform 6-11 Hz trains; a normal 9-Hz posterior rhythm argues against diffuse encephalopathy.",
+      "learningObjective": "Avoid over-reading age-related temporal slowing.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "It indicates a left temporal lesion that requires urgent imaging",
+        "It can be within normal limits for age when sporadic and drowsy-only",
+        "It represents wicket spikes requiring epileptiform classification",
+        "It indicates a diffuse encephalopathy of moderate severity"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-048",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "slow-alpha-variant",
+        "subharmonic",
+        "normal-variant"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "normal-variant",
+      "reasoningSteps": 2,
+      "stem": "A relaxed adult has a notched 4.5-Hz posterior rhythm that blocks with eye opening and alternates with a normal 9-Hz alpha rhythm. What is it?",
+      "explanation": "A notched rhythm at half the alpha frequency that reacts like alpha and alternates with it is the slow alpha variant. Encephalopathic slowing replaces rather than alternates with normal alpha; OIRDA is rhythmic delta in children; PSWY are delta waves fused with alpha in youths.",
+      "learningObjective": "Recognise alpha variants by frequency relationship and reactivity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Slow alpha variant, a normal subharmonic of alpha",
+        "Posterior slowing indicating encephalopathy",
+        "Occipital intermittent rhythmic delta activity",
+        "Posterior slow waves of youth"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-049",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "pswy",
+        "adolescent",
+        "normal-variant"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "normal-variant",
+      "reasoningSteps": 2,
+      "stem": "A 14-year-old shows posterior delta waves fused with alpha, blocking with eye opening and smaller than about 120% of the alpha amplitude. How should these be described?",
+      "explanation": "In children and adolescents, delta waves fused with the alpha rhythm, reacting like it and not excessively large, are posterior slow waves of youth. Focal slowing does not block with eye opening; OIRDA is rhythmic delta trains; lambda waves occur with visual scanning.",
+      "learningObjective": "Distinguish PSWY from abnormal posterior slowing.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Focal occipital slowing",
+        "Posterior slow waves of youth, a normal finding",
+        "Occipital intermittent rhythmic delta activity",
+        "Lambda waves"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-050",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "hypnagogic-hypersynchrony",
+        "pediatric",
+        "drowsiness"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "normal-variant",
+      "reasoningSteps": 2,
+      "stem": "A drowsy 4-year-old shows bursts of high-amplitude generalized 3-5 Hz rhythmic waves without spikes that resolve as sleep deepens. What is this?",
+      "explanation": "Paroxysmal high-amplitude rhythmic theta/delta at drowsiness onset in young children, without spikes and confined to drowsiness, is hypnagogic hypersynchrony. Absence discharges contain spikes; encephalopathic GRDA is not state-limited in this way; PSWY are posterior and awake.",
+      "learningObjective": "Recognise normal paediatric drowsy patterns.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Generalized spike-and-wave of absence epilepsy",
+        "Generalized rhythmic delta of encephalopathy",
+        "Posterior slow waves of youth",
+        "Hypnagogic hypersynchrony, a normal drowsy pattern"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-051",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "breach-rhythm",
+        "craniotomy",
+        "skull-defect"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "normal-abnormal",
+      "reasoningSteps": 2,
+      "stem": "Six months after a right frontal craniotomy, higher-amplitude, sharply contoured 6-11 Hz activity is present over the right frontocentral region. What is the most likely interpretation?",
+      "explanation": "A skull defect lets higher-frequency activity reach the scalp with less attenuation, producing a higher-amplitude, sharply contoured rhythm over the defect. It should not be over-read as epileptiform. Mu is central and reactive to movement; wicket waves are temporal.",
+      "learningObjective": "Account for skull defects when interpreting sharp activity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Right frontal epileptiform activity",
+        "Mu rhythm of the right hemisphere",
+        "A breach rhythm over the skull defect",
+        "Wicket waves of the right temporal region"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-052",
+      "domainId": "domain-3",
+      "sectionId": "d3-sleep-graphoelements",
+      "topicTags": [
+        "sleep-staging",
+        "n2",
+        "n3",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "In a 30-s epoch with sleep spindles present, 1-Hz waves above 75 µV occupy 4.8 s. How should the epoch be staged?",
+      "explanation": "4.8/30 = 16%. N3 requires slow-wave activity (0.5-2 Hz, >75 µV) in at least 20% of the epoch. Amplitude alone is not enough, and spindles in this context support N2.",
+      "learningObjective": "Apply the 20% slow-wave rule to staging.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "N2, because slow waves occupy under 20% of it",
+        "N3, because the slow waves exceed 75 µV",
+        "N3, because slow waves occupy over 15%",
+        "N1, because spindles alone do not define N2"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-053",
+      "domainId": "domain-3",
+      "sectionId": "d3-sleep-graphoelements",
+      "topicTags": [
+        "rem",
+        "sawtooth",
+        "chin-emg"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "normal-abnormal",
+      "reasoningSteps": 2,
+      "stem": "An adult shows low-voltage mixed-frequency activity, sawtooth waves, rapid eye movements and the lowest chin EMG of the night. Which state is this?",
+      "explanation": "Sawtooth waves, rapid eye movements and minimal chin EMG together define REM. Wakefulness and arousals have higher EMG; N1 has slow rolling eye movements and vertex waves.",
+      "learningObjective": "Combine EEG, EOG and EMG features to identify REM.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Wakefulness with eyes open",
+        "REM sleep, stage R",
+        "Stage N1 sleep",
+        "Arousal from N2 sleep"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-054",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "lennox-gastaut",
+        "slow-spike-wave",
+        "gpfa"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A child with several seizure types has a slow background, awake 1.5-2 Hz generalized spike-and-wave, and bursts of generalized 10-20 Hz fast activity in sleep. Which syndrome best fits?",
+      "explanation": "Slow (<2.5 Hz) spike-and-wave, generalized paroxysmal fast activity in sleep and a slow background with multiple seizure types characterise Lennox-Gastaut syndrome. CAE has 3-Hz discharges and a normal background; JME has fast polyspike-wave; EE-SWAS is defined by near-continuous sleep activation.",
+      "learningObjective": "Match EEG features to epilepsy syndromes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Childhood absence epilepsy",
+        "Lennox-Gastaut syndrome",
+        "Juvenile myoclonic epilepsy",
+        "Epileptic encephalopathy with spike-wave activation in sleep"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-055",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "jme",
+        "polyspike-wave",
+        "photosensitivity"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "An adolescent with early-morning jerks has a normal background, irregular 4-6 Hz generalized polyspike-and-wave, and a photoparoxysmal response. Which syndrome best fits?",
+      "explanation": "Morning myoclonus, fast irregular polyspike-and-wave and photosensitivity with a normal background are typical of JME. CAE has regular 3-Hz spike-wave in younger children; LGS has slow spike-wave and a slow background; SeLECTS has centrotemporal spikes.",
+      "learningObjective": "Recognise JME from clinical and EEG features.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Juvenile myoclonic epilepsy",
+        "Childhood absence epilepsy",
+        "Lennox-Gastaut syndrome",
+        "Self-limited epilepsy with centrotemporal spikes"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-056",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "centrotemporal",
+        "dipole",
+        "selects"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 7-year-old has sleep-activated sharp waves that are negative at C4/T4 and simultaneously positive at Fp2/F4, with a normal background. What does this pattern most suggest?",
+      "explanation": "Centrotemporal negativity with simultaneous frontal positivity forms a horizontal (tangential) dipole, typical of the sleep-activated discharges of SeLECTS. A frontal focus would be negative frontally; eye artifact is confined to frontopolar/orbital sites; generalized discharges are bilateral.",
+      "learningObjective": "Use dipole orientation to characterise centrotemporal discharges.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A right frontal epileptogenic focus",
+        "Self-limited epilepsy with centrotemporal spikes",
+        "Eye-movement artifact during sleep",
+        "A generalized epilepsy with frontal predominance"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-057",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "eswas",
+        "csws",
+        "spike-wave-index"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 6-year-old with language regression has spike-and-wave activity in 27 of 30 sampled 10-s segments of NREM sleep, and much less in wakefulness. What does this pattern indicate?",
+      "explanation": "Spike-wave in about 90% of NREM sleep with marked sleep activation and cognitive or language regression is the ESES/CSWS picture (epileptic encephalopathy with spike-wave activation in sleep). Benign centrotemporal spikes are far less continuous; hypsarrhythmia occurs in infants; LGS has a different pattern.",
+      "learningObjective": "Quantify sleep activation and relate it to regression.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Benign sleep-activated centrotemporal spikes",
+        "ESES/CSWS pattern of sleep activation",
+        "Hypsarrhythmia with sleep activation",
+        "Lennox-Gastaut syndrome with sleep activation"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-058",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "hypsarrhythmia",
+        "spasms",
+        "electrodecrement"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "An 8-month-old with clusters of flexor spasms shows chaotic high-amplitude slowing with multifocal spikes. Each spasm coincides with a sudden diffuse voltage attenuation. How should this be described?",
+      "explanation": "Chaotic high-voltage slowing with multifocal spikes is hypsarrhythmia, and the diffuse attenuation accompanying each spasm is an electrodecremental response. Burst-suppression has true suppressions between bursts; myoclonic polyspike-wave occurs on a normal background.",
+      "learningObjective": "Describe infantile spasms EEG correctly.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Burst-suppression of an early infantile epilepsy",
+        "Generalized polyspike-wave of a myoclonic epilepsy",
+        "Hypsarrhythmia with electrodecremental responses",
+        "Electrocerebral inactivity interrupted by artifact"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-059",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "lpd",
+        "frequency",
+        "calculation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "Twelve lateralized sharp discharges occur at regular intervals within a 10-s epoch. How should they be described in ACNS terms?",
+      "explanation": "12 discharges per 10 s = 1.2 per second. Discrete discharges recurring at regular intervals are periodic discharges (LPDs), not rhythmic delta. 0.8 Hz inverts the ratio; 12 Hz ignores the 10-s epoch.",
+      "learningObjective": "Calculate and name periodic pattern frequency.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "LPDs at about 1.2 Hz",
+        "LPDs at about 0.8 Hz",
+        "LRDA at about 1.2 Hz",
+        "LPDs at about 12 Hz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-060",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "electrographic-seizure",
+        "acns-2021",
+        "criteria"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "In a critically ill patient, LPDs accelerate to 3 Hz and remain above 2.5 Hz for 12 s, without clinical signs. How should this be classified?",
+      "explanation": "ACNS 2021: epileptiform discharges averaging more than 2.5 Hz for at least 10 s define an electrographic seizure, regardless of clinical signs. BIRDs last under 10 s; plus features and the ictal-interictal continuum describe patterns that do not meet seizure criteria.",
+      "learningObjective": "Apply ACNS electrographic seizure criteria.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "LPDs with plus features only",
+        "A brief potentially ictal rhythmic discharge",
+        "An ictal-interictal continuum pattern only",
+        "A definite electrographic seizure"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-061",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "electrographic-status",
+        "acns-2021",
+        "calculation"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "Over the last 60 minutes, electrographic seizures add up to 14 minutes; the longest lasts 4 minutes. How should this be classified?",
+      "explanation": "ACNS 2021: electrographic status epilepticus is seizure activity for 10 or more continuous minutes, or for a total of at least 20% of any 60-minute period. 14 of 60 minutes is about 23%, so it qualifies even though no single seizure lasts 10 minutes.",
+      "learningObjective": "Apply the burden criterion for electrographic status epilepticus.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Electrographic status epilepticus",
+        "Recurrent seizures not meeting status criteria",
+        "Ictal-interictal continuum pattern",
+        "Brief potentially ictal rhythmic discharges"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-062",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "birds",
+        "icu",
+        "acns-2021"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A critically ill patient has focal runs of sharply contoured 5-Hz rhythmic activity lasting 4-6 s each, without evolution. What is the best ACNS term?",
+      "explanation": "Focal rhythmic activity faster than 4 Hz lasting under 10 s is a BIRD. It does not meet the 10-s seizure criterion; LPDs are discrete periodic discharges; LRDA is in the delta range.",
+      "learningObjective": "Name brief rhythmic ICU patterns correctly.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Brief potentially ictal rhythmic discharges",
+        "An electrographic seizure of brief duration",
+        "Lateralized periodic discharges, focal",
+        "Lateralized rhythmic delta activity"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-063",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "sirpids",
+        "stimulation",
+        "annotation"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "documentation",
+      "reasoningSteps": 2,
+      "stem": "Rhythmic discharges repeatedly appear within seconds of suctioning or examination in an ICU patient. Which annotation is essential for correct classification of this pattern?",
+      "explanation": "Classifying a pattern as stimulus-induced (SI-, formerly SIRPIDs) requires showing it reliably follows stimulation, which is only possible if each stimulus is time-stamped. The other annotations are useful but cannot establish the relationship.",
+      "learningObjective": "Annotate stimulation to support stimulus-induced pattern classification.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "The exact time and type of each stimulus",
+        "The infusion rate of each sedative every hour",
+        "Electrode impedance values every hour",
+        "The patient's temperature at each discharge"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-064",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "grda",
+        "frontal",
+        "acns-2021"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "An encephalopathic patient has intermittent, bilaterally synchronous 2-Hz rhythmic delta, maximal frontally. What is the ACNS 2021 term?",
+      "explanation": "Bilaterally synchronous rhythmic delta is GRDA; a frontal maximum is a modifier ('frontally predominant'; historically FIRDA). LRDA is one-sided; GPDs and BIPDs are periodic discharges, not rhythmic delta.",
+      "learningObjective": "Use ACNS terminology for rhythmic delta.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Frontally predominant lateralized rhythmic delta",
+        "Frontally predominant generalized rhythmic delta",
+        "Frontally predominant generalized periodic discharges",
+        "Bilateral independent periodic discharges"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-065",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "frontal-seizure",
+        "ltm",
+        "scalp-limitations"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "During LTM, a patient has a brief hypermotor event arising from sleep. The EEG is obscured by muscle and shows no clear ictal change. How should this be regarded?",
+      "explanation": "Frontal lobe seizures, especially mesial or orbital onsets, often show little or obscured scalp change, and hypermotor semiology from sleep is typical of them. Video semiology and stereotypy are essential; filtering does not reveal deep activity.",
+      "learningObjective": "Recognise limits of scalp EEG for frontal seizures.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "It excludes an epileptic seizure, as no EEG change is seen",
+        "It does not exclude a frontal seizure; correlate with video",
+        "It was a sleep arousal, because it arose from sleep",
+        "It should be re-reviewed with the LFF raised to 5 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-066",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "postictal",
+        "lateralization",
+        "slowing"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "After a focal seizure with unclear onset, the post-ictal EEG shows left temporal delta for 2 minutes while the right side is normal. What does this most likely indicate?",
+      "explanation": "Focal post-ictal slowing usually occurs on the side of seizure onset and is a useful lateralizing sign. It is transient and does not by itself indicate a structural lesion.",
+      "learningObjective": "Use post-ictal slowing for lateralization.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "It supports right-sided onset by contralateral suppression",
+        "It has no lateralizing value after focal seizures",
+        "It supports seizure onset in the left hemisphere",
+        "It indicates a structural lesion of the left temporal lobe"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-067",
+      "domainId": "domain-3",
+      "sectionId": "d3-s2",
+      "topicTags": [
+        "infection-control",
+        "c-difficile",
+        "spores"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "After recording a patient on contact precautions for Clostridioides difficile, which hand hygiene and cleaning approach is most appropriate?",
+      "explanation": "C. difficile spores resist alcohol, so hand washing with soap and water is needed, and equipment requires a sporicidal disinfectant (per institutional policy) before reuse. Delaying cleaning risks transmission.",
+      "learningObjective": "Apply spore-specific infection control.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Soap-and-water hand washing; sporicidal cleaning of equipment",
+        "Alcohol hand rub; equipment cleaned with a quaternary wipe",
+        "Alcohol hand rub only, since gloves were worn throughout",
+        "Soap-and-water hand washing; equipment cleaned at day's end"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-068",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "electrical-safety",
+        "equipment",
+        "leakage"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Midway through a recording, you feel a tingle when touching the EEG machine's metal casing. What is the most appropriate action?",
+      "explanation": "A perceptible tingle indicates leakage current or a ground fault, a direct shock hazard to patient and staff. Recording stops, the patient is disconnected and the unit is removed from service until checked. Continuing in any form keeps the patient exposed.",
+      "learningObjective": "Respond to suspected electrical leakage.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Finish the study, then tag it and report it to biomedical engineering",
+        "Move it to another outlet, continue, and report it afterwards",
+        "Disconnect the patient ground, continue, and report it afterwards",
+        "Stop, disconnect the patient, and report it to biomedical engineering"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-069",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "documentation",
+        "correction",
+        "records"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "documentation",
+      "reasoningSteps": 2,
+      "stem": "You realise that an event time written in the paper technologist log is wrong. How should it be corrected?",
+      "explanation": "Medical record corrections must keep the original entry legible and show who changed it and when. Obscuring or rewriting entries destroys the audit trail; verbal notes leave the record wrong.",
+      "learningObjective": "Correct records without destroying the audit trail.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Cover it with correction fluid and write the correct time neatly",
+        "Rewrite the whole log page so the record stays easy to read",
+        "Leave the entry and explain the error verbally at handover",
+        "Strike through once, write the correction, then initial and date it"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-070",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "confidentiality",
+        "colleague",
+        "access"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A colleague is admitted to the epilepsy monitoring unit. You are not part of their care team but your login can open their recordings. What should you do?",
+      "explanation": "Access to health information is limited to what your role requires (minimum necessary). Technical access, a finished report or an informal verbal request does not create a work-related need.",
+      "learningObjective": "Apply role-based access to patient information.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Open the recording to reassure them about their results",
+        "Not open their record or recordings unless assigned to their care",
+        "Open it only after the reading physician has issued a report",
+        "Open it if the colleague gives you verbal permission"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-071",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "social-media",
+        "privacy",
+        "education"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "You want to share an unusual EEG image for teaching on social media, with names, dates and record numbers removed. What is the appropriate approach?",
+      "explanation": "Rare findings, timestamps, facility details or context can still identify a patient, and privacy obligations continue after death. Institutional policy and approval apply even to closed groups.",
+      "learningObjective": "Handle educational use of patient data appropriately.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Freely, because the names, dates and record numbers are removed",
+        "Only in a closed technologists' group, without needing approval",
+        "Freely, since privacy duties end once the patient has died",
+        "Only with institutional approval, after checking for identifiers"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-072",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "collodion",
+        "oxygen",
+        "fire-safety"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "You need to apply collodion electrodes in an ICU room where the patient is receiving supplemental oxygen. What is the safest approach?",
+      "explanation": "Collodion and acetone are flammable and their vapours need ventilation; the risk is managed by keeping them away from oxygen sources and heat. Stopping prescribed oxygen harms the patient, collodion is not universally prohibited, and heat guns add an ignition source.",
+      "learningObjective": "Use flammable materials safely in oxygen-rich settings.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Turn the patient's oxygen off while applying and drying the collodion",
+        "Use paste only, because collodion is prohibited wherever oxygen is used",
+        "Dry each electrode with an electric heat gun to shorten exposure",
+        "Ventilate well and keep collodion and acetone away from oxygen and heat"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-073",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "emu",
+        "medication-taper",
+        "safety"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Antiseizure medication is about to be tapered in the epilepsy monitoring unit. Which preparation is most important?",
+      "explanation": "Tapering increases the risk of seizures, including clusters and convulsions, so safety measures and a rescue plan must be ready. Pausing video loses the events being sought; impedance checks matter but are not the priority.",
+      "learningObjective": "Prepare EMU safety before medication withdrawal.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The patient was sleep-deprived the night before admission",
+        "Seizure and fall precautions plus a rescue-medication order",
+        "Video recording is paused overnight to protect privacy",
+        "Electrode impedances are scheduled to be checked once daily"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-074",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "incidental-seizure",
+        "critical-result",
+        "responsiveness"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "During a routine outpatient EEG, you see 40 s of evolving rhythmic right temporal activity while the patient keeps talking normally. What should you do?",
+      "explanation": "An unrecognised electrographic seizure in an outpatient is an urgent finding: responsiveness is tested and documented during the event, and the reading physician is notified promptly per policy. Telling the patient a diagnosis is outside scope; routine reporting delays action.",
+      "learningObjective": "Handle incidental electrographic seizures as urgent findings.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Document it and leave it for the routine physician report",
+        "Document it and tell the patient that a seizure was recorded",
+        "Test and document responsiveness; notify the reading physician now",
+        "Document it and notify the ordering office by the end of the day"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b2-075",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "scope-of-practice",
+        "medication",
+        "emu"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "During an EMU admission, a patient asks you to let them skip a dose of antiseizure medication 'to help get a seizure'. What is the most appropriate response?",
+      "explanation": "Medication changes, including tapering for EMU studies, are made only under physician orders. The technologist does not authorise or adjust doses but passes the request to the care team.",
+      "learningObjective": "Stay within scope regarding medication.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Explain that doses change only on physician order; inform the team",
+        "Agree, since medication withdrawal is the purpose of this admission",
+        "Agree, but document the patient's request in the technologist log",
+        "Suggest taking half the dose instead, and then inform the care team"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}
