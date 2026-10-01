@@ -57,8 +57,15 @@ Every Challenge calculation item carries exactly one tag:
   and shown with a "Beyond exam depth" badge.
 
 **Calculation drill** (dashboard, 10 / 20): `kind: "challenge"`,
-`focus: "calc-core"`; serves only `calc-core` items (24 in
-`abret-challenge-calc.json` plus 19 tagged pilot/batch-2 items).
+`focus: "calc-core"`; serves only `calc-core` items (84 across the Challenge
+Bank; 24 of them in the focused `abret-challenge-calc.json`).
+
+## Challenge Bank size
+
+500 items in 10 files (pilot, batch 2-9, calc). Domains 78 / 246 / 98 / 78,
+levels L3 97 · L4 170 · L5 107 · L6 126. New batches are gated by
+`node scripts/check-challenge-file.mjs <file>` (same rules as the tests, plus
+section-id and cross-file duplicate checks) before the test suite.
 
 ## Question QA
 

@@ -1,0 +1,1502 @@
+{
+  "version": "batch7-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "description": "ABRET Challenge Bank batch 7: sleep, activation procedures, generalized epilepsies, emergency response and event documentation. Not yet medically verified.",
+  "totalQuestions": 50,
+  "questions": [
+    {
+      "id": "ch-b7-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "sleep-staging",
+        "drowsiness",
+        "n1",
+        "slow-eye-movements"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A 34-year-old resting with eyes closed has a 10-Hz posterior rhythm. Over the next minute it fragments and, for most of each 30-s epoch, is replaced by low-amplitude 4-7 Hz activity; F7-T3 and F8-T4 show slow, out-of-phase deflections lasting 2-3 s each. No spindles or K-complexes are present. How should these epochs be scored?",
+      "explanation": "AASM N1 is scored when the alpha rhythm is attenuated and replaced by low-amplitude mixed 4-7 Hz activity for more than half of the epoch; slow rolling eye movements (deflections lasting well over 0.5 s) support drowsiness. Stage W needs alpha for most of the epoch; stage R needs sharp rapid eye movements with low chin tone; N2 needs a K-complex or spindle, and none are present.",
+      "learningObjective": "Score drowsiness (N1) from alpha attenuation and slow eye movements.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Stage W, with lateral eye movements of visual scanning",
+        "Stage R, with conjugate rapid eye movements of dreaming",
+        "Stage N2, with spindles masked by the mixed theta activity",
+        "Stage N1, with slow rolling eye movements of drowsiness"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "sleep-spindles",
+        "frequency",
+        "duration",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "During sleep, a 10-s page is displayed 300 mm wide. A centrally maximal, waxing-and-waning burst measures 24 mm long and contains 10 cycles. What are its duration and frequency, and what is it?",
+      "explanation": "300 mm per 10 s = 30 mm/s, so 24 mm = 0.8 s and 10 cycles / 0.8 s = 12.5 Hz: a central burst of 11-16 Hz lasting at least 0.5 s is a sleep spindle. 0.96 s / 10.4 Hz assumes 25 mm/s; 1.6 s / 6.3 Hz assumes a 20-s page (15 mm/s); 0.4 s / 25 Hz assumes 60 mm/s.",
+      "learningObjective": "Measure spindle duration and frequency at the actual display speed.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "0.96 s at 10.4 Hz; an alpha burst",
+        "1.6 s at 6.3 Hz; a theta burst",
+        "0.8 s at 12.5 Hz; a sleep spindle",
+        "0.4 s at 25 Hz; a beta burst"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "sleep-staging",
+        "n3",
+        "slow-wave-activity",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "A 30-s epoch (frontal derivation, spindles present) contains 3-Hz waves of 120 µV totalling 9 s and 1-Hz waves of 90 µV totalling 4 s; the rest is low-amplitude mixed activity. Using AASM criteria, how should the epoch be staged?",
+      "explanation": "AASM slow waves are 0.5-2 Hz with peak-to-peak amplitude above 75 µV over the frontal regions, and N3 needs them in at least 20% of the epoch. Only the 1-Hz waves qualify: 4/30 ≈ 13%, so the epoch stays N2 (spindles present). 43% wrongly adds the 3-Hz waves; 30% counts only the 3-Hz waves; N1 ignores the spindles.",
+      "learningObjective": "Apply the frequency, amplitude and 20% rules for N3.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "N2; about 13% of the epoch meets slow-wave criteria",
+        "N3; about 43% of the epoch meets slow-wave criteria",
+        "N3; about 30% of the epoch meets slow-wave criteria",
+        "N1; about 13% of the epoch meets slow-wave criteria"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "rem-sleep",
+        "sawtooth-waves",
+        "sleep-onset-rem",
+        "sleep-deprivation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A sleep-deprived 27-year-old falls asleep 6 minutes into a routine EEG. Eight minutes later the record shows low-amplitude mixed 4-7 Hz activity, runs of 2-6 Hz serrated central waves, sharp conjugate deflections at F7 and F8, and very little muscle activity. What stage is this?",
+      "explanation": "Sawtooth waves, sharp rapid eye movements and low muscle tone define REM sleep. Normal REM latency in adults is roughly 90 minutes; REM within minutes of sleep onset is worth noting, as it occurs with sleep deprivation, narcolepsy and withdrawal of REM-suppressing drugs. N1 has slow (not sharp) eye movements; wakefulness has high muscle tone and blinks; N2 needs spindles or K-complexes.",
+      "learningObjective": "Recognise REM sleep and the significance of a short REM latency.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "REM sleep, reached unusually early after sleep onset",
+        "N1 sleep, with slow eye movements of early drowsiness",
+        "Wakefulness with eyes open and saccadic eye movements",
+        "N2 sleep, with vertex waves in runs over the centre"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "drowsiness",
+        "alpha",
+        "anterior-spread",
+        "normal"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "In a drowsy 45-year-old, the 10-Hz occipital rhythm slows to 8-9 Hz and spreads to the frontal and central channels for 10-20 s at a time, while muscle artifact lessens. When spoken to, the patient answers at once and the 10-Hz posterior rhythm returns. How should this be regarded?",
+      "explanation": "In drowsy adults the alpha rhythm may slow by 1-2 Hz and spread anteriorly before it drops out; prompt arousal with return of the normal posterior rhythm confirms a state change. Alpha coma is unreactive and occurs in unresponsive patients; encephalopathic slowing persists in full wakefulness; drug-induced fast activity is beta, not alpha.",
+      "learningObjective": "Recognise normal alpha changes during drowsiness.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Alpha coma pattern of reduced responsiveness to stimuli",
+        "Mild diffuse slowing that indicates early encephalopathy",
+        "Frontal alpha from a benzodiazepine medication effect",
+        "Normal drowsiness with alpha slowing and anterior spread"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-s4",
+      "topicTags": [
+        "sleep-deprivation",
+        "pre-test-instructions",
+        "medication"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "A 24-year-old taking lamotrigine is booked for a sleep-deprived EEG at 8 a.m. Which set of pre-test instructions is appropriate?",
+      "explanation": "Antiseizure medication is continued unless the ordering physician says otherwise, since missed doses provoke seizures. A normal meal avoids hypoglycaemia, which exaggerates hyperventilation slowing. Caffeine and other stimulants make it harder to fall asleep during the study, defeating the purpose of sleep deprivation.",
+      "learningObjective": "Give correct preparation instructions for a sleep-deprived EEG.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Shorten sleep as directed, omit the morning lamotrigine, eat breakfast, skip caffeine",
+        "Shorten sleep as directed, take lamotrigine as usual, eat breakfast, skip caffeine",
+        "Shorten sleep as directed, take lamotrigine as usual, fast from midnight, skip caffeine",
+        "Shorten sleep as directed, take lamotrigine as usual, eat breakfast, use coffee overnight"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-s4",
+      "topicTags": [
+        "sleep-deprivation",
+        "patient-safety",
+        "driving"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "When confirming a sleep-deprived EEG appointment, a 31-year-old with recent unprovoked seizures says she will drive herself to and from the lab after staying awake all night. What is the most appropriate response?",
+      "explanation": "Sleep deprivation impairs driving and lowers the seizure threshold, and recent seizures often carry driving restrictions. A short nap or caffeine does not correct this, and dropping sleep deprivation sacrifices diagnostic yield to solve a transport problem that a driver solves.",
+      "learningObjective": "Address safety issues in sleep-deprivation instructions.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Ask her to arrange for another person to drive her both ways",
+        "Accept the plan if she naps for 30 minutes after the study",
+        "Accept the plan if she drinks coffee before driving home",
+        "Book a routine EEG instead so that she can drive herself"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-s4",
+      "topicTags": [
+        "hyperventilation",
+        "hypoglycemia",
+        "pre-test-instructions"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "A 19-year-old arrives at 3 p.m. for a routine EEG with hyperventilation and has eaten nothing since the previous evening. What is the best course before starting?",
+      "explanation": "Low blood glucose enhances and prolongs hyperventilation-induced slowing, which can be misread as abnormal build-up. Eating first and noting the fasting interval keeps the full test interpretable. Omitting or shortening HV loses a useful activation for no safety gain.",
+      "learningObjective": "Recognise fasting as a confounder of the HV response.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Proceed as planned, since fasting does not alter the HV response",
+        "Omit hyperventilation and record only photic stimulation and rest",
+        "Shorten hyperventilation to 1 minute and note when he last ate",
+        "Offer a snack as lab policy allows and note when he last ate"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "contraindications",
+        "sickle-cell"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Four outpatients are booked for routine EEG with hyperventilation. Which one most needs the ordering physician's review before hyperventilation is performed?",
+      "explanation": "Hyperventilation causes hypocapnic cerebral vasoconstriction; in sickle cell disease this can precipitate sickling and ischaemia, so HV is a recognised relative contraindication. Suspected absences and JME are reasons to perform HV, and treated hypertension without cerebrovascular or cardiopulmonary disease is not a contraindication.",
+      "learningObjective": "Identify contraindications to hyperventilation.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A 9-year-old with sickle cell disease and recurrent pain crises",
+        "A 9-year-old with suspected absence seizures on no medication",
+        "A 17-year-old with juvenile myoclonic epilepsy on valproate",
+        "A 52-year-old with treated hypertension and a normal exam today"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "effort",
+        "pediatric"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "At 2 minutes of hyperventilation, a 10-year-old is taking shallow, irregular breaths; the EEG is unchanged from baseline and no build-up has appeared. What is the best next step?",
+      "explanation": "The response depends on effort: a flat result after shallow breathing is uninterpretable, not normal. Coaching (a pinwheel, counting, demonstrating) and completing at least 3 minutes of good effort is the fix. Deferring HV wastes the child's current cooperation, and gain changes cannot create a response that ventilation did not produce.",
+      "learningObjective": "Troubleshoot inadequate hyperventilation effort.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "End hyperventilation now, since an absent build-up is a normal result",
+        "Coach deeper breaths with a pinwheel or demonstration and continue",
+        "Move to photic stimulation and return to hyperventilation at the end",
+        "Increase the display gain so that any subtle build-up becomes visible"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "duration",
+        "acns-standards"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "A lab's routine hyperventilation lasts 2 minutes, and recording stops 15 seconds after the patient resumes normal breathing. Compared with ACNS minimum technical standards, what needs to change?",
+      "explanation": "ACNS Guideline 1 calls for hyperventilation of at least 3 minutes, with recording continued for at least 1 minute afterwards so that recovery (or persistence of slowing or discharges) can be judged. Five minutes is acceptable but not the minimum, and stopping right after HV misses the recovery period.",
+      "learningObjective": "Apply the ACNS minimum hyperventilation standard.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Hyperventilate at least 3 minutes; keep recording at least 1 minute after",
+        "Hyperventilate at least 5 minutes; keep recording at least 30 s after",
+        "Keep 2 minutes of HV; keep recording at least 3 minutes afterwards",
+        "Hyperventilate at least 3 minutes; post-HV recording is optional"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "absence",
+        "responsiveness-testing",
+        "hyperventilation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "During hyperventilation a 12-year-old counts breaths aloud. At count 41 a 6-s burst of generalized 3-Hz spike-and-wave appears; counting stops and resumes at 42 when the burst ends, and the child is unaware of any pause. What does this show?",
+      "explanation": "Arrest of an ongoing task time-locked to the discharge, with unawareness of the gap, shows impaired responsiveness, i.e. a clinical absence. Children typically resume where they stopped, so an unbroken count sequence does not make it subclinical. Fatigue or breath-holding would not start and stop with the burst.",
+      "learningObjective": "Use a continuous task to detect impaired responsiveness.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Impaired responsiveness during the discharge: a clinical absence",
+        "A subclinical discharge, as counting resumed with no lost number",
+        "A voluntary pause from fatigue during prolonged hyperventilation",
+        "Breath-holding after HV fatigue, unrelated to the discharge"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "responsiveness-testing",
+        "memory",
+        "spike-and-wave"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A patient has frequent 4-6 s bursts of generalized spike-and-wave and denies any symptoms. Which bedside test best shows whether awareness is impaired during the bursts?",
+      "explanation": "Patients are unaware of their absences, so self-report and button presses miss them; orientation is usually intact a minute later. Failure to recall a word given during the burst (but recall of one given between bursts) demonstrates impaired awareness during the discharge.",
+      "learningObjective": "Choose a memory test to assess awareness during brief discharges.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Ask 'Did you feel anything?' as each burst ends and log the reply",
+        "Ask the patient to press the event button whenever a lapse is felt",
+        "Ask orientation questions a minute after a burst and log the reply",
+        "Say a test word during a burst, then ask for it after the burst ends"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-stimulation",
+        "technique",
+        "lamp-position"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 1,
+      "stem": "Before photic stimulation, the strobe is mounted on an adjustable arm and the patient sits with eyes closed. Where is the lamp usually positioned?",
+      "explanation": "The lamp is conventionally placed about 30 cm in front of the face, aimed at the nasion, so both eyes receive equal stimulation. Much closer is uncomfortable and inconsistent between labs; at 1 m the stimulus is weak; a lateral lamp produces asymmetric stimulation that confounds driving symmetry.",
+      "learningObjective": "Position the photic stimulator correctly.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 10 cm in front of the face, centred on the nasion",
+        "About 100 cm in front of the face, centred on the nasion",
+        "About 30 cm in front of the face, centred on the nasion",
+        "About 30 cm to one side, level with the outer canthus"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-stimulation",
+        "photoparoxysmal-response",
+        "stop-criteria"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "At 16-Hz photic stimulation, a 15-year-old develops generalized 4-Hz polyspike-and-wave with eyelid jerks. The protocol continues to 30 Hz. What should the technologist do?",
+      "explanation": "A generalized photoparoxysmal response, especially with clinical signs, is the end point: stimulation is stopped at once to avoid provoking a generalized tonic-clonic seizure, and the patient is assessed. Completing or prolonging the train, or moving on to nearby frequencies, adds risk without diagnostic gain.",
+      "learningObjective": "Apply stop criteria during photic stimulation.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Finish the 16-Hz train, then move on to the remaining frequencies",
+        "Continue at 16 Hz to see whether the discharge becomes self-sustaining",
+        "Move the lamp further away and resume the protocol at 20 Hz",
+        "Stop the flash train at once, observe, and test responsiveness"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-driving",
+        "asymmetry",
+        "electrode-fault"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "During photic stimulation, driving appears at O1, P3 and P4 but not at O2. O2 also shows no alpha and lower amplitude than O1 in every derivation, although alpha at P4 is normal. What is the best first step?",
+      "explanation": "An electrode that lacks every normal posterior signal (alpha and driving) while its neighbour P4 is normal points to a technical fault such as a bridged, displaced or poorly applied O2. Technical causes are excluded before any asymmetry is interpreted; lamp angle and reference choice do not explain missing alpha.",
+      "learningObjective": "Exclude electrode faults before interpreting driving asymmetry.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Annotate a right occipital abnormality from the absent driving",
+        "Repeat the stimulation with the lamp angled toward the right eye",
+        "Switch to an O2 reference so the right occipital area is enhanced",
+        "Check O2's impedance and position before interpreting the asymmetry"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-stimulation",
+        "photosensitivity",
+        "frequency"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "procedure",
+      "reasoningSteps": 1,
+      "stem": "A 13-year-old with suspected photosensitive epilepsy is to have photic stimulation from 1 to 30 Hz. Within which flash-frequency band is a photoparoxysmal response most likely to appear?",
+      "explanation": "Photosensitive patients are most often provoked by flash rates of roughly 15-20 Hz, which is why protocols approach this range carefully and stop at the first generalized response. Low rates and rates near 30 Hz provoke responses far less often.",
+      "learningObjective": "Know the most provocative photic frequency range.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 1-5 Hz",
+        "About 6-10 Hz",
+        "About 15-20 Hz",
+        "About 25-30 Hz"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "sleep-deprivation",
+        "jme",
+        "awakening",
+        "photic-stimulation"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 16-year-old with morning myoclonic jerks has a sleep-deprived EEG. HV and photic stimulation at the start were normal; she falls asleep at 20 minutes, reaches N2 at 26 minutes, and the booking ends at 30 minutes. No discharges have been seen. What is the most useful plan?",
+      "explanation": "In juvenile myoclonic epilepsy, discharges are activated by sleep and especially by the period after awakening, and photosensitivity may be more evident then. Extending to capture sleep and the arousal is the high-yield step; waking her early or stopping before awakening forfeits it.",
+      "learningObjective": "Plan a sleep-deprived study to capture high-yield states.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Wake her now so that hyperventilation can be repeated at once",
+        "Let her sleep on, then record the awakening and repeat photic",
+        "End at 30 minutes as booked, since N2 sleep has been captured",
+        "Let her sleep on, then end the study before she fully awakens"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "vertex-waves",
+        "referential-to-bipolar",
+        "phase-reversal",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "At the peak of a vertex wave, referential values (against a quiet reference) are T3 −10 µV, C3 −50 µV, Cz −110 µV, C4 −55 µV, T4 −15 µV. In the transverse chain T3-C3, C3-Cz, Cz-C4, C4-T4 (negative up), what do the two middle channels show?",
+      "explanation": "C3-Cz = −50 − (−110) = +60 µV (input 1 positive relative to input 2, so downward); Cz-C4 = −110 − (−55) = −55 µV (upward). Opposite deflections sharing Cz mark a negative phase reversal at the vertex. Reversing the directions inverts the convention; 160/165 µV come from adding instead of subtracting.",
+      "learningObjective": "Derive bipolar deflections for a vertex wave from referential values.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "C3-Cz 60 µV up, Cz-C4 55 µV down; reversal at Cz",
+        "C3-Cz 60 µV down, Cz-C4 55 µV up; reversal at Cz",
+        "C3-Cz 160 µV down, Cz-C4 165 µV up; reversal at Cz",
+        "C3-Cz 60 µV down, Cz-C4 55 µV down; no reversal"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posts",
+        "sleep-transients",
+        "polarity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "In a 30-year-old in stage N2 with eyes closed, ear-referenced O1 and O2 channels show bisynchronous, surface-positive, sharply contoured transients of about 50 µV, occurring in irregular runs at 4-5 per second. What are they?",
+      "explanation": "POSTS are surface-positive, bisynchronous, often asymmetric occipital transients of N1-N2 sleep, frequently in runs at 4-5 Hz. Lambda waves look similar but need the eyes open and visual scanning; epileptic spikes are surface-negative with after-going slow waves; OIRDA is rhythmic delta, not sharp transients.",
+      "learningObjective": "Identify POSTS and distinguish them from lambda waves.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Lambda waves evoked by saccadic scanning",
+        "Bilateral occipital spikes of epileptic origin",
+        "Occipital intermittent rhythmic delta activity",
+        "Positive occipital sharp transients of sleep"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posts",
+        "end-of-chain",
+        "polarity",
+        "bipolar"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "During N2 sleep, the longitudinal bipolar chains show sharp upward deflections (negative up) in P3-O1, T5-O1, P4-O2 and T6-O2, with no phase reversal; channels from Fp1-F3 to C3-P3 are quiet. Ear-referenced O1 and O2 deflect downward at the same moments. What potential is present?",
+      "explanation": "P3-O1 upward means input 1 (P3) is more negative than O1, i.e. O1 is positive relative to P3. O1 is the last electrode of the chain, so no phase reversal can appear (end-of-chain). The downward O1-ear deflection confirms positivity at O1 - the POSTS pattern. A P3 maximum would reverse between C3-P3 and P3-O1, but C3-P3 is quiet.",
+      "learningObjective": "Localise an end-of-chain positive transient.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A surface-negative potential maximal at O1 and O2",
+        "A surface-negative potential maximal at P3 and P4",
+        "A surface-positive potential maximal at O1 and O2",
+        "A surface-positive potential maximal at P3 and P4"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "rem-sleep",
+        "sawtooth-waves",
+        "sleep-transients"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "About 90 minutes after sleep onset in an adult, 2-5 Hz notched, triangular waves appear in runs of 2-4 s, maximal centrally and at the vertex, just before bursts of sharp conjugate eye movements; muscle tone is at its lowest of the night. What are these waves?",
+      "explanation": "Sawtooth waves are 2-6 Hz serrated, triangular waves maximal centrally that often precede bursts of rapid eye movements in REM sleep, with the low muscle tone of REM. Vertex waves are isolated sharp transients of N1-N2; midline theta occurs in wakefulness or drowsiness; epileptiform spikes are not tied to REM bursts.",
+      "learningObjective": "Identify sawtooth waves of REM sleep.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Sawtooth waves of REM sleep",
+        "Vertex waves of N1 in runs",
+        "Midline theta of drowsiness",
+        "Midline epileptiform spikes"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "arousal",
+        "sleep-scoring",
+        "alpha"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "After 2 minutes of stable N2 sleep, a 6-s run of 9-Hz alpha appears with a rise in chin EMG, then spindles resume. The rest of the 30-s epoch is N2. Using AASM rules, how is this handled?",
+      "explanation": "An AASM arousal is an abrupt shift to alpha, theta or >16 Hz (not spindles) lasting at least 3 s after at least 10 s of stable sleep. Six seconds of alpha qualifies, but the epoch is staged by the majority (24 s of N2 with spindles), so it remains N2. Although an arousal ends N2, the spindles that resume within this epoch re-establish it. Stage W needs alpha for most of the epoch.",
+      "learningObjective": "Apply AASM arousal and epoch-majority rules.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Score an arousal; the epoch remains scored N2",
+        "Score the epoch as stage W, since alpha appeared",
+        "Score no arousal, since it lasted under 10 seconds",
+        "Score an arousal and change the epoch to stage N1"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "slow-eye-movements",
+        "corneoretinal-dipole",
+        "polarity",
+        "drowsiness"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "During drowsiness, the eyes drift slowly to the left. Considering the corneoretinal dipole, what do channels F7-T3 and F8-T4 show (negative up)?",
+      "explanation": "The cornea is positive relative to the retina. Looking left brings the corneas toward F7 (positive) and the retinas toward F8 (negative). F7-T3 is then positive in input 1 (downward) and F8-T4 negative in input 1 (upward): out-of-phase deflections, the hallmark of lateral eye movements.",
+      "learningObjective": "Predict lateral eye-movement polarity in F7/F8 channels.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "F7-T3 deflects up and F8-T4 deflects down",
+        "F7-T3 and F8-T4 both deflect down together",
+        "F7-T3 deflects down and F8-T4 deflects up",
+        "F7-T3 and F8-T4 both deflect up together"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "rem-sleep",
+        "wakefulness",
+        "eye-movements",
+        "emg"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A segment shows low-amplitude mixed-frequency activity without alpha and sharp conjugate eye movements at F7 and F8. Frontal and temporal muscle artifact is prominent, and blinks are frequent. Which state is this most likely to be?",
+      "explanation": "Eyes-open wakefulness and REM sleep both show low-voltage mixed activity with sharp saccades, but REM has minimal muscle tone and no blinking. Prominent muscle artifact plus blinks favour wakefulness; N1 has slow rolling eye movements and N2 would show spindles or K-complexes.",
+      "learningObjective": "Separate REM sleep from eyes-open wakefulness using muscle tone and blinks.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Wakefulness with the eyes open",
+        "REM sleep with rapid eye movements",
+        "Stage N1 with drowsy eye movements",
+        "Stage N2 between sleep spindles"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "focal-aware-seizure",
+        "event-testing",
+        "emu"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "During an EMU recording, a patient presses the event button and reports a rising epigastric sensation and déjà vu. The scalp EEG shows no change from baseline. What should the technologist do?",
+      "explanation": "Focal aware seizures (auras) often have no scalp EEG correlate because the discharging area is small or deep. The technologist examines the patient during the event and records objective findings; labelling the event or telling the patient it was not a seizure is interpretation beyond the role, and delaying testing loses the ictal examination.",
+      "learningObjective": "Test and describe events that lack a scalp EEG correlate.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Tell the patient it was not a seizure, since the EEG is unchanged",
+        "Annotate it as a non-epileptic event, since the EEG is unchanged",
+        "Test language and memory, observe, and annotate the symptoms described",
+        "Wait for the symptoms to end before entering, to avoid artifact"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "video-eeg",
+        "event-testing",
+        "camera"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "At 3 a.m. in the EMU, a patient under a blanket has an event. The technologist reaches the bedside and stands between the bed and the camera to examine the patient. What adjustment most improves the value of the recording?",
+      "explanation": "Interpretation of semiology depends on seeing the face and all four limbs on video. Uncovering the patient and working from the far side of the bed keeps the view clear; staying in the line of sight or leaving limbs covered hides lateralizing signs. Lighting helps only if the patient is visible.",
+      "learningObjective": "Preserve video visibility during bedside testing.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Leave the blanket in place and examine from the camera side of the bed",
+        "Pull back the blanket and stay between the bed and camera to examine",
+        "Pull back the blanket and examine from the side away from the camera",
+        "Leave the patient covered and switch on the lights before examining"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-028",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "post-ictal-testing",
+        "aphasia",
+        "lateralization"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "After a focal seizure, a right-handed patient follows commands and moves all limbs normally but cannot name a pen or a watch for about 3 minutes. Why is it useful to test and record this?",
+      "explanation": "Post-ictal language impairment with preserved comprehension of commands is a lateralizing sign pointing to the language-dominant (usually left) hemisphere. It is not a non-dominant or generalized sign, which is why language and naming are tested systematically after events.",
+      "learningObjective": "Use post-ictal language testing to lateralize seizures.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Post-ictal aphasia suggests onset in the dominant hemisphere",
+        "Post-ictal aphasia suggests onset in the non-dominant hemisphere",
+        "Post-ictal anomia is non-specific and has no lateralizing value",
+        "Post-ictal aphasia suggests a generalized onset to the seizure"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-029",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "chest-pain",
+        "stop-criteria"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "At 90 seconds of hyperventilation, a 58-year-old says he has chest tightness and feels light-headed; the ECG channel shows a regular rhythm at 96 beats per minute. What is the most appropriate response?",
+      "explanation": "Light-headedness and tingling are expected during HV, but chest tightness in a middle-aged adult is a reason to stop: hypocapnia can provoke coronary vasospasm, and a regular ECG trace does not exclude ischaemia. He needs assessment before any further activation.",
+      "learningObjective": "Recognise symptoms that require stopping hyperventilation.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Slow his breathing, continue to 3 minutes, then notify the physician",
+        "Stop hyperventilation, assess him, and notify the physician at once",
+        "Continue to 3 minutes, as these are typical, then notify the physician",
+        "Stop hyperventilation, start photic, and notify the physician later"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-030",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-driving",
+        "harmonic",
+        "frequency",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "At 30 mm/s, the photic marker channel shows flash artifacts every 6 mm. The occipital channels show a time-locked rhythmic response with a cycle width of 3 mm. What are the flash rate and the response, and how is it described?",
+      "explanation": "6 mm at 30 mm/s = 0.2 s, so flashes are at 5 Hz; a 3-mm cycle = 0.1 s, a 10-Hz response. A time-locked response at twice the flash rate is harmonic driving. Swapping the two gives the 10/5-Hz error; 'fundamental' would require equal rates; 2.5/5 Hz assumes 15 mm/s.",
+      "learningObjective": "Measure photic driving and classify its relation to the flash rate.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "10-Hz flashes, 5-Hz response; subharmonic driving",
+        "5-Hz flashes, 10-Hz response; fundamental driving",
+        "5-Hz flashes, 10-Hz response; harmonic driving",
+        "2.5-Hz flashes, 5-Hz response; harmonic driving"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-031",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "myoclonus",
+        "polygraphy",
+        "emg"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "A 17-year-old has brief jerks of both arms during photic stimulation, and the EEG shows generalized polyspikes that are partly obscured by muscle artifact. What addition best clarifies the relationship between jerks and discharges?",
+      "explanation": "Surface EMG over the jerking muscles time-marks each myoclonic jerk, so it can be related to the polyspike discharges (epileptic myoclonus typically follows the polyspike). Temporal and infraorbital electrodes answer other questions, and lowering the HFF reduces muscle artifact but also blunts the polyspikes without timing the jerks.",
+      "learningObjective": "Add polygraphic EMG to characterise myoclonus.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Extra T1 and T2 electrodes over the temporal lobes",
+        "Infraorbital electrodes to separate eye movements",
+        "Surface EMG electrodes over both deltoid muscles",
+        "A lower HFF setting to reduce the muscle artifact"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-032",
+      "domainId": "domain-3",
+      "sectionId": "d3-sleep-graphoelements",
+      "topicTags": [
+        "k-complex",
+        "vertex-waves",
+        "sleep-transients"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "In an adult in N2, a door slams. A biphasic transient follows: a sharp negative wave then a slower positive component, total duration 0.8 s, largest at Fz and Cz and standing out from the background; a brief spindle rides on its tail. What is it?",
+      "explanation": "A K-complex is a well-delineated negative sharp wave followed by a positive component, lasting at least 0.5 s, usually maximal frontally, often with a spindle and often evoked by sounds. Vertex waves are briefer (under 0.5 s) and maximal at Cz; epileptiform sharp-and-slow waves are not stimulus-bound sleep transients; arousal delta is rhythmic rather than a single biphasic wave.",
+      "learningObjective": "Distinguish a K-complex from a vertex wave.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A K-complex evoked by the noise",
+        "A vertex wave evoked by the noise",
+        "A frontal sharp-and-slow-wave complex",
+        "A burst of frontal arousal delta"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-033",
+      "domainId": "domain-3",
+      "sectionId": "d3-sleep-graphoelements",
+      "topicTags": [
+        "sleep-spindles",
+        "asymmetry",
+        "lateralization"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A 50-year-old's sleep record shows well-formed 13-Hz spindles over the right central region throughout N2, while the left central region shows only rare, low-amplitude spindles. Left-sided impedances are normal, and there is no skull defect. How should this be interpreted?",
+      "explanation": "In adults, spindles are normally bilaterally symmetric and synchronous. A persistent asymmetry, after technical causes and skull defects are excluded, indicates dysfunction on the side where spindles are reduced, here the left. Excess spindles are not a marker of an epileptic focus.",
+      "learningObjective": "Interpret persistent spindle asymmetry.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A persistent asymmetry pointing to right-hemisphere dysfunction",
+        "A persistent asymmetry pointing to left-hemisphere dysfunction",
+        "A normal variant, as spindle asymmetry is common in adults",
+        "A right-sided epileptic focus that is driving excess spindles"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-034",
+      "domainId": "domain-3",
+      "sectionId": "d3-activation-procedures",
+      "topicTags": [
+        "hyperventilation",
+        "build-up",
+        "pediatric",
+        "normal"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "In an 8-year-old, hyperventilation produces 250-300 µV, 2-3 Hz generalized rhythmic delta, frontally maximal, without spikes; the child keeps counting throughout, and the delta resolves within 40 seconds of stopping. How should this be interpreted?",
+      "explanation": "High-amplitude generalized delta build-up is normal in children during HV, especially when it resolves within about a minute of stopping and responsiveness is preserved. Absences need spike-and-wave and impaired responsiveness; encephalopathic delta is present at rest; 40 s is not prolonged.",
+      "learningObjective": "Recognise a normal paediatric hyperventilation response.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An absence seizure without spikes",
+        "A normal build-up response for age",
+        "Frontal rhythmic delta of encephalopathy",
+        "Abnormally prolonged post-HV slowing"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-035",
+      "domainId": "domain-3",
+      "sectionId": "d3-activation-procedures",
+      "topicTags": [
+        "hyperventilation",
+        "re-build-up",
+        "moyamoya"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "In a 7-year-old with episodes of transient hemiparesis while crying, hyperventilation produces slowing that resolves within 20 seconds; then, about 40 seconds after HV ended, high-amplitude delta returns while the child breathes normally. What does this suggest, and what follows?",
+      "explanation": "Return of slowing after initial recovery from HV (re-build-up) is characteristic of moyamoya disease, and transient deficits with crying (which hyperventilates) fit. HV risks ischaemia in moyamoya, so it should not be repeated and the finding needs prompt physician attention. Repeating HV or photic adds risk; drowsy slowing is not preceded by an HV pattern with hemiparetic history.",
+      "learningObjective": "Recognise re-build-up and its safety implication.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Re-build-up suggesting moyamoya; avoid further hyperventilation",
+        "Delayed normal build-up; repeat hyperventilation to confirm it",
+        "Drowsiness after hyperventilation; continue the routine protocol",
+        "Absence status without spikes; repeat it with photic stimulation"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-036",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "absence",
+        "3-hz-spike-wave",
+        "childhood-absence-epilepsy"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A 7-year-old with a normal background has several 8-12 s bursts of generalized 3-Hz spike-and-wave, frontally maximal, slowing to about 2.5 Hz toward the end of each burst; most occur during hyperventilation, with staring and eyelid flutter. Which syndrome fits best?",
+      "explanation": "Frequent HV-provoked absences with regular 3-Hz frontally maximal spike-and-wave that slows slightly through the burst, on a normal background in a school-age child, define childhood absence epilepsy. Juvenile absence epilepsy starts around adolescence with less frequent absences; JME shows faster polyspike-and-wave with myoclonus; LGS has slow (<2.5 Hz) spike-and-wave on an abnormal background.",
+      "learningObjective": "Match 3-Hz spike-and-wave to childhood absence epilepsy.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Juvenile absence epilepsy",
+        "Juvenile myoclonic epilepsy",
+        "Childhood absence epilepsy",
+        "Lennox-Gastaut syndrome"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-037",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "jme",
+        "polyspike-wave",
+        "focal-fragments"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 17-year-old with jerks of the arms shortly after waking has a sleep-deprived EEG showing 4-6 Hz generalized polyspike-and-wave. Several shorter discharges are maximal at F3 or at F4, varying between sides. How should these fragments be regarded?",
+      "explanation": "Juvenile myoclonic epilepsy often shows asymmetric or apparently focal fragments of its generalized discharges, shifting between sides. Misreading them as focal can lead to the wrong syndrome and drug choice. Secondary bilateral synchrony needs a consistent lead-in from one focus; BETS are small, brief and not polyspike-and-wave.",
+      "learningObjective": "Recognise focal fragments in idiopathic generalized epilepsy.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Independent bifrontal foci, so a focal epilepsy is more likely",
+        "Secondary bilateral synchrony from a single frontal focus",
+        "Fragments of generalized discharges, common in this epilepsy",
+        "Benign epileptiform transients of sleep unrelated to epilepsy"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-038",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "secondary-bilateral-synchrony",
+        "frontal",
+        "generalized-vs-focal"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "Every bilateral spike-and-wave burst in a 30-year-old is preceded by 1-2 s of repetitive spikes phase-reversing at F8, and the bursts are consistently higher in amplitude on the right. Isolated F8 spikes also occur between bursts. What best explains the bilateral bursts?",
+      "explanation": "A consistent focal lead-in at the same site, persistent lateralized amplitude and independent spikes at that site indicate secondary bilateral synchrony from a right frontal focus. Primary generalized discharges lack a fixed lead-in; independent foci would not show a constant onset side; reference contamination would affect every channel sharing the reference, not create a phase reversal at F8.",
+      "learningObjective": "Separate secondary bilateral synchrony from primary generalized discharges.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Primary generalized discharges with incidental F8 spikes",
+        "Secondary bilateral synchrony from a right frontal focus",
+        "Two independent frontal foci that fire in close sequence",
+        "Generalized discharges with right-sided reference contamination"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-039",
+      "domainId": "domain-3",
+      "sectionId": "d3-activation-procedures",
+      "topicTags": [
+        "photoparoxysmal-response",
+        "waltz-classification"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "During photic stimulation, spikes appear over the parieto-occipital region followed by a biphasic slow wave, and the discharge spreads to the frontal regions; it stops with the flash train. Using the Waltz classification, which type is this?",
+      "explanation": "Waltz types: 1 = spikes within the occipital rhythm; 2 = parieto-occipital spikes followed by a biphasic slow wave; 3 = type 2 with spread to the frontal regions; 4 = generalized spike-and-wave or polyspike-and-wave. Frontal spread without full generalization is type 3.",
+      "learningObjective": "Grade a photoparoxysmal response.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Type 1",
+        "Type 2",
+        "Type 4",
+        "Type 3"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-040",
+      "domainId": "domain-3",
+      "sectionId": "d3-sleep-graphoelements",
+      "topicTags": [
+        "vertex-waves",
+        "pediatric",
+        "spike-mimic"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "In a 6-year-old in N2, sharply contoured 200-µV transients at Cz occur singly and in short runs. Their field spreads symmetrically to C3 and C4, they match the vertex transients seen at sleep onset, they lack an after-going slow wave, and none appear in wakefulness. How should they be read?",
+      "explanation": "Vertex waves in children are often high in amplitude, sharp and repetitive, but they are symmetric about Cz, appear with sleep and match the sleep-onset transients. Midline spikes would disrupt the background with an after-going slow wave; centrotemporal spikes are maximal at C3/C4-T3/T4; BETS are small (<50 µV), brief and seen in adults.",
+      "learningObjective": "Avoid over-reading sharp vertex waves in children.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Midline spikes indicating a vertex epileptic focus",
+        "Centrotemporal spikes spreading toward the vertex",
+        "Benign epileptiform transients of sleep at Cz",
+        "Vertex waves, which are often sharp in children"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-041",
+      "domainId": "domain-3",
+      "sectionId": "d3-activation-procedures",
+      "topicTags": [
+        "photic-driving",
+        "normal-variation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 1,
+      "stem": "An adult with a normal 10-Hz alpha rhythm and normal background shows no photic driving at any flash frequency from 1 to 30 Hz; the flash marker confirms each train was delivered. How should the photic response be described?",
+      "explanation": "Photic driving is absent in a substantial proportion of normal people, so its absence alone is not abnormal. Only a clear, consistent asymmetry of driving (with technical causes excluded) carries meaning; bilateral absence with a normal background does not suggest occipital dysfunction, encephalopathy or toxicity.",
+      "learningObjective": "Interpret absent photic driving.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Absent driving, a sign of bilateral occipital dysfunction",
+        "Absent driving, a finding within normal limits",
+        "Absent driving, a sign of a diffuse encephalopathy",
+        "Absent driving, a sign of antiseizure drug toxicity"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-042",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "seizure-first-aid",
+        "tonic-clonic"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "During a routine EEG, a 40-year-old seated in a reclining chair has a generalized tonic-clonic seizure. Which set of actions is most appropriate during the convulsive phase?",
+      "explanation": "During the convulsive phase the aim is injury prevention and observation: lower the patient safely, protect the head, time the seizure and keep recording the EEG and video. Restraining limbs causes injury; nothing is placed in the mouth; sitting a convulsing patient upright risks falls and aspiration - turn to the side once jerking stops.",
+      "learningObjective": "Apply convulsive-seizure first aid during an EEG.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Hold the limbs still, cushion the head, time it, keep recording",
+        "Ease him to a safe position, cushion the head, time it, keep recording",
+        "Place a bite block, cushion the head, time it, keep recording",
+        "Ease him to a safe position, sit him upright, time it, keep recording"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-043",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "status-epilepticus",
+        "timing",
+        "emergency-response"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "A generalized tonic-clonic seizure began at 10:02:15 during an EMU recording and is still continuing at 10:07:30. The patient has a rescue medication order. How should this be managed?",
+      "explanation": "The seizure has lasted 5 min 15 s. Under the ILAE operational definition, a tonic-clonic seizure lasting 5 minutes or more is status epilepticus and treatment should start (time point t1); 30 minutes (t2) marks the risk of long-term consequences, not the time to begin. Ten minutes is the t1 for focal seizures with impaired awareness.",
+      "learningObjective": "Apply the 5-minute threshold for convulsive status epilepticus.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Wait until 10 minutes before treating it as status, per protocol",
+        "Treat it as status epilepticus now and activate the response per protocol",
+        "Wait until 30 minutes before treating it as status, per protocol",
+        "Wait until the seizure ends, then activate the response per protocol"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-044",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "rescue-medication",
+        "scope-of-practice",
+        "emu"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "In the EMU, a patient's seizure reaches the time limit in the rescue medication order (intranasal midazolam). Facility policy restricts medication administration to nursing and medical staff, and you are the only staff member at the bedside. What is the best action?",
+      "explanation": "Acting within scope means summoning the credentialed person immediately while maintaining safety, observation and recording. An existing order does not extend administration rights to staff whom policy excludes, and waiting for the seizure to end defeats the purpose of a rescue order.",
+      "learningObjective": "Act within scope during rescue-medication situations.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Give the midazolam yourself, since the order has already been written",
+        "Give the midazolam yourself, then tell the nurse once it has been given",
+        "Wait for the seizure to end, then ask the nurse to give the medication",
+        "Call for the nurse to give the medication while you keep the patient safe"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-045",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "syncope",
+        "ecg",
+        "convulsive-syncope"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "As a 22-year-old stands at the end of a recording, still connected, he turns pale and slumps. The ECG channel shows a 9-s pause without QRS complexes; the EEG shows diffuse high-amplitude delta, then brief flattening, with a few irregular jerks. He recovers within 20 s, fully oriented. What best describes this event?",
+      "explanation": "Asystole first, followed by diffuse slowing and then flattening, a few irregular jerks and rapid, complete recovery is the sequence of convulsive syncope. A seizure would show rhythmic evolving ictal activity before any cardiac change and post-ictal confusion; a real QRS pause is not artifact; the EEG shows no focal ictal onset.",
+      "learningObjective": "Recognise convulsive syncope on EEG/ECG.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A tonic-clonic seizure that caused an asystolic pause",
+        "A psychogenic non-epileptic event with ECG artifact",
+        "A focal impaired-awareness seizure with bradycardia",
+        "Convulsive syncope from transient cerebral hypoperfusion"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-046",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "choking",
+        "airway",
+        "bls"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 1,
+      "stem": "During electrode application, a 60-year-old eating a sweet starts coughing forcefully and can speak between coughs; his colour is normal. What is the most appropriate response?",
+      "explanation": "A forceful cough and the ability to speak indicate mild airway obstruction; coughing is the most effective way to clear it, and back blows or thrusts are reserved for severe obstruction (unable to speak, cough or breathe). Blind finger sweeps can push the object deeper.",
+      "learningObjective": "Manage mild airway obstruction.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Give five back blows, then five abdominal thrusts, repeating",
+        "Give abdominal thrusts at once until the object is expelled",
+        "Encourage coughing and stay with him, watching for worsening",
+        "Sweep the mouth with a finger to find and clear the object"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-047",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "post-ictal-care",
+        "recovery-position",
+        "airway"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "After a 90-s generalized tonic-clonic seizure, a patient is unresponsive, with snoring respirations at 14 per minute, pink colour and a radial pulse of 110. What is the most appropriate next step?",
+      "explanation": "He is breathing with a pulse, so CPR and rescue breaths are not indicated. Snoring signals partial obstruction by the tongue; the recovery position keeps the airway open and lets secretions drain while he recovers. Oral fluids risk aspiration in a patient who is not fully awake.",
+      "learningObjective": "Provide post-ictal airway care.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Begin chest compressions at 100-120 per minute at once",
+        "Give two rescue breaths, then reassess his breathing",
+        "Sit him upright and give sips of water to rouse him",
+        "Turn him into the recovery position and monitor his airway"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-048",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "cpr",
+        "bls",
+        "compressions"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 1,
+      "stem": "During an EEG, an adult collapses; he is unresponsive, has only occasional gasps, and no pulse is felt within 10 seconds. After help and an AED have been called for, what compression rate and depth should be used?",
+      "explanation": "Adult BLS compressions are 100-120 per minute at a depth of at least 5 cm but not more than 6 cm, with full recoil. Occasional gasps are not normal breathing. Slower or shallower compressions give inadequate perfusion; deeper compressions increase injury.",
+      "learningObjective": "Apply adult BLS compression standards.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "100-120 per minute, about 5-6 cm deep",
+        "80-100 per minute, about 3-4 cm deep",
+        "120-140 per minute, about 7-8 cm deep",
+        "60-80 per minute, about 5-6 cm deep"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-049",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "event-annotation",
+        "objective-description",
+        "semiology"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "During a recording, a patient's head turns to the right and her right arm stiffens, then jerks rhythmically for 40 s; she does not respond to her name. Which annotation best fits technologist documentation standards?",
+      "explanation": "Technologist annotations describe what is observed (body parts, side, sequence, duration, responsiveness) without diagnostic labels. Localizing the onset, calling the event generalized or non-epileptic are interpretations reserved for the physician and may be wrong.",
+      "learningObjective": "Write objective event annotations.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left frontal onset seizure, secondarily generalizing; unresponsive",
+        "Head turns R, R arm stiffens then jerks 40 s; no response to name",
+        "Probable non-epileptic event; asymmetric jerks; no response to name",
+        "Generalized seizure with versive head turn; patient unresponsive"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b7-050",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "medication-annotation",
+        "rescue-medication",
+        "documentation"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "After rescue midazolam is given during an EEG, the post-ictal record shows diffuse beta activity and slowing. Which documentation most helps the interpreting physician?",
+      "explanation": "Benzodiazepines produce beta activity and can suppress discharges and alter the background. The interpreter can attribute these changes only if drug, dose and exact time appear on the record itself. Missing the time, the drug, or placing it only in a separate chart leaves the changes unexplained.",
+      "learningObjective": "Annotate medications on the EEG record.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Drug and dose on the requisition form, without a time on the EEG",
+        "Drug, dose and time given, annotated on the EEG at the moment of giving",
+        "Time of giving annotated on the EEG, without the drug's name or dose",
+        "Drug, dose and time given, entered in the nursing notes only"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 7 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

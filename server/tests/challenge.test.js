@@ -128,7 +128,7 @@ describe('Challenge Bank as a whole', () => {
         }
         // dB ratios and single-pole gain formulas are beyond typical exam depth
         const beyond = allChallenge.filter((q) => q.topicTags.includes('calc-beyond')).map((q) => q.id).sort();
-        expect(beyond).toEqual(['ch-b2-004', 'ch-b2-005', 'ch-b2-007', 'ch-pilot-011']);
+        expect(beyond).toEqual(['ch-b2-004', 'ch-b2-005', 'ch-b2-007', 'ch-b6-004', 'ch-b6-017', 'ch-pilot-011']);
     });
 });
 

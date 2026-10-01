@@ -1,0 +1,1546 @@
+{
+  "version": "batch6-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "description": "ABRET Challenge Bank batch 6: instrumentation physics, amplifiers, filters, grounding, sampling and calibration troubleshooting; technical description and data management; QA and electrical safety. Not yet medically verified.",
+  "totalQuestions": 50,
+  "questions": [
+    {
+      "id": "ch-b6-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-basic-eeg-physics-instrumentation",
+      "topicTags": [
+        "ohms-law",
+        "impedance",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "An impedance meter drives a 10-µA AC test current through one electrode contact and measures 50 mV across it. What impedance does it display for that electrode?",
+      "explanation": "Ohm's law: Z = V ÷ I = 0.05 V ÷ 0.00001 A = 5,000 Ω (5 kΩ). 500 Ω, 50 kΩ and 500 kΩ are the classic results of mis-converting the milli- (10⁻³) and micro- (10⁻⁶) prefixes by one or two decimal places.",
+      "learningObjective": "Apply Ohm's law with correct unit prefixes to impedance measurement.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 50 kΩ",
+        "About 500 Ω",
+        "About 5 kΩ",
+        "About 500 kΩ"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-basic-eeg-physics-instrumentation",
+      "topicTags": [
+        "differential-amplifier",
+        "polarity-convention",
+        "montage"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "Channel F8-T4 (input 1 F8, input 2 T4; negative up) shows an isolated downward deflection of 40 µV. Which pair of values, measured against a quiet reference at that instant, would produce it?",
+      "explanation": "Output = input 1 − input 2. +10 − (−30) = +40 µV, and a positive output deflects downward. −10 − (+30) = −40 µV and −40 − 0 = −40 µV both give upward 40-µV deflections (sign error). +30 − (−30) = +60 µV is downward but 60 µV, not 40.",
+      "learningObjective": "Predict deflection direction and size from the two inputs of a differential amplifier.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "F8 +10 µV and T4 −30 µV",
+        "F8 −10 µV and T4 +30 µV",
+        "F8 −40 µV and T4 0 µV",
+        "F8 +30 µV and T4 −30 µV"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-basic-eeg-physics-instrumentation",
+      "topicTags": [
+        "input-impedance",
+        "voltage-divider",
+        "amplifier"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "A headbox amplifier is specified with an input impedance of 100 MΩ, while the scalp electrodes measure 2-5 kΩ. What is the main purpose of an input impedance this much higher than the electrode impedance?",
+      "explanation": "Electrode impedance and amplifier input impedance form a voltage divider: with 5 kΩ against 100 MΩ, only about 0.005% of the signal is dropped across the electrode, and small impedance differences between inputs matter less. Gain is set separately; offset (polarisation) potentials are handled by AC coupling/the LFF and the input range; patient isolation comes from the isolation barrier, not input impedance.",
+      "learningObjective": "Explain why EEG amplifiers need very high input impedance.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The amplifier's gain rises in proportion to its input impedance",
+        "Almost none of the signal voltage is lost across the electrodes",
+        "Electrode offset potentials are blocked before amplification",
+        "The patient is isolated from earth-referenced line current"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-basic-eeg-physics-instrumentation",
+      "topicTags": [
+        "capacitance",
+        "time-constant",
+        "lff",
+        "calculation",
+        "calc-beyond"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "An analog low-frequency filter stage uses a 0.08-µF capacitor and a 2-MΩ resistor. What are its time constant and its approximate cutoff frequency?",
+      "explanation": "TC = R × C = 2×10⁶ Ω × 0.08×10⁻⁶ F = 0.16 s, and f = 1/(2π × 0.16) ≈ 1 Hz. 6.3 Hz is 1/TC without the 2π; 1.6 s and 0.1 Hz come from a micro-prefix slip in the capacitance; 0.16 Hz reads the time constant in seconds as if it were hertz.",
+      "learningObjective": "Derive time constant and cutoff from R and C.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "0.16 s; about 1 Hz",
+        "0.16 s; about 6.3 Hz",
+        "1.6 s; about 0.1 Hz",
+        "0.16 s; about 0.16 Hz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-basic-eeg-physics-instrumentation",
+      "topicTags": [
+        "reference-contamination",
+        "ear-reference",
+        "polarity-convention",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "Every left-hemisphere electrode is referenced to A1 (negative up). At the peak of a left mid-temporal spike, values against a distant quiet reference are T3 −80 µV, A1 −50 µV, C3 −10 µV, Fp1 0 µV and O1 0 µV. Which description fits the A1-referenced channels?",
+      "explanation": "T3-A1 = −80 − (−50) = −30 µV (upward 30). Fp1-A1 and O1-A1 = 0 − (−50) = +50 µV (downward 50): the active ear puts an inverted copy of the spike into every A1 channel, largest where the scalp electrode is uninvolved. Ignoring A1's own activity gives 80 µV and flat distant channels; reversing the polarity convention swaps every direction.",
+      "learningObjective": "Recognise ear-reference contamination by working through referential values.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "T3-A1 up 80 µV; Fp1-A1 and O1-A1 show 0 µV",
+        "T3-A1 up 30 µV; Fp1-A1 and O1-A1 down 50 µV",
+        "T3-A1 up 30 µV; Fp1-A1 and O1-A1 show 0 µV",
+        "T3-A1 down 30 µV; Fp1-A1 and O1-A1 up 50 µV"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-basic-eeg-physics-instrumentation",
+      "topicTags": [
+        "ohms-law",
+        "impedance-balance",
+        "60-hz",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "Capacitively coupled 60-Hz current of about 10 nA flows to ground through each of a channel's two electrodes, whose impedances are 3 kΩ and 13 kΩ. Approximately what 60-Hz differential voltage appears between the amplifier inputs?",
+      "explanation": "V = I × Z at each electrode: 10 nA × 3 kΩ = 30 µV and 10 nA × 13 kΩ = 130 µV. The amplifier sees their difference, 100 µV, as a genuine differential signal. 30 µV and 130 µV use one electrode only; 160 µV adds instead of subtracting. With matched impedances the two voltages would be equal (common mode) and largely rejected.",
+      "learningObjective": "Use Ohm's law to show why impedance imbalance converts interference into signal.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 30 µV",
+        "About 100 µV",
+        "About 130 µV",
+        "About 160 µV"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-basic-eeg-physics-instrumentation",
+      "topicTags": [
+        "capacitance",
+        "reactance",
+        "lff"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "In an analog low-frequency filter, the signal passes through a series capacitor to a resistor connected to ground, and the output is taken across the resistor. Why is a 0.3-Hz sweat wave attenuated more than a 10-Hz alpha wave?",
+      "explanation": "Capacitive reactance Xc = 1/(2πfC) increases as frequency decreases, so at 0.3 Hz more of the signal voltage is dropped across the capacitor and less appears across the resistor (the output). Reactance falling with frequency is what lets 10-Hz alpha through. A resistor's resistance does not depend on frequency.",
+      "learningObjective": "Relate capacitive reactance to low-frequency filter behaviour.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The capacitor's opposition to current rises as frequency falls",
+        "The capacitor's opposition to current rises as frequency rises",
+        "The resistor's opposition to current rises as frequency falls",
+        "The resistor's opposition to current rises as frequency rises"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-basic-eeg-physics-instrumentation",
+      "topicTags": [
+        "differential-amplifier",
+        "in-phase-cancellation",
+        "vertex-wave",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "At the peak of a vertex sharp transient, values against a quiet reference are C3 −120 µV, Cz −180 µV and C4 −100 µV. What does transverse channel C3-C4 display (negative up)?",
+      "explanation": "C3-C4 = −120 − (−100) = −20 µV, a small upward deflection: activity shared by both inputs cancels. Downward 20 µV reverses the sign; 220 µV adds the inputs instead of subtracting; downward 60 µV is the C3-Cz value (−120 − (−180) = +60).",
+      "learningObjective": "Show how in-phase activity cancels in a differential channel.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A downward deflection of about 20 µV",
+        "An upward deflection of about 220 µV",
+        "An upward deflection of about 20 µV",
+        "A downward deflection of about 60 µV"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "clipping",
+        "saturation",
+        "display",
+        "sensitivity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "On review at 7 µV/mm, high-amplitude delta in several frontal channels appears flat-topped exactly at the channel borders. Re-displaying the same page at 15 µV/mm shows rounded, complete peaks. What caused the flat tops?",
+      "explanation": "Because the full waveform reappears when the stored data are re-displayed at lower sensitivity, the information was recorded intact and only the display confined the trace to its channel. True amplifier or ADC saturation would stay flat at every display setting, since the peaks were never digitised. Filters change waveform shape gradually (rounding, smaller amplitude) and do not cut peaks flat at the channel edge.",
+      "learningObjective": "Distinguish display clipping from amplifier saturation.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Amplifier saturation at the analog-to-digital input range",
+        "Display clipping of traces at the channel boundaries",
+        "A high-frequency filter set too low for the delta waves",
+        "A low-frequency filter blocking the slowest delta waves"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "electrode-instability",
+        "blocking",
+        "impedance"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 3,
+      "stem": "Each time the patient's head moves on the pillow, channels C3-P3 and P3-O1 jump off-scale, stay at the edge for 1-2 s, then drift back; all other channels are unaffected. P3 reads 9 kΩ, other electrodes 2-3 kΩ. What is the best correction?",
+      "explanation": "Only the two channels sharing P3 are affected and P3 has the outlying impedance, so an unstable electrode-skin interface at P3 is producing large potential shifts with movement. Fixing the source is correct. Raising the LFF shortens recovery but distorts slow activity across the record; 20 µV/mm hides the background; the notch and HFF act on fast activity, not slow shifts.",
+      "learningObjective": "Trace slow off-scale shifts to their shared electrode and correct the source.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Raise the LFF to 5 Hz so the baseline recovers faster",
+        "Change both channels to 20 µV/mm so they stay on scale",
+        "Turn on the 60-Hz notch and lower the HFF to 15 Hz",
+        "Re-prepare and re-seat P3, then recheck its impedance"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "sensitivity",
+        "asymmetry",
+        "bipolar-vs-referential"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 3,
+      "stem": "In a longitudinal bipolar montage, alpha measures 4 mm in T5-O1 and 8 mm in T6-O2. On referential review against Cz, T5 matches T6 and O1 matches O2 in amplitude and phase; impedances are 2-3 kΩ. What best explains the bipolar asymmetry?",
+      "explanation": "If the referential values are symmetric, the bipolar differences computed from them must be symmetric too, so a halved trace points to a channel-specific display setting (for example 14 instead of 7 µV/mm). A true left-sided attenuation would show referentially. A bridge would make T5 and O1 nearly identical, which cannot coexist with T6 differing from O2. Reversed inputs invert the trace rather than halve it.",
+      "learningObjective": "Use referential data to localise an apparent asymmetry to a channel setting.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "T5-O1 is set to a different display sensitivity",
+        "Alpha is attenuated over the left posterior head",
+        "T5 and O1 are bridged by an electrolyte smear",
+        "The inputs of T5-O1 are reversed in the montage"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "hff",
+        "muscle-artifact",
+        "spike-morphology"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "To tidy frequent temporalis muscle artifact in an anxious patient, the HFF was lowered from 70 Hz to 15 Hz for the whole recording. The reader now sees runs of sharply contoured rhythmic activity over T3 and T4. What is the main interpretive risk?",
+      "explanation": "A 15-Hz HFF attenuates the fastest components of EMG potentials, leaving smoother, rounded waves that can mimic beta or sharp activity; the same filter reduces the amplitude and sharpness of true spikes rather than exaggerating them. A high-frequency filter has little effect below 1 Hz, and smoothing EMG moves it away from, not toward, a 60-Hz appearance.",
+      "learningObjective": "Recognise how a low HFF disguises muscle artifact.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Lowering the HFF exaggerates the amplitude of true temporal spikes",
+        "Filtered EMG bursts can resemble cerebral sharp or beta activity",
+        "Lowering the HFF mainly distorts temporal slow activity below 1 Hz",
+        "Lowering the HFF makes the EMG resemble 60-Hz line interference"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-sensitivity-time-constants",
+      "topicTags": [
+        "lff",
+        "focal-slowing",
+        "icu",
+        "digital-review"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "In an ICU patient with a left hemisphere stroke, the overnight technologist raised the LFF from 1 Hz to 5 Hz on all channels to control ventilator and sweat sway, without annotation. The morning reader notes 'no focal slowing'. What should happen next?",
+      "explanation": "A 5-Hz LFF strongly attenuates 1-3 Hz delta, which lies well below its cutoff, so polymorphic focal delta can be under-represented. Digital data can be re-displayed at standard settings, so the finding should be checked at 1 Hz. Lowering sensitivity makes delta smaller, and the HFF governs fast activity, not slow waves.",
+      "learningObjective": "Recognise when a raised LFF invalidates a 'no slowing' finding.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Accept the finding, since a 5-Hz LFF still passes 1-2 Hz delta well",
+        "Accept the finding, but lower the sensitivity to search for delta",
+        "Re-review the night with the HFF raised to 70 Hz on all channels",
+        "Re-review the night at a 1-Hz LFF before accepting that finding"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "notch",
+        "impedance",
+        "ambulatory"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "Midway through a 24-hour ambulatory recording, 60-Hz interference appears only in channels containing O1. Turning on the 60-Hz notch at review makes those channels look clean. What remains the main concern about the O1 data?",
+      "explanation": "The new 60-Hz pickup signals that the O1 electrode has dried or loosened. The notch attenuates only a narrow band near 60 Hz; the poor contact persists, leaving O1 open to electrode pops, movement and slow drift that can mimic cerebral activity. A 60-Hz notch has negligible effect on alpha frequency or amplitude, and it does not restore common-mode rejection.",
+      "learningObjective": "Recognise what a notch filter conceals at review.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "The notch has shifted the frequency of the alpha recorded at O1",
+        "The notch has reduced the O1 alpha amplitude by roughly a half",
+        "O1 contact is poor, so slow drifts and pops may still mimic activity",
+        "O1 contact is poor, but the notch restores normal common-mode rejection"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "calibration",
+        "sensitivity",
+        "amplitude",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A channel labelled 7 µV/mm deflected 20 mm in response to a 100-µV calibration signal at the start of the study. In that channel, a sharp wave now measures 12 mm. What is the best estimate of its amplitude?",
+      "explanation": "The calibration shows the channel's true sensitivity: 100 µV ÷ 20 mm = 5 µV/mm, so 12 mm × 5 = 60 µV. 84 µV trusts the 7 µV/mm label over the calibration; 120 µV assumes 10 µV/mm; 240 µV multiplies the two deflections.",
+      "learningObjective": "Use the calibration response, not the label, to measure amplitude.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 84 µV",
+        "About 60 µV",
+        "About 120 µV",
+        "About 240 µV"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "timebase",
+        "page-compression",
+        "periodic-discharges"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "An ICU record with lateralized periodic discharges every 1.5-2 s can be displayed at 10, 20 or 60 seconds per page. Which review task is best served by switching to the 60-second page?",
+      "explanation": "Compressing time puts many discharges on one screen, making slow changes in rate, regularity and evolution over minutes easier to see. Duration, phase-reversal timing and fine morphology need an expanded timebase (10 s or less per page), where the waveforms are wide enough to measure.",
+      "learningObjective": "Match the display timebase to the review task.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Measuring the duration of each discharge's sharp component",
+        "Timing the phase reversal between adjacent bipolar channels",
+        "Judging gradual change in the rate of the periodic discharges",
+        "Checking whether each sharp component is notched or smooth"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "aliasing",
+        "nyquist",
+        "digital-review",
+        "calculation",
+        "calc-beyond"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "A recording was sampled at 200 Hz with an inadequate anti-aliasing filter while a nearby device emitted 170-Hz interference. At what frequency does the interference appear in the stored data, and can a review filter separate it from cerebral activity?",
+      "explanation": "The Nyquist frequency is 100 Hz; a 170-Hz input folds back to 200 − 170 = 30 Hz. After digitisation the aliased energy genuinely sits at 30 Hz, so review filters cannot tell it from 30-Hz cerebral or muscle activity; only analog anti-alias filtering before sampling prevents it. 70 Hz is 170 − 100; 85 Hz halves 170; a 60-Hz notch does not act at 30 Hz.",
+      "learningObjective": "Calculate an alias frequency and explain why review filtering cannot correct it.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "70 Hz; the 35-Hz review HFF attenuates it like other 70-Hz noise",
+        "30 Hz; once sampled, it is indistinguishable from real 30-Hz activity",
+        "85 Hz; the 35-Hz review HFF attenuates it like other 85-Hz noise",
+        "30 Hz; a 60-Hz notch applied at review attenuates it selectively"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "bipolar-vs-referential",
+        "amplitude",
+        "interelectrode-distance"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "A trainee reports a 'low-voltage posterior rhythm' of 15 µV measured in P3-O1. In the ipsilateral ear-referenced channel O1-A1, the same rhythm measures 45 µV. Sensitivity and filters are identical in both channels. What best explains the difference?",
+      "explanation": "P3 and O1 both sit within the posterior alpha field and record similar, in-phase activity, so their difference is small; the ear lies largely outside the field, so O1-A1 shows nearly the full O1 amplitude. An active ear would reduce, not enlarge, O1-A1; modest impedance does not shrink amplitude with a high-input-impedance amplifier; the filters are stated to be identical.",
+      "learningObjective": "Account for montage when describing amplitude.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A1 picks up alpha strongly and adds it to the O1-A1 channel",
+        "P3-O1 has higher electrode impedance, which lowers amplitude",
+        "Bipolar channels run a higher default LFF than referential ones",
+        "Adjacent electrodes share much of the alpha field, which cancels"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "reference-electrode",
+        "60-hz",
+        "reformatting",
+        "montage"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "During a recording against a common system reference, every referential channel shows 60-Hz interference of similar amplitude. When the same data are reformatted to a longitudinal bipolar montage, the interference largely cancels. Scalp electrodes read 2-4 kΩ. Which electrode should be checked first?",
+      "explanation": "Each referential channel is (electrode − reference), so anything at the reference appears equally in every channel; in a bipolar derivation (E1 − R) − (E2 − R) the reference term cancels. That pattern points to the reference. A poor ground raises interference at all inputs and does not cancel this neatly; a single scalp electrode affects only its own channels; ear electrodes are not in the system-referenced channels.",
+      "learningObjective": "Use montage reformatting to localise interference to the reference electrode.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The isolated patient ground electrode",
+        "The highest-impedance scalp electrode",
+        "The ear electrodes A1 and A2 together",
+        "The common recording reference electrode"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "biological-calibration",
+        "lff",
+        "time-constant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "During biological calibration with every channel recording Fp1-O2, the eye blinks in channel 9 are about 40% smaller than in the other channels and return to baseline sooner, with a brief swing past baseline. Sensitivity is the same in every channel. Which setting most likely differs in channel 9?",
+      "explanation": "A blink is a slow wave. A higher LFF (shorter time constant) attenuates it, shortens its return to baseline and produces an undershoot. A lower HFF rounds fast components but barely affects a slow blink; a notch acts only near 60 Hz; reversed inputs invert the blink without changing its size or decay.",
+      "learningObjective": "Use biological calibration to detect a mismatched LFF.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A lower high-frequency filter setting",
+        "An active 60-Hz notch filter in that channel",
+        "Reversed input connections in that channel",
+        "A higher low-frequency filter setting"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "square-wave-calibration",
+        "hff"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "On square-wave calibration, all channels show the same height and the same exponential decay, but in channel 4 the leading edge rises visibly more slowly and its corner is rounded. Which setting most likely differs in channel 4?",
+      "explanation": "The rise of a square-wave step is limited by the high-frequency filter: a lower HFF slows the rise and rounds the corner. The LFF (time constant) governs the decay, which is normal; sensitivity governs height, which is normal; a notch acts only in a narrow band near 60 Hz and does not visibly slow the rise.",
+      "learningObjective": "Read HFF effects from the square-wave calibration.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A lower high-frequency filter setting",
+        "A higher low-frequency filter setting",
+        "A less sensitive µV/mm display setting",
+        "An active 60-Hz notch filter in that channel"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "lff",
+        "spike-and-wave",
+        "slow-wave"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "A child's record shows 3-Hz generalized spike-and-wave at an LFF of 1 Hz. Reviewing one segment at an LFF of 5 Hz to suppress sweat sway, a technologist sees mainly repetitive spikes with little after-going slow wave. What explains the change?",
+      "explanation": "The slow wave of a 3-Hz complex has most of its energy below the 5-Hz cutoff and is strongly attenuated, while the spike's faster components are attenuated much less, so complexes can look like isolated or repetitive spikes. An LFF does not boost amplitude and does not change the repetition rate of the discharges.",
+      "learningObjective": "Predict how a raised LFF alters spike-and-wave morphology.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The spike component is attenuated more than the slow wave",
+        "The slow-wave component is attenuated more than the spike",
+        "The higher LFF has sharpened the spikes by raising their amplitude",
+        "The higher LFF has shifted the discharge rate from 3 Hz to 5 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-sensitivity-time-constants",
+      "topicTags": [
+        "hff",
+        "spike-vs-sharp",
+        "duration",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "At an HFF of 70 Hz and 30 mm/s, a left temporal transient measures 1.8 mm wide and 90 µV. For a cleaner print, a colleague re-displays it at an HFF of 15 Hz, where it measures 2.4 mm wide and 60 µV, and labels it a sharp wave. How should the transient be described?",
+      "explanation": "At 30 mm/s, 1.8 mm = 60 ms (spike range, under 70 ms) and 2.4 mm = 80 ms. A 15-Hz HFF attenuates the fast components of a spike, lowering its amplitude and widening it, which can push it into the sharp-wave range, so measurements belong at the standard 70-Hz setting. Averaging settings is meaningless, and filtering clearly does alter duration.",
+      "learningObjective": "Measure transients at standard filter settings.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "As a 60-ms spike; the 15-Hz HFF widened and blunted it",
+        "As an 80-ms sharp wave; the 70-Hz HFF added muscle sharpness",
+        "As a 70-ms transient, the average of the two measurements",
+        "As an 80-ms sharp wave; HFF changes do not alter its duration"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "electrolyte-bridge",
+        "flat-channel",
+        "impedance"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "Channel F3-C3 is nearly flat, while F3 and C3 each show normal-looking activity in referential channels, with almost identical waveforms. Calibration is normal in every channel. What is the most likely cause?",
+      "explanation": "When paste or gel smears between two electrodes they become one electrical contact; their referential waveforms become nearly identical and the differential channel between them is close to zero. A disconnected lead produces noise and 60-Hz interference, not a quiet trace; a normal calibration argues against amplifier failure; reversed inputs invert rather than flatten.",
+      "learningObjective": "Recognise a salt bridge from referential and bipolar evidence.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Electrolyte bridging between F3 and C3",
+        "A disconnected F3 lead wire at the headbox",
+        "A failed amplifier in the F3-C3 channel",
+        "F3 and C3 reversed in the montage setup"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "sensitivity",
+        "amplitude",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A trainee reviewing at 3 µV/mm calls a frontal rhythm with 20-mm peak-to-peak deflections 'very high amplitude'. What is its amplitude, and how tall would it be at the standard 7 µV/mm?",
+      "explanation": "Amplitude = sensitivity × deflection = 3 × 20 = 60 µV, a moderate amplitude; at 7 µV/mm it would be 60 ÷ 7 ≈ 8.6 mm. 140 µV assumes the page was at 7 µV/mm; 47 mm multiplies instead of dividing; 6.7 µV divides deflection by sensitivity.",
+      "learningObjective": "Avoid judging amplitude from trace height without the sensitivity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "140 µV; about 20 mm at 7 µV/mm",
+        "60 µV; about 47 mm at 7 µV/mm",
+        "6.7 µV; about 1 mm at 7 µV/mm",
+        "60 µV; about 8.6 mm at 7 µV/mm"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "timebase",
+        "periodic-discharges",
+        "frequency",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A compressed ICU page runs at 15 mm/s. Lateralized periodic discharges recur every 30 mm. What is their repetition rate?",
+      "explanation": "At 15 mm/s, 30 mm = 2 s between discharges, giving 1 ÷ 2 = 0.5 Hz. 1 Hz assumes the standard 30 mm/s; 2 Hz inverts the period; 0.25 Hz doubles the interval.",
+      "learningObjective": "Measure periodic discharge rate on a compressed page.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 1 Hz",
+        "About 0.5 Hz",
+        "About 2 Hz",
+        "About 0.25 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "sampling-rate",
+        "nyquist",
+        "digital-review",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "An archived ambulatory file was acquired at 100 samples per second. On review, raising the HFF from 35 Hz to 70 Hz makes no visible difference to suspected muscle artifact. Why?",
+      "explanation": "At 100 samples/s the Nyquist limit is 50 Hz, and the acquisition anti-alias filter attenuates content approaching it, so nothing between 50 and 70 Hz exists in the file for a wider review filter to reveal. Review HFFs are independent of the notch; EMG has substantial energy well above 35 Hz; digital review filters re-process all stored data.",
+      "learningObjective": "Relate stored bandwidth to the sampling rate.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Review HFF settings cannot exceed the notch filter frequency",
+        "Muscle artifact contains little energy above about 35 Hz",
+        "Frequencies above about 50 Hz were not captured at that rate",
+        "Review filters apply only to data acquired after the change"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-028",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "sweat-artifact",
+        "lff",
+        "troubleshooting"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "In a warm room, a sedated adult develops 0.3-0.5 Hz baseline sway in many channels that drifts off the page at 7 µV/mm and obscures the background. The LFF is 1 Hz. What is the best first step?",
+      "explanation": "Sweat artifact arises from changing skin potentials, so cooling and drying address the cause; a modest, annotated LFF increase is a fallback. A 5-Hz LFF attenuates genuine delta and theta for the rest of the study; 20 µV/mm shrinks the background along with the sway; the notch and HFF act on fast activity and do nothing for 0.3-0.5 Hz sway.",
+      "learningObjective": "Manage sweat artifact at its source before filtering.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Cool the patient and room, then raise the LFF modestly if needed",
+        "Raise the LFF to 5 Hz on all channels for the rest of the study",
+        "Change sensitivity to 20 µV/mm to keep the sway on the page",
+        "Turn on the 60-Hz notch and lower the HFF to 35 Hz on all channels"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-029",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "time-constant",
+        "lff",
+        "delta",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "Two legacy montages specify time constants rather than LFFs: montage A uses 0.3 s and montage B uses 0.1 s. Which displays 1-Hz frontal delta closer to its true amplitude?",
+      "explanation": "LFF = 1/(2π × TC): 0.3 s gives about 0.53 Hz and 0.1 s about 1.6 Hz. A longer time constant means a lower cutoff, so 1-Hz delta sits above A's cutoff but below B's, and A shows it closer to true amplitude. Pairing the longer TC with the higher LFF is backwards; 0.1/0.3 Hz reads seconds as hertz; 3.3/10 Hz omits the 2π.",
+      "learningObjective": "Compare time constants for slow-wave fidelity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "B; its LFF is about 0.5 Hz, versus about 1.6 Hz for A",
+        "A; its LFF is about 0.5 Hz, versus about 1.6 Hz for B",
+        "B; its LFF is about 0.1 Hz, versus about 0.3 Hz for A",
+        "A; its LFF is about 3.3 Hz, versus about 10 Hz for B"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-030",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "biological-calibration",
+        "montage-error",
+        "flat-channel"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "Square-wave calibration is normal in all 21 channels. During biological calibration (all channels Fp1-O2), channel 15 alone is flat while every other channel shows the eye blinks. What is the most likely fault?",
+      "explanation": "If the same electrode feeds both inputs, the difference is zero and the trace is flat even though the amplifier is healthy, as the normal square wave shows. A bad Fp1 would affect every channel, since all record Fp1-O2. Amplifier failure is contradicted by the calibration, and even a high LFF reduces a blink rather than flattening it.",
+      "learningObjective": "Use calibration results to separate amplifier faults from input-selection faults.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Channel 15's montage uses the same electrode for both inputs",
+        "Electrode Fp1 has developed a high impedance at its contact",
+        "Channel 15's amplifier gain failed after the square-wave test",
+        "Channel 15's LFF is set high enough to block the slow blinks"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-031",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "60-hz",
+        "icu",
+        "lead-routing",
+        "single-ground"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 3,
+      "stem": "In an ICU, 60-Hz interference of 20-30 µV appears in all channels after an infusion pump and a warming blanket are added beside the bed. Impedances are 2-4 kΩ and balanced, and the ground electrode is secure. What is the best next step?",
+      "explanation": "The interference began with new line-powered devices and the electrodes are already low and balanced, so the coupling is from the devices' fields into the leads; separating and bundling the leads (and moving cords where clinically allowed) reduces it at the source. A notch hides it without fixing it; further lowering already good impedances adds little; a second ground creates a ground loop and an extra current path through the patient.",
+      "learningObjective": "Troubleshoot environmental 60-Hz interference in the ICU.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Enable the 60-Hz notch and continue without other changes",
+        "Re-prepare every electrode to bring impedances below 1 kΩ",
+        "Add a second ground electrode on the patient's shoulder",
+        "Reroute and bundle the leads away from the new devices' cords"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-032",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "technical-description",
+        "posterior-rhythm",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "For the technical description, the eyes-closed posterior rhythm shows 9 complete waves per 30 mm at 30 mm/s; peak-to-peak deflections are 6 mm on the left and 9 mm on the right at 7 µV/mm, and both attenuate with eye opening. Which entry is accurate?",
+      "explanation": "30 mm at 30 mm/s is 1 s, so 9 waves = 9 Hz; 6 mm × 7 = 42 µV and 9 mm × 7 = 63 µV. Reporting mm as µV ignores the sensitivity; 18 Hz counts half-waves; calling the asymmetry abnormal is an interpretation for the reader, not part of the technologist's description.",
+      "learningObjective": "Write a measured, non-interpretive technical description.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "9 Hz, about 6 µV left and 9 µV right, reactive to eye opening",
+        "9 Hz, about 42 µV left and 63 µV right, an abnormal asymmetry",
+        "9 Hz, about 42 µV left and 63 µV right, reactive to eye opening",
+        "18 Hz, about 42 µV left and 63 µV right, reactive to eye opening"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-033",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "reactivity",
+        "icu",
+        "technical-description"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "In a comatose ICU patient, you deliver a sternal rub at 14:10. Within 2 s, high-amplitude EMG appears over both temporal regions and the patient grimaces; the underlying 1-2 Hz delta background is unchanged in frequency and amplitude. Which technical note is accurate?",
+      "explanation": "Under the ACNS 2021 terminology, reactivity requires a change in cerebral EEG activity (amplitude or frequency); muscle activity or eye-blink artifact alone does not qualify. The background was visible and unchanged, so it is neither reactive nor attenuated, and 'not assessable' ignores the visible unchanged delta. The note keeps stimulus, time, clinical response and EEG response separate.",
+      "learningObjective": "Describe EEG reactivity using ACNS criteria.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Sternal rub 14:10: grimace and EMG; EEG reactive to noxious stimulation",
+        "Sternal rub 14:10: grimace and EMG; stimulus-induced attenuation seen",
+        "Sternal rub 14:10: EMG obscured the EEG, so reactivity is not assessable",
+        "Sternal rub 14:10: grimace and EMG only; no change in cerebral activity"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-034",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "technologist-notes",
+        "sedation",
+        "medication-effect"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "During a pediatric EEG, a nurse gives an oral sedative at 10:20. By 10:40 there is prominent 18-25 Hz frontocentral activity and the child is drowsy. The notes already list the home medications. Which addition matters most for the reader?",
+      "explanation": "Drug, dose and timing let the reader relate the new beta and the change of state to the sedative. Weight and meal timing do not explain the EEG change; labelling the beta as a drug effect is the reader's interpretation, not a technical observation; the usual sleep schedule is background history.",
+      "learningObjective": "Record medication events so the reader can interpret EEG changes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The child's weight and the time of the last meal before the study",
+        "Sedative name, dose and time given, plus when drowsiness began",
+        "A note stating that the 18-25 Hz activity is a sedative effect",
+        "The parents' account of the child's usual nightly sleep schedule"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-035",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "skull-defect",
+        "electrode-modification",
+        "technical-description"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A patient has a healing right temporal craniotomy incision, so T4 is placed 2 cm above its measured position and F8 is omitted. Later, the reader sees higher-amplitude, sharper activity at T4 than at T3. Which entry in the technical record matters most for this interpretation?",
+      "explanation": "A skull defect can produce a breach effect (higher-amplitude, sharper activity over the defect), and moving T4 changes inter-electrode distances; the reader needs both facts to avoid mistaking breach rhythm for epileptiform activity. Impedances and adhesive type do not explain the asymmetry, and recording T4 as standard placement would be inaccurate.",
+      "learningObjective": "Record electrode modifications and skull defects for interpretation.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "T4 moved 2 cm up and F8 omitted, because of the right craniotomy",
+        "All impedances below 5 kΩ at the start and end of the recording",
+        "T4 placed by the 10-20 system using standard head measurements",
+        "Right temporal electrodes applied with paste instead of collodion"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-036",
+      "domainId": "domain-3",
+      "sectionId": "d3-s4",
+      "topicTags": [
+        "average-reference",
+        "reformatting",
+        "montage",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "A file recorded against a common system reference is reformatted to an average reference of all 19 scalp electrodes. At the peak of a focal spike, T3 is −190 µV and the other 18 electrodes are 0 µV against the system reference. What do the other 18 channels show (negative up)?",
+      "explanation": "The average is −190 ÷ 19 = −10 µV. Each uninvolved channel is 0 − (−10) = +10 µV, a small downward deflection, while T3-Avg is −190 − (−10) = −180 µV. A large focal discharge contaminates the average, so 'no deflection' is wrong; an upward deflection reverses the sign; 190 µV ignores the averaging.",
+      "learningObjective": "Predict average-reference contamination from a focal discharge.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Each shows no deflection, because only T3 is involved",
+        "Each shows a small upward deflection of about 10 µV",
+        "Each shows a small downward deflection of about 10 µV",
+        "Each shows a downward deflection of about 190 µV"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-037",
+      "domainId": "domain-3",
+      "sectionId": "d3-s4",
+      "topicTags": [
+        "archiving",
+        "file-integrity",
+        "video-eeg"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "After a 72-hour video-EEG admission, the archive job shows 'completed' and the local acquisition drive is scheduled to be wiped in 24 hours. Before the local copy is released, which check best confirms the archive is usable?",
+      "explanation": "Only opening the archived copy and sampling EEG and video across its full duration shows that the data are complete, readable and synchronised. A nonzero size or an error-free job does not prove a file is complete or uncorrupted, and checking only the first minutes misses truncation or loss later in the study.",
+      "learningObjective": "Confirm archive integrity before releasing the local copy.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Check that each archived file is listed with a nonzero file size",
+        "Open the archived study and sample EEG and video across all 72 hours",
+        "Confirm the archive job finished without any error message",
+        "Open the archived study and play the first ten minutes of video"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-038",
+      "domainId": "domain-3",
+      "sectionId": "d3-s4",
+      "topicTags": [
+        "pruning",
+        "emu",
+        "data-retention"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "procedure",
+      "reasoningSteps": 3,
+      "stem": "A 5-day EMU study is to be pruned before long-term storage. It contains three typical seizures, frequent right temporal spikes and one pushbutton press with no EEG change. Which pruning plan keeps what a later reviewer needs?",
+      "explanation": "A reviewer needs every clinical event, including the pushbutton event without EEG change (which may itself be diagnostic), with the pre-onset period to judge the electrographic onset and the postictal period, plus representative interictal wake and sleep background. Clipping at clinical onset loses the EEG onset; dropping the pushbutton event or the video discards evidence.",
+      "learningObjective": "Prune long-term monitoring data without losing diagnostic content.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Each seizure from clinical onset to clinical end, plus one sample of the spikes",
+        "Each event with pre-onset and postictal EEG/video, plus wake and sleep samples",
+        "Each seizure with pre-onset EEG/video, omitting the pushbutton event as non-EEG",
+        "Representative spikes and sleep samples, plus each seizure's EEG without video"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-039",
+      "domainId": "domain-3",
+      "sectionId": "d3-s4",
+      "topicTags": [
+        "patient-identification",
+        "file-header",
+        "data-integrity"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "While archiving, you notice that an EEG file header has the correct name but a date of birth one year different from the order and wristband. The study has not been read yet. What is the best action?",
+      "explanation": "A mismatched identifier means the file may belong to another patient or carry a registration error; it must be held until identity is confirmed through the institution's correction process. Editing the header yourself bypasses that process, a free-text comment leaves an unresolved record in circulation, and a matching name is not sufficient identification.",
+      "learningObjective": "Handle identity discrepancies in EEG files.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Edit the header date of birth to match the order, then archive it",
+        "Archive it unchanged and add a free-text comment about the mismatch",
+        "Hold the file from reading and archiving until identity is reconciled",
+        "Archive it unchanged, since the patient name in the header is correct"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-040",
+      "domainId": "domain-3",
+      "sectionId": "d3-s4",
+      "topicTags": [
+        "bipolar-chain",
+        "reformatting",
+        "montage",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "An older file stores only the bipolar channels Fp1-F7, F7-T3, T3-T5 and T5-O1. At one instant their outputs are +10, −40, +60 and −5 µV (input 1 minus input 2). The reader wants the Fp1-T5 derivation. What is its value?",
+      "explanation": "Adjacent bipolar channels sum along a chain: (Fp1−F7) + (F7−T3) + (T3−T5) = Fp1 − T5 = 10 − 40 + 60 = +30 µV, which deflects downward. +25 µV wrongly adds T5-O1; −30 µV reverses the sign; +110 µV adds magnitudes without signs.",
+      "learningObjective": "Derive a new derivation by summing bipolar channels.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "+25 µV, a downward deflection",
+        "−30 µV, an upward deflection",
+        "+110 µV, a downward deflection",
+        "+30 µV, a downward deflection"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-041",
+      "domainId": "domain-3",
+      "sectionId": "d3-s4",
+      "topicTags": [
+        "video-eeg-synchronization",
+        "event-timing",
+        "data-integrity"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "In an EMU file, the video shows a hand clap at 09:00:00, but its artifact appears on the EEG at 09:00:03. For an event later that day, clinical onset on video precedes the first EEG change by 3 s. What is the best interpretation?",
+      "explanation": "The clap test shows the EEG stamps each event 3 s later than the video does; that 3-s offset alone explains the apparent clinical lead, and after correction the onsets coincide. Interpreting a clinical-first onset localisation before correcting synchronisation is premature; a 3-s offset is not a normal display delay; the clap test is the evidence of the offset and should not be discarded.",
+      "learningObjective": "Check video-EEG synchronisation before interpreting onset timing.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A 3-s video-EEG offset accounts for it; fix the sync before timing onsets",
+        "Clinical onset came first, suggesting a deep or extratemporal origin",
+        "The 3-s gap reflects normal display delay and needs no correction",
+        "The clap test is unreliable, so time onsets from the EEG clock alone"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-042",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "ground-pin",
+        "equipment-inspection",
+        "icu"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Before a portable ICU study, you find that the EEG cart's hospital-grade plug has a bent ground pin and will not seat in the outlet. A colleague offers a three-to-two-prong adapter. The patient has a central venous line. What should you do?",
+      "explanation": "The ground pin is the path that carries chassis leakage and fault current away from the patient; an adapter or a bent, re-straightened pin defeats or weakens it, and patients with central lines are especially vulnerable. Input isolation does not replace chassis grounding, and distance from the bed frame does not protect the patient connected to the cart.",
+      "learningObjective": "Remove equipment with a compromised ground from use.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Use the adapter, since the amplifier inputs are isolated",
+        "Straighten the pin and use the cart if it seats firmly",
+        "Use another cart and tag this one out of service for repair",
+        "Use the adapter but keep the cart away from the bed frame"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-043",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "single-ground",
+        "ground-loop",
+        "icu"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "An ICU patient is connected to a bedside monitor and an infusion pump, and the EEG ground is at Fpz. To reduce 60-Hz interference, a colleague suggests adding a second ground from the patient's arm to the bed frame. What is the best response?",
+      "explanation": "More than one ground connection creates ground loops and an extra low-impedance path for leakage or fault current through the patient, and it often increases rather than reduces interference. The patient should have one ground, and the interference should be traced to its source (leads near cords, impedances, devices).",
+      "learningObjective": "Apply the single-ground principle.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Add the arm ground, since more ground contacts lower the noise",
+        "Add the arm ground, but connect it to the EEG ground jack too",
+        "Move the EEG ground to the arm and add another at the mastoid",
+        "Keep a single patient ground and find the interference source"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-044",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "isolated-inputs",
+        "leakage-current",
+        "isolation-amplifier"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "A faulty line-powered device touching the patient raises the patient's body potential relative to earth. The EEG headbox uses isolated inputs. What limits the current that can flow through the EEG electrodes to earth?",
+      "explanation": "Isolated inputs (and an isolated patient ground) are separated from earth by a barrier of very high impedance, so even if the patient's potential rises, little current can pass through the EEG electrodes to earth. A low-impedance ground would increase current; CMRR and the notch are signal-processing properties that do nothing to limit current.",
+      "learningObjective": "Explain how isolated inputs protect the patient.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The low impedance of the patient ground electrode",
+        "The amplifier's high common-mode rejection ratio",
+        "The isolation barrier's very high impedance to earth",
+        "The 60-Hz notch filter in each amplifier input stage"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-045",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "touch-proof-connectors",
+        "lead-wires",
+        "equipment-inspection"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Restocking the lab, you find a box of older electrode lead wires whose connector ends are bare metal pins rather than recessed, shrouded sockets. They test as electrically continuous. What should be done with them?",
+      "explanation": "Unshielded pin connectors can be inserted into power cords or outlets, connecting line voltage directly to the patient; injuries led the FDA (1997) to require protected, touch-proof connectors on patient leads. Continuity does not address the hazard, outlets exist in every setting, and taping during storage does not protect during use.",
+      "learningObjective": "Recognise and withdraw non-compliant lead connectors.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Use them, as continuity is the main test lead wires need",
+        "Use them for outpatients only, as ICU outlets are the hazard",
+        "Use them, as long as each pin is taped over during storage",
+        "Withdraw them, as bare pins can be pushed into live power sockets"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-046",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "line-powered-devices",
+        "icu",
+        "outlets",
+        "common-ground"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 3,
+      "stem": "In an ICU room, the bed, ventilator and monitor are plugged into the outlets at the head of the bed. The nearest free outlet for the EEG machine is in the hallway, 8 m away. What is the best approach?",
+      "explanation": "Equipment connected to the same patient should share the same grounding point, typically the outlet group at the bedside, to minimise ground potential differences that drive current through the patient. Outlets on another circuit, such as in a hallway, may sit at a different ground potential; household extension cords and consumer power strips are not acceptable in patient-care areas.",
+      "learningObjective": "Choose power connections that keep a common ground in the ICU.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Run a household extension cord from the hallway outlet",
+        "Plug into a consumer power strip shared with the monitor",
+        "Use the same headwall outlets, asking staff to free one",
+        "Use the hallway outlet and route the cord along the wall"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-047",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "calibration",
+        "qa-trend",
+        "gain-drift"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 3,
+      "stem": "Weekly QA applies 100 µV at 10 µV/mm, with a lab tolerance of ±5%. Over four consecutive weeks, channel 14 deflected 10.0, 9.6, 9.1 and 8.6 mm, while all other channels held at 10.0 mm. What is the best action?",
+      "explanation": "8.6 mm is 14% low and the decline is progressive, so the channel is out of tolerance and still drifting; it needs service. Gradual drift is still failure; re-labelling hides a moving error instead of correcting it; the calibration signal is applied at the amplifier, so the electrodes play no part.",
+      "learningObjective": "Act on calibration trends in QA logs.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Send the amplifier for service; channel 14's gain is steadily falling",
+        "Continue use, since the drift has been gradual rather than sudden",
+        "Continue use after re-labelling channel 14 as about 11.6 µV/mm",
+        "Re-prepare the electrodes used in channel 14 before next week's check"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-048",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "fluid-spill",
+        "leakage-testing",
+        "equipment-maintenance"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "During setup, a cup of saline tips over the EEG headbox. After it is wiped dry, all impedances read normally and the calibration looks correct. What is the best course?",
+      "explanation": "Saline inside a headbox can create conductive paths that raise leakage current or cause later failure, and functional checks such as impedance and calibration do not test electrical isolation. The unit needs inspection and leakage testing by clinical engineering before reuse. Battery power does not repair a breached isolation barrier, and heat can damage components.",
+      "learningObjective": "Withdraw fluid-exposed equipment for safety testing.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Continue, since normal impedances and calibration show it is sound",
+        "Continue, but run the study on battery power in case of a short",
+        "Dry the inside with a heat gun, then continue the recording",
+        "Stop using the headbox until it is inspected and leakage-tested"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-049",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "microshock",
+        "leakage-current",
+        "electrically-susceptible-patient"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Why is an ICU patient with an external temporary pacing wire more vulnerable to leakage current from EEG equipment than an outpatient with intact skin?",
+      "explanation": "A pacing wire or central catheter bypasses the protective resistance of the skin and delivers current directly to the myocardium (microshock), where currents far too small to be felt can cause ventricular fibrillation. Pacing wires do not alter scalp impedance, pacing pulses are not EEG leakage current, and line voltage does not differ between ICU and clinic outlets.",
+      "learningObjective": "Explain microshock risk in electrically susceptible patients.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Pacing wires raise the skin impedance at the scalp electrodes",
+        "Pacing pulses add to the leakage current in the EEG amplifier inputs",
+        "A conductive path to the heart lets tiny currents trigger arrhythmia",
+        "ICU outlets carry a higher line voltage than outpatient clinic outlets"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b6-050",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "impedance-meter",
+        "qa",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "troubleshooting",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "To check the impedance meter, precision test resistors of 5 kΩ and 10 kΩ are connected; the meter reads 2 kΩ and 4 kΩ. During today's study, scalp electrodes read 2-3 kΩ on this meter. What were their likely true impedances?",
+      "explanation": "The meter reads 40% of the true value (2/5 and 4/10), so 2-3 kΩ displayed corresponds to 2 ÷ 0.4 = 5 kΩ to 3 ÷ 0.4 = 7.5 kΩ. 2-3 kΩ trusts the faulty meter; 0.8-1.2 kΩ multiplies by 0.4 instead of dividing; 5-6 kΩ assumes a fixed 3-kΩ offset, which the 10-kΩ check rules out.",
+      "learningObjective": "Correct readings from a meter that fails verification.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 5-7.5 kΩ",
+        "About 2-3 kΩ",
+        "About 0.8-1.2 kΩ",
+        "About 5-6 kΩ"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 6 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

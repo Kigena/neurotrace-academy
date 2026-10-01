@@ -1,0 +1,1450 @@
+{
+  "version": "batch9-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "description": "ABRET Challenge Bank batch 9: normal adult EEG, non-physiologic artifacts and montage-based troubleshooting, focal seizures, professional practice and workplace safety. Not yet medically verified.",
+  "totalQuestions": 50,
+  "questions": [
+    {
+      "id": "ch-b9-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "posterior-dominant-rhythm",
+        "asymmetry",
+        "frequency",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "On a 30 mm/s display, the eyes-closed posterior rhythm of a 42-year-old shows 10 complete cycles in 30 mm at O2 and 10 complete cycles in 37.5 mm at O1. Both sides block symmetrically with eye opening and have similar amplitude. What is the best interpretation?",
+      "explanation": "30 mm = 1 s, so O2 runs at 10 Hz; 37.5 mm = 1.25 s, so O1 runs at 8 Hz. A persistent inter-hemispheric difference in posterior rhythm frequency of more than about 1 Hz is abnormal, and the slower side is the side of dysfunction. Calling 2 Hz normal ignores that limit, 1 Hz is an arithmetic slip, and the faster right side is not the abnormal one.",
+      "learningObjective": "Measure posterior rhythm frequency on each side and apply the 1-Hz asymmetry limit.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 2 Hz slower on the left; within the normal adult limits",
+        "About 1 Hz slower on the left; within the normal adult limits",
+        "About 2 Hz slower on the left; abnormal, implicating the left side",
+        "About 2 Hz slower on the left; abnormal, implicating the right side"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "posterior-dominant-rhythm",
+        "asymmetry",
+        "amplitude",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "In a 35-year-old, eyes-closed alpha measures 66 µV at O2 and 44 µV at O1 in an ipsilateral-ear referential montage; both ears are quiet and electrode positions have been re-measured as symmetric. Taking the larger side as 100%, how large is the asymmetry and how should it be regarded?",
+      "explanation": "(66 − 44) ÷ 66 ≈ 33%. Alpha amplitude asymmetry is generally regarded as abnormal only when it exceeds about 50%, and a modestly higher right-sided alpha is common in healthy adults. 50% comes from dividing by the smaller side (22 ÷ 44); 22% confuses the microvolt difference with a percentage; labelling 33% abnormal over-reads a normal finding.",
+      "learningObjective": "Express alpha amplitude asymmetry correctly and apply the usual 50% limit.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 50%; abnormal, implicating the left side",
+        "About 33%; abnormal, implicating the left side",
+        "About 22%; within normal limits for an adult",
+        "About 33%; within normal limits for an adult"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "reactivity",
+        "bancaud-phenomenon",
+        "alpha"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A 55-year-old has a symmetric 9.5-Hz eyes-closed alpha rhythm. With eye opening and again during mental arithmetic, alpha attenuates well over the left occipital region but continues almost unchanged over the right. What does this most likely indicate?",
+      "explanation": "Unilateral failure of alpha to attenuate with eye opening or mental alerting (Bancaud's phenomenon) indicates dysfunction on the side that fails to react, here the right. The left side reacts normally, so it is not the abnormal side. Healthy adults show symmetric blocking, and drowsiness does not explain a consistent one-sided failure that recurs with two different alerting manoeuvres.",
+      "learningObjective": "Lateralize dysfunction from asymmetric alpha reactivity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Impaired reactivity, pointing to dysfunction on the right",
+        "Impaired reactivity, pointing to dysfunction on the left",
+        "A normal asymmetry of reactivity seen in healthy adults",
+        "A drowsiness effect, reducing reactivity on one side only"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "aging",
+        "posterior-dominant-rhythm",
+        "diffuse-slowing"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "An 81-year-old who lives independently is referred for dizziness. While she is clearly alert, answering questions briskly with the eyes closed, her posterior rhythm is a reactive, symmetric 7.0-7.5 Hz with no notching or alternation with faster alpha. What is the most defensible interpretation?",
+      "explanation": "Healthy older adults usually keep a posterior dominant rhythm of 8 Hz or more; a rhythm below 8 Hz during documented full alertness is abnormal (mild generalized slowing) and is not explained by age alone. The slow alpha variant is a notched subharmonic, about half the alpha frequency, that alternates with normal alpha, which is absent here. Drowsiness is excluded by the brisk responses.",
+      "learningObjective": "Apply the 8-Hz lower limit of the posterior rhythm to older adults.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Expected slowing of the posterior rhythm in the ninth decade",
+        "A slow alpha variant, since it is reactive and symmetric",
+        "Drowsiness, the most common cause of a slowed posterior rhythm",
+        "Below the adult lower limit of 8 Hz; a mild diffuse slowing"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "paradoxical-alpha",
+        "drowsiness",
+        "alpha-variants"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A drowsy 30-year-old shows diffuse low-voltage theta with the eyes closed and no posterior alpha. When asked to open the eyes, a 10-Hz posterior rhythm appears for several seconds and then fades as the eyes stay open. What is this?",
+      "explanation": "In a drowsy subject, the alerting effect of eye opening can transiently bring back alpha before visual input attenuates it: paradoxical alpha. Alpha squeak is a brief higher-frequency alpha just after eye closure, not opening. Lambda waves are positive occipital sharp transients during scanning, not a 10-Hz rhythm. Bancaud's phenomenon is a one-sided failure of alpha to block.",
+      "learningObjective": "Recognize paradoxical alpha in a drowsy patient.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Paradoxical alpha, from arousal out of drowsiness",
+        "Alpha squeak, the rebound that follows a change in eyes",
+        "Lambda waves, evoked by visual scanning on opening",
+        "Bancaud's phenomenon, from impaired alpha reactivity"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "fast-alpha-variant",
+        "alpha-variants",
+        "beta"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "An alert adult has an 18-19 Hz notched posterior rhythm that, in some epochs, takes the place of a typical 9-9.5 Hz alpha rhythm. Both block with eye opening and are maximal over O1 and O2. What is the 18-19 Hz rhythm?",
+      "explanation": "The fast alpha variant runs at about twice the alpha frequency (16-20 Hz), is posterior, alternates with the normal alpha rhythm and blocks with eye opening. Medication beta is frontocentral and does not block with eye opening; a breach rhythm requires a skull defect, none is described, and would be confined to the side of the defect; mu is central and blocked by movement, not by eye opening.",
+      "learningObjective": "Identify the fast alpha variant by its frequency relation and reactivity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Drug-induced beta, typical of a benzodiazepine effect",
+        "Fast alpha variant, a harmonic of the alpha rhythm",
+        "Posterior beta from a breach over an occipital defect",
+        "A posterior mu rhythm harmonic, blocked by movement"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-s2",
+      "topicTags": [
+        "environment",
+        "power",
+        "60-hz",
+        "electrical-safety"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "procedure",
+      "reasoningSteps": 3,
+      "stem": "Before a portable EEG in a single room, the technologist finds the electric bed plugged in beside the head of the bed and the EEG cart running from a household extension cord to an outlet across the room. What is the best preparation before recording?",
+      "explanation": "Household extension cords can compromise the equipment ground and add leakage paths; recording equipment should run from a hospital-grade outlet, ideally the one serving the bed area, with leads routed away from power cords. A notch only masks the interference, a second ground creates an extra current path (ground loop), and moving the cart does nothing about the extension cord.",
+      "learningObjective": "Prepare the recording environment to minimise mains interference and leakage risk.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Keep the extension cord and switch the 60-Hz notch on from the start",
+        "Keep the extension cord and add a second ground electrode on the patient",
+        "Keep the extension cord and move the cart closer to the head of the bed",
+        "Use a hospital-grade outlet by the bed and keep leads away from cords"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-s2",
+      "topicTags": [
+        "calibration",
+        "time-constant",
+        "equipment-check"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "At the start of a study, a 50-µV square-wave calibration at 7 µV/mm, LFF 1 Hz and HFF 70 Hz gives about 7 mm in every channel. In channel 9, however, the trace falls back toward baseline after each step visibly faster than in the other channels. What does this most likely indicate?",
+      "explanation": "The decay after a calibration step reflects the time constant, which is set by the low-frequency filter: a faster decay means a shorter time constant, i.e. a higher LFF in that channel. The HFF shapes the rounding of the leading edge; sensitivity changes the height of the step, which is normal here; and calibration is injected at the amplifier, so electrode impedance plays no part.",
+      "learningObjective": "Read filter settings from the shape of the calibration signal.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Channel 9 has a lower high-frequency filter setting than the rest",
+        "Channel 9 has a higher sensitivity setting than the other channels",
+        "Channel 9 has a higher electrode impedance than the other channels",
+        "Channel 9 has a higher low-frequency filter setting than the rest"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "electrode-pop",
+        "reference",
+        "montage-logic"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "In an ipsilateral-ear referential montage, a steep transient with a slow exponential return appears at the same instant in Fp1-A1, F3-A1, C3-A1, P3-A1, O1-A1, F7-A1, T3-A1 and T5-A1, with identical shape and amplitude in each. No right-sided referential channel and no bipolar channel shows it. What is the most likely source?",
+      "explanation": "Every affected channel shares A1 as input 2, the deflection is identical in all of them, and it is absent from bipolar channels that exclude A1: a pop at the reference. A cerebral field would vary in amplitude between electrodes and appear in bipolar channels; Cz is not an input to any of these derivations; and a ground problem would affect both sides, not only the A1-referenced channels.",
+      "learningObjective": "Localize an artifact to a shared reference electrode.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A left-hemisphere discharge with a broad and evenly distributed field",
+        "An electrode pop at Cz, which lies close to every affected electrode",
+        "An electrode pop at A1, the one input every affected channel shares",
+        "An electrode pop at the ground, which is shared by the affected channels"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "average-reference",
+        "contamination",
+        "bipolar-subtraction",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "A common average reference is built from 19 scalp electrodes. A movement artifact drives T3 to −380 µV while every other electrode stays at 0 µV. With no electrode excluded from the average, what appears in Fz-Avg and in T3-Avg (negative up)?",
+      "explanation": "Average = −380 ÷ 19 = −20 µV. Fz − Avg = 0 − (−20) = +20 µV, a 20-µV downward deflection; T3 − Avg = −380 − (−20) = −360 µV, upward. Reading Fz as upward is a sign error; a flat Fz forgets that T3 contaminates the average; 21 µV comes from dividing −380 by 18 instead of 19 (miscounting the electrodes in the average), and T3 is then wrongly shown at its full 380 µV as if the average were zero at T3.",
+      "learningObjective": "Calculate how one large artifact contaminates every channel of an average reference.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Fz about 20 µV upward; T3 about 360 µV upward",
+        "Fz flat at 0 µV; T3 about 380 µV upward",
+        "Fz about 21 µV downward; T3 about 380 µV upward",
+        "Fz about 20 µV downward; T3 about 360 µV upward"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "60-hz",
+        "end-of-chain",
+        "montage-logic"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "In a longitudinal bipolar montage, 60-Hz interference is present in Fp2-F4 and Fp2-F8 and in no other channel; impedances were last checked an hour earlier. Which electrode should be checked first?",
+      "explanation": "Interference confined to two channels that share one electrode points to that electrode, here Fp2 at the start of both right chains; F4 and F8 each appear in further channels (F4-C4, F8-T4) that are clean. A ground problem would affect all channels, and neither electrode location nor signal size determines which channel picks up mains noise.",
+      "learningObjective": "Use the shared-electrode rule to localize mains interference.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Fp2, the input that every affected channel has in common",
+        "F4, as parasagittal electrodes pick up the most mains noise",
+        "F8, as the lateral temporal chain carries the most signal",
+        "The ground, as mains noise first enters through the ground"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "electrode-artifact",
+        "end-of-chain",
+        "field"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "Recurrent, identical, very steep transients appear in P4-O2 and T6-O2 of a longitudinal bipolar montage, both deflecting upward, with no other channel involved. In an Fz-referenced montage the transient is present in O2-Fz only, while P4-Fz and T6-Fz are unchanged. What is the best interpretation?",
+      "explanation": "O2 is the common input and sits at the end of both chains, so no phase reversal is expected; the referential montage shows the potential at O2 alone with nothing at its neighbours. A cerebral sharp wave large enough to look like this would have a field reaching adjacent electrodes. P4 and T6 are unchanged in the referential display, so neither is the source.",
+      "learningObjective": "Combine end-of-chain logic with referential field analysis to identify electrode artifact.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An O2 sharp wave, maximal at the end of both bipolar chains",
+        "An O2 electrode artifact, with no physiologic field around it",
+        "A P4 electrode artifact carried into the T6-O2 channel",
+        "A T6 sharp wave spreading posteriorly to involve O2"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "headbox",
+        "systematic-troubleshooting",
+        "amplifier-fault"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "Intermittent high-frequency noise appears in every derivation containing C4; C4 impedance is 3 kΩ. The technologist swaps the C4 and Cz lead wires between their headbox jacks and corrects the electrode mapping. The noise now appears in every derivation containing Cz and in none containing C4. Where is the fault most likely?",
+      "explanation": "After the swap the noise moved away from the C4 electrode and followed the jack, which now carries Cz: the fault stays with the original C4 jack (or its input stage). If the electrode or lead were faulty, the noise would have stayed with C4. Cz itself was clean before the swap, and a reference fault would affect every derivation, not one jack's worth.",
+      "learningObjective": "Use a lead swap to separate electrode faults from input faults.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The headbox jack that originally received the C4 lead",
+        "The C4 electrode, its paste or its connecting lead",
+        "The Cz electrode, its paste or its connecting lead",
+        "The recording reference shared by both C4 and Cz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "cell-phone",
+        "radio-frequency",
+        "environmental-artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "During a routine EEG, bursts of very high-frequency, spiky activity lasting 2-3 s appear at irregular intervals, largest at T4, T6 and O2. The patient's phone is lying on the pillow next to the right side of the head, and impedances are 2-4 kΩ. What is the most likely source and remedy?",
+      "explanation": "Intermittent bursts of very high-frequency activity confined to the electrodes nearest a phone are radio-frequency pickup during transmission; moving the phone away (or switching it off) resolves it. Temporalis muscle artifact follows jaw tension, not a device's position; pops are single steep transients at one electrode, not bursts at three; and polyspikes have a physiologic field and morphology rather than tracking a nearby device.",
+      "learningObjective": "Recognize and remedy mobile phone interference.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Right temporalis muscle; ask the patient to relax the jaw",
+        "Electrode pops; re-prepare T4, T6 and O2 one at a time",
+        "Right posterior polyspikes; extend the study with sleep",
+        "Phone transmission; move the phone well away from the head"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "iv-drip",
+        "electrostatic",
+        "periodic-artifact"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "In an inpatient recording, a sharp transient recurs every 2.4 s at C4 and P4, each coinciding with a drop falling in the IV drip chamber hanging beside the right side of the head. The ECG channel shows a regular rate of 75/min. What is the most likely explanation?",
+      "explanation": "The transients are time-locked to the drops, a recognised electrostatic artifact from IV drips near the electrodes. A rate of 75/min gives an R-R interval of 0.8 s; 2.4 s is a multiple of it but pulse artifact follows every beat, not every third. Periodic discharges would not lock to the drip; pops at two electrodes would not be regular.",
+      "learningObjective": "Identify IV drip artifact by its time-locking to an external event.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Pulse artifact, recurring every third heartbeat",
+        "Drip artifact, time-locked to the falling drops",
+        "Right centroparietal periodic discharges at 0.4 Hz",
+        "Electrode pops at C4 and P4 from drying paste"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "ground",
+        "60-hz",
+        "systematic-troubleshooting"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "Shortly after the patient rolls onto the left side, 60-Hz interference of similar amplitude appears in every channel of both the bipolar and the referential displays. Before the turn, all scalp and ear electrodes measured 2-4 kΩ, and no new equipment has been brought into the room. Which component should be checked first?",
+      "explanation": "Interference in every channel of every montage implicates something common to all channels; with no new equipment, a ground dislodged by the turn is the most likely cause. A1 is only in the referential channels that use it, Cz only in its own derivations, and an F7 problem would appear only in channels containing F7.",
+      "learningObjective": "Trace artifact in every channel to a common component.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The A1 reference electrode and its lead",
+        "The Cz electrode and its connecting lead",
+        "The F7 electrode, under the left cheek",
+        "The patient ground electrode and its lead"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "lead-movement",
+        "cable",
+        "mechanical-artifact"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "Large irregular slow and sharp deflections appear in channels containing O1, P3 and T5 whenever the patient's left arm brushes the lead bundle running down the left side of the neck. Each deflection has a different shape, and none shows a consistent field or phase reversal. What is the best response?",
+      "explanation": "Deflections that vary in shape, lack a physiologic field and are triggered by contact with the leads are lead-movement artifact; securing and re-routing the bundle prevents it. Pops are stereotyped steep transients at one electrode; sharp waves have a consistent field and morphology unrelated to arm contact; a ground fault affects all channels.",
+      "learningObjective": "Recognize and correct lead-movement artifact.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Electrode pops; re-prepare O1, P3 and T5 and recheck",
+        "Left posterior sharp waves; add T1 and extend the study",
+        "Ground fault; replace the ground electrode on the brow",
+        "Lead movement; secure and re-route the left lead bundle"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "electrostatic",
+        "environmental-artifact",
+        "icu"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "In an ICU room, high-amplitude irregular slow transients appear in many channels, largest on the side nearest the window, each time a visitor wearing a fleece jacket walks between the bed and the window. Impedances are 3-5 kΩ and the patient does not move. What is the most likely cause?",
+      "explanation": "A person carrying static charge moving close to the leads induces large, irregular potentials in the nearest electrodes and leads, timed to the movement. The patient does not move, so head movement is excluded; arousal responses would not depend on where the visitor walks or favour the electrodes nearest the path; a ground problem would cause mains interference in all channels.",
+      "learningObjective": "Identify electrostatic artifact from people moving near the patient.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Head movement as the patient turns toward the visitor",
+        "Brief arousal responses to the visitor's approach",
+        "Intermittent loosening of the ground electrode lead",
+        "Electrostatic potentials from the charged moving visitor"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "dissimilar-metals",
+        "electrode-potential",
+        "drift"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "A gold-cup electrode set is in use. After the P3 cup is lost, a silver-silver chloride cup is put in its place. Within minutes, channels containing P3 show slow baseline wander with occasional abrupt jumps, although all impedances are 2-4 kΩ. What is the most likely explanation?",
+      "explanation": "Different metals develop different electrode (half-cell) potentials against the electrolyte, so mixing metals in one montage produces offsets, slow drift and jumps in channels containing the odd electrode. A bridge flattens the bipolar channel rather than causing drift; the impedance is normal; sweat would affect multiple warm areas, not one newly swapped electrode.",
+      "learningObjective": "Avoid mixing electrode metals within a recording.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A salt bridge between P3 and neighbouring electrodes",
+        "Dissimilar metals with unequal electrode potentials",
+        "High impedance from the new cup's smaller contact area",
+        "Sweat artifact starting under the newly applied cup"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "60-hz",
+        "equipment-source",
+        "systematic-troubleshooting"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "Midway through a bedside recording, every channel suddenly shows the same high-amplitude 60-Hz interference in both referential and bipolar displays. The patient has not moved, impedances are unchanged, and a nurse has just plugged a warming blanket into an outlet beside the bed. What is the most efficient first step?",
+      "explanation": "A sudden change in all channels of all montages coinciding with new equipment points to that equipment; briefly unplugging it tests the hypothesis in seconds. Impedances are unchanged, so re-preparing every electrode targets the wrong cause; swapping hardware is slower and premature; a reference change cannot explain interference in the bipolar channels too.",
+      "learningObjective": "Test the most likely environmental source first when artifact appears suddenly.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Re-prepare every electrode to bring impedances lower",
+        "Have the blanket unplugged briefly and watch the trace",
+        "Swap the headbox and amplifier cable for a spare set",
+        "Change the reference to Cz and compare with the ears"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "lead-off",
+        "ltm",
+        "electrode-maintenance"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "questionType": "procedure",
+      "reasoningSteps": 3,
+      "stem": "During overnight LTM for a right temporal question, channels containing T6 show large 60-Hz and irregular drifts, and the impedance check reports T6 as an open circuit. The patient is asleep. What is the best course?",
+      "explanation": "An open-circuit electrode in the region of clinical interest should be repaired promptly; brief, gentle repair preserves hours of useful data. Waiting leaves a gap over the area of interest; a notch only masks the mains component while the open input still drifts; substituting T4 loses the posterior temporal coverage the question depends on.",
+      "learningObjective": "Prioritise prompt repair of a failed electrode in the region of interest.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Leave T6 until morning and rely on T4 and O2 meanwhile",
+        "Reattach T6 now with minimal disturbance, then recheck it",
+        "Switch the notch on for T6 channels and keep recording",
+        "Drop T6 from the montage and use T4 wherever it appears"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "pacemaker",
+        "equipment-artifact",
+        "ecg"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "In an 84-year-old, very narrow spikes lasting under 5 ms appear every 0.86 s in many channels, largest on the left. In the ECG channel, each spike is followed immediately by a wide QRS complex. What are the spikes?",
+      "explanation": "Extremely brief spikes at a fixed interval, each immediately preceding a wide paced QRS, are pacemaker stimulus artifact. QRS artifact itself is broader and coincides with the QRS rather than preceding it; periodic discharges last tens to hundreds of milliseconds and are not tied to the ECG; pops are irregular and slow-decaying.",
+      "learningObjective": "Distinguish pacemaker artifact from ECG artifact and periodic discharges.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Cardiac QRS (ECG) artifact",
+        "Periodic discharges at 1.2 Hz",
+        "Pacemaker stimulus artifact",
+        "Electrode pops from the reference"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s1",
+      "topicTags": [
+        "10-20-measurement",
+        "midline",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "The nasion-inion distance is 34 cm. Measuring from the nasion, the technologist marks Fpz at 3.4 cm, Fz at 10.2 cm, Cz at 17.0 cm, Pz at 25.5 cm and Oz at 30.6 cm. Which mark is wrong, and where should it be?",
+      "explanation": "Midline sites lie at 10%, 30%, 50%, 70% and 90% of the nasion-inion distance: 3.4, 10.2, 17.0, 23.8 and 30.6 cm. Pz was placed at 75%. Fz at 6.8 cm uses 20%; Oz at 32.3 cm uses 95%; Pz at 27.2 cm uses 80%.",
+      "learningObjective": "Check midline 10-20 marks against the correct percentages.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Fz; it belongs at 6.8 cm",
+        "Pz; it belongs at 23.8 cm",
+        "Oz; it belongs at 32.3 cm",
+        "Pz; it belongs at 27.2 cm"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s1",
+      "topicTags": [
+        "10-20-measurement",
+        "circumference",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "The head circumference measured through Fpz, T3, Oz and T4 is 56 cm. Along that line, how far should F7 be from T3, and how far should Fp1 be from Fpz?",
+      "explanation": "Along the circumference Fp1 lies 5% from Fpz (2.8 cm), and the lateral electrodes Fp1, F7, T3, T5 and O1 are 10% apart (5.6 cm). 5.6 cm for Fp1 treats it as a full 10% step; 11.2 cm uses 20%, the spacing of the coronal and sagittal chains; 2.8/5.6 reverses the two.",
+      "learningObjective": "Apply circumference percentages to place lateral electrodes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "5.6 cm and 5.6 cm",
+        "5.6 cm and 2.8 cm",
+        "11.2 cm and 2.8 cm",
+        "2.8 cm and 5.6 cm"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s1",
+      "topicTags": [
+        "interelectrode-distance",
+        "amplitude-asymmetry",
+        "measurement-error"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "In a longitudinal bipolar montage, alpha measures about 30 µV in P3-O1 and 65 µV in P4-O2. In an average-reference montage, alpha amplitude is equal at O1 and O2 and equal at P3 and P4, and the P3 and O1 waveforms are not identical. What is the most likely cause of the bipolar asymmetry?",
+      "explanation": "Equal referential amplitudes exclude a true asymmetry; a smaller bipolar amplitude on one side then suggests the two electrodes are closer together, so they share more of the same signal. Modern high-input-impedance amplifiers make amplitude largely insensitive to moderate electrode impedance, and a salt bridge would make the P3 and O1 waveforms identical in the referential montage.",
+      "learningObjective": "Recognize asymmetric electrode placement as a cause of false bipolar asymmetry.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Unequal spacing on the left; re-measure P3 and O1",
+        "Left occipital dysfunction lowering the alpha",
+        "High impedance at O1 attenuating left channels",
+        "A salt bridge between the P3 and O1 electrodes"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s1",
+      "topicTags": [
+        "skull-defect",
+        "electrode-displacement",
+        "symmetry"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "The measured C4 site falls on a fresh, stapled craniotomy incision. Which placement keeps the recording most interpretable?",
+      "explanation": "Electrodes should not go on a fresh incision. When an electrode must be displaced, moving its homologue by the same amount keeps the hemispheres comparable, and both changes are noted for the reader. Leaving C3 in place creates a spatial asymmetry that can mimic an amplitude asymmetry; using the incision risks infection; substituting Cz loses right central coverage.",
+      "learningObjective": "Displace electrodes around a skull incision while preserving symmetry.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Place C4 just off the incision and keep C3 at its measured site",
+        "Place C4 on the incision between staples, using extra paste",
+        "Place C4 just off the incision and shift C3 to the mirror site",
+        "Leave C4 off and use Cz in its place in every derivation"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-s1",
+      "topicTags": [
+        "collodion",
+        "ltm",
+        "impedance"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "For a 72-hour LTM, cup electrodes are applied with collodion-soaked gauze and dried with compressed air. At the first check, several electrodes read 20-30 kΩ although every gauze seal is firm. Which step was most likely omitted or done poorly?",
+      "explanation": "With the collodion technique, low impedance comes from filling each sealed cup with electrolyte through its hole, with gentle skin preparation through the hole using a blunt needle. Longer drying or extra collodion strengthens the seal but does not lower impedance; site marking affects position, not impedance.",
+      "learningObjective": "Apply collodion electrodes correctly for low, stable impedance.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Allowing the collodion to dry longer before checking impedance",
+        "Measuring and marking the sites before applying the collodion",
+        "Adding a second layer of collodion-soaked gauze over each cup",
+        "Injecting electrolyte and gently abrading through each cup hole"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-028",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "frequency",
+        "alpha",
+        "timebase",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A 15-second page is displayed 300 mm wide. Over the occipital region, 19 complete cycles of an eyes-closed rhythm span 40 mm. What is its frequency?",
+      "explanation": "300 mm per 15 s = 20 mm/s, so 40 mm = 2 s and 19 cycles ÷ 2 s = 9.5 Hz. 14.3 Hz assumes the usual 30 mm/s (40 mm = 1.33 s); 19 Hz treats 40 mm as 1 s; 4.8 Hz halves the cycle count.",
+      "learningObjective": "Measure frequency at a non-standard display speed.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "14.3 Hz",
+        "19 Hz",
+        "9.5 Hz",
+        "4.8 Hz"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-029",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "lambda-waves",
+        "visual-scanning",
+        "normal-variant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "While a 26-year-old reads a magazine with the eyes open, surface-positive, triangular sharp transients of about 40 µV appear at O1 and O2 in step with her eye movements. When she stares at a blank white card they stop. What are they?",
+      "explanation": "Lambda waves are positive, triangular occipital transients during visual scanning that stop when there is nothing to scan, such as a blank card. POSTS look similar but occur in sleep; occipital spikes are negative and do not depend on scanning; photoparoxysmal responses are generalized discharges triggered by flicker, not by reading.",
+      "learningObjective": "Identify lambda waves and test them with a blank visual field.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Lambda waves, a normal response to visual scanning",
+        "POSTS, the positive occipital transients of sleep",
+        "Occipital spikes from photosensitive visual cortex",
+        "Photoparoxysmal discharges evoked by the print"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-030",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "beta",
+        "medication-effect",
+        "benzodiazepine"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "An alert 48-year-old taking clonazepam has symmetric 20-25 Hz activity of 25-30 µV, maximal over the frontocentral regions, superimposed on a normal 10-Hz posterior rhythm that blocks with eye opening. What is the best description?",
+      "explanation": "Benzodiazepines typically increase diffuse beta, maximal frontocentrally, often above 25 µV. The fast alpha variant is posterior and reactive and occurs in place of alpha, which is preserved here; frontalis muscle produces irregular, very fast potentials rather than a 20-25 Hz rhythm; non-evolving, symmetric activity in an alert patient is not a seizure.",
+      "learningObjective": "Recognize medication-induced beta activity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Excess beta activity, most likely a medication effect",
+        "A fast alpha variant replacing the posterior rhythm",
+        "Bilateral frontalis muscle artifact from tension",
+        "Bifrontal low-voltage fast seizure activity"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-031",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "alpha-squeak",
+        "alpha-variants",
+        "eye-closure"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "Immediately after eye closure, an adult's posterior rhythm runs at 11.5-12 Hz for about half a second before settling at 10 Hz for the rest of the epoch. What is this?",
+      "explanation": "Alpha squeak is a brief rise in alpha frequency just after eye closure, settling to the baseline frequency within about a second. Paradoxical alpha appears on eye opening in drowsiness; lambda waves are positive transients during visual scanning with the eyes open; the fast alpha variant is about twice the alpha frequency and is not limited to the moment of eye closure.",
+      "learningObjective": "Recognize alpha squeak as a normal transient.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Paradoxical alpha, from arousal out of drowsiness",
+        "Lambda waves, triggered by the closing eye movement",
+        "Alpha squeak, a normal transient after eye closure",
+        "Fast alpha variant, at the start of each epoch"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-032",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "field-analysis",
+        "electrode-artifact",
+        "average-reference"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "Two recurring left temporal transients are compared on an average reference at their peaks. Transient X: F7 −35, T3 −95, T5 −40, C3 −15 µV. Transient Y: F7 −2, T3 −210, T5 −3, C3 −1 µV, with an identical steep rise and slow decay at every occurrence. Which interpretation is best?",
+      "explanation": "X has a graded field across neighbouring electrodes, as a cerebral potential does. Y is huge at T3 with essentially nothing at adjacent electrodes 6-7 cm away and a stereotyped steep rise with slow decay: an electrode artifact. Amplitude alone does not decide; the presence or absence of a physiologic field does.",
+      "learningObjective": "Separate cerebral transients from electrode artifact by their field.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "X is cerebral, maximal at T3; Y is an electrode artifact at T3",
+        "X is an electrode artifact at T3; Y is a larger T3 spike",
+        "Both are cerebral; Y is simply the more focal T3 discharge",
+        "Both are electrode artifacts at T3, differing only in size"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-033",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "device-artifact",
+        "icu",
+        "seizure-mimic"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "In the ICU, a rhythmic 12-Hz pattern begins at the same instant in all channels, keeps exactly the same frequency and amplitude for 10 minutes, and ends abruptly as the respiratory therapist switches off a chest-wall oscillation vest set to 12 Hz. What is the best classification?",
+      "explanation": "A pattern with the exact frequency of a device, starting and stopping with it, with no evolution in frequency, amplitude or field, is artifact. Duration alone does not make a seizure, which needs epileptiform discharges averaging over 2.5 Hz or definite evolution, with a cerebral field; alpha coma is unreactive alpha-range activity that does not begin and end with a device; sedation beta does not start and stop abruptly at 12 Hz.",
+      "learningObjective": "Use timing and frequency matching to identify device artifact that mimics seizures.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Device artifact, matching the vest frequency and timing",
+        "A generalized seizure, given a duration well over 10 s",
+        "An alpha coma pattern, given the diffuse 12-Hz rhythm",
+        "Diffuse beta from sedation given before the treatment"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-034",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "ventilator",
+        "periodic-artifact",
+        "pd-mimic"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "In a ventilated patient, a smooth slow transient recurs every 4 s at P4, T6 and O2 only. Each one coincides with the inspiratory phase on the ventilator display, and the circuit tubing is resting on the right occipital leads. What is the best interpretation?",
+      "explanation": "Transients locked to the ventilator cycle at electrodes in contact with the tubing are mechanical ventilator artifact; moving the tubing confirms and corrects it. LPDs and LRDA are cerebral patterns with a physiologic field that do not lock to the ventilator, and LRDA is a run of rhythmic delta waves rather than isolated transients every 4 s. There is no skull defect described.",
+      "learningObjective": "Recognize ventilator artifact that mimics periodic patterns.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Right posterior LPDs at 0.25 Hz; review the trend",
+        "Ventilator artifact; move the tubing off the leads",
+        "Right posterior LRDA at 0.25 Hz; review the trend",
+        "Brain pulsation under a skull defect; leave as is"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-035",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "mesial-temporal",
+        "ictal-onset",
+        "lateralization"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 29-year-old's focal impaired-awareness seizures begin with a rising epigastric sensation. On scalp EEG, a regular 6-7 Hz rhythm appears over F7, T1 and T3 within 20 s of clinical onset, then slows and spreads. Which onset zone does this best support?",
+      "explanation": "A regular 5-9 Hz inferior temporal rhythm within the first 30 s, with an epigastric aura, is the typical pattern of mesial (hippocampal) onset. Lateral neocortical onsets tend to show slower, irregular, more widespread activity; orbitofrontal seizures rarely produce a sustained anterior-temporal theta at onset; F7, T1 and T3 are left-sided.",
+      "learningObjective": "Recognize the scalp ictal signature of mesial temporal seizures.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left mesial temporal lobe",
+        "Left lateral temporal neocortex",
+        "Left orbitofrontal cortex",
+        "Right mesial temporal lobe"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-036",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "neocortical-temporal",
+        "auditory-aura",
+        "ictal-onset"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 34-year-old's seizures begin with a buzzing sound. At onset, scalp EEG shows irregular, poorly sustained 2-5 Hz activity over T3 and T5 that spreads widely over the left hemisphere, with no regular theta rhythm in the first 30 s. Which onset zone is best supported?",
+      "explanation": "An auditory aura arises from the superior lateral temporal neocortex (Heschl's gyrus), and lateral neocortical onsets typically give irregular, polymorphic, less well-localized activity. Mesial onsets usually show a regular 5-9 Hz rhythm within 30 s and visceral or experiential auras; occipital onsets give visual auras; parietal onsets give somatosensory symptoms.",
+      "learningObjective": "Integrate aura and scalp pattern to separate neocortical from mesial temporal onsets.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left mesial temporal lobe",
+        "Left occipital cortex",
+        "Left lateral temporal neocortex",
+        "Left posterior parietal cortex"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-037",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "frontal-lobe-seizures",
+        "hypermotor",
+        "electrodecrement"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "During LTM, a 22-year-old has several stereotyped 20-40 s events a night, starting abruptly from sleep with bicycling leg movements and vocalization, followed by quick recovery without confusion. In the first second of each, the EEG shows diffuse attenuation with low-amplitude fast activity maximal frontally, then muscle obscures it. What is the most likely explanation?",
+      "explanation": "Brief, stereotyped, clustered hypermotor events from sleep with rapid recovery and an onset of attenuation with low-amplitude fast activity are typical of frontal lobe seizures. Muscle obscuring the EEG does not make events non-epileptic; mesial temporal seizures are longer, with automatisms and postictal confusion; confusional arousals are less stereotyped, usually once a night and followed by confusion.",
+      "learningObjective": "Recognize the clinical and EEG features of frontal lobe seizures.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Non-epileptic events, as the scalp EEG is obscured",
+        "Mesial temporal seizures with rapid secondary spread",
+        "Confusional arousals arising out of slow-wave sleep",
+        "Frontal lobe seizures with an electrodecremental onset"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-038",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "postictal",
+        "lateralization",
+        "focal-slowing"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "Immediately after a focal impaired-awareness seizure, irregular, non-evolving 1-3 Hz delta is present over T4, F8 and T6 for 25 minutes, after which the background is symmetric. The interictal recording beforehand was normal. What does the postictal finding most likely indicate?",
+      "explanation": "Focal postictal slowing usually appears over the region of seizure onset and has lateralizing value, here right temporal (T4, F8, T6 are right-sided). It is transient, which argues against a fixed structural lesion; irregular delta without evolution does not meet criteria for an ongoing seizure.",
+      "learningObjective": "Use postictal slowing to lateralize focal seizures.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Postictal slowing, supporting a right temporal onset",
+        "Postictal slowing, supporting a left temporal onset",
+        "Persistent slowing from a right temporal lesion",
+        "Ongoing nonconvulsive seizure, right temporal"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-039",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "semiology",
+        "lateralizing-signs",
+        "temporal-lobe"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "On video-EEG, a seizure shows oral automatisms, dystonic posturing of the right hand and automatisms of the left hand; afterwards the patient wipes the nose with the left hand. The scalp ictal rhythm is poorly lateralized. Which side do the clinical signs favour as the onset?",
+      "explanation": "Unilateral dystonic posturing is contralateral to the seizure onset, while limb automatisms and postictal nose wiping are usually ipsilateral; all three point to the left in temporal lobe seizures. Taking the nose wipe or automatisms as contralateral reverses the rules; dystonia is not ipsilateral; semiology can lateralize even when the scalp pattern does not.",
+      "learningObjective": "Combine lateralizing semiology when the scalp EEG is non-lateralizing.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left, as the dystonia is right-sided and the nose wipe left-handed",
+        "Right, as the nose wipe and limb automatisms are left-handed",
+        "Right, as unilateral dystonia arises from the same hemisphere",
+        "Neither side, as the scalp ictal rhythm is not lateralized"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-040",
+      "domainId": "domain-3",
+      "sectionId": "d3-s1",
+      "topicTags": [
+        "skin-breakdown",
+        "ltm",
+        "aftercare"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "procedure",
+      "reasoningSteps": 3,
+      "stem": "After 5 days of collodion-applied LTM, removal reveals a 6-mm open, weeping area under the O2 electrode, where the patient mostly lay on the right side. The rest of the scalp is intact. What is the best response?",
+      "explanation": "An open lesion after LTM is a skin injury: it is cleaned gently, its size and location documented, and the nursing team notified so it can be assessed and reported under facility policy. Acetone on an open area irritates the wound; an open, weeping lesion is not simple pressure redness; electrodes should not be re-applied over injured skin.",
+      "learningObjective": "Manage and escalate skin injury found at electrode removal.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Clean it with acetone, document its size and site, and notify the nurse",
+        "Clean it gently, and document it as expected pressure redness only",
+        "Clean it gently, document its size and site, and notify the nurse",
+        "Clean it gently, document it, and reapply O2 there for the follow-up"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-041",
+      "domainId": "domain-3",
+      "sectionId": "d3-s1",
+      "topicTags": [
+        "collodion",
+        "electrode-removal",
+        "technique"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "A technologist removes collodion electrodes by wiping only the edge of each gauze with remover and then pulling the cup straight off. The patient complains of pain and loses hair at two sites. Which technique is correct?",
+      "explanation": "Collodion must be dissolved, not torn: the remover is applied until the collodion softens, and then the cup lifts off without pulling hair. A quick pull still tears hair and skin; collodion is not water-soluble; trimming hair is unnecessary and leaves the patient with bald patches.",
+      "learningObjective": "Remove collodion electrodes without injuring skin or hair.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Wipe the edges with remover, then pull the cup off in one quick motion",
+        "Saturate the collodion with remover until soft, then lift the cup",
+        "Soak the collodion with warm water until soft, then lift the cup",
+        "Trim the hair beneath each cup, then lift the cup with the gauze"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-042",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "scope-of-practice",
+        "results-disclosure",
+        "communication"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "During a routine EEG, the technologist sees frequent left temporal sharp waves. Afterwards the patient asks, 'Did you see anything bad? Can I keep driving?' Which response is within the technologist's scope?",
+      "explanation": "Technologists record and describe; interpretation and its implications, including driving, belong to the interpreting physician. Hinting at abnormal changes, offering reassurance, or predicting seizure risk are all forms of interpretation, even when the physician is mentioned afterwards.",
+      "learningObjective": "Respond to requests for results within the technologist's scope.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Say there were some changes, and the physician will discuss driving",
+        "Explain that the physician will interpret the study and discuss driving",
+        "Say it looked normal so far, and the physician will confirm that",
+        "Say seizures look unlikely, and the physician will discuss driving"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-043",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "scope-of-practice",
+        "interpretation",
+        "reports"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A busy neurologist asks an experienced technologist to write and sign the final impressions for several routine EEGs so that they can be released before the weekend. Which response is appropriate?",
+      "explanation": "A technical description (background, settings, activation, events, artifacts) is within scope; the clinical impression is a medical interpretation by the physician. Co-signing later, limiting it to normal studies, or copying the physician's style still has the technologist interpreting and releasing results.",
+      "learningObjective": "Distinguish technical description from clinical interpretation.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Write the impressions, and have the physician co-sign them on Monday",
+        "Write impressions only for studies that look clearly normal to the physician",
+        "Write technical descriptions only; impressions come from the physician",
+        "Write the impressions using the physician's usual template and phrasing"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-044",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "professional-conduct",
+        "falsification",
+        "chain-of-command"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A technologist notices that a colleague routinely logs impedances as 'below 5 kΩ' without measuring them, to save time on busy days. What is the most appropriate response?",
+      "explanation": "Recording measurements that were not made is falsification of the medical record and a patient-care issue, so it goes promptly to the supervisor through the chain of command. Going straight to an outside board bypasses the lab's responsibility; waiting for a bad study or a yearly review lets the practice continue.",
+      "learningObjective": "Escalate falsified technical records appropriately.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Report it to the credentialing board before speaking with the lab",
+        "Report it only if one of the studies is later found to be poor",
+        "Report it to the lab supervisor through the usual chain of command",
+        "Report it at the colleague's next annual competency review"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-045",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "credentials",
+        "professional-conduct",
+        "abret"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A technologist who has finished training but has not yet sat the registry examination signs worksheets as 'J. Smith, R. EEG T. (pending)'. Which statement is correct?",
+      "explanation": "A credential is earned only when ABRET awards it after the examination; using its initials before then, with or without 'pending', misrepresents qualifications. Neither an accepted application nor a local director's approval confers the credential.",
+      "learningObjective": "Use professional credentials honestly.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "It may be used with 'pending' added until the result arrives",
+        "It may be used once the exam application has been accepted",
+        "The credential may be used only after ABRET has awarded it",
+        "It may be used once the lab's medical director approves it"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-046",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "sds",
+        "hazard-communication",
+        "spill"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "About 100 mL of collodion spills on the floor of the EEG lab. Under OSHA's Hazard Communication Standard, which numbered section of the product's Safety Data Sheet gives the containment and clean-up procedures?",
+      "explanation": "The 16-section SDS format puts accidental release measures (containment and clean-up) in Section 6. Section 4 is first-aid measures, Section 7 handling and storage, and Section 8 exposure controls and personal protection.",
+      "learningObjective": "Find spill procedures on a Safety Data Sheet.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Section 4",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-047",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "hazard-communication",
+        "labeling",
+        "acetone"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "A technologist pours acetone from the stock container into a small squeeze bottle that will stay on the LTM cart for all staff to use over several weeks. Under OSHA hazard communication rules, what does the squeeze bottle need?",
+      "explanation": "A secondary container needs a workplace label giving the product identifier and its hazards, unless it is a portable container for the immediate use of the person who filled it, which a shared, weeks-long bottle is not. A nearby labelled stock container does not cover it; initials and date say nothing about the hazard; storage location does not replace labelling.",
+      "learningObjective": "Apply hazard communication labelling to secondary containers.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "No label, as the stock container nearby is properly labelled",
+        "Only the filler's initials and the date the bottle was filled",
+        "No label, provided it is stored in a flammables cabinet at night",
+        "A workplace label with the product identifier and its hazards"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-048",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "needlestick",
+        "sharps",
+        "post-exposure"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "While removing subdermal needle electrodes from an ICU patient, a technologist sustains a needlestick through the glove. What is the best immediate sequence?",
+      "explanation": "After a needlestick, the site is washed with soap and water and the exposure is reported immediately, because post-exposure prophylaxis, if indicated, works best when started within hours. Squeezing and caustic agents such as bleach are not recommended; waiting for symptoms or a meeting delays evaluation.",
+      "learningObjective": "Respond correctly to a needlestick exposure.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Squeeze the site, apply bleach, then report it at the end of the shift",
+        "Wash with soap and water, finish the removal, report if symptoms occur",
+        "Wash with soap and water, then report at once for post-exposure care",
+        "Apply alcohol, cover the site, and report it at the next staff meeting"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-049",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "sharps",
+        "needle-electrodes",
+        "disposal"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "After an ICU study with disposable subdermal needle electrodes, the sharps container in the room has reached its fill line. Which handling is appropriate?",
+      "explanation": "Used needles go straight into a puncture-resistant sharps container, uncapped, and a container at its fill line is replaced, not overfilled. Pushing needles into a full container, recapping (allowed only by a one-handed technique when no alternative exists) and bending contaminated needles are recognised causes of needlestick injury and are restricted by OSHA's bloodborne pathogens rules.",
+      "learningObjective": "Dispose of needle electrodes without creating sharps injuries.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Use a new container, dropping each needle in uncapped right after removal",
+        "Press the needles down into the container to make room for them",
+        "Recap each needle, then place them all in once a container is emptied",
+        "Bend each needle at the hub first, then add it to the full container"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b9-050",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "ergonomics",
+        "back-injury",
+        "bedside"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "A technologist applies 25 electrodes to patients in low ICU beds, bending forward at the waist for about 40 minutes each time, and has developed low-back pain. Which change best addresses the main ergonomic risk factor?",
+      "explanation": "The main risk is sustained forward flexion; raising the working surface to about waist height and keeping the work close removes the awkward posture at its source. Stretching breaks do not change the posture; back belts have not been shown to prevent back injury; kneeling shifts strain to the knees and still involves reaching.",
+      "learningObjective": "Correct awkward working postures during bedside electrode application.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Keep the bed low, and stretch the lower back after every few electrodes",
+        "Raise the bed to about waist height and work close to the patient's head",
+        "Wear a back-support belt while working at the current bed height",
+        "Kneel on the floor beside the low bed so the back can stay straighter"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 9 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

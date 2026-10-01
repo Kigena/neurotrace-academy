@@ -1,0 +1,1572 @@
+{
+  "version": "batch4-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "description": "ABRET Challenge Bank batch 4: montage-heavy localization, EEG generators and vascular localization, focal vs generalized description, and professional ethics. Not yet medically verified.",
+  "totalQuestions": 50,
+  "questions": [
+    {
+      "id": "ch-b4-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "eeg-generators",
+        "postsynaptic-potentials",
+        "summation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "neurophysiology",
+      "reasoningSteps": 2,
+      "stem": "A cortical action potential lasts about 1 ms, whereas excitatory and inhibitory postsynaptic potentials last tens of milliseconds. Thousands of vertically aligned pyramidal cells receive the same synaptic volley. Why does the scalp EEG mainly reflect the postsynaptic potentials?",
+      "explanation": "Scalp EEG needs thousands of synchronous, parallel sources whose currents add. Long-lasting PSPs overlap in time and summate; 1-ms action potentials rarely coincide. Action potentials are larger intracellularly, not at the scalp; the skull attenuates higher frequencies more, not less; and the open field comes from aligned pyramidal neurons, not glia.",
+      "learningObjective": "Explain why summated postsynaptic potentials dominate the scalp EEG.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Their longer duration lets many overlap in time and summate",
+        "Their larger individual voltage passes through the skull intact",
+        "Their higher frequency content passes the skull more easily",
+        "Their origin in glial cells creates a field open to the scalp"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "eeg-generators",
+        "cortical-area",
+        "scalp-detection"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "neurophysiology",
+      "reasoningSteps": 2,
+      "stem": "During simultaneous subdural and scalp recording, a spike involving about 2 cm² of lateral convexity cortex is clear on the subdural grid but absent at the scalp, while spikes involving a much larger, synchronous area of the same gyri are seen at the scalp. What best explains the difference?",
+      "explanation": "Scalp detection of a spike requires a sizeable area of synchronously active cortex (on the order of several to over 10 cm²), because skull and scalp attenuate and smear small fields. Convexity crown sources are mainly radial, not tangential; subdural spikes are also summated PSPs; the skull attenuates fast components more than slow ones but does not block spikes outright.",
+      "learningObjective": "Relate the area of synchronous cortex to scalp visibility of spikes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Convexity sources are tangential and cancel at the scalp",
+        "Too little synchronous cortex to give a scalp-visible field",
+        "Subdural contacts record action potentials the scalp misses",
+        "The skull passes slow activity but blocks every fast spike"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "dipole",
+        "radial",
+        "tangential"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "neurophysiology",
+      "reasoningSteps": 2,
+      "stem": "Two spike generators of equal size are compared. Generator A lies on the crown of a convexity gyrus; generator B lies in the wall of a sulcus, so its pyramidal cells are parallel to the scalp. Which scalp fields are expected?",
+      "explanation": "Cells on a gyral crown are perpendicular to the scalp (radial dipole), giving a single maximum over the source. Sulcal-wall cells are parallel to the scalp (tangential dipole), producing a negative and a positive maximum on either side with little potential directly above. The distractors swap the two orientations or assign one field type to both.",
+      "learningObjective": "Predict scalp fields of radial and tangential dipoles.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A: one negative maximum overhead; B: paired negative and positive maxima",
+        "A: paired negative and positive maxima; B: one negative maximum overhead",
+        "Each gives one negative maximum directly over its own generator site",
+        "Each gives paired maxima, with the negative pole directly overhead"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "dipole",
+        "epsp",
+        "current-sink",
+        "polarity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "technical",
+      "questionType": "neurophysiology",
+      "reasoningSteps": 3,
+      "stem": "A thalamocortical volley produces synchronous EPSPs on the superficial apical dendrites of vertically oriented pyramidal cells in a convexity gyrus. What polarity is recorded at the overlying scalp, and why?",
+      "explanation": "At an EPSP, positive ions flow into the dendrite, making that extracellular region a sink (relatively negative); current returns through a source near the soma. A superficial sink makes the surface negative. Pairing a sink with positivity, or placing the source superficially, reverses the physiology: a superficial source (as with a superficial IPSP) gives surface positivity.",
+      "learningObjective": "Derive surface polarity from the location of synaptic sinks and sources.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Positive; the extracellular current sink lies near the surface",
+        "Positive; the extracellular current source lies near the surface",
+        "Negative; the extracellular current sink lies near the surface",
+        "Negative; the extracellular current source lies near the surface"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "vascular-territory",
+        "aca",
+        "focal-slowing"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 68-year-old has new weakness of the right leg, much greater than the arm, with abulia; face strength and language are spared. CT confirms an acute infarct. If focal EEG slowing is present, where is it most likely?",
+      "explanation": "Leg-predominant weakness with abulia indicates the left anterior cerebral artery territory: the medial frontal and parietal lobes, including the leg motor area near the vertex, so slowing is expected over the left parasagittal frontocentral and midline electrodes. Lateral frontotemporal involvement fits MCA strokes (face/arm, language); posterior temporal-occipital fits PCA; frontopolar-anterior temporal does not include the leg area.",
+      "learningObjective": "Map an arterial territory to the expected EEG electrode region.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left lateral frontotemporal region (F7, T3, C3, T5)",
+        "Left frontocentral, near the midline (F3, C3, Fz, Cz)",
+        "Left posterior temporal and occipital region (T5, O1, P3)",
+        "Left frontopolar and anterior temporal region (Fp1, F7)"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "vascular-territory",
+        "pca",
+        "focal-slowing"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A right-handed 72-year-old suddenly develops a right homonymous hemianopia and can write but cannot read what he has written. Strength is normal. If focal EEG change is present, where is it most likely?",
+      "explanation": "Right homonymous hemianopia with alexia without agraphia points to the left posterior cerebral artery territory (left occipital lobe and splenium), so changes are expected at O1/T5, often with a reduced left posterior rhythm. A right-sided lesion causes a left field cut; mid-temporal/central and frontal regions do not produce this syndrome.",
+      "learningObjective": "Localise PCA-territory syndromes to posterior electrodes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Right occipital and posterior temporal region (O2, T6)",
+        "Left mid-temporal and central region (T3, C3)",
+        "Left frontal and frontopolar region (F3, Fp1)",
+        "Left occipital and posterior temporal region (O1, T5)"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "somatosensory-cortex",
+        "jacksonian-march",
+        "localization"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A patient's seizures begin with tingling in the left hand that spreads up the left arm to the left face over about 20 seconds, with preserved awareness and no jerking. If a scalp ictal correlate is seen, where is it most likely?",
+      "explanation": "A spreading sensory (Jacksonian) march without motor signs arises in the primary somatosensory cortex of the postcentral gyrus, contralateral to the symptoms: the right centroparietal region near C4/P4. The left hemisphere would cause right-sided symptoms; temporal and frontal regions do not produce a pure sensory march.",
+      "learningObjective": "Localise sensory seizure semiology to the contralateral postcentral gyrus.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Right centroparietal region (C4, P4)",
+        "Left centroparietal region (C3, P3)",
+        "Right mid-temporal region (T4, T6)",
+        "Right frontal region (F4, F8)"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "mesial-temporal",
+        "semiology",
+        "lateralization"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 30-year-old's seizures start with a rising epigastric sensation and déjà vu, followed by staring, lip-smacking and dystonic posturing of the left hand. Where should interictal epileptiform discharges most likely be maximal?",
+      "explanation": "Epigastric aura, déjà vu and oral automatisms indicate mesial temporal onset; unilateral dystonic posturing lateralises to the hemisphere opposite the posturing limb, so the right temporal lobe. Mesial temporal discharges are maximal anteriorly and inferiorly (F8, T2/sphenoidal). The left side ignores the dystonia rule; posterior temporal and frontopolar regions do not fit the semiology.",
+      "learningObjective": "Integrate semiology to predict the interictal field.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left anterior temporal region (F7, T1)",
+        "Right posterior temporal region (T6, O2)",
+        "Right anterior temporal region (F8, T2)",
+        "Right frontopolar region (Fp2, F4)"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "referential-to-bipolar",
+        "positive-phase-reversal",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "At the peak of a transient, referential values against a quiet reference are Fp2 +5 µV, F8 +30 µV, T4 +70 µV, T6 +25 µV and O2 +5 µV. In the chain Fp2-F8, F8-T4, T4-T6, T6-O2 (negative up), what is displayed?",
+      "explanation": "Channel = input 1 − input 2: Fp2-F8 = −25 (up), F8-T4 = −40 (up), T4-T6 = +45 (down), T6-O2 = +20 (down). Deflections pointing away from each other mark a positive phase reversal, at the shared electrode T4. Down-down-up-up reverses the polarity convention; calling it negative misreads the direction; T6 is not the shared electrode of the reversing pair.",
+      "learningObjective": "Identify a positive phase reversal from referential voltages.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Down, down, up, up; negative phase reversal at T4",
+        "Up, up, down, down; negative phase reversal at T4",
+        "Up, up, down, down; positive phase reversal at T4",
+        "Up, up, down, down; positive phase reversal at T6"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "end-of-chain",
+        "bipolar",
+        "localization"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "In the right parasagittal chain (negative up), a sharp transient deflects downward in every channel: Fp2-F4 5 µV, F4-C4 10 µV, C4-P4 25 µV and P4-O2 45 µV. There is no phase reversal. Where is the field maximum most likely?",
+      "explanation": "Every channel down means input 1 is more positive than input 2 all along the chain, so potential falls steadily from Fp2 to O2 and O2 is most negative. The steepest gradient (largest channel) is at the posterior end, so the field is concentrated at or beyond O2: an end-of-chain maximum. A positive Fp2 maximum would give the largest gradient anteriorly; a C4-P4 maximum would produce a reversal; O2 is the most negative, not positive, point.",
+      "learningObjective": "Recognise an end-of-chain maximum without a phase reversal.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A positive maximum at or beyond Fp2",
+        "A negative maximum between C4 and P4",
+        "A positive maximum at or beyond O2",
+        "A negative maximum at or beyond O2"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "ear-reference",
+        "reference-contamination",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "Left temporal spikes measure 100 µV upward in T3-A2, where the right ear (A2) is quiet. In T3-A1, the same spikes measure only 30 µV upward (negative up). What is the spike voltage at the left ear (A1)?",
+      "explanation": "With A2 quiet, T3 = −100 µV. T3 − A1 = −30 µV, so A1 = −100 − (−30) = −70 µV: the ear is strongly involved, which shrinks the ipsilateral-ear channel. +70 µV is a sign error; −130 µV adds instead of subtracts; −30 µV mistakes the channel value for the ear voltage.",
+      "learningObjective": "Quantify active-ear reference contamination.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About +70 µV",
+        "About −70 µV",
+        "About −130 µV",
+        "About −30 µV"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "ear-reference",
+        "reference-contamination",
+        "polarity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "In a right-ear (A2) referential montage (negative up), right temporal spikes show T4-A2 20 µV up, F8-A2 5 µV up, C4-A2 35 µV down, Fp2-A2 50 µV down and O2-A2 55 µV down. In the left-ear montage, T4-A1 shows 90 µV up. What best explains the downward deflections at Fp2, C4 and O2?",
+      "explanation": "T4-A1 shows T4 ≈ −90 µV, so A2 ≈ −70 µV: the ear is in the spike field. Fp2, C4 and O2 are only mildly negative, so X − A2 is positive and they deflect downward, an inverted copy of the ear's negativity. A true tangential positive pole would show in the A1 montage as well; reversed inputs would also invert T4-A2; the timing and fields show no separate parasagittal discharge.",
+      "learningObjective": "Recognise an active ear reference producing inverted deflections.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "The positive pole of a tangential right temporal dipole",
+        "Inputs reversed in the right-ear referential channels",
+        "A separate positive discharge in the right parasagittal area",
+        "Negativity at A2 subtracted from relatively quiet electrodes"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s3",
+      "topicTags": [
+        "montage-selection",
+        "cz-reference",
+        "bitemporal-spikes"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "An awake adult has frequent, independent spikes over both temporal regions, and both ear electrodes are clearly involved in the spike fields. The physician asks for a referential montage to compare spike amplitudes between the two sides. Which reference is most suitable for this awake segment?",
+      "explanation": "Cz is far from both temporal regions and, while awake, free of vertex sleep transients, so it is relatively quiet for temporal spikes. Linked ears carry both sides' spikes; each contralateral ear is itself active because the spikes are bilateral; Fpz is heavily contaminated by blinks and eye movements in an awake patient.",
+      "learningObjective": "Choose a reference that avoids contamination by the activity under study.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A linked-ears reference for all channels",
+        "A vertex (Cz) reference for all channels",
+        "A contralateral-ear reference per side",
+        "A frontopolar (Fpz) reference for all channels"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "average-reference",
+        "contamination",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "An average reference is formed from 19 electrodes with equal weights. At a spike peak, T3 is −120 µV, F7 −40 µV, T5 −30 µV and all other electrodes are 0 µV. What does channel Fp2-Avg display (negative up)?",
+      "explanation": "Sum = −190 µV; average = −190/19 = −10 µV. Fp2 − Avg = 0 − (−10) = +10 µV, so a 10-µV downward deflection: an inverted copy of the spike in an uninvolved channel. Upward reverses the sign; 'no deflection' assumes the average is inactive; 190 µV forgets to divide by 19.",
+      "learningObjective": "Calculate average-reference contamination of uninvolved channels.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A 10-µV upward deflection",
+        "No visible deflection at all",
+        "A 190-µV downward deflection",
+        "A 10-µV downward deflection"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s3",
+      "topicTags": [
+        "laplacian",
+        "source-derivation",
+        "montage-selection"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "During a recording, small sharp transients seem to arise near C4, but they ride on widespread, high-amplitude frontocentral slow activity that dominates every referential montage. The physician wants the local C4 activity shown as clearly as possible. Which derivation best serves this purpose?",
+      "explanation": "A Laplacian derivation subtracts a weighted mean of each electrode's neighbours, attenuating activity shared over a wide area and emphasising local gradients such as a focus near C4. The common average and linked ears pass the widespread slow activity; Cz is adjacent to C4 and lies inside the frontocentral field, cancelling the activity of interest.",
+      "learningObjective": "Choose a Laplacian derivation to separate local from widespread activity.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A common average reference",
+        "A linked-ears reference",
+        "A vertex (Cz) reference",
+        "A Laplacian (source) derivation"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "rolandic",
+        "tangential-dipole",
+        "field-mapping"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "In a sleeping 8-year-old, each sharp wave gives referential values (quiet reference) of C3 −80 µV, T3 −60 µV, P3 −30 µV, O1 −5 µV, F3 +20 µV and Fp1 +50 µV. The frontal positivity peaks at the same instant and rises and falls with the central negativity in every discharge. What is the best interpretation?",
+      "explanation": "Simultaneous, amplitude-locked negative and positive maxima on either side of the lower rolandic region describe a single horizontal (tangential) dipole, typical of centrotemporal spikes. Independent sources would not be locked in time and amplitude; reference contamination would affect all channels, not create a frontal positive pole; Fp1 is the positive end, not a radial negative source.",
+      "learningObjective": "Map a tangential dipole from referential voltages.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "One tangential dipole: negative centrotemporal, positive frontal",
+        "Two independent sources: centrotemporal negative, frontal positive",
+        "One radial source at C3, with frontal reference contamination",
+        "One radial source at Fp1, with posterior reference contamination"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "tangential-dipole",
+        "bipolar",
+        "amplitude"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "A discharge gives referential values of Fp2 +40 µV, F4 +30 µV, C4 −70 µV, P4 −30 µV and O2 −10 µV. In the chain Fp2-F4, F4-C4, C4-P4, P4-O2, which channel shows the largest deflection, and why?",
+      "explanation": "F4 − C4 = +30 − (−70) = +100 µV: the inputs lie on opposite sides of the zero line, so their voltages add. C4-P4 is only −40 µV even though C4 is the negative peak; Fp2-F4 is +10 µV; P4-O2 is −20 µV. A bipolar channel shows the difference between its inputs, not the size at one electrode.",
+      "learningObjective": "Explain bipolar amplitudes across a dipole's zero line.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "C4-P4, because C4 carries the largest single voltage",
+        "F4-C4, because its inputs straddle opposite poles",
+        "Fp2-F4, because Fp2 carries the positive maximum",
+        "P4-O2, because the field is widest posteriorly"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "polarity-convention",
+        "bipolar",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "Channel T4-T6 shows a 40-µV upward deflection (negative up). Which pair of referential values (against a quiet reference) produces exactly this?",
+      "explanation": "Upward means input 1 is more negative than input 2. T4 − T6 = −90 − (−50) = −40 µV: 40 µV up. −50 − (−90) and +20 − (−20) both give +40 µV (down); −90 − (+50) = −140 µV, too large. Both inputs can be negative; only their difference matters.",
+      "learningObjective": "Apply the bipolar polarity convention to referential pairs.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "T4 −50 µV, T6 −90 µV",
+        "T4 +20 µV, T6 −20 µV",
+        "T4 −90 µV, T6 +50 µV",
+        "T4 −90 µV, T6 −50 µV"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "isopotential",
+        "field-mapping",
+        "bipolar"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "Referential values (quiet reference) at a sharp-wave peak are Fp2 −10 µV, F8 −40 µV, T4 −70 µV, T6 −65 µV and O2 −15 µV. What does the chain Fp2-F8, F8-T4, T4-T6, T6-O2 show (negative up), and where is the maximum?",
+      "explanation": "Fp2-F8 = +30 (down), F8-T4 = +30 (down), T4-T6 = −5 (near-flat), T6-O2 = −50 (up). The near-flat T4-T6 channel means T4 and T6 are almost equally negative, so the maximum spans both. Reading T4-T6 as a full upward channel overstates T4; up-up-flat-down reverses the convention; T6 is not maximal on its own.",
+      "learningObjective": "Recognise an isopotential channel inside a broad maximum.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Down, down, near-flat, up; maximum shared by T4 and T6",
+        "Down, down, up, up; maximum confined to T4 alone",
+        "Up, up, near-flat, down; maximum shared by T4 and T6",
+        "Down, down, near-flat, up; maximum confined to T6 alone"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "bipolar-to-referential",
+        "subtraction",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "At one instant (negative up): O1-A1 shows 10 µV up, T5-O1 shows 40 µV up and T3-T5 shows 30 µV up. Assuming A1 is quiet, what does T3-A1 show?",
+      "explanation": "Up means input 1 is more negative: O1 = −10, T5 = O1 − 40 = −50, T3 = T5 − 30 = −80 µV, so T3-A1 = 80 µV upward. 70 µV forgets O1's own −10; 60 µV adds O1 with the wrong sign; 'downward' reverses the polarity convention.",
+      "learningObjective": "Chain bipolar differences to reconstruct a referential value.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "70 µV upward",
+        "60 µV upward",
+        "80 µV upward",
+        "80 µV downward"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s3",
+      "topicTags": [
+        "end-of-chain",
+        "transverse",
+        "montage-selection"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "In the transverse chain T3-C3, C3-Cz, Cz-C4, C4-T4 (negative up), a sharp wave deflects downward in all four channels, growing from 5 µV in T3-C3 to 60 µV in C4-T4. The right ear (A2) is suspected to lie within the field. Which review best defines the maximum?",
+      "explanation": "Downward deflections growing toward C4-T4 place the negative maximum at or beyond T4, the end of the chain, where no phase reversal can occur. A distant, quiet reference shows the true amplitude at each electrode. A2 is likely in the field and would shrink or invert T4; a frontal transverse row still ends at F8; parasagittal chains omit the region of interest.",
+      "learningObjective": "Resolve an end-of-chain maximum during recording.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A referential montage to the right-ear (A2) reference",
+        "The same transverse chain moved one row forward",
+        "A referential montage to a distant, uninvolved reference",
+        "A longitudinal parasagittal chain without temporal sites"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s3",
+      "topicTags": [
+        "end-of-chain",
+        "occipital",
+        "transverse"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "In a longitudinal bipolar montage (negative up), sharp waves deflect downward in both P3-O1 and T5-O1 and are largest in those channels, with no phase reversal. The physician asks for an additional bipolar montage that can test whether the maximum is at O1. Which is best?",
+      "explanation": "Both chains end at O1, so an occipital maximum is an end-of-chain finding. In a posterior transverse chain O1 sits between T5-O1 and O1-O2, so an O1 maximum produces a phase reversal there. The central chain does not include O1; reversing the order flips polarity but still ends at O1; double-distance chains still end at O1.",
+      "learningObjective": "Choose a chain that places a suspected maximum mid-chain.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A transverse posterior chain: T5-O1, O1-O2, O2-T6",
+        "A transverse central chain: T3-C3, C3-Cz, Cz-C4, C4-T4",
+        "A longitudinal chain run in reverse order: O1-P3, P3-C3",
+        "A double-distance longitudinal chain: Fp1-C3, C3-O1"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "average-reference",
+        "eye-artifact",
+        "modified-average"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "In a 19-electrode average-reference montage, every blink appears as a small inverted deflection in the posterior channels, where the eyes cannot be the direct source. Which modification of the reference best reduces this?",
+      "explanation": "Large blink potentials at Fp1/Fp2 enter the average, which is then subtracted from every channel, inverting a small blink in quiet posterior channels. Excluding the frontopolar electrodes from the average reduces this. Adding ears barely dilutes it; doubling the frontopolar weight worsens it; Fpz itself carries large blink potentials.",
+      "learningObjective": "Modify an average reference to limit eye-artifact contamination.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Add A1 and A2 to the electrodes forming the average",
+        "Leave Fp1 and Fp2 out of the electrodes forming the average",
+        "Give Fp1 and Fp2 double weight within the average",
+        "Replace the average with an Fpz reference throughout"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "linked-ears",
+        "reference-contamination",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "At a left temporal spike peak, T3 is −100 µV, A1 is −60 µV and A2 is 0 µV against a distant reference. In a mathematically linked-ears montage, what does T3-(A1+A2)/2 show (negative up)?",
+      "explanation": "Linked-ears reference = (−60 + 0)/2 = −30 µV. T3 − (−30) = −70 µV, so 70 µV upward. 100 µV assumes the reference is quiet; 40 µV uses A1 alone; 130 µV adds the reference instead of subtracting it.",
+      "learningObjective": "Calculate linked-ears reference contamination.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "100 µV upward",
+        "40 µV upward",
+        "70 µV upward",
+        "130 µV upward"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s3",
+      "topicTags": [
+        "ecg-artifact",
+        "ear-reference",
+        "re-referencing"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "In a left-ear (A1) referential montage, a sharp transient locked to every QRS complex appears in all A1-referenced channels, largest where the other input is low-voltage. It is absent in the bipolar montages and in channels referenced to A2. What is the best immediate correction?",
+      "explanation": "A transient common to all A1-referenced channels and absent elsewhere arises in the reference: the ear electrode is picking up ECG. Changing the reference corrects every affected channel at once. The notch acts near 60 Hz, not on QRS-locked transients; the other left electrodes are not the source; a 5-Hz low-frequency setting would distort the EEG and only partly attenuate the sharp QRS.",
+      "learningObjective": "Trace an artifact to a contaminated reference and correct it.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Apply the 60-Hz notch to the ear-referenced channels",
+        "Re-apply every electrode on the left side of the head",
+        "Re-reference to an electrode free of ECG, such as Cz",
+        "Raise the low-frequency setting to 5 Hz on all channels"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "electrode-pop",
+        "cz-reference",
+        "reference-artifact"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "In a Cz-referenced montage, an abrupt, sharp, identical transient appears at the same instant and with the same amplitude and polarity in every channel. It has no counterpart in bipolar montages that do not include Cz. What is the most likely source?",
+      "explanation": "A waveform identical in every channel that shares Cz, and absent from bipolar derivations without Cz, is a single-electrode event at the reference. A cerebral discharge would vary in amplitude across the head and appear in bipolar chains; a ground fault typically adds interference rather than a sharp identical transient; one amplifier fault affects one channel.",
+      "learningObjective": "Localise an artifact to the common reference.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A generalized discharge with a broad, even field",
+        "A fault in the patient ground electrode",
+        "An electrode pop at Cz, the common reference",
+        "A transient failure of one amplifier channel"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "electrode-artifact",
+        "phase-reversal",
+        "physiologic-field"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "Sharp transients phase reverse at T4 in the right temporal chain. In a distant-reference montage, T4 shows a 150-µV sharp deflection at each event, while F8, T6, C4 and A2 show no change at all. What is the most likely interpretation?",
+      "explanation": "A cerebral discharge large enough to measure 150 µV at T4 has a field that spreads, with smoothly decreasing voltage, to adjacent electrodes 5-6 cm away. Involvement of a single electrode with nothing at its neighbours indicates an electrode artifact, even though it produces a phase reversal in bipolar chains. A tangential dipole would show a pole at C4; deep sources give broad, not single-electrode, fields.",
+      "learningObjective": "Use the presence of a physiological field to separate spikes from electrode artifact.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An electrode artifact at T4, with no physiological field",
+        "A very focal spike generated directly beneath T4",
+        "A tangential spike whose opposite pole lies at C4",
+        "A deep mesial spike whose field reaches only T4"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-028",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "interelectrode-distance",
+        "bipolar",
+        "amplitude"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "A broad 2-Hz frontocentral slow wave measures 30 µV in channel F3-C3. The same wave is reviewed in channel F3-P3, whose electrodes are about twice as far apart. What change in displayed amplitude is expected?",
+      "explanation": "A bipolar channel shows the potential difference between its inputs. For a broad field, electrodes farther apart sit at more different points on the gradient, so the difference (and displayed amplitude) increases. In-phase cancellation is worse with closer, not farther, electrodes; gain is not the only factor; lead length does not add cerebral signal.",
+      "learningObjective": "Relate interelectrode distance to bipolar amplitude.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Smaller, because the longer span increases in-phase cancellation",
+        "Larger, because a wider span of the field gradient is spanned",
+        "Unchanged, because displayed amplitude depends only on the gain",
+        "Larger, because longer leads add volume-conducted scalp noise"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-029",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "noncephalic-reference",
+        "ecg-artifact",
+        "referential"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "To avoid any cephalic reference contamination, a lab records referentially to a sternum-to-spine (noncephalic) reference pair. What is the main technical drawback of this reference, and how is it usually handled?",
+      "explanation": "A noncephalic reference on the trunk lies in the heart's electrical field, so ECG appears in every channel; a balanced sterno-spinal pair, adjusted to cancel the ECG, is the classic remedy. Eye and jaw-muscle potentials are cephalic problems; in-phase cancellation applies to closely spaced bipolar pairs, not to distant references.",
+      "learningObjective": "Identify the trade-off of a noncephalic reference.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Eye-movement pickup, reduced by excluding the frontopolar channels",
+        "Temporal muscle pickup, reduced by asking the patient to relax the jaw",
+        "In-phase cancellation of broad fields, reduced by doubling distances",
+        "ECG pickup, reduced by balancing the sternal and spinal leads"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-030",
+      "domainId": "domain-2",
+      "sectionId": "d2-s3",
+      "topicTags": [
+        "montage-selection",
+        "average-reference",
+        "sleep"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "A patient with independent spikes over both temporal regions, involving both ear electrodes, falls asleep and begins to show frequent vertex waves and K-complexes. Which referential montage is least contaminated for reviewing the temporal spikes during this sleep segment?",
+      "explanation": "Both ears are active in the spike fields, ruling out ear-based references, and in sleep Cz carries large vertex waves and K-complexes that would be inverted into every channel. A common average dilutes each local event across all electrodes, so contamination is small. The trade-off differs from wakefulness, when Cz would be quiet.",
+      "learningObjective": "Adapt the reference choice to state-dependent contamination.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A common average reference",
+        "A vertex (Cz) reference",
+        "A linked-ears reference",
+        "An ipsilateral-ear reference"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-031",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "laplacian",
+        "source-derivation",
+        "edge-effect"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "A Laplacian (source) derivation computes each electrode minus a weighted mean of its surrounding neighbours. In a standard 19-electrode 10-20 array, which electrode's derivation is least reliable?",
+      "explanation": "The Laplacian assumes neighbours on all sides. Edge electrodes such as Fp1 (also O1, T3, T4) have neighbours on one side only, so their derivation is asymmetric and less accurate. C3, Cz and P3 are surrounded by electrodes in all directions.",
+      "learningObjective": "Recognise the edge limitation of Laplacian derivations.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "C3, in the left central region",
+        "Fp1, in the left frontopolar region",
+        "Cz, at the vertex of the array",
+        "P3, in the left parietal region"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-032",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "report-description",
+        "field",
+        "polarity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "Referential values (distant, quiet reference) at the peak of recurring sharp waves are T3 −120 µV, F7 −70 µV, T5 −60 µV, C3 −20 µV, Fp1 −10 µV and O1 −5 µV. Which technical description is most accurate?",
+      "explanation": "All values are negative, greatest at T3; the next largest are F7 (−70) and T5 (−60), which define the field. C3 and Fp1 are small (−20, −10). The distractors misstate polarity, the maximum, or the main field electrodes.",
+      "learningObjective": "Describe polarity, maximum and field from referential data.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 7: Guidelines for EEG Reporting (Tatum et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Negative sharp waves, maximal at T3, with field to F7 and T5",
+        "Positive sharp waves, maximal at T3, with field to F7 and T5",
+        "Negative sharp waves, maximal at F7, with field to T3 and T5",
+        "Negative sharp waves, maximal at T3, with field to C3 and Fp1"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-033",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "epileptiform-criteria",
+        "physiologic-field",
+        "artifact"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "In a drowsy adult, a 60-ms sharp transient at F8 recurs every few minutes. Which additional observation most supports a cerebral epileptiform origin rather than artifact?",
+      "explanation": "A physiological field, with smoothly decreasing same-polarity voltage at neighbouring electrodes, indicates a cerebral generator. High amplitude alone is not specific; stereotyped transients without an after-going slow wave and involvement of a single electrode both favour artifact.",
+      "learningObjective": "Apply the field criterion when judging possible epileptiform transients.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An amplitude about three times the background at the F8 site",
+        "An identical waveform each time with no after-going slow wave",
+        "Occurrence only in channels that include the F8 electrode",
+        "Smaller same-polarity deflections at F4 and T4 at the same instant"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-034",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "secondary-bilateral-synchrony",
+        "focal-onset",
+        "generalized-spike-wave"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 30-year-old with seizures since age 20 has bursts of bilateral 2.5-3 Hz spike-and-wave. In every burst, 0.5-1 s of rhythmic spikes at F4 and F8 precedes the bilateral activity, and isolated right frontal spikes occur between bursts. What is the best interpretation?",
+      "explanation": "A consistent focal lead-in before each bilateral burst, plus interictal spikes in the same region, indicates focal (right frontal) discharges that spread bilaterally: secondary bilateral synchrony. Fragments in generalized epilepsy vary in side and do not lead every burst; a single consistent onset argues against two epilepsies; artifact would not lead into cerebral spike-and-wave.",
+      "learningObjective": "Recognise secondary bilateral synchrony from a consistent focal lead-in.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Generalized epilepsy with fragments of spike-and-wave",
+        "Two independent epilepsies, one focal and one generalized",
+        "Generalized epilepsy with right frontal electrode artifact",
+        "Right frontal onset with secondary bilateral synchrony"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-035",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "generalized-spike-wave",
+        "field",
+        "report-description"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A 3-Hz spike-and-wave burst begins simultaneously on both sides. Peak amplitudes are F3 280 µV, F4 270 µV, C3 220 µV, C4 210 µV, P3 150 µV, P4 150 µV, O1 90 µV and O2 95 µV. How should it be described?",
+      "explanation": "Simultaneous onset with near-equal homologous amplitudes (differences of about 5%) is bisynchronous and symmetric; the gradient from 280 µV frontally to about 90 µV occipitally gives frontal predominance. A 10-µV difference does not lateralise; the field covers the whole head rather than a bifrontal focus; the posterior values are the smallest.",
+      "learningObjective": "Describe the field of generalized discharges.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 7: Guidelines for EEG Reporting (Tatum et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Generalized, bisynchronous and symmetric, maximal frontally",
+        "Generalized and bisynchronous, maximal at the left frontal region",
+        "Bifrontal focal discharges with spread to the central regions",
+        "Generalized, bisynchronous and symmetric, maximal posteriorly"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-036",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "bilateral-independent",
+        "temporal-spikes",
+        "report-description"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "In a 30-minute recording there are 70 spikes maximal at T3 and 30 maximal at T4. None of the T4 spikes coincides with a T3 spike, and each set has its own field. How should they be described?",
+      "explanation": "Spikes arising on each side at different times, each with its own field, are bilateral independent; the 70:30 ratio gives left predominance. Synchronous spikes would coincide; spread would show right-sided activity following left spikes; generalized spikes would involve both sides simultaneously.",
+      "learningObjective": "Distinguish independent from synchronous bilateral discharges.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 7: Guidelines for EEG Reporting (Tatum et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Bilateral synchronous temporal spikes, left more than right",
+        "Bilateral independent temporal spikes, left more than right",
+        "Left temporal spikes that spread to the right temporal region",
+        "Generalized spikes with a bitemporal maximum on both sides"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-037",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "tirda",
+        "temporal-lobe-epilepsy",
+        "focal-slowing"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "An adult referred for unexplained spells shows repeated 4-8 s trains of rhythmic, sinusoidal 2-3 Hz delta over F7 and T3 in wakefulness and drowsiness. The trains do not evolve in frequency or field and the background is otherwise normal. What is the main clinical significance?",
+      "explanation": "Temporal intermittent rhythmic delta activity (TIRDA) is closely associated with temporal lobe epilepsy, carrying significance similar to temporal sharp waves. It is not a benign drowsy variant; the deep-midline association was historically attributed to frontal (FIRDA) patterns; a focal temporal pattern with a normal background does not indicate diffuse encephalopathy.",
+      "learningObjective": "Recognise the epileptogenic significance of TIRDA.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A normal drowsy pattern of no clinical significance",
+        "A sign of a deep midline or posterior fossa lesion",
+        "A sign of a diffuse, nonspecific encephalopathy",
+        "A strong association with left temporal lobe epilepsy"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-038",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "midline-spikes",
+        "field",
+        "report-description"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 3,
+      "stem": "Referential values (quiet reference) at a spike peak are Fz −120 µV, F3 −70 µV, F4 −65 µV, Cz −60 µV, Fp1 and Fp2 −30 µV, C3 and C4 −25 µV, T3 and T4 −5 µV, O1 and O2 0 µV. How should the spikes be described?",
+      "explanation": "The maximum is at Fz with a symmetric decline to F3/F4 and little at temporal or occipital electrodes, so the field is midline frontal, not generalized. F3 and F4 change together at one instant, not independently; F3 is only 5 µV above F4 and well below Fz. Midline foci are easily missed in montages without midline channels.",
+      "learningObjective": "Recognise and describe a midline focus.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 7: Guidelines for EEG Reporting (Tatum et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Generalized spikes, bisynchronous, with a frontal predominance",
+        "Midline frontal spikes, maximal at Fz, with spread to F3 and F4",
+        "Bilateral independent frontal spikes arising at F3 and at F4",
+        "Left frontal spikes, maximal at F3, with spread to Fz and F4"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-039",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "juvenile-myoclonic-epilepsy",
+        "fragments",
+        "focal-features"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 16-year-old with early-morning myoclonic jerks has generalized 4-6 Hz polyspike-and-wave. In sleep there are also isolated spikes of similar morphology, sometimes maximal at F3 and sometimes at F4, and no consistent lead-in before the generalized bursts. What is the best interpretation?",
+      "explanation": "In genetic generalized epilepsies such as JME, fragmentary discharges often appear focal and shift between sides; with typical generalized polyspike-and-wave and no consistent lead-in, they do not indicate focal epilepsy. Secondary bilateral synchrony requires a consistent focal onset from one region; frontal spikes with a cerebral field are not artifact.",
+      "learningObjective": "Avoid misreading focal fragments in generalized epilepsy.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Fragments of generalized discharges, fitting the generalized epilepsy",
+        "Bilateral independent frontal foci, indicating a focal epilepsy",
+        "Secondary bilateral synchrony from a single left frontal focus",
+        "Electrode artifact at F3 and F4, since their fields are restricted"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-040",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "amplitude-asymmetry",
+        "posterior-rhythm",
+        "focal-abnormality"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "In a 70-year-old, the 9-Hz posterior rhythm measures 80 µV at O2 and 30 µV at O1 in both referential and bipolar montages. Measurements, electrode positions and impedances have been checked, and there is no skull defect. How should this be described?",
+      "explanation": "O1 is about 60% lower than O2, beyond the modest right-greater-than-left asymmetry seen normally (usually under 50%). With technical causes and a skull defect excluded, the lower-amplitude side is generally the abnormal one. Excess amplitude is mainly expected over a skull defect; interelectrode distances were verified.",
+      "learningObjective": "Interpret significant amplitude asymmetry of the posterior rhythm.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A normal asymmetry, since the right side is usually higher",
+        "Right posterior excess amplitude, a focal abnormality on the right",
+        "Left posterior attenuation, a focal abnormality on the left",
+        "A technical asymmetry from unequal interelectrode distances"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-041",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "focal-slowing",
+        "polymorphic-delta",
+        "structural-lesion"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "Focal delta activity is seen over the left temporal region in four different patients. Which combination of features most strongly suggests an underlying structural lesion?",
+      "explanation": "Continuous, irregular (polymorphic), nonreactive focal delta is the classic marker of a structural lesion involving white matter. Intermittent, reactive or drowsiness-limited slowing is less specific and may be normal in older adults; slowing only during hyperventilation is usually a physiological response.",
+      "learningObjective": "Grade the significance of focal slowing.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Continuous, polymorphic and persisting despite alerting",
+        "Intermittent, rhythmic and attenuating with eye opening",
+        "Intermittent, polymorphic and present only in drowsiness",
+        "Continuous, rhythmic and present only with hyperventilation"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-042",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "impairment",
+        "colleague",
+        "patient-safety"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "At 07:00 a colleague arrives to perform an urgent ICU EEG. Their speech is slurred, they smell of alcohol and they fumble the electrode kit. No other technologist is on site yet. What should you do?",
+      "explanation": "Suspected impairment is an immediate patient-safety issue: the colleague should not perform the study, and the supervisor must be told now so the urgent EEG can be covered. Waiting until afterwards or until a recurrence exposes the patient to harm; external anonymous reports do not protect this patient and bypass the facility's process.",
+      "learningObjective": "Respond promptly to suspected colleague impairment.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Let them start, and report your concern to the supervisor afterwards",
+        "Ask them not to start, and report your concern to the supervisor now",
+        "Talk with them privately after the shift, and report it if it recurs",
+        "Let them start, and report your concern anonymously to the licensing board"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-043",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "falsification",
+        "impedance",
+        "documentation"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "You forgot to measure impedances before a routine EEG. The study looked clean, and you measured 3-5 kΩ at every electrode when it ended. A coworker suggests entering 'typical' values in the pre-test field of the QA checklist. What is the right course?",
+      "explanation": "Records must reflect what actually happened. Noting the omission and the real end-of-study values is honest and still useful. Entering values that were never measured, or presenting end values as pre-test values, is falsification; leaving the field blank without explanation hides the omission.",
+      "learningObjective": "Correct an omission honestly instead of falsifying data.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Document that pre-test values were not measured, plus the end-of-test values",
+        "Document typical 5-kΩ values, since the tracing quality was clearly good",
+        "Document the end-of-test values in the pre-test impedance field instead",
+        "Document nothing and leave the pre-test impedance field blank"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-044",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "gifts",
+        "boundaries"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 1,
+      "stem": "On discharge from a 5-day EMU admission, a grateful patient hands you a $50 store gift card in a thank-you note. What is the most appropriate response?",
+      "explanation": "Most facility gift policies treat gift cards as cash equivalents that staff must decline, whatever the value or timing; accepting cash-like gifts from patients also blurs professional boundaries. Thanking the patient preserves the relationship. Sharing with the team, the end of the admission, or a modest value does not change the nature of a cash gift.",
+      "learningObjective": "Handle patient gifts within professional boundaries.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Accept it and share it with the whole unit team",
+        "Thank them warmly and decline the gift card",
+        "Accept it, since their EMU stay has now ended",
+        "Accept it, as its value is modest at under $100"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-045",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "conflict-of-interest",
+        "vendors"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "You sit on the committee choosing the lab's next EEG system. One vendor offers you an all-expenses-paid weekend at a resort for 'product training' before the decision. What is the appropriate response?",
+      "explanation": "A lavish benefit from a vendor while you influence a purchase is a conflict of interest; it should be declined and disclosed so the committee can judge the process. Abstaining only from the vote still lets the benefit shape discussion; calling it training does not change its value; declining without disclosure hides a relevant attempt to influence the decision.",
+      "learningObjective": "Manage vendor conflicts of interest.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Accept the trip, and abstain only from the final vote",
+        "Accept the trip, since vendor training is educational",
+        "Disclose the offer to the committee and decline the trip",
+        "Decline the trip, and keep the offer to yourself"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-046",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "social-media",
+        "privacy-breach",
+        "colleague"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A coworker posts a selfie from the EMU workstation on a public social media account. Zooming in, you can read a patient's name and an EEG on the monitor behind them. What should you do?",
+      "explanation": "Visible patient identifiers on a public post are a potential privacy breach: it should come down at once, and the privacy officer must be told, because removal does not undo exposure and the facility must assess it. Leaving it up prolongs exposure; public comments draw attention to it; a staff meeting is not the breach-reporting route.",
+      "learningObjective": "Respond to a social media privacy breach by a colleague.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Ask the coworker to take it down now; reporting is unneeded once removed",
+        "Ask the coworker to take it down now, and report it to the privacy officer",
+        "Report it to the privacy officer, and leave the post up as evidence",
+        "Comment asking friends not to share it, and report it at the next staff meeting"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-047",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "social-media",
+        "boundaries"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 1,
+      "stem": "A patient you recorded in the EMU last month, who remains under the epilepsy service's care, sends you a friend request on your personal social media account. What is the most appropriate response?",
+      "explanation": "Personal social media connections with current patients blur professional boundaries and invite disclosures of health information. Avoiding care discussion does not fix the boundary problem; the patient is still under the service's care; private messaging about care is an inappropriate channel.",
+      "learningObjective": "Maintain professional boundaries on social media.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Accept, but avoid any discussion of their care online",
+        "Accept, since their EMU admission has already ended",
+        "Accept, and move any care questions to private messages",
+        "Decline, keeping a professional boundary with the patient"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-048",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "data-security",
+        "colleague-misconduct",
+        "privacy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "You see a colleague copying identifiable EEG files to a personal USB drive 'to make teaching slides at home'. Facility policy prohibits storing patient data on personal devices. What should you do?",
+      "explanation": "Copying identifiable data to a personal device violates policy and risks a breach; it should be addressed with the colleague and reported so the facility can secure the data. Encryption or later de-identification does not make a prohibited transfer acceptable, and waiting for a loss leaves the risk unmanaged.",
+      "learningObjective": "Respond to a colleague's mishandling of patient data.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Tell them to encrypt the drive; reporting is unneeded if encrypted",
+        "Say nothing for now, and report it if any data are later lost",
+        "Tell them to delete names at home; reporting is unneeded then",
+        "Tell them it breaches policy, and report it to the privacy officer"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-049",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "falsification",
+        "billing",
+        "recording-time"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A routine EEG ran for 40 minutes and the patient has been disconnected and has left. The reading physician asks you to enter 60 minutes as the recording time so the study meets a higher billing threshold. What should you do?",
+      "explanation": "Entering a false recording time is falsification and potential billing fraud, regardless of who asks. The accurate time must be recorded, and a request to falsify should be raised through the compliance channel. Noting that it was requested does not make a false entry acceptable; silent compliance with the accurate entry leaves a fraud request unaddressed.",
+      "learningObjective": "Refuse and escalate requests to falsify records.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Record 60 minutes, since billing is the reader's responsibility",
+        "Record 60 minutes, and add a note that the reader requested it",
+        "Record the actual 40 minutes and raise the request with compliance",
+        "Record 40 minutes, and let the request pass without any comment"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b4-050",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "credential-sharing",
+        "accountability"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 1,
+      "stem": "A colleague's account is locked near the end of a shift, and they ask you to log in to the EEG system so they can finish their technical notes for a patient you both recorded. What is the appropriate response?",
+      "explanation": "Each user's credentials make entries traceable to the person who made them. Letting someone work under your login, even supervised or for a shared patient, misattributes their entries; sharing a password breaches security however soon it is changed.",
+      "learningObjective": "Protect credentials and accountability in the record.",
+      "references": [
+        {
+          "citation": "ABRET / ASET Code of Ethics and professional conduct standards for neurodiagnostic technologists",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Log in for them, and stay beside them while they finish notes",
+        "Log in for them, since you both recorded the same patient",
+        "Decline, and help them reach IT to unlock their own account",
+        "Give them your password, and change it at the end of the shift"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 4 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

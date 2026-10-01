@@ -1,0 +1,1547 @@
+{
+  "version": "batch3-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "description": "ABRET Challenge Bank batch 3: patient identification and history, electrodes and impedance, physiologic artifacts, benign variants, infection control and confidentiality. Not yet medically verified.",
+  "totalQuestions": 51,
+  "questions": [
+    {
+      "id": "ch-b3-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "patient-identification",
+        "two-identifiers",
+        "order-verification"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A portable EEG is ordered for 'J. Morales, room 412-B, DOB 14/03/1961'. The patient in 412-B gives her name as Juana Morales; her wristband shows that name with DOB 14/03/1966. The nurse says she is the only Morales on the unit. What is the best course?",
+      "explanation": "Two person-specific identifiers (such as name and date of birth) must match across patient, wristband and order before testing. A date-of-birth mismatch means the order may belong to someone else or be wrong, so it is resolved first. A room number is not an identifier; silently using the wristband date hides the discrepancy; a nurse's statement is not a patient identifier.",
+      "learningObjective": "Resolve identifier discrepancies before starting a study.",
+      "references": [
+        {
+          "citation": "The Joint Commission National Patient Safety Goals, NPSG.01.01.01 (use at least two patient identifiers)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Hold the study until the order and wristband identifiers agree",
+        "Proceed, since name and room number give two matching identifiers",
+        "Proceed, and enter the wristband date of birth in the study header",
+        "Proceed, since the nurse's statement serves as the second identifier"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "order-verification",
+        "hyperventilation",
+        "contraindication"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "Four outpatient EEG orders arrive for the same morning. Which order detail should be clarified with the ordering provider before the study begins?",
+      "explanation": "Hyperventilation is relatively contraindicated in sickle cell disease because hypocapnic vasoconstriction can precipitate ischaemia or a crisis, so that order needs confirmation. Photic stimulation is expected in suspected JME (photosensitivity is common), sleep deprivation raises the yield after a first seizure, and hyperventilation is the key activation for suspected absence seizures.",
+      "learningObjective": "Screen activation orders against the patient's history.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Photic stimulation for a 15-year-old with suspected JME",
+        "Sleep deprivation for a 30-year-old after a first seizure",
+        "Hyperventilation for a 9-year-old with sickle cell disease",
+        "Hyperventilation for a 7-year-old with suspected absences"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "patient-identification",
+        "open-questions"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "Two outpatients named Daniel Okafor are booked 30 minutes apart. When you call the name in the waiting room, a man stands up. Which approach correctly identifies him before electrode application?",
+      "explanation": "The patient should state two identifiers (name and date of birth) in response to open questions, and both are matched to the order. A closed question invites an automatic 'yes' from the wrong patient. Appointment time and referring doctor are not patient identifiers and could be shared by both men.",
+      "learningObjective": "Use open-ended two-identifier verification.",
+      "references": [
+        {
+          "citation": "The Joint Commission National Patient Safety Goals, NPSG.01.01.01 (use at least two patient identifiers)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Ask him to state his full name and date of birth, and match both to the order",
+        "Ask 'Are you Daniel Okafor, born 2 May 1984?' and match his reply to the order",
+        "Ask him to state his full name and the time of his booked appointment",
+        "Ask him to state his full name and the name of his referring doctor"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "history-taking",
+        "last-seizure",
+        "postictal-slowing"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A routine EEG in a 34-year-old shows continuous polymorphic left temporal delta that becomes less frequent over the 40-minute recording; the background is otherwise normal. Which intake history item most changes how this finding is interpreted?",
+      "explanation": "Focal slowing that wanes during the recording suggests a resolving post-ictal state; knowing a seizure occurred 2 hours earlier lets the reader attribute (and lateralize) it rather than assume a structural lesion. Fasting mainly exaggerates hyperventilation build-up diffusely; sleep loss produces drowsiness patterns, not persistent focal delta; caffeine mainly reduces drowsiness.",
+      "learningObjective": "Record time of the last seizure and relate it to focal slowing.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "No food since the previous evening, about 14 hours earlier",
+        "Only 4 hours of sleep the night before the appointment",
+        "A focal impaired-awareness seizure about 2 hours before arrival",
+        "Two cups of strong coffee shortly before the recording"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "history-taking",
+        "hyperventilation",
+        "hypoglycemia"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "During hyperventilation in a 22-year-old, high-amplitude generalized 2-3 Hz delta builds up after 60 s and is still present 2 minutes after hyperventilation stops. The patient stays responsive and counts aloud throughout. Which intake history item best accounts for this?",
+      "explanation": "Low blood glucose enhances and prolongs hyperventilation build-up; persistence well beyond the usual recovery in a patient who keeps counting (so not an absence) points to fasting. Levetiracetam does not exaggerate build-up, modest sleep loss promotes drowsiness rather than prolonged post-HV delta, and a migraine history does not explain it.",
+      "learningObjective": "Relate time of last meal to hyperventilation response.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Levetiracetam 500 mg taken as usual early that morning",
+        "No food since the previous evening, about 15 hours earlier",
+        "About 5 hours of sleep the night before the appointment",
+        "A recent onset of migraine headaches with visual aura"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "history-taking",
+        "medication-effects",
+        "beta"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 45-year-old's EEG shows diffuse 18-25 Hz beta activity of 30-40 µV, maximal frontocentrally, in wakefulness and drowsiness. Which medication on the intake list most likely accounts for it and should be highlighted in the technical notes?",
+      "explanation": "Benzodiazepines (like barbiturates) characteristically increase frontocentral beta activity, and a dose an hour earlier fits a prominent effect. Levetiracetam and lamotrigine have little effect on background beta, and a beta-blocker does not produce excess beta.",
+      "learningObjective": "Link medication history to drug-induced EEG changes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Lorazepam 1 mg taken an hour before the appointment",
+        "Levetiracetam 750 mg twice daily for two years",
+        "Metoprolol 50 mg once daily for hypertension",
+        "Lamotrigine 100 mg twice daily for one year"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-s2",
+      "topicTags": [
+        "photic-stimulation",
+        "room-preparation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 1,
+      "stem": "You are preparing the room for a routine EEG with photic stimulation, following the updated European photic stimulation algorithm. Where should the lamp be placed and how should the room be lit?",
+      "explanation": "The standard lamp distance is 30 cm from the nasion, in dimmed lighting so the flash contrast is adequate. A fully lit room reduces the effective stimulus; 100 cm weakens it considerably, and 10 cm is closer than the standardised geometry.",
+      "learningObjective": "Set up photic stimulation geometry and lighting.",
+      "references": [
+        {
+          "citation": "Kasteleijn-Nolst Trenité et al. Methodology of photic stimulation revisited: updated European algorithm for visual stimulation in the EEG laboratory. Epilepsia 2012",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 30 cm from the nasion, in a dimly lit room",
+        "About 30 cm from the nasion, in a fully lit room",
+        "About 100 cm from the nasion, in a dimly lit room",
+        "About 10 cm from the nasion, in a dimly lit room"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-s2",
+      "topicTags": [
+        "room-preparation",
+        "60-hz",
+        "lead-routing"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "At an ICU bedside, the EEG cart must sit beside a bank of infusion pumps and the bed's power cord. Before connecting the patient, which set-up step most reduces the chance of 60-Hz interference?",
+      "explanation": "Bundling (or braiding) the leads keeps the loop area between them small, so induced interference appears almost equally on both inputs and is rejected as common-mode signal. Spreading the leads enlarges the pickup loop, a coil beside pumps acts as an inductive pickup, and running leads next to a power cord maximises coupling.",
+      "learningObjective": "Prepare the bedside environment to limit interference.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Gather the electrode leads into one bundle routed away from power cords",
+        "Spread the electrode leads apart so that they do not touch each other",
+        "Coil the extra electrode lead length into a loop beside the pumps",
+        "Run the electrode leads under the mattress next to the bed power cord"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrodes-impedance",
+      "topicTags": [
+        "impedance-imbalance",
+        "60-hz",
+        "bipolar"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "Impedances before a recording are Fp1 3 kΩ, F3 2 kΩ, C3 2 kΩ, P3 11 kΩ, O1 3 kΩ. In the chain Fp1-F3, F3-C3, C3-P3, P3-O1, where is 60-Hz interference most likely to appear?",
+      "explanation": "Interference leaks through when the two inputs of a channel have unequal impedance, which converts common-mode 60 Hz into a differential signal. Every channel containing P3 is unbalanced, whichever input P3 occupies. Fp1-F3 and F3-C3 pair well-matched electrodes and stay clean.",
+      "learningObjective": "Predict which channels show interference from one high-impedance electrode.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "In C3-P3 and P3-O1, the two channels that include P3",
+        "In P3-O1 only, the channel in which P3 is the first input",
+        "In C3-P3 only, the channel in which P3 is the second input",
+        "In all four channels of the chain, since the imbalance is shared"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrodes-impedance",
+      "topicTags": [
+        "impedance-measurement",
+        "polarization"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "A new technologist proposes checking electrode impedances with a DC ohmmeter from the engineering workshop instead of the EEG system's impedance check, which uses a small alternating test current. What is the main problem?",
+      "explanation": "Passing direct current through an electrode builds up charge at the electrode-electrolyte junction (polarization), which shifts the electrode potential and causes drift and noise; that is why impedance is checked with a small AC signal. Ionic gel does conduct DC, an ohmmeter measures the whole path including skin, and its reading is independent of amplifier gain.",
+      "learningObjective": "Explain why impedance is measured with alternating current.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "The direct current cannot pass through the electrolyte gel at all",
+        "The direct current polarizes the electrode-electrolyte interface",
+        "The ohmmeter reads only the lead wire's resistance, not the skin's",
+        "The ohmmeter reading changes with the EEG amplifier's gain setting"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrodes-impedance",
+      "topicTags": [
+        "impedance",
+        "skin-preparation"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "T4 reads 18 kΩ while all other electrodes are 2-4 kΩ. You add fresh electrolyte through the cup's hole without further skin preparation, and T4 now reads 12 kΩ. The patient has thick hair with styling product. What is the best next step?",
+      "explanation": "Persistently high impedance after re-filling points to a poor skin interface (oil, product, dead skin), which only skin re-preparation fixes. Excess electrolyte risks a salt bridge to neighbouring electrodes, pressure gives an unstable contact that drifts, and a new cup does not change the skin under it.",
+      "learningObjective": "Correct high impedance at its source.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Add more electrolyte until a small amount spreads out from under the cup's rim",
+        "Press the cup down firmly and secure it with extra tape for the whole recording",
+        "Replace the cup with a new one at the same site using the same electrolyte",
+        "Lift the cup, part the hair, and clean and gently abrade the skin before refilling"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrode-types-application",
+      "topicTags": [
+        "electrode-material",
+        "ag-agcl",
+        "slow-potentials"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "A research protocol requires faithful recording of very slow potential shifts (below 0.1 Hz) with the LFF set as low as the system allows. Which electrode type is most suitable?",
+      "explanation": "Ag/AgCl electrodes are essentially non-polarizable, with a low, stable electrode potential, so they pass very slow signals with little drift. Gold, stainless steel and platinum are polarizable and behave partly like capacitors, attenuating very slow components and drifting; corrosion resistance and stable contact do not address this.",
+      "learningObjective": "Match electrode material to the frequencies of interest.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Gold-plated cups, which are highly resistant to corrosion",
+        "Silver/silver-chloride cups, which are non-polarizable",
+        "Stainless-steel subdermal needles, which have stable contact",
+        "Platinum subdermal needles, which have a small contact area"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrode-types-application",
+      "topicTags": [
+        "electrode-material",
+        "dissimilar-metals",
+        "drift"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "After restocking, a mix of gold cups and silver/silver-chloride cups is applied in one recording. Several channels show slow, wandering baseline drift, worst in channels that pair a gold cup with a silver cup, although impedances are 2-4 kΩ throughout. What is the most likely explanation?",
+      "explanation": "Each metal-electrolyte junction has its own half-cell potential; pairing dissimilar metals in one derivation produces a DC offset that fluctuates with movement and electrolyte changes, seen as drift. Electrode metal does not alter amplifier gain, sweat artifact is not metal-specific, and impedances are already equal.",
+      "learningObjective": "Recognise the effect of mixing electrode metals.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Silver cups conduct sweat more readily, causing slow skin potentials",
+        "The two metals give a different amplifier gain to each channel input",
+        "Unequal electrode potentials of the two metals create offset and drift",
+        "Gold cups need longer for the electrolyte to soak into the skin"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrode-types-application",
+      "topicTags": [
+        "collodion",
+        "long-term-monitoring"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 1,
+      "stem": "A 4-day video-EEG admission is planned for an active 30-year-old who will be walking around the room. Which electrode application method best suits this recording?",
+      "explanation": "Collodion gives the most secure multi-day adherence, and electrolyte can be replenished through the cup's hole. Paste alone loosens over days of movement, needles are unsuitable for an awake ambulatory patient (discomfort, dislodgement, infection risk), and adhesive disposables do not hold through hair for days.",
+      "learningObjective": "Choose an application method for prolonged monitoring.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Cup electrodes held with conductive paste alone, covered by a gauze wrap",
+        "Cup electrodes secured with collodion, refilled with electrolyte as needed",
+        "Subdermal needle electrodes taped down and covered by a gauze head wrap",
+        "Adhesive disposable electrodes on the scalp, held under an elastic cap"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrode-types-application",
+      "topicTags": [
+        "sphenoidal",
+        "mesial-temporal"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A surgical candidate's scalp EEG shows rare, poorly lateralized anterior temporal sharp waves. The epileptologist plans to insert sphenoidal electrodes below the zygomatic arch, directed toward the foramen ovale. What do these electrodes add?",
+      "explanation": "The sphenoidal tip lies near the foramen ovale, close to the basal and mesial temporal surface, improving detection of anterior-mesial temporal discharges. The lateral temporal convexity is already covered by scalp temporal electrodes; orbitofrontal and insular sources are not their target.",
+      "learningObjective": "State the purpose of sphenoidal electrodes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Better recording of orbitofrontal and frontopolar discharges",
+        "Better recording of lateral temporal neocortical convexity discharges",
+        "Better recording of insular and frontal opercular discharges",
+        "Better recording of anterior-mesial and basal temporal discharges"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-complete-electrode-placement",
+      "topicTags": [
+        "t1-t2",
+        "electrode-placement",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "On the left side, the distance from the external auditory meatus to the outer canthus measures 9 cm. Where should the T1 electrode be placed?",
+      "explanation": "T1 lies 1 cm above the point one-third of the way from the external auditory meatus to the outer canthus: 9 ÷ 3 = 3 cm forward of the meatus, then 1 cm up. Measuring from the canthus places it too far forward, 4.5 cm is the midpoint, and the electrode goes above, not below, the line.",
+      "learningObjective": "Place T1/T2 anterior temporal electrodes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "3 cm behind the outer canthus along this line, then 1 cm above it",
+        "4.5 cm anterior to the meatus along this line, then 1 cm above it",
+        "3 cm anterior to the meatus along this line, then 1 cm below it",
+        "3 cm anterior to the meatus along this line, then 1 cm above it"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-complete-electrode-placement",
+      "topicTags": [
+        "10-10-nomenclature",
+        "electrode-names"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 1,
+      "stem": "An outside report using 10-10 (modified combinatorial) nomenclature describes sharp waves maximal at P8 with spread to T8. Which 10-20 electrodes in your montage correspond to these two sites?",
+      "explanation": "In 10-10 nomenclature T3/T4 become T7/T8 and T5/T6 become P7/P8, so P8 = T6 and T8 = T4. P4 keeps its name, F8 is unchanged, and O2 is not renamed.",
+      "learningObjective": "Translate between 10-10 and 10-20 electrode names.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 2: Guidelines for Standard Electrode Position Nomenclature (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "P4 and T4",
+        "T6 and T4",
+        "T6 and F8",
+        "O2 and T6"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-complete-electrode-placement",
+      "topicTags": [
+        "interelectrode-distance",
+        "asymmetry",
+        "measurement-error"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "In a longitudinal bipolar montage, alpha in T5-O1 is about 40% higher than in T6-O2, while ear-referenced O1 and O2 are symmetric. Remeasurement finds T5 and O1 8.5 cm apart but T6 and O2 5.5 cm apart. What is the best interpretation and action?",
+      "explanation": "For a broad field, bipolar amplitude grows with interelectrode distance, so the wider left pair records a larger difference; symmetric referential amplitudes confirm a technical cause. High impedance does not boost amplitude, and the asymmetry cannot be judged normal or abnormal until the placement is corrected.",
+      "learningObjective": "Recognise placement error as a cause of bipolar asymmetry.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Unequal electrode spacing caused it; remeasure and reposition the electrodes",
+        "A true right posterior alpha reduction; record it as a focal abnormality",
+        "Higher left-sided impedance boosted the signal; re-prepare the left side",
+        "An asymmetry under 50% is within normal limits; record it without change"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "eye-movement",
+        "lateral-gaze",
+        "phase-reversal"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "In a longitudinal bipolar montage (negative up), a smooth 300-ms transient deflects up in Fp1-F7 and down in F7-T3, while it deflects down in Fp2-F8 and up in F8-T4; posterior channels are quiet. Which event best explains this?",
+      "explanation": "Deflections pointing away from each other around F7 mean F7 is positive; pointing toward each other around F8 mean F8 is negative. The cornea is positive, so the left cornea has moved toward F7 and the right retina toward F8: gaze to the left. Rightward gaze gives the mirror image, a blink is positive at Fp1/Fp2 symmetrically, and glossokinetic potentials are diffuse and not opposite-sided.",
+      "learningObjective": "Infer gaze direction from F7/F8 phase reversals.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A horizontal eye movement to the right",
+        "A vertical eye movement upward with a blink",
+        "A horizontal eye movement to the left",
+        "A glossokinetic potential from the tongue"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "eye-blink",
+        "bipolar-subtraction",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "At the peak of a blink, ear-referenced values are Fp1 +90 µV, Fp2 +90 µV, F3 +25 µV, F4 +25 µV, C3 +5 µV, C4 +5 µV. What do Fp1-F3 and F3-C3 show in a longitudinal bipolar montage (negative up)?",
+      "explanation": "Fp1-F3 = 90 − 25 = +65 µV and F3-C3 = 25 − 5 = +20 µV; input 1 positive relative to input 2 deflects down. The positivity is maximal at the end of the chain (Fp1), so there is no reversal, only decreasing downward deflections. 115 and 30 come from adding instead of subtracting.",
+      "learningObjective": "Derive the bipolar appearance of a blink from referential values.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Fp1-F3 65 µV up and F3-C3 20 µV up, with no phase reversal",
+        "Fp1-F3 65 µV down and F3-C3 20 µV up, a phase reversal at F3",
+        "Fp1-F3 65 µV down and F3-C3 20 µV down, with no phase reversal",
+        "Fp1-F3 115 µV down and F3-C3 30 µV down, with no phase reversal"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "eye-movement",
+        "infraorbital-electrode",
+        "frontal-slowing"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "Intermittent 1-2 Hz slow waves appear at Fp1 and Fp2 in a drowsy patient with eyes closed. You add an electrode just below the left eye, referenced to the same ear as Fp1. Which result indicates the waves come from eye movement?",
+      "explanation": "Vertical eye movement rotates the corneoretinal dipole, so electrodes above and below the eye change in opposite directions. A cerebral frontal field has the same polarity above and below the eye and falls off with distance; absence below the eye also favours a cerebral source.",
+      "learningObjective": "Use an infraorbital electrode to identify eye-movement artifact.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The infraorbital electrode shows the waves with the same polarity as Fp1",
+        "The infraorbital electrode shows the waves with polarity opposite to Fp1",
+        "The infraorbital electrode shows the waves larger than Fp1, same polarity",
+        "The infraorbital electrode shows no waves while Fp1 still shows them"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "average-reference",
+        "reference-contamination",
+        "eye-blink"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "In an average reference montage of all 19 scalp electrodes, each blink gives the expected large downward deflections in Fp1-Avg and Fp2-Avg, and also small upward deflections at the same moment in O1-Avg and O2-Avg. The occipital electrodes are well applied. What explains the occipital deflections?",
+      "explanation": "The blink makes Fp1 and Fp2 strongly positive, so the average of all electrodes becomes slightly positive. O1-Avg = (≈0) − (positive) is negative, deflecting upward: an inverted, small copy of the blink at quiet sites. Volume-conducted eye potentials fall off steeply, lambda waves need visual scanning with eyes open, and pillow movement would not be time-locked to every blink.",
+      "learningObjective": "Recognise contamination of the average reference.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Volume conduction of the corneoretinal potential to the occipital region",
+        "Occipital lambda waves triggered by the visual change of each blink",
+        "Movement of the occipital electrodes against the pillow with each blink",
+        "The large frontopolar blink potential is included in the average reference"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "muscle-artifact",
+        "ear-reference",
+        "reference-contamination"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "In an ipsilateral-ear referential montage, irregular 40-60 Hz activity appears in every left channel (Fp1-A1 through O1-A1) with nearly identical amplitude, and in no right channel. A left longitudinal bipolar chain shows it only in channels near T3. What is the most likely source?",
+      "explanation": "Identical activity in every channel sharing A1 implicates the reference; the bipolar chain shows the true local field near T3, over the temporalis/masseter region beside the ear. Frontalis muscle would peak in frontal bipolar channels, mains interference is a regular 60-Hz sinusoid, and breach activity is lower in frequency and confined near the defect in bipolar channels.",
+      "learningObjective": "Identify a contaminated ear reference by comparing montages.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Left frontalis muscle activity spreading over the left hemisphere",
+        "A high-impedance A1 electrode admitting 60-Hz interference",
+        "Diffuse left-hemisphere beta over a left-sided skull defect",
+        "Left temporalis muscle activity contaminating the A1 reference"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "muscle-artifact",
+        "hff",
+        "pitfall"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "Bursts of frontotemporal muscle artifact obscure a recording. A colleague lowers the HFF from 70 Hz to 15 Hz for the whole study. What is the main risk of this change?",
+      "explanation": "Lowering the HFF attenuates the fast components of muscle potentials, rounding them into rhythmic or sharply contoured waves that can mimic beta or spikes, while also blunting true fast activity. It does not create delta, a low-pass filter does not boost any frequency, and a 15-Hz setting reduces 10-Hz alpha only modestly.",
+      "learningObjective": "Recognise how an aggressive HFF disguises muscle artifact.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Muscle bursts are converted into slow waves that resemble delta activity",
+        "Muscle bursts are smoothed into waveforms that resemble beta or spikes",
+        "Muscle bursts become larger, because the filter boosts lower frequencies",
+        "Muscle bursts are unchanged, while the 8-12 Hz alpha is markedly reduced"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "chewing-artifact",
+        "icu",
+        "seizure-mimic"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "A 70-year-old ICU patient shows 1-Hz bursts of very fast, spiky activity over both temporal regions, each burst lasting about 300 ms, for 20 s at a time. The bursts match jaw movements on video, and the background between bursts is unchanged. What is the most likely explanation?",
+      "explanation": "Chewing produces bursts of muscle potentials time-locked to jaw closure, maximal temporally, with no evolution and an unchanged background between bursts. Glossokinetic artifact is slow, not fast; periodic discharges would not be locked to jaw movement; a seizure with automatisms would show an evolving ictal rhythm rather than isolated muscle bursts.",
+      "learningObjective": "Identify chewing artifact by time-locking to jaw movement.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Bitemporal periodic discharges with superimposed fast activity",
+        "Glossokinetic artifact from tongue movement during jaw motion",
+        "Chewing artifact from rhythmic masseter and temporalis contraction",
+        "A bitemporal seizure with rhythmic fast bursts and automatisms"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "sucking-artifact",
+        "neonatal",
+        "seizure-mimic"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "A 2-week-old term infant shows rhythmic 2-3 Hz sharply contoured waves in temporal and frontal channels for 30 s. Video shows sucking on a pacifier throughout; the activity stops within a second of the pacifier being removed, with no change in frequency or morphology beforehand. What is it most likely to be?",
+      "explanation": "Rhythmic sucking produces sharply contoured temporal/frontal activity that can mimic a seizure, but it is time-locked to the movement, does not evolve and ends abruptly when the movement stops. A seizure would show evolution and would not stop on removal of a pacifier; crying is not present; anterior dysrhythmia is frontal delta of sleep, not linked to sucking.",
+      "learningObjective": "Distinguish sucking artifact from neonatal seizures.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An electrographic seizure with oral automatisms",
+        "Glossokinetic artifact from crying and tongue motion",
+        "Anterior dysrhythmia, a normal transitional pattern",
+        "Sucking artifact from rhythmic oral and facial movement"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "ventilator-artifact",
+        "icu",
+        "periodic-mimic"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "An intubated patient's EEG shows an identical-looking sharp transient in several left-sided channels every 4.3 s. The ventilator is set at 14 breaths per minute, and water has collected in the circuit tubing beside the patient's head. What is the most likely source?",
+      "explanation": "60 s ÷ 14 breaths = 4.3 s, matching the transient interval exactly; identical shape and tubing condensation near the head point to ventilator artifact (confirm by marking the ventilator cycle). LPDs vary somewhat and are not locked to the ventilator; pulse and ECG artifacts recur at cardiac rates (about 1 s), not every 4.3 s.",
+      "learningObjective": "Time-lock a periodic artifact to the ventilator rate.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Lateralized periodic discharges at about 0.23 Hz",
+        "Pulse artifact from a temporal artery under an electrode",
+        "ECG artifact from a slow junctional heart rhythm",
+        "Ventilator-related artifact, timed to each delivered breath"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-028",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "eye-movement",
+        "prosthetic-eye",
+        "asymmetry"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 58-year-old with a left enucleation and orbital prosthesis has blink artifact at Fp2 but almost none at Fp1. With lateral gaze, deflections appear at F8 but are minimal at F7. Intermittent Fp2 slow waves occur only with eye movements on video. How should the asymmetry be interpreted?",
+      "explanation": "A prosthetic eye has no corneoretinal potential, so eye-movement artifact appears only on the side of the intact eye. The right frontal slow waves coincide with eye movements and are therefore artifact; the left-sided absence is not a cerebral attenuation, and high impedance does not selectively suppress eye artifact.",
+      "learningObjective": "Interpret asymmetric eye artifact after enucleation.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left frontal attenuation suggesting a left frontal structural lesion",
+        "Right frontal slowing suggesting right frontal cerebral dysfunction",
+        "A high-impedance Fp1 electrode suppressing left frontal activity",
+        "Expected loss of the left corneoretinal dipole, not a cerebral finding"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-029",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "slow-eye-movements",
+        "drowsiness"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "As a 40-year-old becomes drowsy, the alpha rhythm drops out and smooth 0.3-0.5 Hz waves appear at F7 and F8 with opposite polarity to each other; they are absent at T3 and T4. What are they most likely to be?",
+      "explanation": "Slow roving horizontal eye movements are a marker of drowsiness; opposite polarity at F7 and F8 reflects the horizontal swing of the corneoretinal dipoles. Rhythmic delta is faster and not opposite-sided, sweat artifact does not invert between the two sides in step, and glossokinetic potentials are broad and frontally maximal rather than out of phase at F7/F8.",
+      "learningObjective": "Recognise slow roving eye movements of drowsiness.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Slow lateral eye movements of drowsiness",
+        "Bitemporal intermittent rhythmic delta",
+        "Sweat artifact over the anterior temples",
+        "Glossokinetic potentials from swallowing"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-030",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "tremor-artifact",
+        "movement"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "artifact",
+      "reasoningSteps": 1,
+      "stem": "A 72-year-old with Parkinson's disease has waxing and waning 4-5 Hz rhythmic, sinusoidal activity in posterior temporal and occipital channels, unaffected by eye opening. Video shows a rhythmic tremor of the head and hands that lessens when the head rests on the pillow. What is it?",
+      "explanation": "A 4-5 Hz rhythm matching a visible resting tremor and lessening when the head is supported is mechanical tremor artifact. A slowed posterior rhythm would react to eye opening; cerebral rhythmic theta would not change with head support; rhythmic midtemporal theta is a drowsy, midtemporal variant.",
+      "learningObjective": "Recognise tremor artifact.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A slowed posterior dominant rhythm of 4-5 Hz",
+        "Posterior temporal intermittent rhythmic theta",
+        "Tremor artifact from rhythmic head movement",
+        "Rhythmic midtemporal theta of drowsiness"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-031",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "glossokinetic",
+        "dipole"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "artifact",
+      "reasoningSteps": 1,
+      "stem": "While an alert patient talks with the technologist, irregular 1-3 Hz delta appears, maximal at Fp1, Fp2, F7 and F8, mainly during words with 'l' and 't' sounds. Which property of the tongue explains this?",
+      "explanation": "The tongue behaves as a dipole with the tip negative relative to the root; tongue movement produces slow potentials maximal anteriorly and inferiorly. The polarity is the reverse of the cornea's, muscle firing would produce fast activity, and the eyes are not involved.",
+      "learningObjective": "Explain the origin of glossokinetic artifact.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Its tip is positive relative to its root, as with the cornea",
+        "Its tip is negative relative to its root, forming a dipole",
+        "Its muscle fibres fire at 1-3 Hz during articulation",
+        "Its movement shifts the corneoretinal dipoles of both eyes"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-032",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "lateral-rectus",
+        "eye-movement",
+        "polarity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "A patient reads a page of text. At the start of each saccade toward the right, a brief 20-ms spike appears in channels containing F8, followed by a slow potential. In a referential montage, what polarity does the slow potential have at F8 and at F7?",
+      "explanation": "Looking right contracts the right lateral rectus (the spike at F8) and swings both corneas (positive) toward the right, so F8 becomes positive and F7, now nearer the retinas, negative. Same-polarity changes at both sides would suggest vertical movement or a cerebral field.",
+      "learningObjective": "Predict F7/F8 polarity for horizontal saccades.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Positive at F8 and negative at F7",
+        "Negative at F8 and positive at F7",
+        "Positive at both F7 and F8 equally",
+        "Negative at both F7 and F8 equally"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-033",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "wicket-spikes",
+        "isolated-wicket"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "normal-variant",
+      "reasoningSteps": 2,
+      "stem": "A 63-year-old's drowsy record shows several trains of 7-10 Hz arciform waves at T3. Later a single sharply contoured transient of identical morphology appears at T3, without an aftergoing slow wave or background disruption. How should the isolated transient be regarded?",
+      "explanation": "Isolated wickets are easily over-read; matching the transient to wicket trains at the same site, with no aftergoing slow wave or background disruption, identifies it as the same benign variant. BETS are very brief, low-amplitude and widespread rather than arciform; mu is central and reacts to movement.",
+      "learningObjective": "Avoid over-reading isolated wicket waves.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "As a left temporal sharp wave, an epileptiform discharge",
+        "As an isolated wicket, part of the same benign variant",
+        "As a fragment of mu rhythm displaced to the temporal region",
+        "As a benign small sharp spike (BETS) of light sleep"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-034",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "bets",
+        "small-sharp-spikes"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "normal-variant",
+      "reasoningSteps": 2,
+      "stem": "Low-amplitude, brief, sharp transients appear over the left temporal region of a 45-year-old. Which additional finding would most argue against classifying them as benign epileptiform transients of sleep (small sharp spikes)?",
+      "explanation": "BETS are low-amplitude (under about 50 µV), very brief (under about 50 ms), seen in adults in drowsiness and light sleep, often bilateral, and have little or no aftergoing slow wave. A prominent slow wave that disrupts the background is a feature of epileptiform discharges; the other three findings support BETS.",
+      "learningObjective": "Use defining features to separate BETS from epileptiform spikes.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An amplitude below 50 µV with a duration below 50 ms",
+        "Occurrence only during drowsiness and light NREM sleep",
+        "Independent occurrence over both hemispheres in the record",
+        "A prominent aftergoing slow wave that disrupts the background"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-035",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "14-and-6",
+        "referential-montage"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 2,
+      "stem": "A 13-year-old is recorded in drowsiness. Your lab's standard displays use bipolar chains with short interelectrode distances. To best demonstrate possible 14- and 6-Hz positive bursts, which display should you add?",
+      "explanation": "14- and 6-Hz positive bursts are broad posterior temporal fields; they are best shown with long interelectrode distances, classically a contralateral-ear reference. Short bipolar and Laplacian derivations subtract neighbouring, similar potentials and make broad fields small.",
+      "learningObjective": "Choose a montage that reveals broad positive bursts.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A transverse bipolar montage of adjacent electrodes",
+        "A Laplacian (source) derivation centred on T5 and T6",
+        "A referential montage to the contralateral ear",
+        "A circumferential bipolar montage around the head"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-036",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "lambda-waves",
+        "polarity",
+        "end-of-chain"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage-localization",
+      "reasoningSteps": 3,
+      "stem": "While an awake 20-year-old scans a detailed picture, sharp transients appear at O1 and O2, positive in ear-referenced channels. They stop when the patient closes the eyes or looks at a blank card. In P3-O1 and P4-O2 (negative up), how do they deflect, and what are they?",
+      "explanation": "P3 − O1 with O1 positive gives a negative result, so the channel deflects upward and can look like a negative spike at the end of the chain. Occurrence only during visual scanning, abolished by eye closure or a blank field, identifies lambda waves. POSTS occur in sleep, and occipital spikes would not depend on scanning.",
+      "learningObjective": "Recognise lambda waves and their bipolar appearance.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Downward; lambda waves",
+        "Upward; lambda waves",
+        "Upward; occipital spikes",
+        "Downward; POSTS"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-037",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "posts",
+        "sleep"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "normal-variant",
+      "reasoningSteps": 2,
+      "stem": "During stage N2 sleep in a 28-year-old, trains of surface-positive, sharply contoured, triangular transients appear bilaterally at O1 and O2 at 4-5 Hz, without aftergoing slow waves. What are they?",
+      "explanation": "POSTS are surface-positive, triangular occipital transients of NREM sleep, often in 4-5 Hz trains, and are benign. Lambda waves resemble them but need visual scanning while awake; epileptic spikes are usually surface-negative with aftergoing slow waves; OIRDA is rhythmic delta, not sharp positive transients.",
+      "learningObjective": "Identify POSTS.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Positive occipital sharp transients of sleep",
+        "Lambda waves, occipital transients of visual scanning",
+        "Bilateral occipital spike discharges of epilepsy",
+        "Occipital intermittent rhythmic delta activity"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-038",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "breach-rhythm",
+        "epileptiform"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "normal-variant",
+      "reasoningSteps": 3,
+      "stem": "Two years after a right temporal craniotomy, higher-amplitude 6-11 Hz activity with sharply contoured, mu-like waves is present at T4 and F8. Which additional finding would most support a true epileptiform discharge rather than breach effect?",
+      "explanation": "A skull defect increases amplitude and sharpness of ongoing rhythms (breach effect), including mu-like activity that reacts to contralateral movement, in all states. A discrete transient that disrupts the background with an aftergoing slow wave is not explained by breach and favours an epileptiform discharge.",
+      "learningObjective": "Separate breach effect from epileptiform activity.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Sharply contoured waves at T4 that are larger than those at homologous T3",
+        "Faster, higher-amplitude rhythms over T4 that persist through all sleep stages",
+        "Arciform 7-11 Hz waves near the defect that attenuate with left-hand movement",
+        "Recurrent sharp transients at T4 with aftergoing slow waves disrupting the background"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-039",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "sreda",
+        "responsiveness-testing"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "During a routine EEG in an awake 68-year-old, an abrupt run of rhythmic, sharply contoured 5-6 Hz theta appears over both parietal and posterior temporal regions and has continued for 30 s. The patient lies quietly with eyes open. What should the technologist do now?",
+      "explanation": "This resembles SREDA, a benign variant of older adults, but the key difference from a seizure is preserved awareness, lack of evolution and no post-ictal change. Testing responsiveness and memory during the run provides that evidence. Hyperventilation adds risk and confounds, waiting loses the chance to test, and changing sensitivity does not test awareness.",
+      "learningObjective": "Gather clinical evidence during a possible SREDA run.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Start hyperventilation to see whether the run accelerates or spreads",
+        "Switch to a transverse montage and wait for the run to end before acting",
+        "Change sensitivity to 15 µV/mm to judge whether the run evolves in amplitude",
+        "Ask questions and give a word to recall, testing responsiveness during the run"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-040",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "6-hz-phantom",
+        "fold"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "normal-variant",
+      "reasoningSteps": 1,
+      "stem": "A drowsy 25-year-old woman shows 1-s bursts of low-amplitude (about 30 µV) 6-Hz spike-and-wave, maximal occipitally, in which the spike component is barely visible. How should this be classified?",
+      "explanation": "6-Hz phantom spike-and-wave that is occipital, low amplitude, seen in drowsiness and in a female (the FOLD profile) is regarded as benign. The high-amplitude, anterior, waking type (WHAM) is more often associated with seizures; occipital epilepsy spikes are higher and sharper; atypical generalized spike-wave is slower and not phantom-like.",
+      "learningObjective": "Classify 6-Hz phantom spike-and-wave by its features.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Phantom spike-and-wave of the high-amplitude anterior, waking type",
+        "Occipital spikes of a self-limited childhood occipital epilepsy",
+        "Phantom spike-and-wave of the benign occipital, low-amplitude type",
+        "Atypical generalized spike-and-wave of a generalized epilepsy"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-041",
+      "domainId": "domain-3",
+      "sectionId": "d3-s2",
+      "topicTags": [
+        "spaulding",
+        "disinfection",
+        "electrodes"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "After two EEGs you clean two sets of reusable cup electrodes: set A was used on intact scalp, and set B over a scalp with several open, oozing excoriations. Under the Spaulding classification, what processing does each set need after cleaning?",
+      "explanation": "Items touching intact skin are non-critical (low-level disinfection); items touching non-intact skin or mucous membranes are semi-critical (high-level disinfection); sterilization is for items entering sterile tissue. Contact with non-intact skin raises set B to semi-critical, and set A still requires disinfection, not cleaning alone.",
+      "learningObjective": "Apply the Spaulding classification to EEG electrodes.",
+      "references": [
+        {
+          "citation": "CDC/HICPAC Guideline for Disinfection and Sterilization in Healthcare Facilities (2008, updated)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Set A low-level disinfection; set B low-level disinfection",
+        "Set A low-level disinfection; set B high-level disinfection",
+        "Set A high-level disinfection; set B sterilization",
+        "Set A cleaning only; set B low-level disinfection"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-042",
+      "domainId": "domain-3",
+      "sectionId": "d3-s2",
+      "topicTags": [
+        "cleaning",
+        "organic-load",
+        "disinfection"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Reusable cup electrodes come back with dried paste and a little dried blood in the cups. A colleague puts them straight into the approved disinfectant for the labelled contact time. What is the main problem?",
+      "explanation": "Cleaning to remove organic material must precede disinfection, because residual paste and blood shield microorganisms and inactivate many disinfectants. Longer contact time does not overcome soil, blood on electrodes used on skin does not mandate sterilization, and corrosion is not the main concern.",
+      "learningObjective": "Sequence cleaning before disinfection.",
+      "references": [
+        {
+          "citation": "CDC/HICPAC Guideline for Disinfection and Sterilization in Healthcare Facilities (2008, updated)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "The disinfectant contact time must be doubled whenever blood is present",
+        "Dried blood requires sterilization in place of disinfection for cup electrodes",
+        "Residual organic material shields surfaces and reduces disinfectant efficacy",
+        "The electrolyte paste reacts with the disinfectant and corrodes the cups"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-043",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "research",
+        "phi",
+        "minimum-necessary"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A neurology resident not involved in their care asks you for a list of this month's EMU patients with diagnoses and medical record numbers 'for a research project I'm planning'. No IRB approval or data agreement is mentioned. What is the most appropriate response?",
+      "explanation": "Research use of identifiable data needs IRB approval or a waiver and a privacy review. Medical record numbers are identifiers, so removing names does not de-identify the list; being a clinician does not create a need to know; diagnoses tied to EMU admissions in a given month remain protected health information.",
+      "learningObjective": "Handle research requests for patient data.",
+      "references": [
+        {
+          "citation": "HIPAA Privacy Rule, 45 CFR Parts 160 and 164 (Subpart E)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Provide the list with names removed but medical record numbers kept",
+        "Provide the list, since the resident is a clinician at the same hospital",
+        "Decline, and direct the resident to the IRB and privacy approval process",
+        "Provide diagnoses only, since diagnoses alone are not health information"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-044",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "right-of-access",
+        "release-of-information"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "At the end of her recording, an adult outpatient asks you for a copy of her EEG and the final report to take to a second-opinion neurologist. What is the most appropriate response?",
+      "explanation": "Patients have a right of access to their own health records, including EEG data, but release goes through the release-of-information process (identity check, format, timing). Ownership of the medium does not remove the right, referring-provider approval is not required, and an ad-hoc USB copy bypasses identity verification and security controls.",
+      "learningObjective": "Respond to a patient's request for their records.",
+      "references": [
+        {
+          "citation": "HIPAA Privacy Rule, 45 CFR Parts 160 and 164 (Subpart E)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Explain that the raw EEG belongs to the hospital and only the summary can be released",
+        "Explain that she needs written approval from her referring neurologist first",
+        "Explain that she is entitled to a copy and direct her to the release-of-information office",
+        "Copy the recording to a USB drive for her now, since it is her own information"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-045",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "confidentiality",
+        "telephone",
+        "family"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 1,
+      "stem": "A caller says he is the husband of a patient recorded this morning and asks whether the EEG 'showed anything'. The patient's chart lists no personal representative or authorization for him. What is the most appropriate response?",
+      "explanation": "Without the patient's authorization or a documented personal representative, nothing about the study is disclosed, even a 'normal' result, and knowing her date of birth does not establish authority. Marriage does not by itself make a spouse a personal representative. Technologists also do not give results.",
+      "learningObjective": "Protect results from unauthorised callers.",
+      "references": [
+        {
+          "citation": "HIPAA Privacy Rule, 45 CFR Parts 160 and 164 (Subpart E)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Share only that the EEG was normal, since normal results carry no risk",
+        "Share the results once he confirms her date of birth and home address",
+        "Decline to share details, and suggest he ask the patient directly",
+        "Share the results, because a spouse is automatically her representative"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-046",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "consent",
+        "right-to-refuse",
+        "photic-stimulation"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "Midway through a routine EEG, a competent 35-year-old declines photic stimulation after hearing that it may provoke a seizure, although it is listed on the order. What is the most appropriate response?",
+      "explanation": "A competent adult may refuse any part of a procedure; the refusal is respected and recorded so the reader knows why the activation is missing. A milder version, selected frequencies, or stimulating during sleep all proceed without consent.",
+      "learningObjective": "Respect a patient's refusal of an activation procedure.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Omit photic stimulation, and record the refusal and its reason in the technical notes",
+        "Perform it at reduced flash intensity, since the order includes photic stimulation",
+        "Perform only the 1-10 Hz flash rates, which are least likely to provoke a seizure",
+        "Postpone it to the end of the recording and perform it if the patient falls asleep"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-047",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "law-enforcement",
+        "disclosure"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A police officer at the EEG lab desk asks for a copy of a patient's EEG report from last week, saying it relates to a car-crash investigation. He shows a badge but no subpoena, warrant or patient authorization. What is the most appropriate response?",
+      "explanation": "Disclosures to law enforcement are permitted only under specific conditions (such as a court order, warrant or qualifying subpoena), which the privacy or records office evaluates. A badge alone is not sufficient, a partial report is still protected information, and logging the visit does not create legal authority.",
+      "learningObjective": "Route law-enforcement requests correctly.",
+      "references": [
+        {
+          "citation": "HIPAA Privacy Rule, 45 CFR Parts 160 and 164 (Subpart E)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Release the summary, since disclosures to law enforcement are allowed on request",
+        "Refer the request to the privacy officer or records office before releasing anything",
+        "Release only the impression line, since a summary carries less identifiable detail",
+        "Release the summary once the officer signs the lab's visitor log with his badge number"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-048",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "interpreter",
+        "consent",
+        "limited-english"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 3,
+      "stem": "A 55-year-old Spanish-speaking patient with limited English arrives for a sleep-deprived EEG. Her 12-year-old son offers to interpret the consent discussion and the history questions about seizures, medications and alcohol use. What is the most appropriate approach?",
+      "explanation": "Consent and a sensitive history (seizures, alcohol) need accurate, confidential interpretation by a qualified interpreter; a minor should not interpret outside an emergency, and family interpreters may filter or omit information. Splitting the tasks still uses the child for sensitive questions, and gestures do not provide meaningful communication.",
+      "learningObjective": "Provide language access for consent and history.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Use a qualified medical interpreter, in person or by phone or video",
+        "Use the son as interpreter, since a family member knows her history best",
+        "Use the son for the history, and a qualified interpreter only for consent",
+        "Use simple English with gestures, since the son's presence may reassure her"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-049",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "incidental-disclosure",
+        "workstation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 1,
+      "stem": "In a busy EMU, the central review station monitor faces a corridor used by visitors and displays patients' full names, room numbers and live video. What is the most appropriate change?",
+      "explanation": "Reasonable safeguards must prevent passers-by from viewing health information: the display itself must not be visible from public areas. Live video and medical record numbers are still identifiable, and a sign does not prevent viewing.",
+      "learningObjective": "Apply reasonable safeguards to displayed patient information.",
+      "references": [
+        {
+          "citation": "HIPAA Privacy Rule, 45 CFR Parts 160 and 164 (Subpart E)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Reposition the monitor or add a privacy screen facing the corridor",
+        "Hide the names but keep live video visible to the corridor",
+        "Post a sign asking visitors not to look at the monitor screens",
+        "Show medical record numbers on screen in place of patient names"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-050",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "treatment-disclosure",
+        "secure-transfer"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 3,
+      "stem": "A neurologist at another hospital who is treating your patient urgently asks for the EEG file. The patient has not signed a release, and a colleague suggests emailing it from your personal account because the hospital's secure transfer system is slow. What is the most appropriate approach?",
+      "explanation": "Disclosure to another provider for the patient's treatment is permitted without a signed authorization, but it must use secure, approved channels. A personal email account breaches security safeguards; waiting for a release delays urgent care unnecessarily, and splitting the file by release status rests on the same misunderstanding.",
+      "learningObjective": "Combine treatment-disclosure rules with security safeguards.",
+      "references": [
+        {
+          "citation": "HIPAA Privacy Rule, 45 CFR Parts 160 and 164 (Subpart E)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Send it from the personal account, since sharing for treatment needs no release",
+        "Send it through the hospital's secure transfer system, without a signed release",
+        "Wait for the patient's signed release, then send it through the secure system",
+        "Send only the summary by fax now, and the EEG file once a signed release arrives"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b3-051",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "right-to-withdraw",
+        "consent"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "Fifteen minutes into an outpatient sleep-deprived EEG, a 40-year-old with decision-making capacity says she wants to stop and go home, although no sleep has been recorded yet. What is the most appropriate response?",
+      "explanation": "A capable adult may withdraw consent at any time; the technologist explains the consequences (a sleep-deprived study without sleep may miss abnormalities) and then honours the decision. An order does not override consent, outpatients do not need a doctor's permission to leave, and enlisting a partner to persuade her is pressure.",
+      "learningObjective": "Honour withdrawal of consent after informing the patient.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Explain that the order must be completed, and continue until sleep is recorded",
+        "Explain that leaving needs the ordering doctor's approval, and ask her to wait",
+        "Explain what an incomplete study may miss, and ask her partner to persuade her",
+        "Explain what an incomplete study may miss, then stop if she still wishes"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

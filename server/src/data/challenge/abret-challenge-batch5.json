@@ -1,0 +1,1605 @@
+{
+  "version": "batch5-1",
+  "generatedAt": "2026-10-01",
+  "bank": "challenge",
+  "description": "ABRET Challenge Bank batch 5: pediatric and neonatal EEG (development, neonatal technique, pediatric activation, ILAE 2022 syndromes, neonatal patterns, pediatric safety). Not yet medically verified.",
+  "totalQuestions": 50,
+  "questions": [
+    {
+      "id": "ch-b5-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "maturation",
+        "posterior-dominant-rhythm",
+        "pediatric"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A developmentally normal 3-year-old is fully awake and relaxed with eyes closed; drowsiness has been excluded. The posterior dominant rhythm is a symmetric 5-Hz rhythm that attenuates with eye opening, and the rest of the record is unremarkable. How should the posterior rhythm be regarded?",
+      "explanation": "The posterior rhythm is about 3-4 Hz at 3-4 months, about 5-6 Hz at 12 months and reaches about 8 Hz by age 3, so 5 Hz at 3 years is slow for age. 5-6 Hz is the value at about 1 year, not age 5; reactivity and symmetry do not make a slow frequency normal; about 10 Hz is the adult mean, not the age-3 expectation.",
+      "learningObjective": "Apply age norms for posterior dominant rhythm frequency.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Slow for age, since about 8 Hz is expected by age 3",
+        "Normal for age, since 5-6 Hz persists until about age 5",
+        "Normal for age, since it is reactive and symmetric",
+        "Slow for age, since about 10 Hz is expected by age 3"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "maturation",
+        "sleep-spindles",
+        "infant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A healthy 4-month-old born at term is recorded in NREM sleep. Central 12-14 Hz spindles occur in trains lasting several seconds, often appearing over one hemisphere and then the other rather than simultaneously. How should this be regarded?",
+      "explanation": "Spindles appear at about 6-8 weeks post-term, are often prolonged and comb-like in infancy, and are commonly asynchronous between hemispheres, becoming largely synchronous by about age 2. Synchrony is not expected just after term; spindles are expected well before 6 months; long trains are typical of infancy rather than a sign of abnormality.",
+      "learningObjective": "Recognise normal infant spindle morphology and asynchrony.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Normal, since spindle asynchrony is expected in infancy",
+        "Abnormal, since spindles should be synchronous after term",
+        "Abnormal, since spindles should not appear before 6 months",
+        "Normal, but only if each spindle train lasts under 1 second"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "postmenstrual-age",
+        "neonatal",
+        "maturation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 29 weeks gestational age is recorded at 7 weeks of chronological age. Which postmenstrual age (PMA) should be used when judging whether the EEG is mature for age?",
+      "explanation": "PMA = gestational age at birth + chronological age = 29 + 7 = 36 weeks, and neonatal EEG maturity is judged against PMA. 29 weeks ignores the time since birth; 47 weeks wrongly adds the chronological age to term (40); 33 weeks subtracts it from term.",
+      "learningObjective": "Compute postmenstrual age for neonatal EEG interpretation.",
+      "references": [
+        {
+          "citation": "ACNS Standardized EEG Terminology and Categorization for the Description of Continuous EEG Monitoring in Neonates (Tsuchida et al., J Clin Neurophysiol 2013)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "36 weeks PMA",
+        "29 weeks PMA",
+        "47 weeks PMA",
+        "33 weeks PMA"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "trace-alternant",
+        "dysmaturity",
+        "infant"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "An infant born at term is recorded at 12 weeks of age (about 52 weeks PMA). In quiet sleep, bursts of high-voltage slow activity alternate every few seconds with lower-voltage segments, and no spindles are seen. How should this be regarded?",
+      "explanation": "Tracé alternant gives way to continuous slow-wave NREM sleep by about 44-46 weeks PMA, and spindles appear by about 6-8 weeks post-term, so both findings are dysmature at 52 weeks. Tracé alternant does not persist to 6 months; hypnagogic hypersynchrony is a later drowsiness pattern of continuous rhythmic slowing, not alternating sleep bursts; spindle synchrony is not expected until about age 2.",
+      "learningObjective": "Recognise persistence of neonatal sleep patterns beyond their normal age.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Normal for age; tracé alternant persists until about 6 months",
+        "Normal for age; this is hypnagogic hypersynchrony of infancy",
+        "Immature for age; tracé alternant should be gone by about 46 weeks",
+        "Immature for age; spindles should already be synchronous by now"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "sleep-onset",
+        "active-sleep",
+        "infant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "A 5-week-old term infant falls asleep while feeding. The first sleep epoch shows irregular respiration, rapid eye movements, low chin EMG and continuous mixed-frequency EEG. How should this sleep onset be regarded?",
+      "explanation": "Newborns and young infants normally enter sleep through active (REM-like) sleep; NREM sleep onset becomes the rule at about 3 months. Sleep-onset REM is therefore not a narcolepsy marker here, feeding is irrelevant to the sequence, and quiet-sleep-first onset is not expected just after term.",
+      "learningObjective": "Know the normal sleep-onset state in young infants.",
+      "references": [
+        {
+          "citation": "AASM Manual for the Scoring of Sleep and Associated Events (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Abnormal, since sleep-onset REM at this age suggests narcolepsy",
+        "Normal, but only because feeding produced a brief arousal first",
+        "Normal, since young infants usually enter sleep via active sleep",
+        "Abnormal, since quiet sleep should come first once past term"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-s3",
+      "topicTags": [
+        "autism",
+        "rapport",
+        "pediatric"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A minimally verbal 7-year-old with autism arrives for a routine EEG. His mother says he tolerates haircuts only after watching the clippers first, and he follows a picture schedule at school. In the waiting area he is pacing and covering his ears. Which approach is most likely to achieve a usable recording?",
+      "explanation": "The history shows he copes when sensory input is reduced and steps are predictable and previewed, so a quiet room, a visual sequence and handling an electrode first match his known strategies. Rushing without preview overloads him; removing the parent removes his main source of security and information; minimal speech does not mean explanation is useless when it is given visually.",
+      "learningObjective": "Adapt preparation to the sensory and communication needs of autistic children.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Use a quiet, dim room, show each step with pictures and let him hold an electrode",
+        "Measure and apply every electrode in one fast, continuous sequence to keep it short",
+        "Have his mother wait outside so that he focuses on the technologist's instructions",
+        "Offer a reward at the end but skip explanations, since he is minimally verbal"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-s3",
+      "topicTags": [
+        "adolescent",
+        "rapport",
+        "communication"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A 14-year-old girl referred after a first seizure looks embarrassed and keeps her eyes down; her mother answers every question addressed to her. The technologist wants her cooperation for HV and photic. Which approach best builds rapport?",
+      "explanation": "Adolescents cooperate best when addressed directly in age-appropriate language and given a voice; the parent still consents. Speaking only to the mother sidelines the teenager; minimal explanation leaves her unprepared for HV and photic; technical jargon reduces understanding rather than reassuring.",
+      "learningObjective": "Build rapport with adolescent patients.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Direct all explanations to the mother, who is the legal decision-maker",
+        "Keep explanations very brief so as not to heighten her embarrassment",
+        "Describe the test in technical terms to show it is a routine procedure",
+        "Speak to her directly, explain each step and invite her own questions"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-s4",
+      "topicTags": [
+        "sleep-deprivation",
+        "pre-test-instructions",
+        "pediatric"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "A 6-year-old arrives at 9:00 for a sleep-deprived EEG. He went to bed 2 hours late and was woken 2 hours early as instructed, took his usual levetiracetam, ate a normal breakfast, and had conditioner put on his hair last night. On the drive in he slept for 40 minutes. Which item most threatens the purpose of the study?",
+      "explanation": "Sleep deprivation aims to make sleep likely during the recording; a 40-minute nap relieves much of the sleep pressure. Conditioner raises impedance but is corrected by cleaning the electrode sites; usual medications are continued unless the physician directs otherwise; a normal meal is encouraged because low blood glucose exaggerates the HV response.",
+      "learningObjective": "Identify pre-test events that defeat sleep deprivation in children.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The conditioner left on his hair overnight",
+        "The usual morning dose of levetiracetam",
+        "The normal breakfast eaten before arriving",
+        "The 40-minute nap in the car on the way in"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "reduced-montage",
+        "electrode-spacing"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "A 30-week PMA infant with a head circumference of 28 cm needs an EEG in the NICU. Why is a reduced electrode set (Fp1/2, C3/4, T3/4, O1/2, Cz), placed by 10-20 measurements, commonly used rather than the full array?",
+      "explanation": "On a small head the full array crowds electrodes together, risking salt bridges and very short interelectrode distances that cancel in-phase activity; a reduced set keeps spacing adequate. Neonatal seizures are often focal, so spatial sampling still matters; electrodes can be recorded near fontanelles; double-distance chains are a consequence of the reduced set, not its reason.",
+      "learningObjective": "Explain the rationale for the reduced neonatal montage.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Neonatal activity is too slow to need the spatial sampling of a full array",
+        "Electrodes over the open fontanelles pick up too much pulse artifact",
+        "Fewer sites keep spacing adequate and avoid paste bridges on a small head",
+        "Double-distance chains require omitting every second electrode site"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "10-20-measurement",
+        "neonatal",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A term neonate's head circumference, measured through Fpz, T3, Oz and T4, is 34 cm. Using 10-20 percentages, about how far apart are Fp1 and T3 along this circumference, as used in the double-distance neonatal derivation Fp1-T3?",
+      "explanation": "Along the circumference, Fp1 to F7 and F7 to T3 are each 10%, so Fp1 to T3 is 20% of 34 cm = 6.8 cm. 3.4 cm is a single 10% step (Fp1-F7 only); 13.6 cm is 40% (Fp1 to O1); 8.5 cm is 25%, measured from Fpz instead of Fp1.",
+      "learningObjective": "Apply 10-20 percentages to neonatal head measurements.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 6.8 cm",
+        "About 3.4 cm",
+        "About 13.6 cm",
+        "About 8.5 cm"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "interburst-interval",
+        "paper-speed",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A preterm EEG is displayed with a 20-second page that is 300 mm wide. A low-voltage interburst segment measures 135 mm. How long is this interburst interval?",
+      "explanation": "300 mm ÷ 20 s = 15 mm/s, so 135 mm ÷ 15 mm/s = 9 s. 4.5 s assumes the adult 30 mm/s; 13.5 s assumes 10 mm/s; 18 s assumes 7.5 mm/s.",
+      "learningObjective": "Measure interburst intervals at the neonatal display speed.",
+      "references": [
+        {
+          "citation": "ACNS Standardized EEG Terminology and Categorization for the Description of Continuous EEG Monitoring in Neonates (Tsuchida et al., J Clin Neurophysiol 2013)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 4.5 s",
+        "About 9 s",
+        "About 13.5 s",
+        "About 18 s"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "paper-speed",
+        "neonatal",
+        "display"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "instrumentation",
+      "reasoningSteps": 2,
+      "stem": "A neonatal EEG is reviewed at 15 mm/s (20-second pages) instead of the 30 mm/s (10-second pages) used for older patients. What is the main benefit of this choice for neonatal interpretation?",
+      "explanation": "A 20-second page lets the reader judge continuity, interburst intervals, state cycling and slowly evolving rhythmic seizures. Display speed does not change the sampling rate or the vertical scale, and it compresses rather than spreads waveforms, which makes them look sharper and requires care when measuring duration.",
+      "learningObjective": "Explain why neonatal records use a slower display speed.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Doubled effective sampling, sharpening brief neonatal transients",
+        "More time per page, showing burst-interburst cycling and slow evolution",
+        "Doubled displayed amplitude of the low-voltage neonatal background",
+        "Wider spreading of each waveform, so transient durations read easier"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "eog",
+        "polygraphy",
+        "montage",
+        "neonatal"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "For a neonatal study, one eye electrode is placed 0.5 cm above the right outer canthus (ROC) and one 0.5 cm below the left outer canthus (LOC); both are recorded against A1 (negative up). The cornea is positive relative to the retina. During a conjugate rightward eye movement, what do the two eye channels show?",
+      "explanation": "Looking right brings the right cornea toward ROC (ROC becomes positive, so ROC-A1 deflects down) and the left cornea away from LOC (LOC becomes negative, so LOC-A1 deflects up). The diagonal offset makes vertical movements out of phase as well, while cerebral activity reaching both sites appears in phase. In-phase deflection is the cerebral pattern; the reversed pair is a polarity error; both eyes move, so LOC also changes.",
+      "learningObjective": "Predict EOG deflections from electrode position and corneoretinal polarity.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "In phase: ROC-A1 and LOC-A1 both deflect downward",
+        "Out of phase: ROC-A1 deflects up, LOC-A1 deflects down",
+        "Out of phase: ROC-A1 deflects down, LOC-A1 deflects up",
+        "A deflection in ROC-A1 only; LOC-A1 stays flat"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "state-scoring",
+        "polygraphy",
+        "neonatal"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "In a 41-week PMA infant, the EEG in one 5-minute epoch is ambiguous between sleep states. Which combination of polygraphic findings supports quiet sleep?",
+      "explanation": "Quiet sleep is characterised by regular respiration, absent rapid eye movements, preserved chin tone and few body movements. Irregular respiration with REMs and low chin tone is active sleep; the mixed combinations pair active-sleep features with quiet-sleep ones and do not define quiet sleep.",
+      "learningObjective": "Use polygraphic channels to score neonatal sleep state.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Irregular respiration, rapid eye movements, chin EMG tone absent",
+        "Regular respiration, no rapid eye movements, chin EMG tone present",
+        "Regular respiration, rapid eye movements, chin EMG tone absent",
+        "Irregular respiration, no rapid eye movements, chin EMG tone absent"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "apnea",
+        "polygraphy",
+        "neonatal-seizure"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 39-week PMA neonate has repeated apneas with oxygen desaturation but no visible convulsive movements. The neurologist asks whether the apneas are seizures. The EEG uses 9 scalp electrodes. Which added configuration best answers the question?",
+      "explanation": "Deciding whether apnea is ictal requires knowing exactly when breathing stops relative to any evolving EEG rhythm, so a respiration channel (with ECG for heart-rate change and video) is essential. EMG and eye channels help other questions but do not time the apnea; SpO2 lags apnea onset by many seconds, so it cannot establish the sequence.",
+      "learningObjective": "Select polygraphic channels to evaluate possible apneic seizures.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Chin and limb EMG channels with video, to capture subtle motor activity",
+        "Continuous pulse oximetry trend, to compare desaturation with EEG change",
+        "Respiration and ECG channels with video, to time EEG change to apnea onset",
+        "Two eye channels with video, to capture eye deviation during each apnea"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-recording-procedures-patient-preparation",
+      "topicTags": [
+        "ventilator-artifact",
+        "nicu",
+        "artifact"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "A 34-week PMA infant on high-frequency oscillatory ventilation set to 10 Hz shows continuous, perfectly regular 10-Hz sinusoidal activity of constant amplitude in most channels, unchanged over 20 minutes and across changes in state. What is the most likely source?",
+      "explanation": "Activity that matches the ventilator rate exactly, never varies and is unaffected by state is mechanical artifact from the oscillator. A seizure must evolve and would not last unchanged for 20 minutes; 60-Hz interference would alias to 10 Hz only with an unusually low sampling rate and appears where impedance is poor; drug-induced fast activity is irregular and changes with state.",
+      "learningObjective": "Identify high-frequency ventilator artifact in the NICU.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A neonatal electrographic seizure in the alpha frequency range",
+        "Ventilator oscillation transmitted to the head and leads",
+        "Mains interference aliased down to 10 Hz by the sampler",
+        "Fast activity induced by sedative or antiseizure drugs"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-recording-procedures-patient-preparation",
+      "topicTags": [
+        "patting-artifact",
+        "annotation",
+        "nicu"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "During a NICU recording, rhythmic 2-Hz sharply contoured waves appear in the left temporal and occipital channels for 40 s, then stop abruptly. The video shows a nurse at the bedside, partly blocking the camera. What should the technologist have done at the time to make this segment interpretable?",
+      "explanation": "Patting, rocking and other nursing care produce rhythmic artifacts that mimic seizures; a contemporaneous annotation is what allows the reader to exclude them. A high LFF distorts the record without identifying the source; artifact can show an apparent field, so a montage change does not settle it; sensitivity changes do not reveal the cause.",
+      "learningObjective": "Annotate bedside interventions that mimic neonatal seizures.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Annotated the nurse's handling of the infant as it happened",
+        "Applied a 3-Hz LFF so the rhythm is attenuated during review",
+        "Re-montaged to a transverse chain to test the rhythm's field",
+        "Raised the sensitivity to look for subtle evolution in the rhythm"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-recording-procedures-patient-preparation",
+      "topicTags": [
+        "sucking-artifact",
+        "glossokinetic",
+        "infant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "A 2-month-old is recorded while sucking a pacifier. Bursts of rhythmic 1-2 Hz potentials appear in both temporal regions, largest at T3/T4, with superimposed fast muscle activity, and they stop each time the pacifier falls out. What are they most likely to be?",
+      "explanation": "Rhythmic tongue movement and masseter/temporalis contraction during sucking produce slow glossokinetic potentials with superimposed muscle, and the link to the pacifier confirms it. A seizure would evolve rather than start and stop with sucking; lateral rectus spikes are brief, frontal-temporal and tied to eye movements; pulse artifact follows the heart rate.",
+      "learningObjective": "Recognise sucking artifact in infant recordings.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Bitemporal rhythmic delta of an electrographic seizure",
+        "Lateral rectus spikes from rapid horizontal eye movements",
+        "Glossokinetic and muscle artifact from rhythmic sucking",
+        "Pulse artifact from the temporal arteries during feeding"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-recording-procedures-patient-preparation",
+      "topicTags": [
+        "ecg-artifact",
+        "neonatal",
+        "artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "In a neonate with a heart rate of 150/min, sharp transients recur at about 2.5 Hz in channels referenced to linked ears, largest on the left. Each transient coincides exactly with the QRS complex in the ECG channel. What is the most likely cause and the most useful next step?",
+      "explanation": "Transients time-locked to the QRS at the heart rate are ECG artifact, which is prominent in neonates and in ear-referenced montages; adjacent electrodes see a similar ECG field, so short bipolar derivations reduce it. Pulse artifact repeats at the heart rate but is a slower, rounded wave that follows the QRS by about 200-300 ms and is limited to the electrode over an artery; true periodic discharges would not match the heart rate exactly; raising the LFF distorts slow neonatal activity and is a poor fix for a sharp waveform.",
+      "learningObjective": "Recognise and reduce ECG artifact in neonatal recordings.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Pulse artifact; move the electrode lying over an artery",
+        "Periodic discharges; measure their field in bipolar chains",
+        "ECG artifact; review in bipolar chains with short distances",
+        "ECG artifact; raise the LFF until the transients attenuate"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-recording-procedures-patient-preparation",
+      "topicTags": [
+        "positioning",
+        "electrode-pressure",
+        "infant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "A 3-month-old lies supine on a firm mattress. Large irregular slow waves appear only in channels containing O1 and O2 whenever she turns her head, and O1/O2 impedances read normal between movements. What is the best correction?",
+      "explanation": "Artifact tied to head movement at electrodes the infant lies on, with normal impedances, is pressure and movement of those leads; removing the load is the fix. Re-preparing electrodes with normal impedance does not stop mechanical movement; raising the LFF only partly attenuates the waves and distorts posterior activity; shifting electrodes off their 10-20 positions corrupts localization.",
+      "learningObjective": "Correct positional electrode artifact in infants.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Re-abrade and re-gel O1 and O2 until each reads below 2 kΩ",
+        "Rest her on her side or a soft ring so O1/O2 bear no weight",
+        "Raise the LFF to 1 Hz in the channels containing O1 and O2",
+        "Move O1 and O2 about 1 cm upward, away from the mattress"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-recording-procedures-patient-preparation",
+      "topicTags": [
+        "rocking-artifact",
+        "movement-artifact",
+        "infant"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "troubleshooting",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "An awake 10-month-old sits on her father's lap while he rocks her gently about once per second. A rhythmic 1-Hz slow wave appears in all channels, larger posteriorly, while she remains calm and interactive. What is the most likely explanation?",
+      "explanation": "A 1-Hz wave matching the rocking rate in an alert, interactive infant is movement artifact; it should stop when the rocking stops and be annotated. Posterior slow waves of youth appear in older children and are intermixed with alpha; periodic discharges would not occur with normal behaviour and rate-locking to rocking; hypnagogic hypersynchrony requires drowsiness.",
+      "learningObjective": "Recognise rhythmic movement artifact from caregiver handling.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Posterior slow waves of youth enhanced by her relaxed state",
+        "Movement artifact from the rocking, swaying the head and leads",
+        "Generalized 1-Hz periodic discharges of an encephalopathy",
+        "Hypnagogic hypersynchrony as she becomes drowsy on his lap"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "positive-rolandic-sharp-waves",
+        "bipolar",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "In a 31-week PMA infant, at the peak of a sharp transient the referential values against a quiet reference are Fp1 0 µV, C3 +60 µV, O1 +5 µV, T3 +10 µV and Cz +15 µV. In the chains Fp1-C3, C3-O1 and T3-C3, C3-Cz (negative up), what is displayed?",
+      "explanation": "Fp1-C3 = 0 − 60 = −60 (up); C3-O1 = 60 − 5 = +55 (down); T3-C3 = 10 − 60 = −50 (up); C3-Cz = 60 − 15 = +45 (down). Deflections pointing away from each other at the shared electrode mark a positive phase reversal at C3, the typical location of positive rolandic sharp waves. The other options reverse the deflection directions or mislabel the polarity.",
+      "learningObjective": "Derive bipolar deflections for a positive focal transient.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Down then up in both chains; a negative phase reversal at C3",
+        "Up then down in both chains; a positive phase reversal at C3",
+        "Up then down in both chains; a negative phase reversal at C3",
+        "Down then up in both chains; a positive phase reversal at C3"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "reference-contamination",
+        "ear-reference",
+        "centrotemporal-spikes",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "An 8-year-old has left centrotemporal spikes measuring about −150 µV at T3 and −60 µV at A1 against a distant noncephalic reference; Fp1 and O1 are quiet. In an ipsilateral ear montage (negative up), how does the spike appear in Fp1-A1 and O1-A1?",
+      "explanation": "Fp1-A1 = 0 − (−60) = +60 µV, a downward (apparently positive) deflection, and O1-A1 likewise; the active ear contaminates every channel referred to it. Upward deflection reverses the sign; 150 µV uses the T3 value; assuming no spike ignores that the reference itself is active.",
+      "learningObjective": "Recognise ear-reference contamination by temporal spikes.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "An upward spike of about 60 µV",
+        "A downward spike of about 150 µV",
+        "No spike, as Fp1 and O1 are quiet",
+        "A downward spike of about 60 µV"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "end-of-chain",
+        "neonatal-montage",
+        "localization"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "A surface-negative sharp transient in a term neonate produces, in the chain Fp2-T4, T4-O2 (negative up), a 50-µV upward deflection in Fp2-T4 and a 15-µV upward deflection in T4-O2, with no phase reversal. Where is the negativity maximal?",
+      "explanation": "Upward deflections mean input 1 is more negative than input 2 in both channels, so negativity decreases from Fp2 to T4 to O2 (for example −65, −15, 0 µV) with the steepest gradient near Fp2: an end-of-chain maximum at Fp2. A maximum at O2 would give downward deflections; maxima at T4 or between T4 and O2 would produce a phase reversal.",
+      "learningObjective": "Localise an end-of-chain maximum without a phase reversal.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "At O2, the end of the chain",
+        "At T4, the shared middle electrode",
+        "Between T4 and O2, nearer O2",
+        "At Fp2, the start of the chain"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s3",
+      "topicTags": [
+        "average-reference",
+        "hypsarrhythmia",
+        "montage-selection"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "A 9-month-old has continuous 300-500 µV chaotic slowing with multifocal spikes, largest on the left frontally. In an average reference montage, the relatively low-voltage right temporal channels show slow waves and spikes that are inverted mirror images of the left frontal spikes and are absent in bipolar chains. What is the best explanation?",
+      "explanation": "When some channels carry very high voltages, the average reference contains that activity, and subtracting it from quiet channels produces inverted copies of the dominant discharges. In-phase cancellation would not create inverted mirror images; an independent focus would not mirror the left frontal spikes; impedance problems add noise and 60-Hz, not time-locked inverted spikes.",
+      "learningObjective": "Recognise average-reference contamination in high-voltage infant records.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Bipolar chains cancel right temporal activity because its field is broad",
+        "The right temporal region has an independent focus seen only referentially",
+        "The right temporal electrodes have high impedance, adding inverted noise",
+        "The average reference is contaminated by the high-voltage activity"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "pediatric",
+        "coaching"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 1,
+      "stem": "A 5-year-old asked to hyperventilate takes a few deep breaths, then returns to normal breathing; she does not understand 'breathe deeply and quickly'. What is the most effective way to obtain adequate HV?",
+      "explanation": "A pinwheel or tissue turns HV into a game that young children sustain, giving genuine overbreathing. Shortening HV reduces the stimulus; breath-holding raises CO2 and works against HV; breathing at a comfortable rate is not hyperventilation.",
+      "learningObjective": "Coach hyperventilation in young children.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Shorten HV to 1 minute so that she can sustain her effort throughout",
+        "Have her blow repeatedly at a pinwheel or tissue held in front of her",
+        "Have her hold her breath between deep breaths to build up the effect",
+        "Demonstrate once, then let her breathe at her own comfortable rate"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "effort",
+        "absence"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "A 9-year-old with suspected absence seizures completes 3 minutes of HV with no buildup and no discharges. The video shows rapid, shallow breathing with frequent pauses to talk, and she denied dizziness or tingling throughout. What is the most appropriate next step?",
+      "explanation": "Shallow breathing with pauses, no buildup and no symptoms in a child (who usually builds up readily) indicates inadequate HV, so a coached repeat is needed before calling it negative. Duration alone does not make HV adequate; HV, not photic, is the most effective activator of absences; prolonging ineffective breathing adds nothing.",
+      "learningObjective": "Judge the adequacy of HV in children.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Record the HV as negative, as 3 minutes is the standard duration",
+        "Proceed to photic stimulation, which provokes absences more reliably",
+        "Coach deeper breaths and repeat HV, as her effort was likely inadequate",
+        "Extend the same breathing pattern to 6 minutes to raise the yield"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-028",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "contraindication",
+        "moyamoya"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "Four children are scheduled for routine EEG with HV. For which one is there the strongest reason to withhold HV until the ordering physician has been consulted?",
+      "explanation": "HV causes cerebral vasoconstriction, which can provoke ischemia in moyamoya disease (as in sickle cell disease), so it should be withheld pending physician review. HV is especially valuable in absence epilepsy; migraine without current headache is not a contraindication; well-controlled asthma without bronchospasm is usually acceptable with observation.",
+      "learningObjective": "Identify pediatric contraindications to hyperventilation.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "An 8-year-old with moyamoya disease and prior transient hemiparesis",
+        "A 7-year-old with childhood absence epilepsy, on ethosuximide",
+        "A 10-year-old with migraine without aura, headache-free today",
+        "A 6-year-old with well-controlled asthma and no wheeze today"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-029",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-stimulation",
+        "photoparoxysmal-response",
+        "pediatric"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "During photic stimulation at 16 Hz with eyes closed, a 12-year-old develops generalized polyspike-and-wave discharges that begin 2 s into the 10-s train. What should the technologist do?",
+      "explanation": "Stimulation is stopped as soon as a generalized photoparoxysmal response appears, to avoid provoking a seizure, and the provoking frequency is noted. Completing the train risks a convulsion; continuing at the same frequency with less intensity or a different eye state still exposes her to the provoking stimulus.",
+      "learningObjective": "Respond correctly to a photoparoxysmal response.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "End the flash train at once and note the frequency that provoked it",
+        "Finish the 10-s train so the response can be classed as self-sustained",
+        "Reduce the flash intensity and continue the train at the same 16 Hz",
+        "Have her open her eyes and continue the train at the same 16 Hz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-030",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "sleep-activation",
+        "sleep-deprivation",
+        "sequence"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "procedure",
+      "reasoningSteps": 2,
+      "stem": "A sleep-deprived 4-year-old falls asleep within 2 minutes of electrode application, before any awake recording, HV or photic stimulation. What is the best sequence?",
+      "explanation": "Sleep is the hardest state to obtain and the reason for sleep deprivation, so spontaneous sleep is recorded when it comes; awakening, awake background and activation follow. Waking him first risks losing sleep altogether; the awake posterior rhythm and activation are still needed; deferring sleep wastes the deprivation.",
+      "learningObjective": "Sequence sleep and activation in a sleep-deprived child.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Wake him now for HV and photic, then let him go back to sleep",
+        "Record the sleep now, then wake him for awake EEG, photic and HV",
+        "Record sleep only, since the awake portion adds little at age 4",
+        "Wake him for awake EEG and photic, and try sleep at a later visit"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-031",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "polygraphy",
+        "neonatal",
+        "setup"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "procedure",
+      "reasoningSteps": 1,
+      "stem": "A term neonatal study is set up with 9 scalp electrodes, an ECG channel and chin EMG. For standard state scoring and artifact recognition, which channels are still missing?",
+      "explanation": "Standard neonatal polygraphy adds eye movement, respiration, chin EMG and ECG to the EEG (with video). Without EOG and respiration, active and quiet sleep cannot be separated. Limb EMG and oximetry are optional additions that do not replace the missing channels.",
+      "learningObjective": "List the standard polygraphic channels for neonatal EEG.",
+      "references": [
+        {
+          "citation": "ACNS Guideline on Continuous EEG Monitoring in Neonates (Shellhaas et al., J Clin Neurophysiol 2011)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Limb EMG and pulse oximetry channels",
+        "Eye movement (EOG) and limb EMG channels",
+        "Respiration and pulse oximetry channels",
+        "Eye movement (EOG) and respiration channels"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-032",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "iess",
+        "infantile-spasms",
+        "ilae-2022"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 6-month-old who had been developing normally now has clusters of brief trunk and arm flexion on waking and has stopped smiling socially. The interictal EEG shows high-voltage disorganized slowing with multifocal spikes. Under the ILAE 2022 classification, which syndrome name applies?",
+      "explanation": "Epileptic spasms in clusters with hypsarrhythmia and regression after 3 months of age define infantile epileptic spasms syndrome (IESS), the ILAE 2022 term that includes West syndrome. EIDEE begins in the first 3 months, typically with burst-suppression; Dravet presents with prolonged febrile hemiclonic seizures; self-limited infantile epilepsy has focal seizures, normal development and a normal interictal EEG.",
+      "learningObjective": "Name infantile spasms with hypsarrhythmia under ILAE 2022.",
+      "references": [
+        {
+          "citation": "ILAE classification and definition of epilepsy syndromes with onset in neonates and infants (Zuberi et al., Epilepsia 2022)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Early infantile developmental and epileptic encephalopathy",
+        "Dravet syndrome",
+        "Self-limited infantile epilepsy",
+        "Infantile epileptic spasms syndrome"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-033",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "eidee",
+        "burst-suppression",
+        "ilae-2022"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 3-week-old has had frequent tonic seizures since day 5 of life. The EEG shows high-voltage bursts of spikes and slow waves alternating with near-flat periods of several seconds, in both waking and sleep. Under ILAE 2022, which syndrome does this fit?",
+      "explanation": "Onset in the first weeks with tonic seizures and a burst-suppression pattern present in wake and sleep is early infantile DEE (EIDEE), which absorbs the former Ohtahara syndrome and early myoclonic encephalopathy. IESS begins later with hypsarrhythmia; self-limited familial neonatal epilepsy has a normal or near-normal interictal background; EIMFS shows focal seizures migrating between hemispheres rather than burst-suppression.",
+      "learningObjective": "Recognise EIDEE under ILAE 2022.",
+      "references": [
+        {
+          "citation": "ILAE classification and definition of epilepsy syndromes with onset in neonates and infants (Zuberi et al., Epilepsia 2022)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Infantile epileptic spasms syndrome",
+        "Self-limited familial neonatal epilepsy",
+        "Epilepsy of infancy with migrating focal seizures (EIMFS)",
+        "Early infantile developmental and epileptic encephalopathy"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-034",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "childhood-absence-epilepsy",
+        "generalized-spike-wave",
+        "ilae-2022"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 6-year-old girl has dozens of daily staring spells lasting 5-15 s, sometimes with lip-smacking. The background is normal. HV provokes generalized spike-and-wave starting at about 3.5 Hz and slowing to about 2.5 Hz over 10 s; there are no polyspikes and no photoparoxysmal response. Which syndrome best fits?",
+      "explanation": "Frequent brief absences in a young school-age child, with HV-provoked spike-and-wave at about 3 Hz that slows during the burst and a normal background, fit childhood absence epilepsy; mild automatisms are common. Juvenile absence epilepsy starts later with fewer, often longer absences and frequent GTCS; eyelid myoclonia is triggered by eye closure and is usually photosensitive; myoclonic absences have rhythmic jerks of the shoulders and arms.",
+      "learningObjective": "Distinguish childhood absence epilepsy from related syndromes.",
+      "references": [
+        {
+          "citation": "ILAE classification and definition of epilepsy syndromes with onset in childhood (Specchio et al., Epilepsia 2022)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Juvenile absence epilepsy",
+        "Epilepsy with eyelid myoclonia",
+        "Epilepsy with myoclonic absences",
+        "Childhood absence epilepsy"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-035",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "selects",
+        "exclusion-criteria",
+        "focal-slowing"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 9-year-old has nocturnal seizures with right facial twitching and drooling. Four EEG findings are reported across his studies. Which one is most inconsistent with self-limited epilepsy with centrotemporal spikes (SeLECTS) and should prompt a search for another cause?",
+      "explanation": "SeLECTS has a normal background; persistent focal slowing suggests a structural lesion and should prompt imaging. Bilateral independent spikes, marked activation by drowsiness and sleep, and spikes shifting side between recordings are all typical of SeLECTS.",
+      "learningObjective": "Recognise EEG features that argue against SeLECTS.",
+      "references": [
+        {
+          "citation": "ILAE classification and definition of epilepsy syndromes with onset in childhood (Specchio et al., Epilepsia 2022)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Spikes over both centrotemporal regions, occurring independently",
+        "Spike frequency increasing markedly in drowsiness and NREM sleep",
+        "Spikes on the right in one study, then on the left in a later one",
+        "Persistent focal polymorphic delta over the left central region"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-036",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "seleas",
+        "autonomic-seizures",
+        "ilae-2022"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A previously healthy 4-year-old has a 40-minute nocturnal event with vomiting, pallor and eye deviation, ending with a brief hemiclonic phase. The EEG shows high-amplitude spikes, posterior on one recording and frontal on another, with a normal background. Which syndrome best fits?",
+      "explanation": "Prolonged, often nocturnal seizures with emesis and autonomic features in a preschool child, with multifocal shifting spikes on a normal background, fit self-limited epilepsy with autonomic seizures (formerly Panayiotopoulos syndrome). Childhood occipital visual epilepsy affects older children with brief visual seizures; SeLECTS causes hemifacial seizures with centrotemporal spikes; photosensitive occipital lobe epilepsy is triggered by light.",
+      "learningObjective": "Recognise self-limited epilepsy with autonomic seizures.",
+      "references": [
+        {
+          "citation": "ILAE classification and definition of epilepsy syndromes with onset in childhood (Specchio et al., Epilepsia 2022)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Childhood occipital visual epilepsy",
+        "Self-limited epilepsy with centrotemporal spikes",
+        "Self-limited epilepsy with autonomic seizures",
+        "Photosensitive occipital lobe epilepsy"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-037",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "dravet",
+        "febrile-seizures",
+        "dee"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "A 7-month-old with normal development has had three febrile seizures over 20 minutes long, two right-sided hemiclonic and one left-sided. Her first EEGs were normal. By age 2 she has myoclonic seizures, slowing development, and generalized and multifocal discharges. Which syndrome best fits?",
+      "explanation": "Prolonged febrile hemiclonic seizures alternating sides in the first year, an initially normal EEG, then myoclonic seizures, developmental slowing and generalized/multifocal discharges are characteristic of Dravet syndrome. GEFS+ is a familial spectrum usually without developmental decline; FIRES is explosive refractory status after a febrile illness in a previously normal school-age child; Lennox-Gastaut is defined by tonic seizures and slow spike-and-wave with generalized paroxysmal fast activity.",
+      "learningObjective": "Recognise the evolution of Dravet syndrome.",
+      "references": [
+        {
+          "citation": "ILAE classification and definition of epilepsy syndromes with onset in neonates and infants (Zuberi et al., Epilepsia 2022)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Genetic epilepsy with febrile seizures plus",
+        "Febrile infection-related epilepsy syndrome",
+        "Dravet syndrome",
+        "Lennox-Gastaut syndrome"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-038",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "ee-swas",
+        "landau-kleffner",
+        "ilae-2022"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 5-year-old with previously normal speech gradually stops understanding spoken words, although hearing tests are normal. He has had two brief nocturnal seizures. The awake EEG shows occasional left temporal spikes, while NREM sleep shows near-continuous bilateral spike-and-wave. Under ILAE 2022, how is this best classified?",
+      "explanation": "Acquired verbal auditory agnosia with marked sleep activation of spike-and-wave is Landau-Kleffner syndrome, which ILAE 2022 places within (developmental and) epileptic encephalopathy with spike-wave activation in sleep. Atypical SeLECTS may evolve into EE-SWAS but does not explain the language picture by itself; Lennox-Gastaut requires tonic seizures and slow spike-and-wave; a structural lesion would not account for the marked sleep activation into near-continuous bilateral spike-and-wave with only occasional awake spikes.",
+      "learningObjective": "Classify Landau-Kleffner syndrome under ILAE 2022.",
+      "references": [
+        {
+          "citation": "ILAE classification and definition of epilepsy syndromes with onset in childhood (Specchio et al., Epilepsia 2022)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Landau-Kleffner syndrome, within the EE-SWAS spectrum",
+        "Atypical SeLECTS with sleep-activated temporal spikes",
+        "Lennox-Gastaut syndrome with sleep-activated discharges",
+        "Acquired aphasia from a left temporal structural lesion"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-039",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "trace-discontinu",
+        "discontinuity",
+        "neonatal"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 3,
+      "stem": "Two infants show the same pattern throughout a 60-minute study: 2-4 s bursts of mixed activity separated by 8-12 s periods below 10 µV, with no change in continuity across the record. Infant A is 27 weeks PMA; infant B is 40 weeks PMA. How should the records be interpreted?",
+      "explanation": "At 27 weeks a discontinuous pattern (tracé discontinu) without state differentiation is normal. At term, wakefulness and active sleep are continuous and quiet sleep shows tracé alternant, whose interburst segments contain clear activity rather than near-flat periods, so invariant discontinuity with low-voltage gaps is abnormal. Tracé alternant is not near-flat between bursts; discontinuity is normal in preterm infants; the last option reverses the two.",
+      "learningObjective": "Interpret discontinuity relative to postmenstrual age.",
+      "references": [
+        {
+          "citation": "ACNS Standardized EEG Terminology and Categorization for the Description of Continuous EEG Monitoring in Neonates (Tsuchida et al., J Clin Neurophysiol 2013)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Both are appropriate; this is tracé alternant in both infants",
+        "A is appropriate for age; B shows abnormal discontinuity for term",
+        "Both are abnormal; discontinuity is abnormal at any PMA",
+        "A is abnormal for age; B shows normal tracé alternant for term"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-040",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "positive-rolandic-sharp-waves",
+        "preterm",
+        "white-matter-injury"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 1,
+      "stem": "In a 30-week PMA infant whose cranial ultrasound has not yet been done, frequent positive sharp waves appear at C3, C4 and Cz across several recordings. Which finding are these most closely associated with?",
+      "explanation": "Frequent positive rolandic sharp waves in preterm infants are a marker of periventricular white matter injury, often with intraventricular hemorrhage. Frontal sharp transients are normal, negative, frontal and bilateral; metabolic encephalopathy causes background changes rather than this focal positive marker; self-limited familial neonatal epilepsy is not associated with positive rolandic sharp waves.",
+      "learningObjective": "Associate positive rolandic sharp waves with white matter injury.",
+      "references": [
+        {
+          "citation": "ACNS Standardized EEG Terminology and Categorization for the Description of Continuous EEG Monitoring in Neonates (Tsuchida et al., J Clin Neurophysiol 2013)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Normal maturation, similar to frontal sharp transients at term",
+        "An acute metabolic encephalopathy such as hypocalcemia",
+        "A self-limited familial neonatal epilepsy syndrome",
+        "Periventricular white matter injury or ventricular hemorrhage"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-041",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "neonatal-seizure",
+        "electroclinical-uncoupling",
+        "hie"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 3,
+      "stem": "A 2-day-old term infant with hypoxic-ischemic encephalopathy, already given phenobarbital, shows rhythmic sharp waves at T4 starting at 1 Hz and building to 2 Hz with a spreading field over 45 s. The video shows the infant lying still with no change in heart rate. How should this be classified?",
+      "explanation": "A rhythmic pattern lasting at least 10 s that evolves in frequency and field is a neonatal electrographic seizure; electroclinical uncoupling is frequent, especially after phenobarbital. Brief rhythmic discharges last under 10 s, and the clinical correlate is not part of the definition; periodic discharges do not evolve, and the 2.5-Hz threshold is not the criterion when evolution is present; an evolving focal field in a still infant argues against artifact.",
+      "learningObjective": "Recognise electrographic-only neonatal seizures.",
+      "references": [
+        {
+          "citation": "ACNS Standardized EEG Terminology and Categorization for the Description of Continuous EEG Monitoring in Neonates (Tsuchida et al., J Clin Neurophysiol 2013)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Brief rhythmic discharges, as there is no clinical correlate",
+        "An electrographic-only seizure, common after antiseizure medication",
+        "Lateralized periodic discharges, as the rate stays under 2.5 Hz",
+        "Rhythmic artifact, as the infant shows no visible movement"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-042",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "sedation",
+        "airway",
+        "pediatric"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 3,
+      "stem": "A 3-year-old given oral sedation for EEG is on continuous pulse oximetry. The sedation nurse has stepped out briefly. The child's snoring suddenly stops, the chest and abdomen keep moving but no airflow is felt, and SpO2 falls from 98% to 89%. What should the technologist do first?",
+      "explanation": "Snoring that stops while respiratory effort continues without airflow is airway obstruction, so the airway must be opened at once while help is summoned. Oxygen cannot reach the lungs through an obstructed airway; calling the child's name may not relieve obstruction in a sedated child; waiting for spontaneous recovery delays the essential manoeuvre.",
+      "learningObjective": "Recognise and respond to airway obstruction during pediatric sedation.",
+      "references": [
+        {
+          "citation": "AAP/AAPD Guidelines for Monitoring and Management of Pediatric Patients Before, During, and After Sedation (Cote & Wilson, Pediatrics 2019)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Open the airway with head tilt or jaw thrust and call for help",
+        "Give blow-by oxygen and recheck the SpO2 trend in one minute",
+        "Wake the child by name and annotate the event on the record",
+        "Raise the head of the bed and wait for the saturation to recover"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-043",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "sedation",
+        "discharge-criteria",
+        "pediatric"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "Ninety minutes after a sedated EEG, a 2-year-old is still hard to rouse, with SpO2 97% on room air. The parent wants to leave, saying she can sleep in her car seat on the way home. What is the most appropriate response?",
+      "explanation": "A sedated child must return to near-baseline alertness before discharge; a deeply sedated child in a car seat can obstruct the airway with no one watching. Normal sleep in a car seat is not comparable to residual sedation; periodic checks by a driving parent are not monitoring; a normal SpO2 at rest does not show that airway reflexes have recovered.",
+      "learningObjective": "Apply discharge criteria after pediatric sedation.",
+      "references": [
+        {
+          "citation": "AAP/AAPD Guidelines for Monitoring and Management of Pediatric Patients Before, During, and After Sedation (Cote & Wilson, Pediatrics 2019)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Release her now, since sleeping in a car seat is normal at her age",
+        "Release her if the parent agrees to check on her every 15 minutes",
+        "Release her now, since her oxygen saturation is normal on room air",
+        "Keep her until she is easily rousable and back near her baseline"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-044",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "falls",
+        "infant",
+        "stretcher"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "An 8-month-old lies on a stretcher with one side rail up during electrode application. The technologist needs a measuring tape from a drawer 2 m away, and the mother is seated across the room. What is the best way to proceed?",
+      "explanation": "An infant can roll off an unguarded surface within seconds, so someone must keep a hand on him at the open side before the technologist moves away. Centering, turning toward the rail and swaddling all leave the infant unattended and can be defeated by a single roll or wriggle.",
+      "learningObjective": "Prevent falls of infants on examination surfaces.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Move him to the centre of the stretcher, then step away for the tape",
+        "Have the mother stand at the open side, a hand on him, before stepping away",
+        "Turn him to face the raised rail, then step away for a few seconds",
+        "Swaddle him snugly so that he cannot roll, then step away for the tape"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-045",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "child-abuse",
+        "mandatory-reporting",
+        "pediatric"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "While applying electrodes to a 2-year-old, the technologist finds bruises of different colours behind both ears and a looped, patterned mark on the back. The accompanying adult says the child 'falls a lot'. What should the technologist do?",
+      "explanation": "Bruising behind the ears, bruises of different ages and loop marks in a toddler are concerning for abuse, and the technologist is a mandated reporter who must report through the required pathway. Interrogating the adult is not the technologist's role and may endanger the child; the duty to report is personal and cannot be assumed by others; warning the adult may put the child at risk.",
+      "learningObjective": "Act on suspected child abuse as a mandated reporter.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Ask the adult to explain each mark in detail, and document the answers",
+        "Document the marks only, and assume the reading physician will report",
+        "Report the concern promptly through the facility's child-protection process",
+        "Inform the adult that a report will be made, then complete the study"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-046",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "child-abuse",
+        "mandatory-reporting",
+        "reasonable-suspicion"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "professional",
+      "reasoningSteps": 2,
+      "stem": "A technologist is uneasy about a 3-month-old's unexplained torn upper-lip frenulum and a parent whose account of it keeps changing, but thinks, 'I can't prove anything.' Regarding the duty to report, which statement is correct?",
+      "explanation": "Mandatory reporting is triggered by reasonable suspicion; investigation and proof are the role of child-protection services. An unexplained oral injury in a non-mobile infant with a changing history is a recognised warning sign. Diagnostic certainty, physician confirmation and disproving the parent's story are not prerequisites.",
+      "learningObjective": "Know the threshold for mandatory reporting of suspected abuse.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The duty arises from reasonable suspicion; proof is not required",
+        "The duty arises only when an injury pattern is diagnostic of abuse",
+        "The duty arises only after a physician confirms the suspicion",
+        "The duty arises only if the parent's account is shown to be false"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-047",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "status-epilepticus",
+        "emergency-response",
+        "pediatric"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "During photic stimulation a 4-year-old has a generalized tonic-clonic seizure. The technologist has turned her on her side, timed the onset and is watching her airway. At 5 minutes she is still convulsing. Which action is most appropriate now?",
+      "explanation": "A convulsive seizure lasting 5 minutes meets the operational definition of status epilepticus (ILAE t1) and needs treatment, so emergency help is activated now. 30 minutes is the older definition, linked to the risk of long-term injury, not the point to start treatment; waiting to 10 minutes delays care; oxygen is supportive but does not replace calling for treatment.",
+      "learningObjective": "Apply the 5-minute threshold for convulsive status epilepticus.",
+      "references": [
+        {
+          "citation": "A definition and classification of status epilepticus (Trinka et al., Epilepsia 2015)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Keep observing until 30 minutes, the threshold for status epilepticus",
+        "Keep observing until 10 minutes, then activate the emergency team",
+        "Activate the emergency team, since this now meets status epilepticus",
+        "Give oxygen by mask and keep observing until the seizure stops"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-048",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "infant-cpr",
+        "bls",
+        "compression-ratio"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 1,
+      "stem": "A 6-month-old in the EEG lab becomes unresponsive, is not breathing normally and has no definite brachial pulse. Two trained rescuers are present. Which compression-to-ventilation ratio should they use?",
+      "explanation": "For infants and children with two rescuers, the ratio is 15 compressions to 2 breaths. 30:2 is the single-rescuer ratio; 15:1 and 5:1 are not current recommendations.",
+      "learningObjective": "Apply the two-rescuer infant CPR ratio.",
+      "references": [
+        {
+          "citation": "American Heart Association Pediatric Basic Life Support Guidelines (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "15:2",
+        "30:2",
+        "15:1",
+        "5:1"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-049",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "pediatric-bls",
+        "bradycardia",
+        "cpr"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "During a sedated EEG, a 1-year-old becomes limp and pale with gasping breaths. Help has been called. Rescue breaths are given, but the brachial pulse remains about 50/min with poor perfusion. What is the next action?",
+      "explanation": "In infants and children, a heart rate below 60/min with signs of poor perfusion despite adequate ventilation is treated with CPR. A palpable pulse does not make compressions unnecessary when perfusion is inadequate; the recovery position is for a breathing child with adequate circulation; 40/min is not the threshold.",
+      "learningObjective": "Start CPR for symptomatic pediatric bradycardia.",
+      "references": [
+        {
+          "citation": "American Heart Association Pediatric Basic Life Support Guidelines (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Start chest compressions, as the rate is below 60/min with poor perfusion",
+        "Continue rescue breaths only, as a pulse is still clearly palpable",
+        "Place her in the recovery position and recheck the pulse in 2 minutes",
+        "Start compressions only if the pulse then falls below 40/min"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-b5-050",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "choking",
+        "infant",
+        "foreign-body-airway"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 1,
+      "stem": "A 9-month-old in the waiting room puts a small object in his mouth and suddenly cannot cry or cough, but is still conscious. What is the recommended sequence?",
+      "explanation": "For a conscious choking infant, give 5 back blows (face down) followed by 5 chest thrusts (face up), repeated until the object is expelled or the infant becomes unresponsive. Abdominal thrusts are not used in infants because of the risk of abdominal organ injury; blind finger sweeps can push the object deeper.",
+      "learningObjective": "Relieve foreign-body airway obstruction in a conscious infant.",
+      "references": [
+        {
+          "citation": "American Heart Association Pediatric Basic Life Support Guidelines (current version)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Cycles of 5 abdominal thrusts with the infant held seated upright",
+        "Cycles of 5 back blows and 5 chest thrusts, face down then face up",
+        "A blind finger sweep, then 5 back blows if no object is felt",
+        "Cycles of 5 back blows and 5 abdominal thrusts, face down then up"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge batch 5 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}
