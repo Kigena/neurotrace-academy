@@ -200,12 +200,16 @@ submitting marks it done. Clinical case completions are stored in
 
 ## Diagnostic (server/src/services/diagnostic.js)
 
-40 questions, timed 60 min, no feedback until submission (session kind
-`diagnostic`). 20 Challenge questions, 5 per competency at L3/L4/L4/L5/L5
-(enough to assess all four higher-order readiness components), plus 20
-foundation questions split 3/9/4/4 by domain weight, one per section, choosing
-the sections the user has answered least. Results (overall, by domain, by
-competency via `result.breakdown.byCompetency`) appear on the dashboard; a
-retake is suggested after 21 days. Until the first diagnostic is taken it is
-offered in Today's Study (before any due mock).
+40 Challenge Bank questions, timed 60 min, no feedback until submission
+(session kind `diagnostic`): 10 per competency at L3 2 / L4 3 / L5 3 / L6 2,
+unseen questions first, domains steered toward 6/18/8/8. Results (overall, by
+domain, by competency via `result.breakdown.byCompetency`) appear on the
+dashboard; a retake is suggested after 21 days. Offered in Today's Study until
+first taken (before any due mock).
 
+## Mock exams
+
+All presets (full 130, 30-question sets, single-domain) draw from the
+Challenge Bank with the preset's domain allocation (full mock 19/60/25/26),
+never-answered questions first, then the least recently answered. The
+foundation bank is used only if the Challenge Bank cannot fill every domain.

@@ -249,10 +249,15 @@ describe('Challenge mode and QA statuses (API)', () => {
         for (const id of ['d2-batch1-005', 'd2-batch1-030', 'd2-batch7-001']) expect(all.has(id)).toBe(false);
     });
 
-    it('standard sessions never include Challenge Bank questions', async () => {
+    it('mocks come from the Challenge Bank with the 19/60/25/26 split; custom practice stays on the foundation bank', async () => {
         const u = await registerUser(app);
         const full = await request(app).post('/api/quiz/sessions').set(bearer(u.token)).send({ kind: 'preset', presetId: 'mock-full-130' });
-        expect(full.body.questions.some((q) => q.questionId.startsWith('ch-'))).toBe(false);
+        expect(full.status).toBe(201);
+        expect(full.body.questions).toHaveLength(130);
+        expect(full.body.questions.every((q) => q.questionId.startsWith('ch-'))).toBe(true);
+        const byDomain = {};
+        full.body.questions.forEach((q) => { byDomain[q.domainId] = (byDomain[q.domainId] || 0) + 1; });
+        expect(byDomain).toEqual({ 'domain-1': 19, 'domain-2': 60, 'domain-3': 25, 'domain-4': 26 });
         const custom = await request(app).post('/api/quiz/sessions').set(bearer(u.token)).send({ kind: 'custom', mode: 'practice', questionCount: 100 });
         expect(custom.body.questions.some((q) => q.questionId.startsWith('ch-'))).toBe(false);
     });

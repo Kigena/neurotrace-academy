@@ -27,6 +27,8 @@ import {
     selectDomainQuickStart,
     selectForPreset,
     selectChallenge,
+    selectChallengeMock,
+    poolCoversPreset,
     CHALLENGE_SIZES,
     toPublicQuestion,
     xpForPercent,
@@ -402,7 +404,7 @@ router.post('/sessions', async (req, res) => {
 
         // Spaced review and misconception drills may draw on either bank.
         const poolQuery = kind === 'challenge' ? CHALLENGE_POOL
-            : kind === 'review-due' || kind === 'misconception' || kind === 'diagnostic' ? SERVABLE
+            : kind === 'review-due' || kind === 'misconception' || kind === 'diagnostic' || kind === 'preset' ? SERVABLE
                 : FOUNDATION_POOL;
         const pool = await Question.find(poolQuery).select(POOL_FIELDS).lean();
         if (!pool.length) {
@@ -419,7 +421,17 @@ router.post('/sessions', async (req, res) => {
             presetId = preset.id;
             timeLimitSec = preset.timeLimitMinutes * 60;
             shuffleOptions = preset.shuffle !== false;
-            selected = selectForPreset(pool, preset);
+            // Mocks come from the Challenge Bank (higher-order, audited items),
+            // favouring questions not yet seen; the foundation bank is used only
+            // if the Challenge Bank cannot fill every domain.
+            const challengeOnly = pool.filter((q) => q.bank === 'challenge');
+            if (poolCoversPreset(challengeOnly, preset)) {
+                const events = await AttemptEvent.find({ userId: req.user.id, bank: 'challenge' }).sort({ timestamp: -1 }).limit(5000)
+                    .select('questionId timestamp').lean();
+                selected = selectChallengeMock(challengeOnly, preset, events);
+            } else {
+                selected = selectForPreset(pool.filter((q) => q.bank !== 'challenge'), preset);
+            }
             config = {
                 domains: resolvePresetAllocation(preset).map((a) => a.domainId),
                 sections: [], tags: [], difficulty: [],
@@ -473,9 +485,10 @@ router.post('/sessions', async (req, res) => {
             selected = selectWeakAreas(pool, buildStudyProfile(events), size);
             config = { domains: [], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
         } else if (kind === 'diagnostic') {
-            const events = await AttemptEvent.find({ userId: req.user.id }).sort({ timestamp: -1 }).limit(5000)
-                .select('sectionId').lean();
+            const events = await AttemptEvent.find({ userId: req.user.id, bank: 'challenge' }).sort({ timestamp: -1 }).limit(5000)
+                .select('questionId').lean();
             selected = selectDiagnostic(pool, events);
+            if (selected.length < 20) return res.status(503).json({ error: 'The Challenge Bank is not available for the diagnostic yet.' });
             mode = 'timed';
             timeLimitSec = DIAGNOSTIC_TIME_LIMIT_SEC;
             config = { domains: [], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };

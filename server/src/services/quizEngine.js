@@ -296,3 +296,29 @@ export function xpForPercent(percent) {
     if (percent >= 60) return { xp: 30, activityType: 'quiz_completion' };
     return { xp: 20, activityType: 'quiz_completion' };
 }
+
+// ------------------------------------------------- challenge-bank mocks ---
+
+/** True if the pool has enough questions in every domain of the preset. */
+export function poolCoversPreset(pool, preset) {
+    return resolvePresetAllocation(preset).every(({ domainId, count }) => pool.filter((q) => q.domainId === domainId).length >= count);
+}
+
+/**
+ * Mock from the Challenge Bank with the preset's per-domain allocation.
+ * Within a domain: questions never answered first (random order), then the
+ * ones answered longest ago, so successive mocks repeat as little as possible.
+ */
+export function selectChallengeMock(pool, preset, events = [], rng = Math.random) {
+    const lastSeen = new Map();
+    for (const e of events) lastSeen.set(e.questionId, Math.max(lastSeen.get(e.questionId) || 0, e.timestamp));
+    const picked = [];
+    for (const { domainId, count } of resolvePresetAllocation(preset)) {
+        const ranked = pool
+            .filter((q) => q.domainId === domainId)
+            .map((q) => ({ q, key: lastSeen.has(q.questionId) ? lastSeen.get(q.questionId) : -1 - rng() }))
+            .sort((a, b) => a.key - b.key);
+        picked.push(...ranked.slice(0, count).map((x) => x.q));
+    }
+    return preset.shuffle === false ? picked : shuffle(picked, rng);
+}

@@ -7,7 +7,7 @@ import { setupTestDb, makeApp, registerUser, bearer } from './helpers.js';
 import { defaultSourcePath, importQuestions, loadSourceFile } from '../src/services/questionImport.js';
 import {
     DIAGNOSTIC_COMPETENCIES,
-    DIAGNOSTIC_FOUNDATION,
+    DIAGNOSTIC_DOMAIN_TARGET,
     DIAGNOSTIC_SIZE,
     diagnosticSummary,
     selectDiagnostic,
@@ -26,35 +26,32 @@ const pool = allSource.map((q) => ({
 }));
 
 describe('diagnostic selection', () => {
-    it('picks 40 unique questions: 5 Challenge per competency at L3-L5, foundation 3/9/4/4 by domain', () => {
+    it('picks 40 unique Challenge questions: 10 per competency at L3 2 / L4 3 / L5 3 / L6 2, near the 6/18/8/8 domain split', () => {
         let seed = 11;
         const rng = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
         const picked = selectDiagnostic(pool, [], rng);
         expect(picked).toHaveLength(DIAGNOSTIC_SIZE);
         expect(new Set(picked.map((q) => q.questionId)).size).toBe(DIAGNOSTIC_SIZE);
-
-        const ch = picked.filter((q) => q.bank === 'challenge');
-        expect(ch).toHaveLength(20);
+        expect(picked.every((q) => q.bank === 'challenge')).toBe(true);
         for (const c of DIAGNOSTIC_COMPETENCIES) {
-            const mine = ch.filter((q) => q.competency === c);
-            expect(mine, c).toHaveLength(5);
-            expect(mine.map((q) => q.cognitiveLevel).sort()).toEqual([3, 4, 4, 5, 5]);
+            const mine = picked.filter((q) => q.competency === c);
+            expect(mine, c).toHaveLength(10);
+            expect(mine.map((q) => q.cognitiveLevel).sort()).toEqual([3, 3, 4, 4, 4, 5, 5, 5, 6, 6]);
         }
-        const fd = picked.filter((q) => q.bank !== 'challenge');
-        for (const [domainId, n] of Object.entries(DIAGNOSTIC_FOUNDATION)) {
-            const mine = fd.filter((q) => q.domainId === domainId);
-            expect(mine, domainId).toHaveLength(n);
-            expect(new Set(mine.map((q) => q.sectionId)).size, `${domainId} one per section`).toBe(n);
+        for (const [domainId, n] of Object.entries(DIAGNOSTIC_DOMAIN_TARGET)) {
+            const count = picked.filter((q) => q.domainId === domainId).length;
+            expect(Math.abs(count - n), `${domainId}: ${count} vs ${n}`).toBeLessThanOrEqual(3);
         }
     });
 
-    it('prefers foundation sections the user has answered least', () => {
-        const d1Sections = [...new Set(pool.filter((q) => q.bank === 'foundation' && q.domainId === 'domain-1').map((q) => q.sectionId))];
-        // Heavy history in every Domain I section except three
-        const fresh = d1Sections.slice(0, 3);
-        const events = d1Sections.slice(3).flatMap((sectionId) => Array.from({ length: 10 }, () => ({ sectionId })));
-        const picked = selectDiagnostic(pool, events).filter((q) => q.bank === 'foundation' && q.domainId === 'domain-1');
-        expect(new Set(picked.map((q) => q.sectionId))).toEqual(new Set(fresh));
+    it('prefers Challenge questions the user has not answered before', () => {
+        const challengeIds = pool.filter((q) => q.bank === 'challenge').map((q) => q.questionId);
+        // Everything answered except 120 questions spread across the bank
+        const unseen = new Set(challengeIds.filter((_, i) => i % 4 === 0).slice(0, 120));
+        const events = challengeIds.filter((id) => !unseen.has(id)).map((questionId) => ({ questionId }));
+        const picked = selectDiagnostic(pool, events);
+        const fresh = picked.filter((q) => unseen.has(q.questionId)).length;
+        expect(fresh).toBeGreaterThanOrEqual(30);
     });
 
     it('summarises a submitted diagnostic and suggests a retake after 3 weeks', () => {
@@ -105,7 +102,7 @@ describe('diagnostic API', () => {
 
         dash = await request(app).get('/api/study/dashboard').set(bearer(u.token));
         expect(dash.body.diagnostic).toMatchObject({ taken: true, percent: 100, retakeSuggested: false });
-        for (const c of DIAGNOSTIC_COMPETENCIES) expect(dash.body.diagnostic.byCompetency[c]).toMatchObject({ correct: 5, total: 5 });
+        for (const c of DIAGNOSTIC_COMPETENCIES) expect(dash.body.diagnostic.byCompetency[c]).toMatchObject({ correct: 10, total: 10 });
         const components = Object.fromEntries(dash.body.readiness.components.map((x) => [x.key, x]));
         for (const c of DIAGNOSTIC_COMPETENCIES) expect(components[c].assessed, c).toBe(true);
         // The plan item it was started from is done
