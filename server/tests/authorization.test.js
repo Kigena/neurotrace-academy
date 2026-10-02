@@ -193,6 +193,12 @@ describe('admin authorization', () => {
 });
 
 describe('community cases', () => {
+    it('featured case is 200 with null when nothing is published (not a 404)', async () => {
+        const res = await request(app).get('/api/cases/featured');
+        expect(res.status).toBe(200);
+        expect(res.body).toBeNull();
+    });
+
     it('pending cases are visible only to their author and admins', async () => {
         const c = await CommunityCase.create({ title: 'Pending case', author: bob.id, status: 'pending', history: 'h' });
         const anon = await request(app).get(`/api/cases/${c._id}`);

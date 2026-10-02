@@ -73,11 +73,9 @@ router.get('/featured', async (req, res) => {
             }
         }
 
-        if (!featuredCase) {
-            return res.status(404).json({ error: 'No featured case available' });
-        }
-
-        res.json(featuredCase);
+        // No community case yet is a normal state, not an error: return null
+        // and let the client fall back to a starter case.
+        res.json(featuredCase || null);
     } catch (error) {
         console.error('Get featured case error:', error);
         res.status(500).json({ error: 'Failed to fetch featured case' });

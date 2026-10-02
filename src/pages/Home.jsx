@@ -14,18 +14,22 @@ function Home() {
 
   // Get featured community case of the week
   useEffect(() => {
+    // Weekly rotation through the starter cases when no community case is featured
+    const applyStarterCase = () => {
+      if (casesData.starterCases && casesData.starterCases.length > 0) {
+        const weekNumber = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
+        const caseIndex = weekNumber % casesData.starterCases.length;
+        setCaseOfTheWeek({ ...casesData.starterCases[caseIndex], isStatic: true });
+      }
+    };
     const fetchFeaturedCase = async () => {
       try {
         const response = await apiService.get('/cases/featured');
-        setCaseOfTheWeek(response);
+        if (response && response._id) setCaseOfTheWeek(response);
+        else applyStarterCase();
       } catch (error) {
         console.error('Failed to fetch featured case:', error);
-        // Fallback to static cases if community case fetch fails
-        if (casesData.starterCases && casesData.starterCases.length > 0) {
-          const weekNumber = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
-          const caseIndex = weekNumber % casesData.starterCases.length;
-          setCaseOfTheWeek({ ...casesData.starterCases[caseIndex], isStatic: true });
-        }
+        applyStarterCase();
       } finally {
         setLoadingCase(false);
       }
