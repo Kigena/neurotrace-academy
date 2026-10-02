@@ -8,8 +8,22 @@ import { DOMAINS } from '../blueprint/abret2026.js';
 
 export const MASTERY_WINDOW = 30;        // most recent attempts considered
 export const MASTERY_MIN_ATTEMPTS = 5;   // below this: "Insufficient data"
-export const MASTERY_PRIOR_STRENGTH = 3; // pseudo-attempts pulling toward 50
+export const MASTERY_PRIOR_STRENGTH = 10; // pseudo-attempts pulling toward 50
 export const MASTERY_PRIOR = 0.5;
+// Weak-area ranking reacts faster than displayed mastery (lighter prior, no cap).
+export const RANK_PRIOR_STRENGTH = 3;
+// Higher bands need evidence spread over time (exam = retention, not cramming).
+// Caps apply from the top down: the first row whose requirements are met.
+export const MASTERY_EVIDENCE_CAPS = [
+    { minDays: 3, minAttempts: 20, cap: 100 }, // "Strong" possible
+    { minDays: 2, minAttempts: 10, cap: 84 },  // up to "Good"
+    { minDays: 0, minAttempts: 0, cap: 69 },   // up to "Developing"
+];
+// Domains: a score above 50 counts fully only once this many sections have answers.
+export const DOMAIN_FULL_COVERAGE_SECTIONS = 4;
+
+const studyDayFormat = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' });
+const studyDayOf = (ts) => studyDayFormat.format(new Date(ts));
 
 /**
  * Mastery (0-100) for one topic.
@@ -18,10 +32,12 @@ export const MASTERY_PRIOR = 0.5;
  *   2. Recency weight  w_i = 1 - 0.5 * i / 29   (newest 1.0, 30th-newest 0.5).
  *   3. Weighted accuracy  A = sum(w_i * correct_i) / sum(w_i).
  *   4. Evidence shrinkage toward 50%:
- *        mastery = 100 * (n * A + 3 * 0.5) / (n + 3)
- *      so few attempts cannot produce an extreme score
- *      (5/5 correct -> 81, 12/12 -> 90, 30/30 -> 95; 0/5 -> 19).
- *   5. `sufficient` is true only when n >= 5; below that the label is
+ *        raw = 100 * (n * A + 10 * 0.5) / (n + 10)
+ *      (5/5 correct -> 67, 10/10 -> 75, 20/20 -> 83, 30/30 -> 88; 0/5 -> 33).
+ *   5. Spaced-evidence cap: answers from a single study day cap at 69
+ *      ("Developing"); "Good" needs 2+ days and 10+ answers; "Strong" needs
+ *      3+ days and 20+ answers. Caps never lift a low score.
+ *   6. `sufficient` is true only when n >= 5; below that the label is
  *      "Insufficient data" and the score must not be presented as mastery.
  */
 export function masteryFromAttempts(attempts) {
@@ -40,19 +56,68 @@ export function masteryFromAttempts(attempts) {
         if (e.isCorrect) wCorrect += w;
     });
     const weightedAccuracy = wCorrect / wSum;
-    const score = Math.round(
+    const rawScore = Math.round(
         (100 * (n * weightedAccuracy + MASTERY_PRIOR_STRENGTH * MASTERY_PRIOR)) / (n + MASTERY_PRIOR_STRENGTH)
     );
+    const rankScore = Math.round(
+        (100 * (n * weightedAccuracy + RANK_PRIOR_STRENGTH * MASTERY_PRIOR)) / (n + RANK_PRIOR_STRENGTH)
+    );
+    const studyDays = new Set(recent.map((e) => studyDayOf(e.timestamp))).size;
+    const tier = MASTERY_EVIDENCE_CAPS.find((t) => studyDays >= t.minDays && n >= t.minAttempts);
+    const score = Math.min(rawScore, tier.cap);
     const correct = recent.filter((e) => e.isCorrect).length;
     const sufficient = n >= MASTERY_MIN_ATTEMPTS;
     return {
         score,
+        rawScore,
+        rankScore,
+        capped: score < rawScore,
+        capNote: score < rawScore ? evidenceNote(studyDays, n) : null,
+        studyDays,
         attempts: n,
         correct,
         accuracy: Math.round((correct / n) * 100),
         sufficient,
         label: sufficient ? masteryLabel(score) : 'Insufficient data',
     };
+}
+
+function evidenceNote(days, n) {
+    const next = [...MASTERY_EVIDENCE_CAPS].reverse().find((t) => days < t.minDays || n < t.minAttempts);
+    const needs = [];
+    if (days < next.minDays) needs.push(`answers on ${next.minDays - days} more day${next.minDays - days === 1 ? '' : 's'}`);
+    if (n < next.minAttempts) needs.push(`${next.minAttempts - n} more answers`);
+    return `Capped until there is more spaced evidence: needs ${needs.join(' and ')}`;
+}
+
+/**
+ * Domain mastery also needs breadth: a score above 50 counts fully only once
+ * DOMAIN_FULL_COVERAGE_SECTIONS sections have answers (low scores are never
+ * lifted, so weaknesses still show).
+ */
+export function withDomainCoverage(m, events) {
+    if (!m || m.score === null) return m;
+    const sections = new Set(events.map((e) => e.sectionId)).size;
+    const coverage = Math.min(1, sections / DOMAIN_FULL_COVERAGE_SECTIONS);
+    if (m.score <= 50 || coverage >= 1) return { ...m, sectionsCovered: sections };
+    const score = Math.round(50 + (m.score - 50) * coverage);
+    return {
+        ...m,
+        score,
+        sectionsCovered: sections,
+        capped: true,
+        capNote: [m.capNote, `answers in ${DOMAIN_FULL_COVERAGE_SECTIONS - sections} more section${DOMAIN_FULL_COVERAGE_SECTIONS - sections === 1 ? '' : 's'} of this domain`]
+            .filter(Boolean).join('; '),
+        label: m.sufficient ? masteryLabel(score) : m.label,
+    };
+}
+
+function domainMasteryTable(events) {
+    const table = masteryTable(events, (e) => [e.domainId]);
+    for (const [domainId, m] of Object.entries(table)) {
+        table[domainId] = withDomainCoverage(m, events.filter((e) => e.domainId === domainId));
+    }
+    return table;
 }
 
 export function masteryLabel(score) {
@@ -88,7 +153,7 @@ export function masteryTable(events, keysFn) {
 export function computeMastery(events) {
     const challenge = events.filter((e) => e.bank === 'challenge');
     return {
-        byDomain: masteryTable(events, (e) => [e.domainId]),
+        byDomain: domainMasteryTable(events),
         bySection: masteryTable(events, (e) => [e.sectionId]),
         byTag: masteryTable(events, (e) => e.topicTags || []),
         // Challenge Bank only
@@ -189,7 +254,7 @@ export function computeReadiness({ events, mockResults }) {
     const components = [];
 
     // Foundation mastery (domain-weighted)
-    const foundationByDomain = masteryTable(foundationEvents, (e) => [e.domainId]);
+    const foundationByDomain = domainMasteryTable(foundationEvents);
     const perDomain = DOMAINS.map((d) => {
         const m = foundationByDomain[d.legacyDomainId];
         return {
@@ -277,10 +342,14 @@ const DAY = 24 * 60 * 60 * 1000;
  *     + 0.75 * [section untouched in 7 days] (4. not reviewed recently)
  */
 export function weakAreaWeight(q, profile, now = Date.now()) {
+    // Ranking uses a faster-reacting estimate (lighter prior, no spaced-evidence
+    // cap): the cap limits what is displayed as mastery, not how weak a topic
+    // looks relative to the others.
+    const rank = (m) => (m ? (m.rankScore ?? m.score) : undefined);
     const sec = profile.mastery.bySection[q.sectionId];
-    const secScore = sec ? sec.score : 50;
+    const secScore = sec ? rank(sec) : 50;
     const tagScores = (q.topicTags || [])
-        .map((t) => profile.mastery.byTag[t]?.score)
+        .map((t) => rank(profile.mastery.byTag[t]))
         .filter((s) => s !== undefined && s !== null);
     const tagWeakness = tagScores.length
         ? tagScores.reduce((s, x) => s + (100 - x) / 100, 0) / tagScores.length

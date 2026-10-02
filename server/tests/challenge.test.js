@@ -359,8 +359,10 @@ describe('Challenge mode and QA statuses (API)', () => {
         const c = Object.fromEntries(dash.body.readiness.components.map((x) => [x.key, x]));
         for (const k of ['technical', 'montage', 'troubleshooting', 'clinical']) {
             expect(c[k].assessed).toBe(true);
-            expect(c[k].score).toBeGreaterThanOrEqual(85);
+            // All correct but in one sitting: capped at 69 until spread over days
+            expect(c[k].score).toBe(69);
         }
+        expect(dash.body.mastery.byCompetency.montage.capNote).toMatch(/more day/);
         expect(c.foundation.assessed).toBe(false);
         expect(dash.body.mastery.byCompetency.montage.sufficient).toBe(true);
         // Today's Study is Challenge-first when the bank is available

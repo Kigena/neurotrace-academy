@@ -14,6 +14,9 @@ import {
 // ------------------------------------------------------------ pure logic ---
 
 const ev = (isCorrect, t, extra = {}) => ({ isCorrect, timestamp: t, questionId: `q${t}`, domainId: 'domain-2', sectionId: 's', topicTags: [], ...extra });
+// Noon in New York on study day `d` (+ i seconds): spreads answers over real days.
+const DAY0 = Date.UTC(2026, 9, 1, 16);
+const onDay = (d, i = 0) => DAY0 + d * 86400000 + i * 1000;
 
 describe('mastery', () => {
     it('does not claim mastery with fewer than 5 attempts', () => {
@@ -24,15 +27,42 @@ describe('mastery', () => {
     });
 
     it('shrinks low-evidence scores toward 50 and grows with evidence', () => {
-        const five = masteryFromAttempts(Array.from({ length: 5 }, (_, i) => ev(true, i)));
-        const thirty = masteryFromAttempts(Array.from({ length: 30 }, (_, i) => ev(true, i)));
-        expect(five.score).toBe(81);
-        expect(five.label).toBe('Good');
-        expect(thirty.score).toBe(95);
-        expect(thirty.label).toBe('Strong');
-        const allWrong = masteryFromAttempts(Array.from({ length: 5 }, (_, i) => ev(false, i)));
-        expect(allWrong.score).toBe(19);
-        expect(allWrong.label).toBe('Weak');
+        const five = masteryFromAttempts(Array.from({ length: 5 }, (_, i) => ev(true, onDay(0, i))));
+        expect(five).toMatchObject({ score: 67, rawScore: 67, label: 'Developing', capped: false });
+        const allWrong = masteryFromAttempts(Array.from({ length: 5 }, (_, i) => ev(false, onDay(0, i))));
+        expect(allWrong).toMatchObject({ score: 33, label: 'Weak' });
+        const spread30 = masteryFromAttempts(Array.from({ length: 30 }, (_, i) => ev(true, onDay(i % 3, i))));
+        expect(spread30).toMatchObject({ score: 88, label: 'Strong', studyDays: 3, capped: false });
+    });
+
+    it('caps mastery until the evidence is spread over study days', () => {
+        // 30/30 in one sitting: capped at 69 (Developing)
+        const crammed = masteryFromAttempts(Array.from({ length: 30 }, (_, i) => ev(true, onDay(0, i))));
+        expect(crammed).toMatchObject({ rawScore: 88, score: 69, label: 'Developing', capped: true, studyDays: 1 });
+        expect(crammed.capNote).toMatch(/more day/);
+        // 12/12 over 2 days: up to Good, not Strong
+        const twoDays = masteryFromAttempts(Array.from({ length: 12 }, (_, i) => ev(true, onDay(i % 2, i))));
+        expect(twoDays).toMatchObject({ rawScore: 77, score: 77, label: 'Good' });
+        // 3 days but only 15 answers: Strong needs 20
+        const fewer = masteryFromAttempts(Array.from({ length: 15 }, (_, i) => ev(true, onDay(i % 3, i))));
+        expect(fewer.score).toBeLessThanOrEqual(84);
+        expect(fewer.label).toBe('Good');
+        // Caps never lift a low score
+        const weak = masteryFromAttempts(Array.from({ length: 10 }, (_, i) => ev(i < 2, onDay(0, i))));
+        expect(weak.capped).toBe(false);
+        expect(weak.score).toBe(weak.rawScore);
+    });
+
+    it('needs breadth before a domain score counts fully', () => {
+        const oneSection = Array.from({ length: 30 }, (_, i) => ev(true, onDay(i % 3, i), { sectionId: 'd2-a' }));
+        const d1 = computeMastery(oneSection).byDomain['domain-2'];
+        expect(d1).toMatchObject({ sectionsCovered: 1, score: 60, label: 'Developing', capped: true });
+        expect(d1.capNote).toMatch(/3 more sections/);
+        const fourSections = Array.from({ length: 30 }, (_, i) => ev(true, onDay(i % 3, i), { sectionId: `d2-${i % 4}` }));
+        expect(computeMastery(fourSections).byDomain['domain-2']).toMatchObject({ sectionsCovered: 4, score: 88, label: 'Strong' });
+        // A weak domain is not lifted by low coverage
+        const weakOne = Array.from({ length: 10 }, (_, i) => ev(false, onDay(0, i), { sectionId: 'd2-a' }));
+        expect(computeMastery(weakOne).byDomain['domain-2'].score).toBe(25); // (0 + 5) / (10 + 10)
     });
 
     it('weights recent attempts more than older ones and uses only the last 30', () => {
@@ -46,7 +76,7 @@ describe('mastery', () => {
     });
 
     it('labels by band', () => {
-        const at = (correct, total) => masteryFromAttempts(Array.from({ length: total }, (_, i) => ev(i < correct, i)));
+        const at = (correct, total) => masteryFromAttempts(Array.from({ length: total }, (_, i) => ev(i < correct, onDay(i % 3, i))));
         expect(at(30, 30).label).toBe('Strong');
         expect(at(0, 30).label).toBe('Weak');
     });
@@ -54,7 +84,7 @@ describe('mastery', () => {
 
 describe('readiness', () => {
     const challengeEvents = (competency, correct, total) =>
-        Array.from({ length: total }, (_, i) => ev(i < correct, 1000 + i, { bank: 'challenge', competency, cognitiveLevel: 5, sectionId: 'd2-x' }));
+        Array.from({ length: total }, (_, i) => ev(i < correct, onDay(i % 2, i), { bank: 'challenge', competency, cognitiveLevel: 5, sectionId: 'd2-x' }));
 
     it('is null with no data at all', () => {
         const r = computeReadiness({ events: [], mockResults: [] });
@@ -67,19 +97,19 @@ describe('readiness', () => {
     it('perfect foundation-bank scores alone cannot produce a high readiness', () => {
         const events = [];
         for (const d of ['domain-1', 'domain-2', 'domain-3', 'domain-4']) {
-            for (let i = 0; i < 30; i++) events.push(ev(true, i, { domainId: d, sectionId: `${d}-s` }));
+            for (let i = 0; i < 30; i++) events.push(ev(true, onDay(i % 3, i), { domainId: d, sectionId: `${d}-s${i % 4}` }));
         }
         const r = computeReadiness({ events, mockResults: [] });
         const c = Object.fromEntries(r.components.map((x) => [x.key, x]));
-        expect(c.foundation.score).toBe(95);
+        expect(c.foundation.score).toBe(88);
         for (const k of ['technical', 'montage', 'troubleshooting', 'clinical', 'mock']) {
             expect(c[k].assessed).toBe(false);
             expect(c[k].score).toBe(0);
         }
-        expect(r.score).toBe(Math.round(0.2 * 95)); // 19
+        expect(r.score).toBe(Math.round(0.2 * 88)); // 18
         expect(r.label).toBe('Building Foundation');
         // Even with a perfect mock, foundation + mock cannot exceed 40.
-        expect(computeReadiness({ events, mockResults: [{ percent: 100 }] }).score).toBe(Math.round(0.2 * 95 + 0.2 * 100));
+        expect(computeReadiness({ events, mockResults: [{ percent: 100 }] }).score).toBe(Math.round(0.2 * 88 + 0.2 * 100));
     });
 
     it('higher-order competencies come only from Challenge Bank attempts', () => {
@@ -92,10 +122,10 @@ describe('readiness', () => {
         const r2 = computeReadiness({ events, mockResults: [{ percent: 70 }] });
         const c = Object.fromEntries(r2.components.map((x) => [x.key, x]));
         expect(c.montage.assessed).toBe(true);
-        expect(c.montage.score).toBe(88); // 10/10 -> round(100*(10+1.5)/13)
+        expect(c.montage.score).toBe(75); // 10/10 over 2 days -> round(100*(10+5)/20), Good tier
         expect(c.technical.assessed).toBe(false); // only 4 answers
         expect(c.mock.score).toBe(70);
-        expect(r2.score).toBe(Math.round(0.15 * 88 + 0.2 * 70));
+        expect(r2.score).toBe(Math.round(0.15 * 75 + 0.2 * 70));
         expect(r2.measuredWeightPercent).toBe(35);
     });
 });

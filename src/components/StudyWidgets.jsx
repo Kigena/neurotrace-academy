@@ -21,6 +21,11 @@ export function MasteryRow({ label, mastery, sub }) {
         <div className={`h-2 rounded-full ${tone.bar}`} style={{ width: `${sufficient ? score : 0}%` }} />
       </div>
       {sub && <div className="text-xs text-slate-500">{sub}</div>}
+      {sufficient && mastery.capped && mastery.capNote && (
+        <div className="text-xs text-slate-500" title={`Uncapped estimate: ${mastery.rawScore}%`}>
+          {mastery.capNote}
+        </div>
+      )}
     </div>
   );
 }

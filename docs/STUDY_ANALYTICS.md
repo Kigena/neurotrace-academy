@@ -9,11 +9,19 @@ probability of passing the exam.
 1. Most recent 30 attempts for the topic, newest first (`i = 0..n-1`).
 2. Recency weight `w_i = 1 − 0.5·i/29` (newest 1.0 → 30th-newest 0.5).
 3. Weighted accuracy `A = Σ w_i·correct_i / Σ w_i`.
-4. Evidence shrinkage toward 50%: `mastery = 100·(n·A + 3·0.5)/(n + 3)`.
-5. Fewer than 5 attempts → "Insufficient data" (score not shown as mastery).
+4. Evidence shrinkage toward 50%: `raw = 100·(n·A + 10·0.5)/(n + 10)`
+   (5/5 → 67, 10/10 → 75, 20/20 → 83, 30/30 → 88; 0/5 → 33).
+5. Spaced-evidence cap (study days in New York time): answers from one day cap
+   at 69 (Developing); "Good" needs 2+ days and 10+ answers (cap 84); "Strong"
+   needs 3+ days and 20+ answers. Caps never lift a low score; the dashboard
+   shows what is needed to lift a cap (`capNote`).
+6. Domains also need breadth: a score above 50 counts fully only once 4
+   sections have answers (`50 + (score − 50)·sections/4`).
+7. Fewer than 5 attempts → "Insufficient data".
 
-Examples: 5/5 correct → 81 (Good), 12/12 → 90, 30/30 → 95 (Strong),
-0/5 → 19 (Weak). Bands: 0–49 Weak, 50–69 Developing, 70–84 Good, 85–100 Strong.
+Weak-area ranking uses a faster-reacting `rankScore` (prior strength 3, no
+cap) so a run of misses is targeted quickly. Bands: 0–49 Weak, 50–69
+Developing, 70–84 Good, 85–100 Strong.
 
 ## Study readiness
 
