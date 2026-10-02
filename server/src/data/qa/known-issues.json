@@ -9,15 +9,15 @@
     },
     {
       "questionId": "d2-batch1-030",
-      "qaStatus": "NEEDS_REVISION",
-      "code": "CONTRADICTORY_EXPLANATION",
-      "detail": "Keyed option is '0.16 Hz' but its own text and the explanation compute LFF = 1/(2π × 0.1 s) ≈ 1.6 Hz. The option '1.6 Hz' is the correct value."
+      "qaStatus": "UNREVIEWED",
+      "code": "REVISED",
+      "detail": "Keyed option is '0.16 Hz' but its own text and the explanation compute LFF = 1/(2π × 0.1 s) ≈ 1.6 Hz. The option '1.6 Hz' is the correct value. REVISED 2026-10-02 (foundation de-cue): corrected and fact-checked; back to UNREVIEWED."
     },
     {
       "questionId": "d2-batch7-001",
-      "qaStatus": "NEEDS_REVISION",
-      "code": "QUESTIONABLE_FACT",
-      "detail": "Keyed answer places P3 at '20% of the distance from Cz to the left ear, along the parietal line'. P3 lies on the left parasagittal line between C3 and O1 (posterior to C3), not on the Cz-to-ear line."
+      "qaStatus": "UNREVIEWED",
+      "code": "REVISED",
+      "detail": "Keyed answer places P3 at '20% of the distance from Cz to the left ear, along the parietal line'. P3 lies on the left parasagittal line between C3 and O1 (posterior to C3), not on the Cz-to-ear line. REVISED 2026-10-02 (foundation de-cue): corrected and fact-checked; back to UNREVIEWED."
     },
     {
       "questionId": "tricky-128",
@@ -342,6 +342,780 @@
       "qaStatus": "REJECTED",
       "code": "DUPLICATE_STEM",
       "detail": "Duplicate of d2-batch5-017 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-241",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology diagnosis (retinitis pigmentosa); no EEG or technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-242",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology diagnosis (macular degeneration); no EEG or technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-243",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology emergency (retinal artery occlusion); outside EEG technologist scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-244",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology terminology (blepharitis); no EEG or technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-249",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Hepatology disease facts (hepatitis vs cirrhosis); no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-250",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General clinical sign of liver disease (jaundice); no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-260",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Pulmonary disease facts (asthma vs COPD); no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-261",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Cardiopulmonary disease (pulmonary hypertension); no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-266",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spine pathology (spondylolisthesis); outside EEG technologist scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-267",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Spine surgery procedures (laminectomy vs fusion); outside EEG technologist scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-268",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spinal deformity (scoliosis); outside EEG technologist scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-269",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spinal deformity (kyphosis vs lordosis); outside EEG technologist scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-271",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology disease comparison; no EEG or technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-278",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Virology detail (hepatitis D co-infection); no EEG or infection-control relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-279",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology (hepatoma, liver cancer); outside EEG technologist scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-289",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Inner ear/ENT disease (Meniere) with no EEG technologist relevance (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-291",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General throat anatomy/infection (pharyngitis) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-292",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Pediatric airway disease (croup) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-294",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Hematology/bone marrow disorder (myelofibrosis) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-296",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology (myeloma) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-297",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spine disorder (spondylolysis) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-299",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic/rheumatologic spine inflammation (spondylitis) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-302",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic disk disease terminology unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-305",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General medical device term (catheter) with no EEG relevance (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-306",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Renal lab chemistry (creatinine) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-307",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology terminology (in situ) (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-308",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General histology (adipose tissue) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-310",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Wound care procedure (debridement), another profession's task (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-311",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology terminology (carcinogen) (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-317",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Virology/oncology trivia (EBV, Burkitt lymphoma) (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-321",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Connective tissue genetic disorder (Marfan) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-324",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General immunology definition with no EEG relevance (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-325",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Eating disorder (anorexia nervosa) unrelated to EEG (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-326",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmic refraction test (retinoscopy), another profession's task (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-328",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Eye anatomy trivia (iris) with no EEG relevance (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-340",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology disease facts (retinitis pigmentosa) with no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-341",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology disease facts (macular degeneration) with no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-343",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology (blepharitis vs conjunctivitis) with no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-344",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Hepatology (hepatitis vs cirrhosis) disease facts outside the R.EEG T. scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-346",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General medical terminology (jaundice/skin color) with no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-347",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Pulmonology (asthma vs COPD reversibility) outside the R.EEG T. scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-349",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Cardiopulmonary disease (pulmonary hypertension/cor pulmonale) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-353",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic terminology (vertebra vs spine) with no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-354",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spine disorder (spondylolisthesis) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-355",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Spine surgery procedures (laminectomy vs fusion) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-356",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spinal curvature terminology (scoliosis) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-359",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spine disorder (spondylolysis) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-360",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic/radicular pain terminology (sciatica) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-361",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General anatomical terminology trivia (canal) with no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-363",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology (conjunctiva/pinkeye) with no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-367",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Virology/oncology (EBV, Burkitt lymphoma) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-368",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General cardiovascular pathology terminology (arteriosclerosis) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-369",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General endocrine disease fact (diabetic ketoacidosis) with no EEG-specific content. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-371",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Genetic connective tissue disorder (Marfan) with no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-374",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Psychiatric eating disorder facts (anorexia nervosa) with no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-375",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Optometry procedure (retinoscopy) - another profession's task. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-379",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology (hepatoma/hepatocellular carcinoma) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-380",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Virology (hepatitis D replication) with no technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-381",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Pediatric respiratory disease (croup) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-383",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: ENT anatomy/pharyngitis symptoms with no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-385",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Hematology (myelofibrosis) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-386",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology/hematology (multiple myeloma) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-388",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic/rheumatologic terminology (spondylitis) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-389",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spinal anatomy (lumbar vertebra count) outside EEG scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-390",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Spinal curvature (lordosis) is orthopedic anatomy with no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-398",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology (retinitis pigmentosa) is outside the R.EEG T. content outline. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-399",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology (macular degeneration) is outside the R.EEG T. content outline. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-400",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology (retinal artery occlusion) is outside the R.EEG T. content outline. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-401",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Hepatology (hepatitis to cirrhosis progression) has no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-403",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Pulmonology (asthma vs COPD spirometry) has no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-405",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Myositis diagnosis by labs/biopsy is general medicine, not EEG technology. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-407",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spine pathology (spondylolysis/spondylolisthesis) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-408",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Orthopedic spine deformity (scoliosis) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-417",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Renal laboratory chemistry (creatinine) is general medicine with no EEG focus. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-418",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology staging term (in situ) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-419",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General histology trivia (adipose tissue) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-421",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology terminology (tumor vs cancer vs neoplasm) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-422",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology terminology (benign tumor) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-423",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology (metastasis) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-424",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology (leukemia) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-425",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology (lymphoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-426",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology (sarcoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-427",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology (carcinoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-430",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Pediatric oncology (neuroblastoma of adrenal/sympathetic chain) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-431",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmic oncology (retinoblastoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-432",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Dermatologic oncology (melanoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-433",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Dermatologic oncology (basal cell carcinoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-434",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Thoracic oncology (mesothelioma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-435",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Hematologic oncology (Burkitt lymphoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-436",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Endocrine tumor classification (pituitary adenoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-438",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology terminology (pre-cancerous) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-450",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Spinal surgical procedure terminology (microdiscectomy); no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-454",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General vascular disease fact (Raynaud's); no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-461",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology: tumor classification by cell of origin. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-463",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology: benign vs malignant tumor behavior. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-464",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology: Burkitt's lymphoma associations. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-465",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology/occupational: mesothelioma and asbestos. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-466",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology: retinoblastoma. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-468",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General vascular disease fact (Raynaud's); no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-481",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology: definition of cancer and metastatic spread. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-482",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology terminology (neoplasm vs cancer/carcinoma). (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-495",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Spinal surgical procedure terminology (microdiscectomy); no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-496",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology: metastasis. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-497",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology terminology (pre-cancerous conditions) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-498",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Hematologic oncology (leukemia) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-499",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Hematologic oncology (lymphoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-500",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology tissue classification (sarcoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-501",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Oncology tissue classification (carcinoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-504",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Pediatric oncology (neuroblastoma of adrenal/sympathetic chain) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-505",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Dermatologic oncology (malignant melanoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-506",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Dermatologic oncology (basal cell carcinoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "tricky-507",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Endocrine tumor classification (pituitary adenoma) is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-023",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Neuro-oncology/otology (cranial nerve involvement by acoustic neuroma) with no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-024",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Otology/neuro-oncology (acoustic neuroma hearing loss) outside the R.EEG T. scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-025",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Neuro-oncology differential of cerebellopontine angle tumors is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-026",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Tumor genetics (NF2 and bilateral vestibular schwannomas) with no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-032",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology (visual acuity in papilledema) outside the R.EEG T. scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-033",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Ophthalmology (papilledema vs optic disc drusen) outside the R.EEG T. scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-034",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Physician procedure decision (imaging before lumbar puncture) - another profession's task. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-035",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Neuroradiology (MS plaques on MRI) with no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-036",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: CSF laboratory findings in MS are general neurology, not EEG technology. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-037",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: General disease fact (MS clinical course) with no EEG relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-038",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Differential diagnosis of MS (NMO, ADEM, vasculitis) is physician-level neurology outside scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-046",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Neurosurgical grading (Spetzler-Martin) is off-scope for the R.EEG T. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-047",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Neurosurgical/radiosurgical treatment of AVMs is off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d1-batch1-048",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Angiographic/pathologic distinction of AVM vs cavernoma is neuroradiology, off-scope. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d3-batch1-031",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: tests a non-standard acronym (SDS) (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d3-batch1-038",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Renal pathology (TSC renal angiomyolipoma bleeding risk) with no EEG/technologist relevance. (retired 2026-10-02, history kept)."
+    },
+    {
+      "questionId": "d3-batch1-045",
+      "qaStatus": "REJECTED",
+      "code": "OFF_SCOPE",
+      "detail": "Outside the R.EEG T. content outline: Pharmacokinetics trivia (phenytoin zero-order vs carbamazepine linear kinetics) with no EEG/technologist relevance. (retired 2026-10-02, history kept)."
     }
   ]
 }

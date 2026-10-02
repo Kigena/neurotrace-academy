@@ -37,18 +37,32 @@ describe('QA audit heuristics', () => {
         expect(auditQuestion(byId('d2-batch6-003')).map((f) => f.code)).not.toContain('SENSITIVITY_TERMINOLOGY');
     });
 
-    it('flags the time-constant item whose keyed value contradicts its own calculation', () => {
-        expect(auditQuestion(byId('d2-batch1-030')).map((f) => f.code)).toContain('CONTRADICTORY_EXPLANATION');
+    it('flags a keyed value that contradicts its own calculation', () => {
+        // d2-batch1-030 carried this error (0.16 Hz keyed, 1.6 Hz computed) until the de-cue corrected it.
+        const fixed = byId('d2-batch1-030');
+        expect(auditQuestion(fixed).map((f) => f.code)).toEqual([]);
+        const broken = { ...fixed, options: [...fixed.options] };
+        broken.options[broken.answerIndex] = '0.16 Hz ≈ 1.6 Hz';
+        expect(auditQuestion(broken).map((f) => f.code)).toContain('CONTRADICTORY_EXPLANATION');
     });
 
-    it('flags categorical filter claims, "Both A and B", duplicates and longest-answer bias', () => {
-        const r = auditBank(legacy.questions);
-        expect(r.total).toBe(1128);
-        expect(r.byCode.FILTER_ROLLOFF_REVIEW).toBeGreaterThan(10);
-        expect(r.byCode.BOTH_AB_PATTERN).toBeGreaterThan(200);
-        expect(r.byCode.DUPLICATE_STEM).toBeGreaterThan(50);
-        expect(r.byCode.LONGEST_ANSWER_BIAS).toBeGreaterThan(300);
-        expect(r.byCode.OBVIOUS_DISTRACTOR).toBeGreaterThan(50);
+    it('flags categorical filter claims, "Both A and B", obvious distractors, duplicates and longest-answer bias', () => {
+        const base = { stem: 'A filter question?', explanation: 'x', answerIndex: 0 };
+        const codes = (q, ctx) => auditQuestion({ ...base, ...q }, ctx).map((f) => f.code);
+        expect(codes({ options: ['A notch filter removes all 60 Hz activity', 'b', 'c', 'd'] })).toContain('FILTER_ROLLOFF_REVIEW');
+        expect(codes({ options: ['x', 'y', 'Both A and B are correct', 'z'], answerIndex: 2 })).toContain('BOTH_AB_PATTERN');
+        expect(codes({ options: ['Right answer', 'Settings never matter', 'c', 'd'] })).toContain('OBVIOUS_DISTRACTOR');
+        expect(codes({ options: ['A much longer keyed answer that explains itself fully', 'short', 'tiny', 'brief'] })).toContain('LONGEST_ANSWER_BIAS');
+        const dup = { ...base, options: ['a', 'b', 'c', 'd'] };
+        expect(auditBank([{ ...dup, id: 'x1' }, { ...dup, id: 'x2' }]).byCode.DUPLICATE_STEM).toBe(2);
+    });
+
+    it('every servable foundation question passes the audit (de-cued 2026-10-02)', () => {
+        const withheld = new Set(knownIssues.issues.filter((i) => ['NEEDS_REVISION', 'REJECTED'].includes(i.qaStatus)).map((i) => i.questionId));
+        const servable = legacy.questions.filter((q) => !withheld.has(q.id));
+        expect(servable.length).toBeGreaterThan(900);
+        const r = auditBank(servable);
+        expect(r.byCode).toEqual({});
     });
 
     it('does not rewrite question content', () => {
@@ -225,22 +239,25 @@ describe('Challenge mode and QA statuses (API)', () => {
         const applied = await runQuestionAudit({ dryRun: false });
         expect(applied.knownIssuesApplied).toBe(statusChanges);
         expect(applied.knownIssuesMissing).toEqual([]);
-        const flagged = await Question.find({ qaStatus: 'NEEDS_REVISION' }).select('questionId qaFlags').lean();
-        expect(flagged.map((d) => d.questionId).sort()).toEqual(['d2-batch1-030', 'd2-batch7-001']);
-        const tc = flagged.find((d) => d.questionId === 'd2-batch1-030');
-        expect(tc.qaFlags.some((f) => f.source === 'manual' && f.code === 'CONTRADICTORY_EXPLANATION')).toBe(true);
-        // Duplicates retired, the revised sensitivity item back in service
-        expect(await Question.countDocuments({ qaStatus: 'REJECTED' })).toBe(knownIssues.issues.filter((i) => i.qaStatus === 'REJECTED').length);
-        expect((await Question.findOne({ questionId: 'd2-batch1-005' }).lean()).qaStatus).toBe('UNREVIEWED');
+        // All earlier holds were revised; duplicates and off-scope items are retired.
+        expect(await Question.countDocuments({ qaStatus: 'NEEDS_REVISION' })).toBe(0);
+        const rejected = knownIssues.issues.filter((i) => i.qaStatus === 'REJECTED');
+        expect(await Question.countDocuments({ qaStatus: 'REJECTED' })).toBe(rejected.length);
+        for (const id of ['d2-batch1-005', 'd2-batch1-030', 'd2-batch7-001']) {
+            expect((await Question.findOne({ questionId: id }).lean()).qaStatus, id).toBe('UNREVIEWED');
+        }
+        const offScope = rejected.find((i) => i.code === 'OFF_SCOPE');
+        const retired = await Question.findOne({ questionId: offScope.questionId }).lean();
+        expect(retired.qaFlags.some((f) => f.source === 'manual' && f.code === 'OFF_SCOPE')).toBe(true);
 
         const again = await runQuestionAudit({ dryRun: false });
         expect(again.knownIssuesApplied).toBe(0);
-        const tc2 = await Question.findOne({ questionId: 'd2-batch1-030' }).lean();
-        expect(tc2.qaFlags.filter((f) => f.source === 'manual')).toHaveLength(1);
+        const retired2 = await Question.findOne({ questionId: offScope.questionId }).lean();
+        expect(retired2.qaFlags.filter((f) => f.source === 'manual')).toHaveLength(1);
 
-        // Content untouched
-        const doc = await Question.findOne({ questionId: 'd2-batch1-030' }).select('+answerIndex').lean();
-        const src = legacy.questions.find((q) => q.id === 'd2-batch1-030');
+        // Content untouched by the runner
+        const doc = await Question.findOne({ questionId: offScope.questionId }).select('+answerIndex').lean();
+        const src = legacy.questions.find((q) => q.id === offScope.questionId);
         expect(doc.stem).toBe(src.stem);
         expect(doc.answerIndex).toBe(src.answerIndex);
     });

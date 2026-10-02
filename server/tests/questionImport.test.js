@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { describe, it, expect } from 'vitest';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -36,10 +37,19 @@ describe('legacy question bank import', () => {
         expect(Object.keys(first.sectionCounts)).toHaveLength(47);
     });
 
-    it('reports duplicate stems without de-duplicating them', () => {
-        expect(first.qa.duplicateStemGroups).toBe(48);
-        expect(first.qa.duplicateStemExtraCopies).toBe(54);
+    it('reports duplicate stems without de-duplicating them; at most one copy per group stays in service', () => {
+        const groups = new Map();
+        for (const q of source.questions) {
+            const k = q.stem.trim().toLowerCase();
+            groups.set(k, [...(groups.get(k) || []), q.id]);
+        }
+        const dups = [...groups.values()].filter((g) => g.length > 1);
+        expect(first.qa.duplicateStemGroups).toBe(dups.length);
+        expect(first.qa.duplicateStemExtraCopies).toBe(dups.reduce((n, g) => n + g.length - 1, 0));
         expect(first.qa.duplicateSourceIds).toEqual([]);
+        const issues = JSON.parse(fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '../src/data/qa/known-issues.json'), 'utf8')).issues;
+        const retired = new Set(issues.filter((i) => i.qaStatus === 'REJECTED').map((i) => i.questionId));
+        for (const g of dups) expect(g.filter((id) => !retired.has(id)).length, g.join(',')).toBeLessThanOrEqual(1);
     });
 
     it('preserves IDs, text, options, answer and explanation exactly', async () => {
