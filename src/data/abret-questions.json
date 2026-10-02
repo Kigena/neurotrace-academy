@@ -443,15 +443,15 @@
       "sectionId": "d2-s1",
       "topicTags": ["10-20", "measurements", "impedance", "ground", "reference"],
       "difficulty": "easy",
-      "stem": "Best practice for impedance management is to:",
+      "stem": "Which is the BEST practice for managing electrode impedances during a routine EEG?",
       "options": [
-        "Ignore impedance values if tracing looks clean",
-        "Achieve acceptable impedances per lab policy and recheck after patient movement",
-        "Set notch filter to compensate",
-        "Increase sweep speed to hide noise"
+        "Check them once at hookup, then rely on the tracing afterwards",
+        "Bring all sites to acceptable values and recheck after movement",
+        "Accept higher values when the notch filter clears the line noise",
+        "Recheck them only at the end, just before the electrodes come off"
       ],
       "answerIndex": 1,
-      "explanation": "Stable impedances reduce artifact and improve quality."
+      "explanation": "Impedances should be brought to acceptable, balanced values and rechecked whenever the patient moves or artifact appears, because contact changes during a study. A single check at hookup misses later deterioration; using the notch filter masks a contact problem instead of fixing it; checking only at the end is too late to improve the recording."
     },
     {
       "id": "d2-s1-q4",
@@ -461,13 +461,13 @@
       "difficulty": "hard",
       "stem": "A reference electrode becomes intermittently loose. The MOST likely effect is:",
       "options": [
-        "No effect on any channels",
-        "Widespread distortion across referential channels and potential false asymmetries",
-        "Only affects photic stimulation",
-        "Only affects ECG channel"
+        "Artifact confined to the single channel nearest that electrode",
+        "No visible change, since common-mode rejection cancels it out",
+        "Artifact limited to the bipolar channels on the same side",
+        "Artifact in all referential channels, possibly false asymmetry"
       ],
-      "answerIndex": 1,
-      "explanation": "Reference instability can contaminate multiple channels."
+      "answerIndex": 3,
+      "explanation": "In a referential montage every channel uses the reference as its second input, so an unstable reference contaminates all of those channels at once and can create false asymmetries. It is not confined to one channel; common-mode rejection does not cancel a fault in one input; and bipolar channels do not use the reference, so they would be the ones unaffected."
     },
     {
       "id": "d2-s1-q5",
@@ -477,13 +477,13 @@
       "difficulty": "medium",
       "stem": "Which documentation is MOST helpful if a non-standard electrode position was used?",
       "options": [
-        "No mention; interpreter will infer it",
-        "Diagram/annotation of the change on the recording and in technical notes",
-        "Only verbal handoff",
-        "Change montage labels to hide it"
+        "An annotation on the recording and a note of the new position",
+        "A verbal note to the reader at handoff, with no written record",
+        "Renaming the electrode to the nearest standard 10-20 label",
+        "A note on the requisition form, kept apart from the recording"
       ],
-      "answerIndex": 1,
-      "explanation": "Deviations must be documented for correct interpretation."
+      "answerIndex": 0,
+      "explanation": "Any deviation from standard placement should be annotated on the recording and described in the technical notes so the reader localizes correctly. Verbal handoff is lost; relabeling to a standard name hides the deviation and causes mislocalization; a note kept apart from the recording may never reach the interpreter."
     },
     {
       "id": "d2-s2-q1",
@@ -493,13 +493,13 @@
       "difficulty": "medium",
       "stem": "Which change MOST likely attenuates slow waves and masks diffuse slowing?",
       "options": [
-        "Raising the low-frequency filter too high",
-        "Lowering the high-frequency filter slightly",
-        "Increasing sweep speed",
-        "Turning off photic stimulation"
+        "Lowering the high-frequency filter too far",
+        "Turning on the 60 Hz notch filter throughout",
+        "Switching to a faster display sweep speed",
+        "Raising the low-frequency filter too high"
       ],
-      "answerIndex": 0,
-      "explanation": "Higher LFF removes slow activity and can hide slowing."
+      "answerIndex": 3,
+      "explanation": "Raising the low-frequency (high-pass) filter attenuates delta and theta, so diffuse slowing can look less prominent. Lowering the HFF attenuates fast activity, not slow waves; the notch acts on a narrow band around line frequency; a faster sweep speed spreads waves horizontally but does not reduce their amplitude."
     },
     {
       "id": "d2-s2-q2",
@@ -525,13 +525,13 @@
       "difficulty": "easy",
       "stem": "The notch filter is BEST used when:",
       "options": [
-        "Always; it improves every EEG",
-        "Only when needed after attempting to correct the noise source",
-        "To improve PDR frequency",
-        "To detect spikes better"
+        "When line noise persists after the source has been addressed",
+        "Routinely at the start of each recording to prevent noise",
+        "When spikes need to look sharper for easier identification",
+        "When slow activity must be reduced for a steadier baseline"
       ],
-      "answerIndex": 1,
-      "explanation": "Notch can distort EEG; address source first."
+      "answerIndex": 0,
+      "explanation": "The notch filter attenuates a narrow band at line frequency but can distort sharp components, so it is a fallback after correcting the noise source. Routine use hides contact problems; it does not sharpen spikes (it can blunt them); and it does not act on slow activity, which is the domain of the low-frequency filter."
     },
     {
       "id": "d2-s2-q4",
@@ -541,13 +541,13 @@
       "difficulty": "hard",
       "stem": "Reducing sensitivity (higher µV/mm) MOST likely causes:",
       "options": [
-        "Spikes to become taller",
-        "Low-amplitude activity to appear smaller and potentially be under-appreciated",
-        "More line noise",
-        "Slower waves to become faster"
+        "Spikes to look taller and sharper relative to the background",
+        "Line-frequency noise to become more prominent in all channels",
+        "Low-amplitude activity to look smaller and be under-recognized",
+        "Slow waves to appear faster across the whole page of EEG"
       ],
-      "answerIndex": 1,
-      "explanation": "Lower sensitivity compresses amplitude display."
+      "answerIndex": 2,
+      "explanation": "A higher µV/mm value means each millimeter represents more voltage, so everything is drawn smaller and low-amplitude activity can be missed. Spikes are drawn shorter, not taller; noise is scaled down with the signal rather than increased; and sensitivity changes the vertical scale only, not frequency."
     },
     {
       "id": "d2-s2-q5",
@@ -573,13 +573,13 @@
       "difficulty": "medium",
       "stem": "Why are montage changes important during routine EEG?",
       "options": [
-        "They reduce total recording time",
-        "They can clarify localization and confirm suspicious discharges",
-        "They eliminate the need for activation",
-        "They are only for normal EEGs"
+        "They help clarify localization and confirm suspected discharges",
+        "They improve the signal-to-noise ratio of each recorded channel",
+        "They lower electrode impedance by re-routing the amplifier inputs",
+        "They replace the need for hyperventilation and photic stimulation"
       ],
-      "answerIndex": 1,
-      "explanation": "Different montages reveal fields and help confirm true discharges."
+      "answerIndex": 0,
+      "explanation": "Viewing the same data in several montages shows the field and phase relationships of a discharge, which helps localize it and separate true discharges from artifact. Montage choice does not change the recorded signal-to-noise ratio or electrode impedance (those depend on contact and amplifiers), and it does not substitute for activation procedures."
     },
     {
       "id": "d2-s3-q2",
@@ -603,15 +603,15 @@
       "sectionId": "d2-s3",
       "topicTags": ["montages", "referential", "bipolar", "phase-reversal", "strategy"],
       "difficulty": "medium",
-      "stem": "A sharp transient appears only in one channel in a referential montage. BEST next step:",
+      "stem": "A sharp transient appears in only one channel of a referential montage. BEST next step:",
       "options": [
-        "Call it epileptiform immediately",
-        "Review in multiple montages and check for field/phase reversal and artifact sources",
-        "Increase notch filter",
-        "Stop the study"
+        "Mark it as epileptiform, since referential views localize well",
+        "Turn on the notch filter and reassess the channel morphology",
+        "Review other montages for a field and look for artifact sources",
+        "Repeat hyperventilation to see if the transient recurs"
       ],
-      "answerIndex": 1,
-      "explanation": "Confirm with montage changes and artifact review."
+      "answerIndex": 2,
+      "explanation": "A transient confined to one electrode with no field is suspicious for artifact (for example electrode pop), so the next step is to check other montages for a physiologic field and phase reversal and to inspect that electrode. Calling it epileptiform is premature; the notch filter only addresses line noise; repeating HV does not answer whether this event was artifact."
     },
     {
       "id": "d2-s3-q4",
@@ -621,13 +621,13 @@
       "difficulty": "medium",
       "stem": "Which montage often helps detect lateralized slowing most clearly?",
       "options": [
-        "A montage that provides good interhemispheric comparison (e.g., bipolar longitudinal)",
-        "Only average reference",
-        "Only ECG channel",
-        "Only photic channel"
+        "A Cz reference montage that refers every electrode to vertex",
+        "A single-hemisphere montage showing only the affected side",
+        "A bipolar longitudinal montage that pairs homologous chains",
+        "A montage with every electrode referred to the left ear"
       ],
-      "answerIndex": 0,
-      "explanation": "Side-by-side comparisons are strong in bipolar longitudinal chains."
+      "answerIndex": 2,
+      "explanation": "Longitudinal bipolar chains laid out left and right in parallel allow direct comparison of homologous regions, which shows lateralized slowing well. A Cz reference can be contaminated by central activity; a one-sided montage gives nothing to compare against; a single-ear reference contaminates the ipsilateral side and creates false asymmetries."
     },
     {
       "id": "d2-s3-q5",
@@ -653,13 +653,13 @@
       "difficulty": "easy",
       "stem": "Hyperventilation was omitted due to poor cooperation. What should be done?",
       "options": [
-        "Omit mention of HV",
-        "Document HV omission and the reason",
-        "Replace HV with notch filter",
-        "Stop the EEG immediately"
+        "Leave HV out of the notes, since no HV data exist",
+        "Substitute a longer photic run labeled as activation",
+        "Note in the record that HV was omitted and why",
+        "Have the patient do HV later while drowsy or asleep"
       ],
-      "answerIndex": 1,
-      "explanation": "If an activation is omitted, document why."
+      "answerIndex": 2,
+      "explanation": "When an activation procedure is not performed, the technical record should state that it was omitted and the reason (here, poor cooperation) so the reader does not assume a normal HV response. Leaving it out invites a wrong assumption; photic stimulation is a different activation and cannot be relabeled as HV; HV cannot be performed meaningfully in drowsiness or sleep."
     },
     {
       "id": "d2-s4-q2",
@@ -683,15 +683,15 @@
       "sectionId": "d2-s4",
       "topicTags": ["activation", "hv", "photic", "sleep", "contraindications"],
       "difficulty": "medium",
-      "stem": "A patient becomes dizzy during HV. BEST action:",
+      "stem": "During HV a patient becomes very dizzy, unsteady, and says they feel faint. BEST action:",
       "options": [
-        "Force HV to complete full 3 minutes",
-        "Stop HV, ensure safety, document symptoms and duration achieved",
-        "Ignore symptoms and continue",
-        "Increase LFF"
+        "Reassure the patient and continue HV to the full 3 minutes",
+        "Pause HV for 30 seconds, then resume until 3 minutes are done",
+        "Stop HV, attend to the patient, and note symptoms and duration",
+        "Stop HV, then restart it later to achieve the full 3 minutes"
       ],
-      "answerIndex": 1,
-      "explanation": "Safety first; stop if needed and document."
+      "answerIndex": 2,
+      "explanation": "Marked dizziness with near-syncope is a reason to end HV: stop, attend to the patient, and record the symptoms and how long HV was performed. Mild lightheadedness is common, but continuing or resuming after near-faint symptoms puts the patient at risk; restarting later to complete 3 minutes repeats the provocation without clinical need."
     },
     {
       "id": "d2-s4-q4",
@@ -699,15 +699,15 @@
       "sectionId": "d2-s4",
       "topicTags": ["activation", "hv", "photic", "sleep", "contraindications"],
       "difficulty": "hard",
-      "stem": "Sleep was ordered but not achieved. BEST documentation is:",
+      "stem": "Sleep was ordered but not achieved. BEST technical note is:",
       "options": [
-        "Do not mention sleep",
-        "'Sleep normal'",
-        "Document that sleep was attempted, not achieved, and why",
-        "State that sleep was recorded anyway"
+        "Sleep attempted but not achieved, with the reason stated",
+        "No comment on sleep, since none was actually recorded",
+        "Sleep recorded, as the patient appeared drowsy at times",
+        "Brief sleep obtained, based on eye closure and stillness"
       ],
-      "answerIndex": 2,
-      "explanation": "Accurate recording state is essential for interpretation."
+      "answerIndex": 0,
+      "explanation": "The record must reflect the true state: sleep was attempted, not achieved, and why, so the reader knows sleep-activated findings could not be assessed. Omitting it lets the reader assume sleep was not requested; drowsiness is not sleep; eye closure and stillness without EEG sleep features do not establish sleep."
     },
     {
       "id": "d2-s4-q5",
@@ -763,15 +763,15 @@
       "sectionId": "d2-s5",
       "topicTags": ["artifacts", "muscle", "ecg", "movement", "electrode-pop", "60hz"],
       "difficulty": "medium",
-      "stem": "Which is BEST practice for line noise?",
+      "stem": "Which is the BEST practice for 60 Hz line noise?",
       "options": [
-        "Always leave notch ON",
-        "Use notch only if needed and correct causes first",
-        "Increase LFF to remove noise",
-        "Reduce montage changes"
+        "Keep the notch on for every study so the tracing stays clean",
+        "Raise the low-frequency filter until the 60 Hz noise is reduced",
+        "Correct the source first; use the notch only if still needed",
+        "Lower the high-frequency filter to 15 Hz before checking leads"
       ],
-      "answerIndex": 1,
-      "explanation": "Notch can distort; correct the source first."
+      "answerIndex": 2,
+      "explanation": "Line noise usually reflects a technical problem (poor contact, high or unbalanced impedance, a bad ground, nearby equipment), so the source should be corrected first and the notch used only if noise persists, since the notch can distort sharp activity. Routine notch use hides contact problems; the LFF acts on slow frequencies, not 60 Hz; dropping the HFF to 15 Hz attenuates spikes and skips troubleshooting."
     },
     {
       "id": "d2-s5-q4",
@@ -781,13 +781,13 @@
       "difficulty": "hard",
       "stem": "Sweat artifact typically appears as:",
       "options": [
-        "Very sharp spikes",
-        "Slow baseline drift that improves with cooling/drying",
-        "Time-locked to heart rate",
-        "Only at photic frequencies"
+        "Slow baseline drift that eases with cooling and drying",
+        "Fast, low-voltage spikes over both temporal regions",
+        "Sharp, regular transients time-locked to the heartbeat",
+        "Abrupt, steep deflections confined to one electrode"
       ],
-      "answerIndex": 1,
-      "explanation": "Sweat causes slow drift and unstable baselines."
+      "answerIndex": 0,
+      "explanation": "Sweat changes the electrode-skin interface and produces very slow, swaying baseline shifts, often across several electrodes, which improve when the patient is cooled and the scalp dried. Fast temporal spikes suggest muscle, heartbeat-locked transients are ECG artifact, and abrupt steep deflections at one electrode are electrode pops."
     },
     {
       "id": "d2-s5-q5",
@@ -845,13 +845,13 @@
       "difficulty": "medium",
       "stem": "Which feature MOST supports that a temporal 'wicket' pattern is a benign variant?",
       "options": [
-        "Clear after-going slow wave",
-        "Occurs in brief trains with arch-like morphology, no disruption of background, and no epileptiform field",
-        "Always provoked by photic",
-        "Occurs only with HV"
+        "Arciform waves in brief trains without background disruption",
+        "A clear after-going slow wave following each sharp component",
+        "Reliable activation by intermittent photic stimulation",
+        "Isolated, high-amplitude spikes appearing during wakefulness"
       ],
-      "answerIndex": 1,
-      "explanation": "Wickets are benign variants lacking epileptiform features."
+      "answerIndex": 0,
+      "explanation": "Wickets are arciform (mu-like) waves in brief trains over the temporal regions, typically in drowsiness in older adults, without disturbing the background and without an epileptiform field. An after-going slow wave is a feature of epileptiform discharges; wickets are not a photic-driven phenomenon; isolated high-amplitude spikes in wakefulness point toward epileptiform activity rather than a benign variant."
     },
     {
       "id": "d2-s6-q4",
@@ -861,13 +861,13 @@
       "difficulty": "hard",
       "stem": "Which statement BEST distinguishes focal slowing from generalized slowing?",
       "options": [
-        "Focal slowing is confined to a region and persists across montages; generalized slowing is diffuse and affects most channels",
-        "Focal slowing only occurs in sleep",
-        "Generalized slowing always means epilepsy",
-        "Focal slowing cannot be seen in children"
+        "Focal slowing appears only in sleep; generalized slowing appears in wakefulness",
+        "Focal slowing is faster than 4 Hz; generalized slowing is slower than 4 Hz",
+        "Focal slowing is unreactive to eye opening; generalized slowing is reactive",
+        "Focal slowing is regional and persists across montages; generalized is diffuse"
       ],
-      "answerIndex": 0,
-      "explanation": "Topography and consistency across montages are key."
+      "answerIndex": 3,
+      "explanation": "The distinction is topographic: focal slowing is confined to a region and is seen consistently across montages, while generalized slowing involves most channels diffusely. Either type can occur in wakefulness and sleep; frequency (theta vs delta) does not define focal vs generalized; reactivity can vary in both and does not separate them."
     },
     {
       "id": "d2-s6-q5",
@@ -893,13 +893,13 @@
       "difficulty": "medium",
       "stem": "During a suspected seizure event, which annotation is MOST useful?",
       "options": [
-        "Only the clock time",
-        "Observed behaviors, responsiveness, onset/offset, and key phases",
-        "Only impedance values",
-        "Only montage name"
+        "The clock time of onset and the montage being viewed",
+        "The impedance values and filter settings at onset",
+        "The suspected seizure type and the likely diagnosis",
+        "Behaviors, responsiveness, and the onset and offset times"
       ],
-      "answerIndex": 1,
-      "explanation": "Detailed clinical timing and behavior support correlation."
+      "answerIndex": 3,
+      "explanation": "The reader needs to correlate the EEG with what the patient did: observed behaviors, tested responsiveness, and onset/offset timing. Clock time and montage alone give no clinical correlation; impedances and filters are technical data, not event description; naming the seizure type or diagnosis is the interpreter's role, not an annotation."
     },
     {
       "id": "d2-s7-q2",
@@ -909,13 +909,13 @@
       "difficulty": "medium",
       "stem": "A prolonged convulsive seizure occurs during EEG. The technologist should FIRST:",
       "options": [
-        "Interpret and announce seizure type",
-        "Prioritize safety and follow emergency protocol (call help, protect from injury)",
-        "Continue recording without intervention",
-        "Change to average reference"
+        "Keep recording and note the onset time for the interpreter",
+        "Protect the patient from injury and summon help right away",
+        "Reattach loose electrodes to preserve the ictal recording",
+        "Test responsiveness first, then decide whether help is needed"
       ],
       "answerIndex": 1,
-      "explanation": "Safety and escalation come first."
+      "explanation": "With a prolonged convulsive seizure the first priority is the patient: protect from injury and call for help per the emergency plan, while the recording continues. Noting onset time and reattaching electrodes come after patient care; delaying the call for help to test responsiveness wastes time in a possible emergency."
     },
     {
       "id": "d2-s7-q3",
@@ -925,13 +925,13 @@
       "difficulty": "easy",
       "stem": "Documenting responsiveness during an event helps differentiate:",
       "options": [
-        "Artifact vs cerebral activity and seizure vs non-seizure events",
-        "PDR vs mu rhythm",
-        "ECG vs EMG",
-        "Photic driving vs HV response"
+        "The posterior rhythm from the mu rhythm",
+        "Seizures from non-seizure behavioral events",
+        "Cardiac ECG artifact from scalp muscle artifact",
+        "Photic driving from the hyperventilation response"
       ],
-      "answerIndex": 0,
-      "explanation": "Clinical responsiveness is key for interpretation."
+      "answerIndex": 1,
+      "explanation": "Testing responsiveness during an event shows whether awareness was impaired, which helps the reader separate seizures from non-seizure events and correlate with any EEG change (or with artifact). PDR versus mu is separated by location and reactivity to eye opening versus movement; ECG versus muscle artifact by morphology and timing; photic versus HV responses by which procedure was running."
     },
     {
       "id": "d2-s7-q4",
@@ -973,13 +973,13 @@
       "difficulty": "medium",
       "stem": "Which approach is MOST appropriate for neonatal EEG?",
       "options": [
-        "Use adult montage without modification",
-        "Customize montage/strategy for neonatal physiology and clinical context",
-        "Avoid sleep recording entirely",
-        "Raise LFF to simplify tracing"
+        "Apply the full adult 10-20 array without any modification",
+        "Adapt the montage and strategy to neonatal age and context",
+        "Record wakefulness only, as neonatal sleep is uninformative",
+        "Raise the low-frequency filter to reduce slow neonatal waves"
       ],
       "answerIndex": 1,
-      "explanation": "Neonates require tailored approach and age-specific expectations."
+      "explanation": "Neonatal EEG needs a reduced, adapted montage, polygraphic channels and a strategy that reflects conceptional age and clinical context. Small heads do not accommodate the full adult array; sleep states are central to neonatal interpretation; raising the LFF attenuates the slow activity that is normal and important in neonates."
     },
     {
       "id": "d2-s8-q2",
@@ -989,13 +989,13 @@
       "difficulty": "medium",
       "stem": "In ICU EEG, the BEST approach to high artifact burden is to:",
       "options": [
-        "Use very aggressive filters to 'clean' the tracing",
-        "Optimize electrodes/grounding, annotate artifacts, and keep filters conservative",
-        "Turn notch on permanently and ignore sources",
-        "Avoid documenting artifacts"
+        "Use narrow filter settings throughout so the tracing looks clean",
+        "Fix electrodes and grounding, annotate artifact, keep filters standard",
+        "Keep the notch on and rely on it for all electrical interference",
+        "Raise the µV/mm value so that artifact looks less prominent"
       ],
       "answerIndex": 1,
-      "explanation": "Preserve cerebral signals; troubleshoot source and document."
+      "explanation": "ICU artifact is best handled at the source (electrodes, grounding, equipment) and by annotating what cannot be fixed, while keeping filters near standard so cerebral activity is not distorted. Narrow filters attenuate real slowing and spikes; the notch addresses only line frequency; lowering the display sensitivity shrinks cerebral activity along with artifact."
     },
     {
       "id": "d2-s8-q3",
@@ -1005,13 +1005,13 @@
       "difficulty": "hard",
       "stem": "Which statement is MOST accurate about electrocerebral inactivity (ECI) EEG studies?",
       "options": [
-        "Any short routine EEG is sufficient",
-        "Strict technical criteria and protocol adherence are required and must be documented",
-        "Notch must be ON always",
-        "ECI can be declared by technologist alone"
+        "A standard 20-minute study at routine settings is sufficient",
+        "Recording at 7 μV/mm is preferred so noise is not over-amplified",
+        "The technologist may declare ECI when no activity is visible",
+        "Defined technical standards apply, e.g., 2 μV/mm and 30+ minutes"
       ],
-      "answerIndex": 1,
-      "explanation": "ECI studies are protocol-driven and require strict technical documentation."
+      "answerIndex": 3,
+      "explanation": "ECI recordings follow specific technical standards (for example sensitivity of 2 µV/mm for at least 30 minutes of recording with appropriate calibrations, adequate interelectrode distances, stimulation and documentation of all steps). A routine study at routine settings does not meet them; 7 µV/mm is too insensitive to exclude low-voltage activity; ECI is an interpretation made by the physician, not the technologist."
     },
     {
       "id": "d2-s8-q4",
@@ -1691,15 +1691,15 @@
       "sectionId": "d2-filters-time-constants",
       "topicTags": ["lff", "hff", "filters", "distortion", "abret-trap"],
       "difficulty": "hard",
-      "stem": "An EEG shows diffuse theta-delta slowing. After raising the low-frequency filter from 0.1 Hz to 1.0 Hz, the slowing appears reduced. The technologist should:",
+      "stem": "An EEG shows diffuse theta-delta slowing. After raising the low-frequency filter from 0.5 Hz to 5 Hz, the slowing appears reduced. The technologist should:",
       "options": [
-        "Report that the encephalopathy has improved based on the filter change",
-        "Recognize this is a filter artifact and interpret the original recording with standard settings",
-        "Lower the sensitivity to make the slowing less visible",
-        "Document that the patient's condition normalized during the study"
+        "Conclude that the encephalopathy improved during the study",
+        "Recognize a filter effect and review at standard settings",
+        "Keep the 5 Hz setting, since it gives a cleaner baseline",
+        "Decrease the display gain to judge the remaining slowing"
       ],
       "answerIndex": 1,
-      "explanation": "High LFF artificially attenuates slow activity; this is a technical artifact, not a clinical change. Always interpret with standard filter settings."
+      "explanation": "A higher LFF attenuates delta and theta, so the apparent reduction is a technical effect, not clinical improvement; the record should be reviewed at standard settings (the standard LFF is 0.5-1 Hz). Concluding improvement misreads a filter change; keeping 5 Hz keeps the slowing understated; reducing gain makes the slowing look smaller still."
     },
     {
       "id": "tricky-002",
@@ -1757,13 +1757,13 @@
       "difficulty": "hard",
       "stem": "All electrodes show impedance values of 3-5 kΩ, but Fp1 shows 8 kΩ. The EEG has excessive noise. The technologist should:",
       "options": [
-        "Proceed; all values are under 10 kΩ so they're acceptable",
-        "Re-prep Fp1 to balance impedance; large differences cause artifact even if individual values are acceptable",
-        "Lower the sensitivity to reduce noise",
-        "Use a different montage to avoid Fp1"
+        "Proceed, since every value is still below the 10 kΩ limit",
+        "Lower the sensitivity so the noise is less visible on screen",
+        "Switch to a montage that leaves out the Fp1 electrode",
+        "Re-prep Fp1 so its impedance matches the other electrodes"
       ],
-      "answerIndex": 1,
-      "explanation": "Impedance balance is more critical than absolute values. A 5 kΩ difference can cause significant artifact. Re-prepping to balance impedances is the correct approach."
+      "answerIndex": 3,
+      "explanation": "Fp1 is both above the usual 5 kΩ target and mismatched with its neighbors; impedance imbalance degrades common-mode rejection and lets noise through, so re-prepping Fp1 is the fix. Passing a loose 10 kΩ limit ignores the imbalance; lowering sensitivity only shrinks the display of noise and signal alike; dropping Fp1 loses frontal coverage instead of fixing contact."
     },
     {
       "id": "tricky-006",
@@ -1789,13 +1789,13 @@
       "difficulty": "hard",
       "stem": "A technologist increases sensitivity from 7 μV/mm to 3.5 μV/mm to 'see more detail.' The waveforms appear larger. The technologist should understand that:",
       "options": [
-        "The brain activity has actually increased in amplitude",
-        "Only the display scale changed; actual brain voltage is unchanged",
-        "Lower sensitivity values always mean better recordings",
-        "This change will reveal hidden epileptiform activity"
+        "Only the display scale changed; brain voltage is unchanged",
+        "The amplifier is now recording a higher true scalp voltage",
+        "The signal-to-noise ratio of the recording has improved",
+        "Hidden epileptiform activity will now become visible"
       ],
-      "answerIndex": 1,
-      "explanation": "Sensitivity controls display scaling, not actual brain voltage. Lower sensitivity values (μV/mm) mean higher gain (larger display). The actual brain signal amplitude is unchanged."
+      "answerIndex": 0,
+      "explanation": "Sensitivity (µV/mm) sets how many microvolts each millimeter of deflection represents; going from 7 to 3.5 µV/mm doubles the displayed height but does not change the voltage the brain produces. The true scalp voltage is the same; noise is scaled up along with signal, so the signal-to-noise ratio is unchanged; a display change does not create discharges that were not present."
     },
     {
       "id": "tricky-008",
@@ -1853,13 +1853,13 @@
       "difficulty": "hard",
       "stem": "A regular, 1 Hz sharp transient appears in all channels, time-locked across montages, and correlates with the patient's pulse. The technologist should identify this as:",
       "options": [
-        "Generalized epileptiform activity",
-        "ECG artifact, best confirmed by checking pulse correlation and ECG channel if available",
         "Electrode pop artifact",
-        "Muscle artifact"
+        "Muscle (EMG) artifact",
+        "Generalized spike activity",
+        "ECG (cardiac) artifact"
       ],
-      "answerIndex": 1,
-      "explanation": "ECG artifact appears as regular, sharp transients time-locked to heart rate (typically 60-100 bpm, ~1 Hz). It appears in all channels and correlates with pulse. Checking ECG channel confirms it."
+      "answerIndex": 3,
+      "explanation": "Regular sharp transients at about 1 Hz, seen in many channels and time-locked to the pulse, are ECG artifact; an ECG channel or palpating the pulse confirms the correlation. Electrode pops are irregular and confined to one electrode; muscle artifact is fast and irregular; generalized discharges are not locked to the heartbeat."
     },
     {
       "id": "tricky-012",
@@ -1883,15 +1883,15 @@
       "sectionId": "d2-timebase-sampling",
       "topicTags": ["timebase", "sampling-rate", "aliasing", "nyquist", "frequency"],
       "difficulty": "hard",
-      "stem": "An EEG system samples at 200 Hz. The technologist should understand that the maximum frequency that can be accurately represented is:",
+      "stem": "An EEG system samples at 200 Hz. The highest frequency that can theoretically be represented without aliasing is:",
       "options": [
         "200 Hz",
-        "100 Hz (Nyquist frequency = sampling rate / 2)",
         "400 Hz",
+        "100 Hz",
         "50 Hz"
       ],
-      "answerIndex": 1,
-      "explanation": "Nyquist theorem states maximum representable frequency = sampling rate / 2. At 200 Hz sampling, maximum frequency is 100 Hz. Higher frequencies will alias."
+      "answerIndex": 2,
+      "explanation": "By the Nyquist theorem the highest representable frequency is half the sampling rate: 200 Hz / 2 = 100 Hz. Frequencies above this alias into lower frequencies. 200 Hz equals the sampling rate itself, 400 Hz is double it, and 50 Hz is one quarter of it. In practice a sampling rate of at least 3-4 times the highest frequency of interest is preferred."
     },
     {
       "id": "tricky-014",
@@ -1949,13 +1949,13 @@
       "difficulty": "hard",
       "stem": "A technologist uses subdermal needle electrodes for a patient with thick, matted hair. The technologist should be aware that:",
       "options": [
-        "Needle electrodes are always preferred for better signal quality",
-        "Needle electrodes require strict sterile technique and have infection risk; scalp prep may be preferable if possible",
-        "Needle electrodes eliminate all artifact",
-        "Needle electrodes don't require impedance checks"
+        "They give better signal quality than cups in most patients",
+        "They make impedance checks unnecessary after insertion",
+        "They carry infection risk, so prepared cups are preferable",
+        "They have lower impedance than well-prepared cup electrodes"
       ],
-      "answerIndex": 1,
-      "explanation": "Needle electrodes have higher infection risk and require sterile technique. They should only be used when scalp access is truly limited. Proper scalp prep with cup electrodes is generally preferred."
+      "answerIndex": 2,
+      "explanation": "Subdermal needles break the skin, require sterile single-use technique and carry infection and needlestick risk, so well-prepared cup electrodes are preferred whenever scalp access allows. Needles do not give better signal quality; their impedance still must be checked; and they typically have higher, not lower, impedance than well-prepared cups."
     },
     {
       "id": "tricky-018",
@@ -2045,13 +2045,13 @@
       "difficulty": "hard",
       "stem": "A technologist switches from bipolar to average reference montage. A focal sharp wave that was subtle in bipolar becomes more prominent. The technologist should understand that:",
       "options": [
-        "The abnormality has worsened",
-        "Average reference can enhance focal abnormalities by reducing common-mode activity; this is a montage effect, not a clinical change",
-        "The recording is now artifact-contaminated",
-        "Bipolar montage is always superior"
+        "The display changed with the montage; the discharge did not",
+        "The discharge has grown in amplitude since the switch",
+        "The average reference has introduced a new artifact source",
+        "A faulty electrode in the bipolar chain was hiding it"
       ],
-      "answerIndex": 1,
-      "explanation": "Average reference can enhance focal abnormalities by subtracting common activity. This is a technical effect of montage choice, not a change in the actual abnormality."
+      "answerIndex": 0,
+      "explanation": "Montages differ in which electrodes are subtracted. In a bipolar chain, neighbors with similar potentials partly cancel, so a broad discharge can look subtle; against an average reference it can appear more prominent. This is a montage effect, not a clinical change. Nothing suggests the discharge grew, the change is explained without new artifact, and a faulty electrode would produce its own artifact rather than selective cancellation."
     },
     {
       "id": "tricky-024",
@@ -2077,13 +2077,13 @@
       "difficulty": "hard",
       "stem": "A technologist lowers the high-frequency filter from 70 Hz to 15 Hz to 'reduce muscle artifact.' Small sharp transients become less visible. The technologist should understand that:",
       "options": [
-        "The epileptiform activity has resolved",
-        "Low HFF can attenuate spikes and sharp waves, potentially masking important findings",
-        "This is the correct setting for all recordings",
-        "Muscle artifact is now completely eliminated"
+        "The transients were muscle artifact that is now correctly hidden",
+        "The epileptiform activity has resolved since the filter change",
+        "Low HFF can attenuate spikes and sharp waves, masking findings",
+        "A 15 Hz HFF is the recommended setting for routine recordings"
       ],
-      "answerIndex": 1,
-      "explanation": "Excessively low HFF (e.g., 15 Hz) can attenuate spikes and sharp waves, which contain high-frequency components. This can mask epileptiform activity. Standard HFF is 35-70 Hz."
+      "answerIndex": 2,
+      "explanation": "Spikes and sharp waves contain fast components, so an HFF of 15 Hz attenuates them and can mask epileptiform activity; standard HFF is about 70 Hz. Muscle can be reduced at 15 Hz, but so can real sharp transients, so their loss is not proof they were artifact; a filter change cannot make discharges resolve; and 15 Hz is not a routine setting."
     },
     {
       "id": "tricky-026",
@@ -2109,13 +2109,13 @@
       "difficulty": "hard",
       "stem": "An EEG shows 60 Hz artifact in all channels. The technologist checks and finds the ground electrode impedance is 50 kΩ. The technologist should:",
       "options": [
-        "Use the notch filter immediately",
-        "Fix the ground electrode first; poor grounding causes 60 Hz artifact that affects all channels",
-        "Increase the high-frequency filter",
-        "Lower the sensitivity"
+        "Re-prep or replace the ground electrode before anything else",
+        "Turn on the 60 Hz notch filter and continue the recording",
+        "Lower the high-frequency filter to 35 Hz to reduce the noise",
+        "Raise the µV/mm setting so the 60 Hz noise is less prominent"
       ],
-      "answerIndex": 1,
-      "explanation": "Poor grounding is a common cause of 60 Hz artifact affecting all channels. Fixing the ground should be the first step. Notch filter should be used only if the source cannot be fixed."
+      "answerIndex": 0,
+      "explanation": "A 50 kΩ ground explains line noise in every channel, so the ground should be fixed first. The notch should be a fallback once the source cannot be corrected; lowering the HFF to 35 Hz attenuates 60 Hz only partly and also attenuates fast activity; reducing display sensitivity shrinks noise and EEG together without correcting anything."
     },
     {
       "id": "tricky-028",
@@ -2189,13 +2189,13 @@
       "difficulty": "hard",
       "stem": "A patient arrives for EEG and reports taking 'seizure medication' but cannot recall the name. The technologist should:",
       "options": [
-        "Proceed without documenting medications since the name is unknown",
-        "Document 'seizure medication - name unknown' and note the importance of obtaining accurate medication list for interpretation",
-        "Assume it's not important for EEG interpretation",
-        "Cancel the study until medication name is confirmed"
+        "Document no medications, since the name cannot be confirmed",
+        "Document a likely drug name based on the stated diagnosis",
+        "Postpone the study until the drug name can be documented",
+        "Document 'seizure medication, name unknown' and seek the list"
       ],
-      "answerIndex": 1,
-      "explanation": "Medications significantly affect EEG (e.g., benzodiazepines cause beta, AEDs suppress epileptiform). Documenting what is known (even if incomplete) is better than omitting it. Attempt to obtain accurate list but don't cancel study."
+      "answerIndex": 3,
+      "explanation": "Documenting what is known (an unnamed seizure medication) and trying to obtain the full list gives the reader accurate context, since medications such as benzodiazepines and antiseizure drugs affect the background and discharge frequency. Recording no medications is inaccurate; guessing a drug name records false information; postponing is unnecessary because incomplete information can be noted."
     },
     {
       "id": "tricky-033",
@@ -2267,15 +2267,15 @@
       "sectionId": "d2-filters-sensitivity-time-constants",
       "topicTags": ["time-constant", "lff", "filters", "distortion", "abret-trap"],
       "difficulty": "hard",
-      "stem": "A technologist understands that 'time constant' is related to:",
+      "stem": "A technologist understands that 'time constant' is directly related to:",
       "options": [
-        "The duration of the recording",
-        "Low-frequency filter behavior; shorter time constant = higher LFF cutoff = less slow activity",
-        "Patient age",
-        "Electrode impedance"
+        "The high-frequency filter setting",
+        "The sampling rate of the system",
+        "The low-frequency filter setting",
+        "The electrode impedance at each site"
       ],
-      "answerIndex": 1,
-      "explanation": "Time constant is an analog concept related to LFF. Shorter time constant = higher LFF cutoff = attenuation of slow frequencies. This is important for understanding filter effects."
+      "answerIndex": 2,
+      "explanation": "Time constant describes the low-frequency (high-pass) filter: TC = 1 / (2π × LFF cutoff), so a shorter time constant corresponds to a higher LFF and more attenuation of slow activity. The HFF is described by its cutoff frequency, the sampling rate determines the Nyquist limit, and impedance concerns electrode contact; none of these is the time constant."
     },
     {
       "id": "tricky-038",
@@ -2301,13 +2301,13 @@
       "difficulty": "hard",
       "stem": "In a bipolar montage, a sharp wave shows phase reversal between F3-Fz and Fz-F4. The technologist should localize this to:",
       "options": [
-        "F3",
-        "Fz (the electrode common to both channels showing reversal)",
-        "F4",
-        "Cannot be determined from phase reversal"
+        "At the F3 electrode",
+        "At the F4 electrode",
+        "At the Cz electrode",
+        "At the Fz electrode"
       ],
-      "answerIndex": 1,
-      "explanation": "Phase reversal localizes to the electrode common to both channels. Fz is common to F3-Fz and Fz-F4, so the abnormality is at Fz."
+      "answerIndex": 3,
+      "explanation": "In a bipolar chain, a phase reversal localizes to the electrode shared by the two channels that point toward each other. Fz is common to F3-Fz and Fz-F4, so the discharge is maximal at Fz. F3 and F4 are each in only one of the reversing channels, and Cz is not part of either derivation."
     },
     {
       "id": "tricky-040",
@@ -2365,13 +2365,13 @@
       "difficulty": "hard",
       "stem": "All electrodes show impedance of 2 kΩ except Fp1 at 15 kΩ. The EEG shows excessive noise. The technologist should:",
       "options": [
-        "Proceed; Fp1 is still under 20 kΩ which is acceptable",
-        "Re-prep Fp1 to balance impedance; the large difference (13 kΩ) causes artifact even if individual values are 'acceptable'",
-        "Use notch filter to eliminate noise",
-        "Lower sensitivity"
+        "Proceed, since Fp1 is still under the 20 kΩ limit",
+        "Turn on the notch filter to reduce the visible noise",
+        "Re-prep Fp1 to bring it in line with the other electrodes",
+        "Raise the µV/mm setting to make the noise less visible"
       ],
-      "answerIndex": 1,
-      "explanation": "Impedance balance is critical. A 13 kΩ difference between electrodes causes significant artifact, even if both values are individually 'acceptable'. Re-prepping to balance is essential."
+      "answerIndex": 2,
+      "explanation": "Fp1 is far above the usual 5 kΩ target and badly mismatched with the 2 kΩ electrodes; the imbalance reduces common-mode rejection and causes noise, so re-prepping Fp1 is the fix. A 20 kΩ limit is not an accepted standard; the notch would mask a contact problem; reducing display sensitivity shrinks noise and signal alike."
     },
     {
       "id": "tricky-044",
@@ -2445,13 +2445,13 @@
       "difficulty": "hard",
       "stem": "A technologist changes sweep speed from 30 mm/s to 10 mm/s. The technologist should understand that:",
       "options": [
-        "The actual brain frequencies have changed",
-        "Only the display compression changed; faster speeds (30 mm/s) spread out waveforms for better spike identification, slower speeds (10 mm/s) compress for slow wave viewing",
-        "The recording quality has improved",
-        "The sampling rate has changed"
+        "The displayed brain frequencies have slowed by a factor of three",
+        "The sampling rate dropped, so fast activity is less accurate",
+        "Only the horizontal display changed; waves look compressed",
+        "Waveforms now spread out, making spikes easier to identify"
       ],
-      "answerIndex": 1,
-      "explanation": "Sweep speed controls display compression, not actual brain activity. Faster speeds (30 mm/s) spread waveforms for spike identification; slower speeds (10 mm/s) compress for viewing slow waves."
+      "answerIndex": 2,
+      "explanation": "Sweep speed (time base) only changes how much time fits on a page: at 10 mm/s waveforms are compressed, which suits surveying slow waves and background, while 30 mm/s spreads them out for spike review. The brain frequencies are unchanged, the sampling rate is independent of display speed, and slowing the sweep compresses rather than spreads waveforms."
     },
     {
       "id": "tricky-049",
@@ -2477,13 +2477,13 @@
       "difficulty": "hard",
       "stem": "A technologist measures and marks electrode positions using the 10-20 system. The technologist should understand that:",
       "options": [
-        "Exact measurements are optional; approximate placement is sufficient",
-        "Accurate 10-20 measurements are essential for proper localization and comparison across studies",
-        "Electrode names don't matter for interpretation",
-        "Only frontal electrodes need accurate placement"
+        "Accurate measurement supports localization and serial comparison",
+        "Approximate placement is acceptable if left-right symmetry is kept",
+        "Measuring matters mainly for frontal sites; others can be estimated",
+        "Software corrects placement errors when montages are reformatted"
       ],
-      "answerIndex": 1,
-      "explanation": "Accurate 10-20 measurements are critical for proper localization, comparison across studies, and standardized interpretation. Approximate placement can lead to mislocalization and errors."
+      "answerIndex": 0,
+      "explanation": "Electrode positions define where activity is localized and allow comparison between studies, so 10-20 measurements must be accurate at every site. Symmetric but inaccurate placement still mislocalizes; all regions need measuring, not only frontal; and digital remontaging re-references the recorded channels but cannot move electrodes that were misplaced."
     },
     {
       "id": "tricky-051",
@@ -2621,13 +2621,13 @@
       "difficulty": "hard",
       "stem": "In an average reference montage, a focal sharp wave appears prominent. The technologist switches to a linked-ear reference. The sharp wave becomes less visible. The technologist should understand that:",
       "options": [
-        "The abnormality has resolved",
-        "Average reference can enhance focal abnormalities; linked-ear may reduce visibility depending on field distribution",
-        "The recording is now artifact-contaminated",
-        "Linked-ear is always superior to average reference"
+        "The discharge has resolved since the reference was changed",
+        "Its visibility depends on the reference and field, not a change",
+        "The average reference created the discharge as an artifact",
+        "The linked-ear view is the accurate picture of the field"
       ],
       "answerIndex": 1,
-      "explanation": "Different reference choices affect how focal abnormalities appear. Average reference can enhance focal activity by subtracting common activity. The actual abnormality hasn't changed, only its appearance."
+      "explanation": "How prominent a discharge looks depends on the reference: if the ear electrodes pick up part of the field (common with temporal discharges), a linked-ear reference subtracts some of it and the discharge looks smaller. The discharge has not resolved; the average reference did not create it, as it was seen with a defined field; and no single reference is the true picture, since each can be contaminated."
     },
     {
       "id": "tricky-060",
@@ -2907,15 +2907,15 @@
       "sectionId": "d2-timebase-sampling",
       "topicTags": ["timebase", "sweep-speed", "spike", "slow-wave", "display"],
       "difficulty": "hard",
-      "stem": "Which sweep speed settings are appropriate for different purposes?",
+      "stem": "Which pairing of sweep speed and purpose is correct?",
       "options": [
-        "30 mm/s: Better for identifying spikes and fast activity",
-        "10 mm/s: Better for viewing slow waves and overall background",
-        "Both A and B are correct",
-        "Sweep speed doesn't affect interpretation"
+        "30 mm/s, to spread waveforms out for spike review",
+        "10 mm/s, to spread waveforms out for spike review",
+        "30 mm/s, to compress the page for slow-wave review",
+        "60 mm/s, to compress the page for slow-wave review"
       ],
-      "answerIndex": 2,
-      "explanation": "Both are correct: Faster speeds (30 mm/s) spread waveforms for spike identification; slower speeds (10 mm/s) compress for viewing slow waves and background patterns."
+      "answerIndex": 0,
+      "explanation": "A faster sweep (30 mm/s) gives more millimeters per second, spreading waveforms out so spike morphology is easier to see; a slower sweep (10 mm/s) compresses the page, which helps survey slow waves and background. 10 mm/s compresses rather than spreads; 30 mm/s and 60 mm/s spread rather than compress the page."
     },
     {
       "id": "tricky-078",
@@ -2939,15 +2939,15 @@
       "sectionId": "d2-electrode-types-application",
       "topicTags": ["electrodes", "impedance", "prep", "signal-quality", "application"],
       "difficulty": "hard",
-      "stem": "Which practices improve electrode contact and signal quality?",
+      "stem": "Which practice MOST improves electrode contact and signal quality?",
       "options": [
-        "Proper scalp preparation (abrasion/cleaning)",
-        "Adequate conductive paste/gel application",
-        "Both A and B are correct",
-        "Skipping impedance checks saves time"
+        "Spreading paste across neighboring sites for contact",
+        "Moisturizing the scalp with lotion before applying cups",
+        "Using larger cups so the skin needs no preparation",
+        "Cleaning and gently abrading the scalp at each site"
       ],
-      "answerIndex": 2,
-      "explanation": "Both are correct: Good scalp prep and adequate conductive medium are essential for low impedance and stable recordings. Impedance checks are necessary, not optional."
+      "answerIndex": 3,
+      "explanation": "Cleaning away oil and debris and gently abrading the outer skin layer lowers impedance and stabilizes contact, followed by an adequate amount of conductive paste at each site. Paste spreading between sites creates a salt bridge that shorts electrodes together; lotion leaves an insulating film; a larger cup does not replace skin preparation."
     },
     {
       "id": "tricky-080",
@@ -3147,15 +3147,15 @@
       "sectionId": "d2-recording-procedures-patient-preparation",
       "topicTags": ["patient-preparation", "medications", "documentation", "history", "clinical-correlation"],
       "difficulty": "hard",
-      "stem": "Which medications commonly affect EEG background activity?",
+      "stem": "Which medication class is classically associated with prominent frontocentral beta activity on EEG?",
       "options": [
-        "Benzodiazepines (prominent frontal beta)",
-        "Antiepileptic drugs (may suppress epileptiform activity)",
-        "Both A and B are correct",
-        "Medications never affect EEG"
+        "Beta-blockers",
+        "Benzodiazepines",
+        "Opioid analgesics",
+        "Lithium carbonate"
       ],
-      "answerIndex": 2,
-      "explanation": "Both are correct: Benzodiazepines cause prominent beta; AEDs can suppress epileptiform discharges. Accurate medication documentation is essential for proper interpretation."
+      "answerIndex": 1,
+      "explanation": "Benzodiazepines (like barbiturates) characteristically increase frontocentral beta activity, so medication history matters when beta is prominent. Beta-blockers do not produce excess beta despite the name; opioids tend to produce slowing; lithium is associated with slowing and sometimes sharp activity rather than prominent beta."
     },
     {
       "id": "tricky-093",
@@ -4107,15 +4107,15 @@
       "sectionId": "d2-recording-procedures-patient-preparation",
       "topicTags": ["medications", "documentation", "benzodiazepines", "aed", "clinical-correlation"],
       "difficulty": "hard",
-      "stem": "Which medications should be documented as they affect EEG interpretation?",
+      "stem": "Why should a patient's antiseizure medications be documented before the EEG is interpreted?",
       "options": [
-        "Benzodiazepines (cause prominent frontal beta)",
-        "Antiepileptic drugs (may suppress epileptiform activity)",
-        "Both A and B are correct",
-        "Only seizure medications matter"
+        "They raise electrode impedance and increase line noise",
+        "They may reduce how often epileptiform discharges appear",
+        "They typically speed the posterior rhythm above 13 Hz",
+        "They reliably increase photoparoxysmal responses"
       ],
-      "answerIndex": 2,
-      "explanation": "Both are correct: Benzodiazepines cause beta; AEDs can suppress epileptiform. Many medications affect EEG. Accurate documentation is essential for proper interpretation."
+      "answerIndex": 1,
+      "explanation": "Antiseizure medications can reduce the frequency of interictal epileptiform discharges, so a normal or near-normal study must be read in that context (and some, like benzodiazepines and barbiturates, also add beta). They do not affect electrode impedance or line noise, they tend to slow rather than speed the posterior rhythm, and they usually reduce rather than increase photoparoxysmal responses."
     },
     {
       "id": "tricky-153",
@@ -11655,13 +11655,13 @@
       "difficulty": "hard",
       "stem": "A technologist increases the low-frequency filter (LFF) from 0.5 Hz to 5 Hz. This will:",
       "options": [
-        "Reduce slow activity (delta, theta) and may distort spike morphology",
-        "Only affect fast activity",
-        "Increase slow activity amplitude",
-        "Have no effect on the tracing"
+        "Attenuate beta and muscle activity but spare slow waves",
+        "Increase the displayed amplitude of delta and theta waves",
+        "Attenuate only 60 Hz interference, sparing EEG frequencies",
+        "Attenuate delta and theta and may alter spike morphology"
       ],
-      "answerIndex": 0,
-      "explanation": "Increasing LFF (high-pass filter) reduces slow activity (delta, theta) and can distort spike morphology by removing slow components. This is a critical ABRET trap - high LFF can make spikes appear sharper or alter their appearance. Understanding filter effects on waveform morphology is essential."
+      "answerIndex": 3,
+      "explanation": "The LFF is a high-pass filter: raising it from 0.5 to 5 Hz attenuates delta and theta and reduces the slow components of spikes and sharp waves, which can change their apparent morphology. Attenuating beta and muscle is the effect of lowering the HFF; an LFF never boosts slow-wave amplitude; and narrow 60 Hz attenuation is the notch filter, not the LFF."
     },
     {
       "id": "d2-batch1-002",
@@ -11703,13 +11703,13 @@
       "difficulty": "hard",
       "stem": "Optimal electrode impedance for EEG recording should be:",
       "options": [
-        "As high as possible (>50 kΩ)",
-        "Less than 5 kΩ (ideally <2 kΩ) with balanced impedances",
-        "Between 10-20 kΩ",
-        "Impedance doesn't matter"
+        "Between 10 and 20 kΩ, provided they are balanced",
+        "Below 5 kΩ at each site, and balanced across electrodes",
+        "Below 25 kΩ, with balance between sites being optional",
+        "Above 50 kΩ, to reduce loading on the amplifier input"
       ],
       "answerIndex": 1,
-      "explanation": "Optimal impedance is less than 5 kΩ (ideally <2 kΩ) with balanced impedances across electrodes. High or unbalanced impedance increases noise, artifacts, and signal distortion. Low, balanced impedance ensures optimal signal quality and reduces common-mode rejection issues."
+      "explanation": "Standard guidance is impedances below 5 kΩ that are also balanced, because high or mismatched impedance degrades common-mode rejection and admits noise and artifact. 10-20 kΩ and 25 kΩ exceed the usual routine target, and balance is not optional; impedance above 50 kΩ produces noisy, artifact-prone recordings rather than protecting the amplifier."
     },
     {
       "id": "d2-batch1-005",
@@ -11717,15 +11717,15 @@
       "sectionId": "d2-amplifiers-sensitivity",
       "topicTags": ["amplifier", "sensitivity", "gain", "amplitude", "display"],
       "difficulty": "hard",
-      "stem": "A technologist increases sensitivity from 7 μV/mm to 14 μV/mm. This will:",
+      "stem": "A technologist changes the sensitivity setting from 7 μV/mm to 14 μV/mm. This will:",
       "options": [
-        "Make waveforms appear larger (amplify the signal)",
-        "Make waveforms appear smaller",
-        "Only affect frequency",
-        "Have no effect on display"
+        "Make the waveforms appear larger on the display",
+        "Make the waveforms appear smaller on the display",
+        "Lower the frequency of the displayed waveforms",
+        "Increase the true voltage recorded from the scalp"
       ],
-      "answerIndex": 0,
-      "explanation": "Increasing sensitivity (decreasing μV/mm) amplifies the signal, making waveforms appear larger on the display. Sensitivity controls the vertical scale - lower μV/mm = higher sensitivity = larger display. Understanding sensitivity is critical for proper signal display and amplitude measurement."
+      "answerIndex": 1,
+      "explanation": "Sensitivity is expressed as µV per mm of pen deflection. At 14 µV/mm each millimeter represents twice as many microvolts as at 7 µV/mm, so the same signal is drawn at half the height (a decrease in display sensitivity). It is the opposite of a gain increase, it has no effect on frequency, and it does not change the voltage the brain produces."
     },
     {
       "id": "d2-batch1-006",
@@ -11767,13 +11767,13 @@
       "difficulty": "hard",
       "stem": "A technologist decreases the high-frequency filter (HFF) from 70 Hz to 35 Hz. This will:",
       "options": [
-        "Reduce fast activity (beta, muscle artifact) and may smooth spikes",
-        "Only affect slow activity",
-        "Increase fast activity amplitude",
-        "Have no effect on the tracing"
+        "Attenuate beta and muscle activity and may blunt spikes",
+        "Attenuate delta and theta while sparing faster activity",
+        "Increase the displayed amplitude of beta and muscle activity",
+        "Affect only frequencies above 70 Hz, leaving EEG unchanged"
       ],
       "answerIndex": 0,
-      "explanation": "Decreasing HFF (low-pass filter) reduces fast activity (beta, muscle artifact) and can smooth spikes by removing fast components. This is a critical ABRET trap - low HFF can alter spike appearance. Understanding filter effects on waveform morphology is essential for accurate interpretation."
+      "explanation": "The HFF is a low-pass filter: lowering it from 70 to 35 Hz attenuates fast activity, including beta and muscle, and reduces the fast components of spikes, which can make them look blunter. Attenuating delta/theta is the effect of raising the LFF; filters do not boost amplitude; and a 35 Hz HFF acts well below 70 Hz."
     },
     {
       "id": "d2-batch1-009",
@@ -11879,13 +11879,13 @@
       "difficulty": "hard",
       "stem": "Unbalanced electrode impedances (e.g., 2 kΩ vs 10 kΩ) can cause:",
       "options": [
-        "No problems",
-        "Increased noise, artifacts, and reduced common-mode rejection",
-        "Only affect amplitude",
-        "Only affect frequency"
+        "A higher true amplitude in the higher-impedance channel",
+        "Reduced common-mode rejection, with more noise and artifact",
+        "Slowing of the displayed frequencies in affected channels",
+        "No effect, as long as each value is still below 10 kΩ"
       ],
       "answerIndex": 1,
-      "explanation": "Unbalanced impedances reduce common-mode rejection, increase noise and artifacts, and can cause signal distortion. Balanced impedances (<5 kΩ, ideally <2 kΩ) are essential for optimal signal quality. Understanding impedance balance is critical for troubleshooting."
+      "explanation": "A differential amplifier rejects interference that is identical at both inputs; unequal impedances make that interference unequal, so common-mode rejection falls and line noise and artifact appear. Impedance mismatch does not raise true cerebral amplitude or slow frequencies, and balance matters even when each value is individually acceptable."
     },
     {
       "id": "d2-batch1-016",
@@ -11895,13 +11895,13 @@
       "difficulty": "hard",
       "stem": "To measure a 50 μV spike accurately, the technologist should use:",
       "options": [
-        "Low sensitivity (high μV/mm) to see the full spike",
-        "Appropriate sensitivity (e.g., 7 μV/mm) to display the spike clearly without clipping",
-        "Very high sensitivity (low μV/mm) to make it larger",
-        "Sensitivity doesn't matter"
+        "A sensitivity near 1 μV/mm, so the spike is drawn as large as possible",
+        "A sensitivity near 50 μV/mm, to match the voltage of the spike",
+        "A sensitivity near 30 μV/mm, so the spike fits inside one channel",
+        "A sensitivity near 7 μV/mm, so the spike is clear without clipping"
       ],
-      "answerIndex": 1,
-      "explanation": "Appropriate sensitivity (e.g., 7 μV/mm) displays the spike clearly without clipping (signal going off-screen) or being too small. Too high sensitivity causes clipping; too low makes spikes hard to see. Understanding sensitivity selection is critical for accurate amplitude measurement."
+      "answerIndex": 3,
+      "explanation": "At 7 µV/mm a 50 µV spike is about 7 mm tall: clearly visible and measurable without overlapping or clipping. At 1 µV/mm it would be 50 mm and clip; at 50 µV/mm it would be only 1 mm tall (matching sensitivity to spike voltage is a common confusion); at 30 µV/mm it would be under 2 mm, too small to measure well."
     },
     {
       "id": "d2-batch1-017",
@@ -12055,13 +12055,13 @@
       "difficulty": "hard",
       "stem": "To achieve optimal impedance (<5 kΩ), the technologist should:",
       "options": [
-        "Apply electrodes without skin preparation",
-        "Clean skin, abrade if necessary, apply conductive paste/gel, and ensure good contact",
-        "Use only water",
-        "Impedance doesn't require preparation"
+        "Apply electrodes with paste directly, without cleaning the skin",
+        "Wet the scalp with water and apply the electrodes without paste",
+        "Spread extra paste between neighboring sites to improve contact",
+        "Clean and lightly abrade the skin, then apply conductive paste"
       ],
-      "answerIndex": 1,
-      "explanation": "Optimal impedance requires proper skin preparation: clean skin, abrade if necessary (remove dead skin cells, oils), apply conductive paste/gel, and ensure good contact. Proper preparation reduces impedance and improves signal quality. Understanding electrode application is foundational."
+      "answerIndex": 3,
+      "explanation": "Low impedance comes from removing oil and dead skin (cleaning and light abrasion) and then using an adequate conductive medium with good contact. Paste over unprepared skin leaves impedance high; water alone is not a stable conductive medium; paste spread between sites creates a salt bridge that shorts neighboring electrodes."
     },
     {
       "id": "d2-batch1-027",
@@ -12263,13 +12263,13 @@
       "difficulty": "hard",
       "stem": "Posterior dominant rhythm (PDR) in a normal awake adult should:",
       "options": [
-        "Be absent",
-        "Be 8-13 Hz, symmetric, reactive to eye opening",
-        "Be 4-7 Hz",
-        "Be present only during sleep"
+        "Be 4-7 Hz, symmetric, and attenuate with eye opening",
+        "Be 8-13 Hz, symmetric, and attenuate with eye opening",
+        "Be 8-13 Hz, symmetric, and increase with eye opening",
+        "Be 14-20 Hz, symmetric, and attenuate with eye closure"
       ],
       "answerIndex": 1,
-      "explanation": "Normal PDR in awake adults is 8-13 Hz, symmetric, and reactive to eye opening (attenuates). Understanding normal background rhythms is foundational for EEG interpretation."
+      "explanation": "The normal adult posterior dominant rhythm is 8-13 Hz (alpha), roughly symmetric, and attenuates with eye opening. 4-7 Hz is theta and abnormally slow for an awake adult; the PDR is blocked, not increased, by eye opening; 14-20 Hz is beta, and the PDR appears with eye closure rather than attenuating."
     },
     {
       "id": "d2-batch2-010",

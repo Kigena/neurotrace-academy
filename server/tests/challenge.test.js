@@ -13,6 +13,7 @@ import { QuestionVersion } from '../src/models/QuestionVersion.js';
 import { AttemptEvent } from '../src/models/AttemptEvent.js';
 
 const serverRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const knownIssues = JSON.parse(fs.readFileSync(path.join(serverRoot, 'src/data/qa/known-issues.json'), 'utf8'));
 const legacy = loadSourceFile(defaultSourcePath(serverRoot));
 const challengeDir = path.join(serverRoot, 'src/data/challenge');
 const challengeFiles = fs.readdirSync(challengeDir).filter((f) => f.endsWith('.json')).sort();
@@ -25,9 +26,13 @@ const allChallenge = challengeSets.flatMap((c) => c.data.questions);
 describe('QA audit heuristics', () => {
     const byId = (id) => legacy.questions.find((q) => q.id === id);
 
-    it('flags the known sensitivity error (7 -> 14 µV/mm said to enlarge waveforms)', () => {
-        const flags = auditQuestion(byId('d2-batch1-005')).map((f) => f.code);
-        expect(flags).toContain('SENSITIVITY_TERMINOLOGY');
+    it('flags a sensitivity direction error (7 -> 14 µV/mm said to enlarge waveforms)', () => {
+        // d2-batch1-005 carried this error until the de-cue pilot corrected it.
+        const fixed = byId('d2-batch1-005');
+        expect(auditQuestion(fixed).map((f) => f.code)).toEqual([]);
+        const broken = { ...fixed, options: [...fixed.options] };
+        broken.options[broken.answerIndex] = 'Make the waveforms appear larger on the display';
+        expect(auditQuestion(broken).map((f) => f.code)).toContain('SENSITIVITY_TERMINOLOGY');
         // Correctly worded sensitivity items are not flagged.
         expect(auditQuestion(byId('d2-batch6-003')).map((f) => f.code)).not.toContain('SENSITIVITY_TERMINOLOGY');
     });
@@ -212,26 +217,30 @@ describe('Challenge mode and QA statuses (API)', () => {
     });
 
     it('the audit runner is a dry run by default and applies known issues idempotently', async () => {
+        const statusChanges = knownIssues.issues.filter((i) => i.qaStatus !== 'UNREVIEWED').length;
         const dry = await runQuestionAudit({ dryRun: true });
-        expect(dry.knownIssuesApplied).toBe(3);
+        expect(dry.knownIssuesApplied).toBe(statusChanges);
         expect(await Question.countDocuments({ qaStatus: 'NEEDS_REVISION' })).toBe(0);
 
         const applied = await runQuestionAudit({ dryRun: false });
-        expect(applied.knownIssuesApplied).toBe(3);
+        expect(applied.knownIssuesApplied).toBe(statusChanges);
         expect(applied.knownIssuesMissing).toEqual([]);
         const flagged = await Question.find({ qaStatus: 'NEEDS_REVISION' }).select('questionId qaFlags').lean();
-        expect(flagged.map((d) => d.questionId).sort()).toEqual(['d2-batch1-005', 'd2-batch1-030', 'd2-batch7-001']);
-        const sens = flagged.find((d) => d.questionId === 'd2-batch1-005');
-        expect(sens.qaFlags.some((f) => f.source === 'manual' && f.code === 'SENSITIVITY_TERMINOLOGY')).toBe(true);
+        expect(flagged.map((d) => d.questionId).sort()).toEqual(['d2-batch1-030', 'd2-batch7-001']);
+        const tc = flagged.find((d) => d.questionId === 'd2-batch1-030');
+        expect(tc.qaFlags.some((f) => f.source === 'manual' && f.code === 'CONTRADICTORY_EXPLANATION')).toBe(true);
+        // Duplicates retired, the revised sensitivity item back in service
+        expect(await Question.countDocuments({ qaStatus: 'REJECTED' })).toBe(knownIssues.issues.filter((i) => i.qaStatus === 'REJECTED').length);
+        expect((await Question.findOne({ questionId: 'd2-batch1-005' }).lean()).qaStatus).toBe('UNREVIEWED');
 
         const again = await runQuestionAudit({ dryRun: false });
         expect(again.knownIssuesApplied).toBe(0);
-        const sens2 = await Question.findOne({ questionId: 'd2-batch1-005' }).lean();
-        expect(sens2.qaFlags.filter((f) => f.source === 'manual')).toHaveLength(1);
+        const tc2 = await Question.findOne({ questionId: 'd2-batch1-030' }).lean();
+        expect(tc2.qaFlags.filter((f) => f.source === 'manual')).toHaveLength(1);
 
         // Content untouched
-        const doc = await Question.findOne({ questionId: 'd2-batch1-005' }).select('+answerIndex').lean();
-        const src = legacy.questions.find((q) => q.id === 'd2-batch1-005');
+        const doc = await Question.findOne({ questionId: 'd2-batch1-030' }).select('+answerIndex').lean();
+        const src = legacy.questions.find((q) => q.id === 'd2-batch1-030');
         expect(doc.stem).toBe(src.stem);
         expect(doc.answerIndex).toBe(src.answerIndex);
     });
@@ -246,7 +255,9 @@ describe('Challenge mode and QA statuses (API)', () => {
             expect(s.status).toBe(201);
             s.body.questions.forEach((q) => all.add(q.questionId));
         }
-        for (const id of ['d2-batch1-005', 'd2-batch1-030', 'd2-batch7-001']) expect(all.has(id)).toBe(false);
+        const withheld = knownIssues.issues.filter((i) => ['NEEDS_REVISION', 'REJECTED'].includes(i.qaStatus)).map((i) => i.questionId);
+        expect(withheld.length).toBeGreaterThan(50);
+        for (const id of withheld) expect(all.has(id), id).toBe(false);
     });
 
     it('mocks come from the Challenge Bank with the 19/60/25/26 split; custom practice stays on the foundation bank', async () => {

@@ -3,9 +3,9 @@
   "issues": [
     {
       "questionId": "d2-batch1-005",
-      "qaStatus": "NEEDS_REVISION",
-      "code": "SENSITIVITY_TERMINOLOGY",
-      "detail": "Keyed answer says changing 7 µV/mm to 14 µV/mm makes waveforms larger. A larger µV/mm value is LOWER display sensitivity: the same voltage gives a smaller deflection. The stem also calls this an increase in sensitivity, and the explanation contradicts the keyed answer."
+      "qaStatus": "UNREVIEWED",
+      "code": "REVISED",
+      "detail": "Keyed answer says changing 7 µV/mm to 14 µV/mm makes waveforms larger. A larger µV/mm value is LOWER display sensitivity: the same voltage gives a smaller deflection. The stem also calls this an increase in sensitivity, and the explanation contradicts the keyed answer. REVISED 2026-10-02 (de-cue pilot): corrected and fact-checked; back to UNREVIEWED."
     },
     {
       "questionId": "d2-batch1-030",
@@ -18,6 +18,330 @@
       "qaStatus": "NEEDS_REVISION",
       "code": "QUESTIONABLE_FACT",
       "detail": "Keyed answer places P3 at '20% of the distance from Cz to the left ear, along the parietal line'. P3 lies on the left parasagittal line between C3 and O1 (posterior to C3), not on the Cz-to-ear line."
+    },
+    {
+      "questionId": "tricky-128",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-085 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-188",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-085 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-153",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-093 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-155",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-095 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-157",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-097 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-159",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-099 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-164",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-104 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-165",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-105 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-167",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-107 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-168",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-108 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-169",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-109 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-171",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-111 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-173",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-113 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-205",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-113 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-174",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-114 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-206",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-114 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-175",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-115 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-207",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-115 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-176",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-116 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-208",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-116 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-177",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-117 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-209",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-117 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-180",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-120 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-181",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-121 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-182",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-122 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-183",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-123 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-184",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-124 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-186",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-126 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-187",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-127 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-189",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-129 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-190",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-130 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-191",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-131 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-192",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-132 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-193",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-133 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-194",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-134 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-195",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-135 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-196",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-136 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-197",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-137 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-199",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-139 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-202",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-142 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-203",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-143 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-204",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-144 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-210",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-178 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-342",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-243 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-357",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-269 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-338",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-286 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-320",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-370 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-490",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-470 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-489",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-471 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-488",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-472 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "tricky-510",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of tricky-479 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "d4-batch2-024",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of d4-batch5-030 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "d2-batch7-016",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of d2-batch4-020 (same stem; kept the copy with fewer quality flags)."
+    },
+    {
+      "questionId": "d3-batch2-025",
+      "qaStatus": "REJECTED",
+      "code": "DUPLICATE_STEM",
+      "detail": "Duplicate of d2-batch5-017 (same stem; kept the copy with fewer quality flags)."
     }
   ]
 }
