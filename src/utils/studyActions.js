@@ -28,6 +28,8 @@ export async function startPlanItem(item, navigate) {
   } else {
     body = { kind: "custom", mode: "practice", questionCount: count };
   }
+  // Links the session to the Today's Study item so finishing it marks it done.
+  if (item.id) body.planItemId = item.id;
   await quizApi.createSession(body);
   navigate("/quiz/session");
 }

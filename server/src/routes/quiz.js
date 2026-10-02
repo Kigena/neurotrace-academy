@@ -10,6 +10,7 @@ import { BLUEPRINT_KEY } from '../blueprint/abret2026.js';
 import { buildStudyProfile, selectWeakAreas } from '../services/studyAnalytics.js';
 import { buildReviewQueue, CONFIDENCE_LEVELS, selectMisconceptionDrill } from '../services/reinforcement.js';
 import { describeMisconception, errorCodeFor, isMisconceptionCode } from '../services/misconceptions.js';
+import { completePlanItem, findTodaysItem, startPlanItem } from '../services/dailyPlan.js';
 import {
     DOMAIN_QUICKSTART,
     EXPIRY_GRACE_MS,
@@ -263,6 +264,7 @@ async function submitSession(session, userId) {
         const current = await QuizSession.findById(session._id);
         return { session: current, alreadySubmitted: true };
     }
+    if (session.planItemId) await completePlanItem(userId, session.planDate, session.planItemId, session.sessionId, now);
 
     // Practice answers were recorded when answered; timed/mock answers are
     // recorded now, once.
@@ -464,6 +466,7 @@ router.post('/sessions', async (req, res) => {
         );
 
         const now = Date.now();
+        const planLink = await findTodaysItem(req.user.id, body.planItemId, now);
         const session = await QuizSession.create({
             userId: req.user.id,
             sessionId: `session_${now}_${crypto.randomBytes(6).toString('hex')}`,
@@ -480,7 +483,10 @@ router.post('/sessions', async (req, res) => {
             expiresAt: timeLimitSec ? new Date(now + timeLimitSec * 1000) : null,
             timeLimitSec: timeLimitSec || null,
             config,
+            planDate: planLink?.date ?? null,
+            planItemId: planLink?.item.id ?? null,
         });
+        if (planLink) await startPlanItem(req.user.id, planLink.date, planLink.item.id, session.sessionId, now);
 
         res.status(201).json(await buildActivePayload(session));
     } catch (error) {
@@ -586,6 +592,9 @@ router.post('/sessions/:sessionId/answers', async (req, res) => {
             }
 
             await insertAttemptsIgnoringDuplicates([attemptEventFor(session, req.user.id, q, answer)]);
+            if (updated.planItemId && Object.keys(answersToObject(updated.answers)).length >= updated.items.length) {
+                await completePlanItem(req.user.id, updated.planDate, updated.planItemId, updated.sessionId);
+            }
             return res.json(feedback(answer.isCorrect, originalIndex));
         }
 

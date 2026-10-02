@@ -15,6 +15,7 @@ import {
 import { clampInt } from '../utils/validation.js';
 import { buildReviewQueue, CONFIDENCE_LEVELS, misconceptionSummary } from '../services/reinforcement.js';
 import { describeMisconception, errorCodeFor } from '../services/misconceptions.js';
+import { getTodaysPlan, planDateFor } from '../services/dailyPlan.js';
 
 // Single-user study dashboard, incorrect-answer review and retry.
 // Every query is scoped to the authenticated user.
@@ -85,6 +86,25 @@ router.get('/dashboard', async (req, res) => {
         const mistakes = misconceptionSummary(events);
         const activeMistakes = mistakes.filter((m) => m.active);
 
+        // Today's Study: persisted per day so completed items stay marked.
+        const plan = await getTodaysPlan(req.user.id, buildDailyPlan({
+            mastery,
+            incorrectCount: incorrect.length,
+            sectionDomains,
+            challengeAvailable,
+            reviewsDue: reviews.dueNow,
+            misconception: activeMistakes.find((m) => m.questionsAvailable > 0) || null,
+        }));
+        // "Review incorrect" items have no quiz session: done once that many
+        // retries were answered today.
+        const today = planDateFor();
+        const retriesToday = events.filter((e) => e.mode === 'review' && planDateFor(e.timestamp) === today).length;
+        const todaysStudy = plan.items.map((i) => (
+            i.kind === 'review' && i.status !== 'done' && retriesToday >= (i.count || 1)
+                ? { ...i, status: 'done' }
+                : i
+        ));
+
         const ranked = (table) => Object.entries(table)
             .filter(([, m]) => m.sufficient)
             .map(([key, m]) => ({ key, ...m }))
@@ -108,14 +128,12 @@ router.get('/dashboard', async (req, res) => {
                 active: activeMistakes.slice(0, 5),
                 recent: mistakes.filter((m) => !m.active && m.recentErrors > 0).slice(0, 5),
             },
-            todaysStudy: buildDailyPlan({
-                mastery,
-                incorrectCount: incorrect.length,
-                sectionDomains,
-                challengeAvailable,
-                reviewsDue: reviews.dueNow,
-                misconception: activeMistakes.find((m) => m.questionsAvailable > 0) || null,
-            }),
+            todaysStudy,
+            todaysProgress: {
+                done: todaysStudy.filter((i) => i.status === 'done').length,
+                total: todaysStudy.length,
+                date: plan.date,
+            },
         });
     } catch (error) {
         console.error('Study dashboard error:', error.message);

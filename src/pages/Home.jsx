@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import apiService from "../services/apiService";
+import { loadCaseProgressMap } from "../services/caseProgressApi";
 import casesData from "../data/cases.json";
 import patternsData from "../data/neurotrace_patterns_library_v2.json";
 import syndromesData from "../data/syndromes_v2.json";
@@ -11,6 +12,20 @@ function Home() {
   const [caseOfTheWeek, setCaseOfTheWeek] = useState(null);
   const [loadingCase, setLoadingCase] = useState(true);
   const [communityCasesCount, setCommunityCasesCount] = useState(0);
+  const [caseProgressMap, setCaseProgressMap] = useState({});
+  const weeklyCaseProgress = caseOfTheWeek
+    ? caseProgressMap[caseOfTheWeek.isStatic ? caseOfTheWeek.id : caseOfTheWeek._id]
+    : null;
+
+  useEffect(() => {
+    let cancelled = false;
+    loadCaseProgressMap().then((map) => {
+      if (!cancelled) setCaseProgressMap(map);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // Get featured community case of the week
   useEffect(() => {
@@ -155,6 +170,12 @@ function Home() {
             {caseOfTheWeek.author && (
               <div className="text-xs text-slate-500">
                 by <span className="font-semibold">{caseOfTheWeek.author.name}</span>
+              </div>
+            )}
+            {weeklyCaseProgress && (
+              <div className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
+                ✓ Completed
+                {weeklyCaseProgress.lastTotal > 0 && ` · ${weeklyCaseProgress.lastCorrect}/${weeklyCaseProgress.lastTotal}`}
               </div>
             )}
           </div>

@@ -43,6 +43,9 @@ const quizSessionSchema = new mongoose.Schema({
     mode: { type: String, enum: ['practice', 'timed', 'mock'], required: true },
     kind: { type: String, enum: ['custom', 'domain-quickstart', 'preset', 'weak-areas', 'challenge', 'review-due', 'misconception', null], default: null },
     presetId: { type: String, default: null },
+    // Set when the session was started from a Today's Study item.
+    planDate: { type: String, default: null },
+    planItemId: { type: String, default: null },
     blueprintKey: { type: String, default: null },
     status: {
         type: String,

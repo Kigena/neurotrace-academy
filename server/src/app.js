@@ -7,6 +7,7 @@ import multer from 'multer';
 import { createAuthRouter } from './routes/auth.js';
 import { createChatRouter } from './routes/chat.js';
 import casesRoutes from './routes/cases.js';
+import caseProgressRoutes from './routes/caseProgress.js';
 import adminRoutes from './routes/admin.js';
 import aiRoutes from './routes/ai.js';
 import gamificationRoutes from './routes/gamification.js';
@@ -73,6 +74,7 @@ export function createApp(options = {}) {
 
     app.use('/api/auth', createAuthRouter({ limiters }));
     app.use('/api/chat', createChatRouter({ limiters }));
+    app.use('/api/case-progress', caseProgressRoutes);
     app.use('/api/cases', casesRoutes);
     app.use('/api/admin', adminRoutes);
     app.use('/api/ai', limiters.ai, aiRoutes);

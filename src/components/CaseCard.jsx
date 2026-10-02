@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import syndromesData from "../data/syndromes_v2.json";
 
-function CaseCard({ eegCase }) {
+function CaseCard({ eegCase, progress }) {
   const difficultyColors = {
     easy: "bg-green-100 text-green-800",
     medium: "bg-yellow-100 text-yellow-800",
@@ -34,6 +34,7 @@ function CaseCard({ eegCase }) {
     >
       <div className="flex items-center justify-between mb-2">
         <h3 className="text-sm font-semibold text-slate-900 line-clamp-1" title={eegCase.title}>
+          {progress && <span className="text-emerald-600 mr-1" aria-label="Completed">✓</span>}
           {eegCase.title}
         </h3>
         {eegCase.difficulty && (
@@ -48,6 +49,11 @@ function CaseCard({ eegCase }) {
       <div className="text-[11px] text-slate-500 mb-2">
         {getAgeDisplay()} • {eegCase.patient?.context || eegCase.patientInfo?.gender || "Case Study"}
       </div>
+      {progress && (
+        <div className="mb-1 text-[11px] font-semibold text-emerald-700">
+          ✓ Completed{progress.lastTotal > 0 ? ` · ${progress.lastCorrect}/${progress.lastTotal}` : ""}
+        </div>
+      )}
       <p className="mt-1 text-xs text-slate-700 line-clamp-2 mb-auto">
         {eegCase.chiefComplaint || eegCase.history?.substring(0, 100) + "..."}
       </p>

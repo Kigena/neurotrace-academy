@@ -48,7 +48,7 @@ function StudyDashboard() {
 
   const continueStudying = () => {
     if (data?.hasActiveSession) navigate("/quiz/session");
-    else if (data?.todaysStudy?.length) run(data.todaysStudy[0]);
+    else if (data?.todaysStudy?.length) run(data.todaysStudy.find((i) => i.status !== "done") || data.todaysStudy[0]);
     else run({ kind: "mixed", count: 10 });
   };
 
@@ -192,23 +192,58 @@ function StudyDashboard() {
 
           {/* Today's study */}
           <div className="rounded-lg border border-slate-200 bg-white p-5 space-y-3">
-            <h2 className="text-sm font-semibold text-slate-900">TODAY&apos;S STUDY</h2>
+            <div className="flex items-baseline justify-between">
+              <h2 className="text-sm font-semibold text-slate-900">TODAY&apos;S STUDY</h2>
+              {data.todaysProgress && (
+                <span className="text-xs text-slate-600">
+                  {data.todaysProgress.done}/{data.todaysProgress.total} done
+                </span>
+              )}
+            </div>
+            {data.todaysProgress && data.todaysProgress.total > 0 && (
+              <div className="h-1.5 rounded bg-slate-100">
+                <div
+                  className="h-1.5 rounded bg-emerald-500 transition-all"
+                  style={{ width: `${Math.round((100 * data.todaysProgress.done) / data.todaysProgress.total)}%` }}
+                />
+              </div>
+            )}
+            {data.todaysProgress && data.todaysProgress.total > 0 && data.todaysProgress.done === data.todaysProgress.total && (
+              <p className="text-xs font-semibold text-emerald-700">All done for today. Extra practice still counts.</p>
+            )}
             <ol className="space-y-2">
-              {data.todaysStudy.map((item, idx) => (
-                <li key={idx} className="flex items-start justify-between gap-3">
-                  <div>
-                    <div className="text-sm text-slate-900">{planItemLabel(item)}</div>
-                    <div className="text-xs text-slate-500">{item.reason}</div>
-                  </div>
-                  <button
-                    onClick={() => run(item)}
-                    disabled={busy}
-                    className="shrink-0 rounded border border-slate-300 px-2 py-1 text-xs hover:bg-slate-50 disabled:opacity-60"
-                  >
-                    Start
-                  </button>
-                </li>
-              ))}
+              {data.todaysStudy.map((item) => {
+                const done = item.status === "done";
+                return (
+                  <li key={item.id || planItemLabel(item)} className="flex items-start justify-between gap-3">
+                    <div className="flex items-start gap-2">
+                      <span
+                        aria-label={done ? "Done" : item.status === "started" ? "In progress" : "Not started"}
+                        className={`mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border text-[10px] ${
+                          done
+                            ? "border-emerald-500 bg-emerald-500 text-white"
+                            : item.status === "started"
+                              ? "border-amber-400 bg-amber-50 text-amber-700"
+                              : "border-slate-300 bg-white"
+                        }`}
+                      >
+                        {done ? "✓" : item.status === "started" ? "…" : ""}
+                      </span>
+                      <div>
+                        <div className={`text-sm ${done ? "text-slate-500 line-through" : "text-slate-900"}`}>{planItemLabel(item)}</div>
+                        <div className="text-xs text-slate-500">{done ? "Completed today" : item.reason}</div>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => run(item)}
+                      disabled={busy}
+                      className="shrink-0 rounded border border-slate-300 px-2 py-1 text-xs hover:bg-slate-50 disabled:opacity-60"
+                    >
+                      {done ? "Again" : item.status === "started" ? "Resume" : "Start"}
+                    </button>
+                  </li>
+                );
+              })}
             </ol>
           </div>
 

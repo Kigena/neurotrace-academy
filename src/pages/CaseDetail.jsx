@@ -12,10 +12,11 @@ import StudyNotesButton from "../components/StudyNotesButton.jsx";
 import SimilarCasesButton from "../components/SimilarCasesButton.jsx";
 import caseService from "../services/caseService";
 import apiService from "../services/apiService";
+import caseProgressApi, { loadCaseProgressMap } from "../services/caseProgressApi";
 
 // --- Components ---
 
-const StaticCaseView = ({ eegCase }) => {
+const StaticCaseView = ({ eegCase, onComplete }) => {
   const getAgeDisplay = () => {
     if (eegCase.patient.ageYears < 1) {
       const months = Math.round(eegCase.patient.ageYears * 12);
@@ -76,7 +77,7 @@ const StaticCaseView = ({ eegCase }) => {
 
       {/* Interactive Runner */}
       {eegCase.taskFlow && eegCase.taskFlow.length > 0 && (
-        <CaseRunner caseData={eegCase} />
+        <CaseRunner caseData={eegCase} onComplete={onComplete} />
       )}
 
       {/* Tags */}
@@ -89,7 +90,7 @@ const StaticCaseView = ({ eegCase }) => {
   );
 };
 
-const CommunityCaseView = ({ eegCase, setEegCase }) => {
+const CommunityCaseView = ({ eegCase, setEegCase, onComplete, completed }) => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const canEdit = user && (user.id === eegCase.author?._id || user.role === 'admin');
@@ -116,7 +117,17 @@ const CommunityCaseView = ({ eegCase, setEegCase }) => {
             </button>
           )}
         </div>
-        <h1 className="text-2xl font-bold text-slate-900">{eegCase.title}</h1>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h1 className="text-2xl font-bold text-slate-900">{eegCase.title}</h1>
+          {!completed && onComplete && (
+            <button
+              onClick={() => onComplete({ correct: 0, total: 0 })}
+              className="rounded-md border border-emerald-400 bg-emerald-50 px-3 py-1.5 text-sm font-semibold text-emerald-800 hover:bg-emerald-100"
+            >
+              ✓ Mark as completed
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Patient Context */}
@@ -248,6 +259,22 @@ const CommunityCaseView = ({ eegCase, setEegCase }) => {
   );
 }
 
+/** Shown when the signed-in user has completed this case before. */
+function CaseCompletionBanner({ progress }) {
+  if (!progress) return null;
+  const hasScore = progress.lastTotal > 0;
+  return (
+    <div className="flex flex-wrap items-center gap-2 rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-900">
+      <span className="font-semibold">✓ Completed</span>
+      <span className="text-emerald-800">
+        {new Date(progress.firstCompletedAt).toLocaleDateString()}
+        {hasScore && ` · last score ${progress.lastCorrect}/${progress.lastTotal}, best ${progress.bestCorrect}/${progress.lastTotal}`}
+        {progress.completions > 1 && ` · ${progress.completions} times`}
+      </span>
+    </div>
+  );
+}
+
 // --- Main Container ---
 
 function CaseDetail() {
@@ -257,6 +284,26 @@ function CaseDetail() {
   const [caseType, setCaseType] = useState(null); // 'static' or 'community'
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [progress, setProgress] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadCaseProgressMap().then((map) => {
+      if (!cancelled) setProgress(map[id] || null);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [id]);
+
+  const recordCompletion = async ({ correct, total }) => {
+    try {
+      const saved = await caseProgressApi.complete(id, { correct, total, title: eegCase?.title || "" });
+      setProgress(saved);
+    } catch (err) {
+      console.error("Could not save case progress:", err);
+    }
+  };
 
   useEffect(() => {
     const loadCase = async () => {
@@ -312,10 +359,12 @@ function CaseDetail() {
           <span>←</span> Back to cases
         </Link>
 
+        <CaseCompletionBanner progress={progress} />
+
         {caseType === 'static' ? (
-          <StaticCaseView eegCase={eegCase} />
+          <StaticCaseView eegCase={eegCase} onComplete={recordCompletion} />
         ) : (
-          <CommunityCaseView eegCase={eegCase} setEegCase={setEegCase} />
+          <CommunityCaseView eegCase={eegCase} setEegCase={setEegCase} onComplete={recordCompletion} completed={!!progress} />
         )}
       </section>
 

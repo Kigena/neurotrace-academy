@@ -13,7 +13,7 @@ export function setupTestDb() {
         await mongoose.connect(inject('mongoUri'), { dbName });
         // Build the indexes the invariants under test rely on (unique email,
         // unique questionId/version, one scored attempt per session+question).
-        const needed = ['User', 'Question', 'QuestionVersion', 'BlueprintNode', 'QuizSession', 'AttemptEvent'];
+        const needed = ['User', 'Question', 'QuestionVersion', 'BlueprintNode', 'QuizSession', 'AttemptEvent', 'DailyPlan', 'CaseProgress'];
         await Promise.all(needed.map((name) => mongoose.model(name).createIndexes()));
     });
     afterAll(async () => {

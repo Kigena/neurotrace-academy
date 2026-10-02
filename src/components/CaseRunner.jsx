@@ -6,7 +6,7 @@ import { normalizeStep, stepHeading } from "../utils/caseSteps";
  * CaseRunner Component
  * Renders interactive case simulation with stepper UI for taskFlow
  */
-function CaseRunner({ caseData }) {
+function CaseRunner({ caseData, onComplete }) {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [submittedSteps, setSubmittedSteps] = useState({});
@@ -73,6 +73,16 @@ function CaseRunner({ caseData }) {
   }, [taskFlow, submittedSteps, selectedAnswers]);
 
   const isComplete = currentStepIndex === taskFlow.length - 1 && submittedSteps[currentStep?.stepId];
+
+  // Every step answered: report the case as completed (once per run).
+  const allSubmitted = taskFlow.length > 0 && taskFlow.every((s) => submittedSteps[s.stepId]);
+  const reportedRef = React.useRef(false);
+  React.useEffect(() => {
+    if (allSubmitted && !reportedRef.current && onComplete) {
+      reportedRef.current = true;
+      onComplete({ correct: caseScore.correct, total: caseScore.total });
+    }
+  }, [allSubmitted, caseScore, onComplete]);
 
   if (!caseData) {
     return (

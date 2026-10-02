@@ -6,6 +6,7 @@ import SearchBar from "../components/SearchBar.jsx";
 import CaseCard from "../components/CaseCard.jsx";
 import ContextualAI from "../components/ContextualAI.jsx";
 import caseService from "../services/caseService";
+import { loadCaseProgressMap } from "../services/caseProgressApi";
 
 function Cases() {
   const [searchParams] = useSearchParams();
@@ -13,6 +14,17 @@ function Cases() {
   const [activeTab, setActiveTab] = useState("community"); // 'community' or 'practice'
   const [communityCases, setCommunityCases] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [progressMap, setProgressMap] = useState({});
+
+  useEffect(() => {
+    let cancelled = false;
+    loadCaseProgressMap().then((map) => {
+      if (!cancelled) setProgressMap(map);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // existing filter state for practice cases
   const [difficultyFilter, setDifficultyFilter] = useState("all");
@@ -213,7 +225,7 @@ function Cases() {
           ) : filteredCommunityCases.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 animate-in fade-in">
               {filteredCommunityCases.map((c) => (
-                <CaseCard key={c._id} eegCase={c} />
+                <CaseCard key={c._id} eegCase={c} progress={progressMap[c._id]} />
               ))}
             </div>
           ) : (
@@ -229,7 +241,7 @@ function Cases() {
           filteredPracticeCases.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 animate-in fade-in">
               {filteredPracticeCases.map((c) => (
-                <CaseCard key={c.id} eegCase={c} />
+                <CaseCard key={c.id} eegCase={c} progress={progressMap[c.id]} />
               ))}
             </div>
           ) : (
