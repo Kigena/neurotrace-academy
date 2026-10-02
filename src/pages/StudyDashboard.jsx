@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import studyApi from "../services/studyApi";
 import { EXAM_CONFIG, countdownText, daysUntilExam } from "../config/examConfig";
-import { DOMAIN_ORDER, DOMAIN_SHORT, planItemLabel, sectionTitle, tagTitle, scoreTone } from "../utils/studyLabels";
+import { COMPETENCY_NAMES, DOMAIN_ORDER, DOMAIN_SHORT, planItemLabel, sectionTitle, tagTitle, scoreTone } from "../utils/studyLabels";
 import { startPlanItem } from "../utils/studyActions";
 import { MasteryRow, ReadinessBreakdown, PercentChip } from "../components/StudyWidgets.jsx";
 
@@ -247,6 +247,12 @@ function StudyDashboard() {
             </ol>
           </div>
 
+          {/* Mock exam schedule */}
+          <MockScheduleCard schedule={data.mockSchedule} busy={busy} onStart={() => run({ kind: "mock" })} />
+
+          {/* Adaptive ladder */}
+          <LadderCard ladder={data.ladder} />
+
           {/* Spaced review */}
           <ReviewCard reviews={data.reviews} busy={busy} onStart={(count) => run({ kind: "reviews", count })} />
 
@@ -330,6 +336,106 @@ function relativeDay(ts) {
   const days = Math.ceil((ts - Date.now()) / 86400000);
   if (days <= 0) return "today";
   return days === 1 ? "tomorrow" : `in ${days} days`;
+}
+
+const formatShortDate = (ymd) =>
+  new Date(`${ymd}T12:00:00Z`).toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" });
+
+/** Full mock every 2 weeks, the last one about a week before the exam. */
+function MockScheduleCard({ schedule, busy, onStart }) {
+  if (!schedule) return null;
+  const { slots = [], next, dueNow } = schedule;
+  const done = slots.filter((s) => s.status === "done").length;
+  const tone = {
+    done: "bg-emerald-500 border-emerald-500 text-white",
+    due: "bg-indigo-600 border-indigo-600 text-white",
+    missed: "bg-red-50 border-red-300 text-red-700",
+    upcoming: "bg-white border-slate-300 text-slate-500",
+  };
+  return (
+    <div className="rounded-lg border border-slate-200 bg-white p-5 space-y-3">
+      <div className="flex items-baseline justify-between">
+        <h2 className="text-sm font-semibold text-slate-900">Mock exam schedule</h2>
+        <span className="text-xs text-slate-600">{done}/{slots.length} taken</span>
+      </div>
+      {slots.length === 0 ? (
+        <p className="text-sm text-slate-500">No more mocks before the exam.</p>
+      ) : (
+        <ol className="space-y-1.5">
+          {slots.map((s, idx) => (
+            <li key={s.date} className="flex items-center gap-2 text-sm">
+              <span className={`inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[10px] font-bold ${tone[s.status]}`}>
+                {s.status === "done" ? "✓" : idx + 1}
+              </span>
+              <span className={s.status === "missed" ? "text-red-700" : "text-slate-800"}>
+                {formatShortDate(s.date)}
+                {idx === slots.length - 1 ? " · final" : ""}
+              </span>
+              <span className="ml-auto text-xs text-slate-500">
+                {s.status === "done"
+                  ? `${s.mock?.percent ?? "—"}%`
+                  : s.status === "due"
+                    ? "due now"
+                    : s.status === "missed"
+                      ? "missed"
+                      : s.canTakeEarly
+                        ? "can take now"
+                        : "upcoming"}
+              </span>
+            </li>
+          ))}
+        </ol>
+      )}
+      {next && (dueNow || next.canTakeEarly) && (
+        <button
+          onClick={onStart}
+          disabled={busy}
+          className="w-full rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-60"
+        >
+          START 130-QUESTION MOCK
+        </button>
+      )}
+      <p className="text-xs text-slate-500">
+        Timed like the real exam. Each mock recalibrates your plan and readiness score.
+      </p>
+    </div>
+  );
+}
+
+const LEVELS = [3, 4, 5, 6];
+
+/** Current difficulty rung per higher-order skill (moves with your answers). */
+function LadderCard({ ladder }) {
+  if (!ladder) return null;
+  return (
+    <div className="rounded-lg border border-slate-200 bg-white p-5 space-y-3">
+      <h2 className="text-sm font-semibold text-slate-900">Level ladder</h2>
+      {Object.keys(COMPETENCY_NAMES).map((key) => {
+        const s = ladder[key];
+        const rung = s?.rung ?? 4;
+        return (
+          <div key={key} className="space-y-1">
+            <div className="flex items-baseline justify-between text-xs">
+              <span className="text-slate-800">{COMPETENCY_NAMES[key]}</span>
+              <span className="text-slate-500">{s ? `L${rung} · ${s.attempts} answers` : "starts at L4"}</span>
+            </div>
+            <div className="flex gap-1">
+              {LEVELS.map((l) => (
+                <div
+                  key={l}
+                  title={`L${l}`}
+                  className={`h-2 flex-1 rounded ${l < rung ? "bg-indigo-300" : l === rung ? "bg-indigo-600" : "bg-slate-100"}`}
+                />
+              ))}
+            </div>
+          </div>
+        );
+      })}
+      <p className="text-xs text-slate-500">
+        Two correct in a row at your level moves you up; a miss steps you down and adds an easier question on the same topic.
+      </p>
+    </div>
+  );
 }
 
 /** Spaced repetition: missed and guessed questions return at 1/3/7/16/35 days. */

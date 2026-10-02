@@ -311,6 +311,16 @@ function QuizSession() {
             confidence,
           },
         }));
+        // Adaptive ladder: an easier (or back-up) question placed right after this one.
+        if (res.inserted?.question) {
+          setQuestions((prev) => {
+            if (prev.some((q) => q.questionId === res.inserted.question.questionId)) return prev;
+            const at = prev.findIndex((q) => q.questionId === res.inserted.afterQuestionId);
+            const next = [...prev];
+            next.splice(at < 0 ? next.length : at + 1, 0, res.inserted.question);
+            return next;
+          });
+        }
       }
     } catch (err) {
       setAnswers((prev) => {
@@ -961,11 +971,21 @@ function QuizSession() {
                   <span className="text-xs px-2 py-1 rounded bg-indigo-100 text-indigo-800">
                     {levelLabel(currentQuestion.cognitiveLevel)}
                   </span>
-                ) : (
+                ) : null}
+                {currentQuestion.adaptive?.role === "step-down" ? (
+                  <span className="text-xs px-2 py-1 rounded bg-amber-100 text-amber-800" title="Added after a miss: the same topic one level lower">
+                    ↓ Step down: build the basics
+                  </span>
+                ) : currentQuestion.adaptive?.role === "climb-up" ? (
+                  <span className="text-xs px-2 py-1 rounded bg-emerald-100 text-emerald-800" title="You recovered: back up to the original level">
+                    ↑ Back up to L{currentQuestion.adaptive.fromLevel}
+                  </span>
+                ) : null}
+                {!currentQuestion.cognitiveLevel ? (
                   <span className="text-xs px-2 py-1 rounded bg-blue-100 text-blue-800">
                     {currentQuestion.difficulty}
                   </span>
-                )}
+                ) : null}
                 {currentQuestion.topicTags?.includes("calc-beyond") && (
                   <span
                     className="text-xs px-2 py-1 rounded bg-slate-100 text-slate-600"

@@ -11,6 +11,7 @@ import { buildStudyProfile, selectWeakAreas } from '../services/studyAnalytics.j
 import { buildReviewQueue, CONFIDENCE_LEVELS, selectMisconceptionDrill } from '../services/reinforcement.js';
 import { describeMisconception, errorCodeFor, isMisconceptionCode } from '../services/misconceptions.js';
 import { completePlanItem, findTodaysItem, startPlanItem } from '../services/dailyPlan.js';
+import { ladderRungs, levelMixForRung, MAX_ADAPTIVE_INSERTS, MIN_LEVEL, pickAdaptiveQuestion } from '../services/adaptiveLadder.js';
 import {
     DOMAIN_QUICKSTART,
     EXPIRY_GRACE_MS,
@@ -106,7 +107,7 @@ async function buildActivePayload(session) {
     const questions = session.items
         .map((item) => {
             const q = qmap.get(item.questionId);
-            return q ? toPublicQuestion(q, item.optionOrder) : null;
+            return q ? withAdaptive(toPublicQuestion(q, item.optionOrder), item) : null;
         })
         .filter(Boolean);
 
@@ -167,6 +168,69 @@ function resultToPlain(result) {
             byDifficulty: conv(result.breakdown?.byDifficulty),
         },
     };
+}
+
+function withAdaptive(publicQuestion, item) {
+    return item.adaptive?.role ? { ...publicQuestion, adaptive: { role: item.adaptive.role, fromLevel: item.adaptive.fromLevel } } : publicQuestion;
+}
+
+/**
+ * Adaptive ladder: after a miss on an L4-L6 Challenge question insert an
+ * easier question on the same topic right after it; after a correct
+ * step-down answer insert one back at the original level. Returns the
+ * inserted public question, or null.
+ */
+async function insertAdaptiveQuestion(session, item, q, isCorrect, userId) {
+    if (session.mode !== 'practice' || !Number.isInteger(q.cognitiveLevel) || q.bank !== 'challenge') return null;
+    if (session.items.filter((i) => i.adaptive?.role).length >= MAX_ADAPTIVE_INSERTS) return null;
+
+    let role;
+    let targetLevel;
+    if (!isCorrect && q.cognitiveLevel > MIN_LEVEL) {
+        role = 'step-down';
+        targetLevel = q.cognitiveLevel - 1;
+    } else if (isCorrect && item.adaptive?.role === 'step-down' && item.adaptive.fromLevel > q.cognitiveLevel) {
+        role = 'climb-up';
+        targetLevel = item.adaptive.fromLevel;
+    } else {
+        return null;
+    }
+
+    const [pool, events] = await Promise.all([
+        Question.find({ ...CHALLENGE_POOL, cognitiveLevel: { $in: [targetLevel, targetLevel - 1] } }).select(POOL_FIELDS).lean(),
+        AttemptEvent.find({ userId }).sort({ timestamp: -1 }).limit(2000).select(REINFORCEMENT_EVENT_FIELDS).lean(),
+    ]);
+    const pick = pickAdaptiveQuestion(pool, {
+        failed: q,
+        targetLevel,
+        excludeIds: new Set(session.items.map((i) => i.questionId)),
+        events,
+        allowLower: role === 'step-down',
+    });
+    if (!pick) return null;
+
+    const full = await Question.findOne({ questionId: pick.questionId }).select(CONTENT_FIELDS).lean();
+    if (!full) return null;
+    const fromLevel = role === 'step-down' ? (item.adaptive?.role === 'step-down' ? item.adaptive.fromLevel : q.cognitiveLevel) : targetLevel;
+    const newItem = {
+        questionId: full.questionId,
+        questionVersion: full.version ?? null,
+        optionOrder: buildOptionOrder(full.options, true),
+        adaptive: { role, fromLevel, parentId: q.questionId },
+    };
+    const position = session.items.findIndex((i) => i.questionId === item.questionId) + 1;
+    const res = await QuizSession.updateOne(
+        { _id: session._id, status: 'active', questionIds: { $ne: full.questionId } },
+        {
+            $push: {
+                items: { $each: [newItem], $position: position },
+                questionIds: { $each: [full.questionId], $position: position },
+            },
+            $set: { updatedAt: new Date() },
+        }
+    );
+    if (!res.modifiedCount) return null;
+    return { afterQuestionId: item.questionId, question: withAdaptive(toPublicQuestion(full, newItem.optionOrder), newItem) };
 }
 
 /** Misconception code for a wrong canonical choice, or undefined. */
@@ -382,7 +446,15 @@ router.post('/sessions', async (req, res) => {
             }
             mode = 'practice';
             timeLimitSec = null;
-            selected = selectChallenge(challengePool, size);
+            // Focused on one competency: centre the level mix on its ladder rung.
+            let mix;
+            if (competencies.length === 1) {
+                const events = await AttemptEvent.find({ userId: req.user.id, bank: 'challenge' }).sort({ timestamp: -1 }).limit(2000)
+                    .select('isCorrect timestamp cognitiveLevel competency').lean();
+                const rung = ladderRungs(events)[competencies[0]]?.rung;
+                if (rung) mix = levelMixForRung(rung);
+            }
+            selected = selectChallenge(challengePool, size, Math.random, mix);
             config = { domains: [], sections: [], tags: calcDrill ? [...competencies, CALC_CORE_TAG] : competencies, difficulty: [], shuffle: true, questionCount: selected.length };
         } else if (kind === 'weak-areas') {
             const size = Number.parseInt(body.questionCount, 10);
@@ -592,10 +664,11 @@ router.post('/sessions/:sessionId/answers', async (req, res) => {
             }
 
             await insertAttemptsIgnoringDuplicates([attemptEventFor(session, req.user.id, q, answer)]);
-            if (updated.planItemId && Object.keys(answersToObject(updated.answers)).length >= updated.items.length) {
+            const inserted = await insertAdaptiveQuestion(updated, item, q, answer.isCorrect, req.user.id);
+            if (!inserted && updated.planItemId && Object.keys(answersToObject(updated.answers)).length >= updated.items.length) {
                 await completePlanItem(req.user.id, updated.planDate, updated.planItemId, updated.sessionId);
             }
-            return res.json(feedback(answer.isCorrect, originalIndex));
+            return res.json({ ...feedback(answer.isCorrect, originalIndex), inserted });
         }
 
         // Timed / mock: answers may change until submission; no feedback.

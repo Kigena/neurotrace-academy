@@ -24,6 +24,11 @@ const itemSchema = new mongoose.Schema({
     questionVersion: { type: Number, default: null },
     // optionOrder[displayIndex] = canonical option index
     optionOrder: { type: [Number], default: [] },
+    // Inserted by the adaptive ladder: 'step-down' after a miss, 'climb-up' after recovering.
+    adaptive: {
+        type: new mongoose.Schema({ role: String, fromLevel: Number, parentId: String }, { _id: false }),
+        default: undefined,
+    },
 }, { _id: false });
 
 const breakdownEntry = {

@@ -188,10 +188,10 @@ function sampleByDomainWeight(list, k, rng) {
  * favoured in proportion to their ABRET weight, and beyond-exam calculations
  * are down-weighted.
  */
-export function selectChallenge(pool, n, rng = Math.random) {
+export function selectChallenge(pool, n, rng = Math.random, mix = CHALLENGE_LEVEL_MIX) {
     const eligible = pool.filter((q) => Number.isInteger(q.cognitiveLevel) && q.cognitiveLevel >= 3 && q.cognitiveLevel <= 6);
     const target = Math.min(n, eligible.length);
-    const alloc = allocateChallengeLevels(target);
+    const alloc = allocateChallengeLevels(target, mix);
     const picked = [];
     for (const [level, count] of Object.entries(alloc)) {
         picked.push(...sampleByDomainWeight(eligible.filter((q) => q.cognitiveLevel === Number(level)), count, rng));

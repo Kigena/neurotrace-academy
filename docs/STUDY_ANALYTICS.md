@@ -167,3 +167,34 @@ appear on the dashboard with a 5-question drill (session kind `misconception`:
 unseen questions first, then missed, skipping ones answered correctly in the
 last 3 days).
 
+## Adaptive ladder (server/src/services/adaptiveLadder.js)
+
+Within a Challenge practice session: a miss on an L4-L6 question inserts a
+**step-down** question one level lower right after it (same section, else
+same competency and domain, else same competency; one further level down if
+none), skipping questions already in the session or answered correctly in the
+last 3 days. A correct step-down answer inserts a **climb-up** question back at
+the original level. At most 6 inserts per session; inserted items count in the
+session score.
+
+Across sessions each competency has a rung (start L4, range L3-L6): two
+consecutive correct answers at or above the rung move it up; a miss at or
+below it moves it down. A Challenge session focused on one competency uses the
+level mix rung−1 25% · rung 50% · rung+1 25% (clamped), instead of the default.
+
+## Mock exam schedule (server/src/services/mockSchedule.js)
+
+Full 130-question mock every 14 days from the first full mock (or today), the
+last one 7 days before the exam (2026-12-07 for 2026-12-14); a final slot never
+falls within 7 days of the previous one. A slot runs from 6 days before its
+target to 7 days after; the first full mock submitted in it completes it,
+otherwise it becomes "missed". A due mock is added at the end of Today's Study.
+
+## Today's Study tracking
+
+Saved per user per New York calendar day (`DailyPlan`). The plan follows the
+latest analytics until an item is started, then stays fixed for the day.
+Sessions started from an item carry `planItemId`; answering every question or
+submitting marks it done. Clinical case completions are stored in
+`CaseProgress` (`/api/case-progress`).
+
