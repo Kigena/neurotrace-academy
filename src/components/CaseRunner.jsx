@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { normalizeStep, stepHeading } from "../utils/caseSteps";
 
 /**
  * CaseRunner Component
@@ -11,7 +12,10 @@ function CaseRunner({ caseData }) {
   const [submittedSteps, setSubmittedSteps] = useState({});
   const [stepStartTimes, setStepStartTimes] = useState({});
 
-  const taskFlow = caseData.taskFlow || [];
+  const taskFlow = useMemo(
+    () => (caseData.taskFlow || []).map((step, idx) => normalizeStep(step, idx, caseData.id)),
+    [caseData.taskFlow, caseData.id]
+  );
   const currentStep = taskFlow[currentStepIndex];
 
   // Initialize step start time
@@ -144,9 +148,10 @@ function CaseRunner({ caseData }) {
             <div className="text-xs text-slate-500 mb-1">
               Step {currentStepIndex + 1} of {taskFlow.length}
             </div>
-            <h3 className="text-sm font-semibold text-slate-900 mb-1">
-              {currentStep.type.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())}
-            </h3>
+            <h3 className="text-sm font-semibold text-slate-900 mb-1">{stepHeading(currentStep, currentStepIndex)}</h3>
+            {currentStep.description && (
+              <p className="text-sm text-slate-600 mb-2">{currentStep.description}</p>
+            )}
             <p className="text-sm text-slate-700">{currentStep.prompt}</p>
           </div>
 
