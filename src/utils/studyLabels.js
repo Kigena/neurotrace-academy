@@ -77,6 +77,8 @@ export function planItemLabel(item) {
       return `Review ${item.count} incorrect question${item.count === 1 ? "" : "s"}`;
     case "mixed":
       return `${item.count}-question mixed ABRET quiz`;
+    case "diagnostic":
+      return "40-question diagnostic (all domains and skills)";
     case "mock":
       return "Full 130-question mock exam (scheduled)";
     case "reviews":

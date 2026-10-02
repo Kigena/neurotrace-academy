@@ -253,7 +253,7 @@ function bump(map, key, isCorrect, answered) {
  */
 export function scoreSession(items, answers, questions) {
     const get = (id) => (answers instanceof Map ? answers.get(id) : answers?.[id]);
-    const breakdown = { byDomain: {}, bySection: {}, byTag: {}, byDifficulty: {} };
+    const breakdown = { byDomain: {}, bySection: {}, byTag: {}, byDifficulty: {}, byCompetency: {} };
     const perQuestion = {};
     let correct = 0;
     let attempted = 0;
@@ -271,6 +271,7 @@ export function scoreSession(items, answers, questions) {
         bump(breakdown.byDomain, q.domainId, isCorrect, answered);
         bump(breakdown.bySection, q.sectionId, isCorrect, answered);
         bump(breakdown.byDifficulty, q.difficulty, isCorrect, answered);
+        bump(breakdown.byCompetency, q.competency, isCorrect, answered);
         for (const tag of q.topicTags || []) bump(breakdown.byTag, tag, isCorrect, answered);
     }
 

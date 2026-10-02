@@ -17,6 +17,8 @@ export async function startPlanItem(item, navigate) {
     body = { kind: "custom", mode: "practice", questionCount: count, filters: { domains: [item.domainId] } };
   } else if (item.kind === "weak") {
     body = { kind: "weak-areas", questionCount: count };
+  } else if (item.kind === "diagnostic") {
+    body = { kind: "diagnostic" };
   } else if (item.kind === "mock") {
     body = { kind: "preset", presetId: item.presetId || "mock-full-130" };
   } else if (item.kind === "reviews") {

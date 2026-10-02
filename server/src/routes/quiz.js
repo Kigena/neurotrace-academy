@@ -11,6 +11,7 @@ import { buildStudyProfile, selectWeakAreas } from '../services/studyAnalytics.j
 import { buildReviewQueue, CONFIDENCE_LEVELS, selectMisconceptionDrill } from '../services/reinforcement.js';
 import { describeMisconception, errorCodeFor, isMisconceptionCode } from '../services/misconceptions.js';
 import { completePlanItem, findTodaysItem, startPlanItem } from '../services/dailyPlan.js';
+import { DIAGNOSTIC_TIME_LIMIT_SEC, selectDiagnostic } from '../services/diagnostic.js';
 import { ladderRungs, levelMixForRung, MAX_ADAPTIVE_INSERTS, MIN_LEVEL, pickAdaptiveQuestion } from '../services/adaptiveLadder.js';
 import {
     DOMAIN_QUICKSTART,
@@ -166,6 +167,7 @@ function resultToPlain(result) {
             bySection: conv(result.breakdown?.bySection),
             byTag: conv(result.breakdown?.byTag),
             byDifficulty: conv(result.breakdown?.byDifficulty),
+            byCompetency: conv(result.breakdown?.byCompetency),
         },
     };
 }
@@ -400,7 +402,7 @@ router.post('/sessions', async (req, res) => {
 
         // Spaced review and misconception drills may draw on either bank.
         const poolQuery = kind === 'challenge' ? CHALLENGE_POOL
-            : kind === 'review-due' || kind === 'misconception' ? SERVABLE
+            : kind === 'review-due' || kind === 'misconception' || kind === 'diagnostic' ? SERVABLE
                 : FOUNDATION_POOL;
         const pool = await Question.find(poolQuery).select(POOL_FIELDS).lean();
         if (!pool.length) {
@@ -469,6 +471,13 @@ router.post('/sessions', async (req, res) => {
             mode = 'practice';
             timeLimitSec = null;
             selected = selectWeakAreas(pool, buildStudyProfile(events), size);
+            config = { domains: [], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
+        } else if (kind === 'diagnostic') {
+            const events = await AttemptEvent.find({ userId: req.user.id }).sort({ timestamp: -1 }).limit(5000)
+                .select('sectionId').lean();
+            selected = selectDiagnostic(pool, events);
+            mode = 'timed';
+            timeLimitSec = DIAGNOSTIC_TIME_LIMIT_SEC;
             config = { domains: [], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
         } else if (kind === 'review-due') {
             const size = Number.parseInt(body.questionCount, 10);

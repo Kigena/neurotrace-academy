@@ -247,6 +247,9 @@ function StudyDashboard() {
             </ol>
           </div>
 
+          {/* Diagnostic */}
+          <DiagnosticCard diagnostic={data.diagnostic} busy={busy} onStart={() => run({ kind: "diagnostic" })} />
+
           {/* Mock exam schedule */}
           <MockScheduleCard schedule={data.mockSchedule} busy={busy} onStart={() => run({ kind: "mock" })} />
 
@@ -398,6 +401,68 @@ function MockScheduleCard({ schedule, busy, onStart }) {
       <p className="text-xs text-slate-500">
         Timed like the real exam. Each mock recalibrates your plan and readiness score.
       </p>
+    </div>
+  );
+}
+
+/** One-time (then every 3+ weeks) 40-question check across domains and skills. */
+function DiagnosticCard({ diagnostic, busy, onStart }) {
+  if (!diagnostic) return null;
+  const startButton = (label) => (
+    <button
+      onClick={onStart}
+      disabled={busy}
+      className="w-full rounded-md border border-indigo-300 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-900 hover:bg-indigo-100 disabled:opacity-60"
+    >
+      {label}
+    </button>
+  );
+  if (!diagnostic.taken) {
+    return (
+      <div className="rounded-lg border border-slate-200 bg-white p-5 space-y-3">
+        <h2 className="text-sm font-semibold text-slate-900">Diagnostic</h2>
+        <p className="text-sm text-slate-700">
+          40 questions, about 60 minutes, no feedback until the end. It checks all four domains and all four skills, so your
+          readiness score and weak areas are based on evidence instead of guesses.
+        </p>
+        {startButton("START DIAGNOSTIC")}
+      </div>
+    );
+  }
+  const domainRows = DOMAIN_ORDER.filter((d) => diagnostic.byDomain?.[d]);
+  const compRows = Object.keys(COMPETENCY_NAMES).filter((c) => diagnostic.byCompetency?.[c]);
+  const bar = (pct) => (
+    <div className="h-1.5 flex-1 rounded bg-slate-100">
+      <div className={`h-1.5 rounded ${scoreTone(pct).bar}`} style={{ width: `${pct ?? 0}%` }} />
+    </div>
+  );
+  return (
+    <div className="rounded-lg border border-slate-200 bg-white p-5 space-y-3">
+      <div className="flex items-baseline justify-between">
+        <h2 className="text-sm font-semibold text-slate-900">Diagnostic</h2>
+        <span className="text-xs text-slate-500">
+          {new Date(diagnostic.endTime).toLocaleDateString()} · {diagnostic.correct}/{diagnostic.total} ({diagnostic.percent}%)
+        </span>
+      </div>
+      <div className="space-y-1.5">
+        {domainRows.map((d) => (
+          <div key={d} className="flex items-center gap-2 text-xs">
+            <span className="w-28 shrink-0 text-slate-700">{DOMAIN_SHORT[d]}</span>
+            {bar(diagnostic.byDomain[d].percent)}
+            <span className="w-10 text-right text-slate-600">{diagnostic.byDomain[d].percent}%</span>
+          </div>
+        ))}
+        {compRows.map((c) => (
+          <div key={c} className="flex items-center gap-2 text-xs">
+            <span className="w-28 shrink-0 text-slate-700">{COMPETENCY_NAMES[c]}</span>
+            {bar(diagnostic.byCompetency[c].percent)}
+            <span className="w-10 text-right text-slate-600">{diagnostic.byCompetency[c].percent}%</span>
+          </div>
+        ))}
+      </div>
+      {diagnostic.retakeSuggested
+        ? startButton("RETAKE DIAGNOSTIC")
+        : <p className="text-xs text-slate-500">A retake is suggested 3 weeks after the last one, to measure progress.</p>}
     </div>
   );
 }

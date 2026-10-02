@@ -18,6 +18,7 @@ import { describeMisconception, errorCodeFor } from '../services/misconceptions.
 import { getTodaysPlan, planDateFor } from '../services/dailyPlan.js';
 import { ladderRungs } from '../services/adaptiveLadder.js';
 import { buildMockSchedule, FULL_MOCK_PRESET } from '../services/mockSchedule.js';
+import { diagnosticSummary } from '../services/diagnostic.js';
 
 // Single-user study dashboard, incorrect-answer review and retry.
 // Every query is scoped to the authenticated user.
@@ -89,6 +90,9 @@ router.get('/dashboard', async (req, res) => {
         const activeMistakes = mistakes.filter((m) => m.active);
 
         const mockSchedule = buildMockSchedule({ mocks: mocks.filter((m) => m.presetId === FULL_MOCK_PRESET) });
+        const lastDiagnostic = await QuizSession.findOne({ userId: req.user.id, kind: 'diagnostic', status: 'submitted' })
+            .sort({ endTime: -1 }).select('sessionId endTime result').lean();
+        const diagnostic = diagnosticSummary(lastDiagnostic);
         const ladder = ladderRungs(events.filter((e) => e.bank === 'challenge'));
 
         // Today's Study: persisted per day so completed items stay marked.
@@ -100,6 +104,10 @@ router.get('/dashboard', async (req, res) => {
             reviewsDue: reviews.dueNow,
             misconception: activeMistakes.find((m) => m.questionsAvailable > 0) || null,
         });
+        // Never taken a diagnostic: suggest it (it fills in the mastery map).
+        if (!diagnostic.taken) {
+            freshPlan.push({ kind: 'diagnostic', count: 40, reason: 'One-time 40-question check across all domains and skills' });
+        }
         // A due scheduled mock goes last: it is long, and the shorter items warm up for it.
         if (mockSchedule.dueNow) {
             freshPlan.push({ kind: 'mock', count: 130, reason: `Scheduled full mock exam (target ${mockSchedule.next.date})` });
@@ -140,6 +148,7 @@ router.get('/dashboard', async (req, res) => {
             },
             mockSchedule,
             ladder,
+            diagnostic,
             todaysStudy,
             todaysProgress: {
                 done: todaysStudy.filter((i) => i.status === 'done').length,

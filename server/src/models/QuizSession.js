@@ -46,7 +46,7 @@ const quizSessionSchema = new mongoose.Schema({
     sessionId: { type: String, required: true, unique: true },
     engineVersion: { type: Number, default: 1 },
     mode: { type: String, enum: ['practice', 'timed', 'mock'], required: true },
-    kind: { type: String, enum: ['custom', 'domain-quickstart', 'preset', 'weak-areas', 'challenge', 'review-due', 'misconception', null], default: null },
+    kind: { type: String, enum: ['custom', 'domain-quickstart', 'preset', 'weak-areas', 'challenge', 'review-due', 'misconception', 'diagnostic', null], default: null },
     presetId: { type: String, default: null },
     // Set when the session was started from a Today's Study item.
     planDate: { type: String, default: null },
@@ -90,6 +90,7 @@ const quizSessionSchema = new mongoose.Schema({
             bySection: breakdownEntry,
             byTag: breakdownEntry,
             byDifficulty: breakdownEntry,
+            byCompetency: breakdownEntry,
         },
     },
     xpAwarded: { type: Boolean, default: false },

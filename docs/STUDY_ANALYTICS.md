@@ -198,3 +198,14 @@ Sessions started from an item carry `planItemId`; answering every question or
 submitting marks it done. Clinical case completions are stored in
 `CaseProgress` (`/api/case-progress`).
 
+## Diagnostic (server/src/services/diagnostic.js)
+
+40 questions, timed 60 min, no feedback until submission (session kind
+`diagnostic`). 20 Challenge questions, 5 per competency at L3/L4/L4/L5/L5
+(enough to assess all four higher-order readiness components), plus 20
+foundation questions split 3/9/4/4 by domain weight, one per section, choosing
+the sections the user has answered least. Results (overall, by domain, by
+competency via `result.breakdown.byCompetency`) appear on the dashboard; a
+retake is suggested after 21 days. Until the first diagnostic is taken it is
+offered in Today's Study (before any due mock).
+

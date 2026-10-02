@@ -885,7 +885,9 @@ function QuizSession() {
           <h1 className="text-xl font-bold text-slate-900">
             {session.kind === "challenge"
               ? "ABRET Challenge"
-              : session.kind === "review-due"
+              : session.kind === "diagnostic"
+                ? "ABRET Diagnostic"
+                : session.kind === "review-due"
                 ? "Spaced Review"
                 : session.kind === "misconception"
                   ? "Mistake Drill"
