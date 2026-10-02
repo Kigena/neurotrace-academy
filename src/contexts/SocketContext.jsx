@@ -71,18 +71,25 @@ export const SocketProvider = ({ children }) => {
 
         // The server authenticates the socket from this token and derives the
         // user's identity itself; client-sent user ids are ignored.
+        // Polling first, then upgrade to WebSocket: the hosted API sleeps when
+        // idle and takes ~30-60 s to wake. An HTTP poll waits out the wake-up,
+        // whereas each failed raw WebSocket attempt logs a browser error.
+        // Keep retrying with backoff instead of giving up after a few tries.
         const newSocket = io(socketUrl, {
             auth: (cb) => cb({ token: localStorage.getItem('token') }),
-            transports: ['websocket', 'polling'],
+            transports: ['polling', 'websocket'],
             reconnection: true,
-            reconnectionAttempts: 10,
-            reconnectionDelay: 1000,
-            reconnectionDelayMax: 5000,
-            timeout: 20000
+            reconnectionAttempts: Infinity,
+            reconnectionDelay: 2000,
+            reconnectionDelayMax: 30000,
+            randomizationFactor: 0.5,
+            timeout: 60000
         });
+        let failedAttempts = 0;
 
         newSocket.on('connect', () => {
-            console.log('Socket connected');
+            console.log(failedAttempts ? `Socket connected after ${failedAttempts} retries` : 'Socket connected');
+            failedAttempts = 0;
             setIsConnected(true);
             newSocket.emit('user:online', { userId: user.id, userName: user.name });
         });
@@ -100,28 +107,18 @@ export const SocketProvider = ({ children }) => {
         });
 
         newSocket.on('connect_error', (error) => {
-            console.error('❌ Socket connection error:', error.message);
+            failedAttempts += 1;
             setIsConnected(false);
+            // One line while the server wakes up, then only occasionally.
+            if (failedAttempts === 1) console.warn('Realtime server not reachable yet (it may be waking up); retrying…');
+            else if (failedAttempts % 10 === 0) console.warn(`Realtime server still unreachable after ${failedAttempts} attempts:`, error.message);
         });
 
-        newSocket.on('reconnect', (attemptNumber) => {
-            console.log('✅ Socket reconnected after', attemptNumber, 'attempts');
+        // Reconnection events are emitted by the Manager (socket.io v4), not the socket.
+        newSocket.io.on('reconnect', () => {
             setIsConnected(true);
             // Re-announce user online status
             newSocket.emit('user:online', { userId: user.id, userName: user.name });
-        });
-
-        newSocket.on('reconnect_attempt', (attemptNumber) => {
-            console.log('🔄 Reconnection attempt', attemptNumber);
-        });
-
-        newSocket.on('reconnect_error', (error) => {
-            console.error('❌ Reconnection error:', error.message);
-        });
-
-        newSocket.on('reconnect_failed', () => {
-            console.error('❌ Failed to reconnect after all attempts');
-            setIsConnected(false);
         });
 
         newSocket.on('users:online', (users) => {
