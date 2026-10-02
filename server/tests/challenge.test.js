@@ -250,6 +250,16 @@ describe('Challenge mode and QA statuses (API)', () => {
         const retired = await Question.findOne({ questionId: offScope.questionId }).lean();
         expect(retired.qaFlags.some((f) => f.source === 'manual' && f.code === 'OFF_SCOPE')).toBe(true);
 
+        // Retired duplicates do not flag the copy kept in service.
+        const servableDup = await Question.countDocuments({
+            qaStatus: { $nin: ['NEEDS_REVISION', 'REJECTED'] },
+            qaFlags: { $elemMatch: { code: 'DUPLICATE_STEM', source: 'auto' } },
+        });
+        expect(servableDup).toBe(0);
+        const keeperGroup = rejected.find((i) => i.code === 'DUPLICATE_STEM');
+        const keeperId = /Duplicate of (\S+?) /.exec(keeperGroup.detail)[1];
+        expect((await Question.findOne({ questionId: keeperId }).lean()).qaFlags.some((f) => f.code === 'DUPLICATE_STEM')).toBe(false);
+
         const again = await runQuestionAudit({ dryRun: false });
         expect(again.knownIssuesApplied).toBe(0);
         const retired2 = await Question.findOne({ questionId: offScope.questionId }).lean();

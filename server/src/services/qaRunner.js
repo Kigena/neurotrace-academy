@@ -17,9 +17,12 @@ export async function runQuestionAudit({ dryRun = true, filter = {} } = {}) {
     const docs = await Question.find(filter)
         .select('questionId stem options bank qaStatus qaFlags +answerIndex +explanation')
         .lean();
-    const audit = auditBank(docs);
-    const byId = new Map(audit.results.map((r) => [r.id, r.flags]));
     const known = new Map(getKnownIssues().map((k) => [k.questionId, k]));
+    // Retired (REJECTED) copies do not count toward duplicate stems, so the
+    // single copy kept in service is not flagged because of them.
+    const retired = (d) => d.qaStatus === 'REJECTED' || known.get(d.questionId)?.qaStatus === 'REJECTED';
+    const audit = auditBank(docs, { stemPool: docs.filter((d) => !retired(d)) });
+    const byId = new Map(audit.results.map((r) => [r.id, r.flags]));
 
     let flagsWritten = 0;
     let statusChanged = 0;

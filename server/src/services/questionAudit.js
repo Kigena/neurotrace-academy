@@ -143,9 +143,13 @@ export function buildStemCounts(questions) {
     return counts;
 }
 
-/** Audit a whole bank; returns per-question flags and a summary. */
-export function auditBank(questions) {
-    const stemCounts = buildStemCounts(questions);
+/**
+ * Audit a whole bank; returns per-question flags and a summary. Duplicate
+ * stems are counted within `stemPool` (default: the audited questions), so
+ * retired copies can be excluded and do not flag the copy kept in service.
+ */
+export function auditBank(questions, { stemPool = questions } = {}) {
+    const stemCounts = buildStemCounts(stemPool);
     const results = questions.map((q) => ({ id: q.id ?? q.questionId, flags: auditQuestion(q, { stemCounts }) }));
     const byCode = {};
     for (const r of results) for (const f of r.flags) byCode[f.code] = (byCode[f.code] || 0) + 1;
