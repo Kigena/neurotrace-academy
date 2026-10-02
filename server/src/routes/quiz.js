@@ -8,6 +8,8 @@ import { Question } from '../models/Question.js';
 import GamificationService from '../services/gamificationService.js';
 import { BLUEPRINT_KEY } from '../blueprint/abret2026.js';
 import { buildStudyProfile, selectWeakAreas } from '../services/studyAnalytics.js';
+import { buildReviewQueue, CONFIDENCE_LEVELS, selectMisconceptionDrill } from '../services/reinforcement.js';
+import { describeMisconception, errorCodeFor, isMisconceptionCode } from '../services/misconceptions.js';
 import {
     DOMAIN_QUICKSTART,
     EXPIRY_GRACE_MS,
@@ -35,6 +37,9 @@ router.use(auth);
 
 const MODES = ['practice', 'timed', 'mock'];
 const WEAK_AREA_SIZES = [10, 20, 30];
+const REVIEW_SIZES = [10, 20];
+const DRILL_SIZES = [5, 10];
+const REINFORCEMENT_EVENT_FIELDS = 'questionId isCorrect timestamp confidence errorCode';
 const POOL_FIELDS = 'questionId domainId sectionId topicTags difficulty origin.sourceOrder bank cognitiveLevel competency';
 const CONTENT_FIELDS = 'questionId domainId sectionId topicTags difficulty stem options version bank cognitiveLevel competency';
 
@@ -114,6 +119,8 @@ async function buildActivePayload(session) {
             entry.isCorrect = a.isCorrect;
             entry.correctIndex = displayIndexOf(item.optionOrder, q.answerIndex);
             entry.explanation = q.explanation || '';
+            const code = a.isCorrect ? null : errorCodeOf(q, a.originalIndex);
+            entry.misconception = code ? describeMisconception(code) : null;
         }
         savedAnswers[item.questionId] = entry;
     }
@@ -161,6 +168,12 @@ function resultToPlain(result) {
     };
 }
 
+/** Misconception code for a wrong canonical choice, or undefined. */
+function errorCodeOf(q, originalIndex) {
+    if (originalIndex === q.answerIndex) return undefined;
+    return errorCodeFor(q.questionId, q.options?.[originalIndex]) || undefined;
+}
+
 function attemptEventFor(session, userId, q, answer) {
     return {
         userId,
@@ -180,6 +193,8 @@ function attemptEventFor(session, userId, q, answer) {
         mode: session.mode,
         sessionId: session.sessionId,
         scoredBy: 'server',
+        confidence: CONFIDENCE_LEVELS.includes(answer.confidence) ? answer.confidence : undefined,
+        errorCode: errorCodeOf(q, answer.originalIndex),
     };
 }
 
@@ -317,7 +332,11 @@ router.post('/sessions', async (req, res) => {
         let shuffleOptions = true;
         let config;
 
-        const pool = await Question.find(kind === 'challenge' ? CHALLENGE_POOL : FOUNDATION_POOL).select(POOL_FIELDS).lean();
+        // Spaced review and misconception drills may draw on either bank.
+        const poolQuery = kind === 'challenge' ? CHALLENGE_POOL
+            : kind === 'review-due' || kind === 'misconception' ? SERVABLE
+                : FOUNDATION_POOL;
+        const pool = await Question.find(poolQuery).select(POOL_FIELDS).lean();
         if (!pool.length) {
             if (kind === 'challenge') {
                 return res.status(503).json({ error: 'The ABRET Challenge Bank has not been imported yet.' });
@@ -377,6 +396,32 @@ router.post('/sessions', async (req, res) => {
             timeLimitSec = null;
             selected = selectWeakAreas(pool, buildStudyProfile(events), size);
             config = { domains: [], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
+        } else if (kind === 'review-due') {
+            const size = Number.parseInt(body.questionCount, 10);
+            if (!REVIEW_SIZES.includes(size)) {
+                return res.status(400).json({ error: `questionCount must be one of ${REVIEW_SIZES.join(', ')}` });
+            }
+            const events = await AttemptEvent.find({ userId: req.user.id }).sort({ timestamp: -1 }).limit(5000)
+                .select(REINFORCEMENT_EVENT_FIELDS).lean();
+            const byId = new Map(pool.map((q) => [q.questionId, q]));
+            selected = buildReviewQueue(events).due.map((i) => byId.get(i.questionId)).filter(Boolean).slice(0, size);
+            if (!selected.length) return res.status(400).json({ error: 'No reviews are due right now' });
+            mode = 'practice';
+            timeLimitSec = null;
+            config = { domains: [], sections: [], tags: [], difficulty: [], shuffle: true, questionCount: selected.length };
+        } else if (kind === 'misconception') {
+            const size = Number.parseInt(body.questionCount, 10);
+            if (!DRILL_SIZES.includes(size)) {
+                return res.status(400).json({ error: `questionCount must be one of ${DRILL_SIZES.join(', ')}` });
+            }
+            if (!isMisconceptionCode(body.code)) return res.status(400).json({ error: 'Unknown misconception code' });
+            const events = await AttemptEvent.find({ userId: req.user.id }).sort({ timestamp: -1 }).limit(5000)
+                .select(REINFORCEMENT_EVENT_FIELDS).lean();
+            selected = selectMisconceptionDrill(pool, body.code, events, size);
+            if (!selected.length) return res.status(400).json({ error: 'No questions are available for that mistake yet' });
+            mode = 'practice';
+            timeLimitSec = null;
+            config = { domains: [], sections: [], tags: [body.code], difficulty: [], shuffle: true, questionCount: selected.length };
         } else if (kind === 'custom') {
             mode = MODES.includes(body.mode) ? body.mode : null;
             if (!mode) return res.status(400).json({ error: 'mode must be practice, timed or mock' });
@@ -498,19 +543,24 @@ router.post('/sessions/:sessionId/answers', async (req, res) => {
         const timeMs = Number.isFinite(req.body?.timeMs)
             ? Math.min(Math.max(Math.round(req.body.timeMs), 0), 4 * 60 * 60 * 1000)
             : 0;
+        const confidence = CONFIDENCE_LEVELS.includes(req.body?.confidence) ? req.body.confidence : undefined;
         const originalIndex = item.optionOrder[selectedIndex];
 
         if (session.mode === 'practice') {
             const q = await Question.findOne({ questionId }).select(KEY_FIELDS).lean();
             if (!q) return res.status(410).json({ error: 'Question is no longer available' });
             const correctIndex = displayIndexOf(item.optionOrder, q.answerIndex);
-            const feedback = (isCorrect) => ({
-                questionId,
-                selectedIndex,
-                isCorrect,
-                correctIndex,
-                explanation: q.explanation || '',
-            });
+            const feedback = (isCorrect, chosenOriginal) => {
+                const code = isCorrect ? null : errorCodeOf(q, chosenOriginal);
+                return {
+                    questionId,
+                    selectedIndex,
+                    isCorrect,
+                    correctIndex,
+                    explanation: q.explanation || '',
+                    misconception: code ? describeMisconception(code) : null,
+                };
+            };
 
             // Practice answers are final: record only if not already answered.
             const answer = {
@@ -519,6 +569,7 @@ router.post('/sessions/:sessionId/answers', async (req, res) => {
                 isCorrect: originalIndex === q.answerIndex,
                 timeMs,
                 answeredAt: new Date(),
+                confidence,
             };
             const updated = await QuizSession.findOneAndUpdate(
                 { _id: session._id, status: 'active', [`answers.${questionId}`]: { $exists: false } },
@@ -529,13 +580,13 @@ router.post('/sessions/:sessionId/answers', async (req, res) => {
             if (!updated) {
                 const existing = answersToObject((await QuizSession.findById(session._id)).answers)[questionId];
                 if (existing && existing.chosenIndex === selectedIndex) {
-                    return res.json({ ...feedback(existing.isCorrect), alreadyRecorded: true });
+                    return res.json({ ...feedback(existing.isCorrect, existing.originalIndex), alreadyRecorded: true });
                 }
                 return res.status(409).json({ error: 'This question has already been answered' });
             }
 
             await insertAttemptsIgnoringDuplicates([attemptEventFor(session, req.user.id, q, answer)]);
-            return res.json(feedback(answer.isCorrect));
+            return res.json(feedback(answer.isCorrect, originalIndex));
         }
 
         // Timed / mock: answers may change until submission; no feedback.

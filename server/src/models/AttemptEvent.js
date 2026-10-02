@@ -24,6 +24,10 @@ const attemptEventSchema = new mongoose.Schema({
     mode: { type: String, enum: ['practice', 'timed', 'mock', 'review'] },
     sessionId: { type: String }, // Link back to the quiz session
     scoredBy: { type: String, enum: ['server'], default: undefined },
+    // Self-rated confidence (practice only); drives spaced-review scheduling.
+    confidence: { type: String, enum: ['sure', 'unsure', 'guess'], default: undefined },
+    // Misconception code of the chosen distractor (data/qa/distractor-errors.json).
+    errorCode: { type: String, default: undefined },
 });
 
 attemptEventSchema.index({ userId: 1, timestamp: -1 });

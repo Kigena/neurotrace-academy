@@ -17,6 +17,10 @@ export async function startPlanItem(item, navigate) {
     body = { kind: "custom", mode: "practice", questionCount: count, filters: { domains: [item.domainId] } };
   } else if (item.kind === "weak") {
     body = { kind: "weak-areas", questionCount: count };
+  } else if (item.kind === "reviews") {
+    body = { kind: "review-due", questionCount: count >= 20 ? 20 : 10 };
+  } else if (item.kind === "misconception") {
+    body = { kind: "misconception", code: item.code, questionCount: count >= 10 ? 10 : 5 };
   } else if (item.kind === "challenge") {
     body = { kind: "challenge", questionCount: count };
     if (item.competency) body.competencies = [item.competency];

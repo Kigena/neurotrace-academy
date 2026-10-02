@@ -13,8 +13,12 @@ export const studyApi = {
   getRetryQuestion(questionId) {
     return apiService.get(`/study/retry/${encodeURIComponent(questionId)}`);
   },
-  submitRetry(questionId, selectedIndex, timeMs) {
-    return apiService.post(`/study/retry/${encodeURIComponent(questionId)}`, { selectedIndex, timeMs });
+  submitRetry(questionId, selectedIndex, timeMs, confidence) {
+    return apiService.post(`/study/retry/${encodeURIComponent(questionId)}`, {
+      selectedIndex,
+      timeMs,
+      ...(confidence ? { confidence } : {}),
+    });
   },
 };
 

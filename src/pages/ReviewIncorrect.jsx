@@ -112,6 +112,12 @@ function IncorrectCard({ item }) {
           <div className={`rounded p-3 text-sm ${result.isCorrect ? "bg-green-50 text-green-900" : "bg-red-50 text-red-900"}`}>
             <div className="font-semibold">{result.isCorrect ? "Correct — recorded as a new study attempt." : "Still incorrect — recorded."}</div>
             {result.explanation && <div className="text-slate-700 mt-1">{result.explanation}</div>}
+            {result.misconception && (
+              <div className="mt-2 rounded border border-amber-300 bg-amber-50 p-2 text-amber-900">
+                <div className="text-xs font-semibold uppercase tracking-wide">Common mistake: {result.misconception.title}</div>
+                <div className="mt-1">{result.misconception.tip}</div>
+              </div>
+            )}
           </div>
         </>
       )}

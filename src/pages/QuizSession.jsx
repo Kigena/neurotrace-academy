@@ -64,6 +64,8 @@ function QuizSession() {
   const [session, setSession] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({}); // questionId -> { selectedIndex, isCorrect?, correctIndex?, explanation? }
+  // Practice: the option picked but not yet submitted (awaiting a confidence rating).
+  const [pendingChoice, setPendingChoice] = useState(null); // { questionId, index }
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flagged, setFlagged] = useState(new Set());
   const [result, setResult] = useState(null);
@@ -284,18 +286,19 @@ function QuizSession() {
     });
   };
 
-  const handleAnswerSelect = async (questionId, selectedIndex) => {
+  const handleAnswerSelect = async (questionId, selectedIndex, confidence) => {
     if (!session || showResults || isSubmitting) return;
     const isPractice = session.mode === "practice";
     const previous = answers[questionId];
     if (isPractice && previous) return; // practice answers are final
+    setPendingChoice(null);
 
     const timeMs = Date.now() - questionStartTimeRef.current;
     questionStartTimeRef.current = Date.now();
 
     setAnswers((prev) => ({ ...prev, [questionId]: { selectedIndex } }));
     try {
-      const res = await quizApi.answer(session.sessionId, questionId, selectedIndex, timeMs);
+      const res = await quizApi.answer(session.sessionId, questionId, selectedIndex, timeMs, confidence);
       if (isPractice) {
         setAnswers((prev) => ({
           ...prev,
@@ -304,6 +307,8 @@ function QuizSession() {
             isCorrect: res.isCorrect,
             correctIndex: res.correctIndex,
             explanation: res.explanation,
+            misconception: res.misconception || null,
+            confidence,
           },
         }));
       }
@@ -870,7 +875,11 @@ function QuizSession() {
           <h1 className="text-xl font-bold text-slate-900">
             {session.kind === "challenge"
               ? "ABRET Challenge"
-              : isPractice ? "ABRET Practice Quiz" : session.mode === "timed" ? "ABRET Timed Quiz" : "ABRET Mock Exam"}
+              : session.kind === "review-due"
+                ? "Spaced Review"
+                : session.kind === "misconception"
+                  ? "Mistake Drill"
+                  : isPractice ? "ABRET Practice Quiz" : session.mode === "timed" ? "ABRET Timed Quiz" : "ABRET Mock Exam"}
           </h1>
           <p className="text-xs text-slate-500">
             Question {currentIndex + 1} of {questions.length}
@@ -981,7 +990,8 @@ function QuizSession() {
 
             <div className="space-y-2">
               {currentQuestion.options.map((option, idx) => {
-                const isSelected = selectedAnswer === idx;
+                const isPending = isPractice && !answer && pendingChoice?.questionId === currentQuestion.questionId && pendingChoice.index === idx;
+                const isSelected = selectedAnswer === idx || isPending;
                 let optionClass = "w-full text-left rounded-md border px-4 py-3 text-sm transition";
 
                 if (hasFeedback && idx === answer.correctIndex) {
@@ -999,7 +1009,11 @@ function QuizSession() {
                     key={idx}
                     type="button"
                     disabled={isPractice && !!answer}
-                    onClick={() => handleAnswerSelect(currentQuestion.questionId, idx)}
+                    onClick={() =>
+                      isPractice
+                        ? setPendingChoice({ questionId: currentQuestion.questionId, index: idx })
+                        : handleAnswerSelect(currentQuestion.questionId, idx)
+                    }
                     className={optionClass}
                   >
                     <span className="font-semibold mr-2">{String.fromCharCode(65 + idx)}.</span>
@@ -1009,10 +1023,20 @@ function QuizSession() {
               })}
             </div>
 
+            {isPractice && !answer && pendingChoice?.questionId === currentQuestion.questionId && (
+              <ConfidencePrompt
+                onRate={(confidence) => handleAnswerSelect(currentQuestion.questionId, pendingChoice.index, confidence)}
+              />
+            )}
+
             {hasFeedback && (
               <div className={`mt-4 text-sm p-3 rounded ${answer.isCorrect ? "bg-green-50 text-green-900" : "bg-red-50 text-red-900"}`}>
-                <div className="font-semibold mb-1">{answer.isCorrect ? "Correct" : "Incorrect"}</div>
+                <div className="font-semibold mb-1">
+                  {answer.isCorrect ? "Correct" : "Incorrect"}
+                  {answer.confidence && <ConfidenceNote isCorrect={answer.isCorrect} confidence={answer.confidence} />}
+                </div>
                 {answer.explanation && <div className="text-slate-700">{answer.explanation}</div>}
+                {answer.misconception && <MisconceptionTip misconception={answer.misconception} />}
               </div>
             )}
           </div>
@@ -1050,6 +1074,50 @@ function QuizSession() {
       }}
     />
     </>
+  );
+}
+
+const CONFIDENCE_OPTIONS = [
+  { value: "sure", label: "Sure", className: "border-emerald-300 bg-emerald-50 text-emerald-900 hover:bg-emerald-100" },
+  { value: "unsure", label: "Unsure", className: "border-amber-300 bg-amber-50 text-amber-900 hover:bg-amber-100" },
+  { value: "guess", label: "Guess", className: "border-slate-300 bg-slate-50 text-slate-800 hover:bg-slate-100" },
+];
+
+/** Asked before an answer is revealed; drives how soon the question returns. */
+function ConfidencePrompt({ onRate }) {
+  return (
+    <div className="mt-4 rounded-md border border-slate-200 bg-slate-50 p-3">
+      <div className="text-xs text-slate-600 mb-2">How sure are you? Your rating decides when this question comes back.</div>
+      <div className="flex gap-2">
+        {CONFIDENCE_OPTIONS.map((o) => (
+          <button
+            key={o.value}
+            type="button"
+            onClick={() => onRate(o.value)}
+            className={`flex-1 rounded-md border px-3 py-2 text-sm font-semibold ${o.className}`}
+          >
+            {o.label}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ConfidenceNote({ isCorrect, confidence }) {
+  let text = null;
+  if (isCorrect && confidence !== "sure") text = "you'll see this again soon to lock it in";
+  else if (!isCorrect && confidence === "sure") text = "a confident miss: this comes back first in tomorrow's review";
+  else if (!isCorrect) text = "this comes back in tomorrow's review";
+  return text ? <span className="ml-2 font-normal text-xs opacity-80">· {text}</span> : null;
+}
+
+function MisconceptionTip({ misconception }) {
+  return (
+    <div className="mt-3 rounded border border-amber-300 bg-amber-50 p-2 text-amber-900">
+      <div className="text-xs font-semibold uppercase tracking-wide">Common mistake: {misconception.title}</div>
+      <div className="text-sm mt-1">{misconception.tip}</div>
+    </div>
   );
 }
 

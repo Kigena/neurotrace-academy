@@ -16,6 +16,7 @@ const answerSchema = new mongoose.Schema({
     isCorrect: Boolean,
     timeMs: Number,
     answeredAt: Date,
+    confidence: String,
 }, { _id: false });
 
 const itemSchema = new mongoose.Schema({
@@ -40,7 +41,7 @@ const quizSessionSchema = new mongoose.Schema({
     sessionId: { type: String, required: true, unique: true },
     engineVersion: { type: Number, default: 1 },
     mode: { type: String, enum: ['practice', 'timed', 'mock'], required: true },
-    kind: { type: String, enum: ['custom', 'domain-quickstart', 'preset', 'weak-areas', 'challenge', null], default: null },
+    kind: { type: String, enum: ['custom', 'domain-quickstart', 'preset', 'weak-areas', 'challenge', 'review-due', 'misconception', null], default: null },
     presetId: { type: String, default: null },
     blueprintKey: { type: String, default: null },
     status: {

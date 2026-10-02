@@ -131,3 +131,39 @@ Today's Study and Continue Studying are Challenge-first whenever the
 Challenge Bank is available: 10 questions in the weakest (or not yet
 assessed) higher-order competency, 10 mixed Challenge questions, then review
 of incorrect answers.
+
+## Spaced review (server/src/services/reinforcement.js)
+
+Derived on demand from scored attempts; no extra state. Per question:
+
+- Wrong: stage 0, due in 1 day. A wrong answer rated **Sure** is a
+  *misconception* and is reviewed first.
+- Correct + **Guess**: enters (or stays) at its stage without credit (1 day if new).
+- Correct + **Unsure**: enters at stage 1 (3 days) if not queued.
+- Correct (Sure / unrated) while queued: advances one stage, only on a later
+  calendar day than the last change. Intervals 1 / 3 / 7 / 16 / 35 days;
+  passing the last stage retires the question. "Learned" = 3 correct days
+  since the last miss.
+
+Today's Study starts with due reviews (session kind `review-due`, 10/20),
+then one active repeated mistake, then the Challenge plan. Existing wrong
+answers enter the queue immediately (unrated history counts as Sure).
+
+## Confidence
+
+Practice questions ask Sure / Unsure / Guess before the answer is revealed
+(stored as `AttemptEvent.confidence`). Timed and mock sessions do not ask.
+Mastery and readiness are unchanged; confidence only affects scheduling.
+
+## Repeated mistakes
+
+`data/qa/misconceptions.json` defines 51 error codes (title + 60-second tip).
+`data/qa/distractor-errors.json` tags 1,283 of 1,620 Challenge distractors,
+keyed by question id and exact option text (editing an option drops its tag).
+A wrong answer on a tagged distractor stores `AttemptEvent.errorCode` and
+returns the tip as feedback. A code is **active** with ≥2 errors in 30 days
+until 3 later correct answers on questions offering that mistake; active codes
+appear on the dashboard with a 5-question drill (session kind `misconception`:
+unseen questions first, then missed, skipping ones answered correctly in the
+last 3 days).
+

@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "description": "Controlled vocabulary of classic errors. Each Challenge distractor may carry one code (server/src/data/qa/distractor-errors.json). Choosing a tagged distractor records the code on the attempt, which drives the 'Repeated mistakes' card and targeted drills.",
+  "codes": {
+    "TC_NO_2PI": {
+      "group": "Calculations",
+      "title": "Forgetting 2π in time constant ↔ LFF",
+      "tip": "LFF = 1 / (2π × TC) and TC = 1 / (2π × LFF). Anchors: 1 s ↔ 0.16 Hz, 0.3 s ↔ 0.53 Hz, 0.1 s ↔ 1.6 Hz. Using 1/TC alone overstates the LFF about 6-fold."
+    },
+    "TC_UNITS": {
+      "group": "Calculations",
+      "title": "Reading seconds as hertz (TC vs LFF)",
+      "tip": "A time constant is in seconds; an LFF is in hertz. A 0.3-s time constant is not a 0.3-Hz filter: convert with LFF = 1 / (2π × TC)."
+    },
+    "TC_37_63": {
+      "group": "Calculations",
+      "title": "Mixing up 37% remaining with 63% lost",
+      "tip": "One time constant after a calibration step, about 37% of the deflection remains (63% has decayed). After two time constants about 13.5% remains."
+    },
+    "CUTOFF_50_NOT_70": {
+      "group": "Filters",
+      "title": "Using 50% instead of ~70% at a filter cutoff",
+      "tip": "At its cutoff frequency a filter passes about 70% of the amplitude (−3 dB), not 50%. Activity at the setting is reduced by about 30%."
+    },
+    "FILTER_ALL_OR_NONE": {
+      "group": "Filters",
+      "title": "Treating filters as on/off at the setting",
+      "tip": "Filters roll off gradually: activity near the setting is partly attenuated, and some activity beyond the setting still passes. Nothing is cut cleanly at the number on the dial."
+    },
+    "FILTER_DIRECTION": {
+      "group": "Filters",
+      "title": "Confusing what the LFF and HFF act on",
+      "tip": "The LFF (high-pass) attenuates SLOW activity and sets the decay of a calibration step; the HFF (low-pass) attenuates FAST activity and rounds sharp corners."
+    },
+    "MASKING_A_FAULT": {
+      "group": "Filters",
+      "title": "Hiding a technical fault with a filter or setting",
+      "tip": "A notch, filter or sensitivity change hides the symptom but leaves the cause. Fix the electrode, impedance, ground or equipment first; document any filter you do use."
+    },
+    "SENS_DIRECTION": {
+      "group": "Calculations",
+      "title": "Thinking a higher µV/mm makes waves bigger",
+      "tip": "Sensitivity is µV per mm. A larger number (e.g. 7 → 15 µV/mm) is LESS sensitive, so the same signal is drawn SMALLER."
+    },
+    "SENS_ARITHMETIC": {
+      "group": "Calculations",
+      "title": "Dividing instead of multiplying with sensitivity",
+      "tip": "Amplitude (µV) = sensitivity (µV/mm) × deflection (mm). Deflection (mm) = amplitude ÷ sensitivity."
+    },
+    "PAGE_SPEED_ASSUMED": {
+      "group": "Calculations",
+      "title": "Assuming 30 mm/s or a 10-s page",
+      "tip": "Always check the actual display speed or page width before measuring. At 15 mm/s a 30-mm span is 2 s, not 1 s, so frequencies would be doubled by mistake."
+    },
+    "WAVES_NOT_PER_SECOND": {
+      "group": "Calculations",
+      "title": "Counting waves without dividing by time",
+      "tip": "Frequency = number of complete waves ÷ the time they span. Seven waves in 0.7 s is 10 Hz, not 7 Hz."
+    },
+    "DECIMAL_SLIP": {
+      "group": "Calculations",
+      "title": "Decimal or unit-scale slip (×10, ms vs s, mV vs µV)",
+      "tip": "Write units at every step: 1 mV = 1000 µV, 1 s = 1000 ms. A ×10 error usually means a lost unit conversion."
+    },
+    "PEAK_TO_PEAK": {
+      "group": "Calculations",
+      "title": "Doubling or halving peak vs peak-to-peak",
+      "tip": "EEG amplitude is normally measured peak to peak. Do not double a peak-to-peak value or halve it unless the question asks for a peak value."
+    },
+    "PERCENT_BASE": {
+      "group": "Calculations",
+      "title": "Percentage taken against the wrong base",
+      "tip": "Percent change = difference ÷ the EXPECTED (reference) value. 8 mm against an expected 10 mm is 20% low, not 25%."
+    },
+    "NYQUIST": {
+      "group": "Digital",
+      "title": "Misapplying the Nyquist rule",
+      "tip": "Sample at more than twice the highest frequency of interest; the Nyquist frequency is half the sampling rate. Real anti-alias filters roll off gradually, so systems sample well above the minimum."
+    },
+    "ALIASING": {
+      "group": "Digital",
+      "title": "Misunderstanding aliasing",
+      "tip": "Activity above the Nyquist frequency folds down to a false lower frequency and cannot be removed after sampling; only an analog anti-alias filter before digitisation prevents it."
+    },
+    "TENTWENTY_MEASURE": {
+      "group": "Electrodes",
+      "title": "Wrong 10-20 percentage or landmark",
+      "tip": "Midline: Fpz 10%, Fz 30%, Cz 50%, Pz 70%, Oz 90% of nasion-inion. Coronal: T3 10%, C3 30%, Cz 50% of preauricular distance. Circumference: Fp1 5%, then 10% steps."
+    },
+    "IMPEDANCE_LOGIC": {
+      "group": "Electrodes",
+      "title": "Misjudging impedance or electrode behaviour",
+      "tip": "Balanced, low impedances let the differential amplifier reject common-mode noise; imbalance converts interference into signal. Mixed or polarizable metals cause drift."
+    },
+    "CMRR_ALONE": {
+      "group": "Electrodes",
+      "title": "Relying on CMRR despite impedance imbalance",
+      "tip": "CMRR only rejects signals that arrive identically at both inputs. Unequal electrode impedances make 60-Hz interference differ between inputs, so it is amplified."
+    },
+    "GROUND_REFERENCE_LOGIC": {
+      "group": "Troubleshooting",
+      "title": "One-electrode vs whole-system fault logic",
+      "tip": "A problem in one electrode appears in every channel containing that electrode; a problem in all channels of every montage points to the ground, reference or amplifier."
+    },
+    "POLARITY_SIGN": {
+      "group": "Montages",
+      "title": "Polarity convention or subtraction sign error",
+      "tip": "Channel = Input 1 − Input 2. If the result is negative the pen goes UP (negative-up convention). Work out each channel's sign before reading the picture."
+    },
+    "BIPOLAR_ADDING": {
+      "group": "Montages",
+      "title": "Adding instead of subtracting in a derivation",
+      "tip": "Every channel shows a DIFFERENCE between two inputs. −60 µV minus −100 µV is +40 µV, not 160 µV."
+    },
+    "PHASE_REVERSAL_READ": {
+      "group": "Montages",
+      "title": "Misreading a phase reversal",
+      "tip": "Pens pointing TOWARD each other mark a negative maximum at the shared electrode; pointing AWAY marks a positive one. Check polarity before naming the field."
+    },
+    "END_OF_CHAIN": {
+      "group": "Montages",
+      "title": "Missing an end-of-chain maximum",
+      "tip": "When the maximum is at the first or last electrode of a bipolar chain there is no phase reversal; confirm it with a referential or transverse montage."
+    },
+    "REFERENCE_CONTAMINATION": {
+      "group": "Montages",
+      "title": "Missing an active reference",
+      "tip": "If every channel sharing one reference shows the same deflection, the reference itself (ear, Cz, average) is active. Re-reference before localising."
+    },
+    "ISOPOTENTIAL": {
+      "group": "Montages",
+      "title": "Reading a flat bipolar channel as 'no activity'",
+      "tip": "A flat bipolar channel means the two electrodes are at EQUAL potential, which may be a field maximum or a salt bridge, not an absence of activity."
+    },
+    "LOCALIZATION": {
+      "group": "Montages",
+      "title": "Localising to the wrong electrode or region",
+      "tip": "Find the electrode common to the reversing pair, confirm in a second montage, and map the field before naming a lobe."
+    },
+    "ARTIFACT_AS_CEREBRAL": {
+      "group": "Artifacts",
+      "title": "Reading artifact as brain activity",
+      "tip": "Artifacts usually lack a physiological field, break the rules of polarity or appear in a single electrode, and often time-lock to ECG, movement or equipment."
+    },
+    "CEREBRAL_AS_ARTIFACT": {
+      "group": "Artifacts",
+      "title": "Dismissing brain activity as artifact",
+      "tip": "Activity with a plausible field across neighbouring electrodes, consistent polarity and evolution is cerebral until proven otherwise."
+    },
+    "ARTIFACT_TYPE": {
+      "group": "Artifacts",
+      "title": "Naming the wrong artifact source",
+      "tip": "Match the clue: time-locked to QRS = ECG; ~200-300 ms after QRS over an artery = pulse; F7/F8 opposite polarity = lateral eye movement; slow frontal with tongue = glossokinetic."
+    },
+    "VARIANT_AS_ABNORMAL": {
+      "group": "Patterns",
+      "title": "Calling a benign variant abnormal",
+      "tip": "Wicket spikes, small sharp spikes, 14 & 6 positive spikes, rhythmic midtemporal theta, SREDA and mu are normal variants: no aftergoing slow wave, no field disruption, state-dependent."
+    },
+    "ABNORMAL_AS_NORMAL": {
+      "group": "Patterns",
+      "title": "Missing an abnormality as a normal finding",
+      "tip": "Look for an aftergoing slow wave, field disruption of the background, asymmetry and persistence across states before accepting a pattern as normal."
+    },
+    "AGE_NORMS": {
+      "group": "Patterns",
+      "title": "Wrong age-expected norm",
+      "tip": "Judge against age: PDR ~4 Hz at 4 months, ~6 Hz at 1 year, ~8 Hz by 3 years; tracé alternant disappears by ~44-46 weeks PMA; slower rhythms are normal in drowsy children."
+    },
+    "SLEEP_RULES": {
+      "group": "Patterns",
+      "title": "Misapplying sleep staging or sleep graphoelements",
+      "tip": "Stage by the majority of each 30-s epoch; N2 needs spindles or K-complexes; N3 needs ≥20% slow waves >75 µV; REM shows low tone with sawtooth waves and rapid eye movements."
+    },
+    "ACNS_CRITERIA": {
+      "group": "Critical care",
+      "title": "Misapplying ACNS 2021 thresholds",
+      "tip": "Seizure: >2.5 Hz for ≥10 s or definite evolution ≥10 s. BIRDs: >4 Hz, 0.5 to <10 s. IIC: PDs/SW 1-2.5 Hz. ESE: ≥10 continuous min or ≥20% of any hour."
+    },
+    "ENCEPHALOPATHY": {
+      "group": "Critical care",
+      "title": "Misreading encephalopathy or coma patterns",
+      "tip": "Diffuse slowing, triphasic-morphology GPDs, FIRDA, alpha/theta/spindle coma and burst suppression are described by reactivity, continuity and frequency, not by a single feature."
+    },
+    "ECI_REQUIREMENTS": {
+      "group": "Critical care",
+      "title": "Wrong ECI (brain death) recording requirement",
+      "tip": "ACNS: full electrode set, ≥10 cm spacing, impedances 100-10,000 Ω, 2 µV/mm for ≥30 min, HFF ≥30 Hz, LFF ≤1 Hz, ECG, stimulation and an integrity test."
+    },
+    "SYNDROME_MATCH": {
+      "group": "Patterns",
+      "title": "Wrong epilepsy syndrome for the picture",
+      "tip": "Match age, seizure type and EEG together: 3-Hz spike-wave = absence; 4-6 Hz polyspike-wave = JME; hypsarrhythmia = infantile spasms; slow spike-wave + tonic = Lennox-Gastaut."
+    },
+    "ACTIVATION_RESPONSE": {
+      "group": "Activation",
+      "title": "Misreading an HV or photic response",
+      "tip": "Normal HV build-up resolves within about a minute; photomyogenic responses are frontal muscle time-locked to flashes and stop with eye opening; photoparoxysmal responses are cerebral spike-wave."
+    },
+    "MEDICATION_EFFECT": {
+      "group": "Patterns",
+      "title": "Missing or misattributing a medication effect",
+      "tip": "Benzodiazepines and barbiturates increase frontocentral beta; reduced drug beta on one side suggests a lesion there. Sedatives also slow the background."
+    },
+    "CONTRAINDICATION": {
+      "group": "Safety",
+      "title": "Missing a contraindication or continuing an unsafe step",
+      "tip": "Screen before and stop during: recent stroke/TIA, sickle cell, significant cardiopulmonary disease or moyamoya limit HV; stop photic at a photoparoxysmal response; a sleep-deprived or sedated patient must not drive home."
+    },
+    "PRIORITY_ORDER": {
+      "group": "Procedure",
+      "title": "Right actions in the wrong order",
+      "tip": "Patient safety first, then preserve the evidence (test responsiveness, keep recording), then notify and document."
+    },
+    "SCOPE": {
+      "group": "Professional",
+      "title": "Acting outside technologist scope",
+      "tip": "Technologists describe and document; physicians interpret, diagnose and order medications. Results are reported to patients by the interpreting physician."
+    },
+    "UNDER_ESCALATION": {
+      "group": "Professional",
+      "title": "Not escalating an urgent finding",
+      "tip": "Seizures, status, ECI concerns and other critical findings are communicated promptly to the responsible physician with read-back, not left for the routine report."
+    },
+    "PRIVACY": {
+      "group": "Professional",
+      "title": "Confidentiality or HIPAA error",
+      "tip": "Use the minimum necessary information, share PHI only for treatment, payment or operations or with authorization, and route other requests through the privacy office."
+    },
+    "CONSENT": {
+      "group": "Professional",
+      "title": "Patient rights or consent error",
+      "tip": "Patients (and guardians for minors, with the child's assent) may decline or withdraw at any time; explain, document and inform the physician. Use a qualified interpreter, not family, unless the patient specifically asks."
+    },
+    "INFECTION_CONTROL": {
+      "group": "Safety",
+      "title": "Wrong precaution or disinfection level",
+      "tip": "Intact skin: low-level disinfection; non-intact skin: high-level; C. difficile: soap and water plus sporicidal cleaning; prion risk: disposable electrodes."
+    },
+    "DOCUMENTATION": {
+      "group": "Professional",
+      "title": "Improper documentation or correction",
+      "tip": "Document objectively and at the time; correct with a single line, initials and date; annotate every setting change, event and medication on the recording."
+    },
+    "EQUIPMENT_SAFETY": {
+      "group": "Safety",
+      "title": "Wrong equipment, QA or electrical-safety decision",
+      "tip": "Remove failed or uninspected equipment from service, use a single patient ground, keep calibration logs and escalate validation failures to biomedical engineering."
+    },
+    "ETHICS": {
+      "group": "Professional",
+      "title": "Professional boundary or ethics error",
+      "tip": "Avoid gifts that act as cash, conflicts of interest and dual relationships; disclose errors honestly; treat every patient equitably."
+    },
+    "EMERGENCY_STEP": {
+      "group": "Safety",
+      "title": "Wrong first-aid or BLS step",
+      "tip": "Seizure: time it, protect, turn to the side, nothing in the mouth; call for help at 5 minutes or with injury; cardiac arrest: CPR and AED immediately."
+    }
+  }
+}

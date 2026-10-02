@@ -13,6 +13,8 @@ import {
     recentPerformance,
 } from '../services/studyAnalytics.js';
 import { clampInt } from '../utils/validation.js';
+import { buildReviewQueue, CONFIDENCE_LEVELS, misconceptionSummary } from '../services/reinforcement.js';
+import { describeMisconception, errorCodeFor } from '../services/misconceptions.js';
 
 // Single-user study dashboard, incorrect-answer review and retry.
 // Every query is scoped to the authenticated user.
@@ -26,7 +28,7 @@ function ownEvents(userId) {
     return AttemptEvent.find({ userId })
         .sort({ timestamp: -1 })
         .limit(MAX_EVENTS)
-        .select('questionId domainId sectionId topicTags difficulty isCorrect timestamp mode selectedIndex bank cognitiveLevel competency')
+        .select('questionId domainId sectionId topicTags difficulty isCorrect timestamp mode selectedIndex bank cognitiveLevel competency confidence errorCode')
         .lean();
 }
 
@@ -72,6 +74,17 @@ router.get('/dashboard', async (req, res) => {
         const incorrect = outstandingIncorrect(events);
         const readiness = computeReadiness({ events, mockResults: mocks });
 
+        // Spaced review only counts questions that can still be served.
+        const servable = new Set((await Question.find({ status: 'active', qaStatus: { $nin: ['NEEDS_REVISION', 'REJECTED'] } })
+            .select('questionId').lean()).map((q) => q.questionId));
+        const queue = buildReviewQueue(events.filter((e) => servable.has(e.questionId)));
+        const reviews = {
+            ...queue.summary,
+            nextDueAt: Number.isFinite(queue.summary.nextDueAt) ? queue.summary.nextDueAt : null,
+        };
+        const mistakes = misconceptionSummary(events);
+        const activeMistakes = mistakes.filter((m) => m.active);
+
         const ranked = (table) => Object.entries(table)
             .filter(([, m]) => m.sufficient)
             .map(([key, m]) => ({ key, ...m }))
@@ -90,7 +103,19 @@ router.get('/dashboard', async (req, res) => {
             incorrectOutstanding: incorrect.length,
             hasActiveSession: !!activeSession,
             challengeAvailable,
-            todaysStudy: buildDailyPlan({ mastery, incorrectCount: incorrect.length, sectionDomains, challengeAvailable }),
+            reviews,
+            misconceptions: {
+                active: activeMistakes.slice(0, 5),
+                recent: mistakes.filter((m) => !m.active && m.recentErrors > 0).slice(0, 5),
+            },
+            todaysStudy: buildDailyPlan({
+                mastery,
+                incorrectCount: incorrect.length,
+                sectionDomains,
+                challengeAvailable,
+                reviewsDue: reviews.dueNow,
+                misconception: activeMistakes.find((m) => m.questionsAvailable > 0) || null,
+            }),
         });
     } catch (error) {
         console.error('Study dashboard error:', error.message);
@@ -163,6 +188,7 @@ router.post('/retry/:questionId', async (req, res) => {
     try {
         const { questionId } = req.params;
         const { selectedIndex } = req.body || {};
+        const confidence = CONFIDENCE_LEVELS.includes(req.body?.confidence) ? req.body.confidence : undefined;
         if (!(await hasPriorIncorrect(req.user.id, questionId))) {
             return res.status(404).json({ error: 'No incorrect attempt found for this question' });
         }
@@ -172,6 +198,7 @@ router.post('/retry/:questionId', async (req, res) => {
             return res.status(400).json({ error: 'selectedIndex is out of range' });
         }
         const isCorrect = selectedIndex === q.answerIndex;
+        const errorCode = isCorrect ? undefined : errorCodeFor(q.questionId, q.options[selectedIndex]) || undefined;
         const timeMs = Number.isFinite(req.body?.timeMs) ? Math.min(Math.max(Math.round(req.body.timeMs), 0), 3600000) : 0;
         await AttemptEvent.create({
             userId: req.user.id,
@@ -191,8 +218,17 @@ router.post('/retry/:questionId', async (req, res) => {
             mode: 'review',
             sessionId: `retry_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`,
             scoredBy: 'server',
+            confidence,
+            errorCode,
         });
-        res.json({ questionId, selectedIndex, isCorrect, correctIndex: q.answerIndex, explanation: q.explanation || '' });
+        res.json({
+            questionId,
+            selectedIndex,
+            isCorrect,
+            correctIndex: q.answerIndex,
+            explanation: q.explanation || '',
+            misconception: errorCode ? describeMisconception(errorCode) : null,
+        });
     } catch (error) {
         console.error('Retry error:', error.message);
         res.status(500).json({ error: 'Failed to record retry' });

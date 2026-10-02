@@ -77,6 +77,10 @@ export function planItemLabel(item) {
       return `Review ${item.count} incorrect question${item.count === 1 ? "" : "s"}`;
     case "mixed":
       return `${item.count}-question mixed ABRET quiz`;
+    case "reviews":
+      return `Spaced review: ${Math.min(item.count, item.due ?? item.count)} due question${(item.due ?? item.count) === 1 ? "" : "s"}`;
+    case "misconception":
+      return `Fix a repeated mistake: ${item.title || item.code}`;
     case "challenge":
       return item.competency
         ? `${item.count} Challenge questions: ${COMPETENCY_NAMES[item.competency] || item.competency}`

@@ -1,0 +1,2258 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-02",
+  "description": "Misconception code per Challenge distractor, keyed by question id and exact option text.",
+  "items": {
+    "ch-b10-001": {
+      "Take both parts with read-back, then pass the physician's dose order on to the nurse in person": "SCOPE",
+      "Take the photic change with read-back; have the nurse give the dose on the physician's say-so": "SCOPE"
+    },
+    "ch-b10-002": {
+      "Let the student run it, as phone access to the instructor counts as supervision": "SCOPE",
+      "Let the student run it, provided the patient agrees to be recorded by a student": "SCOPE",
+      "Let the student apply electrodes alone, and have the instructor check the record later": "SCOPE"
+    },
+    "ch-b10-003": {
+      "Accept, and use the system's default IONM settings with the vendor on the phone": "SCOPE",
+      "Accept, since the R. EEG T. credential also covers evoked potential monitoring": "SCOPE",
+      "Accept the SSEP part, since it is close to routine EEG, and decline only the MEPs": "SCOPE"
+    },
+    "ch-b10-004": {
+      "Do 90 s instead of 3 min, and tell the ordering physician about it afterwards": "CONTRAINDICATION",
+      "Do it as requested, since the ordering physician has accepted the risk": "CONTRAINDICATION",
+      "Skip it, and note the reason on the worksheet for the physician to read": "UNDER_ESCALATION"
+    },
+    "ch-b10-005": {
+      "Keep it confidential as asked, and help her keep a log she can report later": "ETHICS",
+      "Warn the senior colleague privately, and report it only if the conduct continues": "ETHICS",
+      "Wait until she feels ready, and then help her report it as a formal complaint": "ETHICS"
+    },
+    "ch-b10-006": {
+      "She may keep using it while completing the credits, as she passed the exam": "ETHICS",
+      "She may keep using it with 'inactive' after the initials until renewal": "ETHICS",
+      "She may keep using it within her own lab, since the employer knows": "ETHICS"
+    },
+    "ch-b10-007": {
+      "Reopen the signed worksheet and document the 08:00 dose in the medication field": "DOCUMENTATION",
+      "Add an entry timed 09:00 documenting the dose, so it sits with the history": "DOCUMENTATION",
+      "Phone the reader, since a signed worksheet cannot be documented further": "DOCUMENTATION"
+    },
+    "ch-b10-009": {
+      "Document the slip and your findings, and note that an incident report has been filed": "DOCUMENTATION",
+      "Document nothing in the chart, since the incident report holds the full account": "DOCUMENTATION",
+      "Document the slip and your findings, and attach a copy of the incident report to it": "DOCUMENTATION"
+    },
+    "ch-b10-010": {
+      "Repeat 'three an hour' back to her, and document the call once the shift notes are done": "DOCUMENTATION",
+      "Document it during the call, and read it back to her only if the line seems unclear": "DOCUMENTATION",
+      "Document it as heard, then text her the wording so that she can confirm it later": "DOCUMENTATION"
+    },
+    "ch-b10-011": {
+      "Document HV as performed, with good effort and diffuse slowing building up during it": "DOCUMENTATION",
+      "Document HV as not performed, since less than the full protocol time was completed": "DOCUMENTATION",
+      "Document HV as 70 s with poor effort, since the patient chose to stop before 3 minutes": "DOCUMENTATION"
+    },
+    "ch-b10-012": {
+      "Document a clinical event at 03:00, and the video outage separately in the log": "DOCUMENTATION",
+      "Document only the video outage, since unwitnessed events are not documented": "DOCUMENTATION",
+      "Document the event once the EEG near 03:00 has been checked for a correlate": "SCOPE"
+    },
+    "ch-b10-013": {
+      "Proceed with his father holding him, since the parent's consent is legally sufficient": "ETHICS"
+    },
+    "ch-b10-014": {
+      "Export them, since removing names and record numbers makes the files de-identified": "PRIVACY",
+      "Export them, since she belongs to the same covered entity as the clinical lab": "PRIVACY",
+      "Export them after deleting the dates of service, but keep the 5-digit ZIP codes": "PRIVACY"
+    },
+    "ch-b10-015": {
+      "Use the friend to sign, since she is willing and the patient knows her well": "CONSENT",
+      "Use written notes and lip-reading, and demonstrate hyperventilation yourself": "CONSENT",
+      "Reschedule for a later date when the patient can bring her own interpreter": "CONSENT"
+    },
+    "ch-b10-016": {
+      "Send the full files, since coders are part of the hospital's own workforce": "PRIVACY",
+      "Send nothing until the patient signs an authorization for billing access": "PRIVACY",
+      "Send the EEG files without the video, since EEG data identify no one": "PRIVACY"
+    },
+    "ch-b10-017": {
+      "Dress it, and report it to your supervisor without raising it with her": "ETHICS",
+      "Tell her it is a usual reaction to prep gel, dress it, and report it later": "ETHICS",
+      "Tell her the reader will explain it, dress it, and report it to the physician": "ETHICS"
+    },
+    "ch-b10-018": {
+      "Move his patients up, since earlier testing benefits those patients clinically": "ETHICS",
+      "Keep his patients in queue order, and keep the off-site job a private matter": "ETHICS",
+      "Let a colleague schedule his patients, so you have no part in the decision": "ETHICS"
+    },
+    "ch-b10-019": {
+      "Agree to the swap, since a willing technologist gives that patient better care": "ETHICS",
+      "Agree to the swap, and suggest she wear a gown and double gloves for such patients": "INFECTION_CONTROL",
+      "Decline the swap, and suggest she use full isolation precautions for this patient": "INFECTION_CONTROL"
+    },
+    "ch-b10-020": {
+      "Annotate the record now, and let the physician find the note at final reporting": "UNDER_ESCALATION",
+      "Tell the physician only if the final report still mentions the left-sided slowing": "UNDER_ESCALATION",
+      "Relabel the stored channels so the physician sees the 6 hours correctly sited": "DOCUMENTATION"
+    },
+    "ch-b11-002": {
+      "Use the overdue unit, as normal calibration shows its isolation is intact": "EQUIPMENT_SAFETY",
+      "Use the overdue unit and book its inspection for the next routine service": "EQUIPMENT_SAFETY",
+      "Use the overdue unit with its ground well away from the bedside monitors": "EQUIPMENT_SAFETY"
+    },
+    "ch-b11-003": {
+      "Wrap the crack firmly with tape and keep using the lead until a spare arrives": "EQUIPMENT_SAFETY",
+      "Keep the lead and set T4's HFF lower so the movement bursts are attenuated": "MASKING_A_FAULT",
+      "Keep the lead and reroute it so the cracked part cannot flex during the study": "EQUIPMENT_SAFETY"
+    },
+    "ch-b11-004": {
+      "True LFF is about 1 Hz; the longer decay reflects new display scaling only": "TC_NO_2PI",
+      "True LFF is about 6 Hz; slow activity will be heavily attenuated until fixed": "TC_NO_2PI",
+      "True LFF is about 0.16 Hz; this meets ACNS minimums, so record as usual": "EQUIPMENT_SAFETY"
+    },
+    "ch-b11-005": {
+      "3.0%; this is below the threshold, so file the audit without further action": "PERCENT_BASE",
+      "13.3%; suspend routine studies until every technologist has been retrained": "PERCENT_BASE"
+    },
+    "ch-b11-006": {
+      "The Fp1 electrode has a high impedance that affects channel 9 the most": "IMPEDANCE_LOGIC"
+    },
+    "ch-b11-007": {
+      "Influenza A, on day 2 of illness": "INFECTION_CONTROL",
+      "MRSA colonisation of a leg wound": "INFECTION_CONTROL",
+      "Clostridioides difficile diarrhoea": "INFECTION_CONTROL"
+    },
+    "ch-b11-008": {
+      "Pull the alarm, tackle the fire if small, move the patient out, then close the door": "PRIORITY_ORDER",
+      "Tackle the fire if small, move the patient out, pull the alarm, then close the door": "PRIORITY_ORDER",
+      "Close the door, pull the alarm, tackle the fire if small, then move the patient out": "PRIORITY_ORDER"
+    },
+    "ch-b11-011": {
+      "Bring the cart in, but keep it behind the 5-gauss line marked on the floor": "EQUIPMENT_SAFETY",
+      "Bring the cart in, locking its wheels as soon as it reaches the patient table": "EQUIPMENT_SAFETY",
+      "Bring the cart in, since the field is ramped down between patients' scans": "EQUIPMENT_SAFETY"
+    },
+    "ch-b11-017": {
+      "Take off the scalp electrodes first, pausing CPR, then apply the pads": "EMERGENCY_STEP",
+      "Put the right pad straight over the ECG electrode to save time, then shock": "EMERGENCY_STEP",
+      "Unplug all leads at the headbox and await the code team's manual defibrillator": "EMERGENCY_STEP"
+    },
+    "ch-b11-018": {
+      "Give his antihistamine tablets now and watch him closely for 10 min": "EMERGENCY_STEP",
+      "Lay him flat, legs raised, and call the team only if his pulse rises": "EMERGENCY_STEP",
+      "Sit him up to ease breathing and phone his allergist for guidance": "EMERGENCY_STEP"
+    },
+    "ch-b11-020": {
+      "Raise the stretcher head to 90 degrees and hold his head upright": "EMERGENCY_STEP",
+      "Place a bite block between his teeth to keep his airway open": "EMERGENCY_STEP",
+      "Give a head-tilt chin-lift and keep him on his back to vomit": "EMERGENCY_STEP"
+    },
+    "ch-b2-001": {
+      "7 µV/mm": "SENS_ARITHMETIC",
+      "15 µV/mm": "SENS_DIRECTION",
+      "5 µV/mm": "SENS_DIRECTION"
+    },
+    "ch-b2-002": {
+      "15 Hz": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-b2-003": {
+      "About 40 ms; a spike": "DECIMAL_SLIP",
+      "About 133 ms; a sharp wave": "PAGE_SPEED_ASSUMED",
+      "About 400 ms; a slow wave": "DECIMAL_SLIP"
+    },
+    "ch-b2-004": {
+      "About 50 µV, and about 71 µV": "CUTOFF_50_NOT_70",
+      "About 71 µV, and about 100 µV": "FILTER_ALL_OR_NONE",
+      "About 0 µV, and about 50 µV": "FILTER_ALL_OR_NONE"
+    },
+    "ch-b2-005": {
+      "About 100%": "FILTER_ALL_OR_NONE"
+    },
+    "ch-b2-006": {
+      "About 32; there is no meaningful distortion": "DECIMAL_SLIP",
+      "About 3; it will be aliased to a lower frequency": "ALIASING"
+    },
+    "ch-b2-007": {
+      "About 1 µV": "DECIMAL_SLIP",
+      "About 10 µV": "DECIMAL_SLIP",
+      "About 100 µV": "DECIMAL_SLIP"
+    },
+    "ch-b2-008": {
+      "About 0.3 Hz": "TC_UNITS",
+      "About 3.3 Hz": "TC_NO_2PI"
+    },
+    "ch-b2-009": {
+      "Its gain is about 40% high; reduce its sensitivity to compensate": "PERCENT_BASE",
+      "It reflects a higher electrode impedance at that head position": "IMPEDANCE_LOGIC",
+      "It is within tolerance, because the deviation is under 2 mm": "EQUIPMENT_SAFETY"
+    },
+    "ch-b2-010": {
+      "Fp1 has high impedance only in channel 6's connection": "IMPEDANCE_LOGIC"
+    },
+    "ch-b2-012": {
+      "Accept it, since a single high electrode only reduces amplitude": "IMPEDANCE_LOGIC",
+      "Accept it, and raise the HFF to suppress any noise from O2": "MASKING_A_FAULT",
+      "Accept it, and use O2 only in referential derivations": "IMPEDANCE_LOGIC"
+    },
+    "ch-b2-013": {
+      "Up, up, down, down; negative phase reversal at T3": "POLARITY_SIGN",
+      "Down, down, up, up; negative phase reversal at T5": "LOCALIZATION",
+      "Down, up, down, up; two independent maxima present": "POLARITY_SIGN"
+    },
+    "ch-b2-014": {
+      "A 20-µV downward deflection": "POLARITY_SIGN",
+      "A 140-µV upward deflection": "BIPOLAR_ADDING",
+      "A 140-µV downward deflection": "BIPOLAR_ADDING"
+    },
+    "ch-b2-016": {
+      "Between C3 and P3, left centroparietal": "LOCALIZATION",
+      "At Cz, the vertex": "LOCALIZATION",
+      "At T3, the left mid-temporal region": "LOCALIZATION"
+    },
+    "ch-b2-017": {
+      "As independent right-sided positive discharges occurring simultaneously": "REFERENCE_CONTAMINATION",
+      "As volume conduction of the discharge across the midline to the right": "REFERENCE_CONTAMINATION",
+      "As high impedance across the right-hemisphere electrodes at that moment": "IMPEDANCE_LOGIC"
+    },
+    "ch-b2-018": {
+      "Generalized positive sharp transients; annotate them as abnormal": "REFERENCE_CONTAMINATION",
+      "Occipital POSTS spreading forward; review the same montage at 10 µV/mm": "REFERENCE_CONTAMINATION",
+      "Frontal eye-movement artifact; add infraorbital electrodes to confirm": "CEREBRAL_AS_ARTIFACT"
+    },
+    "ch-b2-019": {
+      "The inferior frontal gyrus": "LOCALIZATION",
+      "The left frontal pole": "LOCALIZATION",
+      "The left mid-temporal neocortex": "LOCALIZATION"
+    },
+    "ch-b2-020": {
+      "At T4 alone, with C4 uninvolved": "ISOPOTENTIAL",
+      "At Cz, the vertex": "POLARITY_SIGN",
+      "At C4 alone, with T4 uninvolved": "LOCALIZATION"
+    },
+    "ch-b2-021": {
+      "Fp1 becomes negative relative to F3 as the retina turns upward": "POLARITY_SIGN",
+      "F3 becomes positive relative to Fp1 from frontalis contraction": "ARTIFACT_TYPE",
+      "Fp1 impedance rises briefly as the eyelid closes over it": "ARTIFACT_TYPE"
+    },
+    "ch-b2-022": {
+      "A disconnected patient ground electrode": "GROUND_REFERENCE_LOGIC",
+      "A nearby device radiating 60-Hz fields": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b2-023": {
+      "High impedance at the patient ground": "GROUND_REFERENCE_LOGIC",
+      "Unbalanced impedance between T5 and O1": "IMPEDANCE_LOGIC"
+    },
+    "ch-b2-024": {
+      "Sweat artifact from posterior scalp electrodes": "ARTIFACT_TYPE",
+      "Posterior slow waves of youth": "ARTIFACT_AS_CEREBRAL",
+      "Occipital intermittent rhythmic delta activity": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b2-025": {
+      "Medication-induced beta activity": "ARTIFACT_AS_CEREBRAL",
+      "A breach rhythm over both temporal regions": "ARTIFACT_AS_CEREBRAL",
+      "60-Hz interference from the room": "ARTIFACT_TYPE"
+    },
+    "ch-b2-027": {
+      "A failed amplifier in the Fp1-F3 channel": "ISOPOTENTIAL",
+      "High impedance at the Fp1 electrode": "IMPEDANCE_LOGIC",
+      "Focal cortical suppression beneath F3": "ISOPOTENTIAL"
+    },
+    "ch-b2-028": {
+      "A right mid-temporal spike with an unusually steep field": "ARTIFACT_AS_CEREBRAL",
+      "A right temporal sharp wave that has contaminated the average": "ARTIFACT_AS_CEREBRAL",
+      "A lateral rectus spike recorded at the T4 electrode": "ARTIFACT_TYPE"
+    },
+    "ch-b2-029": {
+      "A photomyogenic response of frontal muscles": "ARTIFACT_TYPE",
+      "A photoparoxysmal response": "ARTIFACT_AS_CEREBRAL",
+      "Photic driving of a frontal rhythm": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b2-030": {
+      "Lateralized periodic discharges": "ARTIFACT_AS_CEREBRAL",
+      "Electrode pops from a drying electrode": "ARTIFACT_TYPE",
+      "ECG artifact": "ARTIFACT_TYPE"
+    },
+    "ch-b2-031": {
+      "Pulse artifact": "ARTIFACT_TYPE",
+      "Lateralized periodic discharges": "ARTIFACT_AS_CEREBRAL",
+      "Ballistocardiographic movement": "ARTIFACT_TYPE"
+    },
+    "ch-b2-032": {
+      "Bifrontal epileptiform spikes": "ARTIFACT_AS_CEREBRAL",
+      "Lambda waves": "ARTIFACT_AS_CEREBRAL",
+      "Electrode pops at F7 and F8": "ARTIFACT_TYPE"
+    },
+    "ch-b2-033": {
+      "A bitemporal electrographic seizure": "ARTIFACT_AS_CEREBRAL",
+      "Rhythmic midtemporal theta of drowsiness": "ARTIFACT_AS_CEREBRAL",
+      "Glossokinetic artifact": "ARTIFACT_TYPE"
+    },
+    "ch-b2-034": {
+      "Repeat HV for a further 5 minutes to try to provoke buildup": "ACTIVATION_RESPONSE",
+      "Annotate the HV portion as technically inadequate and repeat it": "ACTIVATION_RESPONSE"
+    },
+    "ch-b2-035": {
+      "A carbohydrate-rich snack before testing": "ACTIVATION_RESPONSE"
+    },
+    "ch-b2-036": {
+      "A photoparoxysmal response at half the flash rate": "ACTIVATION_RESPONSE",
+      "A photomyogenic response of the frontal muscles": "ACTIVATION_RESPONSE",
+      "Photoelectric artifact from the photic lamp": "CEREBRAL_AS_ARTIFACT"
+    },
+    "ch-b2-037": {
+      "20 minutes, matching a routine adult outpatient study": "AGE_NORMS",
+      "30 minutes, stopping as soon as quiet sleep is seen": "AGE_NORMS",
+      "10 minutes after settling, to minimise movement artifact": "AGE_NORMS"
+    },
+    "ch-b2-038": {
+      "A sensitivity of 2 µV/mm for part of the recording": "ECI_REQUIREMENTS",
+      "A recording duration of 35 minutes": "ECI_REQUIREMENTS",
+      "Interelectrode distances of 10 cm or more": "ECI_REQUIREMENTS"
+    },
+    "ch-b2-039": {
+      "Electrocerebral inactivity with intermittent artifact": "ENCEPHALOPATHY",
+      "Generalized periodic discharges": "ENCEPHALOPATHY",
+      "A normal discontinuous sleep pattern": "ABNORMAL_AS_NORMAL"
+    },
+    "ch-b2-040": {
+      "A normal, widely distributed posterior alpha rhythm": "ABNORMAL_AS_NORMAL",
+      "Mu rhythm spreading over the frontal regions": "ABNORMAL_AS_NORMAL",
+      "Medication-induced beta activity of sedation": "MEDICATION_EFFECT"
+    },
+    "ch-b2-041": {
+      "7.6 cm": "TENTWENTY_MEASURE",
+      "3.8 cm": "TENTWENTY_MEASURE",
+      "19.0 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-b2-042": {
+      "5.6 cm": "TENTWENTY_MEASURE",
+      "11.2 cm": "TENTWENTY_MEASURE",
+      "2.8 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-b2-043": {
+      "The right central (C4) region": "LOCALIZATION",
+      "The left occipital (O1) region": "LOCALIZATION",
+      "The left anterior temporal (F7/T1) region": "LOCALIZATION"
+    },
+    "ch-b2-044": {
+      "Migraine with a visual aura triggered by bright light": "CONTRAINDICATION",
+      "Cataract surgery on both eyes last year": "CONTRAINDICATION",
+      "Red-green colour blindness since childhood": "CONTRAINDICATION"
+    },
+    "ch-b2-045": {
+      "Quiet sleep": "SLEEP_RULES",
+      "Indeterminate sleep": "SLEEP_RULES",
+      "Wakefulness with eyes closed": "SLEEP_RULES"
+    },
+    "ch-b2-046": {
+      "Normal, because delta brushes are most abundant near term": "AGE_NORMS",
+      "Artifactual, because neonatal montages exaggerate them": "CEREBRAL_AS_ARTIFACT"
+    },
+    "ch-b2-047": {
+      "It indicates a left temporal lesion that requires urgent imaging": "AGE_NORMS",
+      "It represents wicket spikes requiring epileptiform classification": "VARIANT_AS_ABNORMAL",
+      "It indicates a diffuse encephalopathy of moderate severity": "ENCEPHALOPATHY"
+    },
+    "ch-b2-048": {
+      "Posterior slowing indicating encephalopathy": "VARIANT_AS_ABNORMAL",
+      "Occipital intermittent rhythmic delta activity": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b2-049": {
+      "Focal occipital slowing": "VARIANT_AS_ABNORMAL",
+      "Occipital intermittent rhythmic delta activity": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b2-050": {
+      "Generalized spike-and-wave of absence epilepsy": "VARIANT_AS_ABNORMAL",
+      "Generalized rhythmic delta of encephalopathy": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b2-051": {
+      "Right frontal epileptiform activity": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b2-052": {
+      "N3, because the slow waves exceed 75 µV": "SLEEP_RULES",
+      "N3, because slow waves occupy over 15%": "SLEEP_RULES",
+      "N1, because spindles alone do not define N2": "SLEEP_RULES"
+    },
+    "ch-b2-053": {
+      "Wakefulness with eyes open": "SLEEP_RULES",
+      "Stage N1 sleep": "SLEEP_RULES",
+      "Arousal from N2 sleep": "SLEEP_RULES"
+    },
+    "ch-b2-054": {
+      "Childhood absence epilepsy": "SYNDROME_MATCH",
+      "Juvenile myoclonic epilepsy": "SYNDROME_MATCH",
+      "Epileptic encephalopathy with spike-wave activation in sleep": "SYNDROME_MATCH"
+    },
+    "ch-b2-055": {
+      "Childhood absence epilepsy": "SYNDROME_MATCH",
+      "Lennox-Gastaut syndrome": "SYNDROME_MATCH",
+      "Self-limited epilepsy with centrotemporal spikes": "SYNDROME_MATCH"
+    },
+    "ch-b2-056": {
+      "A right frontal epileptogenic focus": "LOCALIZATION",
+      "Eye-movement artifact during sleep": "CEREBRAL_AS_ARTIFACT",
+      "A generalized epilepsy with frontal predominance": "SYNDROME_MATCH"
+    },
+    "ch-b2-057": {
+      "Benign sleep-activated centrotemporal spikes": "SYNDROME_MATCH",
+      "Hypsarrhythmia with sleep activation": "SYNDROME_MATCH",
+      "Lennox-Gastaut syndrome with sleep activation": "SYNDROME_MATCH"
+    },
+    "ch-b2-058": {
+      "Burst-suppression of an early infantile epilepsy": "SYNDROME_MATCH",
+      "Generalized polyspike-wave of a myoclonic epilepsy": "SYNDROME_MATCH"
+    },
+    "ch-b2-059": {
+      "LPDs at about 0.8 Hz": "WAVES_NOT_PER_SECOND",
+      "LRDA at about 1.2 Hz": "ACNS_CRITERIA",
+      "LPDs at about 12 Hz": "WAVES_NOT_PER_SECOND"
+    },
+    "ch-b2-060": {
+      "LPDs with plus features only": "ACNS_CRITERIA",
+      "A brief potentially ictal rhythmic discharge": "ACNS_CRITERIA",
+      "An ictal-interictal continuum pattern only": "ACNS_CRITERIA"
+    },
+    "ch-b2-061": {
+      "Recurrent seizures not meeting status criteria": "ACNS_CRITERIA",
+      "Ictal-interictal continuum pattern": "ACNS_CRITERIA",
+      "Brief potentially ictal rhythmic discharges": "ACNS_CRITERIA"
+    },
+    "ch-b2-062": {
+      "An electrographic seizure of brief duration": "ACNS_CRITERIA",
+      "Lateralized periodic discharges, focal": "ACNS_CRITERIA",
+      "Lateralized rhythmic delta activity": "ACNS_CRITERIA"
+    },
+    "ch-b2-063": {
+      "The infusion rate of each sedative every hour": "DOCUMENTATION",
+      "Electrode impedance values every hour": "DOCUMENTATION",
+      "The patient's temperature at each discharge": "DOCUMENTATION"
+    },
+    "ch-b2-064": {
+      "Frontally predominant lateralized rhythmic delta": "ACNS_CRITERIA",
+      "Frontally predominant generalized periodic discharges": "ACNS_CRITERIA",
+      "Bilateral independent periodic discharges": "ACNS_CRITERIA"
+    },
+    "ch-b2-065": {
+      "It excludes an epileptic seizure, as no EEG change is seen": "ABNORMAL_AS_NORMAL",
+      "It was a sleep arousal, because it arose from sleep": "ABNORMAL_AS_NORMAL"
+    },
+    "ch-b2-066": {
+      "It supports right-sided onset by contralateral suppression": "LOCALIZATION"
+    },
+    "ch-b2-067": {
+      "Alcohol hand rub; equipment cleaned with a quaternary wipe": "INFECTION_CONTROL",
+      "Alcohol hand rub only, since gloves were worn throughout": "INFECTION_CONTROL",
+      "Soap-and-water hand washing; equipment cleaned at day's end": "INFECTION_CONTROL"
+    },
+    "ch-b2-068": {
+      "Finish the study, then tag it and report it to biomedical engineering": "EQUIPMENT_SAFETY",
+      "Move it to another outlet, continue, and report it afterwards": "EQUIPMENT_SAFETY",
+      "Disconnect the patient ground, continue, and report it afterwards": "EQUIPMENT_SAFETY"
+    },
+    "ch-b2-069": {
+      "Cover it with correction fluid and write the correct time neatly": "DOCUMENTATION",
+      "Rewrite the whole log page so the record stays easy to read": "DOCUMENTATION",
+      "Leave the entry and explain the error verbally at handover": "DOCUMENTATION"
+    },
+    "ch-b2-070": {
+      "Open the recording to reassure them about their results": "PRIVACY",
+      "Open it only after the reading physician has issued a report": "PRIVACY",
+      "Open it if the colleague gives you verbal permission": "PRIVACY"
+    },
+    "ch-b2-071": {
+      "Freely, because the names, dates and record numbers are removed": "PRIVACY",
+      "Only in a closed technologists' group, without needing approval": "PRIVACY",
+      "Freely, since privacy duties end once the patient has died": "PRIVACY"
+    },
+    "ch-b2-072": {
+      "Turn the patient's oxygen off while applying and drying the collodion": "EQUIPMENT_SAFETY",
+      "Dry each electrode with an electric heat gun to shorten exposure": "EQUIPMENT_SAFETY"
+    },
+    "ch-b2-073": {
+      "Electrode impedances are scheduled to be checked once daily": "PRIORITY_ORDER"
+    },
+    "ch-b2-074": {
+      "Document it and leave it for the routine physician report": "UNDER_ESCALATION",
+      "Document it and tell the patient that a seizure was recorded": "SCOPE",
+      "Document it and notify the ordering office by the end of the day": "UNDER_ESCALATION"
+    },
+    "ch-b2-075": {
+      "Agree, since medication withdrawal is the purpose of this admission": "SCOPE",
+      "Agree, but document the patient's request in the technologist log": "SCOPE",
+      "Suggest taking half the dose instead, and then inform the care team": "SCOPE"
+    },
+    "ch-b3-001": {
+      "Proceed, and enter the wristband date of birth in the study header": "DOCUMENTATION"
+    },
+    "ch-b3-002": {
+      "Photic stimulation for a 15-year-old with suspected JME": "CONTRAINDICATION",
+      "Sleep deprivation for a 30-year-old after a first seizure": "CONTRAINDICATION",
+      "Hyperventilation for a 7-year-old with suspected absences": "CONTRAINDICATION"
+    },
+    "ch-b3-005": {
+      "Levetiracetam 500 mg taken as usual early that morning": "MEDICATION_EFFECT"
+    },
+    "ch-b3-006": {
+      "Levetiracetam 750 mg twice daily for two years": "MEDICATION_EFFECT",
+      "Metoprolol 50 mg once daily for hypertension": "MEDICATION_EFFECT",
+      "Lamotrigine 100 mg twice daily for one year": "MEDICATION_EFFECT"
+    },
+    "ch-b3-009": {
+      "In P3-O1 only, the channel in which P3 is the first input": "GROUND_REFERENCE_LOGIC",
+      "In C3-P3 only, the channel in which P3 is the second input": "GROUND_REFERENCE_LOGIC",
+      "In all four channels of the chain, since the imbalance is shared": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b3-010": {
+      "The direct current cannot pass through the electrolyte gel at all": "IMPEDANCE_LOGIC",
+      "The ohmmeter reads only the lead wire's resistance, not the skin's": "IMPEDANCE_LOGIC",
+      "The ohmmeter reading changes with the EEG amplifier's gain setting": "IMPEDANCE_LOGIC"
+    },
+    "ch-b3-011": {
+      "Add more electrolyte until a small amount spreads out from under the cup's rim": "IMPEDANCE_LOGIC",
+      "Press the cup down firmly and secure it with extra tape for the whole recording": "IMPEDANCE_LOGIC",
+      "Replace the cup with a new one at the same site using the same electrolyte": "IMPEDANCE_LOGIC"
+    },
+    "ch-b3-012": {
+      "Gold-plated cups, which are highly resistant to corrosion": "IMPEDANCE_LOGIC",
+      "Stainless-steel subdermal needles, which have stable contact": "IMPEDANCE_LOGIC",
+      "Platinum subdermal needles, which have a small contact area": "IMPEDANCE_LOGIC"
+    },
+    "ch-b3-013": {
+      "Silver cups conduct sweat more readily, causing slow skin potentials": "IMPEDANCE_LOGIC",
+      "The two metals give a different amplifier gain to each channel input": "IMPEDANCE_LOGIC",
+      "Gold cups need longer for the electrolyte to soak into the skin": "IMPEDANCE_LOGIC"
+    },
+    "ch-b3-015": {
+      "Better recording of orbitofrontal and frontopolar discharges": "LOCALIZATION",
+      "Better recording of lateral temporal neocortical convexity discharges": "LOCALIZATION",
+      "Better recording of insular and frontal opercular discharges": "LOCALIZATION"
+    },
+    "ch-b3-016": {
+      "3 cm behind the outer canthus along this line, then 1 cm above it": "TENTWENTY_MEASURE",
+      "4.5 cm anterior to the meatus along this line, then 1 cm above it": "TENTWENTY_MEASURE",
+      "3 cm anterior to the meatus along this line, then 1 cm below it": "TENTWENTY_MEASURE"
+    },
+    "ch-b3-017": {
+      "P4 and T4": "TENTWENTY_MEASURE",
+      "T6 and F8": "TENTWENTY_MEASURE",
+      "O2 and T6": "TENTWENTY_MEASURE"
+    },
+    "ch-b3-018": {
+      "A true right posterior alpha reduction; record it as a focal abnormality": "ARTIFACT_AS_CEREBRAL",
+      "Higher left-sided impedance boosted the signal; re-prepare the left side": "IMPEDANCE_LOGIC"
+    },
+    "ch-b3-019": {
+      "A horizontal eye movement to the right": "PHASE_REVERSAL_READ",
+      "A vertical eye movement upward with a blink": "ARTIFACT_TYPE",
+      "A glossokinetic potential from the tongue": "ARTIFACT_TYPE"
+    },
+    "ch-b3-020": {
+      "Fp1-F3 65 µV up and F3-C3 20 µV up, with no phase reversal": "POLARITY_SIGN",
+      "Fp1-F3 65 µV down and F3-C3 20 µV up, a phase reversal at F3": "END_OF_CHAIN",
+      "Fp1-F3 115 µV down and F3-C3 30 µV down, with no phase reversal": "BIPOLAR_ADDING"
+    },
+    "ch-b3-021": {
+      "The infraorbital electrode shows the waves with the same polarity as Fp1": "CEREBRAL_AS_ARTIFACT",
+      "The infraorbital electrode shows the waves larger than Fp1, same polarity": "CEREBRAL_AS_ARTIFACT",
+      "The infraorbital electrode shows no waves while Fp1 still shows them": "CEREBRAL_AS_ARTIFACT"
+    },
+    "ch-b3-022": {
+      "Volume conduction of the corneoretinal potential to the occipital region": "REFERENCE_CONTAMINATION",
+      "Occipital lambda waves triggered by the visual change of each blink": "REFERENCE_CONTAMINATION",
+      "Movement of the occipital electrodes against the pillow with each blink": "ARTIFACT_TYPE"
+    },
+    "ch-b3-023": {
+      "Left frontalis muscle activity spreading over the left hemisphere": "REFERENCE_CONTAMINATION",
+      "A high-impedance A1 electrode admitting 60-Hz interference": "ARTIFACT_TYPE",
+      "Diffuse left-hemisphere beta over a left-sided skull defect": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b3-024": {
+      "Muscle bursts are converted into slow waves that resemble delta activity": "FILTER_DIRECTION",
+      "Muscle bursts become larger, because the filter boosts lower frequencies": "FILTER_DIRECTION",
+      "Muscle bursts are unchanged, while the 8-12 Hz alpha is markedly reduced": "FILTER_DIRECTION"
+    },
+    "ch-b3-025": {
+      "Bitemporal periodic discharges with superimposed fast activity": "ARTIFACT_AS_CEREBRAL",
+      "Glossokinetic artifact from tongue movement during jaw motion": "ARTIFACT_TYPE",
+      "A bitemporal seizure with rhythmic fast bursts and automatisms": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b3-026": {
+      "An electrographic seizure with oral automatisms": "ARTIFACT_AS_CEREBRAL",
+      "Glossokinetic artifact from crying and tongue motion": "ARTIFACT_TYPE",
+      "Anterior dysrhythmia, a normal transitional pattern": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b3-027": {
+      "Lateralized periodic discharges at about 0.23 Hz": "ARTIFACT_AS_CEREBRAL",
+      "Pulse artifact from a temporal artery under an electrode": "ARTIFACT_TYPE",
+      "ECG artifact from a slow junctional heart rhythm": "ARTIFACT_TYPE"
+    },
+    "ch-b3-028": {
+      "Left frontal attenuation suggesting a left frontal structural lesion": "ARTIFACT_AS_CEREBRAL",
+      "Right frontal slowing suggesting right frontal cerebral dysfunction": "ARTIFACT_AS_CEREBRAL",
+      "A high-impedance Fp1 electrode suppressing left frontal activity": "IMPEDANCE_LOGIC"
+    },
+    "ch-b3-029": {
+      "Bitemporal intermittent rhythmic delta": "ARTIFACT_AS_CEREBRAL",
+      "Sweat artifact over the anterior temples": "ARTIFACT_TYPE",
+      "Glossokinetic potentials from swallowing": "ARTIFACT_TYPE"
+    },
+    "ch-b3-030": {
+      "A slowed posterior dominant rhythm of 4-5 Hz": "ARTIFACT_AS_CEREBRAL",
+      "Posterior temporal intermittent rhythmic theta": "ARTIFACT_AS_CEREBRAL",
+      "Rhythmic midtemporal theta of drowsiness": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b3-031": {
+      "Its tip is positive relative to its root, as with the cornea": "ARTIFACT_TYPE",
+      "Its muscle fibres fire at 1-3 Hz during articulation": "ARTIFACT_TYPE",
+      "Its movement shifts the corneoretinal dipoles of both eyes": "ARTIFACT_TYPE"
+    },
+    "ch-b3-032": {
+      "Negative at F8 and positive at F7": "POLARITY_SIGN",
+      "Positive at both F7 and F8 equally": "ARTIFACT_TYPE",
+      "Negative at both F7 and F8 equally": "ARTIFACT_TYPE"
+    },
+    "ch-b3-033": {
+      "As a left temporal sharp wave, an epileptiform discharge": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b3-034": {
+      "An amplitude below 50 µV with a duration below 50 ms": "VARIANT_AS_ABNORMAL",
+      "Occurrence only during drowsiness and light NREM sleep": "VARIANT_AS_ABNORMAL",
+      "Independent occurrence over both hemispheres in the record": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b3-035": {
+      "A transverse bipolar montage of adjacent electrodes": "ISOPOTENTIAL",
+      "A Laplacian (source) derivation centred on T5 and T6": "ISOPOTENTIAL",
+      "A circumferential bipolar montage around the head": "ISOPOTENTIAL"
+    },
+    "ch-b3-036": {
+      "Downward; lambda waves": "POLARITY_SIGN",
+      "Upward; occipital spikes": "VARIANT_AS_ABNORMAL",
+      "Downward; POSTS": "POLARITY_SIGN"
+    },
+    "ch-b3-037": {
+      "Lambda waves, occipital transients of visual scanning": "SLEEP_RULES",
+      "Bilateral occipital spike discharges of epilepsy": "VARIANT_AS_ABNORMAL",
+      "Occipital intermittent rhythmic delta activity": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b3-038": {
+      "Sharply contoured waves at T4 that are larger than those at homologous T3": "VARIANT_AS_ABNORMAL",
+      "Faster, higher-amplitude rhythms over T4 that persist through all sleep stages": "VARIANT_AS_ABNORMAL",
+      "Arciform 7-11 Hz waves near the defect that attenuate with left-hand movement": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b3-039": {
+      "Start hyperventilation to see whether the run accelerates or spreads": "PRIORITY_ORDER",
+      "Switch to a transverse montage and wait for the run to end before acting": "PRIORITY_ORDER",
+      "Change sensitivity to 15 µV/mm to judge whether the run evolves in amplitude": "PRIORITY_ORDER"
+    },
+    "ch-b3-040": {
+      "Phantom spike-and-wave of the high-amplitude anterior, waking type": "VARIANT_AS_ABNORMAL",
+      "Occipital spikes of a self-limited childhood occipital epilepsy": "VARIANT_AS_ABNORMAL",
+      "Atypical generalized spike-and-wave of a generalized epilepsy": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b3-041": {
+      "Set A low-level disinfection; set B low-level disinfection": "INFECTION_CONTROL",
+      "Set A high-level disinfection; set B sterilization": "INFECTION_CONTROL",
+      "Set A cleaning only; set B low-level disinfection": "INFECTION_CONTROL"
+    },
+    "ch-b3-042": {
+      "The disinfectant contact time must be doubled whenever blood is present": "INFECTION_CONTROL",
+      "Dried blood requires sterilization in place of disinfection for cup electrodes": "INFECTION_CONTROL",
+      "The electrolyte paste reacts with the disinfectant and corrodes the cups": "INFECTION_CONTROL"
+    },
+    "ch-b3-043": {
+      "Provide the list with names removed but medical record numbers kept": "PRIVACY",
+      "Provide the list, since the resident is a clinician at the same hospital": "PRIVACY",
+      "Provide diagnoses only, since diagnoses alone are not health information": "PRIVACY"
+    },
+    "ch-b3-044": {
+      "Explain that the raw EEG belongs to the hospital and only the summary can be released": "PRIVACY",
+      "Explain that she needs written approval from her referring neurologist first": "PRIVACY",
+      "Copy the recording to a USB drive for her now, since it is her own information": "PRIVACY"
+    },
+    "ch-b3-045": {
+      "Share only that the EEG was normal, since normal results carry no risk": "PRIVACY",
+      "Share the results once he confirms her date of birth and home address": "PRIVACY",
+      "Share the results, because a spouse is automatically her representative": "PRIVACY"
+    },
+    "ch-b3-046": {
+      "Perform it at reduced flash intensity, since the order includes photic stimulation": "CONSENT",
+      "Perform only the 1-10 Hz flash rates, which are least likely to provoke a seizure": "CONSENT",
+      "Postpone it to the end of the recording and perform it if the patient falls asleep": "CONSENT"
+    },
+    "ch-b3-047": {
+      "Release the summary, since disclosures to law enforcement are allowed on request": "PRIVACY",
+      "Release only the impression line, since a summary carries less identifiable detail": "PRIVACY",
+      "Release the summary once the officer signs the lab's visitor log with his badge number": "PRIVACY"
+    },
+    "ch-b3-048": {
+      "Use the son as interpreter, since a family member knows her history best": "PRIVACY",
+      "Use the son for the history, and a qualified interpreter only for consent": "PRIVACY",
+      "Use simple English with gestures, since the son's presence may reassure her": "ETHICS"
+    },
+    "ch-b3-049": {
+      "Hide the names but keep live video visible to the corridor": "PRIVACY",
+      "Post a sign asking visitors not to look at the monitor screens": "PRIVACY",
+      "Show medical record numbers on screen in place of patient names": "PRIVACY"
+    },
+    "ch-b3-050": {
+      "Send it from the personal account, since sharing for treatment needs no release": "PRIVACY",
+      "Wait for the patient's signed release, then send it through the secure system": "PRIVACY",
+      "Send only the summary by fax now, and the EEG file once a signed release arrives": "PRIVACY"
+    },
+    "ch-b3-051": {
+      "Explain that the order must be completed, and continue until sleep is recorded": "CONSENT",
+      "Explain that leaving needs the ordering doctor's approval, and ask her to wait": "CONSENT",
+      "Explain what an incomplete study may miss, and ask her partner to persuade her": "CONSENT"
+    },
+    "ch-b4-003": {
+      "A: paired negative and positive maxima; B: one negative maximum overhead": "LOCALIZATION",
+      "Each gives one negative maximum directly over its own generator site": "LOCALIZATION",
+      "Each gives paired maxima, with the negative pole directly overhead": "LOCALIZATION"
+    },
+    "ch-b4-005": {
+      "Left lateral frontotemporal region (F7, T3, C3, T5)": "LOCALIZATION",
+      "Left posterior temporal and occipital region (T5, O1, P3)": "LOCALIZATION",
+      "Left frontopolar and anterior temporal region (Fp1, F7)": "LOCALIZATION"
+    },
+    "ch-b4-006": {
+      "Right occipital and posterior temporal region (O2, T6)": "LOCALIZATION",
+      "Left mid-temporal and central region (T3, C3)": "LOCALIZATION",
+      "Left frontal and frontopolar region (F3, Fp1)": "LOCALIZATION"
+    },
+    "ch-b4-007": {
+      "Left centroparietal region (C3, P3)": "LOCALIZATION",
+      "Right mid-temporal region (T4, T6)": "LOCALIZATION",
+      "Right frontal region (F4, F8)": "LOCALIZATION"
+    },
+    "ch-b4-008": {
+      "Left anterior temporal region (F7, T1)": "LOCALIZATION",
+      "Right posterior temporal region (T6, O2)": "LOCALIZATION",
+      "Right frontopolar region (Fp2, F4)": "LOCALIZATION"
+    },
+    "ch-b4-009": {
+      "Down, down, up, up; negative phase reversal at T4": "POLARITY_SIGN",
+      "Up, up, down, down; negative phase reversal at T4": "PHASE_REVERSAL_READ",
+      "Up, up, down, down; positive phase reversal at T6": "LOCALIZATION"
+    },
+    "ch-b4-010": {
+      "A positive maximum at or beyond Fp2": "POLARITY_SIGN",
+      "A negative maximum between C4 and P4": "END_OF_CHAIN",
+      "A positive maximum at or beyond O2": "POLARITY_SIGN"
+    },
+    "ch-b4-011": {
+      "About +70 µV": "POLARITY_SIGN",
+      "About −130 µV": "BIPOLAR_ADDING"
+    },
+    "ch-b4-012": {
+      "The positive pole of a tangential right temporal dipole": "REFERENCE_CONTAMINATION",
+      "Inputs reversed in the right-ear referential channels": "REFERENCE_CONTAMINATION",
+      "A separate positive discharge in the right parasagittal area": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b4-013": {
+      "A linked-ears reference for all channels": "REFERENCE_CONTAMINATION",
+      "A contralateral-ear reference per side": "REFERENCE_CONTAMINATION",
+      "A frontopolar (Fpz) reference for all channels": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b4-014": {
+      "A 10-µV upward deflection": "POLARITY_SIGN",
+      "No visible deflection at all": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b4-015": {
+      "A common average reference": "REFERENCE_CONTAMINATION",
+      "A linked-ears reference": "REFERENCE_CONTAMINATION",
+      "A vertex (Cz) reference": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b4-016": {
+      "Two independent sources: centrotemporal negative, frontal positive": "LOCALIZATION",
+      "One radial source at C3, with frontal reference contamination": "LOCALIZATION",
+      "One radial source at Fp1, with posterior reference contamination": "LOCALIZATION"
+    },
+    "ch-b4-017": {
+      "C4-P4, because C4 carries the largest single voltage": "BIPOLAR_ADDING",
+      "Fp2-F4, because Fp2 carries the positive maximum": "BIPOLAR_ADDING",
+      "P4-O2, because the field is widest posteriorly": "BIPOLAR_ADDING"
+    },
+    "ch-b4-018": {
+      "T4 −50 µV, T6 −90 µV": "POLARITY_SIGN",
+      "T4 +20 µV, T6 −20 µV": "POLARITY_SIGN",
+      "T4 −90 µV, T6 +50 µV": "BIPOLAR_ADDING"
+    },
+    "ch-b4-019": {
+      "Down, down, up, up; maximum confined to T4 alone": "ISOPOTENTIAL",
+      "Up, up, near-flat, down; maximum shared by T4 and T6": "POLARITY_SIGN",
+      "Down, down, near-flat, up; maximum confined to T6 alone": "LOCALIZATION"
+    },
+    "ch-b4-020": {
+      "60 µV upward": "POLARITY_SIGN",
+      "80 µV downward": "POLARITY_SIGN"
+    },
+    "ch-b4-021": {
+      "A referential montage to the right-ear (A2) reference": "REFERENCE_CONTAMINATION",
+      "The same transverse chain moved one row forward": "END_OF_CHAIN"
+    },
+    "ch-b4-022": {
+      "A transverse central chain: T3-C3, C3-Cz, Cz-C4, C4-T4": "END_OF_CHAIN",
+      "A longitudinal chain run in reverse order: O1-P3, P3-C3": "END_OF_CHAIN",
+      "A double-distance longitudinal chain: Fp1-C3, C3-O1": "END_OF_CHAIN"
+    },
+    "ch-b4-023": {
+      "Add A1 and A2 to the electrodes forming the average": "REFERENCE_CONTAMINATION",
+      "Give Fp1 and Fp2 double weight within the average": "REFERENCE_CONTAMINATION",
+      "Replace the average with an Fpz reference throughout": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b4-024": {
+      "100 µV upward": "REFERENCE_CONTAMINATION",
+      "130 µV upward": "BIPOLAR_ADDING"
+    },
+    "ch-b4-025": {
+      "Apply the 60-Hz notch to the ear-referenced channels": "MASKING_A_FAULT",
+      "Re-apply every electrode on the left side of the head": "REFERENCE_CONTAMINATION",
+      "Raise the low-frequency setting to 5 Hz on all channels": "MASKING_A_FAULT"
+    },
+    "ch-b4-026": {
+      "A generalized discharge with a broad, even field": "ARTIFACT_AS_CEREBRAL",
+      "A fault in the patient ground electrode": "GROUND_REFERENCE_LOGIC",
+      "A transient failure of one amplifier channel": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b4-027": {
+      "A very focal spike generated directly beneath T4": "ARTIFACT_AS_CEREBRAL",
+      "A tangential spike whose opposite pole lies at C4": "ARTIFACT_AS_CEREBRAL",
+      "A deep mesial spike whose field reaches only T4": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b4-028": {
+      "Smaller, because the longer span increases in-phase cancellation": "ISOPOTENTIAL"
+    },
+    "ch-b4-029": {
+      "Eye-movement pickup, reduced by excluding the frontopolar channels": "ARTIFACT_TYPE",
+      "Temporal muscle pickup, reduced by asking the patient to relax the jaw": "ARTIFACT_TYPE"
+    },
+    "ch-b4-030": {
+      "A vertex (Cz) reference": "REFERENCE_CONTAMINATION",
+      "A linked-ears reference": "REFERENCE_CONTAMINATION",
+      "An ipsilateral-ear reference": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b4-032": {
+      "Positive sharp waves, maximal at T3, with field to F7 and T5": "POLARITY_SIGN",
+      "Negative sharp waves, maximal at F7, with field to T3 and T5": "LOCALIZATION",
+      "Negative sharp waves, maximal at T3, with field to C3 and Fp1": "LOCALIZATION"
+    },
+    "ch-b4-033": {
+      "An amplitude about three times the background at the F8 site": "ARTIFACT_AS_CEREBRAL",
+      "An identical waveform each time with no after-going slow wave": "ARTIFACT_AS_CEREBRAL",
+      "Occurrence only in channels that include the F8 electrode": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b4-034": {
+      "Generalized epilepsy with fragments of spike-and-wave": "SYNDROME_MATCH",
+      "Generalized epilepsy with right frontal electrode artifact": "CEREBRAL_AS_ARTIFACT"
+    },
+    "ch-b4-035": {
+      "Generalized and bisynchronous, maximal at the left frontal region": "LOCALIZATION",
+      "Bifrontal focal discharges with spread to the central regions": "LOCALIZATION",
+      "Generalized, bisynchronous and symmetric, maximal posteriorly": "LOCALIZATION"
+    },
+    "ch-b4-037": {
+      "A normal drowsy pattern of no clinical significance": "ABNORMAL_AS_NORMAL",
+      "A sign of a diffuse, nonspecific encephalopathy": "ENCEPHALOPATHY"
+    },
+    "ch-b4-038": {
+      "Generalized spikes, bisynchronous, with a frontal predominance": "LOCALIZATION",
+      "Bilateral independent frontal spikes arising at F3 and at F4": "LOCALIZATION",
+      "Left frontal spikes, maximal at F3, with spread to Fz and F4": "LOCALIZATION"
+    },
+    "ch-b4-039": {
+      "Bilateral independent frontal foci, indicating a focal epilepsy": "SYNDROME_MATCH",
+      "Secondary bilateral synchrony from a single left frontal focus": "SYNDROME_MATCH",
+      "Electrode artifact at F3 and F4, since their fields are restricted": "CEREBRAL_AS_ARTIFACT"
+    },
+    "ch-b4-040": {
+      "A normal asymmetry, since the right side is usually higher": "ABNORMAL_AS_NORMAL",
+      "Right posterior excess amplitude, a focal abnormality on the right": "LOCALIZATION",
+      "A technical asymmetry from unequal interelectrode distances": "CEREBRAL_AS_ARTIFACT"
+    },
+    "ch-b4-041": {
+      "Continuous, rhythmic and present only with hyperventilation": "ACTIVATION_RESPONSE"
+    },
+    "ch-b4-042": {
+      "Let them start, and report your concern to the supervisor afterwards": "PRIORITY_ORDER",
+      "Talk with them privately after the shift, and report it if it recurs": "UNDER_ESCALATION",
+      "Let them start, and report your concern anonymously to the licensing board": "UNDER_ESCALATION"
+    },
+    "ch-b4-043": {
+      "Document typical 5-kΩ values, since the tracing quality was clearly good": "DOCUMENTATION",
+      "Document the end-of-test values in the pre-test impedance field instead": "DOCUMENTATION",
+      "Document nothing and leave the pre-test impedance field blank": "DOCUMENTATION"
+    },
+    "ch-b4-044": {
+      "Accept it and share it with the whole unit team": "ETHICS",
+      "Accept it, since their EMU stay has now ended": "ETHICS",
+      "Accept it, as its value is modest at under $100": "ETHICS"
+    },
+    "ch-b4-045": {
+      "Accept the trip, and abstain only from the final vote": "ETHICS",
+      "Accept the trip, since vendor training is educational": "ETHICS",
+      "Decline the trip, and keep the offer to yourself": "ETHICS"
+    },
+    "ch-b4-046": {
+      "Ask the coworker to take it down now; reporting is unneeded once removed": "PRIVACY",
+      "Report it to the privacy officer, and leave the post up as evidence": "PRIVACY",
+      "Comment asking friends not to share it, and report it at the next staff meeting": "PRIVACY"
+    },
+    "ch-b4-047": {
+      "Accept, but avoid any discussion of their care online": "ETHICS",
+      "Accept, since their EMU admission has already ended": "ETHICS",
+      "Accept, and move any care questions to private messages": "ETHICS"
+    },
+    "ch-b4-048": {
+      "Tell them to encrypt the drive; reporting is unneeded if encrypted": "PRIVACY",
+      "Say nothing for now, and report it if any data are later lost": "PRIVACY",
+      "Tell them to delete names at home; reporting is unneeded then": "PRIVACY"
+    },
+    "ch-b4-049": {
+      "Record 60 minutes, since billing is the reader's responsibility": "DOCUMENTATION",
+      "Record 60 minutes, and add a note that the reader requested it": "DOCUMENTATION",
+      "Record 40 minutes, and let the request pass without any comment": "ETHICS"
+    },
+    "ch-b4-050": {
+      "Log in for them, and stay beside them while they finish notes": "DOCUMENTATION",
+      "Log in for them, since you both recorded the same patient": "DOCUMENTATION",
+      "Give them your password, and change it at the end of the shift": "PRIVACY"
+    },
+    "ch-b5-001": {
+      "Normal for age, since 5-6 Hz persists until about age 5": "AGE_NORMS",
+      "Normal for age, since it is reactive and symmetric": "AGE_NORMS",
+      "Slow for age, since about 10 Hz is expected by age 3": "AGE_NORMS"
+    },
+    "ch-b5-002": {
+      "Abnormal, since spindles should be synchronous after term": "AGE_NORMS",
+      "Abnormal, since spindles should not appear before 6 months": "AGE_NORMS",
+      "Normal, but only if each spindle train lasts under 1 second": "AGE_NORMS"
+    },
+    "ch-b5-003": {
+      "29 weeks PMA": "AGE_NORMS",
+      "47 weeks PMA": "AGE_NORMS",
+      "33 weeks PMA": "AGE_NORMS"
+    },
+    "ch-b5-004": {
+      "Normal for age; tracé alternant persists until about 6 months": "AGE_NORMS",
+      "Normal for age; this is hypnagogic hypersynchrony of infancy": "AGE_NORMS",
+      "Immature for age; spindles should already be synchronous by now": "AGE_NORMS"
+    },
+    "ch-b5-005": {
+      "Abnormal, since sleep-onset REM at this age suggests narcolepsy": "AGE_NORMS",
+      "Normal, but only because feeding produced a brief arousal first": "AGE_NORMS",
+      "Abnormal, since quiet sleep should come first once past term": "AGE_NORMS"
+    },
+    "ch-b5-010": {
+      "About 3.4 cm": "TENTWENTY_MEASURE",
+      "About 13.6 cm": "TENTWENTY_MEASURE",
+      "About 8.5 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-b5-011": {
+      "About 4.5 s": "PAGE_SPEED_ASSUMED",
+      "About 13.5 s": "PAGE_SPEED_ASSUMED",
+      "About 18 s": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-b5-013": {
+      "In phase: ROC-A1 and LOC-A1 both deflect downward": "ARTIFACT_TYPE",
+      "Out of phase: ROC-A1 deflects up, LOC-A1 deflects down": "POLARITY_SIGN",
+      "A deflection in ROC-A1 only; LOC-A1 stays flat": "ARTIFACT_TYPE"
+    },
+    "ch-b5-014": {
+      "Irregular respiration, rapid eye movements, chin EMG tone absent": "SLEEP_RULES",
+      "Regular respiration, rapid eye movements, chin EMG tone absent": "SLEEP_RULES",
+      "Irregular respiration, no rapid eye movements, chin EMG tone absent": "SLEEP_RULES"
+    },
+    "ch-b5-016": {
+      "A neonatal electrographic seizure in the alpha frequency range": "ARTIFACT_AS_CEREBRAL",
+      "Mains interference aliased down to 10 Hz by the sampler": "ARTIFACT_TYPE",
+      "Fast activity induced by sedative or antiseizure drugs": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b5-017": {
+      "Applied a 3-Hz LFF so the rhythm is attenuated during review": "MASKING_A_FAULT",
+      "Re-montaged to a transverse chain to test the rhythm's field": "DOCUMENTATION",
+      "Raised the sensitivity to look for subtle evolution in the rhythm": "DOCUMENTATION"
+    },
+    "ch-b5-018": {
+      "Bitemporal rhythmic delta of an electrographic seizure": "ARTIFACT_AS_CEREBRAL",
+      "Lateral rectus spikes from rapid horizontal eye movements": "ARTIFACT_TYPE",
+      "Pulse artifact from the temporal arteries during feeding": "ARTIFACT_TYPE"
+    },
+    "ch-b5-019": {
+      "Pulse artifact; move the electrode lying over an artery": "ARTIFACT_TYPE",
+      "Periodic discharges; measure their field in bipolar chains": "ARTIFACT_AS_CEREBRAL",
+      "ECG artifact; raise the LFF until the transients attenuate": "MASKING_A_FAULT"
+    },
+    "ch-b5-020": {
+      "Re-abrade and re-gel O1 and O2 until each reads below 2 kΩ": "IMPEDANCE_LOGIC",
+      "Raise the LFF to 1 Hz in the channels containing O1 and O2": "MASKING_A_FAULT",
+      "Move O1 and O2 about 1 cm upward, away from the mattress": "TENTWENTY_MEASURE"
+    },
+    "ch-b5-021": {
+      "Posterior slow waves of youth enhanced by her relaxed state": "ARTIFACT_AS_CEREBRAL",
+      "Generalized 1-Hz periodic discharges of an encephalopathy": "ARTIFACT_AS_CEREBRAL",
+      "Hypnagogic hypersynchrony as she becomes drowsy on his lap": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b5-022": {
+      "Down then up in both chains; a negative phase reversal at C3": "POLARITY_SIGN",
+      "Up then down in both chains; a negative phase reversal at C3": "PHASE_REVERSAL_READ",
+      "Down then up in both chains; a positive phase reversal at C3": "POLARITY_SIGN"
+    },
+    "ch-b5-023": {
+      "An upward spike of about 60 µV": "POLARITY_SIGN",
+      "A downward spike of about 150 µV": "REFERENCE_CONTAMINATION",
+      "No spike, as Fp1 and O1 are quiet": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b5-024": {
+      "At O2, the end of the chain": "POLARITY_SIGN",
+      "At T4, the shared middle electrode": "END_OF_CHAIN",
+      "Between T4 and O2, nearer O2": "END_OF_CHAIN"
+    },
+    "ch-b5-025": {
+      "Bipolar chains cancel right temporal activity because its field is broad": "ISOPOTENTIAL",
+      "The right temporal region has an independent focus seen only referentially": "REFERENCE_CONTAMINATION",
+      "The right temporal electrodes have high impedance, adding inverted noise": "IMPEDANCE_LOGIC"
+    },
+    "ch-b5-027": {
+      "Record the HV as negative, as 3 minutes is the standard duration": "ACTIVATION_RESPONSE",
+      "Proceed to photic stimulation, which provokes absences more reliably": "ACTIVATION_RESPONSE",
+      "Extend the same breathing pattern to 6 minutes to raise the yield": "ACTIVATION_RESPONSE"
+    },
+    "ch-b5-028": {
+      "A 7-year-old with childhood absence epilepsy, on ethosuximide": "CONTRAINDICATION",
+      "A 10-year-old with migraine without aura, headache-free today": "CONTRAINDICATION",
+      "A 6-year-old with well-controlled asthma and no wheeze today": "CONTRAINDICATION"
+    },
+    "ch-b5-029": {
+      "Finish the 10-s train so the response can be classed as self-sustained": "CONTRAINDICATION",
+      "Reduce the flash intensity and continue the train at the same 16 Hz": "CONTRAINDICATION",
+      "Have her open her eyes and continue the train at the same 16 Hz": "CONTRAINDICATION"
+    },
+    "ch-b5-030": {
+      "Wake him now for HV and photic, then let him go back to sleep": "PRIORITY_ORDER",
+      "Wake him for awake EEG and photic, and try sleep at a later visit": "PRIORITY_ORDER"
+    },
+    "ch-b5-032": {
+      "Early infantile developmental and epileptic encephalopathy": "SYNDROME_MATCH",
+      "Dravet syndrome": "SYNDROME_MATCH",
+      "Self-limited infantile epilepsy": "SYNDROME_MATCH"
+    },
+    "ch-b5-033": {
+      "Infantile epileptic spasms syndrome": "SYNDROME_MATCH",
+      "Self-limited familial neonatal epilepsy": "SYNDROME_MATCH",
+      "Epilepsy of infancy with migrating focal seizures (EIMFS)": "SYNDROME_MATCH"
+    },
+    "ch-b5-034": {
+      "Juvenile absence epilepsy": "SYNDROME_MATCH",
+      "Epilepsy with eyelid myoclonia": "SYNDROME_MATCH",
+      "Epilepsy with myoclonic absences": "SYNDROME_MATCH"
+    },
+    "ch-b5-035": {
+      "Spikes over both centrotemporal regions, occurring independently": "SYNDROME_MATCH",
+      "Spike frequency increasing markedly in drowsiness and NREM sleep": "SYNDROME_MATCH",
+      "Spikes on the right in one study, then on the left in a later one": "SYNDROME_MATCH"
+    },
+    "ch-b5-036": {
+      "Childhood occipital visual epilepsy": "SYNDROME_MATCH",
+      "Self-limited epilepsy with centrotemporal spikes": "SYNDROME_MATCH",
+      "Photosensitive occipital lobe epilepsy": "SYNDROME_MATCH"
+    },
+    "ch-b5-037": {
+      "Genetic epilepsy with febrile seizures plus": "SYNDROME_MATCH",
+      "Febrile infection-related epilepsy syndrome": "SYNDROME_MATCH",
+      "Lennox-Gastaut syndrome": "SYNDROME_MATCH"
+    },
+    "ch-b5-038": {
+      "Atypical SeLECTS with sleep-activated temporal spikes": "SYNDROME_MATCH",
+      "Lennox-Gastaut syndrome with sleep-activated discharges": "SYNDROME_MATCH",
+      "Acquired aphasia from a left temporal structural lesion": "SYNDROME_MATCH"
+    },
+    "ch-b5-039": {
+      "Both are appropriate; this is tracé alternant in both infants": "AGE_NORMS",
+      "Both are abnormal; discontinuity is abnormal at any PMA": "AGE_NORMS",
+      "A is abnormal for age; B shows normal tracé alternant for term": "AGE_NORMS"
+    },
+    "ch-b5-040": {
+      "Normal maturation, similar to frontal sharp transients at term": "ABNORMAL_AS_NORMAL",
+      "A self-limited familial neonatal epilepsy syndrome": "SYNDROME_MATCH"
+    },
+    "ch-b5-041": {
+      "Brief rhythmic discharges, as there is no clinical correlate": "ACNS_CRITERIA",
+      "Lateralized periodic discharges, as the rate stays under 2.5 Hz": "ACNS_CRITERIA",
+      "Rhythmic artifact, as the infant shows no visible movement": "CEREBRAL_AS_ARTIFACT"
+    },
+    "ch-b5-042": {
+      "Give blow-by oxygen and recheck the SpO2 trend in one minute": "EMERGENCY_STEP",
+      "Wake the child by name and annotate the event on the record": "EMERGENCY_STEP",
+      "Raise the head of the bed and wait for the saturation to recover": "EMERGENCY_STEP"
+    },
+    "ch-b5-045": {
+      "Ask the adult to explain each mark in detail, and document the answers": "SCOPE",
+      "Document the marks only, and assume the reading physician will report": "UNDER_ESCALATION",
+      "Inform the adult that a report will be made, then complete the study": "PRIORITY_ORDER"
+    },
+    "ch-b5-046": {
+      "The duty arises only when an injury pattern is diagnostic of abuse": "UNDER_ESCALATION",
+      "The duty arises only after a physician confirms the suspicion": "UNDER_ESCALATION",
+      "The duty arises only if the parent's account is shown to be false": "UNDER_ESCALATION"
+    },
+    "ch-b5-047": {
+      "Keep observing until 30 minutes, the threshold for status epilepticus": "EMERGENCY_STEP",
+      "Keep observing until 10 minutes, then activate the emergency team": "EMERGENCY_STEP",
+      "Give oxygen by mask and keep observing until the seizure stops": "EMERGENCY_STEP"
+    },
+    "ch-b5-048": {
+      "30:2": "EMERGENCY_STEP",
+      "15:1": "EMERGENCY_STEP",
+      "5:1": "EMERGENCY_STEP"
+    },
+    "ch-b5-049": {
+      "Continue rescue breaths only, as a pulse is still clearly palpable": "EMERGENCY_STEP",
+      "Place her in the recovery position and recheck the pulse in 2 minutes": "EMERGENCY_STEP",
+      "Start compressions only if the pulse then falls below 40/min": "EMERGENCY_STEP"
+    },
+    "ch-b5-050": {
+      "Cycles of 5 abdominal thrusts with the infant held seated upright": "EMERGENCY_STEP",
+      "A blind finger sweep, then 5 back blows if no object is felt": "EMERGENCY_STEP",
+      "Cycles of 5 back blows and 5 abdominal thrusts, face down then up": "EMERGENCY_STEP"
+    },
+    "ch-b6-001": {
+      "About 50 kΩ": "DECIMAL_SLIP",
+      "About 500 Ω": "DECIMAL_SLIP",
+      "About 500 kΩ": "DECIMAL_SLIP"
+    },
+    "ch-b6-002": {
+      "F8 −10 µV and T4 +30 µV": "POLARITY_SIGN",
+      "F8 −40 µV and T4 0 µV": "POLARITY_SIGN"
+    },
+    "ch-b6-003": {
+      "The amplifier's gain rises in proportion to its input impedance": "IMPEDANCE_LOGIC",
+      "Electrode offset potentials are blocked before amplification": "IMPEDANCE_LOGIC"
+    },
+    "ch-b6-004": {
+      "0.16 s; about 6.3 Hz": "TC_NO_2PI",
+      "1.6 s; about 0.1 Hz": "DECIMAL_SLIP",
+      "0.16 s; about 0.16 Hz": "TC_UNITS"
+    },
+    "ch-b6-005": {
+      "T3-A1 up 80 µV; Fp1-A1 and O1-A1 show 0 µV": "REFERENCE_CONTAMINATION",
+      "T3-A1 up 30 µV; Fp1-A1 and O1-A1 show 0 µV": "REFERENCE_CONTAMINATION",
+      "T3-A1 down 30 µV; Fp1-A1 and O1-A1 up 50 µV": "POLARITY_SIGN"
+    },
+    "ch-b6-006": {
+      "About 30 µV": "IMPEDANCE_LOGIC",
+      "About 130 µV": "IMPEDANCE_LOGIC",
+      "About 160 µV": "BIPOLAR_ADDING"
+    },
+    "ch-b6-007": {
+      "The capacitor's opposition to current rises as frequency rises": "FILTER_DIRECTION"
+    },
+    "ch-b6-008": {
+      "A downward deflection of about 20 µV": "POLARITY_SIGN",
+      "An upward deflection of about 220 µV": "BIPOLAR_ADDING"
+    },
+    "ch-b6-009": {
+      "A high-frequency filter set too low for the delta waves": "FILTER_ALL_OR_NONE",
+      "A low-frequency filter blocking the slowest delta waves": "FILTER_ALL_OR_NONE"
+    },
+    "ch-b6-010": {
+      "Raise the LFF to 5 Hz so the baseline recovers faster": "MASKING_A_FAULT",
+      "Change both channels to 20 µV/mm so they stay on scale": "MASKING_A_FAULT",
+      "Turn on the 60-Hz notch and lower the HFF to 15 Hz": "MASKING_A_FAULT"
+    },
+    "ch-b6-011": {
+      "The inputs of T5-O1 are reversed in the montage": "POLARITY_SIGN"
+    },
+    "ch-b6-012": {
+      "Lowering the HFF exaggerates the amplitude of true temporal spikes": "FILTER_DIRECTION",
+      "Lowering the HFF mainly distorts temporal slow activity below 1 Hz": "FILTER_DIRECTION",
+      "Lowering the HFF makes the EMG resemble 60-Hz line interference": "ARTIFACT_TYPE"
+    },
+    "ch-b6-013": {
+      "Accept the finding, since a 5-Hz LFF still passes 1-2 Hz delta well": "FILTER_DIRECTION",
+      "Accept the finding, but lower the sensitivity to search for delta": "SENS_DIRECTION",
+      "Re-review the night with the HFF raised to 70 Hz on all channels": "FILTER_DIRECTION"
+    },
+    "ch-b6-014": {
+      "O1 contact is poor, but the notch restores normal common-mode rejection": "MASKING_A_FAULT"
+    },
+    "ch-b6-015": {
+      "About 240 µV": "SENS_ARITHMETIC"
+    },
+    "ch-b6-017": {
+      "70 Hz; the 35-Hz review HFF attenuates it like other 70-Hz noise": "ALIASING",
+      "85 Hz; the 35-Hz review HFF attenuates it like other 85-Hz noise": "NYQUIST",
+      "30 Hz; a 60-Hz notch applied at review attenuates it selectively": "ALIASING"
+    },
+    "ch-b6-018": {
+      "A1 picks up alpha strongly and adds it to the O1-A1 channel": "REFERENCE_CONTAMINATION",
+      "P3-O1 has higher electrode impedance, which lowers amplitude": "IMPEDANCE_LOGIC"
+    },
+    "ch-b6-019": {
+      "The isolated patient ground electrode": "GROUND_REFERENCE_LOGIC",
+      "The highest-impedance scalp electrode": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b6-020": {
+      "A lower high-frequency filter setting": "FILTER_DIRECTION",
+      "Reversed input connections in that channel": "POLARITY_SIGN"
+    },
+    "ch-b6-021": {
+      "A higher low-frequency filter setting": "FILTER_DIRECTION"
+    },
+    "ch-b6-022": {
+      "The spike component is attenuated more than the slow wave": "FILTER_DIRECTION"
+    },
+    "ch-b6-023": {
+      "As an 80-ms sharp wave; the 70-Hz HFF added muscle sharpness": "FILTER_DIRECTION"
+    },
+    "ch-b6-024": {
+      "F3 and C3 reversed in the montage setup": "POLARITY_SIGN"
+    },
+    "ch-b6-025": {
+      "60 µV; about 47 mm at 7 µV/mm": "SENS_ARITHMETIC",
+      "6.7 µV; about 1 mm at 7 µV/mm": "SENS_ARITHMETIC"
+    },
+    "ch-b6-026": {
+      "About 1 Hz": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-b6-027": {
+      "Review HFF settings cannot exceed the notch filter frequency": "NYQUIST",
+      "Muscle artifact contains little energy above about 35 Hz": "NYQUIST",
+      "Review filters apply only to data acquired after the change": "NYQUIST"
+    },
+    "ch-b6-028": {
+      "Raise the LFF to 5 Hz on all channels for the rest of the study": "MASKING_A_FAULT",
+      "Change sensitivity to 20 µV/mm to keep the sway on the page": "MASKING_A_FAULT",
+      "Turn on the 60-Hz notch and lower the HFF to 35 Hz on all channels": "FILTER_DIRECTION"
+    },
+    "ch-b6-029": {
+      "B; its LFF is about 0.1 Hz, versus about 0.3 Hz for A": "TC_UNITS",
+      "A; its LFF is about 3.3 Hz, versus about 10 Hz for B": "TC_NO_2PI"
+    },
+    "ch-b6-030": {
+      "Electrode Fp1 has developed a high impedance at its contact": "GROUND_REFERENCE_LOGIC",
+      "Channel 15's LFF is set high enough to block the slow blinks": "FILTER_ALL_OR_NONE"
+    },
+    "ch-b6-031": {
+      "Enable the 60-Hz notch and continue without other changes": "MASKING_A_FAULT",
+      "Re-prepare every electrode to bring impedances below 1 kΩ": "IMPEDANCE_LOGIC",
+      "Add a second ground electrode on the patient's shoulder": "EQUIPMENT_SAFETY"
+    },
+    "ch-b6-032": {
+      "9 Hz, about 6 µV left and 9 µV right, reactive to eye opening": "SENS_ARITHMETIC",
+      "9 Hz, about 42 µV left and 63 µV right, an abnormal asymmetry": "SCOPE"
+    },
+    "ch-b6-033": {
+      "Sternal rub 14:10: grimace and EMG; EEG reactive to noxious stimulation": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b6-034": {
+      "A note stating that the 18-25 Hz activity is a sedative effect": "SCOPE"
+    },
+    "ch-b6-035": {
+      "T4 placed by the 10-20 system using standard head measurements": "DOCUMENTATION"
+    },
+    "ch-b6-036": {
+      "Each shows no deflection, because only T3 is involved": "REFERENCE_CONTAMINATION",
+      "Each shows a small upward deflection of about 10 µV": "POLARITY_SIGN",
+      "Each shows a downward deflection of about 190 µV": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b6-039": {
+      "Edit the header date of birth to match the order, then archive it": "DOCUMENTATION"
+    },
+    "ch-b6-040": {
+      "−30 µV, an upward deflection": "POLARITY_SIGN",
+      "+110 µV, a downward deflection": "BIPOLAR_ADDING"
+    },
+    "ch-b6-042": {
+      "Use the adapter, since the amplifier inputs are isolated": "EQUIPMENT_SAFETY",
+      "Straighten the pin and use the cart if it seats firmly": "EQUIPMENT_SAFETY",
+      "Use the adapter but keep the cart away from the bed frame": "EQUIPMENT_SAFETY"
+    },
+    "ch-b6-043": {
+      "Add the arm ground, since more ground contacts lower the noise": "EQUIPMENT_SAFETY",
+      "Add the arm ground, but connect it to the EEG ground jack too": "EQUIPMENT_SAFETY",
+      "Move the EEG ground to the arm and add another at the mastoid": "EQUIPMENT_SAFETY"
+    },
+    "ch-b6-044": {
+      "The low impedance of the patient ground electrode": "EQUIPMENT_SAFETY"
+    },
+    "ch-b6-045": {
+      "Use them, as continuity is the main test lead wires need": "EQUIPMENT_SAFETY",
+      "Use them for outpatients only, as ICU outlets are the hazard": "EQUIPMENT_SAFETY",
+      "Use them, as long as each pin is taped over during storage": "EQUIPMENT_SAFETY"
+    },
+    "ch-b6-046": {
+      "Run a household extension cord from the hallway outlet": "EQUIPMENT_SAFETY",
+      "Plug into a consumer power strip shared with the monitor": "EQUIPMENT_SAFETY",
+      "Use the hallway outlet and route the cord along the wall": "EQUIPMENT_SAFETY"
+    },
+    "ch-b6-047": {
+      "Continue use, since the drift has been gradual rather than sudden": "EQUIPMENT_SAFETY",
+      "Continue use after re-labelling channel 14 as about 11.6 µV/mm": "MASKING_A_FAULT"
+    },
+    "ch-b6-048": {
+      "Continue, since normal impedances and calibration show it is sound": "EQUIPMENT_SAFETY",
+      "Continue, but run the study on battery power in case of a short": "EQUIPMENT_SAFETY",
+      "Dry the inside with a heat gun, then continue the recording": "EQUIPMENT_SAFETY"
+    },
+    "ch-b6-050": {
+      "About 0.8-1.2 kΩ": "PERCENT_BASE"
+    },
+    "ch-b7-001": {
+      "Stage W, with lateral eye movements of visual scanning": "SLEEP_RULES",
+      "Stage R, with conjugate rapid eye movements of dreaming": "SLEEP_RULES",
+      "Stage N2, with spindles masked by the mixed theta activity": "SLEEP_RULES"
+    },
+    "ch-b7-002": {
+      "0.96 s at 10.4 Hz; an alpha burst": "PAGE_SPEED_ASSUMED",
+      "1.6 s at 6.3 Hz; a theta burst": "PAGE_SPEED_ASSUMED",
+      "0.4 s at 25 Hz; a beta burst": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-b7-003": {
+      "N3; about 43% of the epoch meets slow-wave criteria": "SLEEP_RULES",
+      "N3; about 30% of the epoch meets slow-wave criteria": "SLEEP_RULES",
+      "N1; about 13% of the epoch meets slow-wave criteria": "SLEEP_RULES"
+    },
+    "ch-b7-004": {
+      "N1 sleep, with slow eye movements of early drowsiness": "SLEEP_RULES",
+      "Wakefulness with eyes open and saccadic eye movements": "SLEEP_RULES",
+      "N2 sleep, with vertex waves in runs over the centre": "SLEEP_RULES"
+    },
+    "ch-b7-005": {
+      "Alpha coma pattern of reduced responsiveness to stimuli": "ENCEPHALOPATHY",
+      "Mild diffuse slowing that indicates early encephalopathy": "ENCEPHALOPATHY",
+      "Frontal alpha from a benzodiazepine medication effect": "MEDICATION_EFFECT"
+    },
+    "ch-b7-006": {
+      "Shorten sleep as directed, take lamotrigine as usual, fast from midnight, skip caffeine": "ACTIVATION_RESPONSE"
+    },
+    "ch-b7-007": {
+      "Accept the plan if she naps for 30 minutes after the study": "CONTRAINDICATION",
+      "Accept the plan if she drinks coffee before driving home": "CONTRAINDICATION"
+    },
+    "ch-b7-008": {
+      "Proceed as planned, since fasting does not alter the HV response": "ACTIVATION_RESPONSE"
+    },
+    "ch-b7-009": {
+      "A 9-year-old with suspected absence seizures on no medication": "CONTRAINDICATION",
+      "A 17-year-old with juvenile myoclonic epilepsy on valproate": "CONTRAINDICATION",
+      "A 52-year-old with treated hypertension and a normal exam today": "CONTRAINDICATION"
+    },
+    "ch-b7-010": {
+      "End hyperventilation now, since an absent build-up is a normal result": "ACTIVATION_RESPONSE"
+    },
+    "ch-b7-015": {
+      "Finish the 16-Hz train, then move on to the remaining frequencies": "CONTRAINDICATION",
+      "Continue at 16 Hz to see whether the discharge becomes self-sustaining": "CONTRAINDICATION",
+      "Move the lamp further away and resume the protocol at 20 Hz": "CONTRAINDICATION"
+    },
+    "ch-b7-016": {
+      "Annotate a right occipital abnormality from the absent driving": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b7-017": {
+      "About 1-5 Hz": "ACTIVATION_RESPONSE",
+      "About 6-10 Hz": "ACTIVATION_RESPONSE",
+      "About 25-30 Hz": "ACTIVATION_RESPONSE"
+    },
+    "ch-b7-019": {
+      "C3-Cz 60 µV up, Cz-C4 55 µV down; reversal at Cz": "POLARITY_SIGN",
+      "C3-Cz 160 µV down, Cz-C4 165 µV up; reversal at Cz": "BIPOLAR_ADDING",
+      "C3-Cz 60 µV down, Cz-C4 55 µV down; no reversal": "PHASE_REVERSAL_READ"
+    },
+    "ch-b7-020": {
+      "Lambda waves evoked by saccadic scanning": "SLEEP_RULES",
+      "Bilateral occipital spikes of epileptic origin": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b7-021": {
+      "A surface-negative potential maximal at O1 and O2": "POLARITY_SIGN",
+      "A surface-negative potential maximal at P3 and P4": "END_OF_CHAIN",
+      "A surface-positive potential maximal at P3 and P4": "END_OF_CHAIN"
+    },
+    "ch-b7-022": {
+      "Vertex waves of N1 in runs": "SLEEP_RULES",
+      "Midline theta of drowsiness": "SLEEP_RULES",
+      "Midline epileptiform spikes": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b7-023": {
+      "Score the epoch as stage W, since alpha appeared": "SLEEP_RULES",
+      "Score no arousal, since it lasted under 10 seconds": "SLEEP_RULES",
+      "Score an arousal and change the epoch to stage N1": "SLEEP_RULES"
+    },
+    "ch-b7-024": {
+      "F7-T3 deflects up and F8-T4 deflects down": "POLARITY_SIGN",
+      "F7-T3 and F8-T4 both deflect down together": "ARTIFACT_TYPE",
+      "F7-T3 and F8-T4 both deflect up together": "ARTIFACT_TYPE"
+    },
+    "ch-b7-025": {
+      "REM sleep with rapid eye movements": "SLEEP_RULES",
+      "Stage N1 with drowsy eye movements": "SLEEP_RULES",
+      "Stage N2 between sleep spindles": "SLEEP_RULES"
+    },
+    "ch-b7-026": {
+      "Tell the patient it was not a seizure, since the EEG is unchanged": "SCOPE",
+      "Annotate it as a non-epileptic event, since the EEG is unchanged": "SCOPE",
+      "Wait for the symptoms to end before entering, to avoid artifact": "PRIORITY_ORDER"
+    },
+    "ch-b7-028": {
+      "Post-ictal aphasia suggests onset in the non-dominant hemisphere": "LOCALIZATION"
+    },
+    "ch-b7-029": {
+      "Slow his breathing, continue to 3 minutes, then notify the physician": "CONTRAINDICATION",
+      "Continue to 3 minutes, as these are typical, then notify the physician": "CONTRAINDICATION",
+      "Stop hyperventilation, start photic, and notify the physician later": "UNDER_ESCALATION"
+    },
+    "ch-b7-030": {
+      "5-Hz flashes, 10-Hz response; fundamental driving": "ACTIVATION_RESPONSE",
+      "2.5-Hz flashes, 5-Hz response; harmonic driving": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-b7-032": {
+      "A vertex wave evoked by the noise": "SLEEP_RULES",
+      "A frontal sharp-and-slow-wave complex": "VARIANT_AS_ABNORMAL",
+      "A burst of frontal arousal delta": "SLEEP_RULES"
+    },
+    "ch-b7-033": {
+      "A persistent asymmetry pointing to right-hemisphere dysfunction": "LOCALIZATION",
+      "A normal variant, as spindle asymmetry is common in adults": "ABNORMAL_AS_NORMAL"
+    },
+    "ch-b7-034": {
+      "An absence seizure without spikes": "ACTIVATION_RESPONSE",
+      "Frontal rhythmic delta of encephalopathy": "ACTIVATION_RESPONSE",
+      "Abnormally prolonged post-HV slowing": "ACTIVATION_RESPONSE"
+    },
+    "ch-b7-035": {
+      "Delayed normal build-up; repeat hyperventilation to confirm it": "CONTRAINDICATION",
+      "Drowsiness after hyperventilation; continue the routine protocol": "ACTIVATION_RESPONSE"
+    },
+    "ch-b7-036": {
+      "Juvenile absence epilepsy": "SYNDROME_MATCH",
+      "Juvenile myoclonic epilepsy": "SYNDROME_MATCH",
+      "Lennox-Gastaut syndrome": "SYNDROME_MATCH"
+    },
+    "ch-b7-037": {
+      "Independent bifrontal foci, so a focal epilepsy is more likely": "SYNDROME_MATCH",
+      "Secondary bilateral synchrony from a single frontal focus": "LOCALIZATION",
+      "Benign epileptiform transients of sleep unrelated to epilepsy": "ABNORMAL_AS_NORMAL"
+    },
+    "ch-b7-038": {
+      "Primary generalized discharges with incidental F8 spikes": "LOCALIZATION",
+      "Generalized discharges with right-sided reference contamination": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b7-039": {
+      "Type 1": "ACTIVATION_RESPONSE",
+      "Type 2": "ACTIVATION_RESPONSE",
+      "Type 4": "ACTIVATION_RESPONSE"
+    },
+    "ch-b7-040": {
+      "Midline spikes indicating a vertex epileptic focus": "VARIANT_AS_ABNORMAL",
+      "Centrotemporal spikes spreading toward the vertex": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b7-041": {
+      "Absent driving, a sign of bilateral occipital dysfunction": "ACTIVATION_RESPONSE",
+      "Absent driving, a sign of a diffuse encephalopathy": "ACTIVATION_RESPONSE",
+      "Absent driving, a sign of antiseizure drug toxicity": "ACTIVATION_RESPONSE"
+    },
+    "ch-b7-042": {
+      "Hold the limbs still, cushion the head, time it, keep recording": "EMERGENCY_STEP",
+      "Place a bite block, cushion the head, time it, keep recording": "EMERGENCY_STEP",
+      "Ease him to a safe position, sit him upright, time it, keep recording": "EMERGENCY_STEP"
+    },
+    "ch-b7-043": {
+      "Wait until 10 minutes before treating it as status, per protocol": "EMERGENCY_STEP",
+      "Wait until 30 minutes before treating it as status, per protocol": "EMERGENCY_STEP",
+      "Wait until the seizure ends, then activate the response per protocol": "EMERGENCY_STEP"
+    },
+    "ch-b7-044": {
+      "Give the midazolam yourself, since the order has already been written": "SCOPE",
+      "Give the midazolam yourself, then tell the nurse once it has been given": "SCOPE",
+      "Wait for the seizure to end, then ask the nurse to give the medication": "UNDER_ESCALATION"
+    },
+    "ch-b7-046": {
+      "Give five back blows, then five abdominal thrusts, repeating": "EMERGENCY_STEP",
+      "Give abdominal thrusts at once until the object is expelled": "EMERGENCY_STEP",
+      "Sweep the mouth with a finger to find and clear the object": "EMERGENCY_STEP"
+    },
+    "ch-b7-047": {
+      "Begin chest compressions at 100-120 per minute at once": "EMERGENCY_STEP",
+      "Give two rescue breaths, then reassess his breathing": "EMERGENCY_STEP",
+      "Sit him upright and give sips of water to rouse him": "EMERGENCY_STEP"
+    },
+    "ch-b7-048": {
+      "80-100 per minute, about 3-4 cm deep": "EMERGENCY_STEP",
+      "120-140 per minute, about 7-8 cm deep": "EMERGENCY_STEP",
+      "60-80 per minute, about 5-6 cm deep": "EMERGENCY_STEP"
+    },
+    "ch-b7-049": {
+      "Left frontal onset seizure, secondarily generalizing; unresponsive": "SCOPE",
+      "Probable non-epileptic event; asymmetric jerks; no response to name": "SCOPE",
+      "Generalized seizure with versive head turn; patient unresponsive": "SCOPE"
+    },
+    "ch-b7-050": {
+      "Drug and dose on the requisition form, without a time on the EEG": "DOCUMENTATION",
+      "Time of giving annotated on the EEG, without the drug's name or dose": "DOCUMENTATION",
+      "Drug, dose and time given, entered in the nursing notes only": "DOCUMENTATION"
+    },
+    "ch-b8-001": {
+      "Generalized paroxysmal fast activity of an emerging seizure": "MEDICATION_EFFECT",
+      "Frontalis and temporalis muscle artifact from agitation": "CEREBRAL_AS_ARTIFACT",
+      "Sleep spindles intruding as the patient becomes drowsy": "SLEEP_RULES"
+    },
+    "ch-b8-002": {
+      "An irritative focus on the right generating excess fast activity": "MEDICATION_EFFECT",
+      "An expected drug-related asymmetry of no clinical significance": "MEDICATION_EFFECT"
+    },
+    "ch-b8-003": {
+      "Arrest rhythm, number of shocks given, and the admission blood pressure": "DOCUMENTATION",
+      "Prior seizure history, handedness, and any family history of epilepsy": "DOCUMENTATION",
+      "Downtime estimate, bystander CPR, and the paramedics' arrival time": "DOCUMENTATION"
+    },
+    "ch-b8-006": {
+      "Diffuse slowing, then increased beta, then burst suppression, then suppression": "MEDICATION_EFFECT",
+      "Increased beta, then burst suppression, then diffuse slowing, then suppression": "MEDICATION_EFFECT",
+      "Burst suppression, then increased beta, then diffuse slowing, then suppression": "MEDICATION_EFFECT"
+    },
+    "ch-b8-007": {
+      "It suppresses cortical activity, so a low-voltage background should be expected": "MEDICATION_EFFECT",
+      "It produces diffuse beta activity that can mimic a benzodiazepine drug effect": "MEDICATION_EFFECT",
+      "It lowers the seizure threshold, so more frequent discharges should be expected": "MEDICATION_EFFECT"
+    },
+    "ch-b8-008": {
+      "The core temperature, which is too low for the record to be interpretable": "ECI_REQUIREMENTS",
+      "The sodium value, which is in a range that suppresses cortical activity": "ECI_REQUIREMENTS",
+      "The absence of a paralytic, so muscle artifact may obscure the record": "ECI_REQUIREMENTS"
+    },
+    "ch-b8-009": {
+      "Silver-silver chloride cups, since any nonferrous metal is imaging-safe": "EQUIPMENT_SAFETY",
+      "Subdermal needle electrodes, taped flat so they stay out of the field": "EQUIPMENT_SAFETY"
+    },
+    "ch-b8-010": {
+      "Generalized rhythmic theta of cerebral origin from encephalopathy": "ARTIFACT_AS_CEREBRAL",
+      "A nonconvulsive seizure with an unusually fixed 5-Hz frequency": "ARTIFACT_AS_CEREBRAL",
+      "Mains interference aliased down to 5 Hz by a low sampling rate": "ARTIFACT_TYPE"
+    },
+    "ch-b8-011": {
+      "Raise the low-frequency filter to 5 Hz so the transients are less prominent": "MASKING_A_FAULT",
+      "Mark them as possible periodic discharges and continue standard review": "ARTIFACT_AS_CEREBRAL",
+      "Pause the CRRT circuit briefly so the recording can be checked without it": "SCOPE"
+    },
+    "ch-b8-012": {
+      "Pulse artifact from a scalp artery": "ARTIFACT_TYPE",
+      "ECG artifact from each QRS complex": "ARTIFACT_TYPE",
+      "Generalized periodic discharges, 1 Hz": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b8-013": {
+      "Raise the low-frequency filter in all channels until the waves are reduced": "MASKING_A_FAULT",
+      "Re-reference the montage to linked ears to cancel the posterior waves": "MASKING_A_FAULT",
+      "Describe the waves as bilateral posterior rhythmic delta of cerebral origin": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b8-014": {
+      "A positive field maximal over the left parasagittal electrodes": "REFERENCE_CONTAMINATION",
+      "A negative discharge maximal at C3, with relative sparing of T3": "LOCALIZATION"
+    },
+    "ch-b8-015": {
+      "F7-T3: 60 µV up; T3-T5: 40 µV down": "POLARITY_SIGN",
+      "F7-T3: 120 µV down; T3-T5: 140 µV up": "BIPOLAR_ADDING",
+      "F7-T3: 60 µV down; T3-T5: 40 µV down": "PHASE_REVERSAL_READ"
+    },
+    "ch-b8-016": {
+      "Reverse the chain to run O2-P4-C4-F4-Fp2 and look for a phase reversal": "END_OF_CHAIN",
+      "Repeat the same chain at higher sensitivity to reveal a hidden reversal": "END_OF_CHAIN"
+    },
+    "ch-b8-017": {
+      "3.4 cm and 6.8 cm; neither pair meets it": "TENTWENTY_MEASURE",
+      "10.2 cm and 13.6 cm; both pairs meet it": "TENTWENTY_MEASURE",
+      "13.6 cm and 27.2 cm; both pairs meet it": "TENTWENTY_MEASURE"
+    },
+    "ch-b8-018": {
+      "Change sensitivity only; then record 8 more minutes to reach 30": "ECI_REQUIREMENTS",
+      "Change sensitivity, HFF and LFF; then record 8 more minutes": "ECI_REQUIREMENTS",
+      "Change HFF and LFF only; then record 30 minutes at 7 µV/mm": "ECI_REQUIREMENTS"
+    },
+    "ch-b8-019": {
+      "Repeat the calibration with a larger signal to confirm channel gain": "ECI_REQUIREMENTS",
+      "Recheck all impedances after 10 minutes to confirm they are stable": "ECI_REQUIREMENTS",
+      "Run a biological calibration with Fp1-O2 fed into every channel": "ECI_REQUIREMENTS"
+    },
+    "ch-b8-020": {
+      "Very good contact at F3 and C3 needing no change": "ECI_REQUIREMENTS",
+      "Open circuits from broken F3 and C3 lead wires": "IMPEDANCE_LOGIC"
+    },
+    "ch-b8-021": {
+      "Passive eye opening and closing, plus photic stimulation at 1-30 Hz": "ECI_REQUIREMENTS",
+      "Hyperventilation via the ventilator, plus repeated sternal rubs": "ECI_REQUIREMENTS",
+      "A benzodiazepine challenge, plus repeated noxious stimulation": "ECI_REQUIREMENTS"
+    },
+    "ch-b8-022": {
+      "Ventilator artifact matching the set 14/min breath rate": "ARTIFACT_TYPE",
+      "Residual cerebral delta activity that excludes inactivity": "ARTIFACT_AS_CEREBRAL",
+      "Mains interference aliased down to 1.2 Hz on the display": "ARTIFACT_TYPE"
+    },
+    "ch-b8-023": {
+      "Raise the low-frequency filter in the two affected channels to 5 Hz": "MASKING_A_FAULT",
+      "Reduce the sensitivity of the two affected channels to 15 µV/mm": "MASKING_A_FAULT"
+    },
+    "ch-b8-025": {
+      "Hold the twitching hand still, mark the event, and notify the team per protocol": "EMERGENCY_STEP",
+      "Mark the event, check the right-hand impedances, then notify the team per protocol": "CEREBRAL_AS_ARTIFACT",
+      "Mark the event, and notify the team per protocol once it has lasted 5 minutes": "UNDER_ESCALATION"
+    },
+    "ch-b8-026": {
+      "Place F7 and T3 over the staples with extra paste, and document the placement": "INFECTION_CONTROL"
+    },
+    "ch-b8-027": {
+      "Count each change as turning artifact, since nursing care is recorded": "CEREBRAL_AS_ARTIFACT",
+      "Adjust the spectrogram colour scale until the changes no longer stand out": "MASKING_A_FAULT"
+    },
+    "ch-b8-028": {
+      "Read the 26-µV deflections as a widespread field of opposite polarity": "ARTIFACT_AS_CEREBRAL",
+      "Reduce sensitivity in all channels so the 26-µV deflections shrink": "MASKING_A_FAULT",
+      "Add the ear electrodes to the average so the 26-µV effect is diluted": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b8-029": {
+      "Frontal rhythmic delta; mark it as a new encephalopathic pattern": "ARTIFACT_AS_CEREBRAL",
+      "Glossokinetic artifact; ask the nurse to suction oral secretions": "ARTIFACT_TYPE",
+      "Ventilator artifact; ask the therapist to change the breathing rate": "ARTIFACT_TYPE"
+    },
+    "ch-b8-030": {
+      "A generalized electrographic seizure without clinical signs": "ARTIFACT_AS_CEREBRAL",
+      "Generalized rhythmic theta from arousal to the stimulation": "ARTIFACT_AS_CEREBRAL",
+      "Shivering muscle artifact provoked by uncovering the chest": "ARTIFACT_TYPE"
+    },
+    "ch-b8-031": {
+      "About 1.7 Hz": "PAGE_SPEED_ASSUMED",
+      "About 0.6 Hz": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-b8-032": {
+      "Not IIC, because the PD frequency is below 1 Hz": "ACNS_CRITERIA",
+      "ESE, because the pattern has persisted for hours": "ACNS_CRITERIA",
+      "ESz, because rhythmic fast activity is superimposed": "ACNS_CRITERIA"
+    },
+    "ch-b8-033": {
+      "Not ESE, since no single seizure lasts 10 minutes or more": "ACNS_CRITERIA",
+      "Not ESE, since the 14 minutes is under 30% of that hour": "ACNS_CRITERIA",
+      "ESE only if any one seizure has lasted 5 minutes or more": "ACNS_CRITERIA"
+    },
+    "ch-b8-034": {
+      "Possible BIRDs, as the runs last under 10 s": "ACNS_CRITERIA",
+      "Electrographic seizures, as the runs evolve": "ACNS_CRITERIA",
+      "LRDA with a plus modifier, as it is rhythmic": "ACNS_CRITERIA"
+    },
+    "ch-b8-035": {
+      "Burst attenuation": "ACNS_CRITERIA",
+      "Discontinuous background": "ACNS_CRITERIA",
+      "Suppressed background": "ACNS_CRITERIA"
+    },
+    "ch-b8-036": {
+      "Alpha coma pattern": "ENCEPHALOPATHY",
+      "Normal stage N2 sleep": "ENCEPHALOPATHY",
+      "Drug-related beta coma": "ENCEPHALOPATHY"
+    },
+    "ch-b8-037": {
+      "Reactive 7-Hz posterior rhythm with intermittent diffuse theta": "ENCEPHALOPATHY",
+      "Reactive mixed theta and delta with no posterior dominant rhythm": "ENCEPHALOPATHY",
+      "8-Hz posterior rhythm with intermittent frontal rhythmic delta": "ENCEPHALOPATHY"
+    },
+    "ch-b8-038": {
+      "Bilateral independent PDs (BIPDs)": "ACNS_CRITERIA",
+      "Generalized PDs (GPDs)": "ACNS_CRITERIA",
+      "Lateralized PDs (LPDs)": "ACNS_CRITERIA"
+    },
+    "ch-b8-039": {
+      "GPDs, as any bilateral synchronous PDs count as generalized": "ACNS_CRITERIA",
+      "BIPDs, as both hemispheres are involved at the same time": "ACNS_CRITERIA",
+      "GPDs, since bilateral asymmetry is only noted as a comment": "ACNS_CRITERIA"
+    },
+    "ch-b8-040": {
+      "Possible electroclinical status epilepticus": "ACNS_CRITERIA",
+      "Ictal-interictal continuum only": "ACNS_CRITERIA",
+      "Electrographic status epilepticus": "ACNS_CRITERIA"
+    },
+    "ch-b8-041": {
+      "Metabolic triphasic waves, a category outside ACNS terms": "ACNS_CRITERIA",
+      "ESE, as the GPDs are continuous for more than 10 minutes": "ACNS_CRITERIA",
+      "Interictal GPDs, since the frequency is below 2.5 Hz": "ACNS_CRITERIA"
+    },
+    "ch-b8-042": {
+      "Leave O2 in place until the study ends, then document and report the skin finding": "DOCUMENTATION",
+      "Move O2 to an intact nearby site and document the finding at the end of the study": "DOCUMENTATION"
+    },
+    "ch-b8-043": {
+      "Disconnect the head box only and leave the cups on, per MRI safety protocol": "EQUIPMENT_SAFETY",
+      "Tape the leads away from the head and the coil, per MRI safety protocol": "EQUIPMENT_SAFETY",
+      "Leave the cups on, since gold is nonmagnetic, per MRI safety protocol": "EQUIPMENT_SAFETY"
+    },
+    "ch-b8-044": {
+      "Use alcohol rub, as it is the preferred method for all organisms": "INFECTION_CONTROL",
+      "Use alcohol rub, then put on fresh gloves before leaving the room": "INFECTION_CONTROL",
+      "Use a chlorhexidine skin wipe, as it is sporicidal for C. difficile": "INFECTION_CONTROL"
+    },
+    "ch-b8-045": {
+      "Re-level the drain to the new head position yourself before turning": "SCOPE"
+    },
+    "ch-b8-046": {
+      "Time, the seizure count, and that the finding was reported by phone": "DOCUMENTATION",
+      "The neurologist's name, what was reported, and the next review time": "DOCUMENTATION",
+      "Time, what was reported, and that the bedside nurse was also told": "DOCUMENTATION"
+    },
+    "ch-b8-047": {
+      "Keep paging the same neurologist every 15 minutes per policy": "UNDER_ESCALATION",
+      "Note it in the log and leave it for the morning reader per policy": "UNDER_ESCALATION",
+      "Email the finding to the neurologist and morning team per policy": "UNDER_ESCALATION"
+    },
+    "ch-b8-048": {
+      "At 14:05 EEG time, as charted by the nurse": "DOCUMENTATION",
+      "At 14:09 EEG time, noting the clock offset": "DOCUMENTATION",
+      "At the first EEG change after 14:05 EEG time": "DOCUMENTATION"
+    },
+    "ch-b8-050": {
+      "Check the head box and amplifier connections for a technical fault": "PRIORITY_ORDER",
+      "Annotate the change and begin reviewing the preceding hour of EEG": "PRIORITY_ORDER",
+      "Recheck ECG lead placement before raising any alarm about it": "PRIORITY_ORDER"
+    },
+    "ch-b9-001": {
+      "About 2 Hz slower on the left; within the normal adult limits": "ABNORMAL_AS_NORMAL",
+      "About 1 Hz slower on the left; within the normal adult limits": "ABNORMAL_AS_NORMAL",
+      "About 2 Hz slower on the left; abnormal, implicating the right side": "LOCALIZATION"
+    },
+    "ch-b9-002": {
+      "About 50%; abnormal, implicating the left side": "PERCENT_BASE",
+      "About 22%; within normal limits for an adult": "PERCENT_BASE"
+    },
+    "ch-b9-003": {
+      "Impaired reactivity, pointing to dysfunction on the left": "LOCALIZATION",
+      "A normal asymmetry of reactivity seen in healthy adults": "ABNORMAL_AS_NORMAL"
+    },
+    "ch-b9-004": {
+      "Expected slowing of the posterior rhythm in the ninth decade": "AGE_NORMS",
+      "A slow alpha variant, since it is reactive and symmetric": "ABNORMAL_AS_NORMAL",
+      "Drowsiness, the most common cause of a slowed posterior rhythm": "ABNORMAL_AS_NORMAL"
+    },
+    "ch-b9-005": {
+      "Bancaud's phenomenon, from impaired alpha reactivity": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b9-006": {
+      "Drug-induced beta, typical of a benzodiazepine effect": "MEDICATION_EFFECT",
+      "Posterior beta from a breach over an occipital defect": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b9-007": {
+      "Keep the extension cord and switch the 60-Hz notch on from the start": "MASKING_A_FAULT",
+      "Keep the extension cord and add a second ground electrode on the patient": "EQUIPMENT_SAFETY",
+      "Keep the extension cord and move the cart closer to the head of the bed": "EQUIPMENT_SAFETY"
+    },
+    "ch-b9-008": {
+      "Channel 9 has a lower high-frequency filter setting than the rest": "FILTER_DIRECTION",
+      "Channel 9 has a higher electrode impedance than the other channels": "IMPEDANCE_LOGIC"
+    },
+    "ch-b9-009": {
+      "A left-hemisphere discharge with a broad and evenly distributed field": "ARTIFACT_AS_CEREBRAL",
+      "An electrode pop at Cz, which lies close to every affected electrode": "GROUND_REFERENCE_LOGIC",
+      "An electrode pop at the ground, which is shared by the affected channels": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b9-010": {
+      "Fz about 20 µV upward; T3 about 360 µV upward": "POLARITY_SIGN",
+      "Fz flat at 0 µV; T3 about 380 µV upward": "REFERENCE_CONTAMINATION",
+      "Fz about 21 µV downward; T3 about 380 µV upward": "REFERENCE_CONTAMINATION"
+    },
+    "ch-b9-011": {
+      "F4, as parasagittal electrodes pick up the most mains noise": "GROUND_REFERENCE_LOGIC",
+      "F8, as the lateral temporal chain carries the most signal": "GROUND_REFERENCE_LOGIC",
+      "The ground, as mains noise first enters through the ground": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b9-012": {
+      "An O2 sharp wave, maximal at the end of both bipolar chains": "ARTIFACT_AS_CEREBRAL",
+      "A P4 electrode artifact carried into the T6-O2 channel": "GROUND_REFERENCE_LOGIC",
+      "A T6 sharp wave spreading posteriorly to involve O2": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b9-013": {
+      "The C4 electrode, its paste or its connecting lead": "GROUND_REFERENCE_LOGIC",
+      "The Cz electrode, its paste or its connecting lead": "GROUND_REFERENCE_LOGIC",
+      "The recording reference shared by both C4 and Cz": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b9-014": {
+      "Right temporalis muscle; ask the patient to relax the jaw": "ARTIFACT_TYPE",
+      "Electrode pops; re-prepare T4, T6 and O2 one at a time": "ARTIFACT_TYPE",
+      "Right posterior polyspikes; extend the study with sleep": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b9-015": {
+      "Pulse artifact, recurring every third heartbeat": "ARTIFACT_TYPE",
+      "Right centroparietal periodic discharges at 0.4 Hz": "ARTIFACT_AS_CEREBRAL",
+      "Electrode pops at C4 and P4 from drying paste": "ARTIFACT_TYPE"
+    },
+    "ch-b9-016": {
+      "The A1 reference electrode and its lead": "GROUND_REFERENCE_LOGIC",
+      "The Cz electrode and its connecting lead": "GROUND_REFERENCE_LOGIC",
+      "The F7 electrode, under the left cheek": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b9-017": {
+      "Electrode pops; re-prepare O1, P3 and T5 and recheck": "ARTIFACT_TYPE",
+      "Left posterior sharp waves; add T1 and extend the study": "ARTIFACT_AS_CEREBRAL",
+      "Ground fault; replace the ground electrode on the brow": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b9-018": {
+      "Head movement as the patient turns toward the visitor": "ARTIFACT_TYPE",
+      "Brief arousal responses to the visitor's approach": "ARTIFACT_AS_CEREBRAL",
+      "Intermittent loosening of the ground electrode lead": "ARTIFACT_TYPE"
+    },
+    "ch-b9-019": {
+      "A salt bridge between P3 and neighbouring electrodes": "ARTIFACT_TYPE",
+      "High impedance from the new cup's smaller contact area": "IMPEDANCE_LOGIC",
+      "Sweat artifact starting under the newly applied cup": "ARTIFACT_TYPE"
+    },
+    "ch-b9-020": {
+      "Re-prepare every electrode to bring impedances lower": "IMPEDANCE_LOGIC",
+      "Change the reference to Cz and compare with the ears": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-b9-021": {
+      "Switch the notch on for T6 channels and keep recording": "MASKING_A_FAULT"
+    },
+    "ch-b9-022": {
+      "Cardiac QRS (ECG) artifact": "ARTIFACT_TYPE",
+      "Periodic discharges at 1.2 Hz": "ARTIFACT_AS_CEREBRAL",
+      "Electrode pops from the reference": "ARTIFACT_TYPE"
+    },
+    "ch-b9-023": {
+      "Fz; it belongs at 6.8 cm": "TENTWENTY_MEASURE",
+      "Oz; it belongs at 32.3 cm": "TENTWENTY_MEASURE",
+      "Pz; it belongs at 27.2 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-b9-024": {
+      "5.6 cm and 5.6 cm": "TENTWENTY_MEASURE",
+      "11.2 cm and 2.8 cm": "TENTWENTY_MEASURE",
+      "2.8 cm and 5.6 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-b9-025": {
+      "Left occipital dysfunction lowering the alpha": "ARTIFACT_AS_CEREBRAL",
+      "High impedance at O1 attenuating left channels": "IMPEDANCE_LOGIC",
+      "A salt bridge between the P3 and O1 electrodes": "ISOPOTENTIAL"
+    },
+    "ch-b9-026": {
+      "Place C4 just off the incision and keep C3 at its measured site": "TENTWENTY_MEASURE",
+      "Place C4 on the incision between staples, using extra paste": "INFECTION_CONTROL"
+    },
+    "ch-b9-027": {
+      "Allowing the collodion to dry longer before checking impedance": "IMPEDANCE_LOGIC",
+      "Measuring and marking the sites before applying the collodion": "IMPEDANCE_LOGIC",
+      "Adding a second layer of collodion-soaked gauze over each cup": "IMPEDANCE_LOGIC"
+    },
+    "ch-b9-028": {
+      "14.3 Hz": "PAGE_SPEED_ASSUMED",
+      "19 Hz": "WAVES_NOT_PER_SECOND"
+    },
+    "ch-b9-029": {
+      "POSTS, the positive occipital transients of sleep": "SLEEP_RULES",
+      "Occipital spikes from photosensitive visual cortex": "VARIANT_AS_ABNORMAL",
+      "Photoparoxysmal discharges evoked by the print": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-b9-030": {
+      "A fast alpha variant replacing the posterior rhythm": "MEDICATION_EFFECT",
+      "Bilateral frontalis muscle artifact from tension": "CEREBRAL_AS_ARTIFACT",
+      "Bifrontal low-voltage fast seizure activity": "MEDICATION_EFFECT"
+    },
+    "ch-b9-032": {
+      "X is an electrode artifact at T3; Y is a larger T3 spike": "CEREBRAL_AS_ARTIFACT",
+      "Both are cerebral; Y is simply the more focal T3 discharge": "ARTIFACT_AS_CEREBRAL",
+      "Both are electrode artifacts at T3, differing only in size": "CEREBRAL_AS_ARTIFACT"
+    },
+    "ch-b9-033": {
+      "A generalized seizure, given a duration well over 10 s": "ACNS_CRITERIA",
+      "An alpha coma pattern, given the diffuse 12-Hz rhythm": "ARTIFACT_AS_CEREBRAL",
+      "Diffuse beta from sedation given before the treatment": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-b9-034": {
+      "Right posterior LPDs at 0.25 Hz; review the trend": "ARTIFACT_AS_CEREBRAL",
+      "Right posterior LRDA at 0.25 Hz; review the trend": "ARTIFACT_AS_CEREBRAL",
+      "Brain pulsation under a skull defect; leave as is": "ARTIFACT_TYPE"
+    },
+    "ch-b9-035": {
+      "Left lateral temporal neocortex": "LOCALIZATION",
+      "Left orbitofrontal cortex": "LOCALIZATION",
+      "Right mesial temporal lobe": "LOCALIZATION"
+    },
+    "ch-b9-036": {
+      "Left mesial temporal lobe": "LOCALIZATION",
+      "Left occipital cortex": "LOCALIZATION",
+      "Left posterior parietal cortex": "LOCALIZATION"
+    },
+    "ch-b9-037": {
+      "Non-epileptic events, as the scalp EEG is obscured": "ABNORMAL_AS_NORMAL",
+      "Mesial temporal seizures with rapid secondary spread": "LOCALIZATION",
+      "Confusional arousals arising out of slow-wave sleep": "ABNORMAL_AS_NORMAL"
+    },
+    "ch-b9-038": {
+      "Postictal slowing, supporting a left temporal onset": "LOCALIZATION",
+      "Ongoing nonconvulsive seizure, right temporal": "ACNS_CRITERIA"
+    },
+    "ch-b9-039": {
+      "Right, as the nose wipe and limb automatisms are left-handed": "LOCALIZATION",
+      "Right, as unilateral dystonia arises from the same hemisphere": "LOCALIZATION",
+      "Neither side, as the scalp ictal rhythm is not lateralized": "LOCALIZATION"
+    },
+    "ch-b9-040": {
+      "Clean it gently, and document it as expected pressure redness only": "DOCUMENTATION",
+      "Clean it gently, document it, and reapply O2 there for the follow-up": "INFECTION_CONTROL"
+    },
+    "ch-b9-042": {
+      "Say there were some changes, and the physician will discuss driving": "SCOPE",
+      "Say it looked normal so far, and the physician will confirm that": "SCOPE",
+      "Say seizures look unlikely, and the physician will discuss driving": "SCOPE"
+    },
+    "ch-b9-043": {
+      "Write the impressions, and have the physician co-sign them on Monday": "SCOPE",
+      "Write impressions only for studies that look clearly normal to the physician": "SCOPE",
+      "Write the impressions using the physician's usual template and phrasing": "SCOPE"
+    },
+    "ch-b9-044": {
+      "Report it to the credentialing board before speaking with the lab": "ETHICS",
+      "Report it only if one of the studies is later found to be poor": "ETHICS",
+      "Report it at the colleague's next annual competency review": "ETHICS"
+    },
+    "ch-b9-045": {
+      "It may be used with 'pending' added until the result arrives": "ETHICS",
+      "It may be used once the exam application has been accepted": "ETHICS",
+      "It may be used once the lab's medical director approves it": "ETHICS"
+    },
+    "ch-b9-048": {
+      "Squeeze the site, apply bleach, then report it at the end of the shift": "INFECTION_CONTROL",
+      "Wash with soap and water, finish the removal, report if symptoms occur": "INFECTION_CONTROL",
+      "Apply alcohol, cover the site, and report it at the next staff meeting": "INFECTION_CONTROL"
+    },
+    "ch-b9-049": {
+      "Press the needles down into the container to make room for them": "INFECTION_CONTROL",
+      "Recap each needle, then place them all in once a container is emptied": "INFECTION_CONTROL",
+      "Bend each needle at the hub first, then add it to the full container": "INFECTION_CONTROL"
+    },
+    "ch-calc-001": {
+      "About 6.3 µV": "DECIMAL_SLIP",
+      "About 126 µV": "PEAK_TO_PEAK",
+      "About 32 µV": "PEAK_TO_PEAK"
+    },
+    "ch-calc-002": {
+      "10 mm, then 15 mm": "SENS_DIRECTION",
+      "15 mm, then about 6.7 mm": "SENS_DIRECTION"
+    },
+    "ch-calc-003": {
+      "98 µV reported; 140 µV true": "PEAK_TO_PEAK"
+    },
+    "ch-calc-004": {
+      "7 Hz": "WAVES_NOT_PER_SECOND",
+      "5 Hz": "PAGE_SPEED_ASSUMED",
+      "20 Hz": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-calc-005": {
+      "6 Hz; they would report 3 Hz": "PAGE_SPEED_ASSUMED",
+      "3 Hz; they would report 1.5 Hz": "PAGE_SPEED_ASSUMED",
+      "6 Hz; they would report 12 Hz": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-calc-006": {
+      "About 90 ms; a sharp wave": "PAGE_SPEED_ASSUMED",
+      "About 180 ms; a sharp wave": "PAGE_SPEED_ASSUMED",
+      "About 600 ms; a slow wave": "DECIMAL_SLIP"
+    },
+    "ch-calc-007": {
+      "A and B are both sharp waves": "PAGE_SPEED_ASSUMED",
+      "A is a slow wave; B is a sharp wave": "PAGE_SPEED_ASSUMED",
+      "A and B are both spikes": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-calc-008": {
+      "About 0.16 Hz": "DECIMAL_SLIP",
+      "About 10 Hz": "TC_NO_2PI",
+      "About 0.1 Hz": "TC_UNITS"
+    },
+    "ch-calc-009": {
+      "It lengthens from about 1 s to about 3.3 s": "TC_NO_2PI",
+      "It lengthens from about 0.16 s to about 0.3 s": "TC_UNITS"
+    },
+    "ch-calc-010": {
+      "The actual LFF is about 0.16 Hz, lower than shown": "TC_UNITS",
+      "The actual LFF is about 6 Hz, far higher than shown": "TC_NO_2PI"
+    },
+    "ch-calc-011": {
+      "About 5 mm": "TC_37_63",
+      "About 6.3 mm": "TC_37_63",
+      "About 1.4 mm": "TC_37_63"
+    },
+    "ch-calc-012": {
+      "About 75 µV": "CUTOFF_50_NOT_70",
+      "About 150 µV": "FILTER_ALL_OR_NONE",
+      "About 45 µV": "CUTOFF_50_NOT_70"
+    },
+    "ch-calc-013": {
+      "1 Hz": "FILTER_DIRECTION"
+    },
+    "ch-calc-014": {
+      "About 20 µV": "FILTER_ALL_OR_NONE",
+      "About 40 µV": "CUTOFF_50_NOT_70"
+    },
+    "ch-calc-015": {
+      "Just over 100 Hz": "NYQUIST",
+      "Just over 400 Hz": "NYQUIST",
+      "Just over 50 Hz": "NYQUIST"
+    },
+    "ch-calc-016": {
+      "256 Hz": "NYQUIST",
+      "512 Hz": "NYQUIST",
+      "64 Hz": "NYQUIST"
+    },
+    "ch-calc-017": {
+      "100 Hz": "NYQUIST",
+      "150 Hz": "ALIASING",
+      "200 Hz": "ALIASING"
+    },
+    "ch-calc-018": {
+      "17.0 cm": "TENTWENTY_MEASURE",
+      "6.8 cm": "TENTWENTY_MEASURE",
+      "10.2 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-calc-019": {
+      "10.8 cm": "TENTWENTY_MEASURE",
+      "16.2 cm": "TENTWENTY_MEASURE",
+      "27.0 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-calc-020": {
+      "Nothing; C3 lies 20% above the preauricular point": "TENTWENTY_MEASURE",
+      "C3 is 3.6 cm too high; 10% should have been used": "TENTWENTY_MEASURE",
+      "C3 is 10.8 cm too low; 50% should have been used": "TENTWENTY_MEASURE"
+    },
+    "ch-calc-021": {
+      "Up 40 µV, then down 60 µV": "POLARITY_SIGN",
+      "Down 160 µV, then up 140 µV": "BIPOLAR_ADDING",
+      "Up 60 µV, then down 40 µV": "POLARITY_SIGN"
+    },
+    "ch-calc-022": {
+      "Ictal-interictal continuum GPDs": "ACNS_CRITERIA",
+      "Brief potentially ictal rhythmic discharges": "ACNS_CRITERIA",
+      "Generalized periodic discharges at 1 Hz": "ACNS_CRITERIA"
+    },
+    "ch-calc-024": {
+      "About 25% low": "PERCENT_BASE",
+      "About 2% low": "DECIMAL_SLIP"
+    },
+    "ch-pilot-001": {
+      "7.2 cm": "TENTWENTY_MEASURE",
+      "14.4 cm": "TENTWENTY_MEASURE",
+      "18.0 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-pilot-002": {
+      "About 0.16 s": "TC_UNITS",
+      "About 0.53 s": "TC_UNITS",
+      "About 1.0 s": "TC_NO_2PI"
+    },
+    "ch-pilot-003": {
+      "Raise the low-frequency filter so slow posterior components are reduced": "MASKING_A_FAULT",
+      "Start hyperventilation early to reveal the child's true background frequency": "ACTIVATION_RESPONSE"
+    },
+    "ch-pilot-004": {
+      "Burst-suppression, indicating a significant encephalopathy": "AGE_NORMS",
+      "Tracé discontinu, expected only in a very premature infant": "AGE_NORMS",
+      "Interhemispheric asynchrony from immature commissural function": "AGE_NORMS"
+    },
+    "ch-pilot-005": {
+      "Do 1 minute of HV, record the TIA history, and inform the physician": "CONTRAINDICATION",
+      "Do HV as ordered, record the TIA history, and inform the physician": "CONTRAINDICATION",
+      "Do HV only after a normal baseline, and record the TIA history": "CONTRAINDICATION"
+    },
+    "ch-pilot-006": {
+      "Left mid-temporal region": "LOCALIZATION",
+      "Left occipital region": "END_OF_CHAIN",
+      "Left parietal parasagittal region": "LOCALIZATION"
+    },
+    "ch-pilot-007": {
+      "As possible frontal epileptiform activity needing an urgent call": "MEDICATION_EFFECT",
+      "As muscle artifact, lowering the high-frequency filter to remove it": "CEREBRAL_AS_ARTIFACT",
+      "As a breach rhythm, and ask the family about prior skull surgery": "MEDICATION_EFFECT"
+    },
+    "ch-pilot-008": {
+      "Rhythmic central discharges suggestive of an epileptic focus": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-pilot-009": {
+      "70 µV; 14.3 mm": "SENS_DIRECTION",
+      "100 µV; 10 mm": "SENS_ARITHMETIC",
+      "49 µV; 4.9 mm": "SENS_ARITHMETIC"
+    },
+    "ch-pilot-010": {
+      "About 42 ms; a spike": "PAGE_SPEED_ASSUMED",
+      "About 250 ms; a slow transient": "DECIMAL_SLIP"
+    },
+    "ch-pilot-011": {
+      "36 Hz": "ALIASING",
+      "64 Hz": "NYQUIST",
+      "100 Hz": "ALIASING"
+    },
+    "ch-pilot-012": {
+      "About 10 µV": "CUTOFF_50_NOT_70",
+      "Close to 0 µV": "FILTER_ALL_OR_NONE",
+      "About 20 µV": "FILTER_ALL_OR_NONE"
+    },
+    "ch-pilot-013": {
+      "70 Hz; the sampling rate only has to match the highest frequency": "NYQUIST",
+      "140 Hz; higher rates are used mainly to increase displayed amplitude": "NYQUIST",
+      "280 Hz; Nyquist requires four samples per cycle at the top frequency": "NYQUIST"
+    },
+    "ch-pilot-014": {
+      "0.75 µV; it is below the threshold and can be disregarded": "SENS_ARITHMETIC",
+      "3 µV; sensitivity should be reduced to 7 µV/mm to remove it": "ECI_REQUIREMENTS",
+      "15 µV; it should be re-measured at 10 µV/mm instead": "DECIMAL_SLIP"
+    },
+    "ch-pilot-015": {
+      "A poor ground connection; re-apply the patient ground electrode": "GROUND_REFERENCE_LOGIC",
+      "A faulty F4 lead; replace the F4 electrode and its wire": "GROUND_REFERENCE_LOGIC",
+      "Interference from a nearby device; switch on the notch filter": "MASKING_A_FAULT"
+    },
+    "ch-pilot-016": {
+      "The reference electrode chosen for the current montage": "GROUND_REFERENCE_LOGIC",
+      "The impedance of the vertex electrode at Cz": "GROUND_REFERENCE_LOGIC"
+    },
+    "ch-pilot-017": {
+      "A high CMRR amplifies common-mode signals when impedances differ": "CMRR_ALONE",
+      "The 18-kΩ electrode generates 60-Hz activity of its own": "IMPEDANCE_LOGIC",
+      "The higher impedance shifts the interference to a new frequency": "IMPEDANCE_LOGIC"
+    },
+    "ch-pilot-018": {
+      "Right anterior temporal spike; mark it and notify the reader": "ARTIFACT_AS_CEREBRAL",
+      "Right lateral rectus spike; ask the patient to fixate ahead": "ARTIFACT_TYPE",
+      "Electrolyte bridge between F8 and T4; dry the scalp there": "ARTIFACT_TYPE"
+    },
+    "ch-pilot-019": {
+      "An amplifier fault in the C3-P3 channel": "ISOPOTENTIAL",
+      "High impedance at both C3 and P3": "IMPEDANCE_LOGIC",
+      "Excessive notch filtering in that channel": "ISOPOTENTIAL"
+    },
+    "ch-pilot-020": {
+      "Raise the low-frequency filter to 1 Hz for the rest of the study": "MASKING_A_FAULT",
+      "Switch to a referential montage using the ear electrodes": "MASKING_A_FAULT",
+      "Decrease sensitivity to 15 µV/mm for the remaining recording": "MASKING_A_FAULT"
+    },
+    "ch-pilot-021": {
+      "Have the patient close the eyes tightly for several seconds": "ARTIFACT_TYPE",
+      "Begin hyperventilation and watch for any slow-wave buildup": "ACTIVATION_RESPONSE"
+    },
+    "ch-pilot-022": {
+      "ECG artifact from the heart's field; change to a linked-ear reference": "ARTIFACT_TYPE",
+      "Ballistocardiographic head movement; immobilise the head": "ARTIFACT_TYPE",
+      "Right temporal periodic discharges; notify the reading physician": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-pilot-023": {
+      "It attenuates reproducibly with painful stimulation of the patient": "CEREBRAL_AS_ARTIFACT",
+      "It is maximal at T3 with a phase reversal in the left temporal chain": "CEREBRAL_AS_ARTIFACT",
+      "It disappears once the high-frequency filter is lowered to 15 Hz": "FILTER_DIRECTION"
+    },
+    "ch-pilot-024": {
+      "A negative maximum at P3": "PHASE_REVERSAL_READ",
+      "A maximum at O1 at the end of the chain": "END_OF_CHAIN",
+      "Equal potential at C3 and O1 with no maximum": "ISOPOTENTIAL"
+    },
+    "ch-pilot-025": {
+      "At F7; the absence of a phase reversal already confirms it": "END_OF_CHAIN",
+      "At T3; review the same epoch at a lower sensitivity to confirm": "END_OF_CHAIN",
+      "At O1; the wave propagates forward through the temporal chain": "LOCALIZATION"
+    },
+    "ch-pilot-026": {
+      "A maximum at Fp1 that spreads toward T5": "POLARITY_SIGN",
+      "A maximum at T5 with reference artifact at F7": "POLARITY_SIGN",
+      "Two independent generators at Fp1 and T5": "ISOPOTENTIAL"
+    },
+    "ch-pilot-027": {
+      "The discharge is actually maximal over the left parasagittal region": "REFERENCE_CONTAMINATION",
+      "The left parasagittal electrodes have high or unbalanced impedance": "IMPEDANCE_LOGIC",
+      "The discharge is a positive-polarity benign variant of drowsiness": "REFERENCE_CONTAMINATION"
+    },
+    "ch-pilot-028": {
+      "Volume conduction of the blink potential to the occipital scalp": "REFERENCE_CONTAMINATION",
+      "Occipital lambda waves triggered by each blink": "ARTIFACT_AS_CEREBRAL",
+      "A transient rise in occipital impedance during blinking": "IMPEDANCE_LOGIC"
+    },
+    "ch-pilot-029": {
+      "Upward in F7-T3 and downward in F8-T4": "POLARITY_SIGN",
+      "Downward in both F7-T3 and F8-T4": "POLARITY_SIGN",
+      "Upward in both F7-T3 and F8-T4": "POLARITY_SIGN"
+    },
+    "ch-pilot-030": {
+      "An ipsilateral ear referential montage (C3-A1, C4-A2)": "LOCALIZATION",
+      "A circumferential bipolar montage around the head": "LOCALIZATION"
+    },
+    "ch-pilot-031": {
+      "Complete the frequency sequence, documenting each response": "CONTRAINDICATION",
+      "Repeat 15 Hz with eyes open and document reproducibility": "CONTRAINDICATION",
+      "Pause briefly, resume at 15 Hz, and document the response": "CONTRAINDICATION"
+    },
+    "ch-pilot-032": {
+      "A photoparoxysmal response": "ACTIVATION_RESPONSE",
+      "Photic driving of the posterior rhythm": "ACTIVATION_RESPONSE",
+      "Frontal intermittent rhythmic delta activity": "ARTIFACT_AS_CEREBRAL"
+    },
+    "ch-pilot-033": {
+      "Keep the child hyperventilating so the full 3 minutes is recorded": "PRIORITY_ORDER"
+    },
+    "ch-pilot-034": {
+      "7 µV/mm throughout, standard spacing, 10 minutes, no stimulation": "ECI_REQUIREMENTS",
+      "2 µV/mm, notch on and HFF set to 15 Hz to suppress the artifact": "ECI_REQUIREMENTS",
+      "1 µV/mm, closely spaced electrodes, 60 minutes with paralysis": "ECI_REQUIREMENTS"
+    },
+    "ch-pilot-035": {
+      "5 Hz, about 84 µV": "WAVES_NOT_PER_SECOND",
+      "10 Hz, about 12 µV": "SENS_ARITHMETIC"
+    },
+    "ch-pilot-036": {
+      "Left temporal sharp waves suggesting an epileptic focus": "VARIANT_AS_ABNORMAL",
+      "Lateralized periodic discharges over the left hemisphere": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-pilot-037": {
+      "A transverse bipolar montage, as they phase-reverse at the vertex": "LOCALIZATION"
+    },
+    "ch-pilot-038": {
+      "Independent bitemporal interictal epileptiform spikes": "VARIANT_AS_ABNORMAL",
+      "Generalized polyspike discharges of a generalized epilepsy": "VARIANT_AS_ABNORMAL",
+      "Vertex sharp waves of stage N1 sleep": "SLEEP_RULES"
+    },
+    "ch-pilot-039": {
+      "A focal electrographic seizure of the right temporal lobe": "VARIANT_AS_ABNORMAL",
+      "Lateralized rhythmic delta activity": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-pilot-040": {
+      "An electrographic seizure; activate the seizure protocol at once": "VARIANT_AS_ABNORMAL"
+    },
+    "ch-pilot-041": {
+      "Equally benign regardless of location and state (FOLD features)": "ABNORMAL_AS_NORMAL"
+    },
+    "ch-pilot-042": {
+      "Lower the HFF to 15 Hz so the discharges look smoother for the reader": "MASKING_A_FAULT"
+    },
+    "ch-pilot-043": {
+      "Generalized periodic discharges (GPDs)": "ACNS_CRITERIA",
+      "Lateralized rhythmic delta activity (LRDA)": "ACNS_CRITERIA",
+      "Bilateral independent periodic discharges (BIPDs)": "ACNS_CRITERIA"
+    },
+    "ch-pilot-044": {
+      "Left temporal lobe seizure with impaired awareness at 10:42, consistent with epilepsy": "SCOPE",
+      "Typical seizure according to the family; EEG change judged insignificant by the technologist": "DOCUMENTATION",
+      "Probably a psychogenic event because the EEG change during the episode was subtle": "SCOPE"
+    },
+    "ch-pilot-045": {
+      "Two grounds only increase artifact, so no safety action is needed": "EQUIPMENT_SAFETY",
+      "The EEG ground should be connected to the monitor's chassis instead": "EQUIPMENT_SAFETY",
+      "Both ground electrodes should be placed on the same limb": "EQUIPMENT_SAFETY"
+    },
+    "ch-pilot-046": {
+      "Reusable electrodes, low-level disinfection per protocol": "INFECTION_CONTROL",
+      "Reusable electrodes, standard autoclave cycle per protocol": "INFECTION_CONTROL",
+      "Subdermal needles, discarded as sharps per protocol": "INFECTION_CONTROL"
+    },
+    "ch-pilot-047": {
+      "Share a general impression, then say the physician will report": "SCOPE",
+      "Say it looked reassuring but that the physician will report it": "SCOPE",
+      "With the patient's consent, report your impression to them now": "SCOPE"
+    },
+    "ch-pilot-048": {
+      "Document it, raise that channel's gain to match, then record": "MASKING_A_FAULT",
+      "Document it and rely on biological calibration to correct it": "EQUIPMENT_SAFETY",
+      "Document it and apply a notch filter to that channel only": "MASKING_A_FAULT"
+    },
+    "ch-pilot-049": {
+      "Stop the recording, position the patient safely, and wait for it to end": "PRIORITY_ORDER",
+      "Leave to notify the physician, then return to annotate the clinical signs": "EMERGENCY_STEP",
+      "Hold the moving hand to limit artifact, then annotate the seizure onset": "EMERGENCY_STEP"
+    },
+    "ch-pilot-050": {
+      "Correct the header to the requisition and document the change": "DOCUMENTATION",
+      "Release it, documenting that the record number matched the order": "PRIVACY"
+    }
+  }
+}

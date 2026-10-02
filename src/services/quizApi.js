@@ -27,11 +27,12 @@ export const quizApi = {
     return apiService.get("/quiz/sessions/active");
   },
 
-  answer(sessionId, questionId, selectedIndex, timeMs) {
+  answer(sessionId, questionId, selectedIndex, timeMs, confidence) {
     return apiService.post(`/quiz/sessions/${encodeURIComponent(sessionId)}/answers`, {
       questionId,
       selectedIndex,
       timeMs,
+      ...(confidence ? { confidence } : {}),
     });
   },
 

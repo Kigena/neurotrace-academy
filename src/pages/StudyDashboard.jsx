@@ -212,6 +212,16 @@ function StudyDashboard() {
             </ol>
           </div>
 
+          {/* Spaced review */}
+          <ReviewCard reviews={data.reviews} busy={busy} onStart={(count) => run({ kind: "reviews", count })} />
+
+          {/* Repeated mistakes */}
+          <MistakesCard
+            misconceptions={data.misconceptions}
+            busy={busy}
+            onDrill={(m) => run({ kind: "misconception", code: m.code, count: 5 })}
+          />
+
           {/* Weakest topics */}
           <div className="rounded-lg border border-slate-200 bg-white p-5 space-y-3">
             <h2 className="text-sm font-semibold text-slate-900">Weakest topics</h2>
@@ -277,6 +287,98 @@ function StudyDashboard() {
         </div>
       )}
     </section>
+  );
+}
+
+function relativeDay(ts) {
+  if (!ts) return null;
+  const days = Math.ceil((ts - Date.now()) / 86400000);
+  if (days <= 0) return "today";
+  return days === 1 ? "tomorrow" : `in ${days} days`;
+}
+
+/** Spaced repetition: missed and guessed questions return at 1/3/7/16/35 days. */
+function ReviewCard({ reviews, busy, onStart }) {
+  if (!reviews) return null;
+  const due = reviews.dueNow || 0;
+  return (
+    <div className="rounded-lg border border-slate-200 bg-white p-5 space-y-3">
+      <h2 className="text-sm font-semibold text-slate-900">Spaced review</h2>
+      <div className="flex items-baseline gap-2">
+        <span className={`text-4xl font-black ${due ? "text-indigo-700" : "text-slate-400"}`}>{due}</span>
+        <span className="text-sm text-slate-700">due now</span>
+        {reviews.misconceptionsDue > 0 && (
+          <span className="ml-auto rounded bg-red-100 px-2 py-0.5 text-xs text-red-800">
+            {reviews.misconceptionsDue} confident miss{reviews.misconceptionsDue === 1 ? "" : "es"}
+          </span>
+        )}
+      </div>
+      <dl className="grid grid-cols-3 gap-2 text-xs">
+        <div><dt className="text-slate-500">This week</dt><dd className="font-semibold text-slate-900">{reviews.dueThisWeek}</dd></div>
+        <div><dt className="text-slate-500">Learning</dt><dd className="font-semibold text-slate-900">{reviews.learning}</dd></div>
+        <div><dt className="text-slate-500">Learned</dt><dd className="font-semibold text-emerald-700">{reviews.learned}</dd></div>
+      </dl>
+      {due > 0 ? (
+        <button
+          onClick={() => onStart(due >= 20 ? 20 : 10)}
+          disabled={busy}
+          className="w-full rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-60"
+        >
+          REVIEW {Math.min(due, 20)} NOW
+        </button>
+      ) : (
+        <p className="text-xs text-slate-500">
+          {reviews.nextDueAt ? `Next review ${relativeDay(reviews.nextDueAt)}.` : "Missed or guessed questions will appear here."}
+        </p>
+      )}
+      <p className="text-xs text-slate-500">
+        A question counts as learned after 3 correct answers on separate days. Misses restart it at 1 day.
+      </p>
+    </div>
+  );
+}
+
+/** Misconceptions recorded from the distractors chosen. */
+function MistakesCard({ misconceptions, busy, onDrill }) {
+  if (!misconceptions) return null;
+  const { active = [], recent = [] } = misconceptions;
+  return (
+    <div className="rounded-lg border border-slate-200 bg-white p-5 space-y-3">
+      <h2 className="text-sm font-semibold text-slate-900">Repeated mistakes</h2>
+      {active.length === 0 && recent.length === 0 && (
+        <p className="text-sm text-slate-500">
+          When a wrong answer matches a known error (for example forgetting 2π), it is tracked here.
+        </p>
+      )}
+      {active.slice(0, 3).map((m) => (
+        <div key={m.code} className="rounded-md border border-amber-200 bg-amber-50 p-3 space-y-1">
+          <div className="flex items-start justify-between gap-2">
+            <div className="text-sm font-semibold text-amber-900">{m.title}</div>
+            <span className="shrink-0 text-xs text-amber-800">{m.recentErrors}× in 30 days</span>
+          </div>
+          <p className="text-xs text-amber-900">{m.tip}</p>
+          <div className="flex items-center justify-between pt-1">
+            <span className="text-xs text-amber-800">Cleared {m.clearProgress}/{m.clearTarget}</span>
+            {m.questionsAvailable > 0 && (
+              <button
+                onClick={() => onDrill(m)}
+                disabled={busy}
+                className="rounded border border-amber-400 bg-white px-2 py-1 text-xs font-semibold text-amber-900 hover:bg-amber-100 disabled:opacity-60"
+              >
+                Drill 5
+              </button>
+            )}
+          </div>
+        </div>
+      ))}
+      {active.length === 0 && recent.length > 0 && (
+        <ul className="space-y-1 text-xs text-slate-600">
+          {recent.slice(0, 3).map((m) => (
+            <li key={m.code}>Watching: {m.title} ({m.recentErrors}×)</li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 

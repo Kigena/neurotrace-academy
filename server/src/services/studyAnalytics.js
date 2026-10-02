@@ -343,8 +343,27 @@ const D2_PREFERENCE_POINTS = 5; // D2 sections sort as if 5 mastery points weake
  *   - review up to 5 outstanding incorrect questions
  *   - a 10-question mixed ABRET quiz
  */
-export function buildDailyPlan({ mastery, incorrectCount, sectionDomains = {}, challengeAvailable = 0 }) {
+export function buildDailyPlan({ mastery, incorrectCount, sectionDomains = {}, challengeAvailable = 0, reviewsDue = 0, misconception = null }) {
     const items = [];
+
+    // Reinforcement first: due spaced reviews, then one repeated mistake.
+    if (reviewsDue > 0) {
+        items.push({
+            kind: 'reviews',
+            count: Math.min(20, reviewsDue) > 10 ? 20 : 10,
+            due: reviewsDue,
+            reason: `${reviewsDue} question(s) due for spaced review`,
+        });
+    }
+    if (misconception) {
+        items.push({
+            kind: 'misconception',
+            count: 5,
+            code: misconception.code,
+            title: misconception.title,
+            reason: `Made ${misconception.recentErrors}× in the last 30 days`,
+        });
+    }
 
     // Challenge-first plan: the foundation bank is mostly recall, so when the
     // Challenge Bank is available, Today's Study is built from it.
