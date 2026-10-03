@@ -9,9 +9,9 @@ import ChecklistTab from "../components/emgNcs/ChecklistTab.jsx";
 import "../components/emgNcs/emgProse.css";
 
 /**
- * EMG/NCS Clinical Refresher: a native page (formerly an iframe of
- * public/emg-ncs-study-hub.html). Content lives in src/data/emgNcs/hub.json
- * and is loaded on demand; images are files under public/emg-ncs/atlas/.
+ * EMG/NCS Clinical Refresher. Content lives in src/data/emgNcs/hub.json
+ * (the source of truth; edit it there) and is loaded on demand; images are
+ * files under public/emg-ncs/atlas/.
  */
 
 const TABS = [
