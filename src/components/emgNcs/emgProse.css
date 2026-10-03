@@ -1,0 +1,84 @@
+/* Light-theme styling for the EMG/NCS reading content (static HTML from
+   src/data/emgNcs/hub.json). Scoped to .emg-prose so it never leaks. */
+.emg-prose { color: #334155; font-size: 0.925rem; line-height: 1.65; }
+.emg-prose h2 { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.25rem; }
+.emg-prose h3 { font-size: 1.05rem; font-weight: 700; color: #0f172a; margin: 0 0 0.6rem; line-height: 1.35; }
+.emg-prose h4 { font-size: 0.95rem; font-weight: 700; color: #0f172a; margin: 1rem 0 0.4rem; }
+.emg-prose p { margin: 0 0 0.75rem; }
+.emg-prose ul { list-style: disc; margin: 0.25rem 0 0.75rem; padding-left: 1.25rem; }
+.emg-prose ol { list-style: decimal; margin: 0.25rem 0 0.75rem; padding-left: 1.25rem; }
+.emg-prose li { margin-bottom: 0.3rem; }
+.emg-prose li::marker { color: #94a3b8; }
+.emg-prose strong, .emg-prose b { color: #0f172a; font-weight: 600; }
+
+.emg-prose .card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 0.75rem;
+  padding: 1.25rem 1.375rem; margin-bottom: 1.25rem;
+}
+.emg-prose .pearl {
+  background: #eef2ff; border-left: 3px solid #6366f1; border-radius: 0.5rem;
+  padding: 0.75rem 1rem; margin-top: 0.875rem; color: #312e81; font-size: 0.875rem;
+}
+.emg-prose .pearl b, .emg-prose .pearl strong { color: #3730a3; }
+.emg-prose .grid-2 { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) {
+  .emg-prose .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.emg-prose .table-scroll {
+  overflow-x: auto; border: 1px solid #e2e8f0; border-radius: 0.5rem; margin: 0.5rem 0;
+}
+.emg-prose table.ref-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 560px; }
+.emg-prose table.ref-table th {
+  background: #f8fafc; color: #475569; text-align: left; padding: 0.6rem 0.75rem;
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  border-bottom: 1px solid #e2e8f0; white-space: nowrap;
+}
+.emg-prose table.ref-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+.emg-prose table.ref-table tbody tr:last-child td { border-bottom: 0; }
+.emg-prose table.ref-table tbody tr:hover td { background: #f8fafc; }
+.emg-prose table.ref-table td:first-child { font-weight: 600; color: #0f172a; }
+.emg-prose .ref-note { font-size: 0.8rem; color: #64748b; margin: 0.5rem 0 0; }
+
+.emg-prose .proc-grid { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1024px) {
+  .emg-prose .proc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.emg-prose .proc-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem 1.375rem;
+  scroll-margin-top: 8rem; transition: box-shadow 0.3s;
+}
+.emg-prose .proc-card.is-target { box-shadow: 0 0 0 3px #a5b4fc; }
+.emg-prose .proc-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.2rem; }
+.emg-prose .proc-head h3 { margin: 0; }
+.emg-prose .proc-num {
+  flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 9999px; background: #eef2ff; color: #4338ca;
+  font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center;
+}
+.emg-prose .sub {
+  font-size: 0.72rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;
+  margin: 0 0 0.75rem 2.75rem;
+}
+
+.emg-prose .badge {
+  display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.03em;
+  padding: 0.15rem 0.5rem; border-radius: 0.3rem; margin-left: 0.4rem; vertical-align: middle;
+}
+.emg-prose .badge-red { background: #fee2e2; color: #b91c1c; }
+.emg-prose .badge-green { background: #dcfce7; color: #15803d; }
+.emg-prose .badge-amber { background: #fef3c7; color: #b45309; }
+
+.emg-prose .banner { margin: 2rem 0 1rem; padding: 0.9rem 1.25rem; border-radius: 0.75rem; border: 1px solid; }
+.emg-prose .banner h2 { color: inherit; }
+.emg-prose .banner p { margin: 0; font-size: 0.85rem; opacity: 0.85; }
+.emg-prose .banner-red { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+.emg-prose .banner-green { background: #f0fdf4; border-color: #bbf7d0; color: #166534; }
+.emg-prose .footer-note { font-size: 0.78rem; color: #94a3b8; text-align: center; margin-top: 2rem; }
+
+/* Flashcard flip */
+.emg-flip { perspective: 1400px; }
+.emg-flip-inner { position: relative; transform-style: preserve-3d; transition: transform 0.5s cubic-bezier(.4, .2, .2, 1); }
+.emg-flip-inner.is-flipped { transform: rotateY(180deg); }
+.emg-flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.emg-flip-back { transform: rotateY(180deg); }
+@media (prefers-reduced-motion: reduce) { .emg-flip-inner { transition: none; } }
