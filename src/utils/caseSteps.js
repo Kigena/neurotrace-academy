@@ -14,6 +14,7 @@ export function normalizeStep(step, idx, caseId) {
     options: Array.isArray(s.options) ? s.options : [],
     answerIndex: Number.isInteger(s.answerIndex) ? s.answerIndex : Number.isInteger(s.correctAnswer) ? s.correctAnswer : null,
     explanation: s.explanation || "",
+    tracing: typeof s.tracing === "string" ? s.tracing : null,
   };
 }
 

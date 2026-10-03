@@ -9,6 +9,7 @@
 import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateScene } from "../src/eeg/generator.js";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => JSON.parse(readFileSync(resolve(root, p), "utf8"));
@@ -84,6 +85,16 @@ for (const c of batch) {
       if (Number.isInteger(answer) && lens[answer] === Math.max(...lens) && lens[answer] > 1.4 * (lens.reduce((a, b) => a + b, 0) - lens[answer]) / (lens.length - 1))
         warn.push(`${sid}: keyed option is much longer than the others (length cue)`);
     }
+  });
+  for (const [key, scene] of Object.entries(c.tracings || {})) {
+    try {
+      validateScene(scene);
+    } catch (e) {
+      err(id, `tracing ${key}: ${e.message}`);
+    }
+  }
+  steps.forEach((s, i) => {
+    if (s.tracing && !c.tracings?.[s.tracing]) err(`${id} step ${i + 1}`, `unknown tracing ${s.tracing}`);
   });
   if (!Array.isArray(c.learningLinks) || !c.learningLinks.length) err(id, "learningLinks");
   for (const l of c.learningLinks || []) if (!validLinks.has(l.to) && !String(l.to).startsWith("/study-guides/")) err(id, `bad learning link ${l.to}`);

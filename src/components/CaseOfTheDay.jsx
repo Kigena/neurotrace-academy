@@ -62,6 +62,7 @@ function DayTile({ day, progress }) {
         ) : null}
       </div>
       <div className="mt-2 line-clamp-3 text-xs font-medium leading-snug text-slate-800">{day.case.title}</div>
+      {day.case.tracings && <div className="mt-auto pt-1.5 text-[0.65rem] font-semibold text-sky-700">📈 Tracings</div>}
     </Link>
   );
 }
@@ -86,6 +87,9 @@ export default function CaseOfTheDay({ cases, progressMap = {}, now }) {
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <div className="rounded-full bg-indigo-600 px-4 py-1.5 text-sm font-bold text-white">⭐ CASE OF THE DAY</div>
         <div className="text-xs font-medium text-slate-500">{dateLabel} · new case every day</div>
+        {today.tracings && Object.keys(today.tracings).length > 0 && (
+          <div className="rounded-full bg-sky-100 px-3 py-1 text-xs font-bold text-sky-800">📈 EEG tracings</div>
+        )}
         {progress && (
           <div className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">
             ✓ Completed{scoreText(progress) && ` · ${scoreText(progress)}`}

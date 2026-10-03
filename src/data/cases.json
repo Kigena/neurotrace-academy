@@ -9161,6 +9161,1523 @@
           "to": "/patterns/pattern_focal_spikes_temporal"
         }
       ]
+    },
+    {
+      "id": "case-0073",
+      "title": "Central Arciform Rhythm That Ignores Eye Opening",
+      "difficulty": "easy",
+      "domainFocus": [
+        "domain-3",
+        "domain-2"
+      ],
+      "tags": [
+        "mu-rhythm",
+        "normal-variants",
+        "reactivity",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_mu_rhythm",
+        "pattern_pdr"
+      ],
+      "patient": {
+        "ageYears": 41,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG after a single fainting episode",
+      "history": {
+        "eventDescription": "A 41-year-old felt light-headed while standing in a long line and briefly lost consciousness, with no jerking or tongue biting. Routine awake EEG was ordered.",
+        "lastEventTiming": "2 weeks ago",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Well-organized awake background",
+        "pdrHz": "About 10 Hz, reactive to eye opening",
+        "epileptiform": "None",
+        "focalFindings": "Arciform 9 Hz activity over C3 and C4",
+        "activation": "Eye opening and closing",
+        "artifacts": "Eye blinks"
+      },
+      "objectives": [
+        "Confirm normal posterior alpha reactivity on a live page",
+        "Localize an arciform central rhythm by phase reversal",
+        "Use contralateral hand movement to test mu blocking"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 11,
+          "ageYears": 41,
+          "state": "awake",
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "background": {
+            "pdrUv": 55
+          },
+          "findings": [
+            {
+              "type": "mu",
+              "uv": 45,
+              "hz": 9
+            },
+            {
+              "type": "eyesOpen",
+              "at": 0.9
+            },
+            {
+              "type": "blink",
+              "at": [
+                2.4,
+                4.1
+              ]
+            },
+            {
+              "type": "eyesClosed",
+              "at": 6.6
+            }
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Eye-opening check",
+          "description": "The first awake page is displayed in the longitudinal bipolar montage at 7 uV/mm. You asked the patient to open her eyes at 0.9 s and to close them at 6.6 s; both events are marked under the page.",
+          "question": "Compare T5-O1 and T6-O2 before 0.9 s, between the markers, and after 6.6 s. What does the posterior ~10 Hz rhythm do?",
+          "options": [
+            "It continues unchanged with eyes open, so it does not react",
+            "It attenuates only on the left side, leaving the right unchanged",
+            "It attenuates after eye opening and returns after eye closure",
+            "It increases in amplitude after eye opening, then fades at 6.6 s"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The posterior dominant rhythm in T5-O1 and T6-O2 drops to low amplitude after the 'Eyes open' marker and returns after 'Eyes closed': normal, symmetric reactivity. A rhythm that persisted unchanged would be unreactive, which is the opposite of what the page shows. Alpha does not grow with eye opening (paradoxical alpha is a drowsiness phenomenon). The attenuation is bilateral; a one-sided failure to block (Bancaud phenomenon) would be a finding worth noting, but it is not present here.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "The central rhythm",
+          "description": "Between the eye markers, an arciform rhythm of about 9 Hz remains in F3-C3, C3-P3, F4-C4 and C4-P4. Its sharp phase alternates with a rounded one. Look at the direction of the sharp peaks in each pair of channels.",
+          "question": "Where is this rhythm maximal, and what on the page shows it?",
+          "options": [
+            "At C3 and C4, because F3-C3 and C3-P3 deflect in opposite directions",
+            "At Fz and Cz, because it is largest in the midline Fz-Cz channel",
+            "At T3 and T4, because the temporal channels carry the sharp phase",
+            "At O1 and O2, because the occipital electrodes end each chain"
+          ],
+          "correctAnswer": 0,
+          "explanation": "In F3-C3 the subtraction is F3 minus C3; with C3 negative the result is positive and the pen goes down. In C3-P3 the subtraction is C3 minus P3, so the same negativity gives an upward pen deflection. Opposite deflections in the two channels sharing C3 are a phase reversal at C3 (and likewise at C4). O1/O2 is where the posterior alpha lives, and that rhythm blocked. Fz-Cz is small on this page. The temporal chains do not carry the arciform activity.",
+          "tracing": "t1"
+        },
+        {
+          "step": 3,
+          "type": "recording-strategy",
+          "title": "Confirming mu",
+          "description": "The physician asks whether you can show that the central rhythm is mu. You still have several minutes of awake recording, and the patient is cooperative and seated with her eyes open.",
+          "question": "Which bedside test best confirms that this is mu rhythm?",
+          "options": [
+            "Run photic stimulation at 9 Hz and watch for driving at C3 and C4",
+            "Ask her to open and close her right hand and watch the C3 activity",
+            "Ask her to open and close her eyes again and watch C3 and C4",
+            "Start hyperventilation and look for the central rhythm to build up"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Mu rhythm attenuates with movement (or even the intention to move) of the contralateral limb, so a right-hand fist should block mu over C3, and left-hand movement should block it over C4. Repeating eye opening adds nothing, because the page already shows the central rhythm persists with eyes open; that is what separates it from alpha but does not prove it is mu. Photic driving and hyperventilation build-up test other things and do not block mu.",
+          "tracing": "t1"
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Technologist note",
+          "description": "With repeated right-hand fist clenching, the 9 Hz activity over C3 attenuated within a second and returned after she relaxed. Left-hand movement did the same over C4. You now write your technologist comments.",
+          "question": "Which note is accurate and within your scope?",
+          "options": [
+            "9 Hz arciform C3/C4 activity, persists with eyes open, blocks with hand use",
+            "Impression: rolandic spikes over C3 and C4; abnormal EEG, epileptiform",
+            "Central 9 Hz activity, normal variant, so it does not need documenting",
+            "Impression: mu rhythm only; normal EEG; no further review is needed"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The technologist documents what was seen and how it reacted: frequency, location, morphology, persistence with eyes open and blocking with contralateral hand movement, with the tests annotated on the record. Writing 'rolandic spikes, abnormal' mislabels a normal rhythm and is an interpretation. Leaving it out loses the observation the reader needs to classify it. A final impression of 'normal EEG' is the physician's call, not the technologist's.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Mu Rhythm",
+          "to": "/patterns/pattern_mu_rhythm"
+        },
+        {
+          "label": "Domain III: Normal Variants",
+          "to": "/workflow/domain-3/d3-normal-variants"
+        }
+      ]
+    },
+    {
+      "id": "case-0074",
+      "title": "Arciform Posterior Alpha Mistaken for Mu Rhythm",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-3",
+        "domain-2"
+      ],
+      "tags": [
+        "alpha",
+        "mu-rhythm",
+        "localization",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_pdr",
+        "pattern_mu_rhythm"
+      ],
+      "patient": {
+        "ageYears": 37,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG for recurrent headaches with visual aura",
+      "history": {
+        "eventDescription": "A 37-year-old with migraine with visual aura had an EEG requested to exclude an occipital seizure focus. No loss of awareness has occurred.",
+        "lastEventTiming": "last aura 5 days ago",
+        "comorbidities": [
+          "migraine with aura"
+        ],
+        "medications": [
+          "sumatriptan as needed"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake, eyes closed",
+        "pdrHz": "About 10 Hz with arciform morphology",
+        "epileptiform": "None",
+        "focalFindings": "None",
+        "activation": "Eye opening",
+        "artifacts": "Minimal"
+      },
+      "objectives": [
+        "Localize an arciform 10 Hz rhythm to the occipital region",
+        "Separate arciform alpha from mu by location and reactivity",
+        "Describe a posterior rhythm without mislabeling its shape"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 12,
+          "ageYears": 37,
+          "state": "awake",
+          "background": {
+            "pdrUv": 0
+          },
+          "findings": [
+            {
+              "type": "muShapedAlpha",
+              "uv": 70,
+              "hz": 10
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        },
+        "t2": {
+          "seed": 11,
+          "ageYears": 41,
+          "state": "awake",
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "background": {
+            "pdrUv": 55
+          },
+          "findings": [
+            {
+              "type": "mu",
+              "uv": 45,
+              "hz": 9
+            },
+            {
+              "type": "eyesOpen",
+              "at": 0.9
+            },
+            {
+              "type": "blink",
+              "at": [
+                2.4,
+                4.1
+              ]
+            },
+            {
+              "type": "eyesClosed",
+              "at": 6.6
+            }
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Where is it?",
+          "description": "A trainee flags this awake, eyes-closed page as 'mu rhythm'. The page shows an arciform rhythm of about 10 Hz. Switch between the longitudinal and referential montages before you answer.",
+          "question": "Where is this arciform rhythm maximal?",
+          "options": [
+            "At T3 and T4, largest in the mid-temporal channels",
+            "At Fz and Cz, largest in the midline Fz-Cz channel",
+            "At O1 and O2, largest in the O1-A1 and O2-A2 channels",
+            "At C3 and C4, largest in the F3-C3 and C4-P4 channels"
+          ],
+          "correctAnswer": 2,
+          "explanation": "In referential (ipsilateral ear) the largest channels are O1-A1 and O2-A2. In longitudinal the activity is largest in T5-O1 and T6-O2, the last channel of each chain, where O1/O2 is input 2 and there is no phase reversal (end-of-chain). C3-P3, C4-P4 and Cz-Pz carry some of it only because P3, P4 and Pz lie at the edge of the occipital field. F3-C3, F4-C4 and Fz-Cz are nearly flat, so there is no reversal at C3/C4 and this is not where mu lives. The mid-temporal channels do not carry it.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "recording-strategy",
+          "title": "Choose the test",
+          "description": "The trainee still thinks the shape alone proves mu. You can ask the patient to do one simple maneuver before the next page.",
+          "question": "Which maneuver best separates this rhythm from mu?",
+          "options": [
+            "Start 3 minutes of hyperventilation and watch the central channels",
+            "Run photic stimulation at 10 Hz and look for occipital driving",
+            "Lower the HFF to 15 Hz to see whether the sharp phase disappears",
+            "Ask him to open his eyes, since alpha blocks and mu does not"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Posterior alpha attenuates with eye opening; mu persists with eyes open and blocks with contralateral movement instead. Lowering the HFF changes the displayed morphology and can hide the harmonic that makes the waves look arciform, but it says nothing about what the rhythm is. Hyperventilation and photic driving test other responses and do not separate alpha from mu.",
+          "tracing": "t1"
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Compare with true mu",
+          "description": "For teaching, you open a second page from another patient whose central rhythm was confirmed as mu. Its eye-opening and eye-closing markers are shown.",
+          "question": "Compared with the first page, what is different on this comparison page?",
+          "options": [
+            "Its arciform rhythm is posterior and faster, at about 12 Hz",
+            "Its arciform rhythm is only on the left, over C3 and P3",
+            "Its arciform rhythm is central and blocks after 'Eyes open'",
+            "Its arciform rhythm is central and continues after 'Eyes open'"
+          ],
+          "correctAnswer": 3,
+          "explanation": "On the comparison page the arciform rhythm (about 9 Hz) reverses phase at C3 and C4 and keeps going between 'Eyes open' and 'Eyes closed', while the posterior 10 Hz rhythm blocks. That is mu. It is central, not posterior, and slightly slower, not 12 Hz. It does not block with eye opening, which is the whole point. It is bilateral, seen in both F3-C3/C3-P3 and F4-C4/C4-P4.",
+          "tracing": "t2"
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Describe it correctly",
+          "description": "Back on the first patient, you asked him to open his eyes: the arciform 10 Hz rhythm over O1 and O2 attenuated and returned on eye closure. You now write your technologist comments.",
+          "question": "Which description is accurate?",
+          "options": [
+            "10 Hz arciform posterior rhythm at O1/O2, blocks with eye opening",
+            "No posterior rhythm seen; central mu rhythm present over C3/C4",
+            "Posterior rhythm absent; arciform waves at C3 and C4 persisting",
+            "Sharply contoured 10 Hz occipital waves, possibly epileptiform"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The arciform waves are the posterior dominant rhythm itself, with a superimposed harmonic giving the arciform look: 10 Hz, maximal O1/O2, symmetric and reactive. Calling it 'no PDR, mu present' mislocalizes it and loses the normal PDR. 'Possibly epileptiform' turns a rhythmic background rhythm into a concern it does not warrant; a continuous rhythm that blocks with eye opening is not a train of discharges. The rhythm is not central and it does not persist with eyes open.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Posterior Dominant Rhythm",
+          "to": "/patterns/pattern_pdr"
+        },
+        {
+          "label": "Pattern: Mu Rhythm",
+          "to": "/patterns/pattern_mu_rhythm"
+        },
+        {
+          "label": "Domain II: Montages & Referencing",
+          "to": "/workflow/domain-2/d2-montages-referencing"
+        }
+      ]
+    },
+    {
+      "id": "case-0075",
+      "title": "Frontal Rhythmic Delta in Metabolic Encephalopathy",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-3",
+        "domain-4"
+      ],
+      "tags": [
+        "firda",
+        "encephalopathy",
+        "reactivity",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_firda",
+        "pattern_diffuse_slowing"
+      ],
+      "patient": {
+        "ageYears": 61,
+        "sex": "male",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Stupor with rising ammonia and creatinine",
+      "history": {
+        "eventDescription": "A 61-year-old with cirrhosis and acute kidney injury became progressively drowsy over two days and now opens his eyes only briefly to loud voice. No witnessed convulsions.",
+        "lastEventTiming": "decline over 48 hours",
+        "comorbidities": [
+          "cirrhosis",
+          "acute kidney injury"
+        ],
+        "medications": [
+          "lactulose",
+          "ceftriaxone"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "stupor"
+        ],
+        "background": "Diffuse theta-delta slowing, no posterior dominant rhythm",
+        "pdrHz": "Absent",
+        "epileptiform": "None on this page",
+        "focalFindings": "None",
+        "activation": "Reactivity testing",
+        "artifacts": "Frontal muscle artifact"
+      },
+      "objectives": [
+        "Measure the frequency of rhythmic delta with the caliper",
+        "Describe frontally predominant GRDA in ACNS 2021 terms",
+        "Test and annotate reactivity, and recognize muscle artifact"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 13,
+          "ageYears": 61,
+          "state": "stupor",
+          "sensitivity": 10,
+          "background": {
+            "theta": 7,
+            "delta": 6
+          },
+          "findings": [
+            {
+              "type": "firda",
+              "uv": 165,
+              "hz": 1.8,
+              "runs": [
+                [
+                  0.2,
+                  4.4
+                ],
+                [
+                  5.3,
+                  9.9
+                ]
+              ]
+            },
+            {
+              "type": "muscle",
+              "from": 8.6,
+              "to": 10,
+              "sites": [
+                "Fp1",
+                "Fp2",
+                "F7",
+                "F8"
+              ],
+              "uv": 10
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "calculation",
+          "title": "Measure the rhythm",
+          "description": "Bedside EEG at 10 uV/mm, LFF 1 Hz, HFF 70 Hz. The page shows runs of high-amplitude rhythmic slow waves. Use the caliper on one full wave (trough to trough) in Fp1-F7 or F3-C3, or count waves within one second.",
+          "question": "What is the frequency of this rhythmic activity?",
+          "options": [
+            "About 1.8 Hz, in the delta band",
+            "About 5 Hz, in the theta band",
+            "About 3.6 Hz, at the top of the delta band",
+            "About 0.9 Hz, in the slowest part of the delta band"
+          ],
+          "correctAnswer": 0,
+          "explanation": "One cycle measures about 550 ms, and frequency = 1 / period = 1 / 0.55 s = 1.8 Hz, which is delta (below 4 Hz). Counting gives the same answer: just under 2 waves per 1-s grid box. 3.6 Hz comes from counting each peak and trough as a separate wave. 0.9 Hz comes from measuring two cycles as one. 5 Hz theta is the faster, lower-amplitude background between runs, not the rhythmic runs.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Distribution and name",
+          "description": "Switch to the referential montage and compare the frontal and the posterior channels. The rhythmic runs start near 0.2 s and 5.3 s.",
+          "question": "Which description fits the page in ACNS 2021 terminology?",
+          "options": [
+            "Generalized periodic discharges at about 2 per second",
+            "An electrographic seizure, evolving in frequency and location",
+            "Generalized rhythmic delta activity, frontally predominant",
+            "Lateralized rhythmic delta activity over the left frontal region"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The delta is bilateral and synchronous, largest at Fp1/Fp2 and F3/F4/Fz and small over O1/O2: GRDA with frontal predominance, the pattern classically called FIRDA. It is not lateralized, because both sides are equal. Periodic discharges are discrete waveforms separated by background; these are continuous sinusoidal waves (rhythmic, not periodic). Nothing evolves in frequency, morphology or location, so the page does not meet seizure criteria.",
+          "tracing": "t1"
+        },
+        {
+          "step": 3,
+          "type": "safety-response",
+          "title": "What to do now",
+          "description": "The nurse asks whether this is a seizure and whether she should call the rapid response team. The patient's vital signs are stable, and the physician is reachable by phone.",
+          "question": "What is your best next action?",
+          "options": [
+            "Test reactivity with voice, then noxious stimulus, and annotate each",
+            "Call a seizure alert now, since rhythmic delta is status epilepticus",
+            "Raise the LFF to 5 Hz so that the slow waves stop hiding the background",
+            "Give the PRN lorazepam ordered for seizures, then notify the physician"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Frontally predominant GRDA is common in toxic-metabolic encephalopathy and is not epileptiform by itself. The technologist's job is to describe it, test and annotate reactivity (auditory, then tactile or noxious), check responsiveness and notify per protocol. Giving a benzodiazepine is outside technologist scope. Calling it status epilepticus over-reads a non-evolving pattern. Raising the LFF to 5 Hz would erase the very finding the reader needs to see.",
+          "tracing": "t1"
+        },
+        {
+          "step": 4,
+          "type": "troubleshooting",
+          "title": "End of the page",
+          "description": "Look at the last 1.5 s of the page in the frontopolar and anterior temporal channels before you finalize your annotations.",
+          "question": "What is the high-frequency activity there, and how do you handle it?",
+          "options": [
+            "Frontal muscle artifact; annotate it and keep the HFF at 70 Hz",
+            "60 Hz line noise; turn on the notch filter for the rest of the study",
+            "Excess beta from the benzodiazepines; document a drug effect",
+            "Low-voltage fast seizure onset; call the physician as a seizure"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Very fast, irregular activity limited to Fp1, Fp2, F7 and F8, appearing abruptly with no cerebral field, is muscle (frontalis/temporalis, often with grimacing or stimulation). Annotate it and leave the HFF at 70 Hz so the record is not distorted. Line noise is a monotonous 60 Hz sine wave, typically in channels with poor impedance, not a burst of irregular spikes. A fast seizure onset would evolve and have a field. Benzodiazepine beta is diffuse and ongoing, and none has been given here.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: FIRDA",
+          "to": "/patterns/pattern_firda"
+        },
+        {
+          "label": "Domain III: Encephalopathy Differentials",
+          "to": "/workflow/domain-3/d3-encephalopathy-differentials"
+        }
+      ]
+    },
+    {
+      "id": "case-0076",
+      "title": "Left Polymorphic Delta After Ischemic Stroke",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-3",
+        "domain-2"
+      ],
+      "tags": [
+        "focal-slowing",
+        "stroke",
+        "asymmetry",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_focal_slowing",
+        "pattern_firda"
+      ],
+      "patient": {
+        "ageYears": 41,
+        "sex": "male",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Aphasia and right arm weakness, EEG for a possible seizure",
+      "history": {
+        "eventDescription": "A 41-year-old with a left middle cerebral artery infarct three days ago had a 30-second episode of staring. EEG was ordered to look for seizures. He is awake and follows simple commands.",
+        "lastEventTiming": "staring episode this morning",
+        "comorbidities": [
+          "left MCA ischemic stroke",
+          "atrial fibrillation"
+        ],
+        "medications": [
+          "apixaban",
+          "atorvastatin"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Asymmetric",
+        "pdrHz": "About 10 Hz on the right",
+        "epileptiform": "None on this page",
+        "focalFindings": "Continuous left hemisphere slowing",
+        "activation": "None",
+        "artifacts": "Minimal"
+      },
+      "objectives": [
+        "Lateralize continuous polymorphic delta on a live page",
+        "Recognize attenuated faster activity on the lesion side",
+        "Separate focal polymorphic delta from FIRDA and artifact"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 14,
+          "ageYears": 41,
+          "state": "awake",
+          "background": {
+            "pdrUv": 35
+          },
+          "findings": [
+            {
+              "type": "polymorphicDelta",
+              "side": "left",
+              "uv": 34
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        },
+        "t2": {
+          "seed": 13,
+          "ageYears": 61,
+          "state": "stupor",
+          "sensitivity": 10,
+          "background": {
+            "theta": 7,
+            "delta": 6
+          },
+          "findings": [
+            {
+              "type": "firda",
+              "uv": 165,
+              "hz": 1.8,
+              "runs": [
+                [
+                  0.2,
+                  4.4
+                ],
+                [
+                  5.3,
+                  9.9
+                ]
+              ]
+            },
+            {
+              "type": "muscle",
+              "from": 8.6,
+              "to": 10,
+              "sites": [
+                "Fp1",
+                "Fp2",
+                "F7",
+                "F8"
+              ],
+              "uv": 10
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "First look",
+          "description": "Awake page at 7 uV/mm in the longitudinal bipolar montage. Compare the left temporal and parasagittal chains (top and third blocks) with the right ones.",
+          "question": "Which description matches the page?",
+          "options": [
+            "Intermittent occipital delta that blocks with eye opening",
+            "Rhythmic 2 Hz delta in brief runs, bilateral and frontal",
+            "Continuous irregular 1-2 Hz delta over the right hemisphere",
+            "Continuous irregular 1-2 Hz delta over the left hemisphere"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Fp1-F7 through T5-O1 and Fp1-F3 through P3-O1 carry continuous delta of varying shape and duration (polymorphic), while the right chains do not: left hemispheric polymorphic delta, consistent with a structural lesion such as the infarct. The right side is the normal one. Brief bilateral frontal runs of monomorphic delta describe FIRDA, not this page. Posterior slowing that blocks with eye opening describes a different pattern; the delta here is left hemispheric and continuous.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Faster activity",
+          "description": "Now compare the faster frequencies: the alpha in T5-O1 and P3-O1 against T6-O2 and P4-O2, and the low-voltage beta across both sides.",
+          "question": "How does the faster activity differ between the hemispheres?",
+          "options": [
+            "Alpha and beta are symmetric; only the delta is lateralized",
+            "Alpha and beta are lower on the left; right PDR is about 10 Hz",
+            "The right PDR is absent and the left alpha is preserved",
+            "Alpha and beta are higher on the left, a breach rhythm effect"
+          ],
+          "correctAnswer": 1,
+          "explanation": "A destructive lesion reduces the faster frequencies on its side, so the left alpha and beta are attenuated while the right shows a normal ~10 Hz posterior dominant rhythm. A breach rhythm (higher, sharper faster activity) occurs over a skull defect, and this patient has had no craniotomy. Symmetric faster activity is not what the page shows. The right posterior rhythm is the preserved one.",
+          "tracing": "t1"
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Not FIRDA",
+          "description": "A colleague suggests the slowing is 'just FIRDA from the stroke'. You open a reference page of FIRDA from another patient to compare.",
+          "question": "Which feature best separates the stroke page from the FIRDA page?",
+          "options": [
+            "Stroke page: rhythmic frontal runs; FIRDA page: continuous and left-sided",
+            "Both pages show the same pattern; only the amplitude differs between them",
+            "Stroke page: continuous, irregular, lateralized; FIRDA: rhythmic, frontal",
+            "Stroke page: delta that blocks with eyes open; FIRDA page: unreactive"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The FIRDA page shows monomorphic, sinusoidal ~1.8 Hz delta in runs, bilateral and frontally maximal. The stroke page shows continuous, irregular delta confined to one hemisphere, with reduced faster activity on that side. The choice \"Stroke page: rhythmic frontal runs; FIRDA page: continuous and left-sided\" swaps the two descriptions. They are different patterns, not one pattern at two amplitudes. Eye-opening reactivity does not separate them here.",
+          "tracing": "t2"
+        },
+        {
+          "step": 4,
+          "type": "troubleshooting",
+          "title": "Is the asymmetry real?",
+          "description": "Before you document a left-sided abnormality, you want to be sure the asymmetry is not technical or ocular.",
+          "question": "Which check is the most useful?",
+          "options": [
+            "Raise the LFF to 3 Hz so that the delta disappears from both sides",
+            "Confirm symmetric measurement and impedances; check beyond Fp1/F7",
+            "Swap left and right inputs in the montage to see if the delta moves",
+            "Lower the left-channel sensitivity until the two sides look equal"
+          ],
+          "correctAnswer": 1,
+          "explanation": "A true asymmetry survives a check of electrode placement (symmetric 10-20 measurements) and balanced impedances, and polymorphic delta that extends into T3, T5, C3, P3 and O1 is not explained by eye movement, which is maximal at Fp1/Fp2 and F7/F8. Filtering out the delta hides the finding instead of verifying it. Changing sensitivity on one side creates a false picture. Swapping inputs in software just relabels the same electrodes and does not test the recording.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Focal Slowing",
+          "to": "/patterns/pattern_focal_slowing"
+        },
+        {
+          "label": "Domain III: Focal & Generalized Patterns",
+          "to": "/workflow/domain-3/d3-focal-generalized-patterns"
+        }
+      ]
+    },
+    {
+      "id": "case-0077",
+      "title": "Right Occipital Spikes in Sleep - End of Chain",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "polarity",
+        "end-of-chain",
+        "spikes",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_vertex_sharp_waves",
+        "pattern_sleep_spindles"
+      ],
+      "patient": {
+        "ageYears": 57,
+        "sex": "female",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Episodes of flashing lights in the left visual field followed by confusion",
+      "history": {
+        "eventDescription": "A 57-year-old with a remote right occipital hemorrhage reports brief episodes of flashing colored lights on the left, sometimes followed by a few minutes of confusion. EEG was recorded including sleep.",
+        "lastEventTiming": "yesterday evening",
+        "comorbidities": [
+          "remote right occipital hemorrhage",
+          "hypertension"
+        ],
+        "medications": [
+          "amlodipine"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "n2"
+        ],
+        "background": "Stage N2 sleep with vertex waves and spindles",
+        "pdrHz": "Not assessable in sleep",
+        "epileptiform": "Repetitive right posterior transients",
+        "focalFindings": "Right occipital",
+        "activation": "Sleep",
+        "artifacts": "Minimal"
+      },
+      "objectives": [
+        "Apply end-of-chain logic when no phase reversal is seen",
+        "Use the transverse montage to find the reversal at O2",
+        "Measure discharge duration to classify a spike (<70 ms)"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 15,
+          "ageYears": 57,
+          "state": "n2",
+          "sensitivity": 10,
+          "findings": [
+            {
+              "type": "spike",
+              "center": "O2",
+              "sigma": 0.17,
+              "uv": 95,
+              "durMs": 50,
+              "at": [
+                0.8,
+                1.9,
+                2.8,
+                4.3,
+                5.2,
+                6.1,
+                7.3,
+                8.5,
+                9.4
+              ]
+            },
+            {
+              "type": "vertex",
+              "at": [
+                3.4,
+                7.9
+              ]
+            },
+            {
+              "type": "spindle",
+              "at": [
+                1.2,
+                5.6
+              ]
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        },
+        "t2": {
+          "seed": 15,
+          "ageYears": 57,
+          "state": "n2",
+          "sensitivity": 10,
+          "findings": [
+            {
+              "type": "spike",
+              "center": "O2",
+              "sigma": 0.17,
+              "uv": 95,
+              "durMs": 50,
+              "at": [
+                0.8,
+                1.9,
+                2.8,
+                4.3,
+                5.2,
+                6.1,
+                7.3,
+                8.5,
+                9.4
+              ]
+            },
+            {
+              "type": "vertex",
+              "at": [
+                3.4,
+                7.9
+              ]
+            },
+            {
+              "type": "spindle",
+              "at": [
+                1.2,
+                5.6
+              ]
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "montage": "transverse"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Longitudinal: read the polarity",
+          "description": "Stage N2 page at 10 uV/mm in the longitudinal bipolar montage. Repetitive brief transients appear in the right posterior channels. Look at T6-O2 and P4-O2 for each of them.",
+          "question": "What do those two channels tell you about the field?",
+          "options": [
+            "No phase reversal is present, so the transients must be artifact",
+            "They point down, so negativity is maximal at O2, the chain's end",
+            "They reverse phase with T4-T6, so the maximum is at T6",
+            "They point down, so O2 is positive; this is a positive transient"
+          ],
+          "correctAnswer": 1,
+          "explanation": "T6-O2 is T6 minus O2. If O2 is the most negative point, the result is positive and the pen goes down (negative up). P4-O2 behaves the same. Both channels end at O2, so the maximum sits at the end of the chain, where no reversal is possible: end-of-chain phenomenon. A downward deflection in a bipolar channel does not mean the input-2 electrode is positive; here it means input 2 is more negative. There is no reversal with T4-T6 here. Lack of a reversal in one montage never proves artifact.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Transverse confirms",
+          "description": "You switch the display to the transverse bipolar montage to place O2 in the middle of a chain. Find the bottom row: T5-O1, O1-O2, O2-T6.",
+          "question": "Where is the phase reversal now, and what shows it?",
+          "options": [
+            "At Pz: P3-Pz and Pz-P4 deflect in opposite directions",
+            "At O2: O1-O2 points down while O2-T6 points up",
+            "At O1: T5-O1 and O1-O2 deflect in opposite directions",
+            "At T6: P4-T6 and O2-T6 deflect in opposite directions"
+          ],
+          "correctAnswer": 1,
+          "explanation": "O1-O2 = O1 minus O2; with O2 negative the result is positive, so the pen goes down. O2-T6 = O2 minus T6, which is negative, so the pen goes up. Opposite deflections around O2 are a phase reversal at O2, confirming the longitudinal reading. T6, O1 and Pz are only weakly involved; the transients barely appear in their other channels.",
+          "tracing": "t2"
+        },
+        {
+          "step": 3,
+          "type": "calculation",
+          "title": "Spike or sharp wave?",
+          "description": "Return to the longitudinal page. Turn the caliper on and drag across the base of one transient in T6-O2, from where it leaves the baseline to where it returns.",
+          "question": "What duration do you measure, and how is the transient classified?",
+          "options": [
+            "About 140 ms, so it is a sharp wave (70 to 200 ms)",
+            "About 50 ms, so it is a spike (20 to under 70 ms)",
+            "About 50 ms, so it is a sharp wave (70 to 200 ms)",
+            "About 250 ms, so it is a slow transient, not epileptiform"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The caliper reads about 50 ms across the base of each transient (1 / 0.05 s = 20 Hz equivalent), only one-twentieth of a 1-s grid box. Spikes last 20 to under 70 ms; sharp waves 70 to 200 ms. So these are spikes. Calling a 50 ms transient a sharp wave misapplies the cutoff. 140 ms is the duration of a sharp wave, not these. 250 ms would be a slow wave and would look much broader on the page.",
+          "tracing": "t1"
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Technologist note",
+          "description": "You also see two broader, diphasic sharp transients at about 3.4 and 7.9 s that reverse phase at Cz between Fz-Cz and Cz-Pz, and low-amplitude 13 Hz activity near 1.2 and 5.6 s. You now write your technologist note.",
+          "question": "Which note is accurate?",
+          "options": [
+            "Spikes at O2 and Cz in N2; the Cz spikes are larger and more frequent",
+            "Spikes at O2 in N2, reversal at O2 in transverse; vertex waves at Cz",
+            "Positive sharp waves at O2 in N2; no reversal, so likely artifactual",
+            "Spikes at T6 in N2 with phase reversal at T6; spindles over Cz"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The note should give the location (maximal O2), how it was confirmed (reversal at O2 in the transverse montage, end-of-chain in the longitudinal), the state (N2), and how often (about 9 in 10 s). The broad midline transients at 3.4 and 7.9 s are vertex waves, normal sleep transients, and the 13 Hz bursts are spindles. Calling the vertex waves Cz spikes turns normal sleep architecture into an abnormality. The O2 discharges are surface negative, not positive, and a missing reversal in one montage does not make them artifact. T6 is not the maximum.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain II: Montages & Referencing",
+          "to": "/workflow/domain-2/d2-montages-referencing"
+        },
+        {
+          "label": "Domain III: Epileptiform Discharges",
+          "to": "/workflow/domain-3/d3-epileptiform-discharges"
+        },
+        {
+          "label": "Domain III: Sleep Graphoelements",
+          "to": "/workflow/domain-3/d3-sleep-graphoelements"
+        }
+      ]
+    },
+    {
+      "id": "case-0078",
+      "title": "Right Posterior Temporal Sharp Waves - Measure Before Naming",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3",
+        "domain-2"
+      ],
+      "tags": [
+        "sharp-waves",
+        "phase-reversal",
+        "measurement",
+        "tracing"
+      ],
+      "syndromeIds": [
+        "temporal_lobe_epilepsy"
+      ],
+      "patternIds": [
+        "pattern_focal_spikes_temporal"
+      ],
+      "patient": {
+        "ageYears": 20,
+        "sex": "male",
+        "context": "emu"
+      },
+      "chiefComplaint": "Episodes of deja vu followed by lip smacking",
+      "history": {
+        "eventDescription": "A 20-year-old has episodes of a rising feeling and deja vu, then 1 minute of lip smacking with impaired awareness. Admitted to the EMU for characterization.",
+        "lastEventTiming": "3 days ago",
+        "comorbidities": [],
+        "medications": [
+          "levetiracetam"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "n2"
+        ],
+        "background": "Stage N2 sleep with vertex waves and spindles",
+        "pdrHz": "Not assessable in sleep",
+        "epileptiform": "Repetitive right posterior temporal transients",
+        "focalFindings": "Right posterior temporal",
+        "activation": "Sleep",
+        "artifacts": "Minimal"
+      },
+      "objectives": [
+        "Localize a discharge by phase reversal at T6",
+        "Measure ~140 ms and classify it as a sharp wave (70-200 ms)",
+        "Contrast sharp waves with spikes on a comparison page"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 16,
+          "ageYears": 20,
+          "state": "n2",
+          "sensitivity": 10,
+          "findings": [
+            {
+              "type": "sharp",
+              "center": "T6",
+              "sigma": 0.2,
+              "uv": 160,
+              "durMs": 140,
+              "slowWave": true,
+              "at": [
+                0.6,
+                3.1,
+                4.6,
+                5.9,
+                7.2,
+                8.4
+              ]
+            },
+            {
+              "type": "vertex",
+              "at": [
+                2.2
+              ]
+            },
+            {
+              "type": "spindle",
+              "at": [
+                6.5
+              ]
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        },
+        "t2": {
+          "seed": 15,
+          "ageYears": 57,
+          "state": "n2",
+          "sensitivity": 10,
+          "findings": [
+            {
+              "type": "spike",
+              "center": "O2",
+              "sigma": 0.17,
+              "uv": 95,
+              "durMs": 50,
+              "at": [
+                0.8,
+                1.9,
+                2.8,
+                4.3,
+                5.2,
+                6.1,
+                7.3,
+                8.5,
+                9.4
+              ]
+            },
+            {
+              "type": "vertex",
+              "at": [
+                3.4,
+                7.9
+              ]
+            },
+            {
+              "type": "spindle",
+              "at": [
+                1.2,
+                5.6
+              ]
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Localize",
+          "description": "Stage N2 page at 10 uV/mm, longitudinal bipolar montage. Repetitive transients with an after-going slow wave appear in the right temporal chain. Compare T4-T6 and T6-O2 for each discharge.",
+          "question": "Where is the discharge maximal?",
+          "options": [
+            "At O2, because T6-O2 and P4-O2 point the same way",
+            "At T4, because F8-T4 and T4-T6 point in opposite directions",
+            "At T6, because T4-T6 points down and T6-O2 points up",
+            "At P4, because the parasagittal chain carries the largest wave"
+          ],
+          "correctAnswer": 2,
+          "explanation": "T4-T6 = T4 minus T6: with T6 negative the result is positive, so the pen goes down. T6-O2 = T6 minus O2, which is negative, so the pen goes up. Opposite deflections around a shared electrode mean a phase reversal at T6. O2 is not the shared electrode of the reversing pair. F8-T4 is small here, so there is no reversal at T4. The parasagittal P4 channels are smaller than the temporal ones.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "calculation",
+          "title": "Measure it",
+          "description": "Turn on the caliper and drag across the base of the sharp component of one discharge in T6-O2, excluding the slow wave that follows.",
+          "question": "What duration do you measure, and how is the transient classified?",
+          "options": [
+            "About 40 ms, so it is a spike (20 to under 70 ms)",
+            "About 480 ms, so it is a slow wave and not epileptiform",
+            "About 140 ms, so it is a sharp wave (70 to 200 ms)",
+            "About 140 ms, so it is a spike (20 to under 70 ms)"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The sharp component spans about 140 ms (about 7 Hz equivalent on the caliper). Spikes last 20 to under 70 ms; sharp waves 70 to 200 ms, so this is a sharp wave. Calling a 140 ms transient a spike ignores the duration cutoff. 40 ms would be far narrower than what the page shows. About 480 ms is the whole sharp-and-slow-wave complex, which includes the after-going slow wave, not the sharp component you are measuring.",
+          "tracing": "t1"
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Compare with spikes",
+          "description": "To teach a student, you open a page from another patient with O2 spikes in N2 and measure one of those discharges the same way.",
+          "question": "How do the O2 discharges on the comparison page differ from the T6 discharges?",
+          "options": [
+            "They reverse phase at O2 in the longitudinal montage",
+            "They are about 140 ms long and have an after-going slow wave",
+            "They are about 50 ms long and lack an after-going slow wave",
+            "They are about 200 ms long, at the top of the sharp-wave range"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The comparison discharges are about 50 ms (spikes) with no clear after-going slow wave, while the T6 discharges are about 140 ms (sharp waves) followed by a slow wave. The choice \"They are about 140 ms long and have an after-going slow wave\" describes the T6 discharges, not the comparison. O2 is the end of the longitudinal chain, so those spikes show no reversal there (T6-O2 and P4-O2 both point down). 200 ms is not what the caliper shows.",
+          "tracing": "t2"
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "A borderline discharge",
+          "description": "Later in the night you measure one discharge at T6 at about 155 ms. Its rising phase is very steep, and a colleague wants to call it a spike because it 'looks spiky'.",
+          "question": "How should you document this discharge?",
+          "options": [
+            "As a sharp wave at T6 with its measured duration noted",
+            "As a spike, because a steep rising phase defines a spike",
+            "As a slow wave, because it is longer than 150 ms",
+            "As an artifact, because its duration differs from the others"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Spike versus sharp wave is defined by duration: 20 to under 70 ms is a spike and 70 to 200 ms is a sharp wave, so a 155 ms discharge is a sharp wave. Some readers loosely call a very steep sharp wave 'spike-equivalent', but the technologist documents the measured duration and location and leaves clinical weighting to the physician. Steepness alone does not make a spike. A slow wave is longer than 200 ms. Variation in duration between discharges from the same focus is expected and does not mean artifact.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain III: Epileptiform Discharges",
+          "to": "/workflow/domain-3/d3-epileptiform-discharges"
+        },
+        {
+          "label": "Pattern: Temporal Spikes",
+          "to": "/patterns/pattern_focal_spikes_temporal"
+        }
+      ]
+    },
+    {
+      "id": "case-0079",
+      "title": "Staring Spell in an 11-Year-Old - Counting the Discharge",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-3",
+        "domain-4"
+      ],
+      "tags": [
+        "absence",
+        "spike-and-wave",
+        "responsiveness",
+        "tracing"
+      ],
+      "syndromeIds": [
+        "cae"
+      ],
+      "patternIds": [
+        "pattern_three_hz_gsw"
+      ],
+      "patient": {
+        "ageYears": 11,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Brief staring spells noticed by teachers",
+      "history": {
+        "eventDescription": "An 11-year-old has had several daily episodes of blank staring for a few seconds, with eyelid fluttering, that stop abruptly. Her grades have dropped.",
+        "lastEventTiming": "several times today",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Normal awake background",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "Generalized spike-and-wave burst",
+        "focalFindings": "None",
+        "activation": "Hyperventilation pending",
+        "artifacts": "Minimal"
+      },
+      "objectives": [
+        "Count spike-and-wave frequency from a live page",
+        "Recognize generalized, bilaterally synchronous onset",
+        "Test responsiveness during a burst and document its duration"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 17,
+          "ageYears": 11,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "background": {
+            "pdrUv": 60
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 3.2,
+              "to": 11,
+              "uv": 420,
+              "hz": 3,
+              "startHz": 3.4
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "calculation",
+          "title": "Count the complexes",
+          "description": "Awake resting page at 10 uV/mm, LFF 0.5 Hz. Partway through the page the background is interrupted by a high-amplitude rhythmic discharge. Count complexes in the 1-s boxes between 6 and 9 s, or use the caliper from one spike to the next.",
+          "question": "What is the frequency of the discharge in that part of the page?",
+          "options": [
+            "About 1.5 Hz, counting one complex every two boxes",
+            "About 3 Hz, one spike-and-wave complex per 330 ms",
+            "About 10 Hz, matching the background before the burst",
+            "About 6 Hz, counting each spike and each wave"
+          ],
+          "correctAnswer": 1,
+          "explanation": "There are about 3 complexes per 1-s box, and spike-to-spike intervals measure about 330 ms: 1 / 0.33 s = 3 Hz. At its onset the discharge is slightly faster (about 3.4 Hz) and then settles to 3 Hz, which is typical. Counting the spike and the slow wave as two events doubles the rate to 6 Hz. 1.5 Hz halves it. 10 Hz is the posterior rhythm before the burst.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Field",
+          "description": "Switch to the referential montage and compare onset timing and amplitude across left and right, front and back.",
+          "question": "How is this discharge best described?",
+          "options": [
+            "Left frontal onset with later spread to the right side",
+            "Generalized and bilaterally synchronous, frontally predominant",
+            "Right temporal maximum with phase reversal at T4",
+            "Occipital maximum with spread forward to the frontal leads"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The complexes start at the same time on both sides and are largest in F3-A1 and F4-A2, slightly smaller at Fp1/Fp2 and C3/C4, and small posteriorly (P3/P4, O1/O2): generalized, bilaterally synchronous, frontally predominant spike-and-wave. A focal onset with secondary spread would show one side leading. There is no occipital maximum and no temporal phase reversal.",
+          "tracing": "t1"
+        },
+        {
+          "step": 3,
+          "type": "safety-response",
+          "title": "During the burst",
+          "description": "A burst like this starts again while she is sitting quietly. Her mother is in the room. You have a few seconds to act while the discharge is on the screen.",
+          "question": "What is the best way to test responsiveness?",
+          "options": [
+            "Pinch the trapezius to see whether she withdraws from pain",
+            "Turn on the photic lamp to see whether the flash stops the burst",
+            "Say a code word and ask her to recall it after the burst ends",
+            "Wait for the burst to end, then ask her if she felt anything"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Giving a word or simple command during the discharge and asking for recall afterwards tests awareness during the burst itself, and you annotate when it was given and what she recalled. A noxious stimulus is inappropriate for an awake child and tests a different thing. Asking only after the burst misses the testing window. Photic stimulation is an activation procedure, not a responsiveness test.",
+          "tracing": "t1"
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Document the burst",
+          "description": "She did not recall the code word. The discharge began at 3.2 s on the page and is still running at the right edge of the page. Hyperventilation is still to be done.",
+          "question": "Which documentation and plan are correct?",
+          "options": [
+            "Duration 6.8 s, ending at 10 s; skip HV since the burst was captured",
+            "Duration 10 s, the page length; do HV for 30 s to limit further bursts",
+            "Duration about 3 s, one second per Hz; stop the study and notify",
+            "Duration at least 6.8 s, check the next page; then do HV for 3-5 min"
+          ],
+          "correctAnswer": 3,
+          "explanation": "On this page the burst runs from 3.2 s to the page end at 10 s, so it lasted at least 10 - 3.2 = 6.8 s, and the offset must be read on the next page. Hyperventilation for 3-5 minutes is the standard activation for suspected absence seizures, with responsiveness testing during any burst. Recording 6.8 s as the exact duration ignores that the burst continues. The page length is not the burst length. Frequency in Hz has nothing to do with duration in seconds.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: 3 Hz Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        },
+        {
+          "label": "Syndrome: Childhood Absence Epilepsy",
+          "to": "/syndromes/cae"
+        },
+        {
+          "label": "Domain III: Activation Procedures",
+          "to": "/workflow/domain-3/d3-activation-procedures"
+        }
+      ]
+    },
+    {
+      "id": "case-0080",
+      "title": "Myoclonic Jerk - Polyspike-Wave or Muscle Artifact?",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3",
+        "domain-4"
+      ],
+      "tags": [
+        "polyspike-wave",
+        "myoclonus",
+        "artifact",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_polyspike_wave",
+        "pattern_three_hz_gsw"
+      ],
+      "patient": {
+        "ageYears": 15,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Sudden arm jerks, sometimes dropping objects",
+      "history": {
+        "eventDescription": "A 15-year-old has brief, shock-like jerks of both arms, mostly within an hour of waking and after late nights, and has dropped a cup twice. Consciousness seems preserved. EEG was requested to characterize the jerks.",
+        "lastEventTiming": "this morning",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "drowsy"
+        ],
+        "background": "Drowsy background",
+        "pdrHz": "Not prominent in drowsiness",
+        "epileptiform": "Brief generalized burst with a clinical jerk",
+        "focalFindings": "None",
+        "activation": "Photic stimulation pending",
+        "artifacts": "Muscle artifact"
+      },
+      "objectives": [
+        "Recognize polyspike-and-wave time-locked to a jerk",
+        "Separate a muscle-only burst from a cerebral discharge",
+        "Document the jerk and plan photic stimulation in scope"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 18,
+          "ageYears": 15,
+          "state": "drowsy",
+          "sensitivity": 10,
+          "findings": [
+            {
+              "type": "polyspikeWave",
+              "at": 4.3,
+              "uv": 420,
+              "spikes": 5,
+              "marker": "Jerk"
+            },
+            {
+              "type": "muscle",
+              "from": 4.25,
+              "to": 4.7,
+              "uv": 25
+            },
+            {
+              "type": "muscle",
+              "from": 7.1,
+              "to": 8.1,
+              "sites": [
+                "F7",
+                "T3"
+              ],
+              "uv": 18
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        },
+        "t2": {
+          "seed": 17,
+          "ageYears": 11,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "background": {
+            "pdrUv": 60
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 3.2,
+              "to": 11,
+              "uv": 420,
+              "hz": 3,
+              "startHz": 3.4
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "The marked event",
+          "description": "Drowsy page at 10 uV/mm. You saw both arms jerk and pressed the 'Jerk' marker at 4.3 s. Look at all channels around the marker.",
+          "question": "Which description matches the cerebral activity at the marker?",
+          "options": [
+            "Muscle artifact only, with no change in the cerebral channels",
+            "A vertex wave of drowsiness, maximal at Cz, with no fast part",
+            "Rhythmic 3 Hz spike-and-wave complexes lasting several seconds",
+            "A generalized burst of several spikes over 0.25 s, then a slow wave"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Around 4.3 s every chain shows a cluster of about 5 spikes within roughly 0.25 s, followed by a slow wave: a generalized, irregular polyspike-and-wave discharge, with high-frequency muscle superimposed in the temporal channels at the moment of the jerk. It is a single burst, not seconds of 3 Hz complexes. A vertex wave is a single midline wave without polyspikes. The large spikes and slow wave in parasagittal and midline channels are cerebral, not just muscle.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Compare with absence",
+          "description": "A student asks whether this is 'the same as absence spike-and-wave'. You open a reference page of a typical absence discharge from another child.",
+          "question": "Which difference is most important?",
+          "options": [
+            "The reference has a slower PDR, so it cannot be compared",
+            "The reference is focal at Fz, while the jerk page is generalized",
+            "The reference shows polyspikes; the jerk page shows single spikes",
+            "The reference is rhythmic 3 Hz, one spike per wave, for seconds"
+          ],
+          "correctAnswer": 3,
+          "explanation": "The reference page shows rhythmic, regular 3 Hz spike-and-wave with one spike per complex, lasting more than 6 s, frontally predominant and generalized. The jerk page shows one brief, irregular burst with multiple spikes. The choice \"The reference shows polyspikes; the jerk page shows single spikes\" reverses the two. The reference discharge is generalized, not focal. Both pages show a normal-for-age background before the discharge, so comparison is valid.",
+          "tracing": "t2"
+        },
+        {
+          "step": 3,
+          "type": "troubleshooting",
+          "title": "A second burst",
+          "description": "Later on the same page there is another burst of fast activity, between about 7 and 8 s. Look at which channels contain it and whether any slow wave follows.",
+          "question": "What is the second burst?",
+          "options": [
+            "60 Hz line noise from a loose F7 electrode lead",
+            "An electrode pop at T3 from a drying electrode",
+            "Muscle artifact confined to F7 and T3, with no cerebral field",
+            "A left temporal polyspike discharge, a focal seizure onset"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The burst is very fast and irregular, appears only in channels containing F7 and T3 (Fp1-F7, F7-T3, T3-T5), has no field spreading to neighbors and no after-going slow wave: muscle artifact, for example from jaw clenching. A cerebral polyspike discharge would have a field and a slow wave. An electrode pop is a single steep deflection at one electrode, not a 1-s burst. Line noise is a monotonous 60 Hz sine wave rather than an irregular burst.",
+          "tracing": "t1"
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "Document and continue",
+          "description": "The patient is now awake and well. Photic stimulation is next in the protocol. The parent asks you whether this means 'juvenile myoclonic epilepsy'.",
+          "question": "What is the best action?",
+          "options": [
+            "Note the jerk at 4.3 s with the discharge; do photic per protocol",
+            "Annotate the second burst as a focal seizure for the physician",
+            "Skip photic stimulation because a jerk has already been captured",
+            "Tell the parent this is JME and that medication will be needed"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Document that the bilateral arm jerk at 4.3 s was time-locked to a generalized polyspike-and-wave burst, then perform photic stimulation per protocol, because photosensitivity is common in myoclonic generalized epilepsies such as JME; stop flashing if a generalized photoparoxysmal response appears, and annotate any jerks. Naming the syndrome to the family is the physician's role. Capturing one jerk does not make the photic test unnecessary. The 7-8 s burst is muscle, not a seizure.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Polyspike-and-Wave",
+          "to": "/patterns/pattern_polyspike_wave"
+        },
+        {
+          "label": "Domain III: Artifacts Recognition",
+          "to": "/workflow/domain-3/d3-artifacts-recognition"
+        },
+        {
+          "label": "Domain III: Activation Procedures",
+          "to": "/workflow/domain-3/d3-activation-procedures"
+        }
+      ]
     }
   ]
 }

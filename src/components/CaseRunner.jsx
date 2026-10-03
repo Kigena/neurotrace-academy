@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { normalizeStep, stepHeading } from "../utils/caseSteps";
+import EegTracing from "./EegTracing.jsx";
 
 /**
  * CaseRunner Component
@@ -161,6 +162,11 @@ function CaseRunner({ caseData, onComplete }) {
             <h3 className="text-sm font-semibold text-slate-900 mb-1">{stepHeading(currentStep, currentStepIndex)}</h3>
             {currentStep.description && (
               <p className="text-sm text-slate-600 mb-2">{currentStep.description}</p>
+            )}
+            {currentStep.tracing && caseData.tracings?.[currentStep.tracing] && (
+              <div className="my-3">
+                <EegTracing scene={caseData.tracings[currentStep.tracing]} />
+              </div>
             )}
             <p className="text-sm text-slate-700">{currentStep.prompt}</p>
           </div>
