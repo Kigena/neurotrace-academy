@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NeuroLinea · Targeted Study Guide after Mock 1</title>
+<style>
+  @page { size: Letter; margin: 15mm 16mm 16mm 16mm;
+    @bottom-left { content: "NeuroLinea · Targeted Study Guide · Mock 1 follow-up"; font: 7.5pt "Segoe UI", sans-serif; color: #94a3b8; }
+    @bottom-right { content: counter(page); font: 600 8pt "Segoe UI", sans-serif; color: #4f46e5; } }
+  @page cover { margin: 0; @bottom-left { content: none } @bottom-right { content: none } }
+  :root {
+    --ink: #0f172a; --muted: #475569; --faint: #94a3b8; --line: #e2e8f0; --bg: #f8fafc;
+    --indigo: #4f46e5; --indigo-d: #3730a3; --indigo-l: #eef2ff; --violet: #7c3aed;
+    --teal: #0d9488; --teal-l: #f0fdfa; --amber: #b45309; --amber-l: #fffbeb; --rose: #be123c; --rose-l: #fff1f2;
+    --green: #15803d; --green-l: #f0fdf4;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font: 9.6pt/1.5 "Segoe UI", system-ui, -apple-system, sans-serif; color: var(--ink); }
+  h1, h2, h3, h4 { margin: 0; line-height: 1.2; }
+  p { margin: 0 0 6pt; }
+  .page { page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; }
+  .muted { color: var(--muted); } .faint { color: var(--faint); }
+  .mono { font-family: "Cascadia Mono", Consolas, monospace; }
+  b, strong { font-weight: 650; }
+
+  /* ---------- cover ---------- */
+  .cover { page: cover; height: 279.4mm; width: 215.9mm; position: relative; overflow: hidden;
+    background: linear-gradient(150deg, #1e1b4b 0%, #3730a3 45%, #6d28d9 100%); color: #fff; padding: 26mm 22mm; }
+  .cover .eyebrow { font: 600 9pt "Segoe UI"; letter-spacing: .18em; text-transform: uppercase; color: #c7d2fe; }
+  .cover h1 { font-size: 34pt; font-weight: 750; letter-spacing: -.02em; margin: 10mm 0 4mm; max-width: 150mm; }
+  .cover .lede { font-size: 12.5pt; color: #e0e7ff; max-width: 140mm; line-height: 1.45; }
+  .cover .stats { display: flex; gap: 6mm; margin-top: 16mm; }
+  .cover .stat { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); border-radius: 4mm; padding: 5mm 6mm; min-width: 38mm; }
+  .cover .stat .v { font-size: 26pt; font-weight: 750; letter-spacing: -.02em; }
+  .cover .stat .l { font-size: 8.5pt; color: #c7d2fe; text-transform: uppercase; letter-spacing: .08em; }
+  .cover .modules { position: absolute; left: 22mm; right: 22mm; bottom: 24mm; display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; }
+  .cover .mod { border-top: 2px solid rgba(255,255,255,.5); padding-top: 3mm; font-size: 9pt; color: #e0e7ff; }
+  .cover .mod b { display: block; color: #fff; font-size: 10.5pt; margin-bottom: 1mm; }
+  .cover .wave { position: absolute; left: 0; right: 0; top: 168mm; opacity: .3; }
+
+  /* ---------- section headers ---------- */
+  .kicker { font: 650 8pt "Segoe UI"; letter-spacing: .16em; text-transform: uppercase; color: var(--indigo); }
+  .h1 { font-size: 21pt; font-weight: 750; letter-spacing: -.015em; margin: 1.5mm 0 2mm; }
+  .intro { font-size: 10.5pt; color: var(--muted); max-width: 165mm; margin-bottom: 5mm; }
+  .module-head { display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 2px solid var(--ink); padding-bottom: 3mm; margin-bottom: 5mm; }
+  .module-head .num { font-size: 40pt; font-weight: 800; color: var(--indigo-l); -webkit-text-stroke: 1.2px var(--indigo); line-height: .9; }
+  h3 { font-size: 12pt; font-weight: 700; margin: 5mm 0 2mm; color: var(--ink); }
+  h4 { font-size: 9.5pt; font-weight: 700; margin: 0 0 1.5mm; }
+
+  /* ---------- components ---------- */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .card { border: 1px solid var(--line); border-radius: 3mm; padding: 4mm 4.5mm; background: #fff; break-inside: avoid; }
+  .card.tint { background: var(--bg); }
+  .card.indigo { background: var(--indigo-l); border-color: #c7d2fe; }
+  .card.teal { background: var(--teal-l); border-color: #99f6e4; }
+  .rule { border-left: 3px solid var(--indigo); background: var(--indigo-l); padding: 3mm 4mm; border-radius: 0 2.5mm 2.5mm 0; margin: 2mm 0 3mm; break-inside: avoid; }
+  .rule .f { font: 650 11.5pt "Cambria Math", Cambria, Georgia, serif; color: var(--indigo-d); }
+  .trap { border: 1px solid #fecdd3; background: var(--rose-l); border-radius: 2.5mm; padding: 3mm 4mm; break-inside: avoid; }
+  .trap .t { font: 700 7.5pt "Segoe UI"; letter-spacing: .12em; text-transform: uppercase; color: var(--rose); margin-bottom: 1mm; }
+  .tip { border: 1px solid #bbf7d0; background: var(--green-l); border-radius: 2.5mm; padding: 3mm 4mm; break-inside: avoid; }
+  .tip .t { font: 700 7.5pt "Segoe UI"; letter-spacing: .12em; text-transform: uppercase; color: var(--green); margin-bottom: 1mm; }
+  .worked { border: 1px solid var(--line); border-radius: 3mm; overflow: hidden; break-inside: avoid; margin-bottom: 3.5mm; }
+  .worked .q { background: var(--bg); padding: 3mm 4mm; border-bottom: 1px solid var(--line); }
+  .worked .q .tag { font: 700 7pt "Segoe UI"; letter-spacing: .12em; color: var(--teal); text-transform: uppercase; }
+  .worked .s { padding: 3mm 4mm; }
+  .steps { margin: 0; padding-left: 0; list-style: none; counter-reset: s; }
+  .steps li { counter-increment: s; position: relative; padding-left: 7mm; margin-bottom: 1.2mm; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: .2mm; width: 4.6mm; height: 4.6mm; border-radius: 50%;
+    background: var(--teal); color: #fff; font: 700 7pt/4.6mm "Segoe UI"; text-align: center; }
+  .ans { display: inline-block; background: var(--teal); color: #fff; border-radius: 1.5mm; padding: .3mm 2.2mm; font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+  th { text-align: left; font: 650 7.5pt "Segoe UI"; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 1.5px solid var(--ink); padding: 1.6mm 2mm; }
+  td { border-bottom: 1px solid var(--line); padding: 1.8mm 2mm; vertical-align: top; }
+  tr { break-inside: avoid; }
+  .pill { display: inline-block; border-radius: 10mm; padding: .2mm 2.2mm; font: 650 7.5pt "Segoe UI"; }
+  .pill.r { background: var(--rose-l); color: var(--rose); } .pill.a { background: var(--amber-l); color: var(--amber); }
+  .pill.g { background: var(--green-l); color: var(--green); } .pill.i { background: var(--indigo-l); color: var(--indigo); }
+
+  /* bars */
+  .bar { display: grid; grid-template-columns: 34mm 1fr 18mm; align-items: center; gap: 3mm; margin-bottom: 2.4mm; font-size: 9pt; }
+  .bar .track { height: 3.2mm; background: #eef2f7; border-radius: 2mm; position: relative; overflow: hidden; }
+  .bar .fill { position: absolute; inset: 0 auto 0 0; border-radius: 2mm; }
+  .bar .v { text-align: right; font-weight: 650; }
+  .target { position: absolute; top: -1mm; bottom: -1mm; width: 0; border-left: 1.5px dashed #0f172a55; }
+
+  /* practice test */
+  .qitem { break-inside: avoid; margin-bottom: 4.2mm; display: grid; grid-template-columns: 8mm 1fr; }
+  .qitem .n { font: 750 11pt "Segoe UI"; color: var(--indigo); }
+  .qitem .stem { margin-bottom: 1.6mm; }
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 1mm 5mm; }
+  .opts div { padding-left: 5.5mm; text-indent: -5.5mm; }
+  .opts b { color: var(--muted); display: inline-block; width: 5.5mm; text-indent: 0; }
+  .qhead { display: flex; justify-content: space-between; align-items: baseline; margin: 2mm 0 3mm; padding-bottom: 1.5mm; border-bottom: 1px solid var(--line); }
+  .qhead h3 { margin: 0; }
+  .key { break-inside: avoid; display: grid; grid-template-columns: 9mm 10mm 1fr; gap: 2mm; padding: 2mm 0; border-bottom: 1px solid var(--line); font-size: 9pt; }
+  .key .n { font-weight: 750; color: var(--indigo); }
+  .key .k { font-weight: 750; color: #fff; background: var(--teal); border-radius: 1.5mm; text-align: center; height: 5mm; line-height: 5mm; }
+
+  /* plan */
+  .plan { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3mm; }
+  .day { border: 1px solid var(--line); border-radius: 2.5mm; padding: 3mm; min-height: 46mm; break-inside: avoid; }
+  .day .d { font: 750 8pt "Segoe UI"; letter-spacing: .1em; color: var(--indigo); text-transform: uppercase; }
+  .day .focus { font-weight: 700; margin: 1mm 0 1.5mm; font-size: 9.5pt; }
+  .day ul { margin: 0; padding-left: 4mm; font-size: 8.4pt; color: var(--muted); }
+  .day.mock { background: var(--indigo-l); border-color: #c7d2fe; }
+  svg text { font-family: "Segoe UI", sans-serif; }
+</style>
+</head>
+<body>
+
+<!-- ===================================================== COVER -->
+<section class="page cover">
+  <div class="eyebrow">NeuroLinea · ABRET R. EEG T. preparation</div>
+  <h1>Closing the gaps from Mock&nbsp;1</h1>
+  <div class="lede">A targeted study guide built from your first full 130-question mock. Your clinical reasoning is already strong; the points you are losing come from four trainable, mechanical skills. This guide teaches each one, drills it, and gives you a ten-study-day plan leading to Mock 2 on Oct 17.</div>
+  <div class="stats">
+    <div class="stat"><div class="v">78%</div><div class="l">Mock 1 · 101 / 130</div></div>
+    <div class="stat"><div class="v">65%</div><div class="l">Study readiness</div></div>
+    <div class="stat"><div class="v">72</div><div class="l">Days to exam · Dec 14</div></div>
+  </div>
+  <svg class="wave" width="215.9mm" height="48mm" viewBox="0 0 900 240" preserveAspectRatio="none" fill="none">
+    <path d="M0 120 C40 120 50 60 70 60 S100 180 120 180 S150 40 170 40 S200 200 220 200 S250 90 270 90 S300 150 320 150 S360 20 380 20 S410 220 430 220 S460 110 480 110 S520 140 540 140 S580 70 600 70 S640 170 660 170 S700 100 720 100 S760 130 780 130 S840 115 900 120" stroke="#fff" stroke-width="3"/>
+  </svg>
+  <div class="modules">
+    <div class="mod"><b>01 · Calculations</b>Time constant ↔ LFF, page-speed frequency and duration, sampling, 10-20, gain.</div>
+    <div class="mod"><b>02 · Montage polarity</b>Bipolar subtraction, phase reversals, eye-movement dipoles, active references.</div>
+    <div class="mod"><b>03 · ACNS 2021</b>Seizure, ESE, BIRDs and IIC thresholds, applied to numbers.</div>
+    <div class="mod"><b>04 · Emergencies</b>Infant choking, AED with electrodes on, sedation airway, seizures.</div>
+  </div>
+</section>
+
+<!-- ===================================================== AT A GLANCE -->
+<section class="page">
+  <div class="kicker">Your Mock 1 at a glance · taken Oct 3, 2026 · 118 minutes</div>
+  <div class="h1">Strong reasoning, leaky mechanics</div>
+  <p class="intro">You scored 101/130 (78%) on 130 higher-order Challenge questions, distributed exactly like the exam (19 / 60 / 25 / 26). The dashed line marks 80%, a comfortable margin above a typical pass threshold.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h4>By exam domain</h4>
+      <div class="bar"><span>I · Pre-Study</span><div class="track"><div class="fill" style="width:74%;background:#f59e0b"></div><div class="target" style="left:80%"></div></div><span class="v">74% <span class="faint">14/19</span></span></div>
+      <div class="bar"><span>II · Performing</span><div class="track"><div class="fill" style="width:78%;background:#6366f1"></div><div class="target" style="left:80%"></div></div><span class="v">78% <span class="faint">47/60</span></span></div>
+      <div class="bar"><span>III · Post-Study</span><div class="track"><div class="fill" style="width:76%;background:#6366f1"></div><div class="target" style="left:80%"></div></div><span class="v">76% <span class="faint">19/25</span></span></div>
+      <div class="bar"><span>IV · Professional</span><div class="track"><div class="fill" style="width:81%;background:#10b981"></div><div class="target" style="left:80%"></div></div><span class="v">81% <span class="faint">21/26</span></span></div>
+    </div>
+    <div class="card">
+      <h4>By skill</h4>
+      <div class="bar"><span>Troubleshooting</span><div class="track"><div class="fill" style="width:88%;background:#10b981"></div><div class="target" style="left:80%"></div></div><span class="v">88% <span class="faint">21/24</span></span></div>
+      <div class="bar"><span>Clinical</span><div class="track"><div class="fill" style="width:78%;background:#6366f1"></div><div class="target" style="left:80%"></div></div><span class="v">78% <span class="faint">49/63</span></span></div>
+      <div class="bar"><span>Technical</span><div class="track"><div class="fill" style="width:72%;background:#f59e0b"></div><div class="target" style="left:80%"></div></div><span class="v">72% <span class="faint">18/25</span></span></div>
+      <div class="bar"><span>Montage</span><div class="track"><div class="fill" style="width:72%;background:#f59e0b"></div><div class="target" style="left:80%"></div></div><span class="v">72% <span class="faint">13/18</span></span></div>
+    </div>
+  </div>
+
+  <h3>Where the 29 missed points came from</h3>
+  <table>
+    <thead><tr><th style="width:30%">Area</th><th style="width:16%">Your accuracy</th><th>What went wrong</th><th style="width:14%">Module</th></tr></thead>
+    <tbody>
+      <tr><td><b>Core calculations</b></td><td><span class="pill r">46% · 28 answers</span></td><td>Time constant ↔ LFF (40%), frequency from non-standard page widths (0 of 3), samples per spike. Errors: decimal slips ×2, seconds read as hertz.</td><td><span class="pill i">01</span></td></tr>
+      <tr><td><b>Polarity & montage</b></td><td><span class="pill r">43% phase reversals</span></td><td>Referential → bipolar subtraction (0 of 3). Sign errors ×3 (blink, average reference, slow eye drift). Missed an active ear reference ×2.</td><td><span class="pill i">02</span></td></tr>
+      <tr><td><b>Emergency response</b></td><td><span class="pill r">1 of 3</span></td><td>Infant choking sequence, AED pad placement with EEG leads on, sedated child's airway.</td><td><span class="pill i">04</span></td></tr>
+      <tr><td><b>ACNS 2021 thresholds</b></td><td><span class="pill a">2 errors</span></td><td>3-Hz discharges for ≥10 s = seizure; triphasic GPDs at 1.5 Hz = IIC.</td><td><span class="pill i">03</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2" style="margin-top:5mm">
+    <div class="card indigo">
+      <h4>The pattern behind the numbers</h4>
+      <p style="margin:0">Your accuracy rises with difficulty: <b>L3 57%</b>, L4 80%, L5 77%, <b>L6 87%</b>. The hardest reasoning questions are your best; the lost points sit in the most mechanical steps, such as a sign, a unit or a page width. That is good news: mechanics improve fastest with short, deliberate repetition.</p>
+    </div>
+    <div class="card teal">
+      <h4>How to use this guide</h4>
+      <p style="margin:0">Work one module per study block: read the rules, cover the worked solutions and redo them yourself, then take that module's questions in the practice test (p.&nbsp;10). In the app, use <b>Calculation Drill</b>, the <b>Repeated mistakes</b> drills and <b>Spaced review</b> daily.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== MODULE 1 -->
+<section class="page">
+  <div class="module-head"><div><div class="kicker">Module 01</div><div class="h1" style="margin:1mm 0 0">Calculations without slips</div></div><div class="num">01</div></div>
+  <p class="intro">Every calculation on the exam reduces to five relationships. Write the units at every step; most lost points were unit or decimal slips, not wrong formulas.</p>
+
+  <div class="grid2">
+    <div>
+      <div class="rule"><div class="f">Amplitude (µV) = sensitivity (µV/mm) × deflection (mm)</div><span class="muted">A larger µV/mm number means LOWER sensitivity: smaller waves.</span></div>
+      <div class="rule"><div class="f">speed (mm/s) = page width (mm) ÷ page time (s)</div><span class="muted">Never assume 30 mm/s: compute it from the page every time.</span></div>
+      <div class="rule"><div class="f">duration (s) = width (mm) ÷ speed &nbsp;·&nbsp; f (Hz) = 1 ÷ period</div><span class="muted">Spike &lt; 70 ms · sharp wave 70–200 ms.</span></div>
+      <div class="rule"><div class="f">LFF = 1 ÷ (2π · TC) &nbsp;·&nbsp; TC = 1 ÷ (2π · LFF)</div><span class="muted">TC is the time to decay to 37% on a square-wave calibration.</span></div>
+      <div class="rule"><div class="f">samples = duration (s) × sampling rate · Nyquist = rate ÷ 2</div><span class="muted">A filter passes ~70% (−3 dB) at its own cutoff.</span></div>
+    </div>
+    <div>
+      <div class="card tint" style="margin-bottom:4mm">
+        <h4>Time-constant anchors: memorise these three</h4>
+        <svg width="100%" viewBox="0 0 330 150">
+          <line x1="30" y1="120" x2="320" y2="120" stroke="#cbd5e1"/><line x1="30" y1="15" x2="30" y2="120" stroke="#cbd5e1"/>
+          <path d="M30 20 C 70 70, 110 95, 170 108 S 280 118, 320 119" stroke="#4f46e5" stroke-width="2.5" fill="none"/>
+          <line x1="30" y1="83" x2="98" y2="83" stroke="#be123c" stroke-dasharray="3 3"/><line x1="98" y1="83" x2="98" y2="120" stroke="#be123c" stroke-dasharray="3 3"/>
+          <circle cx="98" cy="83" r="3.5" fill="#be123c"/>
+          <text x="104" y="79" font-size="10" fill="#be123c" font-weight="700">37% at t = TC</text>
+          <text x="2" y="24" font-size="9" fill="#475569">100%</text><text x="300" y="134" font-size="9" fill="#475569">time</text>
+        </svg>
+        <table style="margin-top:2mm">
+          <thead><tr><th>Time constant</th><th>LFF</th></tr></thead>
+          <tbody><tr><td class="mono">1 s</td><td class="mono">0.16 Hz</td></tr><tr><td class="mono">0.3 s</td><td class="mono">0.53 Hz</td></tr><tr><td class="mono">0.1 s</td><td class="mono">1.6 Hz</td></tr></tbody>
+        </table>
+        <p class="faint" style="margin:2mm 0 0;font-size:8pt">Shortcut: LFF ≈ 0.16 ÷ TC. Halve the TC and the LFF doubles.</p>
+      </div>
+      <div class="trap"><div class="t">Your traps on Mock 1</div>
+        <b>Decimal slip:</b> TC 0.1 s gives 1.6 Hz, not 0.16 Hz. Sanity-check against the anchors.<br>
+        <b>Seconds read as hertz:</b> an LFF of 0.5 Hz is not a 0.5-s time constant; it is 0.32 s.<br>
+        <b>Assumed speed:</b> a 20-s page across 300 mm runs at 15 mm/s, not 30.
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="page">
+  <div class="kicker">Module 01 · continued</div>
+  <h3 style="margin-top:2mm">Worked examples · cover the solution, then check</h3>
+  <div class="grid2">
+    <div class="worked"><div class="q"><span class="tag">Page width</span><br>A 20-s review page is 300 mm wide. LPDs recur every 24 mm. What is their frequency?</div>
+      <div class="s"><ol class="steps"><li>Speed = 300 mm ÷ 20 s = <b>15 mm/s</b></li><li>Period = 24 mm ÷ 15 mm/s = <b>1.6 s</b></li><li>f = 1 ÷ 1.6 s = <span class="ans">0.63 Hz</span></li></ol><p class="faint" style="margin:0">At an assumed 30 mm/s you would report 1.25 Hz, double the truth.</p></div></div>
+    <div class="worked"><div class="q"><span class="tag">Duration</span><br>On a 10-s page 250 mm wide, a transient is 3 mm wide at its base. Spike or sharp wave?</div>
+      <div class="s"><ol class="steps"><li>Speed = 250 ÷ 10 = <b>25 mm/s</b></li><li>Duration = 3 ÷ 25 = 0.12 s = <b>120 ms</b></li><li>70–200 ms → <span class="ans">sharp wave</span></li></ol><p class="faint" style="margin:0">Assuming 30 mm/s gives 100 ms. Same class here, but not always.</p></div></div>
+    <div class="worked"><div class="q"><span class="tag">Time constant</span><br>A square-wave calibration decays to 37% after 0.2 s. What LFF is applied?</div>
+      <div class="s"><ol class="steps"><li>Decay to 37% → <b>TC = 0.2 s</b></li><li>LFF = 1 ÷ (2π × 0.2) = 1 ÷ 1.257</li><li>= <span class="ans">0.8 Hz</span> (check: 0.16 ÷ 0.2 = 0.8 ✓)</li></ol></div></div>
+    <div class="worked"><div class="q"><span class="tag">Sampling</span><br>A 30-ms spike is digitised at 200 samples/s. How many samples describe it?</div>
+      <div class="s"><ol class="steps"><li>Convert: 30 ms = <b>0.030 s</b></li><li>0.030 s × 200 /s = <span class="ans">6 samples</span></li><li>Few samples can clip the true peak, so the amplitude may be underestimated</li></ol></div></div>
+  </div>
+
+
+  <h3>10-20 measuring: the percentages that matter</h3>
+  <div class="grid2">
+    <table>
+      <thead><tr><th>Line</th><th>From the start point</th></tr></thead>
+      <tbody>
+        <tr><td><b>Midline</b> nasion → inion</td><td>Fpz 10% · Fz 30% · Cz 50% · Pz 70% · Oz 90%</td></tr>
+        <tr><td><b>Coronal</b> preauricular → preauricular</td><td>T3 10% · C3 30% · Cz 50% · C4 70% · T4 90%</td></tr>
+        <tr><td><b>Circumference</b> through Fpz, T3, Oz</td><td>Fp1 5% · F7 15% · T3 25% · T5 35% · O1 45% from Fpz</td></tr>
+        <tr><td><b>Parasagittal</b></td><td>Fp1 → F3 → C3 → P3 → O1 at equal 25% steps of the Fp1–O1 distance (Fp1 10%, F3 30%, C3 50%, P3 70%, O1 90% of the nasion–inion line through C3)</td></tr>
+      </tbody>
+    </table>
+    <div class="worked" style="margin:0"><div class="q"><span class="tag">10-20</span><br>Nasion-inion is 36 cm. How far is Fz from Pz?</div>
+      <div class="s"><ol class="steps"><li>Fz at 30%, Pz at 70% → 40% apart</li><li>0.40 × 36 cm = <span class="ans">14.4 cm</span></li></ol><p class="faint" style="margin:0">Adjacent midline sites are 20% apart (7.2 cm here); Fz→Pz skips Cz.</p></div></div>
+  </div>
+
+</section>
+
+<section class="page">
+  <div class="kicker">Module 01 · continued</div>
+  <h3 style="margin-top:2mm">Gain, sensitivity and filters</h3>
+  <div class="grid3">
+    <div class="worked" style="margin:0"><div class="q"><span class="tag">Calibration error</span><br>50 µV at 5 µV/mm should give 10 mm. One channel deflects 12 mm.</div>
+      <div class="s">Error = (12 − 10) ÷ <b>10 (expected)</b> = <span class="ans">20% high</span><br><span class="faint">Divide by the expected value, not the observed one.</span></div></div>
+    <div class="worked" style="margin:0"><div class="q"><span class="tag">Sensitivity</span><br>A wave is 7 mm tall at 10 µV/mm. Sensitivity becomes 7 µV/mm.</div>
+      <div class="s">Amplitude = 10 × 7 = <b>70 µV</b>; new height = 70 ÷ 7 = <span class="ans">10 mm</span><br><span class="faint">The voltage never changes; only its drawing does.</span></div></div>
+    <div class="worked" style="margin:0"><div class="q"><span class="tag">70% rule</span><br>HFF 35 Hz. A 35-Hz component is truly 60 µV.</div>
+      <div class="s">At the cutoff ≈ 70% passes: 0.7 × 60 = <span class="ans">≈ 42 µV</span><br><span class="faint">Not 50% (that is −6 dB), not unchanged, not removed.</span></div></div>
+  </div>
+
+  <div class="grid2" style="margin-top:5mm">
+    <div class="tip"><div class="t">The 20-second habit</div>Before any page-based calculation, write the speed in the margin: <b>width ÷ time = mm/s</b>. It takes 5 seconds and removes the most common Mock 1 error.</div>
+    <div class="tip"><div class="t">Sanity checks</div>Alpha is 8–13 Hz; LPDs are usually 0.5–2.5 Hz; spikes are tens of ms. If an answer falls far outside the expected range, re-check the units before choosing it.</div>
+  </div>
+
+  <h3>Nyquist and aliasing in one picture</h3>
+  <div class="card tint">
+    <svg width="100%" viewBox="0 0 640 96">
+      <rect x="10" y="30" width="300" height="26" rx="4" fill="#dcfce7"/><rect x="310" y="30" width="320" height="26" rx="4" fill="#ffe4e6"/>
+      <text x="20" y="48" font-size="11" fill="#15803d" font-weight="700">Represented faithfully (below rate ÷ 2)</text>
+      <text x="320" y="48" font-size="11" fill="#be123c" font-weight="700">Aliases to a false lower frequency</text>
+      <line x1="310" y1="20" x2="310" y2="66" stroke="#0f172a" stroke-width="1.5"/>
+      <text x="270" y="16" font-size="10" fill="#0f172a">Nyquist = rate ÷ 2</text>
+      <text x="10" y="76" font-size="10" fill="#475569">Example: sampling 256 Hz → Nyquist 128 Hz.</text>
+      <text x="10" y="89" font-size="10" fill="#475569">To show activity up to 100 Hz you need more than 200 samples/s, plus a margin for the anti-alias filter.</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================================================== MODULE 2 -->
+<section class="page">
+  <div class="module-head"><div><div class="kicker">Module 02</div><div class="h1" style="margin:1mm 0 0">Polarity you can trust</div></div><div class="num">02</div></div>
+  <p class="intro">Three of your misses were the same mistake: a sign. Use one rule, applied the same way every time, and polarity questions become arithmetic.</p>
+
+  <div class="grid2">
+    <div>
+      <div class="rule"><div class="f">Channel = Input 1 − Input 2</div><span class="muted">Negative result → pen goes <b>UP</b>. Positive result → pen goes <b>DOWN</b>.</span></div>
+      <div class="rule"><div class="f">Pens point TOWARD each other → negative maximum</div><span class="muted">Pens point AWAY from each other → positive maximum, at the shared electrode.</span></div>
+      <div class="rule"><div class="f">No reversal + biggest at the end of a chain</div><span class="muted">→ maximum at the end electrode (end-of-chain). Confirm with another montage.</span></div>
+      <div class="trap" style="margin-top:3mm"><div class="t">Your traps on Mock 1</div>
+        <b>Adding instead of subtracting:</b> −60 − (−100) = <b>+40</b>, not −160.<br>
+        <b>Average reference sign:</b> one electrode at −380 µV (19 in the average) pulls the average to −20 µV, so every quiet electrode deflects <b>down</b> by 20 µV.<br>
+        <b>Eye dipole:</b> the cornea is <b>positive</b>. Wherever the eyes turn, the electrodes there go positive.
+      </div>
+    </div>
+    <div class="card tint">
+      <h4>Worked chain · negative spike at T3</h4>
+      <svg width="100%" viewBox="0 0 320 250">
+        <g font-size="11" font-weight="700" fill="#0f172a">
+          <circle cx="40" cy="40" r="15" fill="#fff" stroke="#4f46e5" stroke-width="2"/><text x="31" y="44">F7</text>
+          <circle cx="40" cy="125" r="15" fill="#4f46e5"/><text x="31" y="129" fill="#fff">T3</text>
+          <circle cx="40" cy="210" r="15" fill="#fff" stroke="#4f46e5" stroke-width="2"/><text x="31" y="214">T5</text>
+        </g>
+        <text x="62" y="44" font-size="10" fill="#475569">−30 µV</text>
+        <text x="62" y="129" font-size="10" fill="#be123c" font-weight="700">−110 µV (max)</text>
+        <text x="62" y="214" font-size="10" fill="#475569">−60 µV</text>
+        <g font-size="10" fill="#0f172a">
+          <text x="150" y="70" font-weight="700">F7-T3</text><text x="150" y="84">−30 − (−110) = +80</text><text x="150" y="98" fill="#15803d">positive → DOWN 80</text>
+          <text x="150" y="160" font-weight="700">T3-T5</text><text x="150" y="174">−110 − (−60) = −50</text><text x="150" y="188" fill="#4f46e5">negative → UP 50</text>
+        </g>
+        <path d="M270 62 v26" stroke="#15803d" stroke-width="3" marker-end="url(#ah)"/>
+        <path d="M270 196 v-26" stroke="#4f46e5" stroke-width="3" marker-end="url(#ah2)"/>
+        <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#15803d"/></marker><marker id="ah2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#4f46e5"/></marker></defs>
+        <text x="96" y="236" font-size="10.5" fill="#be123c" font-weight="700">Pens point toward each other → negative max at T3</text>
+      </svg>
+    </div>
+  </div>
+
+  <h3>Eye movements: the corneoretinal dipole</h3>
+  <div class="grid2">
+    <div class="card tint">
+      <svg width="100%" viewBox="0 0 320 150">
+        <ellipse cx="160" cy="80" rx="58" ry="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="122" cy="80" r="15" fill="#e0e7ff" stroke="#4f46e5"/><text x="116" y="85" font-size="16" font-weight="800" fill="#4f46e5">+</text>
+        <path d="M206 50 Q 222 80 206 110" stroke="#be123c" stroke-width="3" fill="none"/><text x="211" y="85" font-size="16" font-weight="800" fill="#be123c">−</text>
+        <text x="96" y="30" font-size="10" fill="#4f46e5" font-weight="700">cornea (+)</text><text x="192" y="30" font-size="10" fill="#be123c" font-weight="700">retina (−)</text>
+        <text x="8" y="142" font-size="10" fill="#475569">Gaze LEFT → cornea toward F7: F7 positive, F8 negative.</text>
+      </svg>
+    </div>
+    <table>
+      <thead><tr><th>Movement</th><th>What goes positive</th><th>Bipolar picture (negative up)</th></tr></thead>
+      <tbody>
+        <tr><td><b>Blink</b> (eyes roll up)</td><td>Fp1 and Fp2 together</td><td>Fp1-F3 and Fp2-F4 both <b>down</b>, in phase; no reversal (end of chain)</td></tr>
+        <tr><td><b>Look left</b></td><td>F7 (+), F8 (−)</td><td>F7-T3 <b>down</b>, F8-T4 <b>up</b>: out of phase</td></tr>
+        <tr><td><b>Look right</b></td><td>F8 (+), F7 (−)</td><td>F8-T4 <b>down</b>, F7-T3 <b>up</b></td></tr>
+        <tr><td><b>Slow roving (drowsy)</b></td><td>Same as lateral gaze</td><td>Same signs, but slow (0.2–0.5 Hz) and no lateral rectus spikes</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker">Module 02 · continued</div>
+  <h3 style="margin-top:2mm">References: when the reference itself is active</h3>
+  <div class="grid2">
+    <div>
+      <p><b>Recognise it:</b> every channel that shares one reference shows the <i>same</i> deflection, even electrodes far from the discharge; the true maximum can look small or inverted.</p>
+      <div class="worked"><div class="q"><span class="tag">Average reference arithmetic</span><br>19-electrode average. A pop drives O2 to +190 µV; all others are 0 µV. What do Cz-Avg and O2-Avg show?</div>
+        <div class="s"><ol class="steps"><li>Average = +190 ÷ 19 = <b>+10 µV</b></li><li>Cz − Avg = 0 − 10 = −10 → <span class="ans">Cz up 10 µV</span></li><li>O2 − Avg = 190 − 10 = +180 → <span class="ans">O2 down 180 µV</span></li></ol></div></div>
+    </div>
+    <div>
+      <h4>Choosing a reference for bilateral temporal spikes involving both ears</h4>
+      <table>
+        <thead><tr><th>State</th><th>Best choice</th><th>Why the others fail</th></tr></thead>
+        <tbody>
+          <tr><td><b>Awake</b></td><td><span class="pill g">Cz reference</span></td><td>Both ears carry spikes; Fpz is full of eye artifact. Cz is far from the temporal lobes and quiet while awake.</td></tr>
+          <tr><td><b>Asleep</b></td><td><span class="pill g">Common average</span></td><td>Cz now carries vertex waves and K-complexes; the average dilutes any single event across all electrodes.</td></tr>
+          <tr><td><b>Any state</b></td><td><span class="pill i">Bipolar chains</span></td><td>Reference-free: use them to confirm localisation with phase reversals.</td></tr>
+        </tbody>
+      </table>
+      <div class="tip" style="margin-top:3mm"><div class="t">Remember the trade-off</div>No reference is "true". Pick the one farthest from the activity you are studying, and confirm in a second montage.</div>
+    </div>
+  </div>
+
+  <h3>Practice the subtraction: fill in, then check (answers at the end of the answer key)</h3>
+  <table>
+    <thead><tr><th>Referential values (quiet reference)</th><th>Channel</th><th>Your calculation</th><th>Direction & size</th></tr></thead>
+    <tbody>
+      <tr><td>Fp2 −20 · F4 −90</td><td class="mono">Fp2-F4</td><td></td><td></td></tr>
+      <tr><td>F4 −90 · C4 −40</td><td class="mono">F4-C4</td><td></td><td></td></tr>
+      <tr><td>C3 +15 · P3 +55</td><td class="mono">C3-P3</td><td></td><td></td></tr>
+      <tr><td>P3 +55 · O1 +10</td><td class="mono">P3-O1</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <p class="faint" style="margin-top:2mm">What do rows 1–2 and rows 3–4 each tell you about the location and sign of the maximum?</p>
+</section>
+
+<!-- ===================================================== MODULE 3 -->
+<section class="page">
+  <div class="module-head"><div><div class="kicker">Module 03</div><div class="h1" style="margin:1mm 0 0">ACNS 2021: classify by the numbers</div></div><div class="num">03</div></div>
+  <p class="intro">Each critical-care term is decided by two numbers: <b>frequency</b> (count discharges ÷ seconds) and <b>duration</b>. Work them out first, then read the table.</p>
+
+  <table>
+    <thead><tr><th style="width:22%">Term</th><th style="width:40%">Criteria</th><th>How to recognise it fast</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill r">Electrographic seizure</span></td><td>Epileptiform discharges averaging <b>&gt; 2.5 Hz for ≥ 10 s</b> (&gt; 25 in 10 s), <b>or</b> any pattern with definite evolution lasting ≥ 10 s</td><td>9 discharges in 3 s = 3 Hz; held for 15 s → seizure, even without evolution</td></tr>
+      <tr><td><span class="pill r">Electrographic status (ESE)</span></td><td>Seizure lasting <b>≥ 10 continuous minutes</b>, or seizures totalling <b>≥ 20% of any 60-minute period</b> (≥ 12 min)</td><td>13 min of seizures within one hour → ESE, even if none lasted 10 min</td></tr>
+      <tr><td><span class="pill a">BIRDs</span></td><td>Rhythmic activity <b>&gt; 4 Hz</b>, at least 6 waves, lasting <b>0.5 to &lt; 10 s</b>. <b>Definite</b>: evolution or resembles the patient's seizures. <b>Possible</b>: sharply contoured without evolution.</td><td>7 s of 5 → 7 Hz speeding up = definite BIRDs (too short for a seizure)</td></tr>
+      <tr><td><span class="pill a">Ictal-interictal continuum (IIC)</span></td><td>PDs or SW averaging <b>&gt; 1 and ≤ 2.5 Hz for ≥ 10 s</b>; or PDs/SW <b>0.5–1 Hz</b> with a plus modifier or fluctuation; or <b>LRDA &gt; 1 Hz</b> with a plus modifier or fluctuation</td><td>GPDs at 1.5 Hz with triphasic morphology in liver failure → <b>IIC</b>; morphology and cause do not exclude it</td></tr>
+      <tr><td><span class="pill i">LPDs / GPDs / LRDA / GRDA</span></td><td>Main terms: localisation (G, L, BI, UI, Mf) + pattern (PD, RDA, SW); plus modifiers +F (fast activity), +R (PDs only), +S (RDA only)</td><td>Asymmetric but synchronous PDs count as <b>lateralized</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid2" style="margin-top:5mm">
+    <div class="card indigo">
+      <h4>Decision path</h4>
+      <svg width="100%" viewBox="0 0 330 200">
+        <g font-size="10" fill="#0f172a">
+          <rect x="5" y="5" width="320" height="30" rx="6" fill="#fff" stroke="#c7d2fe"/><text x="15" y="24">1. Frequency = discharges ÷ seconds · Duration = how long</text>
+          <rect x="5" y="45" width="320" height="30" rx="6" fill="#fff" stroke="#c7d2fe"/><text x="15" y="64">2. &gt; 2.5 Hz (or evolving) and ≥ 10 s?  → <tspan font-weight="700" fill="#be123c">Seizure</tspan></text>
+          <rect x="5" y="85" width="320" height="30" rx="6" fill="#fff" stroke="#c7d2fe"/><text x="15" y="104">3. Seizure ≥ 10 min, or ≥ 12 of any 60 min?  → <tspan font-weight="700" fill="#be123c">ESE</tspan></text>
+          <rect x="5" y="125" width="320" height="30" rx="6" fill="#fff" stroke="#c7d2fe"/><text x="15" y="144">4. &gt; 4 Hz but &lt; 10 s?  → <tspan font-weight="700" fill="#b45309">BIRDs</tspan> (definite if evolving)</text>
+          <rect x="5" y="165" width="320" height="30" rx="6" fill="#fff" stroke="#c7d2fe"/><text x="15" y="184">5. PDs/SW &gt; 1 to 2.5 Hz for ≥ 10 s?  → <tspan font-weight="700" fill="#b45309">IIC</tspan></text>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <div class="trap"><div class="t">Your traps on Mock 1</div>
+        <b>"Seizures must evolve."</b> No: a steady &gt; 2.5 Hz discharge for ≥ 10 s already qualifies.<br>
+        <b>"Triphasic waves are metabolic, not IIC."</b> In ACNS 2021 they are GPDs with triphasic morphology, classified by frequency like any other PD.
+      </div>
+      <div class="tip" style="margin-top:3mm"><div class="t">Technologist's role</div>Measure frequency and duration, test and document responsiveness, and notify the physician promptly; the physician makes the clinical diagnosis.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== MODULE 4 -->
+<section class="page">
+  <div class="module-head"><div><div class="kicker">Module 04</div><div class="h1" style="margin:1mm 0 0">Emergencies in the EEG lab</div></div><div class="num">04</div></div>
+  <p class="intro">Emergency questions reward the first correct action. Learn each sequence as a fixed script (based on current AHA / Red Cross guidance; always follow your facility's protocol).</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h4><span class="pill r">Choking infant (&lt; 1 year), responsive</span></h4>
+      <ol class="steps" style="margin-top:2mm"><li><b>5 back blows</b>, infant face-down along your forearm, head lower than chest</li><li><b>5 chest thrusts</b>, face-up, heel of one hand on the lower half of the breastbone (AHA 2025 no longer prefers the two-finger technique)</li><li>Repeat until the object comes out or the infant becomes unresponsive → start <b>CPR</b> and call for help</li></ol>
+      <p class="faint" style="margin:0">No abdominal thrusts in infants; no blind finger sweeps.</p>
+    </div>
+    <div class="card">
+      <h4><span class="pill r">Cardiac arrest with EEG electrodes on</span></h4>
+      <ol class="steps" style="margin-top:2mm"><li><b>Keep CPR going</b> while the AED pads go on; do not pause for electrodes</li><li>A pad must not sit over an electrode or patch: <b>peel off the chest ECG electrode</b> where the pad belongs</li><li><b>Scalp electrodes stay on</b>; they do not interfere with pad placement</li></ol>
+    </div>
+    <div class="card">
+      <h4><span class="pill a">Sedated child: snoring stops, SpO<sub>2</sub> falls</span></h4>
+      <ol class="steps" style="margin-top:2mm"><li>Effort without airflow means <b>obstruction</b>: open the airway with <b>head tilt–chin lift or jaw thrust</b></li><li><b>Call for help</b> at the same time: summon the sedation nurse/rapid response team</li><li>Oxygen helps only once the airway is open</li></ol>
+    </div>
+    <div class="card">
+      <h4><span class="pill a">Generalized convulsion during the EEG</span></h4>
+      <ol class="steps" style="margin-top:2mm"><li><b>Time it</b> and keep recording; protect the head, clear the area</li><li><b>Nothing in the mouth</b>; do not restrain the limbs</li><li>Afterwards, place the patient on their <b>side</b> (recovery position) and check the airway</li><li>Alert the nurse/physician at onset (per protocol); it is a medical emergency (status epilepticus) if it lasts <b>≥ 5 minutes</b>, recurs without recovery, or the patient is injured or not breathing normally</li></ol>
+    </div>
+  </div>
+
+  <div class="trap" style="margin-top:5mm"><div class="t">Your traps on Mock 1</div>Choosing a reasonable but <b>later</b> step first (for example oxygen before opening the airway, or waiting before calling for help). On emergency questions ask: <b>"What keeps the patient alive in the next 30 seconds?"</b></div>
+</section>
+
+<!-- ===================================================== PRACTICE TEST -->
+<section class="page">
+  <div class="qhead"><h3>Practice test · 24 questions</h3><span class="faint">Aim: 20+ correct · about 35 minutes · answers p. 13</span></div>
+  <div class="kicker" style="margin-bottom:2mm">Module 01 · Calculations</div>
+
+  <div class="qitem"><div class="n">1</div><div><div class="stem">A 10-s page is displayed 250 mm wide. LPDs recur every 20 mm. What is their frequency?</div>
+    <div class="opts"><div><b>A</b>1.5 Hz</div><div><b>B</b>0.8 Hz</div><div><b>C</b>1.25 Hz</div><div><b>D</b>2.5 Hz</div></div></div></div>
+  <div class="qitem"><div class="n">2</div><div><div class="stem">A recording's time constant is 0.2 s. Which LFF does this correspond to?</div>
+    <div class="opts"><div><b>A</b>About 0.8 Hz</div><div><b>B</b>About 5 Hz</div><div><b>C</b>About 0.2 Hz</div><div><b>D</b>About 0.08 Hz</div></div></div></div>
+  <div class="qitem"><div class="n">3</div><div><div class="stem">The LFF is set to 1.6 Hz. What is the time constant?</div>
+    <div class="opts"><div><b>A</b>About 0.63 s</div><div><b>B</b>About 1.0 s</div><div><b>C</b>About 0.01 s</div><div><b>D</b>About 0.1 s</div></div></div></div>
+  <div class="qitem"><div class="n">4</div><div><div class="stem">A square-wave calibration decays to 37% of its height after 0.16 s. What LFF is applied?</div>
+    <div class="opts"><div><b>A</b>About 0.16 Hz</div><div><b>B</b>About 1 Hz</div><div><b>C</b>About 6.3 Hz</div><div><b>D</b>About 0.5 Hz</div></div></div></div>
+  <div class="qitem"><div class="n">5</div><div><div class="stem">A 40-ms spike is digitised at 256 samples per second. About how many samples fall within it?</div>
+    <div class="opts"><div><b>A</b>About 6</div><div><b>B</b>About 1</div><div><b>C</b>About 10</div><div><b>D</b>About 100</div></div></div></div>
+  <div class="qitem"><div class="n">6</div><div><div class="stem">A wave is 7 mm tall at 10 µV/mm. What is its amplitude, and how tall is it at 7 µV/mm?</div>
+    <div class="opts"><div><b>A</b>70 µV; 4.9 mm</div><div><b>B</b>70 µV; 10 mm</div><div><b>C</b>100 µV; 7 mm</div><div><b>D</b>0.7 µV; 10 mm</div></div></div></div>
+  <div class="qitem"><div class="n">7</div><div><div class="stem">The nasion-inion distance is 36 cm. How far apart are Fz and Pz along the midline?</div>
+    <div class="opts"><div><b>A</b>7.2 cm</div><div><b>B</b>10.8 cm</div><div><b>C</b>18.0 cm</div><div><b>D</b>14.4 cm</div></div></div></div>
+  <div class="qitem"><div class="n">8</div><div><div class="stem">The HFF is 35 Hz. A 35-Hz component has a true amplitude of 60 µV. About what amplitude is displayed?</div>
+    <div class="opts"><div><b>A</b>About 42 µV</div><div><b>B</b>About 30 µV</div><div><b>C</b>About 60 µV</div><div><b>D</b>About 18 µV</div></div></div></div>
+
+  <div class="kicker" style="margin:3mm 0 2mm">Module 02 · Montage polarity</div>
+  <div class="qitem"><div class="n">9</div><div><div class="stem">Against a quiet reference: F7 −30 µV, T3 −110 µV, T5 −60 µV. What do F7-T3 and T3-T5 show (negative up)?</div>
+    <div class="opts"><div><b>A</b>Up 80, then down 50: positive maximum at T3</div><div><b>B</b>Down 80, then up 50: negative maximum at T3</div><div><b>C</b>Down 140, then up 170</div><div><b>D</b>Down 80, then down 50: end of chain</div></div></div></div>
+</section>
+
+<section class="page">
+  <div class="qitem"><div class="n">10</div><div><div class="stem">At the same instant F4-C4 deflects up and C4-P4 deflects down (negative up). What does this indicate?</div>
+    <div class="opts"><div><b>A</b>A negative maximum at C4</div><div><b>B</b>A positive maximum at F4</div><div><b>C</b>A positive maximum at C4</div><div><b>D</b>An electrode artifact at P4</div></div></div></div>
+  <div class="qitem"><div class="n">11</div><div><div class="stem">Fp2-F8 shows a 60 µV upward deflection, F8-T4 20 µV up and T4-T6 5 µV up; there is no phase reversal. Where is the maximum?</div>
+    <div class="opts"><div><b>A</b>Negative maximum at F8</div><div><b>B</b>Positive maximum at T6</div><div><b>C</b>No localisation is possible</div><div><b>D</b>Negative maximum at Fp2 (end of chain)</div></div></div></div>
+  <div class="qitem"><div class="n">12</div><div><div class="stem">During a blink, what do Fp1-F3 and Fp2-F4 show (negative up)?</div>
+    <div class="opts"><div><b>A</b>Both deflect down, in phase</div><div><b>B</b>Both deflect up, in phase</div><div><b>C</b>Fp1-F3 up, Fp2-F4 down</div><div><b>D</b>No deflection; blinks cancel</div></div></div></div>
+  <div class="qitem"><div class="n">13</div><div><div class="stem">The patient looks to the RIGHT. What do F7-T3 and F8-T4 show (negative up)?</div>
+    <div class="opts"><div><b>A</b>F7-T3 down, F8-T4 up</div><div><b>B</b>Both down</div><div><b>C</b>F7-T3 up, F8-T4 down</div><div><b>D</b>Both up</div></div></div></div>
+  <div class="qitem"><div class="n">14</div><div><div class="stem">A 19-electrode average reference: O2 jumps to +190 µV, all others stay at 0 µV. What do Cz-Avg and O2-Avg show?</div>
+    <div class="opts"><div><b>A</b>Cz down 10; O2 down 190</div><div><b>B</b>Cz up 10; O2 down 180</div><div><b>C</b>Cz flat; O2 down 190</div><div><b>D</b>Cz up 10; O2 up 180</div></div></div></div>
+  <div class="qitem"><div class="n">15</div><div><div class="stem">Left ear reference: during a left temporal spike, Fp1-A1, F3-A1, C3-A1 and O1-A1 all deflect down by a similar amount, while T3-A1 deflects slightly up. What explains this?</div>
+    <div class="opts"><div><b>A</b>A positive parasagittal field</div><div><b>B</b>Reversed leads in four channels</div><div><b>C</b>A1 lies in the spike field (active reference)</div><div><b>D</b>A negative maximum at C3</div></div></div></div>
+  <div class="qitem"><div class="n">16</div><div><div class="stem">Independent spikes over both temporal regions involve both ears. Which references are best for a referential review awake, and then asleep with vertex waves?</div>
+    <div class="opts"><div><b>A</b>Linked ears; then linked ears</div><div><b>B</b>Cz; then Cz</div><div><b>C</b>Average; then Cz</div><div><b>D</b>Cz; then common average</div></div></div></div>
+
+  <div class="kicker" style="margin:3mm 0 2mm">Module 03 · ACNS 2021</div>
+  <div class="qitem"><div class="n">17</div><div><div class="stem">Generalized spike-wave: 18 discharges in every 6 s, lasting 12 s, with no evolution. Classification?</div>
+    <div class="opts"><div><b>A</b>Ictal-interictal continuum</div><div><b>B</b>Electrographic seizure</div><div><b>C</b>Brief potentially ictal rhythmic discharges</div><div><b>D</b>Interictal GPDs</div></div></div></div>
+  <div class="qitem"><div class="n">18</div><div><div class="stem">LPDs at 2 Hz for 30 minutes, no evolution, no clinical correlate. Classification?</div>
+    <div class="opts"><div><b>A</b>Electrographic status epilepticus</div><div><b>B</b>Electrographic seizure</div><div><b>C</b>Ictal-interictal continuum</div><div><b>D</b>BIRDs</div></div></div></div>
+</section>
+
+<section class="page">
+  <div class="qitem"><div class="n">19</div><div><div class="stem">A 7-s run of focal rhythmic sharp activity starts at 5 Hz and speeds to 7 Hz. Classification?</div>
+    <div class="opts"><div><b>A</b>Definite BIRDs</div><div><b>B</b>Electrographic seizure</div><div><b>C</b>Ictal-interictal continuum</div><div><b>D</b>LRDA with plus modifier</div></div></div></div>
+  <div class="qitem"><div class="n">20</div><div><div class="stem">Within one 60-minute period, seizures add up to 13 minutes; none lasts 10 continuous minutes. Classification?</div>
+    <div class="opts"><div><b>A</b>Not ESE: a 10-minute continuous seizure is required</div><div><b>B</b>Ictal-interictal continuum</div><div><b>C</b>Electrographic status epilepticus</div><div><b>D</b>Recurrent BIRDs</div></div></div></div>
+
+  <div class="kicker" style="margin:3mm 0 2mm">Module 04 · Emergencies</div>
+  <div class="qitem"><div class="n">21</div><div><div class="stem">A 10-month-old suddenly cannot cry or cough but is still conscious. What do you do?</div>
+    <div class="opts"><div><b>A</b>Abdominal thrusts until the object comes out</div><div><b>B</b>A blind finger sweep, then back blows</div><div><b>C</b>Start CPR immediately</div><div><b>D</b>5 back blows, then 5 chest thrusts, repeated</div></div></div></div>
+  <div class="qitem"><div class="n">22</div><div><div class="stem">A patient wearing 21 scalp electrodes and an ECG patch below the right clavicle arrests. CPR is under way when the AED arrives. Best approach?</div>
+    <div class="opts"><div><b>A</b>Peel off the right chest ECG patch, place the pads, leave scalp leads</div><div><b>B</b>Stop CPR and remove all scalp electrodes first</div><div><b>C</b>Place the right pad over the ECG patch to save time</div><div><b>D</b>Disconnect the EEG headbox before any shock</div></div></div></div>
+  <div class="qitem"><div class="n">23</div><div><div class="stem">A sedated 3-year-old's snoring stops; the chest still moves, there is no airflow, and SpO<sub>2</sub> falls to 89%. First action?</div>
+    <div class="opts"><div><b>A</b>Increase oxygen flow and keep watching</div><div><b>B</b>Open the airway (head tilt or jaw thrust) and call for help</div><div><b>C</b>Call the child's name loudly and wait</div><div><b>D</b>Document the event and continue the study</div></div></div></div>
+  <div class="qitem"><div class="n">24</div><div><div class="stem">A patient has a generalized convulsion during the EEG. Which plan is correct?</div>
+    <div class="opts"><div><b>A</b>Insert a bite block, then call for help</div><div><b>B</b>Restrain the limbs to prevent injury</div><div><b>C</b>Time it, protect, nothing in the mouth; alert staff now, emergency if ≥ 5 minutes</div><div><b>D</b>Stop recording and wait 10 minutes before calling</div></div></div></div>
+
+  <div class="card tint" style="margin-top:6mm">
+    <h4>Score yourself</h4>
+    <table>
+      <thead><tr><th>Section</th><th>Questions</th><th>Your score</th><th>Next step if below target</th></tr></thead>
+      <tbody>
+        <tr><td>Calculations</td><td>1–8</td><td>&nbsp;&nbsp;&nbsp;/ 8</td><td>Below 7: in-app Calculation Drill (20) twice this week</td></tr>
+        <tr><td>Montage polarity</td><td>9–16</td><td>&nbsp;&nbsp;&nbsp;/ 8</td><td>Below 7: redo Module 02 worked examples; Repeated-mistakes drill</td></tr>
+        <tr><td>ACNS 2021</td><td>17–20</td><td>&nbsp;&nbsp;&nbsp;/ 4</td><td>Below 4: re-read the decision path; Challenge Me · Clinical</td></tr>
+        <tr><td>Emergencies</td><td>21–24</td><td>&nbsp;&nbsp;&nbsp;/ 4</td><td>Below 4: recite the four scripts aloud daily for 3 days</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===================================================== ANSWER KEY -->
+<section class="page">
+  <div class="qhead"><h3>Answer key with worked reasoning</h3><span class="faint">Module 02 fill-in answers are at the end</span></div>
+  <div class="key"><span class="n">1</span><span class="k">C</span><span>250 ÷ 10 = 25 mm/s; 20 mm ÷ 25 = 0.8 s period → <b>1.25 Hz</b>. A assumes 30 mm/s; B reports the period as a frequency.</span></div>
+  <div class="key"><span class="n">2</span><span class="k">A</span><span>1 ÷ (2π × 0.2) = 1 ÷ 1.257 ≈ <b>0.8 Hz</b>. B is 1/TC without 2π; C reads seconds as hertz; D is a decimal slip.</span></div>
+  <div class="key"><span class="n">3</span><span class="k">D</span><span>TC = 1 ÷ (2π × 1.6) = 1 ÷ 10.05 ≈ <b>0.1 s</b> (anchor). A is 1/LFF without 2π; B is the 0.16-Hz anchor; C is a decimal slip.</span></div>
+  <div class="key"><span class="n">4</span><span class="k">B</span><span>37% defines TC = 0.16 s → 1 ÷ (2π × 0.16) ≈ <b>1 Hz</b>. C forgets 2π; A reads the TC as hertz.</span></div>
+  <div class="key"><span class="n">5</span><span class="k">C</span><span>0.040 s × 256 /s = 10.2 → <b>about 10</b>. B and D are factor-of-ten slips from not converting ms to s.</span></div>
+  <div class="key"><span class="n">6</span><span class="k">B</span><span>10 × 7 = <b>70 µV</b>; 70 ÷ 7 = <b>10 mm</b>. A multiplies by the new setting; the voltage itself never changes.</span></div>
+  <div class="key"><span class="n">7</span><span class="k">D</span><span>Fz 30% → Pz 70% = 40% of 36 cm = <b>14.4 cm</b>. A is one 20% step; C is nasion → Cz.</span></div>
+  <div class="key"><span class="n">8</span><span class="k">A</span><span>≈ 70% passes at the cutoff (−3 dB): 0.7 × 60 ≈ <b>42 µV</b>. B uses 50%; C ignores the filter.</span></div>
+  <div class="key"><span class="n">9</span><span class="k">B</span><span>F7-T3 = −30 − (−110) = +80 → <b>down 80</b>; T3-T5 = −110 − (−60) = −50 → <b>up 50</b>. Pens point toward each other: negative maximum at T3. C adds instead of subtracting.</span></div>
+  <div class="key"><span class="n">10</span><span class="k">C</span><span>F4-C4 up → C4 more positive than F4; C4-P4 down → C4 more positive than P4. Pens point away from each other: <b>positive maximum at C4</b>.</span></div>
+  <div class="key"><span class="n">11</span><span class="k">D</span><span>Largest deflection in the first channel, falling along the chain, no reversal: <b>end-of-chain negative maximum at Fp2</b>. Confirm with a referential or transverse montage. B also fits the signs, but the gradient is steepest at Fp2-F8 (60 µV) and flattest at T4-T6 (5 µV), so the field peaks at Fp2, not T6.</span></div>
+  <div class="key"><span class="n">12</span><span class="k">A</span><span>The eyes roll up (Bell's phenomenon), so the positive corneas approach Fp1/Fp2; both are input 1 and positive → <b>both down, in phase</b>.</span></div>
+  <div class="key"><span class="n">13</span><span class="k">C</span><span>Gaze right: the cornea (+) moves toward F8, the retina (−) toward F7. F8-T4 positive → down; F7-T3 negative → <b>up</b>. Out of phase.</span></div>
+  <div class="key"><span class="n">14</span><span class="k">B</span><span>Average = 190 ÷ 19 = +10 µV. Cz − 10 = −10 → <b>up 10</b>; O2 = 190 − 10 = +180 → <b>down 180</b>.</span></div>
+  <div class="key"><span class="n">15</span><span class="k">C</span><span>Identical deflections in every channel sharing A1 mean the <b>reference is active</b>. T3, the true maximum, is only slightly more negative than the contaminated A1.</span></div>
+  <div class="key"><span class="n">16</span><span class="k">D</span><span>Awake: <b>Cz</b> is far from the temporal lobes and quiet. Asleep, Cz carries vertex waves and K-complexes, so the <b>common average</b> is least contaminated. Both ears are active.</span></div>
+  <div class="key"><span class="n">17</span><span class="k">B</span><span>18 ÷ 6 = 3 Hz &gt; 2.5 Hz, lasting 12 s ≥ 10 s → <b>electrographic seizure</b>, with or without evolution.</span></div>
+  <div class="key"><span class="n">18</span><span class="k">C</span><span>PDs &gt; 1 and ≤ 2.5 Hz for ≥ 10 s without evolution → <b>IIC</b>. Not a seizure (not &gt; 2.5 Hz, no evolution), so not ESE.</span></div>
+  <div class="key"><span class="n">19</span><span class="k">A</span><span>&gt; 4 Hz, evolving, but only 7 s (&lt; 10 s) → <b>definite BIRDs</b>. LRDA is ≤ 4 Hz delta.</span></div>
+  <div class="key"><span class="n">20</span><span class="k">C</span><span>≥ 20% of any 60-minute period (≥ 12 min) qualifies: 13 min → <b>ESE</b>, even without a 10-minute seizure.</span></div>
+  <div class="key"><span class="n">21</span><span class="k">D</span><span>Responsive infant: <b>5 back blows + 5 chest thrusts</b>, repeated. No abdominal thrusts in infants; no blind sweeps; CPR only if unresponsive.</span></div>
+  <div class="key"><span class="n">22</span><span class="k">A</span><span>Continue CPR; a pad must not cover a patch, so <b>peel the ECG patch</b>; scalp electrodes do not interfere and stay.</span></div>
+  <div class="key"><span class="n">23</span><span class="k">B</span><span>Effort without airflow = obstruction: <b>open the airway and call for help</b>. Oxygen cannot pass a closed airway.</span></div>
+  <div class="key"><span class="n">24</span><span class="k">C</span><span>Time, protect, nothing in the mouth, no restraint; recovery position afterwards; <b>alert staff at onset</b>; ≥ 5 minutes = status/emergency, or sooner if injured or not breathing.</span></div>
+  <div class="card tint" style="margin-top:4mm">
+    <h4>Module 02 fill-in answers</h4>
+    <p style="margin:0">Fp2-F4 = −20 − (−90) = +70 → <b>down 70</b> · F4-C4 = −90 − (−40) = −50 → <b>up 50</b> → pens toward each other: <b>negative maximum at F4</b>.<br>
+    C3-P3 = 15 − 55 = −40 → <b>up 40</b> · P3-O1 = 55 − 10 = +45 → <b>down 45</b> → pens away from each other: <b>positive maximum at P3</b>.</p>
+  </div>
+</section>
+
+<!-- ===================================================== PLAN -->
+<section class="page">
+  <div class="kicker">Ten study days · Mock 2 on Oct 17 (use Oct 4–7 to start early or catch up)</div>
+  <div class="h1">A plan that fits around work</div>
+  <p class="intro">About 40–60 minutes a day. Each day starts with the app's <b>Spaced review</b> (questions you missed come back on a schedule), then one focused block. The goal for Mock 2 is to move calculations above 75% and montage above 80%.</p>
+  <div class="plan">
+    <div class="day"><div class="d">Day 1</div><div class="focus">Module 01 rules</div><ul><li>Read pp. 3–5</li><li>Redo the 4 worked examples cold</li><li>App: Calculation Drill · 10</li></ul></div>
+    <div class="day"><div class="d">Day 2</div><div class="focus">Page-speed & duration</div><ul><li>Practice test Q1–8</li><li>App: Calculation Drill · 20</li><li>Write the speed in the margin, every time</li></ul></div>
+    <div class="day"><div class="d">Day 3</div><div class="focus">Module 02 rules</div><ul><li>Read pp. 6–7</li><li>Fill-in subtraction table</li><li>App: Repeated mistakes · polarity drill</li></ul></div>
+    <div class="day"><div class="d">Day 4</div><div class="focus">Eye dipole & references</div><ul><li>Practice test Q9–16</li><li>Sketch the cornea (+) for each gaze</li><li>App: Challenge Me · Montage · 10</li></ul></div>
+    <div class="day"><div class="d">Day 5</div><div class="focus">ACNS 2021</div><ul><li>Read p. 8, practice Q17–20</li><li>Count discharges ÷ seconds on 5 examples</li><li>App: Challenge Me · Clinical · 10</li></ul></div>
+    <div class="day"><div class="d">Day 6</div><div class="focus">Emergencies</div><ul><li>Read p. 9; recite 4 scripts</li><li>Practice Q21–24</li><li>App: Today's Study</li></ul></div>
+    <div class="day"><div class="d">Day 7</div><div class="focus">Mixed review</div><ul><li>Whole practice test again, timed (35 min)</li><li>Redo every miss with its worked answer</li></ul></div>
+    <div class="day"><div class="d">Day 8</div><div class="focus">Speed</div><ul><li>App: Calculation Drill · 20, target &lt; 60 s each</li><li>App: Spaced review (all due)</li></ul></div>
+    <div class="day"><div class="d">Day 9</div><div class="focus">Light day</div><ul><li>Spaced review only</li><li>Skim all four "traps" boxes</li></ul></div>
+    <div class="day mock"><div class="d">Day 10 · Oct 17</div><div class="focus">Mock 2 (130)</div><ul><li>Full timed mock in the app</li><li>Compare with Mock 1 by module</li><li>Ask for the next targeted guide</li></ul></div>
+  </div>
+  <div class="grid2" style="margin-top:6mm">
+    <div class="tip"><div class="t">Rate your confidence honestly</div>In practice questions, tap <b>Sure / Unsure / Guess</b> truthfully. A confident miss is the most valuable signal: it marks a misconception and comes back first in tomorrow's review.</div>
+    <div class="card indigo"><h4>Where to find it in the app</h4><p style="margin:0">ABRET Study → <b>Calculation Drill</b>, <b>Repeated mistakes</b> (Drill 5), <b>Spaced review</b>, <b>Challenge Me</b> with a skill focus, and the <b>Mock exam schedule</b> card (Mock 2 on Oct 17).</p></div>
+  </div>
+</section>
+
+</body>
+</html>

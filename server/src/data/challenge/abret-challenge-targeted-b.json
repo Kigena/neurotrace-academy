@@ -1,0 +1,716 @@
+{
+  "version": "targeted-b-1",
+  "generatedAt": "2026-10-03",
+  "bank": "challenge",
+  "focus": "targeted",
+  "description": "ABRET Challenge Bank targeted remediation set B: montage polarity (referential to bipolar subtraction, phase reversal direction, end-of-chain, eye-movement polarity, average and ear reference contamination) and emergency response / BLS. Not yet medically verified.",
+  "totalQuestions": 20,
+  "questions": [
+    {
+      "id": "ch-tgb-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "bipolar-subtraction",
+        "polarity",
+        "phase-reversal",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "At the peak of a sharp wave, values against a quiet reference are F4 −35 µV, C4 −95 µV and P4 −20 µV. What do channels F4-C4 and C4-P4 display (input 1 minus input 2, negative up)?",
+      "explanation": "F4-C4 = −35 − (−95) = +60 µV; a positive result deflects DOWN. C4-P4 = −95 − (−20) = −75 µV; a negative result deflects UP. The pens point toward each other at C4, the negative maximum. '60 up / 75 down' gets both signs backwards (treating positive as up); '130 up / 115 up' adds the two inputs (−35 + −95, −95 + −20) instead of subtracting; '60 down / 75 down' gets F4-C4 right but subtracts C4-P4 the wrong way round (−20 − (−95)).",
+      "learningObjective": "Convert referential values to bipolar deflections with the negative-up convention.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "F4-C4 60 µV up and C4-P4 75 µV down",
+        "F4-C4 60 µV down and C4-P4 75 µV up",
+        "F4-C4 130 µV up and C4-P4 115 µV up",
+        "F4-C4 60 µV down and C4-P4 75 µV down"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "bipolar-subtraction",
+        "referential-reconstruction",
+        "polarity",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "In a longitudinal bipolar montage (negative up), channel P4-O2 shows a 45-µV upward deflection at the peak of a transient. Against a quiet reference, O2 measures −15 µV at that instant. What is the referential value at P4?",
+      "explanation": "Upward means the channel output is negative: P4 − O2 = −45 µV, so P4 = −45 + (−15) = −60 µV. '+30' reads the upward deflection as +45 and then adds O2 (45 − 15); '−30' subtracts O2 instead of adding it back (−45 − (−15)); '+60' has the right size but loses the negative sign of an upward pen.",
+      "learningObjective": "Recover a referential value from a bipolar deflection and one known input.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "+30 µV",
+        "−30 µV",
+        "−60 µV",
+        "+60 µV"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "phase-reversal",
+        "positive-phase-reversal",
+        "transverse-montage",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 2,
+      "stem": "In the transverse chain F7-F3, F3-Fz, Fz-F4, F4-F8 (negative up), a transient gives F7-F3 30 µV up, F3-Fz 35 µV down, Fz-F4 3 µV down and F4-F8 1 µV down. What does this indicate?",
+      "explanation": "F7-F3 up means F7 − F3 is negative, so F3 is more positive than F7; F3-Fz down means F3 − Fz is positive, so F3 is more positive than Fz. The pens point AWAY from each other at F3, the shared electrode, so F3 is a positive maximum (for example F7 +10, F3 +40, Fz +5 µV). 'Negative at F3' reads a divergent reversal as a convergent one; 'Fz' places the maximum on the far side of the reversing pair, where the small Fz-F4 output shows little gradient; 'F7' treats the end of the chain as the maximum, although F7-F3 already shows F7 to be less positive than F3.",
+      "learningObjective": "Read the direction of a phase reversal to name the polarity of the maximum.",
+      "references": [
+        {
+          "citation": "Tatum WO (ed.). Handbook of EEG Interpretation, 3rd ed. (Demos, 2021): polarity, localization and artifacts",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A surface-negative maximum at F3",
+        "A surface-positive maximum at F3",
+        "A surface-negative maximum at Fz",
+        "A surface-negative maximum at F7"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "eye-movement",
+        "corneoretinal-dipole",
+        "vertical-gaze",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "An awake patient with eyes open is asked to look down at a card held near her lap and keeps her gaze there for 2 s. Considering the corneoretinal dipole, what do Fp1-F3 and Fp2-F4 show as the eyes move (negative up)?",
+      "explanation": "The cornea is positive relative to the retina. Looking down rotates both corneas away from the frontopolar electrodes, so Fp1 and Fp2 become relatively negative compared with F3 and F4: Fp1 − F3 < 0 and Fp2 − F4 < 0, so both channels deflect UP together. 'Downward in both' is the pattern of looking up or of a blink (Bell's phenomenon brings the corneas toward Fp1/Fp2); opposite polarity between the two sides is the signature of lateral, not vertical, movement; vertical movements are seen best at Fp1/Fp2, while F7/F8 mainly sense lateral gaze.",
+      "learningObjective": "Predict vertical eye-movement polarity from the corneoretinal dipole.",
+      "references": [
+        {
+          "citation": "Tatum WO (ed.). Handbook of EEG Interpretation, 3rd ed. (Demos, 2021): polarity, localization and artifacts",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A downward deflection in both channels",
+        "Upward in Fp1-F3 and downward in Fp2-F4",
+        "Little change, since only F7 and F8 sense gaze",
+        "An upward deflection in both channels"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "eye-movement",
+        "corneoretinal-dipole",
+        "lateral-gaze",
+        "referential-montage",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "artifact",
+      "reasoningSteps": 2,
+      "stem": "In a montage referenced to the ipsilateral ears (F7-A1 and F8-A2; negative up), an awake patient briskly looks to her left and holds the gaze. What do these two channels show at the movement?",
+      "explanation": "On left gaze both corneas (positive) swing toward F7 and away from F8, so F7 becomes positive and F8 negative. F7 − A1 > 0 deflects DOWN; F8 − A2 < 0 deflects UP. The reversed pair describes gaze to the right (or forgets that negative is up); same-direction deflections at F7 and F8 would mean a vertical movement or a common reference effect, not a conjugate lateral one, which always gives opposite polarity on the two sides.",
+      "learningObjective": "Predict lateral eye-movement polarity in a referential montage.",
+      "references": [
+        {
+          "citation": "Tatum WO (ed.). Handbook of EEG Interpretation, 3rd ed. (Demos, 2021): polarity, localization and artifacts",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "F7-A1 deflects up and F8-A2 deflects down",
+        "Both deflect down, larger in the F7-A1 channel",
+        "Both deflect up, larger in the F8-A2 channel",
+        "F7-A1 deflects down and F8-A2 deflects up"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "active-reference",
+        "ear-reference",
+        "reference-contamination",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "In an ipsilateral ear montage (left side to A1; negative up), each left temporal spike gives T3-A1 50 µV upward, while Fp1-A1 and O1-A1 each give 25 µV downward at the same instant. Assuming Fp1 and O1 are quiet, what is the spike's value at T3 against a quiet reference?",
+      "explanation": "O1-A1 down 25 µV means O1 − A1 = +25; with O1 at 0, A1 = −25 µV, so the ear is active. T3-A1 up 50 µV means T3 − A1 = −50, so T3 = −50 + (−25) = −75 µV. '−50' takes the T3-A1 channel at face value and ignores the active ear; '−25' subtracts A1 instead of adding it back (−50 − (−25)); '+75' gets the size right but loses the sign of an upward deflection.",
+      "learningObjective": "Recognise and correct for an active ear reference with simple arithmetic.",
+      "references": [
+        {
+          "citation": "Tatum WO (ed.). Handbook of EEG Interpretation, 3rd ed. (Demos, 2021): polarity, localization and artifacts",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "−75 µV",
+        "−50 µV",
+        "−25 µV",
+        "+75 µV"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "end-of-chain",
+        "bipolar-subtraction",
+        "parasagittal-chain",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "At the peak of a transient, values against a quiet reference are Fp2 −90 µV, F4 −50 µV, C4 −25 µV, P4 −10 µV and O2 −5 µV. Which description of the chain Fp2-F4, F4-C4, C4-P4, P4-O2 (negative up) is correct?",
+      "explanation": "Fp2-F4 = −90 − (−50) = −40 (up 40); F4-C4 = −50 − (−25) = −25 (up 25); C4-P4 = −25 − (−10) = −15 (up 15); P4-O2 = −10 − (−5) = −5 (up 5). Every channel goes the same way and shrinks away from Fp2, with no reversal: the maximum is at the first electrode of the chain, which a referential or transverse montage should confirm. 'All down / positive' reverses the sign convention; 'largest in P4-O2' reads the chain backwards (the smallest output is posterior); 'reversal at F4' invents an opposite deflection that the arithmetic does not produce.",
+      "learningObjective": "Recognise an end-of-chain maximum from referential values.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "All four up, largest in Fp2-F4: end-of-chain negative maximum at Fp2",
+        "All four down, largest in Fp2-F4: end-of-chain positive maximum at Fp2",
+        "All four up, largest in P4-O2: end-of-chain negative maximum at O2",
+        "Fp2-F4 up, F4-C4 down: phase reversal with a negative maximum at F4"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "eye-movement",
+        "corneoretinal-dipole",
+        "lateral-gaze",
+        "transverse-montage",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "The display is the transverse chain F7-F3, F3-Fz, Fz-F4, F4-F8 (negative up). An awake patient makes a brisk, sustained gaze to her right. Considering the corneoretinal dipole, which pattern is expected?",
+      "explanation": "On right gaze the positive corneas move toward F8 and away from F7, so potential rises steadily from left (F7 most negative) to right (F8 most positive), with the steepest change at the lateral ends. Each transverse channel is left minus right, which is negative, so all four deflect UP, largest in F7-F3 and F4-F8. 'Up then down' carries over the longitudinal-montage picture (F7-T3 vs F8-T4) without redoing the subtraction for F4-F8 (F4 − F8 is negative); 'all down' is the pattern for left gaze; a reversal at Fz would require a maximum at the midline, which a lateral eye movement does not create.",
+      "learningObjective": "Work out lateral eye-movement polarity in a transverse montage.",
+      "references": [
+        {
+          "citation": "Tatum WO (ed.). Handbook of EEG Interpretation, 3rd ed. (Demos, 2021): polarity, localization and artifacts",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Upward in all four channels, largest in F7-F3 and F4-F8",
+        "Upward in F7-F3, downward in F4-F8, small in between",
+        "Downward in all four channels, largest in F7-F3 and F4-F8",
+        "A phase reversal at Fz, largest in F3-Fz and Fz-F4"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "average-reference",
+        "reference-contamination",
+        "isopotential",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "An average reference is built from 19 scalp electrodes with equal weights. At a spike peak, values against a quiet reference are F8 −190 µV, T4 −130 µV, F4 −40 µV, C4 −20 µV and all other electrodes 0 µV. What do channels F8-Avg, C4-Avg and O2-Avg display (negative up)?",
+      "explanation": "Average = (−190 − 130 − 40 − 20) ÷ 19 = −380 ÷ 19 = −20 µV. F8-Avg = −190 − (−20) = −170 (up 170); C4-Avg = −20 − (−20) = 0 (flat, although C4 is involved); O2-Avg = 0 − (−20) = +20 (down 20, an inverted 'spike' at an uninvolved site). '190 / 20 up / flat' ignores the average and treats it as a quiet reference; '20 up' at O2 gets the subtraction sign wrong; '210 / 40 / 20 up' adds the average instead of subtracting it.",
+      "learningObjective": "Calculate average-reference contamination and its sign.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "F8 190 µV up, C4 20 µV up, O2 flat",
+        "F8 170 µV up, C4 flat, O2 20 µV down",
+        "F8 170 µV up, C4 flat, O2 20 µV up",
+        "F8 210 µV up, C4 40 µV up, O2 20 µV up"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "phase-reversal",
+        "bipolar-subtraction",
+        "chain-direction",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "A reader's custom montage runs the left temporal chain backwards: O1-T5, T5-T3, T3-F7, F7-Fp1 (input 1 minus input 2, negative up). At a sharp-wave peak, values against a quiet reference are Fp1 −10, F7 −40, T3 −100, T5 −45 and O1 −5 µV. Which description is correct?",
+      "explanation": "T5-T3 = −45 − (−100) = +55 (down); T3-F7 = −100 − (−40) = −60 (up); O1-T5 = +40 (down) and F7-Fp1 = −30 (up) complete the picture. In a continuous chain the pens still point toward each other at a negative maximum whichever way the chain runs, so T3 is the negative maximum. Swapping the directions forgets that a positive output deflects down; calling it positive assumes that reversing the chain inverts the rule, which it does not; 145 and 140 come from adding the inputs (−45 + −100, −100 + −40).",
+      "learningObjective": "Apply the phase-reversal rule to a chain displayed in reverse order.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "T5-T3 55 µV up, T3-F7 60 µV down: a negative maximum at T3",
+        "T5-T3 55 µV down, T3-F7 60 µV up: a negative maximum at T3",
+        "T5-T3 55 µV down, T3-F7 60 µV up: a positive maximum at T3",
+        "T5-T3 145 µV up, T3-F7 140 µV up: a negative maximum at T3"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "slow-roving-eye-movements",
+        "corneoretinal-dipole",
+        "drowsiness",
+        "targeted"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "artifact",
+      "reasoningSteps": 3,
+      "stem": "A drowsy 45-year-old with eyes closed has lost the alpha rhythm. Smooth 0.3-Hz waves appear in frontal channels. At one peak, values against a quiet reference are F7 +45, F8 −45, Fp1 +12, Fp2 −12, T3 +8 and T4 −8 µV; half a cycle later every sign is reversed. What is the best interpretation?",
+      "explanation": "Slow roving eye movements of drowsiness are smooth, about 0.2-0.5 Hz, maximal at F7/F8 and of OPPOSITE polarity on the two sides, falling off steeply backwards (45 at F7/F8, 8 at T3/T4). The cornea is positive, so F7 at +45 means the corneas point toward the left. 'Turned right' reverses the dipole (F8 would be positive); bifrontal cerebral slowing would be the same polarity on both sides, not mirror-image; vertical movements give the SAME polarity at Fp1 and Fp2, whereas here they are opposite (+12 and −12), as expected from spread of a lateral dipole.",
+      "learningObjective": "Identify slow roving eye movements and gaze direction from referential values.",
+      "references": [
+        {
+          "citation": "Tatum WO (ed.). Handbook of EEG Interpretation, 3rd ed. (Demos, 2021): polarity, localization and artifacts",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Slow lateral eye movements; at this peak the eyes are turned to the right",
+        "Slow lateral eye movements; at this peak the eyes are turned to the left",
+        "Bifrontal rhythmic slowing with a broad field maximal at F7 and F8",
+        "Slow vertical eye movements, as Fp1 and Fp2 change with every wave"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s3",
+      "topicTags": [
+        "active-reference",
+        "ear-reference",
+        "montage-selection",
+        "sleep",
+        "targeted"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "During N2 sleep with frequent vertex waves, a 30-year-old has left temporal spikes. Against a distant reference, each spike measures T3 −140, F7 −70, T5 −60 and A1 −55 µV, while A2 and the right hemisphere stay near 0 µV. In the A1-referenced display the spikes look small and appear inverted in Fp1-A1, C3-A1 and O1-A1. Which referential montage best shows the spike field?",
+      "explanation": "A1 is inside the spike field (−55 µV), so every A1 channel subtracts it: T3-A1 = −85 (up 85, too small) and quiet sites such as Fp1-A1 = 0 − (−55) = +55 (inverted, down). A2 is quiet, so T3-A2 = −140 and the true field appears. Linked ears still carry half of A1, −27.5 µV, giving T3 −112.5 and 27.5-µV inverted deflections everywhere; Cz is a poor reference in N2 sleep because vertex waves would appear in every channel; doubling sensitivity enlarges the display but keeps the same subtraction errors.",
+      "learningObjective": "Choose a reference that avoids an active ear electrode during sleep.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Reference to the linked ears, A1 plus A2",
+        "Reference to the vertex midline electrode, Cz",
+        "Reference to A1, at double the sensitivity",
+        "Reference to the contralateral right ear, A2"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "average-reference",
+        "reference-contamination",
+        "generalized-discharge",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "montage",
+      "reasoningSteps": 3,
+      "stem": "A frontally predominant generalized discharge is reviewed in an average reference of all 19 scalp electrodes. Against a distant quiet reference, the seven frontal electrodes each measure −190 µV, the five central and mid-temporal electrodes each −76 µV, and the seven posterior electrodes 0 µV. A trainee reports 'occipital positive sharp waves' because O1-Avg and O2-Avg deflect with each discharge. What do those channels show, and why?",
+      "explanation": "Sum = 7 × (−190) + 5 × (−76) + 7 × 0 = −1330 − 380 = −1710 µV; average = −1710 ÷ 19 = −90 µV. O1-Avg = 0 − (−90) = +90, a 90-µV DOWNWARD deflection time-locked to the discharge, created entirely by the widespread frontal negativity in the average. A bipolar chain (or a quiet reference) shows the occipital channels flat. '90 up' gets the subtraction sign wrong; a 'posterior positive generator' accepts the contamination as cerebral; 'flat' forgets that each channel is the electrode minus the average, not the electrode alone.",
+      "learningObjective": "Recognise average-reference contamination by a widespread discharge.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 90 µV up, inherited from the average; recheck in a bipolar chain",
+        "About 90 µV down, from a posterior positive generator; add an occipital chain",
+        "Flat, since O1 and O2 are at 0 µV; the trainee is misreading the page",
+        "About 90 µV down, inherited from the average; recheck in a bipolar chain"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "linked-ears",
+        "reference-contamination",
+        "lpds",
+        "acns-terminology",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "montage",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 4,
+      "stem": "An ICU recording is displayed against linked ears, (A1+A2)/2. Against a distant reference, each 1-Hz periodic discharge measures T3 −160, F7 −90, T5 −80 and A1 −80 µV, while A2 and every right-hemisphere electrode stay near 0 µV. The overnight note reads 'bilateral PDs, right side positive'. What is the best reading of the pattern?",
+      "explanation": "Linked-ears reference = (−80 + 0) ÷ 2 = −40 µV. Right-hemisphere channels: 0 − (−40) = +40, a uniform 40-µV DOWNWARD deflection with every discharge; T3-ref = −160 − (−40) = −120 (up). The right-sided 'positive PDs' are therefore reference contamination from the active left ear, and the true pattern is left LPDs (ACNS 2021). GPDs require a genuinely bilateral, roughly symmetric field, which the distant-reference values exclude; a second right positive PD field does not exist on those values; volume conduction would give a smaller same-polarity field fading with distance, not a uniform opposite-polarity deflection in every right channel.",
+      "learningObjective": "Separate linked-ear contamination from a bilateral periodic pattern.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        },
+        {
+          "citation": "ACNS Guideline 6: A Proposal for Standard Montages to Be Used in Clinical EEG (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Left LPDs; the 40-µV right-sided deflections come from A1 in the linked ears",
+        "GPDs; any discharge seen over both hemispheres at once counts as generalized",
+        "Left LPDs plus 40-µV right positive PDs that need their own annotation",
+        "Left LPDs; the right-sided deflections reflect volume conduction across the head"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-015",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "choking",
+        "infant",
+        "foreign-body-airway-obstruction",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "In the EEG waiting room, a 9-month-old eating a teething biscuit suddenly cannot cry, makes only weak, silent coughs and is turning dusky, but is still awake and moving. A colleague is calling the emergency team. What should you do now?",
+      "explanation": "A responsive infant who cannot cry and has a weak, silent cough has a severe airway obstruction. Current AHA and Red Cross guidance for infants (under 1 year): support the infant face-down along your forearm with the head lower than the chest, give 5 back blows between the shoulder blades, turn face-up and give 5 chest thrusts on the lower half of the breastbone, and repeat until the object comes out or the infant becomes unresponsive. Abdominal thrusts are not used in infants because of the risk of abdominal organ injury; blind finger sweeps can push the object deeper; watching is right only while the cough is still effective, which a silent cough is not.",
+      "learningObjective": "Relieve severe airway obstruction in a responsive infant.",
+      "references": [
+        {
+          "citation": "American Heart Association Guidelines for CPR and Emergency Cardiovascular Care (2020, with 2025 update): Pediatric Basic Life Support, foreign-body airway obstruction",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Give quick abdominal thrusts with the infant upright on your lap",
+        "Sweep a finger through the mouth to hook out the biscuit piece",
+        "Give 5 back blows, then 5 chest thrusts, and repeat the cycle",
+        "Sit her upright and let her keep coughing while you watch closely"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-016",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "choking",
+        "infant",
+        "infant-cpr",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "safety",
+      "reasoningSteps": 2,
+      "stem": "A 6-month-old brought for an EEG chokes on a small toy part. After several rounds of back blows and chest thrusts the object has not come out, and she goes limp and stops responding. Help is on the way but has not arrived. What is the best next step?",
+      "explanation": "When a choking infant becomes unresponsive, AHA guidance is to start CPR beginning with chest compressions; each time the airway is opened for breaths, look in the mouth and take out an object only if you can see it. Back blows and chest thrusts are for the responsive infant and delay compressions once she is unresponsive; blind finger sweeps can push the object deeper; a pulse check should take no more than 10 seconds, and a 30-second check delays compressions.",
+      "learningObjective": "Switch from choking relief to CPR when an infant becomes unresponsive.",
+      "references": [
+        {
+          "citation": "American Heart Association Guidelines for CPR and Emergency Cardiovascular Care (2020, with 2025 update): Pediatric Basic Life Support, foreign-body airway obstruction",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Keep giving back blows and chest thrusts until the team arrives",
+        "Finger-sweep the back of the throat, then give 2 rescue breaths",
+        "Start CPR with compressions; look in the mouth before giving breaths",
+        "Give 2 breaths, then feel the brachial pulse for a full 30 seconds"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-017",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "aed",
+        "cardiac-arrest",
+        "pad-placement",
+        "eeg-electrodes",
+        "targeted"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "In the EMU, a 62-year-old wearing 23 collodion scalp electrodes is found unresponsive, not breathing normally and without a pulse. A colleague is doing chest compressions as the AED arrives. His chest is soaked with sweat, and a medication patch sits just below his right clavicle. What is the best approach?",
+      "explanation": "AHA AED guidance: wipe a wet chest quickly so the pads adhere and current does not track across the skin, and take off any medication patch at a pad site and wipe the area, because a pad over a patch can block current and cause burns. Scalp electrodes are far from the pad sites and do not need to come off; stopping to strip 23 collodion electrodes delays the first shock while compressions and analysis should proceed. Everyone, including the technologist holding leads or the headbox, stands clear during analysis and shock. A pad over the patch impairs delivery; skipping a quick wipe of a soaked chest risks poor contact and arcing.",
+      "learningObjective": "Prepare the chest for AED pads in a patient wearing EEG electrodes.",
+      "references": [
+        {
+          "citation": "American Heart Association Guidelines for CPR and Emergency Cardiovascular Care (2020, with 2025 update): Adult Basic Life Support and AED use",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Peel off the patch, wipe the chest dry and apply the pads; leave the scalp leads on",
+        "Take off the scalp electrodes first so current cannot arc through them, then pad up",
+        "Dry the chest and place the right pad over the patch so no time is lost peeling it",
+        "Put the pads on the wet chest at once, since drying delays the first shock"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-018",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "sedation",
+        "pulse-oximetry",
+        "airway",
+        "pediatric",
+        "targeted"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A 3-year-old given an ordered oral sedative is asleep during an EEG; the sedation nurse has stepped into the next room. Over 40 s the SpO2 falls from 98% to 88%. The pleth waveform is clean, the head has flexed forward onto the chest, and soft snoring has given way to quiet, laboured breaths. What is the best immediate action?",
+      "explanation": "A clean pleth waveform makes a probe artifact unlikely, and neck flexion with a change from snoring to quiet, laboured breathing points to a partly obstructed airway in a sedated toddler. Within technologist scope, the immediate steps are to open the airway by repositioning (head tilt-chin lift or a shoulder roll to undo the flexion) and summon the sedation nurse now. Rechecking the probe for 5 minutes delays care for a real desaturation; deferring the report to the end of the study under-escalates; the child is still breathing, so the first step is to open the airway and get help rather than to start rescue breaths.",
+      "learningObjective": "Respond to desaturation in a sedated child within technologist scope.",
+      "references": [
+        {
+          "citation": "AAP/AAPD Guidelines for Monitoring and Management of Pediatric Patients Before, During, and After Sedation (Coté et al., Pediatrics 2019)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Reseat the oximeter probe and recheck the reading over the next 5 minutes",
+        "Mark the event on the record and tell the nurse when the study is complete",
+        "Start bag-mask rescue breaths at once, as the saturation is below 90%",
+        "Reposition the head to open the airway and call the sedation nurse at once"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-019",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "seizure-first-aid",
+        "when-to-call-ems",
+        "tonic-clonic",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 2,
+      "stem": "In an office-based EEG lab with no physician on site, staff follow standard seizure first-aid guidance. A 34-year-old with known epilepsy has a 90-s generalized tonic-clonic seizure; you time it, turn her on her side and protect her head. Which later finding is the clearest reason to call emergency services now?",
+      "explanation": "First-aid guidance calls for emergency help when a convulsive seizure lasts 5 minutes or longer, when seizures repeat without recovery in between, or with breathing difficulty, serious injury, a first-ever seizure, pregnancy or a seizure in water. A second convulsion before awareness returns signals possible status epilepticus. Post-ictal confusion and drowsiness for 10 minutes are expected after a tonic-clonic seizure; incontinence and a small tongue bite are common and are not by themselves emergencies; snoring respirations with good colour and pulse are normal post-ictal breathing that needs side positioning and observation.",
+      "learningObjective": "Know when seizure first aid requires calling emergency services.",
+      "references": [
+        {
+          "citation": "AHA/American Red Cross Guidelines for First Aid (2020/2024): seizures and recovery position",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "She stays confused and drowsy for 10 minutes after the jerking",
+        "She has wet herself and has a small bite mark on her tongue",
+        "A second convulsion begins before she has regained awareness",
+        "She snores, with pink colour and a steady pulse, as it ends"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tgb-020",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "post-ictal",
+        "airway",
+        "recovery-position",
+        "targeted"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "Seconds after a 70-s generalized tonic-clonic seizure in a reclining EEG chair, a 66-year-old is unresponsive, slumped with his chin on his chest and making gurgling breaths. His partial upper denture has come loose and lies visibly at the front of his mouth. What is the best action?",
+      "explanation": "Once the convulsion has stopped, an unresponsive patient who is breathing goes into the recovery (side) position so secretions drain, and a loose object that is visible at the front of the mouth can be taken out because it may obstruct the airway. 'Nothing in the mouth' applies to forcing objects in DURING a seizure, not to removing a visible loose denture afterwards; a slumped, seated, unresponsive patient cannot protect his airway even with a chin lift; gurgling means secretions in a breathing patient, not apnea, so rescue breaths on his back are not indicated.",
+      "learningObjective": "Protect the airway of a post-ictal patient with a loose denture.",
+      "references": [
+        {
+          "citation": "AHA/American Red Cross Guidelines for First Aid (2020/2024): seizures and recovery position",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Get him onto his side and leave the denture, as nothing goes in the mouth",
+        "Keep him seated, tilt his head back and lift the chin to quiet the gurgling",
+        "Get him onto his side, lift out the loose denture and watch his breathing",
+        "Lay him flat on his back and give rescue breaths, as gurgling means apnea"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set B (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

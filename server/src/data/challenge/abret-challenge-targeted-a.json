@@ -1,0 +1,707 @@
+{
+  "version": "targeted-a-1",
+  "generatedAt": "2026-10-03",
+  "bank": "challenge",
+  "focus": "targeted",
+  "description": "ABRET Challenge Bank targeted remediation set A: core calculations (time constant and LFF, calibration decay and error, page-width frequency and duration, sampling, 10-20 measurement, sensitivity) and ACNS 2021 critical care thresholds. Not yet medically verified.",
+  "totalQuestions": 20,
+  "questions": [
+    {
+      "id": "ch-tga-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "time-constant",
+        "lff",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "An older system's montage sheet specifies a time constant of 0.2 s for the eye-movement channels. The new system takes its low-frequency filter in hertz. Which LFF setting reproduces that time constant?",
+      "explanation": "LFF = 1 ÷ (2π × TC) = 1 ÷ (6.28 × 0.2) = 1 ÷ 1.26 ≈ 0.8 Hz. '5 Hz' is 1 ÷ 0.2 with the 2π left out, a sixfold overestimate; '0.2 Hz' copies the time constant in seconds across as hertz; '0.08 Hz' is the right working with a decimal slip (÷ 12.6 instead of ÷ 1.26).",
+      "learningObjective": "Convert a time constant to its LFF with LFF = 1/(2π × TC).",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 0.8 Hz",
+        "About 5 Hz",
+        "About 0.2 Hz",
+        "About 0.08 Hz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "time-constant",
+        "calibration-decay",
+        "lff",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "Before a study, a 50-µV square-wave calibration is applied at 5 µV/mm with the LFF at 0.3 Hz. One time constant after the step, about how tall should the trace be, and how long after the step is that?",
+      "explanation": "Initial deflection = 50 µV ÷ 5 µV/mm = 10 mm. TC = 1 ÷ (2π × 0.3) = 1 ÷ 1.885 ≈ 0.53 s, and after one time constant about 37% remains: 0.37 × 10 = 3.7 mm. '6.3 mm' is the 63% that has decayed, not what remains; '3.3 s' is 1 ÷ 0.3 without 2π; '0.30 s' reads the 0.3-Hz setting as a time constant in seconds.",
+      "learningObjective": "Predict the calibration decay height and timing from an LFF setting.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 6.3 mm, about 0.53 s after the step",
+        "About 3.7 mm, about 3.3 s after the step",
+        "About 3.7 mm, about 0.30 s after the step",
+        "About 3.7 mm, about 0.53 s after the step"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "calibration-decay",
+        "time-constant",
+        "lff",
+        "label-mismatch",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "A montage header reads LFF 0.1 Hz for a study ordered to assess slow activity. On the square-wave calibration, every channel's 10-mm step decays to about 3.7 mm in 0.53 s. What LFF is actually being applied, and what does it mean for slow activity?",
+      "explanation": "3.7 of 10 mm is 37%, so the time constant is 0.53 s and LFF = 1 ÷ (2π × 0.53) = 1 ÷ 3.33 ≈ 0.3 Hz. A true 0.1-Hz setting would give TC = 1 ÷ (2π × 0.1) ≈ 1.6 s. A higher LFF than labelled attenuates slow waves more, so delta will look smaller than the header suggests. '1.9 Hz' is 1 ÷ 0.53 without 2π; '0.53 Hz' reads the time constant as hertz; 'attenuated less' reverses the effect of raising the LFF.",
+      "learningObjective": "Use the calibration decay to detect an LFF that differs from its label.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 1.9 Hz; slow activity is attenuated more than the label implies",
+        "About 0.53 Hz; slow activity is attenuated more than the label implies",
+        "About 0.3 Hz; slow activity is attenuated more than the label implies",
+        "About 0.3 Hz; slow activity is attenuated less than the label implies"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "frequency",
+        "page-width",
+        "display-speed",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A review screen shows 12 s per page across 240 mm. Over the occipital region, 7 complete cycles of a rhythm span 28 mm. What is its frequency?",
+      "explanation": "Display speed = 240 mm ÷ 12 s = 20 mm/s, so 28 mm = 1.4 s and 7 cycles ÷ 1.4 s = 5.0 Hz. '7.5 Hz' assumes 30 mm/s (28 mm = 0.93 s); '7.0 Hz' counts cycles without dividing by time; '6.0 Hz' assumes a 10-s page (24 mm/s, so 28 mm = 1.17 s).",
+      "learningObjective": "Derive display speed from page width and duration before measuring frequency.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "7.5 Hz",
+        "5.0 Hz",
+        "7.0 Hz",
+        "6.0 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "duration",
+        "spike-vs-sharp",
+        "page-width",
+        "display-speed",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "To inspect a transient in detail, the reader switches to an 8-second page displayed 320 mm wide. The transient measures 2.4 mm at its base. What is its duration, and how is it classified by duration?",
+      "explanation": "Speed = 320 mm ÷ 8 s = 40 mm/s; 2.4 mm ÷ 40 mm/s = 0.06 s = 60 ms, which is under 70 ms, so a spike (20 to under 70 ms; sharp waves 70-200 ms). '80 ms' assumes 30 mm/s (2.4 ÷ 30); '75 ms' assumes a 10-s page (32 mm/s); '600 ms' slips a decimal converting 0.06 s to milliseconds.",
+      "learningObjective": "Classify a transient by duration on an expanded, non-standard page.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "About 80 ms, so a sharp wave",
+        "About 60 ms, so it is a spike",
+        "About 75 ms, so a sharp wave",
+        "About 600 ms, so a slow wave"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "periodic-discharges",
+        "repetition-rate",
+        "page-width",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "A cEEG trend review shows 16 s per page across 320 mm. Lateralized periodic discharges recur every 14 mm. What is their repetition rate?",
+      "explanation": "Speed = 320 ÷ 16 = 20 mm/s, so the interval is 14 ÷ 20 = 0.7 s and the rate is 1 ÷ 0.7 ≈ 1.4 Hz. '2.1 Hz' assumes 30 mm/s (14 mm = 0.47 s); '0.7 Hz' reports the interval in seconds as if it were the rate; '2.3 Hz' assumes a 10-s page (32 mm/s, 14 mm = 0.44 s).",
+      "learningObjective": "Convert a periodic discharge interval measured on a compressed page into a rate.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 1.4 Hz",
+        "About 2.1 Hz",
+        "About 0.7 Hz",
+        "About 2.3 Hz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "sampling-rate",
+        "samples-per-spike",
+        "digital-eeg",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "Two archived files contain the same 40-ms spike: one was sampled at 200 Hz and the other at 1000 Hz. About how many sample points describe the spike in each file?",
+      "explanation": "Samples = duration × rate: 0.040 s × 200/s = 8 and 0.040 s × 1000/s = 40. '80 and 400' treats 40 ms as 0.4 s; '4 and 20' halves the counts as though the Nyquist frequency set the number of samples; '5 and 25' divides the rate by the duration in ms (200 ÷ 40, 1000 ÷ 40) instead of multiplying by it in seconds.",
+      "learningObjective": "Calculate the number of samples within a transient at a given sampling rate.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "About 80 and 400 samples",
+        "About 4 and 20 samples",
+        "About 5 and 25 samples",
+        "About 8 and 40 samples"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "nyquist",
+        "anti-alias-filter",
+        "sampling-rate",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "A protocol requires scalp activity up to 100 Hz to be displayed. The amplifier's anti-aliasing filter is fixed at one-third of the sampling rate. The system offers 200, 256, 400 and 512 Hz. What is the lowest offered rate that meets the requirement?",
+      "explanation": "The anti-aliasing filter must sit at or above 100 Hz: rate ÷ 3 ≥ 100, so rate ≥ 300 Hz, and 400 Hz (filter at about 133 Hz, Nyquist 200 Hz) is the lowest offered rate that qualifies. 200 Hz is exactly twice 100 Hz (the bare Nyquist minimum) but its filter sits at about 67 Hz; 256 Hz has a 128-Hz Nyquist frequency but an 85-Hz filter; 512 Hz works but is not the lowest rate that does.",
+      "learningObjective": "Choose a sampling rate that satisfies Nyquist and the anti-aliasing filter in practice.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "400 Hz",
+        "200 Hz",
+        "256 Hz",
+        "512 Hz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-009",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "10-20",
+        "midline",
+        "measurement",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "The nasion-inion distance is 37 cm. Because of a forehead dressing, the technologist marks Pz by measuring up the midline from the inion. How far above the inion should Pz be marked?",
+      "explanation": "Midline marks sit at 10, 30, 50, 70 and 90% of nasion-inion from the nasion, so Pz is at 70% from the nasion, which is 30% from the inion: 0.30 × 37 = 11.1 cm. '3.7 cm' (10%) is Oz; '7.4 cm' (20%) takes the 20% step from the inion and forgets the first 10% to Oz; '25.9 cm' (70%) is Pz's distance from the nasion applied from the wrong end.",
+      "learningObjective": "Locate a midline electrode measuring from the inion.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 2: Guidelines for Standard Electrode Position Nomenclature (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "3.7 cm",
+        "7.4 cm",
+        "25.9 cm",
+        "11.1 cm"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-010",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "10-20",
+        "coronal",
+        "measurement",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "The preauricular-to-preauricular distance measured over the vertex is 35 cm. How far above the left preauricular point should C3 be marked, and how far apart should C3 and C4 be along this line?",
+      "explanation": "On the coronal line T3 is at 10%, C3 at 30%, Cz at 50%, C4 at 70% and T4 at 90%. C3 = 0.30 × 35 = 10.5 cm; C3 to C4 spans 40% = 14.0 cm. '7.0 cm apart' takes one 20% step (C3-Cz) as the whole C3-C4 distance; '7.0 cm; 21.0 cm' places C3 at 20% from each ear, leaving 60% between them; '3.5 cm; 28.0 cm' puts C3 where T3 belongs (10%).",
+      "learningObjective": "Apply coronal 10-20 percentages to place and check C3 and C4.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 2: Guidelines for Standard Electrode Position Nomenclature (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "10.5 cm; 14.0 cm apart",
+        "10.5 cm; 7.0 cm apart",
+        "7.0 cm; 21.0 cm apart",
+        "3.5 cm; 28.0 cm apart"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-011",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "10-20",
+        "circumference",
+        "measurement",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "Head circumference measured through Fpz, T3, Oz and T4 is 58 cm. Along this line, how far from Oz should O1 be, and how far should O1 be from T5?",
+      "explanation": "On the circumference, O1 and O2 sit 5% either side of Oz (O1-O2 = 10%), and adjacent lateral electrodes (O1-T5, T5-T3, T3-F7, F7-Fp1) are 10% apart. 5% × 58 = 2.9 cm; 10% × 58 = 5.8 cm. '5.8 cm from Oz' uses 10% for the half-step either side of the midline; the 11.6-cm options use 20%, the midline and coronal step size, for the circumference.",
+      "learningObjective": "Apply circumference percentages to the posterior temporal-occipital electrodes.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 2: Guidelines for Standard Electrode Position Nomenclature (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "5.8 cm and 5.8 cm",
+        "2.9 cm and 11.6 cm",
+        "2.9 cm and 5.8 cm",
+        "5.8 cm and 11.6 cm"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-012",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "10-20",
+        "midline",
+        "placement-check",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "The nasion-inion distance is 36 cm. After application, a check of the midline spacings gives Fpz-Fz 7.2 cm, Fz-Cz 5.6 cm, Cz-Pz 8.8 cm and Pz-Oz 7.2 cm. Which electrode is misplaced, and how?",
+      "explanation": "Each midline step should be 20% × 36 = 7.2 cm. Fpz-Fz and Pz-Oz are correct, so Fz and Pz are in place; Fz-Cz is 1.6 cm short and Cz-Pz 1.6 cm long, so Cz sits 1.6 cm toward Fz (forward). Cz too far back would make Fz-Cz long and Cz-Pz short; Fz too far back would also lengthen Fpz-Fz; Pz too far forward would shorten Cz-Pz and lengthen Pz-Oz.",
+      "learningObjective": "Use measured interelectrode spacings to find a misplaced midline electrode.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 2: Guidelines for Standard Electrode Position Nomenclature (Acharya et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Cz, about 1.6 cm too far back",
+        "Cz, about 1.6 cm too far forward",
+        "Fz, about 1.6 cm too far back",
+        "Pz, about 1.6 cm too far forward"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "calibration",
+        "percent-error",
+        "gain",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "questionType": "calculation",
+      "reasoningSteps": 2,
+      "stem": "Before an electrocerebral inactivity study, a 50-µV calibration signal is applied at 2 µV/mm. The lab's tolerance is ±10% of the expected deflection. One channel deflects 21.5 mm. How far off is its gain, and does it pass?",
+      "explanation": "Expected deflection = 50 ÷ 2 = 25 mm. Error = (25 - 21.5) ÷ 25 = 3.5 ÷ 25 = 14%, and a smaller deflection than expected means low gain, which is outside ±10%. '16%' divides by the measured 21.5 mm instead of the expected 25 mm; '3.5%' reports the millimetre shortfall as a percentage; '14% high' reverses the direction (a channel that draws less than expected is under-amplifying).",
+      "learningObjective": "Calculate calibration percentage error against the expected deflection.",
+      "references": [
+        {
+          "citation": "ACNS Guideline 1: Minimum Technical Requirements for Performing Clinical Electroencephalography (Sinha et al., J Clin Neurophysiol 2016)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Gain about 16% low; fails the 10% limit",
+        "Gain about 3.5% low; passes the 10% limit",
+        "Gain about 14% low; fails the 10% limit",
+        "Gain about 14% high; fails the 10% limit"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "sensitivity",
+        "amplitude-asymmetry",
+        "per-channel-settings",
+        "calculation",
+        "calc-core",
+        "targeted"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "questionType": "calculation",
+      "reasoningSteps": 3,
+      "stem": "Reviewing a cEEG, you notice the posterior rhythm looks much taller on the right. O1-A1 is set at 10 µV/mm and deflects 6 mm; O2-A2 was changed by a previous reader to 3 µV/mm and deflects 15 mm. Taking the larger side as 100%, which side is truly higher and by how much is the other side lower?",
+      "explanation": "Amplitude = sensitivity × deflection: left 10 × 6 = 60 µV, right 3 × 15 = 45 µV. The right is (60 - 45) ÷ 60 = 25% lower. '33%' divides the difference by the smaller side (15 ÷ 45); '60% lower' compares the raw deflections (6 vs 15 mm) and ignores the different sensitivities; '88% lower' divides deflection by sensitivity (0.6 vs 5) instead of multiplying.",
+      "learningObjective": "Compare amplitudes displayed at different per-channel sensitivities.",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left is higher; the right is about 33% lower",
+        "Right is higher; the left is about 60% lower",
+        "Left is higher; the right is about 25% lower",
+        "Right is higher; the left is about 88% lower"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-015",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-2021",
+        "electrographic-seizure",
+        "spike-and-wave",
+        "targeted"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 2,
+      "stem": "In a comatose patient, generalized spike-and-wave complexes occur 14 times in every 5-s span, and the run lasts 12 s with no change in frequency, location or morphology. There are no clinical signs. Under ACNS 2021, how should the run be classified?",
+      "explanation": "14 ÷ 5 s = 2.8 Hz, which averages above 2.5 Hz, and the run lasts 12 s (at least 10 s), so it meets the ACNS 2021 electrographic seizure criterion without needing evolution (evolution is an alternative route for slower patterns). The IIC applies only to patterns that do not qualify as seizures (PDs/SW 1-2.5 Hz); BIRDs last under 10 s and require rhythmic activity above 4 Hz; a clinical correlate is not required for an electrographic seizure.",
+      "learningObjective": "Apply the >2.5 Hz for ≥10 s electrographic seizure criterion.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "An ictal-interictal pattern, as it does not evolve",
+        "Brief potentially ictal rhythmic discharges (BIRDs)",
+        "Interictal discharges, as there is no clinical sign",
+        "An electrographic seizure, by its rate and duration"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-016",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-2021",
+        "birds",
+        "evolution",
+        "targeted"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 3,
+      "stem": "Four flagged events from an ICU cEEG after subarachnoid hemorrhage are reviewed; none has a clinical correlate. Under ACNS 2021, which one is a definite BIRD (brief potentially ictal rhythmic discharge)?",
+      "explanation": "BIRDs are focal or generalized rhythmic activity above 4 Hz lasting at least 0.5 s and under 10 s, not part of burst-suppression or burst-attenuation, without a definite clinical correlate; evolution makes them definite BIRDs. The 7-s evolving 6-Hz run fits. A 1.5-Hz run is rhythmic delta, not above 4 Hz; an evolving run lasting 14 s (at least 10 s) is an electrographic seizure; activity confined to the bursts of burst-suppression is excluded from the BIRD definition.",
+      "learningObjective": "Apply the frequency, duration and context limits of ACNS 2021 BIRDs.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "A 7-s focal 1.5-Hz run that evolves in frequency and location, on a continuous background",
+        "A 7-s focal 6-Hz run that evolves in frequency and location, on a continuous background",
+        "A 14-s focal 6-Hz run that evolves in frequency and location, on a continuous background",
+        "A 7-s focal 6-Hz run that evolves in frequency and location, within burst-suppression bursts"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-017",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-2021",
+        "iic",
+        "lrda",
+        "plus-modifier",
+        "targeted"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "questionType": "pattern-recognition",
+      "reasoningSteps": 3,
+      "stem": "A patient with a left temporal hemorrhage has runs of left temporal rhythmic delta at about 1.5 Hz with frequent superimposed sharp waves. The runs last 20-40 s without evolution, and there are no clinical signs. Under ACNS 2021, how is this best classified?",
+      "explanation": "ACNS 2021 places LRDA averaging above 1 Hz with a plus modifier (here +S, superimposed sharp waves) or fluctuation in the ictal-interictal continuum, provided it does not meet seizure criteria. 1.5 Hz is not above 2.5 Hz and the runs do not evolve, so they are not seizures despite lasting over 10 s. The IIC includes LRDA, not only periodic discharges; BIRDs require rhythmic activity above 4 Hz lasting under 10 s.",
+      "learningObjective": "Recognise LRDA with a plus modifier as an IIC pattern.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "LRDA+S, which meets electrographic seizure criteria",
+        "LRDA+S, interictal only, as IIC needs periodic discharges",
+        "LRDA+S, which falls within the ictal-interictal continuum",
+        "Possible BIRDs, as the runs are sharply contoured and brief"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-018",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-2021",
+        "electrographic-status-epilepticus",
+        "seizure-burden",
+        "targeted"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "An ICU cEEG shows nonconvulsive seizures at 09:38-09:41, 09:47-09:50, 09:55-09:58, 10:04-10:07 and 10:15-10:17, with none elsewhere between 08:00 and 12:00, and no clinical signs. The night reader asks whether this meets electrographic status epilepticus. What is the correct answer?",
+      "explanation": "ACNS 2021 ESE is an electrographic seizure lasting at least 10 continuous minutes or totalling at least 20% (12 min) of any 60-minute period. Durations are 3 + 3 + 3 + 3 + 2 = 14 min, all between 09:38 and 10:17, so a window such as 09:30-10:30 contains 14 min (23%): ESE. Splitting by clock hour (9 min, then 5 min) misses the 'any 60-minute period' wording; the 10-continuous-minute route is an alternative, not a requirement; ESE is defined by seizure burden, not by a count of seizures.",
+      "learningObjective": "Apply the 20%-of-any-hour ESE criterion across clock-hour boundaries.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Yes: 14 min of seizures fall within one 60-min window, over 20%",
+        "No: neither clock hour holds 12 min or more of seizure activity",
+        "No: none of the seizures lasts 10 continuous minutes or longer",
+        "Yes: five or more seizures in any 60 minutes define the status"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-019",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-2021",
+        "electroclinical-seizure",
+        "lpds",
+        "time-locked-correlate",
+        "targeted"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "Right-hemisphere LPDs occur 12 times per 10-s page without evolution and have persisted for 30 minutes. The nurse reports subtle left facial twitching, and video review shows each twitch is time-locked to a discharge. Under ACNS 2021, how is this best classified?",
+      "explanation": "12 discharges per 10 s is 1.2 Hz, which alone would sit in the IIC. However, ACNS 2021 defines an electroclinical seizure as any EEG pattern with a definite clinical correlate time-locked to it, of any duration, and electroclinical status epilepticus as electroclinical seizures lasting at least 10 continuous minutes or 20% of any hour; 30 minutes of time-locked twitching qualifies. The rate-based IIC and 'below 2.5 Hz' answers ignore the time-locked correlate; 'electrographic only' discards the clinical sign that defines the electroclinical category.",
+      "learningObjective": "Recognise that a time-locked clinical correlate makes slow LPDs an electroclinical seizure.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Ictal-interictal continuum, as the LPD rate is between 1 and 2.5 Hz",
+        "LPDs without seizures, as the rate stays below the 2.5-Hz threshold",
+        "Electrographic seizure only, as twitching does not change the term",
+        "Electroclinical status epilepticus, given the time-locked twitches"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-tga-020",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "acns-2021",
+        "triphasic-morphology",
+        "gpds",
+        "iic",
+        "targeted"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "questionType": "clinical-integration",
+      "reasoningSteps": 3,
+      "stem": "A patient with uremic encephalopathy has GPDs of triphasic morphology, 8 per 10-s page, for most of a 3-hour recording. There is no evolution, no fluctuation, no +F or +R modifier and no clinical correlate. The resident asks whether this is an ictal-interictal continuum pattern. What is the correct answer?",
+      "explanation": "8 ÷ 10 s = 0.8 Hz. ACNS 2021 places PDs in the IIC when they average above 1 Hz and up to 2.5 Hz, or 0.5-1 Hz with a plus modifier or fluctuation. Triphasic morphology is a minor (morphology) modifier, not a plus modifier, so 0.8-Hz GPDs without a plus modifier (+F or +R; +S applies only to rhythmic delta) or fluctuation are not IIC. Duration does not lower the frequency threshold, and periodic discharges below 2.5 Hz without evolution or a clinical correlate do not constitute ESE however long they last.",
+      "learningObjective": "Distinguish triphasic morphology from plus modifiers when applying IIC thresholds.",
+      "references": [
+        {
+          "citation": "ACNS Standardized Critical Care EEG Terminology: 2021 Version (Hirsch et al., J Clin Neurophysiol 2021)",
+          "note": "Verify section before publication"
+        }
+      ],
+      "difficulty": "hard",
+      "options": [
+        "Yes: triphasic morphology counts as a plus modifier for GPDs at 0.8 Hz",
+        "No: GPDs at 0.8 Hz with triphasic morphology alone fall short of the IIC",
+        "Yes: GPDs persisting for over an hour qualify as IIC at any frequency",
+        "No: they meet electrographic status, persisting for over 10 minutes"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea challenge targeted set A (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

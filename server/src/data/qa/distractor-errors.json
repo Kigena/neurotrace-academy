@@ -2253,6 +2253,201 @@
     "ch-pilot-050": {
       "Correct the header to the requisition and document the change": "DOCUMENTATION",
       "Release it, documenting that the record number matched the order": "PRIVACY"
+    },
+    "ch-tga-001": {
+      "About 5 Hz": "TC_NO_2PI",
+      "About 0.2 Hz": "TC_UNITS",
+      "About 0.08 Hz": "DECIMAL_SLIP"
+    },
+    "ch-tga-002": {
+      "About 6.3 mm, about 0.53 s after the step": "TC_37_63",
+      "About 3.7 mm, about 3.3 s after the step": "TC_NO_2PI",
+      "About 3.7 mm, about 0.30 s after the step": "TC_UNITS"
+    },
+    "ch-tga-003": {
+      "About 1.9 Hz; slow activity is attenuated more than the label implies": "TC_NO_2PI",
+      "About 0.53 Hz; slow activity is attenuated more than the label implies": "TC_UNITS",
+      "About 0.3 Hz; slow activity is attenuated less than the label implies": "FILTER_DIRECTION"
+    },
+    "ch-tga-004": {
+      "7.5 Hz": "PAGE_SPEED_ASSUMED",
+      "7.0 Hz": "WAVES_NOT_PER_SECOND",
+      "6.0 Hz": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-tga-005": {
+      "About 80 ms, so a sharp wave": "PAGE_SPEED_ASSUMED",
+      "About 75 ms, so a sharp wave": "PAGE_SPEED_ASSUMED",
+      "About 600 ms, so a slow wave": "DECIMAL_SLIP"
+    },
+    "ch-tga-006": {
+      "About 2.1 Hz": "PAGE_SPEED_ASSUMED",
+      "About 2.3 Hz": "PAGE_SPEED_ASSUMED"
+    },
+    "ch-tga-007": {
+      "About 80 and 400 samples": "DECIMAL_SLIP",
+      "About 4 and 20 samples": "NYQUIST"
+    },
+    "ch-tga-008": {
+      "200 Hz": "NYQUIST",
+      "256 Hz": "NYQUIST"
+    },
+    "ch-tga-009": {
+      "3.7 cm": "TENTWENTY_MEASURE",
+      "7.4 cm": "TENTWENTY_MEASURE",
+      "25.9 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-tga-010": {
+      "10.5 cm; 7.0 cm apart": "TENTWENTY_MEASURE",
+      "7.0 cm; 21.0 cm apart": "TENTWENTY_MEASURE",
+      "3.5 cm; 28.0 cm apart": "TENTWENTY_MEASURE"
+    },
+    "ch-tga-011": {
+      "5.8 cm and 5.8 cm": "TENTWENTY_MEASURE",
+      "2.9 cm and 11.6 cm": "TENTWENTY_MEASURE",
+      "5.8 cm and 11.6 cm": "TENTWENTY_MEASURE"
+    },
+    "ch-tga-012": {
+      "Cz, about 1.6 cm too far back": "TENTWENTY_MEASURE",
+      "Fz, about 1.6 cm too far back": "TENTWENTY_MEASURE",
+      "Pz, about 1.6 cm too far forward": "TENTWENTY_MEASURE"
+    },
+    "ch-tga-013": {
+      "Gain about 16% low; fails the 10% limit": "PERCENT_BASE",
+      "Gain about 14% high; fails the 10% limit": "SENS_DIRECTION"
+    },
+    "ch-tga-014": {
+      "Left is higher; the right is about 33% lower": "PERCENT_BASE",
+      "Right is higher; the left is about 88% lower": "SENS_ARITHMETIC"
+    },
+    "ch-tga-015": {
+      "An ictal-interictal pattern, as it does not evolve": "ACNS_CRITERIA",
+      "Brief potentially ictal rhythmic discharges (BIRDs)": "ACNS_CRITERIA",
+      "Interictal discharges, as there is no clinical sign": "ACNS_CRITERIA"
+    },
+    "ch-tga-016": {
+      "A 7-s focal 1.5-Hz run that evolves in frequency and location, on a continuous background": "ACNS_CRITERIA",
+      "A 14-s focal 6-Hz run that evolves in frequency and location, on a continuous background": "ACNS_CRITERIA",
+      "A 7-s focal 6-Hz run that evolves in frequency and location, within burst-suppression bursts": "ACNS_CRITERIA"
+    },
+    "ch-tga-017": {
+      "LRDA+S, which meets electrographic seizure criteria": "ACNS_CRITERIA",
+      "LRDA+S, interictal only, as IIC needs periodic discharges": "ACNS_CRITERIA",
+      "Possible BIRDs, as the runs are sharply contoured and brief": "ACNS_CRITERIA"
+    },
+    "ch-tga-018": {
+      "No: neither clock hour holds 12 min or more of seizure activity": "ACNS_CRITERIA",
+      "No: none of the seizures lasts 10 continuous minutes or longer": "ACNS_CRITERIA",
+      "Yes: five or more seizures in any 60 minutes define the status": "ACNS_CRITERIA"
+    },
+    "ch-tga-019": {
+      "Ictal-interictal continuum, as the LPD rate is between 1 and 2.5 Hz": "ACNS_CRITERIA",
+      "LPDs without seizures, as the rate stays below the 2.5-Hz threshold": "ACNS_CRITERIA",
+      "Electrographic seizure only, as twitching does not change the term": "ACNS_CRITERIA"
+    },
+    "ch-tga-020": {
+      "Yes: triphasic morphology counts as a plus modifier for GPDs at 0.8 Hz": "ACNS_CRITERIA",
+      "Yes: GPDs persisting for over an hour qualify as IIC at any frequency": "ACNS_CRITERIA",
+      "No: they meet electrographic status, persisting for over 10 minutes": "ACNS_CRITERIA"
+    },
+    "ch-tgb-001": {
+      "F4-C4 60 µV up and C4-P4 75 µV down": "POLARITY_SIGN",
+      "F4-C4 130 µV up and C4-P4 115 µV up": "BIPOLAR_ADDING",
+      "F4-C4 60 µV down and C4-P4 75 µV down": "POLARITY_SIGN"
+    },
+    "ch-tgb-002": {
+      "+30 µV": "POLARITY_SIGN",
+      "−30 µV": "POLARITY_SIGN",
+      "+60 µV": "POLARITY_SIGN"
+    },
+    "ch-tgb-003": {
+      "A surface-negative maximum at F3": "PHASE_REVERSAL_READ",
+      "A surface-negative maximum at Fz": "LOCALIZATION",
+      "A surface-negative maximum at F7": "END_OF_CHAIN"
+    },
+    "ch-tgb-004": {
+      "A downward deflection in both channels": "POLARITY_SIGN",
+      "Upward in Fp1-F3 and downward in Fp2-F4": "ARTIFACT_TYPE",
+      "Little change, since only F7 and F8 sense gaze": "ARTIFACT_TYPE"
+    },
+    "ch-tgb-005": {
+      "F7-A1 deflects up and F8-A2 deflects down": "POLARITY_SIGN",
+      "Both deflect down, larger in the F7-A1 channel": "ARTIFACT_TYPE",
+      "Both deflect up, larger in the F8-A2 channel": "ARTIFACT_TYPE"
+    },
+    "ch-tgb-006": {
+      "−50 µV": "REFERENCE_CONTAMINATION",
+      "−25 µV": "POLARITY_SIGN",
+      "+75 µV": "POLARITY_SIGN"
+    },
+    "ch-tgb-007": {
+      "All four down, largest in Fp2-F4: end-of-chain positive maximum at Fp2": "POLARITY_SIGN",
+      "All four up, largest in P4-O2: end-of-chain negative maximum at O2": "LOCALIZATION",
+      "Fp2-F4 up, F4-C4 down: phase reversal with a negative maximum at F4": "PHASE_REVERSAL_READ"
+    },
+    "ch-tgb-008": {
+      "Upward in F7-F3, downward in F4-F8, small in between": "POLARITY_SIGN",
+      "Downward in all four channels, largest in F7-F3 and F4-F8": "POLARITY_SIGN",
+      "A phase reversal at Fz, largest in F3-Fz and Fz-F4": "PHASE_REVERSAL_READ"
+    },
+    "ch-tgb-009": {
+      "F8 190 µV up, C4 20 µV up, O2 flat": "REFERENCE_CONTAMINATION",
+      "F8 170 µV up, C4 flat, O2 20 µV up": "POLARITY_SIGN",
+      "F8 210 µV up, C4 40 µV up, O2 20 µV up": "BIPOLAR_ADDING"
+    },
+    "ch-tgb-010": {
+      "T5-T3 55 µV up, T3-F7 60 µV down: a negative maximum at T3": "POLARITY_SIGN",
+      "T5-T3 55 µV down, T3-F7 60 µV up: a positive maximum at T3": "PHASE_REVERSAL_READ",
+      "T5-T3 145 µV up, T3-F7 140 µV up: a negative maximum at T3": "BIPOLAR_ADDING"
+    },
+    "ch-tgb-011": {
+      "Slow lateral eye movements; at this peak the eyes are turned to the right": "POLARITY_SIGN",
+      "Bifrontal rhythmic slowing with a broad field maximal at F7 and F8": "ARTIFACT_AS_CEREBRAL",
+      "Slow vertical eye movements, as Fp1 and Fp2 change with every wave": "ARTIFACT_TYPE"
+    },
+    "ch-tgb-012": {
+      "Reference to the linked ears, A1 plus A2": "REFERENCE_CONTAMINATION",
+      "Reference to the vertex midline electrode, Cz": "REFERENCE_CONTAMINATION",
+      "Reference to A1, at double the sensitivity": "MASKING_A_FAULT"
+    },
+    "ch-tgb-013": {
+      "About 90 µV up, inherited from the average; recheck in a bipolar chain": "POLARITY_SIGN",
+      "About 90 µV down, from a posterior positive generator; add an occipital chain": "REFERENCE_CONTAMINATION",
+      "Flat, since O1 and O2 are at 0 µV; the trainee is misreading the page": "REFERENCE_CONTAMINATION"
+    },
+    "ch-tgb-014": {
+      "GPDs; any discharge seen over both hemispheres at once counts as generalized": "ACNS_CRITERIA",
+      "Left LPDs plus 40-µV right positive PDs that need their own annotation": "REFERENCE_CONTAMINATION",
+      "Left LPDs; the right-sided deflections reflect volume conduction across the head": "REFERENCE_CONTAMINATION"
+    },
+    "ch-tgb-015": {
+      "Give quick abdominal thrusts with the infant upright on your lap": "EMERGENCY_STEP",
+      "Sweep a finger through the mouth to hook out the biscuit piece": "EMERGENCY_STEP",
+      "Sit her upright and let her keep coughing while you watch closely": "EMERGENCY_STEP"
+    },
+    "ch-tgb-016": {
+      "Keep giving back blows and chest thrusts until the team arrives": "EMERGENCY_STEP",
+      "Finger-sweep the back of the throat, then give 2 rescue breaths": "EMERGENCY_STEP",
+      "Give 2 breaths, then feel the brachial pulse for a full 30 seconds": "EMERGENCY_STEP"
+    },
+    "ch-tgb-017": {
+      "Take off the scalp electrodes first so current cannot arc through them, then pad up": "PRIORITY_ORDER",
+      "Dry the chest and place the right pad over the patch so no time is lost peeling it": "EMERGENCY_STEP",
+      "Put the pads on the wet chest at once, since drying delays the first shock": "EMERGENCY_STEP"
+    },
+    "ch-tgb-018": {
+      "Reseat the oximeter probe and recheck the reading over the next 5 minutes": "UNDER_ESCALATION",
+      "Mark the event on the record and tell the nurse when the study is complete": "UNDER_ESCALATION",
+      "Start bag-mask rescue breaths at once, as the saturation is below 90%": "EMERGENCY_STEP"
+    },
+    "ch-tgb-019": {
+      "She stays confused and drowsy for 10 minutes after the jerking": "EMERGENCY_STEP",
+      "She has wet herself and has a small bite mark on her tongue": "EMERGENCY_STEP",
+      "She snores, with pink colour and a steady pulse, as it ends": "EMERGENCY_STEP"
+    },
+    "ch-tgb-020": {
+      "Get him onto his side and leave the denture, as nothing goes in the mouth": "EMERGENCY_STEP",
+      "Keep him seated, tilt his head back and lift the chin to quiet the gurgling": "EMERGENCY_STEP",
+      "Lay him flat on his back and give rescue breaths, as gurgling means apnea": "EMERGENCY_STEP"
     }
   }
 }
