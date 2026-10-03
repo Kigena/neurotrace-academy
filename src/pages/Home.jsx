@@ -4,18 +4,16 @@ import { useAuth } from "../contexts/AuthContext";
 import apiService from "../services/apiService";
 import { loadCaseProgressMap } from "../services/caseProgressApi";
 import casesData from "../data/cases.json";
+import CaseOfTheDay from "../components/CaseOfTheDay.jsx";
 import patternsData from "../data/neurotrace_patterns_library_v2.json";
 import syndromesData from "../data/syndromes_v2.json";
 
 function Home() {
   const { user } = useAuth();
-  const [caseOfTheWeek, setCaseOfTheWeek] = useState(null);
+  const [communityCase, setCommunityCase] = useState(null);
   const [loadingCase, setLoadingCase] = useState(true);
   const [communityCasesCount, setCommunityCasesCount] = useState(0);
   const [caseProgressMap, setCaseProgressMap] = useState({});
-  const weeklyCaseProgress = caseOfTheWeek
-    ? caseProgressMap[caseOfTheWeek.isStatic ? caseOfTheWeek.id : caseOfTheWeek._id]
-    : null;
 
   useEffect(() => {
     let cancelled = false;
@@ -27,24 +25,14 @@ function Home() {
     };
   }, []);
 
-  // Get featured community case of the week
+  // Featured community case (optional; the daily case comes from the starter pool)
   useEffect(() => {
-    // Weekly rotation through the starter cases when no community case is featured
-    const applyStarterCase = () => {
-      if (casesData.starterCases && casesData.starterCases.length > 0) {
-        const weekNumber = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
-        const caseIndex = weekNumber % casesData.starterCases.length;
-        setCaseOfTheWeek({ ...casesData.starterCases[caseIndex], isStatic: true });
-      }
-    };
     const fetchFeaturedCase = async () => {
       try {
         const response = await apiService.get('/cases/featured');
-        if (response && response._id) setCaseOfTheWeek(response);
-        else applyStarterCase();
+        if (response && response._id) setCommunityCase(response);
       } catch (error) {
         console.error('Failed to fetch featured case:', error);
-        applyStarterCase();
       } finally {
         setLoadingCase(false);
       }
@@ -157,150 +145,23 @@ function Home() {
         </div>
       </div>
 
-      {/* Case of the Week */}
-      {!loadingCase && caseOfTheWeek && (
-        <div className="bg-white rounded-2xl p-8 border-2 border-indigo-200 shadow-lg">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="px-4 py-1.5 bg-indigo-600 text-white rounded-full text-sm font-bold">
-              ⭐ CASE OF THE WEEK
+      {/* Case of the Day */}
+      <CaseOfTheDay cases={casesData.starterCases || []} progressMap={caseProgressMap} />
+
+      {/* Featured community case (shown alongside, never instead of, the daily case) */}
+      {!loadingCase && communityCase && (
+        <Link
+          to={`/cases/${communityCase._id}`}
+          className="flex flex-col gap-1 rounded-xl border border-slate-200 bg-white p-5 hover:border-indigo-300 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-wide text-indigo-600">
+              From our community{communityCase.author?.name ? ` · by ${communityCase.author.name}` : ""}
             </div>
-            <div className="text-xs text-slate-500 font-medium">
-              {caseOfTheWeek.isStatic ? 'Updated Weekly' : 'From Our Community'}
-            </div>
-            {caseOfTheWeek.author && (
-              <div className="text-xs text-slate-500">
-                by <span className="font-semibold">{caseOfTheWeek.author.name}</span>
-              </div>
-            )}
-            {weeklyCaseProgress && (
-              <div className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
-                ✓ Completed
-                {weeklyCaseProgress.lastTotal > 0 && ` · ${weeklyCaseProgress.lastCorrect}/${weeklyCaseProgress.lastTotal}`}
-              </div>
-            )}
+            <div className="font-semibold text-slate-900">{communityCase.title}</div>
           </div>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-            {caseOfTheWeek.title}
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="space-y-3">
-              {/* Patient Info - handle both community and static cases */}
-              {(caseOfTheWeek.patientInfo || caseOfTheWeek.patient) && (
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    👤
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-500">Patient</div>
-                    <div className="font-semibold text-slate-900">
-                      {caseOfTheWeek.isStatic ? (
-                        <>
-                          {caseOfTheWeek.patient.ageYears < 1
-                            ? `${Math.round(caseOfTheWeek.patient.ageYears * 12)} months`
-                            : `${caseOfTheWeek.patient.ageYears} years`}, {caseOfTheWeek.patient.context}
-                        </>
-                      ) : (
-                        <>
-                          {caseOfTheWeek.patientInfo?.age && (
-                            <>{caseOfTheWeek.patientInfo.age} {caseOfTheWeek.patientInfo.ageUnit}</>
-                          )}
-                          {caseOfTheWeek.patientInfo?.gender && `, ${caseOfTheWeek.patientInfo.gender}`}
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* History/Chief Complaint */}
-              {(caseOfTheWeek.history || caseOfTheWeek.chiefComplaint) && (
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    🔍
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-500">
-                      {caseOfTheWeek.isStatic ? 'Chief Complaint' : 'Clinical History'}
-                    </div>
-                    <div className="font-semibold text-slate-900 line-clamp-2">
-                      {caseOfTheWeek.isStatic ? caseOfTheWeek.chiefComplaint : caseOfTheWeek.history}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Views or Difficulty */}
-              {caseOfTheWeek.isStatic && caseOfTheWeek.difficulty && (
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    📊
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-500">Difficulty</div>
-                    <div className="font-semibold capitalize text-slate-900">{caseOfTheWeek.difficulty}</div>
-                  </div>
-                </div>
-              )}
-
-              {!caseOfTheWeek.isStatic && (
-                <div className="flex items-center gap-3 text-sm">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    👁️
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-500">Engagement</div>
-                    <div className="font-semibold text-slate-900">
-                      {caseOfTheWeek.views || 0} views • {caseOfTheWeek.likes?.length || 0} likes
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-              <div className="text-xs font-semibold text-indigo-600 mb-2">
-                {caseOfTheWeek.isStatic ? 'LEARNING OBJECTIVES' : 'WHAT YOU\'LL LEARN'}
-              </div>
-              <ul className="space-y-1.5 text-sm text-slate-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-indigo-500 mt-0.5">✓</span>
-                  <span>Identify EEG patterns accurately</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-indigo-500 mt-0.5">✓</span>
-                  <span>Recognize technical artifacts</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-indigo-500 mt-0.5">✓</span>
-                  <span>Apply proper documentation</span>
-                </li>
-              </ul>
-              {!caseOfTheWeek.isStatic && caseOfTheWeek.tags && caseOfTheWeek.tags.length > 0 && (
-                <div className="mt-3 pt-3 border-t border-slate-200">
-                  <div className="flex flex-wrap gap-1.5">
-                    {caseOfTheWeek.tags.slice(0, 3).map((tag, idx) => (
-                      <span key={idx} className="text-xs px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          <Link
-            to={`/cases/${caseOfTheWeek.isStatic ? caseOfTheWeek.id : caseOfTheWeek._id}`}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-bold hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-          >
-            <span className="text-white">Study This Case</span>
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
-        </div>
+          <span className="text-sm font-semibold text-indigo-600">Open case →</span>
+        </Link>
       )}
 
       {/* Featured Patterns */}

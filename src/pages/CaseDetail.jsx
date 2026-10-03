@@ -16,7 +16,17 @@ import caseProgressApi, { loadCaseProgressMap } from "../services/caseProgressAp
 
 // --- Components ---
 
-const StaticCaseView = ({ eegCase, onComplete }) => {
+const CONTEXT_LABEL = { icu: "ICU", ed: "ED", nicu: "NICU", emu: "EMU" };
+
+const StaticCaseView = ({ eegCase, onComplete, completed }) => {
+  // The EEG summary names the findings the steps ask about, so it stays
+  // hidden until the case has been worked through once.
+  const [finished, setFinished] = useState(false);
+  const showSummary = completed || finished;
+  const handleComplete = (result) => {
+    setFinished(true);
+    return onComplete?.(result);
+  };
   const getAgeDisplay = () => {
     if (eegCase.patient.ageYears < 1) {
       const months = Math.round(eegCase.patient.ageYears * 12);
@@ -47,7 +57,7 @@ const StaticCaseView = ({ eegCase, onComplete }) => {
         <h2 className="text-sm font-semibold text-slate-900 mb-3">Patient Information</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
           <div><span className="font-semibold">Age:</span> {getAgeDisplay()}</div>
-          <div><span className="font-semibold">Context:</span> {eegCase.patient.context}</div>
+          <div><span className="font-semibold">Context:</span> {CONTEXT_LABEL[eegCase.patient.context] || eegCase.patient.context}</div>
           <div className="sm:col-span-2"><span className="font-semibold">Chief Complaint:</span> {eegCase.chiefComplaint}</div>
         </div>
       </div>
@@ -58,14 +68,30 @@ const StaticCaseView = ({ eegCase, onComplete }) => {
           <h2 className="text-sm font-semibold text-slate-900 mb-3">History</h2>
           <div className="space-y-2 text-sm text-slate-700">
             <p><span className="font-semibold">Event Description:</span> {eegCase.history.eventDescription}</p>
-            {eegCase.history.medications && <p><span className="font-semibold">Medications:</span> {eegCase.history.medications.join(", ")}</p>}
-            {eegCase.history.comorbidities && <p><span className="font-semibold">Comorbidities:</span> {eegCase.history.comorbidities.join(", ")}</p>}
+            {eegCase.history.medications?.length > 0 && <p><span className="font-semibold">Medications:</span> {eegCase.history.medications.join(", ")}</p>}
+            {eegCase.history.comorbidities?.length > 0 && <p><span className="font-semibold">Comorbidities:</span> {eegCase.history.comorbidities.join(", ")}</p>}
           </div>
         </div>
       )}
 
-      {/* EEG Summary */}
-      {eegCase.eegSummary && (
+      {Array.isArray(eegCase.objectives) && eegCase.objectives.length > 0 && (
+        <div className="rounded-lg border border-indigo-100 bg-indigo-50/60 p-4">
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-indigo-700 mb-2">Learning objectives</h2>
+          <ul className="space-y-1 text-sm text-slate-700">
+            {eegCase.objectives.map((o) => (
+              <li key={o} className="flex gap-2"><span className="text-indigo-500">✓</span>{o}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* EEG Summary (revealed after the steps) */}
+      {eegCase.eegSummary && !showSummary && (
+        <div className="rounded-lg border border-dashed border-slate-300 bg-slate-50 p-4 text-sm text-slate-500">
+          <span className="font-semibold text-slate-700">EEG summary</span> unlocks when you finish the steps, so it does not give away the answers.
+        </div>
+      )}
+      {eegCase.eegSummary && showSummary && (
         <div className="rounded-lg border border-slate-200 bg-white p-4">
           <h2 className="text-sm font-semibold text-slate-900 mb-3">EEG Summary</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
@@ -77,7 +103,7 @@ const StaticCaseView = ({ eegCase, onComplete }) => {
 
       {/* Interactive Runner */}
       {eegCase.taskFlow && eegCase.taskFlow.length > 0 && (
-        <CaseRunner caseData={eegCase} onComplete={onComplete} />
+        <CaseRunner caseData={eegCase} onComplete={handleComplete} />
       )}
 
       {/* Tags */}
@@ -362,7 +388,7 @@ function CaseDetail() {
         <CaseCompletionBanner progress={progress} />
 
         {caseType === 'static' ? (
-          <StaticCaseView eegCase={eegCase} onComplete={recordCompletion} />
+          <StaticCaseView eegCase={eegCase} onComplete={recordCompletion} completed={!!progress} />
         ) : (
           <CommunityCaseView eegCase={eegCase} setEegCase={setEegCase} onComplete={recordCompletion} completed={!!progress} />
         )}
