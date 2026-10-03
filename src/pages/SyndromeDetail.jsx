@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import syndromesV2Data from "../data/syndromes_v2.json";
 import syndromesData from "../data/syndromes.json";
 import patternsV2Data from "../data/neurotrace_patterns_library_v2.json";
 import ContextualAI from "../components/ContextualAI.jsx";
+import apiService from "../services/apiService";
 
 function SyndromeDetail() {
   const { id } = useParams();
+  const known = syndromesV2Data.some((s) => s.id === id) || syndromesData.some((s) => s.id === id);
+
+  // Counts toward the Syndrome Scholar badge (first view of each syndrome).
+  useEffect(() => {
+    if (id && known) apiService.post("/gamification/studied", { kind: "syndrome", id }).catch(() => {});
+  }, [id, known]);
 
   // Try v2 first, then fall back to v1
   let syndrome = syndromesV2Data.find((s) => s.id === id);

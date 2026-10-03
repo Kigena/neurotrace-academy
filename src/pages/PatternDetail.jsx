@@ -5,9 +5,15 @@ import patternsData from "../data/patterns.json";
 import workflowData from "../data/workflow-domains.json";
 import { getPatternQuizTags } from "../utils/patternQuizTags";
 import ContextualAI from "../components/ContextualAI.jsx";
+import apiService from "../services/apiService";
 
 function PatternDetail() {
   const { id } = useParams();
+
+  // Counts toward the Pattern Explorer badge (first view of each pattern).
+  useEffect(() => {
+    if (id) apiService.post("/gamification/studied", { kind: "pattern", id }).catch(() => {});
+  }, [id]);
 
   // Clean up any lingering backdrop and drawer elements on mount
   useEffect(() => {

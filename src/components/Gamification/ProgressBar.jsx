@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Level and XP Progress Bar Component
  */
-const ProgressBar = ({ level, xp, xpToNextLevel, showDetails = true }) => {
+const ProgressBar = ({ level, xp, xpToNextLevel, showDetails = true, onDark = false }) => {
     const progress = (xp / xpToNextLevel) * 100;
     
     // Level tier colors
@@ -30,11 +30,11 @@ const ProgressBar = ({ level, xp, xpToNextLevel, showDetails = true }) => {
                         <div className={`px-3 py-1 rounded-full bg-gradient-to-r ${getLevelColor(level)} text-white font-bold text-sm`}>
                             Level {level}
                         </div>
-                        <span className="text-sm text-slate-600 font-medium">
+                        <span className={`text-sm font-medium ${onDark ? "text-indigo-100" : "text-slate-600"}`}>
                             {getLevelTitle(level)}
                         </span>
                     </div>
-                    <span className="text-xs text-slate-500 font-medium">
+                    <span className={`text-xs font-medium ${onDark ? "text-indigo-200" : "text-slate-500"}`}>
                         {xp} / {xpToNextLevel} XP
                     </span>
                 </div>

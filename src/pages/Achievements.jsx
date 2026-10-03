@@ -77,6 +77,7 @@ const Achievements = () => {
                                 xp={progress.xp}
                                 xpToNextLevel={progress.xpToNextLevel}
                                 showDetails={true}
+                                onDark
                             />
                         </div>
 

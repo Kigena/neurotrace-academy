@@ -68,6 +68,12 @@ const userProgressSchema = new mongoose.Schema({
         sessionsCount: { type: Number, default: 0 }
     },
 
+    // Distinct items studied (drive Pattern Explorer / Syndrome Scholar)
+    studied: {
+        patterns: { type: [String], default: [] },
+        syndromes: { type: [String], default: [] },
+    },
+
     // Streak System
     streak: {
         current: { type: Number, default: 0 },

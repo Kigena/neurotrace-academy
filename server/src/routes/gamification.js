@@ -13,6 +13,7 @@ const router = express.Router();
 // Get user's gamification progress
 router.get('/progress', auth, async (req, res) => {
     try {
+        await GamificationService.reconcileProgress(req.user.id).catch((e) => console.error('Reconcile error:', e.message));
         const progress = await GamificationService.getUserProgress(req.user.id);
         res.json(progress);
     } catch (error) {
@@ -24,6 +25,7 @@ router.get('/progress', auth, async (req, res) => {
 // Get all achievements (with user's unlock status)
 router.get('/achievements', auth, async (req, res) => {
     try {
+        await GamificationService.reconcileProgress(req.user.id).catch((e) => console.error('Reconcile error:', e.message));
         const userProgress = await UserProgress.findOne({ user: req.user.id });
         const allAchievements = await Achievement.find({ isActive: true }).sort({ order: 1, category: 1 });
 
@@ -48,6 +50,19 @@ router.get('/achievements', auth, async (req, res) => {
     } catch (error) {
         console.error('Get achievements error:', error);
         res.status(500).json({ error: 'Failed to fetch achievements' });
+    }
+});
+
+// Record a studied pattern or syndrome page (distinct items only)
+router.post('/studied', auth, async (req, res) => {
+    try {
+        const { kind, id } = req.body || {};
+        const result = await GamificationService.recordStudy(req.user.id, kind, id);
+        res.json(result);
+    } catch (error) {
+        if (error.status) return res.status(error.status).json({ error: error.message });
+        console.error('Record study error:', error.message);
+        res.status(500).json({ error: 'Failed to record study' });
     }
 });
 

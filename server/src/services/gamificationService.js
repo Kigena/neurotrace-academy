@@ -1,6 +1,14 @@
+import mongoose from 'mongoose';
 import Achievement from '../models/Achievement.js';
 import UserProgress from '../models/UserProgress.js';
+import { QuizSession } from '../models/QuizSession.js';
+import CommunityCase from '../models/CommunityCase.js';
 import notificationService from './notificationService.js';
+
+// A "perfect" quiz must be a real quiz, not a 1-question session.
+export const PERFECT_MIN_QUESTIONS = 10;
+const STUDY_ID = /^[A-Za-z0-9_-]{1,80}$/;
+const STUDY_KINDS = { pattern: 'patterns', syndrome: 'syndromes' };
 
 class GamificationService {
     // XP rewards for different actions
@@ -89,12 +97,16 @@ class GamificationService {
         const stats = progress.stats;
 
         switch (activityType) {
+            // The quiz engine awards 'quiz_completion' / 'quiz_perfect'; older
+            // code used 'quiz_complete'. A perfect quiz is also a completed one.
             case 'quiz_complete':
+            case 'quiz_completion':
                 stats.quizzesCompleted += 1;
-                if (metadata.score) stats.totalQuizScore += metadata.score;
+                if (typeof metadata.score === 'number') stats.totalQuizScore += metadata.score;
                 break;
 
             case 'quiz_perfect':
+                stats.quizzesCompleted += 1;
                 stats.quizzesPerfect += 1;
                 break;
 
@@ -145,6 +157,96 @@ class GamificationService {
                 }
                 break;
         }
+    }
+
+    /**
+     * Recompute badge counters from the source records (quiz sessions, cases,
+     * comments, studied items) instead of trusting incremental counters, then
+     * unlock any achievements now met. Idempotent; also repairs past progress.
+     */
+    static async reconcileProgress(userId) {
+        let progress = await UserProgress.findOne({ user: userId });
+        if (!progress) progress = new UserProgress({ user: userId });
+        const uid = String(userId);
+        const oid = mongoose.Types.ObjectId.isValid(uid) ? new mongoose.Types.ObjectId(uid) : null;
+
+        const sessions = await QuizSession.find({ userId: uid })
+            .select('status mode endTime engineVersion items questionIds answers result')
+            .lean();
+        let completed = 0;
+        let perfect = 0;
+        for (const s of sessions) {
+            const answers = s.answers instanceof Map ? Object.fromEntries(s.answers) : (s.answers || {});
+            const total = s.items?.length ?? s.questionIds?.length ?? 0;
+            const answered = Object.values(answers).filter((a) => Number.isInteger(a?.originalIndex) || Number.isInteger(a?.chosenIndex)).length;
+            const isDone = s.status === 'submitted'
+                || (s.engineVersion !== 2 && s.endTime != null)
+                || (s.mode === 'practice' && total > 0 && answered >= total);
+            if (!isDone || total === 0) continue;
+            completed += 1;
+            const correct = s.result?.correct ?? Object.values(answers).filter((a) => a?.isCorrect).length;
+            if (total >= PERFECT_MIN_QUESTIONS && correct === total) perfect += 1;
+        }
+
+        let casesShared = 0;
+        let casesApproved = 0;
+        let commentsPosted = 0;
+        if (oid) {
+            [casesShared, casesApproved] = await Promise.all([
+                CommunityCase.countDocuments({ author: oid }),
+                CommunityCase.countDocuments({ author: oid, status: 'published' }),
+            ]);
+            const [row] = await CommunityCase.aggregate([
+                { $unwind: '$comments' },
+                { $match: { 'comments.userId': oid, 'comments.isAI': { $ne: true } } },
+                { $count: 'n' },
+            ]);
+            commentsPosted = row?.n || 0;
+        }
+
+        const stats = progress.stats;
+        stats.quizzesCompleted = completed;
+        stats.quizzesPerfect = perfect;
+        stats.casesShared = casesShared;
+        stats.casesApproved = casesApproved;
+        stats.commentsPosted = commentsPosted;
+        stats.patternsStudied = progress.studied?.patterns?.length || 0;
+        stats.syndromesStudied = progress.studied?.syndromes?.length || 0;
+        await progress.save();
+        const newAchievements = await this.checkAchievements(userId, progress);
+        return { progress, newAchievements };
+    }
+
+    /**
+     * Record that a pattern or syndrome page was studied. Only the first view
+     * of each distinct item counts (and earns XP).
+     */
+    static async recordStudy(userId, kind, itemId) {
+        const field = STUDY_KINDS[kind];
+        if (!field || !STUDY_ID.test(String(itemId || ''))) {
+            const err = new Error('Invalid study item');
+            err.status = 400;
+            throw err;
+        }
+        const res = await UserProgress.updateOne(
+            { user: userId, [`studied.${field}`]: { $ne: itemId } },
+            { $addToSet: { [`studied.${field}`]: itemId } },
+            { upsert: false }
+        );
+        let firstTime = res.modifiedCount > 0;
+        if (!res.matchedCount) {
+            const exists = await UserProgress.exists({ user: userId });
+            if (!exists) {
+                await UserProgress.create({ user: userId, studied: { [field]: [itemId] } });
+                firstTime = true;
+            }
+        }
+        if (firstTime) {
+            const xp = kind === 'pattern' ? this.XP_REWARDS.PATTERN_STUDY : this.XP_REWARDS.SYNDROME_STUDY;
+            await this.awardXP(userId, xp, `${kind}_study`, { itemId });
+        }
+        const { progress } = await this.reconcileProgress(userId);
+        return { firstTime, studied: progress.studied?.[field]?.length || 0 };
     }
 
     /**
