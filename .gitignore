@@ -40,3 +40,6 @@ server/reports/
 *.njsproj
 *.sln
 *.sw?
+
+# Kilo Code agent worktrees
+.kilo/

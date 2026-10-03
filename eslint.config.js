@@ -10,7 +10,7 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 //   npx eslint . --prune-suppressions
 
 export default defineConfig([
-  globalIgnores(['dist', 'coverage', '**/node_modules', 'server/uploads', 'public']),
+  globalIgnores(['dist', 'coverage', '**/node_modules', 'server/uploads', 'public', '.kilo']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [
