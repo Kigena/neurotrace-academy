@@ -996,9 +996,13 @@ function QuizSession() {
                     Beyond exam depth
                   </span>
                 )}
-                <span className="text-xs text-slate-500">
-                  {currentQuestion.topicTags?.filter((t) => !t.startsWith("calc-")).slice(0, 2).join(", ")}
-                </span>
+                {/* Topic tags often name the answer (e.g. "landau-kleffner"):
+                    shown only once the answer has been revealed. */}
+                {hasFeedback && (
+                  <span className="text-xs text-slate-500">
+                    {currentQuestion.topicTags?.filter((t) => !t.startsWith("calc-")).slice(0, 2).join(", ")}
+                  </span>
+                )}
               </div>
               <button
                 onClick={() => handleToggleFlag(currentQuestion.questionId)}

@@ -74,10 +74,15 @@ function IncorrectCard({ item }) {
     <div className="rounded-lg border border-slate-200 bg-white p-4 space-y-3">
       <div className="flex flex-wrap items-center gap-2 text-xs">
         <span className="rounded bg-blue-100 px-2 py-0.5 text-blue-800">{domainTitle(item.domainId)}</span>
-        <span className="rounded bg-slate-100 px-2 py-0.5 text-slate-700">{sectionTitle(item.sectionId)}</span>
-        {item.topicTags.slice(0, 4).map((t) => (
-          <span key={t} className="rounded bg-slate-50 px-2 py-0.5 text-slate-500">#{tagTitle(t)}</span>
-        ))}
+        {/* Section and topic tags can name the answer: hidden while retrying. */}
+        {mode !== "retry" && (
+          <>
+            <span className="rounded bg-slate-100 px-2 py-0.5 text-slate-700">{sectionTitle(item.sectionId)}</span>
+            {item.topicTags.slice(0, 4).map((t) => (
+              <span key={t} className="rounded bg-slate-50 px-2 py-0.5 text-slate-500">#{tagTitle(t)}</span>
+            ))}
+          </>
+        )}
         <span className="ml-auto text-slate-400">
           missed {item.timesIncorrect}× · {new Date(item.lastAttemptAt).toLocaleDateString()}
         </span>
