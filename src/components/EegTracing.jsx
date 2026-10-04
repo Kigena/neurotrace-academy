@@ -16,7 +16,7 @@ const HEADER = 40;
 const FOOTER = 30;
 const GROUPS = { longitudinal: [4, 4, 4, 4, 2], transverse: [3, 4, 4, 4, 3], referential: [8, 8] };
 const SENSITIVITIES = [3, 5, 7, 10, 15, 20, 30, 50];
-const STATE_LABEL = { awake: "awake", drowsy: "drowsy", n2: "stage N2 sleep", stupor: "stuporous", sleep: "asleep" };
+const STATE_LABEL = { awake: "awake", drowsy: "drowsy", n2: "stage N2 sleep", stupor: "stuporous", semicomatose: "semicomatose", sleep: "asleep" };
 
 function ageText(age) {
   if (age == null) return null;

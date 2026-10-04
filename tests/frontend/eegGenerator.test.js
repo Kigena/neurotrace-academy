@@ -62,6 +62,33 @@ describe("synthetic EEG generator", () => {
     }
   });
 
+  it("draws triphasic waves with a dominant positive phase that reaches the posterior leads ~lagMs later", () => {
+    const scene = { seed: 7, ekg: false, background: QUIET, findings: [{ type: "triphasic", at: 5, uv: 100, lagMs: 130 }] };
+    const page = renderScene(scene, "referential");
+    const peakTime = (label) => {
+      const d = ch(page, label);
+      let ip = 4.5 * FS;
+      for (let i = 4.5 * FS; i < 5.8 * FS; i++) if (d[i] > d[ip]) ip = i;
+      return { t: ip / FS, v: d[ip], min: Math.min(...d.subarray(4 * FS, 6 * FS)) };
+    };
+    const f = peakTime("Fp1-A1");
+    const p = peakTime("O1-A1");
+    expect(f.v).toBeGreaterThan(Math.abs(f.min)); // positive phase dominates
+    expect(f.v).toBeGreaterThan(p.v); // frontal maximum
+    expect(Math.abs((p.t - f.t) * 1000 - 130)).toBeLessThan(25);
+  });
+
+  it("scales diffuse slowing frequency with hz", () => {
+    const crossings = (hz) => {
+      const page = renderScene({ seed: 8, ekg: false, background: QUIET, findings: [{ type: "diffuseSlowing", hz, bwHz: 0.6, uv: 60 }] }, "referential");
+      const d = ch(page, "F3-A1");
+      let c = 0;
+      for (let i = 1; i < d.length; i++) if (d[i - 1] < 0 !== d[i] < 0) c++;
+      return c;
+    };
+    expect(crossings(3)).toBeGreaterThan(crossings(1.5) * 1.4);
+  });
+
   it("is deterministic for a given seed and changes with the seed", () => {
     const scene = { seed: 9, findings: [{ type: "mu" }] };
     expect(Array.from(ch(renderScene(scene), "C3-P3").slice(0, 50))).toEqual(Array.from(ch(renderScene(scene), "C3-P3").slice(0, 50)));

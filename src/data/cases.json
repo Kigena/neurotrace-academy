@@ -10678,6 +10678,519 @@
           "to": "/workflow/domain-3/d3-activation-procedures"
         }
       ]
+    },
+    {
+      "id": "case-0081",
+      "title": "Serial EEGs in Drug-Induced Encephalopathy: Days 1 to 8",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-3",
+        "domain-4"
+      ],
+      "tags": [
+        "encephalopathy",
+        "serial-eeg",
+        "diffuse-slowing",
+        "triphasic",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_diffuse_slowing",
+        "pattern_triphasic_waves",
+        "pattern_pdr"
+      ],
+      "patient": {
+        "ageYears": 49,
+        "sex": "female",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Progressive confusion and drowsiness after several days of vomiting",
+      "history": {
+        "eventDescription": "A 49-year-old woman who takes lithium long term was admitted after several days of vomiting and poor fluid intake. She became tremulous, then confused, then hard to rouse. Daily bedside EEGs are requested while the team corrects her fluids and follows her drug level.",
+        "lastEventTiming": "4 days before the first EEG",
+        "comorbidities": [
+          "Bipolar disorder, stable for years"
+        ],
+        "medications": [
+          "Lithium (chronic)"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "semicomatose",
+          "stupor",
+          "awake"
+        ],
+        "background": "Diffuse slowing that changes in frequency, amplitude and form from day 1 to day 8",
+        "pdrHz": "Absent on days 1, 3 and 5; about 9 Hz on day 8",
+        "epileptiform": "None described by the technologist",
+        "focalFindings": "None; slowing is diffuse and frontally predominant on days 5 and 8",
+        "activation": "Stimulation trial for reactivity per lab policy",
+        "artifacts": "Brief right frontocentral muscle artifact on day 1"
+      },
+      "objectives": [
+        "Read delta frequency and amplitude on each daily page",
+        "Recognize intermittent blunt triphasic-looking waves on day 5",
+        "Document state and returning alpha without diagnosing"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 31,
+          "ageYears": 49,
+          "state": "semicomatose",
+          "sensitivity": 7,
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrUv": 0,
+            "beta": 0.8,
+            "theta": 0.8,
+            "delta": 0,
+            "noise": 2.5
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.2,
+              "bwHz": 0.7,
+              "uv": 26,
+              "frontal": 0.3
+            },
+            {
+              "type": "triphasic",
+              "at": [
+                3.1,
+                7.3
+              ],
+              "uv": 45
+            },
+            {
+              "type": "muscle",
+              "from": 0,
+              "to": 1.4,
+              "sites": [
+                "F4",
+                "C4"
+              ],
+              "uv": 5
+            }
+          ],
+          "montage": "longitudinal"
+        },
+        "t2": {
+          "seed": 32,
+          "ageYears": 49,
+          "state": "stupor",
+          "sensitivity": 7,
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrUv": 0,
+            "beta": 1.5,
+            "theta": 1.5,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 2.6,
+              "bwHz": 1.2,
+              "uv": 26,
+              "frontal": 0.4
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 1.5,
+              "uv": 12,
+              "frontal": 0.2
+            }
+          ],
+          "montage": "longitudinal"
+        },
+        "t3": {
+          "seed": 33,
+          "ageYears": 49,
+          "state": "stupor",
+          "sensitivity": 7,
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrUv": 0,
+            "beta": 1.5,
+            "theta": 1,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.7,
+              "bwHz": 0.9,
+              "uv": 38,
+              "frontal": 0.5
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 1.5,
+              "uv": 16,
+              "frontal": 0.2
+            },
+            {
+              "type": "triphasic",
+              "at": [
+                2,
+                2.55,
+                3.1,
+                3.65,
+                7.05,
+                7.6,
+                8.15
+              ],
+              "uv": 200,
+              "lagMs": 130
+            }
+          ],
+          "montage": "longitudinal"
+        },
+        "t4": {
+          "seed": 34,
+          "ageYears": 49,
+          "state": "awake",
+          "sensitivity": 7,
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 30,
+            "beta": 2.5,
+            "theta": 2,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 2,
+              "bwHz": 1,
+              "uv": 30,
+              "frontal": 0.5,
+              "runs": [
+                [
+                  1,
+                  3.2
+                ],
+                [
+                  6.4,
+                  7.8
+                ]
+              ]
+            }
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Day 1: the starting page",
+          "description": "Day 1, bedside, 7 uV/mm. She does not open her eyes to voice and withdraws weakly to a firm squeeze. The requisition lists lithium; a level was drawn on admission but the result is not yet on the form. Use the caliper on a few waves of the background.",
+          "question": "Which description fits the background on this page?",
+          "options": [
+            "Low-amplitude irregular delta near 1 to 1.5 Hz, little fast activity",
+            "Large rhythmic 3 Hz delta in frontal runs on a faster background",
+            "Diffuse 20 Hz beta that hides all of the slower activity present",
+            "A clear 9 Hz posterior rhythm, with only a few scattered 2 Hz delta waves"
+          ],
+          "correctAnswer": 0,
+          "explanation": "A single delta wave measures roughly 700 to 1000 ms with the caliper (1 / 0.8 s is about 1.25 Hz), so the dominant activity is irregular delta near 1 to 1.5 Hz. It is diffuse and low in amplitude (tens of microvolts at 7 uV/mm) with very little theta or beta, which fits a deeply depressed state. There is no 9 Hz posterior rhythm, so a clear 9 Hz posterior rhythm is wrong. The delta is irregular and not a rhythmic 3 Hz run, so large rhythmic 3 Hz frontal runs describe a different pattern. Beta is scant here, not dominant. The brief fast burst in the right F4 and C4 channels at the start is muscle artifact, not a cerebral finding, and a couple of low-voltage blunt waves near 3 and 7 s are worth noting as seen. Slowing like this does not point to a cause; the requisition and the clinical team supply that.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Day 3: what changed",
+          "description": "Day 3, same 7 uV/mm and the same longitudinal montage. She now opens her eyes to voice but drifts off at once (stupor). Overlay the caliper on several delta waves and compare them with your memory of day 1.",
+          "question": "Compared with day 1, which change is on this page?",
+          "options": [
+            "Slower delta near 1 Hz with lower amplitude than on day 1",
+            "Faster delta near 2 to 3 Hz, larger, with theta added",
+            "Bursts of generalized 3 Hz spike-and-wave, abrupt onset",
+            "A 9 Hz posterior rhythm that blocks when the eyes open"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Single delta waves now last about 330 to 500 ms (2 to 3 Hz), the amplitude is somewhat higher, and a theta component of about 5 to 6 Hz is mixed in. That is a faster, richer background than day 1. Slower, smaller delta describes the earlier page, so slower, smaller delta reverses the trend. No 9 Hz posterior rhythm is present yet, and there are no spike-and-wave bursts or other epileptiform discharges on this page. Better frequency often tracks clinical improvement, but it is nonspecific: many toxic and metabolic conditions give the same picture, so you describe what you see and leave the cause to the physician.",
+          "tracing": "t2"
+        },
+        {
+          "step": 3,
+          "type": "recording-strategy",
+          "title": "Day 5: busier, not simpler",
+          "description": "Day 5, still stuporous but the nurse says she is a little more alert and the lithium level is falling. The page looks larger and busier than day 3. Frontal channels show repeating blunt waves in two bursts, roughly 2 to 3.7 s and 7 to 8.2 s.",
+          "question": "What is the best handling of this recording?",
+          "options": [
+            "Describe the bursts and her state, test reactivity, and tell the reader",
+            "Write lithium toxicity waves on the report so that the reader can confirm it",
+            "Treat the busier page as a poor run and repeat it later that same day",
+            "Leave the bursts out of the notes because she is clinically improving"
+          ],
+          "correctAnswer": 0,
+          "explanation": "EEG can lag behind, or even look worse than, the bedside picture during recovery: here the delta is larger (about 1.7 Hz) and intermittent blunt triphasic-looking waves have appeared, while the nurse reports slight improvement. A technologist describes what is on the page (the bursts, their timing and frontal maximum), records the level of alertness, performs a stimulation trial for reactivity per lab policy, notes medications and the drug level from the requisition, and informs the reading physician so the change is not missed. Naming a cause on the report is interpretation outside scope, and the same waves occur in other toxic and metabolic states. Repeating the study because it looks worse treats a real finding as technical failure, since nothing on the page suggests an artifact or a recording problem. Omitting the bursts because she seems better hides a finding the reader needs, and the page is not a measure of the bedside exam.",
+          "tracing": "t3"
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Day 8: documenting the follow-up",
+          "description": "Day 8, awake and talking, drug level now low. The tracing is on screen. Count one cycle of the posterior rhythm with the caliper and note where slow activity appears (about 1 to 3 s and 6.4 to 7.8 s).",
+          "question": "Which entry best describes this page in your notes?",
+          "options": [
+            "Awake; about 9 Hz posterior rhythm, two brief runs of frontal delta",
+            "Encephalopathy resolved; no residual abnormality remains on the page",
+            "Normal awake EEG; nothing further needs to be said to the reader",
+            "Stupor pattern persists; slowing unchanged from the day 5 page"
+          ],
+          "correctAnswer": 0,
+          "explanation": "One posterior cycle measures about 110 ms (1 / 0.11 s is about 9 Hz) and the rhythm is roughly 40 to 50 uV peak to peak, so a posterior dominant rhythm has returned, with irregular delta of about 2 Hz still present in two short frontal-predominant runs. Your note should state that factually, with the state (awake) and the drug history. Calling it normal ignores the delta runs and is an interpretation. Saying the stupor pattern persists contradicts the page, which now has an organized posterior rhythm and only brief slow runs. Declaring resolution goes beyond a technologist's role. Recovery can be uneven: the EEG may lag the bedside, so findings are reported as seen at each study.",
+          "tracing": "t4"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain III: Encephalopathy Differentials",
+          "to": "/workflow/domain-3/d3-encephalopathy-differentials"
+        },
+        {
+          "label": "Domain III: Diffuse Slowing",
+          "to": "/workflow/domain-3/d3-diffuse-slowing"
+        },
+        {
+          "label": "Pattern: Triphasic Waves",
+          "to": "/patterns/pattern_triphasic_waves"
+        }
+      ]
+    },
+    {
+      "id": "case-0082",
+      "title": "Triphasic Waves vs Epileptiform Discharges in Liver Failure",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3",
+        "domain-4"
+      ],
+      "tags": [
+        "triphasic",
+        "encephalopathy",
+        "spike-and-wave",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_triphasic_waves",
+        "pattern_three_hz_gsw",
+        "pattern_diffuse_slowing"
+      ],
+      "patient": {
+        "ageYears": 63,
+        "sex": "male",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Worsening confusion and sleepiness with decompensated cirrhosis",
+      "history": {
+        "eventDescription": "A 63-year-old man with decompensated cirrhosis has had two days of worsening confusion and sleepiness. His family saw no jerking or staring spells. A routine EEG is requested to look for a cause of the altered mental status.",
+        "lastEventTiming": "2 days ago, gradual",
+        "comorbidities": [
+          "Cirrhosis with ascites",
+          "Hepatic encephalopathy, prior admission"
+        ],
+        "medications": [
+          "Lactulose",
+          "Spironolactone"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "stupor"
+        ],
+        "background": "Diffuse delta with theta, frontally predominant, no posterior dominant rhythm",
+        "pdrHz": "Absent",
+        "epileptiform": "Repeating blunt waves in two bursts; no sharp spike-and-wave",
+        "focalFindings": "None",
+        "activation": "Stimulation trial for reactivity per lab policy",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Describe triphasic wave morphology and frontal maximum",
+        "Measure the front-to-back lag with the caliper",
+        "Separate triphasic waves from 3 Hz spike-and-wave"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 33,
+          "ageYears": 63,
+          "state": "stupor",
+          "sensitivity": 7,
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrUv": 0,
+            "beta": 1.5,
+            "theta": 1,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.7,
+              "bwHz": 0.9,
+              "uv": 38,
+              "frontal": 0.5
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 1.5,
+              "uv": 16,
+              "frontal": 0.2
+            },
+            {
+              "type": "triphasic",
+              "at": [
+                2,
+                2.55,
+                3.1,
+                3.65,
+                7.05,
+                7.6,
+                8.15
+              ],
+              "uv": 200,
+              "lagMs": 130
+            }
+          ],
+          "montage": "referential"
+        },
+        "t2": {
+          "seed": 17,
+          "ageYears": 11,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "background": {
+            "pdrUv": 60
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 3.2,
+              "to": 11,
+              "uv": 420,
+              "hz": 3,
+              "startHz": 3.4
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Shape of the repeating waves",
+          "description": "The patient is stuporous at 7 uV/mm, shown in the referential montage. Between 2 and 3.7 s the frontal channels show repeating waves, and they appear again between 7 and 8.2 s. Look at the shape of a single wave in Fp1-A1 and F3-A1, with negative up.",
+          "question": "Which description fits one of these repeating waves?",
+          "options": [
+            "Rhythmic 3 Hz spike-and-wave starting abruptly in every channel",
+            "Blunt wave with a large down-going phase and smaller up phases",
+            "A 14 Hz spindle burst at Cz that waxes and wanes over a second",
+            "A sharp spike under 70 ms with a slow wave, maximal at the vertex"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Each wave is blunt (not sharp) and has three phases: a small up-going phase, a larger down-going middle phase (surface positive, since negative is up), and an up-going phase after it of similar or smaller size, with the largest amplitude frontally (roughly 80 to 100 uV in Fp1-A1 and F3-A1). They repeat at about 1.8 per second (0.55 s apart) in two bursts over a slow background, not as rhythmic 3 Hz complexes. A true spike is under 70 ms and sharp, which these waves are not. A spindle is a 12 to 14 Hz burst in sleep, and this patient is stuporous. These features describe triphasic morphology without saying what causes it: the same morphology is seen in several metabolic and toxic states, so describe it and leave the cause to the reader.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "troubleshooting",
+          "title": "Measuring the front-to-back lag",
+          "description": "Still in the referential montage. Pick one burst, for example near 3.1 s. Drag the caliper from the peak of the down-going phase in Fp1-A1 or F3-A1 to the matching peak in O1-A1 or O2-A2, and read the milliseconds.",
+          "question": "What does the caliper show?",
+          "options": [
+            "Occipital first, with frontal channels peaking about 100 to 150 ms later",
+            "Frontal first, with occipital channels peaking about 400 ms later",
+            "Frontal first, with occipital channels peaking about 100 to 150 ms later",
+            "No measurable delay; all channels peak within a few milliseconds of each other"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The down-going peak is at the frontal electrodes first and reaches O1 and O2 about 100 to 150 ms later (roughly 1/8 of a second); this front-to-back lag is a classic descriptive feature of triphasic waves. Occipital-first is the reverse of what the caliper shows. A discharge with no delay is typical of the generalized spike-and-wave you will compare next. A delay of about 400 ms is nearly the length of a whole wave and would put the posterior peak most of the way to the next frontal wave 550 ms later, so it reflects a mismatched peak. Read the lag in the referential montage so each wave is measured at one electrode rather than across a bipolar pair.",
+          "tracing": "t1"
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Comparing with an absence page",
+          "description": "A colleague opens a reference recording from an 11-year-old child, in the longitudinal montage. A discharge begins abruptly at 3.2 s and continues to the end of the page. Compare it with the bursts you just measured on the adult page.",
+          "question": "Which comparison of the two pages is correct?",
+          "options": [
+            "Both begin abruptly out of a normal background and also stop abruptly",
+            "The child page runs at about 1.8 per second and has a front-to-back delay",
+            "Child page: about 3 per second, no delay; adult: slower, with a delay",
+            "They differ only in amplitude; both are synchronous at about 3 per second"
+          ],
+          "correctAnswer": 2,
+          "explanation": "On the child page, complexes start abruptly at 3.2 s, repeat at about 3 to 3.4 per second, each with a sharp component followed by a slow wave, and they are bilaterally synchronous: the caliper shows no meaningful front-to-back delay. The adult bursts are blunt, run at about 1.8 per second, show the 100 to 150 ms lag, and sit on a slow background, so slow, blunt and delayed separates them. Amplitude is not the difference, and only the child page runs near 3 Hz. A child-page rate near 1.8 per second with a front-to-back delay would reverse what the two pages actually show. The adult page has no normal background before the bursts, and the child discharge does not stop before the page ends, so abrupt onset and offset out of a normal background do not describe both pages. Resemblance in rate can still raise a question for the reader, which is why the technologist reports the measurements.",
+          "tracing": "t2"
+        },
+        {
+          "step": 4,
+          "type": "safety-response",
+          "title": "What the technologist does",
+          "description": "Back on the adult page. The physician has not yet seen the recording. The patient moves little, has no visible jerking, and you wonder whether the bursts could mean ongoing seizure activity. Medications and the liver history are on the requisition.",
+          "question": "What is the best next step for you?",
+          "options": [
+            "Stop recording, since triphasic waves are expected in liver failure patients",
+            "Write nonconvulsive status epilepticus on the requisition and phone it in",
+            "Ask the nurse to give a benzodiazepine to see whether the waves stop",
+            "Test reactivity, note alertness and medications, notify the reading physician"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A technologist tests responsiveness and reactivity to stimulation per lab protocol, documents alertness, any clinical correlate or lack of one, and medications from the requisition, and notifies the reading physician promptly when seizure activity is possible, describing the findings rather than labeling them. Writing a diagnosis is interpretation and out of scope. A benzodiazepine challenge is a physician decision, with monitoring and a clinical plan, and a technologist neither orders nor requests it. Stopping early assumes the waves are benign, which is also interpretation, and how the pattern is classified, including whether it meets ACNS 2021 criteria for periodic discharges and whether triphasic morphology applies, is for the reader to decide. Complete the protocol and report what you saw.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Triphasic Waves",
+          "to": "/patterns/pattern_triphasic_waves"
+        },
+        {
+          "label": "Domain III: Encephalopathy Differentials",
+          "to": "/workflow/domain-3/d3-encephalopathy-differentials"
+        },
+        {
+          "label": "Domain IV: Documentation & Reporting",
+          "to": "/workflow/domain-4/d4-documentation-reporting"
+        }
+      ]
     }
   ]
 }

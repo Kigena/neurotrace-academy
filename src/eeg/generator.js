@@ -191,11 +191,13 @@ const DEFAULT_BG = {
   drowsy: { pdrHz: 8.5, pdrUv: 15, beta: 5, theta: 7, delta: 3, noise: 4 },
   n2: { pdrHz: 0, pdrUv: 0, beta: 2.5, theta: 5, delta: 6, noise: 3 },
   stupor: { pdrHz: 0, pdrUv: 0, beta: 2, theta: 10, delta: 14, noise: 4 },
+  semicomatose: { pdrHz: 0, pdrUv: 0, beta: 1, theta: 1, delta: 0, noise: 2.5 },
 };
 
 export const FINDING_TYPES = [
   "mu", "muShapedAlpha", "firda", "polymorphicDelta", "spike", "sharp", "gsw", "polyspikeWave",
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
+  "diffuseSlowing", "triphasic",
 ];
 
 /**
@@ -403,6 +405,59 @@ export function generateReferential(scene) {
         }
         addSource(V, field([0, 0.3], 0.5), sig);
         if (f.marker) markers.push({ at: t0, label: f.marker });
+        break;
+      }
+      case "diffuseSlowing": {
+        // Irregular slow activity spread over the whole scalp, optionally frontally predominant
+        // and optionally limited to `runs`. `uv` is the approximate peak amplitude at the scalp.
+        const hz = f.hz ?? 1.5;
+        const bw = f.bwHz ?? 1;
+        const amp = (f.uv ?? 30) / 2.8;
+        const front = f.frontal ?? 0.3;
+        const runs = f.runs || [[0, seconds]];
+        const gate = new Float64Array(n);
+        for (let i = 0; i < n; i++) {
+          let g = 0;
+          for (const [a, b] of runs) g = Math.max(g, gateValue(time(i), a, b, 0.5));
+          gate[i] = g;
+        }
+        const regions = [[[0, 0.55], 1 + front], [[0, 0], 1], [[0, -0.5], Math.max(0.3, 1 - front * 0.8)]];
+        for (const [center, k] of regions) {
+          const sig = narrowband(n, hz, bw, gauss);
+          for (let i = 0; i < n; i++) sig[i] *= amp * k * gate[i] * 0.85;
+          addSource(V, field(center, 0.5), sig);
+        }
+        for (const name of ELECTRODE_NAMES) {
+          const loc = narrowband(n, hz, bw, gauss);
+          const k = Math.max(0.3, 1 + front * ELECTRODES[name][1]) * amp * 0.5;
+          const ch = V[name];
+          for (let i = 0; i < n; i++) ch[i] += loc[i] * k * gate[i];
+        }
+        break;
+      }
+      case "triphasic": {
+        // Blunt triphasic waves: small negative, dominant POSITIVE, then negative phase; frontal maximum
+        // that reaches the posterior leads `lagMs` later.
+        const amp = f.uv ?? 90;
+        const lag = (f.lagMs ?? 130) / 1000;
+        const ds = (f.durMs ?? 450) / 450;
+        const times = Array.isArray(f.at) ? f.at : [f.at];
+        const wave = (t, t0) =>
+          -0.22 * asymGauss(t, t0 - 0.13 * ds, 0.05 * ds, 0.06 * ds) +
+          asymGauss(t, t0, 0.07 * ds, 0.1 * ds) -
+          0.28 * asymGauss(t, t0 + 0.21 * ds, 0.08 * ds, 0.12 * ds);
+        const front = new Float64Array(n);
+        const post = new Float64Array(n);
+        for (let i = 0; i < n; i++) {
+          const t = time(i);
+          for (const t0 of times) {
+            if (Math.abs(t - t0) > 0.8) continue;
+            front[i] += amp * wave(t, t0);
+            post[i] += amp * 0.6 * wave(t, t0 + lag);
+          }
+        }
+        addSource(V, field([0, 0.55], 0.45), front);
+        addSource(V, field([0, -0.35], 0.5), post);
         break;
       }
       case "vertex": {
