@@ -11191,6 +11191,1036 @@
           "to": "/workflow/domain-4/d4-documentation-reporting"
         }
       ]
+    },
+    {
+      "id": "case-0083",
+      "title": "Occipital Rhythmic Delta and a 3 Hz Burst in a Child",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-3",
+        "domain-4"
+      ],
+      "tags": [
+        "oirda",
+        "rhythmic-delta",
+        "child",
+        "spike-and-wave",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_oirda",
+        "pattern_firda",
+        "pattern_three_hz_gsw"
+      ],
+      "patient": {
+        "ageYears": 10,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Several short lapses in attention each day at school",
+      "history": {
+        "eventDescription": "A 10-year-old girl is referred after her teacher noticed several brief lapses in attention each day. She develops normally, is alert and cooperative, and takes no medicine. Her pediatrician requested a routine awake EEG that includes hyperventilation.",
+        "lastEventTiming": "earlier this week",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Mildly slow posterior background for age with intermittent runs of rhythmic delta",
+        "pdrHz": "About 8 to 9 Hz between runs",
+        "epileptiform": "One generalized 3 Hz spike-and-wave burst of about 2 s at 6.2 s",
+        "focalFindings": "Occipital-predominant rhythmic delta, about 0.5 to 5.4 s",
+        "activation": "Hyperventilation per lab protocol, still to come",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Measure a rhythmic delta run with the caliper",
+        "Tell occipital from frontal rhythmic delta by rate and location",
+        "Test responsiveness and document a spike-and-wave burst"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 41,
+          "ageYears": 10,
+          "state": "awake",
+          "sensitivity": 10,
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 8.5,
+            "pdrUv": 20,
+            "beta": 3,
+            "theta": 4,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "rhythmicDelta",
+              "hz": 3,
+              "uv": 190,
+              "runs": [
+                [
+                  0.5,
+                  5.4
+                ]
+              ],
+              "center": [
+                0,
+                -0.8
+              ],
+              "sigma": 0.34
+            },
+            {
+              "type": "gsw",
+              "from": 6.2,
+              "to": 8.2,
+              "uv": 260,
+              "hz": 3,
+              "startHz": 3.2,
+              "center": [
+                0,
+                -0.45
+              ],
+              "sigma": 0.5
+            }
+          ],
+          "montage": "longitudinal"
+        },
+        "t2": {
+          "seed": 13,
+          "ageYears": 61,
+          "state": "stupor",
+          "sensitivity": 10,
+          "background": {
+            "theta": 7,
+            "delta": 6
+          },
+          "findings": [
+            {
+              "type": "firda",
+              "uv": 165,
+              "hz": 1.8,
+              "runs": [
+                [
+                  0.2,
+                  4.4
+                ],
+                [
+                  5.3,
+                  9.9
+                ]
+              ]
+            },
+            {
+              "type": "muscle",
+              "from": 8.6,
+              "to": 10,
+              "sites": [
+                "Fp1",
+                "Fp2",
+                "F7",
+                "F8"
+              ],
+              "uv": 10
+            }
+          ],
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "montage": "longitudinal"
+        },
+        "t3": {
+          "seed": 41,
+          "ageYears": 10,
+          "state": "awake",
+          "sensitivity": 10,
+          "montages": [
+            "referential",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 8.5,
+            "pdrUv": 20,
+            "beta": 3,
+            "theta": 4,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "rhythmicDelta",
+              "hz": 3,
+              "uv": 190,
+              "runs": [
+                [
+                  0.5,
+                  5.4
+                ]
+              ],
+              "center": [
+                0,
+                -0.8
+              ],
+              "sigma": 0.34
+            },
+            {
+              "type": "gsw",
+              "from": 6.2,
+              "to": 8.2,
+              "uv": 260,
+              "hz": 3,
+              "startHz": 3.2,
+              "center": [
+                0,
+                -0.45
+              ],
+              "sigma": 0.5
+            }
+          ],
+          "montage": "referential"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "A run of smooth, regular waves",
+          "description": "The child is awake, and the page runs at 10 uV/mm in the double banana montage. Between about 0.5 and 5.4 s the background gives way to a repeating run of large smooth waves. Drag the caliper from one peak to the next in T5-O1, then compare the size of the waves in the frontal and occipital chains.",
+          "question": "Which description matches this run?",
+          "options": [
+            "Rhythmic 6 Hz theta, largest in the temporal chains T3-T5 and T4-T6",
+            "Rhythmic 3 Hz delta, largest in Fp1-F7 and Fp2-F8, with small occipital channels",
+            "Irregular 1 Hz delta, restricted to the left hemisphere with reduced alpha",
+            "Rhythmic 3 Hz delta, largest in T5-O1 and T6-O2, with small frontal channels"
+          ],
+          "correctAnswer": 3,
+          "explanation": "One wave measures about 330 ms from peak to peak (1 / 0.33 s = 3 Hz), which is in the delta range, and the spacing stays regular through the run, so it is rhythmic. The waves are largest in T5-O1 and T6-O2 (roughly 280 to 290 uV peak to peak), next in P3-O1 and P4-O2 (about 205 uV) and Cz-Pz, while the frontal chains stay near 40 to 55 uV. That is occipital intermittent rhythmic delta, here lasting about 5 s. The frontal-maximum answer reverses the location. A 6 Hz theta rhythm would measure about 165 ms per cycle and would not sit in the temporal chains. Irregular 1 Hz delta over one hemisphere describes focal polymorphic slowing, and this run is regular and bilateral. A technologist describes the rate, location and timing; this pattern is seen mainly in children and is sometimes associated with generalized or absence epilepsy, but it is not specific, so the reading physician decides what it means.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "A second page for comparison",
+          "description": "A colleague brings a page for comparison: a 61-year-old patient who is stuporous, same montage and 10 uV/mm. Runs of large rhythmic waves appear from 0.2 to 4.4 s and again from 5.3 s. Measure one wave and look at where the waves are largest. Fast muscle activity also appears over the front from about 8.6 s; measure the first run.",
+          "question": "How does this run differ from the child's run?",
+          "options": [
+            "Same occipital maximum as the child's run, but irregular waves of changing shape",
+            "Faster, about 5 to 6 Hz, with the same occipital maximum as the child's run",
+            "Same 3 Hz rate, but largest in the left temporal chains rather than occipital",
+            "Slower, near 1.8 Hz, and largest in the frontal chains such as Fp1-F7 and Fz-Cz"
+          ],
+          "correctAnswer": 3,
+          "explanation": "One wave here measures about 550 ms (1 / 0.55 s = 1.8 Hz), slower than the child's 330 ms, and the largest deflections are in the frontal chains: Fp1-F7 and Fp2-F8 near 185 to 195 uV in the first run, F3-C3 about 195 uV and Fz-Cz about 215 uV, while T5-O1 is only about 60 uV. Rhythmic delta with a frontal maximum is a separate named pattern from the occipital one, and like it, it is not specific, so rate and location are what you report. The left temporal answer is wrong because both runs are bilateral and symmetric. A 5 to 6 Hz rate would be theta. Irregular changing waves would be polymorphic, but these are monomorphic. The pair shows why you report both rate and location rather than age alone.",
+          "tracing": "t2"
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "The pattern changes at 6.2 s",
+          "description": "Back to the child, now on the referential (ear) tab. The slow rhythm continues at nearly the same rate from about 6.2 to 8.2 s, but the page looks different from the earlier run. Compare one cycle in P3-A1 and O1-A1 at 6.5 s with a cycle at 3 s, and check the frontal channels.",
+          "question": "What separates the event at 6.2 to 8.2 s from the earlier run?",
+          "options": [
+            "The rate falls to about 1.5 Hz and a spike appears in T3-A1 alone",
+            "A sharp spike now leads each slow wave, and it is visible from front to back",
+            "The waves stay smooth and sinusoidal, and only their size changes over both parietal areas",
+            "The rate rises to about 6 Hz and the waves stay limited to O1-A1 and O2-A2"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The rate barely changes (about 3.1 Hz, one cycle every 320 ms), so frequency does not separate the two. What changes is shape and spread: each cycle now has a steep negative spike followed by a rounded slow wave (the steepest 12 ms slope is about two to four times larger than in the earlier run, depending on the channel), and the activity appears in every region. It is largest posteriorly (P3-A1 and P4-A2 about 260 uV, O1-A1 and O2-A2 about 230 uV, C3-A1 and C4-A2 about 140 uV) but is also present in the frontal channels at lower amplitude (about 35 to 50 uV). That is a generalized 3 Hz spike-and-wave burst lasting about 2 s, here with a posterior emphasis, which is less typical than the usual frontocentral maximum. A 6 Hz posterior rhythm, an unchanged smooth wave, or a slow lateralized spike would all describe other pages. The technologist records the time and appearance and reports it; the physician names it.",
+          "tracing": "t3"
+        },
+        {
+          "step": 4,
+          "type": "safety-response",
+          "title": "The child stops counting",
+          "description": "While the child counts aloud for the technologist, she stops mid-count at about 6.2 s and picks it up again near 8.3 s. The protocol still includes hyperventilation, and the technologist has marked the page at 6.2 s.",
+          "question": "What is the best next step for the technologist?",
+          "options": [
+            "Hold her attention with conversation so the bursts stop, and log only the EEG changes without her behavior",
+            "Keep everything else as planned but skip hyperventilation, since a burst has already appeared and more could follow",
+            "Note the pause, test responsiveness in later bursts, run hyperventilation per protocol, and report it",
+            "Label the event an absence seizure in the log, end the recording, and tell the family the diagnosis is confirmed"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The page shows a 2 s generalized burst that coincides with a pause in counting, so the useful, in-scope step is to record exactly what she did and when, then test responsiveness during later bursts (give a few words to remember and ask for them afterward, or have her repeat a phrase), continue with hyperventilation per the lab protocol unless the physician says otherwise, and report the findings. Calling it a seizure and giving the family a diagnosis is outside the technologist's scope, and ending the test early loses the activation. Skipping hyperventilation because a burst already appeared drops a standard activation that often brings these discharges out. Keeping the child busy so the bursts stop hides the finding, and leaving her behavior out of the log removes the clinical correlate the reader needs.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Occipital Intermittent Rhythmic Delta",
+          "to": "/patterns/pattern_oirda"
+        },
+        {
+          "label": "Pattern: Frontal Intermittent Rhythmic Delta",
+          "to": "/patterns/pattern_firda"
+        },
+        {
+          "label": "Domain III: Activation Procedures",
+          "to": "/workflow/domain-3/d3-activation-procedures"
+        }
+      ]
+    },
+    {
+      "id": "case-0084",
+      "title": "Eye, Tongue or Brain: Sorting Frontal Deflections",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3",
+        "domain-2"
+      ],
+      "tags": [
+        "artifacts",
+        "eye-movement",
+        "glossokinetic",
+        "montages",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 30,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Four routine recordings from different patients, reviewed with the lab's eye-check montage",
+      "history": {
+        "eventDescription": "The lab has added an ear-referenced eye-check montage: Fp1-A1, IO1-A1, Fp2-A2, IO2-A2, LOC-A1, ROC-A2, then F3 through O2. IO is an infraorbital electrode below the eye, LOC sits above eye level at the left outer canthus and ROC below eye level at the right outer canthus. A technologist works through four recordings from one day to decide which deflections are ocular, which come from another source, and which are cerebral.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "drowsy"
+        ],
+        "background": "Posterior alpha in three recordings; drowsy frontal slowing in one",
+        "pdrHz": "About 10 Hz where present",
+        "epileptiform": "None described",
+        "focalFindings": "None",
+        "activation": "Eyes closed and open on request; looking left and right on request",
+        "artifacts": "Blinks, vertical eye movement, tongue potentials, lateral gaze"
+      },
+      "objectives": [
+        "Use in-phase versus out-of-phase logic at Fp and IO",
+        "Separate tongue potentials and frontal delta from eye movement",
+        "Read LOC and ROC to tell the direction of gaze"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 42,
+          "ageYears": 30,
+          "state": "awake",
+          "sensitivity": 7,
+          "montages": [
+            "eyeCheck",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrUv": 40
+          },
+          "findings": [
+            {
+              "type": "blink",
+              "at": [
+                1.3,
+                2.9,
+                8.6
+              ],
+              "uv": 150
+            },
+            {
+              "type": "eyesClosed",
+              "at": 4.4,
+              "uv": 150
+            },
+            {
+              "type": "eyesOpen",
+              "at": 7.2,
+              "uv": 130
+            }
+          ],
+          "montage": "eyeCheck",
+          "eyesOpen": true
+        },
+        "t2": {
+          "seed": 43,
+          "ageYears": 62,
+          "state": "drowsy",
+          "sensitivity": 7,
+          "montages": [
+            "eyeCheck",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrUv": 0,
+            "theta": 5,
+            "delta": 5
+          },
+          "findings": [
+            {
+              "type": "firda",
+              "hz": 2,
+              "uv": 90,
+              "runs": [
+                [
+                  1.2,
+                  8.8
+                ]
+              ]
+            }
+          ],
+          "montage": "eyeCheck"
+        },
+        "t3": {
+          "seed": 44,
+          "ageYears": 35,
+          "state": "awake",
+          "sensitivity": 7,
+          "montages": [
+            "eyeCheck",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrUv": 35
+          },
+          "findings": [
+            {
+              "type": "glossokinetic",
+              "at": [
+                1.8,
+                4.5,
+                7
+              ],
+              "uv": 110
+            }
+          ],
+          "montage": "eyeCheck"
+        },
+        "t4": {
+          "seed": 45,
+          "ageYears": 28,
+          "state": "awake",
+          "sensitivity": 7,
+          "montages": [
+            "eyeCheck",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrUv": 40
+          },
+          "findings": [
+            {
+              "type": "lateralEye",
+              "at": 2,
+              "durS": 1.3,
+              "dir": "left",
+              "uv": 140
+            },
+            {
+              "type": "lateralEye",
+              "at": 6,
+              "durS": 1.3,
+              "dir": "right",
+              "uv": 140
+            }
+          ],
+          "montage": "eyeCheck"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "troubleshooting",
+          "title": "Recording 1: the blink at 2.9 s",
+          "description": "Awake, 30 years old, 7 uV/mm, eye-check tab first. The patient blinked near 1.3, 2.9 and 8.6 s, and was asked to close and then open her eyes at the two markers. Look at the blink at 2.9 s in Fp1-A1, IO1-A1, LOC-A1 and ROC-A2.",
+          "question": "What do these four channels do during the blink?",
+          "options": [
+            "Fp1-A1 and IO1-A1 both go up together, while LOC-A1 and ROC-A2 stay close to baseline",
+            "Fp1-A1 goes down while IO1-A1 goes up, and LOC-A1 and ROC-A2 move in opposite directions",
+            "Fp1-A1 goes up while IO1-A1 goes down, and LOC-A1 and ROC-A2 move in the same direction",
+            "Fp1-A1 and IO1-A1 both go down together, and LOC-A1 and ROC-A2 also both go down together"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The cornea is positive, and when the eyes roll up in a blink the cornea moves toward Fp and away from the infraorbital electrode below the eye. Fp1-A1 swings positive (down, about +43 uV) while IO1-A1 swings negative (up, about -81 uV): out of phase. LOC and ROC mirror each other (LOC about +77 uV, ROC about -79 uV) because one electrode sits above and the other below eye level, so vertical movement such as a blink is out of phase between them. The same pattern repeats at the Eyes closed and Eyes open markers, and the posterior channels O1 and O2 become much smaller after Eyes open at about 7.2 s. Same-direction movement at Fp and IO would not be explained by the eyes, and a reversed Fp and IO polarity swaps positive and negative.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Recording 2: slow waves all across the front",
+          "description": "Drowsy, 62 years old, 7 uV/mm, eye-check tab. From about 1.2 to 8.8 s repeating slow waves of 100 to 180 uV appear at Fp1-A1 and Fp2-A2 and in F3-A1 and F4-A2. Measure one wave, then compare Fp1-A1 with IO1-A1, and LOC-A1 with ROC-A2.",
+          "question": "What do the timing and the phase relationship say?",
+          "options": [
+            "About 2 Hz, with Fp and IO moving in opposite directions, so this fits slow vertical eye roving in drowsiness",
+            "About 2 Hz, with Fp and IO moving together, so this fits two steady blinks every second",
+            "About 5 Hz, with Fp and IO moving together, so this fits tongue movement potentials",
+            "About 2 Hz, with Fp and IO moving together, so this is cerebral frontal delta, not eye movement"
+          ],
+          "correctAnswer": 3,
+          "explanation": "One wave measures about 500 ms (1 / 0.5 s = 2 Hz). Fp1-A1 and IO1-A1 swing the same way throughout (IO about 100 to 110 uV, Fp about 170 to 180 uV), and LOC and ROC move together too instead of mirroring each other as they do for eye movement. Same-direction movement over the whole front, with F3 and F4 nearly as large as Fp, points to cerebral activity spreading across the frontal region. Steady blinks at two per second for nearly eight seconds, in a drowsy patient, would look like sharp lid movements in opposite directions at Fp and IO. Opposite-direction movement is the signature of eye movement, and this page does not show it. The rate is 2 Hz, not 5 Hz. The technologist describes it as rhythmic 2 Hz frontal slowing in a drowsy patient, and the reading physician interprets it.",
+          "tracing": "t2"
+        },
+        {
+          "step": 3,
+          "type": "troubleshooting",
+          "title": "Recording 3: three slow potentials",
+          "description": "Awake, 35 years old, 7 uV/mm, eye-check tab, alpha present at O1 and O2. Single slow waves arrive near 1.8, 4.5 and 7.0 s, each far slower than a blink. Compare their size in Fp1-A1, IO1-A1, F3-A1, LOC-A1 and ROC-A2 and note which way each moves.",
+          "question": "Which reading and response fit this page?",
+          "options": [
+            "Vertical eye roving, so add more eye-monitor leads and annotate the eye movement",
+            "A tongue movement potential, so ask for a still tongue and jaw and annotate the page",
+            "Frontal cerebral delta, so describe it as rhythmic slowing and notify the physician",
+            "Blinks, so ask the patient to keep the eyes open and annotate the blink rate"
+          ],
+          "correctAnswer": 1,
+          "explanation": "All of these channels move in the same direction (Fp, IO, LOC and ROC together), which rules out eye movement, and the waves are the largest at the infraorbital leads (IO1 and IO2 about 75 to 77 uV, Fp1 and Fp2 about 50 to 57 uV, F3 and F4 about 40 uV). That infraorbital-greater-than-Fp distribution, with slow single waves about 2.5 s apart rather than a rhythmic run, is typical of tongue movement (glossokinetic) potentials. The technologist can ask the patient to hold the tongue still and relax the jaw, then annotate the page. Blinks would give out-of-phase, sharper waves. The page already has eye-monitor leads and shows in-phase behavior, so adding more would not help. A rhythmic delta run would repeat regularly, not as three isolated waves.",
+          "tracing": "t3"
+        },
+        {
+          "step": 4,
+          "type": "troubleshooting",
+          "title": "Recording 4: looking left, then right",
+          "description": "Awake, 28 years old, 7 uV/mm, eye-check tab. The technologist asked her to look left when ready, return to center, then look to the other side. At the first deflection near 2.0 s, which is the look to the left, LOC-A1 goes down and ROC-A2 goes up. Now find the deflection near 6.0 s.",
+          "question": "What do LOC-A1 and ROC-A2 do near 6.0 s, and where is she looking?",
+          "options": [
+            "LOC-A1 and ROC-A2 stay flat, so the movement at 6.0 s is cerebral rather than ocular",
+            "LOC-A1 goes up and ROC-A2 goes down, so she is looking to the right",
+            "LOC-A1 goes down and ROC-A2 goes up again, so she is looking to the left a second time",
+            "LOC-A1 and ROC-A2 both go up, so she is looking upward"
+          ],
+          "correctAnswer": 1,
+          "explanation": "A lead the eyes move toward goes positive (pen down), because the cornea is positive. Looking left brings the left cornea toward LOC and takes the right cornea away from ROC, so LOC goes down and ROC goes up, a mirror pair because the two electrodes sit on opposite sides of the face. At 6.0 s the polarities are reversed (LOC about -62 uV up, ROC about +61 uV down), which means gaze has moved the other way, to the right. The 1 Hz low-frequency filter lets a held position fade, so the deflections occur mostly at the start and the end of each gaze shift: the return from the left near 3.3 to 3.6 s also reverses sign and can look like a look to the right, and the return from the right at about 7.3 to 7.6 s reverses the 6.0 s deflection. In the longitudinal tab the Fp1-F7 and Fp2-F8 chains also show opposite polarity at each gaze shift. A repeat of the left-gaze polarity or a pair moving the same way would not fit, and flat LOC and ROC would mean no eye movement. The cerebral channels stay quiet during these deflections, so the technologist annotates left and right gaze and moves on.",
+          "tracing": "t4"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain III: Artifacts Recognition",
+          "to": "/workflow/domain-3/d3-artifacts-recognition"
+        },
+        {
+          "label": "Domain II: Montages & Referencing",
+          "to": "/workflow/domain-2/d2-montages-referencing"
+        },
+        {
+          "label": "Domain IV: Documentation & Reporting",
+          "to": "/workflow/domain-4/d4-documentation-reporting"
+        }
+      ]
+    },
+    {
+      "id": "case-0085",
+      "title": "Four Independent Spike Foci in a Young Child",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-3",
+        "domain-2"
+      ],
+      "tags": [
+        "multifocal",
+        "phase-reversal",
+        "spikes",
+        "montages",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_focal_spikes_temporal"
+      ],
+      "patient": {
+        "ageYears": 4,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Delayed development with several kinds of brief spells",
+      "history": {
+        "eventDescription": "A 4-year-old boy has delayed language and motor milestones. His parents describe brief staring, head drops and occasional stiffening on one side. A routine awake EEG is requested to look for epileptiform discharges.",
+        "lastEventTiming": "two days ago",
+        "comorbidities": [
+          "Global developmental delay"
+        ],
+        "medications": [
+          "Levetiracetam"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Posterior rhythm of about 7 to 8 Hz with excess theta for age",
+        "pdrHz": "About 7.5 Hz",
+        "epileptiform": "Eight sharply contoured events at four separate sites",
+        "focalFindings": "Left parietal, left temporal, right central and right posterior temporal",
+        "activation": "None yet",
+        "artifacts": "Fast irregular muscle bursts in the right and left temporal chains"
+      },
+      "objectives": [
+        "Localize each focus by its phase reversal",
+        "Judge independence from timing and sites",
+        "Separate temporal muscle from discharges in the log"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 46,
+          "ageYears": 4,
+          "state": "awake",
+          "sensitivity": 10,
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 7.5,
+            "pdrUv": 35,
+            "theta": 6,
+            "noise": 4
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "P3",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 55,
+              "at": [
+                1.8,
+                6.3
+              ]
+            },
+            {
+              "type": "sharp",
+              "center": "C4",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 110,
+              "at": [
+                4.1,
+                8.8
+              ]
+            },
+            {
+              "type": "sharp",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 150,
+              "durMs": 120,
+              "slowWave": true,
+              "at": [
+                3.3,
+                7
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "T6",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 60,
+              "at": [
+                5.2,
+                9.3
+              ]
+            },
+            {
+              "type": "muscle",
+              "from": 0.2,
+              "to": 0.9,
+              "sites": [
+                "F8",
+                "T4"
+              ],
+              "uv": 12
+            },
+            {
+              "type": "muscle",
+              "from": 6.6,
+              "to": 7,
+              "sites": [
+                "F7",
+                "T3"
+              ],
+              "uv": 12
+            }
+          ],
+          "montage": "longitudinal"
+        },
+        "t2": {
+          "seed": 46,
+          "ageYears": 4,
+          "state": "awake",
+          "sensitivity": 10,
+          "montages": [
+            "referential",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 7.5,
+            "pdrUv": 35,
+            "theta": 6,
+            "noise": 4
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "P3",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 55,
+              "at": [
+                1.8,
+                6.3
+              ]
+            },
+            {
+              "type": "sharp",
+              "center": "C4",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 110,
+              "at": [
+                4.1,
+                8.8
+              ]
+            },
+            {
+              "type": "sharp",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 150,
+              "durMs": 120,
+              "slowWave": true,
+              "at": [
+                3.3,
+                7
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "T6",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 60,
+              "at": [
+                5.2,
+                9.3
+              ]
+            },
+            {
+              "type": "muscle",
+              "from": 0.2,
+              "to": 0.9,
+              "sites": [
+                "F8",
+                "T4"
+              ],
+              "uv": 12
+            },
+            {
+              "type": "muscle",
+              "from": 6.6,
+              "to": 7,
+              "sites": [
+                "F7",
+                "T3"
+              ],
+              "uv": 12
+            }
+          ],
+          "montage": "referential"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Counting the foci",
+          "description": "Awake, 4 years old, 10 uV/mm, double banana. The page shows eight sharply contoured events spread over 10 s, some larger than the background by a wide margin. Find the phase reversal for each one by following where the up-going and down-going pen deflections meet.",
+          "question": "How many separate sites are discharging?",
+          "options": [
+            "Four: P3, T3, C4 and T6, each with its own phase reversal",
+            "Five: P3, T3, C4 and T6, plus the burst in the right temporal chains",
+            "Three: P3, T3 and T6, with the C4 event spreading from T6",
+            "Two: a left parieto-temporal area and a right centro-temporal area, each with spread"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Each event has its own reversal: C3-P3 down with P3-O1 up at 1.8 and 6.3 s (P3), F7-T3 down with T3-T5 up at 3.3 and 7.0 s (T3), F4-C4 down with C4-P4 up at 4.1 and 8.8 s (C4), and T4-T6 down with T6-O2 up at 5.2 and 9.3 s (T6). That is four sites, two events each. A two-area answer merges sites that reverse at different electrodes and in different lobes. The C4 events do not trace back to T6, because their reversal is at C4 and they do not occur together with the T6 events. The burst at 0.2 to 0.9 s in the right temporal chains is fast, irregular muscle with no after-going slow wave, so it is not a fifth focus.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Are they independent?",
+          "description": "List the time and site of each event: P3 at 1.8 s, T3 at 3.3 s, C4 at 4.1 s, T6 at 5.2 s, then P3 at 6.3 s, T3 at 7.0 s, C4 at 8.8 s and T6 at 9.3 s. The sites repeat in the same order in the second half of the page. Compare the gaps from one site to the next in the first and second rounds.",
+          "question": "What best shows these sites are independent?",
+          "options": [
+            "Every event is surface-negative, so a single deep source must be producing all of them",
+            "The gap between one site and the next changes from the first round to the second",
+            "The same four sites repeat in the same order, so the order proves a single spreading source",
+            "All eight events have a similar size and shape, which fits one generator seen from four angles"
+          ],
+          "correctAnswer": 1,
+          "explanation": "A single focus spreading to neighbors keeps a roughly fixed delay between sites. Here P3 to T3 takes about 1.5 s the first time and about 0.7 s the second, T3 to C4 about 0.8 s and then about 1.8 s, and C4 to T6 about 1.1 s and then about 0.5 s, so there is no fixed latency, and the events never occur together. Two rounds that happen to visit the same four sites in the same order do not prove one source, because the delays between them are not constant. Similar size and shape is common to discharges from different foci in the same child. A surface-negative polarity is expected for every spike or sharp wave and does not show a shared source. Multifocal independent discharges point to widespread cortical hyperexcitability, and the seizure types seen with them vary, so the technologist describes the sites and times and leaves interpretation to the physician.",
+          "tracing": "t1"
+        },
+        {
+          "step": 3,
+          "type": "troubleshooting",
+          "title": "The T3 event in the referential montage",
+          "description": "Switch to the referential (ear) tab and look at the T3 event near 3.3 s. Fp1-A1, F3-A1, C3-A1, P3-A1, O1-A1, F7-A1 and T5-A1 all deflect down together by roughly 55 to 90 uV, while T3-A1 goes up by about 60 uV.",
+          "question": "What explains this pattern?",
+          "options": [
+            "The left-side amplifier has more gain than the right side, which flips the polarity of T3-A1",
+            "Those channels see a widespread left discharge, while T3-A1 alone has a loose electrode",
+            "The discharge has spread across the whole left hemisphere, and T3 is the least involved electrode",
+            "A1, shared by every left channel, picks up the T3 discharge, so those channels move together"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A1 is the second input of every left-sided channel. When the T3 discharge reaches the ear electrode (as can happen with an anterior-to-mid temporal discharge), A1 turns negative, so every left channel that uses it as the reference is pushed positive (down), while T3-A1 itself goes up because T3 is even more negative. The same T3 event at 7.0 s shows the same pattern. This is reference contamination, and the way to locate the focus is the bipolar chain: F7-T3 goes down and T3-T5 goes up, a phase reversal at T3. A loose electrode would give a different, nonepileptiform appearance and would not time-lock to the event. A hemisphere-wide discharge would not make T3 move the opposite way. Gain differences between sides would not flip polarity with an event-locked pattern. The technologist notes the contamination and switches montage to localize.",
+          "tracing": "t2"
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "What goes in the record",
+          "description": "At 0.2 to 0.9 s there is a burst of fast irregular activity in Fp2-F8, F8-T4 and T4-T6 with no after-going slow wave, and a smaller one appears in the left temporal chains just before the T3 event near 7.0 s. The child was awake and active, and the technologist saw no change in behavior during any of the eight events.",
+          "question": "Which entry is best?",
+          "options": [
+            "Awake, no clinical change seen; four seizure foci found at P3, T3, C4 and T6, and the temporal bursts counted as extra sharply contoured events",
+            "Awake, no clinical change seen; eight sharply contoured events at P3, T3, C4 and T6 listed by time; temporal bursts noted as muscle",
+            "Awake, no clinical change seen; discharges listed at P3, T3, C4 and T6, but the temporal muscle bursts left out of the notes entirely",
+            "Awake, no clinical change seen; generalized discharges noted, with the individual sites left unlisted because each event is brief"
+          ],
+          "correctAnswer": 1,
+          "explanation": "A useful record lists the sites and times of the discharges, states the child's state and that no clinical change was seen, and mentions the temporal muscle bursts so the reader can see they were considered and set aside, especially the left one that comes just before a T3 discharge. Calling the foci seizure foci goes beyond describing the tracing, and counting muscle bursts as sharp events inflates the findings. Leaving the muscle out gives the reader no way to know the fast activity was reviewed. Calling the discharges generalized misdescribes a page where each event is focal, and leaving out the sites drops the information the physician needs. Multifocal independent discharges are associated with widespread cortical hyperexcitability and with several seizure types, which the physician, not the technologist, interprets.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Domain III: Epileptiform Discharges",
+          "to": "/workflow/domain-3/d3-epileptiform-discharges"
+        },
+        {
+          "label": "Domain II: Montages & Referencing",
+          "to": "/workflow/domain-2/d2-montages-referencing"
+        },
+        {
+          "label": "Domain III: Artifacts Recognition",
+          "to": "/workflow/domain-3/d3-artifacts-recognition"
+        }
+      ]
+    },
+    {
+      "id": "case-0086",
+      "title": "Irregular Polyspike-Wave Bursts vs Rhythmic 3 Hz Bursts",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3",
+        "domain-4"
+      ],
+      "tags": [
+        "polyspike-wave",
+        "spike-and-wave",
+        "myoclonus",
+        "montages",
+        "tracing"
+      ],
+      "syndromeIds": [
+        "jme",
+        "cae"
+      ],
+      "patternIds": [
+        "pattern_polyspike_wave",
+        "pattern_three_hz_gsw"
+      ],
+      "patient": {
+        "ageYears": 25,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Brief arm jerks, mostly in the first hours after waking",
+      "history": {
+        "eventDescription": "A 25-year-old woman describes sudden brief jerks of both arms, mostly soon after waking, and sometimes drops things. She is otherwise healthy and sleeps irregularly. A routine awake EEG with hyperventilation and photic stimulation is requested. A comparison page from a 12-year-old with staring spells is also on the review table.",
+        "lastEventTiming": "this morning",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Normal posterior rhythm continues between bursts",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "Three irregular generalized polyspike-and-wave bursts; two marked Jerk",
+        "focalFindings": "None",
+        "activation": "Hyperventilation and photic stimulation still to come",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Read the transverse montage for a symmetric discharge",
+        "Separate irregular polyspike-wave from rhythmic 3 Hz bursts",
+        "Document jerks and test responsiveness without diagnosing"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 47,
+          "ageYears": 25,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "transverse",
+          "montages": [
+            "transverse",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrUv": 40
+          },
+          "findings": [
+            {
+              "type": "polyspikeWave",
+              "at": 2.2,
+              "spikes": 4,
+              "uv": 230,
+              "marker": "Jerk"
+            },
+            {
+              "type": "polyspikeWave",
+              "at": 4.6,
+              "spikes": 5,
+              "uv": 260
+            },
+            {
+              "type": "polyspikeWave",
+              "at": 7.4,
+              "spikes": 4,
+              "uv": 210,
+              "marker": "Jerk"
+            }
+          ]
+        },
+        "t2": {
+          "seed": 48,
+          "ageYears": 12,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrUv": 55
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 1.4,
+              "to": 2.8,
+              "uv": 300,
+              "hz": 3,
+              "startHz": 3.3
+            },
+            {
+              "type": "gsw",
+              "from": 6.3,
+              "to": 7.9,
+              "uv": 300,
+              "hz": 3,
+              "startHz": 3.3
+            }
+          ],
+          "montage": "longitudinal"
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Three bursts in the transverse montage",
+          "description": "Awake, 25 years old, 10 uV/mm, transverse montage first. Text markers read Jerk near 2.2 s and 7.4 s. Count the bursts, then compare left chains (F7-F3, T3-C3) with right chains (F4-F8, C4-T4) at the start of each burst.",
+          "question": "What does the page show?",
+          "options": [
+            "Two bursts, both marked Jerk; left pairs go down while right pairs go up at the same instant",
+            "Three bursts, the one near 4.6 s unmarked; left chains start first and the right chains follow about 100 ms later",
+            "Three bursts, the one near 4.6 s unmarked; left pairs go down while right pairs go up at the same instant",
+            "Three bursts, the one near 4.6 s unmarked; left pairs and right pairs go the same direction at the same instant"
+          ],
+          "correctAnswer": 2,
+          "explanation": "There are three bursts, at about 2.2, 4.6 and 7.4 s, and only the first and third carry a Jerk marker. In the transverse montage each pair subtracts the medial electrode from the lateral one on the left (F7-F3, T3-C3) and the lateral electrode from the medial one on the right (F4-F8, C4-T4). A negative discharge centered near the midline therefore makes the left pairs go down (about +65 to +90 uV) and the right pairs go up (about -65 to -100 uV) at the same instant, a mirror image with no measurable lag, which is how a symmetric generalized discharge looks. The pairs that cross the midline (Fp1-Fp2, F3-Fz, Fz-F4) stay small, about 30 to 60 uV. Same-direction deflection or a left-to-right delay would point to a different arrangement, and counting only the marked bursts misses the middle one.",
+          "tracing": "t1"
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "A comparison page",
+          "description": "The comparison page is a 12-year-old, awake, 10 uV/mm, LFF 0.5, longitudinal tab. Two bursts appear near 1.4 to 2.8 s and 6.3 to 7.9 s with a normal posterior rhythm between them. Drag the caliper across one full cycle of the burst, then look back at the shape of the polyspike bursts.",
+          "question": "How do these bursts differ from the first page?",
+          "options": [
+            "They repeat at about 3 Hz with an identical spike-and-wave shape, unlike the uneven spike clusters",
+            "They are regular single-spike complexes at about 6 Hz, brief in duration and limited to posterior chains",
+            "They are slower, near 1 Hz, with a single spike riding on each slow wave in every cycle",
+            "They are clusters of four to five uneven spikes followed by a slow wave, about once every 2.5 seconds"
+          ],
+          "correctAnswer": 0,
+          "explanation": "One cycle measures about 320 ms (1 / 0.32 s = 3.1 Hz), and every cycle has the same single spike and slow wave in the same arrangement for about 1.5 s: a rhythmic, monomorphic discharge, largest in central and parietal chains (Cz-Pz about 170 to 195 uV, C3-P3 and C4-P4 about 140 to 150 uV). The first page is different on both counts: each burst is a cluster of several spikes of varying size and spacing, then a slow wave, with about 1.5 to 2 s of ordinary background between bursts, so it is polymorphic and arrhythmic. A 1 Hz rate or a 6 Hz rate does not match the caliper reading, and the description of four to five uneven spikes about every 2.5 seconds fits the first page, not this one. Rhythmic 3 Hz bursts are what absence epilepsy classically shows, whereas irregular polyspike-wave bursts with jerks are typical of juvenile myoclonic epilepsy and related myoclonic epilepsies, though neither pattern is specific; the technologist describes and documents and leaves the classification to the physician.",
+          "tracing": "t2"
+        },
+        {
+          "step": 3,
+          "type": "safety-response",
+          "title": "During a brief rhythmic burst",
+          "description": "Back on the comparison page, the child is counting aloud and stops partway through the burst that begins at about 6.3 s, then continues after about 7.9 s. The protocol still includes hyperventilation and photic stimulation.",
+          "question": "What should the technologist do?",
+          "options": [
+            "Mark each burst, test responsiveness with words to repeat and recall, continue activation per protocol, report it",
+            "Stop the recording and call a rapid response, since spike-and-wave bursts always mean a convulsive event",
+            "Note the bursts only on the page, since bursts of 1.5 s are too short to test and need no behavior notes",
+            "Start photic stimulation at once to see whether it lengthens the bursts, and tell the physician afterward"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Bursts of about 1.5 s are long enough for a quick responsiveness check: a few words to remember and recall afterward, or a phrase to repeat, with the response noted against the burst time. The technologist then continues the activation procedures per the lab protocol unless the physician says otherwise, and reports the findings. Writing only on the page leaves out the behavioral correlate the reader needs. A rapid response is for an event the lab's seizure protocol treats as an emergency, such as a convulsion or a prolonged seizure, not a brief burst with a short pause in counting. Starting photic stimulation out of order, outside the protocol and to provoke longer bursts, goes beyond the technologist's role and could put the child at risk.",
+          "tracing": "t2"
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Logging the jerks",
+          "description": "Back to the 25-year-old on the transverse tab. The technologist saw both arms jerk with the first and third bursts and noted no visible movement with the middle one. The patient was awake and answering questions. Hyperventilation and photic stimulation are still ahead.",
+          "question": "Which entry is best?",
+          "options": [
+            "Three polyspike-wave bursts logged by time, jerks seen with the first and last, none with the middle; continue activation per protocol and notify the physician",
+            "Bursts logged without times because the polyspike shape makes the exact moments hard to pin down; activation continued",
+            "Two jerk events at 2.2 and 7.4 s recorded, and the middle burst left out because it did not produce a jerk",
+            "Three myoclonic seizures at 2.2, 4.6 and 7.4 s, consistent with juvenile myoclonic epilepsy; photic stimulation omitted to avoid provoking more"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The page has three bursts, so the record lists all three with times, notes which were accompanied by visible jerks (those marked at about 2.2 and 7.4 s), states that no movement was seen with the burst at about 4.6 s, records the patient's state and responsiveness, and continues activation per the protocol while notifying the physician. Naming a syndrome and writing seizure types is a diagnosis and outside the technologist's scope, and dropping photic stimulation or the activation without a physician order removes a standard part of the study. Leaving out the middle burst because no jerk was seen erases a finding that the physician needs to see. Omitting the times removes the link between the movements and the EEG, which is the point of the event markers.",
+          "tracing": "t1"
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Pattern: Polyspike and Wave",
+          "to": "/patterns/pattern_polyspike_wave"
+        },
+        {
+          "label": "Pattern: 3 Hz Generalized Spike-and-Wave",
+          "to": "/patterns/pattern_three_hz_gsw"
+        },
+        {
+          "label": "Domain III: Activation Procedures",
+          "to": "/workflow/domain-3/d3-activation-procedures"
+        }
+      ]
     }
   ]
 }

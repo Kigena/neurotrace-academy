@@ -89,6 +89,47 @@ describe("synthetic EEG generator", () => {
     expect(crossings(3)).toBeGreaterThan(crossings(1.5) * 1.4);
   });
 
+  describe("eye-monitor electrodes (eyeCheck montage)", () => {
+    const corr = (a, b) => {
+      let sa = 0, sb = 0, sab = 0;
+      for (let i = 0; i < a.length; i++) { sa += a[i] * a[i]; sb += b[i] * b[i]; sab += a[i] * b[i]; }
+      return sab / Math.sqrt(sa * sb);
+    };
+    const run = (findings) => renderScene({ seed: 11, ekg: false, background: QUIET, findings }, "eyeCheck");
+
+    it("makes vertical eye movements out of phase between Fp and infraorbital leads", () => {
+      const page = run([{ type: "blink", at: 3 }]);
+      expect(peak(ch(page, "Fp1-A1"), 3.15, 0.1)).toBeGreaterThan(20);
+      expect(peak(ch(page, "IO1-A1"), 3.15, 0.1)).toBeLessThan(-20);
+      expect(peak(ch(page, "LOC-A1"), 3.15, 0.1) * peak(ch(page, "ROC-A2"), 3.15, 0.1)).toBeLessThan(0);
+    });
+
+    it("makes frontal delta in phase between Fp and infraorbital leads", () => {
+      const page = run([{ type: "firda", hz: 2, uv: 150 }]);
+      expect(corr(ch(page, "Fp1-A1"), ch(page, "IO1-A1"))).toBeGreaterThan(0.8);
+      expect(corr(ch(page, "Fp2-A2"), ch(page, "IO2-A2"))).toBeGreaterThan(0.8);
+    });
+
+    it("makes glossokinetic potentials in phase and larger at the infraorbital leads", () => {
+      const page = run([{ type: "glossokinetic", at: [3, 6] }]);
+      expect(corr(ch(page, "Fp1-A1"), ch(page, "IO1-A1"))).toBeGreaterThan(0.95);
+      expect(Math.abs(peak(ch(page, "IO1-A1"), 3.4, 0.4))).toBeGreaterThan(1.5 * Math.abs(peak(ch(page, "Fp1-A1"), 3.4, 0.4)));
+    });
+
+    it("makes lateral gaze out of phase between the outer canthus leads", () => {
+      const page = run([{ type: "lateralEye", at: 3, durS: 1.5, dir: "left" }]);
+      expect(peak(ch(page, "LOC-A1"), 3.8, 0.4) * peak(ch(page, "ROC-A2"), 3.8, 0.4)).toBeLessThan(0);
+    });
+  });
+
+  it("puts regional rhythmic delta where the center says (occipital vs frontal)", () => {
+    const rmsAt = (findings, label) => rms(ch(renderScene({ seed: 12, ekg: false, background: QUIET, findings }, "referential"), label));
+    const occ = [{ type: "rhythmicDelta", hz: 3, uv: 150 }];
+    expect(rmsAt(occ, "O1-A1")).toBeGreaterThan(2 * rmsAt(occ, "Fp1-A1"));
+    const fr = [{ type: "firda", hz: 2, uv: 150 }];
+    expect(rmsAt(fr, "Fp1-A1")).toBeGreaterThan(2 * rmsAt(fr, "O1-A1"));
+  });
+
   it("is deterministic for a given seed and changes with the seed", () => {
     const scene = { seed: 9, findings: [{ type: "mu" }] };
     expect(Array.from(ch(renderScene(scene), "C3-P3").slice(0, 50))).toEqual(Array.from(ch(renderScene(scene), "C3-P3").slice(0, 50)));

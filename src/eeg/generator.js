@@ -24,10 +24,14 @@ export const ELECTRODES = {
   T5: [-0.65, -0.47], P3: [-0.33, -0.4], Pz: [0, -0.38], P4: [0.33, -0.4], T6: [0.65, -0.47],
   O1: [-0.25, -0.77], O2: [0.25, -0.77],
   A1: [-0.97, -0.08], A2: [0.97, -0.08],
+  // eye-monitor electrodes: infraorbital (below the eye) and outer canthi (LOC above, ROC below eye level)
+  IO1: [-0.3, 0.98], IO2: [0.3, 0.98], LOC: [-0.62, 0.98], ROC: [0.62, 0.98],
 };
 export const ELECTRODE_NAMES = Object.keys(ELECTRODES);
-const LEFT = new Set(["Fp1", "F7", "F3", "T3", "C3", "T5", "P3", "O1", "A1"]);
-const RIGHT = new Set(["Fp2", "F8", "F4", "T4", "C4", "T6", "P4", "O2", "A2"]);
+const EYE_NAMES = ["IO1", "IO2", "LOC", "ROC"];
+const CORE_NAMES = ELECTRODE_NAMES.filter((n) => !EYE_NAMES.includes(n));
+const LEFT = new Set(["Fp1", "F7", "F3", "T3", "C3", "T5", "P3", "O1", "A1", "IO1", "LOC"]);
+const RIGHT = new Set(["Fp2", "F8", "F4", "T4", "C4", "T6", "P4", "O2", "A2", "IO2", "ROC"]);
 
 export const MONTAGES = {
   longitudinal: {
@@ -48,6 +52,13 @@ export const MONTAGES = {
       ["T3", "C3"], ["C3", "Cz"], ["Cz", "C4"], ["C4", "T4"],
       ["T5", "P3"], ["P3", "Pz"], ["Pz", "P4"], ["P4", "T6"],
       ["T5", "O1"], ["O1", "O2"], ["O2", "T6"],
+    ],
+  },
+  eyeCheck: {
+    label: "Eye-movement check (ear-referenced)",
+    pairs: [
+      ["Fp1", "A1"], ["IO1", "A1"], ["Fp2", "A2"], ["IO2", "A2"], ["LOC", "A1"], ["ROC", "A2"],
+      ["F3", "A1"], ["F4", "A2"], ["C3", "A1"], ["C4", "A2"], ["T3", "A1"], ["T4", "A2"], ["O1", "A1"], ["O2", "A2"],
     ],
   },
   referential: {
@@ -197,7 +208,7 @@ const DEFAULT_BG = {
 export const FINDING_TYPES = [
   "mu", "muShapedAlpha", "firda", "polymorphicDelta", "spike", "sharp", "gsw", "polyspikeWave",
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
-  "diffuseSlowing", "triphasic",
+  "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic",
 ];
 
 /**
@@ -232,7 +243,13 @@ export function generateReferential(scene) {
   };
 
   // --- local background at each electrode (independent, so bipolar pairs differ)
-  for (const name of ELECTRODE_NAMES) {
+  // Eye-monitor electrodes use a separate random stream so adding them never changes existing pages.
+  const eyeGauss = gaussianRng(mulberry32((scene.seed ?? 1) * 40503 + 7));
+  for (const name of EYE_NAMES) {
+    const white = lowpassNoise(n, 30, eyeGauss);
+    for (let i = 0; i < n; i++) V[name][i] += bg.noise * 0.3 * white[i];
+  }
+  for (const name of CORE_NAMES) {
     const g = sideGain(name) * (name === "A1" || name === "A2" ? 0.6 : 1);
     const ch = V[name];
     const slow = lowpassNoise(n, 2.5, gauss);
@@ -311,7 +328,8 @@ export function generateReferential(scene) {
         }
         break;
       }
-      case "firda": {
+      case "firda":
+      case "rhythmicDelta": {
         const hz = f.hz ?? 2;
         const amp = f.uv ?? 180;
         const runs = f.runs || [[0, seconds]];
@@ -324,7 +342,7 @@ export function generateReferential(scene) {
           for (const [a, b] of runs) g = Math.max(g, gateValue(t, a, b, 0.4));
           sig[i] = -amp * g * (Math.sin(phi) + 0.22 * Math.sin(2 * phi + 0.9));
         }
-        addSource(V, field([0, 0.62], 0.42), sig);
+        addSource(V, field(f.center ?? (f.type === "rhythmicDelta" ? [0, -0.65] : [0, 0.62]), f.sigma ?? 0.42), sig);
         break;
       }
       case "polymorphicDelta": {
@@ -380,7 +398,7 @@ export function generateReferential(scene) {
           }
           sig[i] = amp * v;
         }
-        addSource(V, field([0, 0.35], 0.62), sig);
+        addSource(V, field(f.center ?? [0, 0.35], f.sigma ?? 0.62), sig);
         markers.push({ at: from, label: f.label ?? "" });
         break;
       }
@@ -427,7 +445,7 @@ export function generateReferential(scene) {
           for (let i = 0; i < n; i++) sig[i] *= amp * k * gate[i] * 0.85;
           addSource(V, field(center, 0.5), sig);
         }
-        for (const name of ELECTRODE_NAMES) {
+        for (const name of CORE_NAMES) {
           const loc = narrowband(n, hz, bw, gauss);
           const k = Math.max(0.3, 1 + front * ELECTRODES[name][1]) * amp * 0.5;
           const ch = V[name];
@@ -505,7 +523,9 @@ export function generateReferential(scene) {
           for (const t0 of times) v += asymGauss(t, t0 + 0.12, 0.07, 0.16);
           sig[i] = amp * v;
         }
-        addSource(V, field([0, 1.08], 0.3), sig);
+        const wBlink = field([0, 1.08], 0.3);
+        Object.assign(wBlink, { IO1: -0.85, IO2: -0.85, LOC: 0.8, ROC: -0.8 }); // cornea moves away from the infraorbital leads
+        addSource(V, wBlink, sig);
         if (f.type !== "blink") markers.push({ at: times[0], label: f.type === "eyesOpen" ? "Eyes open" : "Eyes closed" });
         break;
       }
@@ -519,6 +539,22 @@ export function generateReferential(scene) {
         for (let i = 0; i < n; i++) sig[i] = amp * sgn * gateValue(time(i), t0, t0 + dur, 0.35);
         addSource(V, field("F7", 0.2), sig, 1);
         addSource(V, field("F8", 0.2), sig, -1);
+        const lw = { LOC: 0.9, ROC: -0.9, IO1: 0.55, IO2: -0.55 };
+        addSource(V, Object.fromEntries(ELECTRODE_NAMES.map((nm) => [nm, lw[nm] || 0])), sig);
+        break;
+      }
+      case "glossokinetic": {
+        // Tongue potential: slow wave in phase on both sides, larger at the infraorbital leads than at Fp1/Fp2.
+        const amp = f.uv ?? 90;
+        const times = Array.isArray(f.at) ? f.at : [f.at];
+        const sig = new Float64Array(n);
+        for (let i = 0; i < n; i++) {
+          let v = 0;
+          for (const t0 of times) v += asymGauss(time(i), t0 + 0.4, 0.2, 0.3);
+          sig[i] = -amp * v;
+        }
+        const gw = { IO1: 1, IO2: 1, Fp1: 0.55, Fp2: 0.55, LOC: 0.5, ROC: 0.5, F7: 0.3, F8: 0.3, F3: 0.3, F4: 0.3, Fz: 0.3, T3: 0.12, T4: 0.12 };
+        addSource(V, Object.fromEntries(ELECTRODE_NAMES.map((nm) => [nm, gw[nm] || 0])), sig);
         break;
       }
       case "muscle": {

@@ -14,7 +14,7 @@ const PX_PER_MM = TRACE_W / 300;
 const ROW = 27;
 const HEADER = 40;
 const FOOTER = 30;
-const GROUPS = { longitudinal: [4, 4, 4, 4, 2], transverse: [3, 4, 4, 4, 3], referential: [8, 8] };
+const GROUPS = { longitudinal: [4, 4, 4, 4, 2], transverse: [3, 4, 4, 4, 3], referential: [8, 8], eyeCheck: [2, 2, 2, 2, 2, 2, 2] };
 const SENSITIVITIES = [3, 5, 7, 10, 15, 20, 30, 50];
 const STATE_LABEL = { awake: "awake", drowsy: "drowsy", n2: "stage N2 sleep", stupor: "stuporous", semicomatose: "semicomatose", sleep: "asleep" };
 
@@ -215,7 +215,7 @@ export default function EegTracing({ scene, caption }) {
               onClick={() => setMontage(m)}
               className={`rounded px-2 py-1 font-semibold ${montage === m ? "bg-indigo-600 text-white" : "text-slate-600 hover:bg-slate-100"}`}
             >
-              {m === "longitudinal" ? "Longitudinal" : m === "transverse" ? "Transverse" : "Referential"}
+              {m === "longitudinal" ? "Longitudinal" : m === "transverse" ? "Transverse" : m === "eyeCheck" ? "Eye check" : "Referential"}
             </button>
           ))}
         </div>
