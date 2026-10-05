@@ -1,0 +1,70 @@
+{
+  "seed": 61,
+  "ageYears": 34,
+  "state": "awake",
+  "sensitivity": 7,
+  "filterControls": true,
+  "lpOrder": 1,
+  "lff": 1,
+  "hff": 70,
+  "montages": [
+    "longitudinal"
+  ],
+  "calibration": {
+    "at": [
+      0.5
+    ],
+    "uv": 50,
+    "durS": 1.8
+  },
+  "background": {
+    "pdrUv": 35,
+    "beta": 3,
+    "theta": 2,
+    "noise": 3
+  },
+  "findings": [
+    {
+      "type": "diffuseSlowing",
+      "hz": 1.2,
+      "bwHz": 0.6,
+      "uv": 70,
+      "frontal": 0.3,
+      "runs": [
+        [
+          3.6,
+          6.2
+        ]
+      ]
+    },
+    {
+      "type": "spike",
+      "center": "T3",
+      "sigma": 0.17,
+      "uv": 130,
+      "durMs": 50,
+      "at": [
+        7,
+        8.3
+      ]
+    },
+    {
+      "type": "muscle",
+      "from": 8.7,
+      "to": 10,
+      "sites": [
+        "F8",
+        "T4"
+      ],
+      "uv": 14
+    },
+    {
+      "type": "sine",
+      "hz": 60,
+      "uv": 25,
+      "sites": [
+        "T5"
+      ]
+    }
+  ]
+}

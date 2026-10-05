@@ -14,6 +14,7 @@ import CaseDetail from "./pages/CaseDetail.jsx";
 import ShareCase from "./pages/cases/ShareCase.jsx";
 import EditCase from "./pages/cases/EditCase.jsx";
 import Workflow from "./pages/Workflow.jsx";
+import AmplifierFilters from "./pages/AmplifierFilters.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
@@ -214,6 +215,12 @@ function AppContent() {
             <Route path="/emg-ncs" element={
               <ProtectedRoute>
                 <EmgNcsStudy />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/amplifier-controls" element={
+              <ProtectedRoute>
+                <AmplifierFilters />
               </ProtectedRoute>
             } />
           </Routes>
