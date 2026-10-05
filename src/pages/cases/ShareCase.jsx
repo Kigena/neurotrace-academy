@@ -62,7 +62,7 @@ const ShareCase = () => {
     // Debug helper - can be removed later
     const runDiagnostics = () => {
         const token = localStorage.getItem('token');
-        const apiUrl = import.meta.env.VITE_API_URL || 'https://neurotrace-academy.onrender.com/api';
+        const apiUrl = import.meta.env.VITE_API_URL || 'https://neurolinea-api.onrender.com/api';
         
         console.log('=== CASE SHARING DIAGNOSTICS ===');
         console.log('1. Authentication:');

@@ -18,7 +18,7 @@ below is an operator action.
 | API + Socket.io (Express, Node ≥ 20) | `server/` | Render web service (currently suspended) — any Node host works |
 | Database | MongoDB (Mongoose 8) | External (e.g. MongoDB Atlas) via `MONGODB_URI` |
 | File uploads | Cloudinary (preferred) or local disk fallback | Cloudinary |
-| AI | Google Gemini `gemini-2.5-flash` | via `GEMINI_API_KEY` |
+| AI | Google Gemini (`gemini-3.5-flash`, falls back to `gemini-3.5-flash-lite`) | via `GEMINI_API_KEY`; models set by `GEMINI_MODEL` / `GEMINI_FALLBACK_MODEL` |
 
 ---
 
@@ -34,13 +34,14 @@ below is an operator action.
 | `NODE_ENV` | Recommended | `production` enables required-variable enforcement for `MONGODB_URI`. |
 | `PORT` | Optional | Defaults to `5003`. Render injects its own. |
 | `GEMINI_API_KEY` | Optional | AI features fail without it; everything else works. |
+| `GEMINI_MODEL`, `GEMINI_FALLBACK_MODEL` | Optional | Primary and backup Gemini models. Defaults `gemini-3.5-flash` and `gemini-3.5-flash-lite`. The backup is used only when the primary is retired, rate limited or overloaded. Google retires models regularly (2.0 Flash is gone; 2.5 Flash is scheduled to shut down on 2026-10-16), so change these in the host's environment settings instead of editing code. |
 | `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET` | Recommended | All three required to enable Cloudinary. Otherwise uploads use **ephemeral** local disk. |
 
 ### Frontend (Vercel) — see `.env.example`
 
 | Variable | Notes |
 |---|---|
-| `VITE_API_URL` | Base API URL **including `/api`**, e.g. `https://<api-host>/api`. Baked in at build time; public. If unset, the code falls back to `https://neurotrace-academy.onrender.com/api`. |
+| `VITE_API_URL` | Base API URL **including `/api`**, e.g. `https://<api-host>/api`. Baked in at build time; public. If unset, the code falls back to `https://neurolinea-api.onrender.com/api`. |
 
 > Local development note: the committed-ignored root `.env` on the operator's
 > machine currently points at `http://localhost:5003` **without** `/api`,

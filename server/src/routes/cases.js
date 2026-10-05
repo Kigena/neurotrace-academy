@@ -30,7 +30,7 @@ router.post('/upload', auth, caseUpload.single('file'), (req, res) => {
             console.log('📎 Case file uploaded to Cloudinary:', fileUrl);
         } else {
             // Local storage - build URL
-            const host = req.get('host') || 'neurotrace-academy.onrender.com';
+            const host = req.get('host') || 'neurolinea-api.onrender.com';
             const protocol = host.includes('localhost') ? 'http' : 'https';
             fileUrl = `${protocol}://${host}/uploads/cases/${req.file.filename}`;
             console.log('📎 Case file uploaded to local disk (ephemeral):', fileUrl);

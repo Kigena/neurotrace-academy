@@ -1,10 +1,14 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { createResilientModel, DEFAULT_MODEL, DEFAULT_FALLBACK_MODEL } from './geminiModel.js';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 class GeminiService {
     constructor() {
-        this.model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+        this.model = createResilientModel(genAI, {
+            primary: process.env.GEMINI_MODEL || DEFAULT_MODEL,
+            fallback: process.env.GEMINI_FALLBACK_MODEL || DEFAULT_FALLBACK_MODEL,
+        });
     }
 
     /**

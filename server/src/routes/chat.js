@@ -30,7 +30,7 @@ export function createChatRouter({ limiters }) {
             if (isCloudinary) {
                 fileUrl = req.file.path;
             } else {
-                const host = req.get('host') || 'neurotrace-academy.onrender.com';
+                const host = req.get('host') || 'neurolinea-api.onrender.com';
                 const protocol = host.includes('localhost') ? 'http' : 'https';
                 fileUrl = `${protocol}://${host}/uploads/${req.file.filename}`;
             }

@@ -1,8 +1,8 @@
-const API_URL = import.meta.env.VITE_API_URL || 'https://neurotrace-academy.onrender.com/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://neurolinea-api.onrender.com/api';
 
 // Get base URL without /api suffix for static files (uploads)
 const getBaseUrl = () => {
-    const apiUrl = import.meta.env.VITE_API_URL || 'https://neurotrace-academy.onrender.com/api';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://neurolinea-api.onrender.com/api';
     return apiUrl.replace(/\/api$/, '');
 };
 
