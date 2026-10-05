@@ -208,7 +208,7 @@ const DEFAULT_BG = {
 export const FINDING_TYPES = [
   "mu", "muShapedAlpha", "firda", "polymorphicDelta", "spike", "sharp", "gsw", "polyspikeWave",
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
-  "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic",
+  "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine",
 ];
 
 /**
@@ -543,6 +543,22 @@ export function generateReferential(scene) {
         addSource(V, Object.fromEntries(ELECTRODE_NAMES.map((nm) => [nm, lw[nm] || 0])), sig);
         break;
       }
+      case "sine": {
+        // A pure tone on named electrodes (not common-mode): 60 Hz pickup from a poor electrode, or a test signal.
+        const hz = f.hz ?? 60;
+        const amp = f.uv ?? 30;
+        const from = f.from ?? -Infinity;
+        const to = f.to ?? Infinity;
+        for (const site of f.sites || ["T3"]) {
+          if (!V[site]) throw new Error(`Unknown electrode ${site}`);
+          const ch = V[site];
+          for (let i = 0; i < n; i++) {
+            const t = time(i);
+            if (t >= from && t <= to) ch[i] += amp * Math.sin(2 * Math.PI * hz * t);
+          }
+        }
+        break;
+      }
       case "glossokinetic": {
         // Tongue potential: slow wave in phase on both sides, larger at the infraorbital leads than at Fp1/Fp2.
         const amp = f.uv ?? 90;
@@ -627,8 +643,16 @@ function highpass(x, lffHz) {
   return y;
 }
 
-function lowpass(x, hffHz) {
+function lowpass(x, hffHz, order = 2) {
   if (!hffHz || hffHz >= FS / 2) return x;
+  if (order === 1) {
+    // single-pole RC (6 dB/octave): rise time constant TC = 1 / (2 pi f)
+    const rc = 1 / (2 * Math.PI * hffHz);
+    const a = 1 / FS / (rc + 1 / FS);
+    const out = new Float64Array(x.length);
+    for (let i = 1; i < x.length; i++) out[i] = out[i - 1] + a * (x[i] - out[i - 1]);
+    return out;
+  }
   // 2nd-order Butterworth via bilinear transform
   const k = Math.tan((Math.PI * hffHz) / FS);
   const q = Math.SQRT1_2;
@@ -644,8 +668,8 @@ function lowpass(x, hffHz) {
   return y;
 }
 
-function notch60(x) {
-  const w = (2 * Math.PI * 60) / FS;
+function notchFilter(x, hz = 60) {
+  const w = (2 * Math.PI * hz) / FS;
   const r = 0.97;
   const y = new Float64Array(x.length);
   for (let i = 2; i < x.length; i++) {
@@ -665,14 +689,26 @@ export function renderScene(scene, montageKey) {
   const ref = generateReferential(scene);
   const lff = scene.lff ?? 1;
   const hff = scene.hff ?? 70;
+  const lpOrder = scene.lpOrder ?? 2;
+  // Calibration signal: a square pulse injected into every channel ahead of the filters.
+  // Negative voltage = upward deflection, so the pulse rises on screen like a bedside calibration.
+  let cal = null;
+  if (scene.calibration) {
+    const { at = [0.6], uv = 50, durS = 1.5 } = scene.calibration;
+    cal = new Float64Array(ref.n);
+    for (let i = 0; i < ref.n; i++) {
+      const t = i / FS - PRE_ROLL_S;
+      for (const t0 of at) if (t >= t0 && t < t0 + durS) cal[i] = -uv;
+    }
+  }
   const channels = montage.pairs.map(([a, b]) => {
     const raw = new Float64Array(ref.n);
-    for (let i = 0; i < ref.n; i++) raw[i] = ref.V[a][i] - ref.V[b][i];
-    let y = lowpass(highpass(raw, lff), hff);
-    if (scene.notch) y = notch60(y);
+    for (let i = 0; i < ref.n; i++) raw[i] = ref.V[a][i] - ref.V[b][i] + (cal ? cal[i] : 0);
+    let y = lowpass(highpass(raw, lff), hff, lpOrder);
+    if (scene.notch) y = notchFilter(y, scene.notchHz ?? 60);
     return { label: `${a}-${b}`, inputs: [a, b], data: y.subarray(ref.preRoll) };
   });
-  const ekg = scene.ekg === false ? null : lowpass(highpass(ref.ekg, lff), hff).subarray(ref.preRoll);
+  const ekg = scene.ekg === false ? null : lowpass(highpass(ref.ekg, lff), hff, lpOrder).subarray(ref.preRoll);
   return { channels, ekg, markers: ref.markers, seconds: scene.seconds ?? 10, fs: FS, montage: key, montageLabel: montage.label };
 }
 
@@ -681,6 +717,7 @@ export function validateScene(scene) {
   if (!scene || typeof scene !== "object") throw new Error("scene must be an object");
   for (const f of scene.findings || []) if (!FINDING_TYPES.includes(f.type)) throw new Error(`unknown finding ${f.type}`);
   for (const m of scene.montages || [scene.montage || "longitudinal"]) if (!MONTAGES[m]) throw new Error(`unknown montage ${m}`);
+  if (scene.calibration && !(scene.calibration.at || [0.6]).every(Number.isFinite)) throw new Error("calibration.at must be numbers");
   renderScene(scene);
   return true;
 }

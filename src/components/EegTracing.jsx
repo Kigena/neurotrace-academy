@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { renderScene } from "../eeg/generator";
+import { HFF_CHOICES, LFF_CHOICES, timeConstantFromCutoff } from "../eeg/filters";
 
 /**
  * Renders a NeuroLinea synthetic EEG page (see src/eeg/generator.js).
@@ -34,7 +35,7 @@ function pathFor(data, x0, y0, pxPerSample, pxPerUv) {
   return d;
 }
 
-function TracingSvg({ scene, montage, sens, caliper, onCaliper, caliperMode }) {
+function TracingSvg({ scene, montage, sens, caliper, onCaliper, ruler, onRuler, tool }) {
   const svgRef = useRef(null);
   const drag = useRef(null);
   const page = useMemo(() => renderScene(scene, montage), [scene, montage]);
@@ -65,25 +66,31 @@ function TracingSvg({ scene, montage, sens, caliper, onCaliper, caliperMode }) {
   const ekgSens = scene.ekgSens ?? 100;
   const calUv = sens <= 10 ? 50 : sens <= 20 ? 100 : 200;
 
-  const toX = (evt) => {
+  const toPoint = (evt) => {
     const svg = svgRef.current;
     const pt = svg.createSVGPoint();
     pt.x = evt.clientX;
     pt.y = evt.clientY;
     const p = pt.matrixTransform(svg.getScreenCTM().inverse());
-    return Math.max(LABEL_W, Math.min(LABEL_W + TRACE_W, p.x));
+    return {
+      x: Math.max(LABEL_W, Math.min(LABEL_W + TRACE_W, p.x)),
+      y: Math.max(HEADER - 6, Math.min(height - FOOTER + 2, p.y)),
+    };
   };
   const onDown = (e) => {
-    if (!caliperMode) return;
+    if (!tool) return;
     e.preventDefault();
-    const x = toX(e);
-    drag.current = x;
-    onCaliper({ x1: x, x2: x });
+    const { x, y } = toPoint(e);
+    drag.current = tool === "time" ? x : y;
+    if (tool === "time") onCaliper({ x1: x, x2: x });
+    else onRuler({ y1: y, y2: y });
     e.currentTarget.setPointerCapture?.(e.pointerId);
   };
   const onMove = (e) => {
-    if (!caliperMode || drag.current == null) return;
-    onCaliper({ x1: drag.current, x2: toX(e) });
+    if (!tool || drag.current == null) return;
+    const { x, y } = toPoint(e);
+    if (tool === "time") onCaliper({ x1: drag.current, x2: x });
+    else onRuler({ y1: drag.current, y2: y });
   };
   const onUp = () => {
     drag.current = null;
@@ -91,6 +98,9 @@ function TracingSvg({ scene, montage, sens, caliper, onCaliper, caliperMode }) {
 
   const cal = caliper && Math.abs(caliper.x2 - caliper.x1) > 1 ? caliper : null;
   const calMs = cal ? (Math.abs(cal.x2 - cal.x1) / pxPerSec) * 1000 : 0;
+  const rul = ruler && Math.abs(ruler.y2 - ruler.y1) > 1 ? ruler : null;
+  const rulMm = rul ? Math.abs(rul.y2 - rul.y1) / PX_PER_MM : 0;
+  const lffTc = timeConstantFromCutoff(scene.lff ?? 1);
   const stateText = [ageText(scene.ageYears), STATE_LABEL[scene.state] || scene.state].filter(Boolean).join(", ");
 
   return (
@@ -98,7 +108,7 @@ function TracingSvg({ scene, montage, sens, caliper, onCaliper, caliperMode }) {
       ref={svgRef}
       viewBox={`0 0 ${width} ${height}`}
       className="block h-auto w-full select-none bg-white"
-      style={{ touchAction: caliperMode ? "none" : "auto", cursor: caliperMode ? "col-resize" : "default" }}
+      style={{ touchAction: tool ? "none" : "auto", cursor: tool === "time" ? "col-resize" : tool === "amp" ? "row-resize" : "default" }}
       onPointerDown={onDown}
       onPointerMove={onMove}
       onPointerUp={onUp}
@@ -110,7 +120,7 @@ function TracingSvg({ scene, montage, sens, caliper, onCaliper, caliperMode }) {
       <text x={6} y={15} fontSize="11" fill="#475569" fontFamily="ui-monospace, monospace">NeuroLinea · {page.montageLabel}</text>
       <text x={LABEL_W + TRACE_W / 2} y={15} fontSize="12" fill="#0f172a" fontWeight="600" textAnchor="middle">{stateText}</text>
       <text x={width - 6} y={15} fontSize="11" fill="#475569" textAnchor="end" fontFamily="ui-monospace, monospace">
-        LFF {scene.lff ?? 1} Hz · HFF {scene.hff ?? 70} Hz{scene.notch ? " · notch" : ""} · {sens} µV/mm
+        LFF {scene.lff ?? 1} Hz{scene.filterControls ? ` (TC ${lffTc < 1 ? lffTc.toFixed(2) : lffTc.toFixed(1)} s)` : ""} · HFF {scene.hff ?? 70} Hz{scene.notch ? ` · notch ${scene.notchHz ?? 60}` : ""} · {sens} µV/mm
       </text>
 
       {/* time grid */}
@@ -162,6 +172,18 @@ function TracingSvg({ scene, montage, sens, caliper, onCaliper, caliperMode }) {
       ))}
       <text x={LABEL_W} y={height - 4} fontSize="9" fill="#94a3b8">NeuroLinea synthetic tracing · for education</text>
 
+      {/* amplitude ruler */}
+      {rul && (
+        <g pointerEvents="none">
+          <line x1={LABEL_W} x2={LABEL_W + TRACE_W} y1={rul.y1} y2={rul.y1} stroke="#0d9488" strokeWidth={1} />
+          <line x1={LABEL_W} x2={LABEL_W + TRACE_W} y1={rul.y2} y2={rul.y2} stroke="#0d9488" strokeWidth={1} />
+          <rect x={LABEL_W + 8} y={(rul.y1 + rul.y2) / 2 - 10} width={232} height={20} rx={3} fill="#0d9488" />
+          <text x={LABEL_W + 14} y={(rul.y1 + rul.y2) / 2 + 4} fontSize="11" fill="#fff" fontWeight="600">
+            {rulMm.toFixed(1)} mm × {sens} µV/mm = {Math.round(rulMm * sens)} µV
+          </text>
+        </g>
+      )}
+
       {/* caliper */}
       {cal && (
         <g pointerEvents="none">
@@ -182,14 +204,22 @@ export default function EegTracing({ scene, caption }) {
   const montages = scene.montages?.length ? scene.montages : [scene.montage || "longitudinal"];
   const [montage, setMontage] = useState(scene.montage || montages[0]);
   const [sens, setSens] = useState(scene.sensitivity ?? 7);
-  const [caliperMode, setCaliperMode] = useState(false);
+  const [lff, setLff] = useState(scene.lff ?? 1);
+  const [hff, setHff] = useState(scene.hff ?? 70);
+  const [notch, setNotch] = useState(!!scene.notch);
+  const [tool, setTool] = useState(null);
   const [caliper, setCaliper] = useState(null);
+  const [ruler, setRuler] = useState(null);
   const [enlarged, setEnlarged] = useState(false);
 
   useEffect(() => {
     setMontage(scene.montage || montages[0]);
     setSens(scene.sensitivity ?? 7);
+    setLff(scene.lff ?? 1);
+    setHff(scene.hff ?? 70);
+    setNotch(!!scene.notch);
     setCaliper(null);
+    setRuler(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scene]);
 
@@ -203,6 +233,9 @@ export default function EegTracing({ scene, caption }) {
       document.body.style.overflow = "";
     };
   }, [enlarged]);
+
+  const liveScene = useMemo(() => ({ ...scene, lff, hff, notch }), [scene, lff, hff, notch]);
+  const withCurrent = (choices, value) => (choices.includes(value) ? choices : [...choices, value].sort((a, b) => a - b));
 
   const toolbar = (
     <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 bg-slate-50 px-3 py-2 text-xs">
@@ -228,18 +261,54 @@ export default function EegTracing({ scene, caption }) {
           ))}
         </select>
       </label>
+      {scene.filterControls && (
+        <>
+          <label className="flex items-center gap-1 text-slate-600">
+            LFF
+            <select value={lff} onChange={(e) => setLff(Number(e.target.value))} className="rounded border border-slate-300 bg-white px-1 py-0.5">
+              {withCurrent(LFF_CHOICES, lff).map((f) => (
+                <option key={f} value={f}>{f} Hz</option>
+              ))}
+            </select>
+          </label>
+          <label className="flex items-center gap-1 text-slate-600">
+            HFF
+            <select value={hff} onChange={(e) => setHff(Number(e.target.value))} className="rounded border border-slate-300 bg-white px-1 py-0.5">
+              {withCurrent(HFF_CHOICES, hff).map((f) => (
+                <option key={f} value={f}>{f} Hz</option>
+              ))}
+            </select>
+          </label>
+          <label className="flex items-center gap-1 text-slate-600">
+            <input type="checkbox" checked={notch} onChange={(e) => setNotch(e.target.checked)} />
+            Notch {scene.notchHz ?? 60} Hz
+          </label>
+        </>
+      )}
       <button
         type="button"
         onClick={() => {
-          setCaliperMode((v) => !v);
+          setTool((t) => (t === "time" ? null : "time"));
           setCaliper(null);
         }}
-        className={`rounded-md border px-2 py-1 font-semibold ${caliperMode ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"}`}
+        className={`rounded-md border px-2 py-1 font-semibold ${tool === "time" ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"}`}
         title="Drag across the tracing to measure duration"
       >
-        📏 Caliper{caliperMode ? " on" : ""}
+        📏 Caliper{tool === "time" ? " on" : ""}
       </button>
-      {caliperMode && <span className="text-slate-500">Drag across a waveform to measure it</span>}
+      <button
+        type="button"
+        onClick={() => {
+          setTool((t) => (t === "amp" ? null : "amp"));
+          setRuler(null);
+        }}
+        className={`rounded-md border px-2 py-1 font-semibold ${tool === "amp" ? "border-teal-600 bg-teal-600 text-white" : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"}`}
+        title="Drag up or down to measure height; uV = mm x sensitivity"
+      >
+        ↕ Amplitude{tool === "amp" ? " on" : ""}
+      </button>
+      {tool === "time" && <span className="text-slate-500">Drag across a waveform to measure its duration</span>}
+      {tool === "amp" && <span className="text-slate-500">Drag up or down across a wave to measure its height</span>}
       <button type="button" onClick={() => setEnlarged(true)} className="ml-auto rounded-md border border-slate-300 bg-white px-2 py-1 font-semibold text-slate-700 hover:bg-slate-100">
         ⤢ Enlarge
       </button>
@@ -247,7 +316,7 @@ export default function EegTracing({ scene, caption }) {
   );
 
   const svg = (
-    <TracingSvg scene={scene} montage={montage} sens={sens} caliper={caliper} onCaliper={setCaliper} caliperMode={caliperMode} />
+    <TracingSvg scene={liveScene} montage={montage} sens={sens} caliper={caliper} onCaliper={setCaliper} ruler={ruler} onRuler={setRuler} tool={tool} />
   );
 
   return (
