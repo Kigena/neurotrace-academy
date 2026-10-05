@@ -1,0 +1,1729 @@
+{
+ "version": "1.0.0",
+ "generatedAt": "2026-10-05",
+ "bank": "challenge",
+ "focus": "amplifier-controls-filters",
+ "description": "ABRET Challenge Bank: amplifier controls and filters (sensitivity, calibration, time base, filter cutoffs, time constants, HFF, notch/60 Hz, artifact versus filter troubleshooting). Text only; not yet medically verified.",
+ "totalQuestions": 60,
+ "questions": [
+  {
+   "id": "ch-amp-001",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "amplitude"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A technologist wants waves to look taller on the screen without changing anything else. Which of these sensitivity settings does that most?",
+   "explanation": "Sensitivity is microvolts per millimeter, so a smaller number is more sensitive and draws taller waves. 5 µV/mm gives the largest display here. 7 µV/mm is the usual routine setting and is taller than the other two, but less tall than 5. 10 and 20 µV/mm shrink the same waves further.",
+   "learningObjective": "Relate the sensitivity number to wave height on the screen.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "7 µV/mm",
+    "10 µV/mm",
+    "20 µV/mm",
+    "5 µV/mm"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-002",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "amplitude",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "At a sensitivity of 7 µV/mm, a wave measures 10 mm on the screen. What is its amplitude?",
+   "explanation": "Amplitude equals sensitivity times height: 7 µV/mm x 10 mm = 70 µV. 1.4 µV comes from dividing by the wrong number, 17 µV comes from adding the two values, and 700 µV slips a decimal place.",
+   "learningObjective": "Convert a measured deflection into microvolts.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "70 µV",
+    "1.4 µV",
+    "17 µV",
+    "700 µV"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-003",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "amplitude",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A wave is 12 mm tall at a sensitivity of 5 µV/mm. What is its amplitude?",
+   "explanation": "Multiply height by sensitivity: 12 mm x 5 µV/mm = 60 µV. 2.4 µV divides the height by the sensitivity, 17 µV adds the two numbers, and 600 µV is a tenfold decimal error.",
+   "learningObjective": "Convert a measured deflection into microvolts.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "60 µV",
+    "2.4 µV",
+    "17 µV",
+    "600 µV"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-004",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "deflection",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A technologist wants a 100 µV spike to be drawn 10 mm tall. Which sensitivity does this need?",
+   "explanation": "Sensitivity is voltage divided by height: 100 µV / 10 mm = 10 µV/mm. 0.1 µV/mm inverts the ratio, 90 µV/mm subtracts the values, and 1,000 µV/mm multiplies them.",
+   "learningObjective": "Work out the sensitivity that gives a wanted deflection.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "0.1 µV/mm",
+    "90 µV/mm",
+    "10 µV/mm",
+    "1,000 µV/mm"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-005",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "amplitude",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A spike measures 14 mm at a sensitivity of 7 µV/mm. What is its amplitude?",
+   "explanation": "Height times sensitivity gives 14 x 7 = 98 µV. 2 µV divides instead of multiplying, 21 µV adds the numbers, and 196 µV doubles the correct value.",
+   "learningObjective": "Convert a measured deflection into microvolts.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "2 µV",
+    "21 µV",
+    "196 µV",
+    "98 µV"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-006",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "amplitude"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "At 7 µV/mm a large-amplitude burst is 30 mm tall and overlaps the neighboring channels. Which change fixes this, and what will it do?",
+   "explanation": "To shrink the display, the µV/mm number must rise, because larger numbers mean lower sensitivity. Doubling it to 14 halves a 30 mm burst to about 15 mm. Going to 3.5 µV/mm would double the height and worsen the overlap. The pairings that state taller waves at 14 µV/mm, or smaller waves at 3.5 µV/mm, reverse the relationship.",
+   "learningObjective": "Choose a sensitivity change and predict the size of the result.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Move to 3.5 µV/mm; the burst will be about half as tall",
+    "Move to 14 µV/mm; the burst will be about twice as tall",
+    "Move to 14 µV/mm; the burst will be about half as tall",
+    "Move to 3.5 µV/mm; the burst will be about twice as tall"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-007",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "artifact",
+    "amplitude"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A technologist records a study to evaluate for electrocerebral inactivity and raises the sensitivity to 2 µV/mm to look for low-amplitude cerebral activity. What is the main trade-off of this setting?",
+   "explanation": "A sensitivity of 2 µV/mm is far more sensitive than the routine 7 µV/mm, so every deflection grows, including artifact, electrode noise and interference. The setting does not shrink waves, alter paper speed, or shift the frequency of any activity.",
+   "learningObjective": "Predict the consequence of a high-sensitivity recording.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Everything is drawn smaller, so artifact is easier to separate from cerebral signal",
+    "The paper speed is halved, so fewer seconds are shown on each page",
+    "Everything is drawn larger, so artifact and noise are magnified too",
+    "Cerebral frequencies are shifted upward, so rhythms look faster"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-008",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "deflection",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A 150 µV spike must stay no taller than 15 mm so it does not run into the neighboring channel. Which of these settings is the most sensitive one that still allows that?",
+   "explanation": "Height is voltage divided by sensitivity, so 150 µV is 15 mm at 10 µV/mm, which just meets the limit. At 7.5 µV/mm the spike is 20 mm, at 5 µV/mm it is 30 mm, and at 3 µV/mm it is 50 mm, all too tall.",
+   "learningObjective": "Select a sensitivity from a height limit.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "7.5 µV/mm",
+    "5.0 µV/mm",
+    "3.0 µV/mm",
+    "10 µV/mm"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-009",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "units"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "In what units is sensitivity expressed on an EEG machine?",
+   "explanation": "Sensitivity relates voltage to display height, so it is stated in microvolts per millimeter. Millimeters per second describes paper speed, cycles per second (hertz) describes frequency, and microvolts per second would be a rate of voltage change.",
+   "learningObjective": "Recognize the unit of sensitivity.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Millimeters per second",
+    "Cycles per second",
+    "Microvolts per second",
+    "Microvolts per millimeter"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-010",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "sensitivity",
+    "deflection",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A wave measures 7 mm at 10 µV/mm. The same wave is then redisplayed at 7 µV/mm. How tall is it now?",
+   "explanation": "At 10 µV/mm the wave is 7 x 10 = 70 µV. At 7 µV/mm it measures 70 / 7 = 10 mm. 4.9 mm inverts the ratio (7 x 7 / 10), 7 mm assumes nothing changed, and 14 mm doubles the original height without a basis.",
+   "learningObjective": "Predict deflection after a sensitivity change.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "4.9 mm",
+    "7 mm",
+    "10 mm",
+    "14 mm"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-011",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "calibration",
+    "sensitivity"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "What is the main purpose of the calibration pulse recorded at the start of a study?",
+   "explanation": "A calibration pulse injects a known voltage so the technologist can confirm that each channel responds equally and that amplitudes can be trusted. It does not test electrode impedance, the notch filter, or the paper speed.",
+   "learningObjective": "State the purpose of the calibration signal.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "To measure the impedance of each scalp electrode before recording",
+    "To check that the notch filter is attenuating mains interference",
+    "To confirm that every channel gives the same known deflection",
+    "To set the paper speed used for the whole recording"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-012",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "calibration",
+    "sensitivity",
+    "amplitude",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A 50 µV calibration pulse is displayed at 10 µV/mm. How tall is the pulse?",
+   "explanation": "Height is voltage divided by sensitivity: 50 / 10 = 5 mm. 0.2 mm inverts the ratio, 60 mm adds the values, and 500 mm multiplies them.",
+   "learningObjective": "Predict calibration pulse height from the sensitivity.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "0.2 mm",
+    "60 mm",
+    "500 mm",
+    "5 mm"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-013",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "calibration",
+    "sensitivity",
+    "amplitude",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A 50 µV calibration pulse is displayed at 7 µV/mm. About how tall is the pulse?",
+   "explanation": "50 µV / 7 µV/mm is about 7.1 mm. 0.14 mm inverts the ratio, 57 mm adds the numbers, and 350 mm multiplies them.",
+   "learningObjective": "Predict calibration pulse height from the sensitivity.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "About 0.14 mm",
+    "About 7.1 mm",
+    "About 57 mm",
+    "About 350 mm"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-014",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "calibration",
+    "amplitude",
+    "sensitivity",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A 50 µV calibration pulse measures 6 mm. On the same settings a spike measures 18 mm. What is the spike's amplitude?",
+   "explanation": "Amplitude from a pulse is calibration voltage x wave height / calibration height: 50 x 18 / 6 = 150 µV. 17 µV flips the ratio, 108 µV multiplies the two heights, and 300 µV doubles the correct value.",
+   "learningObjective": "Derive amplitude by comparison with the calibration pulse.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "17 µV",
+    "150 µV",
+    "108 µV",
+    "300 µV"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-015",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "calibration",
+    "amplitude",
+    "sensitivity",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A 100 µV calibration pulse is 10 mm tall. A slow rhythm measures 14 mm from trough to peak. What is its peak-to-peak amplitude?",
+   "explanation": "The pulse sets the scale at 10 µV/mm, so a 14 mm peak-to-peak height is 140 µV. 70 µV halves the value as though only the peak were wanted, 1,400 µV slips a decimal, and 14 µV forgets the scale.",
+   "learningObjective": "Measure rhythm amplitude from the calibration scale.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "70 µV",
+    "140 µV",
+    "1,400 µV",
+    "14 µV"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-016",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-sensitivity",
+   "topicTags": [
+    "calibration",
+    "troubleshooting",
+    "sensitivity"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "A 50 µV calibration pulse is injected into every channel at 10 µV/mm. Most channels show 5 mm, but one channel shows only 3 mm. What does this most likely mean for that channel?",
+   "explanation": "The calibration pulse is injected electronically, so a smaller deflection points to that channel's own amplifier gain, sensitivity or filter settings and not to the brain or the scalp. Cortical suppression and a loose electrode would not alter an injected pulse, and the time base is common to all channels and changes pulse width, not height.",
+   "learningObjective": "Interpret an unequal calibration pulse across channels.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Cerebral activity under that electrode is suppressed by illness",
+    "The electrode under that channel has come loose from the scalp",
+    "A faster time base has narrowed the pulse in that channel",
+    "That channel's own amplification or settings differ from the others"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-017",
+   "domainId": "domain-2",
+   "sectionId": "d2-timebase-sampling",
+   "topicTags": [
+    "time-base",
+    "paper-speed",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "At a paper speed of 30 mm/s, about how much time does 1 mm represent?",
+   "explanation": "Time per millimeter is 1,000 ms / 30 mm, about 33 ms. 3.3 ms slips a decimal, 100 ms would belong to a much slower speed, and 30 ms confuses the speed with a duration.",
+   "learningObjective": "Convert distance on paper to time.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "About 33 ms",
+    "About 3.3 ms",
+    "About 100 ms",
+    "About 30 ms"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-018",
+   "domainId": "domain-2",
+   "sectionId": "d2-timebase-sampling",
+   "topicTags": [
+    "time-base",
+    "duration",
+    "spike",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A discharge is 2 mm wide at a paper speed of 30 mm/s. About how long does it last?",
+   "explanation": "Duration is width divided by speed: 2 / 30 = 0.067 s, about 67 ms. 15 ms divides the speed by the width, 60 ms multiplies the numbers, and 6.7 ms is a tenfold slip.",
+   "learningObjective": "Convert width on the page to duration.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "About 15 ms",
+    "About 60 ms",
+    "About 67 ms",
+    "About 6.7 ms"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-019",
+   "domainId": "domain-2",
+   "sectionId": "d2-timebase-sampling",
+   "topicTags": [
+    "time-base",
+    "frequency",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "At 30 mm/s, five complete waves of a rhythm fit in 50 mm of tracing. What is its frequency?",
+   "explanation": "50 mm at 30 mm/s is about 1.67 s, and 5 waves in 1.67 s is 3 Hz. 10 Hz divides the width by the number of waves, 1.7 Hz is the elapsed time and not a frequency, and 30 Hz reads off the paper speed.",
+   "learningObjective": "Compute frequency from waves counted over a measured distance.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "10 Hz",
+    "3 Hz",
+    "1.7 Hz",
+    "30 Hz"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-020",
+   "domainId": "domain-2",
+   "sectionId": "d2-timebase-sampling",
+   "topicTags": [
+    "time-base",
+    "paper-speed",
+    "duration",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A page is 300 mm wide. How many seconds does it show at a paper speed of 15 mm/s?",
+   "explanation": "Time shown is width divided by speed: 300 / 15 = 20 s. 10 s is the value at 30 mm/s, 4.5 s multiplies the numbers and scales by a thousand, and 40 s doubles the true answer.",
+   "learningObjective": "Relate page width, paper speed and time shown.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "10 s",
+    "20 s",
+    "4.5 s",
+    "40 s"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-021",
+   "domainId": "domain-2",
+   "sectionId": "d2-timebase-sampling",
+   "topicTags": [
+    "time-base",
+    "paper-speed"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "How does changing the time base from 30 mm/s to 60 mm/s affect the appearance of a rhythm?",
+   "explanation": "A faster time base gives each second more horizontal room, so waves spread and look slower. A slower time base does the opposite. Neither setting changes the height of waves or the real frequency of the activity.",
+   "learningObjective": "Describe how time base changes the look of a rhythm.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The waves squeeze together and the rhythm looks faster",
+    "The waves get taller on the screen",
+    "The waves spread apart and the rhythm looks slower",
+    "The true frequency of the rhythm is doubled"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-022",
+   "domainId": "domain-2",
+   "sectionId": "d2-timebase-sampling",
+   "topicTags": [
+    "time-base",
+    "duration",
+    "spike",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "At 30 mm/s a sharply contoured transient measures 3 mm in width. How should it be described?",
+   "explanation": "3 mm at 30 mm/s lasts about 100 ms, which falls in the 70 to 200 ms sharp-wave range, while spikes are 20 to under 70 ms. Calling it a spike misclassifies the duration. 10 ms and 300 ms come from multiplying or dividing the wrong numbers.",
+   "learningObjective": "Classify a transient from its measured duration.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "A sharp wave of about 100 ms",
+    "A spike of about 100 ms",
+    "A spike of about 10 ms",
+    "A slow wave of about 300 ms"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-023",
+   "domainId": "domain-2",
+   "sectionId": "d2-timebase-sampling",
+   "topicTags": [
+    "time-base",
+    "frequency",
+    "paper-speed",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "A reader counts 10 waves across 30 mm of tracing, but the study was recorded at 15 mm/s. What is the true frequency?",
+   "explanation": "30 mm at 15 mm/s covers 2 s, and 10 waves in 2 s is 5 Hz. 10 Hz wrongly assumes 30 mm/s, 20 Hz doubles that error, and 2.5 Hz halves the true value.",
+   "learningObjective": "Correct a frequency estimate for the real paper speed.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "10 Hz",
+    "20 Hz",
+    "2.5 Hz",
+    "5 Hz"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-024",
+   "domainId": "domain-2",
+   "sectionId": "d2-timebase-sampling",
+   "topicTags": [
+    "time-base",
+    "paper-speed",
+    "spike"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A technologist switches from 30 to 60 mm/s to judge the shape of a brief sharp transient. What should be expected on the new page?",
+   "explanation": "A faster time base stretches the picture horizontally, so the transient looks wider, but the event itself is unchanged. Amplitude depends on sensitivity, and since each millimeter now covers less time, the page holds fewer seconds, not more.",
+   "learningObjective": "Predict the effects of a faster time base.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Its real duration is doubled along with its width",
+    "Its amplitude is doubled along with its width on the page",
+    "The page now shows twice as many seconds of tracing",
+    "It looks twice as wide, but its real duration is unchanged"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-025",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "lff"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "The low-frequency filter (LFF) is the same kind of filter as which of these?",
+   "explanation": "The LFF attenuates slow activity and passes faster activity, which is what a high-pass filter does. A low-pass filter describes the HFF, a notch targets a narrow band, and sensitivity scales amplitude.",
+   "learningObjective": "Match the LFF to its filter type.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "A high-pass filter",
+    "A low-pass filter",
+    "A notch filter",
+    "A sensitivity control"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-026",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "hff",
+    "muscle"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Which control is adjusted mainly to reduce fast muscle activity on the screen?",
+   "explanation": "The HFF is a low-pass filter and attenuates fast activity such as muscle. The LFF acts on slow activity, sensitivity scales every wave, and paper speed only changes horizontal spacing.",
+   "learningObjective": "Identify the control that attenuates fast activity.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The low-frequency filter",
+    "The sensitivity control",
+    "The paper speed",
+    "The high-frequency filter"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-027",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "cutoff"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "At the cutoff (-3 dB) frequency of a filter, roughly how much of the signal's amplitude is passed?",
+   "explanation": "The cutoff is where the signal falls to about 70.7% of its amplitude, the -3 dB point. It is not half, the filter has already acted so it is not full amplitude, and the roll-off is gradual so the signal is not fully blocked.",
+   "learningObjective": "State the amplitude passed at a filter's cutoff.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "About 70%",
+    "About 50%",
+    "About 100%",
+    "About 0%"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-028",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "cutoff",
+    "hff"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "With the HFF set at 70 Hz, how is a 100 Hz component treated?",
+   "explanation": "Filter roll-off is gradual: activity just past the cutoff is only partly reduced and the effect deepens with distance. The cutoff is not a sharp wall, filters do not leave activity untouched past the setting, and they do not change a signal's frequency.",
+   "learningObjective": "Describe gradual filter roll-off.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It is stopped sharply as soon as it rises above 70 Hz",
+    "It passes at full size because 70 Hz is only a rough guide",
+    "It is moved down to 70 Hz and kept at that frequency",
+    "It is reduced gradually, more so as it rises further above 70 Hz"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-029",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "cutoff",
+    "lff",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A 100 µV sinusoidal slow wave at exactly 1 Hz passes an LFF set to 1 Hz. About how large will it appear?",
+   "explanation": "At the cutoff about 70.7% of the amplitude is passed, so 100 µV becomes about 71 µV. 50 µV treats the cutoff as half amplitude, 100 µV assumes no effect, and 29 µV is the amount lost, not the amount passed.",
+   "learningObjective": "Apply the roughly 70% rule at a cutoff.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "About 50 µV",
+    "About 71 µV",
+    "About 100 µV",
+    "About 29 µV"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-030",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "frequency",
+    "amplitude"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Changing a filter setting alters which properties of a wave?",
+   "explanation": "Filters attenuate some frequency components, which changes how tall and how sharp a wave appears. They do not retune a rhythm, so frequency is not changed.",
+   "learningObjective": "Recognize what filters alter and what they do not.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Its amplitude and shape, while its frequency stays the same",
+    "Its frequency and shape, while its amplitude stays the same",
+    "Only its frequency, while amplitude and shape stay the same",
+    "Its frequency and amplitude, while its shape stays the same"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-031",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "lff",
+    "hff"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Which pair of filter settings is typical for a routine adult EEG?",
+   "explanation": "Routine recordings use a low LFF of about 1 Hz or lower and an HFF near 70 Hz. The swapped pair would pass almost nothing, and the other pairs would either squeeze the pass band or leave the muscle band wide open.",
+   "learningObjective": "Recall routine filter settings.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "LFF about 70 Hz and HFF about 1 Hz",
+    "LFF about 10 Hz and HFF about 15 Hz",
+    "LFF about 1 Hz and HFF about 70 Hz",
+    "LFF about 5 Hz and HFF about 300 Hz"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-032",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "lff",
+    "delta"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "A 1 Hz delta wave looks much smaller after the LFF is raised from 1 Hz to 5 Hz. What explains this, and what should be done?",
+   "explanation": "The LFF is a high-pass filter, so a higher setting attenuates slow waves such as 1 Hz delta and the display can understate or distort them. The fix is to restore the routine value. The LFF does not amplify slow waves, and it does not act as a global gain control.",
+   "learningObjective": "Recognize the effect of an LFF that is set too high.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "A higher LFF amplifies slow activity, so the LFF should be raised further",
+    "A higher LFF attenuates slow activity, so return it to the routine value",
+    "Slow activity is not affected by the LFF, so the patient's delta must have changed",
+    "A higher LFF reduces the sensitivity of every channel, so the sensitivity should be lowered"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-033",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "hff",
+    "beta"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A reader is concerned that a 20 Hz beta rhythm looks reduced. The HFF was left at 15 Hz. What best fits this?",
+   "explanation": "An HFF of 15 Hz sits below 20 Hz, so beta is attenuated by the low-pass filter. Restoring the routine setting lets the reader judge it. The filter setting is relevant, it does not amplify, and the HFF acts on fast, not slow, activity.",
+   "learningObjective": "Link a low HFF to attenuated fast rhythms.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The 20 Hz activity is partly attenuated by the low HFF, so restore the routine HFF",
+    "The patient's beta activity is truly reduced and the filter setting is irrelevant",
+    "The 20 Hz activity is amplified by the low HFF, so it should be lowered further",
+    "The HFF only changes slow activity, so the rhythm must have been recorded wrongly"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-034",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "lff",
+    "hff"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "With the LFF at 1 Hz and the HFF at 70 Hz, which activity is the least attenuated?",
+   "explanation": "A 10 Hz rhythm sits well inside the 1 to 70 Hz pass band, so it is barely affected. Sway and drift lie below the LFF and are attenuated, and 150 Hz noise lies well above the HFF and is also reduced.",
+   "learningObjective": "Identify what falls inside a filter pass band.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "A 0.3 Hz baseline sway",
+    "A 0.5 Hz electrode drift",
+    "A 150 Hz noise burst",
+    "A 10 Hz posterior rhythm"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-035",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "hff",
+    "muscle"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "The HFF is lowered from 70 Hz to 35 Hz. What happens to a burst of 50 Hz muscle activity?",
+   "explanation": "A lower HFF attenuates faster activity, so the 50 Hz muscle burst is reduced. A filter cannot amplify, it cannot retune the frequency, and activity above the cutoff is affected, not spared.",
+   "learningObjective": "Predict the effect of lowering the HFF on muscle activity.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "It is attenuated and looks smaller",
+    "It is amplified and looks larger",
+    "Its frequency drops to 35 Hz",
+    "It is unchanged because it is a fast rhythm"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-036",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "hff",
+    "spike"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A 40 ms spike is recorded with the HFF at 15 Hz instead of the routine 70 Hz. How will it look, and why does that matter?",
+   "explanation": "A spike has substantial fast content, so a low HFF blunts its apex and reduces its height, which can cause under-calling. It is not sharpened, it is not immune because it is brief, and filtering does not split it into two discharges.",
+   "learningObjective": "Predict how a low HFF changes spike appearance and reading.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Rounder and lower, so it may be under-read as a slower, less pointed wave",
+    "Sharper and taller, so it is easier to spot in the tracing",
+    "Unchanged, because spikes are slow events that the HFF ignores",
+    "Split into two separate spikes, so it looks like a double discharge"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-037",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "hff",
+    "muscle",
+    "spike"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Bilateral temporal muscle obscures a tracing recorded at an HFF of 70 Hz. A trainee drops the HFF to 15 Hz. What is the most likely outcome?",
+   "explanation": "Lowering the HFF reduces fast muscle but also rounds and shrinks genuine fast activity, including spikes. It cannot sharpen anything or amplify muscle, and it acts on fast, not slow, components. Relaxing the patient is the better first step.",
+   "learningObjective": "Weigh the benefit and cost of lowering the HFF.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The muscle looks smaller and spikes become sharper and taller",
+    "Muscle looks smaller, but spikes and fast activity are blunted too",
+    "The muscle looks larger because fast activity is amplified by it",
+    "Nothing changes at all because the HFF affects only slow waves"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-038",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "hff",
+    "spike"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A reader notices that every discharge in a record looks blunt and low. The header shows an HFF of 15 Hz. Which interpretation fits best?",
+   "explanation": "A low HFF attenuates the fast components that make a discharge look sharp, so the record can understate morphology. The header makes true slowing a poor explanation. Sensitivity affects only size, and the time base affects appearance, not real duration.",
+   "learningObjective": "Interpret blunted discharges in light of the HFF setting.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The patient truly has only slow, blunt discharges in this record",
+    "The sensitivity was too low, which also changed the frequencies",
+    "The time base was too slow, which changed the true duration of discharges",
+    "The low HFF rounded the discharges, so their sharpness is understated"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-039",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "hff",
+    "muscle",
+    "artifact"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "At an HFF of 70 Hz, temporal muscle overlies a possible left temporal sharp wave. Which approach best handles the muscle while protecting the sharp wave?",
+   "explanation": "Muscle should be tackled at its source, because a very low HFF would blunt the sharp wave itself. The LFF acts on slow activity and does not help with fast muscle, and a higher sensitivity enlarges the muscle as well.",
+   "learningObjective": "Reduce muscle while keeping real discharges visible.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Lower the HFF to 15 Hz to remove the muscle",
+    "Lower the LFF to 0.1 Hz so that the muscle is reduced",
+    "Help the patient relax the jaw; keep the routine HFF",
+    "Raise the sensitivity to 2 µV/mm so the sharp wave stands out"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-040",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "hff",
+    "time-constant"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A sudden step in voltage passes through the high-frequency filter. About what fraction of its final height does the output reach after one HFF time constant?",
+   "explanation": "The HFF time constant describes the rise toward the final value, and one time constant reaches about 63%. The 37% figure is the remaining fraction, and a first-order filter does not reach full height at once or stop at half.",
+   "learningObjective": "State the rise fraction for the HFF time constant.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "About 63%",
+    "About 37%",
+    "About 100%",
+    "About 50%"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-041",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-impedance-grounding",
+   "topicTags": [
+    "notch",
+    "60hz",
+    "filters"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Which control is designed to reduce mains interference at 60 Hz?",
+   "explanation": "A notch filter attenuates a narrow band around the mains frequency. The LFF acts on slow activity, sensitivity scales all waves, and paper speed does not change interference.",
+   "learningObjective": "Identify the control aimed at line frequency.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The low-frequency filter",
+    "The sensitivity control",
+    "The notch filter",
+    "The paper speed"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-042",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-impedance-grounding",
+   "topicTags": [
+    "notch",
+    "60hz",
+    "impedance",
+    "grounding"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "troubleshooting",
+   "reasoningSteps": 1,
+   "stem": "Before turning on the notch filter for 60 Hz interference, what should the technologist check first?",
+   "explanation": "Interference is best solved at its cause: contact quality, grounding, cables and nearby powered devices. Lowering the HFF or raising the LFF blunts real activity and leaves the fault, and raising the sensitivity only enlarges the interference.",
+   "learningObjective": "Order the steps for handling 60 Hz interference.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Whether the HFF can be lowered to 15 Hz to remove it",
+    "Electrode contact, grounding and cables",
+    "Whether the LFF can be raised to 5 Hz to remove it",
+    "Whether the sensitivity can be raised to measure it"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-043",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-impedance-grounding",
+   "topicTags": [
+    "notch",
+    "60hz",
+    "impedance",
+    "grounding"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "60 Hz appears in every channel, and the ground electrode has a high impedance. The technologist turns on the notch. What is the best next step, and what has the notch done?",
+   "explanation": "A poor ground contact is the cause, so it must be corrected. The notch hides the symptom but leaves the fault. The LFF acts on slow activity, and lowering sensitivity only shrinks the display of the interference.",
+   "learningObjective": "Tell masking from fixing a 60 Hz problem.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Leave the notch on, because the problem is now fully fixed",
+    "Reapply the ground electrode, because the notch only masked the fault",
+    "Raise the LFF, because this lowers the 60 Hz at its source",
+    "Lower the sensitivity, because the notch needs a smaller signal"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-044",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-impedance-grounding",
+   "topicTags": [
+    "notch",
+    "60hz",
+    "filters"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Why is the notch filter regarded as a last resort for 60 Hz interference?",
+   "explanation": "A notch hides a fixable problem and can distort the waveform of fast, sharp activity near its band. Slow activity near 1 Hz is untouched by it, and it neither lowers nor raises the amplitude of all frequencies by the same amount.",
+   "learningObjective": "Explain the drawbacks of the notch filter.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It hides a correctable technical fault and can distort fast, sharp activity",
+    "It lowers the amplitude of all frequencies by the same amount",
+    "It removes the slow activity near 1 Hz along with the interference",
+    "It raises the amplitude of all frequencies by the same amount"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-045",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-impedance-grounding",
+   "topicTags": [
+    "notch",
+    "60hz",
+    "impedance",
+    "artifact"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "Interference appears only in the channels that share one scalp electrode, and the notch is off. A colleague suggests turning it on. What is the better move?",
+   "explanation": "Interference confined to the channels of one electrode points to that electrode's contact. Fixing it cures the problem. The notch and lower HFF would mask the fault and blunt real activity, and display settings do not alter the source.",
+   "learningObjective": "Localize interference to an electrode and fix the cause first.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Switch on the notch, and lower the HFF to 15 Hz as an extra step",
+    "Raise the sensitivity so the interference is easier to measure",
+    "Check and reapply that electrode",
+    "Reduce the paper speed so the interference appears shorter"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-046",
+   "domainId": "domain-2",
+   "sectionId": "d2-amplifiers-impedance-grounding",
+   "topicTags": [
+    "notch",
+    "60hz",
+    "impedance",
+    "grounding",
+    "filters"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 3,
+   "stem": "A routine EEG shows 60 Hz in all channels. Several impedances are above 10 kΩ and a bed warmer is plugged in beside the head. The technologist re-preps the electrodes, unplugs the warmer, and most interference clears, but a trace remains. What is the most defensible next step?",
+   "explanation": "The causes are being corrected step by step, so the sensible course continues down that list before accepting a filter. If a trace remains, a notch is acceptable and its use should be known to the reader. A lower HFF blunts real activity, higher sensitivity enlarges the residue, and stopping is excessive.",
+   "learningObjective": "Sequence the response to persistent 60 Hz interference.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Switch on the notch now and also lower the HFF to 15 Hz for extra margin",
+    "Raise the sensitivity so that the residual trace is easier to evaluate in detail",
+    "Recheck grounding and cables, and use the notch only if a trace still remains",
+    "Stop recording, since any residual interference makes the study uninterpretable"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-047",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "artifact",
+    "sweat",
+    "lff"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "troubleshooting",
+   "reasoningSteps": 1,
+   "stem": "Slow, wandering baseline sway appears in many channels while the patient perspires in a warm room. What is the best first step?",
+   "explanation": "Sweat artifact is a slow, wavy baseline shift, and the right first step is to deal with the sweat. The HFF acts on fast activity, the notch targets 60 Hz, and paper speed changes only horizontal spacing.",
+   "learningObjective": "Handle sweat artifact at its cause.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Raise the HFF up to 300 Hz",
+    "Cool the room, dry the skin",
+    "Switch on the 60 Hz notch filter",
+    "Double the current paper speed"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-048",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "artifact",
+    "electrode-pop",
+    "filters"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "A sudden, steep deflection appears in every channel containing one electrode, with no field in neighboring areas. What is it, and what is the fix?",
+   "explanation": "A steep transient confined to the channels of a single electrode is a typical electrode pop, and reapplying the contact cures it. A real discharge would have a field. Neither the notch nor an HFF change targets a poor contact.",
+   "learningObjective": "Recognize an electrode pop and fix its cause.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "A spike discharge, so the sensitivity should be lowered",
+    "Mains interference, so the notch should be turned on",
+    "Muscle activity, so the HFF should be lowered",
+    "An electrode pop, so that electrode should be reapplied"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-049",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "artifact",
+    "muscle",
+    "hff"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "Fast, irregular activity appears over both temporal regions when the patient clenches the jaw, with the HFF at 70 Hz. What is the best approach?",
+   "explanation": "Muscle should be reduced by relaxing the patient. An HFF as low as 5 Hz would also destroy real fast activity. A higher LFF or shorter time constant acts on slow activity and does not address fast muscle.",
+   "learningObjective": "Handle muscle artifact with minimal filtering.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Ask the patient to relax the jaw and support the head",
+    "Lower the HFF to 5 Hz so no fast activity passes",
+    "Raise the LFF to 30 Hz so that the muscle is reduced",
+    "Turn on the 60 Hz notch filter so the activity is reduced"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-050",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "artifact",
+    "sweat",
+    "lff",
+    "time-constant"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "Sweat artifact sways the baseline, and the technologist raises the LFF from 1 Hz to about 5 Hz, shortening the time constant. The sway shrinks. What else should be recognized?",
+   "explanation": "The LFF cannot distinguish artifact from brain, so raising it also attenuates genuine delta and theta. The cause should be dealt with and the routine value restored. The LFF leaves fast activity alone and does not shift frequencies.",
+   "learningObjective": "Weigh the cost of a higher LFF used to hide sweat artifact.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Nothing else changes, because the LFF acts only on the artifact itself",
+    "Fast activity above 5 Hz is now attenuated as well as the sway",
+    "All frequencies in the record have been shifted upward by the filter",
+    "Real slow EEG activity is attenuated too, so the setting should be reversed"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-051",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "artifact",
+    "electrode-pop",
+    "hff",
+    "spike"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "An electrode pop produces sharp transients in one channel group. A colleague proposes lowering the HFF to 15 Hz to hide them. What is the problem with this plan?",
+   "explanation": "A low HFF blunts every fast event, including real spikes, and the faulty contact remains. Pops are steep and have fast content, so the HFF does affect them. A lower HFF does not enlarge anything.",
+   "learningObjective": "Fix an electrode pop at the source instead of filtering.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The pops are slow events, so only the LFF could change them",
+    "Lowering the HFF has no effect on any waveform in the record",
+    "It would round real spikes and leave the bad contact unfixed",
+    "A lower HFF would make the pops larger and sharper"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-052",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "artifact",
+    "sweat",
+    "muscle",
+    "filters"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 3,
+   "stem": "During a routine study at 7 µV/mm, baseline sway from sweat appears frontally and muscle appears over the temporal regions. The technologist wants real delta and spikes left intact. Which plan is best?",
+   "explanation": "Each artifact is best treated at its source, which keeps real delta and spikes intact. A higher LFF and a lower HFF would blunt cerebral activity at both ends. The notch targets 60 Hz, higher sensitivity enlarges artifact, and a faster paper speed only spreads it.",
+   "learningObjective": "Plan a combined response to two artifacts without distorting the EEG.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Raise the LFF to 5 Hz and lower the HFF to 15 Hz to get rid of both",
+    "Cool and dry the patient, relax the jaw, keep routine filters",
+    "Turn on the notch filter and double the sensitivity setting",
+    "Switch to a faster paper speed so both artifacts spread out"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-053",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A time constant of 0.1 s corresponds to an LFF of about which value?",
+   "explanation": "LFF is 1 / (2 pi x TC), so 0.1 s gives about 1.6 Hz. 0.16 Hz belongs to a 1 s time constant, 10 Hz leaves out the 2 pi, and 0.53 Hz belongs to a 0.3 s time constant.",
+   "learningObjective": "Convert a time constant to an LFF.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "About 0.16 Hz",
+    "About 10 Hz",
+    "About 1.6 Hz",
+    "About 0.53 Hz"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-054",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "An LFF of about 5.3 Hz corresponds to a time constant of about which value?",
+   "explanation": "TC is 1 / (2 pi x LFF), so 5.3 Hz gives about 0.03 s. 0.19 s leaves out the 2 pi, 0.3 s belongs to an LFF of about 0.53 Hz, and 1 s belongs to about 0.16 Hz.",
+   "learningObjective": "Convert an LFF to a time constant.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "About 0.19 s",
+    "About 0.03 s",
+    "About 0.3 s",
+    "About 1 s"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-055",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "delta"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Which time constant attenuates slow activity the most?",
+   "explanation": "A shorter time constant means a higher LFF, which attenuates slow activity more. A time constant of 0.03 s corresponds to about 5.3 Hz, while 1 s corresponds to about 0.16 Hz and preserves slow waves best.",
+   "learningObjective": "Relate a shorter time constant to a higher LFF.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "0.10 s",
+    "0.03 s",
+    "0.30 s",
+    "1.00 s"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-056",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "time-constant",
+    "calibration",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "The top of a calibration pulse sags to about 37% of its starting height in 0.3 s. What does this tell you?",
+   "explanation": "The pulse top falls to about 37%, a fall of about 63%, in one time constant, so TC is 0.3 s and the LFF is 1 / (2 pi x 0.3), about 0.53 Hz. 3.7 Hz misuses the 37% figure as a frequency, the sag measures the LFF and not the HFF, and 0.16 Hz belongs to a 1 s time constant.",
+   "learningObjective": "Read the LFF from calibration-pulse decay.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The time constant is 0.3 s, so the LFF is about 3.7 Hz",
+    "The HFF is about 0.53 Hz",
+    "The time constant is 0.3 s, so the LFF is about 0.53 Hz",
+    "The time constant is 1 s, so the LFF is about 0.16 Hz"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-057",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "The time constant is shortened from 0.3 s to 0.1 s. What happens to the LFF and to slow activity?",
+   "explanation": "A shorter TC raises the LFF, here from about 0.53 to 1.6 Hz, and a higher LFF attenuates slow activity more. The pairing that lowers the LFF reverses the relationship, the LFF does not act on fast activity, and the time constant sets the LFF, so it cannot stay unchanged.",
+   "learningObjective": "Predict the LFF and its effect when time constant is shortened.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The LFF rises from about 0.5 Hz to about 1.6 Hz, so slow activity is attenuated more",
+    "The LFF falls from about 1.6 Hz to about 0.5 Hz, so slow activity is preserved better",
+    "The LFF rises from about 0.5 Hz to about 1.6 Hz, so fast activity is attenuated more",
+    "The LFF stays at about 0.5 Hz while the HFF rises"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-058",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "delta",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A technologist wants a 0.5 Hz delta rhythm attenuated as little as possible. The LFF is currently about 5.3 Hz. Which of these time constants is the best choice?",
+   "explanation": "A shorter time constant raises the LFF. Of these options, 0.3 s gives an LFF of about 0.53 Hz, the lowest of the four, so it attenuates 0.5 Hz delta least (to about 69%, versus roughly 30% at 1.6 Hz for 0.1 s). A longer constant such as 1 s would do better still. 0.03 s gives about 5.3 Hz and 0.01 s gives about 16 Hz.",
+   "learningObjective": "Choose a time constant to preserve slow activity.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "0.3 s",
+    "0.1 s",
+    "0.03 s",
+    "0.01 s"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-059",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "hff",
+    "calibration"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A square step is passed through the amplifier. Which description matches the effect of its two filters?",
+   "explanation": "The HFF limits how fast the output can rise, so the corner is rounded, while the LFF lets the flat top decay. The pairing that swaps the roles is wrong, the LFF does not round the leading edge, and the HFF changes shape rather than simply delaying it.",
+   "learningObjective": "Describe how each filter's time constant shapes a square pulse.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The HFF makes the flat top sag and the LFF rounds the leading edge",
+    "The HFF rounds the leading edge and the LFF makes the flat top sag",
+    "The HFF and LFF both round the leading edge and leave the top flat",
+    "The HFF delays the whole step by one time constant and keeps its shape"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-060",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "calibration",
+    "amplitude",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "technical",
+   "reasoningSteps": 3,
+   "stem": "A 50 µV calibration pulse measures 5 mm. A wave on the same settings is 20 mm tall, and the time constant is 0.1 s. What are the wave's amplitude and the LFF?",
+   "explanation": "The pulse sets the scale at 10 µV/mm, so 20 mm is 200 µV, and a 0.1 s time constant gives an LFF of about 1.6 Hz. 0.16 Hz belongs to a 1 s time constant, 12.5 µV inverts the calibration ratio, and 10 Hz leaves out the 2 pi.",
+   "learningObjective": "Combine pulse scaling and time constant to find amplitude and LFF.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "200 µV and about 0.16 Hz",
+    "12.5 µV and about 1.6 Hz",
+    "200 µV and about 10 Hz",
+    "200 µV and about 1.6 Hz"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  }
+ ]
+}

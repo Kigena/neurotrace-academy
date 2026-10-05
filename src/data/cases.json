@@ -12221,6 +12221,1784 @@
           "to": "/workflow/domain-3/d3-activation-procedures"
         }
       ]
+    },
+    {
+      "id": "case-0087",
+      "title": "Sensitivity: Making the Wave Readable",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "sensitivity",
+        "calibration",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 28,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine outpatient EEG; display needs adjusting for readability",
+      "history": {
+        "eventDescription": "A routine outpatient EEG session runs through three recordings in a day. The lab default is 7 uV/mm, but the first page is displayed at 10 uV/mm. As the pages change, you must decide whether to raise or lower the sensitivity so waves can be read, and then record what you changed.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Waking background whose apparent height depends on the sensitivity chosen for each page",
+        "pdrHz": "About 10 Hz posteriorly on the first page",
+        "epileptiform": "Not interpreted by the technologist",
+        "focalFindings": "None described",
+        "activation": "None",
+        "artifacts": "None"
+      },
+      "objectives": [
+        "Convert ruler millimeters to microvolts with S = V / H",
+        "Decide whether to raise or lower the sensitivity number",
+        "Document a sensitivity change so amplitudes stay comparable"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 71,
+          "ageYears": 28,
+          "state": "awake",
+          "sensitivity": 10,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": []
+        },
+        "t2": {
+          "seed": 76,
+          "ageYears": 55,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 12,
+            "beta": 1,
+            "theta": 1,
+            "delta": 1,
+            "noise": 1.5
+          },
+          "findings": []
+        },
+        "t3": {
+          "seed": 75,
+          "ageYears": 9,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.4
+          },
+          "background": {
+            "pdrUv": 50,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 3,
+              "to": 9.5,
+              "uv": 420,
+              "hz": 3,
+              "startHz": 3.3
+            }
+          ]
+        },
+        "t4": {
+          "seed": 75,
+          "ageYears": 9,
+          "state": "awake",
+          "sensitivity": 20,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.4
+          },
+          "background": {
+            "pdrUv": 50,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 3,
+              "to": 9.5,
+              "uv": 420,
+              "hz": 3,
+              "startHz": 3.3
+            }
+          ]
+        }
+      },
+      "montages": [
+        "longitudinal"
+      ],
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "calculation",
+          "title": "Ruler reading to microvolts",
+          "tracing": "t1",
+          "description": "The first page is displayed at 10 uV/mm (see the header). With the amplitude ruler, the 50 uV calibration pulse at the start measures about 4.5 mm. One of the larger posterior waves in T5-O1 around 3 to 4 s measures about 5.5 to 6 mm from trough to peak.",
+          "question": "What is the peak-to-peak amplitude of that wave?",
+          "options": [
+            "83 uV",
+            "60 uV",
+            "30 uV",
+            "42 uV"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Amplitude = sensitivity x height = 10 uV/mm x 6 mm = 60 uV. The pulse agrees roughly: 50 uV at about 4.5 to 5 mm is close to 10 uV/mm, so a 6 mm wave is about 60 uV (50 x 6/5). 30 uV multiplies the two heights (6 x 5) and mixes units. 42 uV inverts the ratio (50 x 5/6), and it is also close to what you get by reading the wave at the usual 7 uV/mm (6 x 7), a reminder to use the header or the pulse rather than a remembered default. 83 uV inverts the arithmetic in the other direction (50 x 10/6). Read the setting printed for the page you are measuring."
+        },
+        {
+          "step": 2,
+          "type": "settings-choice",
+          "title": "Waves too flat to read",
+          "tracing": "t2",
+          "description": "The next recording is displayed at 7 uV/mm. The 50 uV pulse stands about 6 mm tall, but most of the background waves are only about 1 mm high and the largest posterior waves reach about 3 mm. A careful read of the page is difficult.",
+          "question": "Which display change, within lab protocol, makes these waves easier to read?",
+          "options": [
+            "Lower the LFF from 1 Hz to 0.1 Hz to bring up the amplitude",
+            "Increase the sensitivity, for example from 7 to 3 uV/mm",
+            "Turn on the notch filter to clean up the background",
+            "Decrease the sensitivity, for example from 7 to 15 uV/mm"
+          ],
+          "correctAnswer": 1,
+          "explanation": "A smaller uV/mm number means a more sensitive display, so each microvolt takes more millimeters: a typical 10 uV wave becomes about 3 mm at 3 uV/mm (V/S = 10/3), and the pulse becomes about 15 mm. Going to 15 uV/mm does the opposite and shrinks the waves to under 1 mm. Lowering the LFF changes which slow frequencies pass, not the overall height of a faster background, and it invites drift. A notch filter targets 60 Hz and does nothing for a low-voltage page. Changing sensitivity is a display adjustment the technologist can make within protocol, and the change should be annotated."
+        },
+        {
+          "step": 3,
+          "type": "calculation",
+          "title": "Waves that overlap their neighbors",
+          "tracing": "t3",
+          "description": "A new page, displayed at 7 uV/mm, shows a generalized run beginning near 3 s. The waves collide with the channels above and below. A ruler drag on the tallest wave in Cz-Pz measures about 30 mm, which is about 210 uV at 7 uV/mm. You want the largest wave to occupy about 10 mm.",
+          "question": "Which sensitivity does the arithmetic point to?",
+          "options": [
+            "10 uV/mm",
+            "40 uV/mm",
+            "5 uV/mm",
+            "20 uV/mm"
+          ],
+          "correctAnswer": 3,
+          "explanation": "S = V / H = 210 uV / 10 mm = 21, so 20 uV/mm is the nearest standard setting; the tallest wave would then be about 10.5 mm. At 5 uV/mm the same wave would be 42 mm tall, so the overlap worsens, because a smaller number is more sensitive. At 10 uV/mm it would still be about 21 mm and would keep colliding with neighbors. At 40 uV/mm it would shrink to about 5 mm, which avoids overlap but wastes readability for the smaller waves. A larger number (less sensitive) is the correct direction when waves are too tall."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "After the change: what to record",
+          "tracing": "t4",
+          "description": "You moved the display to 20 uV/mm. On this page the header reads 20 and the pulse measures about 2.3 mm. The largest waves now fill about 10 to 11 mm. Later, a colleague comparing with the 7 uV/mm page says the discharge looks about two thirds smaller on the new page.",
+          "question": "What is the correct reading, and what belongs in the record?",
+          "options": [
+            "The amplitude fell on this page; report the discharge as lower in voltage than it was before",
+            "The 2.5 mm pulse means the gain dropped; run a new calibration and repeat the whole recording",
+            "The voltage is unchanged; no entry is needed because sensitivity is only a display choice here",
+            "Voltage is unchanged; annotate the 7 to 20 uV/mm change and its time, and quote amplitudes in uV"
+          ],
+          "correctAnswer": 3,
+          "explanation": "The signal did not change; only its drawing did. 50 uV at about 2.3 mm is close to 20 uV/mm, which matches the header, so the pulse is behaving correctly and no recalibration is needed. The pulse height and the printed sensitivity are what let anyone reconvert millimeters to microvolts (2.3 mm pulse, 10.5 mm wave: about 50 x 10.5/2.3, roughly 210 to 230 uV, in line with the 210 uV measured earlier). Calling the discharge smaller confuses height with voltage. Skipping the entry removes the information a reader needs to compare pages, so changes are annotated with the time. Reporting amplitudes in uV avoids the mismatch."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Sensitivity",
+          "to": "/amplifier-controls?tab=sensitivity"
+        },
+        {
+          "label": "Domain II: Amplifiers & Sensitivity",
+          "to": "/workflow/domain-2/d2-amplifiers-sensitivity"
+        }
+      ]
+    },
+    {
+      "id": "case-0088",
+      "title": "Time Base: Measure Before You Name It",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "time-base",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 8,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Staring spells noticed at school; routine EEG",
+      "history": {
+        "eventDescription": "An 8-year-old boy is referred after teachers noticed brief staring spells. You are recording at 30 mm/s (10 s per page, 7 uV/mm, LFF 1 Hz, HFF 70 Hz). You use the caliper to read the duration of sharp-looking events before labeling them in your technologist notes.",
+        "lastEventTiming": "several weeks ago",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake background with posterior alpha-range activity",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "Technologist describes events by measured duration; interpretation is left to the physician",
+        "focalFindings": "Brief sharp events at left temporal and right parietal sites",
+        "activation": "Hyperventilation not yet performed",
+        "artifacts": "None"
+      },
+      "objectives": [
+        "Use the caliper to read event duration in ms",
+        "Apply spike (20 to under 70 ms) and sharp wave (70 to 200 ms) ranges",
+        "Keep frequency and duration independent of page length"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 77,
+          "ageYears": 8,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.4
+          },
+          "background": {
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sharp",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 140,
+              "at": [
+                2.2
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "P4",
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 45,
+              "at": [
+                4.4
+              ]
+            },
+            {
+              "type": "gsw",
+              "from": 6.4,
+              "to": 9.8,
+              "uv": 320,
+              "hz": 3,
+              "startHz": 3.1
+            }
+          ]
+        },
+        "t2": {
+          "seed": 77,
+          "ageYears": 8,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.4
+          },
+          "background": {
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sharp",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 140,
+              "at": [
+                2.2
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "P4",
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 45,
+              "at": [
+                4.4
+              ]
+            },
+            {
+              "type": "gsw",
+              "from": 6.4,
+              "to": 9.8,
+              "uv": 320,
+              "hz": 3,
+              "startHz": 3.1
+            }
+          ]
+        },
+        "t3": {
+          "seed": 77,
+          "ageYears": 8,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.4
+          },
+          "background": {
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sharp",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 140,
+              "at": [
+                2.2
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "P4",
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 45,
+              "at": [
+                4.4
+              ]
+            },
+            {
+              "type": "gsw",
+              "from": 6.4,
+              "to": 9.8,
+              "uv": 320,
+              "hz": 3,
+              "startHz": 3.1
+            }
+          ]
+        },
+        "t4": {
+          "seed": 77,
+          "ageYears": 8,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.4
+          },
+          "background": {
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sharp",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 140,
+              "durMs": 140,
+              "at": [
+                2.2
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "P4",
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 45,
+              "at": [
+                4.4
+              ]
+            },
+            {
+              "type": "gsw",
+              "from": 6.4,
+              "to": 9.8,
+              "uv": 320,
+              "hz": 3,
+              "startHz": 3.1
+            }
+          ],
+          "seconds": 5
+        }
+      },
+      "montages": [
+        "longitudinal"
+      ],
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Sharp-looking wave at left temporal",
+          "tracing": "t1",
+          "description": "On this 10 s page, a pointed wave with an after-going slow wave appears in the left temporal channels (F7-T3 and T3-T5) at about 2.2 s. Use the caliper across the whole sharp negative wave.",
+          "question": "What does the caliper show, and how is it classed?",
+          "options": [
+            "It spans about 100 to 140 ms, so it counts as a spike because it looks sharply pointed",
+            "It spans about 250 to 300 ms, so it is a slow wave, longer than 200 ms",
+            "It spans about 100 to 140 ms, so it is in the sharp-wave range (70 to 200 ms)",
+            "It spans about 30 to 40 ms, so it is a spike, shorter than 70 ms"
+          ],
+          "correctAnswer": 2,
+          "explanation": "At 30 mm/s one millimeter is 33 ms, so a wave 3 to 4 mm wide lasts roughly 100 to 140 ms. By duration, 70 to 200 ms is a sharp wave; under 70 ms is a spike. Looking pointed does not decide the name, because classification follows duration, which is why you measure before naming. 30 to 40 ms would be a spike and is the right answer for the other event on this page, not this one. 250 to 300 ms would be a slow wave. The technologist describes what is seen and its measured duration, and the physician interprets."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Brief event at right parietal",
+          "tracing": "t2",
+          "description": "Now look at the right parietal channels (C4-P4 and P4-O2) near 4.4 s. The event is much narrower than the one at 2.2 s. The two channels that share P4 deflect in opposite directions.",
+          "question": "What does the caliper read, and how is the event classed?",
+          "options": [
+            "About 30 to 50 ms, a spike (20 to under 70 ms)",
+            "About 30 to 50 ms, electrode pop because it is so brief",
+            "About 90 ms, a sharp wave because it falls between 70 and 200 ms",
+            "About 30 to 50 ms, a sharp wave because it is a focal event"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The event is about 1 to 1.5 mm wide at 30 mm/s, which is 30 to 50 ms, in the spike range of 20 to under 70 ms. Focal location does not turn a spike into a sharp wave; duration decides. A reading near 90 ms would not match this page. An electrode pop is also brief and also shows in both channels that share the electrode, in opposite directions, so that alone does not tell them apart. The shape does: a pop jumps up abruptly and decays smoothly with no after-going wave, while this is a pointed wave with an after-going wave of opposite polarity and a little spread to neighboring channels. The technologist notes the measured duration and location without interpreting."
+        },
+        {
+          "step": 3,
+          "type": "calculation",
+          "title": "Frequency of the late burst",
+          "tracing": "t3",
+          "description": "From about 6.4 s to near the end of the page (about 9.8 s) a repetitive spike-and-wave burst appears in every channel. Place the caliper from one spike to the next spike and compare with the 1-s grid lines.",
+          "question": "What is the repetition rate of the burst?",
+          "options": [
+            "About 6 Hz; one cycle is about 170 ms",
+            "About 30 Hz; one cycle is about 33 ms",
+            "About 3 Hz; one cycle is about 330 ms",
+            "About 1.5 Hz; one cycle is about 660 ms"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Frequency in Hz = 1000 / period in ms. A spike-to-spike distance of about 330 ms (about 10 mm at 30 mm/s) gives 1000 / 330 = 3 Hz, and counting about 3 cycles inside each 1-s grid space agrees. 6 Hz would need cycles 170 ms apart, and 1.5 Hz would need 660 ms. 33 ms is the width of a single millimeter and would give 30 Hz, which would be an unreadable smear. The burst lasts roughly 3.4 s on this page; the technologist notes its onset, duration and any behavior change and does not diagnose."
+        },
+        {
+          "step": 4,
+          "type": "troubleshooting",
+          "title": "A 5 s page changes the look",
+          "tracing": "t4",
+          "description": "A colleague reloads the same recording at 5 s per page, so the same screen width now shows half the time. The 2.2 s sharp wave looks twice as wide, and a trainee says it must now be about 280 ms and therefore a slow wave.",
+          "question": "What is the correct conclusion and note?",
+          "options": [
+            "It really lasts about 250 ms on this view, so it is a slow wave",
+            "Its duration is unchanged, but the sharp-wave range stretches to 140 to 400 ms at a faster display",
+            "The caliper is only valid on 10 s pages, so the wave cannot be measured here",
+            "Duration is unchanged at about 100 to 140 ms and it is still a sharp wave; note the page length"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Page length changes how wide a wave is drawn, not how long it lasts. The caliper reads time from the grid, so it still shows about 100 to 140 ms and the wave is still in the 70 to 200 ms sharp-wave range. The wave looks slower only because it is stretched, the same illusion that makes rhythms look slower at a faster paper speed. Class ranges are defined in ms and do not scale with the view. The caliper works at any page length because it reads time. Recording the page length (or paper speed) beside any measurement avoids confusion between viewers."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Time Base",
+          "to": "/amplifier-controls?tab=timebase"
+        },
+        {
+          "label": "Domain II: Timebase & Sampling",
+          "to": "/workflow/domain-2/d2-timebase-sampling"
+        }
+      ]
+    },
+    {
+      "id": "case-0089",
+      "title": "Calibration Pulse: What Is the LFF?",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "filters",
+        "time-constant",
+        "calibration",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 28,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Quality check before a routine outpatient EEG",
+      "history": {
+        "eventDescription": "Before a routine EEG, you record the calibration pulse at several LFF settings to see what each does. The pulse lasts 2.5 s so the decay of its top is easy to time with the caliper. You work from the pulse shape and then confirm against the header.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Normal waking background in a healthy adult; the calibration pulse is the subject",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "None",
+        "focalFindings": "None",
+        "activation": "None",
+        "artifacts": "None"
+      },
+      "objectives": [
+        "Time the pulse decay and convert time constant to LFF",
+        "Compare pulse decay on two pages to judge the LFF",
+        "Link LFF to slow-wave attenuation and HFF to rounded corners"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 71,
+          "ageYears": 28,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 0.3,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 2.5
+          },
+          "background": {
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": []
+        },
+        "t2": {
+          "seed": 71,
+          "ageYears": 28,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1.6,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 2.5
+          },
+          "background": {
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": []
+        },
+        "t3": {
+          "seed": 71,
+          "ageYears": 28,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 5.3,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 2.5
+          },
+          "background": {
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": []
+        },
+        "t4": {
+          "seed": 71,
+          "ageYears": 28,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 15,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": []
+        }
+      },
+      "montages": [
+        "longitudinal"
+      ],
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "calculation",
+          "title": "Time the decay, find the LFF",
+          "tracing": "t1",
+          "description": "Page 1 carries a 2.5 s pulse. Using the caliper, time how long the top of the pulse takes to fall from its peak to about 37% of its height (a bit under 20 uV on a 50 uV pulse). Work from the decay first, then check against the header.",
+          "question": "What is the time constant and the LFF it implies?",
+          "options": [
+            "About 0.5 s, so the LFF is near 0.3 Hz",
+            "About 0.5 s, so the LFF is near 3 Hz",
+            "About 1.6 s, so the LFF is near 0.1 Hz",
+            "About 0.16 s, so the LFF is near 1 Hz"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The time constant is the time for the pulse top to fall to about 37% of its starting height, here roughly 0.5 s. LFF = 1 / (2 pi x TC) = 1 / (2 x 3.14 x 0.5) = 0.32 Hz, about 0.3 Hz. A TC of 0.16 s would mean an LFF near 1 Hz and a pulse that sags about three times faster than this one. Multiplying by 2 pi instead of dividing gives about 3 Hz. A TC of 1.6 s would mean an LFF near 0.1 Hz and a pulse that sags much more slowly than this one. The printed LFF on this page is 0.3 Hz, so the measurement agrees with the setting."
+        },
+        {
+          "step": 2,
+          "type": "troubleshooting",
+          "title": "Compare two pages",
+          "tracing": "t2",
+          "description": "Page 2 uses the same pulse, but its top falls to about 37% in roughly 0.1 s, about five times faster than on page 1. Both pages are going to be used to record a 1 Hz delta wave.",
+          "question": "Which statement about the 1 Hz delta is correct?",
+          "options": [
+            "Both pages reduce it equally, because 1 Hz lies above both of the cutoffs in use",
+            "Page 2 reduces it more, because the faster decay means a longer time constant and a lower LFF",
+            "Page 1 reduces it more, because its slower decay means a stronger low-frequency filter",
+            "Page 2 reduces it more, because faster decay means a shorter time constant and higher LFF"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A short TC is a high LFF. TC of 0.1 s gives LFF = 1 / (2 pi x 0.1) = 1.6 Hz, which is above 1 Hz and cuts a 1 Hz wave to roughly half, while the 0.3 Hz filter on page 1 passes most of it. The slowly sagging pulse of page 1 reflects a weaker filter, so the claim that slower decay means stronger filtering is the reverse of the truth. The pages differ by a factor of five in cutoff, so they do not treat 1 Hz equally. A longer TC means a lower LFF, so the last claim has the relation backwards."
+        },
+        {
+          "step": 3,
+          "type": "settings-choice",
+          "title": "The extreme page",
+          "tracing": "t3",
+          "description": "On page 3 the pulse collapses almost as soon as it rises; its top falls to about a third of its height in roughly 1 mm of paper (about 30 to 40 ms), and the pulse peak is lower than on pages 1 and 2. The header reads 5.3 Hz. You are comparing it with pages 1 and 2 (0.3 and 1.6 Hz).",
+          "question": "How would a 1 Hz delta wave look on page 3 compared with pages 1 and 2?",
+          "options": [
+            "It would shrink the most of the three, since a 30 ms time constant means the highest LFF",
+            "It would shrink about as much as on page 2, since both of those LFFs exceed 1 Hz",
+            "It would be unchanged, since an LFF only acts on activity above its setting in frequency",
+            "It would shrink the least of the three, since the fastest decay keeps slower waves intact"
+          ],
+          "correctAnswer": 0,
+          "explanation": "TC 0.03 s gives LFF = 1 / (2 pi x 0.03) = 5.3 Hz, the highest of the three, so a 1 Hz wave is cut to a small fraction of its size, much more than on page 2 (about half) or page 1 (almost none). Both pages 2 and 3 exceed 1 Hz, but they differ greatly in how much they cut. A fast decay reflects a strong high-pass filter, so the claim that it keeps slower waves is backwards. An LFF acts on frequencies below its cutoff, which is why 1 Hz is attenuated on this page. A page like this is for troubleshooting, not for recording slow activity."
+        },
+        {
+          "step": 4,
+          "type": "pattern-recognition",
+          "title": "The rounded corner",
+          "tracing": "t4",
+          "description": "On page 4 the LFF is back to 1 Hz, but the leading edge of the pulse is slightly rounded and the pulse arrives more gradually than before. The header shows an HFF of 15 Hz.",
+          "question": "What does the lowered HFF do here, and what would it do to brief spikes?",
+          "options": [
+            "It makes the pulse top sag more, and it would also stretch slow waves on the page",
+            "It rounds the sharp corner with a slower rise, and would also round and shrink brief spikes",
+            "It raises the pulse above 50 uV, and it would also enlarge brief spikes on the page",
+            "It speeds the pulse decay, and it would also remove delta activity from the whole record"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The HFF is a low-pass filter: it slows fast edges (a rounded, slower rise) and lowers brief fast events such as spikes and muscle. Its time constant, 1 / (2 pi x 15) = about 10 ms, is too short to time on a 10 s page, which is why this is judged from the shape of the corner and not from a measurement. Decay of the top is set by the LFF, and slow delta is mostly untouched by the HFF. No filter makes the pulse taller than its true 50 uV. If the corner looks rounded, check the HFF against protocol before accepting a smaller spike as real."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Filters",
+          "to": "/amplifier-controls?tab=filters"
+        },
+        {
+          "label": "Domain II: Filters, Time Constants",
+          "to": "/workflow/domain-2/d2-filters-time-constants"
+        }
+      ]
+    },
+    {
+      "id": "case-0090",
+      "title": "Sweat Artifact or Delta? Choosing the LFF",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "filters",
+        "artifact",
+        "sweat",
+        "time-constant",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 40,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG for episodes of confusion; patient warm and perspiring",
+      "history": {
+        "eventDescription": "A 40-year-old man arrives overheated after a long walk. The room is warm and he is sweating. Early in the recording an unusual slow movement appears on one side of the head, and later a short run of slow waves appears across many channels.",
+        "lastEventTiming": "two weeks ago",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake background with a slow sway in right temporal channels and a short run of generalized slow activity late in the page",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "None described by the technologist",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "None",
+        "artifacts": "Slow sway at T4 channels, near 0.3 Hz"
+      },
+      "objectives": [
+        "Separate a single-electrode sweat sway from real slowing",
+        "Predict what LFF 0.1, 1 and 5.3 Hz do to both",
+        "Fix the technical cause first and document the setting used"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 73,
+          "ageYears": 40,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 0.1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 0.3,
+              "uv": 160,
+              "sites": [
+                "T4"
+              ]
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.7,
+              "uv": 60,
+              "frontal": 0.3,
+              "runs": [
+                [
+                  6,
+                  8.5
+                ]
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 73,
+          "ageYears": 40,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 0.3,
+              "uv": 160,
+              "sites": [
+                "T4"
+              ]
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.7,
+              "uv": 60,
+              "frontal": 0.3,
+              "runs": [
+                [
+                  6,
+                  8.5
+                ]
+              ]
+            }
+          ]
+        },
+        "t3": {
+          "seed": 73,
+          "ageYears": 40,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 5.3,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 0.3,
+              "uv": 160,
+              "sites": [
+                "T4"
+              ]
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.7,
+              "uv": 60,
+              "frontal": 0.3,
+              "runs": [
+                [
+                  6,
+                  8.5
+                ]
+              ]
+            }
+          ]
+        },
+        "t4": {
+          "seed": 73,
+          "ageYears": 40,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 0.3,
+              "uv": 160,
+              "sites": [
+                "T4"
+              ]
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.7,
+              "uv": 60,
+              "frontal": 0.3,
+              "runs": [
+                [
+                  6,
+                  8.5
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "montages": [
+        "longitudinal"
+      ],
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "A slow sway on one side",
+          "tracing": "t1",
+          "description": "This page is at LFF 0.1 Hz. In F8-T4 and T4-T6 the pen swings slowly, about 3 s per cycle and about 45 mm tall, mostly in mirror image between the two channels. Other channels are comparatively quiet apart from a run of slow waves late in the page.",
+          "question": "What does the sway in F8-T4 and T4-T6 represent?",
+          "options": [
+            "Slow sweat or electrode artifact at T4, the one electrode shared by both channels",
+            "A fault of the low-frequency filter, which at 0.1 Hz passes drift from every electrode",
+            "Respiration artifact, since 0.3 Hz matches a normal breathing rate",
+            "Rhythmic 0.3 Hz delta in the right temporal lobe, to be reported as focal slowing"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The sway appears only in the two channels that share T4 and is mirror-image between them (T4 is the second input of F8-T4 and the first input of T4-T6), which points to a single electrode. Its roughly 3 s period (about 0.3 Hz) and large size fit sweat, which changes the electrode-skin potential slowly. Cerebral delta would not be confined to one electrode or mirror itself across a shared input. Respiration artifact can also sit on one electrode, but it is locked to the patient's breathing movement, and here the cause points to the sweating (warm room, perspiring patient, very slow irregular sway at one electrode); check the chest or the electrode against breathing before naming it. An LFF of 0.1 Hz does let slow drift through, but only the channels that contain the sweaty electrode show it, so the filter is not the fault."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Raise the LFF: what remains",
+          "tracing": "t2",
+          "description": "The LFF is now 1 Hz. The T4 sway is smaller but still visible (those two channels are still about twice as tall as their neighbors). From about 6 to 8.5 s a run of slower waves, roughly 1 to 2 cycles per second, appears in many channels, including the left and midline chains.",
+          "question": "Which of the two slow events is more likely cerebral, and why?",
+          "options": [
+            "Both, since any slow activity that survives a 1 Hz LFF must come from the brain",
+            "The T4 sway, because it is the largest and slowest event seen anywhere on the page",
+            "Neither, since slow events seen at this setting are all products of the filter itself",
+            "The 6 to 8.5 s run, since it spans many channels while the sway sits on one electrode"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A wave that appears together in left, right and midline chains with a consistent time course has a field that spreads across the head, which fits cerebral activity. A wave that lives only in two channels sharing one electrode does not. Size is not the test, since artifacts from sweat are large. A slow wave at 1 Hz LFF can still be artifact, as the T4 sway shows. The run is also not a filter product: the LFF removes slow activity, it does not create it. The technologist describes what is seen and where and leaves interpretation to the physician."
+        },
+        {
+          "step": 3,
+          "type": "troubleshooting",
+          "title": "A tempting quick fix",
+          "tracing": "t3",
+          "description": "A colleague raises the LFF to 5.3 Hz to calm the T4 sway. On this page the sway is nearly gone, but the 6 to 8.5 s run is also much smaller than before, roughly a third of its height on the 1 Hz page.",
+          "question": "Why is this a poor way to handle the sweat artifact?",
+          "options": [
+            "It is acceptable as the routine setting, since an LFF near 5 Hz is standard for adult scalp EEG",
+            "It makes the sway larger on neighboring channels, because the filter spreads artifact around",
+            "It only attenuates activity below 0.5 Hz, so the slow run is not affected by the change",
+            "It shrinks the real slow run with the sway, so slowing could be hidden and the electrode stays faulty"
+          ],
+          "correctAnswer": 3,
+          "explanation": "An LFF of 5.3 Hz (time constant about 0.03 s) is a strong high-pass filter that attenuates everything below a few hertz, including genuine delta near 1 to 2 Hz. It removes the sway because the sway is very slow, but it removes much of the clinically relevant slowing too, and the sweaty electrode is still there. Routine adult EEG uses an LFF near 1 Hz or lower, not 5 Hz. Filters do not spread artifact across channels. The cutoff is not limited to sub-0.5 Hz activity: attenuation increases gradually, and it is already substantial at 1 to 2 Hz."
+        },
+        {
+          "step": 4,
+          "type": "troubleshooting",
+          "title": "What to do and what to record",
+          "tracing": "t4",
+          "description": "The page is back at LFF 1 Hz, with the sway still present in the T4 channels and the run still visible from 6 s. Recording continues and the patient is still warm and sweating.",
+          "question": "What is the best response?",
+          "options": [
+            "Leave the LFF at 0.1 Hz so no delta is lost and mention the artifact only if someone asks",
+            "Keep the LFF at 5.3 Hz for the rest of the study and label the T4 channels sweat artifact",
+            "Cool and dry the patient, re-prep T4, restore protocol LFF, annotate cause and fix",
+            "Delete the T4 segments afterward and report the 6 to 8.5 s run as slowing in your notes"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The correct order is to fix the cause: cool the room or the patient, dry and clean the skin, re-prep and reapply the T4 electrode (check impedance), then record at the lab's protocol LFF, and annotate the artifact, the fix and any filter change. A high LFF hides the cause and the delta together. An unnecessarily low LFF leaves the sway large and unreadable, and not documenting leaves the reader guessing. Deleting data is not a technologist task, and describing the run as slowing is interpretation; the technologist describes the finding, with timing, and notifies the physician if the recording is affected."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Filters",
+          "to": "/amplifier-controls?tab=filters"
+        },
+        {
+          "label": "Amplifier & Filters: Common Mistakes",
+          "to": "/amplifier-controls?tab=mistakes"
+        },
+        {
+          "label": "Domain II: Filters, Time Constants",
+          "to": "/workflow/domain-2/d2-filters-time-constants"
+        }
+      ]
+    },
+    {
+      "id": "case-0091",
+      "title": "60 Hz Interference: Fix First, Notch Last",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "filters",
+        "notch",
+        "60hz",
+        "artifact",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 30,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG for suspected focal seizures; 60 Hz fuzz on part of the page",
+      "history": {
+        "eventDescription": "A 30-year-old woman is having a routine EEG after brief focal events. A fuzzy thickening of the trace appears in two channels on the left posterior chain. A spike-like event also appears in the left central channels around 6.5 s and you want it to stay visible.",
+        "lastEventTiming": "one month ago",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake background with a thickened fuzzy trace in two left posterior channels",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "Brief sharp event over C3 near 6.5 s, to be described, not interpreted",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "None",
+        "artifacts": "60 Hz interference localized to T5-containing channels"
+      },
+      "objectives": [
+        "Localize 60 Hz interference to a single electrode",
+        "Predict what HFF 15 Hz and the notch do to 60 Hz and to a spike",
+        "Fix attachment and impedance first and document any notch use"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 74,
+          "ageYears": 30,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 60,
+              "uv": 30,
+              "sites": [
+                "T5"
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 110,
+              "durMs": 55,
+              "at": [
+                6.5
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 74,
+          "ageYears": 30,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 15,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 60,
+              "uv": 30,
+              "sites": [
+                "T5"
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 110,
+              "durMs": 55,
+              "at": [
+                6.5
+              ]
+            }
+          ]
+        },
+        "t3": {
+          "seed": 74,
+          "ageYears": 30,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 60,
+              "uv": 30,
+              "sites": [
+                "T5"
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 110,
+              "durMs": 55,
+              "at": [
+                6.5
+              ]
+            }
+          ]
+        },
+        "t4": {
+          "seed": 74,
+          "ageYears": 30,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 60,
+              "uv": 30,
+              "sites": [
+                "T5"
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 110,
+              "durMs": 55,
+              "at": [
+                6.5
+              ]
+            }
+          ],
+          "notch": true
+        }
+      },
+      "montages": [
+        "longitudinal"
+      ],
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "troubleshooting",
+          "title": "Where is the fuzz coming from?",
+          "tracing": "t1",
+          "description": "Look at the fuzzy, thickened trace on this page. It is strong in T3-T5 and T5-O1 and barely visible in the other 16 channels.",
+          "question": "Which input is the likely source of the interference?",
+          "options": [
+            "Electrode T5, the one input shared by both noisy channels",
+            "Electrode T3, the first input of the earlier noisy channel",
+            "The ground electrode, since pickup in two channels signals a ground fault",
+            "Electrode O1, the last input in the second noisy channel"
+          ],
+          "correctAnswer": 0,
+          "explanation": "A technical artifact that appears in every channel containing one electrode and nowhere else points to that electrode. T5 is the only input shared by T3-T5 and T5-O1, so T5 (high impedance or poor attachment picking up 60 Hz) is the likely source. T3 appears only in the first noisy channel and also in F7-T3, which is clean. O1 appears in P3-O1, which is also clean. A ground problem would be expected to spread across many channels, not stay in two."
+        },
+        {
+          "step": 2,
+          "type": "settings-choice",
+          "title": "Lowering the HFF to 15 Hz",
+          "tracing": "t2",
+          "description": "A colleague lowers the HFF to 15 Hz. On this page the fuzz is smaller but not gone in T3-T5 and T5-O1, and the spike over C3 near 6.5 s is lower and rounder than before.",
+          "question": "What does a 15 Hz HFF do here?",
+          "options": [
+            "It cuts the 60 Hz fuzz but does not remove it, and it also shrinks the C3 spike",
+            "It removes the 60 Hz fully, and it enlarges the C3 spike since noise no longer rides on it",
+            "It leaves the 60 Hz unchanged, since an HFF only acts on activity below its setting, but it blunts the spike",
+            "It removes the 60 Hz fully, because 60 Hz is above a 15 Hz cutoff, and leaves the C3 spike unchanged"
+          ],
+          "correctAnswer": 0,
+          "explanation": "A 15 Hz low-pass filter passes frequencies far above its cutoff with gradual roll-off, not an all-or-none cut, so 60 Hz is reduced to roughly a third of its height but remains visible. The same filter reduces fast components of the real spike (the spike here is roughly a quarter smaller and more rounded). Claiming it fully removes 60 Hz overlooks the gradual roll-off. Claiming it leaves the 60 Hz unchanged is wrong; the HFF attenuates activity above its setting. A filter never enlarges a spike. The cause is untouched, so this is a poor substitute for fixing the electrode."
+        },
+        {
+          "step": 3,
+          "type": "troubleshooting",
+          "title": "First action on the real cause",
+          "tracing": "t3",
+          "description": "The HFF is back at 70 Hz and the 60 Hz fuzz returns at full size in the same two channels. The patient is comfortable and not moving, and other electrodes show normal impedance.",
+          "question": "What should you do first?",
+          "options": [
+            "Lower the sensitivity to 15 uV/mm so the fuzz is smaller on the display screen",
+            "Switch on the 60 Hz notch right away, because the interference is exactly 60 Hz",
+            "Raise the LFF to 5.3 Hz to push the interference out of the signal on the page",
+            "Check T5 impedance and attachment, reseat or re-prep it, and inspect its cable"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Fix the cause first: a high-impedance or loose T5 (dried gel, poor contact, a damaged lead or connector) lets mains interference in. Re-measure impedance, re-prep and reapply if needed, and check the cable path away from power cords. A notch hides the problem and can remove real 60 Hz content, so it is a last resort. Lowering the sensitivity shrinks the whole display and makes small cerebral waves harder to read while the interference stays. An LFF high-pass filter attenuates slow activity, not 60 Hz, so 5.3 Hz would blunt delta and leave the fuzz."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "The notch as a last resort",
+          "tracing": "t4",
+          "description": "You re-prepped T5 and checked cables, but a nearby piece of equipment cannot be unplugged and the fuzz returns. With the lab's approval you switch on the 60 Hz notch. On this page the fuzz is gone and the C3 spike looks as it did at 70 Hz.",
+          "question": "What do you record?",
+          "options": [
+            "Nothing further, since the notch removes only the interference and no real activity",
+            "That 60 Hz was seen at T5, with the notch left on for all of this patient's future EEGs",
+            "Only the time the notch was switched on; the cause is unnecessary now that the page looks clean",
+            "The notch is on and when, the T5 interference and steps tried, and the final impedance"
+          ],
+          "correctAnswer": 3,
+          "explanation": "The record should let a reader know the data were filtered and why: the notch is on from a stated time, the fuzz was at T5, what was tried (impedance, re-prep, cables), and where things ended. A notch also removes a little real 60 Hz content, so it is not free of cost, and silence about it hides a technical issue. A time alone leaves out the reason, the site and the attempts. Future recordings need fresh technical checks, so carrying a notch forward as a standing setting would mask a recurring problem. The page looks cleaner but the interference source was not eliminated."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Filters",
+          "to": "/amplifier-controls?tab=filters"
+        },
+        {
+          "label": "Domain II: Amplifiers, Impedance & Grounding",
+          "to": "/workflow/domain-2/d2-amplifiers-impedance-grounding"
+        }
+      ]
+    },
+    {
+      "id": "case-0092",
+      "title": "HFF, Muscle and Spikes: What It Costs",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "filters",
+        "hff",
+        "artifact",
+        "muscle",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 35,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Routine EEG for spells of altered awareness; tense during recording",
+      "history": {
+        "eventDescription": "A 35-year-old woman is anxious and clenching her jaw at times. A brief burst of fast fuzzy activity appears on the right side of the head, and sharp-looking waves appear in the left temporal channels at about 3.0, 6.2 and 8.4 s. The lab protocol allows temporary HFF changes.",
+        "lastEventTiming": "one week ago",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake background with bursts of fast activity at right temporal sites and sharp events at the left temporal region",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "Left temporal sharp events at about 3.0, 6.2 and 8.4 s; described, not interpreted",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "None",
+        "artifacts": "Right-sided muscle burst around 4.2 to 5.6 s"
+      },
+      "objectives": [
+        "Recognize muscle fuzz and respond at the patient first",
+        "Compare HFF 70, 35 and 15 Hz on muscle and on a spike",
+        "Document a temporary HFF change and restore protocol"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 72,
+          "ageYears": 35,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.6
+          },
+          "background": {
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 50,
+              "at": [
+                3,
+                6.2,
+                8.4
+              ]
+            },
+            {
+              "type": "muscle",
+              "from": 4.2,
+              "to": 5.6,
+              "sites": [
+                "F8",
+                "T4"
+              ],
+              "uv": 16
+            }
+          ]
+        },
+        "t2": {
+          "seed": 72,
+          "ageYears": 35,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 35,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.6
+          },
+          "background": {
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 50,
+              "at": [
+                3,
+                6.2,
+                8.4
+              ]
+            },
+            {
+              "type": "muscle",
+              "from": 4.2,
+              "to": 5.6,
+              "sites": [
+                "F8",
+                "T4"
+              ],
+              "uv": 16
+            }
+          ]
+        },
+        "t3": {
+          "seed": 72,
+          "ageYears": 35,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 15,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.6
+          },
+          "background": {
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 50,
+              "at": [
+                3,
+                6.2,
+                8.4
+              ]
+            },
+            {
+              "type": "muscle",
+              "from": 4.2,
+              "to": 5.6,
+              "sites": [
+                "F8",
+                "T4"
+              ],
+              "uv": 16
+            }
+          ]
+        },
+        "t4": {
+          "seed": 72,
+          "ageYears": 35,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 35,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.4
+            ],
+            "uv": 50,
+            "durS": 1.6
+          },
+          "background": {
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 50,
+              "at": [
+                3,
+                6.2,
+                8.4
+              ]
+            },
+            {
+              "type": "muscle",
+              "from": 4.2,
+              "to": 5.6,
+              "sites": [
+                "F8",
+                "T4"
+              ],
+              "uv": 16
+            }
+          ]
+        }
+      },
+      "montages": [
+        "longitudinal"
+      ],
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "troubleshooting",
+          "title": "A fast burst on the right",
+          "tracing": "t1",
+          "description": "This page is at HFF 70 Hz. From about 4.2 to 5.6 s there is a burst of dense fast activity in the right temporal channels (Fp2-F8, F8-T4, T4-T6). Nothing similar appears on the left, where the sharp events at 3.0, 6.2 and 8.4 s are seen. The patient is awake and tense during this page.",
+          "question": "What is the burst, and what is your first response?",
+          "options": [
+            "A possible seizure; stop the recording and call for emergency help at once for her",
+            "Muscle from the right temple or jaw; have her relax her jaw and forehead, adjust head support",
+            "A fault in the HFF setting; lower the HFF to 15 Hz right away to correct the page",
+            "Cerebral fast activity on the right side; describe it in the notes as a focal beta finding"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Dense, fast, spiky fuzz limited to the right temporal chain that comes and goes over about a second and a half fits muscle (temporalis, jaw or forehead tension). The first response is to help the patient relax, adjust pillow and head support, and re-check electrode contact. Labeling it cerebral beta is an interpretation, outside scope. The HFF setting is not at fault, and lowering it is a trade-off rather than a first step. A short artifact burst with an awake, comfortable-looking patient is not an emergency; the technologist observes the patient, and escalation is for a clinical change."
+        },
+        {
+          "step": 2,
+          "type": "settings-choice",
+          "title": "HFF 35 Hz",
+          "tracing": "t2",
+          "description": "The HFF is 35 Hz on this page. Compare the right temporal burst and the left temporal spike at 3.0 s with the 70 Hz page.",
+          "question": "What changed on this page?",
+          "options": [
+            "The muscle fuzz is completely gone and the left temporal spike is unchanged in height",
+            "Muscle fuzz is reduced but not gone, and the left temporal spike is only slightly smaller",
+            "The muscle fuzz is unchanged on the right and the left temporal spike is much smaller",
+            "The muscle fuzz is completely gone and the left temporal spike is cut roughly in half"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Lowering the HFF to 35 Hz removes about a quarter of the muscle fuzz but leaves a clear remnant, while the spike height falls only a few percent (about 109 to 102 uV in T3-T5). The filter roll-off is gradual, so muscle is reduced, not eliminated. A claim that muscle is gone or that the spike is unchanged overstates the filter. A claim that muscle is unchanged while the spike collapses has the effects reversed. At 35 Hz the spike is still sharp, which is why this setting is often a reasonable temporary compromise within protocol."
+        },
+        {
+          "step": 3,
+          "type": "settings-choice",
+          "title": "HFF 15 Hz: the hidden cost",
+          "tracing": "t3",
+          "description": "The HFF is 15 Hz on this page. The muscle burst is cut to about half its size (it is still visible). The left temporal spike at 3.0 s is lower and broader, about a quarter smaller than at 70 Hz.",
+          "question": "Why is 15 Hz not a free fix for muscle?",
+          "options": [
+            "It is fine to leave on for the whole study, since an HFF only removes activity above 70 Hz",
+            "It makes muscle look larger, because the filter amplifies slower waves in the same channels",
+            "It restores spike height if the sensitivity is also lowered to compensate for the filter",
+            "It also shrinks and rounds real spikes and fast activity, so findings can be hidden"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A low-pass filter attenuates all fast activity, so at 15 Hz both muscle and the fast components of a cerebral spike are reduced; a spike that is shrunk and blunted can look like a slower wave and may be missed. It does not fix the cause, which is tension, so the patient and head support still need attention. Filters do not amplify slow waves meaningfully. An HFF of 15 Hz attenuates much below 70 Hz, not only above it. Changing the display sensitivity rescales the picture but cannot restore filtered detail."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Record the temporary change",
+          "tracing": "t4",
+          "description": "After asking her to relax, repositioning her head, and re-checking contact, the muscle bursts become less frequent but still occur. You keep HFF 35 Hz on this page, and the page header reads 35 Hz.",
+          "question": "What is the best way to handle and document the setting?",
+          "options": [
+            "Leave 35 Hz for the rest of the recording without a note, since it is still a common setting",
+            "Record at 35 Hz silently and tell the reader afterward that spikes looked smaller than expected",
+            "Annotate the change from 70 to 35 Hz with time and reason, then restore 70 Hz once muscle settles",
+            "Use 15 Hz for the whole study and make it her standard setting for all of her future EEGs"
+          ],
+          "correctAnswer": 2,
+          "explanation": "A temporary HFF change within protocol should be annotated with the time and reason, and the protocol HFF restored when the cause (muscle) has settled, so the reader knows which pages were filtered more strongly and why spikes may be smaller. Leaving a changed setting without a note leaves later readers unsure. Making 15 Hz a standing setting for future studies would repeatedly blunt spikes. Telling a reader afterward that spikes look smaller hands them an avoidable surprise; the record should carry the setting information from the start."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Filters",
+          "to": "/amplifier-controls?tab=filters"
+        },
+        {
+          "label": "Domain II: Filters, Sensitivity, Time Constants",
+          "to": "/workflow/domain-2/d2-filters-sensitivity-time-constants"
+        }
+      ]
     }
   ]
 }
