@@ -1,0 +1,95 @@
+{
+  "lffStack": {
+    "seed": 81,
+    "ageYears": 30,
+    "state": "awake",
+    "seconds": 5,
+    "montage": "single",
+    "background": {
+      "pdrUv": 0,
+      "beta": 0,
+      "theta": 0,
+      "delta": 0,
+      "noise": 0
+    },
+    "findings": [
+      {
+        "type": "sine",
+        "hz": 1,
+        "uv": 200,
+        "sites": [
+          "O1"
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "label": "TC 2.0 s",
+        "lff": 0.0796,
+        "hff": 200
+      },
+      {
+        "label": "TC 0.3 s",
+        "lff": 0.5305,
+        "hff": 200
+      },
+      {
+        "label": "TC 0.1 s",
+        "lff": 1.5915,
+        "hff": 200
+      },
+      {
+        "label": "TC 0.03 s",
+        "lff": 5.305,
+        "hff": 200
+      }
+    ]
+  },
+  "hffStack": {
+    "seed": 82,
+    "ageYears": 30,
+    "state": "awake",
+    "seconds": 0.4,
+    "montage": "single",
+    "background": {
+      "pdrUv": 0,
+      "beta": 0,
+      "theta": 0,
+      "delta": 0,
+      "noise": 0
+    },
+    "findings": [
+      {
+        "type": "sine",
+        "hz": 20,
+        "uv": 200,
+        "sites": [
+          "O1"
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "label": "No filter",
+        "lff": 0,
+        "hff": 200
+      },
+      {
+        "label": "HFF 70 Hz",
+        "lff": 0,
+        "hff": 70
+      },
+      {
+        "label": "HFF 35 Hz",
+        "lff": 0,
+        "hff": 35
+      },
+      {
+        "label": "HFF 15 Hz",
+        "lff": 0,
+        "hff": 15
+      }
+    ],
+    "tickS": 0.05
+  }
+}

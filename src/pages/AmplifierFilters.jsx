@@ -4,6 +4,8 @@ import EegTracing from "../components/EegTracing.jsx";
 import Calculators from "../components/amplifier/Calculators.jsx";
 import ResponseCurve from "../components/amplifier/ResponseCurve.jsx";
 import labScene from "../data/amplifierLab.json";
+import stacks from "../data/filterStacks.json";
+import FilterStack from "../components/amplifier/FilterStack.jsx";
 import casesData from "../data/cases.json";
 import {
   HFF_CHOICES, LFF_CHOICES, durationMs, frequencyHz, heightFromVoltage, highPassGain, lowPassGain, timeConstantFromCutoff,
@@ -246,10 +248,32 @@ function Filters() {
 
       <ResponseCurve />
 
+      <Card title="Filters also shift timing" tone="indigo">
+        <p>Besides changing size, a filter changes <strong>when</strong> a wave peaks. Frequency stays the same; only the timing and the height change.</p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li><strong>LFF:</strong> a shorter time constant (higher LFF) shrinks a slow wave <em>and</em> makes its peak come earlier.</li>
+          <li><strong>HFF:</strong> a lower HFF trims a fast wave <em>and</em> makes its peak come slightly later.</li>
+        </ul>
+        <p>For a single-pole filter the shift is a phase of atan(fc ÷ f) for the LFF (a lead) and atan(f ÷ fc) for the HFF (a lag). At a wave&apos;s own cutoff that is 45°, one eighth of a cycle.</p>
+      </Card>
+      <FilterStack
+        scene={stacks.lffStack}
+        variants={stacks.lffStack.variants}
+        showTheory
+        caption="One 1 Hz sine wave, four time constants. A shorter time constant gives a smaller wave whose peak arrives earlier."
+      />
+      <FilterStack
+        scene={stacks.hffStack}
+        variants={stacks.hffStack.variants}
+        showTheory
+        caption="One 20 Hz sine wave, four HFF settings. A lower HFF gives a slightly smaller wave whose peak arrives later. The frequency never changes."
+      />
+
       <div className="grid gap-4 md:grid-cols-2">
         <Card title="What goes wrong with filter choices" tone="amber">
           <ul className="list-disc space-y-1 pl-5">
-            <li>LFF too high: delta and slow potentials shrink and the baseline recovers too quickly after large deflections.</li>
+            <li>LFF too high: delta and slow potentials shrink, focal slowing can be missed, and the baseline recovers too quickly after large deflections.</li>
+            <li>A little more LFF can help in one situation: very large delta that hides small spikes. Raising it (and noting it) can make the spikes easier to see; return to the routine setting afterward.</li>
             <li>LFF very low: slow artifact (sweat, movement, electrode drift) and baseline wander return and can be mistaken for delta activity.</li>
             <li>HFF too low: spikes look rounder and smaller, and may be mistaken for sharp waves or missed.</li>
             <li>HFF high: muscle artifact and 60 Hz are more obvious.</li>
@@ -298,9 +322,10 @@ const MISTAKES = [
   ["A longer time constant means a higher LFF.", "A longer TC means a lower LFF: 0.3 s is 0.53 Hz and 0.1 s is 1.6 Hz."],
   ["Lowering the HFF to 15 Hz removes muscle artifact completely.", "It reduces it, rounds spikes and trims fast activity. Relaxing the patient or fixing the electrode comes first."],
   ["A notch filter fixes a 60 Hz problem.", "It hides it. Fix grounding, impedances and cables first; the notch also removes real activity at 60 Hz."],
-  ["Filters change the frequency of a rhythm.", "They change amplitude and shape. An 8 Hz rhythm is still 8 Hz."],
+  ["Filters change the frequency of a rhythm.", "They change amplitude, shape and the timing of the peaks, never the frequency. An 8 Hz rhythm is still 8 Hz."],
   ["A faster time base makes rhythms look faster.", "A faster paper speed spreads waves out, so rhythms look slower. A slower speed squeezes them, so they look faster."],
   ["A 50 µV pulse is always 5 mm tall.", "That is true at 10 µV/mm. At 7 µV/mm it is about 7.1 mm, and screens and printouts can rescale. Use the pulse on the page."],
+  ["Raising the LFF to 5 Hz is a safe way to get rid of drift.", "It also shrinks real delta, can hide focal slowing and distorts slow waves. Fix the cause (sweat, movement, electrode) first and keep the routine LFF."],
   ["I can read microvolts straight from the millimetre marks on any printout.", "Printouts rescale. Use calibration µV × wave height ÷ calibration height."],
 ];
 
