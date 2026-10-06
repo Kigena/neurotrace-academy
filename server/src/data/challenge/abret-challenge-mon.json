@@ -1,0 +1,1161 @@
+{
+ "version": "1.0.0",
+ "generatedAt": "2026-10-05",
+ "bank": "challenge",
+ "focus": "montages-referencing",
+ "description": "ABRET Challenge Bank round 4: montages and referencing (ear contamination, choosing a reference, EKG with ear references, average reference, bipolar phase reversal, Laplacian, choosing a montage). Text only; not yet medically verified.",
+ "totalQuestions": 40,
+ "questions": [
+  {
+   "id": "ch-mon-001",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "reference"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "What is the basic assumption behind a referential montage?",
+   "explanation": "A referential channel compares one scalp electrode with a common reference, and the display is only a faithful picture of the active electrode if the reference contributes little signal. A reference that carries a large signal would distort every channel instead of defining polarity. The reference is not a second ground and does not remove interference. A midline site can be a reference, but the principle is that the site is quiet, not where it is.",
+   "learningObjective": "State the assumption behind referential recording.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The reference electrode carries the largest signal in the montage, so it sets the polarity of every channel",
+    "The reference electrode acts as a second ground and removes interference from every channel",
+    "The reference site has little activity of its own, so each channel mostly reflects its active electrode",
+    "The reference electrode must be placed on the midline so that both hemispheres share one input"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-002",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "ear-reference",
+    "contamination"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "In an A1-referenced montage, a T3 sharp wave is accompanied by small downward deflections in many channels that do not include T3. What best explains these deflections?",
+   "explanation": "Ear electrodes lie close to the temporal lobes, so a strong T3 discharge can reach A1. Because A1 is shared by every A1-referenced channel, the extra potential appears as a similar deflection in all of them. The other channels do not generate separate discharges, an amplifier does not change gain for one event, and a lifted ground would produce continuous interference rather than a deflection timed to the T3 discharge.",
+   "learningObjective": "Recognise ear contamination as a source of spurious deflections.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The left ear electrode picked up part of the T3 discharge, so the reference is no longer quiet",
+    "Several distant scalp areas produced their own separate discharge at the same instant as T3",
+    "The amplifier gain drifted upward briefly while the discharge was being recorded on screen",
+    "The ground electrode lifted and added a common potential to every channel in the montage"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-003",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "ear-reference",
+    "amplitude"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Why does the T3-A1 channel show a smaller deflection than the true T3 amplitude during a left temporal sharp wave?",
+   "explanation": "Every referential channel shows the potential at the active electrode minus the potential at the reference. If A1 has picked up part of the T3 discharge, subtracting it shrinks the displayed deflection. The software does not swap the roles of the electrodes, the filter settings do not depend on which reference a channel uses, and the sensitivity is one setting for the display.",
+   "learningObjective": "Explain why ear contamination reduces the amplitude of a nearby discharge.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "A1 becomes the active electrode and T3 is then treated as the reference for the channel",
+    "The LFF reduces sharp waves that are recorded against ear electrodes more than scalp ones",
+    "The sensitivity switches to a lower setting for channels that use the ear references",
+    "A1 carries part of the same potential, so the channel shows only the T3 minus A1 difference"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-004",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "ear-reference",
+    "contamination"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "A left temporal spike looks small in T3-A1, and downward deflections appear in Fp1-A1, C3-A1 and O1-A1 at the same instant, while the A2 channels look clean. What is the most useful change, and why?",
+   "explanation": "The shared deflections point to contamination of A1 by the discharge. Changing to a reference farther from the focus, such as the opposite ear or Cz, removes most of the contamination and restores the true T3 amplitude. A higher LFF would reduce the spike as well as the contamination because both are brief transients. Moving the ground does not change the reference potential, and lowering the sensitivity only shrinks everything on the page.",
+   "learningObjective": "Choose a remedy for ear contamination by an adjacent focus.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Raise the LFF so the ear contamination is attenuated while the spike stays unchanged",
+    "Switch to A2 or Cz referencing, because those sites are farther from the discharge",
+    "Move the ground electrode to the left ear so the common potential cancels in all channels",
+    "Lower the sensitivity so the downward deflections fall below the visible size"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-005",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "ear-reference",
+    "amplitude"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "A technologist records the left hemisphere against A1 and the right hemisphere against A2, and a left temporal focus is present. Why are left-right amplitude comparisons unreliable in this montage?",
+   "explanation": "Homologous amplitude comparison needs one common reference. With separate ears, the left ear may be contaminated by the focus while the right ear is not, so the left channels can look smaller or distorted for reasons unrelated to the underlying activity. Sensitivity and time constant are display settings that do not follow the reference, and referential montages can display any pair of scalp electrodes.",
+   "learningObjective": "Explain why amplitude comparison needs a shared reference.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The sensitivity setting differs between channels that use different ear electrodes in the montage",
+    "The two sides use different references, so a size difference may come from the references",
+    "The time constant is linked to the reference electrode chosen for each separate channel",
+    "Cross-hemisphere channels cannot be displayed at all in referential montages with ear electrodes"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-006",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "linked-ears",
+    "contamination"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "A left temporal spike is recorded against linked ears (A1 and A2 joined) instead of A1 alone. What is the expected effect on contamination?",
+   "explanation": "Joining the ears averages the contaminated left ear with the clean right ear, so the contribution is roughly halved but still enters every channel. It is not cancelled exactly because the right ear carries little of the discharge. The reference does change when the ears are joined, and the contamination does not switch sides but is spread across all channels using the reference.",
+   "learningObjective": "Predict how linked ears change reference contamination.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The false deflection is removed because the right ear cancels the left ear exactly",
+    "The false deflection is unchanged because joining ears does not alter the reference",
+    "The false deflection moves to the right hemisphere channels only",
+    "A smaller false deflection appears, but it is shared by channels of both hemispheres"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-007",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "ear-reference",
+    "contamination"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "A T3 discharge produces downward deflections in many A1 channels. Which pair of actions best fits the situation?",
+   "explanation": "The contamination comes from the position of A1 beside an active temporal region, so the effective fix is a different reference, with a note so the reader knows which channels to doubt. With an opposite-ear (A2) reference, homologous left and right amplitudes are no longer directly comparable, which is also worth noting. The HFF cannot separate the contamination from the discharge because both are in the same frequency range. Lower impedance does not stop the electrode from picking up true nearby activity, and more sensitivity makes the false deflections larger. Every option includes a note, so the choice rests on the action.",
+   "learningObjective": "Combine the technical remedy with a note for the reader.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Switch to A2 or Cz referencing, and note that A1 was contaminated by the discharge",
+    "Keep A1 and lower the HFF so the contamination is filtered out, and note the filter change",
+    "Re-prep the A1 electrode to lower its impedance, and note the new impedance with the montage unchanged",
+    "Increase the sensitivity so the false deflections can be measured, and note the gain change"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-008",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "ear-reference",
+    "contamination"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 1,
+   "stem": "Which finding in an A1-referenced montage points to contamination of the reference rather than separate activity in each channel?",
+   "explanation": "A contaminated reference adds its own potential to every channel that uses it, so many channels show the same event at the same moment with the same polarity. Separate activity would differ in timing and shape, a single-channel event points to that electrode, and varying polarity points to real differences in the field, not a shared input.",
+   "learningObjective": "Recognise the pattern that suggests reference contamination.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Deflections of different timing in neighboring channels, each with its own shape and size",
+    "A deflection that appears in one channel only and is absent in all of the neighbors",
+    "Deflections of the same polarity, shape and timing in many channels remote from the discharge",
+    "Deflections in random directions, with no consistent timing between channels"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-009",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "cz-reference"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Which feature makes a Cz reference useful for comparing left and right hemisphere amplitudes?",
+   "explanation": "Because Cz is symmetrical between the hemispheres, left and right channels share the same reference and their amplitudes can be compared directly. Cz is on the scalp and does record cortical activity, it is not joined to the ears, and it can still pick up movement and cardiac potentials.",
+   "learningObjective": "Explain why a midline reference suits symmetry checks.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Cz is over the vertex, so it carries no cortical activity of its own",
+    "Cz is joined to both ears so contamination cancels out",
+    "Cz is far from the heart and face, so it is free of EKG and movement potentials",
+    "Cz lies on the midline, about equally far from both hemispheres"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-010",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "cz-reference",
+    "sleep"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Why does a Cz reference perform poorly in drowsiness and sleep?",
+   "explanation": "In sleep the vertex region is highly active, so a Cz reference no longer sits at a quiet site; the activity at Cz is subtracted from or added to every channel, producing apparent transients across the head. Electrode loosening is not the typical cause, slow activity is easily recorded at Cz, and the vertex is far from the eyes.",
+   "learningObjective": "Explain why Cz is not a neutral reference in sleep.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Cz electrodes loosen as the patient relaxes and add mains interference to every channel",
+    "Vertex waves and spindles are largest at Cz, so they contaminate every Cz-referenced channel",
+    "Cz carries large eye-movement potentials during drowsiness, which spread to every Cz-referenced channel",
+    "Cz impedance rises as the patient relaxes, which adds noise to every Cz-referenced channel"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-011",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "nose-reference",
+    "artifact"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "A nose reference is chosen to avoid ear contamination. What problem does it bring?",
+   "explanation": "The nose is near the eyes and facial muscles, so their potentials enter the reference and then appear in every channel that uses it. The nose can be a shared input, it is not near the ear canal, and it does not cancel frontal rhythms specifically.",
+   "learningObjective": "Recognise artifact sources for non-cephalic references.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "It records too little signal of its own, so every channel is displayed at very low amplitude",
+    "It sits close to the ear canal, so temporal spikes enter every channel through it",
+    "Blinks, eye movement and facial muscle reach the nose and appear in many channels",
+    "It is close to the scalp midline, so it cancels frontal rhythms in each channel"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-012",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "chin-reference",
+    "artifact"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "With a chin reference, many channels show the same slow deflection each time the patient swallows or moves the tongue. What explains this, and what is the best step?",
+   "explanation": "A chin reference is exposed to tongue and jaw potentials, which appear as a common deflection in all channels using it. Re-applying scalp electrodes does not fix a problem at the reference, the HFF affects fast activity more than swallowing potentials, and sleep would not produce a deflection timed to each swallow.",
+   "learningObjective": "Explain why chin references are not neutral and how to respond.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The reference picks up tongue and jaw potentials that enter every channel, so use a scalp or ear reference",
+    "The scalp electrodes pick up the movement themselves, so all of them must be re-applied before continuing",
+    "The HFF is passing the movement, so it should be lowered before the recording is continued further",
+    "The patient is falling asleep, so the montage should stay on the chin reference as it is now"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-013",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "non-cephalic-reference",
+    "ekg"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Why is a balanced non-cephalic reference used instead of a single neck or chest electrode?",
+   "explanation": "A non-cephalic site avoids cerebral activity, but near the heart a single electrode would pick up QRS; balancing cancels most of that. The other descriptions do not match this reference, which is off the head and not at the scalp, ears or chin.",
+   "learningObjective": "Describe how a balanced non-cephalic reference works.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It sits off the head to avoid cerebral activity, and balancing cancels the heart signal a single site would pick up",
+    "It is placed on the scalp midline, so the signals from the two hemispheres are equal and cancel in each channel",
+    "It is joined to both ears, so the cardiac potentials add up and the channels become flat in all recordings",
+    "It is placed over the chin, so the muscle potentials are the same in every channel and are cancelled"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-014",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "cz-reference",
+    "amplitude"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "A patient is awake and no ear contamination is suspected, and the reader wants left and right posterior amplitudes compared. Which reference is shared by both sides and sits equally between them?",
+   "explanation": "Awake, with no suspected contamination, Cz offers a shared midline reference that favors comparison of amplitudes. Separate ears give different baselines, one ear for all channels favors that ear's side and can be contaminated by the nearby temporal lobe, and a chin electrode brings tongue and muscle potentials.",
+   "learningObjective": "Choose a reference for an amplitude symmetry comparison.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "A1 for the left channels and A2 for the right channels, so each side has its own ear",
+    "The left ear for every channel, so the two sides can be compared with one input",
+    "Cz, because it is midline and both sides share the same reference",
+    "A single chin electrode, because it is distant from both hemispheres"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-015",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "cz-reference",
+    "sleep",
+    "average-reference"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "A patient recorded with a Cz reference falls asleep. Which plan fits the changing state?",
+   "explanation": "Cz works well in wakefulness but picks up vertex waves and spindles in sleep, so another reference or an average or linked-ear option is more suitable, with a note so the reader knows the reference changed. A chin reference adds tongue and muscle potentials, and the HFF does not remove vertex waves because they are slow.",
+   "learningObjective": "Adapt the reference to the patient state.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Keep Cz because it gives the best amplitude symmetry in every state, and note the patient's state change",
+    "Switch to an average or linked-ear reference, and note the change on the record",
+    "Switch to a chin reference because it is farther from the vertex, and note the change on the record",
+    "Lower the HFF so the vertex waves are reduced in all Cz channels, and note the filter change"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-016",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "ear-reference",
+    "ekg"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "In a typical ear-referenced montage, QRS complexes appear upright in A1 channels and inverted in A2 channels. What explains the opposite polarity?",
+   "explanation": "The cardiac potential at the two ears is of opposite sign, and each channel subtracts its ear, so the QRS appears reversed between the A1 and A2 channels. Impedance differences add noise but do not invert a signal, an amplifier does not invert by side, and the two ears pick up the same heartbeat.",
+   "learningObjective": "Explain the polarity of EKG in ear-referenced channels.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The two ear electrodes have different impedance and so invert the signal for one channel group",
+    "The amplifier inverts the signal whenever the reference electrode is on the right side of the head",
+    "The QRS is two separate heartbeats, one recorded from each side of the head by each ear",
+    "The cardiac field reaches the ears with opposite polarity, so the same QRS enters each reference oppositely"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-017",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "ear-reference",
+    "ekg",
+    "bipolar"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "QRS-timed deflections appear in all referential channels using the ears but are minimal in the bipolar chain. Why?",
+   "explanation": "The ears act as a shared input that carries a cardiac potential, so it appears everywhere; in bipolar channels both electrodes receive nearly the same cardiac potential and the difference is small. LFF and sensitivity are display settings that do not differ between the two montage types, and the signal originates in the heart, not in the contact.",
+   "learningObjective": "Explain why ear references show more EKG than bipolar chains.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Bipolar channels use a higher LFF than referential ones, so they cannot show the heart signal",
+    "Ears pick up cardiac potential that enters every channel, while adjacent scalp pairs cancel most of it",
+    "Referential channels use a lower sensitivity setting, so they amplify the heart signal more",
+    "The heart signal is generated by the contact of the ear electrodes with the skin, not the heart"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-018",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "linked-ears",
+    "ekg",
+    "artifact"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Why does joining A1 and A2 into a linked-ears reference reduce the QRS in the channels?",
+   "explanation": "Linking adds two potentials of opposite polarity, which nearly cancel and leave little QRS in the shared reference. Higher impedance would not cancel the signal, linking does not change the physical position of the electrodes, and the amplifier reads the joined ears as an ordinary reference.",
+   "learningObjective": "Describe how linked ears cancel EKG electronically.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Joining the ears doubles their impedance, so less cardiac current flows into the amplifier input",
+    "The joined reference moves to the midline where the heart signal is weaker than at the ears",
+    "The amplifier treats the joined ears as a ground and ignores their input in all the channels",
+    "Cardiac potentials at the two ears have opposite polarity, so they sum toward zero when joined"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-019",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "ear-reference",
+    "ekg",
+    "artifact"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "QRS-locked transients appear in the A1 and A2 referential channels. Which response is most appropriate?",
+   "explanation": "The cause is cardiac potential entering the reference, so linking the ears (opposite QRS polarity at A1 and A2 attenuates it) or a bipolar chain helps. Every option includes checking against the EKG channel, so the choice rests on the action. A higher LFF would reduce slow EEG as well, moving the ground does not change the reference, and the notch removes 60 Hz, not a cardiac rhythm.",
+   "learningObjective": "Respond to EKG contamination of ear references.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Raise the LFF so the transients are attenuated, and compare their timing with the EKG channel",
+    "Move the ground electrode to the chest so the QRS cancels in every channel, and compare the transient timing with the EKG channel",
+    "Link the ears or change to a bipolar montage, and compare the transient timing with the EKG channel",
+    "Turn on the notch because the QRS repeats at a fixed rate, and compare the transient timing with the EKG channel"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-020",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "average-reference"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "What is the average reference?",
+   "explanation": "The average reference is computed by the system as the mean of many electrodes and subtracted from each channel, so it needs no extra electrode. The other descriptions refer to a Cz or ear combination, a physical neck electrode and a bipolar chain, which are different arrangements.",
+   "learningObjective": "Define the average reference.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The mean of the potentials from the selected scalp electrodes",
+    "The potential at Cz minus the potential at the ear electrodes",
+    "A separate electrode on the neck that records the mean signal",
+    "The difference between each electrode and its closest neighbor"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-021",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "average-reference",
+    "artifact"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Which electrodes are usually left out of the average reference, and why?",
+   "explanation": "Frontal pole electrodes carry large eye potentials, and including them would add blinks to the average and to every channel. Occipital rhythm, temporal electrodes and midline electrodes are not routinely excluded for the reasons listed.",
+   "learningObjective": "Name the electrodes excluded from the average and why.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "O1 and O2, because the posterior rhythm is too large to average",
+    "T3 and T4, because temporal electrodes pick up too much EKG",
+    "Cz and Pz, because midline electrodes are mostly contaminated by sleep",
+    "Fp1 and Fp2, because blinks and eye movements would spread into every channel"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-022",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "average-reference",
+    "focus"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "A large focal discharge involves a few electrodes in one region. Why might the technologist leave those electrodes out of the average reference?",
+   "explanation": "A large focal potential biases the mean, so clean channels show small false deflections of opposite polarity. It does not force the average to zero, it does not add mains interference, and the software can include high-amplitude channels.",
+   "learningObjective": "Explain why large focal activity distorts the average reference.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Their large potentials would shift the average and create false opposite-polarity deflections",
+    "Their large potentials would make the average exactly zero and flatten every other channel",
+    "Those electrodes would add 60 Hz to the average through their cables and connectors",
+    "The software cannot compute an average that includes high-amplitude channels on the display"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-023",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "average-reference",
+    "localization"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Why is the average reference helpful for delineating a focal feature?",
+   "explanation": "With an average reference the channels sum to about zero, so a focal negative maximum stands out against small positive deflections at distant electrodes, which helps map its extent. It does not erase other deflections, alter the polarity convention, or place a reference over the focus.",
+   "learningObjective": "Explain how the average reference helps in mapping.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The reference removes every deflection that is not at the focus, so only the focal activity is left on the page",
+    "The channels sum to about zero, so a focus shows large with small opposite deflections at distant electrodes",
+    "The reference changes polarity so that all of the discharges point upward in every channel of the montage",
+    "The reference is placed directly over the focus and so cancels the surrounding activity around that focus"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-024",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "average-reference",
+    "generalized"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "A generalized discharge involves almost every electrode. How does an average reference affect the display?",
+   "explanation": "When nearly all electrodes carry the discharge, the mean includes it and subtracting it shrinks the apparent size and alters the field. The average does not stay near zero then, it is not computed from the ears, and it does not invert the discharge.",
+   "learningObjective": "Recognise the limit of the average reference with a widespread field.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The average stays near zero, so the discharge amplitudes are displayed faithfully in all channels",
+    "The average is dominated by the ears and the discharge appears only at the temporal sites",
+    "The average then contains much of the discharge, so amplitudes shrink and the field is distorted",
+    "The average inverts the discharge so that it points downward in all of the channels"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-025",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "average-reference",
+    "artifact"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "One electrode has high impedance and shows continuous noise while an average reference is displayed. What follows, and what is the best step?",
+   "explanation": "The average includes every selected electrode, so its noise is spread across all channels; excluding or correcting the electrode restores the display. Noise does not remain confined to one channel, it does not cancel by averaging, and ears are not part of an average reference.",
+   "learningObjective": "Recognise how a bad electrode affects the average reference.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The noise stays in that channel only, so no action is needed at this point in the recording",
+    "The noise cancels with the other electrodes, so the montage can stay as it is for now",
+    "The noise enters the average and appears in every channel, so exclude or fix the electrode",
+    "The noise shifts to the ear channels, so the ear electrodes should be re-applied"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-026",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "polarity"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "In a bipolar channel, input 1 is more negative than input 2. How does the trace deflect?",
+   "explanation": "By convention, a channel deflects upward when input 1 is more negative than input 2. A downward deflection would mean input 2 is more negative, a flat line means equal potentials, and sensitivity changes size but not direction.",
+   "learningObjective": "State the polarity convention for deflection.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Downward on the display",
+    "Upward on the display",
+    "It remains flat on the display",
+    "It deflects only if the sensitivity is raised"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-027",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "polarity"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Both electrodes of a bipolar channel have the same potential at the same moment. What does the trace show?",
+   "explanation": "The channel records the difference between its two inputs, and equal potentials give no difference. Upward or downward deflections need unequal potentials, and a 60 Hz wave would be interference.",
+   "learningObjective": "Explain that equal potentials cancel in a bipolar channel.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "A flat or nearly flat line",
+    "A large upward deflection",
+    "A large downward deflection",
+    "A 60 Hz sine wave"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-028",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "phase-reversal",
+    "localization"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "A negative spike peaks at an electrode in the middle of a chain. How do the two channels that share that electrode deflect?",
+   "explanation": "Maximum negativity at the shared electrode makes the first channel go down and the next channel go up, so the traces point toward each other. Pointing away indicates maximum positivity, parallel deflections are not a reversal, and a flat partner would be a different pattern.",
+   "learningObjective": "Identify a negative phase reversal.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "They deflect away from each other, a negative phase reversal",
+    "They deflect in the same direction, so there is no phase reversal",
+    "One deflects and the other remains flat, an end-of-chain pattern",
+    "They deflect toward each other, a negative phase reversal"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-029",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "phase-reversal",
+    "polarity"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "What does a positive phase reversal indicate?",
+   "explanation": "A positive peak at the common electrode makes the first channel go up and the next go down, so the traces point away from each other. Traces pointing toward each other signal a negative peak, equal potentials produce flat lines, and an end-of-chain electrode is a limit of the montage.",
+   "learningObjective": "Identify a positive phase reversal.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Maximum positivity at the shared electrode, with the two traces pointing away from each other",
+    "Maximum negativity at the shared electrode, with the two traces pointing toward each other",
+    "Equal potentials at all electrodes of the chain",
+    "An end-of-chain electrode that cannot show a reversal"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-030",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "phase-reversal",
+    "localization"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "In a longitudinal chain, F7-T3 deflects downward while T3-T5 deflects upward at the same moment (negative up). What does this indicate?",
+   "explanation": "F7-T3 going down means T3 is more negative than F7, and T3-T5 going up means T3 is more negative than T5, so T3 is the most negative of the three. The opposite signs would be needed for a positive maximum, and F7 and T5 are not the shared electrode of those two channels.",
+   "learningObjective": "Interpret a negative phase reversal from channel directions.",
+   "questionType": "montage-localization",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "A positive maximum at T3",
+    "A negative maximum at F7",
+    "A negative maximum at T5",
+    "A negative maximum at T3"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-031",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "phase-reversal",
+    "polarity"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "In a chain, T3-C3 deflects upward and C3-Cz deflects downward at the same moment (negative up). What does this indicate?",
+   "explanation": "T3-C3 going up means T3 is more negative than C3, and C3-Cz going down means Cz is more negative than C3, so C3 is the most positive of the three. A negative maximum would produce the opposite directions, Cz is only an end of the pair and is not the maximum, and a flat potential would show no deflection.",
+   "learningObjective": "Interpret a positive phase reversal from channel directions.",
+   "questionType": "montage-localization",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "A negative maximum at C3, a negative phase reversal",
+    "A negative maximum at Cz",
+    "A positive maximum at C3, a positive phase reversal",
+    "A flat potential at C3, with no localizing value"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-032",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "phase-reversal",
+    "artifact",
+    "movement"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 1,
+   "stem": "In a longitudinal chain, two phase reversals a few electrodes apart appear at the same instant as the patient shakes the head. How should the technologist regard them?",
+   "explanation": "A double phase reversal is uncommon in genuine activity and is typical of movement or an electrode artifact, especially when it coincides with head motion. Genuine fields can occasionally show two peaks, but that is not the first assumption. A calibration fault would not coincide with head shaking, and a failed ground would show constant interference.",
+   "learningObjective": "Treat a double phase reversal as artifact first.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "As a probable genuine focus with two maxima, to be labeled for the reader despite the head movement",
+    "As probable artifact from movement, to be noted with the head-shake timing",
+    "As a calibration fault that needs a new calibration pulse",
+    "As evidence that the ground has failed on one side"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-033",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "phase-reversal",
+    "butterfly"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "A transverse chain (A1-T3, T3-C3, C3-Cz, Cz-C4, C4-T4, T4-A2) shows negative phase reversals at T3 and T4 and a positive phase reversal at Cz at the same moment. What is the best first approach?",
+   "explanation": "Multiple phase reversals in a chain are treated as artifact until shown otherwise, for example movement or electrode problems. A genuine butterfly pattern is rare, so the technologist checks electrodes and movement and tells the reader if it persists. Interpreting it is the reader's role. Paper speed and ear electrodes do not explain it.",
+   "learningObjective": "Recognise the butterfly pattern as possible genuine activity.",
+   "questionType": "montage-localization",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Report it as a confirmed bilateral epileptiform pattern",
+    "Suspect artifact first, check the electrodes and patient movement, and tell the reader if it persists",
+    "Treat it as an end-of-chain effect and change the paper speed to a slower setting",
+    "Treat it as ear contamination and replace the ear electrodes before going further"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-034",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "phase-reversal",
+    "end-of-chain"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "A spike peaks at O1, the last electrode of the chain Fp1-F3-C3-P3-O1, and the last channel shows a single deflection with no reversal. What is the best next step?",
+   "explanation": "An electrode at the end of a chain has only one neighboring channel and so cannot show a reversal; the localization is clarified by adding electrodes or by a montage in which the electrode lies in the middle. A single deflection can be real, sensitivity does not create a reversal, and linking ears is a reference change that does not address the chain.",
+   "learningObjective": "Recognise the end-of-chain limit.",
+   "questionType": "montage-localization",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Treat the single deflection as an artifact, since a true spike would show a reversal in the last channel",
+    "Change the sensitivity until a reversal appears in the last channel of the chain on the screen",
+    "A reversal cannot appear at a chain end, so add electrodes or change to a montage that places O1 mid-chain",
+    "Link the ears so that the last channel is referred to both of them instead of its neighbor"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-035",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "laplacian",
+    "source-derivation"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "How is a Laplacian (source) derivation computed for an electrode?",
+   "explanation": "A Laplacian compares each electrode with the mean of its four surrounding neighbors. Subtracting the average of all electrodes defines the average reference, subtracting a single neighbor gives a bipolar channel, and subtracting the ears gives an ear reference.",
+   "learningObjective": "Define the Laplacian derivation.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The electrode minus the average of every electrode on the head",
+    "The electrode minus the electrode next to it in a chain",
+    "The electrode minus the potential at the linked ears",
+    "The electrode minus the average of the four electrodes around it"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-036",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "laplacian",
+    "source-derivation",
+    "localization"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Compared with an average reference, what does a Laplacian derivation emphasize?",
+   "explanation": "Because each electrode is compared with its nearest neighbors, activity shared across the area cancels and activity confined to one site stands out. It does not emphasize broad fields, it does not use the ears, and a derivation is not a filter.",
+   "learningObjective": "Describe what a Laplacian highlights.",
+   "questionType": "montage-localization",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Steep local gradients, so focal features stand out and widespread activity is reduced",
+    "Broad fields, so widespread activity is easier to see than focal features are",
+    "Activity at the ears, because the ears are used as the reference for each electrode",
+    "Slow activity, because the derivation acts as a low-frequency filter on every channel"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-037",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "laplacian",
+    "source-derivation"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Which statement describes a limitation of the Laplacian derivation with a standard 19-electrode set?",
+   "explanation": "Edge electrodes do not have four surrounding electrodes, so the computation is less reliable there and a denser array improves it. The derivation does not depend on ears, it is not limited to slow activity, and it needs no chin electrode.",
+   "learningObjective": "Recognise limits of the Laplacian with a sparse array.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It reduces focal sharp waves, because activity shared with neighbors is added to each electrode",
+    "It works only for fast activity, because averaging neighbors removes slow waves",
+    "It requires the ears to be linked before the four neighbors can be averaged",
+    "Edge electrodes lack four neighbors, so the derivation works better with more electrodes"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-038",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "phase-reversal",
+    "localization"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "A focal sharp wave appears during the recording. Which montage should the technologist display so the reader can see where it is maximal?",
+   "explanation": "Bipolar chains show phase reversals at the electrode of maximum potential, so they are the standard tool for localization. A single ear can be contaminated by a nearby focus, a chin reference adds tongue and muscle activity, and Cz in sleep carries vertex activity.",
+   "learningObjective": "Choose a montage for localization.",
+   "questionType": "montage-localization",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "A bipolar chain, where a phase reversal points to the electrode with the maximum",
+    "A single-ear reference, because the ear is remote from the focus",
+    "A chin reference, because the chin is the quietest site on the body",
+    "A Cz reference during sleep, because Cz is quiet"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-039",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "referential",
+    "cz-reference",
+    "average-reference",
+    "amplitude"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "A reader wants to judge whether a posterior rhythm is symmetric in amplitude. Why is a bipolar chain a poor choice for this?",
+   "explanation": "A bipolar channel is the difference between two neighbors, so activity shared by both electrodes is reduced and the size does not reflect either electrode alone. A shared referential montage is better for symmetry. The ears are not added in a bipolar chain, linked ears are not required, and a bipolar chain shows alpha normally.",
+   "learningObjective": "Explain why bipolar chains are poor for amplitude symmetry.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "A bipolar chain adds the ear potentials to every channel, which makes the rhythm look larger on one side",
+    "Each channel shows only the difference between neighboring electrodes, so shared activity is reduced",
+    "A bipolar chain cannot be displayed without linked ears, so the two sides would lack a shared reference electrode",
+    "A bipolar chain displays slow rhythms only, so a posterior alpha rhythm cannot be seen on the page at all"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-mon-040",
+   "domainId": "domain-2",
+   "sectionId": "d2-montages-referencing",
+   "topicTags": [
+    "montage",
+    "bipolar",
+    "referential",
+    "linked-ears",
+    "ekg"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "An awake patient has left temporal sharp waves, and the ear-referenced channels show QRS deflections. Which plan fits best?",
+   "explanation": "A bipolar chain gives a phase reversal for localization and cancels most cardiac potential, while an awake Cz reference gives a referential view with less QRS and less ear contamination. The technologist stays within the protocol and notes the changes. A1 would be contaminated by the left focus, and filters do not cure it. Linked ears still carry about half of the left-ear contamination, a chin reference adds tongue and muscle potentials, and Fp1 and Fp2 in the average add blinks.",
+   "learningObjective": "Combine montages for a localization task with EKG contamination.",
+   "questionType": "montage",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Use A1 for all channels because the focus is on the left, and lower the HFF",
+    "Use a chin reference because it is far from the temporal lobes, and raise the LFF",
+    "Use a bipolar chain to localize, and a Cz reference when a referential view is needed",
+    "Use an average reference that includes Fp1 and Fp2 to maximize the number of electrodes"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea montages set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  }
+ ]
+}

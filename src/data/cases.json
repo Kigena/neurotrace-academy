@@ -15173,6 +15173,1538 @@
           "to": "/amplifier-controls?tab=mistakes"
         }
       ]
+    },
+    {
+      "id": "case-0097",
+      "title": "Ear Contamination: When A1 Carries the Discharge",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "montages",
+        "referential",
+        "contamination",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 27,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Brief episodes of lost time reported by family; routine outpatient EEG",
+      "history": {
+        "eventDescription": "A 27-year-old woman has a routine awake EEG. Your lab protocol lets you switch among the offered montages, requires that each change be documented, and asks you to notify the reader about reference problems. You do not interpret the findings.",
+        "lastEventTiming": "ongoing",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake adult background with a posterior rhythm near 10 Hz",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "Repeated sharp negative discharge at T3 described by the technologist only by time and channel",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "None",
+        "artifacts": "None significant; ear reference carries part of the T3 field"
+      },
+      "objectives": [
+        "Explain why A1 channels deflect down with a T3 discharge",
+        "Estimate T3 amplitude by adding back the A1 share, and check it against All to A2",
+        "Document montage changes and notify the reader"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 101,
+          "ageYears": 27,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "referential",
+          "montages": [
+            "referential",
+            "referentialA2",
+            "referentialA1"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 35,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.15,
+              "uv": 130,
+              "durMs": 55,
+              "at": [
+                2,
+                5.1,
+                8.2
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 101,
+          "ageYears": 27,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "referential",
+          "montages": [
+            "referential",
+            "referentialA2",
+            "referentialA1"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 35,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.15,
+              "uv": 130,
+              "durMs": 55,
+              "at": [
+                2,
+                5.1,
+                8.2
+              ]
+            }
+          ]
+        },
+        "t3": {
+          "seed": 101,
+          "ageYears": 27,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "referentialA1",
+          "montages": [
+            "referential",
+            "referentialA2",
+            "referentialA1"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 35,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.15,
+              "uv": 130,
+              "durMs": 55,
+              "at": [
+                2,
+                5.1,
+                8.2
+              ]
+            }
+          ]
+        },
+        "t4": {
+          "seed": 101,
+          "ageYears": 27,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "referentialA2",
+          "montages": [
+            "referential",
+            "referentialA2",
+            "referentialA1"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 35,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.15,
+              "uv": 130,
+              "durMs": 55,
+              "at": [
+                2,
+                5.1,
+                8.2
+              ]
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Down in every left channel",
+          "tracing": "t1",
+          "description": "A routine awake recording opens on the Ipsi ear tab (left electrodes to A1, right to A2) at 7 uV/mm. A sharp negative discharge repeats at 2.0, 5.1 and 8.2 s. T3-A1 deflects up about 9 mm. At the same instants F3-A1, C3-A1, P3-A1, O1-A1, F7-A1, T5-A1 and Fp1-A1 each deflect DOWN by roughly 4 to 9 mm, about equal in height from front to back. The right-sided channels stay small.",
+          "question": "What best explains the downward deflections in the left channels that are not over the discharge?",
+          "options": [
+            "A1 has poor contact and a high impedance, so it adds a downward artifact to every channel that shares it",
+            "The left-sided amplifiers are wired with opposite polarity to the right-sided ones, so left channels invert",
+            "The discharge spreads across the whole left hemisphere, so each left electrode is genuinely positive at that moment",
+            "A1 picks up part of the T3 discharge and turns negative, so every channel using it as input 2 swings positive (pen down)"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Every channel is input 1 minus input 2, with negative up. T3 is strongly negative, so T3-A1 goes up. A1 sits close to the temporal field and also turns negative; F3 - (negative A1) is positive, so F3-A1 goes down, and the same happens in each left channel. The size is nearly equal from Fp1 to O1 (about 7 to 9 mm), which a real scalp field would not give, and the right channels use the clean ear A2, so they stay quiet. A spreading field would fall off with distance. A poor A1 contact would add noise all the time, not only at the three spike times. Opposite wiring would also flip T3-A1, which points up as expected."
+        },
+        {
+          "step": 2,
+          "type": "calculation",
+          "title": "How big is T3 really?",
+          "tracing": "t2",
+          "description": "Same page, Ipsi ear tab, 7 uV/mm, first discharge at 2.0 s. T3-A1 is about 9 mm up (63 uV). F3-A1, C3-A1, P3-A1 and O1-A1 are each about 7 to 8 mm down (about 49 to 55 uV). Those electrodes are far from T3 and carry almost none of the discharge, so that deflection is mainly the A1 share. Add the A1 share to the T3-A1 height for a rough estimate of the T3 amplitude, then switch to All to A2 and read T3-A2 as a check.",
+          "question": "What is the rough estimate of the T3 amplitude and height on this page?",
+          "options": [
+            "About 63 uV, roughly 9 mm tall, because the ear adds nothing to the measurement",
+            "About 112 uV, roughly 16 mm tall once the A1 share is added back",
+            "About 14 uV, roughly 2 mm tall, because the ear share is subtracted from the measured 63 uV",
+            "About 49 uV, roughly 7 mm tall, taken from the F3-A1 deflection alone"
+          ],
+          "correctAnswer": 1,
+          "explanation": "T3-A1 = T3 - A1 = -63 uV (up). F3-A1 = F3 - A1 = +49 uV (down), and F3 is nearly silent, so A1 is about -49 uV. Adding the two readings gives (T3 - A1) + (A1 - F3) = T3 - F3, about -112 uV or 16 mm. This works only because the other electrodes record almost none of the discharge. In real recordings the field spreads, the ear is not the only source of the shared deflection, and no reference is truly zero, so treat the sum as an estimate and confirm it on All to A2, where T3-A2 reads about 16 mm. Subtracting 49 from 63 gives 14 uV, which reverses the sign of the ear share. Taking 63 uV at face value ignores the part of the discharge that A1 cancelled. Using 49 uV alone measures the ear, not T3."
+        },
+        {
+          "step": 3,
+          "type": "troubleshooting",
+          "title": "Referring everything to A1",
+          "tracing": "t3",
+          "description": "You open the All to A1 tab as a test. T3-A1 is still about 9 mm up, but the other 15 channels, right side included (Fp2, F4, C4, P4, O2, F8, T4, T6), all swing down about 5 to 8 mm at 2.0, 5.1 and 8.2 s. The page looks as if the whole head is involved.",
+          "question": "What does this view show, and which change fixes it?",
+          "options": [
+            "The downward deflections are a filter effect, so raising the LFF until they disappear gives comparable channels",
+            "The discharge has become generalized, so it should be described as generalized and the recording continued in this view",
+            "Every channel inherits A1's share of the T3 field; All to A2 uses the farther ear",
+            "A1 has failed, so the study should be stopped, both ears rewired and the whole recording restarted from the beginning"
+          ],
+          "correctAnswer": 2,
+          "explanation": "With A1 as input 2 everywhere, any potential on A1 appears in every channel as an inverted copy, so the right hemisphere seems to share the event. The cure is a different reference, here A2, which is far from the left temporal field. The technologist describes what is seen and does not call the discharge generalized, which would be interpretation. A1 is working (it records the discharge faithfully, which is the problem), so rewiring and restarting wastes time. An LFF change would alter the spike itself and does not remove a time-locked offset."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "What goes in the notes",
+          "tracing": "t4",
+          "description": "You switch to All to A2. T3-A2 is about 16 mm up at each discharge and every other channel stays under about 5 mm. Your lab asks that montage changes be documented and that the reader be told when a reference is not clean.",
+          "question": "Which note is the most appropriate for your technologist worksheet?",
+          "options": [
+            "Discharge originates in the left temporal lobe, as confirmed by the change to A2, and a repeat study is recommended",
+            "Only the final All to A2 view is recorded, so the page appears clean and the reader is not distracted by the earlier montage",
+            "Ipsi ear: T3-A1 about 9 mm, left A1 channels down. All to A2: T3-A2 about 16 mm. A1 shares the T3 field. Reader informed",
+            "A1 electrode replaced after the artifact appeared; no further comment is needed because the montage change is only a display choice"
+          ],
+          "correctAnswer": 2,
+          "explanation": "A useful note records what was seen in each montage, the measured heights, and that A1 shares the T3 field, so the reader knows why the Ipsi ear page understates T3 and sprays small down deflections into the left channels. Documenting only the clean view hides information the reader needs. Naming the lobe of origin or advising a repeat is interpretation, outside technologist scope. Replacing A1 is not indicated, since A1 is working; saying that a montage change needs no comment contradicts lab documentation practice."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Montages: Ear contamination",
+          "to": "/montages-references?tab=contamination"
+        },
+        {
+          "label": "Montages: Referential montages",
+          "to": "/montages-references?tab=referential"
+        }
+      ]
+    },
+    {
+      "id": "case-0098",
+      "title": "Choosing the Reference: Ear, Cz or Average",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "montages",
+        "referential",
+        "choosing-reference",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 27,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Staring spells; routine outpatient EEG with a nap",
+      "history": {
+        "eventDescription": "A 27-year-old woman has a routine EEG that includes drowsiness and sleep. Your protocol lets you switch among the offered references, requires that each change be documented and asks you to inform the reader which reference was used. You choose and switch montages, you do not interpret them.",
+        "lastEventTiming": "ongoing",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "n2"
+        ],
+        "background": "Awake alpha near 10 Hz, later stage N2 sleep with vertex waves and spindles",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "Repeated sharp negative discharge at T3 on the awake page, described by time and channel only",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "Natural sleep",
+        "artifacts": "Reference contamination depends on the montage used"
+      },
+      "objectives": [
+        "Compare ear, Cz and average references on one page",
+        "Explain why Cz is unreliable in sleep",
+        "Pick a reference for left-right amplitude comparison"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 101,
+          "ageYears": 27,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "referential",
+          "montages": [
+            "referential",
+            "referentialA2",
+            "referentialCz",
+            "average"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 35,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.15,
+              "uv": 130,
+              "durMs": 55,
+              "at": [
+                2,
+                5.1,
+                8.2
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 102,
+          "ageYears": 27,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "referentialCz",
+          "montages": [
+            "referential",
+            "referentialCz",
+            "average",
+            "longitudinal"
+          ],
+          "findings": [
+            {
+              "type": "vertex",
+              "at": [
+                2.4,
+                6.6
+              ],
+              "uv": 110
+            },
+            {
+              "type": "spindle",
+              "at": [
+                4,
+                8
+              ],
+              "uv": 40
+            }
+          ]
+        },
+        "t3": {
+          "seed": 102,
+          "ageYears": 27,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "referential",
+          "montages": [
+            "referential",
+            "referentialCz",
+            "average",
+            "longitudinal"
+          ],
+          "findings": [
+            {
+              "type": "vertex",
+              "at": [
+                2.4,
+                6.6
+              ],
+              "uv": 110
+            },
+            {
+              "type": "spindle",
+              "at": [
+                4,
+                8
+              ],
+              "uv": 40
+            }
+          ]
+        },
+        "t4": {
+          "seed": 101,
+          "ageYears": 27,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "referentialCz",
+          "montages": [
+            "referential",
+            "referentialA2",
+            "referentialCz",
+            "average",
+            "linkedEars"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 35,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.15,
+              "uv": 130,
+              "durMs": 55,
+              "at": [
+                2,
+                5.1,
+                8.2
+              ]
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Which reference understates T3?",
+          "tracing": "t1",
+          "description": "The reader wants the true height of a T3 discharge that repeats at 2.0, 5.1 and 8.2 s in an awake 27-year-old. The page opens on the Ipsi ear tab at 7 uV/mm, with T3-A1 near 9 mm. Step through the All to A2, Cz ref and Average tabs and compare the height of T3 and what happens in the other channels.",
+          "question": "Which tab gives the least trustworthy amplitude for this discharge?",
+          "options": [
+            "Average: because it includes T3 itself, T3-AV always reads exactly 50% of its true height",
+            "Ipsi ear: A1 shares the T3 field, so T3-A1 loses height and the other left channels deflect down",
+            "Cz ref: Cz sits nearer to T3 than A2 does, so it is the reference most likely to lose the T3 height",
+            "All to A2: the right ear always shares part of the left temporal field, so T3-A2 is too small"
+          ],
+          "correctAnswer": 1,
+          "explanation": "T3-A1 is about 9 mm, while T3-A2 is about 16 mm, T3-Cz about 17 mm and T3-AV about 15 mm. Only the Ipsi ear page also puts 4 to 9 mm downward deflections in the other left channels, because A1 is part of the discharge field. On this awake page Cz shows almost none of the discharge (T3-Cz about 17 mm, other channels under 4 mm), so it does not lose T3 height. A2 is far from the focus and the other left channels stay under about 3 mm. The average includes T3, so a slight loss and small deflections elsewhere occur, but the loss is far from 50%."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Vertex waves with a Cz reference",
+          "tracing": "t2",
+          "description": "Later in the session the patient is asleep (stage N2, 10 uV/mm). The page opens on the Cz ref tab. At 2.4 and 6.6 s all 16 channels, frontal to occipital, deflect down together by about 5 to 10 mm. The same moments on the Ipsi ear tab show only 1 to 4.5 mm deflections.",
+          "question": "What explains the simultaneous downward deflection in every channel?",
+          "options": [
+            "A generalized discharge reaches every electrode in step, so all 16 channels truly become positive at that instant",
+            "The amplifier saturated on a large signal, so each channel dropped by the same fixed amount as it recovered",
+            "A vertex wave is negative at Cz, the reference, so subtracting it makes every channel go positive (pen down)",
+            "The patient moved, and movement artifact shifts every electrode together, which is why the pattern appears twice"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Output = electrode minus Cz. Vertex waves are negative at the vertex, so each channel is E - (negative) = positive, and the pen goes down in all of them. The deflections are 5 to 10 mm everywhere, even at the temples and occiput. A generalized discharge would be interpretation and does not fit the Ipsi ear tab, which shows only small, central changes. Movement artifact would be irregular and show on the EKG or other channels as a shift in baseline. Amplifier saturation would flatten the traces, not give a smooth, brief pattern."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "The same sleep page with ear references",
+          "tracing": "t3",
+          "description": "You switch to the Ipsi ear tab. At 2.4 and 6.6 s the vertex waves now point up in the frontal, central and parietal channels (largest in C3-A1 and C4-A2, about 4 to 4.5 mm) and are only 1 to 2 mm, sometimes slightly down, in temporal and occipital channels.",
+          "question": "What does this comparison show about the Cz reference during sleep?",
+          "options": [
+            "The ear page is wrong, because ear references cannot show vertex waves and always reduce their height to near zero",
+            "The vertex wave is truly diffuse and equal everywhere, so the Cz page shows its real distribution and is the better view",
+            "The vertex wave is central-dominant; the Cz reference spread it into every channel, so Cz is a poor choice in drowsiness and sleep",
+            "Vertex waves appear in sleep only on ear-reference pages, so the Cz page is the one to trust for reporting sleep waves"
+          ],
+          "correctAnswer": 2,
+          "explanation": "With Cz as the reference, the vertex wave sits in input 2 of every channel and is copied (inverted) everywhere. The ear page keeps the central maximum. A truly diffuse wave would not shrink so much with a different reference. Vertex waves are not limited to ear pages, and ear references show them well (about 4 mm at the central electrodes). The ear page is not wrong; this is the reason to avoid Cz as a reference once the patient is drowsy or asleep."
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "A reference for left-right amplitude comparison",
+          "tracing": "t4",
+          "description": "Back on the awake page, the T3 discharge is still present and A1 is the contaminated ear. The reader asks for a view that lets them compare the T3 height with the homologous T4 height. The page opens on the Cz ref tab: T3-Cz is about 17 mm and T4-Cz about 2 mm. There are no vertex waves or spindles on this awake page.",
+          "question": "Which view is the best choice for comparing homologous amplitudes here?",
+          "options": [
+            "Cz ref, since one reference serves both sides and this awake page has no vertex waves or spindles to leak into it",
+            "Ipsi ear, since each hemisphere uses its own ear and both sides can be compared on their own reference",
+            "Linked ears, since averaging A1 and A2 halves the contamination, so the two sides can be compared directly",
+            "Average, since the mean of all electrodes is zero at every instant, so no discharge can alter either side's height"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Comparing sides needs the same reference on both. Cz, awake and with no vertex waves or spindles in the page, gives T3 about 17 mm and T4 about 2 mm without the A1 problem. On the Ipsi ear tab each side uses a different ear and A1 is contaminated, so the left side is understated and the left channels get spurious deflections. Linked ears only halves A1's share and spreads it into every channel. The average includes the large T3 discharge, so its mean moves with T3 and shifts every channel; it is not exactly zero."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Montages: Choosing a reference",
+          "to": "/montages-references?tab=choosing"
+        },
+        {
+          "label": "Montages: Ear contamination",
+          "to": "/montages-references?tab=contamination"
+        }
+      ]
+    },
+    {
+      "id": "case-0099",
+      "title": "EKG at the Ears and the Linked-Ear Fix",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "montages",
+        "referential",
+        "ekg",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 58,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Memory complaints; routine outpatient EEG",
+      "history": {
+        "eventDescription": "A 58-year-old man has a routine awake EEG. The Ipsi ear page shows a regular artifact at the ears. Your protocol lets you switch among montages within protocol, document the choice and notify the reader. You do not read heart rhythms or interpret cerebral activity.",
+        "lastEventTiming": "ongoing",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake adult background, posterior rhythm near 9.5 Hz",
+        "pdrHz": "About 9.5 Hz",
+        "epileptiform": "None described by the technologist",
+        "focalFindings": "None described",
+        "activation": "None",
+        "artifacts": "Regular EKG artifact at both ear references, opposite polarity at A1 and A2, rate about 78 per minute"
+      },
+      "objectives": [
+        "Recognise EKG at the ears by its opposite polarity",
+        "Explain why linked ears cancels it and what it does not fix",
+        "Document the montages used and the artifact"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 103,
+          "ageYears": 58,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "referential",
+          "heartRate": 78,
+          "montages": [
+            "referential",
+            "linkedEars",
+            "longitudinal"
+          ],
+          "ekgOppositeEars": true,
+          "ekgContamination": 30,
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 25,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": []
+        },
+        "t2": {
+          "seed": 103,
+          "ageYears": 58,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "linkedEars",
+          "heartRate": 78,
+          "montages": [
+            "referential",
+            "linkedEars",
+            "longitudinal"
+          ],
+          "ekgOppositeEars": true,
+          "ekgContamination": 30,
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 25,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": []
+        },
+        "t3": {
+          "seed": 103,
+          "ageYears": 58,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "linkedEars",
+          "heartRate": 78,
+          "montages": [
+            "referential",
+            "linkedEars",
+            "longitudinal"
+          ],
+          "ekgOppositeEars": true,
+          "ekgContamination": 30,
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 25,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": []
+        },
+        "t4": {
+          "seed": 103,
+          "ageYears": 58,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "referential",
+          "heartRate": 78,
+          "montages": [
+            "referential",
+            "linkedEars",
+            "longitudinal"
+          ],
+          "ekgOppositeEars": true,
+          "ekgContamination": 30,
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 25,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": []
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "A beat that flips between sides",
+          "tracing": "t1",
+          "description": "An awake recording opens on the Ipsi ear tab at 7 uV/mm. Sharp deflections occur about every 0.77 s (13 in the 10 s page) and line up with the QRS complexes on the EKG channel at the bottom. In the left channels (Fp1-A1 to T5-A1) they point DOWN about 2 to 4 mm. In the right channels (Fp2-A2 to T6-A2) they point UP about 4 mm.",
+          "question": "What best explains this pattern?",
+          "options": [
+            "Periodic discharges alternating between hemispheres, to be labelled as lateralized periodic discharges on the worksheet",
+            "Pulse artifact at the left ear, because a pulse wave follows each beat by a fraction of a second on one side only",
+            "EKG reaching the ear electrodes with opposite polarity at A1 and A2, so left and right ear-referenced channels flip",
+            "Mains interference at 60 Hz, because the regular shape and equal height in every channel point to line noise"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The timing matches the QRS exactly and the polarity flips with the ear used as input 2, which is the EKG fingerprint at A1 and A2 on this page. The rate is 60 / 0.77 = about 78 per minute, equal to the EKG channel. Periodic discharges would not be locked to the EKG, and a technologist does not label them. Pulse artifact lags the QRS by a few hundred ms, is a slow wave and sits on one side. Mains interference is 60 Hz, which appears as a thick band, not a 1.3 Hz sequence."
+        },
+        {
+          "step": 2,
+          "type": "troubleshooting",
+          "title": "Linking the ears",
+          "tracing": "t2",
+          "description": "You switch to Linked ears (every channel to the average of A1 and A2). The same page now shows the QRS deflections at less than 2 mm in every channel; the EKG channel at the bottom still shows each beat.",
+          "question": "Why did the QRS almost disappear from the scalp channels?",
+          "options": [
+            "Linked ears adds a high-frequency filter to each channel, so the sharp QRS spike is removed from the page",
+            "A1 and A2 carry the QRS with opposite polarity, so their average reference holds almost none and nothing is left to subtract",
+            "The montage subtracts the EKG channel from every scalp channel, so the heart's signal is deleted from the page",
+            "The scalp electrodes record the QRS in the same polarity as each ear, so they cancel one another in every pair"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Each channel is an electrode minus the (A1+A2)/2 average. If A1 has +x and A2 has -x at each QRS, the average is about 0, so input 2 no longer injects the EKG and the channels show roughly what the scalp itself picks up. No filter is added by choosing a montage, and the EKG channel is not subtracted; it is only displayed. The scalp electrodes do not cancel pairs in a referential montage; the scalp itself carries little EKG, which is why the longitudinal tab is also nearly free of it. Here the two ears carry equal and opposite QRS; in many recordings they do not, and linking the ears only reduces the EKG."
+        },
+        {
+          "step": 3,
+          "type": "recording-strategy",
+          "title": "What the fix does not do",
+          "tracing": "t3",
+          "description": "The Linked ears page is clean of QRS. The recording will continue for 20 more minutes. A colleague says to stay on Linked ears for everything because it solved the problem.",
+          "question": "Which statement about this choice is correct?",
+          "options": [
+            "It removes blink and muscle artifact as well, so no further artifact checks are needed once the ears are linked",
+            "It cancels the EKG only because the ears are opposite; if one ear picks up cerebral activity, linking spreads that into every channel",
+            "It turns the recording into an ordinary bipolar chain, so phase reversals can be read from it in the usual way",
+            "It permanently lowers the EKG at the ears, so the electrodes can stay as they are for the rest of the study"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Linked ears works here because the two ears carry opposite EKG, which cancel in their average. The same average mixes anything else the ears pick up (for example a temporal discharge at one ear) and puts it in every channel. It does nothing to blink or muscle artifact, and it is not a bipolar chain, so phase-reversal logic does not apply to it. The EKG at the ears is still there; only its effect on the displayed channels is cancelled, so the technologist keeps checking the page and the electrode sites."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Documenting the EKG",
+          "tracing": "t4",
+          "description": "You return to the Ipsi ear tab for the next part of the record. The heart rate on the EKG channel is about 78 per minute and regular. You make the worksheet entry for the reader.",
+          "question": "Which entry is most appropriate?",
+          "options": [
+            "Regular EKG artifact at A1 and A2 (opposite polarity), about 78/min. Ipsi ear and Linked ears used; QRS removed on Linked ears",
+            "Pulse artifact at A1, A1 electrode replaced, EKG artifact resolved and no mention of the Linked ears view",
+            "No entry needed, because the artifact is gone on the Linked ears page and the reader will review that page only",
+            "Cardiac arrhythmia suspected on the ear channels, with a cardiology review recommended before the study is read"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The note describes what is seen, the montages used and what changed, and leaves the reading to the physician. A regular rate of 78 per minute is also no basis for any rhythm label, and recommending cardiology review is outside the technologist's scope. Saying nothing hides the fact that the Ipsi ear page carries EKG, which the reader may see on the saved pages. Calling it pulse artifact and replacing A1 misdescribes it, since the deflections are time-locked to the QRS, not delayed."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Montages: Ear contamination",
+          "to": "/montages-references?tab=contamination"
+        },
+        {
+          "label": "Montages: Referential montages",
+          "to": "/montages-references?tab=referential"
+        }
+      ]
+    },
+    {
+      "id": "case-0100",
+      "title": "Average Reference: A Peak at F4 and Blinks",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "montages",
+        "referential",
+        "average-reference",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 19,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Single event with loss of awareness; routine outpatient EEG",
+      "history": {
+        "eventDescription": "A 19-year-old man has a routine awake EEG that includes some average-reference and Laplacian views. Your protocol lets you choose montages, requires that you document them and asks you to notify the reader. You describe what is displayed, you do not diagnose.",
+        "lastEventTiming": "ongoing",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake adult background, posterior rhythm near 10 Hz",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "Repeated sharp negative discharge at F4 described by time and channel only",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "None",
+        "artifacts": "Large blinks at 1.2 and 8.3 s"
+      },
+      "objectives": [
+        "Read the average reference: peak and small distant opposite deflections",
+        "Explain why Fp1 and Fp2 are left out of the average",
+        "Use the Laplacian as a localising supplement"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 104,
+          "ageYears": 19,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "average",
+          "montages": [
+            "average",
+            "referential",
+            "referentialCz",
+            "laplacian",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "F4",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 55,
+              "at": [
+                3.2,
+                6.4
+              ]
+            },
+            {
+              "type": "blink",
+              "at": [
+                1.2,
+                8.3
+              ],
+              "uv": 700
+            }
+          ]
+        },
+        "t2": {
+          "seed": 104,
+          "ageYears": 19,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "average",
+          "montages": [
+            "average",
+            "referential",
+            "referentialCz",
+            "laplacian",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "F4",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 55,
+              "at": [
+                3.2,
+                6.4
+              ]
+            },
+            {
+              "type": "blink",
+              "at": [
+                1.2,
+                8.3
+              ],
+              "uv": 700
+            }
+          ]
+        },
+        "t3": {
+          "seed": 104,
+          "ageYears": 19,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "average",
+          "avgExclude": [],
+          "montages": [
+            "average"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "F4",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 55,
+              "at": [
+                3.2,
+                6.4
+              ]
+            },
+            {
+              "type": "blink",
+              "at": [
+                1.2,
+                8.3
+              ],
+              "uv": 700
+            }
+          ]
+        },
+        "t4": {
+          "seed": 104,
+          "ageYears": 19,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "average",
+          "montages": [
+            "average",
+            "referential",
+            "referentialCz",
+            "laplacian",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "F4",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 55,
+              "at": [
+                3.2,
+                6.4
+              ]
+            },
+            {
+              "type": "blink",
+              "at": [
+                1.2,
+                8.3
+              ],
+              "uv": 700
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "A peak at F4 and small deflections elsewhere",
+          "tracing": "t1",
+          "description": "A 19-year-old is recorded awake at 7 uV/mm on the Average tab (all channels to the mean of the scalp electrodes). Sharp negative discharges repeat at 3.2 and 6.4 s. F4-AV deflects up about 14 mm. Most of the other 15 channels move only 1 to 3 mm, the majority pointing down.",
+          "question": "What best explains the small downward deflections in the distant channels?",
+          "options": [
+            "The average reference is switched to a Cz reference automatically whenever one channel is much larger than the rest",
+            "F4's negative potential is part of the average, so subtracting that negative mean gives a small positive (down) deflection elsewhere",
+            "The distant electrodes have a high impedance, so a small part of the discharge leaks to them from F4 through the skin",
+            "The discharge is spreading to every region and becoming positive at a distance, so it must be described as widespread"
+          ],
+          "correctAnswer": 1,
+          "explanation": "In the average montage each channel is E minus the mean of the scalp electrodes. A focal negative discharge at F4 pulls the mean slightly negative, and subtracting a negative gives a small positive value in each other channel (about 1 to 3 mm here, mixed with background). F4-AV, the peak, is 14 mm up, so the largest negativity is at F4. Calling the discharge widespread would be interpretation and does not fit one channel dominating. Impedance does not make signals leak over the scalp. The montage never changes reference by itself."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Blinks and the Fp electrodes",
+          "tracing": "t2",
+          "description": "The same page shows large blinks at 1.2 and 8.3 s. Fp1-AV and Fp2-AV deflect down about 25 mm. The other 14 channels show only background-sized changes (about 1 to 4 mm, mixed up and down). The reader asks why the blinks do not show in every channel in this montage.",
+          "question": "Which statement explains why the blink stays in the Fp channels?",
+          "options": [
+            "Fp1 and Fp2 are left out of the average reference, so the blink never enters the mean that every channel subtracts",
+            "The blink is cancelled by the opposite eye movement on the other side, so only the two frontopolar channels remain",
+            "Blinks are too slow to enter an average, because only fast activity above 20 Hz is mixed into the reference mean",
+            "The LFF is high enough on this page to remove the slow blink wave from all channels except those closest to the eyes"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The mean here is made from the scalp electrodes except Fp1 and Fp2 (the default of this page), so a blink, which is huge at Fp1 and Fp2, does not enter it. The Fp channels show the blink fully (about 25 mm down), while the others carry only background. There is no cancellation by an opposite eye movement; both Fp electrodes go positive together. An LFF would not select channels by location. Slow activity is part of any average, so the frequency of a blink is not the reason either."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "The same recording with Fp1 and Fp2 included",
+          "tracing": "t3",
+          "description": "You open the second page, the same recording where Fp1 and Fp2 are included in the average. At the blinks (1.2 and 8.3 s) Fp1-AV and Fp2-AV are still large and down at about 22 to 24 mm, but now most other channels (central, temporal, parietal, occipital) deflect UP by about 3 to 5 mm in step with the blink. On the first page the same channels moved only about 1 to 2.5 mm.",
+          "question": "What does this comparison show?",
+          "options": [
+            "The upward deflections show that the other electrodes are genuinely negative at the blink, so they are real frontal activity",
+            "A huge Fp potential adds to the mean and turns every other channel slightly negative, a false event; the Fp pair is left out",
+            "The blink has spread to the whole head because the patient was drowsy, so the page shows the true distribution",
+            "The larger average includes more electrodes and so reduces the noise, which makes this the preferred version of the page"
+          ],
+          "correctAnswer": 1,
+          "explanation": "With Fp1 and Fp2 inside the mean, the very large blink potential at those electrodes raises the average, and each of the other channels is E minus that average, so each gets a small inverted (upward) deflection that looks like a diffuse negative event. Leaving Fp1 and Fp2 out stops this and is the reason for the exclusion. The deflections are time-locked to the blink and do not reflect drowsiness or real cortical activity. Including more electrodes does not reduce this error; it adds a source of it."
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "Laplacian as a sharper look",
+          "tracing": "t4",
+          "description": "You return to the first page and open the Laplacian tab (each electrode minus the mean of its four nearest neighbours, 19 channels with Fz, Cz and Pz). At 3.2 s F4-Lap is up about 13 mm. Neighbouring channels are small, mostly down by 1 to 4.5 mm; Fz-Lap is slightly up.",
+          "question": "What is the best use of this view for your worksheet?",
+          "options": [
+            "Replaces the need for any other montage, so the average and bipolar views no longer have to be saved for the reader",
+            "Shows the discharge is generalized, because every one of the 19 channels now has a visible deflection at 3.2 s",
+            "Proves the discharge is a right frontal lobe seizure focus, so the report can state the diagnosis and the lobe",
+            "Peak at F4 on the Laplacian at 3.2 and 6.4 s, with small opposite deflections nearby; record the montage names and times, no diagnosis"
+          ],
+          "correctAnswer": 3,
+          "explanation": "The Laplacian emphasizes a local peak and cancels broad fields, so it shows the peak at F4 with small opposite deflections around it. The technologist documents what is displayed, the montages used and the times (3.2 and 6.4 s) and leaves diagnosis to the reader. A tidy picture does not prove a seizure focus or a lobe of origin. The Laplacian is a supplement, not a replacement, and the reader still needs the standard views. The nearby channels are small, not equal to F4, so the discharge is not generalized."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Montages: Choosing a reference",
+          "to": "/montages-references?tab=choosing"
+        },
+        {
+          "label": "Montages: Referential montages",
+          "to": "/montages-references?tab=referential"
+        }
+      ]
+    },
+    {
+      "id": "case-0101",
+      "title": "Reading Phase Reversals: Toward, Away and Flat",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "montages",
+        "bipolar",
+        "phase-reversal",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 34,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Recurrent head-turning episodes reported by a relative; routine outpatient EEG",
+      "history": {
+        "eventDescription": "A 34-year-old woman has a routine awake EEG. Your protocol lets you switch between double banana and transverse montages, requires that you document what each page shows and asks you to notify the reader. You describe polarity and location, you do not diagnose.",
+        "lastEventTiming": "ongoing",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake adult background, posterior rhythm near 10 Hz",
+        "pdrHz": "About 10 Hz",
+        "epileptiform": "Discharges at C3 and Cz described by polarity, time and channels only",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "None",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Tell a negative from a positive phase reversal",
+        "Explain a flat channel between equal potentials",
+        "Confirm a finding in a second bipolar montage"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 105,
+          "ageYears": 34,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 55,
+              "at": [
+                3,
+                6.6
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 106,
+          "ageYears": 34,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": -130,
+              "durMs": 55,
+              "at": [
+                3,
+                6.6
+              ]
+            }
+          ]
+        },
+        "t3": {
+          "seed": 108,
+          "ageYears": 40,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "transverse",
+          "montages": [
+            "longitudinal",
+            "transverse"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": [
+                -0.2,
+                0
+              ],
+              "sigma": 0.15,
+              "uv": 140,
+              "durMs": 55,
+              "at": [
+                3,
+                6.5
+              ]
+            }
+          ]
+        },
+        "t4": {
+          "seed": 108,
+          "ageYears": 40,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": [
+                -0.2,
+                0
+              ],
+              "sigma": 0.15,
+              "uv": 140,
+              "durMs": 55,
+              "at": [
+                3,
+                6.5
+              ]
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Toward each other",
+          "tracing": "t1",
+          "description": "A 34-year-old is recorded awake at 10 uV/mm in the double banana. At 3.0 and 6.6 s F3-C3 deflects DOWN about 12 mm and the channel below it, C3-P3, deflects UP about 12 mm. The other channels are small. (Switch to Transverse if you want a second look: T3-C3 is down and C3-Cz is up, about 11 mm each.)",
+          "question": "How do you describe where this discharge is maximal?",
+          "options": [
+            "No phase reversal, because one channel goes up and the other goes down, so the two cancel at C3",
+            "A positive phase reversal at C3: the two traces point toward each other, so C3 is the most positive electrode",
+            "A negative phase reversal at C3: the two traces point toward each other at the shared electrode, so C3 is the most negative",
+            "A negative phase reversal at F3 and P3, the outer electrodes, because those inputs have the largest deflections"
+          ],
+          "correctAnswer": 2,
+          "explanation": "F3-C3 = F3 - C3 goes down (positive), so C3 is more negative than F3. C3-P3 = C3 - P3 goes up (negative), so C3 is more negative than P3. Deflections that point toward each other at a shared electrode mark a negative phase reversal there. The outer electrodes F3 and P3 are the far inputs, not the maximum. A reversal is exactly one channel up and the neighbour down; it is not a cancellation. Positive reversals are the ones that point away from each other."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Away from each other",
+          "tracing": "t2",
+          "description": "Later in the recording a second page, taken during a different run, shows at 3.0 and 6.6 s that F3-C3 deflects UP about 12 mm and C3-P3 deflects DOWN about 12 mm. The other channels are small.",
+          "question": "What do you document about this page?",
+          "options": [
+            "A flat channel at C3, because opposite deflections in neighbouring channels cancel and leave no maximum at the middle electrode",
+            "A negative phase reversal at C3: the traces point away from each other, so C3 is the electrode with the greatest negativity",
+            "A positive phase reversal at C3: the traces point away from each other, so C3 is maximally positive; check the polarity and note it",
+            "A negative phase reversal at F3 and P3, because the up and down deflections mean the maximum lies in the outer electrodes"
+          ],
+          "correctAnswer": 2,
+          "explanation": "F3-C3 up means F3 is more negative than C3 (C3 more positive); C3-P3 down means C3 is more positive than P3. Deflections pointing away from each other at the shared electrode make a positive phase reversal at C3. This is rarer than a negative one, so it is worth confirming that the electrode inputs and the polarity are right before notifying the reader, and describing it without interpretation. A flat channel needs two electrodes at equal potential, which would show as a small trace, not 12 mm. Negative reversals point toward each other."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "A flat channel between two active ones",
+          "tracing": "t3",
+          "description": "A third page (40 y, awake, 10 uV/mm) opens in Transverse. At 3.0 and 6.5 s T3-C3 deflects DOWN about 5 mm and Cz-C4 deflects UP about 5 mm, but C3-Cz between them is flat, under about 1 mm.",
+          "question": "What is the most likely explanation for the flat C3-Cz channel?",
+          "options": [
+            "There is no discharge at C3 or Cz, so the channel is correctly flat and the activity lies only at T3 and C4",
+            "C3 and Cz have equal potential, so input 1 minus input 2 is near zero between them, and the field is centred between those electrodes",
+            "C3-Cz is disconnected, so the channel is flat and the electrode inputs should be re-prepped before recording any further",
+            "The sensitivity of that channel is lower than the rest, so the same signal appears flat while the others show it"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Two electrodes with the same potential cancel in the channel between them: C3 - Cz = 0. T3-C3 goes down (C3 more negative than T3) and Cz-C4 goes up (Cz more negative than C4), so both C3 and Cz are negative and equal, and the discharge field sits between them. A disconnected channel would be flat throughout the page, not only at the discharge time, and background activity would vanish too. Sensitivity is one setting for the whole page. Saying that no activity is at C3 or Cz contradicts the neighbouring channels."
+        },
+        {
+          "step": 4,
+          "type": "pattern-recognition",
+          "title": "Checking the flat channel in the other montage",
+          "tracing": "t4",
+          "description": "You switch the same page to Longitudinal. At 3.0 s F3-C3 is down about 5 mm and C3-P3 is up about 5 mm; Fz-Cz is down about 4 mm and Cz-Pz is up about 6 mm.",
+          "question": "What does this add to the Transverse page?",
+          "options": [
+            "Two negative reversals, at C3 and at Cz, consistent with a field spanning both, so the flat channel was a cancellation and not an absence",
+            "No reversal at all, because chains that run front to back can never show a reversal for discharges at the midline",
+            "One reversal at the midpoint of C3 and Cz, so the Longitudinal page shows a single focus lying exactly halfway between",
+            "A positive reversal at C3 and at Cz, so the field has two positive peaks and the flat channel was a technical failure"
+          ],
+          "correctAnswer": 0,
+          "explanation": "In each parallel chain a down trace above and an up trace below, pointing toward each other, give a negative reversal: at C3 (F3-C3 down, C3-P3 up) and at Cz (Fz-Cz down, Cz-Pz up). Equal negativity at both explains why C3-Cz cancelled in the Transverse page. A positive reversal would point away. Reversals appear at electrodes, not at midpoints. Longitudinal chains show midline reversals well (as with vertex waves), so the last claim is false. Document both views and the times."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Montages: Bipolar montages",
+          "to": "/montages-references?tab=bipolar"
+        },
+        {
+          "label": "Montages: Common mistakes",
+          "to": "/montages-references?tab=mistakes"
+        }
+      ]
+    },
+    {
+      "id": "case-0102",
+      "title": "Butterfly Pattern and the End of the Chain",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "montages",
+        "bipolar",
+        "phase-reversal",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 12,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Staring and brief falls reported at school; routine outpatient EEG with sleep",
+      "history": {
+        "eventDescription": "A 12-year-old boy has a routine EEG, and a 46-year-old patient's sleep page is used for comparison. Your protocol lets you switch among bipolar montages, requires that you document what each shows and asks you to notify the reader. You describe polarity and location, you do not diagnose.",
+        "lastEventTiming": "ongoing",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "n2"
+        ],
+        "background": "Age-appropriate awake background with a posterior rhythm near 9 Hz; stage N2 on the comparison page",
+        "pdrHz": "About 9 Hz",
+        "epileptiform": "Discharges at T3 and T4, and at O1, described by polarity, time and channels only",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "None",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Read the butterfly pattern across two montages",
+        "Recognise a maximum at the end of a chain",
+        "Switch montage and document a missing reversal"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 107,
+          "ageYears": 12,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "transverse",
+          "montages": [
+            "transverse",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.28,
+              "uv": 150,
+              "durMs": 55,
+              "at": [
+                3,
+                6.5
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "T4",
+              "sigma": 0.28,
+              "uv": 150,
+              "durMs": 55,
+              "at": [
+                3,
+                6.5
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 107,
+          "ageYears": 12,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "transverse",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": "T3",
+              "sigma": 0.28,
+              "uv": 150,
+              "durMs": 55,
+              "at": [
+                3,
+                6.5
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "T4",
+              "sigma": 0.28,
+              "uv": 150,
+              "durMs": 55,
+              "at": [
+                3,
+                6.5
+              ]
+            }
+          ]
+        },
+        "t3": {
+          "seed": 109,
+          "ageYears": 46,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse"
+          ],
+          "findings": [
+            {
+              "type": "spike",
+              "center": "O1",
+              "sigma": 0.15,
+              "uv": 130,
+              "durMs": 50,
+              "at": [
+                2.5,
+                5.5,
+                8
+              ]
+            },
+            {
+              "type": "vertex",
+              "at": [
+                4
+              ],
+              "uv": 100
+            }
+          ]
+        },
+        "t4": {
+          "seed": 109,
+          "ageYears": 46,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "transverse",
+          "montages": [
+            "longitudinal",
+            "transverse"
+          ],
+          "findings": [
+            {
+              "type": "spike",
+              "center": "O1",
+              "sigma": 0.15,
+              "uv": 130,
+              "durMs": 50,
+              "at": [
+                2.5,
+                5.5,
+                8
+              ]
+            },
+            {
+              "type": "vertex",
+              "at": [
+                4
+              ],
+              "uv": 100
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "The midline in the transverse chain",
+          "tracing": "t1",
+          "description": "A 12-year-old is recorded awake at 10 uV/mm on the Transverse tab. At 3.0 and 6.5 s in the central row T3-C3 deflects UP about 9 mm, C3-Cz UP about 4 mm, Cz-C4 DOWN about 5 mm and C4-T4 DOWN about 8 mm. T3 and T4 are at the ends of this row.",
+          "question": "What does the pair C3-Cz and Cz-C4 show at the midline electrode?",
+          "options": [
+            "A positive phase reversal at Cz: the two traces point away from each other, so Cz is more positive than the electrodes on either side",
+            "No reversal at Cz, because the third and fourth channels have different heights, which prevents a phase reversal forming",
+            "A flat channel at Cz, because equal and opposite deflections in the two channels cancel and leave Cz at the baseline",
+            "A negative phase reversal at Cz: the two traces point toward each other, so Cz is the most negative electrode of the row"
+          ],
+          "correctAnswer": 0,
+          "explanation": "C3-Cz goes up (Cz more positive than C3) and Cz-C4 goes down (Cz more positive than C4). Traces pointing away from each other at the shared electrode make a positive phase reversal at Cz. This is the middle of a butterfly: two negative areas at T3 and T4 with a positive reversal between them. Toward each other would be negative. Reversals do not need equal heights (4 and 5 mm here). A flat channel needs near zero in the channel itself, whereas these two channels are 4 to 5 mm."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "The same discharges in the double banana",
+          "tracing": "t2",
+          "description": "You switch to the Longitudinal tab. At 3.0 s F7-T3 deflects down about 11 mm and T3-T5 up about 10 mm. F8-T4 is down about 11 mm and T4-T6 up about 10 mm. Both reversals occur at the same moments, 3.0 and 6.5 s.",
+          "question": "What do you document from this view?",
+          "options": [
+            "Negative phase reversals at T3 and T4 at the same times (3.0 and 6.5 s), matching the Transverse positive reversal at Cz; no interpretation",
+            "A generalized discharge, since both hemispheres are involved at once and the pattern is therefore not focal on this page",
+            "A single positive reversal at the midline because both temporal chains show the same pattern at the same time on the page",
+            "Reversals at F7 and F8, since the first channel of each chain has the largest downward deflection of the page at 3.0 s"
+          ],
+          "correctAnswer": 0,
+          "explanation": "F7-T3 down and T3-T5 up point toward each other at T3, a negative reversal; the same holds at T4. Together with the positive reversal at Cz in the Transverse chain this makes the butterfly. The technologist documents both reversals with times and montage names. A midline positive reversal belongs to the Transverse view, not to these two chains. F7 and F8 are outer inputs, not maxima. Calling the discharge generalized is interpretation, and the two negative foci with a positive reversal between them do not look like one diffuse pattern."
+        },
+        {
+          "step": 3,
+          "type": "troubleshooting",
+          "title": "A maximum at the end of the chain",
+          "tracing": "t3",
+          "description": "A 46-year-old is recorded in stage N2 at 10 uV/mm on the Longitudinal tab. At 2.5, 5.5 and 8.0 s T5-O1 and P3-O1 both deflect DOWN about 10 to 13 mm. No channel above or below them points clearly the other way (the others stay under about 3 mm). A vertex wave at 4.0 s is a separate event.",
+          "question": "What do these two channels tell you, and what is your next move?",
+          "options": [
+            "There is a negative phase reversal at O1, because both traces go down, so the maximum lies at O1 and nothing more is needed",
+            "O1 is the last electrode in both chains, so no reversal can form and the maximum may lie at O1 or beyond; switch to Transverse, where O1 is a middle electrode",
+            "There is a positive phase reversal at T5 and P3, so the maximum lies at those electrodes and the page can be used as it is",
+            "The pattern shows the discharge is widespread, because two channels move together, so the Longitudinal page should be left as is"
+          ],
+          "correctAnswer": 1,
+          "explanation": "O1 is input 2 in both T5-O1 and P3-O1. Both going down means O1 is more negative than T5 and P3, but with O1 at the end of each chain there is no channel beyond it to turn the opposite way, so no reversal can be seen and the maximum could lie at O1 or beyond it. Two chains moving the same way does not show spread. Switching to Transverse makes O1 a middle electrode, so a reversal can show if it is there."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Finding the reversal and documenting it",
+          "tracing": "t4",
+          "description": "You switch to the Transverse tab for the same discharges. At 2.5, 5.5 and 8.0 s T5-O1 is down about 11 to 13 mm and O1-O2 is up about 10 to 13 mm; the neighbouring channels are small.",
+          "question": "Which note is the best entry?",
+          "options": [
+            "Longitudinal: negative reversal at O1. Transverse: negative reversal at O1. Both montages agree, so a single entry is enough",
+            "Longitudinal: positive reversal at T5 and P3 at 4.0 s together with the three discharges, since the vertex wave also looks like a reversal",
+            "Transverse: positive reversal at O2, because O1-O2 goes up and the up deflection marks the electrode with the greatest negativity",
+            "Longitudinal: no reversal, O1 at the end of both chains. Transverse: negative reversal at O1 at 2.5, 5.5 and 8.0 s. Reader informed"
+          ],
+          "correctAnswer": 3,
+          "explanation": "T5-O1 down and O1-O2 up point toward each other at O1, so the Transverse chain shows a negative reversal at O1 at the three times; the Longitudinal chain could not show one because O1 ends it. The entry should say so, name both montages and tell the reader. The Longitudinal page does not show a reversal at O1 (the claim of agreement is false). O1-O2 up means O1 is more negative than O2, not that O2 is the maximum. The vertex wave at 4.0 s is a separate sleep transient, shown at Cz."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Montages: Bipolar montages",
+          "to": "/montages-references?tab=bipolar"
+        },
+        {
+          "label": "Montages: Common mistakes",
+          "to": "/montages-references?tab=mistakes"
+        }
+      ]
     }
   ]
 }
