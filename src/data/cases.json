@@ -13999,6 +13999,1180 @@
           "to": "/workflow/domain-2/d2-filters-sensitivity-time-constants"
         }
       ]
+    },
+    {
+      "id": "case-0093",
+      "title": "Slow Waves That Depend on the LFF",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "filters",
+        "lff",
+        "time-constant",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 52,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Headaches over several months; routine outpatient EEG",
+      "history": {
+        "eventDescription": "A 52-year-old woman is referred for a routine EEG because of headaches. The amplifier was left at a higher LFF by the previous study. Your lab protocol calls for an LFF of 1 Hz or lower for routine recording and lets you adjust display settings, document each change and notify the reader.",
+        "lastEventTiming": "ongoing",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake adult background with a posterior rhythm near 9.5 Hz; irregular slow waves limited to the left temporal channels, whose size depends on the LFF in use",
+        "pdrHz": "About 9.5 Hz",
+        "epileptiform": "None described by the technologist",
+        "focalFindings": "Not interpreted by the technologist; documented as seen",
+        "activation": "None",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Judge how an LFF of 1.6 Hz can shrink slow waves",
+        "Link a longer time constant to larger slow waves",
+        "Document each LFF change and tell the reader"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 91,
+          "ageYears": 52,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1.6,
+          "hff": 35,
+          "montages": [
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": "T3",
+              "sigma": 0.26,
+              "uv": 85,
+              "hz": 1.3,
+              "bwHz": 0.8
+            }
+          ]
+        },
+        "t2": {
+          "seed": 91,
+          "ageYears": 52,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 0.53,
+          "hff": 35,
+          "montages": [
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": "T3",
+              "sigma": 0.26,
+              "uv": 85,
+              "hz": 1.3,
+              "bwHz": 0.8
+            }
+          ]
+        },
+        "t3": {
+          "seed": 91,
+          "ageYears": 52,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 5.3,
+          "hff": 35,
+          "montages": [
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": "T3",
+              "sigma": 0.26,
+              "uv": 85,
+              "hz": 1.3,
+              "bwHz": 0.8
+            }
+          ]
+        },
+        "t4": {
+          "seed": 91,
+          "ageYears": 52,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 0.53,
+          "hff": 35,
+          "montages": [
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": "T3",
+              "sigma": 0.26,
+              "uv": 85,
+              "hz": 1.3,
+              "bwHz": 0.8
+            }
+          ]
+        }
+      },
+      "montages": [
+        "longitudinal"
+      ],
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "A left temporal signal",
+          "tracing": "t1",
+          "description": "The page was started at LFF 1.6 Hz (time constant 0.1 s), 7 uV/mm. Your protocol calls for 1 Hz or lower. In F7-T3 and T3-T5 irregular slow waves, roughly one per second, stand about 11 to 12 mm tall for the whole page. In F8-T4 and T4-T6 the background is only about 4 to 5 mm tall.",
+          "question": "How should you describe this page, and what does the 1.6 Hz LFF mean for what you see?",
+          "options": [
+            "Electrode drift at T3 only, which is best cleared by raising the LFF further and re-checking",
+            "Irregular slow waves confined to the left temporal chain, likely trimmed by this LFF, so a repeat is fair",
+            "Left temporal slow waves that are certainly an abnormality, to be reported to the reader as focal slowing",
+            "Slow waves of the same size on both sides, so the LFF has no bearing on how you describe them"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The slow waves sit in F7-T3 and T3-T5 only (about 11 to 12 mm against 4 to 5 mm on the right), so they are lateralized, not symmetrical. A 1.6 Hz LFF is a first-order filter that passes only about 63% of a 1.3 Hz wave: gain = f / sqrt(f^2 + LFF^2) = 1.3 / sqrt(1.69 + 2.56) = 0.63. The true waves are therefore larger than they look, and your protocol allows a lower LFF, so a repeat is within scope. Calling the waves an abnormality or focal slowing is interpretation and belongs to the reader. Equal slow waves on both sides contradicts the page, and 1 to 2 Hz waves are well within the range an LFF of 1.6 Hz reduces. Drift at one electrode would not show as steady slow waves across the whole page, and raising the LFF would only cut the slow waves further."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "The same page at 0.53 Hz",
+          "tracing": "t2",
+          "description": "Per protocol you set the LFF to 0.53 Hz (time constant 0.3 s) and record the same stretch. F7-T3 and T3-T5 are now about 18 mm tall, against 11 to 12 mm at 1.6 Hz. The right temporal channels are still about 4 to 5 mm.",
+          "question": "Why do the left temporal slow waves look larger at 0.53 Hz?",
+          "options": [
+            "A longer time constant lets more of the 1 to 2 Hz activity through, so less of it is removed",
+            "A longer time constant raises the effective sensitivity of every channel on the page",
+            "A lower LFF adds gain at slow frequencies, so waves are amplified above their true size",
+            "A lower LFF removes faster activity, which makes the slow waves look larger by comparison"
+          ],
+          "correctAnswer": 0,
+          "explanation": "TC = 1 / (2 pi x LFF), so LFF 0.53 Hz is TC = 1 / (2 x 3.14 x 0.53) = 0.3 s. A 1.3 Hz wave passes at 1.3 / sqrt(1.69 + 0.28) = 0.93 of its size, against 0.63 at 1.6 Hz, which is a gain of about 1.5 times, close to the 18 mm versus 11 to 12 mm on the page. A filter never adds gain; it only removes. Fast activity is not removed by a lower LFF, and the right-sided channels barely changed (4 to 5 mm), so it is not a relative effect. Sensitivity is a separate display control and stays at 7 uV/mm in the header."
+        },
+        {
+          "step": 3,
+          "type": "settings-choice",
+          "title": "A trial at 5.3 Hz",
+          "tracing": "t3",
+          "description": "To see the effect, you try LFF 5.3 Hz (time constant 0.03 s) on the same stretch. F7-T3 and T3-T5 shrink to about 5 to 6 mm against about 3 to 4 mm on the right, so the left-right difference is much less obvious than at 0.53 Hz.",
+          "question": "What does this setting do, and why is it not used for routine recording?",
+          "options": [
+            "It removes only electrode drift, so the slow waves of cerebral origin pass through unchanged",
+            "It cuts much of the 1 to 2 Hz activity, so real slowing can hide; it is not a routine choice",
+            "It raises the left temporal slow waves above the alpha rhythm, which is why a protocol limits it",
+            "It leaves the waves smaller but visible, so it suits routine recording when drift is a concern"
+          ],
+          "correctAnswer": 1,
+          "explanation": "At 5.3 Hz a 1.3 Hz wave passes at 1.3 / sqrt(1.69 + 28.1) = 0.24, about a quarter of its size, which matches the drop to 5 to 6 mm. Real slow activity can then be missed, so your lab protocol keeps routine LFF at 1 Hz or lower, and a higher value is only a short, documented troubleshooting step. The filter does not raise slow waves relative to alpha; it lowers them. 'Smaller but visible' is the trap: a reader comparing sides may no longer notice a difference. An LFF removes any activity below its cutoff, cerebral or not, so it does not spare slow waves from the brain."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Restore and document",
+          "tracing": "t4",
+          "description": "You return the amplifier to LFF 0.53 Hz for the rest of the study. The record now holds a segment at 1.6 Hz (start of study), a segment at 0.53 Hz, and a short test at 5.3 Hz. The left temporal slow waves are again about 18 mm.",
+          "question": "What is the correct way to finish and document this?",
+          "options": [
+            "Keep 0.53 Hz and write in your notes that the left temporal activity is focal slowing",
+            "Delete the 1.6 Hz and 5.3 Hz segments so the file shows only the final setting used",
+            "Keep 0.53 Hz and rely on the printed header, since the reader sees the LFF on every page",
+            "Keep 0.53 Hz, annotate which segment used which LFF, and tell the reader about the changes"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Every setting change and where it was used should be documented and the reader told, because slow waves are different sizes in the three segments and a reader judging them needs to know which setting produced each page. Deleting segments hides the evidence of what the LFF did and is not appropriate. Calling the activity focal slowing is interpretation, outside technologist scope. Relying on the header alone is the subtle error: the value is printed but the reader is not warned that a short test or change took place and why, so an annotation and notification are expected."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Filters",
+          "to": "/amplifier-controls?tab=filters"
+        },
+        {
+          "label": "Amplifier & Filters: Filter Lab",
+          "to": "/amplifier-controls?tab=lab"
+        }
+      ]
+    },
+    {
+      "id": "case-0094",
+      "title": "When Delta Hides the Spikes",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "filters",
+        "lff",
+        "artifact",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 14,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Brief arm jerks and staring spells; routine outpatient EEG",
+      "history": {
+        "eventDescription": "A 14-year-old boy has a routine EEG for brief arm jerks and staring spells. Early in the study, large slow waves fill most channels. Your lab protocol routinely uses an LFF of 1 Hz and lets you change display settings briefly, document each change and notify the reader.",
+        "lastEventTiming": "last week",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake background with large widespread slow waves of about 1.4 Hz and a few brief sharp transients whose visibility depends on the LFF",
+        "pdrHz": "Not clearly seen on this short page",
+        "epileptiform": "Not interpreted by the technologist",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "None yet",
+        "artifacts": "Later in the study a slow sway on one electrode"
+      },
+      "objectives": [
+        "Explain why large slow waves can hide brief sharp events",
+        "State what a high LFF costs genuine slow activity",
+        "Refuse a high LFF as the fix for sweat artifact"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 92,
+          "ageYears": 14,
+          "state": "awake",
+          "sensitivity": 10,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "seconds": 5,
+          "background": {
+            "pdrUv": 0,
+            "beta": 2,
+            "theta": 4,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.4,
+              "bwHz": 0.9,
+              "uv": 150,
+              "frontal": 0.4
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 55,
+              "at": [
+                1.5
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "F4",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 50,
+              "at": [
+                2.8,
+                3.7
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 92,
+          "ageYears": 14,
+          "state": "awake",
+          "sensitivity": 10,
+          "lpOrder": 1,
+          "lff": 10,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "seconds": 5,
+          "background": {
+            "pdrUv": 0,
+            "beta": 2,
+            "theta": 4,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.4,
+              "bwHz": 0.9,
+              "uv": 150,
+              "frontal": 0.4
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 55,
+              "at": [
+                1.5
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "F4",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 50,
+              "at": [
+                2.8,
+                3.7
+              ]
+            }
+          ]
+        },
+        "t3": {
+          "seed": 92,
+          "ageYears": 14,
+          "state": "awake",
+          "sensitivity": 10,
+          "lpOrder": 1,
+          "lff": 10,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "seconds": 5,
+          "background": {
+            "pdrUv": 0,
+            "beta": 2,
+            "theta": 4,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.4,
+              "bwHz": 0.9,
+              "uv": 150,
+              "frontal": 0.4
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 55,
+              "at": [
+                1.5
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "F4",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 50,
+              "at": [
+                2.8,
+                3.7
+              ]
+            }
+          ]
+        },
+        "t4": {
+          "seed": 73,
+          "ageYears": 14,
+          "state": "awake",
+          "sensitivity": 10,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 0.3,
+              "uv": 160,
+              "sites": [
+                "T4"
+              ]
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.7,
+              "uv": 60,
+              "frontal": 0.3,
+              "runs": [
+                [
+                  6.0,
+                  8.5
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      "montages": [
+        "longitudinal"
+      ],
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Slow waves everywhere",
+          "tracing": "t1",
+          "description": "This 5-second page is at 10 uV/mm with LFF 1 Hz and HFF 70 Hz. Broad slow waves, about 1.4 per second, stand about 10 to 20 mm tall in most channels (up to about 24 mm in Fp2-F4 and F4-C4). Brief sharp events of 13 to 16 mm sit in F3-C3, C3-P3, Fp2-F4 and F4-C4 near 1.5, 2.8 and 3.7 s, but they are hard to pick out.",
+          "question": "What makes the brief sharp events hard to see on this page?",
+          "options": [
+            "A 1 Hz LFF removes sharp events, so only a trace of each is left on the page",
+            "The sensitivity is too high, so the tops of the sharp events are clipped off the display",
+            "The slow waves are as tall as the sharp events and run into them, so they do not stand out",
+            "The 70 Hz HFF smooths brief sharp events into the surrounding background activity"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The sharp events are about 13 to 16 mm and the slow waves 10 to 20 mm, so size alone does not make them stand out and slow waves add to or cancel them. Sensitivity does not clip events; the display scales every wave equally. A 1 Hz LFF removes content below about 1 Hz and passes a 50 ms event, which carries most energy well above 10 Hz. A 70 Hz HFF would reduce muscle and very fast activity but barely touches a 50 ms spike (about 20 Hz content)."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "The same page at LFF 10 Hz",
+          "tracing": "t2",
+          "description": "You set the LFF to 10 Hz (time constant 0.016 s) for this same 5 seconds. The slow waves shrink to about 3 mm. Sharp events of about 9 mm appear in F3-C3 and C3-P3 near 1.5 s, and of about 10 mm in Fp2-F4 and F4-C4 near 2.8 and 3.7 s.",
+          "question": "What did the higher LFF do to the page?",
+          "options": [
+            "It added gain to brief events, which is why they now look sharper and larger than before",
+            "It raised the sensitivity, so every wave on the page is drawn larger",
+            "It removed muscle and eye artifact that had been covering the sharp events",
+            "It cut most of the 1.4 Hz slow waves, so the brief events stand out on a flat background"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A 1.4 Hz wave passes at 1.4 / sqrt(1.96 + 100) = 0.14 of its size, so roughly 150 uV falls to about 20 to 30 uV (3 mm). A 50 ms spike has content near 20 Hz and passes at about 0.9, so it keeps most of its size (9 to 10 mm). Filters never add gain, which rules out added gain. Sensitivity is unchanged at 10 uV/mm, so a sensitivity change is wrong. There was no artifact on the first page to remove, only slow waves."
+        },
+        {
+          "step": 3,
+          "type": "settings-choice",
+          "title": "What was given up",
+          "tracing": "t3",
+          "description": "The page is still at LFF 10 Hz. The slow waves are now about 3 mm and the background looks nearly flat. You are about to continue recording.",
+          "question": "What does leaving the LFF at 10 Hz cost, and what do you do?",
+          "options": [
+            "It costs nothing, since the slow waves seen at 1 Hz were artifact, so keep 10 Hz all study",
+            "It also cuts real slow activity, so use it briefly, document it and restore the routine LFF",
+            "It can be offset by raising the sensitivity to 5 uV/mm, which brings the slow waves back",
+            "It only removes drift, so cerebral waves are unchanged and nothing needs to be noted"
+          ],
+          "correctAnswer": 1,
+          "explanation": "An LFF removes any slow activity, genuine or not, so at 10 Hz the page cannot show how much slow activity the patient really has. It is therefore a short, documented change, followed by a return to the routine 1 Hz and a note to the reader. The slow waves were widespread and in the same form across the page, which is not how artifact looks, so assuming artifact is a mistake. The LFF is not limited to drift; it acts on every frequency below its cutoff. Raising sensitivity scales what remains but cannot restore filtered waves (about 14% passes), so it brings back nothing."
+        },
+        {
+          "step": 4,
+          "type": "troubleshooting",
+          "title": "Sweat artifact, tempting fix",
+          "tracing": "t4",
+          "description": "Later in the study the patient is warm and sweating. The page is at 10 uV/mm and back at LFF 1 Hz. F8-T4 and T4-T6 show a slow sway about 11 mm tall (about 3 to 7 mm in the other channels; the 50 uV calibration pulse near 0.5 s is not part of the sway), and from 6 to 8.5 s slower waves of about 5 to 10 mm appear in most channels. A colleague says to raise the LFF to 10 Hz again.",
+          "question": "Is a high LFF the right response to the sway?",
+          "options": [
+            "No; cool and dry the patient, reseat T4 and keep the routine LFF",
+            "Yes, raise it to 10 Hz as before, and note the change in the log",
+            "No; lower the HFF to 15 Hz, which smooths the slow sway while leaving slow waves alone",
+            "Yes, but only to about 5 Hz, which clears the sway with no effect on cerebral waves"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The sway is on T4, the electrode shared by F8-T4 and T4-T6, so the cause is technical and should be fixed: cool and dry the patient, check T4 impedance, reseat or re-prepare it. A high LFF would also shrink the slow waves from 6 to 8.5 s: at 5.3 Hz a 1.5 Hz wave passes at 1.5 / sqrt(2.25 + 28.1) = 0.27, and at 10 Hz about 0.15. Choosing 5 Hz does not remove that cost, so cerebral waves are affected too. A lower HFF acts on fast activity and cannot change a slow sway, so it addresses the wrong end of the spectrum."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Filters",
+          "to": "/amplifier-controls?tab=filters"
+        },
+        {
+          "label": "Amplifier & Filters: Common Mistakes",
+          "to": "/amplifier-controls?tab=mistakes"
+        }
+      ]
+    },
+    {
+      "id": "case-0095",
+      "title": "Filters Move the Peaks",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "filters",
+        "lff",
+        "hff",
+        "time-constant",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 30,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Bench test of filters before a clinic day; no patient connected",
+      "history": {
+        "eventDescription": "Before the outpatient clinic starts you send a clean test sine wave through the amplifier at several filter settings, to see what each does to size and timing. Each row of the display is the same signal. Drag across the rows to place a time cursor; it reads the time in milliseconds.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Test signal only; no patient background",
+        "pdrHz": "Not applicable",
+        "epileptiform": "None",
+        "focalFindings": "None",
+        "activation": "None",
+        "artifacts": "None"
+      },
+      "objectives": [
+        "Relate time constant to size and timing of a 1 Hz wave",
+        "Compare the timing shift of an LFF with that of an HFF",
+        "Show that filters do not change the frequency"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 81,
+          "ageYears": 30,
+          "state": "awake",
+          "seconds": 5,
+          "montage": "single",
+          "background": {
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 0
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 1,
+              "uv": 200,
+              "sites": [
+                "O1"
+              ]
+            }
+          ],
+          "variants": [
+            {
+              "label": "TC 2.0 s",
+              "lff": 0.0796,
+              "hff": 200
+            },
+            {
+              "label": "TC 0.3 s",
+              "lff": 0.5305,
+              "hff": 200
+            },
+            {
+              "label": "TC 0.1 s",
+              "lff": 1.5915,
+              "hff": 200
+            },
+            {
+              "label": "TC 0.03 s",
+              "lff": 5.305,
+              "hff": 200
+            }
+          ]
+        },
+        "t2": {
+          "seed": 81,
+          "ageYears": 30,
+          "state": "awake",
+          "seconds": 5,
+          "montage": "single",
+          "background": {
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 0
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 1,
+              "uv": 200,
+              "sites": [
+                "O1"
+              ]
+            }
+          ],
+          "variants": [
+            {
+              "label": "TC 2.0 s",
+              "lff": 0.0796,
+              "hff": 200
+            },
+            {
+              "label": "TC 0.3 s",
+              "lff": 0.5305,
+              "hff": 200
+            },
+            {
+              "label": "TC 0.1 s",
+              "lff": 1.5915,
+              "hff": 200
+            },
+            {
+              "label": "TC 0.03 s",
+              "lff": 5.305,
+              "hff": 200
+            }
+          ]
+        },
+        "t3": {
+          "seed": 82,
+          "ageYears": 30,
+          "state": "awake",
+          "seconds": 0.4,
+          "montage": "single",
+          "background": {
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 0
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 20,
+              "uv": 200,
+              "sites": [
+                "O1"
+              ]
+            }
+          ],
+          "variants": [
+            {
+              "label": "No filter",
+              "lff": 0,
+              "hff": 200
+            },
+            {
+              "label": "HFF 70 Hz",
+              "lff": 0,
+              "hff": 70
+            },
+            {
+              "label": "HFF 35 Hz",
+              "lff": 0,
+              "hff": 35
+            },
+            {
+              "label": "HFF 15 Hz",
+              "lff": 0,
+              "hff": 15
+            }
+          ],
+          "tickS": 0.05
+        },
+        "t4": {
+          "seed": 82,
+          "ageYears": 30,
+          "state": "awake",
+          "seconds": 0.4,
+          "montage": "single",
+          "background": {
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 0
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 20,
+              "uv": 200,
+              "sites": [
+                "O1"
+              ]
+            }
+          ],
+          "variants": [
+            {
+              "label": "No filter",
+              "lff": 0,
+              "hff": 200
+            },
+            {
+              "label": "HFF 70 Hz",
+              "lff": 0,
+              "hff": 70
+            },
+            {
+              "label": "HFF 35 Hz",
+              "lff": 0,
+              "hff": 35
+            },
+            {
+              "label": "HFF 15 Hz",
+              "lff": 0,
+              "hff": 15
+            }
+          ],
+          "tickS": 0.05
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "calculation",
+          "title": "Which row is which",
+          "tracing": "t1",
+          "description": "The display shows one 1 Hz test sine over 5 seconds, drawn four times with time constants 2.0 s, 0.3 s, 0.1 s and 0.03 s from top to bottom. The rows get smaller from top to bottom.",
+          "question": "How are time constant, LFF and wave size related across these rows?",
+          "options": [
+            "The longest time constant has the highest LFF and gives the smallest wave",
+            "A 1 Hz wave sits inside every passband, so all four rows should be the same size",
+            "The shortest time constant has the highest LFF and gives the largest wave",
+            "The shortest time constant has the highest LFF and gives the smallest wave"
+          ],
+          "correctAnswer": 3,
+          "explanation": "LFF = 1 / (2 pi x TC): TC 2.0 s gives 0.08 Hz, 0.3 s gives 0.53 Hz, 0.1 s gives 1.6 Hz and 0.03 s gives 5.3 Hz. The higher the LFF, the more of a 1 Hz wave it removes, which is why the rows shrink as the time constant shortens (about 100%, 88%, 53% and 18% of the top row). Reversing the relation (long TC equals high LFF) is the usual slip. A 1 Hz wave is not safe from the filter when the cutoff is at or above it: at 1.6 Hz and 5.3 Hz it is cut a great deal."
+        },
+        {
+          "step": 2,
+          "type": "calculation",
+          "title": "Read the peak times",
+          "tracing": "t2",
+          "description": "Drag the cursor to the top of the first wave in each row and read the time.",
+          "question": "How do the first peaks line up as the time constant shortens?",
+          "options": [
+            "Every row peaks at about 250 ms, because a filter changes size but not timing",
+            "Each row peaks later than the one above it, because the filter adds a delay",
+            "Each row peaks earlier, but only by a few ms, too little to measure on this page",
+            "Each row peaks earlier than the one above it, to about 30 ms in the bottom row"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A high-pass filter advances the wave: with a shorter time constant the peak moves earlier, from about 240 ms in the TC 2.0 s row to about 170 ms, 90 ms and 30 ms in the lower rows, a shift of more than 200 ms against the 250 ms peak an unfiltered 1 Hz wave would have (a quarter of its 1000 ms cycle). The shift is real and large for slow waves, not a few ms. 'Filters change only height' is the misconception this display is built to break, and a delay (later peaks) is the HFF behavior, not the LFF one."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Now the HFF",
+          "tracing": "t3",
+          "description": "The display now shows a 20 Hz test sine over 0.4 seconds, drawn with no filter and with HFF 70, 35 and 15 Hz, top to bottom. The ticks are 50 ms apart; one 20 Hz cycle is 50 ms. Place the cursor on the first peak in each row. Compare where each row starts at 0 ms: the filtered rows begin lower, because they lag the unfiltered wave.",
+          "question": "How does the effect of the HFF compare with the LFF rows you just read?",
+          "options": [
+            "The rows get smaller as the HFF falls and the peaks move later, but only by a few ms",
+            "The rows get smaller and their peaks move earlier, as with the LFF",
+            "The rows stay the same size and only their peaks move later",
+            "The rows get smaller and their peaks move later by tens of ms, as much as with the LFF"
+          ],
+          "correctAnswer": 0,
+          "explanation": "An HFF is a low-pass filter: it reduces fast waves (the lowest HFF row is about half the unfiltered height) and delays them slightly, so the peaks move later, by roughly 4 to 8 ms in the HFF 15 Hz row against about 12 ms for the unfiltered peak. That is the opposite direction to the LFF shift, and far smaller than the 200 ms seen for the slow wave. Equal size with only a delay ignores the loss of height. 'Earlier' repeats the LFF pattern. Shifts of tens of milliseconds are not seen with a 20 Hz wave."
+        },
+        {
+          "step": 4,
+          "type": "pattern-recognition",
+          "title": "Does the frequency change",
+          "tracing": "t4",
+          "description": "A colleague counts the complete cycles in each row of the 0.4 s page, from the unfiltered row to the HFF 15 Hz row, and asks whether the filter has changed the frequency of the test wave.",
+          "question": "What does the count show, and what does it mean for reading real pages?",
+          "options": [
+            "8 cycles in every row; the filters change size and timing, not frequency",
+            "8 cycles in the unfiltered row and 6 in the HFF 15 Hz row, because a 15 Hz HFF passes only 15 Hz",
+            "8 cycles in the unfiltered row but fewer in the HFF 15 Hz row, because the filter removes some cycles",
+            "8 cycles in every row, which shows the filters do nothing, so the settings need not be recorded"
+          ],
+          "correctAnswer": 0,
+          "explanation": "A 20 Hz wave over 0.4 s has 20 x 0.4 = 8 cycles, and every row shows 8: a filter shrinks and shifts the wave but does not change how many cycles occur per second. So a steady wave keeps its frequency through the filters, and counting its cycles is reliable even though its height is not; real waveforms that are cut or smoothed can still look different, which is why the settings are recorded. A filter reduces the height of cycles rather than deleting them. The shrinking of the HFF rows shows the filters do act, and the settings must still be recorded because they change size and timing. An HFF does not make the amplifier pass only its cutoff frequency, which is a bandpass idea, not a low-pass one."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Filters",
+          "to": "/amplifier-controls?tab=filters"
+        },
+        {
+          "label": "Amplifier & Filters: Filter Lab",
+          "to": "/amplifier-controls?tab=lab"
+        }
+      ]
+    },
+    {
+      "id": "case-0096",
+      "title": "Choosing the LFF for the Job",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "amplifier-controls",
+        "filters",
+        "lff",
+        "artifact",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 40,
+        "sex": "unspecified",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Four outpatient routine EEGs in one clinic day, each needing an LFF decision",
+      "history": {
+        "eventDescription": "During a busy clinic day you meet four different recording problems, one per step; the age of each patient is printed on the page header. Your lab protocol sets a routine LFF of 1 Hz or lower, lets you change display settings briefly, and asks you to document every change and notify the reader.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Four awake outpatient recordings reviewed from earlier cases, each with a different filter question",
+        "pdrHz": "Varies",
+        "epileptiform": "Not interpreted by the technologist",
+        "focalFindings": "Not interpreted by the technologist",
+        "activation": "None",
+        "artifacts": "Slow sway on one electrode in the first recording"
+      },
+      "objectives": [
+        "Pick the fix for a slow sway at one electrode",
+        "Choose the LFF that best shows focal slow waves",
+        "Document every setting change and restore the routine LFF"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 73,
+          "ageYears": 40,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "calibration": {
+            "at": [
+              0.5
+            ],
+            "uv": 50,
+            "durS": 1.8
+          },
+          "background": {
+            "pdrUv": 40,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sine",
+              "hz": 0.3,
+              "uv": 160,
+              "sites": [
+                "T4"
+              ]
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.7,
+              "uv": 60,
+              "frontal": 0.3,
+              "runs": [
+                [
+                  6.0,
+                  8.5
+                ]
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 91,
+          "ageYears": 52,
+          "state": "awake",
+          "sensitivity": 7,
+          "lpOrder": 1,
+          "lff": 0.53,
+          "hff": 35,
+          "montages": [
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 30,
+            "beta": 3,
+            "theta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": "T3",
+              "sigma": 0.26,
+              "uv": 85,
+              "hz": 1.3,
+              "bwHz": 0.8
+            }
+          ]
+        },
+        "t3": {
+          "seed": 92,
+          "ageYears": 14,
+          "state": "awake",
+          "sensitivity": 10,
+          "lpOrder": 1,
+          "lff": 1,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "seconds": 5,
+          "background": {
+            "pdrUv": 0,
+            "beta": 2,
+            "theta": 4,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.4,
+              "bwHz": 0.9,
+              "uv": 150,
+              "frontal": 0.4
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 55,
+              "at": [
+                1.5
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "F4",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 50,
+              "at": [
+                2.8,
+                3.7
+              ]
+            }
+          ]
+        },
+        "t4": {
+          "seed": 92,
+          "ageYears": 14,
+          "state": "awake",
+          "sensitivity": 10,
+          "lpOrder": 1,
+          "lff": 10,
+          "hff": 70,
+          "montages": [
+            "longitudinal"
+          ],
+          "seconds": 5,
+          "background": {
+            "pdrUv": 0,
+            "beta": 2,
+            "theta": 4,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.4,
+              "bwHz": 0.9,
+              "uv": 150,
+              "frontal": 0.4
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 55,
+              "at": [
+                1.5
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "F4",
+              "sigma": 0.17,
+              "uv": 120,
+              "durMs": 50,
+              "at": [
+                2.8,
+                3.7
+              ]
+            }
+          ]
+        }
+      },
+      "montages": [
+        "longitudinal"
+      ],
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "troubleshooting",
+          "title": "Sway on one side",
+          "tracing": "t1",
+          "description": "A 40-year-old patient is warm and perspiring. At LFF 1 Hz, F8-T4 and T4-T6 show a slow sway about 15 mm tall, against about 5 to 8 mm in most other channels (the calibration pulse near 0.5 s is not part of the sway). The sway moves in opposite directions in the two channels, as expected at a shared electrode.",
+          "question": "What is the best response?",
+          "options": [
+            "Cool and dry the patient, reseat T4, keep the routine LFF and document what you did",
+            "Lower the sensitivity so the sway fits in the channel and the other channels look quieter",
+            "Mark the T4 channels as artifact and continue unchanged, leaving the cause as it is",
+            "Raise the LFF to 5.3 Hz for the rest of the study to flatten the sway, then note the change in the log"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The sway appears only in the two channels that share T4 and is mirrored between them, so the cause is local, such as sweat or an unstable electrode. The technologist fixes the cause: cool and dry, check impedance, reseat or re-prepare T4. Raising the LFF to 5.3 Hz would also cut genuine slow waves (a 1.5 Hz wave would pass at about 27%). Lowering sensitivity only changes the drawing size, and marking the channels and carrying on leaves a continuing problem on the record."
+        },
+        {
+          "step": 2,
+          "type": "settings-choice",
+          "title": "Best setting for slow waves",
+          "tracing": "t2",
+          "description": "A 52-year-old with headaches is recorded at LFF 0.53 Hz (time constant 0.3 s). Irregular slow waves in F7-T3 and T3-T5 stand about 18 mm tall. An earlier stretch at 1.6 Hz showed the same waves only 11 to 12 mm tall, and a trial at 5.3 Hz made them 5 to 6 mm.",
+          "question": "Which LFF is best for the reader to see the left temporal slow waves, within protocol?",
+          "options": [
+            "LFF 0.53 Hz (time constant 0.3 s), which keeps most of the 1 to 2 Hz activity",
+            "LFF 5.3 Hz (time constant 0.03 s), which quiets the background so the waves stand out",
+            "LFF 10 Hz (time constant 0.016 s), which gives the cleanest-looking background",
+            "LFF 1.6 Hz (time constant 0.1 s), which shows the waves and keeps drift down"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Slow waves are shown best by the lowest LFF the recording can tolerate without drift. 0.53 Hz passes about 93% of a 1.3 Hz wave (18 mm), 1.6 Hz about 63% (11 to 12 mm), and 5.3 Hz about 24% (5 to 6 mm). A higher LFF makes the background look quieter, but only because it removes the slow activity the reader is trying to assess. 10 Hz is worse still."
+        },
+        {
+          "step": 3,
+          "type": "settings-choice",
+          "title": "Hunting for brief events",
+          "tracing": "t3",
+          "description": "A 14-year-old is recorded at 10 uV/mm and LFF 1 Hz. Slow waves of 10 to 20 mm cover most channels, and brief sharp events near 1.5, 2.8 and 3.7 s are hard to tell from them. The reader asked you to look for brief sharp events.",
+          "question": "Which approach suits this job?",
+          "options": [
+            "Lower the LFF to 0.1 Hz so the brief events riding on the slow waves are drawn larger",
+            "Raise the sensitivity to 5 uV/mm so the brief events grow above the slow waves",
+            "Raise the LFF to 10 Hz briefly, record the time and change, then restore the routine LFF",
+            "Raise the LFF to 10 Hz and keep it there for the rest of the study so the brief events stay visible"
+          ],
+          "correctAnswer": 2,
+          "explanation": "For a short search for brief events, a higher LFF removes the 1.4 Hz slow waves (about 14% passes at 10 Hz) while a 50 ms spike keeps about 90% of its size, so the brief events become visible (about 9 to 10 mm over a 3 mm background). Because it also removes real slow activity, it is a brief, documented change followed by a return to routine. Lowering the LFF makes the slow waves bigger and hides the events more. Raising sensitivity scales slow waves and spikes alike. Keeping 10 Hz for the whole study throws away slow-wave information for the reader."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Write-up",
+          "tracing": "t4",
+          "description": "The 14-year-old's page is at LFF 10 Hz: slow waves about 3 mm, sharp events about 9 to 10 mm in F3-C3, C3-P3, Fp2-F4 and F4-C4. You are about to restore the routine LFF and write your technologist notes.",
+          "question": "What belongs in the notes?",
+          "options": [
+            "The times of the sharp events, labeled as epileptiform discharges that a physician must review",
+            "LFF raised from 1 to 10 Hz for a stated stretch, restored after, with the reader told slow waves shrank",
+            "Only the final LFF setting, because the reader needs a single number to describe the whole study",
+            "Nothing, because the change lasted only seconds and the routine setting was restored afterwards"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The reader must know which part of the page was recorded at LFF 10 Hz and that slow waves were reduced there, so they do not judge background slowing from it; the note should name the setting, the times, and what stayed the same (sensitivity, HFF), and the reader should be notified. Only the final LFF hides the change. Naming events as epileptiform is interpretation, outside scope. Even a brief change is documented, because the page looks different from the routine one."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Amplifier & Filters: Filters",
+          "to": "/amplifier-controls?tab=filters"
+        },
+        {
+          "label": "Amplifier & Filters: Common Mistakes",
+          "to": "/amplifier-controls?tab=mistakes"
+        }
+      ]
     }
   ]
 }

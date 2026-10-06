@@ -1,0 +1,893 @@
+{
+ "version": "1.0.0",
+ "generatedAt": "2026-10-05",
+ "bank": "challenge",
+ "focus": "amplifier-controls-filters-round3",
+ "description": "ABRET Challenge Bank round 3: filters, timing and choosing settings (LFF hiding slow activity, temporary LFF for small spikes, sweat and drift, timing and shape effects of filters, choosing settings for a job). Text only; not yet medically verified.",
+ "totalQuestions": 30,
+ "questions": [
+  {
+   "id": "ch-amp-061",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "filters",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A focal slow wave is only faintly visible with the time constant at 0.1 s. The technologist changes the control to 0.3 s. Which LFF does that give, and how should the slow wave look?",
+   "explanation": "A time constant of 0.3 s corresponds to an LFF of about 0.53 Hz (1/(2 x 3.14 x 0.3)), which is lower than the 1.6 Hz that goes with 0.1 s. A lower LFF attenuates less slow activity, so the wave appears larger and clearer. 5.3 Hz belongs to 0.03 s, and a higher LFF would make the wave fainter, not clearer. 1.6 Hz is the value for the old setting, so nothing would change.",
+   "learningObjective": "Convert time constant to LFF and predict the effect on slow activity.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "About 5.3 Hz, and the slow wave looks larger",
+    "About 1.6 Hz, and the slow wave looks the same",
+    "About 0.53 Hz, and the slow wave looks larger",
+    "About 0.53 Hz, and the slow wave looks smaller"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-062",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "time-constant",
+    "delta"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A focal delta is nearly gone at an LFF of 5.3 Hz (time constant 0.03 s). Why is 5.3 Hz unsuitable for routine recording?",
+   "explanation": "An LFF of 5.3 Hz reduces a large share of slow activity, so delta and other slow waves are reduced or missed and the record does not show what the brain is doing. The setting does not change the frequency of the waves, and it is not a way to reduce muscle, which is fast activity handled by the HFF. It also has nothing to do with electrode impedance.",
+   "learningObjective": "Explain why a high LFF is unsuitable for routine recording.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It attenuates slow activity, so real delta can be reduced or missed",
+    "It shifts delta to a faster frequency so it is misread as alpha",
+    "It reduces muscle artifact, which hides the real background",
+    "It raises electrode impedance and makes the baseline noisy"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-063",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "time-constant",
+    "delta",
+    "procedure"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "During a routine study the technologist notices a focal slow wave that was faint at 1.6 Hz and nearly gone at 5.3 Hz, and the LFF is still at 5.3 Hz. What is the best next step?",
+   "explanation": "The slow activity is visible at lower LFF values, so the setting at 5.3 Hz is hiding it. Returning to the lab's routine LFF (about 1 Hz or lower, such as 0.53 Hz) restores it and lets the reader see what is really there; the change should be documented in the record. Staying at 5.3 Hz keeps the activity hidden even if the setting is recorded, raising sensitivity does not undo the attenuation of slow waves, and a notch filter acts at 60 Hz and has no effect on slow activity.",
+   "learningObjective": "Restore a routine LFF when a high setting hides focal slow activity.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Keep 5.3 Hz for the rest of the study and document the change",
+    "Increase the sensitivity to 3 uV/mm so the wave looks larger and document the change",
+    "Switch on the 60 Hz notch to clean up the slow wave and document the change",
+    "Return the LFF to the routine value and document the change in the record"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-064",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "documentation",
+    "procedure",
+    "delta"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A focal slow wave over the right temporal region looked different when the LFF was changed during the study. Which entry in the technologist's notes is most appropriate?",
+   "explanation": "The technologist describes what was seen and what was done: where the slow wave appeared, the LFF or time constant values used, the times, and that the reader was notified. Naming a cause is outside the technologist's scope, and leaving the filter changes out would stop the reader from knowing why the amplitude changed. Treating filter changes as needing no entry hides the history of the study.",
+   "learningObjective": "Document observation and settings without naming a cause, and notify.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Where the slow wave was seen and the technologist's own opinion of what caused it",
+    "Where the slow wave was seen, the LFF values and times, and that the reader was told",
+    "Only that the study was routine, since filter changes can be reversed later on",
+    "That the slow wave cleared after the LFF was raised, with no LFF values or times listed"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-065",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "time-constant",
+    "delta",
+    "artifact"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 3,
+   "stem": "A trainee looks at a study in which a focal delta was visible at 0.53 Hz and 1.6 Hz but absent at 5.3 Hz, and reports, \"At 5.3 Hz the delta is gone, so it was not really there.\" Which evaluation of this statement is best?",
+   "explanation": "A high LFF shortens the time constant and attenuates slow activity, so its absence at 5.3 Hz proves nothing, particularly when the same activity was visible at 0.53 and 1.6 Hz. The conclusion has to rest on the lower settings, and the technologist should document both views and notify the reader. The statement is wrong because a filter changes amplitude and shape, not the presence of the underlying activity, and a wave that is faint at a lower LFF is not made of artifact.",
+   "learningObjective": "Evaluate a conclusion drawn from a recording with a high LFF.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "It is correct, because anything cut by a filter is artifact",
+    "It is flawed, because the high LFF attenuated activity seen at lower settings",
+    "It is correct, because slow waves cannot be recorded above 1 Hz",
+    "It is flawed, because a high LFF turns slow waves into faster frequencies"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-066",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "delta"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Which change to the filters allows more slow activity to appear on the screen?",
+   "explanation": "Lowering the LFF lets more slow activity through, because the LFF is a high-pass filter that reduces frequencies below its setting. Raising it reduces more slow waves. The HFF affects fast activity, and the notch only reduces a narrow band near 60 Hz, so neither of those reveals more slow activity.",
+   "learningObjective": "Identify the filter change that preserves slow activity.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Raise the LFF",
+    "Lower the HFF",
+    "Switch on the notch filter",
+    "Lower the LFF"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-067",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A slow wave whose frequency equals the LFF cutoff has a true amplitude of 100 uV. About how large will it appear on the screen?",
+   "explanation": "At the cutoff frequency, a filter passes about 70.7% of the signal, so 100 uV x 0.707 is about 71 uV. A value of 50 uV assumes half is passed, which is a common mistake, 100 uV assumes no attenuation, and 29 uV is the amount lost rather than the amount passed.",
+   "learningObjective": "Apply the 70.7% rule at the cutoff frequency.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "About 71 uV",
+    "About 50 uV",
+    "About 100 uV",
+    "About 29 uV"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-068",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "artifact",
+    "procedure"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "To show a focal slow wave better, the technologist lowers the LFF from 1.6 Hz to 0.53 Hz. What is the cost to expect?",
+   "explanation": "A lower LFF passes more slow activity, which helps the delta, but it also passes more slow artifact such as sweat sway and movement drift. The technologist therefore watches for baseline wander and corrects the cause. It does not shorten the time constant, change frequencies, or reduce muscle, because a lower LFF corresponds to a longer time constant and does nothing to fast activity.",
+   "learningObjective": "Recognize the trade-off of lowering the LFF.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The time constant shortens and slow waves shrink further",
+    "Faster waves are shifted to slower frequencies",
+    "More baseline sway and drift can appear and need attention",
+    "Muscle artifact is cleared from the temporal channels"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-069",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "spike",
+    "procedure"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Large slow waves make small spikes hard to see. In a lab whose protocol allows it, a temporary change of the LFF to about 10 Hz might help. Why?",
+   "explanation": "A higher LFF attenuates slow waves much more than fast ones, so the large slow waves shrink and the small, fast spikes stand out. It does not make the spikes larger. The cost is that genuine slow activity is attenuated as well, which is why the change must be temporary, and it is not a way to reduce 60 Hz or muscle.",
+   "learningObjective": "Explain how a temporarily higher LFF can help small spikes.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "It makes spikes taller than the true amplitude",
+    "It reduces 60 Hz interference from the record",
+    "It lengthens the time constant so spikes last longer",
+    "It reduces the large slow waves more than the fast spikes"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-070",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "documentation",
+    "procedure"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "After a short stretch at an LFF of 10 Hz to view small spikes, which action is correct?",
+   "explanation": "The routine setting is restored so the rest of the study shows genuine slow activity, and the change, with its time and reason, is documented so the reader knows that slow waves in that stretch are attenuated. Leaving the 10 Hz setting on would hide slow activity for the rest of the study even with an entry at the end, recording that nothing changed would be untrue, and asking the reader to ignore the stretch discards information instead of explaining it.",
+   "learningObjective": "Restore routine settings and document a temporary filter change.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Leave 10 Hz on and document it at the end of the study",
+    "Restore the routine LFF and document the change with its time",
+    "Restore the routine LFF and document that nothing changed",
+    "Restore the routine LFF and ask the reader to ignore that stretch"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-071",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "sensitivity",
+    "filters",
+    "spike"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Large slow waves hide small spikes. A colleague says simply raising the sensitivity would be as good as a higher LFF. Why is this not the same?",
+   "explanation": "Raising sensitivity enlarges every signal, including the big slow waves, so they crowd neighboring channels or block while the ratio of spike to slow wave stays the same. A higher LFF attenuates the slow waves and changes that ratio, at the price of reducing real slow activity. Sensitivity does not change filter settings or frequencies, and the two controls are not equivalent.",
+   "learningObjective": "Compare raising sensitivity with raising the LFF.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It changes the frequency of the slow waves",
+    "It lowers the LFF whenever the gain is raised",
+    "It enlarges the slow waves along with the spikes",
+    "It affects slow waves in the temporal channels only"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-072",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "sensitivity",
+    "spike",
+    "procedure"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "technical",
+   "reasoningSteps": 3,
+   "stem": "Slow waves of about 150 uV hide spikes of about 30 uV. The lab protocol allows a temporary LFF of 10 Hz with documentation. Which plan is best?",
+   "explanation": "A short, documented rise of the LFF reduces the slow waves relative to the spikes, after which the routine setting is restored. Raising sensitivity makes both larger and overlaps channels, lowering the HFF to 15 Hz rounds and shrinks the spikes themselves, and a notch filter acts only at 60 Hz. The plan needs the documentation so the reader knows slow activity was attenuated in that stretch.",
+   "learningObjective": "Choose and justify a temporary LFF change over other options.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Raise the LFF to 10 Hz for a short stretch, restore the routine value, and document the change",
+    "Raise the sensitivity to 3 uV/mm for a short stretch and document the change",
+    "Lower the HFF to 15 Hz for a short stretch so the spikes are smoother, and document the change",
+    "Turn on the 60 Hz notch for a short stretch and document the change"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-073",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "filters",
+    "delta",
+    "documentation"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "The reader sees no slow activity in a ten-minute stretch that was recorded at an LFF of 10 Hz. What is the best statement about slow activity in that stretch?",
+   "explanation": "Slow activity is strongly attenuated at 10 Hz, so its absence on the page cannot be taken as evidence that it was absent in the patient; this is why the setting and times have to be documented. The statement that the patient had no slow activity ignores the filter, and neither a change to a higher frequency nor clearing of artifact explains the missing waves.",
+   "learningObjective": "Interpret absent slow activity when a high LFF was used.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It cannot be judged there, because the filter attenuated it",
+    "The patient had no slow activity during that stretch",
+    "Slow waves were converted to alpha by the filter",
+    "The missing waves were artifact that the filter cleared"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-074",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "artifact",
+    "sweat",
+    "lff",
+    "filters"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "troubleshooting",
+   "reasoningSteps": 1,
+   "stem": "Which description best fits sweat artifact?",
+   "explanation": "Sweat produces very slow baseline sway, often on one electrode or a single region where the skin is wet. Fast, rhythmic activity points to muscle, sharp isolated deflections in one channel group suggest an electrode pop, and a steady 60 Hz band is mains interference.",
+   "learningObjective": "Recognize sweat artifact.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Fast irregular activity during jaw clenching",
+    "A sudden steep deflection with no field",
+    "Very slow baseline sway, often at one electrode",
+    "A steady 60 Hz band in all channels"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-075",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "artifact",
+    "sweat",
+    "procedure",
+    "lff"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "troubleshooting",
+   "reasoningSteps": 1,
+   "stem": "Slow baseline sway appears at one frontal electrode in a warm room. What is the best first action?",
+   "explanation": "Sweat artifact is a technical cause, so the first response is to fix it: cool the patient or room, dry the skin and re-prep or replace the electrode. Raising the LFF only treats the appearance and reduces real delta, the notch filter has no effect on slow sway, and changing the time base only changes how the sway looks.",
+   "learningObjective": "Fix the cause of sweat artifact before touching a filter.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Raise the LFF to 5.3 Hz to flatten the sway",
+    "Cool, dry and re-prep the electrode site",
+    "Turn on the notch filter to clear the sway",
+    "Change the time base to 60 mm/s to spread it out"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-076",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "artifact",
+    "sweat",
+    "lff",
+    "delta",
+    "filters"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "A technologist raises the LFF from 1 Hz to about 5 Hz to reduce sweat artifact. What is the consequence?",
+   "explanation": "A higher LFF does reduce very slow sway, but it also attenuates genuine delta and other slow waves, so the tracing may look quieter while hiding real activity. The electrode problem is still present at its source, and no filter makes it go away. The setting does not change the frequency of waves, and it does nothing for fast activity.",
+   "learningObjective": "Predict the cost of treating sweat artifact with the LFF.",
+   "questionType": "artifact",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The sway is reduced, and slow activity is unchanged",
+    "The sway stays the same, but muscle is cleared",
+    "The sway is reduced and the delta moves to a faster frequency",
+    "The sway is reduced, but real slow activity is reduced too"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-077",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "artifact",
+    "sweat",
+    "lff",
+    "documentation",
+    "procedure"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "Sweat sway at one temporal electrode persists after re-prepping because the patient keeps perspiring, and the protocol allows a modestly higher LFF. What should the technologist do?",
+   "explanation": "The first steps are to cool, dry and re-prep; if the sway persists, a modestly higher LFF may be used within the protocol, with the change documented, because slow activity will be attenuated. Raising the LFF as far as it goes, switching on the notch filter, or reducing sensitivity until the sway is hidden would not keep the study interpretable, and a note in the record cannot repair that.",
+   "learningObjective": "Apply a protocol-limited filter change after trying to fix the cause, and document it.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Raise the LFF as far as it goes and document the change",
+    "Switch on the notch filter, leave it on and document the change",
+    "Use a modest LFF rise and document the change",
+    "Reduce sensitivity until the sway cannot be seen and document the change"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-078",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "filters",
+    "slow-wave"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "What happens to a slow wave when the LFF time constant is made shorter?",
+   "explanation": "A shorter time constant means a higher LFF, which makes a slow wave smaller and brings its peak earlier because the filter partly differentiates it. The frequency of the wave in cycles per second does not change. A wave does not get larger or later with a shorter time constant.",
+   "learningObjective": "Describe the effect of a shorter LFF time constant on slow waves.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It becomes smaller and peaks earlier",
+    "It becomes smaller and peaks later",
+    "It becomes larger and peaks earlier",
+    "It becomes slower in frequency"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-079",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "hff",
+    "filters",
+    "fast-wave"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "What happens to a fast wave when the HFF is lowered?",
+   "explanation": "A lower HFF attenuates fast waves, so a fast wave becomes smaller and its peak arrives a little later because the filter smooths the rise. The frequency of the wave in cycles per second is not altered. A fast wave does not become larger, and it is not shifted to a lower frequency.",
+   "learningObjective": "Describe the effect of lowering the HFF on a fast wave.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It becomes smaller and peaks earlier",
+    "It becomes larger and peaks later",
+    "It becomes slower in frequency",
+    "It becomes smaller and peaks later"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-080",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "lff",
+    "frequency"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A 1 Hz wave passes through the filters after the LFF is raised. Which property of the wave stays the same?",
+   "explanation": "Filters change amplitude and shape, not frequency, so the number of cycles per second is the same. The wave can look smaller, rise less steeply, and have its peak shift, but a filter does not turn a 1 Hz wave into a different frequency. Its height and timing may change.",
+   "learningObjective": "Recognize that filters do not change frequency.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Its height as seen on the screen",
+    "Its frequency, in cycles per second",
+    "The position of its peak in time",
+    "How steeply it rises and falls"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-081",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "calibration",
+    "time-constant",
+    "lff",
+    "filters"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "At the start of a study the top of the calibration pulse sags slowly. After the LFF is changed, the same pulse sags much faster. What does this tell you?",
+   "explanation": "A pulse top that falls faster means a shorter time constant and therefore a higher LFF, so slow activity will be attenuated more. The pulse is a step, and its decay shows the time constant, whereas a lower LFF would sag more slowly. The sagging is not a sign of a changed HFF, and it is not related to the sensitivity.",
+   "learningObjective": "Read the filter change from the calibration pulse.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The LFF is lower, so slow waves will be passed better",
+    "The HFF is higher, so muscle will be reduced",
+    "The sensitivity is higher, so waves will be taller",
+    "The LFF is higher, so slow waves will be attenuated more"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-082",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "lff",
+    "hff",
+    "time-constant",
+    "slow-wave"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "The same slow wave is recorded twice. In the second recording it is smaller and peaks earlier, while its frequency is the same. Which change fits best?",
+   "explanation": "A smaller slow wave that peaks earlier is typical of a higher LFF, which is the same as a shorter LFF time constant. A lower HFF would also make waves smaller but would delay the peak and mostly affect fast waves, while a larger sensitivity number would reduce height without moving the peak. A faster time base only changes the horizontal spread.",
+   "learningObjective": "Infer which control was changed from amplitude and timing.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The HFF was lowered to a smaller value",
+    "The LFF was raised to a higher value",
+    "The sensitivity number was made larger",
+    "The time base was made faster"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-083",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "filters",
+    "hff",
+    "fast-wave",
+    "frequency",
+    "spike"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A fast wave looks smaller and later after the HFF is lowered, and a colleague claims it now has fewer cycles per second. What is the best response? Counting cycles on the same time base, the colleague finds 10 in one second both before and after.",
+   "explanation": "Lowering the HFF shrinks fast waves and delays their peak, but the number of cycles per second does not change, so the colleague's count should match the earlier one on the same time base. A filter does not alter frequency. The wave is not slower, and nothing about this means the HFF was set wrongly.",
+   "learningObjective": "Separate amplitude and timing effects from frequency.",
+   "questionType": "instrumentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The frequency is the same, since only height and timing changed",
+    "The claim is right, since the filter slowed the wave",
+    "The claim is right, since fast waves lose cycles when attenuated",
+    "The HFF must be raised to restore the cycles"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-084",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "hff",
+    "filters",
+    "procedure",
+    "slow-wave"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A technologist wants to see slow activity clearly. Which filter plan is most suitable?",
+   "explanation": "To see slow activity the LFF must be low, such as about 1 Hz or lower, and the HFF can stay near the usual 70 Hz. A higher LFF, such as 3 or 5 Hz, would reduce slow waves, and a low HFF would take away fast activity that the reader also needs.",
+   "learningObjective": "Choose filter settings for a stated recording goal.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "LFF about 5 Hz, HFF about 70 Hz",
+    "LFF about 5 Hz, HFF about 15 Hz",
+    "LFF about 0.5 Hz, HFF about 70 Hz",
+    "LFF about 3 Hz, HFF about 70 Hz"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-085",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "hff",
+    "filters",
+    "muscle",
+    "spike",
+    "procedure"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Temporal muscle obscures a possible sharp wave. Within the lab protocol the technologist lowers the HFF from 70 Hz to about 35 Hz. What should be expected and recorded?",
+   "explanation": "A modestly lower HFF reduces the muscle but also rounds and shrinks sharp waves, so the change has to be documented for the reader. The muscle is not gone, the spike does not become taller, and a lower HFF has no effect on slow activity. Frequency does not change.",
+   "learningObjective": "Predict and document the consequence of lowering the HFF.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Less muscle and taller, sharper discharges; the change is documented",
+    "Less muscle but smaller, rounder discharges; the change is documented",
+    "The same muscle but less slow activity; the change is documented",
+    "Less muscle, with discharges at a slower frequency; the change is documented"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-086",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "muscle",
+    "artifact",
+    "procedure",
+    "hff"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "troubleshooting",
+   "reasoningSteps": 1,
+   "stem": "Muscle activity covers both temporal regions. What is the best first action?",
+   "explanation": "Muscle is caused by tension, so the first action is to help the patient relax: support the head and neck, check the jaw and brow, and reposition if needed. Lowering the HFF treats the picture and reshapes spikes, raising the LFF reduces slow activity without addressing fast muscle, and the notch reduces only a narrow band at 60 Hz.",
+   "learningObjective": "Fix the cause of muscle artifact before touching a filter.",
+   "questionType": "procedure",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Lower the HFF to 15 Hz so the muscle looks smaller",
+    "Raise the LFF to 5 Hz to flatten the activity",
+    "Switch on the notch filter to clear the activity",
+    "Help the patient relax; support the head and neck"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-087",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "lff",
+    "hff",
+    "sensitivity",
+    "sweat",
+    "muscle",
+    "procedure"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 3,
+   "stem": "A sweating patient shows frontal sway and temporal muscle in a study meant to show slow activity. Which approach is best?",
+   "explanation": "The causes are fixed first: cool, dry and re-prep for the sway, and relax the patient for the muscle. The LFF stays low so slow activity is kept, and any temporary filter change within protocol is documented. Raising the LFF to 3 Hz or lowering the HFF to 30 Hz would clean up the look at the cost of hiding delta and rounding discharges, and raising sensitivity enlarges the artifact as well.",
+   "learningObjective": "Combine cause-first troubleshooting with settings that keep the study valid.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Set LFF 3 Hz and HFF 30 Hz for the entire study and document the change",
+    "Raise sensitivity to 3 uV/mm and leave the filters as they are",
+    "Fix both causes, keep the LFF low, and document any temporary filter change",
+    "Turn on the notch filter and leave the other settings alone"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-088",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-sensitivity-time-constants",
+   "topicTags": [
+    "sensitivity",
+    "hff",
+    "filters",
+    "spike",
+    "procedure"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Low-amplitude fast activity is hard to see at 7 uV/mm. The technologist wants it larger without losing it. Which choice fits best?",
+   "explanation": "Lowering the sensitivity number to about 5 uV/mm makes everything taller, keeps the HFF near 70 Hz so the fast activity is passed, and the technologist documents the change and watches for overlap. Lowering the HFF would attenuate the fast activity being sought, raising the LFF would add distortion without making fast waves larger, and the notch reduces only 60 Hz.",
+   "learningObjective": "Choose sensitivity rather than a filter to enlarge fast activity.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Use 5 uV/mm and keep the HFF near 70 Hz",
+    "Lower the HFF to 15 Hz and keep 7 uV/mm",
+    "Raise the LFF to 10 Hz and keep 7 uV/mm",
+    "Turn on the 60 Hz notch and keep 7 uV/mm"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-089",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "time-constant",
+    "lff",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A lab selects a time constant of 1 s to preserve very slow activity. What is the matching LFF?",
+   "explanation": "LFF = 1/(2 x 3.14 x TC), so for 1 s it is about 0.16 Hz. A value of 1.6 Hz belongs to 0.1 s, 0.53 Hz belongs to 0.3 s, and 6.3 Hz comes from multiplying instead of dividing.",
+   "learningObjective": "Convert a time constant of 1 s to its LFF.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "About 0.16 Hz",
+    "About 0.53 Hz",
+    "About 1.6 Hz",
+    "About 6.3 Hz"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-amp-090",
+   "domainId": "domain-2",
+   "sectionId": "d2-filters-time-constants",
+   "topicTags": [
+    "lff",
+    "hff",
+    "filters",
+    "time-constant",
+    "delta",
+    "spike"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 3,
+   "stem": "To make a sweaty, muscular study look clean, a colleague proposes LFF 5.3 Hz and HFF 15 Hz for the whole study. Which evaluation is best?",
+   "explanation": "The tracing would look tidy, but 5.3 Hz attenuates delta and 15 Hz rounds and shrinks spikes, so the study would be distorted. The better plan fixes the causes, keeps routine settings, and documents any short change. The proposal gives up information for appearance, and neither value is a routine setting.",
+   "learningObjective": "Evaluate a plan that trades diagnostic information for a clean look.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "It is acceptable, since a clean tracing is the aim of filtering",
+    "It is acceptable if the notch filter is also switched on",
+    "It looks clean but hides slow activity and reshapes discharges",
+    "It is acceptable, since filters do not change amplitude"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea amplifier-controls set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  }
+ ]
+}
