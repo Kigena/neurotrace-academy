@@ -1,0 +1,335 @@
+{
+  "gradeIA": {
+    "seed": 201,
+    "ageYears": 52,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 7.5,
+      "pdrUv": 45,
+      "beta": 3,
+      "theta": 2,
+      "delta": 1.5,
+      "noise": 3
+    },
+    "findings": []
+  },
+  "gradeIB": {
+    "seed": 202,
+    "ageYears": 58,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 5,
+      "pdrUv": 40,
+      "beta": 2.5,
+      "theta": 2,
+      "delta": 1.5,
+      "noise": 3
+    },
+    "findings": []
+  },
+  "gradeIIA": {
+    "seed": 203,
+    "ageYears": 47,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 9.5,
+      "pdrUv": 35,
+      "beta": 2.5,
+      "theta": 3,
+      "delta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "diffuseSlowing",
+        "hz": 5.5,
+        "bwHz": 2,
+        "uv": 22,
+        "frontal": 0.3
+      },
+      {
+        "type": "diffuseSlowing",
+        "hz": 1.8,
+        "bwHz": 1,
+        "uv": 12,
+        "frontal": 0.3
+      }
+    ]
+  },
+  "gradeIIB": {
+    "seed": 204,
+    "ageYears": 64,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 5.5,
+      "pdrUv": 30,
+      "beta": 2,
+      "theta": 3,
+      "delta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "diffuseSlowing",
+        "hz": 5.5,
+        "bwHz": 2,
+        "uv": 26,
+        "frontal": 0.3
+      },
+      {
+        "type": "diffuseSlowing",
+        "hz": 1.8,
+        "bwHz": 1,
+        "uv": 8,
+        "frontal": 0.3
+      }
+    ]
+  },
+  "gradeIIIA": {
+    "seed": 205,
+    "ageYears": 55,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 9,
+      "pdrUv": 28,
+      "beta": 2.5,
+      "theta": 3,
+      "delta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "diffuseSlowing",
+        "hz": 1.8,
+        "bwHz": 1,
+        "uv": 42,
+        "frontal": 0.4
+      }
+    ]
+  },
+  "gradeIIIB": {
+    "seed": 206,
+    "ageYears": 70,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 5.5,
+      "pdrUv": 22,
+      "beta": 2,
+      "theta": 4,
+      "delta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "diffuseSlowing",
+        "hz": 1.7,
+        "bwHz": 1,
+        "uv": 46,
+        "frontal": 0.4
+      },
+      {
+        "type": "diffuseSlowing",
+        "hz": 5.5,
+        "bwHz": 2,
+        "uv": 14,
+        "frontal": 0.2
+      }
+    ]
+  },
+  "gradeIVA": {
+    "seed": 207,
+    "ageYears": 66,
+    "state": "stupor",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 1.5,
+      "theta": 1.5,
+      "delta": 0,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "diffuseSlowing",
+        "hz": 1.5,
+        "bwHz": 0.9,
+        "uv": 130,
+        "frontal": 0.4
+      }
+    ]
+  },
+  "gradeIVB": {
+    "seed": 208,
+    "ageYears": 73,
+    "state": "stupor",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 1,
+      "theta": 1,
+      "delta": 0,
+      "noise": 2.5
+    },
+    "findings": [
+      {
+        "type": "diffuseSlowing",
+        "hz": 1.5,
+        "bwHz": 0.9,
+        "uv": 28,
+        "frontal": 0.3
+      }
+    ]
+  },
+  "gradeVA": {
+    "seed": 209,
+    "ageYears": 61,
+    "state": "semicomatose",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 0,
+      "theta": 0,
+      "delta": 0,
+      "noise": 5
+    },
+    "findings": [
+      {
+        "type": "burst",
+        "uv": 160,
+        "runs": [
+          [
+            0.4,
+            1.4
+          ],
+          [
+            3.7,
+            4.8
+          ],
+          [
+            7.2,
+            8.3
+          ]
+        ],
+        "rampS": 0.1
+      }
+    ]
+  },
+  "gradeVB": {
+    "seed": 210,
+    "ageYears": 61,
+    "state": "semicomatose",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 0,
+      "theta": 0,
+      "delta": 0,
+      "noise": 5
+    },
+    "findings": [
+      {
+        "type": "burst",
+        "uv": 160,
+        "runs": [
+          [
+            0.3,
+            1.5
+          ],
+          [
+            8.3,
+            9.6
+          ]
+        ],
+        "rampS": 0.1
+      }
+    ]
+  },
+  "gradeVIA": {
+    "seed": 211,
+    "ageYears": 59,
+    "state": "semicomatose",
+    "sensitivity": 2,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "heartRate": 82,
+    "ekgContamination": 4,
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 0,
+      "theta": 0,
+      "delta": 0,
+      "noise": 1.2
+    },
+    "findings": [
+      {
+        "type": "diffuseSlowing",
+        "hz": 1.8,
+        "bwHz": 1,
+        "uv": 5,
+        "frontal": 0.2
+      }
+    ]
+  },
+  "gradeVIB": {
+    "seed": 212,
+    "ageYears": 59,
+    "state": "semicomatose",
+    "sensitivity": 2,
+    "montage": "longitudinal",
+    "lff": 1,
+    "hff": 70,
+    "heartRate": 82,
+    "ekgContamination": 4,
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 0,
+      "theta": 0,
+      "delta": 0,
+      "noise": 0.6
+    },
+    "findings": []
+  }
+}
