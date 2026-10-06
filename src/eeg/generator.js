@@ -256,7 +256,7 @@ const DEFAULT_BG = {
 export const FINDING_TYPES = [
   "mu", "muShapedAlpha", "firda", "polymorphicDelta", "spike", "sharp", "gsw", "polyspikeWave",
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
-  "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine", "focalDelta",
+  "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine", "focalDelta", "burst",
 ];
 
 /**
@@ -392,6 +392,47 @@ export function generateReferential(scene) {
           sig[i] = -amp * g * (Math.sin(phi) + 0.22 * Math.sin(2 * phi + 0.9));
         }
         addSource(V, field(f.center ?? (f.type === "rhythmicDelta" ? [0, -0.65] : [0, 0.62]), f.sigma ?? 0.42), sig);
+        break;
+      }
+      case "burst": {
+        // Widespread burst of mixed delta, theta and sharp transients with an abrupt onset and offset
+        // (burst-suppression pattern when the background between bursts is very low).
+        const bursts = f.runs || [];
+        const amp = (f.uv ?? 150) / 3;
+        const ramp = f.rampS ?? 0.05;
+        const gate = new Float64Array(n);
+        for (let i = 0; i < n; i++) {
+          let g = 0;
+          for (const [a, b] of bursts) g = Math.max(g, gateValue(time(i), a, b, ramp));
+          gate[i] = g;
+        }
+        const mix = [[2.2, 2.2, 1], [5.5, 3, 0.6], [14, 8, 0.25]];
+        for (const [hz, bw, k] of mix) {
+          const wide = narrowband(n, hz, bw, gauss);
+          for (let i = 0; i < n; i++) wide[i] *= amp * k * gate[i] * 0.9;
+          addSource(V, field([0, 0.1], 0.95), wide);
+          for (const name of CORE_NAMES) {
+            const loc = narrowband(n, hz, bw, gauss);
+            const kk = amp * k * 0.45;
+            const ch = V[name];
+            for (let i = 0; i < n; i++) ch[i] += loc[i] * kk * gate[i];
+          }
+        }
+        // sharp transients riding on each burst
+        for (const [a, b] of bursts) {
+          const cnt = Math.max(1, Math.round((b - a) * (f.sharpPerS ?? 2.5)));
+          const sig = new Float64Array(n);
+          for (let j = 0; j < cnt; j++) {
+            const t0 = a + 0.1 + rng() * Math.max(0.05, b - a - 0.2);
+            const dur = 45 + rng() * 60;
+            for (let i = 0; i < n; i++) {
+              const t = time(i);
+              if (Math.abs(t - t0) < 0.5) sig[i] += transientShape(t, t0, dur, rng() < 0.5);
+            }
+          }
+          for (let i = 0; i < n; i++) sig[i] *= (f.uv ?? 150) * 0.7;
+          addSource(V, field([0, 0.1], 0.9), sig);
+        }
         break;
       }
       case "focalDelta": {
