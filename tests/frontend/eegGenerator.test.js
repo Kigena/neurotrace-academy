@@ -130,6 +130,14 @@ describe("synthetic EEG generator", () => {
     expect(rmsAt(fr, "Fp1-A1")).toBeGreaterThan(2 * rmsAt(fr, "O1-A1"));
   });
 
+  it("confines focal delta to its region and to its runs", () => {
+    const page = renderScene({ seed: 13, ekg: false, background: QUIET, hff: 200, findings: [{ type: "focalDelta", center: "T3", uv: 90, hz: 1.3, runs: [[2, 8]] }] }, "referential");
+    const inside = (l) => rms(ch(page, l).subarray(3 * FS, 7 * FS));
+    expect(inside("T3-A1")).toBeGreaterThan(3 * inside("O2-A2"));
+    expect(inside("T3-A1")).toBeGreaterThan(3 * inside("F4-A2"));
+    expect(rms(ch(page, "T3-A1").subarray(0, 1 * FS))).toBeLessThan(0.2 * inside("T3-A1"));
+  });
+
   it("is deterministic for a given seed and changes with the seed", () => {
     const scene = { seed: 9, findings: [{ type: "mu" }] };
     expect(Array.from(ch(renderScene(scene), "C3-P3").slice(0, 50))).toEqual(Array.from(ch(renderScene(scene), "C3-P3").slice(0, 50)));

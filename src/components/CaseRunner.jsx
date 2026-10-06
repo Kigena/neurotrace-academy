@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { normalizeStep, stepHeading } from "../utils/caseSteps";
 import EegTracing from "./EegTracing.jsx";
+import FilterStack from "./amplifier/FilterStack.jsx";
 
 /**
  * CaseRunner Component
@@ -165,7 +166,11 @@ function CaseRunner({ caseData, onComplete }) {
             )}
             {currentStep.tracing && caseData.tracings?.[currentStep.tracing] && (
               <div className="my-3">
-                <EegTracing scene={caseData.tracings[currentStep.tracing]} />
+                {caseData.tracings[currentStep.tracing].variants ? (
+                  <FilterStack scene={caseData.tracings[currentStep.tracing]} variants={caseData.tracings[currentStep.tracing].variants} />
+                ) : (
+                  <EegTracing scene={caseData.tracings[currentStep.tracing]} />
+                )}
               </div>
             )}
             <p className="text-sm text-slate-700">{currentStep.prompt}</p>

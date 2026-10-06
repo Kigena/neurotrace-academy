@@ -54,6 +54,10 @@ export const MONTAGES = {
       ["T5", "O1"], ["O1", "O2"], ["O2", "T6"],
     ],
   },
+  single: {
+    label: "Single channel (filter demonstration)",
+    pairs: [["O1", "A1"]],
+  },
   eyeCheck: {
     label: "Eye-movement check (ear-referenced)",
     pairs: [
@@ -208,7 +212,7 @@ const DEFAULT_BG = {
 export const FINDING_TYPES = [
   "mu", "muShapedAlpha", "firda", "polymorphicDelta", "spike", "sharp", "gsw", "polyspikeWave",
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
-  "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine",
+  "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine", "focalDelta",
 ];
 
 /**
@@ -217,10 +221,11 @@ export const FINDING_TYPES = [
  */
 export function generateReferential(scene) {
   const seconds = scene.seconds ?? 10;
-  const n = Math.round((seconds + PRE_ROLL_S) * FS);
+  const preRollS = scene.preRollS ?? PRE_ROLL_S; // longer warm-up lets very slow LFF settings settle
+  const n = Math.round((seconds + preRollS) * FS);
   const rng = mulberry32((scene.seed ?? 1) * 2654435761);
   const gauss = gaussianRng(rng);
-  const time = (i) => i / FS - PRE_ROLL_S; // page time in seconds
+  const time = (i) => i / FS - preRollS; // page time in seconds
   const state = scene.state || "awake";
   const bg = { ...DEFAULT_BG[state] || DEFAULT_BG.awake, ...(scene.background || {}) };
   const findings = scene.findings || [];
@@ -343,6 +348,21 @@ export function generateReferential(scene) {
           sig[i] = -amp * g * (Math.sin(phi) + 0.22 * Math.sin(2 * phi + 0.9));
         }
         addSource(V, field(f.center ?? (f.type === "rhythmicDelta" ? [0, -0.65] : [0, 0.62]), f.sigma ?? 0.42), sig);
+        break;
+      }
+      case "focalDelta": {
+        // Irregular delta confined to one region (for example a structural lesion), optionally limited to `runs`.
+        const hz = f.hz ?? 1.3;
+        const bw = f.bwHz ?? 0.9;
+        const amp = (f.uv ?? 80) / 2.8;
+        const runs = f.runs || [[0, seconds]];
+        const sig = narrowband(n, hz, bw, gauss);
+        for (let i = 0; i < n; i++) {
+          let g = 0;
+          for (const [a, b] of runs) g = Math.max(g, gateValue(time(i), a, b, 0.5));
+          sig[i] *= amp * g;
+        }
+        addSource(V, field(f.center ?? "T3", f.sigma ?? 0.22), sig);
         break;
       }
       case "polymorphicDelta": {
@@ -602,7 +622,7 @@ export function generateReferential(scene) {
   if (scene.ekg !== false) {
     const bpm = scene.heartRate ?? 72;
     const rr = 60 / bpm;
-    let tb = -PRE_ROLL_S + rng() * rr;
+    let tb = -preRollS + rng() * rr;
     const beats = [];
     while (tb < seconds + 1) {
       beats.push(tb);
@@ -628,7 +648,7 @@ export function generateReferential(scene) {
     }
   }
 
-  return { n, preRoll: PRE_ROLL_S * FS, V, ekg, markers };
+  return { n, preRoll: preRollS * FS, V, ekg, markers };
 }
 
 // ---------------------------------------------------------------- filters
@@ -697,7 +717,7 @@ export function renderScene(scene, montageKey) {
     const { at = [0.6], uv = 50, durS = 1.5 } = scene.calibration;
     cal = new Float64Array(ref.n);
     for (let i = 0; i < ref.n; i++) {
-      const t = i / FS - PRE_ROLL_S;
+      const t = (i - ref.preRoll) / FS;
       for (const t0 of at) if (t >= t0 && t < t0 + durS) cal[i] = -uv;
     }
   }
@@ -718,6 +738,11 @@ export function validateScene(scene) {
   for (const f of scene.findings || []) if (!FINDING_TYPES.includes(f.type)) throw new Error(`unknown finding ${f.type}`);
   for (const m of scene.montages || [scene.montage || "longitudinal"]) if (!MONTAGES[m]) throw new Error(`unknown montage ${m}`);
   if (scene.calibration && !(scene.calibration.at || [0.6]).every(Number.isFinite)) throw new Error("calibration.at must be numbers");
+  if (scene.variants) {
+    if (!Array.isArray(scene.variants) || !scene.variants.length) throw new Error("variants must be a non-empty array");
+    for (const v of scene.variants) renderScene({ ...scene, ...v }, scene.montage || "single");
+    return true;
+  }
   renderScene(scene);
   return true;
 }

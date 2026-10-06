@@ -3,6 +3,7 @@ import { FS, renderScene } from "../../src/eeg/generator.js";
 import {
   highPassGain, lowPassGain, bandGain, gainToDb, timeConstantFromCutoff, cutoffFromTimeConstant,
   sensitivity, voltageFromHeight, heightFromVoltage, amplitudeFromCalibration, durationMs, widthMm, frequencyHz,
+  highPassPhaseDeg, lowPassPhaseDeg, phaseToMs, netShiftMs,
 } from "../../src/eeg/filters.js";
 
 const QUIET = { pdrUv: 0, beta: 0, theta: 0, delta: 0, noise: 0 };
@@ -117,5 +118,50 @@ describe("generator filters match the textbook model", () => {
     };
     expect(run(0.5)).toBeCloseTo(8, 0);
     expect(run(5.3)).toBeCloseTo(8, 0);
+  });
+});
+
+describe("filters shift timing, not frequency", () => {
+  it("computes phase lead for the LFF and phase lag for the HFF", () => {
+    expect(highPassPhaseDeg(1, 1)).toBeCloseTo(45, 5);
+    expect(highPassPhaseDeg(1, 0.159)).toBeCloseTo(9.03, 1);
+    expect(lowPassPhaseDeg(20, 20)).toBeCloseTo(45, 5);
+    expect(phaseToMs(45, 1)).toBeCloseTo(125, 5);
+    expect(netShiftMs(1, 1.6, 70)).toBeLessThan(0); // LFF makes the peak earlier
+    expect(netShiftMs(20, 0.5, 15)).toBeGreaterThan(0); // HFF makes the peak later
+  });
+
+  // upward zero-crossing time (s) nearest `near`, linearly interpolated
+  const crossing = (d, near) => {
+    let best = null;
+    for (let i = Math.round((near - 0.6) * FS); i < Math.round((near + 0.6) * FS); i++) {
+      if (d[i - 1] < 0 && d[i] >= 0) {
+        const t = (i - 1 + -d[i - 1] / (d[i] - d[i - 1])) / FS;
+        if (best == null || Math.abs(t - near) < Math.abs(best - near)) best = t;
+      }
+    }
+    return best;
+  };
+  const sinePage = (hz, extra) =>
+    renderScene({ seed: 6, ekg: false, background: QUIET, lpOrder: 1, findings: [{ type: "sine", hz, uv: 100, sites: ["O1"] }], ...extra }, "single").channels[0].data;
+
+  it("makes a 1 Hz wave peak earlier as the LFF rises (shorter time constant)", () => {
+    const ref = crossing(sinePage(1, { lff: 0, hff: 200 }), 5.0);
+    const shifts = [0.16, 0.53, 1.6].map((lff) => (crossing(sinePage(1, { lff, hff: 200 }), 5.0) - ref) * 1000);
+    expect(shifts[0]).toBeLessThan(0);
+    expect(shifts[1]).toBeLessThan(shifts[0]);
+    expect(shifts[2]).toBeLessThan(shifts[1]);
+    // theory: atan(fc/f) / 360 s -> 0.53 Hz is about -77 ms
+    expect(Math.abs(shifts[1] - netShiftMs(1, 0.53, 1e9))).toBeLessThan(10);
+  });
+
+  it("makes a 20 Hz wave peak later as the HFF is lowered, without changing its frequency", () => {
+    const ref = crossing(sinePage(20, { lff: 0, hff: 200 }), 5.0);
+    const later = [70, 35, 15].map((hff) => (crossing(sinePage(20, { lff: 0, hff }), 5.0) - ref) * 1000);
+    expect(later[0]).toBeGreaterThan(0);
+    expect(later[1]).toBeGreaterThan(later[0]);
+    expect(later[2]).toBeGreaterThan(later[1]);
+    expect(later[2]).toBeGreaterThan(4); // ms, around 6-7 for a digital single-pole at 15 Hz
+    expect(later[2]).toBeLessThan(9);
   });
 });

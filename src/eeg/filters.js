@@ -45,3 +45,17 @@ export const frequencyHz = (ms) => 1000 / ms;
 /** Standard cutoff choices offered by the Filter Lab. */
 export const LFF_CHOICES = [0.1, 0.3, 0.5, 1, 1.6, 5.3];
 export const HFF_CHOICES = [15, 35, 70];
+
+const RAD = 180 / Math.PI;
+
+/** Phase LEAD (degrees) a single-pole LFF gives a sine of `f` Hz: atan(fc / f). Positive = the wave peaks earlier. */
+export const highPassPhaseDeg = (f, fc) => (fc > 0 ? Math.atan(fc / f) * RAD : 0);
+
+/** Phase LAG (degrees) a single-pole HFF gives a sine of `f` Hz: atan(f / fc). Positive = the wave peaks later. */
+export const lowPassPhaseDeg = (f, fc) => (fc > 0 ? Math.atan(f / fc) * RAD : 0);
+
+/** Time shift in ms for a phase in degrees at frequency `f` Hz. */
+export const phaseToMs = (deg, f) => (deg / 360) * (1000 / f);
+
+/** Net timing shift (ms) of a sine through LFF and HFF: negative = earlier, positive = later. */
+export const netShiftMs = (f, lff, hff) => phaseToMs(lowPassPhaseDeg(f, hff) - highPassPhaseDeg(f, lff), f);
