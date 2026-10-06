@@ -1,0 +1,1146 @@
+{
+ "version": "1.0.0",
+ "generatedAt": "2026-10-06",
+ "bank": "challenge",
+ "focus": "diffuse-abnormalities",
+ "description": "ABRET Challenge Bank round 5: diffuse EEG abnormalities (levels of consciousness, Glasgow Coma Scale, basic slowing patterns, teaching-scale grades, burst suppression, low voltage, technologist documentation). Text only; not yet medically verified.",
+ "totalQuestions": 40,
+ "questions": [
+  {
+   "id": "ch-dif-001",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "consciousness",
+    "lethargy"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A patient answers questions when spoken to in an ordinary voice but falls back asleep as soon as the examiner stops talking. Which level of impaired consciousness fits best?",
+   "explanation": "Lethargy is severe drowsiness in which the patient wakes to ordinary stimulation but sleeps again once it stops. Confusion keeps normal reactions to ordinary stimulation with disorientation and poor attention. Stupor needs vigorous stimulation to produce even temporary arousal. Delirium adds restlessness, hallucinations and incoherence rather than sleepiness.",
+   "learningObjective": "Recognize lethargy among the levels of impaired consciousness.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Confusion with a defect of attention in the person",
+    "Stupor with only brief arousal after any stimulation",
+    "Delirium with restless overactivity and hallucinations",
+    "Lethargy, a severe drowsiness that returns when stimulation stops"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-002",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "consciousness",
+    "confusion"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A patient reacts normally to ordinary stimulation but cannot say the date or the hospital and loses track of a simple conversation. Which level of impaired consciousness is described?",
+   "explanation": "Confusion is a mild reduction of consciousness: the patient responds normally to ordinary stimulation but is disoriented to time, place or person and has an attention defect. Lethargy is drowsiness that returns after stimulation ends, stupor requires vigorous stimulation, and coma means no arousal at all, none of which matches a patient who reacts normally.",
+   "learningObjective": "Define confusion as a level of impaired consciousness.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Lethargy, with sleep returning once stimulation stops",
+    "Confusion, a mild reduction with disorientation",
+    "Stupor, with arousal only after vigorous stimulation",
+    "Coma, with no arousal even to powerful stimuli"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-003",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "consciousness",
+    "delirium"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "An inpatient is disoriented, restless, picks at the bedclothes, reports seeing people who are not there, and speaks incoherently. Which level of impaired consciousness fits best?",
+   "explanation": "Delirium is severe confusion with disorientation, restlessness or overactivity, hallucinations, delusions and incoherence. The patient here is overactive, not sleepy, so lethargy does not fit. Stupor and coma are states of reduced responsiveness, whereas this patient reacts abundantly, only in a disorganized way.",
+   "learningObjective": "Distinguish delirium from lethargy, stupor and coma.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Delirium, a severe confusion with overactivity and hallucinations",
+    "Lethargy, a severe drowsiness that fades when stimulation stops",
+    "Stupor, a state needing vigorous stimulation to rouse",
+    "Coma, a state with almost no response to any stimulus"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-004",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "consciousness",
+    "stupor"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A patient does not react to voice or light touch. Vigorous stimulation makes the patient open the eyes and pull away briefly, after which the patient lapses back into unresponsiveness. Which level is this?",
+   "explanation": "Stupor is partial loss of responsiveness: vigorous stimulation produces temporary arousal and the patient then lapses back. Lethargy would wake to ordinary stimulation, which did not work here. Coma allows no arousal even with powerful stimuli, and confusion implies normal reactions to ordinary stimulation. The brief arousal separates stupor from both ends.",
+   "learningObjective": "Identify stupor from the pattern of arousal.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Lethargy, because the patient wakes to ordinary stimulation",
+    "Coma, because the patient cannot be roused at all",
+    "Stupor, because vigorous stimulation gives only brief arousal",
+    "Confusion, because the patient reacts to stimulation"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-005",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "consciousness",
+    "ordering"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A technologist must record, from least to most impaired, a patient who moves through four states during an admission. Which ordering of these four levels is correct?",
+   "explanation": "Confusion is a mild reduction, lethargy a severe drowsiness that responds to ordinary stimulation, stupor responds only briefly to vigorous stimulation, and coma does not respond even to powerful stimuli. Each wrong ordering places a more responsive state after a less responsive one, or confusion after lethargy.",
+   "learningObjective": "Order the levels of impaired consciousness by severity.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Confusion, lethargy, stupor, coma",
+    "Lethargy, confusion, stupor, coma",
+    "Confusion, stupor, lethargy, coma",
+    "Lethargy, stupor, confusion, coma"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-006",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "gcs",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A patient opens the eyes to a spoken command, answers in confused conversation, and localizes a painful stimulus. What is the Glasgow Coma Scale total and its band?",
+   "explanation": "Eye opening to voice scores 3, confused conversation scores 4, and localizing pain scores 5, giving 12. Totals of 9 to 12 are moderate; mild is 13 to 15. The totals of 11 and 13 come from scoring one component a point too low or too high, and calling 12 mild uses the wrong band.",
+   "learningObjective": "Add the three Glasgow Coma Scale components and name the severity band.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Total 12, mild range",
+    "Total 12, moderate range",
+    "Total 11, moderate range",
+    "Total 13, mild range"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-007",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "gcs",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A patient opens the eyes only to a painful stimulus, makes only incomprehensible sounds, and withdraws from pain. What are the Glasgow Coma Scale total and its band?",
+   "explanation": "Eyes opening to pain score 2, incomprehensible sounds score 2, and withdrawal from pain scores 4, giving 8. Totals of 3 to 8 are severe, so the band is severe. A total of 9 or 7 results from a one-point slip in a component, and calling 8 moderate misplaces the top of the severe band.",
+   "learningObjective": "Compute a Glasgow Coma Scale total from component descriptions and assign the band.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Total 8, moderate range",
+    "Total 9, moderate range",
+    "Total 8, severe range",
+    "Total 7, severe range"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-008",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "gcs"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "What is the range of total Glasgow Coma Scale scores, and which totals form the severe band?",
+   "explanation": "Each of three components has a minimum of 1 (eye 1 to 4, verbal 1 to 5, motor 1 to 6), so totals run from 3 to 15. Totals of 3 to 8 are severe, 9 to 12 moderate and 13 to 15 mild. A range starting at 0 is impossible, and 9 to 12 is the moderate band.",
+   "learningObjective": "State the Glasgow Coma Scale range and bands.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The range is 3 to 15, and the severe band is 3 to 6",
+    "The range is 0 to 15, and the severe band is 0 to 8",
+    "The range is 3 to 15, and the severe band is 9 to 12",
+    "The range is 3 to 15, and the severe band is 3 to 8"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-009",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "gcs",
+    "pediatrics"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "Why are modified verbal scales used with infants and young children when a Glasgow Coma Scale is recorded?",
+   "explanation": "The adult verbal scale is built around oriented speech, which an infant or toddler cannot produce, so age-adapted verbal descriptions are substituted. Eye opening and motor responses are still assessed. The scale still sums three components, and the scoring is adapted to give comparable meaning rather than a wider band.",
+   "learningObjective": "Explain why pediatric verbal scales are modified.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Verbal responses in children are usually scored 1, so only eye and motor scores are summed",
+    "Children are scored out of a different total so that the severe band is wider",
+    "Children are scored on a 3 to 12 scale, so the severe band is narrower",
+    "Young children cannot give oriented speech, so verbal responses are adapted"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-010",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "patterns",
+    "cortical"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "An EEG shows a generalized slow background of about 5 Hz with no excess irregular theta or delta waves. Which type of dysfunction does this pattern suggest?",
+   "explanation": "A slowed background without excess theta and delta fits cortical dysfunction among the three basic patterns. Excess theta-delta waves on a normal background point to white matter dysfunction, and the combination points to both. Nothing in the description suggests a brainstem localization or a technical electrode fault.",
+   "learningObjective": "Link a slow-background-only pattern to cortical dysfunction.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Mainly white matter dysfunction",
+    "Mainly cortical dysfunction",
+    "Mainly brainstem dysfunction",
+    "Mainly electrode dysfunction"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-011",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "patterns",
+    "white-matter"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A well-formed 10-Hz posterior rhythm is preserved, but irregular theta and delta waves are scattered across both hemispheres. Which interpretation of the pattern fits best?",
+   "explanation": "Theta and delta slow waves over a normal background are the pattern linked to white matter dysfunction. A cortical problem would slow the background itself, and mixed involvement would slow the background and add theta-delta. A normal background does not make the record normal, since the added slow waves are abnormal.",
+   "learningObjective": "Recognize theta-delta waves on a normal background as the white matter pattern.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The pattern suggests cortical dysfunction because the waves are slow",
+    "The pattern suggests dysfunction of both cortex and white matter",
+    "The pattern suggests white matter dysfunction",
+    "The pattern suggests no dysfunction because the background is normal"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-012",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "specificity"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "What can a diffuse slowing pattern on a routine EEG tell the team, taken on its own?",
+   "explanation": "Diffuse slowing reflects the degree of cerebral dysfunction and helps with prognosis, but it is rarely specific for the cause. Metabolic, toxic, inflammatory, demyelinating and degenerative illnesses can look alike. Only combined with clinical information does the record narrow the possibilities, and diffuse slowing does not localize to a lobe.",
+   "learningObjective": "State what diffuse slowing does and does not show.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "How severe the dysfunction is, plus some prognostic information",
+    "Which toxin or metabolic disturbance has caused the dysfunction",
+    "Which specific disease process is present in the brain",
+    "Which lobe or region contains the underlying abnormality"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-013",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "specificity",
+    "causes"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "Two patients show similar diffuse theta and delta slowing, one with liver failure and one after a sedative overdose. How should the pair of records be understood?",
+   "explanation": "Metabolic and toxic encephalopathies share nonspecific diffuse slowing, so the EEG gauges severity while the cause comes from clinical and laboratory information. A grade letter describes background and slow-wave findings, not etiology. Similar appearance does not prove a shared cause, and diffuse slowing does not carry a chemical signature.",
+   "learningObjective": "Explain why diffuse slowing is not specific for cause.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The distribution of the slowing identifies which substance affected each brain",
+    "The EEG shows severity, but the cause comes from history and laboratory data",
+    "The grade letter tells the reader whether the cause is metabolic or toxic",
+    "The similar records mean both patients have the same underlying cause"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-014",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "patterns",
+    "consciousness",
+    "documentation"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "Over several hours a patient's consciousness falls from lethargy to stupor. Which expectation and recording practice fit this change?",
+   "explanation": "Degree of EEG abnormality correlates fairly well with the level of consciousness, so a fall from lethargy to stupor is expected to bring more slowing. The technologist records the state and score with the time so the reader can relate the tracing to the patient. The EEG does track arousal, and focal change is not the expected correlate.",
+   "learningObjective": "Relate worsening consciousness to expected EEG change and its documentation.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "More slowing is expected, so record the new state, score and time",
+    "Little EEG change is expected, so keep the earlier score in the header",
+    "A faster background is expected, so note the new state at the end of the study",
+    "Slowing should become focal, so note only the side and skip the state"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-015",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-1"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "In this teaching scale, a background slowed to about 7 Hz with no excess theta or delta is assigned which grade?",
+   "explanation": "In this scale, grade I is background slowing without excess theta-delta; the A subtype is 7 to under 8 Hz and the B subtype is 4 to 6 Hz. Grade II requires dominant theta with some delta, which this description lacks. The B subtype would need a slower background than the 7 to under 8 Hz of the A subtype.",
+   "learningObjective": "Assign grade IA from a description.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Grade IB",
+    "Grade IIA",
+    "Grade IA",
+    "Grade IIB"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-016",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-1"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "In this teaching scale, a 5-Hz background with no excess theta or delta is assigned which grade?",
+   "explanation": "Grade I covers background slowing without excess theta-delta, and the 4 to 6 Hz range is the B subtype. The A subtype is the faster 7 to 8 Hz range. Grades IIA and IIB need dominant theta with some delta, and the description includes no such excess.",
+   "learningObjective": "Assign grade IB from a description.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Grade IA",
+    "Grade IIA",
+    "Grade IIB",
+    "Grade IB"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-017",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-2"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "In this teaching scale, a record is dominated by theta with some delta and has a normal or near-normal background. Which grade fits?",
+   "explanation": "Grade II is dominant theta with some delta; the A subtype has a normal or near-normal background and the B subtype has a slowed one. Grade IB lacks the excess theta-delta, and grade III requires delta as the dominant activity rather than theta.",
+   "learningObjective": "Assign grade IIA from a description.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Grade IIB",
+    "Grade IB",
+    "Grade IIA",
+    "Grade IIIA"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-018",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-2"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "In this teaching scale, a record shows dominant theta with some delta and the background itself is slowed to about 5 Hz. Which grade and meaning of its letter fit?",
+   "explanation": "The dominant theta with some delta places the record in grade II, and a slowed background makes it the B subtype, since B is the worse background. Reversing the letters misreads the scale. Grade IB has no excess theta-delta, and grade III needs delta rather than theta as the dominant activity.",
+   "learningObjective": "Assign grade IIB and interpret the letter.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Grade IIA, where A marks the slower background",
+    "Grade IIB, where B marks the slower background",
+    "Grade IB, where B marks the dominant theta",
+    "Grade IIIB, where B marks the dominant delta"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-019",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-3"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "In this teaching scale, delta is the dominant activity and the background is normal or near normal. Which grade fits?",
+   "explanation": "Grade III is dominant delta, and the A subtype keeps a normal or near-normal background. The B subtype would have a slowed background. Grade IIA has dominant theta rather than delta, and grade IV has only minimal or no background, which does not match a preserved one.",
+   "learningObjective": "Assign grade IIIA from a description.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Grade IIIA",
+    "Grade IIIB",
+    "Grade IIA",
+    "Grade IVA"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-020",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-3"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "In this teaching scale, a record shows dominant delta with a slowed background still clearly present. Which grade fits, and what does its letter indicate?",
+   "explanation": "Dominant delta puts the record in grade III, and the slowed background makes it the B subtype since B is the worse background. Grade IV is reserved for minimal or no background, and grade IIB has dominant theta instead of delta. Swapping the letters reverses the meaning of A and B.",
+   "learningObjective": "Assign grade IIIB and interpret the subtype letter.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Grade IIIA, with A marking the poorer background",
+    "Grade IVA, with A marking the larger delta",
+    "Grade IIB, with B marking the dominant theta",
+    "Grade IIIB, with B marking the poorer background"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-021",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-2"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "In this teaching scale, what separates grade IIA from grade IIB?",
+   "explanation": "Both subtypes have dominant theta with some delta; the letter reflects the background, with A the better and B the worse. Delta amplitude cutoffs belong to grade IV, and suppression time belongs to grade V, so neither distinguishes the grade II subtypes. The amount of delta does not define the letter.",
+   "learningObjective": "State what the A and B letters mean in grade II.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The delta content: more delta in IIA than in IIB",
+    "The delta amplitude: above 50 µV in IIA and below in IIB",
+    "The background: near normal in IIA and slowed in IIB",
+    "The suppression time: shorter in IIA than in IIB"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-022",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "ordering"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "Record P has a 5-Hz background with no excess theta or delta. Record Q has dominant theta with some delta and a near-normal background. In this teaching scale, which statement is correct?",
+   "explanation": "Record P is grade IB and record Q is grade IIA, and the grades ascend with severity, so Q is higher. A near-normal background belongs to the A subtype within a grade but does not outrank the grade number. Excess theta-delta is what moves a record from grade I to grade II, so they do not share a grade.",
+   "learningObjective": "Rank records by grade in this scale.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "P is the higher grade, since a 5-Hz background is slower than a near-normal one",
+    "Q is the higher grade, since dominant theta-delta ranks above background slowing alone",
+    "They share a grade, since both contain slow activity in the theta range",
+    "Q is the lower grade, since its background is near normal"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-023",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-4"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "Which description matches grade IVA in this teaching scale?",
+   "explanation": "Grade IV has delta with minimal or no background, and A is the larger-amplitude subtype at more than 50 µV; B is the smaller subtype below 50 µV. Bursts with suppression belong to grade V, and dominant delta with a present slowed background is grade IIIB.",
+   "learningObjective": "Recognize the grade IVA description.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Delta below 50 µV with minimal or no background",
+    "Bursts separated by suppression shorter than 5 s",
+    "Dominant delta with a slowed but present background",
+    "Delta above 50 µV with minimal or no background"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-024",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-4",
+    "amplitude",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "At a sensitivity of 7 µV/mm, the dominant delta in a record with minimal background measures 8 mm peak to peak. In this teaching scale, which grade fits?",
+   "explanation": "Amplitude is the sensitivity times the height, so 7 µV/mm times 8 mm is 56 µV, above 50 µV, and with minimal background that is grade IVA. Grade IVB would need delta below 50 µV, grade IIIB keeps a present slowed background, and grade V requires bursts with suppression, which was not described.",
+   "learningObjective": "Convert a measured height to microvolts and apply the grade IV cutoff.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Grade IVA",
+    "Grade IVB",
+    "Grade IIIB",
+    "Grade VA"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-025",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "amplitude",
+    "sensitivity",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Delta measuring 6 mm at 7 µV/mm is viewed again at 3 µV/mm for clarity, where it measures 14 mm. The reader will grade partly on amplitude. Which statement is correct?",
+   "explanation": "Amplitude is height times sensitivity: 6 times 7 is 42 µV, and 14 times 3 is also 42 µV. The wave looks taller only because a smaller number gives a more sensitive display. Multiplying 14 by 7 or 6 by 3 mixes the settings, and the grade should be based on microvolts, not millimeters.",
+   "learningObjective": "Show that amplitude in microvolts is independent of the display sensitivity.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The amplitude is about 98 µV, because the taller view shows the true amplitude",
+    "The amplitude is about 42 µV in both views, so the grade is not changed",
+    "The amplitude is about 18 µV, because the smaller sensitivity number reduces it",
+    "The amplitude changed from 42 µV to 98 µV, because the change shifted the grade"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-026",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "grading",
+    "grade-4"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A record has delta as the dominant activity, but no background rhythm can be identified. In this teaching scale, which grade family fits, and why?",
+   "explanation": "Grade IV is delta with minimal or no background, whereas grade III keeps a normal, near-normal or slowed background. Grade II has theta as the dominant activity. Grade V requires bursts alternating with suppression, which the description does not include.",
+   "learningObjective": "Distinguish grade IV from grade III.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Grade IV, because the background is minimal or absent instead of merely slowed",
+    "Grade IIIB, because delta dominance with a slowed background is grade III",
+    "Grade IIB, because slowing without a clear rhythm is grade II",
+    "Grade VA, because absent background means burst suppression"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-027",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "burst-suppression"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "Which description matches a burst-suppression pattern?",
+   "explanation": "Burst suppression alternates bursts of higher-voltage activity with periods of suppression. Continuous slowing at one rate lacks the alternation, rhythmic sharp runs on a normal background describe a different pattern, and steady low voltage without bursts would suggest near-inactivity instead.",
+   "learningObjective": "Describe the burst-suppression pattern.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Continuous slowing at a steady rate across all regions",
+    "Brief rhythmic runs of sharp waves on a normal background",
+    "Bursts of activity alternating with very low voltage periods",
+    "Persistent low voltage with no change over the recording"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-028",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "burst-suppression",
+    "grade-5",
+    "time-base",
+    "calculation",
+    "calc-core"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "On a 30 mm/s display, the suppressed intervals between bursts measure 240 mm. In this teaching scale, which grade fits?",
+   "explanation": "Duration is length divided by speed, so 240 mm divided by 30 mm/s is 8 s. In this scale, burst suppression with suppression longer than 5 s is grade VB, and shorter than 5 s is VA. Grade IV has no bursts alternating with suppression, and grade VI is near-inactivity.",
+   "learningObjective": "Convert a suppression length to seconds and apply the grade V cutoff.",
+   "questionType": "calculation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Grade VA",
+    "Grade IVB",
+    "Grade VIA",
+    "Grade VB"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-029",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "burst-suppression",
+    "terminology"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A reader's note describes a pattern in critical-care terminology, while the study guide uses the teaching-scale grade letters. How should the technologist describe the tracing?",
+   "explanation": "The grade scale is one published teaching scale, and other systems define burst suppression and related patterns differently. Using measurements such as durations and amplitudes keeps the description valid whichever system the reader uses. Assuming universal letters or converting between systems risks mislabelling.",
+   "learningObjective": "Recognize that grade letters belong to one scale.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Treat them as universal, so the letters mean the same in every system",
+    "Convert the reader's terms into grade letters and use those in the notes",
+    "Use whichever term is shorter to write, whatever system it belongs to",
+    "In measured terms: durations, amplitudes and frequencies"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-030",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "burst-suppression",
+    "medications",
+    "documentation"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "During a study in an ICU patient on a continuous pentobarbital infusion, the EEG shows burst suppression. Which entry is most appropriate for the technologist?",
+   "explanation": "Sedative infusions can produce burst suppression, so the reader needs the agent, rate and time of any change alongside the measured durations. The technologist describes rather than names a cause. Declaring electrocerebral inactivity is a medical decision, and leaving out medications removes information the reader needs.",
+   "learningObjective": "Document medications and measurements with burst suppression.",
+   "questionType": "documentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Record the drug, rate and time of any change, and the burst and suppression durations",
+    "Label the pattern as post-anoxic brain injury, since the pattern is typical of that cause",
+    "Record the pattern only, since drug and dose details are the nursing staff's responsibility",
+    "Call the suppression electrocerebral inactivity if it lasts longer than 5 s on the page"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-031",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "low-voltage",
+    "sensitivity",
+    "technique"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "A comatose patient's tracing looks nearly flat at 7 µV/mm. What should the technologist do first?",
+   "explanation": "A flat-looking record at 7 µV/mm may be low voltage rather than absent activity, so the sensitivity is raised and electrode impedances and connections are checked. Naming inactivity is a medical decision. A lower sensitivity shrinks everything further, and raising the HFF does not enlarge cerebral activity.",
+   "learningObjective": "Check technical factors before calling a record low voltage.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Write electrocerebral inactivity in the notes and stop the recording",
+    "Lower the sensitivity to 20 µV/mm so that the noise looks smaller",
+    "Raise the sensitivity to about 2 µV/mm and check impedances and connections",
+    "Raise the HFF to 300 Hz to bring out hidden low-voltage cerebral activity"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-032",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "low-voltage",
+    "ekg",
+    "technique"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "All EEG channels are nearly flat, and the EKG channel also shows no QRS complexes in a patient who clearly has a heartbeat. What is the best first step?",
+   "explanation": "An EKG channel that shows nothing in a patient with a heartbeat points to a recording problem affecting the whole system, so the headbox, reference and cables are checked. Cerebral failure would not erase the EKG. A slower time base does not create signal, and continuing unchanged records a fault.",
+   "learningObjective": "Use the EKG channel to separate a technical fault from a cerebral finding.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Declare electrocerebral inactivity, since the cerebral activity has stopped",
+    "Look for a technical fault, such as a headbox, reference or cable connection",
+    "Switch to a lower sensitivity so that the flat signal looks cleaner",
+    "Record the flat tracing as it is and continue without changes"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-033",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "low-voltage",
+    "scope"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "Who makes the decision that a record shows electrocerebral inactivity?",
+   "explanation": "Declaring electrocerebral inactivity is a medical decision, not a technologist's. The technologist checks electrodes, impedances, sensitivity and the EKG channel, follows the lab protocol and describes the tracing. Neither extra attempts by the technologist nor the nursing staff turns that into a technologist's call.",
+   "learningObjective": "State the limit of the technologist's role.",
+   "questionType": "documentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The reader who interprets the record, once the technical checks are complete",
+    "The technologist who recorded it, once the sensitivity is raised",
+    "The bedside nurse, once the electrodes are confirmed in place",
+    "The technologist, once a second recording has been taken"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-034",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "low-voltage",
+    "ekg",
+    "artifact"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "At high sensitivity in a near-flat record, small deflections repeat in all channels at the same rate as the QRS complexes on the EKG channel. How should this be handled?",
+   "explanation": "Regular deflections locked to the QRS in all channels are EKG artifact, not cerebral activity, so the description should say so and the reader decides what remains. Counting them as cerebral would overstate activity, and changing the HFF does not alter their origin. Calling inactivity is a medical decision.",
+   "learningObjective": "Recognize EKG artifact in a low-voltage record.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Count them as cerebral activity, since they appear in every channel at once and look rhythmic",
+    "Raise the HFF and the sensitivity so the deflections look more like brain waves",
+    "Treat them as EKG artifact and describe them, without counting them as cerebral activity",
+    "Call the record electrocerebral inactivity and stop the recording at once to save time"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-035",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "low-voltage",
+    "60hz",
+    "artifact",
+    "technique"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "After the sensitivity is raised to 2 µV/mm in a near-flat record, 60-Hz interference obscures the tracing. What is the best approach?",
+   "explanation": "At high sensitivity, 60-Hz pickup usually points to high impedance, a poor ground or reference, or nearby equipment, and fixing the cause comes before using a notch. A notch can hide the fault and cut real activity. Changing the LFF or HFF to 5 Hz would distort slow activity and does not address mains pickup.",
+   "learningObjective": "Fix the cause of interference before filtering.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Turn on the 60-Hz notch and leave it on without looking for any source of interference",
+    "Raise the LFF to 5 Hz so that the baseline and slow drifts look calmer on the screen",
+    "Lower the HFF to 15 Hz so that the interference disappears from the display",
+    "Find the source: re-prep high-impedance sites, check ground and reference, move equipment"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-036",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "documentation",
+    "state"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Which items belong with a recording from a patient with suspected diffuse slowing?",
+   "explanation": "State, medications and a score such as the GCS let the reader weigh the findings against the patient's condition. The technologist describes what was observed and does not name a cause, assign a final grade or give a prognosis. Age and montage alone leave out the clinical details that govern interpretation.",
+   "learningObjective": "List what the technologist records alongside the tracing.",
+   "questionType": "documentation",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The suspected cause, the grade assigned and the likely prognosis",
+    "State of arousal, current medications, and the GCS or comparable score",
+    "Only the patient's age and the montage used for the recording",
+    "The technologist's estimate of any drug dose from the look of the tracing"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-037",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "reactivity",
+    "documentation"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A patient with a slowed background is tested for reactivity. Which handling is appropriate?",
+   "explanation": "Reactivity testing follows the lab protocol, with each stimulus marked by time and type so the reader can relate any change to it. The technologist describes the response, including no response. Starting with the strongest stimulus, unmarked stimuli and labeling reactivity from movement alone all leave the reader without reliable information.",
+   "learningObjective": "Perform and document reactivity testing.",
+   "questionType": "documentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Use the strongest stimulus first, mark the end of the run, and write the result from memory later",
+    "Apply a single stimulus, skip the marks, and label the record reactive if the patient moved at all",
+    "Apply the stimuli listed in the protocol, mark the time and kind of each, and describe the response",
+    "Apply the stimuli listed in the protocol, but skip marks so that the tracing stays clean for the reader"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-038",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "documentation",
+    "scope",
+    "amplitude"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Which note about a stuporous patient's record fits the technologist's role?",
+   "explanation": "The technologist describes frequency, amplitude with the sensitivity, and the patient's state, leaving cause and grade to the reader. The other notes name an etiology, a final grade or a prognosis, which are interpretive conclusions outside the technologist's scope and could mislead the reader.",
+   "learningObjective": "Write a descriptive, in-scope note for a diffuse slowing record.",
+   "questionType": "documentation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Background mainly 5 Hz at about 50 µV at 7 µV/mm with intermixed 2-Hz delta, patient stuporous",
+    "Moderate metabolic encephalopathy from liver failure, grade IIB, background about 5 Hz, consistent with the history",
+    "Diffuse slowing consistent with sedative toxicity, grade IIIA, delta about 2 Hz, probably drug related",
+    "Severe encephalopathy of unknown cause with poor prognosis for recovery of function"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-039",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "documentation",
+    "change"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Mid-recording, a patient's theta background abruptly gives way to bursts alternating with very low voltage. What is the best response?",
+   "explanation": "An abrupt change needs prompt attention: the reader is told in line with lab rules, the time is noted, and the patient, sedation changes and equipment are checked to separate a real change from a technical one. Waiting loses time, an HFF change alters the display without explaining it, and logging the pattern later without telling the reader or checking the patient and equipment misses the point.",
+   "learningObjective": "Respond to a sudden background change.",
+   "questionType": "documentation",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Wait until the study ends and mention it to the reader only if the reader asks about it",
+    "Tell the reader promptly as the lab requires, note the time, and check patient and equipment",
+    "Raise the HFF so that the bursts are easier to see, then carry on recording as before",
+    "Write the pattern in the log after the study ends and continue recording as before"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-dif-040",
+   "domainId": "domain-3",
+   "sectionId": "d3-diffuse-slowing",
+   "topicTags": [
+    "diffuse-slowing",
+    "documentation",
+    "hff"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "During a recording with dominant delta and low-amplitude fast activity, the HFF is lowered from 70 Hz to 15 Hz to reduce muscle artifact, without a note. How can this change mislead the reader, and what should be done?",
+   "explanation": "A lower HFF attenuates fast activity, so beta or low-voltage fast activity can look smaller or absent, which affects how the background is judged. The change and its time must be written and the reader told. Slow activity is not what a lower HFF cuts, and filter settings of any kind belong in the notes.",
+   "learningObjective": "Document filter changes that affect fast-activity amplitude.",
+   "questionType": "documentation",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Slow activity is cut instead, so delta looks smaller and no note is needed",
+    "Nothing cerebral lies above 15 Hz, so no note is needed",
+    "Only the sensitivity changes amplitude, so filter changes need no note",
+    "Fast activity looks smaller or absent, so note the change and its time and tell the reader"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea diffuse-abnormalities set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  }
+ ]
+}

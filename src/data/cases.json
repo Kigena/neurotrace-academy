@@ -16705,6 +16705,1554 @@
           "to": "/montages-references?tab=mistakes"
         }
       ]
+    },
+    {
+      "id": "case-0103",
+      "title": "Reading the Background: Slow Rhythm or Extra Slow Waves",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-3"
+      ],
+      "tags": [
+        "diffuse-grades",
+        "diffuse-slowing",
+        "background",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_diffuse_slowing"
+      ],
+      "patient": {
+        "ageYears": 52,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Teaching review of four awake routine pages, each recorded from a different adult",
+      "history": {
+        "eventDescription": "Your lab runs a short teaching session on describing the background. You are shown four awake pages in turn, each from a different outpatient whose age is printed in the page header. Your job is to measure and describe with the caliper and ruler and to leave the interpretation to the reader.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake adult backgrounds with different posterior rhythm speeds and different amounts of theta and delta",
+        "pdrHz": "Varies by page",
+        "epileptiform": "None described",
+        "focalFindings": "None described",
+        "activation": "None",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Count the posterior rhythm with the caliper and report a number",
+        "Separate a slow background from extra slow waves on the page",
+        "State the usual association of each pattern without naming a cause"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 201,
+          "ageYears": 52,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 7.5,
+            "pdrUv": 45,
+            "beta": 3,
+            "theta": 2,
+            "delta": 1.5,
+            "noise": 3
+          },
+          "findings": [],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t2": {
+          "seed": 202,
+          "ageYears": 58,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 5,
+            "pdrUv": 40,
+            "beta": 2.5,
+            "theta": 2,
+            "delta": 1.5,
+            "noise": 3
+          },
+          "findings": [],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t3": {
+          "seed": 203,
+          "ageYears": 47,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 35,
+            "beta": 2.5,
+            "theta": 3,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 2,
+              "uv": 22,
+              "frontal": 0.3
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.8,
+              "bwHz": 1,
+              "uv": 12,
+              "frontal": 0.3
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t4": {
+          "seed": 206,
+          "ageYears": 70,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 5.5,
+            "pdrUv": 22,
+            "beta": 2,
+            "theta": 4,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.7,
+              "bwHz": 1,
+              "uv": 46,
+              "frontal": 0.4
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 2,
+              "uv": 14,
+              "frontal": 0.2
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Count the posterior rhythm",
+          "tracing": "t1",
+          "description": "The first page is an awake, eyes-closed stretch from a 52-year-old. The header reads LFF 1 Hz, HFF 70 Hz and 10 µV/mm. In T5-O1 and T6-O2 a regular rhythm runs through the whole page, about 8 mm tall, and the frontal channels carry low, fast activity only. Lay the time caliper across one second (one grid interval) in T5-O1 and count the waves.",
+          "question": "Which description of the posterior rhythm matches what you count on this page?",
+          "options": [
+            "About 5 Hz, a moderate slowing, with no extra theta or delta in the front",
+            "About 3 Hz, in the delta range, with slow waves dominating the whole page",
+            "About 7 Hz, just under 8 Hz, a mild slowing, with no extra theta or delta in the front",
+            "About 10 Hz, inside the usual adult range, so there is no slowing to describe"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Counting about seven waves in each one-second interval gives about 7 Hz (a wave about 140 ms long on the caliper). In the teaching scale this description, a slow background with no excess theta or delta, is the lowest step, Grade IA. About 10 Hz would need ten waves per second and would not be slowed. About 5 Hz would show only five waves per second and is the moderate-slowing description. Delta at 3 Hz would show three waves per second and large slow waves in the frontal channels, which this page does not have. You report the number you measured; the reader decides what it means."
+        },
+        {
+          "step": 2,
+          "type": "calculation",
+          "title": "Measure three waves",
+          "tracing": "t2",
+          "description": "A second page, from a 58-year-old, is recorded at 7 µV/mm with LFF 1 Hz and HFF 70 Hz. The posterior rhythm in T5-O1 and T6-O2 is clearly slower than on the first page, and the frontal channels stay low in amplitude, about 4 mm tall. Place the caliper across three consecutive waves in T5-O1 and read the time.",
+          "question": "Which reading do you get, and how does it compare with the first page?",
+          "options": [
+            "About 570 ms for three waves, near 5 Hz, slower than the first page",
+            "About 380 ms for three waves, near 8 Hz, the same rate as the first page",
+            "About 250 ms for three waves, near 12 Hz, faster than the first page",
+            "About 1.5 s for three waves, near 2 Hz, so delta has replaced the background"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Three waves of a 5 Hz rhythm last 3 x 190 ms = 570 ms, so the rate is 3 / 0.57 s = 5.3 Hz. That is slower than the first page, where three waves took about 380 ms (3 / 0.38 s = 8 Hz). 250 ms for three waves would be 12 Hz and a faster rhythm than either page. 1.5 s for three waves would be 2 Hz, delta, with big frontal slow waves, which this page does not show. In the teaching scale a moderate slowing of the background alone, with no extra theta or delta, is Grade IB."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Slow rhythm or extra waves?",
+          "tracing": "t3",
+          "description": "The third page, from a 47-year-old, is also recorded at 7 µV/mm. In the frontal and central channels irregular slow waves, some at about 5 to 6 per second and some at about 2 per second, are mixed into the tracing. In T5-O1 and P3-O1 a regular rhythm is still visible. Caliper the posterior rhythm over its clearest 2 seconds, then compare the front with the back.",
+          "question": "Which description fits this page?",
+          "options": [
+            "A posterior rhythm slowed to about 5 Hz, with no extra theta or delta anywhere",
+            "A posterior rhythm slowed to about 7 Hz, with no extra theta or delta anywhere",
+            "A near-normal posterior rhythm (about 9 to 10 Hz) with extra theta and some delta mixed in",
+            "A posterior rhythm near 12 Hz with excess beta in the front"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Counting nine to ten waves per second in T5-O1 and P3-O1 gives a rhythm of about 9 to 10 Hz, so the background itself is close to normal. What is new is the extra slow activity, theta with some delta, in the front. That is the second pattern in the teaching scale: slow waves added to a near-normal background. A rhythm of 5 Hz or 7 Hz would be a slow background, which is a different pattern and does not match the counts. Excess beta near 12 Hz in the front would show fast, low waves, not slow ones."
+        },
+        {
+          "step": 4,
+          "type": "pattern-recognition",
+          "title": "Usual association of the pattern",
+          "tracing": "t4",
+          "description": "The last page is from a 70-year-old, 7 µV/mm. Slow waves at about 1.7 Hz run through the frontal and central channels, often 10 to 12 mm tall, and behind them only slow activity of about 4 to 6 Hz remains; no 8 to 10 Hz rhythm appears in T5-O1 or T6-O2. The reader asks you how the pattern is usually described in the teaching scale. You may state an association but not a cause.",
+          "question": "Which statement should you make?",
+          "options": [
+            "Dominant delta with a slow background is usually linked to both cortex and white matter, not to a named cause",
+            "Delta dominates but the background is normal, so the usual association is cortical dysfunction alone",
+            "The background is slow and nothing else is added, so the usual association is white matter dysfunction alone",
+            "Dominant delta is the usual sign of one particular disease, and the technologist names it in the notes"
+          ],
+          "correctAnswer": 0,
+          "explanation": "In the teaching scale a slow background alone points to cortical dysfunction, extra theta or delta on a normal background points to white matter dysfunction, and both together point to cortex and white matter. This page has dominant delta and no 8 to 10 Hz rhythm, so both elements are present. The EEG is rarely specific for the cause, which is why the statement stops at the association. Calling the background normal is wrong for this page. Saying the background alone is slow ignores the large delta. Naming a disease is outside the technologist's scope and is not something the page can show."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Diffuse abnormalities: Grade explorer",
+          "to": "/diffuse-abnormalities?tab=grades"
+        },
+        {
+          "label": "Diffuse abnormalities: Finder",
+          "to": "/diffuse-abnormalities?tab=finder"
+        },
+        {
+          "label": "Domain III: Diffuse slowing",
+          "to": "/workflow/domain-3/d3-diffuse-slowing"
+        }
+      ]
+    },
+    {
+      "id": "case-0104",
+      "title": "Theta, Delta and the Background: Grades II and III",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3"
+      ],
+      "tags": [
+        "diffuse-grades",
+        "diffuse-slowing",
+        "background",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_diffuse_slowing"
+      ],
+      "patient": {
+        "ageYears": 47,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Teaching review of four awake pages with excess slow waves, each from a different adult",
+      "history": {
+        "eventDescription": "A senior technologist walks you through four awake pages that all show extra slow waves. Each comes from a different adult (age in the header). For every page you measure the posterior rhythm with the caliper and the slow waves with the caliper and ruler, and you say what separates each pair of pages. You do not name a cause or give the final grade.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Awake backgrounds with excess theta and delta on top of posterior rhythms of different speeds",
+        "pdrHz": "Varies by page",
+        "epileptiform": "None described",
+        "focalFindings": "None described",
+        "activation": "None",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Tell dominant theta from dominant delta using caliper readings",
+        "Separate a near-normal background from a slow one",
+        "Measure slow-wave height with the ruler at the page sensitivity"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 203,
+          "ageYears": 47,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 35,
+            "beta": 2.5,
+            "theta": 3,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 2,
+              "uv": 22,
+              "frontal": 0.3
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.8,
+              "bwHz": 1,
+              "uv": 12,
+              "frontal": 0.3
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t2": {
+          "seed": 204,
+          "ageYears": 64,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 5.5,
+            "pdrUv": 30,
+            "beta": 2,
+            "theta": 3,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 2,
+              "uv": 26,
+              "frontal": 0.3
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.8,
+              "bwHz": 1,
+              "uv": 8,
+              "frontal": 0.3
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t3": {
+          "seed": 205,
+          "ageYears": 55,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 28,
+            "beta": 2.5,
+            "theta": 3,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.8,
+              "bwHz": 1,
+              "uv": 42,
+              "frontal": 0.4
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t4": {
+          "seed": 206,
+          "ageYears": 70,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 5.5,
+            "pdrUv": 22,
+            "beta": 2,
+            "theta": 4,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.7,
+              "bwHz": 1,
+              "uv": 46,
+              "frontal": 0.4
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 2,
+              "uv": 14,
+              "frontal": 0.2
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Theta on a good background",
+          "tracing": "t1",
+          "description": "Page one is from a 47-year-old, awake, 7 µV/mm, LFF 1 Hz, HFF 70 Hz. In the frontal and central channels runs of waves at roughly 5 to 6 per second dominate, with slower waves at about 2 per second between them. Place the caliper over the posterior rhythm in T5-O1 and P3-O1 and count the waves in one second.",
+          "question": "Which description matches this page in the teaching scale?",
+          "options": [
+            "A slow background near 5 Hz with theta and some delta added, so the background is slow",
+            "Dominant delta with the near-normal rhythm still present behind it",
+            "A normal rhythm with no added theta or delta, so only the background is described",
+            "A near-normal rhythm near 9 to 10 Hz with dominant theta and some delta added in front"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Nine to ten waves per second behind the slow waves means the background is near normal. The extra activity is mostly theta (5 to 6 Hz) with some delta (about 2 Hz), so theta, not delta, dominates. That is the description of Grade IIA: dominant theta with some delta and a near-normal background. A background near 5 Hz would show five waves per second, which is the B subtype. The page is not free of extra slow waves, so the background-only description does not fit. Dominant delta would show large 1 to 2 Hz waves in every frontal channel, which is the next step up."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "What separates A from B?",
+          "tracing": "t2",
+          "description": "Page two is from a 64-year-old, awake, 7 µV/mm, same filters. The frontal and central channels again show waves at about 5 to 6 per second, most clearly in the frontal poles, with some slower ones, about as tall as on the first page (8 to 9 mm). Caliper the posterior rhythm in T5-O1 and T6-O2 and compare the back of the head with the first page.",
+          "question": "What separates this page from the previous one, and what stays the same?",
+          "options": [
+            "The page now shows only delta, with the theta gone from every channel",
+            "Dominant theta with some delta stays, but the posterior rhythm is now slow, near 5 to 6 Hz",
+            "The posterior rhythm has disappeared and nothing regular remains behind the front",
+            "Frontal slow waves are now about twice as tall as before, and that height separates A from B"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Both pages have dominant theta with some delta in front. The B subtype is defined by the background: here the posterior rhythm has dropped from 9 to 10 Hz to about 5 to 6 Hz, so this is the dominant-theta page with a slow background (Grade IIB in the teaching scale). Height is not the dividing line, and the frontal waves are about the same size on both pages (8 to 9 mm at 7 µV/mm). Theta is still plentiful here. A rhythm is still present behind the front, just a slow one, so nothing has disappeared."
+        },
+        {
+          "step": 3,
+          "type": "calculation",
+          "title": "Delta with a near-normal rhythm",
+          "tracing": "t3",
+          "description": "Page three is from a 55-year-old, awake, 7 µV/mm. In Fp1-F7 and Fz-Cz long slow waves dominate the frontal and central channels; behind them a faster rhythm persists in T5-O1 and P3-O1. Caliper one of the larger slow waves in Fp1-F7 from trough to trough and use the ruler to measure its height.",
+          "question": "Which pair of readings fits this page?",
+          "options": [
+            "About 1.1 s and 12 mm (0.9 Hz, about 84 µV), so the waves are slower than delta waves usually are",
+            "About 80 ms and 4 mm (12 Hz, about 28 µV), so the waves are fast activity",
+            "About 160 ms and 2 mm (6 Hz, about 14 µV), so the waves are theta",
+            "About 550 ms and 6 to 8 mm (1.8 Hz, about 40 to 55 µV), so the waves are delta"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A wave of 550 ms has a rate of 1 / 0.55 = 1.8 Hz, which is in the delta range (below 4 Hz). At 7 µV/mm a height of 6 to 8 mm is 6 x 7 = 42 µV to 8 x 7 = 56 µV. The faster rhythm that persists behind the slow waves is about 9 Hz, so the background is near normal: the description of Grade IIIA. 160 ms is a 6 Hz theta wave and 14 µV is far too small for these waves. 1.1 s would be a very slow wave under 1 Hz and 12 mm is too tall. 80 ms at 12 Hz is alpha or faster activity, not the dominant frontal wave."
+        },
+        {
+          "step": 4,
+          "type": "pattern-recognition",
+          "title": "Delta with a slow background",
+          "tracing": "t4",
+          "description": "Page four is from a 70-year-old, awake, also at 7 µV/mm. Slow waves at about 1.7 Hz again dominate the frontal and central channels, now reaching 10 to 12 mm in Fz-Cz and F3-C3. In T5-O1 and T6-O2 you find only slow activity of about 4 to 6 Hz. You compare it with the previous page.",
+          "question": "Which single reading separates this B page from the A page before it?",
+          "options": [
+            "The slow waves are about twice as tall as on the A page, and that height defines B",
+            "The delta waves are about 1 Hz faster than on the A page, near 3 Hz, which defines B",
+            "The 9 Hz rhythm of the A page is gone; only slow activity of about 4 to 6 Hz remains behind",
+            "The sensitivity setting differs on this page, which makes the slow waves look dominant"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The A or B letter is set by the background. On the A page a rhythm near 9 Hz persisted behind the delta; here only slow activity near 4 to 6 Hz remains, which is the dominant-delta page with a slow background, Grade IIIB in the teaching scale. The delta rate is about the same on both pages (1.7 to 1.8 Hz). The waves are somewhat taller, but height does not define A or B. Both pages are at 7 µV/mm, so the display setting did not change and cannot explain the difference."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Diffuse abnormalities: Grade explorer",
+          "to": "/diffuse-abnormalities?tab=grades"
+        },
+        {
+          "label": "Diffuse abnormalities: Finder",
+          "to": "/diffuse-abnormalities?tab=finder"
+        },
+        {
+          "label": "Domain III: Diffuse slowing",
+          "to": "/workflow/domain-3/d3-diffuse-slowing"
+        }
+      ]
+    },
+    {
+      "id": "case-0105",
+      "title": "Delta Without a Background: Amplitude Decides",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3"
+      ],
+      "tags": [
+        "diffuse-grades",
+        "diffuse-slowing",
+        "sensitivity",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_diffuse_slowing"
+      ],
+      "patient": {
+        "ageYears": 66,
+        "sex": "female",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Stuporous inpatient on the ward; routine EEG requested, plus a teaching comparison page from another patient",
+      "history": {
+        "eventDescription": "A stuporous 66-year-old is recorded at the bedside on the ward. The page shows continuous slow waves and no posterior rhythm. Your protocol asks you to measure amplitudes with the ruler (mm x sensitivity), keep the sensitivity the lab starts with, document every change and notify the reader. You do not name a cause or give a final grade.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "stupor"
+        ],
+        "background": "No posterior rhythm; continuous irregular delta of varying amplitude",
+        "pdrHz": "Absent",
+        "epileptiform": "None described",
+        "focalFindings": "None described",
+        "activation": "Not performed; patient stuporous",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Convert a ruler reading in mm to µV with the page sensitivity",
+        "Explain why the same record looks bigger or smaller at another setting",
+        "Write a log entry that records sensitivity changes and state"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 207,
+          "ageYears": 66,
+          "state": "stupor",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1.5,
+            "theta": 1.5,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.9,
+              "uv": 130,
+              "frontal": 0.4
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t2": {
+          "seed": 208,
+          "ageYears": 73,
+          "state": "stupor",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 2.5
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.9,
+              "uv": 28,
+              "frontal": 0.3
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t3": {
+          "seed": 208,
+          "ageYears": 73,
+          "state": "stupor",
+          "sensitivity": 20,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 2.5
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.9,
+              "uv": 28,
+              "frontal": 0.3
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t4": {
+          "seed": 207,
+          "ageYears": 66,
+          "state": "stupor",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1.5,
+            "theta": 1.5,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.9,
+              "uv": 130,
+              "frontal": 0.4
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "calculation",
+          "title": "From millimetres to microvolts",
+          "tracing": "t1",
+          "description": "The patient is stuporous, the header reads 66 y, stuporous, LFF 1 Hz, HFF 70 Hz and 10 µV/mm. There is no rhythm in T5-O1 or T6-O2, and slow waves at about 1.5 to 2 per second run through every channel. Drag the amplitude ruler over a typical larger slow wave in F3-C3: it measures 13 mm.",
+          "question": "What amplitude do you record for that wave?",
+          "options": [
+            "About 1.3 µV, from 13 mm divided by 10 µV/mm",
+            "About 91 µV, using the 7 µV/mm of an earlier page",
+            "About 13 µV, taking the millimetres as microvolts",
+            "About 130 µV, from 13 mm x 10 µV/mm"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Amplitude is height in millimetres multiplied by the sensitivity printed in the header: 13 mm x 10 µV/mm = 130 µV. Dividing by the sensitivity gives 1.3, which has no meaning in µV. Using the mm number directly ignores the setting. Taking 7 µV/mm from a different page gives 91 µV, a number that is wrong because it belongs to another recording. In the teaching scale delta above 50 µV with minimal or no background is the larger-amplitude description, Grade IVA. Your job is to report the 130 µV; the reader grades."
+        },
+        {
+          "step": 2,
+          "type": "calculation",
+          "title": "Smaller delta, other setting",
+          "tracing": "t2",
+          "description": "The comparison page is a stuporous 73-year-old at 7 µV/mm. Again there is no posterior rhythm, and slow waves at about 1.5 per second run through the channels. A typical larger slow wave in F3-C3 measures 4 mm with the ruler.",
+          "question": "Which reading and statement is correct for this page?",
+          "options": [
+            "About 0.6 µV, from 4 mm divided by 7 µV/mm, so the page is too flat to describe",
+            "About 28 µV, from 4 mm x 7 µV/mm, under 50 µV, matching the lower-amplitude description",
+            "No amplitude can be given until the sensitivity matches the first page",
+            "About 40 µV, from 4 mm x 10 µV/mm, under 50 µV, matching the lower-amplitude description"
+          ],
+          "correctAnswer": 1,
+          "explanation": "4 mm x 7 µV/mm = 28 µV, which is under 50 µV, so the page matches the lower-amplitude description (Grade IVB in the teaching scale). 40 µV reaches a similar conclusion, but it comes from the 10 µV/mm of the other page and would be an error in the log. Dividing by the sensitivity gives a meaningless 0.6 µV. Pages never need the same sensitivity to be measured: the ruler multiplies by whatever the header prints, so waiting is not needed."
+        },
+        {
+          "step": 3,
+          "type": "troubleshooting",
+          "title": "Same record, other setting",
+          "tracing": "t3",
+          "description": "You change the display to 20 µV/mm (less gain; the header now reads 20 µV/mm) on the same stuporous 73-year-old record to fit a cursor annotation. The slow waves you measured a moment ago at 4 mm now look like slight wobbles, the largest about 1.5 to 2 mm, and the page looks nearly flat. A colleague says the activity has dropped.",
+          "question": "What is true about this page?",
+          "options": [
+            "20 µV/mm shows the true amplitude, because larger numbers show less noise and fewer errors",
+            "Nothing has changed: waves measure 4 mm at every sensitivity setting",
+            "The same waves now measure about 1.4 mm; only the display changed, and amplitude is mm x the header sensitivity",
+            "The waves have shrunk to about 14 µV, so the amplitude has fallen since the last page"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The record is the same; only the display setting differs. The wave that was 4 mm at 7 µV/mm (28 µV) is 28 / 20 = 1.4 mm at 20 µV/mm. A larger number draws the same voltage smaller. Calling it 14 µV mixes up the mm reading with the voltage, and no number setting shows the true amplitude better than another. A fixed 4 mm at every setting is not possible, because height in mm changes inversely with the sensitivity. Whenever a page looks flat, read the header first, then measure."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "What goes in the log",
+          "tracing": "t4",
+          "description": "Back on the first patient, the reader asks for the same record at 7 µV/mm because the 10 µV/mm page leaves the waves small on screen. You change the sensitivity from 10 to 7 µV/mm and the larger slow waves now measure about 18 mm in F3-C3 and Fp1-F7. The patient remains stuporous on your protocol test, and the nursing sheet lists a sedating drug given earlier.",
+          "question": "Which entry belongs in the technologist's log?",
+          "options": [
+            "Slow-wave heights in mm only, since the reader converts them; drugs left to the nursing chart",
+            "Delta above 50 µV, so cortical damage; reader told the grade and the likely cause at once",
+            "Sensitivity is 7 µV/mm because the header prints it, so no entry is needed; delta described as large",
+            "Sensitivity changed from 10 to 7 µV/mm with the time; slow-wave heights in µV; stuporous; drug noted; reader told"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A log entry records what you changed (10 to 7 µV/mm, with the time), the measurements you took (18 mm x 7 µV/mm = 126 µV, about 130), the state tested per protocol and the medication on the sheet, then you notify the reader. The header prints the setting, but the change itself is still documented. Giving a grade and a cause is outside your scope. Reporting millimetres without the sensitivity makes the number meaningless, and the drug note helps the reader even if the nursing chart also holds it."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Diffuse abnormalities: Grade explorer",
+          "to": "/diffuse-abnormalities?tab=grades"
+        },
+        {
+          "label": "Diffuse abnormalities: Technologist role",
+          "to": "/diffuse-abnormalities?tab=role"
+        },
+        {
+          "label": "Diffuse abnormalities: Common mistakes",
+          "to": "/diffuse-abnormalities?tab=mistakes"
+        }
+      ]
+    },
+    {
+      "id": "case-0106",
+      "title": "Burst Suppression: Time the Quiet Stretch",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3"
+      ],
+      "tags": [
+        "diffuse-grades",
+        "diffuse-slowing",
+        "burst-suppression",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_burst_suppression"
+      ],
+      "patient": {
+        "ageYears": 61,
+        "sex": "male",
+        "context": "icu"
+      },
+      "chiefComplaint": "Semicomatose ICU patient on continuous medication; bedside EEG ordered",
+      "history": {
+        "eventDescription": "A 61-year-old in the ICU is semicomatose. Your bedside recording shows bursts of activity separated by quiet stretches. The lab protocol asks for caliper timing of the quiet stretches, graded reactivity testing with each stimulus marked on the page, a record of every drug and sedative with times, and notification of the reader. You do not name a cause or give the final grade.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "semicomatose"
+        ],
+        "background": "Bursts alternating with low-amplitude quiet stretches",
+        "pdrHz": "Absent",
+        "epileptiform": "Sharp transients inside the bursts, described only by timing",
+        "focalFindings": "None described",
+        "activation": "None; reactivity testing per protocol",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Caliper the quiet stretches and compare them with 5 s",
+        "Describe burst content and height with the ruler",
+        "Plan reactivity testing, drug notes and notification per protocol"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 209,
+          "ageYears": 61,
+          "state": "semicomatose",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 5
+          },
+          "findings": [
+            {
+              "type": "burst",
+              "uv": 160,
+              "runs": [
+                [
+                  0.4,
+                  1.4
+                ],
+                [
+                  3.7,
+                  4.8
+                ],
+                [
+                  7.2,
+                  8.3
+                ]
+              ],
+              "rampS": 0.1
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t2": {
+          "seed": 210,
+          "ageYears": 61,
+          "state": "semicomatose",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 5
+          },
+          "findings": [
+            {
+              "type": "burst",
+              "uv": 160,
+              "runs": [
+                [
+                  0.3,
+                  1.5
+                ],
+                [
+                  8.3,
+                  9.6
+                ]
+              ],
+              "rampS": 0.1
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t3": {
+          "seed": 209,
+          "ageYears": 61,
+          "state": "semicomatose",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 5
+          },
+          "findings": [
+            {
+              "type": "burst",
+              "uv": 160,
+              "runs": [
+                [
+                  0.4,
+                  1.4
+                ],
+                [
+                  3.7,
+                  4.8
+                ],
+                [
+                  7.2,
+                  8.3
+                ]
+              ],
+              "rampS": 0.1
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t4": {
+          "seed": 210,
+          "ageYears": 61,
+          "state": "semicomatose",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 5
+          },
+          "findings": [
+            {
+              "type": "burst",
+              "uv": 160,
+              "runs": [
+                [
+                  0.3,
+                  1.5
+                ],
+                [
+                  8.3,
+                  9.6
+                ]
+              ],
+              "rampS": 0.1
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "calculation",
+          "title": "First quiet stretch",
+          "tracing": "t1",
+          "description": "The header reads 61 y, semicomatose, LFF 1 Hz, HFF 70 Hz, 10 µV/mm. Three bursts of activity appear across all channels, about 13 to 17 mm tall, starting at about 0.4, 3.7 and 7.2 s. Between them the tracing is low, about 1 mm tall. Use the time caliper from the end of the first burst to the start of the second.",
+          "question": "How long is the quiet stretch, and how does it compare with 5 s?",
+          "options": [
+            "About 1.1 s, under 5 s, which matches the shorter-suppression description",
+            "About 3.7 s, under 5 s, which matches the shorter-suppression description",
+            "About 2 s, under 5 s, which matches the shorter-suppression description",
+            "About 6 s, over 5 s, which matches the longer-suppression description"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The first burst ends at about 1.5 s and the second starts at about 3.7 s, so the quiet stretch lasts about 3.7 - 1.5 = 2.2 s, under 5 s. The second quiet stretch (about 4.9 to 7.1 s) is also about 2 s. In the teaching scale suppression periods under 5 s match Grade VA. 1.1 s is the length of the burst itself, not of the quiet stretch. 3.7 s is the time at which the second burst starts, a clock time, not a duration. About 6 s would make the quiet stretch longer than the whole interval between bursts and is not what the caliper shows."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "A longer quiet stretch",
+          "tracing": "t2",
+          "description": "On a second page from the same patient later in the shift (same header: 10 µV/mm, semicomatose) only two bursts appear, at about 0.3 and 8.3 s. They look much like the bursts on the first page, with the same height. Use the caliper from the end of the first burst to the start of the second.",
+          "question": "Which statement matches this page?",
+          "options": [
+            "The quiet stretch is about 8.3 s, measured from the start of the page to the second burst",
+            "The quiet stretch is about 2 s, as before, but the bursts are taller",
+            "The quiet stretch is about 1.2 s, because the caliper should span the bursts, not the quiet",
+            "The quiet stretch is about 6.5 s, longer than 5 s"
+          ],
+          "correctAnswer": 3,
+          "explanation": "The first burst ends at about 1.6 s and the second begins at about 8.2 s: 8.2 - 1.6 = 6.6 s, longer than 5 s. Only the quiet stretch has changed, while the bursts keep the same height and content. In the teaching scale suppression periods over 5 s match Grade VB. The 2 s figure belongs to the first page. 8.3 s is a clock time, and it also includes the start of the page. The caliper measures the quiet between bursts, not the 1.2 s burst."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "What is inside a burst?",
+          "tracing": "t3",
+          "description": "Go back to the first page (10 µV/mm). Study the burst that starts at about 3.7 s in several channels, one chain at a time, and compare its height with the quiet stretch next to it. The reader wants a description made only of what you can see and measure.",
+          "question": "Which description of the bursts should you give?",
+          "options": [
+            "A slow build-up of delta over 2 s in one hemisphere, fading gradually into the quiet",
+            "A rhythmic 3 per second spike-and-wave train in the frontal channels only, with clean quiet in between",
+            "Mixed delta, theta and faster activity with sharp transients, abrupt on and off, in all channels",
+            "Low fast activity about 1 mm tall with no slow waves, broken by brief muscle artifact"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The bursts start and stop abruptly (within about 0.1 s) in every channel, contain a mix of slow waves, faster activity and sharp transients, and reach about 13 to 17 mm (130 to 170 µV at 10 µV/mm), against about 1 mm (10 µV) in the quiet stretch. The reader gets that description in numbers, with no cause attached. A 3 Hz spike-and-wave train in front only, a gradual build-up in one hemisphere and a flat low-amplitude page all describe patterns that are not on this page."
+        },
+        {
+          "step": 4,
+          "type": "safety-response",
+          "title": "Tests, medications, notification",
+          "tracing": "t4",
+          "description": "On the second page (quiet stretch about 6.5 s) the reader asks you to test reactivity. The patient is receiving sedating medication, and the nursing sheet lists doses and times. Your protocol lists the stimuli to use and the order to follow.",
+          "question": "Which plan fits the protocol?",
+          "options": [
+            "Start with the strongest stimulus on the list to be sure that a response is seen",
+            "Record drugs with times, give stimuli in protocol order, write responses, notify the reader",
+            "Record the grade and a cause, then skip stimulus testing since the pattern is obviously severe",
+            "Wait for the next medication list before writing about sedation and test reactivity only"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Protocols grade stimuli from least to most intense, mark each one on the page with its time and describe the response (or its absence), and record drugs and sedatives with times so the reader can weigh them. The reader is told about the pattern, the quiet stretch length and the test results. Skipping stimulation, jumping to the strongest stimulus, or delaying the sedation note all break the protocol. A grade and a cause are the reader's work, not the technologist's."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Diffuse abnormalities: Grade explorer",
+          "to": "/diffuse-abnormalities?tab=grades"
+        },
+        {
+          "label": "Diffuse abnormalities: Technologist role",
+          "to": "/diffuse-abnormalities?tab=role"
+        },
+        {
+          "label": "Diffuse abnormalities: Common mistakes",
+          "to": "/diffuse-abnormalities?tab=mistakes"
+        }
+      ]
+    },
+    {
+      "id": "case-0107",
+      "title": "Low Voltage or Nothing? Check the Settings First",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3"
+      ],
+      "tags": [
+        "diffuse-grades",
+        "diffuse-slowing",
+        "low-voltage",
+        "sensitivity",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 73,
+        "sex": "male",
+        "context": "icu"
+      },
+      "chiefComplaint": "ICU recordings that look nearly flat: a 73-year-old on two pages, then a 59-year-old on two pages; reader on call",
+      "history": {
+        "eventDescription": "You are recording in the ICU when a page looks almost flat. Your protocol says to check the display settings first, raise the gain (a smaller µV/mm number) as the protocol allows, check electrodes and cables, tell artifact from cerebral activity, document every change and notify the reader. You never call a record electrocerebral inactivity: that is a medical decision made under the protocol. The first two pages are from a 73-year-old; the last two are from a different 59-year-old.",
+        "lastEventTiming": "not applicable",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "stupor",
+          "semicomatose"
+        ],
+        "background": "Very low-amplitude slow activity on the first pages; a few microvolts on later pages",
+        "pdrHz": "Absent",
+        "epileptiform": "None described",
+        "focalFindings": "None described",
+        "activation": "None",
+        "artifacts": "EKG artifact on one chain on the last page"
+      },
+      "objectives": [
+        "Check the header sensitivity before judging a flat page",
+        "Compare the same record at two sensitivities",
+        "Separate EKG artifact from cerebral activity at 2 µV/mm"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 208,
+          "ageYears": 73,
+          "state": "stupor",
+          "sensitivity": 20,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 2.5
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.9,
+              "uv": 28,
+              "frontal": 0.3
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t2": {
+          "seed": 208,
+          "ageYears": 73,
+          "state": "stupor",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 2.5
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.9,
+              "uv": 28,
+              "frontal": 0.3
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t3": {
+          "seed": 211,
+          "ageYears": 59,
+          "state": "semicomatose",
+          "sensitivity": 2,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "heartRate": 82,
+          "ekgContamination": 4,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 1.2
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.8,
+              "bwHz": 1,
+              "uv": 5,
+              "frontal": 0.2
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t4": {
+          "seed": 212,
+          "ageYears": 59,
+          "state": "semicomatose",
+          "sensitivity": 2,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "heartRate": 82,
+          "ekgContamination": 10,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 0.6
+          },
+          "findings": [],
+          "montages": [
+            "longitudinal"
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "troubleshooting",
+          "title": "Nearly flat page",
+          "tracing": "t1",
+          "description": "The header of a stuporous 73-year-old reads LFF 1 Hz, HFF 70 Hz and 20 µV/mm. All channels look nearly flat: the largest wobbles are about 1.5 to 2 mm tall and nothing regular is visible. The nurse asks whether the brain is still active.",
+          "question": "What do you do first?",
+          "options": [
+            "Raise the HFF to 100 Hz so that more of the activity reaches the page, then note it",
+            "Read the header, raise the gain (a smaller µV/mm number, such as 7) and note the change",
+            "Re-prepare every electrode first, since flat channels always mean poor contact",
+            "Tell the reader the record shows no cerebral activity, since nothing exceeds 2 mm"
+          ],
+          "correctAnswer": 1,
+          "explanation": "At 20 µV/mm one millimetre is 20 µV, so a 2 mm wobble is only 40 µV and typical waves of 28 µV look like 1.4 mm. The cheapest and fastest check is the header: raise the gain (a smaller µV/mm number) as the protocol allows and document the change. Telling the reader there is no cerebral activity is a medical decision, not a conclusion from a display at the wrong setting. The HFF changes the fast end of the signal, not the height of slow activity. Re-preparing every electrode is a later check, and flat channels do not always mean poor contact."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Same record at 7 µV/mm",
+          "tracing": "t2",
+          "description": "You change the sensitivity to 7 µV/mm (the header now reads 7 µV/mm). Slow waves at about 1.5 per second are now clear in every channel, the larger ones about 4 mm tall in F3-C3, and some activity in the front looks faster. You compare it with the 20 µV/mm page.",
+          "question": "What does the comparison show?",
+          "options": [
+            "The extra height is noise that the 20 µV/mm setting had filtered out",
+            "The same record: 1.4 mm at 20 µV/mm is about 4 mm at 7 µV/mm, both about 28 µV",
+            "The activity has grown since the last page, so you should tell the reader the patient is recovering",
+            "A different recording, because taller waves mean you must label the pages as two separate studies"
+          ],
+          "correctAnswer": 1,
+          "explanation": "A wave of 28 µV measures 28 / 20 = 1.4 mm at 20 µV/mm and 28 / 7 = 4 mm at 7 µV/mm; the ratio of heights is 20 / 7, about 2.9. Nothing in the record changed, only the display. Stating that the patient is recovering confuses the display with the signal and is also interpretation. The sensitivity is a display gain, so it does not turn one record into two. The sensitivity does not filter anything, so the extra height is the same slow activity, drawn larger."
+        },
+        {
+          "step": 3,
+          "type": "troubleshooting",
+          "title": "A few microvolts left",
+          "tracing": "t3",
+          "description": "Another ICU patient, a 59-year-old, is recorded (header: 59 y, semicomatose, LFF 1 Hz, HFF 70 Hz, 2 µV/mm). The page shows low-amplitude slow waves in every channel, about 3 mm tall (about 6 µV), and the EKG channel at the bottom shows a steady 82 per minute. The reader on call asks for a check of the recording system before any decision.",
+          "question": "Which sequence do you follow?",
+          "options": [
+            "Report electrocerebral inactivity in your notes, since nothing taller than 4 mm remains at 2 µV/mm",
+            "Switch to 1 µV/mm without a note, since the header prints the sensitivity, and send the page on",
+            "Keep 2 µV/mm, check impedances and electrodes per protocol, describe the activity in µV, notify the reader",
+            "Replace the amplifier at once, since a record this small can only mean an equipment failure"
+          ],
+          "correctAnswer": 2,
+          "explanation": "A flat-looking record is first a technical question. At 2 µV/mm you keep the sensitivity the protocol names, check impedances and cables, test that the system responds (for example by a documented integrity or touch test per protocol), describe what is seen in numbers (about 6 µV of slow activity, 3 mm tall) and tell the reader. Calling the record electrocerebral inactivity is a medical decision under the protocol. Changing the sensitivity without a note breaks the documentation rule. Replacing the amplifier before any check assumes a fault without evidence."
+        },
+        {
+          "step": 4,
+          "type": "pattern-recognition",
+          "title": "Small deflections that repeat",
+          "tracing": "t4",
+          "description": "A final page (header: 59 y, semicomatose, 2 µV/mm) shows almost nothing in most channels, about 1 mm or less. In T5-O1 a small upward deflection about 1.5 mm tall repeats about every 0.7 s, with a smaller downward one, about 1 mm, in F7-T3. Use the caliper to compare their spacing with the R waves in the EKG channel. The reader asks what you would write about them.",
+          "question": "Which statement belongs in your notes?",
+          "options": [
+            "EKG artifact: the deflections repeat about every 0.7 s with the R waves in the EKG channel; documented and the reader notified",
+            "Electrode pop at T5 and T3; the technologist re-applies both at once and stops the recording",
+            "Low-voltage fast activity of cerebral origin in T5-O1 and F7-T3, so the technologist calls it a low-voltage record",
+            "Breathing artifact; the technologist lowers the LFF to 0.1 Hz to remove it and does not log the change"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The deflections occur at the heart-rate interval (60 / 82 = 0.73 s) and line up with the R waves in the EKG channel, so they are described as EKG artifact in the T5 and T3 channels. Cerebral activity does not follow the heartbeat, and a pop is a single abrupt jump, not a regular repeat. Changing the LFF to remove an artifact without a log entry breaks the rule that every setting change is documented. Describe it, document it and notify the reader; calling the record electrocerebral inactivity is not the technologist's decision."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Diffuse abnormalities: Grade explorer",
+          "to": "/diffuse-abnormalities?tab=grades"
+        },
+        {
+          "label": "Diffuse abnormalities: Technologist role",
+          "to": "/diffuse-abnormalities?tab=role"
+        },
+        {
+          "label": "Diffuse abnormalities: Common mistakes",
+          "to": "/diffuse-abnormalities?tab=mistakes"
+        }
+      ]
+    },
+    {
+      "id": "case-0108",
+      "title": "One Patient Over Three Days: Documenting Change",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-3"
+      ],
+      "tags": [
+        "diffuse-grades",
+        "diffuse-slowing",
+        "background",
+        "burst-suppression",
+        "tracing"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_burst_suppression"
+      ],
+      "patient": {
+        "ageYears": 66,
+        "sex": "female",
+        "context": "icu"
+      },
+      "chiefComplaint": "Repeated bedside EEGs on a 66-year-old whose alertness is falling",
+      "history": {
+        "eventDescription": "You record the same 66-year-old at the bedside on day 1, day 2, and the afternoon and night of day 3. Alertness is falling, and the ICU flow sheet gives the GCS and drug changes. For each page you compare it with the last one using numbers, record state and settings, document every change and tell the reader. You do not name a cause or give a final grade.",
+        "lastEventTiming": "ongoing",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "stupor",
+          "semicomatose"
+        ],
+        "background": "Worsening sequence: slow background with theta, then dominant delta, then delta without a background, then bursts with quiet stretches",
+        "pdrHz": "Slow, then absent",
+        "epileptiform": "Sharp transients inside the bursts on the last page",
+        "focalFindings": "None described",
+        "activation": "Reactivity testing per protocol",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Compare successive pages by background, slow waves and amplitude",
+        "Convert amplitudes with each page's header sensitivity",
+        "Record GCS, drug changes and times, and notify the reader"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 204,
+          "ageYears": 66,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 5.5,
+            "pdrUv": 30,
+            "beta": 2,
+            "theta": 3,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 2,
+              "uv": 26,
+              "frontal": 0.3
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.8,
+              "bwHz": 1,
+              "uv": 8,
+              "frontal": 0.3
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t2": {
+          "seed": 206,
+          "ageYears": 66,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 5.5,
+            "pdrUv": 22,
+            "beta": 2,
+            "theta": 4,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.7,
+              "bwHz": 1,
+              "uv": 46,
+              "frontal": 0.4
+            },
+            {
+              "type": "diffuseSlowing",
+              "hz": 5.5,
+              "bwHz": 2,
+              "uv": 14,
+              "frontal": 0.2
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t3": {
+          "seed": 207,
+          "ageYears": 66,
+          "state": "stupor",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1.5,
+            "theta": 1.5,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 1.5,
+              "bwHz": 0.9,
+              "uv": 130,
+              "frontal": 0.4
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        },
+        "t4": {
+          "seed": 209,
+          "ageYears": 66,
+          "state": "semicomatose",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "lff": 1,
+          "hff": 70,
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 5
+          },
+          "findings": [
+            {
+              "type": "burst",
+              "uv": 160,
+              "runs": [
+                [
+                  0.4,
+                  1.4
+                ],
+                [
+                  3.7,
+                  4.8
+                ],
+                [
+                  7.2,
+                  8.3
+                ]
+              ],
+              "rampS": 0.1
+            }
+          ],
+          "montages": [
+            "longitudinal"
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "report-writing",
+          "title": "Day 1 baseline",
+          "tracing": "t1",
+          "description": "On day 1 the patient has the eyes open and speaks clearly; the flow sheet lists GCS 15 (E4 V5 M6). The page is awake, 7 µV/mm, LFF 1 Hz, HFF 70 Hz. In T5-O1 and T6-O2 you count a rhythm of about 5 to 6 per second, and the frontal and central channels carry theta with some slower waves, about 6 to 8 mm tall.",
+          "question": "What should the day-1 entry hold as the baseline for later comparison?",
+          "options": [
+            "The label Grade IIB with no measurements, although the page shows about 5 to 6 Hz at 7 µV/mm",
+            "Only the header settings (7 µV/mm, LFF 1 Hz, HFF 70 Hz), since the reader will describe the waves from the page",
+            "A cause for the slowing, the posterior rhythm of about 5 to 6 Hz and the 7 µV/mm sensitivity, as a baseline",
+            "Posterior rhythm about 5 to 6 Hz by caliper, theta with some delta in front, awake, GCS 15, drugs, 7 µV/mm"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A baseline is useful only if it holds numbers that a later page can be compared with: the rhythm speed from the caliper, a description of the slow waves with heights and the sensitivity, the state and GCS, and the drugs. A cause is not something the technologist can state. Settings alone leave the reader with nothing to compare. A grade label with no numbers cannot be checked against the page. Describing the page this way matches the description of Grade IIB in the teaching scale, but you record the measurements."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Day 2",
+          "tracing": "t2",
+          "description": "On day 2 the flow sheet lists GCS 13 (E3 V4 M6) and a new evening drug with its time. The page is awake, 7 µV/mm, the same header as day 1. In the frontal and central channels slow waves of about 1.7 per second now dominate and reach about 9 to 12 mm, and in the back only slow activity of about 4 to 6 Hz can be counted.",
+          "question": "Which statement about day 2 is accurate?",
+          "options": [
+            "The slow waves are taller only because the sensitivity setting changed since day 1",
+            "Frontal waves are taller (9 to 12 mm, not 6 to 8) and delta leads; drug recorded; reader told",
+            "Nothing differs from day 1 apart from the GCS, so the day-1 entry is simply copied forward",
+            "The new drug explains the slow waves, so no notification is needed and the day-1 entry stands unchanged"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Both pages are at 7 µV/mm, so millimetres compare directly: the frontal slow waves have grown from 6 to 8 mm (42 to 56 µV) to 9 to 12 mm (63 to 84 µV), and delta now leads over theta. That is a change from day 1, so the reader is told, and the drug and its time are recorded as information for the reader. A technologist does not decide that a drug explains a change. The sensitivity did not change. Copying the day-1 entry forward would hide the difference."
+        },
+        {
+          "step": 3,
+          "type": "calculation",
+          "title": "Day 3 afternoon",
+          "tracing": "t3",
+          "description": "On the afternoon of day 3 the patient opens the eyes only to pain and says single inappropriate words; the flow sheet lists GCS 9 (E2 V3 M4), and you note stupor on your protocol test. The header now reads 10 µV/mm, not 7. No rhythm can be counted in T5-O1 or T6-O2, and slow waves at about 1.5 per second run through every channel; the larger waves in F3-C3 measure about 13 mm.",
+          "question": "Which statement about the change from day 2 is correct?",
+          "options": [
+            "Sensitivity is the same as on day 2, so the larger waves are a real increase and need no conversion",
+            "Sensitivity went from 7 to 10 µV/mm, so 13 mm is about 130 µV, and no rhythm remains",
+            "A higher sensitivity number magnifies the waves, so the new height is only a display effect",
+            "A rhythm has returned near 4 Hz, so the background is better than on day 2"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The header changed, so the mm must be converted: 13 mm x 10 µV/mm = 130 µV. The same voltage would look 10 / 7 = 1.4 times taller on day 2's setting, so these waves are clearly bigger than the day-2 waves (about 70 to 85 µV). A larger µV/mm number draws the same wave smaller, so the height is not just a display effect. No regular rhythm can be counted in the back, so the background has not recovered. Documenting the new setting and its time is part of the entry, and the reader is told about the loss of the background."
+        },
+        {
+          "step": 4,
+          "type": "safety-response",
+          "title": "Day 3 night",
+          "tracing": "t4",
+          "description": "At night the patient does not open the eyes to pain and the flow sheet lists GCS 6 (E1 V2 M3). A nursing note says a sedative dose was raised two hours ago. The page is at 10 µV/mm, header semicomatose: bursts about 1.1 s long, 13 to 17 mm tall, in every channel, separated by quiet stretches of about 2 s that are about 1 mm tall.",
+          "question": "What do you record and do?",
+          "options": [
+            "The drug change explains the bursts, so a routine entry is enough and the reader is told in the morning round",
+            "The patient has improved, since the bursts are taller than the day-3 delta and the quiet stretches are short ones",
+            "Bursts about 1.1 s long with quiet stretches of about 2 s now replace delta; GCS and drug change recorded; reader told now",
+            "The record is labelled burst suppression, drug-induced, so that the reader can skip a full review"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Compared with the afternoon, continuous delta has been replaced by bursts with quiet stretches of about 2 s (under 5 s, the shorter-suppression description in the teaching scale). You record the numbers, the GCS, the drug change and its time, and tell the reader at once because the pattern has changed. The reader weighs the drug; the technologist does not conclude it explains the pattern or delay a notification. Tall bursts do not mean improvement, and attaching a cause to the label is outside the technologist's role."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Diffuse abnormalities: Grade explorer",
+          "to": "/diffuse-abnormalities?tab=grades"
+        },
+        {
+          "label": "Diffuse abnormalities: Technologist role",
+          "to": "/diffuse-abnormalities?tab=role"
+        },
+        {
+          "label": "Diffuse abnormalities: Common mistakes",
+          "to": "/diffuse-abnormalities?tab=mistakes"
+        }
+      ]
     }
   ]
 }

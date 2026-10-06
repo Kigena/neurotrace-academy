@@ -23,6 +23,7 @@ const syndromes = [...read("src/data/syndromes_v2.json"), ...read("src/data/synd
 const validLinks = new Set(["/standards", "/workflow"]);
 for (const t of ["", "?tab=sensitivity", "?tab=timebase", "?tab=filters", "?tab=lab", "?tab=mistakes"]) validLinks.add(`/amplifier-controls${t}`);
 for (const t of ["", "?tab=referential", "?tab=contamination", "?tab=choosing", "?tab=bipolar", "?tab=lab", "?tab=mistakes"]) validLinks.add(`/montages-references${t}`);
+for (const t of ["", "?tab=grades", "?tab=finder", "?tab=role", "?tab=mistakes"]) validLinks.add(`/diffuse-abnormalities${t}`);
 for (const d of domainList) for (const s of d.sections || []) validLinks.add(`/workflow/${d.id}/${s.id}`);
 for (const p of patterns) validLinks.add(`/patterns/${p.id}`);
 for (const s of syndromes) validLinks.add(`/syndromes/${s.id}`);
