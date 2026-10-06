@@ -33,6 +33,9 @@ const CORE_NAMES = ELECTRODE_NAMES.filter((n) => !EYE_NAMES.includes(n));
 const LEFT = new Set(["Fp1", "F7", "F3", "T3", "C3", "T5", "P3", "O1", "A1", "IO1", "LOC"]);
 const RIGHT = new Set(["Fp2", "F8", "F4", "T4", "C4", "T6", "P4", "O2", "A2", "IO2", "ROC"]);
 
+const SCALP16 = ["Fp1", "F3", "C3", "P3", "O1", "F7", "T3", "T5", "Fp2", "F4", "C4", "P4", "O2", "F8", "T4", "T6"];
+const SCALP19 = [...SCALP16, "Fz", "Cz", "Pz"];
+
 export const MONTAGES = {
   longitudinal: {
     label: "Longitudinal bipolar (double banana)",
@@ -72,7 +75,48 @@ export const MONTAGES = {
       ["Fp2", "A2"], ["F4", "A2"], ["C4", "A2"], ["P4", "A2"], ["O2", "A2"], ["F8", "A2"], ["T4", "A2"], ["T6", "A2"],
     ],
   },
+  referentialA2: {
+    label: "Referential (all channels to A2)",
+    pairs: SCALP16.map((e) => [e, "A2"]),
+  },
+  referentialA1: {
+    label: "Referential (all channels to A1)",
+    pairs: SCALP16.map((e) => [e, "A1"]),
+  },
+  referentialCz: {
+    label: "Referential (Cz)",
+    pairs: SCALP16.map((e) => [e, "Cz"]),
+  },
+  linkedEars: {
+    label: "Referential (linked ears, A1+A2 average)",
+    pairs: SCALP16.map((e) => [e, ["A1", "A2"], `${e}-LE`]),
+  },
+  average: {
+    label: "Average reference",
+    build: (scene) => {
+      const exclude = scene.avgExclude ?? ["Fp1", "Fp2"];
+      const refs = SCALP19.filter((e) => !exclude.includes(e));
+      return SCALP16.map((e) => [e, refs, `${e}-AV`]);
+    },
+  },
+  laplacian: {
+    label: "Source (Laplacian) derivation",
+    build: () => SCALP19.map((e) => [e, nearestScalp(e, 4), `${e}-Lap`]),
+  },
 };
+
+function nearestScalp(name, k) {
+  const [x, y] = ELECTRODES[name];
+  return SCALP19.filter((o) => o !== name)
+    .map((o) => ({ o, d: (ELECTRODES[o][0] - x) ** 2 + (ELECTRODES[o][1] - y) ** 2 }))
+    .sort((a, b) => a.d - b.d)
+    .slice(0, k)
+    .map((r) => r.o);
+}
+
+function montagePairs(montage, scene) {
+  return montage.build ? montage.build(scene) : montage.pairs;
+}
 
 // ---------------------------------------------------------------- utilities
 
@@ -642,7 +686,10 @@ export function generateReferential(scene) {
       ekg[i] = -900 * v; // displayed with negative up: R points up
     }
     const contam = scene.ekgContamination ?? 4;
-    for (const [name, k] of [["A1", 1], ["T5", 0.35], ["T3", 0.25], ["A2", 0.4]]) {
+    const earSites = scene.ekgOppositeEars
+      ? [["A1", 1], ["T5", 0.35], ["T3", 0.25], ["A2", -1]]
+      : [["A1", 1], ["T5", 0.35], ["T3", 0.25], ["A2", 0.4]];
+    for (const [name, k] of earSites) {
       const ch = V[name];
       for (let i = 0; i < n; i++) ch[i] += (k * contam * ekg[i]) / 900;
     }
@@ -721,12 +768,18 @@ export function renderScene(scene, montageKey) {
       for (const t0 of at) if (t >= t0 && t < t0 + durS) cal[i] = -uv;
     }
   }
-  const channels = montage.pairs.map(([a, b]) => {
+  const channels = montagePairs(montage, scene).map(([a, b, label]) => {
+    // input 2 may be one electrode or the average of several (average, linked-ears and Laplacian references)
+    const refs = Array.isArray(b) ? b : [b];
     const raw = new Float64Array(ref.n);
-    for (let i = 0; i < ref.n; i++) raw[i] = ref.V[a][i] - ref.V[b][i] + (cal ? cal[i] : 0);
+    for (let i = 0; i < ref.n; i++) {
+      let m = 0;
+      for (const r of refs) m += ref.V[r][i];
+      raw[i] = ref.V[a][i] - m / refs.length + (cal ? cal[i] : 0);
+    }
     let y = lowpass(highpass(raw, lff), hff, lpOrder);
     if (scene.notch) y = notchFilter(y, scene.notchHz ?? 60);
-    return { label: `${a}-${b}`, inputs: [a, b], data: y.subarray(ref.preRoll) };
+    return { label: label || `${a}-${b}`, inputs: [a, ...refs], data: y.subarray(ref.preRoll) };
   });
   const ekg = scene.ekg === false ? null : lowpass(highpass(ref.ekg, lff), hff, lpOrder).subarray(ref.preRoll);
   return { channels, ekg, markers: ref.markers, seconds: scene.seconds ?? 10, fs: FS, montage: key, montageLabel: montage.label };
