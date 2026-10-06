@@ -151,6 +151,12 @@ function Sidebar({ isOpen, onClose }) {
               </svg>
               Amplifier &amp; Filters
             </NavLink>
+            <NavLink to="/montages-references" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h10M4 18h16" />
+              </svg>
+              Montages &amp; References
+            </NavLink>
           </div>
 
           <div className="mb-4">

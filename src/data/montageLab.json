@@ -1,0 +1,177 @@
+{
+  "earT3": {
+    "seed": 101,
+    "ageYears": 27,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "referential",
+    "montages": [
+      "referential",
+      "referentialA2",
+      "referentialA1",
+      "referentialCz",
+      "average",
+      "linkedEars",
+      "longitudinal"
+    ],
+    "background": {
+      "pdrHz": 10,
+      "pdrUv": 35,
+      "beta": 3,
+      "theta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "spike",
+        "center": "T3",
+        "sigma": 0.15,
+        "uv": 130,
+        "durMs": 55,
+        "at": [
+          2.0,
+          5.1,
+          8.2
+        ]
+      }
+    ]
+  },
+  "czSleep": {
+    "seed": 102,
+    "ageYears": 33,
+    "state": "n2",
+    "sensitivity": 10,
+    "montage": "referential",
+    "montages": [
+      "referential",
+      "referentialCz",
+      "average",
+      "longitudinal"
+    ],
+    "findings": [
+      {
+        "type": "vertex",
+        "at": [
+          2.4,
+          6.6
+        ],
+        "uv": 110
+      },
+      {
+        "type": "spindle",
+        "at": [
+          4.0,
+          8.0
+        ],
+        "uv": 40
+      }
+    ]
+  },
+  "ekgEars": {
+    "seed": 103,
+    "ageYears": 58,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "referential",
+    "heartRate": 78,
+    "montages": [
+      "referential",
+      "linkedEars",
+      "longitudinal"
+    ],
+    "ekgOppositeEars": true,
+    "ekgContamination": 30,
+    "background": {
+      "pdrHz": 9.5,
+      "pdrUv": 25,
+      "beta": 3,
+      "theta": 2,
+      "noise": 3
+    },
+    "findings": []
+  },
+  "avgF4": {
+    "seed": 104,
+    "ageYears": 19,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "average",
+    "montages": [
+      "average",
+      "referential",
+      "referentialCz",
+      "laplacian",
+      "longitudinal"
+    ],
+    "background": {
+      "pdrHz": 10,
+      "pdrUv": 30,
+      "beta": 3,
+      "theta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "spike",
+        "center": "F4",
+        "sigma": 0.17,
+        "uv": 120,
+        "durMs": 55,
+        "at": [
+          3.2,
+          6.4
+        ]
+      },
+      {
+        "type": "blink",
+        "at": [
+          1.2,
+          8.3
+        ],
+        "uv": 700
+      }
+    ]
+  },
+  "butterfly": {
+    "seed": 107,
+    "ageYears": 12,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "transverse",
+    "montages": [
+      "transverse",
+      "longitudinal"
+    ],
+    "background": {
+      "pdrHz": 9,
+      "pdrUv": 40,
+      "beta": 3,
+      "theta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "spike",
+        "center": "T3",
+        "sigma": 0.28,
+        "uv": 150,
+        "durMs": 55,
+        "at": [
+          3.0,
+          6.5
+        ]
+      },
+      {
+        "type": "spike",
+        "center": "T4",
+        "sigma": 0.28,
+        "uv": 150,
+        "durMs": 55,
+        "at": [
+          3.0,
+          6.5
+        ]
+      }
+    ]
+  }
+}

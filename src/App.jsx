@@ -15,6 +15,7 @@ import ShareCase from "./pages/cases/ShareCase.jsx";
 import EditCase from "./pages/cases/EditCase.jsx";
 import Workflow from "./pages/Workflow.jsx";
 import AmplifierFilters from "./pages/AmplifierFilters.jsx";
+import MontageReferences from "./pages/MontageReferences.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
@@ -221,6 +222,12 @@ function AppContent() {
             <Route path="/amplifier-controls" element={
               <ProtectedRoute>
                 <AmplifierFilters />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/montages-references" element={
+              <ProtectedRoute>
+                <MontageReferences />
               </ProtectedRoute>
             } />
           </Routes>
