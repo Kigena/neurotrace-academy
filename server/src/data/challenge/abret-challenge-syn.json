@@ -1,0 +1,1134 @@
+{
+ "version": "1.0.0",
+ "generatedAt": "2026-10-06",
+ "bank": "challenge",
+ "focus": "eeg-syndromes",
+ "description": "ABRET Challenge Bank round 6: EEG syndromes by age and encephalopathy patterns (Ohtahara-type, West, Dravet, absence, rolandic, occipital, Lennox-Gastaut, ESES, juvenile myoclonic, temporal and frontal lobe epilepsy, periodic patterns, alpha coma, drug beta) with technologist documentation scope. Text only; not yet medically verified.",
+ "totalQuestions": 40,
+ "questions": [
+  {
+   "id": "ch-syn-001",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "ohtahara",
+    "burst-suppression"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A neonate has clusters of tonic spasms. The record shows high-amplitude bursts mixed with spikes that alternate with nearly flat suppression in both waking and sleep. Which syndrome is this record typical of?",
+   "explanation": "Burst suppression that persists in both waking and sleep in a neonate with tonic spasms is typical of the Ohtahara-type early infantile encephalopathy. West syndrome appears later, at about 3 to 12 months, with continuous chaotic activity rather than flat intervals. Childhood absence epilepsy and centrotemporal spikes belong to school-age children with a normal background.",
+   "learningObjective": "Recognize the Ohtahara-type burst-suppression record in a neonate.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Early infantile developmental and epileptic encephalopathy",
+    "West syndrome with continuous chaotic high-amplitude activity",
+    "Childhood absence epilepsy with regular generalized spike-and-wave",
+    "Self-limited epilepsy with centrotemporal spikes in sleep"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-002",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "ohtahara",
+    "burst-suppression",
+    "discontinuous"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A term neonate with tonic spasms shows high-amplitude bursts separated by suppression. Which feature distinguishes this Ohtahara-type pattern from the discontinuous tracing of ordinary neonatal quiet sleep?",
+   "explanation": "A tracing that stays burst-suppressed in waking as well as sleep, with high-amplitude bursts and nearly flat intervals, is the Ohtahara-type finding. Restricting a discontinuous pattern to quiet sleep describes the normal neonatal pattern. Continuous low-voltage activity between bursts is not suppression, and low-amplitude occipital sharp waves do not describe the pattern.",
+   "learningObjective": "Separate a persistent burst-suppression pattern from normal neonatal discontinuity.",
+   "questionType": "age-dependent",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The pattern is limited to quiet sleep and disappears when the neonate is awake",
+    "The pattern persists in waking and sleep, with nearly flat intervals between bursts",
+    "The intervals between bursts are filled with continuous low-voltage mixed activity",
+    "The bursts are brief low-amplitude sharp waves limited to the occipital regions"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-003",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "ohtahara",
+    "west",
+    "hypsarrhythmia",
+    "evolution"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A 2-week-old with tonic spasm clusters had burst suppression in waking and sleep. At 5 months the record shows chaotic high-amplitude asynchronous slow waves with multifocal spikes, and clusters of flexor jerks on waking. Which statement about the change is right?",
+   "explanation": "Early burst suppression can evolve into hypsarrhythmia in later infancy, and the chaotic high-amplitude record with spasm clusters at 5 months fits that picture. Burst suppression has flat intervals, which are absent here. A disorganized multifocal background is not normal at any age, and alpha coma is an unreactive alpha-range pattern in coma.",
+   "learningObjective": "Describe the evolution from burst suppression to hypsarrhythmia in infancy.",
+   "questionType": "age-dependent",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The tracing is still burst suppression, since the bursts merely look more disorganized at this later age",
+    "The tracing has normalized, since a disorganized multifocal background is expected in a 5-month-old",
+    "The tracing is now hypsarrhythmia, which burst suppression can evolve into at this age",
+    "The tracing shows alpha coma, since the amplitude is high and the activity is generalized across the head"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-004",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "west",
+    "hypsarrhythmia",
+    "spasms"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A 5-month-old has clusters of brief flexor jerks on waking. The record is chaotic, with high-amplitude asynchronous slow waves and multifocal spikes. Which syndrome fits best?",
+   "explanation": "Spasm clusters on waking in the first year with a hypsarrhythmic record fit West syndrome. Dravet syndrome presents with prolonged febrile clonic seizures, juvenile myoclonic epilepsy begins in the second decade with polyspike-wave on a normal background, and Lennox-Gastaut syndrome has slow spike-and-wave and a later age of onset.",
+   "learningObjective": "Match the hypsarrhythmia record and spasms to West syndrome.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Dravet syndrome with fever-related clonic seizures",
+    "Juvenile myoclonic epilepsy with morning jerks",
+    "Lennox-Gastaut syndrome with drop attacks",
+    "West syndrome with epileptic spasms"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-005",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "west",
+    "spasms",
+    "documentation"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "An infant has a cluster of spasms during the recording. What should the technologist do?",
+   "explanation": "Marking each spasm with a time and a short description lets the reader match the clinical event to the tracing. Stopping the study loses the very events being sought. Naming a syndrome is the reader's task, not the technologist's, and filter changes alter the record without helping to document the spasm.",
+   "learningObjective": "State how a technologist documents epileptic spasms.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Stop the recording until the infant is calm again",
+    "Write the syndrome name in the notes for the reader",
+    "Mark each spasm with the time and note how it looked",
+    "Lower the high-frequency filter to hide the muscle artifact"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-006",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "west",
+    "hypsarrhythmia",
+    "burst-suppression"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "Which feature separates hypsarrhythmia from burst suppression in a waking record?",
+   "explanation": "Hypsarrhythmia is chaotic, high-amplitude, asynchronous slow activity with multifocal spikes and no suppressed intervals when awake. Burst suppression alternates bursts with nearly flat stretches. Hypsarrhythmia is generalized and multifocal rather than occipital, is present in wakefulness, and is not regular 3 Hz spike-and-wave.",
+   "learningObjective": "Distinguish hypsarrhythmia from burst suppression.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Hypsarrhythmia is restricted to the occipital regions and burst suppression is generalized",
+    "Hypsarrhythmia shows regular 3 Hz spike-and-wave and burst suppression is irregular",
+    "Hypsarrhythmia appears only in sleep and burst suppression appears only when awake",
+    "Hypsarrhythmia is continuous chaotic activity without the nearly flat intervals of suppression"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-007",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "west",
+    "spasms",
+    "electrodecrement",
+    "artifact"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "During a spasm cluster the tracing shows a generalized slow wave followed by a sudden flattening of the background, with muscle artifact on top. What should the technologist do and why?",
+   "explanation": "The flattening after a slow wave is the electrodecrement, and muscle artifact from the spasm can imitate it or cover it, so the reader needs times and a note of the artifact. Marking one spasm leaves the others unmatched. A lower filter distorts the record without removing the cause, and the reader depends on the technologist's notes.",
+   "learningObjective": "Document spasms and electrodecrement when muscle artifact overlies them.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Mark each spasm time and note the artifact, since muscle can mimic or hide the electrodecrement",
+    "Mark only the first spasm, since the flattening repeats in the same way throughout a cluster",
+    "Remove the muscle with a lower high-frequency filter, since that will make the flattening easier to read",
+    "Skip the notes, since the electrodecrement is judged only after the whole study is finished"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-008",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "west",
+    "sleep",
+    "hypsarrhythmia",
+    "protocol"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "An infant with suspected spasms is recorded awake for 20 minutes and the background looks borderline. Which plan is most useful?",
+   "explanation": "Hypsarrhythmia is often most evident in non-REM sleep, where it can become more bursty, and spasms often occur on falling asleep or waking, so a sleep record raises the information gained. Stopping early forfeits that. An infant cannot cooperate with hyperventilation, and photic stimulation is not the activation that reveals spasms.",
+   "learningObjective": "Plan a sleep recording in an infant with suspected spasms.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Stop the study now, since a longer recording cannot improve a borderline background",
+    "Continue into sleep, where hypsarrhythmia is often more evident, and mark any spasms",
+    "Add hyperventilation for the full protocol time, since it is the best activation at this age",
+    "Repeat intermittent photic stimulation at every frequency to provoke the spasms"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-009",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "dravet",
+    "photosensitive",
+    "age-dependent"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A first EEG in an infant later found to have Dravet syndrome can be normal. Which later finding fits Dravet syndrome best?",
+   "explanation": "Dravet syndrome often begins with a normal record, then develops generalized spike-and-wave and polyspike-wave, photosensitivity and a slowing background. Regular 3 Hz spike-and-wave on a normal background is childhood absence epilepsy, centrotemporal spikes are rolandic epilepsy, and fixation-off occipital spikes belong to early-onset occipital epilepsy.",
+   "learningObjective": "Recognize the evolving EEG of Dravet syndrome.",
+   "questionType": "age-dependent",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Persistent regular 3 Hz spike-and-wave bursts on an entirely normal background",
+    "Generalized spike-and-wave and polyspike-wave with photosensitivity and slowing of the background",
+    "Centrotemporal spikes with a horizontal dipole that increase in sleep in a school-age child",
+    "Occipital spikes that appear with eye closure and disappear when the eyes are open"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-010",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "dravet",
+    "photic",
+    "sleep",
+    "safety"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A 9-month-old with prolonged febrile seizures is referred for EEG with a request for photic stimulation. What is the best technologist plan?",
+   "explanation": "Photosensitivity is part of the later picture, so photic stimulation is done with the usual protocol and safety measures, sleep is recorded, and fever or events are noted. Keeping the infant awake loses sleep information. Photosensitivity is not excluded in infants, and an infant cannot cooperate with hyperventilation.",
+   "learningObjective": "Plan a safe recording for an infant with prolonged febrile seizures.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Record sleep, include photic stimulation with care, and write down any fever or clinical event",
+    "Keep the infant awake throughout, since sleep removes the ability to activate the record",
+    "Omit photic stimulation, since photosensitivity does not occur in infants of this age",
+    "Use hyperventilation for the full period, since infants can follow breathing instructions well"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-011",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "cae",
+    "absence",
+    "3hz"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A 7-year-old stares for about 10 seconds many times a day. The record shows bursts of regular generalized 3 Hz spike-and-wave on a normal background. Which syndrome is this typical of?",
+   "explanation": "Brief staring spells in a school-age child with bilateral synchronous 3 Hz spike-and-wave on a normal background are typical of childhood absence epilepsy. West syndrome occurs in infancy with hypsarrhythmia, Lennox-Gastaut syndrome has a slow background and slower spike-and-wave, and rolandic epilepsy shows focal centrotemporal spikes.",
+   "learningObjective": "Match 3 Hz spike-and-wave and staring spells to childhood absence epilepsy.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "West syndrome",
+    "Lennox-Gastaut syndrome",
+    "Self-limited epilepsy with centrotemporal spikes",
+    "Childhood absence epilepsy"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-012",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "cae",
+    "hyperventilation",
+    "activation"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Which activation procedure is most useful when absence seizures are suspected in a child who can cooperate?",
+   "explanation": "Hyperventilation is the strongest activator of 3 Hz spike-and-wave, so it is done for the full protocol time if the child can cooperate. A study limited to deep sleep after sleep deprivation targets other findings and tends to fragment generalized bursts. Slow flash rates and prolonged darkness are not the activators of choice for absences.",
+   "learningObjective": "Name the best activation procedure for suspected absence seizures.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "A recording limited to deep sleep after sleep deprivation",
+    "Intermittent photic stimulation at 1 to 3 flashes per second only",
+    "Hyperventilation for the full recommended duration",
+    "Twenty minutes of darkness with the eyes closed"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-013",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "cae",
+    "responsiveness",
+    "hyperventilation"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "During hyperventilation a 6-year-old stops counting and stares while a generalized 3 Hz burst begins. What should the technologist do?",
+   "explanation": "Testing responsiveness during the burst, with a word or phrase to repeat and later recall, shows impaired awareness and ties it to the tracing, and the time and response are recorded. Shaking the child is not a test and may add artifact. Waiting loses the response, and pausing the recorder loses the event.",
+   "learningObjective": "Describe responsiveness testing during a generalized spike-and-wave burst.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Shake the child to end the burst before any testing is attempted",
+    "Wait for the burst to end and note only the child's later description",
+    "Pause the recorder until the child resumes counting and start a new file",
+    "Test responsiveness, note the time and what was said, and mark the event"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-014",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "cae",
+    "lgs",
+    "slow-spike-wave",
+    "3hz"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 3,
+   "stem": "A child has generalized spike-and-wave at about 2 Hz on a slow background. How does this differ from the typical absence pattern, and which syndrome fits better?",
+   "explanation": "Typical absence bursts run at 2.5 to 4 Hz on a normal background, while slow spike-and-wave below 2.5 Hz on a slow background fits Lennox-Gastaut syndrome. The rate of 2 Hz is outside the absence range, is not faster than 4 Hz, and a time base choice does not change the true frequency, so the patterns can be told apart.",
+   "learningObjective": "Differentiate 3 Hz from slow spike-and-wave.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The rate lies within the 2.5 to 4 Hz absence range, so childhood absence epilepsy fits better",
+    "The rate is faster than 4 Hz on a normal background, so juvenile myoclonic epilepsy fits better",
+    "The rate is slower than 2.5 Hz on a slow background, which fits Lennox-Gastaut better than absence epilepsy",
+    "The rate differs only because of the time base chosen, so the two patterns cannot be told apart by eye"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-015",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "rolandic",
+    "centrotemporal",
+    "age-dependent"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "An 8-year-old has hemifacial twitching and drooling on waking. The record shows a normal background and high-amplitude biphasic spikes at C4 and T4 that increase in sleep. Which syndrome fits best?",
+   "explanation": "Nocturnal or waking hemifacial seizures at school age with a normal background and centrotemporal spikes activated by sleep fit rolandic epilepsy. Early-onset occipital epilepsy has occipital spikes and autonomic seizures, Lennox-Gastaut syndrome has a slow background, and juvenile myoclonic epilepsy shows generalized polyspike-wave.",
+   "learningObjective": "Match clinical and EEG features to rolandic epilepsy.",
+   "questionType": "age-dependent",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Self-limited epilepsy with autonomic seizures",
+    "Self-limited epilepsy with centrotemporal spikes",
+    "Lennox-Gastaut syndrome with drop attacks and slow spike-wave",
+    "Juvenile myoclonic epilepsy with morning jerks"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-016",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "rolandic",
+    "montage",
+    "dipole"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "montage",
+   "reasoningSteps": 2,
+   "stem": "Spikes in a child are negative at C4 and T4 and positive frontally. Which recording plan best shows this horizontal dipole?",
+   "explanation": "A horizontal dipole is shown by referential and transverse montages, and sleep activates the spikes. A longitudinal chain alone separates the central negative and frontal positive poles less clearly, a Cz reference is contaminated by the nearby discharge, and staying awake loses the activation. A less sensitive setting shrinks the waves rather than showing the dipole.",
+   "learningObjective": "Choose montages and state to show a horizontal dipole.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Use referential and transverse montages, and record sleep",
+    "Use only a longitudinal chain, since frontal positivity then appears clearly",
+    "Use a single Cz reference throughout, and keep the child awake",
+    "Use a low sensitivity setting, since the dipole needs reduced amplitude"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-017",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "rolandic",
+    "side-shift",
+    "documentation"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "A child referred for suspected rolandic epilepsy has spikes at C3 in the first half of a sleep record that appear at C4 in the second half. Which interpretation should guide the technologist?",
+   "explanation": "Rolandic spikes can shift sides and may be bilateral, so the technologist describes both sides with their times and leaves interpretation to the reader. An electrode swap would change every channel rather than one region's spikes, and naming foci is interpretation. Discarding the study is unwarranted.",
+   "learningObjective": "Describe shifting centrotemporal spikes without over-interpreting.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "An electrode swap occurred, so the montage must be corrected and the record restarted from the beginning",
+    "Centrotemporal spikes can shift sides and be bilateral, so both sides are described with times",
+    "Two unrelated foci are present, so each must be named separately in the notes",
+    "The amplifier channels changed, so the whole study must be discarded"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-018",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "occipital",
+    "panayiotopoulos",
+    "fixation-off"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A 4-year-old has vomiting, pallor and eye deviation during sleep. The record shows occipital spikes that appear with eye closure and disappear when the eyes are open. Which syndrome is typical?",
+   "explanation": "Autonomic seizures in early childhood with occipital spikes that vanish on eye opening are typical of self-limited epilepsy with autonomic seizures (Panayiotopoulos syndrome). Mesial temporal lobe epilepsy shows anterior temporal sharp waves, absence epilepsy shows generalized 3 Hz bursts, and West syndrome has spasms with hypsarrhythmia in infancy.",
+   "learningObjective": "Recognize fixation-off occipital spikes in early childhood.",
+   "questionType": "age-dependent",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Mesial temporal lobe epilepsy with automatisms",
+    "Childhood absence epilepsy with staring spells",
+    "West syndrome with clusters of flexor spasms",
+    "Self-limited epilepsy with autonomic seizures"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-019",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "occipital",
+    "eye-opening",
+    "activation"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Occipital spikes in a child are suspected to depend on fixation. Which recording plan best shows this?",
+   "explanation": "Alternating eyes-closed and eyes-open periods shows whether the spikes appear with eye closure and darkness and disappear with eye opening, and the effect is noted. Bright light with eyes open suppresses them throughout, the spikes are not limited to sleep, and fast flicker tests photosensitivity, not fixation dependence.",
+   "learningObjective": "Plan eye-state alternation to document fixation-off sensitivity.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Alternate eyes-closed and eyes-open periods, and note how eye opening affects the spikes",
+    "Keep the eyes open in bright light throughout the whole study without any breaks",
+    "Record only deep sleep, since the spikes need sleep to appear at all in this child",
+    "Apply photic stimulation at 15 flashes per second for the full length of the record"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-020",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "lgs",
+    "slow-spike-wave"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A 4-year-old with tonic and atonic drop attacks and cognitive impairment has a slow background and generalized spike-and-wave below 2.5 Hz. Which syndrome fits best?",
+   "explanation": "A slow background with slow generalized spike-and-wave and tonic or atonic seizures in early childhood fits Lennox-Gastaut syndrome. Childhood absence epilepsy has a normal background with 3 Hz bursts, and rolandic and occipital epilepsies have focal spikes with normal backgrounds and cognition.",
+   "learningObjective": "Match slow spike-and-wave and drop attacks to Lennox-Gastaut syndrome.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Childhood absence epilepsy",
+    "Self-limited epilepsy with centrotemporal spikes",
+    "Lennox-Gastaut syndrome",
+    "Self-limited epilepsy with autonomic seizures"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-021",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "lgs",
+    "pfa",
+    "sleep"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "In non-REM sleep a child stiffens while a generalized burst of about 10 Hz fast activity appears. What should the technologist do?",
+   "explanation": "Generalized paroxysmal fast activity in non-REM sleep can be the clinical tonic seizure, so the technologist marks the time and describes both the burst and the clinical change. Calling it artifact or alpha misreads it, waking the child interrupts the event, and stating a diagnosis is not the technologist's role.",
+   "learningObjective": "Document paroxysmal fast activity with a clinical correlate.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Discard the burst as muscle artifact, since 10 Hz is the alpha frequency in older children",
+    "Wake the child at once to stop the burst, then make a note of what was seen afterward",
+    "Mark the time and describe the burst and the stiffening, since the burst can be the seizure",
+    "State in the notes that a tonic seizure occurred, since the burst proves that diagnosis"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-022",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "lgs",
+    "sleep",
+    "waking",
+    "protocol"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "Which pair of findings, with the states in which they occur, fits Lennox-Gastaut syndrome and shows why both waking and sleep are recorded?",
+   "explanation": "Lennox-Gastaut syndrome shows slow spike-and-wave below 2.5 Hz in wakefulness and bursts of fast activity in non-REM sleep, so both states are needed. Regular 3 Hz bursts with a normal sleep record describe absence epilepsy, near-continuous sleep spike-wave describes ESES, and the infant pairing describes West syndrome and neonatal burst suppression.",
+   "learningObjective": "Name the waking and sleep findings of Lennox-Gastaut syndrome.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Slow spike-and-wave awake and paroxysmal fast activity in non-REM sleep",
+    "Regular 3 Hz spike-and-wave awake with a completely normal record in sleep",
+    "Centrotemporal spikes awake with near-continuous spike-wave in non-REM sleep",
+    "Hypsarrhythmia awake with burst suppression in sleep, as seen in infants"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-023",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "eses",
+    "landau-kleffner",
+    "sleep"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A 6-year-old loses language comprehension. The sleep record shows near-continuous generalized spike-and-wave at about 2 Hz in non-REM sleep, much less abundant when awake. Which syndrome is typical?",
+   "explanation": "Acquired language loss with near-continuous spike-wave in non-REM sleep fits epileptic encephalopathy with spike-wave activation in sleep (ESES/CSWS), whose language-regression form is Landau-Kleffner syndrome. Absence epilepsy has brief 3 Hz bursts, juvenile myoclonic epilepsy has polyspike-wave beginning in adolescence, and mesial temporal lobe epilepsy produces focal anterior temporal discharges.",
+   "learningObjective": "Recognize spike-wave activation in sleep with language regression.",
+   "questionType": "age-dependent",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Childhood absence epilepsy with bursts of 3 Hz spike-and-wave",
+    "Juvenile myoclonic epilepsy with generalized polyspike-wave",
+    "Mesial temporal lobe epilepsy with anterior temporal sharp waves",
+    "Epileptic encephalopathy with spike-wave activation in sleep (ESES/CSWS)"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-024",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "eses",
+    "sleep",
+    "documentation"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Why is a sleep recording essential in a child with regression, and what should the technologist document?",
+   "explanation": "The discharges take up most of non-REM sleep and are far less abundant awake, so an awake record can look nearly normal. The technologist records through sleep and describes how much of it is involved, leaving the measurement to the reader. Ending at sleep onset or trusting the awake record would miss the pattern.",
+   "learningObjective": "State why sleep recording is essential for spike-wave activation in sleep.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "The awake record shows the full burden of discharges, so sleep adds only recording time",
+    "Sleep brings out the spike-wave, so record through non-REM sleep and describe how much is involved",
+    "A normal awake record rules the syndrome out, so sleep is recorded only for patient comfort",
+    "Only the first minutes of sleep matter, so the record can end soon after sleep onset"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-025",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "jme",
+    "polyspike",
+    "age-dependent"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A 15-year-old has myoclonic jerks soon after waking. The record shows irregular generalized 4 to 6 Hz polyspike-wave bursts on a normal background. Which syndrome is typical?",
+   "explanation": "Morning myoclonic jerks in adolescence with generalized polyspike-wave on a normal background are typical of juvenile myoclonic epilepsy. Absence epilepsy has regular 3 Hz bursts at a younger age, Lennox-Gastaut syndrome has a slow background, and West syndrome belongs to infancy.",
+   "learningObjective": "Match morning jerks and polyspike-wave to juvenile myoclonic epilepsy.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Childhood absence epilepsy",
+    "Lennox-Gastaut syndrome",
+    "West syndrome",
+    "Juvenile myoclonic epilepsy"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-026",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "jme",
+    "sleep-deprivation",
+    "awakening"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "A 16-year-old with jerks soon after waking had a normal routine awake record. Which recording plan is most useful?",
+   "explanation": "Sleep deprivation and awakening activate the polyspike-wave bursts, so a sleep-deprived study that records the waking period and times each jerk is most informative. Repeating the same routine awake study changes nothing, hyperventilation alone omits the strongest triggers, and keeping the patient awake loses the awakening.",
+   "learningObjective": "Plan an activation recording for suspected juvenile myoclonic epilepsy.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "A second routine awake record at the same hour with no change in preparation",
+    "A sleep-deprived study that records the awakening and marks jerks with times",
+    "Hyperventilation alone for the full period, with no sleep recorded",
+    "An evening study with the patient kept awake throughout the session"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-027",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "jme",
+    "photic",
+    "safety",
+    "ppr"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "troubleshooting",
+   "reasoningSteps": 3,
+   "stem": "During photic stimulation at 15 flashes per second in a 17-year-old, a generalized polyspike-wave burst starts with a jerk. What should the technologist do?",
+   "explanation": "A photoparoxysmal discharge calls for stopping the stimulation at the first sign, marking the time and jerk, and continuing to record. Completing the train risks a seizure, raising the rate adds provocation, and switching off the recorder discards the evidence the reader needs.",
+   "learningObjective": "Respond to a photoparoxysmal response during photic stimulation.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Continue to the end of the train, since finishing it may stop the burst",
+    "Raise the rate to 30 flashes per second to see whether the response persists",
+    "Stop the stimulation at once, mark the time and jerk, and keep recording",
+    "Switch off the recorder so the event is not stored on the record"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-028",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "tle",
+    "temporal",
+    "f7"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A teenager has a rising epigastric sensation, then staring and lip-smacking. The record shows anterior temporal sharp waves at F7 that increase in drowsiness. Which syndrome fits best?",
+   "explanation": "A rising epigastric aura followed by staring and automatisms, with anterior temporal sharp waves maximal at F7 and increasing in drowsiness, fits mesial temporal lobe epilepsy. Frontal lobe epilepsy gives brief hypermotor seizures, occipital epilepsy gives autonomic seizures with occipital spikes, and absence epilepsy gives generalized 3 Hz bursts.",
+   "learningObjective": "Match aura, automatisms and F7 sharp waves to mesial temporal lobe epilepsy.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Mesial temporal lobe epilepsy",
+    "Frontal lobe epilepsy",
+    "Self-limited epilepsy with autonomic seizures",
+    "Childhood absence epilepsy"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-029",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "tle",
+    "ictal",
+    "responsiveness"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 3,
+   "stem": "During the study rhythmic 6 Hz activity appears at F7 and T3, grows in amplitude, slows and spreads while the patient stares. What is the best technologist response?",
+   "explanation": "Rhythmic theta that grows, slows and spreads while the patient stares may be a seizure, so the technologist tests responsiveness, describes behavior and marks the onset and spread, and the reader decides whether it is ictal. Raising sensitivity and hyperventilation add nothing, and drowsiness does not evolve in this way, so waiting loses the event.",
+   "learningObjective": "Document an ictal temporal rhythm with behavior and times.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Test responsiveness, describe behavior and mark the onset and spread times",
+    "Increase the sensitivity so that the growing rhythm can be seen more easily",
+    "Ask the patient to hyperventilate so that the rhythm stops",
+    "Interpret the rhythm as drowsiness and mark nothing until it ends"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-030",
+   "domainId": "domain-3",
+   "sectionId": "d3-eeg-syndromes-classification",
+   "topicTags": [
+    "fle",
+    "artifact",
+    "video"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "troubleshooting",
+   "reasoningSteps": 2,
+   "stem": "A patient with brief hypermotor seizures from sleep has an ictal tracing covered by muscle and movement artifact. What is the technologist's most useful contribution?",
+   "explanation": "Frontal seizures are often hidden by muscle and movement, so a precisely timed marker and video are what let the reader correlate the event. A lower filter distorts the record rather than recovering the rhythm, an absent rhythm under artifact does not show the event is not epileptic, and notes remain valuable.",
+   "learningObjective": "Document hidden frontal ictal events with video and times.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Apply a low high-frequency filter so the cortical rhythm can be read",
+    "Note that the event is not epileptic since no clear rhythm is seen",
+    "Record the event on video, mark its time precisely, and describe the behavior seen",
+    "Skip the notes because an unreadable record cannot be used"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-031",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "hsv",
+    "periodic",
+    "lateralized"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A confused febrile patient has periodic sharp complexes about every 1 to 2 seconds over one temporal region on focal slowing. Which pattern fits best?",
+   "explanation": "Stereotyped sharp complexes repeating every 1 to 2 seconds over one temporal region are a lateralized periodic pattern. Generalized symmetric complexes about once per second describe a different pattern, complexes at 4 to 10 seconds with jerks describe a third, and unreactive frontal alpha is the pattern seen in coma.",
+   "learningObjective": "Recognize lateralized periodic discharges.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Generalized periodic complexes about once per second on a slowed background",
+    "Lateralized periodic discharges, formerly called PLEDs",
+    "High-amplitude complexes every 4 to 10 seconds time-locked to jerks",
+    "Frontally predominant alpha activity that does not react to stimulation"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-032",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "hsv",
+    "periodic",
+    "documentation"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A lateralized periodic pattern every 1.5 seconds changes midway, with the interval lengthening and the amplitude falling. What should the technologist do?",
+   "explanation": "The technologist describes the interval and side, documents state and medications, and notifies the reader promptly when a pattern changes. Delay may matter in an acute illness, and naming a cause is outside technologist scope. Real periodic patterns vary in interval and amplitude, so changes are not a reason to discard them.",
+   "learningObjective": "Report a changing lateralized periodic pattern appropriately.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Wait and mention it in the closing note, since the reader reviews the whole study later on",
+    "Write the likely cause in the notes, so the reader can act on it sooner",
+    "Discard the segment as artifact, since periodic activity must be perfectly regular",
+    "Describe interval and side, record state and medications, and tell the reader of the change"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-033",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "cjd",
+    "periodic",
+    "generalized"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A patient with a rapidly progressive dementia has stereotyped generalized symmetric sharp complexes about once per second on a slowed background. Which pattern fits best?",
+   "explanation": "Stereotyped sharp complexes about once per second, generalized and symmetric, on a slowed background fit a generalized periodic pattern. A lateralized pattern stays on one side, complexes every 4 to 10 seconds with jerks describe another, and generalized beta is the drug pattern.",
+   "learningObjective": "Recognize generalized periodic complexes.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Lateralized periodic discharges confined to one temporal region",
+    "Complexes every 4 to 10 seconds time-locked to myoclonic jerks",
+    "Generalized periodic discharges repeating at about 1 Hz",
+    "Excess generalized beta activity with a preserved posterior rhythm"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-034",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "cjd",
+    "sedation",
+    "infection-control"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 3,
+   "stem": "A patient with rapidly progressive dementia has generalized complexes about once per second that are less evident after a sedating drug was given before the study. What should the technologist do?",
+   "explanation": "Sedation can reduce the complexes, so medications and times are recorded together with stimulus responses, rate and distribution, and infection-control precautions apply. Sedation does not prove the pattern was absent, naming a disease is outside scope, and omitting stimulus testing loses reactivity information.",
+   "learningObjective": "Document a sedation-dependent periodic pattern.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Report that the complexes are gone for good, since sedation proves the pattern was not real at all",
+    "Record responses and drug times, describe rate and distribution, and follow infection-control precautions",
+    "Name the disease in the notes so that the reader knows why the pattern changed during the study",
+    "Delay the study until the drug has cleared from the body, and omit the stimulus testing altogether"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-035",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "sspe",
+    "periodic",
+    "myoclonus"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A 12-year-old with past measles and myoclonic jerks has high-amplitude generalized complexes every 4 to 10 seconds, time-locked to the jerks, on a slowed background. Which pattern fits best?",
+   "explanation": "Stereotyped generalized complexes recurring every 4 to 10 seconds with a myoclonic jerk in a young person fit the long-interval periodic pattern. Lateralized discharges repeat every 1 to 2 seconds on one side, the generalized once-per-second pattern has a much shorter interval, and drug beta is fast activity.",
+   "learningObjective": "Recognize long-interval periodic complexes with myoclonic jerks.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Long-interval generalized periodic complexes",
+    "Lateralized periodic discharges about every 1 to 2 seconds over one temporal region",
+    "Generalized periodic complexes about once per second on a slowed background",
+    "Drug-induced beta activity over the frontal regions of both hemispheres"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-036",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "sspe",
+    "time-base",
+    "documentation"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Complexes recur every 8 seconds in a child with myoclonic jerks. Which recording choice makes the long interval visible and documents the pattern?",
+   "explanation": "A long page or slower time base shows several widely spaced complexes together, and each jerk is marked so the reader can check the time-locking. A faster time base spreads the waves and shows fewer complexes per page. Filtering sharpens nothing useful here, and a montage choice does not display the interval.",
+   "learningObjective": "Choose a display that shows a long periodic interval.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Use a faster time base of 60 mm/s to enlarge each complex, and mark no jerks",
+    "Raise the high-frequency filter to sharpen the complexes, and limit pages to 10 seconds",
+    "Switch to a referential montage only, and mark the first jerk of the study",
+    "Use a longer page or slower time base so several complexes appear together, and mark each jerk with the time"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-037",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "alpha-coma",
+    "reactivity"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "Which feature separates alpha coma from a normal posterior alpha rhythm?",
+   "explanation": "Alpha coma is alpha-range activity that is generalized and frontally predominant and does not react, unlike the normal posterior rhythm that blocks with eye opening. A frontal alpha-range rhythm that blocks with eye opening is reactive and does not fit alpha coma, a posterior rhythm that blocks is normal, and a central rhythm that blocks with movement is mu.",
+   "learningObjective": "Distinguish alpha coma from normal alpha.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "It is generalized and frontally predominant, and it blocks briskly with eye opening",
+    "It is posterior and blocks briskly when the eyes are opened and closed",
+    "It is limited to the central regions and blocks with movement of the opposite side",
+    "It is generalized, frontally predominant and unreactive to stimulation"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-038",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "alpha-coma",
+    "reactivity",
+    "documentation"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 3,
+   "stem": "A comatose patient after cardiac arrest has generalized 10 Hz activity that is largest frontally. What should the technologist do?",
+   "explanation": "Reactivity testing with each protocol stimulus is central because normal alpha reacts and alpha coma does not, so the technologist records it along with distribution, frequency, medications and temperature. Ten Hz in a comatose patient is not normal, a diagnosis is outside scope, and changing sensitivity hides the activity.",
+   "learningObjective": "Document reactivity in a comatose patient with alpha-range activity.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Test and record reactivity to each stimulus, and describe distribution, frequency and medications",
+    "Report a normal alpha rhythm and skip the stimuli, since 10 Hz is a normal waking frequency",
+    "Write alpha coma as the diagnosis in the notes and omit stimulus testing to save time",
+    "Reduce the sensitivity to avoid the high amplitude, and skip the stimuli to avoid arousal"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-039",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "beta",
+    "drug",
+    "benzodiazepine"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A patient taking a benzodiazepine has excess generalized beta activity of about 18 Hz, largest frontally, on an otherwise normal record. Which pattern fits best?",
+   "explanation": "Excess generalized frontal beta in a patient taking a benzodiazepine or barbiturate is the drug-induced beta pattern. Alpha coma is unreactive alpha in coma, generalized periodic complexes are stereotyped sharp complexes, and a breach rhythm is a sharp mu-like fast rhythm over a skull defect.",
+   "learningObjective": "Recognize drug-induced beta activity.",
+   "questionType": "pattern-recognition",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Alpha coma",
+    "Drug-induced beta activity",
+    "Generalized periodic complexes",
+    "Breach rhythm"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-syn-040",
+   "domainId": "domain-3",
+   "sectionId": "d3-encephalopathy-differentials",
+   "topicTags": [
+    "beta",
+    "drug",
+    "documentation"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "Excess frontal beta is seen in a patient who has taken sedative medication. How should the technologist handle it?",
+   "explanation": "The technologist documents medication names, doses and times and describes the activity, leaving the interpretation to the reader. Writing the cause in the notes goes beyond scope, a low filter distorts the record, and stopping medication is not a technologist decision.",
+   "learningObjective": "Document medications with drug-related beta activity.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Note that it is a drug effect, since the reader will accept the statement as given",
+    "Apply a low high-frequency filter to remove the beta from the whole tracing",
+    "Record medication names, doses and times, and describe the beta without naming a cause",
+    "Ask the patient to stop the medication, and continue the study when the effect fades"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  }
+ ]
+}

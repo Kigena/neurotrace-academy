@@ -1,0 +1,849 @@
+{
+ "version": "1.0.0",
+ "generatedAt": "2026-10-06",
+ "bank": "challenge",
+ "focus": "neuroanatomy-pathophysiology",
+ "description": "ABRET Challenge Bank round 6: neuroanatomy, arterial territories, EEG generators, thalamocortical physiology and epileptogenesis. Text only; not yet medically verified.",
+ "totalQuestions": 30,
+ "questions": [
+  {
+   "id": "ch-nan-001",
+   "domainId": "domain-1",
+   "sectionId": "d1-neuroanatomy-eeg-localization",
+   "topicTags": [
+    "electrodes",
+    "lobes",
+    "occipital"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Which cortical region lies mainly beneath the O1 and O2 electrodes?",
+   "explanation": "O1 and O2 are placed over the occipital poles, so they sample the visual cortex that generates the posterior dominant rhythm. P3 and P4 sit over the parietal lobes, T3 and T4 over the temporal lobes, and C3 and C4 over the central sensorimotor cortex, so none of those regions lies mainly under the occipital pair.",
+   "learningObjective": "Name the lobe beneath the occipital electrodes.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The parietal lobe, which handles somatic sensation",
+    "The temporal lobe, which handles hearing and memory",
+    "The occipital lobe, home of the primary visual cortex",
+    "The central region, which holds the motor strip"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-002",
+   "domainId": "domain-1",
+   "sectionId": "d1-neuroanatomy-eeg-localization",
+   "topicTags": [
+    "electrodes",
+    "f7-f8",
+    "temporal"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Which pair of cortical regions do the F7 and F8 electrodes overlie?",
+   "explanation": "F7 and F8 sit low on the lateral frontal surface, over the inferior frontal gyrus and just in front of the anterior temporal lobe, which is why anterior temporal sharp waves peak there. Fp1 and Fp2 overlie the frontal poles, F3 and F4 the superior and middle frontal cortex, and T3 and T4 the mid-temporal region, not these locations.",
+   "learningObjective": "Relate F7 and F8 to the underlying inferior frontal and anterior temporal cortex.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The inferior frontal gyrus and the anterior temporal lobe",
+    "The frontal pole and the orbitofrontal cortex surface",
+    "The superior frontal gyrus and the premotor cortex area",
+    "The mid-temporal lobe and the angular gyrus region"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-003",
+   "domainId": "domain-1",
+   "sectionId": "d1-neuroanatomy-eeg-localization",
+   "topicTags": [
+    "electrodes",
+    "midline",
+    "10-20"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "montage",
+   "reasoningSteps": 1,
+   "stem": "Which set contains only midline electrodes of the 10-20 system?",
+   "explanation": "The midline row, labelled with z, runs Fpz, Fz, Cz, Pz and Oz and sits over the interhemispheric region between the hemispheres. Numbered electrodes such as C3, F3, P4, Fp1 and O2 sit on the left (odd) or right (even) side, so any set containing them is not purely midline.",
+   "learningObjective": "Identify midline electrodes by the z suffix.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Fz, C3 and Pz",
+    "F3, Cz and P4",
+    "Fp1, Cz and O2",
+    "Fz, Cz and Pz"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-004",
+   "domainId": "domain-1",
+   "sectionId": "d1-neuroanatomy-eeg-localization",
+   "topicTags": [
+    "electrodes",
+    "spread",
+    "temporal"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A burst of rhythmic theta is maximal at T3, then appears at F7 and C3 a few seconds later. Which cortical spread does this most likely describe?",
+   "explanation": "T3 lies over the left mid-temporal cortex, F7 over the neighbouring inferior frontal and anterior temporal region, and C3 over the left central cortex, so the spread follows adjacent left-sided cortex. Onset under the occipital lobe, the frontal poles or the vertex places the maximum under electrodes that did not show it first, and a jump to the right temporal lobe is not supported by this sequence.",
+   "learningObjective": "Trace onset and spread by electrode position over the underlying lobes.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Onset under the left occipital lobe, spreading to the parietal and temporal cortex",
+    "Onset under the left temporal lobe, spreading to inferior frontal and central cortex",
+    "Onset under the frontal poles, spreading to the occipital cortex",
+    "Onset under the vertex, spreading to the right temporal cortex"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-005",
+   "domainId": "domain-1",
+   "sectionId": "d1-brain-structures-functions",
+   "topicTags": [
+    "broca",
+    "aphasia",
+    "frontal"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A right-handed patient with a left inferior frontal gyrus infarct is most likely to show which speech deficit?",
+   "explanation": "Broca area in the dominant inferior frontal gyrus drives expressive speech, so a lesion gives non-fluent, effortful output while understanding stays fairly good. Fluent but meaningless speech with poor comprehension fits Wernicke area, neglect of one side fits the non-dominant parietal lobe, and a field defect fits the occipital pathway.",
+   "learningObjective": "Contrast expressive and receptive speech deficits.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Fluent speech full of wrong words with poor comprehension",
+    "Normal speech but failure to recognize the left side of the body",
+    "Halting, effortful speech with fairly preserved comprehension",
+    "Normal speech but loss of the right half of the visual field"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-006",
+   "domainId": "domain-1",
+   "sectionId": "d1-brain-structures-functions",
+   "topicTags": [
+    "wernicke",
+    "aphasia",
+    "temporal"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A patient speaks fluently with normal rhythm but substitutes wrong words and cannot follow spoken commands. Which site and EEG finding fit best?",
+   "explanation": "Fluent but empty speech with poor comprehension is receptive aphasia from Wernicke area in the dominant posterior superior temporal gyrus, where a destructive lesion produces focal polymorphic delta over the temporal electrodes. Broca area causes non-fluent speech, a right parietal lesion causes neglect, and an occipital lesion causes a field defect rather than aphasia.",
+   "learningObjective": "Link receptive aphasia to the dominant temporal region and its EEG change.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Left inferior frontal gyrus, with focal delta over the left frontal and frontopolar channels",
+    "Right parietal association cortex, with focal delta over the right parietal channels",
+    "Left occipital visual cortex, with loss of alpha over the left occipital channels",
+    "Left posterior superior temporal region, with focal delta over the left temporal channels"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-007",
+   "domainId": "domain-1",
+   "sectionId": "d1-brain-structures-functions",
+   "topicTags": [
+    "neglect",
+    "parietal",
+    "lateralization"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A right-handed patient ignores people and objects on the left, does not shave the left side of the face, and denies any problem. Which lesion site fits best?",
+   "explanation": "Hemispatial neglect of the left side typically follows a non-dominant right parietal lesion that disrupts spatial attention and awareness. A left parietal lesion tends to give calculation and finger-recognition problems, an occipital lesion gives a field cut without the denial and inattention to the body seen here, and a left inferior frontal lesion gives non-fluent speech.",
+   "learningObjective": "Associate neglect with non-dominant parietal lesions.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The right parietal lobe",
+    "The left parietal lobe",
+    "The right occipital lobe",
+    "The left inferior frontal gyrus"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-008",
+   "domainId": "domain-1",
+   "sectionId": "d1-brain-structures-functions",
+   "topicTags": [
+    "homunculus",
+    "motor",
+    "central"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "On the motor strip along the precentral gyrus, which body part is represented most medially, next to the midline?",
+   "explanation": "The motor homunculus places the leg and foot on the medial surface near the interhemispheric fissure, which is why leg motor activity is best seen at Cz. The hand lies over the lateral convexity and the face and tongue lie lowest and most lateral, near the sylvian fissure.",
+   "learningObjective": "Place body parts on the homunculus from medial to lateral.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "The face and lips",
+    "The leg and foot",
+    "The hand and fingers",
+    "The tongue and jaw"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-009",
+   "domainId": "domain-1",
+   "sectionId": "d1-brain-structures-functions",
+   "topicTags": [
+    "frontal-eye-field",
+    "gaze",
+    "seizure"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "An infarct destroys the right frontal eye field, and later a seizure starts from the same area. Which pattern of eye deviation is expected?",
+   "explanation": "Each frontal eye field turns the eyes to the opposite side. When it is destroyed, the intact left field wins and the eyes drift toward the lesion (right); when it discharges in a seizure it drives the eyes away from the focus (left). The other options either reverse both effects or treat destruction and irritation as the same.",
+   "learningObjective": "Distinguish gaze deviation from a destructive versus an irritative frontal eye field lesion.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Toward the left with the destructive lesion, toward the right during the seizure",
+    "Toward the right during both the lesion and the seizure",
+    "Toward the left during both the lesion and the seizure",
+    "Toward the right with the destructive lesion, toward the left during the seizure"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-010",
+   "domainId": "domain-1",
+   "sectionId": "d1-brain-structures-functions",
+   "topicTags": [
+    "gerstmann",
+    "parietal",
+    "dominant"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A right-handed adult cannot calculate, cannot write, confuses left and right, and cannot name individual fingers. Which region is the likely lesion, and over which electrodes would focal slowing be expected?",
+   "explanation": "This cluster of acalculia, agraphia, left-right confusion and finger agnosia is the Gerstmann syndrome, tied to the dominant (left) angular and supramarginal parietal cortex, which lies under P3 and nearby T5. Right-sided lesions bring neglect, a frontal lesion gives non-fluent speech, and calcarine damage gives a visual field defect.",
+   "learningObjective": "Localize a Gerstmann-type cluster to the dominant parietal region and its electrodes.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Left angular and supramarginal region, over P3 and T5",
+    "Right angular and supramarginal region, over P4 and T6",
+    "Left inferior frontal gyrus, over F7 and the frontal pole",
+    "Left calcarine cortex, over O1 and the occipital pole"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-011",
+   "domainId": "domain-1",
+   "sectionId": "d1-neuroanatomy-eeg-localization",
+   "topicTags": [
+    "aca",
+    "territory",
+    "parasagittal"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "A patient has leg weakness greater than arm weakness and marked loss of drive. Which arterial territory is involved, and where does focal EEG change appear?",
+   "explanation": "The anterior cerebral artery supplies the medial frontal and parietal cortex, including the leg area, so the deficit is leg-predominant with abulia, and slowing or attenuation lies over the parasagittal region. A middle cerebral lesion mainly weakens the face and arm, a posterior cerebral lesion produces a field defect, and a basilar lesion causes brainstem signs.",
+   "learningObjective": "Match leg-predominant weakness to the anterior cerebral territory.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Middle cerebral artery, over the lateral temporal and central channels",
+    "Anterior cerebral artery, over the parasagittal channels near Fz and Cz",
+    "Posterior cerebral artery, over the occipital channels and posterior alpha",
+    "Basilar artery, with generalized low-voltage activity and no focus"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-012",
+   "domainId": "domain-1",
+   "sectionId": "d1-neuroanatomy-eeg-localization",
+   "topicTags": [
+    "mca",
+    "infarct",
+    "focal-delta"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "On day 2 after a left middle cerebral artery infarct, which EEG finding is most expected?",
+   "explanation": "An acute lateral hemispheric infarct deafferents the overlying cortex, giving focal polymorphic delta over the central and temporal region with loss of mu and spindles and reduced fast activity on that side. Occipital delta fits a posterior lesion, generalized periodic complexes are a different diffuse disorder, and diffuse beta usually reflects sedative drugs.",
+   "learningObjective": "Predict the early EEG change of a middle cerebral artery infarct.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Bilateral occipital delta with preserved central mu rhythm and alpha",
+    "Generalized periodic complexes repeating once per second on all channels",
+    "Left central-temporal polymorphic delta with loss of mu and fast activity",
+    "Diffuse excess beta activity with a normal reactive posterior rhythm"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-013",
+   "domainId": "domain-1",
+   "sectionId": "d1-neuroanatomy-eeg-localization",
+   "topicTags": [
+    "pca",
+    "hemianopia",
+    "occipital"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A patient has a left homonymous hemianopia and left-sided sensory loss. Which artery is involved, and which EEG finding fits?",
+   "explanation": "The posterior cerebral artery supplies the occipital lobe, mesial temporal lobe and thalamus, so a right-sided lesion causes a left hemianopia and left sensory loss (memory loss can be added when the mesial temporal lobe is involved), with right occipital delta and attenuated alpha. A left posterior lesion would affect the right visual field, and anterior or middle cerebral lesions do not explain a field cut with thalamic sensory loss.",
+   "learningObjective": "Link visual field loss to the contralateral posterior cerebral territory.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Right posterior cerebral artery, with right occipital delta and reduced alpha",
+    "Left posterior cerebral artery, with left occipital delta and reduced alpha",
+    "Right anterior cerebral artery, with right parasagittal delta",
+    "Left middle cerebral artery, with left central-temporal delta"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-014",
+   "domainId": "domain-1",
+   "sectionId": "d1-neuroanatomy-eeg-localization",
+   "topicTags": [
+    "watershed",
+    "border-zone",
+    "hypotension"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 1,
+   "stem": "After a long period of low blood pressure, a patient has weakness of the shoulders and thighs. Where does the injury lie?",
+   "explanation": "Border-zone (watershed) cortex lies between two arterial territories and is the first to lose flow when pressure falls, giving shoulder-and-thigh weakness and parasagittal slowing. An end territory of a single artery would need an occlusion of that vessel, and a pontine lesion would cause cranial nerve signs and arousal problems instead.",
+   "learningObjective": "Identify the watershed zone after hypoperfusion.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The medial cortex supplied only by the anterior cerebral artery",
+    "The occipital pole supplied only by the posterior cerebral artery",
+    "The pons supplied by the basilar artery",
+    "The cortex between the anterior and middle cerebral territories"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-015",
+   "domainId": "domain-1",
+   "sectionId": "d1-brain-structures-functions",
+   "topicTags": [
+    "locked-in",
+    "coma",
+    "brainstem"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 3,
+   "stem": "After basilar artery occlusion, one patient can only blink and move the eyes up and down, with a reactive alpha rhythm that blocks with eye opening. A second patient with brainstem injury is unresponsive, with frontal alpha that does not react to stimuli. What should the technologist do?",
+   "explanation": "A reactive, normal-looking background in a patient who communicates only by eye movements fits a pontine lesion with intact cortex (locked-in), whereas frontal alpha that does not react to stimulation in an unresponsive patient is the alpha coma pattern. The technologist documents reactivity and stimulus responses; naming a cause or a diagnosis belongs to the reader and the clinical team.",
+   "learningObjective": "Separate a locked-in from a comatose record by reactivity and keep to technologist scope.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "Report the first record as brain death and the second record as seizure activity for the physician to confirm",
+    "Report that both patients are in the same state because both have basilar artery disease and the same cause",
+    "Describe reactivity and stimulus responses in each record separately and leave the interpretation to the reader",
+    "Report the diagnosis and probable cause for each patient so the team can begin treatment promptly"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-016",
+   "domainId": "domain-1",
+   "sectionId": "d1-brain-structures-functions",
+   "topicTags": [
+    "reticular-activating-system",
+    "coma",
+    "brainstem"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "Why can a small bilateral lesion in the upper brainstem tegmentum cause coma while a large single hemispheric infarct usually does not?",
+   "explanation": "The ascending reticular activating system sits in the upper brainstem tegmentum and reaches both cortices through the thalamus, so a small bilateral lesion removes arousal everywhere, while one hemisphere can be lost and the other, still driven by the reticular system, keeps the patient awake. The other statements wrongly credit the brainstem with generating alpha, place consciousness in one hemisphere, or make it a memory store.",
+   "learningObjective": "Explain why brainstem tegmental lesions impair arousal.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The brainstem generates the cortical alpha rhythm directly, so any lesion there flattens the whole record",
+    "The reticular system reaches both hemispheres through the thalamus, so a small bilateral lesion removes arousal",
+    "Only the dominant hemisphere maintains consciousness, so the brainstem lesion must disconnect that side",
+    "A brainstem lesion cuts off the blood supply to both hemispheres, so both cortices infarct"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-017",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "generators",
+    "postsynaptic-potentials"
+   ],
+   "cognitiveLevel": 2,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "What does the scalp EEG mainly record?",
+   "explanation": "Scalp EEG reflects extracellular fields from summed excitatory and inhibitory postsynaptic potentials of many aligned pyramidal neurons. Action potentials are too brief and too poorly summed to reach the scalp, axonal currents cancel, and scalp muscle activity is artifact rather than the signal of interest.",
+   "learningObjective": "State what the EEG signal represents.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Summed postsynaptic potentials from synchronously active cortical neurons",
+    "Action potentials fired in sequence by many individual cortical neurons",
+    "Steady currents flowing along the long white-matter axons beneath cortex",
+    "Potentials generated directly by the scalp muscles and the skin glands"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-018",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "generators",
+    "pyramidal-cells",
+    "dipole"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Which property of pyramidal neurons in cortical layers III and V allows their potentials to sum into a field large enough to reach the scalp?",
+   "explanation": "Pyramidal cells are arranged in parallel columns with their apical dendrites perpendicular to the cortical surface, so their dipoles add instead of cancelling and give a field measurable on the scalp. Random orientations would cancel, action potentials are too brief to sum, and the cells lie in the cortex rather than in white matter.",
+   "learningObjective": "Explain dipole summation by aligned pyramidal cells.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "They fire action potentials at 100 Hz that add up as one continuous slow wave",
+    "They are packed in random orientations so that their fields reinforce each other",
+    "They line up side by side, apical dendrites perpendicular to the surface",
+    "They sit in the white matter directly beneath the skull and scalp surface"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-019",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "generators",
+    "synchrony",
+    "cortical-area"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Why might a small cortical spike focus fail to appear on the scalp?",
+   "explanation": "A scalp-visible potential requires synchronous activity over an area of cortex of several square centimetres; a smaller area produces a field too weak after attenuation by the skull and scalp. The other options misstate the signal source, the cells recorded, or treat the sensitivity setting as the cause.",
+   "learningObjective": "Recall the cortical area needed for a scalp-visible discharge.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Epileptic neurons produce no measurable field until they fire long action potentials",
+    "Scalp electrodes record only activity that arises in the underlying white matter",
+    "Spikes from small foci are filtered out by the 60 Hz notch filter in every recording",
+    "Several square centimetres of synchronous cortex are needed for a scalp field"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-020",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "dipole",
+    "tangential",
+    "rolandic"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "A centrotemporal spike is negative at C3 and T3 and positive at F3 and Fp1. Which description of the generator fits best?",
+   "explanation": "A negative field in one place and a positive field a short distance away is a horizontal dipole from cortex in the wall of a sulcus, the usual pattern for the rolandic focus. A radial dipole from a gyral crown gives one clear polarity under the electrode, a deep midline source would be symmetric, and muscle activity is a fast irregular artifact with no dipole map.",
+   "learningObjective": "Relate a negative-positive spike map to a tangential dipole.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "A radial dipole on a gyral crown giving a single negative field",
+    "A tangential dipole in a sulcal wall giving a horizontal field",
+    "A deep midline source that is equally positive on both sides",
+    "Muscle activity with a mixed polarity field"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-021",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "deep-focus",
+    "medial-frontal",
+    "sleep"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 3,
+   "stem": "A patient has stereotyped seizures from sleep and several normal routine EEGs. A medial frontal focus is suspected. Which explanation and technologist action fit best?",
+   "explanation": "Frontal cortex is largely medial, deep or inferior, so its discharges may be small, tangential or too far from the electrodes to appear, and the yield rises with sleep and with repeated or prolonged recording; the technologist marks clinical events with times and describes state. The remaining statements misstate the signal, the field size, or the value of recording.",
+   "learningObjective": "Explain why medial foci are missed and how recording improves yield.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "Medial or deep generators can be missed, so record sleep and describe events with times",
+    "The EEG records only action potentials, so repeat the same routine recording unchanged",
+    "The scalp field of a medial focus is too large, so lower the sensitivity for the next study",
+    "Frontal discharges cannot be recorded at the scalp, so no further recording is useful"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-022",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "thalamus",
+    "spindles",
+    "reticular-nucleus"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Sleep spindles of 12 to 14 Hz are produced by which mechanism?",
+   "explanation": "Spindles arise from interaction between the inhibitory thalamic reticular nucleus and thalamocortical relay cells, producing waxing and waning 12 to 14 Hz bursts that are relayed to the cortex. A cortex acting alone cannot explain them, no brainstem pacemaker produces a 13 Hz rhythm, and frontalis tension is artifact.",
+   "learningObjective": "Identify the thalamic origin of sleep spindles.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Direct firing of frontal pyramidal cells with no thalamic input at all",
+    "A brainstem pacemaker nucleus that discharges steadily at 13 Hz into cortex",
+    "Muscle tension in the forehead and scalp that appears during light sleep",
+    "Bursts in a loop between the thalamic reticular nucleus and relay neurons"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-023",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "absence",
+    "t-type-calcium",
+    "thalamocortical"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Which mechanism best explains the regular 3 Hz generalized spike-and-wave of an absence seizure?",
+   "explanation": "Absence discharges are generalized because the thalamocortical loop as a whole oscillates; low-threshold T-type calcium channels in thalamic neurons and GABA-B-mediated inhibition from the reticular nucleus set the rhythm of about 3 Hz. A single temporal focus would give focal discharges, white-matter loss produces delta, and brainstem arousal failure produces slowing or coma rather than spike-wave.",
+   "learningObjective": "Explain the thalamocortical origin of the 3 Hz absence pattern.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "A single cortical focus in the left temporal lobe that spreads quickly to both sides",
+    "A thalamocortical loop driven by T-type calcium channels and GABA-B inhibition",
+    "Loss of white-matter connections that deafferents cortex and causes polymorphic delta",
+    "A brainstem reticular lesion that blocks cortical arousal and then slows the record"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-024",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "absence",
+    "generalized",
+    "onset-offset"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "During hyperventilation a child stares, and the record shows an abrupt generalized, symmetric 3 Hz burst that stops just as abruptly. What does the abrupt generalized pattern imply about its origin?",
+   "explanation": "Abrupt, synchronous and symmetric onset and offset point to a widespread thalamocortical loop switching in and out of oscillation, which is how absence discharges arise. A focal source spreading from F7 would show a delay and asymmetry, muscle artifact is irregular and fast, and delta from a white-matter lesion is slow and not spike-wave.",
+   "learningObjective": "Interpret abrupt generalized onset in terms of thalamocortical mechanisms.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "One small focus beneath F7 spreads gradually to both frontal lobes in turn",
+    "Muscle artifact from the jaw produces a rhythmic field across the channels",
+    "The whole thalamocortical network switches into oscillation together",
+    "Delta from a bilateral white-matter lesion appears on both sides at once"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-025",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "focal-delta",
+    "deafferentation",
+    "white-matter"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "Continuous, irregular 1 to 3 Hz activity is localized to one temporal region. What does focal polymorphic delta most strongly suggest?",
+   "explanation": "Delta arises when cortex is cut off from its thalamic or white-matter input, so focal polymorphic delta points to a focal structural lesion beneath the region; it is continuous and irregular, unlike normal variants. A thalamic loop produces generalized discharges, and lambda waves are occipital positive transients of waking.",
+   "learningObjective": "Interpret focal polymorphic delta as a sign of focal deafferentation.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "A focal structural lesion, often in white matter, that deafferents the cortex",
+    "A benign variant of drowsiness that appears over the temporal lobe region",
+    "A thalamic spike-and-wave loop causing generalized discharges at that site",
+    "A normal lambda response to scanning a bright visual scene in the room"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-026",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "breach-rhythm",
+    "skull-defect",
+    "fast-activity"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Over a skull defect a technologist sees higher-amplitude, sharply contoured fast activity. Which statement explains it best?",
+   "explanation": "A breach rhythm is the exaggerated amplitude of normal fast and mu-like activity recorded where bone is missing, because the skull normally attenuates and smooths the field. It is not a new focus, bone does not change a rhythm frequency, and the cortex under the defect still produces rhythms.",
+   "learningObjective": "Explain breach rhythm as reduced attenuation through a skull defect.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "The skull defect creates a new epileptic focus in the cortex beneath it",
+    "Missing bone attenuates less, so normal fast and mu-like activity is larger",
+    "Bone removal changes the frequency of the normal cortical rhythms beneath it",
+    "The defect stops the cortex beneath it from producing any normal rhythm"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-027",
+   "domainId": "domain-1",
+   "sectionId": "d1-brain-structures-functions",
+   "topicTags": [
+    "bancaud",
+    "alpha",
+    "occipital-lesion"
+   ],
+   "cognitiveLevel": 5,
+   "competency": "clinical",
+   "reasoningSteps": 3,
+   "stem": "A patient has a left homonymous hemianopia. At O1 the alpha blocks with eye opening, but at O2 alpha persists with eyes open. What does this fit, and what should the technologist do?",
+   "explanation": "Alpha that persists with eye opening on one side (the Bancaud phenomenon) points to a lesion of the occipital cortex or optic radiation on that side, and a left hemianopia agrees with a right-sided lesion. The technologist repeats eye opening and closing, notes the side and tells the reader. Asymmetry from drowsiness would not persist, left-sided blocking is normal, and a frontal focus does not explain it.",
+   "learningObjective": "Recognize failure of alpha to block as a localizing sign.",
+   "questionType": "clinical-integration",
+   "references": [],
+   "difficulty": "hard",
+   "options": [
+    "A normal asymmetry of drowsiness; note it once and continue the recording",
+    "A left occipital lesion with normal blocking on that side; no action needed",
+    "A right frontal focus; add extra frontal electrodes and extend the recording",
+    "A right occipital lesion; repeat eye opening and closing and note the side"
+   ],
+   "answerIndex": 3,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-028",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "pds",
+    "spike",
+    "epileptogenesis"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "technical",
+   "reasoningSteps": 1,
+   "stem": "Which cellular event produces the epileptiform spike?",
+   "explanation": "The spike reflects a paroxysmal depolarizing shift in which many neurons depolarize abruptly and burst-fire together. A rise in extracellular sodium or a slow loss of dendrites does not produce a sharp transient, and a hyperpolarization is not the event that makes the spike.",
+   "learningObjective": "Describe the paroxysmal depolarizing shift.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "easy",
+   "options": [
+    "A prolonged hyperpolarization that follows strong inhibition",
+    "A slow steady rise of sodium outside the firing neurons",
+    "A paroxysmal depolarizing shift of many neurons firing together",
+    "A gradual loss of dendrites from the affected neurons"
+   ],
+   "answerIndex": 2,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-029",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "slow-wave",
+    "hyperpolarization",
+    "after-going"
+   ],
+   "cognitiveLevel": 4,
+   "competency": "technical",
+   "reasoningSteps": 2,
+   "stem": "Why is an epileptiform spike often followed by a slow wave?",
+   "explanation": "After the paroxysmal depolarizing shift, GABA-mediated inhibition and potassium efflux hyperpolarize the neurons for a longer time, which appears as the after-going slow wave. Muscle tension would be fast and irregular, an amplifier artifact would not occur on a properly set filter, and a prolonged release of glutamate would extend the excitation instead.",
+   "learningObjective": "Explain the after-going slow wave.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Inhibition and potassium efflux hyperpolarize the neurons after the shift",
+    "Muscle tension follows each spike and shows up on the page as a slow wave",
+    "The amplifier time constant adds a slow component to every sharp transient",
+    "Glutamate release continues for a full second after every single spike"
+   ],
+   "answerIndex": 0,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  },
+  {
+   "id": "ch-nan-030",
+   "domainId": "domain-1",
+   "sectionId": "d1-neurophysiology-seizure-mechanisms",
+   "topicTags": [
+    "scn1a",
+    "dravet",
+    "gaba"
+   ],
+   "cognitiveLevel": 3,
+   "competency": "clinical",
+   "reasoningSteps": 2,
+   "stem": "An infant with prolonged fever-related seizures has Dravet syndrome from a loss-of-function SCN1A sodium channel variant. Which mechanism links the variant to seizures?",
+   "explanation": "SCN1A variants reduce sodium current in inhibitory interneurons, so GABA-mediated inhibition falls and excitatory activity prevails, which tips the immature brain into seizures. Excess inhibition would suppress seizures, fewer glutamate receptors would lower excitation, and T-type calcium channels are the absence mechanism, not the SCN1A one.",
+   "learningObjective": "Link SCN1A loss of function to reduced inhibition.",
+   "questionType": "neurophysiology",
+   "references": [],
+   "difficulty": "medium",
+   "options": [
+    "Increased GABA release makes inhibition excessive and drives the discharges",
+    "Less sodium channel function in inhibitory interneurons lowers GABA inhibition",
+    "Loss of glutamate receptors reduces excitation but triggers rebound firing",
+    "The variant removes T-type calcium channels from the reticular nucleus"
+   ],
+   "answerIndex": 1,
+   "author": "NeuroLinea neuroanatomy and syndromes set (AI-drafted; requires expert review)",
+   "qaStatus": "UNREVIEWED"
+  }
+ ]
+}

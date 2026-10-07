@@ -17,6 +17,7 @@ import Workflow from "./pages/Workflow.jsx";
 import AmplifierFilters from "./pages/AmplifierFilters.jsx";
 import MontageReferences from "./pages/MontageReferences.jsx";
 import DiffuseAbnormalities from "./pages/DiffuseAbnormalities.jsx";
+import NeuroSyndromes from "./pages/NeuroSyndromes.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
@@ -235,6 +236,12 @@ function AppContent() {
             <Route path="/diffuse-abnormalities" element={
               <ProtectedRoute>
                 <DiffuseAbnormalities />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/neuro-syndromes" element={
+              <ProtectedRoute>
+                <NeuroSyndromes />
               </ProtectedRoute>
             } />
           </Routes>

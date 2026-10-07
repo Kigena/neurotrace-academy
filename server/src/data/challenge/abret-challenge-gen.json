@@ -1,0 +1,901 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-06",
+  "bank": "challenge",
+  "focus": "genetics-neurocutaneous",
+  "description": "ABRET Challenge Bank round 8: genetics and neurocutaneous disorders (TSC, NF1, NF2, Sturge-Weber, Angelman, Rett, Dravet, KCNQ2, CDKL5, GLUT1, lissencephaly, sleep-related hypermotor epilepsy genes) with technologist documentation scope. Text only; not yet medically verified.",
+  "totalQuestions": 33,
+  "questions": [
+    {
+      "id": "ch-gen-001",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "tsc",
+        "hypsarrhythmia"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "An infant with infantile spasms has hypomelanotic skin patches and a heart tumour. The EEG shows hypsarrhythmia. Which genetic disorder is most likely on the reader's list?",
+      "explanation": "Tuberous sclerosis combines infantile spasms, hypomelanotic skin patches and cardiac rhabdomyomas, and TSC1 or TSC2 variants over-activate the mTOR pathway. NF2 gives schwannomas and meningiomas, Angelman syndrome shows rhythmic delta with laughing and ataxia, and Rett syndrome starts as regression in a girl. The technologist records and describes; the reader decides.",
+      "learningObjective": "Link skin signs and spasms to tuberous sclerosis.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Neurofibromatosis type 2, from a variant of the NF2 gene",
+        "Angelman syndrome, from loss of the maternal UBE3A gene",
+        "Tuberous sclerosis complex, from a TSC1 or TSC2 variant",
+        "Rett syndrome, from a variant of the MECP2 gene"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-002",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "tsc",
+        "mtor"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which pathway is over-activated when TSC1 or TSC2 function is lost?",
+      "explanation": "The TSC1/TSC2 complex restrains mTOR, so loss of function lets mTOR over-act and produces tubers and hyperexcitable cortex. The other options are the mechanisms of other conditions: GABA-A and T-type channels in absence and sedation, and GLUT1 deficiency for glucose transport.",
+      "learningObjective": "Name the pathway involved in tuberous sclerosis.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "The GABA-A receptor chloride channel",
+        "The T-type calcium channel of the thalamus",
+        "The glucose transporter at the blood-brain barrier",
+        "The mTOR growth pathway"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-003",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "tsc",
+        "focal-spikes"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A child with tuberous sclerosis has repeated spikes at T6 and focal delta at T6 in a longitudinal montage. Which description is best for the report?",
+      "explanation": "Tubers can be in any lobe and may generate a focal spike field with focal delta, so the technologist describes the location, the repeats and the times. Hypsarrhythmia is a different, multifocal pattern of infancy, tubers can produce scalp spikes, and the electrodes given are right-sided.",
+      "learningObjective": "Describe tuber-related spikes without naming the cause.",
+      "questionType": "pattern-recognition",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Repeated right posterior temporal spikes with focal slowing, listed with their times",
+        "A generalized hypsarrhythmia pattern, which is expected in all tuberous sclerosis",
+        "A normal record, because tubers lie too deep to produce any scalp spikes",
+        "Left frontal spikes with a clear phase reversal at the midline in the transverse chain"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-004",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "nf1",
+        "normal-eeg"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A girl with cafe-au-lait spots and skin-fold freckling has a routine EEG that is normal. What does this finding mean for the diagnosis of neurofibromatosis type 1?",
+      "explanation": "NF1 has no characteristic EEG pattern, and the EEG is often normal unless a cortical lesion or tumour is present. A normal record therefore does not exclude the condition, does not point to psychogenic events, and does not justify repeating the study until an abnormality appears.",
+      "learningObjective": "State that NF1 often has a normal EEG.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "It proves the diagnosis is wrong, since the disease must change the EEG",
+        "A normal EEG is common and does not exclude it",
+        "It shows that her seizures must be psychogenic",
+        "It means the study should be repeated each week until focal spikes finally appear"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-005",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "nf2",
+        "responsiveness"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Neurofibromatosis type 2 often causes bilateral vestibular schwannomas. How does this change the way a technologist tests responsiveness?",
+      "explanation": "Hearing loss from vestibular schwannomas can make a voice ineffective, so touch and visual stimuli give a fairer test of responsiveness. Loudness alone may still fail, the test is not skipped, and photic stimulation is a separate activation procedure.",
+      "learningObjective": "Adapt responsiveness testing to hearing loss.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Use only a louder voice, since the response must be auditory to count",
+        "Skip the test altogether, since a deaf patient cannot respond at all",
+        "Add touch and visual stimuli, because hearing loss may hide a response to voice",
+        "Test only after a photic stimulation run, to bring out any possible response"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-006",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "sw",
+        "genetics"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which gene, and which kind of change, causes Sturge-Weber syndrome?",
+      "explanation": "Sturge-Weber syndrome is caused by a mosaic (somatic) variant of GNAQ that affects only some cells and is not inherited. TSC2 variants cause tuberous sclerosis, the 15q11-q13 deletion causes Angelman syndrome, and SCN1A causes Dravet syndrome.",
+      "learningObjective": "Recall the genetics of Sturge-Weber syndrome.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "An inherited dominant variant of TSC2 in every cell",
+        "An imprinted deletion of the maternal chromosome 15q11-q13",
+        "A loss-of-function variant of SCN1A in every cell",
+        "A somatic variant of GNAQ present in some cells only"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-007",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "sw",
+        "attenuation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A toddler with a port-wine stain on the right forehead has a recording at equal sensitivity on both sides. Which finding is typical?",
+      "explanation": "The usual finding is attenuation (reduced voltage and fast activity) over the hemisphere with the leptomeningeal angioma, which is on the same side as the port-wine stain. Increased amplitude would not fit, 3 Hz spike-and-wave is the pattern of absence epilepsy, and alpha-blocking asymmetry is a different finding.",
+      "learningObjective": "Recognize hemispheric attenuation in Sturge-Weber syndrome.",
+      "questionType": "pattern-recognition",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Lower amplitude and less fast activity over the right hemisphere",
+        "Higher amplitude fast activity over the right hemisphere than the left",
+        "Bilateral, symmetric 3 Hz spike-and-wave with abrupt onset and offset",
+        "A normal posterior rhythm that blocks with eye opening on one side only"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-008",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "sw",
+        "electrode-placement"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A child with Sturge-Weber syndrome has a port-wine stain across the scalp where an electrode must go. What is the best action?",
+      "explanation": "Skin over a vascular lesion needs gentle preparation to avoid bleeding or injury, and the report should state the lesion so the reader knows why the setup differs. Firm abrasion can injure the skin, an omission without a note hides missing data, and moving the electrode breaks the 10-20 system.",
+      "learningObjective": "Protect skin lesions during electrode placement.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Abrade the skin firmly, since impedance must be very low everywhere",
+        "Place the electrode with gentle preparation and a note about the skin lesion",
+        "Leave out the electrode and make no comment about it in the report",
+        "Move the electrode to the matching position on the opposite side of the head"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-009",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "angelman",
+        "rhythmic-delta"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which description fits the EEG in Angelman syndrome?",
+      "explanation": "Angelman syndrome typically shows high-amplitude, frontally predominant rhythmic delta at about 2 to 3 Hz with spikes, together with theta runs and posterior spikes with eye closure. The other options describe childhood absence, West syndrome and Ohtahara-type patterns.",
+      "learningObjective": "Recall the typical Angelman EEG.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Generalized 3 Hz spike-and-wave with abrupt onset and offset",
+        "Hypsarrhythmia with an electrodecrement at each spasm",
+        "Large frontal rhythmic delta at about 2 to 3 Hz, often with spikes",
+        "Burst suppression with flat intervals between bursts"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-010",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "angelman",
+        "documentation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 4-year-old who laughs often, has ataxia and no speech has a record that is nearly continuous large rhythmic delta at about 2.5 Hz, greatest frontally. What should the technologist do?",
+      "explanation": "A description with numbers, plus time marks for laughing and movement, lets the reader decide. The technologist does not state a diagnosis. A 5 Hz low-frequency filter would suppress the real 2.5 Hz rhythm and hide the finding, and calling a cerebral rhythm artifact without evidence discards data. A rhythmic delta is not an electrical hazard.",
+      "learningObjective": "Document a rhythmic delta in a child with a suspected genetic disorder.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "State in the notes that the record is diagnostic of Angelman syndrome",
+        "Treat it as artifact and apply a low-frequency filter at 5 Hz to remove it from the page",
+        "Stop the study at once because the rhythm is an electrical hazard to the child",
+        "Describe the rate, amplitude and frontal emphasis, and mark the laughing and movements"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-011",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "angelman",
+        "genetics"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Angelman syndrome results from loss of which copy of the chromosome 15q11-q13 gene UBE3A?",
+      "explanation": "UBE3A is imprinted in neurons, so only the maternal copy is expressed; losing it by deletion, variant, paternal uniparental disomy or an imprinting defect causes Angelman syndrome. It is not X-linked.",
+      "learningObjective": "Recall imprinting in Angelman syndrome.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The maternal copy, because only it is active in neurons",
+        "The paternal copy, because only it is active in neurons",
+        "Either copy, because both are active equally in neurons",
+        "Neither copy, because it is a gene on the X chromosome"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-012",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "mecp2",
+        "artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A girl regressed at 14 months and now has hand-wringing movements. Rhythmic activity at the same rate appears in many channels. What is the best interpretation to document?",
+      "explanation": "Rhythmic stereotypies are common in Rett syndrome and can produce rhythmic artifact that resembles a seizure, so the technologist notes the movement and its timing. A true seizure would also be marked, but without the hands the reader cannot compare. The rate and distribution do not fit alpha or pulse artifact.",
+      "learningObjective": "Separate stereotypy artifact from seizure.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A generalized seizure that needs a time mark, with no need to mention the hands",
+        "Rhythmic movement artifact from the hand stereotypies, to be marked with time",
+        "A normal alpha rhythm, since the child is awake and has her eyes open",
+        "A cardiac artifact from the pulse, which needs no mention in the notes"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-013",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "mecp2",
+        "sleep"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which EEG change is typical of Rett syndrome after the regression stage?",
+      "explanation": "After regression, Rett syndrome commonly shows a slow background, loss of normal sleep features and spikes that are often centrotemporal and activated by sleep. The fast infantile rhythm is the lissencephaly pattern, 3 Hz spike-and-wave with a normal background is childhood absence epilepsy, and burst suppression suggests an early encephalopathy.",
+      "learningObjective": "Recall the Rett EEG after regression.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A fast, high-amplitude generalized rhythm of about 14 Hz in a young infant",
+        "A generalized 3 Hz spike-and-wave pattern on an otherwise normal background",
+        "A slowed background with spikes that are often centrotemporal and more frequent in sleep",
+        "Burst suppression in wakefulness and sleep, with flat intervals between bursts"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-014",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "mecp2",
+        "early-eeg"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A 14-month-old with a pathogenic MECP2 variant has not yet regressed. What EEG is most likely?",
+      "explanation": "In Rett syndrome the early EEG is normal or mildly slowed, with the larger changes appearing after regression. Hypsarrhythmia is not a universal start, the fast rhythm belongs to lissencephaly, and frontal rhythmic delta fits Angelman syndrome.",
+      "learningObjective": "Know that early Rett EEG may be normal.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hypsarrhythmia, because every Rett patient starts with spasms",
+        "Generalized fast activity above 100 uV from birth",
+        "Frontal rhythmic delta at 2.5 Hz with spikes",
+        "Normal or only mildly slowed, which does not exclude the disorder"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-015",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "lissencephaly",
+        "fast-activity"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which is the typical high-amplitude pattern in a one-year-old with lissencephaly from a LIS1 or DCX variant?",
+      "explanation": "Lissencephaly typically shows high-amplitude, generalized fast activity of about 10 to 20 Hz, sometimes followed by hypsarrhythmia. The other options describe absence epilepsy, a normal alpha rhythm and the generalized periodic complexes of Creutzfeldt-Jakob disease.",
+      "learningObjective": "Recall the lissencephaly EEG.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Generalized fast activity of about 10 to 20 Hz at over 100 uV",
+        "Generalized 3 Hz spike-and-wave with abrupt onset and offset",
+        "A normal posterior rhythm at 8 Hz with eye closure",
+        "Periodic complexes every second with myoclonus"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-016",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "lissencephaly",
+        "documentation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A recording shows generalized 14 Hz activity of 200 uV in a one-year-old taking no medication. The fast activity is not blocked by passive eye opening. What is the best action?",
+      "explanation": "Excess generalized fast activity at this amplitude is not normal at this age, and the lack of drugs means the technologist should describe it and record the medication history so the reader can consider causes such as a migration disorder. Filtering would hide it, normal infant beta is far smaller, and removing electrodes is unnecessary.",
+      "learningObjective": "Document unexplained high-amplitude fast activity.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Call it drug-induced beta and change the filter so that the activity is removed",
+        "Describe the rate, amplitude and spread, and record that no drugs were taken",
+        "Declare it normal in the notes because beta is normal in infants",
+        "Remove the electrodes at once because the signal is too large to be read"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-017",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "glut1",
+        "fasting"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "GLUT1 deficiency syndrome is suspected in an infant with seizures. Why does the technologist record the time of the last meal?",
+      "explanation": "In GLUT1 deficiency the brain is short of glucose, so spike-wave and clinical events may increase when fasting and improve after a meal. The meal does not change impedance, fasting does not cause 3 Hz spike-and-wave in everyone, and eating does not erase every pattern.",
+      "learningObjective": "Explain why feeding time matters in GLUT1 deficiency.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The glucose in a meal changes the electrode impedance",
+        "Fasting produces generalized 3 Hz spike-and-wave in every infant who is studied",
+        "Discharges often increase when fasting and decrease after eating",
+        "Eating makes every EEG pattern disappear"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-018",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "glut1",
+        "diagnosis"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What is the key laboratory finding in GLUT1 deficiency?",
+      "explanation": "Failure of glucose transport across the blood-brain barrier lowers the spinal fluid glucose while the blood glucose is normal, and the ketogenic diet gives the brain an alternate fuel. The other options are not features of this disorder.",
+      "learningObjective": "Recall the spinal fluid finding in GLUT1 deficiency.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "A low level of calcium in the blood with a normal spinal fluid",
+        "A high lactate in the blood after hyperventilation",
+        "An absence of antibodies in the spinal fluid",
+        "A low glucose level in the spinal fluid with a normal blood glucose"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-019",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "kcnq2",
+        "neonatal"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A newborn has tonic seizures in the first week and several relatives had similar seizures that stopped by 6 months. Which gene is classically involved?",
+      "explanation": "Self-limited familial neonatal seizures are classically caused by KCNQ2 variants (and KCNQ3), which reduce the potassium M-current. TSC1, UBE3A and MECP2 produce different disorders and ages of onset.",
+      "learningObjective": "Link familial neonatal seizures to KCNQ2.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "KCNQ2, a potassium channel gene",
+        "TSC1, a gene in the mTOR pathway",
+        "UBE3A, an imprinted gene on chromosome 15",
+        "MECP2, an X-linked gene in a girl after regression"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-020",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "kcnq2",
+        "ictal"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A neonate with a severe KCNQ2 encephalopathy has seizures that begin with attenuation of the background. How should the technologist handle the event?",
+      "explanation": "Attenuation can be the first sign of a seizure, so the technologist marks the time and describes the clinical signs and evolution. Flattening is not simply electrode loss when impedances are acceptable, stopping loses the event, and naming a gene goes beyond the technologist's role.",
+      "learningObjective": "Document an ictal attenuation.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Treat the flattening as electrode loss and recheck the impedances only",
+        "Mark the onset, describe the clinical signs and the evolution, and note the time",
+        "Stop recording because the background is too low to read",
+        "Name the event as a KCNQ2 seizure in the report"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-021",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "scn1a",
+        "mechanism"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which type of SCN1A variant causes Dravet syndrome, and what is the main consequence?",
+      "explanation": "Dravet syndrome is caused by loss of function of Nav1.1 in inhibitory interneurons, which lowers inhibition and makes the network hyperexcitable. The other options reverse the direction of the variant or name the wrong channels.",
+      "learningObjective": "State the mechanism of SCN1A epilepsy.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Gain of function, which makes inhibitory neurons fire constantly",
+        "Loss of function, which blocks the T-type calcium channel",
+        "Loss of function, which reduces inhibition from interneurons",
+        "Gain of function, which opens the GABA-A channel"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-022",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "scn1a",
+        "evolution"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A 7-month-old has had a prolonged fever-related seizure and a normal first EEG. What should the technologist expect about later studies?",
+      "explanation": "In Dravet syndrome the first EEG may be normal, but later records often show generalized and multifocal spike-wave, photosensitivity and slowing. Hypsarrhythmia is not the usual pattern, and a normal first study does not predict a normal course.",
+      "learningObjective": "Know that the first EEG in Dravet can be normal.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Every later record will stay normal, because the first one was normal",
+        "Later records will show hypsarrhythmia in the large majority of cases",
+        "Later records will show only a posterior alpha rhythm over the occipital regions",
+        "Later records may show generalized or multifocal spike-wave and photosensitivity"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-023",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "cdkl5",
+        "genetics"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "An infant has tonic seizures from 6 weeks of age, then epileptic spasms with hypsarrhythmia, before any developmental regression. Which X-linked gene is classically involved?",
+      "explanation": "CDKL5 deficiency disorder typically begins with seizures in the first three months, often followed by spasms with hypsarrhythmia. The other genes cause disorders with different clinical pictures and ages. Typical Rett syndrome begins with regression after a normal early period.",
+      "learningObjective": "Link early infant seizures and spasms to CDKL5.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "CDKL5",
+        "MECP2, in a girl with typical Rett syndrome",
+        "NF1 in a child with cafe-au-lait spots",
+        "GNAQ in a child with a port-wine stain"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-024",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "cdkl5",
+        "normal-eeg"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant with a CDKL5 variant has a normal EEG at 5 weeks, although seizures have started. What is the best response?",
+      "explanation": "Early EEGs in CDKL5 deficiency can be normal, and later studies show more. The technologist reports what was recorded and does not interpret, manipulate the montage to force an abnormality, or alter filters so that they become misleading.",
+      "learningObjective": "Respond professionally to a normal early EEG.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Declare the seizures to be non-epileptic because the EEG is normal",
+        "Describe it as recorded, and expect the reader may ask for another study",
+        "Alter the montage in several ways until a spike appears on the page",
+        "Raise the high-frequency filter to 200 Hz to try to find a hidden spike"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-025",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "chrna4",
+        "sleep-hypermotor"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which gene is classically linked to autosomal dominant sleep-related hypermotor epilepsy (nocturnal frontal lobe epilepsy)?",
+      "explanation": "ADSHE is linked to nicotinic receptor genes such as CHRNA4, CHRNB2 and CHRNA2, and DEPDC5 variants also cause familial sleep-related hypermotor epilepsy. GRIN2A is linked to epilepsy-aphasia disorders, SLC2A1 to GLUT1 deficiency and PCDH19 to clustering seizures in females.",
+      "learningObjective": "Link sleep-related hypermotor epilepsy to CHRNA4.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "GRIN2A, which codes for an NMDA-type glutamate receptor subunit",
+        "SLC2A1, which codes for the glucose transporter of the blood-brain barrier",
+        "CHRNA4, which codes for a nicotinic acetylcholine receptor subunit",
+        "PCDH19, which codes for a protocadherin cell adhesion protein"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-026",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "chrna4",
+        "video"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A teenager has violent brief arm and leg movements from sleep in clusters. The interictal EEG is normal. What helps most to identify the seizures?",
+      "explanation": "The ictal EEG in sleep-related hypermotor seizures is often covered by movement and muscle artifact, so video with exact time marks lets the reader link a behavior to the record. Raising sensitivity or filtering does not reveal an origin, and a standard recording without video misses the clinical picture.",
+      "learningObjective": "Use video and marks to capture hypermotor seizures.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A higher sensitivity so that the normal record is made to show spikes",
+        "A single standard recording of ordinary length with no video",
+        "A 60 Hz notch filter applied to remove the movement from the record",
+        "Video with the EEG, with each event marked at its time"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-027",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "grin2a",
+        "sleep"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A child with speech regression has near-continuous spike-wave in non-REM sleep. A GRIN2A variant is found. What is the technologist's key task in the study?",
+      "explanation": "Spike-wave activation in sleep is found in non-REM sleep, so a full sleep period with stage marks lets the reader estimate its extent. A short awake recording or photic stimulation alone will miss it, and sleep is recorded even when the child cannot cooperate.",
+      "learningObjective": "Record sleep in epilepsy-aphasia disorders.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Record a full period of sleep and mark the stages",
+        "Record only the first five minutes of wakefulness",
+        "Perform only photic stimulation at 15 Hz",
+        "Skip sleep because the patient cannot cooperate"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-028",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "pcdh19",
+        "genetics"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A girl has fever-triggered seizures in clusters from 10 months. Her X-linked gene variant affects her only because she is a mosaic of cells that carry and lack the variant. Which gene is it?",
+      "explanation": "PCDH19 clustering epilepsy mainly affects heterozygous girls because cells with and without the variant are mixed in a mosaic. Onset is typically in infancy or early childhood, with fever-triggered clusters. CDKL5 is also X-linked but starts in the first months with tonic seizures and spasms, not fever-triggered clusters. STXBP1 and SLC2A1 are autosomal.",
+      "learningObjective": "Link clustering seizures in girls to PCDH19.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "CDKL5",
+        "PCDH19",
+        "STXBP1",
+        "SLC2A1"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-029",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "lgi1",
+        "genetics"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "An auditory aura of buzzing sounds precedes a focal seizure in a teenager with a family history of the same. Which gene is the likely cause?",
+      "explanation": "Autosomal dominant lateral temporal epilepsy, often with auditory auras, is linked to LGI1 variants. TSC2, MECP2 and UBE3A produce different pictures.",
+      "learningObjective": "Link auditory aura epilepsy to LGI1.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "TSC2",
+        "MECP2",
+        "LGI1",
+        "UBE3A"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-030",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "hypsarrhythmia",
+        "genetics"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A hypsarrhythmia pattern in an infant is reported. Which statement about its genetic causes is most accurate?",
+      "explanation": "Hypsarrhythmia is a pattern, not a diagnosis, and it can follow TSC, CDKL5, ARX, STXBP1, LIS1 or DCX variants and non-genetic injuries. Choosing one gene is incorrect, and gene variants clearly can cause it.",
+      "learningObjective": "Know that one pattern has many causes.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "It means the infant has tuberous sclerosis, from a TSC1 or TSC2 variant",
+        "It means the infant has a variant of the CDKL5 gene on the X chromosome",
+        "It is caused only by injury and is not caused by a gene variant",
+        "Many different genes and non-genetic causes can produce it"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-031",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "genetics",
+        "scope"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A technologist is asked whether the EEG shows a TSC2 variant. What is the best reply?",
+      "explanation": "No EEG pattern identifies a specific variant, and a normal EEG does not exclude a genetic disorder. The EEG suggests types of dysfunction; genetic testing identifies variants.",
+      "learningObjective": "State the limits of EEG in genetic diagnosis.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The EEG describes the pattern; genetic testing is needed for a variant",
+        "The EEG can identify the exact variant from the shape of its spikes",
+        "A normal EEG proves that the patient has no gene variant at all",
+        "A focal spike proves the variant is in TSC2"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-032",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "genetics",
+        "matching"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which pair is correctly matched?",
+      "explanation": "Sturge-Weber syndrome is due to a somatic GNAQ variant. Tuberous sclerosis involves TSC1 or TSC2, Dravet syndrome involves loss of SCN1A function, and Angelman syndrome involves the maternal UBE3A gene.",
+      "learningObjective": "Match the gene to the disorder.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Tuberous sclerosis and the maternal UBE3A gene",
+        "Sturge-Weber syndrome and a somatic GNAQ variant",
+        "Dravet syndrome and a gain-of-function GNAQ variant",
+        "Angelman syndrome and a somatic NF1 variant"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-gen-033",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "tsc",
+        "focal-spikes"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which finding best fits a child with a known TSC1 variant at age 7 who has a normal background and rare focal spikes?",
+      "explanation": "After infancy, tuberous sclerosis often shows focal or multifocal spikes related to tubers, which can be anywhere. Hypsarrhythmia is an infant pattern, rhythmic frontal delta suggests Angelman syndrome, and high-amplitude fast activity suggests lissencephaly.",
+      "learningObjective": "Know the later EEG of tuberous sclerosis.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hypsarrhythmia, which remains in the record for life",
+        "Rhythmic frontal delta at 2.5 Hz",
+        "Tuber-related focal spikes that can be anywhere",
+        "High-amplitude fast activity over 100 uV"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea genetics and neurocutaneous set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

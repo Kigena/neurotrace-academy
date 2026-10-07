@@ -1,0 +1,801 @@
+{
+  "regions": [
+    {
+      "id": "frontal",
+      "name": "Frontal lobe",
+      "electrodes": [
+        "Fp1",
+        "Fp2",
+        "F3",
+        "F4",
+        "Fz"
+      ],
+      "supply": "Anterior cerebral artery (medial surface) and middle cerebral artery (lateral surface)",
+      "functions": "Planning, judgment, attention and drive; voluntary movement (premotor cortex); expressive speech in the dominant inferior frontal gyrus (Broca area); frontal eye fields turn the eyes to the opposite side.",
+      "normal": "Low-voltage fast (beta) activity, especially anteriorly. Eye-blink and eye-movement potentials appear in the frontopolar channels.",
+      "lesion": "Abulia and personality change, contralateral weakness or slowed movement, expressive aphasia in the dominant hemisphere, gaze deviation. Focal polymorphic delta over the frontal region, and attenuated fast activity over a destructive lesion.",
+      "seizure": "Often brief, frequent, stereotyped and out of sleep; hypermotor or tonic posturing, vocalization, little postictal confusion. Complex bizarre movements are easily mistaken for non-epileptic events.",
+      "eegNote": "F7 and F8 overlie both the inferior frontal gyrus and the anterior temporal lobe, and are listed with the temporal region on this page. Interictal spikes are often scarce or absent because much of the frontal cortex is deep, medial or inferior. Ictal EEG is often hidden by movement and muscle artifact. Bilateral synchronous discharges can occur through rapid spread across the corpus callosum.",
+      "scene": "regFrontalDelta"
+    },
+    {
+      "id": "central",
+      "name": "Central (sensorimotor) cortex",
+      "electrodes": [
+        "C3",
+        "C4",
+        "Cz"
+      ],
+      "supply": "Middle cerebral artery for the face and arm; anterior cerebral artery for the leg on the medial surface",
+      "functions": "Precentral gyrus is motor and postcentral gyrus is sensory, arranged as a map of the opposite body (the homunculus): the leg is medial near Cz, the hand lies under C3 and C4, and the face is lateral and low, toward T3 and T4.",
+      "normal": "Arch-shaped mu rhythm (about 8 to 10 Hz) over the central region, which persists with eye opening and is blocked by movement or the thought of movement of the opposite side.",
+      "lesion": "Contralateral weakness and sensory loss. The mu rhythm is lost over a destructive lesion. Focal delta can occur over it.",
+      "seizure": "Focal motor seizures with clonic jerking that can march along the body (Jacksonian march), or sensory symptoms such as tingling. Rolandic epilepsy of childhood arises here.",
+      "eegNote": "Centrotemporal spikes with a horizontal dipole (negative centrally, positive frontally) are the typical childhood focus. A skull defect gives a breach rhythm: a sharp, mu-like, higher-amplitude fast rhythm over the defect.",
+      "scene": "regCentral"
+    },
+    {
+      "id": "temporal",
+      "name": "Temporal lobe",
+      "electrodes": [
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "F7",
+        "F8"
+      ],
+      "supply": "Middle cerebral artery (lateral temporal) and posterior cerebral artery (mesial and inferior temporal)",
+      "functions": "Hearing and auditory association (superior temporal gyrus), comprehension of speech in the dominant hemisphere (Wernicke area), memory and emotion (hippocampus and amygdala in the mesial temporal lobe).",
+      "normal": "Mixed low-voltage theta and alpha. Wicket spikes and small sharp spikes of drowsiness are normal variants, and are often mistaken for temporal epileptiform discharges.",
+      "lesion": "Receptive aphasia on the dominant side, memory loss, auditory and superior visual-field defects (a quadrant loss). Focal polymorphic delta over the lesion and, in epilepsy, intermittent temporal rhythmic delta.",
+      "seizure": "Rising epigastric sensation, fear, deja vu, smell or taste aura, then staring, lip-smacking and hand automatisms with later confusion. Lateral temporal seizures can start with auditory or language symptoms.",
+      "eegNote": "Anterior temporal sharp waves with the maximum at F7/F8 or the anterior temporal electrodes, best seen in drowsiness and sleep. Ictal onset is often rhythmic theta (5 to 7 Hz) that grows in amplitude and slows as it spreads.",
+      "scene": "regTemporal"
+    },
+    {
+      "id": "parietal",
+      "name": "Parietal lobe",
+      "electrodes": [
+        "P3",
+        "P4",
+        "Pz"
+      ],
+      "supply": "Middle cerebral artery (lateral) and anterior cerebral artery (medial); watershed with the posterior cerebral artery behind",
+      "functions": "Somatic sensation and spatial awareness. Neglect of the opposite side follows a non-dominant lesion; the dominant angular and supramarginal region supports calculation, writing, finger recognition and left-right orientation (Gerstmann syndrome).",
+      "normal": "Posterior alpha spreads forward into the parietal channels and blocks with eye opening.",
+      "lesion": "Sensory loss, neglect, apraxia, and a lower-quadrant field defect from the upper optic radiation. Focal delta and loss of normal alpha over the lesion.",
+      "seizure": "Sensory or somatosensory auras, a sense of body distortion or vertigo; spread to the temporal or frontal lobes often gives the visible seizure.",
+      "eegNote": "Posterior-quadrant discharges are often hard to localize because the lesion lies between the central, temporal and occipital fields. Compare the amplitude of homologous parietal channels.",
+      "scene": "regParietalDelta"
+    },
+    {
+      "id": "occipital",
+      "name": "Occipital lobe",
+      "electrodes": [
+        "O1",
+        "O2"
+      ],
+      "supply": "Posterior cerebral artery",
+      "functions": "Primary visual cortex around the calcarine fissure. Each side serves the opposite visual field.",
+      "normal": "Posterior dominant rhythm (alpha) on eye closure; it blocks with eye opening. Posterior slow waves of youth and lambda waves are normal.",
+      "lesion": "A contralateral homonymous hemianopia, often with the macula spared because it has dual blood supply. The alpha rhythm may be reduced over the lesion. In the Bancaud phenomenon the alpha on the lesion side fails to block when the eyes open, while the normal side blocks, so the two sides become asymmetric. Focal occipital delta may appear.",
+      "seizure": "Elementary visual hallucinations (coloured flashes, circles), blindness or eye deviation. Autonomic features such as vomiting occur in early-onset childhood occipital epilepsy.",
+      "eegNote": "Occipital spikes in childhood, which may vanish when the eyes are open (fixation-off sensitivity) and appear in eye closure or darkness.",
+      "scene": "regOccipitalDelta"
+    }
+  ],
+  "territories": [
+    {
+      "id": "aca",
+      "name": "Anterior cerebral artery",
+      "area": "Medial frontal and parietal lobes, including the leg area of the motor and sensory cortex",
+      "deficit": "Contralateral leg weakness greater than arm, abulia, urinary incontinence",
+      "eeg": "Parasagittal (Fz, Cz, F3, F4, C3, C4) delta and attenuation; midline findings can look bilateral"
+    },
+    {
+      "id": "mca",
+      "name": "Middle cerebral artery",
+      "area": "Most of the lateral hemisphere: face and arm motor and sensory areas, Broca and Wernicke areas in the dominant hemisphere, the parietal association cortex",
+      "deficit": "Contralateral face and arm weakness and sensory loss, aphasia (dominant) or neglect (non-dominant), gaze preference toward the lesion",
+      "eeg": "Focal polymorphic delta over the central and temporal region, loss of mu and spindles on that side, reduced amplitude of faster activity. These findings are largest in the first days and often fade as the infarct matures."
+    },
+    {
+      "id": "pca",
+      "name": "Posterior cerebral artery",
+      "area": "Occipital lobe, inferior and mesial temporal lobe, and the thalamus",
+      "deficit": "Contralateral homonymous hemianopia (macula often spared), memory loss from mesial temporal involvement, thalamic sensory loss",
+      "eeg": "Occipital delta and alpha attenuation on the side of the lesion; temporal slowing if mesial temporal lobe is involved"
+    },
+    {
+      "id": "brainstem",
+      "name": "Vertebrobasilar (brainstem and thalamus)",
+      "area": "Brainstem reticular activating system, thalamus, cerebellum",
+      "deficit": "Impaired arousal or coma, cranial nerve and eye-movement signs, crossed deficits. A pontine lesion can cause a locked-in state with preserved awareness.",
+      "eeg": "Frontally predominant alpha or theta activity unreactive to stimuli (alpha coma, alpha-theta coma) in a comatose patient, or a usually normal or near-normal, reactive EEG in a locked-in patient"
+    },
+    {
+      "id": "watershed",
+      "name": "Border zones (watershed)",
+      "area": "Cortex between territories, for example between the ACA and MCA, and between the MCA and PCA behind",
+      "deficit": "Infarcts after low blood pressure; shoulder-and-thigh weakness, visual and parietal syndromes",
+      "eeg": "Slowing and amplitude asymmetry over the parasagittal and posterior parietal regions"
+    }
+  ],
+  "generators": [
+    {
+      "title": "Where the EEG comes from",
+      "text": "The scalp EEG records summed postsynaptic potentials (mainly excitatory and inhibitory synaptic currents), not action potentials. Pyramidal neurons in cortical layers III and V line up side by side, so their apical dendrites sum into a dipole. Tens of millions of neurons must be active together, spread across at least several square centimetres of cortex, for the field to reach the scalp."
+    },
+    {
+      "title": "Radial and tangential dipoles",
+      "text": "Cortex on the crown of a gyrus produces a radial dipole that the scalp electrode sees most clearly. Cortex in the wall of a sulcus produces a tangential dipole, which gives a horizontal field with a negative pole at one electrode and a positive pole at another, as with the rolandic spike: negative centrally and positive frontally."
+    },
+    {
+      "title": "Why the thalamus matters",
+      "text": "The thalamus acts as a pacemaker and relay. Thalamocortical neurons and the thalamic reticular nucleus form loops with the cortex. Their rhythmic bursts underlie sleep spindles (12 to 14 Hz) and help to produce the alpha rhythm."
+    },
+    {
+      "title": "Slow waves and deafferentation",
+      "text": "Focal polymorphic delta is produced when the overlying cortex is deafferented by a white-matter or deep lesion; normal sleep delta comes from thalamocortical and cortical networks in a hyperpolarized state. A diffuse white-matter, thalamic or arousal-system disturbance gives generalized slowing."
+    },
+    {
+      "title": "The epileptiform discharge",
+      "text": "A sudden synchronous depolarization of many neurons (the paroxysmal depolarizing shift) produces the spike. The long hyperpolarization that follows, from inhibition and potassium efflux, produces the after-going slow wave. This is why spikes are often followed by a slow wave."
+    },
+    {
+      "title": "Seizure initiation and spread",
+      "text": "Seizures arise when excitation (glutamate acting at NMDA and AMPA receptors) outweighs inhibition (GABA) and neurons begin to fire in synchrony. Impaired inhibition, increased excitation, or abnormal ion channel function can all do this. A focus spreads along cortical connections and through the corpus callosum or the thalamus."
+    },
+    {
+      "title": "Generalized spike-and-wave and the thalamocortical loop",
+      "text": "Absence seizures arise when the thalamocortical loop oscillates abnormally. Low-threshold T-type calcium channels in thalamic neurons, together with GABA-B-mediated inhibition of thalamocortical relay neurons by the reticular nucleus, drive a regular 3 Hz cycle, which appears on the scalp as generalized spike-and-wave with abrupt onset and offset."
+    },
+    {
+      "title": "Why age matters",
+      "text": "The immature brain has more excitatory synapses and less mature inhibition, so it is prone to epileptic spasms and to epileptic encephalopathies. Many childhood syndromes appear at a characteristic age and resolve as the brain matures."
+    }
+  ],
+  "syndromes": [
+    {
+      "id": "ohtahara",
+      "name": "Early infantile developmental and epileptic encephalopathy (Ohtahara-type)",
+      "ageMin": 0,
+      "ageMax": 0.25,
+      "ageText": "Neonate to 3 months",
+      "seizure": "Tonic spasms, often in clusters, difficult to treat",
+      "features": [
+        "burst-suppression"
+      ],
+      "pathophys": "Usually a structural brain malformation or a genetic cause. The immature brain cannot sustain a continuous background, so bursts of activity alternate with suppression.",
+      "eeg": "Burst suppression in both waking and sleep. Bursts are high amplitude and mixed with spikes; suppression between them is nearly flat. The pattern can persist unchanged and often evolves into hypsarrhythmia in later infancy.",
+      "technologist": "Record both states and any spasms with time markers. Describe burst and suppression durations; note the medications.",
+      "scene": "synOhtahara",
+      "detail": "ohtahara",
+      "label": "Ohtahara",
+      "group": "infant",
+      "eegShort": "Burst suppression in waking and sleep."
+    },
+    {
+      "id": "west",
+      "name": "West syndrome (infantile epileptic spasms syndrome)",
+      "ageMin": 0.08,
+      "ageMax": 2,
+      "ageText": "1 month to 2 years (most 3 to 12 months, peak 4 to 7)",
+      "seizure": "Epileptic spasms: brief flexor, extensor or mixed jerks in clusters on waking or falling asleep",
+      "features": [
+        "hypsarrhythmia"
+      ],
+      "pathophys": "Many causes, including structural, genetic, metabolic and hypoxic injury. One hypothesis is an immature brain with abnormal brainstem-cortical interaction.",
+      "eeg": "Hypsarrhythmia: chaotic, high-amplitude (often above 200 uV), asynchronous slow waves with multifocal spikes and no organized background. A spasm is accompanied by a generalized slow wave followed by sudden attenuation of the background (an electrodecrement), often with muscle artifact. In non-REM sleep the pattern is often more evident and may become more bursty (periodic), and it may attenuate in REM sleep.",
+      "technologist": "Mark every spasm with the time, record sleep, and describe the background. Muscle artifact can mimic or hide the electrodecrement.",
+      "scene": "synWestHyps",
+      "scene2": "synWestSpasm",
+      "detail": "west_syndrome",
+      "label": "West",
+      "group": "infant",
+      "eegShort": "Hypsarrhythmia, with an electrodecrement at each spasm."
+    },
+    {
+      "id": "dravet",
+      "name": "Dravet syndrome",
+      "ageMin": 0.25,
+      "ageMax": 1.5,
+      "ageText": "Onset in the first year (often about 6 months)",
+      "seizure": "Prolonged febrile or afebrile hemiclonic or generalized clonic seizures, later myoclonic, absence and focal seizures",
+      "features": [
+        "photosensitive"
+      ],
+      "pathophys": "Usually a loss-of-function mutation in the SCN1A sodium channel gene, reducing sodium current in inhibitory neurons.",
+      "eeg": "The first EEG may be normal. Later: generalized spike-and-wave and polyspike-wave, focal or multifocal discharges and photosensitivity, with progressive slowing of the background.",
+      "technologist": "Record in sleep; do photic stimulation per protocol with attention to safety, and note any fever or clinical event.",
+      "scene": null,
+      "detail": "dravet",
+      "label": "Dravet",
+      "group": "infant",
+      "eegShort": "Generalized and multifocal spike-wave with photosensitivity; the first EEG may be normal."
+    },
+    {
+      "id": "cae",
+      "name": "Childhood absence epilepsy",
+      "ageMin": 2,
+      "ageMax": 13,
+      "ageText": "2 to 13 years (peak 5 to 7)",
+      "seizure": "Brief staring spells with abrupt onset and offset, with or without eyelid flutter or automatisms, many times a day",
+      "features": [
+        "gsw-3hz"
+      ],
+      "pathophys": "Abnormal oscillation of the thalamocortical loop, involving T-type calcium channels in thalamic neurons and GABA-B-mediated inhibition of relay neurons by the reticular nucleus, producing regular 3 Hz generalized spike-and-wave.",
+      "eeg": "A normal background with bursts of generalized, bilaterally synchronous 3 Hz (2.5 to 4 Hz) spike-and-wave, frontal predominant, lasting 4 to 20 seconds (the frontal maximum is clearest in referential montages; in bipolar chains the largest deflections are often centroparietal). The rate may slow slightly toward the end. Occipital intermittent rhythmic delta can occur. Hyperventilation is the best activation.",
+      "technologist": "Test responsiveness during bursts and note the time and what was said. Hyperventilation is done for the full protocol time if the patient can cooperate, and is stopped for a prolonged seizure or distress.",
+      "scene": "synCAE",
+      "detail": "cae",
+      "label": "Childhood absence",
+      "group": "child",
+      "eegShort": "Generalized 3 Hz spike-and-wave on a normal background."
+    },
+    {
+      "id": "rolandic",
+      "name": "Self-limited epilepsy with centrotemporal spikes (rolandic epilepsy)",
+      "ageMin": 3,
+      "ageMax": 14,
+      "ageText": "3 to 14 years (peak 7 to 10)",
+      "seizure": "Nocturnal or on waking: hemifacial twitching, speech arrest, drooling, sometimes spreading to the arm or generalizing",
+      "features": [
+        "rolandic"
+      ],
+      "pathophys": "Hyperexcitable perisylvian sensorimotor cortex in an immature brain; resolves in adolescence.",
+      "eeg": "Normal background. High-amplitude biphasic centrotemporal spikes (C3, C4, T3, T4) with a horizontal dipole: negative centrally and positive frontally. Sleep strongly activates them, and they may shift sides.",
+      "technologist": "Record sleep. Use referential and transverse montages to show the dipole; mention side shifts.",
+      "scene": "synRolandic",
+      "detail": "rolandic",
+      "label": "Rolandic",
+      "group": "child",
+      "eegShort": "Centrotemporal spikes with a horizontal dipole, activated by sleep."
+    },
+    {
+      "id": "occipital",
+      "name": "Self-limited epilepsy with autonomic seizures (SeLEAS, Panayiotopoulos syndrome)",
+      "ageMin": 1,
+      "ageMax": 14,
+      "ageText": "1 to 14 years (peak 3 to 6)",
+      "seizure": "Autonomic seizures with vomiting, pallor and eye deviation, often in sleep and often prolonged",
+      "features": [
+        "occipital"
+      ],
+      "pathophys": "Hyperexcitable immature posterior cortex and autonomic networks; usually remits with age.",
+      "eeg": "Occipital spikes, often high amplitude with a following slow wave, that appear with eye closure and darkness and may disappear when the eyes are open (fixation-off sensitivity). Spikes can also appear in other regions.",
+      "technologist": "Record eyes closed and open in alternating periods, and note the effect of eye opening on the spikes.",
+      "scene": "synOccipital",
+      "detail": null,
+      "label": "Occipital (Panayiotopoulos)",
+      "group": "child",
+      "eegShort": "Occipital spikes that change with eye opening and closure."
+    },
+    {
+      "id": "lgs",
+      "name": "Lennox-Gastaut syndrome",
+      "ageMin": 1,
+      "ageMax": 8,
+      "ageText": "1 to 8 years (peak 3 to 5)",
+      "seizure": "Several types: tonic (often in sleep), atonic drop attacks, atypical absences; cognitive impairment",
+      "features": [
+        "slow-sw",
+        "pfa"
+      ],
+      "pathophys": "A diffuse developmental and epileptic encephalopathy from many causes (including prior West syndrome) in which networks are persistently disturbed.",
+      "eeg": "A slow background with bursts of slow (below 2.5 Hz, often 1.5 to 2.5 Hz) generalized spike-and-wave in wakefulness, and bursts of generalized paroxysmal fast activity (10 to 20 Hz) in non-REM sleep, which can be the clinical tonic seizure.",
+      "technologist": "Record both waking and sleep. Mark clinical events with time and describe any fast bursts.",
+      "scene": "synLGSlow",
+      "scene2": "synLGPFA",
+      "detail": "lennox_gastaut",
+      "label": "Lennox-Gastaut",
+      "group": "child",
+      "eegShort": "Slow spike-wave when awake and generalized fast bursts in sleep, on a slow background."
+    },
+    {
+      "id": "eses",
+      "name": "Developmental and epileptic encephalopathy with spike-and-wave activation in sleep (DEE-SWAS; ESES/CSWS) and Landau-Kleffner syndrome",
+      "ageMin": 2,
+      "ageMax": 12,
+      "ageText": "2 to 12 years (peak 4 to 8)",
+      "seizure": "Variable seizures; regression of language, behaviour or cognition. In Landau-Kleffner syndrome, an acquired loss of language comprehension.",
+      "features": [
+        "esws",
+        "slow-sw"
+      ],
+      "pathophys": "Persistent epileptiform activity in non-REM sleep disturbs the cortical networks that support learning and language.",
+      "eeg": "Near-continuous generalized or diffuse spike-and-wave (about 1.5 to 2.5 Hz) during non-REM sleep, taking up most of the sleep record. It is much less abundant while awake. The amount of spike-wave in sleep is measured by the reader.",
+      "technologist": "A sleep recording is essential. Describe how much of the sleep record shows discharges; do not stop early.",
+      "scene": "synESES",
+      "detail": "eses_csws",
+      "label": "ESES / LKS",
+      "group": "child",
+      "eegShort": "Near-continuous spike-wave in non-REM sleep."
+    },
+    {
+      "id": "jme",
+      "name": "Juvenile myoclonic epilepsy",
+      "ageMin": 10,
+      "ageMax": 24,
+      "ageText": "10 to 24 years",
+      "seizure": "Myoclonic jerks, especially soon after waking; generalized tonic-clonic seizures; absences in some",
+      "features": [
+        "polyspike",
+        "photosensitive"
+      ],
+      "pathophys": "A genetic generalized epilepsy with a hyperexcitable frontal-thalamic network. Sleep deprivation, alcohol and flashing lights lower the threshold.",
+      "eeg": "Normal background with brief generalized polyspike-and-slow-wave complexes (a burst of 4 to 6 Hz polyspike-wave may repeat for 1 to 3 seconds), often frontal predominant, sometimes with a photoparoxysmal response. Bursts are often activated by sleep deprivation and by awakening.",
+      "technologist": "Record on waking or after sleep deprivation if requested. Mark jerks with the time. Photic stimulation per protocol, stopping at the first sign of a photoparoxysmal discharge.",
+      "scene": "synJME",
+      "detail": "jme",
+      "label": "JME",
+      "group": "adolescent",
+      "eegShort": "Generalized 4 to 6 Hz polyspike-wave bursts, often frontal predominant."
+    },
+    {
+      "id": "tle",
+      "name": "Mesial temporal lobe epilepsy",
+      "ageMin": 5,
+      "ageMax": 100,
+      "ageText": "Childhood to adulthood",
+      "seizure": "Rising epigastric aura, fear or deja vu, then staring, lip-smacking and hand automatisms with impaired awareness and later confusion",
+      "features": [
+        "focal-temporal"
+      ],
+      "pathophys": "Often hippocampal sclerosis, with neuronal loss and sprouting that make the circuit hyperexcitable.",
+      "eeg": "Interictal anterior temporal sharp waves with a maximum at F7/F8 or an anterior temporal electrode, more frequent in drowsiness and sleep, often with temporal slowing. Ictal onset is rhythmic theta (about 5 to 7 Hz) that grows in amplitude, slows and spreads to adjacent regions.",
+      "technologist": "Record sleep. Use the longitudinal chain to show the phase reversal at F7/F8 (Fp1-F7 and F7-T3), and a referential montage to show that F7 or F8 has the largest amplitude. During a seizure test responsiveness and describe behaviour.",
+      "scene": "synTLEInter",
+      "scene2": "synTLEIctal",
+      "detail": "temporal_lobe_epilepsy",
+      "label": "Mesial TLE",
+      "group": "adolescent",
+      "eegShort": "Anterior temporal sharp waves; ictal rhythmic theta."
+    },
+    {
+      "id": "fle",
+      "name": "Frontal lobe epilepsy",
+      "ageMin": 0,
+      "ageMax": 100,
+      "ageText": "Any age",
+      "seizure": "Brief frequent seizures, often from sleep, with hypermotor or tonic posturing and little confusion afterward",
+      "features": [
+        "focal-frontal"
+      ],
+      "pathophys": "Cortical malformation, tumour or injury, or a genetic cause (for example nocturnal frontal lobe epilepsy) in a large, deep and highly connected lobe.",
+      "eeg": "Interictal spikes may be absent or are frontal, with rapid bilateral spread. Frontal spikes show a phase reversal at the frontal electrode over the focus (F3 or F4) in the longitudinal chain, and at the same electrode in the transverse chain when it lies mid-chain. Ictal EEG is often obscured by muscle and movement artifact.",
+      "technologist": "Document the clinical event carefully with video. Artifact makes the ictal tracing hard to read, so mark the event time precisely.",
+      "scene": "synFLE",
+      "detail": "frontal_lobe_epilepsy",
+      "label": "Frontal lobe",
+      "group": "adolescent",
+      "eegShort": "Frontal spikes, often scarce; rapid bilateral spread."
+    }
+  ],
+  "patterns": [
+    {
+      "id": "hsv",
+      "name": "Lateralized periodic discharges (LPDs, formerly PLEDs) in a focal destructive illness",
+      "context": "For example acute herpes simplex encephalitis involving one temporal lobe",
+      "eeg": "Periodic sharp or sharp-and-slow complexes about every 1 to 2 seconds, lateralized to the affected temporal region, over focal delta and slowing.",
+      "pathophys": "Acute necrosis of cortex and deafferentation produce stereotyped repeating discharges.",
+      "technologist": "Describe the interval between complexes and the side, record state and medications, and tell the reader promptly if the pattern changes.",
+      "scene": "patHSV"
+    },
+    {
+      "id": "cjd",
+      "name": "Generalized periodic discharges (GPDs) in a rapidly progressive dementia",
+      "context": "For example sporadic Creutzfeldt-Jakob disease",
+      "eeg": "Stereotyped bi- or triphasic sharp complexes repeating about once per second, generalized and usually fairly symmetric (they can be asymmetric early), on a slowed background. They may disappear in very advanced disease.",
+      "pathophys": "Widespread cortical neuronal loss and spongiform change, with synchronous bursts of activity.",
+      "technologist": "Record stimulus responses (the complexes may be reduced by sedation). Describe the rate and distribution. Follow the facility prion policy: use disposable electrodes and supplies and do not reuse cup or needle electrodes.",
+      "scene": "patCJD"
+    },
+    {
+      "id": "sspe",
+      "name": "Periodic complexes in subacute sclerosing panencephalitis",
+      "context": "A late complication of measles in a child or adolescent, with myoclonic jerks",
+      "eeg": "Stereotyped high-amplitude generalized complexes recurring every 4 to 10 seconds, often time-locked to a myoclonic jerk, on a slowed background.",
+      "pathophys": "Persistent viral infection of the brain that damages cortex and white matter.",
+      "technologist": "Use a long page (or time base) so the long interval is visible, and mark each jerk with the time.",
+      "scene": "patSSPE"
+    },
+    {
+      "id": "alphacoma",
+      "name": "Alpha coma",
+      "context": "A comatose patient after cardiac arrest or with a brainstem lesion",
+      "eeg": "Generalized alpha-range activity (8 to 12 Hz) that is frontally predominant and does not react to stimulation. The pattern is unlike a normal posterior alpha rhythm, which blocks with eye opening.",
+      "pathophys": "A pathological rhythm produced by injured cortex and its brainstem or thalamic connections, which no longer respond to input.",
+      "technologist": "Test and record reactivity with every protocol stimulus. Describe the distribution and frequency, and the medications and temperature if known.",
+      "scene": "patAlphaComa"
+    },
+    {
+      "id": "betadrug",
+      "name": "Drug-induced beta activity",
+      "context": "A patient taking a benzodiazepine or barbiturate",
+      "eeg": "Excess beta (about 13 to 30 Hz), generalized and frontally predominant, often in an otherwise normal record. The posterior rhythm may be present or reduced.",
+      "pathophys": "Enhanced GABA-A receptor activity changes the thalamocortical rhythms.",
+      "technologist": "Record the medications and doses with their times. Describe the activity without naming the cause.",
+      "scene": "patBetaDrug"
+    }
+  ],
+  "mistakes": [
+    [
+      "The scalp EEG records action potentials.",
+      "It records summed postsynaptic potentials from synchronously active pyramidal neurons."
+    ],
+    [
+      "A small cortical focus will always show on the scalp.",
+      "A small area, or a focus deep in a sulcus or on the medial surface, can be invisible; several square centimetres of synchronous cortex are needed."
+    ],
+    [
+      "Delta waves always mean damage.",
+      "Delta is normal in deep sleep. Focal polymorphic delta while awake points to a focal lesion (often white matter) that has deafferented the cortex; the reader judges the cause."
+    ],
+    [
+      "A normal interictal EEG rules out epilepsy.",
+      "A single routine EEG shows epileptiform discharges in only about half of patients with epilepsy or fewer, and less often in frontal lobe epilepsy. Repeat studies and sleep raise the yield."
+    ],
+    [
+      "Absence seizures come from a single cortical focus.",
+      "They arise in an abnormal thalamocortical loop and produce generalized, symmetric discharges."
+    ],
+    [
+      "Hypsarrhythmia means the cause is known.",
+      "It is a pattern, not a diagnosis. Many causes produce it."
+    ],
+    [
+      "Rolandic spikes are always on one side.",
+      "They can shift sides and can be bilateral; sleep activates them."
+    ],
+    [
+      "Temporal lobe seizures start with generalized convulsions.",
+      "They typically start with an aura and automatisms; a generalized convulsion is a later spread."
+    ],
+    [
+      "The alpha rhythm in a comatose patient is a good sign.",
+      "Alpha that is frontally dominant and unreactive in coma (alpha coma) is a pathological pattern."
+    ],
+    [
+      "The technologist can name the syndrome from the EEG.",
+      "The reader interprets and diagnoses. The technologist describes with numbers, marks events and documents state and medications."
+    ]
+  ],
+  "genetics": {
+    "intro": "Genes do not give an EEG pattern by themselves. Many genes cause the same pattern, and one gene can cause different patterns at different ages. Use this tab to link the age, the EEG and the associated signs to the conditions the reader may consider. A technologist records and describes; the reader and the clinician make the genetic diagnosis.",
+    "groups": [
+      [
+        "neurocutaneous",
+        "Neurocutaneous"
+      ],
+      [
+        "channel",
+        "Channel, receptor and synaptic genes"
+      ],
+      [
+        "developmental",
+        "Neurodevelopmental genes"
+      ],
+      [
+        "structural",
+        "Malformation, metabolic and mTOR"
+      ]
+    ],
+    "principles": [
+      "One pattern, many genes: hypsarrhythmia and burst suppression have many genetic and non-genetic causes.",
+      "One gene, many patterns: the EEG changes with age, so the same gene can show burst suppression in a neonate and hypsarrhythmia later.",
+      "A normal EEG does not exclude a genetic disorder, especially for NF1, NF2 and the first study in SCN1A or CDKL5.",
+      "Skin, head size, behavior and movements are part of your report: describe them, and note how artifact from hand stereotypies, laughing or muscle appears."
+    ],
+    "patternTable": [
+      [
+        "Hypsarrhythmia",
+        "TSC, CDKL5, ARX, STXBP1, LIS1/DCX",
+        "Many non-genetic causes as well"
+      ],
+      [
+        "Burst suppression",
+        "STXBP1, KCNQ2 (severe), ARX, SCN2A",
+        "Metabolic and structural causes too"
+      ],
+      [
+        "Frontal rhythmic delta with spikes",
+        "UBE3A (Angelman)",
+        "Nonspecific; other encephalopathies can look similar"
+      ],
+      [
+        "Attenuation over one hemisphere",
+        "GNAQ (Sturge-Weber)",
+        "Nonspecific: also seen with subdural fluid, infarct or scalp swelling; compare sides at equal sensitivity"
+      ],
+      [
+        "Focal spikes over a lesion",
+        "TSC (tubers), DEPDC5",
+        "Imaging identifies the lesion"
+      ],
+      [
+        "High-amplitude fast activity",
+        "LIS1/DCX (lissencephaly)",
+        "Drugs also cause beta; check the history"
+      ],
+      [
+        "Spike-wave activated in sleep",
+        "GRIN2A",
+        "Quantified by the reader"
+      ],
+      [
+        "Sleep-related hypermotor seizures",
+        "CHRNA4, CHRNB2, DEPDC5",
+        "The interictal EEG is often normal"
+      ],
+      [
+        "Normal EEG",
+        "NF1, NF2, early SCN1A",
+        "Does not exclude the disorder"
+      ]
+    ],
+    "items": [
+      {
+        "id": "tsc",
+        "label": "Tuberous sclerosis",
+        "name": "Tuberous sclerosis complex (TSC)",
+        "group": "neurocutaneous",
+        "gene": "TSC1 (hamartin) or TSC2 (tuberin)",
+        "age": "Seizures usually begin in the first year; infantile spasms are common",
+        "clinical": "Autosomal dominant, and most cases are new (de novo) variants. Features: cortical tubers, subependymal nodules, hypomelanotic skin patches, facial angiofibromas, cardiac and kidney tumours. Most patients have epilepsy, often starting as infantile spasms or focal seizures.",
+        "mechanism": "The TSC1/TSC2 protein complex normally restrains the mTOR growth pathway. Loss of function over-activates mTOR, which produces tubers and hyperexcitable cortex.",
+        "eeg": "Infantile spasms: hypsarrhythmia, often asymmetric or with a clear focal emphasis, and an electrodecrement at each spasm. Later: focal or multifocal spikes, often over tubers, with focal slowing. Tubers can be in any lobe, so the spike field can be anywhere.",
+        "technologist": "Mark every spasm with its time and record both hemispheres at the same sensitivity so asymmetry is visible. Describe where the spikes are largest in referential and bipolar montages. The reader links the findings to imaging.",
+        "scene": "synWestHyps",
+        "scene2": "genTuber",
+        "sceneLabels": [
+          "Infancy: hypsarrhythmia",
+          "Childhood: tuber spikes"
+        ],
+        "sceneNote": "Classic symmetric hypsarrhythmia is shown (in TSC it is often asymmetric); later in childhood, a focal spike field over a right posterior temporal tuber."
+      },
+      {
+        "id": "nf1",
+        "label": "Neurofibromatosis 1",
+        "name": "Neurofibromatosis type 1 (NF1)",
+        "group": "neurocutaneous",
+        "gene": "NF1 (neurofibromin), chromosome 17",
+        "age": "Clinical features appear in childhood; seizures are uncommon",
+        "clinical": "Autosomal dominant (about half are new variants). Features: cafe-au-lait spots, skin-fold freckling, neurofibromas, Lisch nodules, optic pathway glioma, learning problems. Epilepsy occurs in a minority, much less often than in TSC.",
+        "mechanism": "Neurofibromin is a negative regulator of the RAS pathway; loss of function over-activates RAS and mTOR signalling.",
+        "eeg": "Often normal or nonspecific. Focal slowing or focal spikes appear only when there is a cortical lesion or tumour. There is no characteristic NF1 pattern.",
+        "technologist": "Record a standard study and describe any focal finding. Do not expect a distinctive pattern; a normal EEG does not exclude the disorder."
+      },
+      {
+        "id": "nf2",
+        "label": "Neurofibromatosis 2",
+        "name": "Neurofibromatosis type 2 (NF2)",
+        "group": "neurocutaneous",
+        "gene": "NF2 (merlin, also called schwannomin), chromosome 22",
+        "age": "Usually teen years to young adulthood",
+        "clinical": "Autosomal dominant. Features: bilateral vestibular schwannomas, meningiomas, spinal tumours. Seizures are uncommon and are usually due to a meningioma or other tumour.",
+        "mechanism": "Merlin is a tumour suppressor; its loss causes schwannomas and meningiomas rather than a primary cortical excitability disorder.",
+        "eeg": "Often normal. Focal slowing or spikes can occur near a meningioma.",
+        "technologist": "Hearing loss is common and can be profound, so test responsiveness with touch and visual stimuli as well as voice. Record and describe any focal finding."
+      },
+      {
+        "id": "sw",
+        "label": "Sturge-Weber",
+        "name": "Sturge-Weber syndrome",
+        "group": "neurocutaneous",
+        "gene": "GNAQ, a somatic (mosaic) variant, not inherited",
+        "age": "Seizures usually begin in the first year",
+        "clinical": "Port-wine stain on the face (often the forehead and upper eyelid), a leptomeningeal angioma and glaucoma on the same side as the stain, and later weakness (hemiparesis) on the opposite side of the body. Seizures are common and may be focal, with clusters or prolonged episodes.",
+        "mechanism": "A somatic GNAQ variant in some cells causes abnormal vessels. Chronic poor venous drainage and low blood flow damage the underlying cortex.",
+        "eeg": "Reduced amplitude and fast activity over the affected hemisphere compared with the other side (attenuation), with focal or multifocal spikes and slowing there.",
+        "technologist": "Use the same sensitivity on both sides and compare them. Place electrodes with care over a port-wine stain or scalp lesion, and note any skin changes. Describe the amplitude asymmetry rather than naming the side as abnormal.",
+        "scene": "synSturgeWeber",
+        "sceneNote": "Right hemisphere attenuation with a right posterior spike."
+      },
+      {
+        "id": "scn1a",
+        "label": "SCN1A / Dravet",
+        "name": "SCN1A epilepsies (Dravet syndrome and GEFS+)",
+        "group": "channel",
+        "gene": "SCN1A (Nav1.1 sodium channel)",
+        "age": "Dravet: first seizure around 6 months, often with fever",
+        "clinical": "Fever-sensitive, often prolonged seizures in a previously normal infant, then multiple seizure types and developmental slowing. A milder variant is genetic epilepsy with febrile seizures plus (GEFS+).",
+        "mechanism": "Loss of function of the sodium channel in inhibitory interneurons reduces inhibition, so the network becomes hyperexcitable.",
+        "eeg": "The first EEG can be normal. Later: generalized and multifocal spike-wave, photosensitivity, and background slowing. See the Dravet card on the Syndromes tab.",
+        "technologist": "Record sleep and photic stimulation per protocol and stop for a clinical event. Note temperature or illness, and the timing of any seizure."
+      },
+      {
+        "id": "scn2a8a",
+        "label": "SCN2A / SCN8A",
+        "name": "SCN2A and SCN8A developmental and epileptic encephalopathies",
+        "group": "channel",
+        "gene": "SCN2A (Nav1.2) and SCN8A (Nav1.6)",
+        "age": "Early-onset forms start in the neonatal or early infant period",
+        "clinical": "Early seizures, often focal or tonic, with developmental delay. SCN2A also has a later-onset form with autism and intellectual disability. Variants that increase channel function tend to cause the early forms.",
+        "mechanism": "Gain-of-function variants make excitatory neurons fire too easily; some SCN2A variants reduce function instead and give a later, different phenotype.",
+        "eeg": "Variable: multifocal spikes, focal discharges, burst suppression or hypsarrhythmia in early infancy, depending on the stage.",
+        "technologist": "Record states and any events with time markers, and describe the distribution of discharges. Do not infer a gene from the pattern."
+      },
+      {
+        "id": "kcnq2",
+        "label": "KCNQ2",
+        "name": "KCNQ2 neonatal epilepsies",
+        "group": "channel",
+        "gene": "KCNQ2 (Kv7.2 potassium channel)",
+        "age": "Neonate, usually in the first week",
+        "clinical": "Mild form: self-limited familial neonatal seizures with a normal outcome. Severe form: neonatal epileptic encephalopathy with tonic seizures and developmental delay.",
+        "mechanism": "Loss of potassium channel function (the M-current) lets neurons depolarize and fire too easily.",
+        "eeg": "Self-limited form: interictal EEG is often normal or nonspecific. The severe form can show burst suppression or multifocal discharges, and an ictal attenuation can start a seizure.",
+        "technologist": "Record in a neonate with the correct neonatal montage and mark each clinical event with time. Describe the seizure semiology you saw.",
+        "scene": "synOhtahara",
+        "sceneNote": "Burst suppression is nonspecific; the severe form can resemble it, but its seizures often start with an ictal attenuation."
+      },
+      {
+        "id": "cdkl5",
+        "label": "CDKL5",
+        "name": "CDKL5 deficiency disorder",
+        "group": "developmental",
+        "gene": "CDKL5 (X-linked)",
+        "age": "Seizures usually start in the first 3 months",
+        "clinical": "Early, hard-to-treat seizures (often tonic) in a baby, then epileptic spasms in many, severe developmental delay and poor eye contact. Females are more often diagnosed.",
+        "mechanism": "Loss of a kinase that is important for neuronal maturation and synapse function.",
+        "eeg": "The EEG may be normal for the first weeks, then show multifocal discharges and slowing. Hypsarrhythmia can appear when spasms start.",
+        "technologist": "Mark spasms and tonic seizures with times. Several short studies may be needed because the first record can be normal.",
+        "scene": "synWestHyps",
+        "sceneNote": "Hypsarrhythmia when spasms develop."
+      },
+      {
+        "id": "stxbp1",
+        "label": "STXBP1",
+        "name": "STXBP1 encephalopathy",
+        "group": "developmental",
+        "gene": "STXBP1 (Munc18-1, a synaptic vesicle release protein)",
+        "age": "Neonatal or early infant onset",
+        "clinical": "Early seizures, tonic or spasms, developmental delay, and in many a tremor or movement disorder.",
+        "mechanism": "A deficiency of a protein that controls neurotransmitter release at synapses.",
+        "eeg": "Burst suppression or multifocal spikes in the neonatal period; hypsarrhythmia in some later in infancy when spasms start; background slowing.",
+        "technologist": "Record states and spasms with times, describe bursts and suppression, and note tremor or movements that can mimic seizures.",
+        "scene": "synOhtahara",
+        "sceneNote": "The early burst-suppression pattern, which is nonspecific."
+      },
+      {
+        "id": "arx",
+        "label": "ARX",
+        "name": "ARX-related disorders",
+        "group": "developmental",
+        "gene": "ARX (X-linked transcription factor)",
+        "age": "Infancy, or neonatal",
+        "clinical": "Males with severe variants have lissencephaly with abnormal genitalia (XLAG), epileptic spasms and other seizures; milder variants cause intellectual disability, dystonia or infantile spasms without a malformation.",
+        "mechanism": "Abnormal development and migration of inhibitory interneurons.",
+        "eeg": "Burst suppression or hypsarrhythmia, with severely abnormal background in the malformation form.",
+        "technologist": "Mark spasms and describe the pattern in each state. The malformation is shown on imaging, not on the EEG.",
+        "scene": "synWestHyps",
+        "sceneNote": "Hypsarrhythmia in the spasm stage."
+      },
+      {
+        "id": "pcdh19",
+        "label": "PCDH19",
+        "name": "PCDH19 clustering epilepsy",
+        "group": "developmental",
+        "gene": "PCDH19 (X-linked cell adhesion protein)",
+        "age": "About 6 months to 3 years",
+        "clinical": "Seizures in clusters, often with fever, mainly in heterozygous girls (and mosaic males). Some have developmental delay or autism.",
+        "mechanism": "Cells expressing the variant and cells with the normal gene mix in a mosaic, which disturbs how neurons recognize each other.",
+        "eeg": "Nonspecific. The interictal EEG can be normal or show focal or multifocal discharges; sleep helps find them.",
+        "technologist": "Record sleep, mark each seizure in a cluster with time, and note fever."
+      },
+      {
+        "id": "mecp2",
+        "label": "MECP2 / Rett",
+        "name": "Rett syndrome",
+        "group": "developmental",
+        "gene": "MECP2 (X-linked)",
+        "age": "Regression begins at 6 to 18 months after normal early development",
+        "clinical": "Mostly girls: loss of purposeful hand use, hand-wringing or hand-washing movements, loss of speech, gait problems, breathing irregularity. Most develop seizures.",
+        "mechanism": "MECP2 normally regulates gene expression in mature neurons; its loss disrupts synaptic function.",
+        "eeg": "Early: normal or mild slowing. After regression: slowed background, loss of normal sleep features, and spikes that are often centrotemporal and more frequent in sleep. Rhythmic hand stereotypies can produce rhythmic artifact.",
+        "technologist": "Note the hand movements and the time they occur so the reader does not mistake rhythmic artifact for a seizure. Record sleep, and mark seizures, apnea or breath-holding spells with times.",
+        "scene": "genRett",
+        "sceneNote": "Slow background with centrocentral spikes in sleep.",
+        "detail": "rett"
+      },
+      {
+        "id": "ube3a",
+        "label": "UBE3A / Angelman",
+        "name": "Angelman syndrome",
+        "group": "developmental",
+        "gene": "UBE3A on chromosome 15q11-q13, only the maternal copy is active in neurons",
+        "age": "Delay at 6 to 12 months; seizures often begin before age 3",
+        "clinical": "Severe speech impairment, ataxia, a happy demeanour with frequent laughing, and seizures in most. Causes include a maternal 15q11-q13 deletion, a UBE3A variant, paternal uniparental disomy and an imprinting defect.",
+        "mechanism": "The maternally inherited UBE3A is the one expressed in neurons, so its loss disrupts synaptic function.",
+        "eeg": "Large (200 to 500 uV) rhythmic delta at about 2 to 3 Hz, greatest frontally, often with spikes; runs of 4 to 6 Hz theta; and posterior spikes triggered by eye closure. The EEG can be abnormal before seizures begin.",
+        "technologist": "Describe the amplitude and frequency, the frontal emphasis, and the effect of eye closure. Laughing and movement artifact are frequent, so mark them.",
+        "scene": "synAngelman",
+        "sceneNote": "Frontal-predominant rhythmic delta with spikes.",
+        "detail": "angelman"
+      },
+      {
+        "id": "slc2a1",
+        "label": "SLC2A1 / GLUT1",
+        "name": "GLUT1 deficiency syndrome",
+        "group": "structural",
+        "gene": "SLC2A1 (glucose transporter type 1)",
+        "age": "Infancy; seizures often start in the first 6 months",
+        "clinical": "Seizures, a small head size, developmental delay and movement disorders such as ataxia or dystonia. The spinal fluid glucose is low (hypoglycorrhachia) while the blood glucose is normal, so a low CSF-to-blood glucose ratio is the key finding. The ketogenic diet is the treatment.",
+        "mechanism": "The brain cannot import enough glucose across the blood-brain barrier, so neurons are short of energy.",
+        "eeg": "Generalized 2.5 to 4 Hz spike-wave in some, or focal discharges. Discharges often increase when fasting and decrease after eating.",
+        "technologist": "Note when the patient last ate and record it on the report. Follow the lab protocol and the clinician instructions about timing; do not withhold food without an order."
+      },
+      {
+        "id": "depdc5",
+        "label": "DEPDC5",
+        "name": "DEPDC5 and the mTOR pathway",
+        "group": "structural",
+        "gene": "DEPDC5 (part of the GATOR1 complex)",
+        "age": "Childhood to adulthood",
+        "clinical": "Familial focal epilepsy with variable foci, often with sleep-related hypermotor seizures. Some have focal cortical dysplasia.",
+        "mechanism": "Loss of a negative regulator of mTOR over-activates it, similar in concept to TSC.",
+        "eeg": "Focal spikes whose location differs between family members; may be frontal. Interictal EEG is often normal.",
+        "technologist": "Record sleep. Mark the exact time of seizures and the first movement; muscle and movement can obscure the onset.",
+        "scene": "synFLE",
+        "sceneNote": "Foci vary between family members; a frontal focus is shown as one example."
+      },
+      {
+        "id": "lis1dcx",
+        "label": "LIS1 / DCX",
+        "name": "Lissencephaly and subcortical band heterotopia",
+        "group": "structural",
+        "gene": "LIS1 (PAFAH1B1) on chromosome 17 and DCX (X-linked)",
+        "age": "Infancy; spasms usually start in the first year",
+        "clinical": "Smooth brain (lissencephaly) from failed neuronal migration. LIS1 variants are worse in the back of the brain and DCX variants in the front; DCX variants cause lissencephaly and in females a band of misplaced neurons under the cortex (double cortex). Severe developmental delay and infantile spasms.",
+        "mechanism": "Neurons fail to migrate normally from the ventricular zone to the cortex, so the cortex has too few layers and abnormal circuits.",
+        "eeg": "High-amplitude, generalized fast activity of about 10 to 20 Hz, often over 100 uV, even in infancy. Hypsarrhythmia and multifocal spikes can follow.",
+        "technologist": "Use a lower sensitivity when the amplitude is high, and describe the fast rhythm and where it is largest. Mark spasms with times.",
+        "scene": "genLissencephaly",
+        "sceneNote": "Generalized high-amplitude fast activity.",
+        "detail": "lissencephaly"
+      },
+      {
+        "id": "lgi1",
+        "label": "LGI1",
+        "name": "Autosomal dominant lateral temporal epilepsy (LGI1)",
+        "group": "channel",
+        "gene": "LGI1 (a secreted synaptic protein)",
+        "age": "Teen years to adulthood",
+        "clinical": "Focal seizures that begin with an auditory aura such as a buzzing or a voice, sometimes with language problems; may spread to a generalized seizure. LGI1 variants explain only about half of the families.",
+        "mechanism": "LGI1 helps regulate excitatory synaptic transmission in the lateral temporal cortex.",
+        "eeg": "Interictal EEG is often normal; when abnormal, there are lateral temporal spikes or slowing.",
+        "technologist": "Record sleep, and ask the patient to report an aura and mark its time."
+      },
+      {
+        "id": "nicotinic",
+        "label": "CHRNA4 / CHRNB2",
+        "name": "Autosomal dominant sleep-related hypermotor epilepsy (CHRNA4, CHRNB2, CHRNA2)",
+        "group": "channel",
+        "gene": "Nicotinic acetylcholine receptor subunits",
+        "age": "Childhood or adolescence",
+        "clinical": "Brief, violent hypermotor seizures from sleep, in clusters, often misdiagnosed as parasomnias. Often familial.",
+        "mechanism": "Gain-of-function changes in a ligand-gated channel make the receptor more sensitive to acetylcholine.",
+        "eeg": "Interictal EEG is often normal. Ictal EEG is often obscured by movement and muscle; a frontal origin may be recognized only on video-EEG.",
+        "technologist": "Record sleep with video, mark each event with its time, and describe the behavior exactly.",
+        "scene": "synFLE",
+        "sceneNote": "A frontal focus; the ictal record is usually hidden by movement."
+      },
+      {
+        "id": "grin2a",
+        "label": "GRIN2A",
+        "name": "GRIN2A epilepsy-aphasia spectrum",
+        "group": "channel",
+        "gene": "GRIN2A (NMDA receptor subunit)",
+        "age": "Early to mid childhood",
+        "clinical": "A range from rolandic-like epilepsy to epileptic encephalopathy with spike-wave activation in sleep and Landau-Kleffner syndrome, with speech and language problems.",
+        "mechanism": "Variants (loss- or gain-of-function) alter NMDA receptor function. The phenotype is dominated by sleep-activated discharges and speech and language difficulty.",
+        "eeg": "Centrotemporal spikes, often activated by sleep, up to near-continuous spike-wave in non-REM sleep (ESES/CSWS).",
+        "technologist": "Record a full sleep period and mark non-REM stages; the reader quantifies the spike-wave index.",
+        "scene": "synESES",
+        "sceneNote": "Near-continuous spike-wave in sleep."
+      }
+    ]
+  }
+}

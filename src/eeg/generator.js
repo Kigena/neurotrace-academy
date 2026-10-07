@@ -257,6 +257,7 @@ export const FINDING_TYPES = [
   "mu", "muShapedAlpha", "firda", "polymorphicDelta", "spike", "sharp", "gsw", "polyspikeWave",
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
   "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine", "focalDelta", "burst",
+  "rhythm", "periodic", "ictal", "hypsarrhythmia", "electrodecrement", "fastBurst",
 ];
 
 /**
@@ -274,6 +275,7 @@ export function generateReferential(scene) {
   const bg = { ...DEFAULT_BG[state] || DEFAULT_BG.awake, ...(scene.background || {}) };
   const findings = scene.findings || [];
   const markers = [];
+  const post = []; // functions run on every electrode after all sources are summed
 
   const V = {};
   for (const name of ELECTRODE_NAMES) V[name] = new Float64Array(n);
@@ -334,7 +336,7 @@ export function generateReferential(scene) {
     }
     ["left", "right"].forEach((side, j) => {
       const sig = new Float64Array(n);
-      const gSide = attenuate[side];
+      const gSide = attenuate[side] * (scene.pdrAttenuate?.[side] ?? 1);
       for (let i = 0; i < n; i++) sig[i] = (0.75 * common[i] + 0.45 * own[j][i]) * amp * react[i] * gSide;
       addSource(V, field(side === "left" ? [-0.22, -0.72] : [0.22, -0.72], 0.33), sig);
     });
@@ -392,6 +394,152 @@ export function generateReferential(scene) {
           sig[i] = -amp * g * (Math.sin(phi) + 0.22 * Math.sin(2 * phi + 0.9));
         }
         addSource(V, field(f.center ?? (f.type === "rhythmicDelta" ? [0, -0.65] : [0, 0.62]), f.sigma ?? 0.42), sig);
+        break;
+      }
+      case "rhythm": {
+        // A narrow-band rhythm at a chosen place (for example frontal alpha in coma, drug beta, temporal theta).
+        const hz = f.hz ?? 10;
+        const bw = f.bwHz ?? 0.8;
+        const amp = (f.uv ?? 40) / 2.8;
+        const runs = f.runs || [[0, seconds]];
+        const sig = narrowband(n, hz, bw, gauss);
+        for (let i = 0; i < n; i++) {
+          let g = 0;
+          for (const [a, b] of runs) g = Math.max(g, gateValue(time(i), a, b, f.rampS ?? 0.4));
+          sig[i] *= amp * g;
+        }
+        addSource(V, field(f.center ?? [0, 0], f.sigma ?? 0.4, f.side ? { side: f.side } : {}), sig);
+        break;
+      }
+      case "periodic": {
+        // Repeating complexes at a fixed interval: lateralized (PLEDs/LPDs), generalized (CJD) or very slow (SSPE).
+        const interval = f.intervalS ?? 1;
+        const from = f.from ?? 0;
+        const to = f.to ?? seconds;
+        const jitter = f.jitterS ?? 0.04;
+        const amp = f.uv ?? 120;
+        const shape = f.shape ?? "sharpSlow";
+        const times = [];
+        for (let tt = from + (f.firstAt ?? 0.3); tt < to; tt += interval) times.push(tt + (rng() - 0.5) * 2 * jitter);
+        const sig = new Float64Array(n);
+        for (let i = 0; i < n; i++) {
+          const t = time(i);
+          let v = 0;
+          for (const t0 of times) {
+            if (Math.abs(t - t0) > 1.2) continue;
+            if (shape === "broad") {
+              // stereotyped slow complex: abrupt negative rise, long slow decline, small positive overshoot
+              v += -asymGauss(t, t0, 0.05, 0.22) - 0.45 * asymGauss(t, t0 + 0.12, 0.08, 0.2) + 0.25 * asymGauss(t, t0 + 0.55, 0.2, 0.3);
+            } else {
+              v += transientShape(t, t0, f.durMs ?? 220, shape === "sharpSlow");
+            }
+          }
+          sig[i] = amp * v;
+        }
+        addSource(V, field(f.center ?? [0, 0.1], f.sigma ?? 0.9, f.side ? { side: f.side } : {}), sig);
+        if (f.diffuse) {
+          // generalized complexes reach every electrode with its own gain, so bipolar chains everywhere show them
+          for (const name of CORE_NAMES) {
+            const kk = (0.35 + 0.65 * rng()) * f.diffuse;
+            const ch = V[name];
+            for (let i = 0; i < n; i++) ch[i] += kk * sig[i];
+          }
+        }
+        if (f.positive) addSource(V, field(f.positive.center, f.positive.sigma ?? 0.4), sig, -(f.positive.k ?? 0.4));
+        for (const t0 of times) if (f.marker) markers.push({ at: t0, label: f.marker });
+        break;
+      }
+      case "ictal": {
+        // Evolving rhythmic seizure activity: frequency and amplitude change, optional slower spread to another site.
+        const start = f.start ?? 3;
+        const end = f.end ?? 8;
+        const amp0 = (f.uvStart ?? 30) / 1.0;
+        const amp1 = (f.uvEnd ?? 90) / 1.0;
+        const hz0 = f.hzStart ?? 6;
+        const hz1 = f.hzEnd ?? 4;
+        const sig = new Float64Array(n);
+        let phi = rng() * 6.28;
+        for (let i = 0; i < n; i++) {
+          const t = time(i);
+          const u = Math.min(1, Math.max(0, (t - start) / Math.max(0.1, end - start)));
+          const hz = hz0 + (hz1 - hz0) * u;
+          phi += (2 * Math.PI * hz) / FS;
+          const g = gateValue(t, start, end, 0.6);
+          const a = amp0 + (amp1 - amp0) * u;
+          sig[i] = -a * g * (Math.sin(phi) + 0.35 * Math.sin(2 * phi + 0.7));
+        }
+        addSource(V, field(f.center ?? "T3", f.sigma ?? 0.28, f.side ? { side: f.side } : {}), sig);
+        if (f.spread) {
+          const delay = Math.round((f.spread.delayS ?? 1.5) * FS);
+          const sp = new Float64Array(n);
+          for (let i = delay; i < n; i++) sp[i] = sig[i - delay] * (f.spread.k ?? 0.6);
+          addSource(V, field(f.spread.center, f.spread.sigma ?? 0.5), sp);
+        }
+        if (f.label) markers.push({ at: start, label: f.label });
+        break;
+      }
+      case "hypsarrhythmia": {
+        // Chaotic, very high amplitude, asynchronous slow waves with multifocal spikes (no coordinated background).
+        const amp = (f.uv ?? 260) / 2.8;
+        for (const name of CORE_NAMES) {
+          const a = narrowband(n, 1.6, 1.2, gauss);
+          const b = narrowband(n, 3.8, 2.2, gauss);
+          const ch = V[name];
+          for (let i = 0; i < n; i++) ch[i] += amp * (0.85 * a[i] + 0.5 * b[i]);
+        }
+        const nSpikes = f.spikes ?? 16;
+        for (let j = 0; j < nSpikes; j++) {
+          const site = CORE_NAMES[Math.floor(rng() * CORE_NAMES.length)];
+          const t0 = 0.3 + rng() * (seconds - 0.6);
+          const dur = 55 + rng() * 70;
+          const sig = new Float64Array(n);
+          for (let i = 0; i < n; i++) {
+            const t = time(i);
+            if (Math.abs(t - t0) < 0.5) sig[i] = (f.spikeUv ?? 180) * (0.7 + 0.6 * rng()) * transientShape(t, t0, dur, rng() < 0.5);
+          }
+          addSource(V, field(site, 0.18), sig);
+        }
+        break;
+      }
+      case "electrodecrement": {
+        // Sudden generalized attenuation of the background (as in an infantile spasm), with a slow wave at onset.
+        const times = Array.isArray(f.at) ? f.at : [f.at];
+        const dur = f.durS ?? 2;
+        const depth = f.depth ?? 0.85;
+        const slow = new Float64Array(n);
+        for (let i = 0; i < n; i++) {
+          let v = 0;
+          for (const t0 of times) v += asymGauss(time(i), t0, 0.12, 0.35);
+          slow[i] = -(f.slowUv ?? 280) * v;
+        }
+        addSource(V, field([0, 0.1], 1.0), slow);
+        post.push((name) => {
+          const ch = V[name];
+          for (let i = 0; i < n; i++) {
+            let g = 0;
+            for (const t0 of times) g = Math.max(g, gateValue(time(i), t0 + 0.15, t0 + dur, 0.2));
+            ch[i] *= 1 - depth * g;
+          }
+        });
+        if (f.marker) for (const t0 of times) markers.push({ at: t0, label: f.marker });
+        break;
+      }
+      case "fastBurst": {
+        // Generalized paroxysmal fast activity: brief bursts of 10 to 20 Hz rhythmic activity, frontal predominant.
+        const times = Array.isArray(f.at) ? f.at : [f.at];
+        const dur = f.durS ?? 1.2;
+        const hz = f.hz ?? 12;
+        const sig = new Float64Array(n);
+        let phi = rng() * 6.28;
+        for (let i = 0; i < n; i++) {
+          const t = time(i);
+          phi += (2 * Math.PI * (hz + 1.2 * Math.sin(t * 5))) / FS;
+          let g = 0;
+          for (const t0 of times) g = Math.max(g, gateValue(t, t0, t0 + dur, 0.2));
+          sig[i] = -(f.uv ?? 100) * g * Math.sin(phi);
+        }
+        addSource(V, field(f.center ?? [0, 0.35], f.sigma ?? 0.65), sig);
+        if (f.marker) for (const t0 of times) markers.push({ at: t0, label: f.marker });
         break;
       }
       case "burst": {
@@ -476,6 +624,7 @@ export function generateReferential(scene) {
           sig[i] = amp * v;
         }
         addSource(V, w, sig);
+        if (f.positive) addSource(V, field(f.positive.center, f.positive.sigma ?? 0.25), sig, -(f.positive.k ?? 0.5));
         break;
       }
       case "gsw": {
@@ -701,6 +850,8 @@ export function generateReferential(scene) {
         throw new Error(`Unknown finding type ${f.type}`);
     }
   }
+
+  for (const fn of post) for (const name of ELECTRODE_NAMES) fn(name);
 
   // --- EKG channel and small ear/temporal contamination
   const ekg = new Float64Array(n);

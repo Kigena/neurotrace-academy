@@ -1,0 +1,1046 @@
+{
+  "synCAE": {
+    "seed": 301,
+    "ageYears": 9,
+    "state": "awake",
+    "sensitivity": 10,
+    "lff": 0.5,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 9,
+      "pdrUv": 55,
+      "beta": 2.5,
+      "theta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "gsw",
+        "from": 2.6,
+        "to": 8.4,
+        "uv": 380,
+        "hz": 3,
+        "startHz": 3.4,
+        "label": "Absence"
+      }
+    ]
+  },
+  "synJME": {
+    "seed": 302,
+    "ageYears": 15,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "transverse"
+    ],
+    "background": {
+      "pdrHz": 10,
+      "pdrUv": 45,
+      "beta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "polyspikeWave",
+        "at": 2.2,
+        "spikes": 4,
+        "uv": 230,
+        "marker": "Jerk"
+      },
+      {
+        "type": "polyspikeWave",
+        "at": 4.8,
+        "spikes": 5,
+        "uv": 260
+      },
+      {
+        "type": "polyspikeWave",
+        "at": 7.6,
+        "spikes": 4,
+        "uv": 220,
+        "marker": "Jerk"
+      }
+    ]
+  },
+  "synWestHyps": {
+    "seed": 303,
+    "ageYears": 0.5,
+    "state": "awake",
+    "sensitivity": 20,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 1,
+      "theta": 1,
+      "delta": 0,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "hypsarrhythmia",
+        "uv": 300,
+        "spikes": 18,
+        "spikeUv": 190
+      }
+    ]
+  },
+  "synWestSpasm": {
+    "seed": 304,
+    "ageYears": 0.5,
+    "state": "awake",
+    "sensitivity": 20,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 1,
+      "theta": 1,
+      "delta": 0,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "hypsarrhythmia",
+        "uv": 300,
+        "spikes": 10,
+        "spikeUv": 190
+      },
+      {
+        "type": "electrodecrement",
+        "at": [
+          5.0
+        ],
+        "durS": 2.2,
+        "depth": 0.88,
+        "slowUv": 320,
+        "marker": "Spasm"
+      },
+      {
+        "type": "muscle",
+        "from": 4.95,
+        "to": 5.6,
+        "sites": [
+          "Fp1",
+          "Fp2",
+          "F7",
+          "F8"
+        ],
+        "uv": 16
+      }
+    ]
+  },
+  "synLGSlow": {
+    "seed": 305,
+    "ageYears": 6,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 6.5,
+      "pdrUv": 30,
+      "beta": 2,
+      "theta": 5,
+      "delta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "gsw",
+        "from": 1.6,
+        "to": 7.6,
+        "uv": 300,
+        "hz": 1.8,
+        "startHz": 2.0,
+        "center": [
+          0,
+          0.35
+        ]
+      }
+    ]
+  },
+  "synLGPFA": {
+    "seed": 306,
+    "ageYears": 8,
+    "state": "n2",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "findings": [
+      {
+        "type": "fastBurst",
+        "at": [
+          2.4,
+          6.6
+        ],
+        "durS": 1.4,
+        "hz": 12,
+        "uv": 90,
+        "marker": "Fast burst"
+      },
+      {
+        "type": "spindle",
+        "at": [
+          4.6
+        ],
+        "uv": 25
+      }
+    ]
+  },
+  "synRolandic": {
+    "seed": 307,
+    "ageYears": 8,
+    "state": "n2",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "transverse",
+      "referential"
+    ],
+    "findings": [
+      {
+        "type": "spike",
+        "center": "C4",
+        "sigma": 0.18,
+        "uv": 150,
+        "durMs": 75,
+        "slowWave": true,
+        "at": [
+          1.2,
+          2.3,
+          3.4,
+          5.1,
+          6.4,
+          8.2,
+          9.2
+        ],
+        "positive": {
+          "center": [
+            0.38,
+            0.62
+          ],
+          "sigma": 0.25,
+          "k": 0.5
+        }
+      },
+      {
+        "type": "spindle",
+        "at": [
+          4.2
+        ],
+        "uv": 25
+      }
+    ]
+  },
+  "synTLEInter": {
+    "seed": 308,
+    "ageYears": 34,
+    "state": "drowsy",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "transverse",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 8.5,
+      "pdrUv": 20,
+      "theta": 6,
+      "beta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "sharp",
+        "center": [
+          -0.66,
+          0.4
+        ],
+        "sigma": 0.17,
+        "uv": 130,
+        "durMs": 110,
+        "slowWave": true,
+        "at": [
+          2.2,
+          5.9,
+          8.4
+        ]
+      },
+      {
+        "type": "focalDelta",
+        "center": "T3",
+        "uv": 28,
+        "sigma": 0.25,
+        "runs": [
+          [
+            3.5,
+            7.5
+          ]
+        ]
+      }
+    ]
+  },
+  "synTLEIctal": {
+    "seed": 309,
+    "ageYears": 34,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 9.5,
+      "pdrUv": 30,
+      "theta": 2,
+      "beta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "ictal",
+        "center": [
+          -0.7,
+          0.2
+        ],
+        "sigma": 0.25,
+        "start": 2.4,
+        "end": 9.8,
+        "hzStart": 6.5,
+        "hzEnd": 5,
+        "uvStart": 22,
+        "uvEnd": 75,
+        "spread": {
+          "center": [
+            -0.2,
+            0.25
+          ],
+          "sigma": 0.55,
+          "delayS": 2.0,
+          "k": 0.6
+        },
+        "label": "Onset"
+      }
+    ]
+  },
+  "synFLE": {
+    "seed": 310,
+    "ageYears": 22,
+    "state": "n2",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "transverse",
+      "referential"
+    ],
+    "findings": [
+      {
+        "type": "spike",
+        "center": "F3",
+        "sigma": 0.17,
+        "uv": 150,
+        "durMs": 60,
+        "at": [
+          1.6,
+          3.9,
+          7.4
+        ]
+      },
+      {
+        "type": "gsw",
+        "from": 5.3,
+        "to": 6.5,
+        "uv": 260,
+        "hz": 2.6,
+        "startHz": 3,
+        "center": [
+          0,
+          0.55
+        ],
+        "sigma": 0.45
+      },
+      {
+        "type": "vertex",
+        "at": [
+          8.9
+        ],
+        "uv": 90
+      }
+    ]
+  },
+  "synOccipital": {
+    "seed": 311,
+    "ageYears": 7,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 8.5,
+      "pdrUv": 50,
+      "beta": 2,
+      "theta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "spike",
+        "center": [
+          0,
+          -0.77
+        ],
+        "sigma": 0.38,
+        "uv": 180,
+        "durMs": 80,
+        "slowWave": true,
+        "at": [
+          0.7,
+          1.4,
+          2.1,
+          2.7,
+          7.8,
+          8.5,
+          9.2
+        ]
+      },
+      {
+        "type": "eyesOpen",
+        "at": 3.4,
+        "uv": 140
+      },
+      {
+        "type": "eyesClosed",
+        "at": 7.2,
+        "uv": 200
+      }
+    ]
+  },
+  "synESES": {
+    "seed": 312,
+    "ageYears": 7,
+    "state": "n2",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "findings": [
+      {
+        "type": "gsw",
+        "from": 0.1,
+        "to": 11,
+        "uv": 240,
+        "hz": 2.2,
+        "startHz": 2.3,
+        "center": [
+          0,
+          0.3
+        ]
+      }
+    ]
+  },
+  "synOhtahara": {
+    "seed": 313,
+    "ageYears": 0.1,
+    "state": "semicomatose",
+    "sensitivity": 20,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 0,
+      "theta": 0,
+      "delta": 0,
+      "noise": 5
+    },
+    "findings": [
+      {
+        "type": "burst",
+        "uv": 240,
+        "runs": [
+          [
+            0.6,
+            2.2
+          ],
+          [
+            7.1,
+            8.7
+          ]
+        ],
+        "rampS": 0.1
+      }
+    ]
+  },
+  "patHSV": {
+    "seed": 321,
+    "ageYears": 58,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "transverse",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 7,
+      "pdrUv": 25,
+      "theta": 5,
+      "delta": 3,
+      "beta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "periodic",
+        "intervalS": 1.1,
+        "firstAt": 0.5,
+        "uv": 170,
+        "center": [
+          -0.65,
+          0.25
+        ],
+        "sigma": 0.38,
+        "durMs": 240,
+        "side": "left"
+      },
+      {
+        "type": "focalDelta",
+        "center": "T3",
+        "uv": 45,
+        "sigma": 0.3
+      }
+    ]
+  },
+  "patCJD": {
+    "seed": 322,
+    "ageYears": 64,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 6.5,
+      "pdrUv": 12,
+      "theta": 3,
+      "delta": 2,
+      "beta": 1.5,
+      "noise": 2.5
+    },
+    "findings": [
+      {
+        "type": "periodic",
+        "intervalS": 0.95,
+        "firstAt": 0.4,
+        "uv": 300,
+        "center": [
+          0,
+          0.2
+        ],
+        "sigma": 0.55,
+        "durMs": 190,
+        "diffuse": 0.7
+      }
+    ]
+  },
+  "patSSPE": {
+    "seed": 323,
+    "ageYears": 11,
+    "state": "awake",
+    "sensitivity": 20,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 6,
+      "pdrUv": 12,
+      "theta": 3,
+      "delta": 2,
+      "beta": 1,
+      "noise": 2.5
+    },
+    "findings": [
+      {
+        "type": "periodic",
+        "shape": "broad",
+        "intervalS": 5.2,
+        "firstAt": 1.4,
+        "uv": 500,
+        "center": [
+          0,
+          0.15
+        ],
+        "sigma": 0.5,
+        "marker": "Jerk",
+        "diffuse": 0.7
+      }
+    ]
+  },
+  "patAlphaComa": {
+    "seed": 324,
+    "ageYears": 41,
+    "state": "coma",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 1,
+      "theta": 2,
+      "delta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "rhythm",
+        "hz": 9,
+        "bwHz": 0.9,
+        "uv": 38,
+        "center": [
+          0,
+          0.5
+        ],
+        "sigma": 0.55
+      }
+    ]
+  },
+  "patBetaDrug": {
+    "seed": 325,
+    "ageYears": 36,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 9.5,
+      "pdrUv": 40,
+      "beta": 1,
+      "theta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "rhythm",
+        "hz": 19,
+        "bwHz": 3.5,
+        "uv": 26,
+        "center": [
+          0,
+          0.5
+        ],
+        "sigma": 0.6
+      }
+    ]
+  },
+  "regFrontalDelta": {
+    "seed": 331,
+    "ageYears": 54,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 9.5,
+      "pdrUv": 35,
+      "beta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "focalDelta",
+        "center": "F3",
+        "sigma": 0.28,
+        "uv": 80,
+        "hz": 1.4
+      }
+    ]
+  },
+  "regParietalDelta": {
+    "seed": 332,
+    "ageYears": 61,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 9.5,
+      "pdrUv": 35,
+      "beta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "focalDelta",
+        "center": "P4",
+        "sigma": 0.28,
+        "uv": 80,
+        "hz": 1.4
+      }
+    ]
+  },
+  "regOccipitalDelta": {
+    "seed": 333,
+    "ageYears": 66,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 9.5,
+      "pdrUv": 45,
+      "beta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "focalDelta",
+        "center": "O2",
+        "sigma": 0.3,
+        "uv": 85,
+        "hz": 1.4
+      },
+      {
+        "type": "rhythm",
+        "hz": 9.5,
+        "uv": 20,
+        "center": "O1",
+        "sigma": 0.3
+      }
+    ],
+    "pdrAttenuate": {
+      "right": 0.35
+    }
+  },
+  "regCentral": {
+    "seed": 334,
+    "ageYears": 63,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 9.5,
+      "pdrUv": 35,
+      "beta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "focalDelta",
+        "center": "C3",
+        "sigma": 0.26,
+        "uv": 80,
+        "hz": 1.4
+      },
+      {
+        "type": "mu",
+        "sides": [
+          "right"
+        ],
+        "uv": 45,
+        "hz": 9
+      }
+    ]
+  },
+  "regTemporal": {
+    "seed": 335,
+    "ageYears": 57,
+    "state": "awake",
+    "sensitivity": 7,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal"
+    ],
+    "background": {
+      "pdrHz": 9.5,
+      "pdrUv": 35,
+      "beta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "focalDelta",
+        "center": [
+          -0.7,
+          0.3
+        ],
+        "sigma": 0.2,
+        "uv": 85,
+        "hz": 1.4
+      }
+    ]
+  },
+  "synSturgeWeber": {
+    "seed": 341,
+    "ageYears": 2,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 7,
+      "pdrUv": 60,
+      "theta": 4,
+      "beta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "polymorphicDelta",
+        "side": "right",
+        "uv": 10,
+        "attenuate": 0.4
+      },
+      {
+        "type": "spike",
+        "center": "P4",
+        "sigma": 0.2,
+        "uv": 95,
+        "durMs": 70,
+        "slowWave": true,
+        "at": [
+          2.4,
+          6.1
+        ]
+      }
+    ]
+  },
+  "synAngelman": {
+    "seed": 342,
+    "ageYears": 5,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 7,
+      "pdrUv": 25,
+      "theta": 4,
+      "beta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "rhythmicDelta",
+        "hz": 2.5,
+        "uv": 230,
+        "center": [
+          0,
+          0.5
+        ],
+        "sigma": 0.55,
+        "runs": [
+          [
+            0.2,
+            9.8
+          ]
+        ]
+      },
+      {
+        "type": "spike",
+        "center": [
+          0,
+          0.4
+        ],
+        "sigma": 0.45,
+        "uv": 90,
+        "durMs": 60,
+        "at": [
+          1.9,
+          4.4,
+          7.3
+        ]
+      }
+    ]
+  },
+  "genTuber": {
+    "seed": 351,
+    "ageYears": 5,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 8,
+      "pdrUv": 45,
+      "theta": 4,
+      "beta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "focalDelta",
+        "center": "T6",
+        "sigma": 0.22,
+        "uv": 60,
+        "hz": 1.6
+      },
+      {
+        "type": "spike",
+        "center": "T6",
+        "sigma": 0.18,
+        "uv": 130,
+        "durMs": 65,
+        "slowWave": true,
+        "at": [
+          1.5,
+          3.2,
+          5.8,
+          8.4
+        ]
+      },
+      {
+        "type": "spike",
+        "center": "F3",
+        "sigma": 0.18,
+        "uv": 90,
+        "durMs": 65,
+        "at": [
+          4.4,
+          7.1
+        ]
+      }
+    ]
+  },
+  "genRett": {
+    "seed": 352,
+    "ageYears": 5,
+    "state": "n2",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "findings": [
+      {
+        "type": "diffuseSlowing",
+        "hz": 4.5,
+        "uv": 35,
+        "frontal": 0.1
+      },
+      {
+        "type": "spike",
+        "center": "C4",
+        "sigma": 0.18,
+        "uv": 200,
+        "durMs": 70,
+        "slowWave": true,
+        "at": [
+          1.8,
+          4.9,
+          8.0
+        ]
+      },
+      {
+        "type": "spike",
+        "center": "C3",
+        "sigma": 0.18,
+        "uv": 160,
+        "durMs": 70,
+        "at": [
+          3.3,
+          6.5
+        ]
+      }
+    ]
+  },
+  "genLissencephaly": {
+    "seed": 353,
+    "ageYears": 1,
+    "state": "awake",
+    "sensitivity": 20,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 1,
+      "theta": 1,
+      "delta": 0,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "rhythm",
+        "hz": 14,
+        "bwHz": 2.5,
+        "uv": 330,
+        "center": [
+          0,
+          0.15
+        ],
+        "sigma": 0.7
+      }
+    ]
+  }
+}

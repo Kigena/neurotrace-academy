@@ -18253,6 +18253,3005 @@
           "to": "/diffuse-abnormalities?tab=mistakes"
         }
       ]
+    },
+    {
+      "id": "case-0109",
+      "title": "Which lobe? Matching the deficit to the delta",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "localization",
+        "pathophysiology"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_focal_slowing"
+      ],
+      "patient": {
+        "ageYears": 54,
+        "sex": "male",
+        "context": "inpatient"
+      },
+      "chiefComplaint": "Four stroke-unit patients, each with a different focal deficit, have routine awake EEGs",
+      "history": {
+        "eventDescription": "A stroke unit sends four adults, each with a different deficit after a recent stroke. You record a routine awake EEG for each and compare left with right chains. Your role is to describe with numbers, mark events, record state and medications, and notify the reader; you do not name a diagnosis. The questions below ask which region, territory or mechanism a picture is typical of, as exam practice.",
+        "lastEventTiming": "3 days ago",
+        "comorbidities": [
+          "hypertension"
+        ],
+        "medications": [
+          "aspirin"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Posterior rhythm about 9.5 Hz in each patient",
+        "pdrHz": "About 9.5 Hz",
+        "epileptiform": "None",
+        "focalFindings": "One region of irregular slow waves per patient, with a normal opposite side",
+        "activation": "None",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Match a focal deficit to the lobe and the chains with slow waves",
+        "Explain focal delta as deafferentation of cortex",
+        "Link a visual-field deficit to its arterial territory"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 331,
+          "ageYears": 54,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 35,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": "F3",
+              "sigma": 0.28,
+              "uv": 80,
+              "hz": 1.4
+            }
+          ]
+        },
+        "t2": {
+          "seed": 334,
+          "ageYears": 63,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 35,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": "C3",
+              "sigma": 0.26,
+              "uv": 80,
+              "hz": 1.4
+            },
+            {
+              "type": "mu",
+              "sides": [
+                "right"
+              ],
+              "uv": 45,
+              "hz": 9
+            }
+          ]
+        },
+        "t3": {
+          "seed": 335,
+          "ageYears": 57,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 35,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": [
+                -0.7,
+                0.3
+              ],
+              "sigma": 0.2,
+              "uv": 85,
+              "hz": 1.4
+            }
+          ]
+        },
+        "t4": {
+          "seed": 333,
+          "ageYears": 66,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 45,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": "O2",
+              "sigma": 0.3,
+              "uv": 85,
+              "hz": 1.4
+            },
+            {
+              "type": "rhythm",
+              "hz": 9.5,
+              "uv": 20,
+              "center": "O1",
+              "sigma": 0.3
+            }
+          ],
+          "pdrAttenuate": {
+            "right": 0.35
+          }
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Patient 1: halting speech and a weak leg",
+          "tracing": "t1",
+          "description": "Patient 1 is 54 years old. Since the stroke his speech is effortful and halting in short phrases, he understands what is said, and his right leg is weak. The page is awake, longitudinal, 7 uV/mm. Compare the left chains (Fp1-F3, F3-C3, F7-T3) with the right chains (Fp2-F4, F4-C4, F8-T4) using the amplitude ruler.",
+          "question": "Which chains carry the focal slow waves, and which lobe is this picture typical of?",
+          "options": [
+            "Fp2-F4 and F4-C4 on the right: right frontal lobe, since the weak leg is on the right side of the body",
+            "Fp1-F3 and F3-C3 on the left: left frontal lobe, with the dominant speech area and the leg motor strip",
+            "F7-T3 and T3-T5 on the left: left temporal lobe, since any speech problem points to the temporal region",
+            "C3-P3 and P3-O1 on the left: left parietal lobe, since a weak limb points to sensory cortex"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Fp1-F3 and F3-C3 show irregular slow waves of about 12 to 13 mm peak to peak (roughly 85 to 90 uV at 7 uV/mm), while Fp2-F4 and F4-C4 stay near 5 mm. Effortful speech with preserved comprehension is typical of the dominant inferior frontal region (Broca area), and leg weakness fits the frontal motor strip, so this is typical of a left frontal lesion. The right chains are the quiet side, so the right-sided option has the crossed-side error: the deficit is on the right because the left hemisphere controls it. Receptive (fluent, poorly understood) speech is the temporal pattern, and Fp1-F7 and F7-T3 stay lower (about 6 and 9 mm) because the maximum is at F3. A parietal lesion gives sensory loss or neglect rather than halting speech."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Patient 2: a weak right hand",
+          "tracing": "t2",
+          "description": "Patient 2 is 63. After the stroke the right hand is weak and clumsy; speech and vision are normal. The page is awake, longitudinal, 7 uV/mm. Measure the slow waves in F3-C3 and C3-P3 and in F4-C4 and C4-P4, and look for an arch-shaped 9 Hz rhythm in the central chains.",
+          "question": "Which statement correctly links this page to the deficit?",
+          "options": [
+            "Slow waves of about 13 mm in left F3-C3 and C3-P3, against about 8 mm on the right; the left central cortex serves the right hand",
+            "Slow waves in left C3-P3 and P3-O1 mean a left parietal lesion, which is the usual source of hand weakness",
+            "The left and right central chains carry the same slow activity, so this page cannot be matched to either side",
+            "Slow waves of about 13 mm in left F3-C3 and C3-P3; the right central cortex is damaged, because the weak hand is on the right"
+          ],
+          "correctAnswer": 0,
+          "explanation": "F3-C3 and C3-P3 measure about 13 mm peak to peak against about 8 mm in F4-C4, and the right central chain also shows an arch-shaped 9 Hz mu rhythm that the left chain lacks (a destructive lesion removes mu). Motor control of the hand sits in the opposite precentral gyrus, so a right-hand deficit is typical of a left central lesion. Choosing the right cortex is the crossed-side error: the lesion is on the side opposite the weakness. Saying the sides are equal ignores the measured difference. Weakness is motor, which is precentral; parietal lesions produce sensory loss and neglect, and P3-O1 is not the abnormal chain here. The difference is real but modest, so describe it with numbers and leave the lobe to the reader."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Patient 3: fluent speech that makes no sense",
+          "tracing": "t3",
+          "description": "Patient 3 is 57. Speech is fluent but filled with wrong words, and he does not follow spoken instructions. The page is awake, longitudinal, 7 uV/mm. The left anterior temporal chains Fp1-F7 and F7-T3 show irregular slow waves of about 10 to 15 mm peak to peak, against about 5 mm on the right. A trainee asks why a lesion produces slow waves instead of faster activity.",
+          "question": "Which explanation of the slow waves is accurate?",
+          "options": [
+            "The scalp electrodes record the slowed action potentials of damaged neurons, which is why the waves are slow",
+            "Dying cortical neurons fire more slowly on their own, so the cortex alone produces the delta waves",
+            "Cortex that loses its thalamic and white-matter input is deafferented and falls into slow, irregular activity",
+            "The lesion raises impedance under the nearest electrodes, so only the lowest frequencies pass to the amplifier"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Delta is produced when cortex is deafferented from the thalamus or ascending systems, or when white matter is damaged, so a focal white-matter lesion gives focal polymorphic delta. The scalp records summed postsynaptic potentials, not action potentials, so the first distractor misdescribes the signal. The idea that cortex makes delta by itself is the common mistake that ignores the loss of input. Impedance changes add noise or attenuation across all frequencies and would not give a regular side-to-side difference limited to one region. Fluent, poorly understood speech is typical of a dominant temporal lesion; the technologist records the side and amplitude and leaves the localization to the reader. Wernicke area lies in the posterior superior temporal gyrus; this page's focus is anterior temporal, so only the lobe is being matched."
+        },
+        {
+          "step": 4,
+          "type": "pattern-recognition",
+          "title": "Patient 4: half the visual field is gone",
+          "tracing": "t4",
+          "description": "Patient 4 is 66. He suddenly lost the left half of the visual field in both eyes, while the central field is preserved. The page is awake, longitudinal, 7 uV/mm. T6-O2 shows the largest slow waves (about 11 to 16 mm peak to peak in a one-second stretch) and P4-O2 about 8 to 9 mm; on the left, T5-O1 and P3-O1 show a clearer 9 to 10 Hz rhythm of about 6 to 12 mm among smaller slow waves, while the right-sided rhythm is reduced.",
+          "question": "Which arterial territory is this picture typical of?",
+          "options": [
+            "Posterior cerebral artery",
+            "Vertebrobasilar reticular system",
+            "Anterior cerebral artery",
+            "Middle cerebral artery, lateral surface"
+          ],
+          "correctAnswer": 0,
+          "explanation": "A left homonymous hemianopia comes from the right occipital lobe or its radiation, and sparing of central vision (macular sparing) is typical of a posterior cerebral artery lesion because the occipital pole has dual supply. The right occipital chains T6-O2 and P4-O2 carry the slow waves, which fits. The anterior cerebral artery supplies the medial frontal and parietal cortex and gives leg weakness and abulia. The middle cerebral artery gives face and arm weakness, aphasia or neglect. A vertebrobasilar lesion in the reticular system causes impaired arousal or coma. The technologist reports the chains, side and amplitude; naming a vessel is for the clinician."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Neuroanatomy: Regions and lesions",
+          "to": "/neuro-syndromes?tab=regions"
+        },
+        {
+          "label": "Physiology: Where the EEG comes from",
+          "to": "/neuro-syndromes?tab=physiology"
+        },
+        {
+          "label": "Domain I: Neuroanatomy and EEG localization",
+          "to": "/workflow/domain-1/d1-neuroanatomy-eeg-localization"
+        }
+      ]
+    },
+    {
+      "id": "case-0110",
+      "title": "The 3 Hz absence: a thalamocortical loop",
+      "difficulty": "medium",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "epilepsy-syndrome",
+        "pathophysiology"
+      ],
+      "syndromeIds": [
+        "cae"
+      ],
+      "patternIds": [
+        "pattern_three_hz_gsw"
+      ],
+      "patient": {
+        "ageYears": 9,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Staring spells many times a day at school; routine EEG with hyperventilation",
+      "history": {
+        "eventDescription": "A 9-year-old girl is referred for brief staring spells that begin and end abruptly. You record a routine awake EEG with hyperventilation (HV) at 10 uV/mm, LFF 0.5 Hz. Your role is to describe with numbers, mark events, record state and medications, and notify the reader; you do not name a diagnosis.",
+        "lastEventTiming": "today",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Normal awake background with a posterior rhythm near 9 Hz",
+        "pdrHz": "About 9 Hz",
+        "epileptiform": "Abrupt generalized rhythmic spike-and-wave burst",
+        "focalFindings": "None",
+        "activation": "Hyperventilation",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Measure a spike-and-wave rate with the caliper",
+        "Describe a generalized, synchronous burst by amplitude and timing",
+        "Test and document responsiveness during a burst"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 301,
+          "ageYears": 9,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 55,
+            "beta": 2.5,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 2.6,
+              "to": 8.4,
+              "uv": 380,
+              "hz": 3,
+              "startHz": 3.4,
+              "label": "Burst"
+            }
+          ]
+        },
+        "t2": {
+          "seed": 301,
+          "ageYears": 9,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "montage": "referential",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 55,
+            "beta": 2.5,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 2.6,
+              "to": 8.4,
+              "uv": 380,
+              "hz": 3,
+              "startHz": 3.4,
+              "label": "Burst"
+            }
+          ]
+        },
+        "t3": {
+          "seed": 301,
+          "ageYears": 9,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 55,
+            "beta": 2.5,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 2.6,
+              "to": 8.4,
+              "uv": 380,
+              "hz": 3,
+              "startHz": 3.4,
+              "label": "Burst"
+            }
+          ]
+        },
+        "t4": {
+          "seed": 301,
+          "ageYears": 9,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 55,
+            "beta": 2.5,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 2.6,
+              "to": 8.4,
+              "uv": 380,
+              "hz": 3,
+              "startHz": 3.4,
+              "label": "Burst"
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Caliper the spike-and-wave",
+          "tracing": "t1",
+          "description": "The page is awake, longitudinal, 10 uV/mm. A normal posterior rhythm runs until 2.6 s, where a regular burst begins at a marker and continues to 8.4 s. Place the caliper on one spike and drag to the next spike in the stretch after 6 s.",
+          "question": "What interval and rate do you read?",
+          "options": [
+            "About 330 ms between spikes, so roughly 3 Hz",
+            "About 500 ms between spikes, so roughly 2 Hz",
+            "About 170 ms between spikes, so roughly 6 Hz",
+            "About 100 ms between spikes, so roughly 10 Hz"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Rate = 1 / interval = 1 / 0.33 s = 3 Hz. Early in the burst the complexes are slightly faster (about 3.4 Hz, near 290 ms), so the rate settles toward 3 Hz, which fits the typical range of 2.5 to 4 Hz. An interval of 170 ms would be reached only by counting the spike and the slow wave as two separate cycles. 500 ms would be 2 Hz, the rate of slower syndromes. 100 ms is 10 Hz, the rate of the posterior rhythm before the burst. Always measure from spike to spike."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Where does it start, and how big is it?",
+          "tracing": "t2",
+          "description": "Switch to the Ipsi ear tab (left electrodes to A1, right to A2). Use the amplitude ruler on F3-A1, F4-A2, C3-A1, C4-A2, O1-A1 and O2-A2, and note when each channel first shows the burst.",
+          "question": "Which description of the distribution is accurate?",
+          "options": [
+            "Two independent bursts, one on each side, that happen to overlap in time",
+            "A focal left frontal onset that spreads slowly to the right over several seconds",
+            "Generalized and bilaterally synchronous, largest frontally, with similar size on both sides",
+            "A right-sided discharge that reaches the left through the A1 reference"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Every channel begins together at about 2.6 s. F3-A1 and F4-A2 each swing about 32 mm peak to peak (320 uV at 10 uV/mm), C3-A1 and C4-A2 about 23 mm, and O1-A1 and O2-A2 about 13 to 14 mm, so left and right match and the frontal maximum is clear in the referential view. A focal onset would show one side first and a time lag. Independent bursts would differ in rate and timing between sides. Ear contamination would add equal downward deflections to channels sharing the ear, not matching spike-and-wave in both hemispheres. This generalized, symmetric picture is typical of an absence pattern, but the technologist describes it and leaves the interpretation to the reader."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Why 3 Hz?",
+          "tracing": "t3",
+          "description": "After the study, the child's parent asks what the regular rhythm is thought to be. You review the mechanism for your own preparation.",
+          "question": "Which mechanism is the 3 Hz generalized spike-and-wave associated with?",
+          "options": [
+            "Reduced sodium current in inhibitory neurons from a sodium channel gene variant",
+            "An abnormal thalamocortical loop driven by low-threshold T-type calcium channels and GABA-B signalling",
+            "Cortex deafferented by white-matter damage, which produces slow rhythmic waves",
+            "A single irritable cortical focus in the dominant hemisphere that fires about three times a second"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Absence seizures arise when the thalamocortical loop oscillates abnormally: low-threshold T-type calcium channels in thalamic neurons and GABA-B-mediated inhibition of the relay neurons by the reticular nucleus drive a regular 3 Hz cycle with abrupt onset and offset. A single cortical focus would give focal, not generalized, discharges. Loss of sodium current in inhibitory neurons is the mechanism associated with a different syndrome, Dravet. Deafferentation explains focal delta, not a rhythmic generalized spike-and-wave. Mechanism is background knowledge; at the bedside the technologist describes and tests."
+        },
+        {
+          "step": 4,
+          "type": "safety-response",
+          "title": "During the burst",
+          "tracing": "t4",
+          "description": "On the same page, the burst runs from 2.6 s to 8.4 s while the girl is overbreathing. She is staring and her counting has stopped. You must test responsiveness and document the event within protocol.",
+          "question": "What do you do and record?",
+          "options": [
+            "Give a short phrase to repeat, note whether and when she responds, and log the start and stop times of the burst",
+            "Mark the page as an absence seizure at 2.6 s so the reader knows which seizure type it was",
+            "Wait until the burst ends, then ask her to describe what she felt and write down her account",
+            "Call for emergency help as in status epilepticus, and wait for a break in the burst"
+          ],
+          "correctAnswer": 0,
+          "explanation": "During a burst you test responsiveness with a short phrase or task, note the words used, whether she responded and when, and mark the burst start and stop; the burst on this page lasts 8.4 - 2.6 = 5.8 s. Calling an emergency for a short burst is an overreaction; continue HV for its full protocol time only if she can cooperate and the seizure is not prolonged; follow your lab protocol and the reader's instructions. Asking afterwards loses the time-locked information because she cannot report what she missed. Writing a seizure type is a diagnosis and outside technologist scope. Describe what you see and hear and let the reader classify it."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Physiology: Seizure generators",
+          "to": "/neuro-syndromes?tab=physiology"
+        },
+        {
+          "label": "Childhood absence epilepsy",
+          "to": "/syndromes/cae"
+        },
+        {
+          "label": "Domain I: Neurophysiology of seizures",
+          "to": "/workflow/domain-1/d1-neurophysiology-seizure-mechanisms"
+        }
+      ]
+    },
+    {
+      "id": "case-0111",
+      "title": "Infant with spasms: three ages, three patterns",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "epilepsy-syndrome",
+        "pathophysiology"
+      ],
+      "syndromeIds": [
+        "ohtahara",
+        "west_syndrome"
+      ],
+      "patternIds": [
+        "pattern_burst_suppression",
+        "pattern_hypsarrhythmia"
+      ],
+      "patient": {
+        "ageYears": 0.5,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Clusters of brief jerks on waking in a 6-month-old, after a stormy neonatal course",
+      "history": {
+        "eventDescription": "Over a day you record two infants whose EEGs show very different patterns that both sit in the spectrum of early epileptic encephalopathies: a 1-month-old, then a 6-month-old, recorded again during a spasm. Your role is to describe with numbers, mark events, record state and medications, and notify the reader; you do not name a diagnosis.",
+        "lastEventTiming": "this morning",
+        "comorbidities": [
+          "developmental delay"
+        ],
+        "medications": [
+          "levetiracetam"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "No organized background; high-amplitude disorganized activity",
+        "pdrHz": "Absent",
+        "epileptiform": "Burst suppression in the youngest infant; hypsarrhythmia and an electrodecrement in the older one",
+        "focalFindings": "Multifocal spikes",
+        "activation": "None",
+        "artifacts": "Muscle artifact with the spasm"
+      },
+      "objectives": [
+        "Tell burst suppression from hypsarrhythmia by measuring",
+        "Calculate amplitude from sensitivity",
+        "Document spasms and state accurately"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 313,
+          "ageYears": 0.1,
+          "state": "awake",
+          "sensitivity": 20,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 0,
+            "theta": 0,
+            "delta": 0,
+            "noise": 5
+          },
+          "findings": [
+            {
+              "type": "burst",
+              "uv": 240,
+              "runs": [
+                [
+                  0.6,
+                  2.2
+                ],
+                [
+                  7.1,
+                  8.7
+                ]
+              ],
+              "rampS": 0.1
+            }
+          ]
+        },
+        "t2": {
+          "seed": 303,
+          "ageYears": 0.5,
+          "state": "awake",
+          "sensitivity": 20,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "hypsarrhythmia",
+              "uv": 300,
+              "spikes": 18,
+              "spikeUv": 190
+            }
+          ]
+        },
+        "t3": {
+          "seed": 304,
+          "ageYears": 0.5,
+          "state": "awake",
+          "sensitivity": 20,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "hypsarrhythmia",
+              "uv": 300,
+              "spikes": 10,
+              "spikeUv": 190
+            },
+            {
+              "type": "electrodecrement",
+              "at": [
+                5.0
+              ],
+              "durS": 2.2,
+              "depth": 0.88,
+              "slowUv": 320,
+              "marker": "Spasm"
+            },
+            {
+              "type": "muscle",
+              "from": 4.95,
+              "to": 5.6,
+              "sites": [
+                "Fp1",
+                "Fp2",
+                "F7",
+                "F8"
+              ],
+              "uv": 16
+            }
+          ]
+        },
+        "t4": {
+          "seed": 304,
+          "ageYears": 0.5,
+          "state": "awake",
+          "sensitivity": 20,
+          "montage": "referential",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "hypsarrhythmia",
+              "uv": 300,
+              "spikes": 10,
+              "spikeUv": 190
+            },
+            {
+              "type": "electrodecrement",
+              "at": [
+                5.0
+              ],
+              "durS": 2.2,
+              "depth": 0.88,
+              "slowUv": 320,
+              "marker": "Spasm"
+            },
+            {
+              "type": "muscle",
+              "from": 4.95,
+              "to": 5.6,
+              "sites": [
+                "Fp1",
+                "Fp2",
+                "F7",
+                "F8"
+              ],
+              "uv": 16
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "The 1-month-old",
+          "tracing": "t1",
+          "description": "A 1-month-old with tonic spasms is recorded at 20 uV/mm. High-amplitude activity with spikes appears from about 0.6 to 2.2 s and from 7.1 to 8.7 s. Use the caliper to measure the stretch between those bursts, and use the ruler to compare burst height with that stretch.",
+          "question": "Which description fits the page?",
+          "options": [
+            "Hypsarrhythmia: continuous chaotic high-amplitude slow waves with multifocal spikes across the whole page",
+            "Burst suppression: bursts of about 1.6 s, then a nearly flat stretch of about 4.7 s",
+            "Periodic complexes: stereotyped discharges repeating about every 6.5 s on a slowed background",
+            "Electrodecrement: one sudden attenuation of about 2 s that follows a single large slow wave"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Bursts of 11 to 17 mm (220 to 340 uV at 20 uV/mm) alternate with a nearly flat stretch under 1 mm from about 2.3 to 7.0 s (about 4.7 s), and the bursts come back at 7.1 s. That is burst suppression, which is typical of the earliest infantile encephalopathies and persists in waking and sleep. Hypsarrhythmia has continuous activity between its spikes; it does not alternate with a nearly flat stretch. The burst-to-burst interval (6.5 s) looks periodic, but periodic complexes are stereotyped single events, not bursts of mixed spikes with a flat gap. An electrodecrement is a one-time drop after a spasm, not a repeating cycle."
+        },
+        {
+          "step": 2,
+          "type": "calculation",
+          "title": "The 6-month-old: how big?",
+          "tracing": "t2",
+          "description": "A 6-month-old has clusters of brief flexor jerks on waking. The page is awake at 20 uV/mm. Chaotic slow waves with multifocal spikes run through all channels, and the largest slow waves measure about 30 mm peak to peak with the amplitude ruler.",
+          "question": "What amplitude is that, and how does it compare with the usual hypsarrhythmia range?",
+          "options": [
+            "About 600 uV (30 mm x 20 uV/mm), well above the 200 uV that hypsarrhythmia often exceeds",
+            "About 1.5 uV (30 mm / 20 uV/mm), far too small to matter",
+            "About 210 uV (30 mm x 7 uV/mm), using the sensitivity of an adult page",
+            "About 300 uV (30 mm x 10 uV/mm), using the usual default sensitivity"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Amplitude = height x sensitivity = 30 mm x 20 uV/mm = 600 uV peak to peak, which is higher than the 200 uV that hypsarrhythmia is often described as exceeding. Dividing instead of multiplying gives 1.5, an arithmetic error. Using 10 or 7 uV/mm assumes a different setting; always read the sensitivity in the header, and note that infants are often recorded at 20 uV/mm because their activity is large. Hypsarrhythmia is a pattern, not a diagnosis, and many causes produce it; the technologist reports the measured amplitude and the setting."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "The marked spasm",
+          "tracing": "t3",
+          "description": "Later the same infant has a spasm marked at 5.0 s. A large slow wave appears at about 4.8 s, and the channels Fp1, Fp2, F7 and F8 show brief muscle activity from about 5.0 to 5.2 s. Look at all channels from 5 to 8 s.",
+          "question": "What is the best description of the change after the marker?",
+          "options": [
+            "An electrodecrement: all channels drop to low amplitude from about 5.1 to 7.2 s, after which the chaotic activity returns",
+            "Muscle artifact that hides the cerebral activity in every channel until the movement stops",
+            "The suppression phase of burst suppression, so the infant's pattern has changed to the neonatal type",
+            "Electrode disconnection: all channels go flat because the common reference lead has come loose"
+          ],
+          "correctAnswer": 0,
+          "explanation": "An electrodecrement is a generalized attenuation after a slow wave that accompanies the spasm. Here activity drops from about 15 to 30 mm to about 2 to 3 mm in all channels from about 5.1 to 7.2 s, then the chaotic pattern returns. A loose reference would not recover by itself and would give noise, not clean low-amplitude traces. The suppression of burst suppression recurs in cycles on a different background and does not follow a marked spasm. The muscle artifact is limited to four frontal electrodes and is visible only around 5.0 to 5.2 s, so it cannot explain the drop in the posterior channels. Mark the time of the spasm precisely, because muscle can mimic or hide the change."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "What goes in the notes",
+          "tracing": "t4",
+          "description": "The page is now shown in the Ipsi ear montage. Spasms keep clustering over the next minutes. The parent says they usually occur on waking. You are writing the technologist notes.",
+          "question": "Which documentation is best?",
+          "options": [
+            "A line saying the infant has West syndrome with hypsarrhythmia, so the reader does not need to search",
+            "Time of each spasm, awake or asleep state, medications with times, and any muscle over the change",
+            "Only the time of the first spasm, since the later spasms in the cluster show the same finding",
+            "The medication list only, because the spasms are visible on the page and so need no separate log"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Mark every spasm with its time, record state (awake or asleep, because hypsarrhythmia changes in sleep), list medications and times, and note when muscle artifact might hide the electrodecrement. Naming the syndrome is diagnosis and belongs to the reader. Logging only the first spasm loses the cluster count the reader needs. Leaving out the log assumes the page alone is enough, but the paper record and event marker must match, and the medications are needed to read the background. Describing the findings with times is the technologist's contribution."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Syndromes: Infant patterns",
+          "to": "/neuro-syndromes?tab=syndromes"
+        },
+        {
+          "label": "Infantile epileptic spasms syndrome (West)",
+          "to": "/syndromes/west_syndrome"
+        },
+        {
+          "label": "Early infantile DEE (Ohtahara)",
+          "to": "/syndromes/ohtahara"
+        }
+      ]
+    },
+    {
+      "id": "case-0112",
+      "title": "Rolandic and occipital spikes in the child",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "epilepsy-syndrome",
+        "localization"
+      ],
+      "syndromeIds": [
+        "rolandic"
+      ],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 8,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Facial twitching and speech arrest from sleep in an 8-year-old; second child with eye-closure spikes",
+      "history": {
+        "eventDescription": "You record an 8-year-old boy who has had facial twitching and trouble speaking after falling asleep, then a 7-year-old girl referred for a different pattern. For both you use the montage tabs to show polarity and location. Your role is to describe with numbers, mark events, record state and medications, and notify the reader; you do not name a diagnosis.",
+        "lastEventTiming": "last week",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "n2"
+        ],
+        "background": "Normal sleep background with a spindle near 4.2 s",
+        "pdrHz": "Not applicable in sleep",
+        "epileptiform": "Repeated high-amplitude spikes at C4",
+        "focalFindings": "Right centrotemporal",
+        "activation": "Sleep",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Find the phase reversal and its polarity",
+        "Read the frontal positive pole of a horizontal dipole",
+        "Describe eye-state dependence of occipital spikes"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 307,
+          "ageYears": 8,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "findings": [
+            {
+              "type": "spike",
+              "center": "C4",
+              "sigma": 0.18,
+              "uv": 150,
+              "durMs": 75,
+              "slowWave": true,
+              "at": [
+                1.2,
+                2.3,
+                3.4,
+                5.1,
+                6.4,
+                8.2,
+                9.2
+              ],
+              "positive": {
+                "center": [
+                  0.38,
+                  0.62
+                ],
+                "sigma": 0.25,
+                "k": 0.5
+              }
+            },
+            {
+              "type": "spindle",
+              "at": [
+                4.2
+              ],
+              "uv": 25
+            }
+          ]
+        },
+        "t2": {
+          "seed": 307,
+          "ageYears": 8,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "referential",
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "findings": [
+            {
+              "type": "spike",
+              "center": "C4",
+              "sigma": 0.18,
+              "uv": 150,
+              "durMs": 75,
+              "slowWave": true,
+              "at": [
+                1.2,
+                2.3,
+                3.4,
+                5.1,
+                6.4,
+                8.2,
+                9.2
+              ],
+              "positive": {
+                "center": [
+                  0.38,
+                  0.62
+                ],
+                "sigma": 0.25,
+                "k": 0.5
+              }
+            },
+            {
+              "type": "spindle",
+              "at": [
+                4.2
+              ],
+              "uv": 25
+            }
+          ]
+        },
+        "t3": {
+          "seed": 311,
+          "ageYears": 7,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 8.5,
+            "pdrUv": 50,
+            "beta": 2,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": [
+                0,
+                -0.77
+              ],
+              "sigma": 0.38,
+              "uv": 180,
+              "durMs": 80,
+              "slowWave": true,
+              "at": [
+                0.7,
+                1.4,
+                2.1,
+                2.7,
+                7.8,
+                8.5,
+                9.2
+              ]
+            },
+            {
+              "type": "eyesOpen",
+              "at": 3.4,
+              "uv": 140
+            },
+            {
+              "type": "eyesClosed",
+              "at": 7.2,
+              "uv": 200
+            }
+          ]
+        },
+        "t4": {
+          "seed": 311,
+          "ageYears": 7,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "referential",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 8.5,
+            "pdrUv": 50,
+            "beta": 2,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": [
+                0,
+                -0.77
+              ],
+              "sigma": 0.38,
+              "uv": 180,
+              "durMs": 80,
+              "slowWave": true,
+              "at": [
+                0.7,
+                1.4,
+                2.1,
+                2.7,
+                7.8,
+                8.5,
+                9.2
+              ]
+            },
+            {
+              "type": "eyesOpen",
+              "at": 3.4,
+              "uv": 140
+            },
+            {
+              "type": "eyesClosed",
+              "at": 7.2,
+              "uv": 200
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Where does it reverse?",
+          "tracing": "t1",
+          "description": "The boy is in N2 sleep at 10 uV/mm, longitudinal montage. High-amplitude spikes recur at about 1.2, 2.3, 3.4, 5.1, 6.4, 8.2 and 9.2 s on the right. Look at the right parasagittal chain Fp2-F4, F4-C4, C4-P4 and P4-O2.",
+          "question": "Where is the phase reversal and what is its polarity?",
+          "options": [
+            "No reversal, because C4 is in the middle of the chain and only one channel moves",
+            "At F4, negative, because Fp2-F4 is the first channel in the chain that deflects",
+            "At C4, positive: the two channels point away from each other at that electrode",
+            "At C4, negative: F4-C4 points down and C4-P4 points up, toward each other"
+          ],
+          "correctAnswer": 3,
+          "explanation": "At each spike F4-C4 deflects down about 16 mm and C4-P4 deflects up about 12 mm. Their deflections point toward each other at C4, which marks a negative phase reversal (maximum negativity at C4). Pointing away from each other would be a positive reversal. Fp2-F4 stays small (under 3 mm), so F4 is not the maximum. A reversal needs two adjacent channels sharing an electrode, and here both move, so the one-channel reading is wrong. A centrotemporal location is typical of a rolandic pattern, but the technologist reports the electrode and polarity."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "The frontal downward deflections",
+          "tracing": "t2",
+          "description": "Switch to the Ipsi ear tab (left to A1, right to A2). At each spike C4-A2 goes up about 13 mm. At the same instants Fp2-A2 goes down about 5 mm and F4-A2 down about 4 mm, while T4-A2, P4-A2 and O2-A2 stay within about 2 mm of baseline.",
+          "question": "What best explains the small downward deflections at Fp2-A2 and F4-A2?",
+          "options": [
+            "A2 has picked up the discharge, so every right-sided channel using it swings down by the same amount",
+            "The positive pole of a horizontal dipole: negative at C4 and positive over the frontal region",
+            "Amplifier saturation in the channels beside the largest deflection",
+            "Blink potentials that happen to coincide with each spike, seen through the frontopolar channel"
+          ],
+          "correctAnswer": 1,
+          "explanation": "In the rolandic pattern the spike has a tangential, horizontal dipole with a negative pole centrally and a positive pole frontally, so Fp2 and F4 go positive (down) while C4 goes negative (up). If A2 were contaminated, T4, P4 and O2 would also swing down by a similar amount, but they do not. Blinks do not repeat in step with each spike, and they would show on both frontopolar channels. Saturation clips the largest channel and does not create a small opposite deflection elsewhere. Sleep activates these spikes and they can shift sides, so describe the side, time and polarity."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Eyes closed, eyes open",
+          "tracing": "t3",
+          "description": "The girl is 7 and awake at 10 uV/mm. The page has markers: Eyes open at 3.4 s and Eyes closed at 7.2 s. Spikes with a slow wave appear in the occipital chains (T5-O1, T6-O2) and in P3-O1 and P4-O2. Compare the stretch from 3.6 to 7.0 s with the rest of the page.",
+          "question": "What does the page show about the spikes and eye state?",
+          "options": [
+            "Spikes continue unchanged through eye opening, so eye state has no bearing on them at all on this page",
+            "Spikes appear with eyes closed (0.7 to 2.7 s, 7.8 to 9.2 s) and not with eyes open, as in fixation-off sensitivity",
+            "Spikes are caused by the eye opening itself, so they are eye-movement artifact over the occipital chains",
+            "Spikes occur only once after eye closure at 7.2 s, so the page shows a single occipital burst only"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Spikes of about 8 to 12 mm in T5-O1 and T6-O2 fall at 0.7, 1.4, 2.1 and 2.7 s and again at 7.8, 8.5 and 9.2 s; between 3.4 s (Eyes open) and 7.2 s (Eyes closed) the channels are quiet. This eye-state dependence (fixation-off sensitivity) is typical of the occipital spikes of self-limited epilepsy with autonomic seizures (Panayiotopoulos syndrome). Unchanged spikes would not fit the quiet stretch. Eye-movement artifact appears in frontopolar channels, not as occipital spikes with a slow wave. A single burst after 7.2 s ignores the earlier burst before 3.4 s. Mark each eye-state change so the reader can see the link."
+        },
+        {
+          "step": 4,
+          "type": "history-questions",
+          "title": "What you can say about course",
+          "tracing": "t4",
+          "description": "The page is now shown referentially. Occipital spikes reach about 10 to 14 mm in O1-A1 and O2-A2. The referring team asks what is usually expected for children with these patterns; the questions below treat this as exam knowledge.",
+          "question": "As exam knowledge, which statement about the usual course is most accurate?",
+          "options": [
+            "Occipital seizures in Panayiotopoulos-type epilepsy are typically generalized convulsions with no autonomic features at all",
+            "Both syndromes continue unchanged into adult life, so lifelong follow-up and treatment are certain",
+            "Both are childhood syndromes that usually remit with age; sleep activates centrotemporal spikes and eye closure occipital ones",
+            "Rolandic spikes never change side, and occipital spikes are always present with the eyes open throughout"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Self-limited epilepsy with centrotemporal spikes typically occurs from about 3 to 14 years and resolves in adolescence; self-limited epilepsy with autonomic seizures (Panayiotopoulos) occurs from about 1 to 14 years (peak 3 to 6) and usually remits with age. Rolandic spikes can shift sides, so never is wrong; occipital spikes appear with eye closure and may vanish with the eyes open, the opposite of always present. Lifelong persistence is not the usual course. Occipital seizures in this syndrome typically include autonomic features such as vomiting and eye deviation. In the notes, describe the EEG and document sleep and eye state; prognosis is for the clinician."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Syndromes: Rolandic and occipital",
+          "to": "/neuro-syndromes?tab=syndromes"
+        },
+        {
+          "label": "Rolandic epilepsy",
+          "to": "/syndromes/rolandic"
+        },
+        {
+          "label": "Domain III: Focal and generalized patterns",
+          "to": "/workflow/domain-3/d3-focal-generalized-patterns"
+        }
+      ]
+    },
+    {
+      "id": "case-0113",
+      "title": "Temporal lobe epilepsy: from the sharp wave to the seizure",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "epilepsy-syndrome",
+        "localization"
+      ],
+      "syndromeIds": [
+        "temporal_lobe_epilepsy"
+      ],
+      "patternIds": [
+        "pattern_focal_spikes_temporal"
+      ],
+      "patient": {
+        "ageYears": 34,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Rising stomach sensation, then staring and lip-smacking, for two years",
+      "history": {
+        "eventDescription": "A 34-year-old woman has episodes that begin with a rising epigastric feeling and fear, followed by staring and lip-smacking. You record a routine EEG that includes drowsiness. Later in the study she has a spell on the monitor. Your role is to describe with numbers, mark events, record state and medications, and notify the reader; you do not name a diagnosis.",
+        "lastEventTiming": "2 weeks ago",
+        "comorbidities": [],
+        "medications": [
+          "lamotrigine"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "drowsy",
+          "wake"
+        ],
+        "background": "Alpha slows to about 8.5 Hz in drowsiness",
+        "pdrHz": "About 8.5 Hz drowsy, 9.5 Hz awake",
+        "epileptiform": "Left anterior temporal sharp waves; later a rhythmic theta seizure pattern",
+        "focalFindings": "Left temporal slowing 3.5 to 7.5 s",
+        "activation": "Drowsiness",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Describe a temporal sharp wave by channel, time and polarity",
+        "Explain why a transverse chain shows no reversal at F7",
+        "Document responsiveness and behavior during a seizure"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 308,
+          "ageYears": 34,
+          "state": "drowsy",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 8.5,
+            "pdrUv": 20,
+            "theta": 6,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sharp",
+              "center": [
+                -0.66,
+                0.4
+              ],
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 110,
+              "slowWave": true,
+              "at": [
+                2.2,
+                5.9,
+                8.4
+              ]
+            },
+            {
+              "type": "focalDelta",
+              "center": "T3",
+              "uv": 45,
+              "sigma": 0.25,
+              "runs": [
+                [
+                  3.5,
+                  7.5
+                ]
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 308,
+          "ageYears": 34,
+          "state": "drowsy",
+          "sensitivity": 7,
+          "montage": "transverse",
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 8.5,
+            "pdrUv": 20,
+            "theta": 6,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "sharp",
+              "center": [
+                -0.66,
+                0.4
+              ],
+              "sigma": 0.17,
+              "uv": 130,
+              "durMs": 110,
+              "slowWave": true,
+              "at": [
+                2.2,
+                5.9,
+                8.4
+              ]
+            },
+            {
+              "type": "focalDelta",
+              "center": "T3",
+              "uv": 28,
+              "sigma": 0.25,
+              "runs": [
+                [
+                  3.5,
+                  7.5
+                ]
+              ]
+            }
+          ]
+        },
+        "t3": {
+          "seed": 309,
+          "ageYears": 34,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 30,
+            "theta": 2,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "ictal",
+              "center": [
+                -0.7,
+                0.2
+              ],
+              "sigma": 0.25,
+              "start": 2.4,
+              "end": 9.8,
+              "hzStart": 6.5,
+              "hzEnd": 5,
+              "uvStart": 22,
+              "uvEnd": 75,
+              "spread": {
+                "center": [
+                  -0.2,
+                  0.25
+                ],
+                "sigma": 0.55,
+                "delayS": 2.0,
+                "k": 0.6
+              },
+              "label": "Onset"
+            }
+          ]
+        },
+        "t4": {
+          "seed": 309,
+          "ageYears": 34,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "referential",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 30,
+            "theta": 2,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "ictal",
+              "center": [
+                -0.7,
+                0.2
+              ],
+              "sigma": 0.25,
+              "start": 2.4,
+              "end": 9.8,
+              "hzStart": 6.5,
+              "hzEnd": 5,
+              "uvStart": 22,
+              "uvEnd": 75,
+              "spread": {
+                "center": [
+                  -0.2,
+                  0.25
+                ],
+                "sigma": 0.55,
+                "delayS": 2.0,
+                "k": 0.6
+              },
+              "label": "Onset"
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "report-writing",
+          "title": "Describe, do not diagnose",
+          "tracing": "t1",
+          "description": "The woman is drowsy, longitudinal, 7 uV/mm. Sharp waves with an after-going slow wave occur at 2.2, 5.9 and 8.4 s. Fp1-F7 deflects down about 16 mm and F7-T3 up about 13 to 16 mm each time, and left temporal slowing runs from about 3.5 to 7.5 s. The reader asks for your description of the page.",
+          "question": "Which note describes it the way a technologist should?",
+          "options": [
+            "Typical left mesial temporal lobe epilepsy, with benign wicket spikes of drowsiness ruled out on the shape of the waves alone",
+            "Drowsy. Sharp waves at 2.2, 5.9, 8.4 s, about 16 mm, reversal at F7 (Fp1-F7 down, F7-T3 up), then a slow wave; left temporal slowing 3.5 to 7.5 s",
+            "Benign variant of drowsiness: wicket spikes, so no further action or comment is needed in the report notes at all",
+            "Left frontal artifact from the eye muscles, with a reversal at F7 caused by eye movement during the drowsy state"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Describe with numbers: times, amplitude (about 16 mm x 7 uV/mm = 110 uV), polarity, the electrode of reversal and the state. A negative reversal at F7 means Fp1-F7 and F7-T3 point toward each other there. The after-going slow wave and the focal slowing are features the reader weighs against benign drowsy variants such as wicket spikes, which are arciform runs without a following slow wave; describing the features lets the reader decide. Naming the syndrome or declaring a variant benign is interpretation. Eye muscle artifact shows as muscle or eye-movement potentials, not repeated sharp waves with a slow wave and a localized reversal."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "The transverse chain",
+          "tracing": "t2",
+          "description": "Switch to the Transverse tab. At 2.2 s F7-Fp1 goes up about 16 mm and F7-F3 goes up about 15 mm. The other channels are within about 3 mm of baseline.",
+          "question": "What does the same-direction deflection in these two channels mean?",
+          "options": [
+            "Equal potentials at F7 and F3 that cancel in the channel between them, so the maximum lies at F3",
+            "A negative reversal at F3, because F7-F3 and F3-Fz point toward each other, so the maximum is at F3 and not at F7",
+            "No reversal: F7 is the first input of both channels, so they move together; the reversal shows in the longitudinal chain",
+            "A positive reversal at Fp1, the electrode shared by F7-Fp1 and Fp1-Fp2, so the maximum is frontopolar"
+          ],
+          "correctAnswer": 2,
+          "explanation": "F7-Fp1 and F7-F3 both have F7 as input 1, so a negative peak at F7 moves both channels up. With the maximum at the first input of the first channels, this is an end-of-chain situation and gives no phase reversal; the reversal is seen in the longitudinal chain where F7 lies between Fp1-F7 and F7-T3. Fp1-Fp2 stays small (about 2 to 4 mm), so there is no positive reversal at Fp1. Equal potentials would give a flat channel; F7-F3 is 15 mm tall. F3-Fz is also small, so F7-F3 and F3-Fz do not point toward each other. Reporting where the maximum lies and which montage shows the reversal is accurate and in scope."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "The spell on the monitor",
+          "tracing": "t3",
+          "description": "The woman is awake, longitudinal, 7 uV/mm. A marker reads Onset at 2.4 s. Over the next seconds a rhythmic pattern appears in the left temporal chains Fp1-F7 and T3-T5. Count the waves in a 1 s stretch near 3 s and again near 9 s, and compare the heights; also compare left central and frontal channels with the right.",
+          "question": "Which description of the evolution is accurate?",
+          "options": [
+            "Fast activity near 20 Hz that fades within a second and stays on the right side only, with no spread",
+            "Generalized 3 Hz spike-and-wave that starts at the marker and stops abruptly after a few seconds",
+            "Left temporal theta slowing from about 6 toward 5 Hz while growing, with left central and frontal channels joining later",
+            "Rhythmic theta that speeds up from 5 to 6.5 Hz while shrinking, and stays at the onset site"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Near 3 s you count about 6 waves per second (about 165 ms apart); near 9 s about 5 per second (about 190 ms), so the rhythm slows from about 6.5 to 5 Hz. T3-T5 grows from about 2 mm rms to about 4 to 5 mm rms, and left C3-P3 and Fp1-F3 rise to about 2.8 and 1.8 mm rms while the right F4-C4 and F8-T4 stay near 0.8 mm. Rhythmic theta that grows, slows and spreads is typical of an ictal temporal pattern. A fast fading burst, 3 Hz generalized spike-and-wave and a speeding, shrinking rhythm each contradict the page. Describe the numbers; the reader decides the seizure type."
+        },
+        {
+          "step": 4,
+          "type": "safety-response",
+          "title": "During the event",
+          "tracing": "t4",
+          "description": "The page is now shown in the Ipsi ear montage and the pattern is still running. The woman stares, her lips move, and her left hand picks at the sheet. You are at the bedside.",
+          "question": "What do you do?",
+          "options": [
+            "Describe the event afterwards from memory, since speaking aloud would disturb the recording",
+            "Tell the family this is a temporal lobe seizure so they can plan, then log the page afterwards",
+            "Stop recording to protect the equipment and wait until she stops moving before restarting the study",
+            "Keep recording, call to her and test responsiveness, describe what you see, mark the time, and notify the reader"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Keep recording; test responsiveness with a name and a short phrase, describe what you see (staring, lip movements, hand picking), mark the onset time and the response, keep her safe, and notify the reader. Stopping the recording loses the ictal data. Describing from memory loses the time-locked timing and responsiveness. Telling the family a diagnosis is interpretation and outside scope. Document the actions and the time so the clinical signs can be matched to the EEG."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Syndromes: Temporal lobe epilepsy",
+          "to": "/neuro-syndromes?tab=syndromes"
+        },
+        {
+          "label": "Temporal lobe epilepsy",
+          "to": "/syndromes/temporal_lobe_epilepsy"
+        },
+        {
+          "label": "Domain III: Ictal EEG seizure patterns",
+          "to": "/workflow/domain-3/d3-ictal-eeg-seizure-patterns"
+        }
+      ]
+    },
+    {
+      "id": "case-0114",
+      "title": "Frontal lobe and juvenile myoclonic epilepsy",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "epilepsy-syndrome",
+        "localization"
+      ],
+      "syndromeIds": [
+        "frontal_lobe_epilepsy",
+        "jme"
+      ],
+      "patternIds": [
+        "pattern_polyspike_wave"
+      ],
+      "patient": {
+        "ageYears": 22,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Brief nocturnal seizures in a 22-year-old; next, a 15-year-old with morning jerks",
+      "history": {
+        "eventDescription": "A 22-year-old man has brief, frequent nocturnal seizures with thrashing and little confusion afterwards. Afterwards you record a 15-year-old who has jerks of the arms soon after waking. For both, a sleep or waking record has been requested. Your role is to describe with numbers, mark events, record state and medications, and notify the reader; you do not name a diagnosis.",
+        "lastEventTiming": "last night",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "n2",
+          "wake"
+        ],
+        "background": "Normal for state",
+        "pdrHz": "Not applicable in N2; 10 Hz awake",
+        "epileptiform": "Left frontal spikes with a short bilateral burst; later generalized polyspike-wave bursts",
+        "focalFindings": "F3",
+        "activation": "Sleep, waking",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Find the F3 reversal in the longitudinal chain",
+        "Explain a bilateral burst that follows a focal spike",
+        "Document jerks and plan photic stimulation safely"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 310,
+          "ageYears": 22,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "findings": [
+            {
+              "type": "spike",
+              "center": "F3",
+              "sigma": 0.17,
+              "uv": 150,
+              "durMs": 60,
+              "at": [
+                1.6,
+                3.9,
+                7.4
+              ]
+            },
+            {
+              "type": "gsw",
+              "from": 5.3,
+              "to": 6.5,
+              "uv": 260,
+              "hz": 2.6,
+              "startHz": 3,
+              "center": [
+                0,
+                0.55
+              ],
+              "sigma": 0.45
+            },
+            {
+              "type": "vertex",
+              "at": [
+                8.9
+              ],
+              "uv": 90
+            }
+          ]
+        },
+        "t2": {
+          "seed": 310,
+          "ageYears": 22,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "findings": [
+            {
+              "type": "spike",
+              "center": "F3",
+              "sigma": 0.17,
+              "uv": 150,
+              "durMs": 60,
+              "at": [
+                1.6,
+                3.9,
+                7.4
+              ]
+            },
+            {
+              "type": "gsw",
+              "from": 5.3,
+              "to": 6.5,
+              "uv": 260,
+              "hz": 2.6,
+              "startHz": 3,
+              "center": [
+                0,
+                0.55
+              ],
+              "sigma": 0.45
+            },
+            {
+              "type": "vertex",
+              "at": [
+                8.9
+              ],
+              "uv": 90
+            }
+          ]
+        },
+        "t3": {
+          "seed": 302,
+          "ageYears": 15,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 45,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "polyspikeWave",
+              "at": 2.2,
+              "spikes": 4,
+              "uv": 230,
+              "marker": "Jerk"
+            },
+            {
+              "type": "polyspikeWave",
+              "at": 4.8,
+              "spikes": 5,
+              "uv": 260
+            },
+            {
+              "type": "polyspikeWave",
+              "at": 7.6,
+              "spikes": 4,
+              "uv": 220,
+              "marker": "Jerk"
+            }
+          ]
+        },
+        "t4": {
+          "seed": 302,
+          "ageYears": 15,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "transverse",
+          "montages": [
+            "longitudinal",
+            "transverse"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 45,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "polyspikeWave",
+              "at": 2.2,
+              "spikes": 4,
+              "uv": 230,
+              "marker": "Jerk"
+            },
+            {
+              "type": "polyspikeWave",
+              "at": 4.8,
+              "spikes": 5,
+              "uv": 260
+            },
+            {
+              "type": "polyspikeWave",
+              "at": 7.6,
+              "spikes": 4,
+              "uv": 220,
+              "marker": "Jerk"
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Where is the reversal?",
+          "tracing": "t1",
+          "description": "The 22-year-old is in N2 sleep at 10 uV/mm, longitudinal. Spikes recur at 1.6, 3.9 and 7.4 s. At 3.9 s Fp1-F3 deflects down about 14 mm and F3-C3 up about 15 mm; F4-C4, Fp2-F4 and the temporal chains stay under 3 mm.",
+          "question": "Where is the phase reversal, and what does it mean?",
+          "options": [
+            "At Fp1: Fp1-F3 is the first channel that moves, so the maximum is frontopolar",
+            "At F3: Fp1-F3 and F3-C3 point toward each other, a negative reversal",
+            "At C3: F3-C3 points up, so the maximum lies at the second electrode",
+            "There is no reversal, because a bilateral discharge cannot have a focal maximum"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Deflections that point toward each other at an electrode mark a negative reversal there, so the maximum is at F3. In referential view F3-A1 is also the tallest channel (about 13 to 15 mm). Fp1 and C3 are the outer ends of the two channels, not the shared electrode. Spikes at F3 alone on this page are unilateral; they do not make the discharge bilateral. Interictal spikes can be scarce in frontal lobe epilepsy because much of the frontal cortex is deep, medial or inferior, so a record can look normal; describe the spikes you do see."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "The burst at 5.3 s",
+          "tracing": "t2",
+          "description": "On the same page a rhythmic burst runs from 5.3 to 6.5 s. Fz-Cz, F3-C3 and F4-C4 each measure about 16 to 19 mm peak to peak, with the same size on both sides, at roughly 3 complexes per second. P3-O1, T5-O1 and T6-O2 stay near 4 to 5 mm.",
+          "question": "Which explanation of a short, symmetric burst on a recording whose repeated spikes are only at F3 is the most plausible?",
+          "options": [
+            "A second, independent right frontal focus that happens to fire at the same moment as the left focus",
+            "Rapid spread to both frontal regions (secondary bilateral synchrony), as across the corpus callosum",
+            "Jaw muscle artifact, because the burst is largest over the frontal and central chains of the montage",
+            "Reference contamination, because the burst appears in both hemispheres at the same time on the page"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The burst is about 1.2 s long, is bilateral and symmetric, and has a smooth, rhythmic spike-and-wave shape at about 2.9 Hz, which is consistent with fast bilateral spread of a frontal discharge across the corpus callosum. Two independent foci would not lock together in time with identical rhythm. In a bipolar longitudinal montage no shared reference can be contaminated, so the second explanation is wrong. Muscle artifact is irregular, fast and high frequency, not a smooth 3 Hz rhythm. Describe the burst as bilateral and 1.2 s long, and give the F3 spike times separately. The page shows no focal lead-in, so describe the burst only as bilateral and symmetric with its times; the reader decides whether it is secondary bilateral synchrony or a separate generalized discharge."
+        },
+        {
+          "step": 3,
+          "type": "report-writing",
+          "title": "A burst with no jerk marked",
+          "tracing": "t3",
+          "description": "The next patient is 15 and awake, 10 uV/mm. Short bursts of irregular spikes and slow waves appear generalized at 2.2, 4.8 and 7.6 s. Markers read Jerk at 2.2 and 7.6 s only; you saw no jerk at 4.8 s.",
+          "question": "How do you document the burst at 4.8 s?",
+          "options": [
+            "Record it as a subclinical seizure, since the discharge occurred without a jerk",
+            "Leave it out, because a burst with no marker has no clinical importance",
+            "List it with the others as a generalized burst at 4.8 s; note no jerk was marked",
+            "Treat it as artifact, because a real discharge would have produced a jerk"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Document every burst by time (2.2, 4.8, 7.6 s) and note which ones have a marked jerk; the burst at 4.8 s has no marker. Omitting it hides information the reader needs. Calling it subclinical is a clinical classification outside scope. A generalized polyspike-and-slow-wave complex of this size (about 6 to 10 mm in the longitudinal chains) is cerebral and is not excluded by the absence of a jerk; artifact does not repeat as the same complex. Typically, brief generalized polyspike-and-slow-wave complexes (here each lasts about 0.5 s) occur singly or in runs of 1 to 3 s, often soon after waking."
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "Planning the rest of the study",
+          "tracing": "t4",
+          "description": "The page is now shown in the Transverse montage. Bursts are symmetric (F7-F3 and F4-F8 each about 11 to 13 mm). The order asks for a waking or sleep-deprived record, and photic stimulation is part of the lab protocol.",
+          "question": "Which plan is best?",
+          "options": [
+            "Hold the study until the neurologist confirms the diagnosis so the correct protocol can be chosen first by that physician",
+            "Skip photic stimulation because the page already shows bursts without any flashing lights being used at all",
+            "Run every flash frequency to the end of the protocol, even after a burst, so that the set is complete for the reader",
+            "Record after waking or sleep deprivation as ordered, run photic per protocol, and stop at a generalized photoparoxysmal discharge"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Bursts are often activated by sleep deprivation and awakening, and photic stimulation can provoke a photoparoxysmal response, so you run it per protocol while observing the patient and the tracing and stop at the first generalized discharge or clinical event. Skipping photic stimulation removes a protocol step. Continuing through a burst risks a seizure and is not protocol. Waiting for a diagnosis delays the study and is not required; the technologist follows the written order and documents what is recorded."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Syndromes: Frontal lobe and JME",
+          "to": "/neuro-syndromes?tab=syndromes"
+        },
+        {
+          "label": "Frontal lobe epilepsy",
+          "to": "/syndromes/frontal_lobe_epilepsy"
+        },
+        {
+          "label": "Juvenile myoclonic epilepsy",
+          "to": "/syndromes/jme"
+        }
+      ]
+    },
+    {
+      "id": "case-0115",
+      "title": "Slow spike-wave, fast bursts and sleep-activated spike-wave",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "epilepsy-syndrome",
+        "pathophysiology"
+      ],
+      "syndromeIds": [
+        "lennox_gastaut",
+        "eses_csws",
+        "cae"
+      ],
+      "patternIds": [
+        "pattern_slow_spike_wave",
+        "pattern_gpfa"
+      ],
+      "patient": {
+        "ageYears": 6,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Several seizure types and developmental delay in a 6-year-old; three comparison children",
+      "history": {
+        "eventDescription": "A 6-year-old boy has several seizure types, slow development and drop attacks. Your lab day also includes a 9-year-old with staring spells, an 8-year-old recorded in sleep, and a 7-year-old with language regression. You compare rate, state dependence and sleep content. Your role is to describe with numbers, mark events, record state and medications, and notify the reader; you do not name a diagnosis.",
+        "lastEventTiming": "this week",
+        "comorbidities": [
+          "developmental delay"
+        ],
+        "medications": [
+          "valproate"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "n2"
+        ],
+        "background": "Slow background in the 6-year-old; normal in the 9-year-old",
+        "pdrHz": "About 6.5 Hz in the 6-year-old, 9 Hz in the 9-year-old",
+        "epileptiform": "Slow spike-and-wave, 3 Hz spike-and-wave, generalized fast bursts and near-continuous sleep spike-wave",
+        "focalFindings": "None",
+        "activation": "Sleep",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Measure the rate of generalized spike-and-wave",
+        "Tell fast bursts from a sleep spindle by measurement",
+        "Know what to record for sleep-activated spike-wave"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 305,
+          "ageYears": 6,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 6.5,
+            "pdrUv": 30,
+            "beta": 2,
+            "theta": 5,
+            "delta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 1.6,
+              "to": 7.6,
+              "uv": 300,
+              "hz": 1.8,
+              "startHz": 2.0,
+              "center": [
+                0,
+                0.35
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 301,
+          "ageYears": 9,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 55,
+            "beta": 2.5,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 2.6,
+              "to": 8.4,
+              "uv": 380,
+              "hz": 3,
+              "startHz": 3.4,
+              "label": "Burst"
+            }
+          ]
+        },
+        "t3": {
+          "seed": 306,
+          "ageYears": 8,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "findings": [
+            {
+              "type": "fastBurst",
+              "at": [
+                2.4,
+                6.6
+              ],
+              "durS": 1.4,
+              "hz": 12,
+              "uv": 90,
+              "marker": "Fast burst"
+            },
+            {
+              "type": "spindle",
+              "at": [
+                4.6
+              ],
+              "uv": 25
+            }
+          ]
+        },
+        "t4": {
+          "seed": 312,
+          "ageYears": 7,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 0.1,
+              "to": 11,
+              "uv": 240,
+              "hz": 2.2,
+              "startHz": 2.3,
+              "center": [
+                0,
+                0.3
+              ]
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Caliper the slow spike-wave",
+          "tracing": "t1",
+          "description": "The 6-year-old is awake at 10 uV/mm. The background posterior rhythm is slow, about 6.5 Hz. From 1.6 s to 7.6 s a regular generalized spike-and-wave burst runs. Place the caliper from one spike to the next in the middle of the burst.",
+          "question": "What interval and rate do you read?",
+          "options": [
+            "About 270 ms, so about 3.7 Hz",
+            "About 540 ms, so about 1.8 Hz",
+            "About 800 ms, so about 1.25 Hz",
+            "About 330 ms, so about 3 Hz, the rate of classic absence"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Rate = 1 / 0.54 s = 1.85 Hz. Bursts of generalized spike-and-wave slower than 2.5 Hz (often 1.5 to 2.5 Hz) in a slow background are described with Lennox-Gastaut syndrome. 330 ms would be 3 Hz, a different rate, and 270 ms (3.7 Hz) is still in the faster absence range. 800 ms would be 1.25 Hz, slower than what you measure. The burst lasts about 6 s, with about 11 complexes. The technologist reports the measured rate and background and leaves the syndrome to the reader."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Contrast with a 9-year-old",
+          "tracing": "t2",
+          "description": "The next child is 9 and awake at 10 uV/mm. A normal posterior rhythm runs until 2.6 s, then a regular generalized burst runs to 8.4 s. Measure the rate with the caliper and compare the background before the burst with the previous page.",
+          "question": "Which statement about this page is accurate compared with the previous one?",
+          "options": [
+            "The rate is about 1.8 Hz, the same as before, but the bursts are shorter",
+            "The burst is focal on the left at a rate near 6 Hz, on a normal background",
+            "The rate is about 3 Hz, with a normal 9 Hz posterior rhythm before the burst",
+            "The rate is about 3 Hz, but the background is as slow as on the previous page"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Spike-to-spike intervals near 330 ms give about 3 Hz in the second half of the burst, and the posterior rhythm before 2.6 s is about 9 Hz, a normal background. The previous page had 1.8 Hz and a slow background of about 6.5 Hz. The burst here lasts 5.8 s, not shorter, and it begins in all channels together, so it is generalized, not focal. Rate and background are two of the features that separate a typical absence pattern from the slow spike-wave of a diffuse encephalopathy."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Fast bursts in sleep",
+          "tracing": "t3",
+          "description": "An 8-year-old is in N2 sleep at 10 uV/mm. Two generalized bursts marked Fast burst begin at 2.4 s and 6.6 s and last about 1.4 s each; a sleep spindle sits at 4.6 s. Count the waves in 1 s inside a burst and compare heights in C3-P3.",
+          "question": "Which description is best?",
+          "options": [
+            "Muscle artifact, because activity this fast in sleep cannot be cerebral in origin at all",
+            "Alpha rhythm returning after an arousal, because it is rhythmic and generalized across the head",
+            "Sleep spindles, because anything near 12 Hz in N2 is a spindle and needs no description in the notes",
+            "Generalized bursts of about 12 Hz and 1.4 s in non-REM sleep, taller than the similar-frequency spindle at 4.6 s"
+          ],
+          "correctAnswer": 3,
+          "explanation": "You count about 11 to 12 waves per second (about 85 ms apart). C3-P3 reaches about 8 mm in the bursts against about 5 mm at the spindle, so the bursts are larger, abrupt and generalized, with onset and offset. Frequency alone cannot separate them, so describe amplitude, onset and offset. Generalized paroxysmal fast activity (10 to 20 Hz) in non-REM sleep is described with Lennox-Gastaut syndrome and may be a tonic seizure. Muscle is irregular and brief, not a regular 12 Hz rhythm with an even envelope. An arousal would be recorded with a state change, and the patient is asleep throughout. Mark the bursts and the state and notify the reader if there is a clinical event."
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "A page that is almost all spike-wave",
+          "tracing": "t4",
+          "description": "A 7-year-old with regression of language is in N2 sleep at 10 uV/mm. Generalized spike-and-wave at about 2.2 Hz runs through the whole page. In the awake part of the record there was far less.",
+          "question": "What do you do?",
+          "options": [
+            "Record sleep through its cycle, mark state changes, and describe near-continuous 2.2 Hz activity, leaving proportion to the reader",
+            "Wake the child to see whether the activity stops, then report the exact percentage of the record",
+            "Stop after 20 s because epileptiform activity is already proven and more sleep would add nothing new",
+            "Write a spike-wave index of 85 percent on the page so the reader does not have to calculate it"
+          ],
+          "correctAnswer": 0,
+          "explanation": "In this pattern the discharges take up most of non-REM sleep and are much less abundant awake, so a sleep recording is essential and you do not stop early. The caliper gives about 450 ms between complexes (2.2 Hz). Describe the rate and distribution and mark state changes; the amount of spike-wave in sleep is measured by the reader. Waking the child to test the activity is not protocol and would remove the state of interest. Writing a percentage is a measurement of the reader, outside the technologist role."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Syndromes: Slow spike-wave and sleep activation",
+          "to": "/neuro-syndromes?tab=syndromes"
+        },
+        {
+          "label": "Lennox-Gastaut syndrome",
+          "to": "/syndromes/lennox_gastaut"
+        },
+        {
+          "label": "DEE-SWAS (ESES / CSWS)",
+          "to": "/syndromes/eses_csws"
+        }
+      ]
+    },
+    {
+      "id": "case-0116",
+      "title": "Periodic patterns and coma",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "pathophysiology",
+        "encephalopathy"
+      ],
+      "syndromeIds": [],
+      "patternIds": [
+        "pattern_alpha_coma"
+      ],
+      "patient": {
+        "ageYears": 58,
+        "sex": "male",
+        "context": "icu"
+      },
+      "chiefComplaint": "Fever and confusion; later a rapidly progressive dementia, a child with jerks, and a comatose patient",
+      "history": {
+        "eventDescription": "During one ICU shift you record a 58-year-old with fever and confusion, a 64-year-old with rapidly progressive dementia, an 11-year-old with myoclonic jerks, and a 41-year-old who is comatose. For each you describe the pattern with numbers and never name a cause. Your role is to describe with numbers, mark events, record state and medications, and notify the reader; you do not name a diagnosis.",
+        "lastEventTiming": "3 days ago",
+        "comorbidities": [],
+        "medications": [
+          "acyclovir"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "wake",
+          "coma"
+        ],
+        "background": "Slowed backgrounds with repeating complexes in three patients",
+        "pdrHz": "Slowed or absent",
+        "epileptiform": "Periodic complexes at fixed intervals",
+        "focalFindings": "Lateralized in one patient, generalized in two",
+        "activation": "Stimulation for reactivity",
+        "artifacts": "None significant"
+      },
+      "objectives": [
+        "Measure complex intervals with the caliper",
+        "Separate lateralized from generalized periodic patterns",
+        "Test and document reactivity in a comatose patient"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 321,
+          "ageYears": 58,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "transverse",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 7,
+            "pdrUv": 25,
+            "theta": 5,
+            "delta": 3,
+            "beta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "periodic",
+              "intervalS": 1.1,
+              "firstAt": 0.5,
+              "uv": 170,
+              "center": [
+                -0.65,
+                0.25
+              ],
+              "sigma": 0.38,
+              "durMs": 240,
+              "side": "left"
+            },
+            {
+              "type": "focalDelta",
+              "center": "T3",
+              "uv": 45,
+              "sigma": 0.3
+            }
+          ]
+        },
+        "t2": {
+          "seed": 322,
+          "ageYears": 64,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 6.5,
+            "pdrUv": 12,
+            "theta": 3,
+            "delta": 2,
+            "beta": 1.5,
+            "noise": 2.5
+          },
+          "findings": [
+            {
+              "type": "periodic",
+              "intervalS": 0.95,
+              "firstAt": 0.4,
+              "uv": 300,
+              "center": [
+                0,
+                0.2
+              ],
+              "sigma": 0.55,
+              "durMs": 190,
+              "diffuse": 0.7
+            }
+          ]
+        },
+        "t3": {
+          "seed": 323,
+          "ageYears": 11,
+          "state": "awake",
+          "sensitivity": 20,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 6,
+            "pdrUv": 12,
+            "theta": 3,
+            "delta": 2,
+            "beta": 1,
+            "noise": 2.5
+          },
+          "findings": [
+            {
+              "type": "periodic",
+              "shape": "broad",
+              "intervalS": 5.2,
+              "firstAt": 1.4,
+              "uv": 500,
+              "center": [
+                0,
+                0.15
+              ],
+              "sigma": 0.5,
+              "marker": "Jerk",
+              "diffuse": 0.7
+            }
+          ]
+        },
+        "t4": {
+          "seed": 324,
+          "ageYears": 41,
+          "state": "coma",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 2,
+            "delta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "rhythm",
+              "hz": 9,
+              "bwHz": 0.9,
+              "uv": 38,
+              "center": [
+                0,
+                0.5
+              ],
+              "sigma": 0.55
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Fever and confusion",
+          "tracing": "t1",
+          "description": "The 58-year-old is awake, longitudinal, 7 uV/mm. Sharp-and-slow complexes repeat across the page, starting near 0.5 s. Use the caliper from one complex to the next and compare Fp1-F7, F7-T3, T3-T5 and C3-P3 on the left with F8-T4 and T4-T6 on the right.",
+          "question": "What interval and distribution do you describe?",
+          "options": [
+            "About 5 s apart over the left temporal channels, with the right side quiet",
+            "About 1.1 s apart over the left temporal channels, with the right side quiet",
+            "About 0.5 s apart over the left temporal channels, with the right side quiet",
+            "About 1.1 s apart, generalized and symmetric over both hemispheres"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Complexes fall at about 0.5, 1.6, 2.7, 3.8, 4.9, 6.0, 7.1, 8.2 and 9.3 s, so the interval is 1.1 s. Left channels reach about 20 mm peak to peak (T3-T5 and Fp1-F7 about 22 mm; 150 uV at 7 uV/mm), while right chains stay at about 8 mm, over a slowed left temporal background. Periodic lateralized discharges in a destructive focal illness, such as an acute infection of one temporal lobe, show this pattern, but you never name the cause. The generalized option ignores the quiet right side. 0.5 s halves the true interval, and 5 s is the pattern of a different disease with long intervals."
+        },
+        {
+          "step": 2,
+          "type": "pattern-recognition",
+          "title": "Rapidly progressive dementia",
+          "tracing": "t2",
+          "description": "The 64-year-old is awake, 7 uV/mm. Stereotyped complexes repeat across the page, with the first near 0.45 s. Measure the interval with the caliper and compare left and right chains such as F3-C3 and F4-C4, T5-O1 and T6-O2.",
+          "question": "Which statement is accurate compared with the first page?",
+          "options": [
+            "Complexes recur about every 2 s in both hemispheres, with a jerk marked on each",
+            "Complexes recur about every 0.95 s in both hemispheres (F3-C3 and F4-C4 similar in height), on a slowed background",
+            "Complexes recur about every 5 s in both hemispheres, with a jerk marked on each",
+            "Complexes recur about every 0.95 s but are confined to the left temporal channels, as before"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Complexes fall at about 0.45, 1.35, 2.3, 3.3, 4.2, 5.2, 6.1, 7.05, 8.0, 9.0 and 9.9 s, which is about 0.95 s apart, and F3-C3 (about 8 mm) and F4-C4 (about 7.5 mm) match closely, while T5-O1 (about 10 mm) and T6-O2 (about 13 mm) are similar; some other chains differ by two-fold or more, which is why the pattern can look asymmetric early. Generalized, fairly symmetric periodic complexes about once per second on a slowed background are described with a rapidly progressive dementia, but the pattern can be asymmetric early. No jerks are marked on this page, and the 2 s and 5 s intervals do not match the measurements. Stimulus responses and sedation can change complexes, so record both and name no cause."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "A child with jerks",
+          "tracing": "t3",
+          "description": "The 11-year-old is awake at 20 uV/mm. Large stereotyped complexes appear at 1.4 s and 6.6 s with a marker at each. Place the caliper from the first complex to the second.",
+          "question": "What do you read, and what do the markers show?",
+          "options": [
+            "About 0.5 s between complexes, with a Jerk marked at only one",
+            "About 10 s between complexes, so only one complex is on the page",
+            "About 5.2 s between complexes, with a Jerk marked at each",
+            "About 1 s between complexes, with a Jerk marked at each"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The interval is 6.6 - 1.4 = 5.2 s, with a marker reading Jerk at each complex. The longer interval is typical of the complexes of subacute sclerosing panencephalitis (usually 4 to 10 s) and is why a long page or time base helps: on a short page you could see only one. The 20 uV/mm setting is used because the complexes are large (about 10 to 14 mm in several chains, 200 to 280 uV). Intervals of 0.5 to 1 s belong to the other periodic patterns. Mark each jerk with its time and describe the interval; name no cause."
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "A comatose patient",
+          "tracing": "t4",
+          "description": "The 41-year-old is comatose, 7 uV/mm. A low-amplitude rhythm of about 9 Hz is present in all channels, taller in Fp1-F7, F3-C3, Fz-Cz and Cz-Pz (about 5 to 6 mm) than in P3-O1, T5-O1 and P4-O2 (about 3.5 mm). The rhythm is regular and does not change across the page.",
+          "question": "What is the best next step for the record?",
+          "options": [
+            "Give one loud sound, and if the tracing looks the same, note that no reactivity test was needed",
+            "Apply each protocol stimulus in turn, mark each time, and describe any change; record state and medications",
+            "Report a normal alpha rhythm, because the frequency is about 9 Hz and the page is regular",
+            "Call it alpha coma and name anoxic injury as the cause so the team can act quickly"
+          ],
+          "correctAnswer": 1,
+          "explanation": "A frontally predominant 9 Hz rhythm in a comatose patient that does not respond is the pattern described as alpha coma, which is unlike a normal posterior alpha that blocks with eye opening. Document reactivity by giving each protocol stimulus (for example voice, touch, then painful per protocol), mark each time and describe any change; also record state, medications and temperature if known. A normal posterior rhythm would be maximal posteriorly and block. Naming a cause is outside scope. A single stimulus is not the protocol, so a lack of change after one sound is not a complete reactivity test. Drug-induced beta is faster, about 13 to 30 Hz, and leaves a posterior rhythm intact, which is how you separate it."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Patterns: Periodic patterns and coma",
+          "to": "/neuro-syndromes?tab=patterns"
+        },
+        {
+          "label": "Alpha coma",
+          "to": "/patterns/pattern_alpha_coma"
+        },
+        {
+          "label": "Domain III: Encephalopathy differentials",
+          "to": "/workflow/domain-3/d3-encephalopathy-differentials"
+        }
+      ]
+    },
+    {
+      "id": "case-0117",
+      "title": "Tuberous sclerosis: spasms and tubers",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "genetics",
+        "tuberous-sclerosis"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 0.5,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Clusters of head-drops and arm extensions; white skin patches noticed at birth",
+      "history": {
+        "eventDescription": "A 6-month-old has clusters of sudden head-drops and arm extensions on waking, and several pale (hypomelanotic) skin patches. A heart tumour was seen on a scan. Four years later she is seen again for staring and focal seizures. You record both studies. Your role is to describe, mark and compare the two sides; you never name the genetic cause.",
+        "lastEventTiming": "this morning",
+        "comorbidities": [
+          "hypomelanotic skin patches",
+          "cardiac tumour"
+        ],
+        "medications": [
+          "vigabatrin"
+        ]
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Chaotic and slow in infancy; slow with focal spikes later",
+        "pdrHz": "Absent in infancy",
+        "epileptiform": "Multifocal spikes; later focal spikes",
+        "focalFindings": "Right posterior temporal in childhood",
+        "activation": "None",
+        "artifacts": "Muscle with spasm"
+      },
+      "objectives": [
+        "Describe hypsarrhythmia without naming a cause",
+        "Mark a spasm and the attenuation that follows",
+        "Describe a focal spike field with its times"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 303,
+          "ageYears": 0.5,
+          "state": "awake",
+          "sensitivity": 20,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "hypsarrhythmia",
+              "uv": 300,
+              "spikes": 18,
+              "spikeUv": 190
+            }
+          ]
+        },
+        "t2": {
+          "seed": 304,
+          "ageYears": 0.5,
+          "state": "awake",
+          "sensitivity": 20,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "hypsarrhythmia",
+              "uv": 300,
+              "spikes": 10,
+              "spikeUv": 190
+            },
+            {
+              "type": "electrodecrement",
+              "at": [
+                5.0
+              ],
+              "durS": 2.2,
+              "depth": 0.88,
+              "slowUv": 320,
+              "marker": "Spasm"
+            },
+            {
+              "type": "muscle",
+              "from": 4.95,
+              "to": 5.6,
+              "sites": [
+                "Fp1",
+                "Fp2",
+                "F7",
+                "F8"
+              ],
+              "uv": 16
+            }
+          ]
+        },
+        "t3": {
+          "seed": 351,
+          "ageYears": 5,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 8,
+            "pdrUv": 45,
+            "theta": 4,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "focalDelta",
+              "center": "T6",
+              "sigma": 0.22,
+              "uv": 60,
+              "hz": 1.6
+            },
+            {
+              "type": "spike",
+              "center": "T6",
+              "sigma": 0.18,
+              "uv": 130,
+              "durMs": 65,
+              "slowWave": true,
+              "at": [
+                1.5,
+                3.2,
+                5.8,
+                8.4
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "F3",
+              "sigma": 0.18,
+              "uv": 90,
+              "durMs": 65,
+              "at": [
+                4.4,
+                7.1
+              ]
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "The infant's awake record",
+          "tracing": "t1",
+          "description": "The 6-month-old is awake, longitudinal, 20 uV/mm. The background is made of high-amplitude slow waves of irregular shape with spikes that change place and side from one moment to the next. No organized rhythm is present.",
+          "question": "Which description should go in the report?",
+          "options": [
+            "Chaotic high-amplitude slow activity with multifocal spikes and no organized background",
+            "Generalized 3 Hz spike-and-wave over a normal background rhythm for age",
+            "Repeated bursts of activity separated by long flat stretches of suppression",
+            "A normal alpha rhythm of about 8 Hz that blocks when the eyes are opened"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The page shows disorganized slow activity with multifocal spikes, which is hypsarrhythmia. Activity is present between spikes, so it is not burst suppression, and it is not 3 Hz spike-and-wave. An 8 Hz alpha rhythm is not expected at 6 months, and the infant is not following eye commands. Tuberous sclerosis is one cause of this pattern, but you describe only what you see."
+        },
+        {
+          "step": 2,
+          "type": "recording-strategy",
+          "title": "A cluster of spasms",
+          "tracing": "t2",
+          "description": "The infant has a spasm at 5.0 s. The chaotic activity flattens in all channels for about two seconds, with muscle artifact in the frontopolar channels, and then the chaotic pattern returns.",
+          "question": "How should the spasm be documented?",
+          "options": [
+            "Remove the section from the record because muscle artifact makes it unreadable",
+            "Mark 5.0 s, describe the attenuation and the muscle artifact, and note the clinical movement",
+            "State in the notes that the flattening proves infantile spasms and nothing else",
+            "Wake the infant and restart the recording so that the attenuation is not recorded"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Infantile spasms are accompanied by a sudden attenuation of the background (an electrodecrement), often with muscle artifact, so you mark the time and describe both the EEG change and the movement you saw. Removing the section loses the event, naming the diagnosis is the reader's role, and restarting loses the information the study was made to capture."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Four years later",
+          "tracing": "t3",
+          "description": "The child is now 5 years old and awake, longitudinal, 10 uV/mm. Sharp transients repeat at T6 at about 1.5, 3.2, 5.8 and 8.4 s, each with a slow wave, over a background of focal delta near T6. Two smaller spikes appear at F3 at about 4.4 and 7.1 s.",
+          "question": "Which description is best?",
+          "options": [
+            "Right posterior temporal spikes with focal slowing, plus left frontal spikes at 4.4 and 7.1 s",
+            "Left temporal spikes only, with a phase reversal at F7 in the longitudinal chain",
+            "Bilateral symmetric 3 Hz spike-and-wave with abrupt onset and abrupt offset",
+            "Generalized hypsarrhythmia, as at 6 months, repeating across both hemispheres"
+          ],
+          "correctAnswer": 0,
+          "explanation": "The page shows two separate foci: a right posterior temporal focus with focal delta (T5-O1 and T6-O2 in the longitudinal chain) and a smaller left frontal focus at F3. Tubers can lie in any lobe, so multifocal discharges are common. Hypsarrhythmia and 3 Hz spike-and-wave are different patterns, and the larger focus is on the right, not the left."
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "Planning the next study",
+          "tracing": "t3",
+          "description": "The reader asks for a comparison with the earlier study and for sleep.",
+          "question": "What is the best recording plan?",
+          "options": [
+            "Use a higher sensitivity on the right than on the left so that the right-sided focus is clearer",
+            "Stop the study as soon as the first spike appears so the report is not complicated",
+            "Record wakefulness and sleep at the same sensitivity on both sides, and mark each spike location",
+            "Record only the first ten minutes awake, since the earlier study already showed the findings"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Sleep activates spikes, equal sensitivity on both sides keeps asymmetry honest, and marking each location lets the reader compare studies. A short awake study will miss sleep findings, different sensitivities distort the comparison, and stopping early loses the data."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Genetics and neurocutaneous: tuberous sclerosis",
+          "to": "/neuro-syndromes?tab=genetics"
+        },
+        {
+          "label": "Infantile spasms",
+          "to": "/neuro-syndromes?tab=syndromes"
+        },
+        {
+          "label": "Domain III: EEG syndromes",
+          "to": "/workflow/domain-3/d3-eeg-syndromes-classification"
+        }
+      ]
+    },
+    {
+      "id": "case-0118",
+      "title": "Sturge-Weber, Angelman and NF2 in the lab",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "genetics",
+        "neurocutaneous"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 2,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "A toddler with a port-wine stain, a child with frequent laughter and ataxia, and a teenager with hearing loss",
+      "history": {
+        "eventDescription": "In one clinic day you record a 2-year-old with a port-wine stain on the right forehead and a first seizure, a 5-year-old with ataxia, no speech and frequent laughing, and a 16-year-old with bilateral hearing loss and a family history of neurofibromatosis. You never name the cause; you describe, compare sides and adapt the test.",
+        "lastEventTiming": "last week",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "Asymmetric in one; rhythmic delta in one; normal in one",
+        "pdrHz": "Variable",
+        "epileptiform": "Posterior spikes; frontal spikes",
+        "focalFindings": "Right-sided attenuation in one",
+        "activation": "Eye opening and closure",
+        "artifacts": "Laughing and movement"
+      },
+      "objectives": [
+        "Compare amplitude on the two sides at one sensitivity",
+        "Describe a frontal rhythmic delta with numbers",
+        "Adapt a responsiveness test to hearing loss"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 341,
+          "ageYears": 2,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 7,
+            "pdrUv": 60,
+            "theta": 4,
+            "beta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "polymorphicDelta",
+              "side": "right",
+              "uv": 10,
+              "attenuate": 0.4
+            },
+            {
+              "type": "spike",
+              "center": "P4",
+              "sigma": 0.2,
+              "uv": 95,
+              "durMs": 70,
+              "slowWave": true,
+              "at": [
+                2.4,
+                6.1
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 342,
+          "ageYears": 5,
+          "state": "awake",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 7,
+            "pdrUv": 25,
+            "theta": 4,
+            "beta": 2,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "rhythmicDelta",
+              "hz": 2.5,
+              "uv": 230,
+              "center": [
+                0,
+                0.5
+              ],
+              "sigma": 0.55,
+              "runs": [
+                [
+                  0.2,
+                  9.8
+                ]
+              ]
+            },
+            {
+              "type": "spike",
+              "center": [
+                0,
+                0.4
+              ],
+              "sigma": 0.45,
+              "uv": 90,
+              "durMs": 60,
+              "at": [
+                1.9,
+                4.4,
+                7.3
+              ]
+            }
+          ]
+        },
+        "t3": {
+          "seed": 361,
+          "ageYears": 16,
+          "state": "awake",
+          "sensitivity": 7,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 10,
+            "pdrUv": 45,
+            "beta": 3,
+            "noise": 3
+          },
+          "findings": []
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "A toddler with a port-wine stain",
+          "tracing": "t1",
+          "description": "The 2-year-old is awake, longitudinal, 10 uV/mm. Rhythmic activity of about 7 Hz is clearly visible in the left channels (Fp1-F3, F3-C3, C3-P3, T5-O1). The right channels (Fp2-F4, F4-C4, T4-T6, T6-O2) show much lower activity.",
+          "question": "Which description should you give?",
+          "options": [
+            "Increased amplitude over the right hemisphere, with a normal left hemisphere",
+            "A generalized slowing with the same amplitude over both hemispheres at all times",
+            "Reduced amplitude and less rhythmic activity over the right hemisphere than the left, at the same sensitivity",
+            "Symmetric activity over both hemispheres, with the right side only slightly lower"
+          ],
+          "correctAnswer": 2,
+          "explanation": "The right side shows much less amplitude than the left on the same page and at the same sensitivity, which is attenuation on the side of the stain. Higher amplitude on the right is the opposite of what is seen, and the sides are clearly not symmetric. The same finding can be caused by other conditions, so you describe it and do not name the cause."
+        },
+        {
+          "step": 2,
+          "type": "recording-strategy",
+          "title": "Electrodes on a skin lesion",
+          "tracing": "t1",
+          "description": "The port-wine stain extends under the planned position of Fp2 and F8.",
+          "question": "What is the best action?",
+          "options": [
+            "Move the electrode to a position on the left that has clean skin",
+            "Abrade the skin firmly so that the impedance is as low as possible",
+            "Leave out the electrode and say nothing, so the montage is not changed",
+            "Prepare the skin gently, place the electrode, and note the lesion in the report"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Skin over a vascular lesion needs gentle preparation to avoid injury or bleeding, and the report should say why the setup differs. Firm abrasion can cause harm, silent omission removes data without a record, and moving to the left breaks the 10-20 positions and the comparison between sides."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "A child who laughs",
+          "tracing": "t2",
+          "description": "The 5-year-old is awake, longitudinal, 10 uV/mm. A large rhythmic delta repeats across the whole page, about 5 waves each two seconds, largest in the frontal channels (Fp1-F3, Fp2-F4, Fp1-F7, Fp2-F8). Sharp transients are mixed with it at about 1.9, 4.4 and 7.3 s.",
+          "question": "Which description fits the record?",
+          "options": [
+            "Generalized 3 Hz spike-and-wave with abrupt onset and offset at 4.4 s",
+            "Frontal-predominant rhythmic delta of about 2.5 Hz with sharp transients at 1.9, 4.4 and 7.3 s",
+            "Occipital rhythmic delta at 3 Hz that stops when the child opens the eyes",
+            "A 10 Hz posterior rhythm that blocks with eye opening and returns on eye closure"
+          ],
+          "correctAnswer": 1,
+          "explanation": "About 5 waves in 2 seconds is about 2.5 Hz, with frontal emphasis and sharp transients mixed in. This is the kind of record described in Angelman syndrome, but you only describe it and mark movement and laughing. Spike-and-wave at 3 Hz is a different pattern, and the rhythm does not stop with eye opening or look like alpha."
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "A teenager with hearing loss",
+          "tracing": "t3",
+          "description": "The 16-year-old is awake, with a normal posterior rhythm. He has profound hearing loss from bilateral vestibular schwannomas, and the protocol includes a responsiveness test.",
+          "question": "How do you test responsiveness?",
+          "options": [
+            "Use only a louder voice, because responsiveness must be tested by sound",
+            "Use photic stimulation as the responsiveness test, since it is a visual stimulus",
+            "Omit the test, because a patient with hearing loss cannot take part",
+            "Use touch and visual stimuli as well as voice, and describe the response"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Hearing loss can hide a response to voice, so you add touch and visual stimuli and describe what happened. A louder voice may still fail, omitting the test loses information, and photic stimulation is an activation procedure, not a test of responsiveness."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Genetics and neurocutaneous",
+          "to": "/neuro-syndromes?tab=genetics"
+        },
+        {
+          "label": "Angelman syndrome",
+          "to": "/syndromes/angelman"
+        },
+        {
+          "label": "Domain III: EEG syndromes",
+          "to": "/workflow/domain-3/d3-eeg-syndromes-classification"
+        }
+      ]
+    },
+    {
+      "id": "case-0119",
+      "title": "Rett, lissencephaly and GLUT1 deficiency",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-1",
+        "domain-3"
+      ],
+      "tags": [
+        "neuro-syndromes",
+        "genetics",
+        "artifact"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 5,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Regression with hand-wringing; a one-year-old with spasms; an infant with seizures and a small head",
+      "history": {
+        "eventDescription": "You record a 5-year-old girl who lost words and hand skills after 14 months and wrings her hands, a 1-year-old with spasms and severe delay, and an infant with a small head and morning seizures. You note the movements and the last meal, and you describe the findings without naming a gene.",
+        "lastEventTiming": "this week",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "sleep",
+          "wake"
+        ],
+        "background": "Slowed, high-amplitude fast, and generalized spike-wave",
+        "pdrHz": "Absent or slow",
+        "epileptiform": "Centrocentral spikes in sleep; generalized spike-wave",
+        "focalFindings": "Bilateral central",
+        "activation": "Sleep",
+        "artifacts": "Hand stereotypy"
+      },
+      "objectives": [
+        "Describe centrocentral spikes in sleep",
+        "Separate stereotypy artifact from a seizure",
+        "Describe a high-amplitude fast rhythm in an infant",
+        "Record the time of the last meal"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 352,
+          "ageYears": 5,
+          "state": "n2",
+          "sensitivity": 10,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "findings": [
+            {
+              "type": "diffuseSlowing",
+              "hz": 4.5,
+              "uv": 35,
+              "frontal": 0.1
+            },
+            {
+              "type": "spike",
+              "center": "C4",
+              "sigma": 0.18,
+              "uv": 200,
+              "durMs": 70,
+              "slowWave": true,
+              "at": [
+                1.8,
+                4.9,
+                8.0
+              ]
+            },
+            {
+              "type": "spike",
+              "center": "C3",
+              "sigma": 0.18,
+              "uv": 160,
+              "durMs": 70,
+              "at": [
+                3.3,
+                6.5
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 353,
+          "ageYears": 1,
+          "state": "awake",
+          "sensitivity": 20,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 0,
+            "pdrUv": 0,
+            "beta": 1,
+            "theta": 1,
+            "delta": 0,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "rhythm",
+              "hz": 14,
+              "bwHz": 2.5,
+              "uv": 330,
+              "center": [
+                0,
+                0.15
+              ],
+              "sigma": 0.7
+            }
+          ]
+        },
+        "t3": {
+          "seed": 301,
+          "ageYears": 9,
+          "state": "awake",
+          "sensitivity": 10,
+          "lff": 0.5,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal",
+            "referential"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 55,
+            "beta": 2.5,
+            "theta": 3,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "gsw",
+              "from": 2.6,
+              "to": 8.4,
+              "uv": 380,
+              "hz": 3,
+              "startHz": 3.4,
+              "label": "Absence"
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "The girl in stage N2",
+          "tracing": "t1",
+          "description": "The 5-year-old is in stage N2 sleep, longitudinal, 10 uV/mm. The background is slow. Sharp transients with a slow wave appear in the right central channels (F4-C4, C4-P4) at about 1.8, 4.9 and 8.0 s, and smaller ones in the left central channels at about 3.3 and 6.5 s.",
+          "question": "Which description is best?",
+          "options": [
+            "A normal sleep background with isolated vertex waves at 1.8, 4.9 and 8.0 s on both sides",
+            "Generalized 3 Hz spike-and-wave bursts lasting several seconds at each marked time",
+            "Right temporal spikes with a phase reversal at F8 and no spikes in the left hemisphere",
+            "A slowed background with right central spikes at 1.8, 4.9 and 8.0 s and left central spikes at 3.3 and 6.5 s"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Sharp transients with a slow wave over the central regions, on both sides, are spikes. The vertex waves of sleep are symmetric and appear at Cz, and there is no 3 Hz burst here. The spikes are central, not temporal, and they occur on both sides. This pattern, a slow background with central spikes in sleep, is described in Rett syndrome, but you describe it and leave the diagnosis to the reader."
+        },
+        {
+          "step": 2,
+          "type": "recording-strategy",
+          "title": "Hand-wringing",
+          "tracing": "t1",
+          "description": "Between sleep stages she is awake and wrings her hands. The reader later asks how a technologist keeps rhythmic hand movement from being mistaken for a seizure.",
+          "question": "How should the hand movements be documented?",
+          "options": [
+            "State in the notes that the child has Rett syndrome because of the hand movements",
+            "Mark the time, describe the movement and its rate, and note whether the rhythm follows it",
+            "Remove it from the record, because anything caused by movement has no value to the reader",
+            "Mark it as a generalized seizure, since rhythmic activity in many channels is ictal"
+          ],
+          "correctAnswer": 1,
+          "explanation": "Rhythmic hand stereotypies can produce rhythmic artifact that resembles a seizure. Marking the time and describing the movement lets the reader see whether the rhythm follows it. Calling every rhythm a seizure ignores that clue, removing it hides the information, and naming the syndrome is not your role."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "The infant with spasms",
+          "tracing": "t2",
+          "description": "The 1-year-old is awake, 20 uV/mm. A fast rhythm of about 14 Hz at a very large amplitude is present across the page. It is largest in the parasagittal chains (Fp1-F3, F3-C3, C3-P3, P3-O1) and much smaller in the temporal chains.",
+          "question": "What should be reported?",
+          "options": [
+            "Generalized high-amplitude fast activity of about 14 Hz, with its distribution and the medication history",
+            "Muscle artifact, since high-frequency activity in an infant is always muscle",
+            "Normal beta activity, since 14 Hz is a normal frequency for a one-year-old",
+            "A generalized 3 Hz spike-and-wave pattern at a high amplitude"
+          ],
+          "correctAnswer": 0,
+          "explanation": "A fast rhythm of this size in an infant is not normal beta, which is much smaller. It is regular and spread widely, so it does not look like muscle, and it is not 3 Hz spike-and-wave. This pattern appears in lissencephaly, but the technologist describes the frequency, amplitude and distribution and records the drug history."
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "The infant with a small head",
+          "tracing": "t3",
+          "description": "An infant with a small head and morning seizures shows bursts of generalized spike-and-wave at about 3 Hz in this recording. His parents say the bursts and the seizures seem worse before the first feed.",
+          "question": "What should you record in the report?",
+          "options": [
+            "A statement that the spike-wave proves a glucose transport disorder",
+            "The time of the last feed and the times of the bursts, so the reader can compare",
+            "A note to withhold the next feed until the bursts stop",
+            "Nothing about feeding, since a feed cannot change the EEG"
+          ],
+          "correctAnswer": 1,
+          "explanation": "In GLUT1 deficiency, discharges can increase when fasting and decrease after a meal, so the time of the last feed helps the reader. A feed can change the EEG in this condition, you do not withhold feeding without an order, and naming a diagnosis is not your role."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Genetics and neurocutaneous",
+          "to": "/neuro-syndromes?tab=genetics"
+        },
+        {
+          "label": "Rett syndrome",
+          "to": "/syndromes/rett"
+        },
+        {
+          "label": "Lissencephaly",
+          "to": "/syndromes/lissencephaly"
+        }
+      ]
     }
   ]
 }
