@@ -2,6 +2,8 @@ import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import EegTracing from "../EegTracing.jsx";
 import { Card, Table } from "../study/ui.jsx";
+import RecordingPlan from "./RecordingPlan.jsx";
+import { hasRecordingPlan } from "./recordingPlanUtils.js";
 import patternsData from "../../data/neurotrace_patterns_library_v2.json";
 
 /**
@@ -18,19 +20,12 @@ const GROUPS = [
 const SECTIONS = [
   ["overview", "Overview"],
   ["eeg", "EEG and tracing"],
-  ["activation", "Activation and recording"],
+  ["activation", "How to record (best yield)"],
   ["clinical", "Clinical features"],
   ["course", "Course and differential"],
   ["pearls", "Your role and exam pearls"],
 ];
 
-const ACTIVATION_LABELS = {
-  hyperventilation: "Hyperventilation",
-  photic: "Photic stimulation",
-  sleep: "Sleep",
-  sleepDeprivation: "Sleep deprivation",
-  awake: "Wakefulness",
-};
 
 const patternName = (id) => patternsData.find((p) => p.id === id)?.name || id.replace(/^pattern_/, "").replace(/_/g, " ");
 
@@ -130,25 +125,7 @@ function SyndromeDetail({ s, scenes, syndromes, onSelect, hasSection }) {
         </div>
       )}
 
-      {section === "activation" && (
-        <div className="space-y-4">
-          {s.activation && (
-            <Card title="Which procedures help" tone="indigo">
-              <ul className="space-y-2">
-                {Object.entries(s.activation).map(([k, v]) => (
-                  <li key={k}><strong>{ACTIVATION_LABELS[k] || k}:</strong> {v}</li>
-                ))}
-              </ul>
-            </Card>
-          )}
-          {s.recording && (
-            <Card title="Recording advice">
-              <Field label="Duration">{s.recording.duration}</Field>
-              <Field label="Montage">{s.recording.montage}</Field>
-            </Card>
-          )}
-        </div>
-      )}
+      {section === "activation" && <RecordingPlan s={s} />}
 
       {section === "clinical" && s.clinical && (
         <Card title="Clinical features" tone="indigo">
@@ -226,7 +203,7 @@ export default function SyndromeBrowser({ syndromes, scenes, selectedId, onSelec
   const selected = syndromes.find((s) => s.id === selectedId) || syndromes[0];
   const hasSection = (s, id) => {
     if (id === "overview" || id === "eeg" || id === "pearls") return true;
-    if (id === "activation") return Boolean(s.activation || s.recording);
+    if (id === "activation") return hasRecordingPlan(s);
     if (id === "clinical") return Boolean(s.clinical);
     if (id === "course") return Boolean(s.course || (s.differential && s.differential.length) || (s.related && s.related.length));
     return false;
@@ -234,7 +211,7 @@ export default function SyndromeBrowser({ syndromes, scenes, selectedId, onSelec
 
   return (
     <div className="space-y-5">
-      <p className="max-w-3xl text-slate-600">Syndromes are grouped by age of onset. Search, filter by family, then choose one to see its mechanism, EEG, recording advice, clinical picture and a tracing. Compare the pattern with the age, because the same discharge means different things at different ages.</p>
+      <p className="max-w-3xl text-slate-600">Syndromes are grouped by age of onset. Search, filter by family, then choose one to see its mechanism, EEG, how to record it for the best yield, clinical picture and a tracing. Compare the pattern with the age, because the same discharge means different things at different ages.</p>
       <div className="flex flex-wrap items-center gap-3">
         <input
           type="search"

@@ -101,3 +101,27 @@ describe("merged syndrome data", () => {
     for (const s of data.syndromes) if (s.scene) expect(() => validateScene(scenes[s.scene]), s.id).not.toThrow();
   });
 });
+
+describe("recording guidance", () => {
+  const USE = ["Best", "Helpful", "Limited", "Not useful", "Per protocol"];
+  it("every syndrome has a best-yield plan with typed activations", () => {
+    for (const s of data.syndromes) {
+      expect(Array.isArray(s.yieldPlan) && s.yieldPlan.length >= 3, `${s.id} yieldPlan`).toBe(true);
+      expect(Object.keys(s.activation || {}).length, `${s.id} activation`).toBeGreaterThan(0);
+      for (const [k, v] of Object.entries(s.activation)) {
+        expect(typeof v, `${s.id}.${k}`).toBe("object");
+        expect(USE, `${s.id}.${k}.use`).toContain(v.use);
+        expect(v.how, `${s.id}.${k}.how`).toBeTruthy();
+      }
+      expect(s.recording?.duration, `${s.id} duration`).toBeTruthy();
+    }
+  });
+  it("has a general recording guide with the core procedures", () => {
+    const ids = data.recordingGuide.procedures.map((p) => p.id);
+    for (const id of ["hyperventilation", "photic", "sleep", "sleepDeprivation", "eyeClosure", "video", "eventCapture"]) expect(ids).toContain(id);
+    for (const p of data.recordingGuide.procedures) expect(p.steps.length, p.id).toBeGreaterThan(2);
+  });
+  it("carries no diagnostic-yield percentages anywhere in the study data", () => {
+    expect(/\d\s*%/.test(JSON.stringify(data))).toBe(false);
+  });
+});

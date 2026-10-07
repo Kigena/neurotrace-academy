@@ -8,6 +8,8 @@ import casesData from "../data/cases.json";
 import { ELECTRODES } from "../eeg/generator";
 import { FEATURES, matchSyndromes } from "../eeg/syndromeMatch";
 import SyndromeBrowser from "../components/neuro/SyndromeBrowser.jsx";
+import RecordingPlan from "../components/neuro/RecordingPlan.jsx";
+import { hasRecordingPlan } from "../components/neuro/recordingPlanUtils.js";
 import ContextualAI from "../components/ContextualAI.jsx";
 
 /**
@@ -21,6 +23,7 @@ const TABS = [
   ["physiology", "Pathophysiology"],
   ["regions", "Regions and lesions"],
   ["syndromes", "Syndromes"],
+  ["recording", "Recording guide"],
   ["genetics", "Genetics and neurocutaneous"],
   ["patterns", "Encephalopathy patterns"],
   ["finder", "Syndrome finder"],
@@ -104,6 +107,7 @@ function Overview({ go }) {
     ["Pathophysiology", "generators and mechanisms", "How the scalp EEG is made, why delta means deafferentation, and what happens in a spike, a seizure and an absence.", "physiology"],
     ["Regions and lesions", "a lesion gives a pattern", "For every lobe: the deficit, the usual EEG change, the seizure semiology and a recording to study.", "regions"],
     ["Syndromes", "age plus pattern", "Every epilepsy syndrome in age order with mechanism, EEG, activation advice, clinical picture, differential and a tracing.", "syndromes"],
+    ["Recording guide", "activations for the best yield", "How to perform hyperventilation, photic stimulation, sleep and the other procedures, and which ones each syndrome needs.", "recording"],
     ["Genetics and neurocutaneous", "genes and skin signs", "Tuberous sclerosis, neurofibromatosis, Sturge-Weber and the main epilepsy genes, each with its EEG and a tracing where one is honest.", "genetics"],
     ["Encephalopathy patterns", "periodic and unusual rhythms", "Periodic discharges, alpha coma and drug beta, with the situation each one points to.", "patterns"],
     ["Syndrome finder", "age + feature", "Enter the age and the main EEG feature and see which syndromes fit.", "finder"],
@@ -249,15 +253,14 @@ function GeneCard({ s }) {
         <p><strong>EEG:</strong> {s.eeg}</p>
         <p><strong>Your role:</strong> {s.technologist}</p>
       </Card>
-      {(s.clinicalDetail || s.course || s.activation || s.recording) && (
+      {(s.clinicalDetail || s.course) && (
         <Card title="Clinical course and recording">
           {s.clinicalDetail?.manifestations && <div><strong>Features</strong><ul className="list-disc space-y-1 pl-5">{s.clinicalDetail.manifestations.map((x) => <li key={x}>{x}</li>)}</ul></div>}
           {s.clinicalDetail?.development && <p><strong>Development:</strong> {s.clinicalDetail.development}</p>}
           {s.course && <p><strong>Course:</strong> {[s.course.onset, s.course.progression, s.course.outcome].filter(Boolean).join(" ")}</p>}
-          {s.activation && Object.entries(s.activation).map(([k, v]) => <p key={k}><strong className="capitalize">{k.replace(/([A-Z])/g, " $1")}:</strong> {v}</p>)}
-          {s.recording && <p><strong>Recording:</strong> {[s.recording.duration, s.recording.montage].filter(Boolean).join(" ")}</p>}
         </Card>
       )}
+      {hasRecordingPlan(s) && <RecordingPlan s={s} />}
       {s.differential && s.differential.length > 0 && (
         <Card title="Differential diagnosis (what the reader weighs it against)">
           <ul className="list-disc space-y-1 pl-5">{s.differential.map((x) => <li key={x}>{x}</li>)}</ul>
@@ -321,6 +324,52 @@ function Genetics({ id: idParam, setId }) {
       <GeneCard key={s.id} s={s} />
       <h3 className="pt-2 text-lg font-bold text-slate-900">From the EEG pattern to the genes the reader may consider</h3>
       <Table head={["EEG pattern", "Conditions and genes to think of", "Remember"]} rows={gen.patternTable} />
+    </div>
+  );
+}
+
+function RecordingGuide() {
+  const guide = data.recordingGuide;
+  const [open, setOpen] = useState("hyperventilation");
+  const proc = guide.procedures.find((x) => x.id === open) || guide.procedures[0];
+  const cols = ["hyperventilation", "photic", "sleep", "sleepDeprivation", "eyeClosure"];
+  const all = [...data.syndromes, ...data.genetics.items.filter((g) => g.activation)];
+  const rows = all.filter((x) => x.activation).map((x) => [
+    x.label,
+    ...cols.map((c) => {
+      const v = x.activation[c];
+      return v && typeof v === "object" && v.use ? v.use : "-";
+    }),
+  ]);
+  return (
+    <div className="space-y-5">
+      <p className="max-w-3xl text-slate-600">{guide.intro}</p>
+      <div className="flex flex-wrap gap-2">
+        {guide.procedures.map((x) => (
+          <button key={x.id} type="button" onClick={() => setOpen(x.id)} aria-pressed={x.id === proc.id} className={`rounded-md border px-3 py-1.5 text-sm font-semibold ${x.id === proc.id ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"}`}>
+            {x.title}
+          </button>
+        ))}
+      </div>
+      <Card title={proc.title} tone="indigo">
+        <div><strong>Steps</strong><ol className="list-decimal space-y-1 pl-5">{proc.steps.map((x) => <li key={x}>{x}</li>)}</ol></div>
+        {proc.stop && proc.stop.length > 0 && <div><strong>Stop or call for help when</strong><ul className="list-disc space-y-1 pl-5">{proc.stop.map((x) => <li key={x}>{x}</li>)}</ul></div>}
+        {proc.document && proc.document.length > 0 && <div><strong>Mark and document</strong><ul className="list-disc space-y-1 pl-5">{proc.document.map((x) => <li key={x}>{x}</li>)}</ul></div>}
+        {proc.tip && <p className="rounded-lg bg-emerald-50 px-3 py-2 text-emerald-900"><strong>For the best yield:</strong> {proc.tip}</p>}
+      </Card>
+      <h3 className="pt-2 text-lg font-bold text-slate-900">Which procedures help which syndrome</h3>
+      <p className="max-w-3xl text-sm text-slate-600">Best, Helpful, Limited and Not useful describe how much each procedure adds for that syndrome. Open the syndrome and its &quot;How to record&quot; section for the full plan.</p>
+      <Table head={["Syndrome", "Hyperventilation", "Photic", "Sleep", "Sleep deprivation", "Eye closure"]} rows={rows} />
+      <Card title="Common recording mistakes">
+        <div className="space-y-2">
+          {guide.mistakes.map(([wrong, right]) => (
+            <div key={wrong} className="grid gap-2 md:grid-cols-2">
+              <div className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-900"><span className="mr-1 font-semibold">Wrong idea:</span>{wrong}</div>
+              <div className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-900"><span className="mr-1 font-semibold">Correct:</span>{right}</div>
+            </div>
+          ))}
+        </div>
+      </Card>
     </div>
   );
 }
@@ -502,6 +551,7 @@ export default function NeuroSyndromes() {
         {tab === "physiology" && <Physiology />}
         {tab === "regions" && <Regions />}
         {tab === "syndromes" && <Syndromes id={itemId} setId={select} />}
+        {tab === "recording" && <RecordingGuide />}
         {tab === "genetics" && <Genetics id={itemId} setId={select} />}
         {tab === "patterns" && <Patterns />}
         {tab === "finder" && <Finder />}

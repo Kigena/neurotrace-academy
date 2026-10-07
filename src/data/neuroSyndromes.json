@@ -179,13 +179,37 @@
         "pattern_burst_suppression"
       ],
       "activation": {
-        "sleep": "Record both waking and sleep. Burst suppression that persists in both states is the key finding and separates it from normal trace alternant, which appears only in quiet sleep of the term neonate.",
-        "awake": "Burst suppression is present awake too, so a short awake segment is informative.",
-        "photic": "Not useful in a neonate; do not delay the recording for it."
+        "sleep": {
+          "use": "Best",
+          "how": "Let the infant sleep naturally after a feed and keep recording through the transition. Document sleep stage cues (eyes, breathing, movements).",
+          "why": "Burst suppression that persists in sleep as well as wake separates this pattern from normal neonatal trace alternant, which is seen only in quiet sleep."
+        },
+        "awake": {
+          "use": "Best",
+          "how": "Record a wake segment of at least several minutes with the infant quiet and eyes visible on video. Mark any eye opening, crying or handling.",
+          "why": "The pattern is present awake too; a continuous awake pattern is a key observation."
+        },
+        "photic": {
+          "use": "Not useful",
+          "how": "Do not perform it; do not delay or prolong the recording for it.",
+          "why": "Not a useful activation in a neonate."
+        },
+        "hyperventilation": {
+          "use": "Not useful",
+          "how": "Not applicable at this age.",
+          "why": "The infant cannot cooperate."
+        }
       },
       "recording": {
         "duration": "Long enough to include a wake segment, a sleep segment and, ideally, several tonic spasms.",
-        "montage": "Neonatal or infant montage with wide inter-electrode distances. Use a referential view to show the generalized suppression, and add EMG and respiration channels where available to time spasms."
+        "montage": "Neonatal or infant montage with wide inter-electrode distances. Use a referential view to show the generalized suppression, and use a bipolar view as a second check.",
+        "video": "Synchronized video throughout, with EMG and respiration channels where available, so each tonic spasm can be matched to the EEG. Keep the infant's whole body and face in frame.",
+        "ictal": "When a spasm occurs, press the event marker, note the clock time, describe the movements and any change in color or breathing, and keep recording through the event and afterward.",
+        "special": [
+          "Burst suppression is continuous across wake and sleep; document the state for each segment.",
+          "Keep the infant warm and monitored; never leave the infant alone and tell the nurse or physician of any apnea or color change.",
+          "Record the medication list and last dose times."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -224,7 +248,15 @@
         "west_syndrome",
         "lennox_gastaut"
       ],
-      "sceneNote": "Burst-suppression tracing: high-amplitude bursts alternating with nearly flat intervals."
+      "sceneNote": "Burst-suppression tracing: high-amplitude bursts alternating with nearly flat intervals.",
+      "yieldPlan": [
+        "Prepare a neonatal or infant montage with wide inter-electrode distances, plus EMG (deltoid or neck) and respiration channels, and start video with the clock visible before you begin.",
+        "Record the first segment awake or in whatever state the infant is in and note the state; do not wait for deep sleep before starting, because the pattern is present in both states.",
+        "Continue into sleep (feed-and-settle) and record a full sleep segment so the persistence of burst suppression across both states is documented.",
+        "Mark every tonic spasm or other event with clock time, and write what you saw (limbs, eyes, cry, color, breathing) on the record.",
+        "Keep a long enough run to include several spasms, noting burst and suppression durations on the record and any change in the pattern after an event.",
+        "Record the medication list, last dose times and the infant's age (corrected if premature) on the worksheet."
+      ]
     },
     {
       "id": "eme",
@@ -247,13 +279,32 @@
         "pattern_burst_suppression"
       ],
       "activation": {
-        "sleep": "The most useful state: burst suppression is often clearest in sleep, so record sleep and compare it with waking.",
-        "awake": "Record a waking segment too; the pattern may be less continuous when awake.",
-        "photic": "Not useful in a neonate."
+        "sleep": {
+          "use": "Best",
+          "how": "Allow natural sleep after a feed and keep recording through sleep. Mark the transition and compare with the waking segment.",
+          "why": "Burst suppression is often clearer in sleep."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Record a waking segment with the infant quiet and visible on video. Mark movements and handling.",
+          "why": "The pattern may be less continuous awake early on, so the wake record shows the contrast."
+        },
+        "photic": {
+          "use": "Not useful",
+          "how": "Do not perform it.",
+          "why": "Not useful in a neonate."
+        }
       },
       "recording": {
         "duration": "Long enough to include waking, sleep and a number of myoclonic events.",
-        "montage": "Neonatal or infant montage with wide inter-electrode distances and a referential view. Add EMG and respiration channels, and use video to match jerks with the EEG."
+        "montage": "Neonatal or infant montage with wide inter-electrode distances and a referential view; use a bipolar view as a second check.",
+        "video": "Continuous video with EMG and respiration channels, so erratic, fragmentary jerks that have no EEG correlate can still be timed and described.",
+        "ictal": "For every jerk or spasm press the event marker, note the clock time and the body part, and keep recording through and after the event.",
+        "special": [
+          "Erratic myoclonus often has no consistent EEG correlate; do not stop looking for one but mark and describe every jerk anyway.",
+          "Never leave the infant alone; report apnea or color change at once.",
+          "Record the medication list and last dose times."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -292,7 +343,15 @@
         "west_syndrome"
       ],
       "sceneNote": "Neonatal burst suppression: bursts of about 1.2 s and 1.4 s separated by flat intervals.",
-      "scene": "synEME"
+      "scene": "synEME",
+      "yieldPlan": [
+        "Set up a neonatal or infant montage with wide inter-electrode distances; add EMG leads on the limbs or chin and a respiration channel.",
+        "Start video and an annotated clock; record a waking segment first and describe the state.",
+        "Record through sleep and compare sleep with waking, since the pattern is often clearer in sleep and may be less continuous awake early on.",
+        "Time-mark every jerk, even those that look fragmentary, and note which body part moved because the myoclonus is erratic and shifts.",
+        "Note whether a jerk has any EEG correlate on the screen but do not interpret; the correlate is often absent, which is itself worth documenting.",
+        "Continue long enough to capture several events and any tonic spasms, and record the medication list."
+      ]
     },
     {
       "id": "west_syndrome",
@@ -317,13 +376,37 @@
         "pattern_hypsarrhythmia"
       ],
       "activation": {
-        "sleep": "The most useful state: hypsarrhythmia is often more evident, and may become bursty, in non-REM sleep. Sleep recording is essential and, ideally, includes an awakening.",
-        "awake": "The pattern is usually present awake but may be less prominent. Spasms often cluster on waking.",
-        "photic": "Not a useful activation procedure in this age group."
+        "sleep": {
+          "use": "Best",
+          "how": "Time the study to a nap if possible and record from awake through sleep, including an awakening.",
+          "why": "Hypsarrhythmia is often more evident, and may become bursty, in non-REM sleep, and spasms often cluster on waking."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Record a wake segment with the infant calm, with eyes and face visible on video.",
+          "why": "The pattern is usually present awake but may be less prominent."
+        },
+        "photic": {
+          "use": "Not useful",
+          "how": "Do not perform it routinely.",
+          "why": "Not a useful activation procedure in this age group."
+        },
+        "hyperventilation": {
+          "use": "Not useful",
+          "how": "Not applicable at this age.",
+          "why": "The infant cannot cooperate."
+        }
       },
       "recording": {
-        "duration": "Long enough to include sleep and ideally a transition on waking, when spasms cluster.",
-        "montage": "Infant montage with a referential view to show the multifocal, asymmetric spikes. Add deltoid or neck EMG and video to time each spasm."
+        "duration": "Long enough to include sleep and ideally the transition on waking, with enough time to capture several spasms.",
+        "montage": "Infant montage with a referential view to show the multifocal, asymmetric spikes, and a bipolar view for localizing.",
+        "video": "Essential: continuous video with deltoid or neck EMG so that each spasm is matched to the EEG change. Keep the whole body and face in view.",
+        "ictal": "At each spasm press the event marker, note the time, describe the movement and any eye or head change, and leave the machine running; muscle artifact can mimic or hide the electrodecrement, so write down what you saw.",
+        "special": [
+          "Sleep is essential for the study; ask the caregiver to time the nap or feed so the infant is likely to sleep.",
+          "Never leave the infant alone.",
+          "Record the medication list and last dose times, including any recent treatment started."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -362,7 +445,15 @@
         "eme",
         "lennox_gastaut"
       ],
-      "sceneNote": "Hypsarrhythmia tracing, with a second view showing a spasm with an electrodecrement."
+      "sceneNote": "Hypsarrhythmia tracing, with a second view showing a spasm with an electrodecrement.",
+      "yieldPlan": [
+        "Prepare an infant montage with referential and bipolar views, and add deltoid or neck EMG so each spasm can be timed.",
+        "Start video with the clock in view, and record the awake background first, describing the amplitude and organization.",
+        "Make sure the recording includes sleep, preferably non-REM, because the pattern is often more evident and can become bursty there.",
+        "Arrange for the recording to include the transition on waking, when spasms often cluster, and press the event marker at each spasm.",
+        "For each spasm note clock time, type of movement (flexor, extensor, mixed), cluster number and the infant's state before and after.",
+        "Keep recording long enough to document several clusters, and record the medication list and last dose times."
+      ]
     },
     {
       "id": "dravet",
@@ -386,14 +477,37 @@
         "pattern_polyspike_wave"
       ],
       "activation": {
-        "photic": "Photosensitivity and pattern sensitivity occur in a subset, so do photic stimulation per protocol, with attention to safety, and stop at any seizure.",
-        "sleep": "Sleep may bring out generalized or multifocal discharges and is worth recording.",
-        "awake": "The first EEG may be normal, so a normal result does not exclude the syndrome.",
-        "hyperventilation": "Per protocol and the child's ability to cooperate."
+        "photic": {
+          "use": "Per protocol",
+          "how": "Follow the lab protocol with the child comfortable and eyes open then closed, and stop immediately at a photoparoxysmal response or seizure. Mark the flash frequency and time, and keep recording afterward.",
+          "why": "Photosensitivity occurs in a subset of patients, mainly in early childhood, so photic stimulation is part of the routine protocol and is stopped at once for any response, jerk or seizure."
+        },
+        "sleep": {
+          "use": "Helpful",
+          "how": "Allow a natural nap and record through sleep and the awakening.",
+          "why": "Sleep may bring out generalized or multifocal discharges."
+        },
+        "awake": {
+          "use": "Per protocol",
+          "how": "Record a waking segment of adequate length with eye opening and closure, and note any behavior change.",
+          "why": "The first EEG may be normal, so a normal result does not exclude the syndrome."
+        },
+        "hyperventilation": {
+          "use": "Per protocol",
+          "how": "Only if the child is old enough to cooperate; stop at any seizure, distress or dizziness.",
+          "why": "It depends on the child's ability to cooperate."
+        }
       },
       "recording": {
-        "duration": "Long enough to include sleep and, if the child is old enough, photic stimulation; repeat studies are common because the EEG evolves.",
-        "montage": "Standard pediatric montage with referential views for generalized and multifocal discharges. Use video to document each seizure type."
+        "duration": "Long enough to include awake, photic stimulation (if the child is old enough) and sleep; repeat studies are common because the EEG evolves.",
+        "montage": "Standard pediatric montage with referential views for generalized and multifocal discharges.",
+        "video": "Use video to document each seizure type and keep the child in frame during photic stimulation.",
+        "ictal": "At a seizure press the event marker, note the time, describe onset, laterality and duration, test responsiveness when safe, and notify the physician or nurse promptly if it is prolonged.",
+        "special": [
+          "Fever can trigger seizures; record any fever or recent illness.",
+          "Seizures can be prolonged; never leave the child alone and know the lab's emergency procedure.",
+          "The first EEG may be normal and the pattern evolves with age."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -434,6 +548,14 @@
         "bmei",
         "lennox_gastaut",
         "doose_mae"
+      ],
+      "yieldPlan": [
+        "Take a careful history first: record the age, any current fever or illness (tell the physician or nurse before activations), the last seizure, and the medication list and last dose times.",
+        "Apply a standard pediatric montage and start video with the clock visible; keep the child comfortable and the caregiver nearby.",
+        "Record a waking segment, with eye opening and closure, and hyperventilation only if the child can cooperate.",
+        "Perform photic stimulation per the lab protocol and explicitly stop it at any photoparoxysmal response or clinical event, marking the frequency and time.",
+        "Record sleep (a nap is practical), then record the awakening.",
+        "Mark and describe every seizure type with video, and repeat the study at a later date if the first is normal, since the EEG evolves."
       ]
     },
     {
@@ -459,14 +581,36 @@
         "pattern_three_hz_gsw"
       ],
       "activation": {
-        "sleep": "Drowsiness and light sleep are the best states in which to capture bursts, so allow the infant to doze if possible.",
-        "awake": "Discharges may be sparse when the infant is fully awake.",
-        "photic": "Usually limited value; photic stimulation is done per the lab protocol.",
-        "sleepDeprivation": "Usually not needed in infants; a nap recording is the practical approach."
+        "sleep": {
+          "use": "Best",
+          "how": "Allow the infant to doze or nap naturally and keep recording through drowsiness and light sleep.",
+          "why": "Brief generalized bursts appear most often in drowsiness and light sleep."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Record a calm waking segment and mark any jerks.",
+          "why": "Discharges are usually rare or absent when the infant is fully awake, but a waking record shows the background."
+        },
+        "photic": {
+          "use": "Limited",
+          "how": "Perform it per lab protocol if the infant is cooperative, and stop at any response or jerk.",
+          "why": "It is usually of limited value in this age group."
+        },
+        "sleepDeprivation": {
+          "use": "Limited",
+          "how": "Do not ask caregivers to deprive the infant; schedule the study at nap time instead.",
+          "why": "A nap recording is the practical approach."
+        }
       },
       "recording": {
         "duration": "Long enough for a nap with drowsiness and light sleep, and a number of jerks if they occur.",
-        "montage": "Infant montage with a referential view for the generalized bursts. Add EMG leads and video, because jerks are brief and can be missed."
+        "montage": "Infant montage with a referential view for the generalized bursts, plus a bipolar view.",
+        "video": "Use EMG and video because jerks are brief and can be missed; keep the infant's head, trunk and arms in frame.",
+        "ictal": "When a jerk occurs press the event marker, note the time, and describe the body part and what the infant was doing.",
+        "special": [
+          "Brief jerks can be missed; keep a caregiver nearby to tell you when one occurs.",
+          "Never leave the infant alone."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -507,7 +651,14 @@
         "ige"
       ],
       "sceneNote": "Drowsy 1.5-year-old with two brief generalized spike-wave bursts of about 1.2 s each at 3.4 to 3.8 Hz.",
-      "scene": "synBMEI"
+      "scene": "synBMEI",
+      "yieldPlan": [
+        "Apply an infant montage and add EMG leads (deltoid or neck) before starting; set up video with the clock visible.",
+        "Start with the infant awake and describe the background; discharges may be sparse when fully awake.",
+        "Encourage the infant to doze (feed or nap time) and keep recording through drowsiness and light sleep, which is when bursts are best seen.",
+        "Mark each jerk with the clock time and a description, and note whether a burst is seen on the screen at the same time.",
+        "Perform photic stimulation per the lab protocol, stopping at any response or jerk, and record the medication list and last dose times."
+      ]
     },
     {
       "id": "doose_mae",
@@ -532,14 +683,37 @@
       ],
       "technologist": "Record clinical jerks and falls with time marks, add a muscle (EMG) channel if possible, and describe background, theta bursts and discharge frequency.",
       "activation": {
-        "hyperventilation": "Usually not feasible in this age group.",
-        "photic": "Photosensitivity can occur; follow protocol.",
-        "sleep": "May activate discharges; record wake and sleep.",
-        "awake": "Events and discharges can occur awake without provocation."
+        "awake": {
+          "use": "Helpful",
+          "how": "Record a waking segment of adequate length, with eyes open and closed, and mark every event.",
+          "why": "Events and discharges can occur awake without provocation."
+        },
+        "sleep": {
+          "use": "Helpful",
+          "how": "Allow a natural nap and record through sleep and the awakening.",
+          "why": "Sleep may activate discharges."
+        },
+        "photic": {
+          "use": "Per protocol",
+          "how": "Follow the lab protocol, and stop at a photoparoxysmal response or seizure, marking time and frequency.",
+          "why": "Photosensitivity can occur."
+        },
+        "hyperventilation": {
+          "use": "Limited",
+          "how": "Only if the child is old enough to cooperate; keep it short, supervise closely and stop at any seizure or distress.",
+          "why": "It is usually not feasible in this age group, and the child may drop."
+        }
       },
       "recording": {
         "duration": "Include wake and sleep and try to capture events.",
-        "montage": "Referential and bipolar views; add EMG to document myoclonus and atonia."
+        "montage": "Referential and bipolar views; add EMG to document myoclonus and atonia.",
+        "video": "Use video with an EMG channel on neck or shoulder muscles to show the myoclonic jerk followed by loss of tone.",
+        "ictal": "During a drop or seizure, ensure the child's safety first, press the event marker, note the time and describe the jerk and fall; test responsiveness when it is safe.",
+        "special": [
+          "Falls can cause injury; keep the child supervised and consider a helmet if the lab uses one.",
+          "Prolonged non-convulsive status can occur; notify the physician if the child is unresponsive for a prolonged time.",
+          "Record the medication list and last dose times."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -579,7 +753,15 @@
         "bmei"
       ],
       "sceneNote": "The tracing shows bursts of rhythmic 5.5 Hz parietal theta, followed by generalized spike-wave at about 2.4 to 2.8 Hz, in an awake 3-year-old.",
-      "scene": "synDoose"
+      "scene": "synDoose",
+      "yieldPlan": [
+        "Take a brief history of the events (jerks, drops, atypical absences) and record the medication list and last dose times; plan for a fall risk and keep the child safely supervised.",
+        "Apply a pediatric montage and add EMG on neck or shoulder muscles with video, because the jerk is followed by loss of tone.",
+        "Record a waking segment and describe the background and any parietal theta bursts.",
+        "Perform photic stimulation per protocol and, in a child who can cooperate, hyperventilation; stop either for a response or seizure.",
+        "Record sleep, since it may activate discharges, and also record the awakening.",
+        "Mark each jerk, drop or absence with clock time, test responsiveness when safe, and describe what happened."
+      ]
     },
     {
       "id": "lennox_gastaut",
@@ -606,14 +788,36 @@
         "pattern_gpfa"
       ],
       "activation": {
-        "sleep": "The most informative state: generalized paroxysmal fast activity emerges in non-REM sleep and may accompany a brief tonic seizure or be subclinical.",
-        "awake": "Slow spike-and-wave is present while awake and may run in long bursts with drowsiness or inattention.",
-        "hyperventilation": "Usually not feasible and not particularly useful.",
-        "photic": "Not usually helpful."
+        "sleep": {
+          "use": "Best",
+          "how": "Allow natural sleep and keep recording through non-REM sleep with time marks at state changes.",
+          "why": "Generalized paroxysmal fast activity emerges in non-REM sleep and may be subclinical or accompany a brief tonic seizure."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Record waking and drowsy periods and describe the slow spike-and-wave and any clinical correlates.",
+          "why": "Slow spike-and-wave is present while awake and may run in long bursts with drowsiness or inattention."
+        },
+        "hyperventilation": {
+          "use": "Not useful",
+          "how": "Usually not feasible; do not attempt if the patient cannot cooperate.",
+          "why": "It is not particularly useful in this syndrome."
+        },
+        "photic": {
+          "use": "Limited",
+          "how": "Run the lab's standard intermittent photic protocol, each frequency with eyes open then eyes closed, and stop at once on a photoparoxysmal response or seizure.",
+          "why": "Not usually helpful, but may be included per protocol."
+        }
       },
       "recording": {
-        "duration": "Long enough to include wake and sleep; clinical events should be captured if possible.",
-        "montage": "Use bipolar and referential views; adding a muscle (EMG) channel can help show a tonic seizure."
+        "duration": "Long enough to include wake and sleep, ideally an hour or more; capture clinical events if possible.",
+        "montage": "Bipolar and referential views; add a muscle (EMG) channel to help show tonic seizures.",
+        "video": "Video is strongly recommended to correlate EEG changes with the several seizure types seen in this syndrome.",
+        "ictal": "For each event, mark the time and describe the behaviour, test responsiveness when possible, and note the EEG pattern such as fast bursts or attenuation.",
+        "special": [
+          "A sleep record is essential.",
+          "Be prepared for tonic seizures and falls, and keep the patient safe during the recording."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -654,7 +858,15 @@
         "west_syndrome",
         "eses_csws"
       ],
-      "sceneNote": "Two tracings are attached: slow generalized spike-and-wave in wake on a slow background, and a burst of generalized paroxysmal fast activity in non-REM sleep."
+      "sceneNote": "Two tracings are attached: slow generalized spike-and-wave in wake on a slow background, and a burst of generalized paroxysmal fast activity in non-REM sleep.",
+      "yieldPlan": [
+        "Plan a long recording that includes wake, drowsiness and non-REM sleep, and use video if available.",
+        "Record the medication list and last dose time, and ask the caregiver about the child's usual seizure types.",
+        "Add a muscle (EMG) channel, such as deltoid, to help show tonic seizures, and make sure the video captures the child's whole body for every clinical event.",
+        "Record the awake portion first, describing the background and slow spike-and-wave, then allow sleep to occur naturally.",
+        "Mark every clinical event with time, type and duration, and describe any fast burst or attenuation that accompanies it.",
+        "Stay with the patient and tell the physician of any prolonged seizure."
+      ]
     },
     {
       "id": "atypical_absence",
@@ -677,14 +889,36 @@
       ],
       "technologist": "Describe the background, the discharge frequency and how it starts and stops. Record both waking and sleep, test responsiveness, and mark time and clinical features.",
       "activation": {
-        "sleep": "Discharges are often more abundant in drowsiness and non-REM sleep; a sleep record is essential.",
-        "awake": "Slow spike-and-wave is present while awake, especially in drowsiness.",
-        "hyperventilation": "Usually of limited value.",
-        "photic": "Usually of limited value."
+        "sleep": {
+          "use": "Best",
+          "how": "Allow natural sleep and keep recording through drowsiness and non-REM sleep, with time marks at changes in state.",
+          "why": "Discharges are often more abundant in drowsiness and non-REM sleep."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Record waking and drowsy periods, test responsiveness as the child allows, and describe the background.",
+          "why": "Slow spike-and-wave is present while awake, especially in drowsiness."
+        },
+        "hyperventilation": {
+          "use": "Limited",
+          "how": "Attempt only if the child can cooperate; stop for a prolonged seizure or distress.",
+          "why": "Usually of limited value and often not feasible."
+        },
+        "photic": {
+          "use": "Limited",
+          "how": "Run the lab's standard intermittent photic protocol, each frequency with eyes open then eyes closed, and stop at once on a photoparoxysmal response or seizure.",
+          "why": "Usually of limited value."
+        }
       },
       "recording": {
-        "duration": "Include wake, drowsiness and sleep.",
-        "montage": "Referential and bipolar views to describe distribution and asymmetry."
+        "duration": "Long enough to include wake, drowsiness and non-REM sleep; at least an hour when possible.",
+        "montage": "Referential and bipolar views to describe the distribution and any asymmetry.",
+        "video": "Use video if available to document behaviour arrest, slow onset and offset, and any associated events.",
+        "ictal": "Note the clinical event with time, test responsiveness, and describe the gradual onset and offset and the discharge frequency.",
+        "special": [
+          "A sleep record is essential.",
+          "Record the medication list and last dose time."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -724,7 +958,14 @@
         "cae"
       ],
       "sceneNote": "The tracing shows irregular, slow generalized spike-and-wave at about 2 to 2.4 Hz on a slowed awake background in a 7-year-old.",
-      "scene": "synAtypAbs"
+      "scene": "synAtypAbs",
+      "yieldPlan": [
+        "Plan a long enough study to include waking, drowsiness and non-REM sleep; do not stop early.",
+        "Record the medication list and last dose time, and ask the caregiver about the child's usual events.",
+        "Record awake first, noting the background and any slow spike-wave, with responsiveness tests as appropriate for the child's ability.",
+        "Allow natural sleep and keep recording through drowsiness and non-REM sleep, where discharges are most abundant.",
+        "Mark every clinical event with time, behaviour and how it started and ended, and add a muscle channel if tonic or myoclonic events are possible."
+      ]
     },
     {
       "id": "occipital",
@@ -746,14 +987,41 @@
       "classification": "Self-Limited Focal Epilepsy",
       "patterns": [],
       "activation": {
-        "awake": "Eye closure and darkness bring out occipital spikes; they may vanish with eyes open (fixation-off sensitivity), so alternate eyes-open and eyes-closed periods.",
-        "sleep": "Strongly activating; spikes often multiply and may appear in other regions.",
-        "hyperventilation": "Not specifically helpful.",
-        "photic": "Usually not specific; the key manoeuvre is eye closure, not flicker."
+        "eyeClosure": {
+          "use": "Best",
+          "how": "Repeat eyes-open and eyes-closed periods with time marks, and mark if spikes appear on closure or darkness and disappear on opening.",
+          "why": "Occipital spikes may appear with eye closure and darkness and vanish with fixation, a pattern called fixation-off sensitivity. Fixation-off sensitivity is characteristic but not universal; spikes may be multifocal and are often more frequent in sleep."
+        },
+        "sleep": {
+          "use": "Helpful",
+          "how": "Record drowsiness and sleep, with time marks at state changes.",
+          "why": "Spikes often multiply in sleep and may appear in other regions."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Alternate eyes-open and eyes-closed periods, and keep the child engaged during the eyes-open periods.",
+          "why": "It documents the effect of eye opening on the spikes."
+        },
+        "photic": {
+          "use": "Limited",
+          "how": "Run the lab's standard intermittent photic protocol, each frequency with eyes open then eyes closed, and stop at once on a photoparoxysmal response or seizure.",
+          "why": "Usually not specific; the key manoeuvre is eye closure, not flicker."
+        },
+        "hyperventilation": {
+          "use": "Limited",
+          "how": "Per lab protocol if the child can cooperate. Stop for a prolonged seizure, distress, or if the patient cannot cooperate.",
+          "why": "Not specifically helpful."
+        }
       },
       "recording": {
-        "duration": "Include several eyes-open and eyes-closed periods and drowsiness or sleep.",
-        "montage": "Use bipolar and referential views including the posterior chain; document spikes in other regions too."
+        "duration": "Include several eyes-open and eyes-closed periods and drowsiness or sleep; at least 20 to 30 minutes awake plus sleep if possible.",
+        "montage": "Bipolar and referential views including the posterior chain; document spikes in other regions too.",
+        "video": "Use video if available to show eye position, eye deviation and behaviour.",
+        "ictal": "Mark any event with time, eye position, autonomic signs and responsiveness, and describe how it ended.",
+        "special": [
+          "Eye closure and eye-opening periods must be clearly time-marked.",
+          "Document spikes outside the occipital region."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -791,7 +1059,15 @@
         "rolandic",
         "cae"
       ],
-      "sceneNote": "The tracing shows occipital spikes whose appearance changes with eye opening and closure."
+      "sceneNote": "The tracing shows occipital spikes whose appearance changes with eye opening and closure.",
+      "yieldPlan": [
+        "Record the medication list and last dose time, and ask the family about events from sleep, vomiting or eye deviation.",
+        "Place posterior electrodes carefully so the occipital chain is well recorded.",
+        "Alternate eyes-open and eyes-closed periods several times, with time marks, and note any spikes that appear on eye closure and vanish with eyes open.",
+        "Test fixation-off sensitivity by having the child fixate on a target, then remove fixation by eye closure or by the lab's approved method (for example a darkened room or lenses), and mark each condition.",
+        "Allow drowsiness and sleep, where spikes often increase and may appear in other regions.",
+        "Add photic stimulation per protocol and describe any events with time and behaviour."
+      ]
     },
     {
       "id": "eses_csws",
@@ -816,14 +1092,36 @@
         "pattern_slow_spike_wave"
       ],
       "activation": {
-        "sleep": "Essential: the pattern is defined in non-REM sleep, and it is much less prominent in wakefulness and REM sleep.",
-        "awake": "The waking record may show only focal or generalized spikes, or look unremarkable.",
-        "hyperventilation": "Not helpful.",
-        "photic": "Not helpful."
+        "sleep": {
+          "use": "Best",
+          "how": "Allow natural sleep and keep recording through drowsiness and at least one full sleep cycle of non-REM sleep, marking transitions and any REM.",
+          "why": "The pattern is defined in non-REM sleep and is much less prominent in wakefulness and REM sleep."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Record a waking baseline and describe any focal, temporal or generalized spikes, noting if the record is otherwise unremarkable.",
+          "why": "The waking record may show only focal or generalized spikes, or look unremarkable."
+        },
+        "hyperventilation": {
+          "use": "Not useful",
+          "how": "Not needed for this syndrome.",
+          "why": "Not a useful activation for this pattern; the key to the study is adequate non-REM sleep."
+        },
+        "photic": {
+          "use": "Not useful",
+          "how": "Per lab protocol if required.",
+          "why": "Not a useful activation for this pattern; the key to the study is adequate non-REM sleep."
+        }
       },
       "recording": {
-        "duration": "Obtain a sleep record covering wake, drowsiness and a good stretch of non-REM sleep; do not stop early.",
-        "montage": "Bipolar and referential views are both useful; in LKS, note any temporal predominance."
+        "duration": "Obtain a record covering wake, drowsiness and at least one full sleep cycle with non-REM sleep (typically about 30 to 60 minutes, per lab protocol), and consider REM if the child sleeps long enough; do not stop early.",
+        "montage": "Bipolar and referential views are both useful; note any temporal predominance if language regression is described.",
+        "video": "Use video when available to document seizures and the child's behaviour or language state.",
+        "ictal": "Mark any clinical seizure with time, behaviour and duration.",
+        "special": [
+          "A sleep recording is essential and should not be cut short.",
+          "Describe how much of the sleep record shows discharges and note the stage; the reader measures the amount."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -861,7 +1159,15 @@
         "rolandic",
         "lennox_gastaut"
       ],
-      "sceneNote": "The tracing shows near-continuous generalized spike-and-wave at about 2 Hz during non-REM sleep."
+      "sceneNote": "The tracing shows near-continuous generalized spike-and-wave at about 2 Hz during non-REM sleep.",
+      "yieldPlan": [
+        "Plan a study that includes wake, drowsiness and at least one full sleep cycle (typically about 30 to 60 minutes of non-REM sleep, per lab protocol); a waking-only study can look normal.",
+        "Record the medication list and last dose time, and ask the family about recent language or behavioural change.",
+        "Record a short awake baseline and document the child's behaviour and responsiveness during the study; do not perform language testing unless the lab protocol specifies it.",
+        "Allow natural sleep and keep recording through non-REM sleep; do not stop early even if the first minutes look normal.",
+        "Mark sleep stages and any REM period with time marks, and describe how continuous the discharges are in each state.",
+        "Mark any clinical seizure with time and behaviour."
+      ]
     },
     {
       "id": "cae",
@@ -885,15 +1191,42 @@
         "pattern_three_hz_gsw"
       ],
       "activation": {
-        "hyperventilation": "The most effective activation; often provokes typical absences in untreated children, so record it carefully.",
-        "photic": "Usually of limited value in this syndrome.",
-        "sleep": "Spike-wave may fragment or become faster and polyspike-like in non-REM sleep; absence seizures themselves do not occur in sleep.",
-        "sleepDeprivation": "May increase the chance of capturing discharges.",
-        "awake": "Include both eyes-open and eyes-closed periods."
+        "hyperventilation": {
+          "use": "Best",
+          "how": "Do 3 to 5 minutes of deep, steady breathing with the child counting or watching a pinwheel, then continue recording for several minutes after stopping because bursts often appear during build-up or just after. Stop for a prolonged seizure, distress, or if the patient cannot cooperate.",
+          "why": "It is the most reliable way to provoke typical absences and 3 Hz spike-and-wave in an untreated child."
+        },
+        "photic": {
+          "use": "Limited",
+          "how": "Run the lab's standard intermittent photic protocol, each frequency with eyes open then eyes closed, and stop at once on a photoparoxysmal response or seizure.",
+          "why": "Photosensitivity is not a main feature of this syndrome, but the protocol is still part of the routine study."
+        },
+        "sleep": {
+          "use": "Helpful",
+          "how": "Allow drowsiness and sleep if the child falls asleep; keep recording through the transitions.",
+          "why": "Spike-wave may fragment or become faster and polyspike-like in non-REM sleep, which helps characterise the epilepsy; absences themselves do not occur in sleep."
+        },
+        "sleepDeprivation": {
+          "use": "Helpful",
+          "how": "Follow the lab's sleep-restriction instructions for the child's age and tell the family in advance.",
+          "why": "It may increase the chance of capturing discharges when the routine record is normal."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Include eyes-open and eyes-closed periods and keep the child engaged with simple counting or talking between activations.",
+          "why": "Bursts can occur spontaneously, and responsiveness testing during them documents the clinical absence."
+        }
       },
       "recording": {
-        "duration": "A routine awake recording with full hyperventilation, plus drowsiness or sleep if the study allows.",
-        "montage": "Show both referential and bipolar views: the generalized, frontally predominant field is clearest referentially."
+        "duration": "A routine awake study of at least 20 to 30 minutes with the full hyperventilation, plus drowsiness or sleep if possible; longer recording gives more chance to capture bursts.",
+        "montage": "Display referential and bipolar montages; the generalized frontally predominant field is clearest referentially.",
+        "video": "Use video if available to show staring, eyelid flutter or automatisms and to document responsiveness testing.",
+        "ictal": "At burst onset, call the child's name and give a task; mark the time, record the answer, and mark the end when the child resumes activity. Describe the behaviour and how fast recovery was.",
+        "special": [
+          "Hyperventilation is the key activation; do not skip it unless there is a contraindication or the child cannot cooperate.",
+          "Stop hyperventilation for a prolonged seizure or distress.",
+          "Record the medication list and last dose time."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -935,7 +1268,14 @@
         "atypical_absence",
         "jme"
       ],
-      "sceneNote": "The tracing shows a generalized, synchronous 3 Hz spike-and-wave burst on an otherwise normal awake background."
+      "sceneNote": "The tracing shows a generalized, synchronous 3 Hz spike-and-wave burst on an otherwise normal awake background.",
+      "yieldPlan": [
+        "Check the request and medication list, note the last dose time, and confirm the child is able to follow breathing instructions; practise the breathing before starting.",
+        "Start with a short baseline awake record with eyes open and closed, then do hyperventilation for the full 3 to 5 minutes with the child counting breaths or blowing a pinwheel, and keep recording 2 to 3 minutes afterwards.",
+        "During every burst, call the child's name, give a simple task (count aloud, remember a word, raise an arm) and mark the time, the response and any eyelid flutter or staring.",
+        "Add standard photic stimulation, then drowsiness and sleep if the study allows.",
+        "Record in referential and bipolar views so the frontally predominant generalized field is shown, and document each clinical absence with start time, duration and recovery."
+      ]
     },
     {
       "id": "jeavons",
@@ -961,14 +1301,36 @@
       ],
       "technologist": "Repeat eye closure several times, each with a time mark, and see whether discharges follow within seconds. Keep photic stimulation to protocol, and describe eyelid movements clinically and in the notes.",
       "activation": {
-        "hyperventilation": "May help but is not the main trigger.",
-        "photic": "Often provokes generalized discharges, but test carefully following protocol.",
-        "sleep": "Discharges often become less prominent in sleep.",
-        "awake": "Eye closure is the key manoeuvre; bursts often follow within a few seconds."
+        "eyeClosure": {
+          "use": "Best",
+          "how": "Ask the patient to close the eyes on command, keep them closed 3 to 5 seconds, then open, repeating several times with a time mark at each closure. Watch the eyelids for rapid flutter and mark any burst.",
+          "why": "Generalized discharges characteristically follow eye closure within seconds, often with eyelid myoclonia."
+        },
+        "photic": {
+          "use": "Helpful",
+          "how": "Follow the lab's standard flash series with eyes open and eyes closed. Stop immediately if a photoparoxysmal response or seizure occurs and record the frequency that triggered it.",
+          "why": "Photoparoxysmal responses are common, so it is a key activation, but it needs careful monitoring."
+        },
+        "hyperventilation": {
+          "use": "Limited",
+          "how": "Do 3 to 5 minutes if the patient can cooperate. Stop for a prolonged seizure, distress, or if the patient cannot cooperate.",
+          "why": "It may help but is not the main trigger."
+        },
+        "sleep": {
+          "use": "Limited",
+          "how": "Record drowsiness and sleep if the study allows.",
+          "why": "Discharges often become less prominent in sleep."
+        }
       },
       "recording": {
-        "duration": "Include repeated eye-opening and eye-closure periods.",
-        "montage": "Referential and bipolar views; include a frontal or eyelid channel if possible to document eyelid movement."
+        "duration": "At least 20 to 30 minutes awake, including repeated eye opening and closing and the full photic series.",
+        "montage": "Referential and bipolar views, with a frontal or eyelid (EOG) channel to document eyelid movement.",
+        "video": "Use video focused on the face and eyes to show eyelid myoclonia, with the time mark synchronised.",
+        "ictal": "At each eyelid event, mark the time, test responsiveness and describe the movement, its duration and any lapse in awareness.",
+        "special": [
+          "Photic stimulation and eye closure are the main activations; stop photic stimulation for any photoparoxysmal response or seizure.",
+          "Record the medication list and last dose time."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -1008,7 +1370,15 @@
         "jme"
       ],
       "sceneNote": "The tracing shows two episodes of generalized 4 to 5 Hz spike-wave bursts beginning right after eye closure, with eyes open at 5.0 seconds in between.",
-      "scene": "synJeavons"
+      "scene": "synJeavons",
+      "yieldPlan": [
+        "Confirm the request, record the medication list and last dose time, and check for known photosensitivity before starting.",
+        "Place the electrodes to include frontal and eyelid movement documentation; add an EOG or eyelid channel if possible.",
+        "Start with repeated eye opening and closing: have the patient close the eyes on command, hold 3 to 5 seconds, then open, and put a time mark at each closure.",
+        "Run the standard photic protocol carefully with eyes open and closed, stopping at once on a photoparoxysmal response or seizure.",
+        "Do hyperventilation for 3 to 5 minutes if the patient can cooperate, then record drowsiness or sleep if possible.",
+        "Describe eyelid flutter and any lapse of awareness with the time and a responsiveness check."
+      ]
     },
     {
       "id": "eye_closure_sensitivity",
@@ -1034,14 +1404,41 @@
       ],
       "technologist": "Repeat eye closure several times, each with a time mark. Note whether discharges follow, how soon, and whether they stop with eyes open.",
       "activation": {
-        "awake": "Eye closure is the key activation and should be repeated several times; compare with the eyes-open record.",
-        "photic": "Eyes-closed photic stimulation may add to the response; follow protocol.",
-        "hyperventilation": "May contribute.",
-        "sleep": "Discharges often decrease in sleep."
+        "eyeClosure": {
+          "use": "Best",
+          "how": "Repeat eye closure several times (3 to 5 seconds each) with a time mark at every closure and opening; compare the eyes-open and eyes-closed record.",
+          "why": "Generalized spike-wave bursts appear within seconds of eye closure and may stop when the eyes open."
+        },
+        "photic": {
+          "use": "Helpful",
+          "how": "Follow protocol with eyes open and closed, and stop at once for a photoparoxysmal response or seizure.",
+          "why": "Eyes-closed flicker may add to the response."
+        },
+        "hyperventilation": {
+          "use": "Limited",
+          "how": "Do 3 to 5 minutes if cooperative. Stop for a prolonged seizure, distress, or if the patient cannot cooperate.",
+          "why": "It may contribute but is not the main trigger."
+        },
+        "sleep": {
+          "use": "Limited",
+          "how": "Record drowsiness or sleep if possible.",
+          "why": "Discharges often decrease in sleep."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Alternate eyes-open and eyes-closed periods throughout the awake record.",
+          "why": "It documents spontaneous versus eye-closure-related discharges."
+        }
       },
       "recording": {
-        "duration": "Include several eye-opening and eye-closure periods.",
-        "montage": "Referential and bipolar views."
+        "duration": "At least 20 to 30 minutes awake with several eye-opening and eye-closure periods.",
+        "montage": "Referential and bipolar views; include an eye (EOG) channel if possible.",
+        "video": "Use video to document the eyes and any eyelid movement or lapse with the time marks.",
+        "ictal": "At each event, mark the time, test responsiveness and describe the behaviour.",
+        "special": [
+          "Eye closure is the key manoeuvre and must be repeated several times.",
+          "Stop photic stimulation for a photoparoxysmal response or seizure."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -1082,7 +1479,14 @@
         "jae"
       ],
       "sceneNote": "The tracing shows two episodes of generalized 3.6 to 4.2 Hz spike-wave bursts right after eye closure in an awake 9-year-old.",
-      "scene": "synEyeClosure"
+      "scene": "synEyeClosure",
+      "yieldPlan": [
+        "Place the electrodes and eye channels carefully so eye closure and opening are visible on the record.",
+        "Record a short baseline with eyes open, then ask the patient to close the eyes on command for 3 to 5 seconds and open again, repeating several times.",
+        "Mark the time of each eye closure and opening, and note whether discharges follow, how soon and whether they stop on opening.",
+        "Add eyes-closed photic stimulation per protocol, stopping at once for a photoparoxysmal response or seizure.",
+        "Do hyperventilation if appropriate and include drowsiness or sleep if the study allows."
+      ]
     },
     {
       "id": "rolandic",
@@ -1107,15 +1511,41 @@
         "pattern_focal_spikes_temporal"
       ],
       "activation": {
-        "sleep": "The strongest activator: spikes become more frequent in drowsiness and non-REM sleep and may spread or become bilateral.",
-        "sleepDeprivation": "May help if a routine awake record is normal.",
-        "awake": "Spikes may be sparse or absent when awake, so a normal waking record does not exclude the syndrome.",
-        "hyperventilation": "Little specific effect.",
-        "photic": "Not usually helpful."
+        "sleep": {
+          "use": "Best",
+          "how": "Allow natural sleep and keep recording through drowsiness and non-REM sleep, with time marks at state changes.",
+          "why": "Spikes become more frequent in drowsiness and non-REM sleep and may spread or become bilateral."
+        },
+        "sleepDeprivation": {
+          "use": "Helpful",
+          "how": "Follow the lab's sleep-restriction instructions for the child's age.",
+          "why": "It may help if a routine awake record is normal."
+        },
+        "awake": {
+          "use": "Limited",
+          "how": "Record a waking baseline, eyes open and closed.",
+          "why": "Spikes may be sparse or absent when awake, so a normal waking record does not exclude the syndrome."
+        },
+        "hyperventilation": {
+          "use": "Limited",
+          "how": "Per lab protocol if the child can cooperate. Stop for a prolonged seizure, distress, or if the patient cannot cooperate.",
+          "why": "Little specific effect."
+        },
+        "photic": {
+          "use": "Limited",
+          "how": "Not a main activation for this syndrome; perform it only as part of the routine protocol, stopping at once on a photoparoxysmal response or seizure.",
+          "why": "Photosensitivity is not a feature of this syndrome; sleep is what brings out the spikes."
+        }
       },
       "recording": {
         "duration": "Include drowsiness and sleep; a waking-only record can miss the discharges.",
-        "montage": "Use referential and bipolar/transverse views to show the dipole: negative centrotemporally, positive frontally. Report any shift between hemispheres."
+        "montage": "Referential and bipolar/transverse views to show the dipole, negative centrotemporally and positive frontally; report any shift between hemispheres.",
+        "video": "Use video if available to document facial or oral movements and sleep staging.",
+        "ictal": "If a clinical event occurs, mark the time, describe facial or limb activity and responsiveness, and note if it spreads.",
+        "special": [
+          "Sleep is the key activation.",
+          "Record the medication list and last dose time."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -1153,7 +1583,15 @@
         "eses_csws",
         "cae"
       ],
-      "sceneNote": "The tracing shows high-amplitude centrotemporal spikes with a horizontal dipole on a normal background."
+      "sceneNote": "The tracing shows high-amplitude centrotemporal spikes with a horizontal dipole on a normal background.",
+      "yieldPlan": [
+        "Record the medication list and last dose time, and plan for a record that includes drowsiness and sleep.",
+        "Confirm whether the order or lab protocol calls for sleep deprivation and follow the instructions given to the family; if the awake record is normal, continue into drowsiness and natural sleep and tell the physician whether sleep was obtained.",
+        "Record a short awake baseline with eyes open and closed, including photic and hyperventilation per protocol.",
+        "Keep recording through drowsiness and non-REM sleep, as spikes become more frequent and may spread.",
+        "Use referential and transverse bipolar views to show the dipole, and mark any spread or side shift.",
+        "Describe any clinical event, such as facial twitching, with time and behaviour."
+      ]
     },
     {
       "id": "frontal_lobe_epilepsy",
@@ -1178,13 +1616,31 @@
         "pattern_focal_slowing"
       ],
       "activation": {
-        "sleep": "Sleep often increases frontal discharges; record it when allowed.",
-        "sleepDeprivation": "May increase the chance of capturing spikes or an event.",
-        "awake": "A waking record is often normal or shows only subtle changes."
+        "sleep": {
+          "use": "Best",
+          "how": "Allow natural sleep and keep the camera on throughout, since seizures often arise from sleep.",
+          "why": "Sleep often increases frontal discharges and seizures."
+        },
+        "sleepDeprivation": {
+          "use": "Helpful",
+          "how": "Request partial sleep deprivation per protocol and make sure sleep is recorded.",
+          "why": "It may increase the chance of capturing spikes or an event."
+        },
+        "awake": {
+          "use": "Limited",
+          "how": "Record eyes open and closed.",
+          "why": "A waking record is often normal or shows only subtle changes."
+        }
       },
       "recording": {
-        "duration": "Seizures are brief and frequent, so a prolonged record or video-EEG that captures sleep may be needed.",
-        "montage": "Longitudinal and transverse bipolar chains, plus a referential montage. Add frontal and mesial coverage if the protocol allows."
+        "duration": "Seizures are brief and frequent, so a prolonged record or video-EEG including sleep may be needed.",
+        "montage": "Longitudinal and transverse bipolar chains, plus referential; add supplementary 10-10 frontal and midline electrodes if the protocol allows (scalp coverage of mesial frontal cortex is limited).",
+        "video": "Video is essential to document hypermotor or tonic events and to separate them from artifact.",
+        "ictal": "Mark the exact onset time, note the posture and movements, test responsiveness where safe, and note how quickly the patient recovers; the ictal tracing is often obscured by muscle artifact.",
+        "special": [
+          "Events may be very brief with fast recovery, so mark them at once.",
+          "Keep the patient safe in bed and never leave them alone."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -1224,6 +1680,14 @@
         "temporal_lobe_epilepsy",
         "ige",
         "jme"
+      ],
+      "yieldPlan": [
+        "Record the medication list, last dose time and any seizure times described by the family.",
+        "Prepare for a prolonged or video-EEG study, because the seizures are brief and frequent.",
+        "Include natural sleep, particularly drowsiness and light sleep.",
+        "Use longitudinal and transverse bipolar chains plus a referential montage; add supplementary 10-10 frontal and midline electrodes if allowed (scalp coverage of mesial frontal cortex is limited).",
+        "Keep the patient continuously on camera and press the event marker the moment a seizure starts.",
+        "After each event, document behaviour, responsiveness and recovery, and describe the movement artifact on the tracing."
       ]
     },
     {
@@ -1250,15 +1714,41 @@
       ],
       "technologist": "Choose activation for the likely syndrome as the request and protocol direct: hyperventilation and photic stimulation per protocol, plus sleep. Describe the discharges (rate, distribution, duration) and test responsiveness during bursts.",
       "activation": {
-        "hyperventilation": "The most effective activation for childhood absence epilepsy; less so for JME.",
-        "photic": "Especially relevant in eyelid myoclonia with absences and in photosensitive patients; less so in childhood absence.",
-        "sleepDeprivation": "Often helpful, especially in the syndromes with convulsions or jerks on waking such as JME.",
-        "sleep": "Discharges are often more frequent in drowsiness and on waking; the bursts fragment in deeper sleep.",
-        "awake": "A routine awake record is often normal between seizures."
+        "hyperventilation": {
+          "use": "Best",
+          "how": "Instruct deep, steady breathing at about 20 to 30 breaths per minute for 3 to 5 minutes, then keep recording for at least 1 to 3 minutes afterwards (many labs use 3; follow your lab protocol) to watch the recovery. During any burst, test responsiveness per lab protocol. Stop for a seizure or distress, and do not perform it if the request or protocol excludes it.",
+          "why": "It is the strongest activator for absence-type syndromes and less productive for JME."
+        },
+        "photic": {
+          "use": "Per protocol",
+          "how": "Standard protocol with eyes open and closed; watch for eyelid flutter. Stop at a generalized discharge or seizure sign and say so.",
+          "why": "Especially relevant for eyelid myoclonia with absences and photosensitive patients; less so for childhood absence."
+        },
+        "sleepDeprivation": {
+          "use": "Helpful",
+          "how": "Request partial sleep deprivation per protocol and record around waking.",
+          "why": "More helpful in syndromes with jerks or convulsions on waking, such as JME."
+        },
+        "sleep": {
+          "use": "Helpful",
+          "how": "Record drowsiness and sleep if allowed, with the awakening.",
+          "why": "Discharges increase in drowsiness and fragment in deeper sleep."
+        },
+        "awake": {
+          "use": "Limited",
+          "how": "Record eyes open and closed.",
+          "why": "A routine awake record is often normal between seizures."
+        }
       },
       "recording": {
         "duration": "Long enough for the planned activation and, when requested, sleep.",
-        "montage": "Referential and bipolar views to show the generalized distribution."
+        "montage": "Referential and bipolar views to show the generalized distribution.",
+        "video": "Video helps correlate absences and jerks with the bursts.",
+        "ictal": "During a burst, test responsiveness with a simple task or words to remember; note the length and what the patient did.",
+        "special": [
+          "IGE is an umbrella term, so tailor the activation to the suspected syndrome.",
+          "Stop hyperventilation or photic stimulation for a seizure."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -1304,7 +1794,15 @@
         "jeavons"
       ],
       "sceneNote": "Awake 12-year-old with a generalized 3.8 to 4.2 Hz spike-wave burst and a polyspike-wave complex.",
-      "scene": "synIGE"
+      "scene": "synIGE",
+      "yieldPlan": [
+        "Read the request to identify the suspected syndrome (absence, JME, photosensitive) and choose the emphasis from it.",
+        "Record the medication list, last dose time and sleep hours.",
+        "Record awake with eyes open and closed.",
+        "Perform hyperventilation for 3 to 5 minutes per protocol, testing responsiveness (counting, name recall) during any burst (per lab protocol).",
+        "Run photic stimulation per protocol and stop at the first generalized discharge or seizure.",
+        "Include drowsiness and sleep, with an awakening, when requested, and mark all events with times."
+      ]
     },
     {
       "id": "temporal_lobe_epilepsy",
@@ -1330,14 +1828,36 @@
         "pattern_focal_slowing"
       ],
       "activation": {
-        "sleep": "Drowsiness and light sleep often bring out or increase temporal sharp waves; record sleep if allowed.",
-        "sleepDeprivation": "Often helpful; may increase the chance of capturing spikes.",
-        "awake": "Waking spikes may be infrequent or absent, so a normal awake record does not exclude it.",
-        "hyperventilation": "Per protocol; it can enhance temporal slowing or spikes in some patients."
+        "sleep": {
+          "use": "Best",
+          "how": "Allow drowsiness and light sleep with a natural wake-up, and record for the whole period.",
+          "why": "Temporal sharp waves become more frequent in drowsiness and sleep."
+        },
+        "sleepDeprivation": {
+          "use": "Helpful",
+          "how": "Request partial sleep deprivation per protocol and make sure sleep is recorded.",
+          "why": "It may increase spike frequency."
+        },
+        "hyperventilation": {
+          "use": "Per protocol",
+          "how": "Instruct deep, steady breathing at about 20 to 30 breaths per minute for 3 to 5 minutes, then keep recording for at least 1 to 3 minutes afterwards (many labs use 3; follow your lab protocol) to watch the recovery. During any burst, test responsiveness per lab protocol. Stop for a seizure or distress, and do not perform it if the request or protocol excludes it.",
+          "why": "It can enhance temporal slowing or spikes in some patients."
+        },
+        "awake": {
+          "use": "Limited",
+          "how": "Record eyes open and closed.",
+          "why": "Waking spikes may be sparse or absent, so a normal awake record does not exclude it."
+        }
       },
       "recording": {
-        "duration": "Long enough to include sleep; a longer or prolonged record increases the chance of capturing seizures.",
-        "montage": "Longitudinal and transverse bipolar chains to show phase reversal, plus a referential montage to show the field. Include the anterior temporal (T1/T2 or equivalent) electrodes if the protocol allows, because they can show spikes that standard electrodes miss."
+        "duration": "Long enough to include sleep; a longer record or video-EEG increases the chance of capturing seizures.",
+        "montage": "Longitudinal and transverse bipolar chains to show phase reversal, plus referential to show the field; add anterior temporal electrodes if allowed.",
+        "video": "Video is essential for any extended or ictal study, to correlate the EEG with the behaviour.",
+        "ictal": "At the onset of an aura or seizure, press the event marker, note the clock time, test responsiveness (name, words to remember, commands), describe lip-smacking or hand movements, and keep recording through recovery with a postictal check of orientation and speech.",
+        "special": [
+          "Keep the patient safe and never leave them alone.",
+          "Document what the patient reports at the aura."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -1378,6 +1898,14 @@
         "frontal_lobe_epilepsy",
         "occipital",
         "rolandic"
+      ],
+      "yieldPlan": [
+        "Record the medication list, last dose time, and the patient's description of any aura.",
+        "Record awake for a baseline, eyes open and closed.",
+        "Include drowsiness and natural sleep, as temporal sharp waves are more frequent there.",
+        "Use longitudinal and transverse bipolar chains and a referential montage to show the maximum at F7 or F8; add anterior temporal electrodes if the protocol allows.",
+        "Perform hyperventilation and photic stimulation per protocol only if requested.",
+        "In extended or video-EEG, keep the patient on camera; at the first sign of an aura or seizure, mark the time, test responsiveness and describe behaviour."
       ]
     },
     {
@@ -1401,15 +1929,41 @@
       ],
       "technologist": "Test responsiveness during bursts and note the time and what was said. Perform hyperventilation, and record both awake and drowsy or sleep states.",
       "activation": {
-        "hyperventilation": "Often helpful for provoking bursts, though less reliably than in childhood absence.",
-        "photic": "Occasionally brings out discharges; use the full protocol.",
-        "sleep": "May increase discharges; generalized tonic-clonic seizures are more likely near awakening.",
-        "sleepDeprivation": "Often increases the chance of capturing discharges.",
-        "awake": "Bursts may appear without provocation."
+        "hyperventilation": {
+          "use": "Helpful",
+          "how": "Do 3 to 5 minutes of deep breathing with good effort and keep recording afterwards. Stop for a prolonged seizure, distress, or if the patient cannot cooperate.",
+          "why": "It often provokes bursts, though less reliably than in childhood absence."
+        },
+        "sleepDeprivation": {
+          "use": "Helpful",
+          "how": "Follow the lab's sleep-restriction instructions and record through the transition to sleep and the awakening.",
+          "why": "Sleep loss often increases discharges and the chance of capturing an event."
+        },
+        "sleep": {
+          "use": "Helpful",
+          "how": "Record drowsiness, sleep and the period after awakening.",
+          "why": "Discharges may increase, and generalized tonic-clonic seizures are more likely near awakening."
+        },
+        "photic": {
+          "use": "Limited",
+          "how": "Run the lab's standard intermittent photic protocol, each frequency with eyes open then eyes closed, and stop at once on a photoparoxysmal response or seizure.",
+          "why": "It occasionally brings out discharges and is part of the full protocol."
+        },
+        "awake": {
+          "use": "Helpful",
+          "how": "Include eyes-open and eyes-closed periods.",
+          "why": "Bursts may appear without provocation."
+        }
       },
       "recording": {
-        "duration": "Awake recording with hyperventilation and photic stimulation, plus drowsiness or sleep if possible.",
-        "montage": "Referential and bipolar views to show the generalized distribution."
+        "duration": "An awake record with hyperventilation and photic stimulation, plus drowsiness or sleep if possible; at least 20 to 30 minutes awake.",
+        "montage": "Referential and bipolar views to show the generalized distribution.",
+        "video": "Use video when available to document staring, brief lapses and any myoclonic jerks.",
+        "ictal": "During a burst, test responsiveness, mark the time and record what was said; note a tonic-clonic seizure with time and sequence if one occurs.",
+        "special": [
+          "Stop hyperventilation or photic stimulation if a seizure begins and stay with the patient.",
+          "Record the medication list and last dose time."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -1450,7 +2004,14 @@
         "jeavons"
       ],
       "sceneNote": "The tracing shows a generalized spike-and-wave burst at about 3.6 to 4 Hz lasting about 5.6 seconds in an awake 14-year-old.",
-      "scene": "synJAE"
+      "scene": "synJAE",
+      "yieldPlan": [
+        "Record the medication list and last dose time, and ask about recent sleep and whether seizures occur on waking.",
+        "Begin with an awake baseline, then do hyperventilation for 3 to 5 minutes and continue recording afterwards.",
+        "Add standard photic stimulation, noting any photoparoxysmal response and stopping at once if one appears.",
+        "Test responsiveness during every burst and mark the time and what the patient said or did.",
+        "Arrange drowsiness and sleep, ideally following the lab's sleep-restriction instruction, and keep recording through awakening."
+      ]
     },
     {
       "id": "jme",
@@ -1476,14 +2037,42 @@
         "pattern_polyspike_wave"
       ],
       "activation": {
-        "sleepDeprivation": "Often very helpful. Recording soon after waking, when jerks and discharges are most likely, may increase the chance of capturing events.",
-        "sleep": "Include drowsiness and the awakening itself; discharges tend to cluster around sleep-wake transitions.",
-        "photic": "A photoparoxysmal response is seen in a sizeable minority. Run the protocol as written and stop at the first generalized discharge, because flashes can trigger a jerk or a convulsion.",
-        "hyperventilation": "Less productive than sleep deprivation, but still performed per protocol."
+        "sleepDeprivation": {
+          "use": "Best",
+          "how": "Arrange partial sleep deprivation as the protocol or requester states (the amount is set by the lab; follow the instructions given to the family) and record soon after waking. Confirm and note the actual sleep hours; do not give stimulants.",
+          "why": "Discharges and jerks cluster around waking, so a sleep-deprived record with an awakening is the most likely to capture them."
+        },
+        "sleep": {
+          "use": "Helpful",
+          "how": "Let the patient drowse and sleep, then wake them and continue recording for several minutes. Mark the time of waking.",
+          "why": "Discharges are activated by drowsiness and the awakening itself."
+        },
+        "photic": {
+          "use": "Helpful",
+          "how": "Run the standard intermittent photic protocol, including the 15 to 20 Hz range, with eyes open and then closed. Watch the patient as well as the tracing. Stop the flashes immediately at a generalized discharge, a jerk or any seizure sign, and say so in the report.",
+          "why": "A photoparoxysmal response occurs in a sizeable minority, and flashes can trigger a jerk or convulsion."
+        },
+        "hyperventilation": {
+          "use": "Limited",
+          "how": "Instruct deep, steady breathing at about 20 to 30 breaths per minute for 3 to 5 minutes, then keep recording for at least 1 to 3 minutes afterwards (many labs use 3; follow your lab protocol) to watch the recovery. During any burst, test responsiveness per lab protocol. Stop for a seizure or distress, and do not perform it if the request or protocol excludes it.",
+          "why": "Less productive here than sleep deprivation, but still performed per protocol."
+        },
+        "awake": {
+          "use": "Limited",
+          "how": "Record eyes open and closed; add simple hand tasks only if the protocol permits and the patient can do them safely.",
+          "why": "A short awake-only record is often normal."
+        }
       },
       "recording": {
-        "duration": "Long enough to include drowsiness, sleep and a documented awakening; a routine awake-only record may be normal.",
-        "montage": "Use both referential and bipolar views so the generalized, symmetric distribution and the frontal emphasis can be shown."
+        "duration": "Allow enough time to include drowsiness, sleep and a documented awakening; a short awake-only study may be normal.",
+        "montage": "Run both referential and bipolar montages so the generalized, symmetric distribution and frontal emphasis are shown.",
+        "video": "Use video if available, with an EMG channel on the deltoid or forearm extensors to time jerks against the polyspike bursts.",
+        "ictal": "If a jerk series or convulsion occurs, mark the time, keep the patient safe, describe what was seen and test responsiveness during the burst; keep recording through the aftermath.",
+        "special": [
+          "Record on waking: this is when jerks and discharges are most likely.",
+          "Stop photic stimulation at the first sign of a photoparoxysmal discharge or seizure.",
+          "Note the medication list and last dose time."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -1527,6 +2116,14 @@
         "jae",
         "gtca",
         "jeavons"
+      ],
+      "yieldPlan": [
+        "Check the request and record the medication list, last dose time, hours slept and time of the last jerk.",
+        "Schedule the study soon after the patient wakes, ideally after partial sleep deprivation (often about 4 to 6 hours of sleep, or as your protocol states).",
+        "Record awake first with eyes open and closed, then hyperventilation for 3 to 5 minutes per protocol.",
+        "Run photic stimulation per protocol, covering the 15 to 20 Hz range, and stop at the first generalized discharge or jerk.",
+        "Allow the patient to drowse or sleep, then wake them and keep recording through the awakening, asking them to hold out their arms or do a simple task.",
+        "Mark every jerk with clock time, which limb moved and whether the patient was aware; test responsiveness during any burst."
       ]
     },
     {
@@ -1552,15 +2149,41 @@
       ],
       "technologist": "Record drowsiness, sleep and an awakening if the protocol allows. Perform activation per protocol and mark any clinical event with its time. If a convulsion occurs, keep the patient safe, describe the onset and the behaviour, and keep recording through the postictal period.",
       "activation": {
-        "sleepDeprivation": "Often helpful; recording after sleep loss and around awakening may increase the chance of capturing discharges.",
-        "sleep": "Include drowsiness and the awakening, since discharges and seizures cluster there.",
-        "hyperventilation": "Per protocol; it may bring out generalized discharges.",
-        "photic": "Per protocol; a photoparoxysmal response is less typical than in JME but is possible.",
-        "awake": "A waking record may be normal or show only occasional bursts."
+        "sleepDeprivation": {
+          "use": "Best",
+          "how": "Arrange partial sleep deprivation as the protocol states and record soon after waking. Confirm and note the sleep hours.",
+          "why": "Seizures and discharges cluster after waking, so this raises the chance of capturing them."
+        },
+        "sleep": {
+          "use": "Helpful",
+          "how": "Include drowsiness, sleep and a documented awakening, and keep recording for several minutes after waking.",
+          "why": "Discharges and seizures cluster in drowsiness and around waking."
+        },
+        "hyperventilation": {
+          "use": "Per protocol",
+          "how": "Instruct deep, steady breathing at about 20 to 30 breaths per minute for 3 to 5 minutes, then keep recording for at least 1 to 3 minutes afterwards (many labs use 3; follow your lab protocol) to watch the recovery. During any burst, test responsiveness per lab protocol. Stop for a seizure or distress, and do not perform it if the request or protocol excludes it.",
+          "why": "It may bring out generalized discharges."
+        },
+        "photic": {
+          "use": "Per protocol",
+          "how": "Run the standard protocol with eyes open and closed and stop at the first generalized discharge or seizure sign.",
+          "why": "A photoparoxysmal response is less typical than in JME but is possible."
+        },
+        "awake": {
+          "use": "Limited",
+          "how": "Record eyes open and closed with a calm patient.",
+          "why": "An awake record may be normal or show only occasional bursts."
+        }
       },
       "recording": {
-        "duration": "Long enough to include sleep and awakening; a short awake record can be normal.",
-        "montage": "Use referential and bipolar views to show the generalized, symmetric distribution."
+        "duration": "Long enough to include sleep and an awakening; a short awake record can be normal.",
+        "montage": "Use referential and bipolar views to show the generalized, symmetric distribution.",
+        "video": "Use video if available so a convulsion can be matched to the EEG.",
+        "ictal": "In a convulsion, mark onset, keep the patient safe without restraining, describe the tonic and clonic phases with times, and keep recording through the postictal period.",
+        "special": [
+          "Seizures often follow waking, so keep the patient observed during the awakening.",
+          "Never leave the patient alone after sleep deprivation or a seizure."
+        ]
       },
       "clinical": {
         "manifestations": [
@@ -1603,7 +2226,15 @@
         "cae"
       ],
       "sceneNote": "Awake 17-year-old with a generalized 4 to 4.6 Hz spike-wave burst and a polyspike-wave complex on a normal background.",
-      "scene": "synGTCA"
+      "scene": "synGTCA",
+      "yieldPlan": [
+        "Record the medication list, last dose time, sleep hours and the time of the last convulsion.",
+        "Arrange the study after partial sleep deprivation, soon after waking, if requested.",
+        "Start with an awake record, eyes open and closed, then hyperventilation and photic stimulation per protocol.",
+        "Let the patient drowse and sleep, then wake them and keep recording through the awakening.",
+        "Be ready for a convulsion: protect the patient, mark the onset time and keep recording through the postictal period.",
+        "Describe the discharges (rate, distribution, duration) and mark any event with its clock time."
+      ]
     }
   ],
   "patterns": [
@@ -1786,7 +2417,47 @@
           "Infancy: hypsarrhythmia",
           "Childhood: tuber spikes"
         ],
-        "sceneNote": "Classic symmetric hypsarrhythmia is shown (in TSC it is often asymmetric); later in childhood, a focal spike field over a right posterior temporal tuber."
+        "sceneNote": "Classic symmetric hypsarrhythmia is shown (in TSC it is often asymmetric); later in childhood, a focal spike field over a right posterior temporal tuber.",
+        "yieldPlan": [
+          "Record the medication list and last dose time, and ask the caregiver to describe the usual events (spasms, focal seizures).",
+          "Record an awake and, if possible, a sleep segment, because spikes and hypsarrhythmia are most apparent in non-REM sleep.",
+          "Keep the same sensitivity on both hemispheres so asymmetry and a focal emphasis are visible; run referential and bipolar views.",
+          "Use video and a deltoid or neck EMG channel when spasms are suspected so each spasm can be matched to the electrodecrement.",
+          "Mark every spasm and seizure with clock time, and describe the movements, cluster pattern and responsiveness.",
+          "Add photic stimulation and hyperventilation only if age and cooperation allow, per protocol."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Allow natural sleep and record both light and deep non-REM, plus the awakening, which is when spasms cluster.",
+            "why": "Hypsarrhythmia, focal spikes and electrodecrement are most evident in sleep."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record a calm awake segment, eyes open and closed; note tone and alertness.",
+            "why": "Shows the background and any focal slowing over tubers."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Not a main activator in TSC, but part of a complete study."
+          },
+          "hyperventilation": {
+            "use": "Limited",
+            "how": "Only if the child is old enough to cooperate (blowing a pinwheel or tissue works). Never force it. Stop for distress or any event.",
+            "why": "Rarely adds yield in infants and may be impossible."
+          }
+        },
+        "recording": {
+          "duration": "Long enough to include sleep and at least one awakening; follow the lab protocol, extending if events are expected.",
+          "montage": "Full age-appropriate montage covering all lobes, since tubers can be anywhere; add EMG for spasms.",
+          "video": "Video synchronized to EEG, with the camera framing the whole body and face.",
+          "ictal": "Press the event marker at the first sign of a spasm or seizure, note the clock time, describe the movements, test responsiveness when safe, and record what happens afterwards.",
+          "special": [
+            "Spasms often occur in clusters on waking.",
+            "Report the spike location in both referential and bipolar views; the reader links it to imaging."
+          ]
+        }
       },
       {
         "id": "nf1",
@@ -1798,7 +2469,46 @@
         "clinical": "Autosomal dominant (about half are new variants). Features: cafe-au-lait spots, skin-fold freckling, neurofibromas, Lisch nodules, optic pathway glioma, learning problems. Epilepsy occurs in a minority, much less often than in TSC.",
         "mechanism": "Neurofibromin is a negative regulator of the RAS pathway; loss of function over-activates RAS and mTOR signalling.",
         "eeg": "Often normal or nonspecific. Focal slowing or focal spikes appear only when there is a cortical lesion or tumour. There is no characteristic NF1 pattern.",
-        "technologist": "Record a standard study and describe any focal finding. Do not expect a distinctive pattern; a normal EEG does not exclude the disorder."
+        "technologist": "Record a standard study and describe any focal finding. Do not expect a distinctive pattern; a normal EEG does not exclude the disorder.",
+        "yieldPlan": [
+          "Record the medication list and last dose time, and note the clinical reason (spells, tumour, cognition).",
+          "Record a standard awake study including drowsiness and, if the patient falls asleep, a sleep segment, since sleep gives the best chance of capturing focal discharges.",
+          "Include hyperventilation and photic stimulation per protocol, and mark any focal change.",
+          "Describe any focal slowing or spikes and their location; check electrode placement over any scalp neurofibroma or skin lesion.",
+          "Mark and describe any clinical event with time. A normal record does not exclude the disorder."
+        ],
+        "activation": {
+          "awake": {
+            "use": "Helpful",
+            "how": "Record a full awake segment with eyes open and closed.",
+            "why": "The main yield is documenting a focal abnormality if a lesion is present."
+          },
+          "sleep": {
+            "use": "Helpful",
+            "how": "Let the patient drowse or sleep if they can, and record the stages.",
+            "why": "Sleep increases the chance of capturing focal epileptiform activity."
+          },
+          "hyperventilation": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, about 3 minutes of hyperventilation with good effort, then 2 to 3 minutes after. Watch the patient throughout, mark the start, end and effort quality, and stop for a seizure or distress.",
+            "why": "Standard activation; does not target NF1."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Standard activation; does not target NF1."
+          }
+        },
+        "recording": {
+          "duration": "Standard length per protocol, extending only if the clinician requests sleep.",
+          "montage": "Standard age-appropriate montage; add extra electrodes over a known lesion if ordered.",
+          "video": "Use video only if spells are being investigated.",
+          "ictal": "Mark and describe any event with time and responsiveness testing.",
+          "special": [
+            "There is no characteristic NF1 EEG pattern; a normal EEG does not exclude the disorder.",
+            "Take care over scalp neurofibromas."
+          ]
+        }
       },
       {
         "id": "nf2",
@@ -1810,7 +2520,46 @@
         "clinical": "Autosomal dominant. Features: bilateral vestibular schwannomas, meningiomas, spinal tumours. Seizures are uncommon and are usually due to a meningioma or other tumour.",
         "mechanism": "Merlin is a tumour suppressor; its loss causes schwannomas and meningiomas rather than a primary cortical excitability disorder.",
         "eeg": "Often normal. Focal slowing or spikes can occur near a meningioma.",
-        "technologist": "Hearing loss is common and can be profound, so test responsiveness with touch and visual stimuli as well as voice. Record and describe any focal finding."
+        "technologist": "Hearing loss is common and can be profound, so test responsiveness with touch and visual stimuli as well as voice. Record and describe any focal finding.",
+        "yieldPlan": [
+          "Record the medication list and last dose time, and note the clinical reason.",
+          "Check hearing: hearing loss can be profound, so give instructions in writing or by gesture and test responsiveness with touch and visual stimuli as well as voice.",
+          "Record a standard awake and drowsy study, with sleep if it occurs, per protocol.",
+          "Include hyperventilation and photic stimulation per protocol, and describe any focal finding and its location.",
+          "Mark any event with time. A normal record does not exclude the disorder."
+        ],
+        "activation": {
+          "awake": {
+            "use": "Helpful",
+            "how": "Record eyes open and closed with clear non-verbal instructions.",
+            "why": "Shows any focal slowing near a meningioma."
+          },
+          "sleep": {
+            "use": "Helpful",
+            "how": "Allow drowsiness and sleep if they occur.",
+            "why": "Increases the chance of capturing focal spikes."
+          },
+          "hyperventilation": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, about 3 minutes of hyperventilation with good effort, then 2 to 3 minutes after. Watch the patient throughout, mark the start, end and effort quality, and stop for a seizure or distress. Give instructions by demonstration if hearing is poor.",
+            "why": "Standard activation."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Standard activation."
+          }
+        },
+        "recording": {
+          "duration": "Standard length per protocol.",
+          "montage": "Standard age-appropriate montage; add electrodes over a known lesion if ordered.",
+          "video": "Video only if events are being investigated.",
+          "ictal": "Mark and describe events with time and a visual or touch responsiveness check.",
+          "special": [
+            "Hearing loss may make verbal responsiveness testing unreliable.",
+            "A normal EEG does not exclude the disorder."
+          ]
+        }
       },
       {
         "id": "sw",
@@ -1824,7 +2573,47 @@
         "eeg": "Reduced amplitude and fast activity over the affected hemisphere compared with the other side (attenuation), with focal or multifocal spikes and slowing there.",
         "technologist": "Use the same sensitivity on both sides and compare them. Place electrodes with care over a port-wine stain or scalp lesion, and note any skin changes. Describe the amplitude asymmetry rather than naming the side as abnormal.",
         "scene": "synSturgeWeber",
-        "sceneNote": "Right hemisphere attenuation with a right posterior spike."
+        "sceneNote": "Right hemisphere attenuation with a right posterior spike.",
+        "yieldPlan": [
+          "Record the medication list and last dose time, and note the side of the port-wine stain.",
+          "Place electrodes with care over a port-wine stain or lesion, and do not abrade the skin there; document any deviation from the standard placement.",
+          "Use identical sensitivity on both hemispheres and keep symmetric electrode contact so amplitude asymmetry is real.",
+          "Record awake and sleep, and compare the two hemispheres in both states.",
+          "Mark every seizure with time; describe where the movement began and whether it was lateralized.",
+          "Document the amplitude asymmetry as an observation and leave interpretation to the reader."
+        ],
+        "activation": {
+          "awake": {
+            "use": "Best",
+            "how": "Record a full awake segment, eyes open and closed, with the same sensitivity on both sides.",
+            "why": "Shows reduced amplitude and fast activity over the affected side."
+          },
+          "sleep": {
+            "use": "Helpful",
+            "how": "Record drowsiness and sleep with spindle and slow-wave symmetry noted.",
+            "why": "Spikes and focal slowing are more evident in sleep."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Part of a complete study."
+          },
+          "hyperventilation": {
+            "use": "Limited",
+            "how": "Only if the child is old enough to cooperate (blowing a pinwheel or tissue works). Never force it. Stop for distress or any event.",
+            "why": "Rarely adds yield and may be impossible in young children."
+          }
+        },
+        "recording": {
+          "duration": "Long enough for awake and sleep, per protocol.",
+          "montage": "Symmetric full montage; confirm electrode contact over skin lesions with impedance checks.",
+          "video": "Use video when seizures are expected or reported.",
+          "ictal": "Mark each event with time, describe laterality, test responsiveness when safe, and note afterwards.",
+          "special": [
+            "Port-wine stain skin may be fragile or vascular; avoid abrasion and follow lab protocol.",
+            "Describe the asymmetry rather than naming a side as abnormal."
+          ]
+        }
       },
       {
         "id": "scn1a",
@@ -1836,7 +2625,47 @@
         "clinical": "Fever-sensitive, often prolonged seizures in a previously normal infant, then multiple seizure types and developmental slowing. A milder variant is genetic epilepsy with febrile seizures plus (GEFS+).",
         "mechanism": "Loss of function of the sodium channel in inhibitory interneurons reduces inhibition, so the network becomes hyperexcitable.",
         "eeg": "The first EEG can be normal. Later: generalized and multifocal spike-wave, photosensitivity, and background slowing. See the Dravet card on the Syndromes tab.",
-        "technologist": "Record sleep and photic stimulation per protocol and stop for a clinical event. Note temperature or illness, and the timing of any seizure."
+        "technologist": "Record sleep and photic stimulation per protocol and stop for a clinical event. Note temperature or illness, and the timing of any seizure.",
+        "yieldPlan": [
+          "Record the medication list and last dose time, and ask about temperature, recent illness and warm environments.",
+          "Keep the room at a comfortable temperature and monitor the patient: heat and fever can provoke seizures.",
+          "Include photic stimulation per protocol, with the room dim, because photosensitivity is common; stop at once for a photoparoxysmal response or seizure.",
+          "Record sleep, since discharges become more frequent and multifocal in drowsiness and sleep.",
+          "Use video with the whole body in frame and mark each event with time.",
+          "A normal first EEG is possible; document that the record does not exclude the disorder."
+        ],
+        "activation": {
+          "photic": {
+            "use": "Best",
+            "how": "Per lab protocol with the room dim, eyes open then closed; stop at once for a photoparoxysmal response or seizure, and mark the frequency.",
+            "why": "Photosensitivity is common in Dravet."
+          },
+          "sleep": {
+            "use": "Best",
+            "how": "Record drowsiness and sleep, and note the stages.",
+            "why": "Discharges often increase in sleep."
+          },
+          "hyperventilation": {
+            "use": "Limited",
+            "how": "Only if the child is old enough to cooperate (blowing a pinwheel or tissue works). Never force it. Stop for distress or any event.",
+            "why": "Often impossible in young children; use only if the patient can cooperate."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record eyes open and closed for background assessment.",
+            "why": "Shows slowing as the disorder progresses."
+          }
+        },
+        "recording": {
+          "duration": "Long enough for awake and sleep, plus any event; follow the lab protocol.",
+          "montage": "Age-appropriate full montage with ECG; add EMG for myoclonus if ordered.",
+          "video": "Video EEG is valuable for myoclonic and focal seizures.",
+          "ictal": "Mark onset with the event button, note the clock time, observe the movements, test responsiveness when safe, and record temperature or illness.",
+          "special": [
+            "Prolonged or febrile seizures can occur; know the lab emergency plan and call for help early.",
+            "Do not infer the gene from the pattern."
+          ]
+        }
       },
       {
         "id": "scn2a8a",
@@ -1848,7 +2677,47 @@
         "clinical": "Early seizures, often focal or tonic, with developmental delay. SCN2A also has a later-onset form with autism and intellectual disability. Variants that increase channel function tend to cause the early forms.",
         "mechanism": "Gain-of-function variants make excitatory neurons fire too easily; some SCN2A variants reduce function instead and give a later, different phenotype.",
         "eeg": "Variable: multifocal spikes, focal discharges, burst suppression or hypsarrhythmia in early infancy, depending on the stage.",
-        "technologist": "Record states and any events with time markers, and describe the distribution of discharges. Do not infer a gene from the pattern."
+        "technologist": "Record states and any events with time markers, and describe the distribution of discharges. Do not infer a gene from the pattern.",
+        "yieldPlan": [
+          "Record the medication list and last dose time, and ask about events seen at home.",
+          "Use the age-appropriate neonatal or infant montage and include ECG, with respiration and EMG polygraphic channels if the lab uses them.",
+          "Record both awake and sleep states and label them: discharges and background differ in each.",
+          "Keep video on throughout and mark every event with time, because some movements are not seizures.",
+          "Describe the distribution of discharges (focal, multifocal, burst suppression or hypsarrhythmia) in each state.",
+          "Do not infer a gene from the pattern."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Record active and quiet sleep or non-REM sleep and the awakening, with states labelled.",
+            "why": "Discharges and burst patterns are state-dependent."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record a calm awake segment with eyes open when possible.",
+            "why": "Shows the awake background and any ictal events."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency. Only in older infants who can be tested.",
+            "why": "Part of a complete study when age allows."
+          },
+          "hyperventilation": {
+            "use": "Not useful",
+            "how": "Do not attempt in neonates or infants.",
+            "why": "Not feasible at this age."
+          }
+        },
+        "recording": {
+          "duration": "Long enough to capture sleep states and events; neonatal studies are often longer. Follow the lab protocol.",
+          "montage": "Use the age-appropriate neonatal or infant montage and electrode set per lab protocol, with electrode impedance checked and an ECG channel; add respiration and EMG polygraphic channels if the lab uses them. Do not invent parameters beyond the lab protocol.",
+          "video": "Continuous synchronized video with the whole infant in frame.",
+          "ictal": "Mark each event with the event button and clock time, describe movements, and record whether the EEG changed.",
+          "special": [
+            "Neonatal movements and tremors can mimic seizures.",
+            "Do not infer the gene from the EEG pattern."
+          ]
+        }
       },
       {
         "id": "kcnq2",
@@ -1862,7 +2731,47 @@
         "eeg": "Self-limited form: interictal EEG is often normal or nonspecific. The severe form can show burst suppression or multifocal discharges, and an ictal attenuation can start a seizure.",
         "technologist": "Record in a neonate with the correct neonatal montage and mark each clinical event with time. Describe the seizure semiology you saw.",
         "scene": "synOhtahara",
-        "sceneNote": "Burst suppression is nonspecific; the severe form can resemble it, but its seizures often start with an ictal attenuation."
+        "sceneNote": "Burst suppression is nonspecific; the severe form can resemble it, but its seizures often start with an ictal attenuation.",
+        "yieldPlan": [
+          "Record the medication list and last dose time, and note gestational age and age in days.",
+          "Apply the correct neonatal montage and keep the baby calm, warm and supervised.",
+          "Record sleep states and label them; in the severe form note burst suppression or multifocal discharges.",
+          "Use video on throughout with the face and limbs in frame.",
+          "Mark every clinical event with clock time, and describe the semiology (tonic, autonomic, focal clonic) and responsiveness.",
+          "The interictal EEG may be normal; this does not exclude the disorder."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Record active sleep, quiet sleep and wake cycles, with states labelled.",
+            "why": "State changes may reveal the background and discharges."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record when the infant is awake and calm.",
+            "why": "Shows the background and any events."
+          },
+          "photic": {
+            "use": "Not useful",
+            "how": "Do not use photic stimulation in a neonate unless ordered.",
+            "why": "Not a standard neonatal activation."
+          },
+          "hyperventilation": {
+            "use": "Not useful",
+            "how": "Do not attempt in neonates.",
+            "why": "Not feasible."
+          }
+        },
+        "recording": {
+          "duration": "Long enough to capture sleep states and ideally events; neonatal studies are often long. Follow the lab protocol.",
+          "montage": "Use the age-appropriate neonatal or infant montage and electrode set per lab protocol, with electrode impedance checked and an ECG channel; add respiration and EMG polygraphic channels if the lab uses them. Do not invent parameters beyond the lab protocol.",
+          "video": "Continuous video synchronized to EEG.",
+          "ictal": "Use the event marker at the first sign of an event, note the clock time and describe the semiology and any autonomic change.",
+          "special": [
+            "Handle gently and keep warm.",
+            "A normal interictal EEG does not exclude the disorder."
+          ]
+        }
       },
       {
         "id": "cdkl5",
@@ -1876,7 +2785,47 @@
         "eeg": "The EEG may be normal for the first weeks, then show multifocal discharges and slowing. Hypsarrhythmia can appear when spasms start.",
         "technologist": "Mark spasms and tonic seizures with times. Several short studies may be needed because the first record can be normal.",
         "scene": "synWestHyps",
-        "sceneNote": "Hypsarrhythmia when spasms develop."
+        "sceneNote": "Hypsarrhythmia when spasms develop.",
+        "yieldPlan": [
+          "Record the medication list and last dose time, and ask the caregiver to describe spasms and tonic seizures.",
+          "Use the age-appropriate infant montage, with ECG and an EMG channel (deltoid or neck) per lab protocol if spasms are suspected.",
+          "Include an awake segment and a sleep segment, including the awakening.",
+          "Keep video on throughout and mark each spasm and tonic seizure with clock time.",
+          "Describe the background and discharges in each state; the first record may be normal.",
+          "If the first record is normal, note this and tell the clinician that a repeat study may be needed."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Record drowsiness, sleep and the awakening.",
+            "why": "Multifocal discharges and hypsarrhythmia are more evident in sleep."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record when calm, eyes open.",
+            "why": "Shows the background."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency. Use only if age allows.",
+            "why": "Part of a complete study."
+          },
+          "hyperventilation": {
+            "use": "Not useful",
+            "how": "Do not attempt in infants.",
+            "why": "Not feasible."
+          }
+        },
+        "recording": {
+          "duration": "Long enough for awake, sleep and any events. Follow the lab protocol.",
+          "montage": "Use the age-appropriate neonatal or infant montage and electrode set per lab protocol, with electrode impedance checked and an ECG channel; add respiration and EMG polygraphic channels if the lab uses them. Do not invent parameters beyond the lab protocol.",
+          "video": "Continuous synchronized video; frame the whole body.",
+          "ictal": "Mark each event, note the clock time, describe the movements and what the EEG did.",
+          "special": [
+            "Several short studies may be needed because the first record can be normal.",
+            "Spasms can occur in clusters."
+          ]
+        }
       },
       {
         "id": "stxbp1",
@@ -1890,7 +2839,47 @@
         "eeg": "Burst suppression or multifocal spikes in the neonatal period; hypsarrhythmia in some later in infancy when spasms start; background slowing.",
         "technologist": "Record states and spasms with times, describe bursts and suppression, and note tremor or movements that can mimic seizures.",
         "scene": "synOhtahara",
-        "sceneNote": "The early burst-suppression pattern, which is nonspecific."
+        "sceneNote": "The early burst-suppression pattern, which is nonspecific.",
+        "yieldPlan": [
+          "Record the medication list and last dose time.",
+          "Use the age-appropriate neonatal or infant montage, with ECG and EMG as per protocol.",
+          "Record states and label them: burst suppression or hypsarrhythmia can differ by state.",
+          "Keep video on throughout; note tremor, dyskinesia and other movements that can mimic seizures.",
+          "Mark each spasm or seizure with time and describe the movements.",
+          "Describe bursts, suppression and discharges in each state."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Record active and quiet sleep or non-REM sleep and the awakening.",
+            "why": "Pattern and discharges are state-dependent."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record when calm, eyes open.",
+            "why": "Background assessment, and helps separate tremor from seizures."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency. Only if age allows.",
+            "why": "Part of a complete study."
+          },
+          "hyperventilation": {
+            "use": "Not useful",
+            "how": "Do not attempt in infants.",
+            "why": "Not feasible."
+          }
+        },
+        "recording": {
+          "duration": "Long enough to capture states and events. Follow the lab protocol.",
+          "montage": "Use the age-appropriate neonatal or infant montage and electrode set per lab protocol, with electrode impedance checked and an ECG channel; add respiration and EMG polygraphic channels if the lab uses them. Do not invent parameters beyond the lab protocol.",
+          "video": "Continuous synchronized video with movement of all limbs visible.",
+          "ictal": "Press the event marker at onset, note clock time, and describe the movements and whether the EEG changed.",
+          "special": [
+            "Tremor and movements can mimic seizures; video helps the reader separate them.",
+            "Do not infer the gene from the EEG pattern."
+          ]
+        }
       },
       {
         "id": "arx",
@@ -1904,7 +2893,46 @@
         "eeg": "Burst suppression or hypsarrhythmia, with severely abnormal background in the malformation form.",
         "technologist": "Mark spasms and describe the pattern in each state. The malformation is shown on imaging, not on the EEG.",
         "scene": "synWestHyps",
-        "sceneNote": "Hypsarrhythmia in the spasm stage."
+        "sceneNote": "Hypsarrhythmia in the spasm stage.",
+        "yieldPlan": [
+          "Record the medication list and last dose time.",
+          "Use the age-appropriate neonatal or infant montage with ECG, and EMG for spasms per protocol.",
+          "Record awake and sleep and the awakening, labelling states.",
+          "Keep video on throughout and mark each spasm with clock time.",
+          "Describe the pattern in each state (burst suppression or hypsarrhythmia) and the background.",
+          "The malformation is shown on imaging, not on the EEG; do not comment on it."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Record sleep, including active and quiet sleep or non-REM sleep and awakening.",
+            "why": "Hypsarrhythmia and burst patterns are state-dependent."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record when calm, eyes open.",
+            "why": "Shows the background."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency. Only if age allows.",
+            "why": "Part of a complete study."
+          },
+          "hyperventilation": {
+            "use": "Not useful",
+            "how": "Do not attempt in infants.",
+            "why": "Not feasible."
+          }
+        },
+        "recording": {
+          "duration": "Long enough to capture states and events. Follow the lab protocol.",
+          "montage": "Use the age-appropriate neonatal or infant montage and electrode set per lab protocol, with electrode impedance checked and an ECG channel; add respiration and EMG polygraphic channels if the lab uses them. Do not invent parameters beyond the lab protocol.",
+          "video": "Continuous synchronized video.",
+          "ictal": "Mark each spasm with the event marker and clock time, describe the movements and cluster pattern.",
+          "special": [
+            "Spasms often cluster on waking."
+          ]
+        }
       },
       {
         "id": "pcdh19",
@@ -1916,7 +2944,47 @@
         "clinical": "Seizures in clusters, often with fever, mainly in heterozygous girls (and mosaic males). Some have developmental delay or autism.",
         "mechanism": "Cells expressing the variant and cells with the normal gene mix in a mosaic, which disturbs how neurons recognize each other.",
         "eeg": "Nonspecific. The interictal EEG can be normal or show focal or multifocal discharges; sleep helps find them.",
-        "technologist": "Record sleep, mark each seizure in a cluster with time, and note fever."
+        "technologist": "Record sleep, mark each seizure in a cluster with time, and note fever.",
+        "yieldPlan": [
+          "Record the medication list and last dose time, and ask about fever and the number and timing of recent clusters.",
+          "Record a full awake segment and a sleep segment, because sleep helps find discharges.",
+          "Include hyperventilation and photic stimulation per protocol if age and cooperation allow.",
+          "Use video and mark each seizure in a cluster with clock time; test responsiveness when safe.",
+          "Note fever or illness and the temperature if measured.",
+          "The interictal EEG can be normal; document this honestly."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Record drowsiness, sleep and awakening.",
+            "why": "Sleep helps find focal and multifocal discharges."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record eyes open and closed.",
+            "why": "Shows the background and any focal discharges."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Part of a complete study."
+          },
+          "hyperventilation": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, about 3 minutes of hyperventilation with good effort, then 2 to 3 minutes after. Watch the patient throughout, mark the start, end and effort quality, and stop for a seizure or distress. Only if the child can cooperate.",
+            "why": "Part of a complete study."
+          }
+        },
+        "recording": {
+          "duration": "Long enough for awake and sleep, per protocol, extending if clusters are expected.",
+          "montage": "Age-appropriate full montage with ECG.",
+          "video": "Video EEG is valuable to document the seizure semiology.",
+          "ictal": "Mark each seizure, note the clock time, describe the semiology and responsiveness, and record how many occurred in the cluster.",
+          "special": [
+            "Seizures come in clusters, often with fever.",
+            "Be ready to call for help if a seizure is prolonged."
+          ]
+        }
       },
       {
         "id": "mecp2",
@@ -1970,13 +3038,45 @@
           "lennox_gastaut"
         ],
         "activation": {
-          "sleep": "Record sleep; spikes are often more frequent in sleep.",
-          "awake": "Record with video and mark the hand movements."
+          "sleep": {
+            "use": "Best",
+            "how": "Record natural sleep and keep the camera running.",
+            "why": "Spikes are often more frequent in sleep."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record with video and mark hand movements and breathing patterns.",
+            "why": "It establishes the background and the artifact."
+          },
+          "photic": {
+            "use": "Limited",
+            "how": "Per protocol only if the child tolerates it; stop for a response or seizure.",
+            "why": "It is not usually a key activator."
+          },
+          "hyperventilation": {
+            "use": "Not useful",
+            "how": "Do not request voluntary hyperventilation.",
+            "why": "The child cannot cooperate, and irregular breathing may already occur spontaneously."
+          }
         },
         "recording": {
           "duration": "Long enough to include awake and sleep and to capture typical spells.",
-          "montage": "Referential and bipolar views to show the centrotemporal spikes and distinguish them from artifact. Add respiration and video if available."
-        }
+          "montage": "Referential and bipolar views to show centrotemporal spikes and separate them from artifact; add respiration.",
+          "video": "Essential, to match hand stereotypies and breathing events to the tracing.",
+          "ictal": "Mark the time of any spell, describe motor and breathing changes, and note responsiveness.",
+          "special": [
+            "Rhythmic hand stereotypies can look like seizures on the tracing.",
+            "Breath-holding and apnea spells are common; mark them."
+          ]
+        },
+        "yieldPlan": [
+          "Record the medication list, last dose and any breathing-spell history; ask the carer how the child usually moves and breathes.",
+          "Attach respiration and, if available, EMG channels, and start video early.",
+          "Record awake and mark hand stereotypies with times so rhythmic artifact is not mistaken for seizures.",
+          "Record natural sleep, as spikes are often more frequent there.",
+          "Mark breath-holding, apnea or hyperventilation spells with times and describe them.",
+          "Describe any seizure with time, behaviour and responsiveness, and keep the child comfortable."
+        ]
       },
       {
         "id": "ube3a",
@@ -2031,14 +3131,50 @@
           "atypical_absence"
         ],
         "activation": {
-          "sleep": "Record sleep; the EEG changes may be easier to see and discharges may increase.",
-          "photic": "Per protocol, with video; eye closure effects are worth documenting.",
-          "awake": "Awake and sleep records are both informative; the frontal rhythmic delta is present awake."
+          "eyeClosure": {
+            "use": "Helpful",
+            "how": "Ask the child or carer to close the eyes where possible, and mark the time of eye closure and opening.",
+            "why": "Posterior spikes can be triggered by eye closure."
+          },
+          "sleep": {
+            "use": "Helpful",
+            "how": "Record natural sleep and keep the child comfortable.",
+            "why": "The EEG changes may be easier to see and discharges may increase."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Run the standard protocol if the child tolerates it, with video; stop at any photoparoxysmal discharge or seizure and say so.",
+            "why": "Photosensitivity is uncommon here, so photic stimulation is done only per protocol and if tolerated; eye-closure responses are documented separately."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record with video and mark movement and laughing.",
+            "why": "The frontal rhythmic delta is present awake."
+          },
+          "hyperventilation": {
+            "use": "Not useful",
+            "how": "Do not attempt unless the child can follow commands.",
+            "why": "Most children cannot cooperate."
+          }
         },
         "recording": {
-          "duration": "Long enough to include awake, eye-open and eye-closed periods and sleep.",
-          "montage": "Referential and bipolar views to show the frontal emphasis and posterior spikes. Reduce sensitivity if the amplitude is large."
-        }
+          "duration": "Long enough to include awake, eyes-open, eyes-closed and sleep periods.",
+          "montage": "Referential and bipolar views to show the frontal emphasis and posterior spikes; lower the sensitivity if the amplitude is large.",
+          "video": "Essential, to separate laughing, tremor and movement artifact from seizure activity.",
+          "ictal": "Mark the time of any event, describe behaviour and responsiveness, and keep recording.",
+          "special": [
+            "Amplitude can be large, so adjust sensitivity.",
+            "Mark laughing and movement artifact."
+          ]
+        },
+        "yieldPlan": [
+          "Record the medication list, last dose and seizure types; ask the carer about triggers and the child's usual behaviour.",
+          "Settle the child with the carer; expect laughing, movement and artifact, and mark them in real time.",
+          "Record awake with eyes open and closed, and mark the time of each eye closure and its effect.",
+          "Run photic stimulation per protocol, with video, only if the child tolerates it.",
+          "Include natural sleep.",
+          "Keep video running throughout and describe any events with times."
+        ]
       },
       {
         "id": "slc2a1",
@@ -2050,7 +3186,47 @@
         "clinical": "Seizures, a small head size, developmental delay and movement disorders such as ataxia or dystonia. The spinal fluid glucose is low (hypoglycorrhachia) while the blood glucose is normal, so a low CSF-to-blood glucose ratio is the key finding. The ketogenic diet is the treatment.",
         "mechanism": "The brain cannot import enough glucose across the blood-brain barrier, so neurons are short of energy.",
         "eeg": "Generalized 2.5 to 4 Hz spike-wave in some, or focal discharges. Discharges often increase when fasting and decrease after eating.",
-        "technologist": "Note when the patient last ate and record it on the report. Follow the lab protocol and the clinician instructions about timing; do not withhold food without an order."
+        "technologist": "Note when the patient last ate and record it on the report. Follow the lab protocol and the clinician instructions about timing; do not withhold food without an order.",
+        "yieldPlan": [
+          "Record the medication list and last dose time.",
+          "Document when the patient last ate and what, with the clock time, on the recording sheet and report; also note any diet such as a ketogenic diet.",
+          "Do not withhold food or change feeding unless ordered; follow the lab protocol and the clinician instructions on timing.",
+          "Record awake and drowsy segments and a sleep segment per protocol.",
+          "If events occur, mark time and describe them, including relation to feeding.",
+          "Describe changes in discharges across the study and note time since the last meal."
+        ],
+        "activation": {
+          "awake": {
+            "use": "Best",
+            "how": "Record a full awake segment, eyes open and closed, and note time since last meal.",
+            "why": "Discharges are often more frequent when fasting and less after eating."
+          },
+          "sleep": {
+            "use": "Helpful",
+            "how": "Record drowsiness and sleep per protocol.",
+            "why": "Shows discharges and the sleep background."
+          },
+          "hyperventilation": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, about 3 minutes of hyperventilation with good effort, then 2 to 3 minutes after. Watch the patient throughout, mark the start, end and effort quality, and stop for a seizure or distress. Only if cooperation allows.",
+            "why": "Generalized spike-wave can occur in some patients."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Part of a complete study."
+          }
+        },
+        "recording": {
+          "duration": "Long enough to capture the state changes required; follow the lab protocol, noting meal times.",
+          "montage": "Age-appropriate full montage.",
+          "video": "Video if events are reported, noting paroxysmal movements.",
+          "ictal": "Mark the event, note the clock time and meal timing, and describe behavior and responsiveness.",
+          "special": [
+            "Record the feeding time on the report.",
+            "Do not withhold food without an order."
+          ]
+        }
       },
       {
         "id": "depdc5",
@@ -2064,7 +3240,47 @@
         "eeg": "Focal spikes whose location differs between family members; may be frontal. Interictal EEG is often normal.",
         "technologist": "Record sleep. Mark the exact time of seizures and the first movement; muscle and movement can obscure the onset.",
         "scene": "synFLE",
-        "sceneNote": "Foci vary between family members; a frontal focus is shown as one example."
+        "sceneNote": "Foci vary between family members; a frontal focus is shown as one example.",
+        "yieldPlan": [
+          "Record the medication list and last dose time.",
+          "Record awake and sleep, because focal discharges and seizures often occur in sleep.",
+          "Cover the frontal regions with the full montage and add extra electrodes if ordered.",
+          "Use video and mark the exact time of any seizure and the first movement.",
+          "Note that muscle and movement can obscure the onset; record the first behavior seen.",
+          "The interictal EEG is often normal; document this honestly."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Record drowsiness, sleep and awakening.",
+            "why": "Focal discharges and seizures are more likely in sleep."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record eyes open and closed.",
+            "why": "Background and any focal discharges."
+          },
+          "hyperventilation": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, about 3 minutes of hyperventilation with good effort, then 2 to 3 minutes after. Watch the patient throughout, mark the start, end and effort quality, and stop for a seizure or distress.",
+            "why": "Standard activation."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Standard activation."
+          }
+        },
+        "recording": {
+          "duration": "Long enough to include sleep and ideally an event; follow the lab protocol.",
+          "montage": "Full montage covering frontal and temporal regions.",
+          "video": "Video EEG is valuable to document the semiology.",
+          "ictal": "Mark the first sign of an event, note the clock time and the first movement, test responsiveness when safe.",
+          "special": [
+            "Family members may have different spike locations.",
+            "A normal interictal EEG does not exclude the disorder."
+          ]
+        }
       },
       {
         "id": "lis1dcx",
@@ -2118,13 +3334,45 @@
           "ohtahara"
         ],
         "activation": {
-          "sleep": "Record sleep; sleep may fragment or change the abnormal activity.",
-          "awake": "Record awake and asleep to show the fast activity, any hypsarrhythmia and spasms."
+          "sleep": {
+            "use": "Best",
+            "how": "Record natural sleep and keep the child comfortable.",
+            "why": "Hypsarrhythmia and the abnormal fast activity are usually most evident in non-REM sleep, so sleep must be recorded."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record awake with video.",
+            "why": "It shows the fast activity, any hypsarrhythmia and spasms."
+          },
+          "photic": {
+            "use": "Limited",
+            "how": "Per protocol only if requested and tolerated; stop for a seizure.",
+            "why": "It is not a key activator."
+          },
+          "hyperventilation": {
+            "use": "Not useful",
+            "how": "Do not attempt.",
+            "why": "The child cannot cooperate."
+          }
         },
         "recording": {
           "duration": "Long enough to capture sleep and awake states and any spasms.",
-          "montage": "Referential and bipolar views; lower the sensitivity for the high amplitude and note the location of maximal fast activity."
-        }
+          "montage": "Referential and bipolar views; lower the sensitivity for the high amplitude and note the maximum of the fast activity.",
+          "video": "Essential, with EMG to time spasms against the EEG.",
+          "ictal": "Mark the time of each spasm or cluster, describe the movement, and note responsiveness.",
+          "special": [
+            "Amplitudes may exceed usual scales, so adjust sensitivity.",
+            "Describe any hypsarrhythmia and where the fast activity is largest."
+          ]
+        },
+        "yieldPlan": [
+          "Record the medication list, last dose, and ask the carer about spasms or seizures.",
+          "Lower the sensitivity for the high-amplitude fast activity and describe where it is largest.",
+          "Record awake and asleep, as both help show the fast activity or hypsarrhythmia.",
+          "Place EMG on the shoulders or limbs if spasms are expected, and keep the child on video.",
+          "Mark every spasm or cluster with clock time and describe the behaviour.",
+          "Run photic stimulation only if requested and tolerated."
+        ]
       },
       {
         "id": "lgi1",
@@ -2136,7 +3384,46 @@
         "clinical": "Focal seizures that begin with an auditory aura such as a buzzing or a voice, sometimes with language problems; may spread to a generalized seizure. LGI1 variants explain only about half of the families.",
         "mechanism": "LGI1 helps regulate excitatory synaptic transmission in the lateral temporal cortex.",
         "eeg": "Interictal EEG is often normal; when abnormal, there are lateral temporal spikes or slowing.",
-        "technologist": "Record sleep, and ask the patient to report an aura and mark its time."
+        "technologist": "Record sleep, and ask the patient to report an aura and mark its time.",
+        "yieldPlan": [
+          "Record the medication list and last dose time.",
+          "Record a standard study with sleep, which gives the best chance of lateral temporal findings.",
+          "Include hyperventilation and photic stimulation per protocol.",
+          "Ask the patient to report any aura (for example sound or voice) and mark its time.",
+          "Describe any temporal spikes or slowing and the side.",
+          "A normal record does not exclude the disorder."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Helpful",
+            "how": "Allow drowsiness and sleep and record the stages.",
+            "why": "Increases the chance of capturing temporal spikes."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record eyes open and closed.",
+            "why": "Background and any temporal slowing."
+          },
+          "hyperventilation": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, about 3 minutes of hyperventilation with good effort, then 2 to 3 minutes after. Watch the patient throughout, mark the start, end and effort quality, and stop for a seizure or distress.",
+            "why": "Standard activation."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Standard activation."
+          }
+        },
+        "recording": {
+          "duration": "Standard length per protocol, with sleep.",
+          "montage": "Full montage including anterior and inferior temporal electrodes if the lab uses them.",
+          "video": "Video if events are reported.",
+          "ictal": "Ask the patient to say now or press the push button at an aura; mark the clock time and describe what they report.",
+          "special": [
+            "Interictal EEG is often normal; this does not exclude the disorder."
+          ]
+        }
       },
       {
         "id": "nicotinic",
@@ -2150,7 +3437,47 @@
         "eeg": "Interictal EEG is often normal. Ictal EEG is often obscured by movement and muscle; a frontal origin may be recognized only on video-EEG.",
         "technologist": "Record sleep with video, mark each event with its time, and describe the behavior exactly.",
         "scene": "synFLE",
-        "sceneNote": "A frontal focus; the ictal record is usually hidden by movement."
+        "sceneNote": "A frontal focus; the ictal record is usually hidden by movement.",
+        "yieldPlan": [
+          "Record the medication list and last dose time.",
+          "Plan a sleep recording with video, ideally overnight or a nap per protocol, because events occur in sleep.",
+          "Keep a video of the whole body with good lighting and a low-light option if the lab uses infrared.",
+          "Mark each event with clock time and describe the behavior exactly (posture, movement, vocalization).",
+          "Test responsiveness after the event if the patient is awake.",
+          "Document that movement and muscle may obscure the ictal EEG."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Record the full sleep period including arousals, labelling stages.",
+            "why": "Events cluster in non-REM sleep."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record eyes open and closed.",
+            "why": "Background."
+          },
+          "hyperventilation": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, about 3 minutes of hyperventilation with good effort, then 2 to 3 minutes after. Watch the patient throughout, mark the start, end and effort quality, and stop for a seizure or distress.",
+            "why": "Standard activation."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Standard activation."
+          }
+        },
+        "recording": {
+          "duration": "Long enough to include sleep; overnight when ordered. Follow the lab protocol.",
+          "montage": "Full montage with anterior frontal and temporal electrodes plus EMG, per protocol.",
+          "video": "Continuous synchronized video is essential.",
+          "ictal": "Press the event marker at onset and note the clock time; describe the behavior, duration and responsiveness.",
+          "special": [
+            "The interictal EEG is often normal.",
+            "Frontal origin may only be recognized with video."
+          ]
+        }
       },
       {
         "id": "grin2a",
@@ -2164,8 +3491,274 @@
         "eeg": "Centrotemporal spikes, often activated by sleep, up to near-continuous spike-wave in non-REM sleep (ESES/CSWS).",
         "technologist": "Record a full sleep period and mark non-REM stages; the reader quantifies the spike-wave index.",
         "scene": "synESES",
-        "sceneNote": "Near-continuous spike-wave in sleep."
+        "sceneNote": "Near-continuous spike-wave in sleep.",
+        "yieldPlan": [
+          "Record the medication list and last dose time.",
+          "Record a full sleep period, as spike-wave is activated by non-REM sleep.",
+          "Document the awake background and the transition to sleep.",
+          "Mark sleep stages, including the first non-REM sleep, with clock time.",
+          "Mark seizures or atypical absences with time and test responsiveness.",
+          "The reader quantifies the spike-wave index; do not estimate it."
+        ],
+        "activation": {
+          "sleep": {
+            "use": "Best",
+            "how": "Record a full sleep period, including drowsiness, non-REM sleep and arousal, with stages marked.",
+            "why": "Centrotemporal spikes are activated by sleep and can approach continuous spike-wave in non-REM sleep."
+          },
+          "awake": {
+            "use": "Helpful",
+            "how": "Record eyes open and closed for the awake background.",
+            "why": "Compares awake and sleep activity."
+          },
+          "hyperventilation": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, about 3 minutes of hyperventilation with good effort, then 2 to 3 minutes after. Watch the patient throughout, mark the start, end and effort quality, and stop for a seizure or distress. Only if the child can cooperate.",
+            "why": "Standard activation."
+          },
+          "photic": {
+            "use": "Per protocol",
+            "how": "Per lab protocol, with the room dim and eyes open, then closed; stop at once for a photoparoxysmal response or clinical event and mark the frequency.",
+            "why": "Standard activation."
+          }
+        },
+        "recording": {
+          "duration": "Long enough to cover a complete sleep period, extending if requested. Follow the lab protocol.",
+          "montage": "Full montage with centrotemporal electrodes.",
+          "video": "Video if events are reported.",
+          "ictal": "Mark events with clock time and describe responsiveness.",
+          "special": [
+            "Do not estimate the spike-wave index."
+          ]
+        }
       }
+    ]
+  },
+  "recordingGuide": {
+    "intro": "A routine EEG is a standardized recording plus a set of activation procedures (eye opening and closure, hyperventilation, photic stimulation, sleep) that bring out abnormalities not visible in the resting waking record. The technologist's job is to record cleanly, observe the patient, test and document responsiveness, and mark everything precisely; interpretation and diagnosis belong to the physician, and exact parameters follow your lab protocol.",
+    "procedures": [
+      {
+        "id": "montages",
+        "title": "Set-up, electrodes and montages",
+        "steps": [
+          "Identify the patient, record medications, last meal, sleep history, seizure history and any head injury or skull defect before applying electrodes.",
+          "Measure the head and place electrodes by the International 10-20 system (add 10-10 or supplementary electrodes when your protocol or the clinical question requires it).",
+          "Prepare the skin and keep electrode impedances within your lab's limit (between 100 ohms and 5 kilohms, per your lab protocol, with matched values between electrodes).",
+          "Add an ECG channel and eye-movement and, as needed, EMG or respiration channels to help identify artifact and state.",
+          "Run the calibration and biological-calibration (eye blink, eye movement, jaw clench) checks and confirm filter and sensitivity settings per lab protocol.",
+          "Display the record in standard bipolar (longitudinal and transverse) and referential montages, and switch montages as needed to localize and verify findings."
+        ],
+        "stop": [
+          "Stop and fix the problem if electrode impedance, a floating electrode or persistent artifact makes the record uninterpretable.",
+          "Call the physician or supervisor if you find skin breakdown, a scalp wound or an unexpected skull defect that changes electrode placement."
+        ],
+        "document": [
+          "Record patient identifiers, date and time, age, medications, state of alertness, last sleep and meal, and reason for the study.",
+          "Note any electrodes added, omitted or moved, and the montages, filters and sensitivities used."
+        ],
+        "tip": "A clean, well-labeled technical set-up prevents most artifact that can be mistaken for epileptiform activity or hide it."
+      },
+      {
+        "id": "duration",
+        "title": "Recording length and state",
+        "steps": [
+          "Record a minimum of about 20 to 30 minutes of technically adequate EEG (per your lab protocol), not counting set-up or time lost to artifact.",
+          "Include wakefulness with eyes open and closed, and capture drowsiness and sleep whenever the patient can achieve it.",
+          "Keep the patient comfortable, supported and relaxed so that muscle and movement artifact stays low.",
+          "Observe the patient continuously, noting state changes (alert, drowsy, asleep) as they occur.",
+          "Extend the recording when the study is borderline, when the patient fails to fall asleep and sleep is needed, or when events are expected, according to your protocol or physician request."
+        ],
+        "stop": [
+          "Call the physician or supervisor if the patient cannot cooperate, is medically unstable, or an event occurs that needs care.",
+          "End or pause the study when the patient is unsafe or cannot continue, and document the reason."
+        ],
+        "document": [
+          "Record start and stop time, the sequence of activations performed, and any activation omitted with the reason.",
+          "Mark state changes and note total technically adequate recording time."
+        ],
+        "tip": "Time spent getting a clean record that includes sleep is worth more than extra minutes of noisy waking tracing."
+      },
+      {
+        "id": "eyeClosure",
+        "title": "Eye opening and eye closure",
+        "steps": [
+          "Record a baseline with the patient relaxed, then instruct the patient to open and close the eyes on command and repeat several times through the study.",
+          "Keep each eyes-closed and eyes-open period long enough to see background reactivity (commonly several seconds to a minute; per your lab protocol).",
+          "Mark each eye opening and each eye closure on the record at the moment it happens.",
+          "Watch the patient during eye closure for fluttering or myoclonus of the eyelids, and note any clinical change during or just after closure.",
+          "Repeat eye opening and closure after drowsiness or sleep to check that the patient is again awake and reactive."
+        ],
+        "stop": [
+          "Stop and notify the physician if a clinical event, loss of responsiveness or unusual eye movement or eyelid jerking appears with eye closure."
+        ],
+        "document": [
+          "Mark each eye opening and closure on the record.",
+          "Note any change in the EEG or the patient's behavior on eye closure or eye opening."
+        ],
+        "tip": "Clear, well-marked eye opening and closure lets the reader judge the posterior dominant rhythm's reactivity and recognize eye-closure-sensitive findings."
+      },
+      {
+        "id": "hyperventilation",
+        "title": "Hyperventilation",
+        "steps": [
+          "Check the patient's history first and omit or modify the procedure for the conditions your protocol lists (for example recent stroke or intracranial hemorrhage, significant cardiopulmonary disease, sickle cell disease, moyamoya, or the patient being unable to cooperate).",
+          "Explain the procedure and obtain agreement, then record a baseline of a minute or so with eyes closed before starting.",
+          "Ask the patient to breathe deeply and steadily through the mouth, about 20 to 30 breaths per minute, with eyes closed and while seated or reclined and comfortable.",
+          "Continue for about 3 to 5 minutes (per your lab protocol, with most protocols requiring at least 3 minutes) and encourage good effort throughout, since effort determines adequacy.",
+          "Mark the start, the end and the effort quality, and note each minute elapsed.",
+          "Continue recording after the end of hyperventilation for at least 1 to 3 minutes (many labs use 3; per your lab protocol) with the patient breathing normally and quietly, with eyes closed then open, to watch the recovery.",
+          "Watch the patient's breathing, color and responsiveness throughout, and give a brief reassurance when needed."
+        ],
+        "stop": [
+          "Stop immediately if a seizure begins, the patient is in distress, dizzy, faint or unable to continue, or a prolonged generalized discharge impairs responsiveness.",
+          "Call for help if a seizure or other event does not stop promptly or the patient does not recover to baseline.",
+          "During a brief burst, test responsiveness and follow your lab protocol on whether to continue; do not prolong hyperventilation once a seizure or prolonged discharge appears."
+        ],
+        "document": [
+          "Mark start and end times, the quality of effort (good, fair, poor) and the patient's compliance.",
+          "Mark and describe any slowing, epileptiform discharge, clinical symptom or event during hyperventilation and during recovery.",
+          "Test and write down responsiveness during any generalized discharge or event, and record why the procedure was omitted or shortened if that occurred."
+        ],
+        "tip": "Coach steady, deep, rhythmic breathing and keep the patient motivated, because poor effort is the most common reason hyperventilation fails to activate anything."
+      },
+      {
+        "id": "photic",
+        "title": "Intermittent photic stimulation",
+        "steps": [
+          "Screen the history for known photosensitivity or seizures triggered by light and tell the physician before starting if there is any concern.",
+          "Place the strobe at about 30 cm from the patient's nasion, in a dimly lit room, and plan to run each frequency with eyes open and with eyes closed, per your lab protocol.",
+          "Deliver a series of flash trains over a range of frequencies (commonly from about 1 up to 30 Hz, with ascending and descending sequences; per your lab protocol).",
+          "Give each flash train for about 10 seconds with the eyes open, then with the eyes closed, with a short pause between trains.",
+          "Instruct the patient to keep the eyes open or closed as directed, and to not look away from the light during eyes-open trains.",
+          "Watch the record continuously as the frequency changes so that a response can be stopped immediately.",
+          "Use the same frequency sequence and stimulus settings as your lab protocol so studies remain comparable."
+        ],
+        "stop": [
+          "Stop the flashing immediately when a generalized epileptiform discharge, a photoparoxysmal response or a seizure begins, or when the patient shows a clinical change, and then test responsiveness.",
+          "Call for help if a seizure occurs and follow your seizure-safety protocol.",
+          "Do not resume the sequence at that frequency until the physician says so or your lab protocol allows."
+        ],
+        "document": [
+          "Mark the start and end of each flash train and write down the frequency, and whether eyes were open or closed.",
+          "Mark any photic driving, photoparoxysmal response, myoclonus, or clinical change and the frequency at which it occurred.",
+          "Note the time responsiveness was tested and the result, and any train omitted or stopped."
+        ],
+        "tip": "A consistent, complete frequency series with clear marks lets the reader tie any response to the exact frequency and eye state."
+      },
+      {
+        "id": "sleep",
+        "title": "Recording sleep",
+        "steps": [
+          "Make the room dim and quiet, and let the patient lie back comfortably once the awake record and the other activations are complete, if the protocol allows.",
+          "Allow drowsiness and spontaneous sleep to develop and keep recording while the patient settles, with minimal talking or movement.",
+          "Watch the record for drowsiness and for the stages of non-REM sleep (vertex waves, spindles, K-complexes) and note the time of each change.",
+          "Avoid waking the patient when sleep is reached, but arouse the patient when your protocol or the clinical question requires a post-arousal record.",
+          "Record the arousal and the return to wakefulness, with a few minutes of the awake record after waking."
+        ],
+        "stop": [
+          "Stop and call for help if the patient has an event during sleep, such as a seizure, abnormal movement, or apnea, and test responsiveness once they can be roused."
+        ],
+        "document": [
+          "Mark the time of sleep onset, the stages reached and the arousal.",
+          "Describe any epileptiform activity during sleep as it appears, and any clinical event."
+        ],
+        "tip": "A calm environment and a patient who is relaxed, not forced awake or rushed, gives the best chance of reaching true sleep within the recording time."
+      },
+      {
+        "id": "sleepDeprivation",
+        "title": "Sleep-deprived EEG",
+        "steps": [
+          "Give the patient written instructions ahead of time about the amount of sleep to restrict (the exact amount, such as partial or total sleep restriction, depends on your lab protocol and the physician's order).",
+          "Tell the patient to avoid caffeine and sedating drinks as specified by the lab, to continue the usual medications unless the physician says otherwise, and to arrange safe transport since drowsiness is expected.",
+          "On arrival, confirm how much sleep the patient actually had and record it.",
+          "Keep the patient awake and out of bed until the recording begins, and record the standard waking portion and activations first.",
+          "Allow the patient to fall asleep in a dim, quiet room and keep recording through sleep and the awakening."
+        ],
+        "stop": [
+          "Call for help or the physician if the patient is too drowsy to cooperate safely, or has a seizure or other event.",
+          "Do not ask a patient who is unsafe to drive to leave alone, and tell the physician or follow lab protocol."
+        ],
+        "document": [
+          "Write down the sleep history, the hours of sleep restriction achieved and any stimulants or medications taken.",
+          "Mark sleep onset time and stages, any events, and the patient's condition at the end of the study."
+        ],
+        "tip": "Confirm that the patient actually followed the sleep restriction instructions, since a patient who slept normally will not sleep-deprive and the study loses its purpose."
+      },
+      {
+        "id": "video",
+        "title": "Video-EEG and monitoring",
+        "steps": [
+          "Position the camera to capture the whole patient and the face, with adequate lighting, and confirm the video and EEG are time-synchronized.",
+          "Check the microphone and the push-button or marker so that both patient and observers can mark events.",
+          "Observe the patient continuously during the recording and instruct the patient, family or staff how to call for help and how to mark an event.",
+          "Keep the patient in view of the camera, and keep the bed, lighting and bedside rails safe and stable.",
+          "Review the video along with the EEG when marking an event so that the behavior and the tracing are matched."
+        ],
+        "stop": [
+          "Go to the patient at once during any event that involves risk of injury, and call for help per your emergency protocol.",
+          "Stop the procedure if the patient is unsafe, and follow facility policy for safety and privacy."
+        ],
+        "document": [
+          "Mark the time of every event and record whether it was marked by the patient, a family member, or the technologist.",
+          "Write down who was present, what was observed, and the patient's state before the event."
+        ],
+        "tip": "Synchronized video with accurate, timely marks is what lets a reader decide whether an event had an EEG correlate."
+      },
+      {
+        "id": "eventCapture",
+        "title": "Capturing and documenting clinical events",
+        "steps": [
+          "Press the event marker as soon as a clinical event is seen or reported, and write the exact clock time.",
+          "Describe what you see as it happens, including the onset, the body parts involved, eye position, any vocalization, color, breathing and the duration.",
+          "Test responsiveness, awareness and memory at intervals during the event with a simple standardized routine: say the patient's name, ask them to repeat a word or phrase, give a command, and later ask them to recall it.",
+          "Test and record how the patient responds, including speech and motor function, and whether the patient can follow commands.",
+          "Stay with the patient, keep them safe, and keep recording through the recovery.",
+          "Ask the patient what they experienced afterward, and note whether they remember the test items given during the event."
+        ],
+        "stop": [
+          "Call for help or the emergency team if a seizure lasts 5 minutes or longer (or per your facility's emergency protocol), seizures repeat without recovery, or there is a breathing problem, injury or any medical emergency.",
+          "Never restrain the patient or put anything in the mouth, and protect the head and keep the airway open."
+        ],
+        "document": [
+          "Mark the start, the end, and the observed features of the event, the responsiveness testing and the results.",
+          "Note the time of recovery, the post-event state, and any injury or intervention by clinical staff."
+        ],
+        "tip": "Early marking, a clear description and a consistent responsiveness check make a short event far more useful to the reading physician."
+      }
+    ],
+    "mistakes": [
+      [
+        "Hyperventilation can be stopped as soon as the patient says they are tired.",
+        "Encourage steady effort for the full time set by your lab protocol (usually at least 3 minutes), and always record the recovery period afterward."
+      ],
+      [
+        "The recording ends when hyperventilation ends.",
+        "Keep recording for at least 1 to 3 minutes of recovery (per your lab protocol) because some changes appear or persist after the breathing stops."
+      ],
+      [
+        "Keep flashing through a generalized discharge to see how long it lasts.",
+        "Stop photic stimulation immediately when a generalized discharge, photoparoxysmal response or seizure begins, then test responsiveness and call for help if needed."
+      ],
+      [
+        "Photic stimulation can be done at one fixed frequency.",
+        "Use a range of frequencies (about 1 to 30 Hz in a set sequence per lab protocol) in both eyes-open and eyes-closed trains."
+      ],
+      [
+        "The technologist should say what the event is, such as an epileptic seizure.",
+        "Describe what you see and hear, mark it, and test responsiveness; the physician interprets the event and the diagnosis."
+      ],
+      [
+        "The strobe can be placed at any distance.",
+        "Place it at about 30 cm from the nasion (per your lab protocol) in a dim room so the stimulus is consistent."
+      ],
+      [
+        "A sleep-deprived study needs no confirmation of what the patient actually did.",
+        "Ask about and record the sleep actually obtained and any stimulants or medications taken."
+      ],
+      [
+        "Event marks and responsiveness testing can be added later from memory.",
+        "Mark the event at the moment it happens, write the clock time, and test and record responsiveness during the event."
+      ]
     ]
   }
 }
