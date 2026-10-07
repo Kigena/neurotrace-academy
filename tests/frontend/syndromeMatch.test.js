@@ -8,21 +8,23 @@ const ids = (r) => r.map((s) => s.id);
 
 describe("syndrome finder", () => {
   it("matches the classic age and feature pairs", () => {
-    expect(ids(matchSyndromes(data.syndromes, { age: 6, feature: "gsw-3hz" }))).toEqual(["cae"]);
-    expect(ids(matchSyndromes(data.syndromes, { age: 0.4, feature: "hypsarrhythmia" }))).toEqual(["west"]);
-    expect(ids(matchSyndromes(data.syndromes, { age: 15, feature: "polyspike" }))).toEqual(["jme"]);
+    const at6 = ids(matchSyndromes(data.syndromes, { age: 6, feature: "gsw-3hz" }));
+    expect(at6).toContain("cae");
+    expect(at6).not.toContain("jme");
+    expect(ids(matchSyndromes(data.syndromes, { age: 0.4, feature: "hypsarrhythmia" }))).toEqual(["west_syndrome"]);
+    expect(ids(matchSyndromes(data.syndromes, { age: 15, feature: "polyspike" }))).toContain("jme");
     expect(ids(matchSyndromes(data.syndromes, { age: 8, feature: "rolandic" }))).toEqual(["rolandic"]);
-    expect(ids(matchSyndromes(data.syndromes, { age: 0.05, feature: "burst-suppression" }))).toEqual(["ohtahara"]);
+    expect(ids(matchSyndromes(data.syndromes, { age: 0.05, feature: "burst-suppression" }))).toEqual(expect.arrayContaining(["ohtahara", "eme"]));
   });
 
   it("excludes a syndrome outside its age range", () => {
-    expect(ids(matchSyndromes(data.syndromes, { age: 40, feature: "gsw-3hz" }))).toEqual([]);
+    expect(ids(matchSyndromes(data.syndromes, { age: 45, feature: "gsw-3hz" }))).toEqual([]);
     expect(ids(matchSyndromes(data.syndromes, { age: 30, feature: "hypsarrhythmia" }))).toEqual([]);
   });
 
   it("returns every age-appropriate syndrome when the feature is any, and everything when age is blank", () => {
     expect(matchSyndromes(data.syndromes, { age: "", feature: "any" })).toHaveLength(data.syndromes.length);
-    expect(ids(matchSyndromes(data.syndromes, { age: 28, feature: "any" }))).toEqual(expect.arrayContaining(["tle", "fle"]));
+    expect(ids(matchSyndromes(data.syndromes, { age: 28, feature: "any" }))).toEqual(expect.arrayContaining(["temporal_lobe_epilepsy", "frontal_lobe_epilepsy"]));
   });
 
   it("every feature in the menu is carried by at least one syndrome", () => {
@@ -76,5 +78,26 @@ describe("genetics tab data", () => {
       }
     }
     expect(new Set(gen.items.map((g) => g.id)).size).toBe(gen.items.length);
+  });
+});
+
+describe("merged syndrome data", () => {
+  const geneIds = new Set(["angelman", "rett", "lissencephaly"]);
+  it("every syndrome has the merged fields, a valid group and resolvable related ids", () => {
+    const known = new Set([...data.syndromes.map((s) => s.id), ...geneIds]);
+    expect(data.syndromes.length).toBeGreaterThanOrEqual(20);
+    for (const s of data.syndromes) {
+      for (const f of ["classification", "ageText", "seizure", "pathophys", "eeg", "eegShort", "technologist", "clinical", "course", "differential", "pearls"]) expect(s[f], `${s.id}.${f}`).toBeTruthy();
+      expect(["infant", "child", "adolescent"]).toContain(s.group);
+      for (const r of s.related || []) expect(known.has(r), `${s.id} related ${r}`).toBe(true);
+      expect(s.related || [], s.id).not.toContain("landau_kleffner");
+    }
+  });
+  it("carries no numeric diagnostic-yield percentages", () => {
+    const text = JSON.stringify(data.syndromes);
+    expect(/\d+\s*%/.test(text) || /\d+-\d+%/.test(text)).toBe(false);
+  });
+  it("every syndrome with a tracing has a scene that validates", () => {
+    for (const s of data.syndromes) if (s.scene) expect(() => validateScene(scenes[s.scene]), s.id).not.toThrow();
   });
 });

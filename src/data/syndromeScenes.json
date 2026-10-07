@@ -1042,5 +1042,365 @@
         "sigma": 0.7
       }
     ]
+  },
+  "synJAE": {
+    "seed": 361,
+    "ageYears": 14,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 10,
+      "pdrUv": 50,
+      "beta": 2.5,
+      "theta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "gsw",
+        "from": 2.4,
+        "to": 8.0,
+        "uv": 360,
+        "hz": 3.6,
+        "startHz": 4.0,
+        "label": "Absence"
+      }
+    ]
+  },
+  "synJeavons": {
+    "seed": 362,
+    "ageYears": 8,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 9,
+      "pdrUv": 55,
+      "beta": 2.5,
+      "theta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "eyesClosed",
+        "at": 1.8,
+        "uv": 160
+      },
+      {
+        "type": "gsw",
+        "from": 2.1,
+        "to": 4.3,
+        "uv": 300,
+        "hz": 4.2,
+        "startHz": 5.0,
+        "label": "Burst"
+      },
+      {
+        "type": "eyesOpen",
+        "at": 5.0,
+        "uv": 140
+      },
+      {
+        "type": "eyesClosed",
+        "at": 6.8,
+        "uv": 160
+      },
+      {
+        "type": "gsw",
+        "from": 7.1,
+        "to": 9.0,
+        "uv": 300,
+        "hz": 4.2,
+        "startHz": 5.0,
+        "label": "Burst"
+      }
+    ]
+  },
+  "synAtypAbs": {
+    "seed": 363,
+    "ageYears": 7,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 6.5,
+      "pdrUv": 30,
+      "beta": 2,
+      "theta": 5,
+      "delta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "gsw",
+        "from": 1.4,
+        "to": 6.2,
+        "uv": 300,
+        "hz": 2.0,
+        "startHz": 2.4,
+        "center": [
+          0,
+          0.35
+        ],
+        "label": "Burst"
+      }
+    ]
+  },
+  "synIGE": {
+    "seed": 364,
+    "ageYears": 12,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 10,
+      "pdrUv": 50,
+      "beta": 2.5,
+      "theta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "gsw",
+        "from": 2.2,
+        "to": 5.0,
+        "uv": 330,
+        "hz": 3.8,
+        "startHz": 4.2,
+        "label": "Burst"
+      },
+      {
+        "type": "polyspikeWave",
+        "at": 7.4,
+        "spikes": 4,
+        "uv": 240
+      }
+    ]
+  },
+  "synEME": {
+    "seed": 365,
+    "ageYears": 0.05,
+    "state": "semicomatose",
+    "sensitivity": 20,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 0,
+      "pdrUv": 0,
+      "beta": 0,
+      "theta": 0,
+      "delta": 0,
+      "noise": 5
+    },
+    "findings": [
+      {
+        "type": "burst",
+        "uv": 240,
+        "runs": [
+          [
+            0.8,
+            2.0
+          ],
+          [
+            6.2,
+            7.6
+          ]
+        ],
+        "rampS": 0.1
+      }
+    ]
+  },
+  "synGTCA": {
+    "seed": 366,
+    "ageYears": 17,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 10,
+      "pdrUv": 50,
+      "beta": 2.5,
+      "theta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "gsw",
+        "from": 2.8,
+        "to": 5.2,
+        "uv": 320,
+        "hz": 4.0,
+        "startHz": 4.6,
+        "label": "Burst"
+      },
+      {
+        "type": "polyspikeWave",
+        "at": 7.6,
+        "spikes": 5,
+        "uv": 250
+      }
+    ]
+  },
+  "synBMEI": {
+    "seed": 367,
+    "ageYears": 1.5,
+    "state": "drowsy",
+    "sensitivity": 15,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 6,
+      "pdrUv": 35,
+      "beta": 2,
+      "theta": 5,
+      "delta": 2,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "gsw",
+        "from": 1.1,
+        "to": 2.4,
+        "uv": 260,
+        "hz": 3.4,
+        "startHz": 3.8,
+        "label": "Jerk"
+      },
+      {
+        "type": "gsw",
+        "from": 6.0,
+        "to": 7.2,
+        "uv": 260,
+        "hz": 3.4,
+        "startHz": 3.8,
+        "label": "Jerk"
+      }
+    ]
+  },
+  "synDoose": {
+    "seed": 368,
+    "ageYears": 3,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 6.5,
+      "pdrUv": 30,
+      "beta": 2,
+      "theta": 6,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "rhythm",
+        "hz": 5.5,
+        "bwHz": 1.2,
+        "uv": 170,
+        "center": [
+          0,
+          -0.2
+        ],
+        "sigma": 0.5,
+        "runs": [
+          [
+            0.5,
+            4.5
+          ]
+        ]
+      },
+      {
+        "type": "gsw",
+        "from": 5.6,
+        "to": 8.2,
+        "uv": 320,
+        "hz": 2.4,
+        "startHz": 2.8,
+        "label": "Burst"
+      }
+    ]
+  },
+  "synEyeClosure": {
+    "seed": 369,
+    "ageYears": 9,
+    "state": "awake",
+    "sensitivity": 10,
+    "montage": "longitudinal",
+    "montages": [
+      "longitudinal",
+      "referential"
+    ],
+    "background": {
+      "pdrHz": 9,
+      "pdrUv": 55,
+      "beta": 2.5,
+      "theta": 3,
+      "noise": 3
+    },
+    "findings": [
+      {
+        "type": "eyesClosed",
+        "at": 2.2,
+        "uv": 160
+      },
+      {
+        "type": "gsw",
+        "from": 2.5,
+        "to": 4.6,
+        "uv": 320,
+        "hz": 3.6,
+        "startHz": 4.2,
+        "label": "Burst"
+      },
+      {
+        "type": "eyesOpen",
+        "at": 5.4,
+        "uv": 140
+      },
+      {
+        "type": "eyesClosed",
+        "at": 7.0,
+        "uv": 160
+      },
+      {
+        "type": "gsw",
+        "from": 7.3,
+        "to": 9.0,
+        "uv": 320,
+        "hz": 3.6,
+        "startHz": 4.2,
+        "label": "Burst"
+      }
+    ]
   }
 }

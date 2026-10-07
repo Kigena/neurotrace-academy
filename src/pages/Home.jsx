@@ -6,7 +6,7 @@ import { loadCaseProgressMap } from "../services/caseProgressApi";
 import casesData from "../data/cases.json";
 import CaseOfTheDay from "../components/CaseOfTheDay.jsx";
 import patternsData from "../data/neurotrace_patterns_library_v2.json";
-import syndromesData from "../data/syndromes_v2.json";
+import neuroData from "../data/neuroSyndromes.json";
 
 function Home() {
   const { user } = useAuth();
@@ -61,7 +61,7 @@ function Home() {
     const totalCases = staticCases + communityCasesCount;
     return {
       patterns: patternsData.length,
-      syndromes: syndromesData.length,
+      syndromes: neuroData.syndromes.length + neuroData.genetics.items.length,
       cases: totalCases,
       quizzes: 450 // Placeholder
     };
@@ -256,7 +256,7 @@ function Home() {
           </Link>
 
           <Link
-            to="/syndromes"
+            to="/neuro-syndromes?tab=syndromes"
             className="group bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-indigo-400 hover:shadow-lg transition-all"
           >
             <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-2xl mb-4">

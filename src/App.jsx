@@ -23,8 +23,7 @@ import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
 import PatternRecognitionQuiz from "./pages/PatternRecognitionQuiz.jsx";
 import Progress from "./pages/Progress.jsx";
-import Syndromes from "./pages/Syndromes.jsx";
-import SyndromeDetail from "./pages/SyndromeDetail.jsx";
+import SyndromeRedirect from "./pages/SyndromeRedirect.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import TopBar from "./components/TopBar.jsx";
 import Login from "./pages/Login.jsx";
@@ -183,16 +182,8 @@ function AppContent() {
                 <Achievements />
               </ProtectedRoute>
             } />
-            <Route path="/syndromes" element={
-              <ProtectedRoute>
-                <Syndromes />
-              </ProtectedRoute>
-            } />
-            <Route path="/syndromes/:id" element={
-              <ProtectedRoute>
-                <SyndromeDetail />
-              </ProtectedRoute>
-            } />
+            <Route path="/syndromes" element={<SyndromeRedirect />} />
+            <Route path="/syndromes/:id" element={<SyndromeRedirect />} />
             <Route path="/chat" element={
               <ProtectedRoute>
                 <Chat />

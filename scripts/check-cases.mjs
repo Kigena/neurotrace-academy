@@ -18,7 +18,8 @@ const bank = read("src/data/cases.json").starterCases;
 const domains = read("src/data/workflow-domains.json");
 const domainList = Array.isArray(domains) ? domains : domains.domains || Object.values(domains);
 const patterns = read("src/data/neurotrace_patterns_library_v2.json");
-const syndromes = [...read("src/data/syndromes_v2.json"), ...read("src/data/syndromes.json")];
+const neuro = read("src/data/neuroSyndromes.json");
+const syndromes = neuro.syndromes;
 
 const validLinks = new Set(["/standards", "/workflow"]);
 for (const t of ["", "?tab=sensitivity", "?tab=timebase", "?tab=filters", "?tab=lab", "?tab=mistakes"]) validLinks.add(`/amplifier-controls${t}`);
@@ -27,7 +28,8 @@ for (const t of ["", "?tab=grades", "?tab=finder", "?tab=role", "?tab=mistakes"]
 for (const t of ["", "?tab=anatomy", "?tab=physiology", "?tab=regions", "?tab=syndromes", "?tab=genetics", "?tab=patterns", "?tab=finder", "?tab=mistakes"]) validLinks.add(`/neuro-syndromes${t}`);
 for (const d of domainList) for (const s of d.sections || []) validLinks.add(`/workflow/${d.id}/${s.id}`);
 for (const p of patterns) validLinks.add(`/patterns/${p.id}`);
-for (const s of syndromes) validLinks.add(`/syndromes/${s.id}`);
+for (const s of syndromes) validLinks.add(`/neuro-syndromes?tab=syndromes&id=${s.id}`);
+for (const g of neuro.genetics.items) validLinks.add(`/neuro-syndromes?tab=genetics&id=${g.id}`);
 const patternIds = new Set(patterns.map((p) => p.id));
 const syndromeIds = new Set(syndromes.map((s) => s.id));
 

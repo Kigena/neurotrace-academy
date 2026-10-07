@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import patternsData from "../data/patterns.json";
 import patternsV2Data from "../data/neurotrace_patterns_library_v2.json";
 import casesData from "../data/cases.json";
-import syndromesData from "../data/syndromes.json";
+import neuroData from "../data/neuroSyndromes.json";
 import SearchBar from "../components/SearchBar.jsx";
 import PatternCard from "../components/PatternCard.jsx";
 import FilterPanel from "../components/FilterPanel.jsx";
@@ -154,8 +154,8 @@ function Patterns() {
   // Get related syndromes for selected pattern
   const relatedSyndromes = useMemo(() => {
     if (!selectedPattern) return [];
-    return syndromesData.filter((s) =>
-      s.typical_patterns?.includes(selectedPattern.id)
+    return neuroData.syndromes.filter((s) =>
+      s.patterns?.includes(selectedPattern.id)
     );
   }, [selectedPattern]);
 
@@ -657,14 +657,16 @@ function Patterns() {
                         className="rounded-md border border-slate-200 p-3"
                       >
                         <h4 className="text-sm font-semibold text-slate-900 mb-1">
-                          {syndrome.name}
+                          <Link to={`/neuro-syndromes?tab=syndromes&id=${syndrome.id}`} className="hover:text-indigo-700 hover:underline">
+                            {syndrome.name}
+                          </Link>
                         </h4>
                         <p className="text-xs text-slate-600 mb-2">
-                          {syndrome.notes}
+                          {syndrome.eegShort}
                         </p>
                         <div className="text-xs text-slate-700">
                           <span className="font-medium">Clinical features:</span>{" "}
-                          {syndrome.clinical_features?.join("; ")}
+                          {(syndrome.clinical?.manifestations || [syndrome.seizure]).slice(0, 4).join("; ")}
                         </div>
                       </div>
                     ))}

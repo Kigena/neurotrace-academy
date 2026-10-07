@@ -171,13 +171,131 @@
       "eeg": "Burst suppression in both waking and sleep. Bursts are high amplitude and mixed with spikes; suppression between them is nearly flat. The pattern can persist unchanged and often evolves into hypsarrhythmia in later infancy.",
       "technologist": "Record both states and any spasms with time markers. Describe burst and suppression durations; note the medications.",
       "scene": "synOhtahara",
-      "detail": "ohtahara",
       "label": "Ohtahara",
       "group": "infant",
-      "eegShort": "Burst suppression in waking and sleep."
+      "eegShort": "Burst suppression in waking and sleep.",
+      "classification": "Developmental and Epileptic Encephalopathy",
+      "patterns": [
+        "pattern_burst_suppression"
+      ],
+      "activation": {
+        "sleep": "Record both waking and sleep. Burst suppression that persists in both states is the key finding and separates it from normal trace alternant, which appears only in quiet sleep of the term neonate.",
+        "awake": "Burst suppression is present awake too, so a short awake segment is informative.",
+        "photic": "Not useful in a neonate; do not delay the recording for it."
+      },
+      "recording": {
+        "duration": "Long enough to include a wake segment, a sleep segment and, ideally, several tonic spasms.",
+        "montage": "Neonatal or infant montage with wide inter-electrode distances. Use a referential view to show the generalized suppression, and add EMG and respiration channels where available to time spasms."
+      },
+      "clinical": {
+        "manifestations": [
+          "Frequent brief tonic spasms, single or in clusters, often present from the first days or weeks",
+          "Spasms occur in both waking and sleep",
+          "Severe developmental impairment and hypotonia",
+          "Feeding difficulty is common"
+        ],
+        "triggers": [
+          "Usually spontaneous; spasms occur in both wake and sleep"
+        ],
+        "exam": "Often abnormal, with hypotonia and poor responsiveness.",
+        "imaging": "A structural cause such as a cortical malformation is common; genetic causes are also recognized.",
+        "development": "Severe impairment from onset or soon after."
+      },
+      "course": {
+        "onset": "Neonatal period or first weeks to 3 months of life.",
+        "progression": "The burst-suppression pattern often changes to hypsarrhythmia in later infancy, and some children go on to Lennox-Gastaut syndrome.",
+        "outcome": "Poor; drug-resistant seizures and severe disability are usual, and early mortality is increased."
+      },
+      "differential": [
+        "Early myoclonic encephalopathy - erratic myoclonus rather than tonic spasms; burst suppression is often more marked in sleep and a metabolic cause is common",
+        "Normal trace alternant - only in quiet sleep, with normal waking activity and a healthy infant",
+        "Hypoxic-ischemic or other acute encephalopathy - burst suppression with a clear acute history, and it may improve",
+        "West syndrome - later onset with hypsarrhythmia rather than burst suppression"
+      ],
+      "pearls": [
+        "Burst suppression in both wake and sleep is abnormal; trace alternant is sleep-only and symmetrical.",
+        "The suppression phase is nearly flat; check electrode impedances so that a real flat interval is not confused with a disconnected electrode.",
+        "Tonic spasms may coincide with a burst or with a brief attenuation; mark each event with the time.",
+        "The pattern may evolve into hypsarrhythmia, so note the infant's age on the tracing.",
+        "Record the medication list: some drugs and sedation produce burst suppression too."
+      ],
+      "related": [
+        "eme",
+        "west_syndrome",
+        "lennox_gastaut"
+      ],
+      "sceneNote": "Burst-suppression tracing: high-amplitude bursts alternating with nearly flat intervals."
     },
     {
-      "id": "west",
+      "id": "eme",
+      "label": "EME",
+      "name": "Early myoclonic encephalopathy (EME)",
+      "group": "infant",
+      "classification": "Developmental and Epileptic Encephalopathy",
+      "ageText": "Neonatal period, usually the first weeks of life (before 3 months)",
+      "ageMin": 0,
+      "ageMax": 0.25,
+      "seizure": "Erratic, fragmentary myoclonus (often shifting from one body part to another), plus focal motor seizures and later tonic spasms",
+      "pathophys": "Often an inborn error of metabolism (nonketotic hyperglycinemia is a classic example) or a genetic cause, with severe diffuse cortical dysfunction. A structural cause is less common.",
+      "eeg": "Burst suppression with high-amplitude bursts, mixed spikes and sharp waves, and near-flat suppression between them. The pattern is often more obvious in sleep and may be less regular or less continuous awake early on. Erratic myoclonus often has no consistent EEG correlate. The pattern may change to hypsarrhythmia or a multifocal pattern.",
+      "eegShort": "Burst suppression, often more marked in sleep, with erratic myoclonus.",
+      "features": [
+        "burst-suppression"
+      ],
+      "technologist": "Record both waking and sleep. Time-mark every jerk, add EMG leads if available, and describe burst and suppression durations. Note the medication list.",
+      "patterns": [
+        "pattern_burst_suppression"
+      ],
+      "activation": {
+        "sleep": "The most useful state: burst suppression is often clearest in sleep, so record sleep and compare it with waking.",
+        "awake": "Record a waking segment too; the pattern may be less continuous when awake.",
+        "photic": "Not useful in a neonate."
+      },
+      "recording": {
+        "duration": "Long enough to include waking, sleep and a number of myoclonic events.",
+        "montage": "Neonatal or infant montage with wide inter-electrode distances and a referential view. Add EMG and respiration channels, and use video to match jerks with the EEG."
+      },
+      "clinical": {
+        "manifestations": [
+          "Erratic, fragmentary myoclonic jerks that move between body parts",
+          "Focal motor seizures, later tonic spasms",
+          "Hypotonia, poor feeding and severe developmental impairment",
+          "Onset in the first days to weeks of life"
+        ],
+        "triggers": [
+          "Usually spontaneous"
+        ],
+        "exam": "Severely abnormal, with hypotonia and little interaction.",
+        "imaging": "Often normal early on when the cause is metabolic; structural change can be present.",
+        "development": "Severe impairment from early life."
+      },
+      "course": {
+        "onset": "The neonatal period, often the first weeks of life.",
+        "progression": "The burst-suppression pattern may change to hypsarrhythmia or a multifocal pattern.",
+        "outcome": "Poor; seizures are drug-resistant, disability is severe and early mortality is increased."
+      },
+      "differential": [
+        "Ohtahara syndrome - tonic spasms are dominant, and burst suppression is present awake and asleep",
+        "Normal trace alternant - sleep-only and normal when awake, and the infant is well",
+        "Metabolic or hypoxic-ischemic encephalopathy - can produce a similar tracing, so the history matters",
+        "West syndrome - later onset with hypsarrhythmia"
+      ],
+      "pearls": [
+        "Erratic, migrating myoclonus is the typical seizure type, in contrast to the tonic spasms of Ohtahara syndrome.",
+        "Burst suppression is often more obvious in sleep; record both states and compare.",
+        "Many myoclonic jerks have no EEG correlate; use EMG and video and mark them anyway.",
+        "A metabolic cause is common, so describe the tracing and age exactly and let the physician interpret it.",
+        "Both burst-suppression syndromes can change into hypsarrhythmia, which is why the age is noted."
+      ],
+      "related": [
+        "ohtahara",
+        "west_syndrome"
+      ],
+      "sceneNote": "Neonatal burst suppression: bursts of about 1.2 s and 1.4 s separated by flat intervals.",
+      "scene": "synEME"
+    },
+    {
+      "id": "west_syndrome",
       "name": "West syndrome (infantile epileptic spasms syndrome)",
       "ageMin": 0.08,
       "ageMax": 2,
@@ -191,10 +309,60 @@
       "technologist": "Mark every spasm with the time, record sleep, and describe the background. Muscle artifact can mimic or hide the electrodecrement.",
       "scene": "synWestHyps",
       "scene2": "synWestSpasm",
-      "detail": "west_syndrome",
       "label": "West",
       "group": "infant",
-      "eegShort": "Hypsarrhythmia, with an electrodecrement at each spasm."
+      "eegShort": "Hypsarrhythmia, with an electrodecrement at each spasm.",
+      "classification": "Developmental and Epileptic Encephalopathy",
+      "patterns": [
+        "pattern_hypsarrhythmia"
+      ],
+      "activation": {
+        "sleep": "The most useful state: hypsarrhythmia is often more evident, and may become bursty, in non-REM sleep. Sleep recording is essential and, ideally, includes an awakening.",
+        "awake": "The pattern is usually present awake but may be less prominent. Spasms often cluster on waking.",
+        "photic": "Not a useful activation procedure in this age group."
+      },
+      "recording": {
+        "duration": "Long enough to include sleep and ideally a transition on waking, when spasms cluster.",
+        "montage": "Infant montage with a referential view to show the multifocal, asymmetric spikes. Add deltoid or neck EMG and video to time each spasm."
+      },
+      "clinical": {
+        "manifestations": [
+          "Clusters of brief flexor, extensor or mixed spasms, often on waking",
+          "Loss of previously acquired skills, or developmental stall",
+          "Reduced eye contact and social smiling",
+          "Spasms can be subtle, such as head nods or eye movements"
+        ],
+        "triggers": [
+          "Waking or falling asleep"
+        ],
+        "exam": "Depends on the cause; signs of a structural or genetic disorder may be present, and some children appear normal at first.",
+        "imaging": "A cause is often found, such as a cortical malformation, hypoxic-ischemic injury, a tuberous sclerosis lesion or a genetic disorder.",
+        "development": "Stall or regression is typical."
+      },
+      "course": {
+        "onset": "Usually the first year, most often between 3 and 12 months.",
+        "progression": "May evolve into other seizure types, including focal seizures or Lennox-Gastaut syndrome.",
+        "outcome": "Depends mainly on the underlying cause; a symptomatic cause carries a worse outlook. Prompt reporting of the findings matters."
+      },
+      "differential": [
+        "Benign myoclonus of infancy - jerks occur with a normal EEG",
+        "Ohtahara syndrome or EME - burst suppression instead of hypsarrhythmia, and onset in the neonatal period",
+        "Infantile colic, startle and normal sleep jerks - no EEG change",
+        "Dravet syndrome and other infantile epilepsies - different seizure types and EEG"
+      ],
+      "pearls": [
+        "The classic triad is epileptic spasms, hypsarrhythmia and developmental stall or regression.",
+        "Each spasm is accompanied by a generalized slow wave with an electrodecrement; mark it on the tracing.",
+        "Sleep should be recorded because hypsarrhythmia can be absent awake or seen only in sleep.",
+        "Muscle artifact from a spasm can hide the electrodecrement; use EMG and video.",
+        "Hypsarrhythmia may appear modified, asymmetric or only in part; describe what you see."
+      ],
+      "related": [
+        "ohtahara",
+        "eme",
+        "lennox_gastaut"
+      ],
+      "sceneNote": "Hypsarrhythmia tracing, with a second view showing a spasm with an electrodecrement."
     },
     {
       "id": "dravet",
@@ -210,48 +378,353 @@
       "eeg": "The first EEG may be normal. Later: generalized spike-and-wave and polyspike-wave, focal or multifocal discharges and photosensitivity, with progressive slowing of the background.",
       "technologist": "Record in sleep; do photic stimulation per protocol with attention to safety, and note any fever or clinical event.",
       "scene": null,
-      "detail": "dravet",
       "label": "Dravet",
       "group": "infant",
-      "eegShort": "Generalized and multifocal spike-wave with photosensitivity; the first EEG may be normal."
+      "eegShort": "Generalized and multifocal spike-wave with photosensitivity; the first EEG may be normal.",
+      "classification": "Developmental and Epileptic Encephalopathy",
+      "patterns": [
+        "pattern_polyspike_wave"
+      ],
+      "activation": {
+        "photic": "Photosensitivity and pattern sensitivity occur in a subset, so do photic stimulation per protocol, with attention to safety, and stop at any seizure.",
+        "sleep": "Sleep may bring out generalized or multifocal discharges and is worth recording.",
+        "awake": "The first EEG may be normal, so a normal result does not exclude the syndrome.",
+        "hyperventilation": "Per protocol and the child's ability to cooperate."
+      },
+      "recording": {
+        "duration": "Long enough to include sleep and, if the child is old enough, photic stimulation; repeat studies are common because the EEG evolves.",
+        "montage": "Standard pediatric montage with referential views for generalized and multifocal discharges. Use video to document each seizure type."
+      },
+      "clinical": {
+        "manifestations": [
+          "Prolonged febrile or afebrile hemiclonic or generalized clonic seizures in the first year",
+          "Myoclonic, focal, atypical absence and tonic-clonic seizures appear later",
+          "Prolonged seizures and status epilepticus are common",
+          "Slowing of development after the first year, with gait and coordination problems"
+        ],
+        "triggers": [
+          "Fever",
+          "Hot baths",
+          "Photic or pattern stimulation in some",
+          "Illness"
+        ],
+        "exam": "Normal early; ataxia, hypotonia and crouch gait may develop later.",
+        "imaging": "Usually normal at first; mild atrophy can appear later.",
+        "development": "Normal in the first year, then slowing or plateau."
+      },
+      "course": {
+        "onset": "First year of life, often around 6 months, with a febrile seizure.",
+        "progression": "Several seizure types emerge in the next few years and the EEG background slows.",
+        "outcome": "Usually drug-resistant seizures, intellectual disability and increased risk of early death, including sudden unexpected death."
+      },
+      "differential": [
+        "Simple febrile seizures - brief, with normal development and EEG",
+        "GEFS+ - febrile seizures plus, usually milder and with a better outcome",
+        "Lennox-Gastaut syndrome - later onset, with slow spike-wave and tonic seizures in sleep",
+        "Benign myoclonic epilepsy in infancy - normal development and a milder course"
+      ],
+      "pearls": [
+        "A first EEG in the first year is often normal, so repeat studies are common.",
+        "Fever, hot baths and illness can provoke seizures; record the temperature and any illness.",
+        "Photosensitivity can be present, so do photic stimulation carefully and be ready to stop.",
+        "Long seizures are common; document onset time, behavior and any need for the nurse or physician.",
+        "The usual cause is a gene (SCN1A) that is not seen on EEG; the technologist records only what is on the tracing."
+      ],
+      "related": [
+        "bmei",
+        "lennox_gastaut",
+        "doose_mae"
+      ]
     },
     {
-      "id": "cae",
-      "name": "Childhood absence epilepsy",
-      "ageMin": 2,
-      "ageMax": 13,
-      "ageText": "2 to 13 years (peak 5 to 7)",
-      "seizure": "Brief staring spells with abrupt onset and offset, with or without eyelid flutter or automatisms, many times a day",
+      "id": "bmei",
+      "label": "BMEI",
+      "name": "Myoclonic epilepsy in infancy (MEI, benign myoclonic epilepsy of infancy)",
+      "group": "infant",
+      "classification": "Generalized epilepsy syndrome (self-limited course)",
+      "ageText": "Onset from about 4 months to 3 years, with a peak in the first 2 years",
+      "ageMin": 0.33,
+      "ageMax": 3,
+      "seizure": "Brief generalized myoclonic jerks of the head, trunk or arms, often in drowsiness or light sleep, in an otherwise normal infant",
+      "pathophys": "Presumed genetic in a developmentally normal child; the cause is not usually known. A reflex form triggered by sudden noise or touch exists.",
+      "eeg": "The background is normal for age. Brief generalized spike-wave or polyspike-wave bursts, usually 3 to 4 Hz and lasting a second or two, appear most often in drowsiness and light sleep and are often time-locked to a jerk. Discharges are usually rare or absent when the infant is fully awake.",
+      "eegShort": "Brief generalized spike-wave bursts in drowsiness and light sleep, with a normal background.",
       "features": [
+        "gsw-3hz",
+        "polyspike"
+      ],
+      "technologist": "Record drowsiness and light sleep, and use video and EMG to match any jerk to a burst. Time-mark every event and describe duration. Do not interpret the finding.",
+      "patterns": [
+        "pattern_polyspike_wave",
+        "pattern_three_hz_gsw"
+      ],
+      "activation": {
+        "sleep": "Drowsiness and light sleep are the best states in which to capture bursts, so allow the infant to doze if possible.",
+        "awake": "Discharges may be sparse when the infant is fully awake.",
+        "photic": "Usually limited value; photic stimulation is done per the lab protocol.",
+        "sleepDeprivation": "Usually not needed in infants; a nap recording is the practical approach."
+      },
+      "recording": {
+        "duration": "Long enough for a nap with drowsiness and light sleep, and a number of jerks if they occur.",
+        "montage": "Infant montage with a referential view for the generalized bursts. Add EMG leads and video, because jerks are brief and can be missed."
+      },
+      "clinical": {
+        "manifestations": [
+          "Brief, bilateral myoclonic jerks of the head, arms or trunk",
+          "May cause a head nod or arm flexion, often when drowsy",
+          "Little or no loss of awareness",
+          "A reflex form triggered by sudden noise or touch can occur"
+        ],
+        "triggers": [
+          "Drowsiness and light sleep",
+          "Sudden noise or touch in the reflex form"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Normal at onset; some children later show mild learning or behavioral difficulty."
+      },
+      "course": {
+        "onset": "Infancy to early childhood.",
+        "progression": "Seizures typically fade within a few years of onset; a minority later develop another generalized epilepsy.",
+        "outcome": "Generally favorable seizure outcome, with follow-up of development advised."
+      },
+      "differential": [
+        "Dravet syndrome - febrile and prolonged seizures, several seizure types and developmental slowing",
+        "West syndrome - epileptic spasms with hypsarrhythmia and regression",
+        "Benign myoclonus of infancy - jerks with a normal EEG",
+        "Juvenile myoclonic epilepsy - onset in adolescence"
+      ],
+      "pearls": [
+        "A normal infant with myoclonic jerks and brief generalized spike-wave bursts is the typical picture.",
+        "The tracing may be normal awake; drowsiness and light sleep are where bursts are found.",
+        "A jerk with no EEG correlate is possible, so use video and EMG and mark every event.",
+        "Describe the tracing and the events; identifying the syndrome is the physician's decision.",
+        "A background that is slow or abnormal for age should be noted, because it argues against this syndrome."
+      ],
+      "related": [
+        "dravet",
+        "jme",
+        "ige"
+      ],
+      "sceneNote": "Drowsy 1.5-year-old with two brief generalized spike-wave bursts of about 1.2 s each at 3.4 to 3.8 Hz.",
+      "scene": "synBMEI"
+    },
+    {
+      "id": "doose_mae",
+      "label": "Doose (MAE)",
+      "name": "Epilepsy with myoclonic-atonic seizures (Doose syndrome)",
+      "group": "child",
+      "classification": "Generalized epilepsy syndrome (may have a DEE course)",
+      "ageText": "7 months to 6 years (peak 2 to 4)",
+      "ageMin": 0.6,
+      "ageMax": 6,
+      "seizure": "Myoclonic-atonic seizures (a jerk followed by a drop), with other generalized seizure types such as atypical absences and generalized tonic-clonic seizures",
+      "pathophys": "A genetically heterogeneous generalized epilepsy with a family history of generalized epilepsy in many; in some children specific genes are found.",
+      "eeg": "Usually begins with a normal background, which may then show bursts of rhythmic 4 to 7 Hz theta over the parietal region. Generalized spike-wave and polyspike-wave discharges (about 2 to 3 Hz) accompany myoclonic-atonic events. Slowing and non-convulsive status may appear.",
+      "eegShort": "Parietal rhythmic theta bursts then generalized spike-wave around 2.5 Hz.",
+      "features": [
+        "polyspike",
         "gsw-3hz"
       ],
-      "pathophys": "Abnormal oscillation of the thalamocortical loop, involving T-type calcium channels in thalamic neurons and GABA-B-mediated inhibition of relay neurons by the reticular nucleus, producing regular 3 Hz generalized spike-and-wave.",
-      "eeg": "A normal background with bursts of generalized, bilaterally synchronous 3 Hz (2.5 to 4 Hz) spike-and-wave, frontal predominant, lasting 4 to 20 seconds (the frontal maximum is clearest in referential montages; in bipolar chains the largest deflections are often centroparietal). The rate may slow slightly toward the end. Occipital intermittent rhythmic delta can occur. Hyperventilation is the best activation.",
-      "technologist": "Test responsiveness during bursts and note the time and what was said. Hyperventilation is done for the full protocol time if the patient can cooperate, and is stopped for a prolonged seizure or distress.",
-      "scene": "synCAE",
-      "detail": "cae",
-      "label": "Childhood absence",
-      "group": "child",
-      "eegShort": "Generalized 3 Hz spike-and-wave on a normal background."
+      "patterns": [
+        "pattern_three_hz_gsw",
+        "pattern_polyspike_wave"
+      ],
+      "technologist": "Record clinical jerks and falls with time marks, add a muscle (EMG) channel if possible, and describe background, theta bursts and discharge frequency.",
+      "activation": {
+        "hyperventilation": "Usually not feasible in this age group.",
+        "photic": "Photosensitivity can occur; follow protocol.",
+        "sleep": "May activate discharges; record wake and sleep.",
+        "awake": "Events and discharges can occur awake without provocation."
+      },
+      "recording": {
+        "duration": "Include wake and sleep and try to capture events.",
+        "montage": "Referential and bipolar views; add EMG to document myoclonus and atonia."
+      },
+      "clinical": {
+        "manifestations": [
+          "Sudden jerks with a head or body drop",
+          "Frequent falls and injuries",
+          "Atypical absences and generalized tonic-clonic seizures",
+          "Episodes of non-convulsive status"
+        ],
+        "triggers": [
+          "Spontaneous",
+          "Fatigue or illness"
+        ],
+        "exam": "Often normal at onset.",
+        "imaging": "Normal in most.",
+        "development": "Often normal at onset; may decline."
+      },
+      "course": {
+        "onset": "Early childhood, in a child who was developing normally.",
+        "progression": "Variable; seizures may stop or persist.",
+        "outcome": "Variable: some remit with normal or near-normal development, others have persisting seizures and cognitive impairment."
+      },
+      "differential": [
+        "Lennox-Gastaut syndrome - tonic seizures, slow spike-wave and fast bursts in sleep, usually delayed",
+        "Benign myoclonic epilepsy in infancy - myoclonic only, earlier, usually favourable",
+        "Dravet syndrome - earlier, febrile or hemiclonic seizures, developmental delay",
+        "Atypical absence in other DEEs"
+      ],
+      "pearls": [
+        "Rhythmic 4 to 7 Hz parietal theta may be a key background finding.",
+        "The classic seizure is a myoclonic jerk followed by an atonic drop.",
+        "Tonic seizures and fast bursts in sleep point instead toward Lennox-Gastaut.",
+        "The course may be favourable or evolve to a Lennox-Gastaut-like picture."
+      ],
+      "related": [
+        "lennox_gastaut",
+        "atypical_absence",
+        "bmei"
+      ],
+      "sceneNote": "The tracing shows bursts of rhythmic 5.5 Hz parietal theta, followed by generalized spike-wave at about 2.4 to 2.8 Hz, in an awake 3-year-old.",
+      "scene": "synDoose"
     },
     {
-      "id": "rolandic",
-      "name": "Self-limited epilepsy with centrotemporal spikes (rolandic epilepsy)",
-      "ageMin": 3,
-      "ageMax": 14,
-      "ageText": "3 to 14 years (peak 7 to 10)",
-      "seizure": "Nocturnal or on waking: hemifacial twitching, speech arrest, drooling, sometimes spreading to the arm or generalizing",
+      "id": "lennox_gastaut",
+      "name": "Lennox-Gastaut syndrome",
+      "ageMin": 1,
+      "ageMax": 8,
+      "ageText": "1 to 8 years (peak 3 to 5)",
+      "seizure": "Several types: tonic (often in sleep), atonic drop attacks, atypical absences; cognitive impairment",
       "features": [
-        "rolandic"
+        "slow-sw",
+        "pfa"
       ],
-      "pathophys": "Hyperexcitable perisylvian sensorimotor cortex in an immature brain; resolves in adolescence.",
-      "eeg": "Normal background. High-amplitude biphasic centrotemporal spikes (C3, C4, T3, T4) with a horizontal dipole: negative centrally and positive frontally. Sleep strongly activates them, and they may shift sides.",
-      "technologist": "Record sleep. Use referential and transverse montages to show the dipole; mention side shifts.",
-      "scene": "synRolandic",
-      "detail": "rolandic",
-      "label": "Rolandic",
+      "pathophys": "A diffuse developmental and epileptic encephalopathy from many causes (including prior West syndrome) in which networks are persistently disturbed.",
+      "eeg": "A slow background with bursts of slow (below 2.5 Hz, often 1.5 to 2.5 Hz) generalized spike-and-wave in wakefulness, and bursts of generalized paroxysmal fast activity (10 to 20 Hz) in non-REM sleep, which may accompany a brief tonic seizure or be subclinical.",
+      "technologist": "Record both waking and sleep. Mark clinical events with time and describe any fast bursts.",
+      "scene": "synLGSlow",
+      "scene2": "synLGPFA",
+      "label": "Lennox-Gastaut",
       "group": "child",
-      "eegShort": "Centrotemporal spikes with a horizontal dipole, activated by sleep."
+      "eegShort": "Slow spike-wave when awake and generalized fast bursts in sleep, on a slow background.",
+      "classification": "Developmental and Epileptic Encephalopathy",
+      "patterns": [
+        "pattern_slow_spike_wave",
+        "pattern_gpfa"
+      ],
+      "activation": {
+        "sleep": "The most informative state: generalized paroxysmal fast activity emerges in non-REM sleep and may accompany a brief tonic seizure or be subclinical.",
+        "awake": "Slow spike-and-wave is present while awake and may run in long bursts with drowsiness or inattention.",
+        "hyperventilation": "Usually not feasible and not particularly useful.",
+        "photic": "Not usually helpful."
+      },
+      "recording": {
+        "duration": "Long enough to include wake and sleep; clinical events should be captured if possible.",
+        "montage": "Use bipolar and referential views; adding a muscle (EMG) channel can help show a tonic seizure."
+      },
+      "clinical": {
+        "manifestations": [
+          "Several seizure types: tonic (often in sleep), atonic drop attacks, atypical absences",
+          "Myoclonic, tonic-clonic and non-convulsive status may also occur",
+          "Intellectual disability or regression that tends to be persistent",
+          "Seizures are frequent and difficult to control"
+        ],
+        "triggers": [
+          "Sleep",
+          "Drowsiness",
+          "Illness"
+        ],
+        "exam": "Often abnormal, with cognitive and sometimes motor findings.",
+        "imaging": "Often shows a cause such as structural malformation, injury or past encephalopathy.",
+        "development": "Delay or regression is typical."
+      },
+      "course": {
+        "onset": "Early to mid childhood; in some children it follows West syndrome.",
+        "progression": "Chronic, with persisting seizures and cognitive impairment.",
+        "outcome": "Generally poor long-term outcome."
+      },
+      "differential": [
+        "Doose syndrome - myoclonic-atonic seizures, onset often with normal development, tonic seizures rare early",
+        "Atypical absence in other DEEs - an isolated seizure type, not the full syndrome",
+        "CAE - faster 3 Hz spike-wave on a normal background, preserved cognition",
+        "DEE-SWAS (ESES) - spike-wave mostly in sleep, with regression"
+      ],
+      "pearls": [
+        "Slow spike-and-wave in wake plus generalized paroxysmal fast activity in sleep is the classic pair.",
+        "Paroxysmal fast activity may be subtle; a muscle channel and the observer's notes help confirm a tonic seizure.",
+        "Describe the awake and sleep background as slowed and note any asymmetry.",
+        "Hyperventilation can be a poor choice in this population; note when it was not performed and why."
+      ],
+      "related": [
+        "atypical_absence",
+        "doose_mae",
+        "west_syndrome",
+        "eses_csws"
+      ],
+      "sceneNote": "Two tracings are attached: slow generalized spike-and-wave in wake on a slow background, and a burst of generalized paroxysmal fast activity in non-REM sleep."
+    },
+    {
+      "id": "atypical_absence",
+      "label": "Atypical absence",
+      "name": "Atypical absence seizures (typically within Lennox-Gastaut syndrome and other DEEs)",
+      "group": "child",
+      "classification": "Seizure type seen in DEEs (for example Lennox-Gastaut)",
+      "ageText": "Early childhood onset, usually 1 to 8 years",
+      "ageMin": 1,
+      "ageMax": 8,
+      "seizure": "Staring with less abrupt onset and offset than a typical absence, often with partial loss of awareness and loss of tone",
+      "pathophys": "A seizure type of diffuse developmental and epileptic encephalopathies, reflecting widely disturbed networks rather than a single focus.",
+      "eeg": "Irregular, slow generalized spike-and-wave (about 2 to 2.5 Hz or less) on a slowed or disorganized background, often asymmetric and with a gradual start and end. Discharges are usually more prominent in drowsiness and non-REM sleep.",
+      "eegShort": "Slow irregular generalized spike-and-wave on a slow background.",
+      "features": [
+        "slow-sw"
+      ],
+      "patterns": [
+        "pattern_slow_spike_wave"
+      ],
+      "technologist": "Describe the background, the discharge frequency and how it starts and stops. Record both waking and sleep, test responsiveness, and mark time and clinical features.",
+      "activation": {
+        "sleep": "Discharges are often more abundant in drowsiness and non-REM sleep; a sleep record is essential.",
+        "awake": "Slow spike-and-wave is present while awake, especially in drowsiness.",
+        "hyperventilation": "Usually of limited value.",
+        "photic": "Usually of limited value."
+      },
+      "recording": {
+        "duration": "Include wake, drowsiness and sleep.",
+        "montage": "Referential and bipolar views to describe distribution and asymmetry."
+      },
+      "clinical": {
+        "manifestations": [
+          "Slower onset and offset than typical absence",
+          "Partial change in responsiveness with tone loss, head drop or automatisms",
+          "Other seizure types, often tonic or atonic",
+          "Cognitive impairment and developmental delay"
+        ],
+        "triggers": [
+          "Drowsiness",
+          "Awakening",
+          "Illness"
+        ],
+        "exam": "Often abnormal.",
+        "imaging": "Often shows a structural or other cause.",
+        "development": "Often delayed or regressed."
+      },
+      "course": {
+        "onset": "Early childhood.",
+        "progression": "Persisting seizures, usually within a long-lasting epilepsy syndrome.",
+        "outcome": "Generally depends on the underlying syndrome and tends to be poor."
+      },
+      "differential": [
+        "Typical absence (CAE) - abrupt, regular 3 Hz, normal background",
+        "Jeavons syndrome - eyelid myoclonia with eye closure triggering",
+        "Focal impaired-awareness seizures - focal onset",
+        "Lennox-Gastaut syndrome - atypical absence is one of several seizure types"
+      ],
+      "pearls": [
+        "Slow generalized spike-and-wave (below 3 Hz) with gradual onset distinguishes it from typical absence.",
+        "The background is slowed, unlike CAE.",
+        "Sleep recording is important."
+      ],
+      "related": [
+        "lennox_gastaut",
+        "doose_mae",
+        "cae"
+      ],
+      "sceneNote": "The tracing shows irregular, slow generalized spike-and-wave at about 2 to 2.4 Hz on a slowed awake background in a 7-year-old.",
+      "scene": "synAtypAbs"
     },
     {
       "id": "occipital",
@@ -267,34 +740,61 @@
       "eeg": "Occipital spikes, often high amplitude with a following slow wave, that appear with eye closure and darkness and may disappear when the eyes are open (fixation-off sensitivity). Spikes can also appear in other regions.",
       "technologist": "Record eyes closed and open in alternating periods, and note the effect of eye opening on the spikes.",
       "scene": "synOccipital",
-      "detail": null,
       "label": "Occipital (Panayiotopoulos)",
       "group": "child",
-      "eegShort": "Occipital spikes that change with eye opening and closure."
-    },
-    {
-      "id": "lgs",
-      "name": "Lennox-Gastaut syndrome",
-      "ageMin": 1,
-      "ageMax": 8,
-      "ageText": "1 to 8 years (peak 3 to 5)",
-      "seizure": "Several types: tonic (often in sleep), atonic drop attacks, atypical absences; cognitive impairment",
-      "features": [
-        "slow-sw",
-        "pfa"
+      "eegShort": "Occipital spikes that change with eye opening and closure.",
+      "classification": "Self-Limited Focal Epilepsy",
+      "patterns": [],
+      "activation": {
+        "awake": "Eye closure and darkness bring out occipital spikes; they may vanish with eyes open (fixation-off sensitivity), so alternate eyes-open and eyes-closed periods.",
+        "sleep": "Strongly activating; spikes often multiply and may appear in other regions.",
+        "hyperventilation": "Not specifically helpful.",
+        "photic": "Usually not specific; the key manoeuvre is eye closure, not flicker."
+      },
+      "recording": {
+        "duration": "Include several eyes-open and eyes-closed periods and drowsiness or sleep.",
+        "montage": "Use bipolar and referential views including the posterior chain; document spikes in other regions too."
+      },
+      "clinical": {
+        "manifestations": [
+          "Autonomic seizures: vomiting, pallor, flushing or incontinence",
+          "Eyes and head deviate to one side",
+          "Reduced responsiveness; events may last many minutes",
+          "Often begins in sleep; can progress to convulsive features"
+        ],
+        "triggers": [
+          "Sleep",
+          "Illness or fever may precede some events"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Usually normal."
+      },
+      "course": {
+        "onset": "Preschool age, often around 3 to 6 years.",
+        "progression": "Seizures are usually infrequent, and a few children have only one.",
+        "outcome": "Self-limited, with remission within a few years of onset."
+      },
+      "differential": [
+        "Rolandic epilepsy - centrotemporal rather than occipital spikes, brief seizures with facial signs",
+        "Childhood occipital visual epilepsy (Gastaut type) - later onset, brief visual hallucinations, headache",
+        "Structural occipital epilepsy - fixed focus, abnormal imaging",
+        "Migraine or gastro-intestinal illness can mimic the vomiting events"
       ],
-      "pathophys": "A diffuse developmental and epileptic encephalopathy from many causes (including prior West syndrome) in which networks are persistently disturbed.",
-      "eeg": "A slow background with bursts of slow (below 2.5 Hz, often 1.5 to 2.5 Hz) generalized spike-and-wave in wakefulness, and bursts of generalized paroxysmal fast activity (10 to 20 Hz) in non-REM sleep, which can be the clinical tonic seizure.",
-      "technologist": "Record both waking and sleep. Mark clinical events with time and describe any fast bursts.",
-      "scene": "synLGSlow",
-      "scene2": "synLGPFA",
-      "detail": "lennox_gastaut",
-      "label": "Lennox-Gastaut",
-      "group": "child",
-      "eegShort": "Slow spike-wave when awake and generalized fast bursts in sleep, on a slow background."
+      "pearls": [
+        "Occipital spikes that appear on eye closure and disappear on eye opening show fixation-off sensitivity.",
+        "Spikes are not limited to the occipital region; multifocal spikes are common.",
+        "Document what the eyes were doing: open, closed, or fixating.",
+        "Sleep brings out discharges, so a drowsy or sleep recording is worth obtaining."
+      ],
+      "related": [
+        "rolandic",
+        "cae"
+      ],
+      "sceneNote": "The tracing shows occipital spikes whose appearance changes with eye opening and closure."
     },
     {
-      "id": "eses",
+      "id": "eses_csws",
       "name": "Developmental and epileptic encephalopathy with spike-and-wave activation in sleep (DEE-SWAS; ESES/CSWS) and Landau-Kleffner syndrome",
       "ageMin": 2,
       "ageMax": 12,
@@ -305,13 +805,652 @@
         "slow-sw"
       ],
       "pathophys": "Persistent epileptiform activity in non-REM sleep disturbs the cortical networks that support learning and language.",
-      "eeg": "Near-continuous generalized or diffuse spike-and-wave (about 1.5 to 2.5 Hz) during non-REM sleep, taking up most of the sleep record. It is much less abundant while awake. The amount of spike-wave in sleep is measured by the reader.",
+      "eeg": "Near-continuous generalized or diffuse spike-and-wave (about 1.5 to 2.5 Hz) during non-REM sleep, occupying most of non-REM sleep. It is much less abundant while awake. The amount of spike-wave in sleep is measured by the reader.",
       "technologist": "A sleep recording is essential. Describe how much of the sleep record shows discharges; do not stop early.",
       "scene": "synESES",
-      "detail": "eses_csws",
       "label": "ESES / LKS",
       "group": "child",
-      "eegShort": "Near-continuous spike-wave in non-REM sleep."
+      "eegShort": "Near-continuous spike-wave in non-REM sleep.",
+      "classification": "Developmental and Epileptic Encephalopathy",
+      "patterns": [
+        "pattern_slow_spike_wave"
+      ],
+      "activation": {
+        "sleep": "Essential: the pattern is defined in non-REM sleep, and it is much less prominent in wakefulness and REM sleep.",
+        "awake": "The waking record may show only focal or generalized spikes, or look unremarkable.",
+        "hyperventilation": "Not helpful.",
+        "photic": "Not helpful."
+      },
+      "recording": {
+        "duration": "Obtain a sleep record covering wake, drowsiness and a good stretch of non-REM sleep; do not stop early.",
+        "montage": "Bipolar and referential views are both useful; in LKS, note any temporal predominance."
+      },
+      "clinical": {
+        "manifestations": [
+          "Regression or plateau in cognition, behaviour or attention",
+          "Seizures may be few, infrequent or absent, and may be focal, generalized or atypical absences",
+          "Landau-Kleffner syndrome: acquired loss of understanding of spoken language (auditory verbal agnosia) with later expressive loss",
+          "Behaviour change, including hyperactivity and attention problems"
+        ],
+        "triggers": [
+          "Non-REM sleep"
+        ],
+        "exam": "May be normal apart from cognitive, language or behavioural deficits.",
+        "imaging": "Often normal, but a structural cause is sometimes found.",
+        "development": "Usually normal before onset, followed by regression."
+      },
+      "course": {
+        "onset": "School-age children, with LKS often presenting with language loss in early school years.",
+        "progression": "The sleep EEG picture usually fades with age, but the cognitive effects may lag behind.",
+        "outcome": "Variable; a longer period of near-continuous discharge is linked with poorer recovery of language and cognition."
+      },
+      "differential": [
+        "Rolandic epilepsy - centrotemporal spikes in sleep but not near-continuous, normal cognition",
+        "Lennox-Gastaut - slow spike-wave in wake and fast bursts in sleep, multiple seizure types",
+        "Autism spectrum or developmental language disorder - no acquired loss of previously normal skills",
+        "Normal sleep activity - spike-wave persisting through non-REM sleep is not normal"
+      ],
+      "pearls": [
+        "The defining pattern appears during non-REM sleep, so a sleep study is essential.",
+        "The reader measures the proportion of non-REM sleep occupied by spike-wave; describe how much of the sleep record it fills.",
+        "Comparison with the waking record is valuable.",
+        "LKS is a language-regression presentation within this spectrum, and its discharges often favour the temporal regions.",
+        "The child may have few or no clinical seizures despite a very abnormal sleep EEG."
+      ],
+      "related": [
+        "rolandic",
+        "lennox_gastaut"
+      ],
+      "sceneNote": "The tracing shows near-continuous generalized spike-and-wave at about 2 Hz during non-REM sleep."
+    },
+    {
+      "id": "cae",
+      "name": "Childhood absence epilepsy",
+      "ageMin": 2,
+      "ageMax": 13,
+      "ageText": "2 to 13 years (peak 5 to 7)",
+      "seizure": "Brief staring spells with abrupt onset and offset, with or without eyelid flutter or automatisms, many times a day",
+      "features": [
+        "gsw-3hz"
+      ],
+      "pathophys": "Abnormal oscillation of the thalamocortical loop, involving T-type calcium channels in thalamic neurons and GABA-B-mediated inhibition of relay neurons by the reticular nucleus, producing regular 3 Hz generalized spike-and-wave.",
+      "eeg": "A normal background with bursts of generalized, bilaterally synchronous 3 Hz (2.5 to 4 Hz) spike-and-wave, frontal predominant, lasting 4 to 20 seconds (the frontal maximum is clearest in referential montages; in bipolar chains the largest deflections are often centroparietal). The rate may slow slightly toward the end. Occipital intermittent rhythmic delta can occur. Hyperventilation is the best activation.",
+      "technologist": "Test responsiveness during bursts and note the time and what was said. Hyperventilation is done for the full protocol time if the patient can cooperate, and is stopped for a prolonged seizure or distress.",
+      "scene": "synCAE",
+      "label": "Childhood absence",
+      "group": "child",
+      "eegShort": "Generalized 3 Hz spike-and-wave on a normal background.",
+      "classification": "Genetic Generalized Epilepsy",
+      "patterns": [
+        "pattern_three_hz_gsw"
+      ],
+      "activation": {
+        "hyperventilation": "The most effective activation; often provokes typical absences in untreated children, so record it carefully.",
+        "photic": "Usually of limited value in this syndrome.",
+        "sleep": "Spike-wave may fragment or become faster and polyspike-like in non-REM sleep; absence seizures themselves do not occur in sleep.",
+        "sleepDeprivation": "May increase the chance of capturing discharges.",
+        "awake": "Include both eyes-open and eyes-closed periods."
+      },
+      "recording": {
+        "duration": "A routine awake recording with full hyperventilation, plus drowsiness or sleep if the study allows.",
+        "montage": "Show both referential and bipolar views: the generalized, frontally predominant field is clearest referentially."
+      },
+      "clinical": {
+        "manifestations": [
+          "Brief staring spells with abrupt onset and offset and impaired awareness",
+          "Eyelid flutter or simple automatisms may occur",
+          "Many events a day, no post-event confusion",
+          "No prominent eyelid myoclonia and no limb myoclonic jerks (this separates it from Jeavons and JME)"
+        ],
+        "triggers": [
+          "Hyperventilation",
+          "Fatigue or sleep loss",
+          "Stress"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Usually normal; mild learning or attention difficulties are described."
+      },
+      "course": {
+        "onset": "Early school age; absences begin in an otherwise normal child.",
+        "progression": "Absences often fade in adolescence, though some patients go on to other generalized seizure types.",
+        "outcome": "Often favourable, with remission in many; outcome is less certain if other seizure types appear."
+      },
+      "differential": [
+        "Juvenile absence epilepsy - later onset, absences less frequent, generalized tonic-clonic seizures more likely, spike-wave often a little faster",
+        "Epilepsy with eyelid myoclonia (Jeavons) - eyelid myoclonia, eye-closure and photic sensitivity",
+        "Atypical absence in LGS or other DEEs - slower spike-wave, gradual onset and offset, slowed background, cognitive impairment",
+        "Juvenile myoclonic epilepsy - myoclonic jerks, polyspike-wave, adolescent onset",
+        "Very early-onset absences (before about 4 years) call for a wider look, for example GLUT1 deficiency, rather than assuming CAE"
+      ],
+      "pearls": [
+        "Hyperventilation is the key activation procedure for CAE; document effort, duration and the time to the first burst.",
+        "The spike-wave is generalized, bilaterally synchronous and symmetric, on a normal background.",
+        "Test and describe responsiveness during every burst, and note the time.",
+        "A normal background and normal development separate CAE from symptomatic generalized epilepsies."
+      ],
+      "related": [
+        "jae",
+        "jeavons",
+        "atypical_absence",
+        "jme"
+      ],
+      "sceneNote": "The tracing shows a generalized, synchronous 3 Hz spike-and-wave burst on an otherwise normal awake background."
+    },
+    {
+      "id": "jeavons",
+      "label": "Eyelid myoclonia (Jeavons)",
+      "name": "Epilepsy with eyelid myoclonia (Jeavons syndrome)",
+      "group": "child",
+      "classification": "Genetic Generalized Epilepsy",
+      "ageText": "2 to 14 years (peak 6 to 8)",
+      "ageMin": 2,
+      "ageMax": 14,
+      "seizure": "Brief eyelid myoclonia, often with upward eye deviation, with or without a short absence, usually triggered by eye closure and often by light",
+      "pathophys": "A genetic generalized epilepsy with marked cortical sensitivity to eye closure and to light, involving thalamocortical networks.",
+      "eeg": "Generalized spike-wave or polyspike-wave bursts at about 3 to 6 Hz that appear immediately after eye closure and are often accompanied by eyelid myoclonia. Photoparoxysmal responses are common. The background is usually normal.",
+      "eegShort": "Generalized spike-wave bursts that follow eye closure, often photosensitive.",
+      "features": [
+        "polyspike",
+        "gsw-3hz",
+        "photosensitive"
+      ],
+      "patterns": [
+        "pattern_three_hz_gsw",
+        "pattern_polyspike_wave"
+      ],
+      "technologist": "Repeat eye closure several times, each with a time mark, and see whether discharges follow within seconds. Keep photic stimulation to protocol, and describe eyelid movements clinically and in the notes.",
+      "activation": {
+        "hyperventilation": "May help but is not the main trigger.",
+        "photic": "Often provokes generalized discharges, but test carefully following protocol.",
+        "sleep": "Discharges often become less prominent in sleep.",
+        "awake": "Eye closure is the key manoeuvre; bursts often follow within a few seconds."
+      },
+      "recording": {
+        "duration": "Include repeated eye-opening and eye-closure periods.",
+        "montage": "Referential and bipolar views; include a frontal or eyelid channel if possible to document eyelid movement."
+      },
+      "clinical": {
+        "manifestations": [
+          "Rapid rhythmic eyelid jerks with upward eye deviation",
+          "Often brief absence with impaired awareness",
+          "Seizures often follow eye closure or bright light and may occur many times a day",
+          "Patients may deliberately close their eyes to trigger events"
+        ],
+        "triggers": [
+          "Eye closure",
+          "Bright or flickering light"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Usually normal; some have learning difficulties."
+      },
+      "course": {
+        "onset": "Early to mid childhood.",
+        "progression": "Eyelid myoclonia often persists, and generalized tonic-clonic seizures can appear.",
+        "outcome": "Often lifelong and may be hard to control; photosensitivity can improve with age."
+      },
+      "differential": [
+        "Childhood absence epilepsy - no eyelid myoclonia, generalized 3 Hz spike-wave without eye closure triggering",
+        "Juvenile myoclonic epilepsy - limb jerks on waking",
+        "Eye-closure-sensitive generalized epilepsy without eyelid myoclonia",
+        "Occipital epilepsy - occipital spikes rather than generalized bursts"
+      ],
+      "pearls": [
+        "Discharges follow eye closure, usually within a few seconds, and the record may show repeated bursts after each closure.",
+        "Photosensitivity is common but not universal.",
+        "Eyelid myoclonia is a clinical observation; document it in the technologist notes.",
+        "Compare eyes-open and eyes-closed periods carefully."
+      ],
+      "related": [
+        "eye_closure_sensitivity",
+        "cae",
+        "jme"
+      ],
+      "sceneNote": "The tracing shows two episodes of generalized 4 to 5 Hz spike-wave bursts beginning right after eye closure, with eyes open at 5.0 seconds in between.",
+      "scene": "synJeavons"
+    },
+    {
+      "id": "eye_closure_sensitivity",
+      "label": "Eye closure sensitivity",
+      "name": "Eye-closure sensitivity (reflex trait in genetic generalized epilepsy)",
+      "group": "child",
+      "classification": "Reflex trait, not a separate ILAE syndrome",
+      "ageText": "Childhood to adolescence",
+      "ageMin": 2,
+      "ageMax": 18,
+      "seizure": "Brief absences or myoclonic events triggered by eye closure, sometimes with eyelid myoclonia",
+      "pathophys": "A reflex trait of generalized epilepsies in which eye closure triggers generalized discharges, probably through cortical hyperexcitability; it overlaps strongly with epilepsy with eyelid myoclonia.",
+      "eeg": "Generalized spike-wave bursts (about 3 to 4.5 Hz, sometimes polyspike) that appear within seconds of eye closure, often in repeated episodes with eyes open in between. The background is usually normal.",
+      "eegShort": "Generalized spike-wave bursts right after eye closure.",
+      "features": [
+        "gsw-3hz",
+        "polyspike",
+        "photosensitive"
+      ],
+      "patterns": [
+        "pattern_three_hz_gsw",
+        "pattern_polyspike_wave"
+      ],
+      "technologist": "Repeat eye closure several times, each with a time mark. Note whether discharges follow, how soon, and whether they stop with eyes open.",
+      "activation": {
+        "awake": "Eye closure is the key activation and should be repeated several times; compare with the eyes-open record.",
+        "photic": "Eyes-closed photic stimulation may add to the response; follow protocol.",
+        "hyperventilation": "May contribute.",
+        "sleep": "Discharges often decrease in sleep."
+      },
+      "recording": {
+        "duration": "Include several eye-opening and eye-closure periods.",
+        "montage": "Referential and bipolar views."
+      },
+      "clinical": {
+        "manifestations": [
+          "Absences or brief myoclonic events right after eye closure",
+          "Eyelid myoclonia in some",
+          "Photosensitivity in some",
+          "Patients may self-induce events"
+        ],
+        "triggers": [
+          "Eye closure",
+          "Photic stimulation",
+          "Bright light"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Usually normal."
+      },
+      "course": {
+        "onset": "Childhood to early adolescence.",
+        "progression": "Variable.",
+        "outcome": "Variable; sensitivity may persist."
+      },
+      "differential": [
+        "Jeavons syndrome - eyelid myoclonia is prominent",
+        "CAE or JAE - absences are not tied to eye closure",
+        "Occipital epilepsy - occipital spikes with fixation-off sensitivity",
+        "Other photosensitive epilepsies - triggered by light itself"
+      ],
+      "pearls": [
+        "Bursts appear soon after eye closure rather than during hyperventilation.",
+        "Repeated closures confirm the relationship.",
+        "Mark each closure and each burst with time.",
+        "Document whether the eyes were open or closed when the discharge stopped."
+      ],
+      "related": [
+        "jeavons",
+        "cae",
+        "jae"
+      ],
+      "sceneNote": "The tracing shows two episodes of generalized 3.6 to 4.2 Hz spike-wave bursts right after eye closure in an awake 9-year-old.",
+      "scene": "synEyeClosure"
+    },
+    {
+      "id": "rolandic",
+      "name": "Self-limited epilepsy with centrotemporal spikes (rolandic epilepsy)",
+      "ageMin": 3,
+      "ageMax": 14,
+      "ageText": "3 to 14 years (peak 7 to 10)",
+      "seizure": "Nocturnal or on waking: hemifacial twitching, speech arrest, drooling, sometimes spreading to the arm or generalizing",
+      "features": [
+        "rolandic"
+      ],
+      "pathophys": "Hyperexcitable perisylvian sensorimotor cortex in an immature brain; resolves in adolescence.",
+      "eeg": "Normal background. High-amplitude biphasic centrotemporal spikes (C3, C4, T3, T4) with a horizontal dipole: negative centrally and positive frontally. Sleep strongly activates them, and they may shift sides.",
+      "technologist": "Record sleep. Use referential and transverse montages to show the dipole; mention side shifts.",
+      "scene": "synRolandic",
+      "label": "Rolandic",
+      "group": "child",
+      "eegShort": "Centrotemporal spikes with a horizontal dipole, activated by sleep.",
+      "classification": "Self-Limited Focal Epilepsy",
+      "patterns": [
+        "pattern_focal_spikes_central",
+        "pattern_focal_spikes_temporal"
+      ],
+      "activation": {
+        "sleep": "The strongest activator: spikes become more frequent in drowsiness and non-REM sleep and may spread or become bilateral.",
+        "sleepDeprivation": "May help if a routine awake record is normal.",
+        "awake": "Spikes may be sparse or absent when awake, so a normal waking record does not exclude the syndrome.",
+        "hyperventilation": "Little specific effect.",
+        "photic": "Not usually helpful."
+      },
+      "recording": {
+        "duration": "Include drowsiness and sleep; a waking-only record can miss the discharges.",
+        "montage": "Use referential and bipolar/transverse views to show the dipole: negative centrotemporally, positive frontally. Report any shift between hemispheres."
+      },
+      "clinical": {
+        "manifestations": [
+          "Unilateral facial twitching or sensory change around the mouth",
+          "Speech arrest, gurgling noises and drooling",
+          "Often at night or on waking; may spread to the arm or become bilateral tonic-clonic",
+          "Awareness is often preserved in waking events"
+        ],
+        "triggers": [
+          "Sleep and awakening"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Usually normal; mild language, attention or learning difficulties can occur."
+      },
+      "course": {
+        "onset": "School age, usually between about 3 and 14 years.",
+        "progression": "Seizures are infrequent in many children and fade with age.",
+        "outcome": "Self-limited, with remission by mid-adolescence; a minority show atypical features or a spike-wave-in-sleep picture."
+      },
+      "differential": [
+        "Panayiotopoulos syndrome - occipital or multifocal spikes, autonomic seizures with vomiting",
+        "DEE-SWAS (ESES/CSWS) - spike-wave takes up most of non-REM sleep, with regression",
+        "Structural focal epilepsy - fixed focus, abnormal exam or imaging",
+        "Centrotemporal spikes are also seen in some children who never have seizures, so the EEG alone is not diagnostic"
+      ],
+      "pearls": [
+        "Centrotemporal spikes are strongly activated by sleep; record drowsiness and sleep.",
+        "The spike is high amplitude, diphasic, with an aftergoing slow wave and a horizontal dipole.",
+        "The background is normal and the discharges can shift sides or be bilateral independent.",
+        "Mark any spike-wave that becomes near-continuous in sleep and describe how much of the sleep record it occupies."
+      ],
+      "related": [
+        "occipital",
+        "eses_csws",
+        "cae"
+      ],
+      "sceneNote": "The tracing shows high-amplitude centrotemporal spikes with a horizontal dipole on a normal background."
+    },
+    {
+      "id": "frontal_lobe_epilepsy",
+      "name": "Frontal lobe epilepsy",
+      "ageMin": 0,
+      "ageMax": 100,
+      "ageText": "Any age",
+      "seizure": "Brief frequent seizures, often from sleep, with hypermotor or tonic posturing and little confusion afterward",
+      "features": [
+        "focal-frontal"
+      ],
+      "pathophys": "Cortical malformation, tumour or injury, or a genetic cause (for example autosomal dominant sleep-related hypermotor epilepsy, formerly nocturnal frontal lobe epilepsy) in a large, deep and highly connected lobe.",
+      "eeg": "Interictal spikes may be absent or are frontal, with rapid bilateral spread. Frontal spikes show a phase reversal at the frontal electrode over the focus (F3 or F4) in the longitudinal chain, and at the same electrode in the transverse chain when it lies mid-chain. Ictal EEG is often obscured by muscle and movement artifact.",
+      "technologist": "Document the clinical event carefully with video. Artifact makes the ictal tracing hard to read, so mark the event time precisely.",
+      "scene": "synFLE",
+      "label": "Frontal lobe",
+      "group": "adolescent",
+      "eegShort": "Frontal spikes, often scarce; rapid bilateral spread.",
+      "classification": "Focal Epilepsy",
+      "patterns": [
+        "pattern_focal_spikes_frontal",
+        "pattern_focal_slowing"
+      ],
+      "activation": {
+        "sleep": "Sleep often increases frontal discharges; record it when allowed.",
+        "sleepDeprivation": "May increase the chance of capturing spikes or an event.",
+        "awake": "A waking record is often normal or shows only subtle changes."
+      },
+      "recording": {
+        "duration": "Seizures are brief and frequent, so a prolonged record or video-EEG that captures sleep may be needed.",
+        "montage": "Longitudinal and transverse bipolar chains, plus a referential montage. Add frontal and mesial coverage if the protocol allows."
+      },
+      "clinical": {
+        "manifestations": [
+          "Brief seizures, often several a day or night, usually from sleep",
+          "Hypermotor movements, tonic posturing or vocalization",
+          "Preserved or rapidly recovered awareness with little postictal confusion",
+          "Seizures can be mistaken for non-epileptic events or parasomnias"
+        ],
+        "triggers": [
+          "Sleep",
+          "Stress",
+          "Often none"
+        ],
+        "exam": "Usually normal.",
+        "imaging": "Often normal, but a cortical malformation, tumour or injury may be seen.",
+        "development": "Usually normal; depends on the cause."
+      },
+      "course": {
+        "onset": "Any age.",
+        "progression": "Depends on the cause; seizures often cluster in sleep.",
+        "outcome": "Variable; medication-resistant cases may be evaluated for surgery."
+      },
+      "differential": [
+        "Temporal lobe epilepsy - aura, longer events, automatisms and postictal confusion",
+        "Non-epileptic or psychogenic events - no EEG change, but remember that frontal seizures can have a normal scalp EEG",
+        "Sleep parasomnias - not clustered in the same stereotyped way",
+        "Generalized epilepsy - symmetric generalized bursts rather than a frontal focus"
+      ],
+      "pearls": [
+        "Scalp EEG can be normal or obscured by muscle and movement, so video and exact timing matter.",
+        "Frontal spikes may spread rapidly and appear bilateral, which can look generalized.",
+        "Seizures are brief, stereotyped and often arise from sleep.",
+        "Phase reversal at F3 or F4 in the longitudinal chain locates a frontal spike.",
+        "Mark the event with the clock time and describe the motor behaviour (for example posturing, thrashing, vocalization) and the patient's responsiveness."
+      ],
+      "related": [
+        "temporal_lobe_epilepsy",
+        "ige",
+        "jme"
+      ]
+    },
+    {
+      "id": "ige",
+      "label": "IGE",
+      "name": "Genetic generalized epilepsies (formerly idiopathic generalized epilepsies), overview",
+      "group": "adolescent",
+      "classification": "Genetic Generalized Epilepsy",
+      "ageText": "Childhood to young adulthood, depending on the syndrome",
+      "ageMin": 3,
+      "ageMax": 30,
+      "seizure": "Absence, myoclonic and generalized tonic-clonic seizures, in different combinations by syndrome",
+      "pathophys": "A group of epilepsies with a strong genetic contribution and no structural cause, in which thalamo-cortical networks produce brief generalized discharges.",
+      "eeg": "Normal background with generalized, symmetric, synchronous spike-and-wave or polyspike-and-wave bursts. The rate differs by syndrome: about 3 Hz in childhood absence epilepsy, faster and with polyspikes in JME, and quicker (often 4 to 5 Hz) in eyelid myoclonia with absences. Discharges are often more frequent in drowsiness, with sleep fragmenting them.",
+      "eegShort": "Generalized spike-wave and polyspike-wave on a normal background.",
+      "features": [
+        "gsw-3hz",
+        "polyspike"
+      ],
+      "patterns": [
+        "pattern_three_hz_gsw",
+        "pattern_polyspike_wave",
+        "pattern_slow_spike_wave"
+      ],
+      "technologist": "Choose activation for the likely syndrome as the request and protocol direct: hyperventilation and photic stimulation per protocol, plus sleep. Describe the discharges (rate, distribution, duration) and test responsiveness during bursts.",
+      "activation": {
+        "hyperventilation": "The most effective activation for childhood absence epilepsy; less so for JME.",
+        "photic": "Especially relevant in eyelid myoclonia with absences and in photosensitive patients; less so in childhood absence.",
+        "sleepDeprivation": "Often helpful, especially in the syndromes with convulsions or jerks on waking such as JME.",
+        "sleep": "Discharges are often more frequent in drowsiness and on waking; the bursts fragment in deeper sleep.",
+        "awake": "A routine awake record is often normal between seizures."
+      },
+      "recording": {
+        "duration": "Long enough for the planned activation and, when requested, sleep.",
+        "montage": "Referential and bipolar views to show the generalized distribution."
+      },
+      "clinical": {
+        "manifestations": [
+          "Typical absence: brief staring with loss of awareness",
+          "Myoclonic jerks, usually on waking",
+          "Generalized tonic-clonic seizures",
+          "A normal neurological exam and development are typical"
+        ],
+        "triggers": [
+          "Hyperventilation (absence)",
+          "Flashing lights (some)",
+          "Sleep deprivation",
+          "Awakening",
+          "Alcohol and fatigue (adolescents)"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Usually normal."
+      },
+      "course": {
+        "onset": "Childhood to young adulthood; the age is the best clue to the syndrome.",
+        "progression": "Depends on the syndrome; some remit with age, others persist for life.",
+        "outcome": "Most patients have a good outlook; the syndromes differ in how long treatment is needed."
+      },
+      "differential": [
+        "Symptomatic or developmental generalized epilepsy (e.g. Lennox-Gastaut) - abnormal background and slow generalized discharges",
+        "Focal epilepsy with bilateral spread - asymmetric onset or focal spikes",
+        "Progressive myoclonus epilepsies - slowed background and progressive decline",
+        "Non-epileptic events - no epileptiform change"
+      ],
+      "pearls": [
+        "IGE is an umbrella for childhood absence epilepsy, juvenile absence epilepsy, JME and GTCA, with eyelid myoclonia with absences sometimes grouped with them.",
+        "Match the activation to the likely syndrome: hyperventilation for absence, photic for photosensitive syndromes, sleep deprivation and awakening for JME.",
+        "Generalized, symmetric, synchronous discharges on a normal background separate IGE from focal and symptomatic epilepsies.",
+        "Count the rate of the burst: about 3 Hz fits childhood absence, faster rates and polyspikes suggest older-onset syndromes.",
+        "Current ILAE (2022) limits the IGE group to childhood absence, juvenile absence, juvenile myoclonic and generalized tonic-clonic seizures alone; eyelid myoclonia with absences is a related generalized epilepsy syndrome."
+      ],
+      "related": [
+        "cae",
+        "jae",
+        "jme",
+        "gtca",
+        "jeavons"
+      ],
+      "sceneNote": "Awake 12-year-old with a generalized 3.8 to 4.2 Hz spike-wave burst and a polyspike-wave complex.",
+      "scene": "synIGE"
+    },
+    {
+      "id": "temporal_lobe_epilepsy",
+      "name": "Mesial temporal lobe epilepsy",
+      "ageMin": 5,
+      "ageMax": 100,
+      "ageText": "Childhood to adulthood",
+      "seizure": "Rising epigastric aura, fear or deja vu, then staring, lip-smacking and hand automatisms with impaired awareness and later confusion",
+      "features": [
+        "focal-temporal"
+      ],
+      "pathophys": "Often hippocampal sclerosis, with neuronal loss and sprouting that make the circuit hyperexcitable.",
+      "eeg": "Interictal anterior temporal sharp waves with a maximum at F7/F8 or an anterior temporal electrode, more frequent in drowsiness and sleep, often with temporal slowing. Ictal onset is rhythmic theta (about 5 to 7 Hz) that grows in amplitude, slows and spreads to adjacent regions.",
+      "technologist": "Record sleep. Use the longitudinal chain to show the phase reversal at F7/F8 (Fp1-F7 and F7-T3), and a referential montage to show that F7 or F8 has the largest amplitude. During a seizure test responsiveness and describe behaviour.",
+      "scene": "synTLEInter",
+      "scene2": "synTLEIctal",
+      "label": "Mesial TLE",
+      "group": "adolescent",
+      "eegShort": "Anterior temporal sharp waves; ictal rhythmic theta.",
+      "classification": "Focal Epilepsy",
+      "patterns": [
+        "pattern_focal_spikes_temporal",
+        "pattern_focal_slowing"
+      ],
+      "activation": {
+        "sleep": "Drowsiness and light sleep often bring out or increase temporal sharp waves; record sleep if allowed.",
+        "sleepDeprivation": "Often helpful; may increase the chance of capturing spikes.",
+        "awake": "Waking spikes may be infrequent or absent, so a normal awake record does not exclude it.",
+        "hyperventilation": "Per protocol; it can enhance temporal slowing or spikes in some patients."
+      },
+      "recording": {
+        "duration": "Long enough to include sleep; a longer or prolonged record increases the chance of capturing seizures.",
+        "montage": "Longitudinal and transverse bipolar chains to show phase reversal, plus a referential montage to show the field. Include the anterior temporal (T1/T2 or equivalent) electrodes if the protocol allows, because they can show spikes that standard electrodes miss."
+      },
+      "clinical": {
+        "manifestations": [
+          "Aura: rising epigastric sensation, fear, deja vu or a smell",
+          "Behavioural arrest and staring with impaired awareness",
+          "Oral and hand automatisms, such as lip-smacking or fumbling",
+          "Contralateral dystonic posturing in some",
+          "Postictal confusion; may evolve to a bilateral tonic-clonic seizure"
+        ],
+        "triggers": [
+          "Sleep deprivation",
+          "Stress and fatigue",
+          "Often none"
+        ],
+        "exam": "Usually normal; memory complaints are common.",
+        "imaging": "MRI may show hippocampal sclerosis (mesial temporal sclerosis) or another lesion.",
+        "development": "Usually normal; a history of prolonged febrile seizures is common in the mesial form."
+      },
+      "course": {
+        "onset": "Most often in later childhood or the teens, with a possible seizure-free interval earlier.",
+        "progression": "Chronic; some patients stay refractory to medication and may be evaluated for surgery.",
+        "outcome": "Variable; patients with hippocampal sclerosis often have refractory seizures."
+      },
+      "differential": [
+        "Frontal lobe epilepsy - brief hypermotor events, often from sleep, with little postictal confusion",
+        "Occipital or parietal epilepsy - visual or sensory features and posterior spikes",
+        "Non-epileptic events - no EEG change and variable semiology",
+        "Benign temporal variants (wicket spikes, small sharp spikes) - not slowed, no aftergoing slow wave and not clustered"
+      ],
+      "pearls": [
+        "Anterior temporal sharp waves are maximal at F7 or F8 and more frequent in drowsiness and sleep.",
+        "Phase reversal at F7/F8 in the longitudinal chain locates the spike; the referential montage confirms the field.",
+        "Ictal onset is often rhythmic theta that builds in amplitude and slows as it spreads.",
+        "During a seizure, test responsiveness and describe automatisms with times for the reader.",
+        "Hippocampal sclerosis is the classic pathology of the mesial form."
+      ],
+      "related": [
+        "frontal_lobe_epilepsy",
+        "occipital",
+        "rolandic"
+      ]
+    },
+    {
+      "id": "jae",
+      "label": "Juvenile absence",
+      "name": "Juvenile absence epilepsy",
+      "group": "adolescent",
+      "classification": "Genetic Generalized Epilepsy",
+      "ageText": "8 to 20 years (peak 10 to 12)",
+      "ageMin": 8,
+      "ageMax": 20,
+      "seizure": "Typical absences, often less frequent than in childhood absence epilepsy, with generalized tonic-clonic seizures common and occasional myoclonic jerks",
+      "pathophys": "A genetically determined generalized epilepsy in which thalamocortical networks generate generalized spike-and-wave; the network mechanism overlaps with childhood absence epilepsy.",
+      "eeg": "Normal background with generalized, bilaterally synchronous spike-and-wave bursts, often slightly faster than 3 Hz (about 3.5 to 4.5 Hz) and sometimes with polyspikes. Bursts may last a few seconds to over 10 seconds.",
+      "eegShort": "Generalized spike-and-wave a little faster than 3 Hz on a normal background.",
+      "features": [
+        "gsw-3hz"
+      ],
+      "patterns": [
+        "pattern_three_hz_gsw"
+      ],
+      "technologist": "Test responsiveness during bursts and note the time and what was said. Perform hyperventilation, and record both awake and drowsy or sleep states.",
+      "activation": {
+        "hyperventilation": "Often helpful for provoking bursts, though less reliably than in childhood absence.",
+        "photic": "Occasionally brings out discharges; use the full protocol.",
+        "sleep": "May increase discharges; generalized tonic-clonic seizures are more likely near awakening.",
+        "sleepDeprivation": "Often increases the chance of capturing discharges.",
+        "awake": "Bursts may appear without provocation."
+      },
+      "recording": {
+        "duration": "Awake recording with hyperventilation and photic stimulation, plus drowsiness or sleep if possible.",
+        "montage": "Referential and bipolar views to show the generalized distribution."
+      },
+      "clinical": {
+        "manifestations": [
+          "Impaired awareness with staring, usually without marked automatisms",
+          "Absences are less frequent than in childhood absence epilepsy and can last longer",
+          "Generalized tonic-clonic seizures are common, often near waking",
+          "Myoclonic jerks may occur"
+        ],
+        "triggers": [
+          "Hyperventilation",
+          "Sleep loss",
+          "Awakening",
+          "Stress"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Usually normal."
+      },
+      "course": {
+        "onset": "From about 8 years through the teens; peak around puberty.",
+        "progression": "Absences tend to persist, and tonic-clonic seizures may continue into adulthood.",
+        "outcome": "Often remains lifelong or needs long-term follow-up; less likely to remit than childhood absence epilepsy."
+      },
+      "differential": [
+        "Childhood absence epilepsy - younger onset, more frequent absences, regular 3 Hz",
+        "Juvenile myoclonic epilepsy - myoclonic jerks on waking, polyspike-wave",
+        "Jeavons syndrome - eyelid myoclonia with eye closure sensitivity",
+        "Focal seizures with impaired awareness - different EEG and onset"
+      ],
+      "pearls": [
+        "The spike-and-wave is often a little faster than the 3 Hz of childhood absence.",
+        "Generalized tonic-clonic seizures are more common than in childhood absence epilepsy.",
+        "Hyperventilation and sleep-deprived studies are the usual activation tools."
+      ],
+      "related": [
+        "cae",
+        "jme",
+        "jeavons"
+      ],
+      "sceneNote": "The tracing shows a generalized spike-and-wave burst at about 3.6 to 4 Hz lasting about 5.6 seconds in an awake 14-year-old.",
+      "scene": "synJAE"
     },
     {
       "id": "jme",
@@ -328,49 +1467,143 @@
       "eeg": "Normal background with brief generalized polyspike-and-slow-wave complexes (a burst of 4 to 6 Hz polyspike-wave may repeat for 1 to 3 seconds), often frontal predominant, sometimes with a photoparoxysmal response. Bursts are often activated by sleep deprivation and by awakening.",
       "technologist": "Record on waking or after sleep deprivation if requested. Mark jerks with the time. Photic stimulation per protocol, stopping at the first sign of a photoparoxysmal discharge.",
       "scene": "synJME",
-      "detail": "jme",
       "label": "JME",
       "group": "adolescent",
-      "eegShort": "Generalized 4 to 6 Hz polyspike-wave bursts, often frontal predominant."
+      "eegShort": "Generalized 4 to 6 Hz polyspike-wave bursts, often frontal predominant.",
+      "classification": "Genetic Generalized Epilepsy",
+      "patterns": [
+        "pattern_three_hz_gsw",
+        "pattern_polyspike_wave"
+      ],
+      "activation": {
+        "sleepDeprivation": "Often very helpful. Recording soon after waking, when jerks and discharges are most likely, may increase the chance of capturing events.",
+        "sleep": "Include drowsiness and the awakening itself; discharges tend to cluster around sleep-wake transitions.",
+        "photic": "A photoparoxysmal response is seen in a sizeable minority. Run the protocol as written and stop at the first generalized discharge, because flashes can trigger a jerk or a convulsion.",
+        "hyperventilation": "Less productive than sleep deprivation, but still performed per protocol."
+      },
+      "recording": {
+        "duration": "Long enough to include drowsiness, sleep and a documented awakening; a routine awake-only record may be normal.",
+        "montage": "Use both referential and bipolar views so the generalized, symmetric distribution and the frontal emphasis can be shown."
+      },
+      "clinical": {
+        "manifestations": [
+          "Brief, bilateral, symmetric jerks of the shoulders and arms, most often shortly after waking; objects may be dropped",
+          "Generalized tonic-clonic seizures, often after waking or after sleep loss",
+          "Absence seizures in a minority",
+          "Consciousness is usually preserved during the jerks"
+        ],
+        "triggers": [
+          "Sleep deprivation",
+          "Awakening",
+          "Alcohol",
+          "Fatigue and stress",
+          "Flashing lights in photosensitive patients"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Normal intelligence and development in most patients."
+      },
+      "course": {
+        "onset": "Usually in the teenage years, with jerks often appearing before the first convulsion.",
+        "progression": "A lifelong tendency; the tendency is lifelong.",
+        "outcome": "Seizures are controlled in most patients with treatment, but a long-term course is typical."
+      },
+      "differential": [
+        "Childhood and juvenile absence epilepsy - absence is the main seizure type and there are no myoclonic jerks",
+        "Epilepsy with generalized tonic-clonic seizures alone - no jerks or absences",
+        "Progressive myoclonus epilepsies - abnormal exam, slowed background and a progressive course",
+        "Frontal lobe seizures - focal onset and asymmetric features rather than symmetric generalized bursts"
+      ],
+      "pearls": [
+        "The EEG finding to look for is generalized polyspike-and-wave, usually faster than the 3 Hz spike-and-wave of childhood absence epilepsy.",
+        "Jerks cluster after waking, so recording after sleep or at awakening is the key activation.",
+        "Mark the exact time of any jerk so the reader can match it to the polyspike burst.",
+        "Photic stimulation can provoke discharges and convulsions; stop at the first discharge.",
+        "The background is normal between bursts, which separates JME from symptomatic generalized epilepsy."
+      ],
+      "related": [
+        "ige",
+        "cae",
+        "jae",
+        "gtca",
+        "jeavons"
+      ]
     },
     {
-      "id": "tle",
-      "name": "Mesial temporal lobe epilepsy",
+      "id": "gtca",
+      "label": "GTCA",
+      "name": "Epilepsy with generalized tonic-clonic seizures alone (GTCA)",
+      "group": "adolescent",
+      "classification": "Genetic Generalized Epilepsy",
+      "ageText": "Peak in adolescence; onset from about 5 to 40 years",
       "ageMin": 5,
-      "ageMax": 100,
-      "ageText": "Childhood to adulthood",
-      "seizure": "Rising epigastric aura, fear or deja vu, then staring, lip-smacking and hand automatisms with impaired awareness and later confusion",
+      "ageMax": 40,
+      "seizure": "Generalized tonic-clonic seizures are the only seizure type, often shortly after waking or from sleep",
+      "pathophys": "A genetic generalized epilepsy in which cortico-thalamic networks are hyperexcitable. Sleep loss, alcohol and fatigue lower the threshold.",
+      "eeg": "Normal background with brief generalized spike-and-wave or polyspike-and-wave bursts, typically 3 to 6 Hz, symmetric and synchronous. Discharges are often more frequent in drowsiness and after waking. During a convulsion, the tonic phase brings generalized fast activity, followed by rhythmic bursts and then postictal slowing.",
+      "eegShort": "Generalized 3 to 6 Hz spike-wave and polyspike-wave on a normal background.",
       "features": [
-        "focal-temporal"
+        "gsw-3hz",
+        "polyspike"
       ],
-      "pathophys": "Often hippocampal sclerosis, with neuronal loss and sprouting that make the circuit hyperexcitable.",
-      "eeg": "Interictal anterior temporal sharp waves with a maximum at F7/F8 or an anterior temporal electrode, more frequent in drowsiness and sleep, often with temporal slowing. Ictal onset is rhythmic theta (about 5 to 7 Hz) that grows in amplitude, slows and spreads to adjacent regions.",
-      "technologist": "Record sleep. Use the longitudinal chain to show the phase reversal at F7/F8 (Fp1-F7 and F7-T3), and a referential montage to show that F7 or F8 has the largest amplitude. During a seizure test responsiveness and describe behaviour.",
-      "scene": "synTLEInter",
-      "scene2": "synTLEIctal",
-      "detail": "temporal_lobe_epilepsy",
-      "label": "Mesial TLE",
-      "group": "adolescent",
-      "eegShort": "Anterior temporal sharp waves; ictal rhythmic theta."
-    },
-    {
-      "id": "fle",
-      "name": "Frontal lobe epilepsy",
-      "ageMin": 0,
-      "ageMax": 100,
-      "ageText": "Any age",
-      "seizure": "Brief frequent seizures, often from sleep, with hypermotor or tonic posturing and little confusion afterward",
-      "features": [
-        "focal-frontal"
+      "patterns": [
+        "pattern_three_hz_gsw",
+        "pattern_polyspike_wave"
       ],
-      "pathophys": "Cortical malformation, tumour or injury, or a genetic cause (for example nocturnal frontal lobe epilepsy) in a large, deep and highly connected lobe.",
-      "eeg": "Interictal spikes may be absent or are frontal, with rapid bilateral spread. Frontal spikes show a phase reversal at the frontal electrode over the focus (F3 or F4) in the longitudinal chain, and at the same electrode in the transverse chain when it lies mid-chain. Ictal EEG is often obscured by muscle and movement artifact.",
-      "technologist": "Document the clinical event carefully with video. Artifact makes the ictal tracing hard to read, so mark the event time precisely.",
-      "scene": "synFLE",
-      "detail": "frontal_lobe_epilepsy",
-      "label": "Frontal lobe",
-      "group": "adolescent",
-      "eegShort": "Frontal spikes, often scarce; rapid bilateral spread."
+      "technologist": "Record drowsiness, sleep and an awakening if the protocol allows. Perform activation per protocol and mark any clinical event with its time. If a convulsion occurs, keep the patient safe, describe the onset and the behaviour, and keep recording through the postictal period.",
+      "activation": {
+        "sleepDeprivation": "Often helpful; recording after sleep loss and around awakening may increase the chance of capturing discharges.",
+        "sleep": "Include drowsiness and the awakening, since discharges and seizures cluster there.",
+        "hyperventilation": "Per protocol; it may bring out generalized discharges.",
+        "photic": "Per protocol; a photoparoxysmal response is less typical than in JME but is possible.",
+        "awake": "A waking record may be normal or show only occasional bursts."
+      },
+      "recording": {
+        "duration": "Long enough to include sleep and awakening; a short awake record can be normal.",
+        "montage": "Use referential and bipolar views to show the generalized, symmetric distribution."
+      },
+      "clinical": {
+        "manifestations": [
+          "Generalized tonic-clonic seizure with loss of awareness, stiffening, then rhythmic jerking",
+          "Seizures often occur soon after waking or during sleep",
+          "By definition no absence seizures or myoclonic jerks (a careful history is needed to be sure)"
+        ],
+        "triggers": [
+          "Sleep deprivation",
+          "Awakening",
+          "Alcohol",
+          "Fatigue and stress"
+        ],
+        "exam": "Normal.",
+        "imaging": "Normal.",
+        "development": "Normal."
+      },
+      "course": {
+        "onset": "Mostly in the second decade, with a wide range.",
+        "progression": "Variable; some patients stay free of seizures, in others the tendency persists.",
+        "outcome": "Seizures are controlled in many patients; some patients later reveal myoclonic or absence seizures, which changes the syndrome label."
+      },
+      "differential": [
+        "Juvenile myoclonic epilepsy - the history includes myoclonic jerks, and polyspike-wave is usually present",
+        "Childhood or juvenile absence epilepsy - absence seizures are a defining feature",
+        "Focal epilepsy with secondary generalization - focal onset or focal spikes, and asymmetry",
+        "Convulsive syncope or non-epileptic events - no epileptiform change on EEG"
+      ],
+      "pearls": [
+        "GTCA means convulsions only: no absences and no myoclonic jerks.",
+        "Seizures cluster around awakening, so recording drowsiness and the awakening adds value.",
+        "The interictal EEG may be normal; a normal record does not exclude the syndrome.",
+        "During a convulsion, muscle artifact hides the cortical rhythm, so the clinical description and timing carry the information.",
+        "The normal background and normal exam and imaging separate it from symptomatic generalized epilepsy."
+      ],
+      "related": [
+        "jme",
+        "ige",
+        "jae",
+        "cae"
+      ],
+      "sceneNote": "Awake 17-year-old with a generalized 4 to 4.6 Hz spike-wave burst and a polyspike-wave complex on a normal background.",
+      "scene": "synGTCA"
     }
   ],
   "patterns": [
@@ -697,8 +1930,53 @@
         "eeg": "Early: normal or mild slowing. After regression: slowed background, loss of normal sleep features, and spikes that are often centrotemporal and more frequent in sleep. Rhythmic hand stereotypies can produce rhythmic artifact.",
         "technologist": "Note the hand movements and the time they occur so the reader does not mistake rhythmic artifact for a seizure. Record sleep, and mark seizures, apnea or breath-holding spells with times.",
         "scene": "genRett",
-        "sceneNote": "Slow background with centrocentral spikes in sleep.",
-        "detail": "rett"
+        "sceneNote": "Slow background with centrotemporal spikes in sleep.",
+        "clinicalDetail": {
+          "manifestations": [
+            "Mostly girls, with normal-appearing early development then regression",
+            "Loss of purposeful hand use and loss of spoken language",
+            "Repetitive hand-wringing or hand-washing movements",
+            "Slowing of head growth and gait abnormalities",
+            "Breathing irregularity (breath-holding, hyperventilation), which can mimic seizures",
+            "Seizures in most, including focal and generalized types"
+          ],
+          "triggers": [
+            "Illness and fever",
+            "Sleep disruption"
+          ],
+          "exam": "Abnormal: hand stereotypies, hypotonia then rigidity, gait problems.",
+          "imaging": "Usually normal or shows mild reduction in brain volume.",
+          "development": "Regression after an initial period of apparently normal development."
+        },
+        "course": {
+          "onset": "Regression usually begins between about 6 and 18 months of age; seizures often follow in early childhood.",
+          "progression": "Staged: regression, a plateau, then slow motor decline later.",
+          "outcome": "Lifelong severe disability; most patients survive into adulthood, with ongoing care needs."
+        },
+        "differential": [
+          "Angelman syndrome - happy demeanour and frontal rhythmic delta, no regression after normal development",
+          "Lennox-Gastaut syndrome - tonic seizures and slow spike-wave rather than hand stereotypies",
+          "Autism spectrum disorder - no breathing irregularity or hand stereotypies of this kind",
+          "Non-epileptic events - breath-holding and stereotypies can mimic seizures"
+        ],
+        "pearls": [
+          "The background slows after regression and sleep features fade, so describe the background carefully.",
+          "Rhythmic hand movements can produce rhythmic artifact; mark them and describe the time so the reader does not mistake them for seizures.",
+          "Breath-holding and apnea spells are often not seizures; document with video and time.",
+          "Spikes are often centrotemporal and more frequent in sleep, so record sleep."
+        ],
+        "related": [
+          "angelman",
+          "lennox_gastaut"
+        ],
+        "activation": {
+          "sleep": "Record sleep; spikes are often more frequent in sleep.",
+          "awake": "Record with video and mark the hand movements."
+        },
+        "recording": {
+          "duration": "Long enough to include awake and sleep and to capture typical spells.",
+          "montage": "Referential and bipolar views to show the centrotemporal spikes and distinguish them from artifact. Add respiration and video if available."
+        }
       },
       {
         "id": "ube3a",
@@ -713,7 +1991,54 @@
         "technologist": "Describe the amplitude and frequency, the frontal emphasis, and the effect of eye closure. Laughing and movement artifact are frequent, so mark them.",
         "scene": "synAngelman",
         "sceneNote": "Frontal-predominant rhythmic delta with spikes.",
-        "detail": "angelman"
+        "clinicalDetail": {
+          "manifestations": [
+            "Severe speech impairment, ataxia and jerky movements",
+            "A happy demeanour with frequent laughter and smiling",
+            "Developmental delay evident by the second half of the first year",
+            "Seizures in most, often beginning before age 3, including atypical absence, myoclonic and tonic-clonic seizures",
+            "Sleep disturbance"
+          ],
+          "triggers": [
+            "Fever or illness",
+            "Sleep loss",
+            "Possibly eye closure for the posterior spikes"
+          ],
+          "exam": "Abnormal: ataxia, tremulous movements, absent speech.",
+          "imaging": "Usually normal or non-specific.",
+          "development": "Severe delay."
+        },
+        "course": {
+          "onset": "Delay is noticed in infancy; seizures often begin in the first years of life.",
+          "progression": "Lifelong; seizures can be difficult to control in early childhood and often become less severe in adulthood.",
+          "outcome": "Lifelong need for care, with severe speech impairment."
+        },
+        "differential": [
+          "Rett syndrome - regression after early normal development and hand stereotypies",
+          "Lennox-Gastaut syndrome - tonic seizures and slow spike-wave, without the happy demeanour",
+          "Other genetic developmental and epileptic encephalopathies - different clinical picture",
+          "Cerebral palsy or non-specific developmental delay - no characteristic rhythmic delta"
+        ],
+        "pearls": [
+          "Large, rhythmic delta at about 2 to 3 Hz, frontally maximal, is the characteristic EEG feature and can precede seizures.",
+          "Posterior spikes triggered by eye closure are a described feature, so mark eye-open and eye-closed periods.",
+          "Laughing, tremor and movement artifact are frequent; mark them with times.",
+          "The EEG can be abnormal before seizures start, so the finding supports but never replaces genetic testing."
+        ],
+        "related": [
+          "rett",
+          "lennox_gastaut",
+          "atypical_absence"
+        ],
+        "activation": {
+          "sleep": "Record sleep; the EEG changes may be easier to see and discharges may increase.",
+          "photic": "Per protocol, with video; eye closure effects are worth documenting.",
+          "awake": "Awake and sleep records are both informative; the frontal rhythmic delta is present awake."
+        },
+        "recording": {
+          "duration": "Long enough to include awake, eye-open and eye-closed periods and sleep.",
+          "montage": "Referential and bipolar views to show the frontal emphasis and posterior spikes. Reduce sensitivity if the amplitude is large."
+        }
       },
       {
         "id": "slc2a1",
@@ -754,7 +2079,52 @@
         "technologist": "Use a lower sensitivity when the amplitude is high, and describe the fast rhythm and where it is largest. Mark spasms with times.",
         "scene": "genLissencephaly",
         "sceneNote": "Generalized high-amplitude fast activity.",
-        "detail": "lissencephaly"
+        "clinicalDetail": {
+          "manifestations": [
+            "Infantile spasms, often in the first year",
+            "Other seizure types appear later, including tonic and focal seizures",
+            "Severe developmental delay and hypotonia",
+            "Feeding difficulty",
+            "Smooth brain (agyria-pachygyria) or, in subcortical band heterotopia, a band of misplaced neurons in the white matter"
+          ],
+          "triggers": [
+            "Often spontaneous",
+            "Sleep and awakening for spasms"
+          ],
+          "exam": "Abnormal: hypotonia, microcephaly in many, and spasticity later.",
+          "imaging": "MRI shows a thick, smooth cortex with few gyri (agyria-pachygyria) or a subcortical band of gray matter.",
+          "development": "Severe delay."
+        },
+        "course": {
+          "onset": "Infancy; spasms usually begin in the first year.",
+          "progression": "Persistent epilepsy and severe neurological impairment.",
+          "outcome": "Severe, with a shortened life expectancy in the most severe forms; milder forms exist, especially the band heterotopia."
+        },
+        "differential": [
+          "Infantile epileptic spasms syndrome (West syndrome) from other causes - hypsarrhythmia and spasms, but a different MRI",
+          "Lennox-Gastaut syndrome - slow spike-wave on a different background and no structural smooth brain",
+          "Other malformations of cortical development - different MRI findings",
+          "Normal fast activity in drowsiness - seen in healthy people but at a much lower amplitude"
+        ],
+        "pearls": [
+          "Very high-amplitude generalized fast activity (about 10 to 20 Hz) in an infant should be described and brought to the reader's attention.",
+          "Hypsarrhythmia and multifocal spikes can follow, so describe the background and any spasms with times.",
+          "Reduce the sensitivity when the amplitude is very high so the waveforms are not clipped.",
+          "MRI, not EEG, shows the malformation; the EEG supports but does not identify it."
+        ],
+        "related": [
+          "west_syndrome",
+          "lennox_gastaut",
+          "ohtahara"
+        ],
+        "activation": {
+          "sleep": "Record sleep; sleep may fragment or change the abnormal activity.",
+          "awake": "Record awake and asleep to show the fast activity, any hypsarrhythmia and spasms."
+        },
+        "recording": {
+          "duration": "Long enough to capture sleep and awake states and any spasms.",
+          "montage": "Referential and bipolar views; lower the sensitivity for the high amplitude and note the location of maximal fast activity."
+        }
       },
       {
         "id": "lgi1",

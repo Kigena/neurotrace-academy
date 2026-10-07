@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import syndromesData from "../data/syndromes_v2.json";
+import neuroData from "../data/neuroSyndromes.json";
 
 function CaseCard({ eegCase, progress }) {
   const difficultyColors = {
@@ -60,14 +60,14 @@ function CaseCard({ eegCase, progress }) {
       {eegCase.syndromeIds && eegCase.syndromeIds.length > 0 && (
         <div className="mt-2 flex flex-wrap gap-1">
           {eegCase.syndromeIds.slice(0, 2).map((syndromeId) => {
-            const syndrome = syndromesData.find((s) => s.id === syndromeId);
+            const syndrome = neuroData.syndromes.find((s) => s.id === syndromeId);
             if (!syndrome) return null;
             return (
               <span
                 key={syndromeId}
                 className="text-[10px] px-1.5 py-0.5 rounded bg-purple-50 text-purple-700 font-medium"
               >
-                {syndrome.name.split("(")[0].trim()}
+                {syndrome.label}
               </span>
             );
           })}

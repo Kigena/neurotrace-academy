@@ -93,7 +93,7 @@ function Navbar() {
             <NavLink to="/patterns" className={navLinkClasses}>
               Patterns
             </NavLink>
-            <NavLink to="/syndromes" className={navLinkClasses}>
+            <NavLink to="/neuro-syndromes" className={navLinkClasses}>
               Syndromes
             </NavLink>
             <NavLink to="/cases" className={navLinkClasses}>
@@ -181,7 +181,7 @@ function Navbar() {
             <NavLink to="/patterns" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Patterns
             </NavLink>
-            <NavLink to="/syndromes" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
+            <NavLink to="/neuro-syndromes" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>
               Syndromes
             </NavLink>
             <NavLink to="/cases" className={navLinkClasses} onClick={() => setIsMenuOpen(false)}>

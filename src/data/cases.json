@@ -210,7 +210,7 @@
         },
         {
           "label": "Syndrome: Childhood Absence Epilepsy",
-          "to": "/syndromes/cae"
+          "to": "/neuro-syndromes?tab=syndromes&id=cae"
         },
         {
           "label": "Standards: Activation Procedures",
@@ -341,7 +341,7 @@
         },
         {
           "label": "Syndrome: West Syndrome",
-          "to": "/syndromes/west_syndrome"
+          "to": "/neuro-syndromes?tab=syndromes&id=west_syndrome"
         }
       ]
     },
@@ -738,7 +738,7 @@
         },
         {
           "label": "Syndrome: Juvenile Myoclonic Epilepsy",
-          "to": "/syndromes/jme"
+          "to": "/neuro-syndromes?tab=syndromes&id=jme"
         }
       ]
     },
@@ -878,7 +878,7 @@
         },
         {
           "label": "Syndrome: Lennox-Gastaut Syndrome",
-          "to": "/syndromes/lennox_gastaut"
+          "to": "/neuro-syndromes?tab=syndromes&id=lennox_gastaut"
         }
       ]
     },
@@ -1008,7 +1008,7 @@
         },
         {
           "label": "Syndrome: SeLECTS (Rolandic)",
-          "to": "/syndromes/rolandic"
+          "to": "/neuro-syndromes?tab=syndromes&id=rolandic"
         }
       ]
     },
@@ -1142,7 +1142,7 @@
         },
         {
           "label": "Syndrome: Dravet Syndrome",
-          "to": "/syndromes/dravet"
+          "to": "/neuro-syndromes?tab=syndromes&id=dravet"
         },
         {
           "label": "Domain III: Activation Procedures",
@@ -1278,7 +1278,7 @@
         },
         {
           "label": "Syndrome: ESES/CSWS",
-          "to": "/syndromes/eses_csws"
+          "to": "/neuro-syndromes?tab=syndromes&id=eses_csws"
         }
       ]
     },
@@ -1411,7 +1411,7 @@
         },
         {
           "label": "Syndrome: Jeavons Syndrome",
-          "to": "/syndromes/jeavons"
+          "to": "/neuro-syndromes?tab=syndromes&id=jeavons"
         }
       ]
     },
@@ -1543,7 +1543,7 @@
         },
         {
           "label": "Syndrome: Frontal Lobe Epilepsy",
-          "to": "/syndromes/frontal_lobe_epilepsy"
+          "to": "/neuro-syndromes?tab=syndromes&id=frontal_lobe_epilepsy"
         }
       ]
     },
@@ -1679,7 +1679,7 @@
         },
         {
           "label": "Syndrome: Epilepsy with Myoclonic-Atonic Seizures (Doose / MAE)",
-          "to": "/syndromes/doose_mae"
+          "to": "/neuro-syndromes?tab=syndromes&id=doose_mae"
         }
       ]
     },
@@ -1813,7 +1813,7 @@
         },
         {
           "label": "Syndrome: Ohtahara Syndrome",
-          "to": "/syndromes/ohtahara"
+          "to": "/neuro-syndromes?tab=syndromes&id=ohtahara"
         }
       ]
     },
@@ -1942,7 +1942,7 @@
         },
         {
           "label": "Syndrome: Myoclonic Epilepsy in Infancy (MEI, formerly BMEI)",
-          "to": "/syndromes/bmei"
+          "to": "/neuro-syndromes?tab=syndromes&id=bmei"
         }
       ]
     },
@@ -1963,7 +1963,7 @@
         "sleep"
       ],
       "syndromeIds": [
-        "landau_kleffner"
+        "eses_csws"
       ],
       "patternIds": [],
       "patient": {
@@ -2075,11 +2075,7 @@
         },
         {
           "label": "Syndrome: Landau-Kleffner Syndrome",
-          "to": "/syndromes/landau_kleffner"
-        },
-        {
-          "label": "Syndrome: ESES/CSWS",
-          "to": "/syndromes/eses_csws"
+          "to": "/neuro-syndromes?tab=syndromes&id=eses_csws"
         }
       ]
     },
@@ -5058,7 +5054,7 @@
         },
         {
           "label": "Temporal Lobe Epilepsy",
-          "to": "/syndromes/temporal_lobe_epilepsy"
+          "to": "/neuro-syndromes?tab=syndromes&id=temporal_lobe_epilepsy"
         }
       ]
     },
@@ -9031,7 +9027,7 @@
         },
         {
           "label": "Syndrome: Lennox-Gastaut",
-          "to": "/syndromes/lennox_gastaut"
+          "to": "/neuro-syndromes?tab=syndromes&id=lennox_gastaut"
         }
       ]
     },
@@ -10480,7 +10476,7 @@
         },
         {
           "label": "Syndrome: Childhood Absence Epilepsy",
-          "to": "/syndromes/cae"
+          "to": "/neuro-syndromes?tab=syndromes&id=cae"
         },
         {
           "label": "Domain III: Activation Procedures",
@@ -18752,7 +18748,7 @@
         },
         {
           "label": "Childhood absence epilepsy",
-          "to": "/syndromes/cae"
+          "to": "/neuro-syndromes?tab=syndromes&id=cae"
         },
         {
           "label": "Domain I: Neurophysiology of seizures",
@@ -19049,11 +19045,11 @@
         },
         {
           "label": "Infantile epileptic spasms syndrome (West)",
-          "to": "/syndromes/west_syndrome"
+          "to": "/neuro-syndromes?tab=syndromes&id=west_syndrome"
         },
         {
           "label": "Early infantile DEE (Ohtahara)",
-          "to": "/syndromes/ohtahara"
+          "to": "/neuro-syndromes?tab=syndromes&id=ohtahara"
         }
       ]
     },
@@ -19369,7 +19365,7 @@
         },
         {
           "label": "Rolandic epilepsy",
-          "to": "/syndromes/rolandic"
+          "to": "/neuro-syndromes?tab=syndromes&id=rolandic"
         },
         {
           "label": "Domain III: Focal and generalized patterns",
@@ -19688,7 +19684,7 @@
         },
         {
           "label": "Temporal lobe epilepsy",
-          "to": "/syndromes/temporal_lobe_epilepsy"
+          "to": "/neuro-syndromes?tab=syndromes&id=temporal_lobe_epilepsy"
         },
         {
           "label": "Domain III: Ictal EEG seizure patterns",
@@ -19990,11 +19986,11 @@
         },
         {
           "label": "Frontal lobe epilepsy",
-          "to": "/syndromes/frontal_lobe_epilepsy"
+          "to": "/neuro-syndromes?tab=syndromes&id=frontal_lobe_epilepsy"
         },
         {
           "label": "Juvenile myoclonic epilepsy",
-          "to": "/syndromes/jme"
+          "to": "/neuro-syndromes?tab=syndromes&id=jme"
         }
       ]
     },
@@ -20247,11 +20243,11 @@
         },
         {
           "label": "Lennox-Gastaut syndrome",
-          "to": "/syndromes/lennox_gastaut"
+          "to": "/neuro-syndromes?tab=syndromes&id=lennox_gastaut"
         },
         {
           "label": "DEE-SWAS (ESES / CSWS)",
-          "to": "/syndromes/eses_csws"
+          "to": "/neuro-syndromes?tab=syndromes&id=eses_csws"
         }
       ]
     },
@@ -21012,7 +21008,7 @@
         },
         {
           "label": "Angelman syndrome",
-          "to": "/syndromes/angelman"
+          "to": "/neuro-syndromes?tab=genetics&id=ube3a"
         },
         {
           "label": "Domain III: EEG syndromes",
@@ -21245,11 +21241,11 @@
         },
         {
           "label": "Rett syndrome",
-          "to": "/syndromes/rett"
+          "to": "/neuro-syndromes?tab=genetics&id=mecp2"
         },
         {
           "label": "Lissencephaly",
-          "to": "/syndromes/lissencephaly"
+          "to": "/neuro-syndromes?tab=genetics&id=lis1dcx"
         }
       ]
     }

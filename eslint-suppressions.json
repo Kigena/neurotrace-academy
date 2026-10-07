@@ -84,7 +84,7 @@
   },
   "src/pages/CaseDetail.jsx": {
     "no-unused-vars": {
-      "count": 3
+      "count": 2
     }
   },
   "src/pages/Chat.jsx": {
@@ -115,11 +115,6 @@
   "src/pages/Patterns.jsx": {
     "react-hooks/set-state-in-effect": {
       "count": 2
-    }
-  },
-  "src/pages/SyndromeDetail.jsx": {
-    "react-hooks/rules-of-hooks": {
-      "count": 1
     }
   },
   "src/pages/cases/ShareCase.jsx": {

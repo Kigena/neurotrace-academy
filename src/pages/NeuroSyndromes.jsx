@@ -7,6 +7,8 @@ import scenes from "../data/syndromeScenes.json";
 import casesData from "../data/cases.json";
 import { ELECTRODES } from "../eeg/generator";
 import { FEATURES, matchSyndromes } from "../eeg/syndromeMatch";
+import SyndromeBrowser from "../components/neuro/SyndromeBrowser.jsx";
+import ContextualAI from "../components/ContextualAI.jsx";
 
 /**
  * Neuroanatomy, pathophysiology and syndromes, each tied to a NeuroLinea synthetic tracing.
@@ -101,7 +103,7 @@ function Overview({ go }) {
     ["Anatomy", "lobes, electrodes, arteries", "Which cortex lies under which electrode, what each lobe does, and which artery supplies it.", "anatomy"],
     ["Pathophysiology", "generators and mechanisms", "How the scalp EEG is made, why delta means deafferentation, and what happens in a spike, a seizure and an absence.", "physiology"],
     ["Regions and lesions", "a lesion gives a pattern", "For every lobe: the deficit, the usual EEG change, the seizure semiology and a recording to study.", "regions"],
-    ["Syndromes", "age plus pattern", "Eleven epilepsy syndromes in age order with seizure type, mechanism, EEG findings and tracings.", "syndromes"],
+    ["Syndromes", "age plus pattern", "Every epilepsy syndrome in age order with mechanism, EEG, activation advice, clinical picture, differential and a tracing.", "syndromes"],
     ["Genetics and neurocutaneous", "genes and skin signs", "Tuberous sclerosis, neurofibromatosis, Sturge-Weber and the main epilepsy genes, each with its EEG and a tracing where one is honest.", "genetics"],
     ["Encephalopathy patterns", "periodic and unusual rhythms", "Periodic discharges, alpha coma and drug beta, with the situation each one points to.", "patterns"],
     ["Syndrome finder", "age + feature", "Enter the age and the main EEG feature and see which syndromes fit.", "finder"],
@@ -229,81 +231,8 @@ function Regions() {
   );
 }
 
-function SyndromeCard({ s }) {
-  const [show2, setShow2] = useState(false);
-  return (
-    <div className="space-y-4">
-      <Card title={s.name} tone="indigo">
-        <p><strong>Age:</strong> {s.ageText}</p>
-        <p><strong>Seizures:</strong> {s.seizure}</p>
-        <p><strong>Mechanism:</strong> {s.pathophys}</p>
-        <p><strong>EEG:</strong> {s.eeg}</p>
-        <p><strong>Your role:</strong> {s.technologist}</p>
-        {s.detail && (
-          <p>
-            <Link to={`/syndromes/${s.detail}`} className="font-semibold text-indigo-700 hover:underline">More detail on this syndrome →</Link>
-          </p>
-        )}
-      </Card>
-      {s.scene ? (
-        <>
-          {s.scene2 && (
-            <div className="flex gap-2">
-              <button type="button" onClick={() => setShow2(false)} className={`rounded-md border px-3 py-1.5 text-sm font-semibold ${!show2 ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-300 bg-white text-slate-700"}`}>
-                {s.id === "west" ? "Hypsarrhythmia" : s.id === "lgs" ? "Slow spike-wave (awake)" : "Interictal"}
-              </button>
-              <button type="button" onClick={() => setShow2(true)} className={`rounded-md border px-3 py-1.5 text-sm font-semibold ${show2 ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-300 bg-white text-slate-700"}`}>
-                {s.id === "west" ? "A spasm" : s.id === "lgs" ? "Fast activity (sleep)" : "Ictal"}
-              </button>
-            </div>
-          )}
-          <EegTracing scene={scenes[show2 && s.scene2 ? s.scene2 : s.scene]} caption="NeuroLinea synthetic tracing of the typical pattern." />
-        </>
-      ) : (
-        <p className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">There is no tracing for this syndrome because its first EEG can be normal and the later changes are nonspecific.</p>
-      )}
-    </div>
-  );
-}
-
-function Syndromes() {
-  const [id, setId] = useState("west");
-  const s = data.syndromes.find((x) => x.id === id);
-  const groups = [
-    ["Neonate and infant", (x) => x.group === "infant"],
-    ["Childhood", (x) => x.group === "child"],
-    ["Adolescent and adult", (x) => x.group === "adolescent"],
-  ];
-  return (
-    <div className="space-y-5">
-      <p className="max-w-3xl text-slate-600">Syndromes are grouped by age of onset. Choose one to see its mechanism, EEG and a tracing. Compare the pattern with the age, because the same discharge means different things at different ages.</p>
-      <div className="space-y-3">
-        {groups.map(([label, test]) => (
-          <div key={label}>
-            <div className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</div>
-            <div className="flex flex-wrap gap-2">
-              {data.syndromes.filter(test).map((x) => (
-                <button
-                  key={x.id}
-                  type="button"
-                  onClick={() => setId(x.id)}
-                  aria-pressed={x.id === id}
-                  className={`rounded-md border px-3 py-1.5 text-sm font-semibold ${x.id === id ? "border-indigo-600 bg-indigo-600 text-white" : "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"}`}
-                >
-                  {x.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-      <SyndromeCard key={s.id} s={s} />
-      <Table
-        head={["Syndrome", "Age", "Defining EEG"]}
-        rows={data.syndromes.map((x) => [x.label, x.ageText, x.eegShort])}
-      />
-    </div>
-  );
+function Syndromes({ id, setId }) {
+  return <SyndromeBrowser syndromes={data.syndromes} scenes={scenes} selectedId={id} onSelect={setId} />;
 }
 
 function GeneCard({ s }) {
@@ -319,10 +248,26 @@ function GeneCard({ s }) {
         <p><strong>Mechanism:</strong> {s.mechanism}</p>
         <p><strong>EEG:</strong> {s.eeg}</p>
         <p><strong>Your role:</strong> {s.technologist}</p>
-        {s.detail && (
-          <p><Link to={`/syndromes/${s.detail}`} className="font-semibold text-indigo-700 hover:underline">More detail on this syndrome →</Link></p>
-        )}
       </Card>
+      {(s.clinicalDetail || s.course || s.activation || s.recording) && (
+        <Card title="Clinical course and recording">
+          {s.clinicalDetail?.manifestations && <div><strong>Features</strong><ul className="list-disc space-y-1 pl-5">{s.clinicalDetail.manifestations.map((x) => <li key={x}>{x}</li>)}</ul></div>}
+          {s.clinicalDetail?.development && <p><strong>Development:</strong> {s.clinicalDetail.development}</p>}
+          {s.course && <p><strong>Course:</strong> {[s.course.onset, s.course.progression, s.course.outcome].filter(Boolean).join(" ")}</p>}
+          {s.activation && Object.entries(s.activation).map(([k, v]) => <p key={k}><strong className="capitalize">{k.replace(/([A-Z])/g, " $1")}:</strong> {v}</p>)}
+          {s.recording && <p><strong>Recording:</strong> {[s.recording.duration, s.recording.montage].filter(Boolean).join(" ")}</p>}
+        </Card>
+      )}
+      {s.differential && s.differential.length > 0 && (
+        <Card title="Differential diagnosis (what the reader weighs it against)">
+          <ul className="list-disc space-y-1 pl-5">{s.differential.map((x) => <li key={x}>{x}</li>)}</ul>
+        </Card>
+      )}
+      {s.pearls && s.pearls.length > 0 && (
+        <Card title="Exam pearls">
+          <ul className="list-disc space-y-1 pl-5">{s.pearls.map((x) => <li key={x}>{x}</li>)}</ul>
+        </Card>
+      )}
       {key ? (
         <>
           {s.scene2 && (
@@ -343,10 +288,10 @@ function GeneCard({ s }) {
   );
 }
 
-function Genetics() {
+function Genetics({ id: idParam, setId }) {
   const gen = data.genetics;
-  const [id, setId] = useState("tsc");
-  const s = gen.items.find((x) => x.id === id);
+  const s = gen.items.find((x) => x.id === idParam) || gen.items[0];
+  const id = s.id;
   return (
     <div className="space-y-5">
       <p className="max-w-3xl text-slate-600">{gen.intro}</p>
@@ -500,7 +445,7 @@ function Practice() {
         <p>Questions on neuroanatomy, pathophysiology and syndromes are included in this app&apos;s practice questions. Start a quiz and choose the neuroanatomy and syndrome topics, or use Review Incorrect to revisit misses.</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <Link to="/quiz" className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Open quizzes</Link>
-          <Link to="/syndromes" className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">All syndromes</Link>
+          <Link to="/neuro-syndromes?tab=syndromes" className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">All syndromes</Link>
         </div>
       </Card>
     </div>
@@ -511,10 +456,12 @@ export default function NeuroSyndromes() {
   const [params, setParams] = useSearchParams();
   const raw = params.get("tab");
   const tab = TAB_IDS.has(raw) ? raw : "overview";
+  const itemId = params.get("id");
   const go = (id) => {
     setParams(id === "overview" ? {} : { tab: id }, { replace: false });
     window.scrollTo({ top: 0 });
   };
+  const select = (id) => setParams({ tab, id }, { replace: true });
 
   return (
     <div className="space-y-6">
@@ -554,13 +501,14 @@ export default function NeuroSyndromes() {
         {tab === "anatomy" && <Anatomy />}
         {tab === "physiology" && <Physiology />}
         {tab === "regions" && <Regions />}
-        {tab === "syndromes" && <Syndromes />}
-        {tab === "genetics" && <Genetics />}
+        {tab === "syndromes" && <Syndromes id={itemId} setId={select} />}
+        {tab === "genetics" && <Genetics id={itemId} setId={select} />}
         {tab === "patterns" && <Patterns />}
         {tab === "finder" && <Finder />}
         {tab === "mistakes" && <Mistakes />}
         {tab === "practice" && <Practice />}
       </div>
+      <ContextualAI context={{ page: "syndrome-detail", syndromeData: data.syndromes.find((x) => x.id === itemId) || null }} />
     </div>
   );
 }

@@ -157,7 +157,7 @@ async function buildResourceIndex() {
         resources.push({
             title: s.name,
             type: 'syndrome',
-            path: `/syndromes/${s.id}`,
+            path: `/neuro-syndromes?tab=syndromes&id=${s.id}`,
             topics: [s.category, ...(s.keywords || [])],
             preview: s.overview
         });
