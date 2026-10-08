@@ -1,12 +1,14 @@
 import { describe, expect, it } from "vitest";
 import neuro from "../../src/data/neurologyEssentials.json";
 import safety from "../../src/data/labSafety.json";
+import ethics from "../../src/data/professionalPractice.json";
 
 const KINDS = new Set(["text", "list", "table", "cards", "steps", "flow"]);
 
 describe.each([
   ["neurology essentials", neuro],
   ["lab safety", safety],
+  ["ethics and professional practice", ethics],
 ])("%s study guide", (_, data) => {
   it("has unique tabs whose sections match the renderer schema", () => {
     expect(data.title).toBeTruthy();

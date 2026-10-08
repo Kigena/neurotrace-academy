@@ -1,0 +1,851 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-07",
+  "bank": "challenge",
+  "focus": "hipaa-hitech-allergy-skin",
+  "description": "HIPAA Privacy and Security Rules, HITECH breach notification, allergy screening and skin integrity for EEG technologists. Text only; not yet medically verified.",
+  "totalQuestions": 30,
+  "questions": [
+    {
+      "id": "ch-hip-001",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "hipaa",
+        "phi",
+        "privacy-rule"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which item kept in the EEG reading system counts as protected health information (PHI) under HIPAA?",
+      "explanation": "PHI is individually identifiable health information held by a covered entity, so a recording tied to a name and date qualifies. A blank worksheet holds no patient information, an equipment manual is not health information about anyone, and a tracing properly de-identified under the Safe Harbor method is no longer PHI.",
+      "learningObjective": "Recognize what makes health information protected health information.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "A tracing stripped of every Safe Harbor identifier for teaching",
+        "A blank electrode measurement worksheet used for training",
+        "The amplifier service manual stored on the reading station",
+        "An EEG tracing labeled with the patient's name and test date"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-002",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "hipaa",
+        "minimum-necessary"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A scheduling clerk asks the EEG technologist for the patient's full neurology history and last EEG report so she can book a follow-up recording. What does the minimum necessary standard call for?",
+      "explanation": "For operations such as scheduling, the minimum necessary standard limits a use to what the task requires, here the order and scheduling details. Working for the same organization does not justify broader access, a confidentiality promise does not expand the need to know, and routine operations within the facility do not require a patient authorization.",
+      "learningObjective": "Apply the minimum necessary standard to internal workforce requests.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Send the full report if the clerk agrees to keep it confidential",
+        "Refuse to share anything until the patient signs an authorization",
+        "Send the full chart, since the clerk works for the same hospital",
+        "Share only the details the clerk needs to book the appointment"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-003",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "hipaa",
+        "authorization",
+        "tpo"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which disclosure of EEG information requires the patient's written HIPAA authorization rather than falling under treatment, payment or health care operations?",
+      "explanation": "Marketing use of PHI falls outside treatment, payment and operations and needs a signed authorization. Sending results to the ordering clinician is treatment, billing the insurer is payment, and internal quality review is a health care operation, so none of those needs a separate authorization.",
+      "learningObjective": "Distinguish TPO disclosures from those needing written authorization.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Sending the EEG report to the neurologist who ordered the study",
+        "Giving a device company seizure videos to use in its advertising",
+        "Submitting procedure codes to the insurer to bill for the study",
+        "Using report audits for the lab's internal quality program"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-004",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "hipaa",
+        "patient-rights",
+        "access"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "At the end of an ambulatory EEG hookup removal, the patient asks how she can get a copy of her EEG report. What is the most appropriate response from the technologist?",
+      "explanation": "HIPAA gives patients a right to access and obtain copies of their own records, and requests go through the facility's release-of-information process, which verifies identity and supplies the record properly. Saying the report belongs only to the physician or that a court order is needed is incorrect, and handing over raw data on a drive bypasses the facility's secure release process.",
+      "learningObjective": "Support a patient's right of access through the proper facility process.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Copy the raw study onto a flash drive for her to take home today",
+        "Explain that a court order is required before records are released",
+        "Point her to the facility's release-of-information process",
+        "Tell her the report belongs to the ordering doctor and not to her"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-005",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "hipaa",
+        "patient-rights",
+        "amendment"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A patient reads his EEG report and says the history section wrongly states he had a convulsion last month. Under the HIPAA Privacy Rule, what may he do?",
+      "explanation": "Patients may request an amendment to their records; the facility must act on the request and can accept or deny it in writing, with the patient able to submit a statement of disagreement. HIPAA does not grant a right to erase records, patients cannot alter the record directly, and the rule does give a route to challenge inaccurate information.",
+      "learningObjective": "State the patient's right to request amendment of health records.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Accept it, since patients cannot challenge clinical records",
+        "Submit an amendment request that the facility must answer",
+        "Edit the stored report himself through the patient portal",
+        "Have every record of the study erased from the hospital system"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-006",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "hipaa",
+        "notice-of-privacy-practices"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What is the Notice of Privacy Practices that a patient receives at registration?",
+      "explanation": "The Notice of Privacy Practices describes how the provider may use and disclose PHI, the patient's rights and the provider's duties. Providers make a good-faith effort to get written acknowledgment of receipt, but care is not conditioned on signing it. It is not an annual disclosure report to HHS and has nothing to do with pre-application safety checks.",
+      "learningObjective": "Describe the purpose of the Notice of Privacy Practices.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "A safety checklist reviewed before electrodes are applied to skin",
+        "A report sent to HHS each year listing every disclosure of records",
+        "A document explaining how PHI may be used and the patient's rights",
+        "A consent form that must be signed before any test can be performed"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-007",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "hipaa",
+        "incidental-disclosure"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In a semi-private room, the technologist quietly confirms the patient's name and date of birth before a routine EEG, with the curtain drawn. A visitor at the next bed overhears. How is this best classified?",
+      "explanation": "Identity confirmation is required for safety, and a disclosure that happens incidentally to a permitted use is allowed when reasonable safeguards and minimum necessary practices were followed, such as a lowered voice and a drawn curtain. It is not a breach requiring notification, the rule does not demand private rooms for every conversation, and visitors are not asked to sign confidentiality agreements.",
+      "learningObjective": "Recognize permitted incidental disclosures when reasonable safeguards are in place.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A breach that requires written notice to the patient within 60 days",
+        "An incidental disclosure allowed because reasonable safeguards were used",
+        "Allowed only after the visitor signs a confidentiality agreement",
+        "A violation, because identifiers may be spoken only in private rooms"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-008",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "hipaa",
+        "de-identification",
+        "safe-harbor",
+        "teaching"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A technologist prepares a seizure tracing for a teaching file using the Safe Harbor method. Which retained element keeps the file from counting as de-identified?",
+      "explanation": "Under Safe Harbor, all elements of dates directly related to the individual except the year, such as a full birth date, must be removed. Ages under 90 may be kept, technical settings like montage and sensitivity are not identifiers, and a clinical description is health information that can remain once identifiers are gone.",
+      "learningObjective": "Identify Safe Harbor identifiers that must be removed from teaching material.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The montage name and sensitivity listed on the screen",
+        "The full date of birth printed in the record header",
+        "The patient's age of 34 years shown in the header",
+        "The written description of the seizure semiology"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-009",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "hipaa",
+        "video-eeg",
+        "teaching",
+        "authorization"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A neurologist wants to show a video-EEG clip of a patient's seizure, with the face clearly visible, at a regional conference. Which approach meets HIPAA requirements?",
+      "explanation": "Full-face images are identifiers, so the clip remains PHI unless the face and other identifiers are removed. Presenting it outside treatment requires the patient's written authorization or proper de-identification under facility policy. Professional audiences are not exempt, cropping the name leaves the face, and a physician's verbal approval cannot replace patient authorization.",
+      "learningObjective": "Apply HIPAA to video-EEG clips used for education outside the care team.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Show it unchanged once the name is cropped from the EEG header",
+        "Get the patient's written authorization or remove the identifiers",
+        "Show it unchanged, because a professional audience is exempt",
+        "Show it after the attending physician gives verbal approval"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-010",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "social-media",
+        "confidentiality",
+        "professionalism"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A technologist posts an unusual EEG in a private online group of technologists. The name is cropped out, but the post mentions the hospital, the date of the study and the patient's rare syndrome. How should this be judged?",
+      "explanation": "Combining a facility, a date and a rare diagnosis can identify a patient even without a name, so posting it is an impermissible disclosure of PHI and a professionalism lapse. A private group is still outside the care team, cropping only the name does not de-identify the image, and the violation occurs when the information is posted, not when the patient finds out.",
+      "learningObjective": "Recognize indirect identifiers in social media posts about patients.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "An improper disclosure, because the details could identify the patient",
+        "Acceptable, since removing the name makes the image anonymous",
+        "Acceptable, since the group is closed to members of the public",
+        "An improper disclosure only if the patient later sees the post"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-011",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "texting",
+        "mobile-devices",
+        "security-rule"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "During an overnight study, the on-call physician asks the technologist to text a photo of the EEG screen from the technologist's personal phone. What is the best response?",
+      "explanation": "Sending PHI through standard texting on a personal device lacks the access controls, encryption and audit trail the facility relies on, so approved secure messaging or remote review is the right channel. Deleting the image afterward does not undo the transmission or the copies held by the carrier, cropping the name leaves other identifiers, and a phone passcode does not secure the message in transit.",
+      "learningObjective": "Choose approved secure channels for sharing EEG images.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Text the photo as long as the phone itself is locked with a passcode",
+        "Use the facility's approved secure messaging or remote viewing tool",
+        "Text the photo after cropping the patient's name out of the frame",
+        "Text the photo and delete it once the physician confirms receipt"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-012",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "family",
+        "phone-calls",
+        "confidentiality"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "The adult sister of a competent inpatient phones the EEG lab and asks whether her brother's EEG showed seizures. What should the technologist do?",
+      "explanation": "A competent adult controls who receives his information, and interpreting or releasing results is outside the technologist's role, so the call is redirected to the patient or the treating team. Sibling status does not grant access, informal impressions are still a disclosure and exceed technologist scope, and knowing a birth date does not establish authority to receive results.",
+      "learningObjective": "Respond to family requests for results within HIPAA and technologist scope.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Read the report once she correctly gives his date of birth",
+        "Give an informal impression but not the findings in the report",
+        "Decline to give results and refer her to the patient or care team",
+        "Share the results, since siblings are next of kin under HIPAA"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-013",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "physical-safeguards",
+        "workstation",
+        "monitoring"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "The long-term monitoring station shows live patient video and names on a screen that faces an open hallway used by visitors. What is the appropriate fix?",
+      "explanation": "Workstation placement is a reasonable safeguard: angling the display away from public view or using a privacy screen protects PHI without interrupting monitoring. Dimming the screen leaves it readable and harder for staff to use, a sign does not prevent viewing, and continuous monitoring and privacy can both be achieved with simple placement changes.",
+      "learningObjective": "Apply physical safeguards to monitoring displays in public areas.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Lower the screen brightness during visiting hours each day",
+        "Post a sign, as policy allows, asking visitors not to look at the monitors",
+        "Turn the screen away or add a privacy filter as policy allows",
+        "Leave it as is, since monitoring takes priority over privacy"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-014",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "fax",
+        "misdirected-phi",
+        "breach"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A technologist realizes an EEG report was faxed to a wrong number that was one digit off. What should the technologist do next?",
+      "explanation": "A misdirected fax is a possible breach that the privacy or compliance officer must assess, including a risk assessment and any required notification, so prompt internal reporting comes first. Writing the error into the clinical report is not the incident process, waiting delays the assessment the rule expects, and sending more faxes to an unknown number repeats the exposure without proper follow-up.",
+      "learningObjective": "Report a misdirected disclosure through the facility privacy process.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Notify the privacy officer promptly so the incident can be assessed",
+        "Send a second fax to the same number asking for it to be shredded",
+        "Note the error in the EEG report itself and continue with the day",
+        "Wait to see whether the recipient calls before telling anyone"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-015",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "security-rule",
+        "technical-safeguards",
+        "automatic-logoff"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which measure is a technical safeguard under the HIPAA Security Rule?",
+      "explanation": "Technical safeguards are technology controls on ePHI such as unique user identification, automatic logoff, audit controls and transmission security. Workforce training and sanction policies are administrative safeguards, and locked server rooms are physical safeguards.",
+      "learningObjective": "Classify Security Rule safeguards as administrative, physical or technical.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Badge-controlled locks on the room holding the EEG server",
+        "Annual privacy and security training for all lab staff",
+        "A written sanction policy for staff who misuse patient data",
+        "Unique user logins and automatic logoff on reading stations"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-016",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "passwords",
+        "audit-trails",
+        "security-rule"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A coworker's password has expired and she asks to use your login to finish annotating a study before her shift ends. What is the best response?",
+      "explanation": "Each user must access ePHI under unique credentials so that audit trails accurately show who viewed or changed a record; the coworker should restore her own access. Sharing an account, logging in on her behalf or lending a password all attribute her actions to you and defeat the audit controls, even if you supervise or change the password later.",
+      "learningObjective": "Explain why unique credentials and audit trails require no login sharing.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Let her log in under your account since you work in the same lab",
+        "Log in for her and stay in the room while she finishes the study",
+        "Decline and have her reset her password through the IT help desk",
+        "Lend her your password and change it as soon as she is finished"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-017",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "portable-media",
+        "encryption",
+        "remote-access"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A technologist wants to finish annotating three long-term monitoring studies at home. Which method fits facility security practice?",
+      "explanation": "Facility-approved remote access keeps ePHI on secured systems with encryption, authentication and audit logging. Personal flash drives are easily lost and often unencrypted, personal email and consumer cloud storage place PHI outside the organization's control without a business associate agreement, and deleting files later does not reverse the exposure.",
+      "learningObjective": "Select secure remote work methods for ePHI.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Copy the studies to a personal flash drive kept in a pocket",
+        "Email the files to a personal account and erase them later",
+        "Use the facility's secure remote access with approved credentials",
+        "Upload the files to a cloud drive IT has not approved, using a strong password"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-018",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "breach-notification",
+        "encryption",
+        "hitech"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A laptop holding EEG files is stolen from a car. The disk was encrypted to the HHS guidance standard and the decryption key was not taken. What does this mean for breach notification?",
+      "explanation": "Breach notification duties apply to unsecured PHI; data encrypted consistent with HHS guidance, with the key not compromised, fall under this safe harbor, although the facility still documents and investigates the theft. The loss of the device alone does not trigger notification, identifying the thief does not change the analysis, and the manufacturer has no role in notification.",
+      "learningObjective": "Apply the encryption safe harbor to breach notification decisions.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The data are not unsecured PHI, so notification is generally not required",
+        "Only the laptop manufacturer needs to be informed of the theft",
+        "Notification is required only if the thief is later identified",
+        "Every affected patient must be notified because a device was lost"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-019",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "breach-notification",
+        "risk-assessment",
+        "hitech"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Under the HHS Breach Notification Rule, an impermissible use or disclosure of PHI is presumed to be a breach unless the facility shows which of the following?",
+      "explanation": "The rule presumes a breach unless a documented risk assessment, considering the nature of the PHI, who received it, whether it was actually acquired or viewed and how far risk was mitigated, shows a low probability of compromise. Lack of intent alone does not remove breach status (the narrow exception for good-faith, within-scope access by a workforce member with no further use or disclosure is a separate test), the 500-person threshold affects who is notified rather than whether a breach occurred, and quick discovery affects timing, not classification.",
+      "learningObjective": "State how the breach presumption can be rebutted.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A risk assessment shows a low probability of compromise",
+        "The disclosure was discovered within one week of occurring",
+        "Fewer than 500 patients were affected by the disclosure",
+        "The staff member involved did not mean to disclose the data"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-020",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "breach-notification",
+        "timeline",
+        "hitech"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Under HIPAA, by when must affected individuals be notified after a breach of unsecured PHI is discovered?",
+      "explanation": "Individuals must be notified without unreasonable delay and no later than 60 calendar days after the breach is discovered; 60 days is an outer limit, not a target. A 24-hour deadline, a 10-business-day deadline and a one-year window do not reflect the federal rule, although some state laws and facility policies may be stricter.",
+      "learningObjective": "Recall the federal timeline for notifying individuals of a breach.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Within one year, together with the facility's annual report",
+        "Without unreasonable delay, no later than 60 calendar days",
+        "Within 10 business days, once the privacy officer is informed",
+        "Within 24 hours, before any investigation has been completed"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-021",
+      "domainId": "domain-4",
+      "sectionId": "d4-s1",
+      "topicTags": [
+        "breach-notification",
+        "media",
+        "hhs",
+        "hitech"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "An unencrypted backup drive holding EEG records for 750 residents of one state is lost, and the risk assessment cannot show a low probability of compromise. Who must be notified?",
+      "explanation": "A breach of unsecured PHI affecting more than 500 residents of a state requires notice to the individuals, to prominent media outlets serving that state and to HHS within the same 60-day outer limit. The annual log applies to breaches of fewer than 500 people, HHS does not notify patients for the facility, and the medical board and referring physicians are not the required recipients.",
+      "learningObjective": "Identify notification recipients for a large breach of unsecured PHI.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Affected patients, HHS and prominent media in that state",
+        "HHS only, which then contacts each affected patient",
+        "The state medical board and each referring physician",
+        "Affected patients only, with HHS told in a year-end log"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-022",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "allergy",
+        "screening",
+        "pre-procedure"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Before applying electrodes, which screening question best protects the patient from a preventable skin or allergic reaction?",
+      "explanation": "Asking about reactions to latex, tape, adhesives, collodion, pastes and skin-prep agents lets the technologist choose safe materials before exposure. Sleep history matters for activation planning, prior seizures matter for safety planning, and conditioner affects impedance, but none of these screens for allergy.",
+      "learningObjective": "Screen for allergies and sensitivities before electrode application.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Whether the patient reacts to latex, tape, adhesives or skin preps",
+        "Whether the patient has slept normally over the past week",
+        "Whether the patient has ever had a seizure during an earlier EEG",
+        "Whether the patient washed their hair with conditioner today"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-023",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "latex",
+        "allergy",
+        "supplies"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient's chart lists a latex allergy with hives on prior exposure. How should the technologist prepare for the EEG?",
+      "explanation": "With a documented latex allergy, the safe approach is to remove latex from the encounter entirely, including gloves, tape, cables and other supplies, and to arrange this before the patient arrives. Hand washing does not remove latex proteins from gloves, keeping medication ready does not prevent the reaction and is outside technologist scope, and a short exposure can still provoke a reaction.",
+      "learningObjective": "Prepare a latex-safe EEG setup for a patient with latex allergy.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Use latex-free gloves, tape and supplies, set up before the visit",
+        "Use regular gloves but wash the hands well before touching the scalp",
+        "Use regular supplies and keep an antihistamine nearby just in case",
+        "Use regular supplies as long as the exposure lasts under one hour"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-024",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "collodion",
+        "acetone",
+        "adhesive",
+        "allergy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient scheduled for prolonged monitoring reports a severe skin reaction to collodion during an earlier study. What is the best plan?",
+      "explanation": "A known reaction calls for avoiding the agent and choosing an approved alternative, such as paste with gauze or another adhesive method, per lab protocol, and documenting the allergy. A thinner layer or quicker removal still exposes the patient to the substance, and a waiver does not make a known hazard acceptable.",
+      "learningObjective": "Select an alternative electrode attachment after a prior collodion reaction.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Use collodion again but apply a thinner layer at each electrode",
+        "Use collodion again after asking the patient to sign a waiver",
+        "Use collodion again and remove it promptly when the study ends",
+        "Use an alternative attachment method such as paste and gauze"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-025",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "anaphylaxis",
+        "chlorhexidine",
+        "emergency-response"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Minutes after skin prep for an EEG, an outpatient develops hives, lip swelling and wheezing. What should the technologist do first?",
+      "explanation": "Hives with airway swelling and wheezing suggest anaphylaxis, which can follow exposure to agents such as chlorhexidine or latex; the technologist stops the exposure, activates the emergency response and stays with the patient. Cool compresses and continuing the setup delay care, giving medication is outside technologist scope, and finishing the montage before getting help wastes critical time.",
+      "learningObjective": "Respond to signs of anaphylaxis during EEG setup within technologist scope.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Stop the exposure, call the emergency team and stay with the patient",
+        "Apply cool compresses to the hives and continue applying electrodes",
+        "Finish the montage quickly and then notify the referring physician",
+        "Give an antihistamine from the lab supply and observe for a while"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-026",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "contact-dermatitis",
+        "long-term-monitoring",
+        "skin-integrity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "On day two of video-EEG monitoring, the patient has itchy red patches limited to several electrode sites. What is the best action?",
+      "explanation": "Localized redness and itching at electrode sites suggests irritation or contact dermatitis; the technologist inspects, reports to the nurse or physician, documents the findings and repositions or changes materials per protocol so monitoring can continue safely. Waiting until discharge lets the injury progress, applying medication is outside technologist scope, and ending the study unilaterally sacrifices the clinical goal without team input.",
+      "learningObjective": "Manage electrode-site skin irritation during long-term monitoring.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Document it per lab protocol at discharge and leave every electrode in place for now",
+        "Remove all electrodes and end the study without telling the team",
+        "Notify the nurse, document the sites and adjust per lab protocol",
+        "Apply an over-the-counter steroid cream under each of the electrodes"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-027",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "pressure-injury",
+        "long-term-monitoring",
+        "skin-integrity"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During several days of inpatient video-EEG monitoring with a patient mostly lying on their back, which electrodes are at greatest risk of causing pressure injury?",
+      "explanation": "When a patient lies supine, the weight of the head rests on the occipital and posterior parietal electrodes, so those sites bear the most sustained pressure and need regular checks and padding or repositioning. Forehead, vertex and ear sites are not usually load-bearing in this position, although any site can break down with tight wraps or prolonged recording.",
+      "learningObjective": "Identify electrode sites at highest pressure-injury risk during long-term monitoring.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The ear electrodes clipped to each earlobe",
+        "The vertex electrodes at the midline of the head",
+        "The frontal polar electrodes on the forehead",
+        "The occipital and posterior electrodes under the head"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-028",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "neonate",
+        "skin-integrity",
+        "fragile-skin"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A technologist sets up continuous EEG on a premature neonate in the NICU. Which skin practice is most appropriate?",
+      "explanation": "Premature skin is thin and easily injured, so preparation is gentle with minimal abrasion, materials are chosen per NICU protocol, and sites are checked often for redness or breakdown. Vigorous abrasion risks skin injury, collodion does not remove the need for site checks, and strong adhesive tape can strip fragile neonatal skin on removal.",
+      "learningObjective": "Protect fragile neonatal skin during continuous EEG.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Vigorous abrasion so impedances stay low for the whole recording",
+        "Collodion on every electrode so they do not need to be re-checked",
+        "Strong tape across the forehead to stop the electrodes shifting",
+        "Gentle prep with minimal abrasion and frequent checks of every site"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-029",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "pressure-injury",
+        "documentation",
+        "site-check"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "On day three of monitoring, a site check reveals a non-blanching red area beneath one electrode. What is the most appropriate response?",
+      "explanation": "Non-blanching redness is an early pressure injury, so the pressure source is removed by relocating the electrode, the nurse or physician is told so wound care can be started, and the location, size and appearance are documented per protocol. Re-gluing at the same site worsens the injury, extra padding without relief delays care, and simply rechecking later lets the injury progress.",
+      "learningObjective": "Respond to and document an early pressure injury under an electrode.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Cover the area with more gauze and check it again at discharge",
+        "Move the electrode off the area, notify the nurse and document it",
+        "Leave it and verify the finding again at the next routine check",
+        "Re-glue the electrode firmly on the same spot to keep the signal"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-hip-030",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "collodion",
+        "electrode-removal",
+        "fragile-skin"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An older patient with thin, fragile skin has collodion electrodes ready for removal after monitoring. How should they be removed?",
+      "explanation": "Collodion is released by dissolving it with an approved solvent, used in a ventilated area per protocol, and lifting the electrode gently once loosened, which protects fragile skin. Pulling quickly can tear the skin and hair, cutting hair leaves adhesive behind, and hot water does not reliably dissolve collodion and can scald thin skin.",
+      "learningObjective": "Remove collodion electrodes safely from fragile skin.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Pull each electrode off quickly in a single firm motion",
+        "Cut the hair around each electrode with approved scissors and leave the collodion",
+        "Soak the scalp in hot water for several minutes, then peel",
+        "Dissolve the collodion with an approved remover and lift gently"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

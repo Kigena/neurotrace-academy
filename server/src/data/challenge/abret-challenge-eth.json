@@ -1,0 +1,867 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-07",
+  "bank": "challenge",
+  "focus": "ethics-professional-conduct",
+  "description": "Original scenario and recall questions on ethics, scope of practice, patient rights, communication, documentation integrity and professional conduct for EEG technologists. Text only; not yet medically verified.",
+  "totalQuestions": 30,
+  "questions": [
+    {
+      "id": "ch-eth-001",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "code-of-ethics",
+        "professionalism"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What is the main purpose of the code of ethics that a neurodiagnostic credentialing board asks its credential holders to follow?",
+      "explanation": "A credentialing board's code of ethics states the conduct expected of everyone who holds its credential (honesty, competence, respect for patients, confidentiality, accountability), and the board can act on violations, which protects patients and the public. It does not set pay, which employers and markets decide. It works alongside, not in place of, facility policy and law. Technical recording standards come from technical guidelines (for example ACNS guidelines), not from the ethics code.",
+      "learningObjective": "State the purpose of a credentialing board's code of ethics.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "To replace hospital policies and state law on patient care in the lab",
+        "To define technical recording standards such as electrode placement",
+        "To set conduct standards that protect patients and the public",
+        "To set the minimum salary that credentialed technologists can be paid"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-002",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "credentials",
+        "honesty",
+        "recertification"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A technologist realizes her registry credential lapsed two months ago because she missed the recertification deadline. Her email signature and badge still show the credential. What should she do?",
+      "explanation": "Representing a lapsed credential as current misleads patients, employers and colleagues, which is a breach of the honesty expected by credentialing ethics codes; she should stop using the designation until the board reinstates it and tell her supervisor so staffing and credential records are accurate. Having passed the exam once does not keep a credential active when recertification is missed. Limiting the claim to internal documents or to the badge is still misrepresentation, and waiting until a later renewal to report it prolongs the problem.",
+      "learningObjective": "Apply honest use of credentials when a credential has lapsed.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Keep using it, since she passed the exam and the lapse is only paperwork",
+        "Stop using the credential until it is reinstated and inform her supervisor",
+        "Use it only on internal documents until she reports the lapse at renewal",
+        "Keep the badge but remove the credential from her outside email signature"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-003",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "professionalism",
+        "honesty",
+        "identification"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "While you apply electrodes, a patient's father keeps calling you 'doctor' and asks you to explain what is wrong with his son's brain. What is the best response?",
+      "explanation": "Patients and families have a right to know who is caring for them, and letting a mistaken title stand misrepresents your qualifications. A courteous correction with your name and role, plus a clear statement that a physician interprets the EEG and the ordering provider will share results, is honest and keeps trust. Letting the title pass or accepting it for the visit is misrepresentation even if the answers are general. A blunt correction that deflects to the nurse is unhelpful and the nurse also does not interpret the EEG.",
+      "learningObjective": "Represent one's role and qualifications accurately to patients and families.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Tell him the title is wrong and that he should save his questions for the nurse instead",
+        "Let the title pass, since correcting him might make the family lose confidence in the lab",
+        "Accept the title for this visit and keep your answers general so nothing is misstated",
+        "Politely give your name and role as the EEG technologist and explain who reads the test"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-004",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "scope-of-practice",
+        "results",
+        "communication"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Halfway through a routine EEG, a mother watching the screen asks, 'Are those spikes? Is he having seizures?' What is the most appropriate reply?",
+      "explanation": "Interpreting the EEG and giving results is outside the technologist's scope; a physician interprets the full recording in clinical context and the ordering provider discusses the results. A kind explanation of that process answers the question without interpreting. Saying the tracing looks normal is an interpretation (and may be wrong), and pointing out waveforms is also interpreting. Refusing to talk at all and sending her to the internet is unkind and unhelpful when you can explain the process.",
+      "learningObjective": "Respond to a family's request for results within technologist scope of practice.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Point out the sharp waves on the screen so she can understand why the doctor ordered the test",
+        "Explain that a physician will review the whole recording and the ordering provider will share results",
+        "Tell her you cannot talk about the test at all and suggest she look up EEG information online",
+        "Reassure her that the tracing looks normal so far and that the physician will confirm it later on"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-005",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "scope-of-practice",
+        "results",
+        "reporting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "At the end of an outpatient EEG, an adult patient says, 'Nothing bad showed up, right? So I can drive home.' You noted frequent sharp waveforms during the recording. What should you do?",
+      "explanation": "The technologist does not interpret or give results or medical advice, so telling him the findings suggest epilepsy (diagnosis) or that driving is fine (false reassurance and interpretation) are both outside scope. The safe path is to say that the physician and his provider will address the results and any driving questions, and to bring findings of possible clinical urgency, plus the patient's driving question, to the reading physician's attention as the lab protocol directs. Front-desk staff cannot give results, and waiting until the end of the shift delays a safety concern.",
+      "learningObjective": "Handle a patient's request for results and medical advice while escalating concerning findings.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Avoid commenting on findings, say the physician and his provider will address results and driving, and alert the reading physician per lab protocol",
+        "Tell him the test went smoothly so driving is fine since no seizure occurred, and document the conversation in the technologist notes",
+        "Tell him to ask the front-desk staff for his result, and report his question about driving to the lab supervisor at the end of the shift",
+        "Tell him the findings suggest epilepsy so he should not drive today, then document the advice you gave in the technologist notes for the reader"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-006",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "consent",
+        "assent",
+        "pediatrics"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A 10-year-old is scheduled for an EEG, and her parent has given consent. What does seeking the child's assent mean?",
+      "explanation": "Assent is a minor's affirmative agreement after an age-appropriate explanation; it respects the child's developing autonomy, while the legally valid consent comes from the parent or guardian. A 10-year-old generally cannot give legal consent, so having her sign the consent form is not valid. Repeating the parent's consent is still consent, not assent. A child's objection should be taken seriously and brought to the team, but for a needed diagnostic test it does not automatically override parental consent.",
+      "learningObjective": "Distinguish informed consent from assent in pediatric patients.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Asking the parent to confirm consent a second time aloud in front of the child before the test begins",
+        "Recording the child's objection in the chart so that her refusal overrides the parent's legal consent",
+        "Explaining the test at her level and asking for her agreement, while legal consent comes from the parent",
+        "Having the child sign the legal consent form herself, since she is old enough to understand the test"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-007",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "consent",
+        "scope-of-practice"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A patient is scheduled for a procedure that requires written informed consent, such as intracranial electrode monitoring. Who is responsible for the consent discussion of risks, benefits and alternatives?",
+      "explanation": "Informed consent for a procedure with significant risks is a discussion between the patient and the physician or licensed provider responsible for the procedure, who explains the nature, risks, benefits and alternatives and answers questions; a technologist may act as a witness to the signature when facility policy allows. A signed order does not hand the consent discussion to the technologist who sets up the recording. A signature obtained by any staff member without that discussion is not informed consent, and relatives cannot substitute for the provider's explanation when the patient has capacity.",
+      "learningObjective": "Identify who obtains informed consent for higher-risk neurodiagnostic procedures.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Any staff member who is present, as long as the patient signs the form before the procedure",
+        "The physician or licensed provider who performs or orders the procedure",
+        "The patient's nearest relative, who should explain the procedure to the patient at home first",
+        "The technologist who sets up the recording, once the physician has signed the order"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-008",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "patient-rights",
+        "refusal",
+        "documentation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An alert adult inpatient with decision-making capacity listens to your explanation of the EEG, then firmly says he does not want the test. What is the most appropriate action?",
+      "explanation": "A competent adult has the right to refuse a test even after it is ordered. The technologist respects the refusal, informs the ordering provider so the team can address the patient's concerns, and documents the explanation given and the patient's decision. A physician's order does not override a capable patient's refusal, so proceeding is not acceptable. Using family pressure undermines voluntary choice, and a shortened study still performs the procedure he declined.",
+      "learningObjective": "Respond to a capable adult's refusal of an EEG.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Respect his refusal, notify the ordering provider, and document what was explained and his response",
+        "Apply a reduced set of electrodes to shorten the test, and notify the provider per policy once it is finished",
+        "Proceed with the recording because a physician ordered it, and document that he was reluctant at first",
+        "Ask his family to persuade him, then begin the test once they report that he has finally agreed"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-009",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "patient-rights",
+        "records-access",
+        "confidentiality"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "After her EEG, a patient asks you for a copy of her recording and report to take to a second-opinion neurologist. How should you respond?",
+      "explanation": "Patients generally have a right to access their health records, but release goes through the facility's health information (medical records) process, which verifies identity and authorization and tracks disclosures. Copying files to removable media on your own bypasses those safeguards and may breach security policy. Telling her she cannot obtain her records is incorrect. Handing over selected tracing pages is not a proper release and gives an incomplete record.",
+      "learningObjective": "Route a patient's request for her records through the proper release process.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Copy the EEG file to a USB drive for her, since patients have a right to their own records",
+        "Direct her to the facility's health information office process for releasing her records",
+        "Tell her the recording belongs to the hospital, so patients cannot obtain a copy of it",
+        "Print several pages of the tracing for her now and add the report once it has been signed"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-010",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "chaperone",
+        "patient-rights",
+        "privacy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Before a recording that includes chest ECG leads, an adult woman asks for a chaperone to be present while you apply electrodes. What should you do?",
+      "explanation": "A patient's request for a chaperone should be honored; the technologist arranges a trained staff chaperone as facility policy describes before continuing and records who was present. Deciding the procedure is not intimate enough overrides the patient's stated need. A family member, especially a minor, is not an appropriate chaperone. Dropping the ECG channel compromises the study (ECG is needed to identify cardiac artifact) and avoids rather than meets the request.",
+      "learningObjective": "Respond appropriately to a request for a chaperone.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Skip the ECG lead to avoid the issue and report the change to the reader afterwards",
+        "Ask her teenage son in the waiting room to act as chaperone so the study is not delayed",
+        "Arrange a chaperone per facility policy before starting and note who was present",
+        "Proceed alone, since EEG is not intimate, and document that a chaperone was asked for"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-011",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "interpreter",
+        "communication",
+        "patient-rights"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A patient who speaks limited English arrives for an EEG with her 12-year-old son, who offers to translate. What is the best approach?",
+      "explanation": "Patients with limited English proficiency should be offered a qualified medical interpreter, and facilities have in-person, telephone or video services for this. Children should not be used as interpreters: they may lack medical vocabulary, the role burdens them, and the patient may withhold information. Gestures cannot convey activation instructions, safety questions or event history reliably. Consumer translation apps on personal phones are not reliably accurate and can expose patient information.",
+      "learningObjective": "Arrange appropriate language assistance for patients with limited English proficiency.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Use simple gestures and demonstration, since the EEG needs little patient cooperation",
+        "Use a qualified medical interpreter, in person, by phone or by video, per facility policy",
+        "Let the son translate since he is already here, and document that family interpreted",
+        "Use a free translation app on your own phone to explain the test step by step"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-012",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "cultural-needs",
+        "patient-rights",
+        "communication"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient who wears a head covering for religious reasons becomes uneasy when a male technologist prepares to measure her head. Which response best respects her needs while allowing the test?",
+      "explanation": "Culturally respectful care explains why the scalp must be accessed, asks about her preferences, offers a same-gender technologist when one is available, and provides privacy (closed door or curtain), and the covering can often be replaced loosely over the electrodes afterward. Insisting and proceeding ignores her concerns. Electrodes over fabric cannot make adequate contact, so the recording would be poor. Canceling without trying reasonable accommodations delays her care.",
+      "learningObjective": "Accommodate cultural and religious needs during electrode application.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Cancel the test and send her home to discuss the problem with her physician before rebooking",
+        "Place the electrodes over the covering where possible so that she does not need to remove it",
+        "Tell her the covering must come off for the test and proceed promptly so the schedule is kept",
+        "Explain why scalp access is needed, offer a female technologist if available, and provide privacy"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-013",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "developmental-delay",
+        "communication",
+        "scope-of-practice"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 15-year-old with autism and limited speech is very anxious at the start of his EEG. His caregiver says he does best with routine and warning before touch. Which approach is best?",
+      "explanation": "Patients with developmental delay or autism should be addressed directly, at their level, with short simple steps, warning before each touch, a chance to see and touch materials, extra time, and the caregiver's knowledge of what calms him. Talking only to the caregiver excludes the patient, and rushing usually increases distress. Sedation requires a physician order; a technologist cannot arrange it on their own initiative. Physical restraint as a first approach is distressing and unsafe and is used only within facility policy after less restrictive measures fail.",
+      "learningObjective": "Adapt communication for a patient with autism or developmental delay.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Have two staff hold his head still during measurement, then let him rest once all electrodes are attached",
+        "Ask the nurse to give a sedative so the study can proceed, then inform the ordering physician after the test",
+        "Speak to him directly in short, simple steps, show and let him touch items, and use the caregiver's calming tips",
+        "Speak mostly to the caregiver, since he has limited speech, and work quickly to finish before he is upset"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-014",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "cognitive-impairment",
+        "communication"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "An older patient with dementia keeps asking what you are doing and tries to touch the electrodes. Which communication approach is most appropriate?",
+      "explanation": "People with cognitive impairment benefit from being approached from the front, given brief, simple, calm explanations one step at a time, and having those explanations repeated patiently as often as needed; this reduces fear and helps cooperation. A single long explanation exceeds her memory, and reminding her she was told is unkind. Skipping explanations increases agitation and disrespects her. Involving family helps, but the patient should still be spoken to directly.",
+      "learningObjective": "Communicate effectively with a patient who has dementia.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Approach from the front, use short calm explanations, and repeat them as often as needed",
+        "Give one detailed explanation at the start and remind her that you already explained it",
+        "Skip explanations because she will not remember them, and work as quickly as you can",
+        "Direct all explanations to her daughter, since she is the one who can understand them"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-015",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "confidentiality",
+        "privacy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "At a grocery store, a neighbor asks, 'I saw Mrs. K at your clinic last week. Is she having seizures?' What is the most appropriate response?",
+      "explanation": "Confidentiality covers the fact that someone is a patient, not only the results, so the technologist neither confirms nor denies the visit. Confirming the visit is already a disclosure. Being neighbors or already knowing something does not create a right to information. Offering to seek permission invites a disclosure that has no care purpose and implicitly confirms that she is a patient.",
+      "learningObjective": "Protect patient confidentiality outside the workplace.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Share general information, since they are neighbors and already know",
+        "Politely say you cannot discuss whether anyone is or is not a patient",
+        "Say you will ask Mrs. K at her next visit whether you can tell them",
+        "Confirm the visit but say you cannot share any of the test results"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-016",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "confidentiality",
+        "social-media"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A technologist in a small town wants to post an unusual EEG on a professional social media group. She removed the name and record number but kept the date, the patient's age and the rare diagnosis. What is the best assessment?",
+      "explanation": "De-identification means removing all details that could reasonably identify a patient; in a small community, a date, age and rare diagnosis together can point to one person. Removing only the name and record number is not enough, and closed groups still share content beyond their members. Patient images should be shared only as facility policy and privacy law allow, normally with proper de-identification or authorization, and reporting after posting does not undo a disclosure.",
+      "learningObjective": "Recognize indirect identifiers when sharing educational EEG material.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The post is acceptable because the name and medical record number have been removed",
+        "The post should not go up, because the remaining details could identify the patient",
+        "The post is acceptable if the group is private and limited to EEG professionals only",
+        "The post is acceptable if she reports it to her supervisor after it has been shared"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-017",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "documentation",
+        "error-correction"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What is the accepted way to correct an error in a handwritten technologist log or paper record?",
+      "explanation": "A paper-record error is corrected with a single line through the entry so the original stays readable, the correct information, and the corrector's initials and date (and a reason if policy asks), which leaves a transparent audit trail. Correction fluid, removing pages and writing over entries all hide the original and can look like falsification of the record. Electronic records use the system's amendment function for the same purpose.",
+      "learningObjective": "Correct documentation errors without obscuring the original entry.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Draw a single line through it, keep it legible, write the correction, and initial and date it",
+        "Remove the page and rewrite the entry cleanly on a fresh sheet so the log is easy to read",
+        "Cover the error with correction fluid and write the correct entry neatly over the top of it",
+        "Write the correct entry over the old one so only one version can be seen in the record"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-018",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "documentation",
+        "late-entry"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "After a recording ends, you realize you did not annotate an event the patient reported at 10:42, when she said she felt her usual aura. What should you do?",
+      "explanation": "A late entry is allowed when it is clearly identified as late, carries the actual date and time it is written, refers to the time of the event, and follows facility policy; this keeps the record accurate and honest. Inserting it as though it were made in real time misrepresents when it was documented. Leaving it out loses clinically important data, because an aura may have no clear scalp EEG change. A verbal report alone leaves the record incomplete.",
+      "learningObjective": "Document missed clinical events with a properly labeled late entry.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Add a late entry labeled with the current date and time that refers to the 10:42 event, per policy",
+        "Tell the reading physician about it verbally so the record does not need to be modified at all",
+        "Leave it out, since the reader will see any changes in the EEG at 10:42 without the annotation",
+        "Insert the annotation at 10:42 so it reads as if it were made in real time, then inform the reader"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-019",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "documentation",
+        "record-integrity",
+        "reporting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Your supervisor asks you to change the documented start times of several studies so that they match the times billed. The studies actually started later. What should you do?",
+      "explanation": "Altering records so they match billing is falsification and can be fraud; the technologist should refuse and report the request through the compliance or reporting channel the facility provides. A supervisor's instruction does not make falsification acceptable, and the technologist remains accountable for what they document. Adding a note or informing a physician still leaves a false record, and limiting the change to normal studies is still falsification.",
+      "learningObjective": "Refuse to alter records and use proper channels to report falsification requests.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Decline to change the times and raise the concern through the facility's compliance channel",
+        "Change the times only on studies with normal results, then report the request to the lab",
+        "Change the times but add a note that the supervisor requested it, then inform the physician",
+        "Change the times as asked, because the supervisor is responsible for billing decisions"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-020",
+      "domainId": "domain-4",
+      "sectionId": "d4-documentation-reporting",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "documentation",
+        "record-integrity"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "The lab's electronic template automatically fills in 'photic stimulation performed,' but you did not perform photic stimulation because the patient was too drowsy. How should you document this?",
+      "explanation": "Documentation must reflect what was actually done, so the technologist corrects the auto-filled text, states that photic stimulation was not performed, and gives the reason. Leaving an inaccurate template entry creates a false record even if the reader might notice. A verbal comment does not fix the written record. Deleting the section without an explanation leaves the reader unable to tell whether photic was omitted on purpose.",
+      "learningObjective": "Keep templated documentation consistent with the procedure actually performed.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Edit the entry to show photic stimulation was not done and give the reason",
+        "Leave the template as it is, since the reader can see that photic is absent",
+        "Delete the photic section and add no note, so the template looks complete",
+        "Leave the template as it is and tell the reader verbally about the omission"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-021",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "impaired-colleague",
+        "patient-safety",
+        "reporting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A coworker arrives for an overnight shift smelling of alcohol, with slurred speech, and prepares to hook up a patient. What should you do first?",
+      "explanation": "Possible impairment at work is first a patient safety problem, so the impaired colleague must not provide care, and the supervisor must be told promptly as the facility's policy directs; the institution can then arrange assessment and support. Watching closely or offering coffee still exposes patients to risk. Waiting until morning delays action through a whole night shift. Board reporting may be appropriate later, but it does not protect the patients in front of you tonight.",
+      "learningObjective": "Respond to a colleague who appears impaired at work.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "File an anonymous report with the credentialing board and let the coworker finish the shift",
+        "Suggest the coworker drink some coffee and let them start the hookup while you watch closely",
+        "Let the shift continue, then report the coworker to the supervisor in writing in the morning",
+        "Keep the coworker from caring for patients and notify the supervisor right away"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-022",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "complaint-process",
+        "sanctions",
+        "code-of-ethics"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A technologist submits a complaint to a credentialing board alleging that a credentialed colleague falsified patient records. Which best describes how such a complaint is generally handled?",
+      "explanation": "Credentialing boards generally accept written complaints with supporting information, review them under a defined process that gives the person a chance to respond, and can impose sanctions ranging from reprimand or probation to suspension or revocation of the credential, and may notify relevant parties. Boards are not courts and cannot impose criminal penalties. The employer's actions are separate from the board's. Complaints are accepted from colleagues as well as patients.",
+      "learningObjective": "Describe the general complaint and sanction process of a credentialing board.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The board issues criminal charges and sets a jail term for the person after reviewing the evidence",
+        "The board only acts on complaints from patients and returns complaints made by technologists",
+        "The board reviews the evidence, lets the person respond, and may impose sanctions up to revocation",
+        "The board passes the complaint to the person's employer, which then makes the final decision"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-023",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "continuing-competence",
+        "recertification"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Why do neurodiagnostic credentialing boards require credential holders to meet periodic recertification requirements?",
+      "explanation": "Recertification (for example through continuing education or re-examination, as each board specifies) shows that a credential holder keeps knowledge and skills current as equipment, guidelines and practice evolve, which supports patient safety. It is not a way to change an exam score. Pay is set by employers, not the purpose of recertification. Employers still provide competency assessment and training for their own equipment and procedures.",
+      "learningObjective": "Explain the purpose of recertification and continuing competence.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "To replace the need for any on-the-job training at the employer",
+        "To give technologists a chance to raise their original exam score",
+        "To let employers lower pay for technologists who did not recertify",
+        "To show continued competence as practice and technology change"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-024",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "gifts",
+        "professional-boundaries"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "After her son's long-term monitoring stay, a grateful mother tries to give you a $100 gift card. What is the most appropriate response?",
+      "explanation": "Most facility policies prohibit cash and cash-equivalent gifts such as gift cards, because they can create a sense of obligation or the appearance of favoritism; the technologist thanks her sincerely and declines, following policy (some policies allow small token items like a card or shared food). Sharing it with the team or reporting it afterward does not make an improper gift acceptable. Gifts after care has ended can still raise boundary and conflict concerns, especially with patients who may return.",
+      "learningObjective": "Respond to a patient's offer of a cash-equivalent gift.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Accept it and share it with the team, since refusing could hurt her feelings",
+        "Accept it, since gifts given after care has ended are not a conflict of interest",
+        "Accept it and report the gift to your supervisor after she leaves the unit",
+        "Thank her warmly and decline the card, following the facility's gift policy"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-025",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "conflict-of-interest",
+        "vendors"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Your lab is choosing a new electrode supplier, and you are on the evaluation team. A vendor representative offers to pay for your trip to a national conference 'as thanks for your support.' What should you do?",
+      "explanation": "A benefit offered by a vendor whose product you are helping to choose is a conflict of interest, and the link to 'support' makes it look like an inducement. The professional response is to decline and disclose the offer as the facility's conflict-of-interest policy requires. An educational purpose does not remove the conflict. Disclosing after the decision is too late to protect the process, and personal confidence in your own fairness does not remove the appearance of bias.",
+      "learningObjective": "Recognize and manage a vendor-related conflict of interest.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Accept it but rate all vendors fairly, since only your own judgment matters",
+        "Decline the offer and disclose it under the facility's conflict-of-interest policy",
+        "Accept it and disclose it to the evaluation team after the supplier is chosen",
+        "Accept it, since conference attendance is educational and benefits patient care"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-026",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "professional-boundaries",
+        "social-media"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "During an ambulatory EEG hookup, a patient asks for your personal mobile number so she can text you if an electrode comes loose at home. What is the best response?",
+      "explanation": "Keeping communication in official channels maintains professional boundaries, protects patient privacy, and makes sure a covering staff member responds if you are off duty. Giving a personal number or social media contact blurs boundaries and puts patient information on personal devices, even when the request is well-meant and limited to the study. The lab's contact number and clear instructions meet her real need.",
+      "learningObjective": "Maintain professional boundaries in patient communication.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Give her your personal number, since it helps the study succeed and she has a real need",
+        "Suggest she message you on social media instead, since that is easier than a phone call",
+        "Give her the lab's official contact number and explain how after-hours issues are handled",
+        "Give her your personal number, but ask her to text only about the study and nothing else"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-027",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "harassment",
+        "staff-safety",
+        "reporting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During overnight continuous monitoring, an alert adult patient repeatedly makes sexual comments to you when you enter the room to fix electrodes. What is the most appropriate response?",
+      "explanation": "Staff have a right to a workplace free of harassment, including from patients. Setting a clear, calm boundary, having a second staff member present for bedside care, and reporting to the supervisor and documenting as policy directs protects the technologist while care continues; the team can then consider whether a neurological cause is contributing. Tolerating it alone delays support. Staying out of the room compromises the patient's monitoring and safety. Joking can seem to encourage the behavior, and waiting a night delays reporting.",
+      "learningObjective": "Respond to harassment by a patient while maintaining patient care.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Respond with a joke to defuse it, and report the comments only if they continue the next night",
+        "Stop going into the room overnight, leave the electrodes as they are, and report it per policy in the morning",
+        "Tolerate the comments for the rest of the night, then document them in the notes in the morning",
+        "Calmly state the behavior is not acceptable, bring another staff member for care, and report it per policy"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-028",
+      "domainId": "domain-4",
+      "sectionId": "d4-ethics-confidentiality-professionalism",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "professional-behavior",
+        "harassment",
+        "reporting"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A senior technologist often mocks a new coworker's accent in front of patients and staff. The new coworker seems upset but has not complained. What is the most appropriate action?",
+      "explanation": "Demeaning comments about a coworker's accent or national origin are disrespectful and can be harassment; a colleague who sees it can support the target and report it through the supervisor or human resources channel the facility sets out. Staying silent, even while keeping private notes, lets it continue, and the target may feel unable to complain. Retaliating in kind is unprofessional, and involving patients breaches professionalism and adds harm.",
+      "learningObjective": "Respond to unprofessional, demeaning behavior by a colleague.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Report the behavior to the supervisor or human resources",
+        "Mock the senior technologist in return so they understand how the comments feel",
+        "Tell patients privately that the senior technologist is behaving unprofessionally",
+        "Say nothing for now and document each incident in a private notebook of your own"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-029",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "scope-of-practice",
+        "communication",
+        "reporting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During ICU monitoring, a resident calls and asks, 'Is he in status? Should I give more lorazepam?' Which reply is within the technologist's scope?",
+      "explanation": "Technologists report objective observations (for example, when a rhythmic pattern began, how the patient looked, what was done) and escalate to the reading physician according to the lab's urgent-findings protocol; they do not diagnose or recommend treatment. Stating that the EEG shows status, that it looks stable, or recommending a dose are interpretation or prescribing, which are outside scope even if documented. Prompt escalation lets the physician give the interpretation the resident needs.",
+      "learningObjective": "Communicate EEG observations to clinicians without interpreting or recommending treatment.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Tell the resident the EEG looks stable, so medication can wait until the physician's morning read",
+        "Tell the resident the EEG shows nonconvulsive status, so more lorazepam is the right choice now",
+        "Describe what you observed and when, and say you will reach the reading physician now per protocol",
+        "Recommend a medication dose from the protocol and document the advice for the reading physician"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-eth-030",
+      "domainId": "domain-4",
+      "sectionId": "d4-s2",
+      "topicTags": [
+        "ethics-professional-conduct",
+        "scope-of-practice",
+        "competence"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "While covering at another site, you are asked to set up intraoperative monitoring, a procedure you have never been trained or checked off to perform. What should you do?",
+      "explanation": "Practicing within one's competence protects patients; when asked to perform an unfamiliar procedure, the technologist tells the supervisor about the training gap and asks for qualified staff or proper training and competency validation. A video is not supervised training or competency checkoff. An EEG credential does not cover specialized procedures such as intraoperative monitoring, which has its own training and credentials. Walking off the assignment abandons the work and is unprofessional when the concern can be raised directly.",
+      "learningObjective": "Recognize the limits of personal competence and respond appropriately.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Leave the site to show that the assignment was unsafe, then report it next week",
+        "Do the setup after watching a training video, then document that it went smoothly",
+        "Do the setup because your EEG credential covers all neurodiagnostic procedures",
+        "Tell the supervisor you are not trained for it and ask for qualified staff or training"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ethics and professional practice set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

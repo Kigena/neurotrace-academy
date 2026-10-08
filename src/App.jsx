@@ -20,6 +20,7 @@ import DiffuseAbnormalities from "./pages/DiffuseAbnormalities.jsx";
 import NeuroSyndromes from "./pages/NeuroSyndromes.jsx";
 import NeurologyEssentials from "./pages/NeurologyEssentials.jsx";
 import LabSafety from "./pages/LabSafety.jsx";
+import ProfessionalPractice from "./pages/ProfessionalPractice.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
@@ -247,6 +248,12 @@ function AppContent() {
             <Route path="/lab-safety" element={
               <ProtectedRoute>
                 <LabSafety />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/professional-practice" element={
+              <ProtectedRoute>
+                <ProfessionalPractice />
               </ProtectedRoute>
             } />
           </Routes>

@@ -1,0 +1,863 @@
+{
+  "title": "Ethics, HIPAA and Professional Practice",
+  "subtitle": "ABRET R. EEG T. Domain IV: ethics, privacy, safety and professional conduct (about 20% of the exam)",
+  "tabs": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "intro": "Domain IV covers how you behave as a credentialed technologist, not how you read a tracing. Questions are usually short scenarios that ask for the most appropriate or the first action. The answer is almost always the one that protects the patient, stays within technologist scope and follows facility policy.",
+      "sections": [
+        {
+          "title": "The four task statements",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "1. Practice by the ABRET Code of Ethics",
+              "body": "Act honestly, competently and within scope, use your credential truthfully, and keep your certification in good standing.",
+              "points": [
+                "No interpreting or giving results",
+                "No misrepresenting credentials",
+                "Report violations through proper channels"
+              ]
+            },
+            {
+              "title": "2. Confidentiality and HIPAA/HITECH",
+              "body": "Protect PHI in every format: paper, electronic, video and spoken. Use and share only what the task needs.",
+              "points": [
+                "Minimum necessary",
+                "Secure ePHI",
+                "Report suspected breaches promptly"
+              ]
+            },
+            {
+              "title": "3. Patient safety and self-safety",
+              "body": "Screen for allergies and skin risks, protect skin integrity, and follow electrical, infection-control and chemical-safety rules.",
+              "points": [
+                "Allergy screening before setup",
+                "Skin checks in long-term monitoring",
+                "SDS/OSHA: see Lab Safety page"
+              ]
+            },
+            {
+              "title": "4. Professional conduct in every encounter",
+              "body": "Identify the patient, explain the test, get consent or assent, respect dignity, culture and language, and document truthfully.",
+              "points": [
+                "Two patient identifiers",
+                "Interpreter, not family, for medical content",
+                "Chaperone per policy"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Quick-reference table",
+          "kind": "table",
+          "head": [
+            "Topic",
+            "Key rule",
+            "Typical exam trap"
+          ],
+          "rows": [
+            [
+              "Scope of practice",
+              "Technologists record and describe; physicians interpret and report",
+              "Telling a worried parent the EEG looks normal"
+            ],
+            [
+              "Credential use",
+              "Use only credentials you currently hold and that are active",
+              "Signing R. EEG T. before passing the exam"
+            ],
+            [
+              "PHI",
+              "Any health information linked to an identifier, in any medium",
+              "Thinking video or a voice recording is not PHI"
+            ],
+            [
+              "Minimum necessary",
+              "Use or disclose the least PHI needed; does not apply to treatment between providers",
+              "Browsing a famous patient's chart out of curiosity"
+            ],
+            [
+              "Breach",
+              "Report a suspected breach to the privacy officer at once; the organization decides on notification",
+              "Personally notifying the patient or media yourself"
+            ],
+            [
+              "Allergies",
+              "Ask about latex, adhesives, tape, collodion, acetone, gels and skin cleansers before setup",
+              "Assuming a prior uneventful study means no allergy"
+            ],
+            [
+              "Skin integrity",
+              "Inspect electrode sites on a set schedule in long-term and neonatal studies",
+              "Leaving collodion electrodes unchecked for days"
+            ],
+            [
+              "Documentation",
+              "Never alter or back-date; correct errors with a single line, initials and date (or the EHR amendment process), and add missed information as a labeled late entry",
+              "Deleting a note to tidy up the record"
+            ]
+          ]
+        },
+        {
+          "title": "How to attack a Domain IV question",
+          "kind": "steps",
+          "items": [
+            "Ask: is the patient safe right now? Safety comes first.",
+            "Ask: is this inside technologist scope? If not, refer to the physician.",
+            "Ask: does the action disclose more PHI than needed, or to someone without a need to know?",
+            "Ask: what does facility policy require (chain of command, privacy officer, incident report)?",
+            "Pick the answer that is honest, documented and escalated through the proper channel."
+          ]
+        },
+        {
+          "title": "Cross-references",
+          "kind": "list",
+          "items": [
+            "SDS sections, OSHA Hazard Communication, PPE, sharps and chemical storage: Lab Safety page.",
+            "Electrical safety, grounding, leakage current and isolation: Lab Safety page and the instrumentation material.",
+            "Infection control and electrode disinfection: Lab Safety page."
+          ]
+        }
+      ],
+      "pearls": [
+        "The best answer usually escalates through the chain of command or the privacy officer, not straight to an outside agency.",
+        "If an option has the technologist interpreting, diagnosing or reassuring about results, it is wrong.",
+        "PHI rules apply to spoken words, screens, video and printouts, not just the chart.",
+        "Patient safety beats finishing the recording: stop and address a reaction or skin injury first.",
+        "Document what you did and what you observed, factually and at the time.",
+        "Facility policy and the manufacturer's instructions are the right answer when no single national number exists."
+      ],
+      "eegLink": "Every EEG involves direct patient contact, chemicals on skin, recorded video and electronic PHI, so ethics and privacy decisions happen at the bedside each day."
+    },
+    {
+      "id": "abret-ethics",
+      "title": "ABRET Code of Ethics",
+      "intro": "ABRET keeps a Code of Ethics that sets the conduct expected of anyone seeking or holding its credentials (R. EEG T., R. EP T., CNIM, CLTM, CAP and others). Following it is a condition of earning and keeping certification. Read the current official text on abret.org; the summary below is in plain words, not ABRET's wording.",
+      "sections": [
+        {
+          "title": "Core principles in plain words",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Put the patient first",
+              "body": "Protect the patient's welfare, safety and dignity in every encounter, without discrimination."
+            },
+            {
+              "title": "Keep confidences",
+              "body": "Hold patient information private and share it only as law and policy allow."
+            },
+            {
+              "title": "Practice competently and within scope",
+              "body": "Perform only procedures you are trained and authorized to do; do not take on interpretation or diagnosis that belongs to a physician."
+            },
+            {
+              "title": "Be honest",
+              "body": "Report data, credentials, education and work history truthfully; never fabricate or alter recordings or records."
+            },
+            {
+              "title": "Deal truthfully with ABRET",
+              "body": "Give accurate information on applications and recertification, follow exam rules, and cooperate with any ethics inquiry."
+            },
+            {
+              "title": "Obey the law and policy",
+              "body": "Comply with laws, regulations and employer policies that govern practice."
+            }
+          ]
+        },
+        {
+          "title": "Credential use and misrepresentation",
+          "kind": "list",
+          "items": [
+            "Use only the credential letters you have earned and that are current.",
+            "Do not use a credential before results are official, or after it has lapsed, been suspended or revoked.",
+            "Do not imply a credential you hold covers work it does not (for example, using R. EEG T. to claim CNIM-level IONM competence).",
+            "Falsifying an application, CE records or exam eligibility is a disciplinary matter.",
+            "Sharing, recalling or selling exam content breaks exam security rules.",
+            "Anyone can report someone falsely claiming an ABRET credential."
+          ]
+        },
+        {
+          "title": "Reporting a violation and the sanctions process",
+          "kind": "flow",
+          "items": [
+            "Concern about a colleague's conduct or credential use",
+            "Address patient safety first; report internally through supervisor or chain of command",
+            "Complaint to ABRET Executive Director, with names, facts and documents, based on firsthand knowledge",
+            "Forwarded to the ABRET Ethics & Discipline Committee for review",
+            "Decision: no action, or sanction such as denial, suspension or revocation of certification"
+          ]
+        },
+        {
+          "title": "Scope of practice: what a technologist does and does not do",
+          "kind": "table",
+          "head": [
+            "Within technologist scope",
+            "Outside technologist scope"
+          ],
+          "rows": [
+            [
+              "Record a technically adequate EEG and document clinical events",
+              "Interpreting the EEG or writing the final report"
+            ],
+            [
+              "Describe and annotate observed waveforms and behavior for the reader",
+              "Telling the patient or family the result is normal or abnormal"
+            ],
+            [
+              "Notify the physician promptly of critical findings per lab policy",
+              "Starting or changing medication on your own"
+            ],
+            [
+              "Perform activation procedures as ordered and when safe",
+              "Ordering tests or deciding a study is not needed"
+            ],
+            [
+              "Answer questions about the procedure itself",
+              "Discussing diagnosis, prognosis or driving status"
+            ]
+          ],
+          "note": "When asked about results, say the neurologist will review the study and the ordering provider will discuss it."
+        },
+        {
+          "title": "Continuing competence and recertification",
+          "kind": "list",
+          "items": [
+            "ABRET credentials are time-limited and must be renewed on ABRET's cycle (currently five years) through continuing education or the other routes ABRET allows.",
+            "Keep your own CE records and certificates; ABRET can audit.",
+            "Letting a credential lapse means you may not use the letters until it is reinstated.",
+            "Continuing competence also means learning new equipment, protocols and policies at work, not only collecting hours.",
+            "Check the current ABRET recertification policy for the exact hours and categories."
+          ]
+        }
+      ],
+      "pearls": [
+        "Following the Code is a condition of both initial and continued certification.",
+        "Complaints to ABRET go to the Executive Director, who forwards them to the Ethics & Discipline Committee.",
+        "Possible outcomes include denial, suspension or revocation of certification.",
+        "Staying in compliance is the certificant's own responsibility.",
+        "A technologist never gives results; refer to the physician.",
+        "Altering or fabricating data is among the most serious ethical violations.",
+        "Report concerns about a colleague through your workplace chain of command first; patient safety issues cannot wait."
+      ],
+      "eegLink": "The urge to reassure an anxious parent at the end of a recording is the single most common real-world scope violation in an EEG lab."
+    },
+    {
+      "id": "hipaa",
+      "title": "HIPAA Privacy",
+      "intro": "The HIPAA Privacy Rule controls how protected health information is used and disclosed and gives patients rights over their information. It applies to covered entities and their business associates. For EEG labs, video recordings and casual conversation are where most slips happen.",
+      "sections": [
+        {
+          "title": "Key definitions",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "PHI",
+              "body": "Individually identifiable health information held or sent by a covered entity or business associate, in any form: paper, electronic, spoken, image or video."
+            },
+            {
+              "title": "Covered entities",
+              "body": "Health plans, health care clearinghouses, and health care providers who send standard electronic transactions such as billing."
+            },
+            {
+              "title": "Business associates",
+              "body": "Outside people or companies that handle PHI for a covered entity, such as a cloud vendor, billing or shredding company, or a remote monitoring vendor acting for the facility. They sign a business associate agreement and are directly liable for the Security Rule and certain Privacy Rule requirements. Sending PHI to another provider for treatment does not by itself require one."
+            },
+            {
+              "title": "Minimum necessary",
+              "body": "Use, disclose or request only the PHI needed for the task. It does not apply to disclosures to a provider for treatment, to the patient, or under the patient's authorization."
+            }
+          ]
+        },
+        {
+          "title": "The 18 identifiers (Safe Harbor) in summary",
+          "kind": "table",
+          "head": [
+            "Group",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Names and contact",
+              "Name; street address and geographic units smaller than a state (with a limited three-digit ZIP exception); phone; fax; email"
+            ],
+            [
+              "Dates and ages",
+              "All date elements except year tied to the person (birth, admission, discharge, death); ages over 89"
+            ],
+            [
+              "Numbers",
+              "SSN; medical record number; health plan beneficiary number; account number; certificate or license number; vehicle identifiers and plates; device identifiers and serial numbers"
+            ],
+            [
+              "Online",
+              "Web URLs; IP addresses"
+            ],
+            [
+              "Biometric and images",
+              "Fingerprints and voiceprints; full-face photographs and comparable images"
+            ],
+            [
+              "Catch-all",
+              "Any other unique identifying number, characteristic or code"
+            ]
+          ],
+          "note": "Video-EEG shows the face, so it is PHI and cannot be de-identified by trimming the header alone."
+        },
+        {
+          "title": "Uses that need no authorization vs uses that do",
+          "kind": "table",
+          "head": [
+            "Allowed without written authorization",
+            "Needs the patient's written authorization"
+          ],
+          "rows": [
+            [
+              "Treatment (sharing the EEG with the treating team)",
+              "Marketing"
+            ],
+            [
+              "Payment (billing the insurer)",
+              "Most sale of PHI"
+            ],
+            [
+              "Health care operations (quality review, training staff)",
+              "Psychotherapy notes in most cases"
+            ],
+            [
+              "Required by law, public health, certain law enforcement and abuse reporting",
+              "Posting a patient's video or photo for education outside the organization or on social media"
+            ],
+            [
+              "Disclosure to the patient",
+              "Releasing records to an employer or a lawyer without another legal basis"
+            ]
+          ]
+        },
+        {
+          "title": "Patient rights",
+          "kind": "list",
+          "items": [
+            "Notice of Privacy Practices: a plain-language notice explaining how PHI is used and the patient's rights; providers make a good-faith effort to get written acknowledgment.",
+            "Access: patients may inspect and get copies of their records, including electronic copies, generally within 30 days (one 30-day extension allowed); reasonable cost-based fees only.",
+            "Amendment: patients may ask to correct their record; the entity must respond and can deny with a written reason.",
+            "Accounting of disclosures: a list of certain disclosures made outside treatment, payment and operations.",
+            "Restrictions: patients may request limits; a provider must honor a request not to disclose to a health plan, for payment or operations, information about care the patient paid for in full out of pocket, unless the law requires it.",
+            "Confidential communications: patients may ask to be contacted at another address or phone."
+          ]
+        },
+        {
+          "title": "Incidental disclosures and de-identification",
+          "kind": "text",
+          "text": "An incidental disclosure is a limited, unavoidable by-product of an allowed use, such as a visitor overhearing a name called in a waiting room. It is not a violation if reasonable safeguards and minimum necessary were applied. De-identified data (identifiers removed under Safe Harbor, or an expert determination that re-identification risk is very small) is no longer PHI and may be used for teaching and research."
+        },
+        {
+          "title": "EEG lab scenarios",
+          "kind": "table",
+          "head": [
+            "Situation",
+            "Right practice"
+          ],
+          "rows": [
+            [
+              "Video-EEG of a seizure for a conference talk",
+              "De-identify fully or obtain written authorization; blurring or cropping the face may be needed, and follow institutional policy"
+            ],
+            [
+              "Case presentation at internal grand rounds",
+              "Use only what teaching requires; remove names, MRN and dates where possible"
+            ],
+            [
+              "Sending a recording to an outside reader",
+              "Use a secure, approved channel, with a business associate agreement or other required agreement in place per policy"
+            ],
+            [
+              "Building a teaching file",
+              "Store de-identified samples on approved systems, never on a personal laptop or phone"
+            ],
+            [
+              "Social media",
+              "Never post patient stories, images or tracings, even without names; small details can identify a patient"
+            ],
+            [
+              "Photos with a personal phone",
+              "Do not; use facility-approved devices and consent processes only"
+            ],
+            [
+              "Texting a physician about a patient",
+              "Use only the organization's secure messaging, never personal SMS"
+            ],
+            [
+              "Faxing a report",
+              "Confirm the number, use a cover sheet, and call to confirm receipt per policy"
+            ],
+            [
+              "Workstation left open",
+              "Lock the screen when you step away; angle monitors away from the public"
+            ],
+            [
+              "Talking in the elevator or cafeteria",
+              "Do not discuss patients in public spaces"
+            ],
+            [
+              "Curiosity look-up of a coworker's or celebrity's chart",
+              "Not allowed: no job-related need to know; audit trails will show it"
+            ]
+          ]
+        }
+      ],
+      "pearls": [
+        "Video-EEG and full-face images are PHI.",
+        "Minimum necessary does not restrict provider-to-provider sharing for treatment.",
+        "Treatment, payment and operations are allowed without authorization; marketing and outside publication need authorization.",
+        "Patients have a right to copies of their own EEG report and records.",
+        "Removing the name alone does not de-identify: dates, MRN, face and voice also identify.",
+        "Business associates sign an agreement and are directly liable under HIPAA since HITECH.",
+        "An incidental disclosure is acceptable only when reasonable safeguards were in place."
+      ],
+      "eegLink": "The EEG header, the video window and the patient list on the acquisition screen all display PHI, so screen position and lock-out matter in the monitoring room."
+    },
+    {
+      "id": "hitech-security",
+      "title": "Security Rule and HITECH",
+      "intro": "The Security Rule protects electronic PHI through administrative, physical and technical safeguards. HITECH (2009) strengthened enforcement, extended direct liability to business associates, and created the Breach Notification Rule. Technologists mainly need to know safe habits and what to do when something goes wrong.",
+      "sections": [
+        {
+          "title": "Security Rule safeguards",
+          "kind": "table",
+          "head": [
+            "Safeguard",
+            "What it covers",
+            "EEG lab examples"
+          ],
+          "rows": [
+            [
+              "Administrative",
+              "Risk analysis, security officer, workforce training, sanctions, access management, contingency plans, BA agreements",
+              "Security awareness training (often annual per policy); role-based access to the EEG database; sanctions for snooping"
+            ],
+            [
+              "Physical",
+              "Facility access, workstation use and position, device and media controls, disposal",
+              "Locked reading room; screens facing away from hallways; wiping drives before equipment is retired"
+            ],
+            [
+              "Technical",
+              "Unique user IDs, access controls, automatic logoff, encryption, audit controls, integrity and transmission security",
+              "Individual logins on acquisition and review stations; encrypted remote reading; audit logs of who opened a study"
+            ]
+          ]
+        },
+        {
+          "title": "Everyday security habits",
+          "kind": "list",
+          "items": [
+            "Never share passwords or log in for someone else; every action is tied to your user ID.",
+            "Use strong passwords and multifactor authentication as required by policy.",
+            "Lock or log off the workstation whenever you walk away; do not disable automatic logoff.",
+            "Use only encrypted, facility-approved portable media; avoid personal USB drives.",
+            "Remote and cloud reading must go through approved, encrypted connections (for example VPN) with vendor agreements in place.",
+            "Do not email or upload recordings to personal or consumer cloud accounts.",
+            "Report lost or stolen laptops, drives or phones that held PHI immediately.",
+            "Watch for phishing; do not open unexpected attachments or links."
+          ]
+        },
+        {
+          "title": "Breach basics",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "What a breach is",
+              "body": "An impermissible use or disclosure of unsecured PHI that compromises its privacy or security. It is presumed to be a breach unless a documented risk assessment shows a low probability of compromise. Three exceptions are not breaches: unintentional good-faith access by a workforce member acting within their authority, an inadvertent disclosure between people authorized at the same entity, and a disclosure where the recipient could not reasonably have kept the information."
+            },
+            {
+              "title": "The risk assessment",
+              "body": "Considers the nature and extent of PHI, who received it, whether it was actually viewed or acquired, and how far the risk was reduced."
+            },
+            {
+              "title": "Encryption safe harbor",
+              "body": "If lost data was encrypted to HHS guidance standards and the key was not compromised, it is not unsecured PHI and notification is generally not required."
+            }
+          ]
+        },
+        {
+          "title": "Breach notification timelines",
+          "kind": "table",
+          "head": [
+            "Who is notified",
+            "When"
+          ],
+          "rows": [
+            [
+              "Affected individuals",
+              "Without unreasonable delay and no later than 60 calendar days after discovery, by first-class mail or email if agreed"
+            ],
+            [
+              "HHS, 500 or more affected",
+              "At the same time as individual notice, no later than 60 days after discovery"
+            ],
+            [
+              "HHS, fewer than 500 affected",
+              "Logged and reported annually, within 60 days after the end of the calendar year"
+            ],
+            [
+              "Prominent media",
+              "When more than 500 residents of one state or jurisdiction are affected, within 60 days"
+            ],
+            [
+              "Covered entity, by a business associate",
+              "Without unreasonable delay and no later than 60 days after the BA discovers it"
+            ]
+          ],
+          "note": "State laws may add shorter deadlines. Discovery is the first day the breach is known, or would have been known with reasonable diligence."
+        },
+        {
+          "title": "Penalties in general terms",
+          "kind": "list",
+          "items": [
+            "Civil penalties use four tiers based on culpability: did not know, reasonable cause, willful neglect corrected, and willful neglect not corrected.",
+            "Amounts per violation and annual caps rise with each tier and are adjusted for inflation.",
+            "Knowingly obtaining or disclosing PHI improperly can bring criminal penalties enforced by the Department of Justice, higher with false pretenses or intent to sell or harm.",
+            "HHS Office for Civil Rights enforces; state attorneys general can also bring HIPAA actions.",
+            "Employers also apply their own sanctions, up to termination."
+          ]
+        },
+        {
+          "title": "What a technologist does after a suspected breach",
+          "kind": "flow",
+          "items": [
+            "Contain it if safely possible (retrieve the paper, recall the misdirected fax, lock the device)",
+            "Report at once to supervisor and the privacy or security officer per policy",
+            "Write down the facts: what, when, who, how much",
+            "Cooperate with the investigation and risk assessment",
+            "Organization decides on and sends required notifications"
+          ]
+        }
+      ],
+      "pearls": [
+        "Three safeguard types: administrative, physical, technical.",
+        "Automatic logoff, unique user IDs, audit controls and encryption are technical safeguards.",
+        "Outer limit for individual breach notice is 60 days from discovery, but the standard is without unreasonable delay.",
+        "Breaches of 500 or more go to HHS within 60 days; smaller ones are reported annually.",
+        "Properly encrypted lost devices generally do not trigger breach notification.",
+        "The technologist reports to the privacy or security officer; the organization notifies patients and HHS.",
+        "HITECH made business associates directly liable and raised penalties."
+      ],
+      "eegLink": "Ambulatory and long-term EEG data travel on laptops, drives and remote links, so encryption and approved transfer methods are part of every home or ICU study."
+    },
+    {
+      "id": "professional-conduct",
+      "title": "Professional Conduct",
+      "intro": "Each encounter should leave the patient safe, informed and respected. Exam scenarios test consent, communication with vulnerable patients, boundaries, honest documentation and what to do about an unsafe colleague.",
+      "sections": [
+        {
+          "title": "Starting every encounter",
+          "kind": "steps",
+          "items": [
+            "Introduce yourself with name and role; wear your ID badge.",
+            "Verify identity with two identifiers (for example full name and date of birth) against the order.",
+            "Explain the procedure in plain language, including activation procedures and video recording.",
+            "Obtain consent per facility policy and confirm the patient may stop at any time.",
+            "Screen for allergies, skin problems, implanted devices and safety risks.",
+            "Offer a chaperone per policy and protect privacy with doors, curtains and draping."
+          ]
+        },
+        {
+          "title": "Consent and assent",
+          "kind": "table",
+          "head": [
+            "Term",
+            "Meaning",
+            "EEG example"
+          ],
+          "rows": [
+            [
+              "Informed consent",
+              "A capable adult (or legal representative) agrees after understanding purpose, risks, benefits and alternatives",
+              "Adult agrees to hyperventilation, photic stimulation and video recording"
+            ],
+            [
+              "Implied consent",
+              "Consent shown by action, or presumed in an emergency",
+              "Patient lies down and offers head for measurement"
+            ],
+            [
+              "Parental permission",
+              "Parent or legal guardian gives legal consent for a minor",
+              "Mother consents for her 8-year-old's EEG"
+            ],
+            [
+              "Assent",
+              "Agreement from a child or person who cannot legally consent, appropriate to understanding",
+              "Explaining to the child and asking for cooperation"
+            ],
+            [
+              "Refusal",
+              "A capable patient may decline any part of the test",
+              "Patient declines hyperventilation: document and notify per policy"
+            ]
+          ],
+          "note": "Rules on emancipated minors and who may consent vary by state; follow facility policy."
+        },
+        {
+          "title": "Communication and respect",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Language needs",
+              "body": "Use a qualified medical interpreter (in person, phone or video). Avoid using family members for medical content. An accompanying adult may interpret only at the patient's request (or in an emergency); a minor child only in an emergency."
+            },
+            {
+              "title": "Cognitive limitations",
+              "body": "Use short sentences, one step at a time, calm tone, demonstration, and involve caregivers. Address the patient directly and allow extra time."
+            },
+            {
+              "title": "Hearing or vision loss",
+              "body": "Face the patient, use written instructions or sign language interpreters, and describe each step before touching."
+            },
+            {
+              "title": "Cultural and religious needs",
+              "body": "Ask about preferences such as head coverings, hair, modesty or same-gender staff, and accommodate when safely possible."
+            },
+            {
+              "title": "Chaperones",
+              "body": "Offer per policy, especially for sedation, sleep studies, minors, and sensitive exposure; document chaperone presence or refusal."
+            }
+          ]
+        },
+        {
+          "title": "Boundaries, colleagues and workplace",
+          "kind": "list",
+          "items": [
+            "Keep relationships professional: no dating patients, no personal social media contact, no sharing of personal problems.",
+            "Gifts: follow policy; small tokens may be allowed, cash and costly gifts generally are not.",
+            "Conflicts of interest: disclose vendor relationships or outside interests that could influence equipment choices or referrals.",
+            "Impaired colleague: if someone appears impaired by drugs, alcohol or fatigue, protect patients first and report to the supervisor; do not cover up or confront alone.",
+            "Harassment and discrimination: not tolerated; report through HR or the compliance hotline; retaliation is prohibited.",
+            "Professional appearance: clean, safe attire, ID visible, closed-toe shoes, nails and jewelry per infection-control policy."
+          ]
+        },
+        {
+          "title": "Documentation integrity",
+          "kind": "list",
+          "items": [
+            "Record what you saw and did, objectively, at the time.",
+            "Never alter, delete, back-date or rewrite an entry or annotation, and never edit recorded EEG data.",
+            "Correct paper errors with a single line, initials and date so the original stays readable; electronic corrections follow the system's amendment process.",
+            "Add missed information as a clearly labeled late entry with the current date and time.",
+            "Do not chart for someone else or let others chart under your login."
+          ]
+        },
+        {
+          "title": "When the patient asks about results",
+          "kind": "text",
+          "text": "Acknowledge the concern, explain that a physician trained in EEG will review the full recording and send a report to the ordering provider, and say how and when results usually come back. Do not hint with facial expressions or comments such as 'everything looked fine'. If the patient is distressed or the question is clinical, offer to let the nurse or physician know."
+        }
+      ],
+      "pearls": [
+        "Use two patient identifiers, never room number alone.",
+        "Children give assent; parents or guardians give consent.",
+        "A capable adult can refuse any part of the test; document the refusal and inform the ordering provider.",
+        "Qualified interpreters, not family members, for medical explanations.",
+        "Never alter records; correct errors with a single line, initials and date (or the EHR amendment process), and add missed information as a labeled late entry.",
+        "Report an impaired colleague to the supervisor; patient safety first.",
+        "Answer questions about the procedure, never about the result."
+      ],
+      "eegLink": "Hyperventilation, photic stimulation, sleep deprivation and video recording each need explanation and agreement, so consent is part of the EEG setup, not just paperwork."
+    },
+    {
+      "id": "allergies-skin",
+      "title": "Allergies and Skin Integrity",
+      "intro": "Every EEG puts chemicals, adhesives and pressure on the skin. Screening before setup and checking electrode sites during long recordings prevent the most common patient injuries in the lab. Chemical handling, SDS and ventilation are covered on the Lab Safety page.",
+      "sections": [
+        {
+          "title": "Common sensitizers and irritants",
+          "kind": "table",
+          "head": [
+            "Material",
+            "Possible problem",
+            "Practical alternative or precaution"
+          ],
+          "rows": [
+            [
+              "Latex (gloves, some caps, tourniquets)",
+              "Contact dermatitis to anaphylaxis",
+              "Latex-free supplies; flag allergy in the record and on the room"
+            ],
+            [
+              "Adhesive tape and electrode adhesives",
+              "Irritant or allergic contact dermatitis, skin tears",
+              "Hypoallergenic or paper tape, silicone tapes, gentle removal"
+            ],
+            [
+              "Collodion",
+              "Skin irritation, flammable, strong vapors",
+              "Paste or alternative fixation if sensitive; use with ventilation; see Lab Safety page"
+            ],
+            [
+              "Acetone (collodion removal)",
+              "Drying, irritation, flammable vapor",
+              "Use sparingly, ventilated area; alternative removers per policy"
+            ],
+            [
+              "Conductive pastes and gels",
+              "Contact dermatitis from ingredients",
+              "Try a different product per policy; wash off thoroughly after the study"
+            ],
+            [
+              "Abrasive skin-prep gels",
+              "Abrasion, especially on fragile skin",
+              "Light touch; avoid on neonates and compromised skin"
+            ],
+            [
+              "Chlorhexidine and alcohol wipes",
+              "Irritation; chlorhexidine can rarely cause severe allergic reactions",
+              "Ask before use; avoid alcohol on very fragile or premature skin per policy"
+            ]
+          ]
+        },
+        {
+          "title": "Screening questions before setup",
+          "kind": "list",
+          "items": [
+            "Do you have any allergies to latex, tape, adhesives, bandages or medications?",
+            "Have you had a skin reaction after a previous EEG, ECG or bandage?",
+            "Do you have sensitive skin, eczema, psoriasis, open areas, recent surgery or a scalp condition?",
+            "Any shunt, skull defect, recent craniotomy, or devices that change electrode placement?",
+            "For children and nonverbal patients: ask the caregiver and check the chart.",
+            "Document the answers and use the facility allergy flag."
+          ]
+        },
+        {
+          "title": "If a reaction occurs",
+          "kind": "steps",
+          "items": [
+            "Stop applying the suspected material and remove it gently if safe.",
+            "Watch for spreading hives, swelling of lips or tongue, wheezing, or low blood pressure; these are emergencies.",
+            "For a severe reaction call the rapid response or code team per policy and stay with the patient.",
+            "For local redness or itching, wash the area and notify the nurse or physician.",
+            "Document the material, reaction, actions and who was notified; complete an incident report per policy.",
+            "Update the allergy record so future studies use alternatives."
+          ]
+        },
+        {
+          "title": "Skin integrity in long-term monitoring",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Why injuries happen",
+              "body": "Pressure from electrodes and the head lying on them, moisture, friction, adhesives and long duration can cause pressure injuries and breakdown, especially at the occiput."
+            },
+            {
+              "title": "High-risk patients",
+              "body": "Neonates and premature infants, older adults, ICU and sedated patients, edema, poor nutrition, and anyone who cannot reposition or report pain."
+            },
+            {
+              "title": "Checking sites",
+              "body": "Inspect electrode sites on a scheduled basis per facility protocol, at least daily in long-term monitoring and more often in neonates and ICU patients, and whenever the patient reports pain or itching.",
+              "points": [
+                "Look for redness, blanching, blistering, breakdown or drainage",
+                "Reposition or move an electrode slightly if the skin is at risk"
+              ]
+            },
+            {
+              "title": "Neonates and fragile skin",
+              "body": "Use minimal or no abrasion, neonatal-size electrodes, gentle adhesives and no collodion unless policy allows; remove with care to avoid skin stripping."
+            },
+            {
+              "title": "Documentation",
+              "body": "Record skin condition before setup, at each check and at removal, with any changes reported to the nurse and physician."
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Screen for allergies before any product touches the patient.",
+        "A prior uneventful study does not rule out a new sensitivity.",
+        "Severe allergic signs (airway swelling, wheeze, hypotension) mean call for emergency help.",
+        "The occiput is a common pressure-injury site in recumbent long-term monitoring patients.",
+        "Neonatal skin needs minimal abrasion and gentle adhesives.",
+        "Document skin condition at setup, at each check and at removal.",
+        "Collodion and acetone safety, ventilation and SDS: see the Lab Safety page."
+      ],
+      "eegLink": "Days-long video-EEG and ICU monitoring turn small electrode problems into pressure injuries, so skin checks are part of maintaining a good recording."
+    }
+  ],
+  "mistakes": [
+    [
+      "It is fine to tell a parent the EEG looked normal if you are sure.",
+      "Technologists never give results; the physician interprets and the ordering provider discusses them."
+    ],
+    [
+      "Video-EEG is not PHI if the name is removed from the screen.",
+      "A full-face image or voice identifies the patient; video is PHI."
+    ],
+    [
+      "Minimum necessary blocks sharing the EEG with the treating neurologist.",
+      "Minimum necessary does not apply to disclosures for treatment."
+    ],
+    [
+      "Removing the name makes a case de-identified.",
+      "All 18 Safe Harbor identifiers, including dates, MRN and face, must be removed, or an expert determination used."
+    ],
+    [
+      "The technologist should notify the patient of a breach directly.",
+      "Report to the privacy or security officer; the organization assesses and sends notices."
+    ],
+    [
+      "Breaches must always be reported to HHS within 60 days.",
+      "Breaches of 500 or more go to HHS within 60 days; smaller ones may be reported annually."
+    ],
+    [
+      "A lost encrypted laptop is always a reportable breach.",
+      "Properly encrypted data is not unsecured PHI, so notification is generally not required."
+    ],
+    [
+      "You may use R. EEG T. after the exam but before results are official.",
+      "Use a credential only after it is awarded and while it is active."
+    ],
+    [
+      "Errors in the record should be deleted or rewritten neatly.",
+      "Never alter records; correct errors with a single line, initials and date (or the EHR amendment process), and add missed information as a labeled late entry."
+    ],
+    [
+      "A family member is the best interpreter.",
+      "Use a qualified medical interpreter except in emergencies or by informed patient choice per policy."
+    ],
+    [
+      "A child's assent is legal consent.",
+      "A parent or guardian gives consent; the child gives assent."
+    ],
+    [
+      "Electrode sites only need checking when the patient complains.",
+      "Check on a set schedule per protocol, more often in neonates and ICU patients."
+    ],
+    [
+      "An impaired colleague should be covered for to avoid trouble.",
+      "Protect patients and report to the supervisor through the chain of command."
+    ],
+    [
+      "Texting a patient name to a doctor's personal phone is fine if brief.",
+      "Use only secure, approved messaging systems."
+    ]
+  ],
+  "memory": [
+    [
+      "TPO",
+      "Treatment, Payment and health care Operations: uses of PHI allowed without authorization."
+    ],
+    [
+      "APT safeguards",
+      "Administrative, Physical, Technical: the three Security Rule safeguard groups."
+    ],
+    [
+      "Rule of 60 (breach)",
+      "Individual notice and HHS notice for 500+ no later than 60 days after discovery; small-breach log due 60 days after year end."
+    ],
+    [
+      "Consent from parent, assent from child",
+      "Parents or guardians consent legally; minors give assent."
+    ]
+  ]
+}
