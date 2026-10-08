@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import neuro from "../../src/data/neurologyEssentials.json";
 import safety from "../../src/data/labSafety.json";
 
-const KINDS = new Set(["text", "list", "table", "cards", "steps"]);
+const KINDS = new Set(["text", "list", "table", "cards", "steps", "flow"]);
 
 describe.each([
   ["neurology essentials", neuro],
@@ -19,7 +19,7 @@ describe.each([
       for (const s of t.sections) {
         expect(KINDS.has(s.kind), `${t.id}: ${s.title}`).toBe(true);
         if (s.kind === "text") expect(s.text).toBeTruthy();
-        if (s.kind === "list" || s.kind === "steps") expect(s.items.length).toBeGreaterThan(0);
+        if (s.kind === "list" || s.kind === "steps" || s.kind === "flow") expect(s.items.length).toBeGreaterThan(0);
         if (s.kind === "cards") expect(s.cards.length).toBeGreaterThan(0);
         if (s.kind === "table") for (const r of s.rows) expect(r.length, `${t.id}: ${s.title}`).toBe(s.head.length);
       }

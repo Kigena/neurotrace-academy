@@ -8,6 +8,21 @@ import { Card, Table } from "./ui.jsx";
  */
 
 function Section({ s }) {
+  if (s.kind === "flow") {
+    return (
+      <div className="space-y-2">
+        {s.title && <h3 className="text-base font-semibold text-slate-900">{s.title}</h3>}
+        <ol className="flex flex-wrap items-center gap-2" aria-label={s.title}>
+          {s.items.map((x, i) => (
+            <li key={x} className="flex items-center gap-2">
+              <span className="rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-medium text-indigo-900">{x}</span>
+              {i < s.items.length - 1 && <span aria-hidden="true" className="text-lg font-bold text-indigo-400">&rarr;</span>}
+            </li>
+          ))}
+        </ol>
+      </div>
+    );
+  }
   if (s.kind === "table") {
     return (
       <div className="space-y-2">

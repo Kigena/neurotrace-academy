@@ -1029,22 +1029,22 @@
       "topicTags": [
         "hydrocephalus",
         "ventricular-system",
-        "csf-flow"
+        "foramen-of-monro"
       ],
       "cognitiveLevel": 4,
       "competency": "clinical",
       "reasoningSteps": 2,
-      "stem": "Imaging shows enlarged lateral and third ventricles but a normal-sized fourth ventricle. Where is the obstruction to fluid flow most likely located?",
-      "explanation": "Cerebrospinal fluid flows from the lateral ventricles through the interventricular foramina to the third ventricle, then through the cerebral aqueduct to the fourth ventricle; a block at the aqueduct dilates everything upstream while the fourth ventricle stays normal. Blockage at the fourth ventricle outlets would enlarge the fourth ventricle too. Impaired absorption at the arachnoid granulations causes communicating hydrocephalus with all ventricles enlarged. A block at one interventricular foramen would enlarge only one lateral ventricle.",
-      "learningObjective": "Localize an obstruction in non-communicating hydrocephalus from the ventricular pattern.",
+      "stem": "A tumour growing beside the right interventricular foramen (of Monro) blocks it. Imaging shows only the right lateral ventricle enlarged. Why do the left lateral, third and fourth ventricles stay normal in size?",
+      "explanation": "Each lateral ventricle has its own interventricular foramen into the third ventricle, so blocking the right one traps fluid only on that side while the left lateral ventricle keeps draining normally and the downstream ventricles are not dilated. There is a single midline aqueduct, not one per side. Ventricles do not drain directly into the venous sinus; absorption happens through arachnoid granulations after fluid reaches the subarachnoid space. Choroid plexus lies in both lateral ventricles and in the third and fourth ventricles.",
+      "learningObjective": "Explain one-sided ventricular enlargement from a block at one interventricular foramen.",
       "questionType": "application",
       "references": [],
       "difficulty": "hard",
       "options": [
-        "Cerebral aqueduct of the midbrain",
-        "Foramina at the outlet of the fourth ventricle",
-        "Arachnoid granulations at the sagittal sinus",
-        "Interventricular foramen on one side"
+        "Each lateral ventricle drains through its own foramen into the third ventricle",
+        "The right ventricle has its own aqueduct to the fourth ventricle",
+        "Fluid on the right drains straight into the superior sagittal sinus",
+        "Choroid plexus is found only in the right lateral ventricle"
       ],
       "answerIndex": 0,
       "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",

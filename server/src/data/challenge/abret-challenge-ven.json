@@ -1,0 +1,590 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-07",
+  "bank": "challenge",
+  "focus": "ventricles-csf",
+  "description": "Original questions on the cerebral ventricles, their communications, CSF circulation, hydrocephalus patterns and technologist precautions around shunts and drains. Text only; not yet medically verified.",
+  "totalQuestions": 20,
+  "questions": [
+    {
+      "id": "ch-ven-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "ventricles",
+        "lateral-ventricle"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "In which lobe does the inferior horn of the lateral ventricle lie?",
+      "explanation": "The inferior horn curves down and forward into the medial temporal lobe, where the hippocampus forms much of its floor, so it is also called the temporal horn. The frontal lobe holds the anterior (frontal) horn, the occipital lobe holds the posterior (occipital) horn, and the parietal lobe overlies the body and atrium rather than containing a horn of its own.",
+      "learningObjective": "Match each horn of the lateral ventricle to the lobe that contains it.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Frontal lobe",
+        "Temporal lobe",
+        "Occipital lobe",
+        "Parietal lobe"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "ventricles",
+        "lateral-ventricle",
+        "atrium"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which description best fits the atrium (trigone) of the lateral ventricle?",
+      "explanation": "The atrium is the wide region at the back of the body where the occipital and temporal horns diverge; it holds the bulky glomus of the choroid plexus, which often calcifies. The channel between the third and fourth ventricles is the cerebral aqueduct. The midline cavity between the thalami is the third ventricle. The opening from each lateral ventricle into the third is an interventricular foramen of Monro.",
+      "learningObjective": "Describe the atrium of the lateral ventricle and its contents.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Junction where the body meets the occipital and temporal horns",
+        "Narrow channel joining the third and fourth ventricles",
+        "Slit-like midline cavity lying between the two thalami",
+        "Opening joining each lateral ventricle to the third"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "ventricles",
+        "lateral-ventricle",
+        "septum-pellucidum",
+        "caudate"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which structures form the medial and lateral walls of the frontal horn of the lateral ventricle?",
+      "explanation": "The thin septum pellucidum stretches between the corpus callosum and the fornix and separates the two frontal horns in the midline, while the head of the caudate nucleus bulges into each frontal horn from the side. Reversing the two places the midline membrane laterally, which is anatomically impossible. The thalamus borders the body and third ventricle rather than the frontal horn, and the putamen and internal capsule lie lateral to the caudate without touching the ventricle wall.",
+      "learningObjective": "Identify the walls of the frontal horn of the lateral ventricle.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Caudate head medially, septum pellucidum laterally",
+        "Thalamus medially, putamen laterally",
+        "Septum pellucidum medially, caudate head laterally",
+        "Fornix medially, internal capsule laterally"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "ventricles",
+        "third-ventricle",
+        "thalamus",
+        "hypothalamus"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "The lateral walls of the third ventricle are formed mainly by which structures?",
+      "explanation": "The third ventricle is a narrow midline slit within the diencephalon: the thalamus forms the upper part of each lateral wall and the hypothalamus the lower part, separated by the hypothalamic sulcus. The caudate borders the lateral ventricle, and the putamen does not line any ventricle. The pons and medulla form the floor of the fourth ventricle. The hippocampus lines the temporal horn, and the fornix runs above the third ventricle rather than forming its side walls.",
+      "learningObjective": "Name the structures that form the walls of the third ventricle.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Caudate and putamen",
+        "Pons and medulla",
+        "Hippocampus and fornix",
+        "Thalamus and hypothalamus"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "ventricles",
+        "fourth-ventricle",
+        "cerebellum",
+        "brainstem"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which structures border the fourth ventricle?",
+      "explanation": "The fourth ventricle is a tent-shaped space in the hindbrain: its floor (the rhomboid fossa) is the back of the pons and upper medulla, and its roof is formed by the cerebellum and the medullary velum. The thalami and hypothalamus border the third ventricle. The caudate and septum pellucidum border the lateral ventricles. The tectum and cerebral peduncles belong to the midbrain, which surrounds the cerebral aqueduct rather than the fourth ventricle.",
+      "learningObjective": "Relate the fourth ventricle to the brainstem and cerebellum.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Thalami on each side, hypothalamus below",
+        "Pons and medulla in front, cerebellum behind",
+        "Caudate laterally, septum pellucidum medially",
+        "Tectum behind, cerebral peduncles in front"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "ventricles",
+        "foramen-of-monro"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which openings connect each lateral ventricle with the third ventricle?",
+      "explanation": "Each lateral ventricle drains into the third ventricle through an interventricular foramen of Monro, located just behind the column of the fornix. The lateral apertures of Luschka and the median aperture of Magendie are the outlets of the fourth ventricle into the subarachnoid space. Arachnoid granulations are absorption sites projecting into the dural venous sinuses, not passages between ventricles.",
+      "learningObjective": "Name the communication between the lateral and third ventricles.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Lateral apertures of Luschka",
+        "Median aperture of Magendie",
+        "Interventricular foramina of Monro",
+        "Arachnoid granulations of Pacchioni"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "ventricles",
+        "cerebral-aqueduct",
+        "midbrain"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "The cerebral aqueduct (of Sylvius) passes through which part of the brainstem?",
+      "explanation": "The cerebral aqueduct is the narrow channel running through the midbrain, with the tectum behind it and the tegmentum in front, carrying fluid from the third ventricle to the fourth. The pons and upper medulla form the floor of the fourth ventricle itself, and the lower medulla contains the start of the central canal. The diencephalon surrounds the third ventricle and is usually not counted as part of the brainstem.",
+      "learningObjective": "Locate the cerebral aqueduct within the brainstem.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Midbrain",
+        "Pons",
+        "Medulla",
+        "Diencephalon"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "ventricles",
+        "fourth-ventricle",
+        "foramen-of-magendie",
+        "cisterns"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which opening allows fluid to pass from the fourth ventricle into the cisterna magna?",
+      "explanation": "The single median aperture of Magendie opens from the lower roof of the fourth ventricle into the cisterna magna (cerebellomedullary cistern) behind the medulla. The paired lateral apertures of Luschka open sideways into the subarachnoid space at the cerebellopontine angles. The foramen of Monro links a lateral ventricle to the third ventricle, and the cerebral aqueduct links the third ventricle to the fourth; neither reaches the subarachnoid space.",
+      "learningObjective": "Distinguish the median and lateral outlets of the fourth ventricle.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Lateral aperture of Luschka",
+        "Median aperture of Magendie",
+        "Interventricular foramen of Monro",
+        "Cerebral aqueduct of Sylvius"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-009",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "ventricles",
+        "central-canal",
+        "spinal-cord"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which channel continues caudally from the fourth ventricle into the spinal cord?",
+      "explanation": "The fourth ventricle narrows at the obex into the central canal, a tiny ependyma-lined channel running through the closed medulla and the spinal cord, often partly obliterated in adults. The lumbar cistern is subarachnoid space below the cord, outside the cord itself. The cerebral aqueduct lies above the fourth ventricle, in the midbrain. The foramen magnum is a skull opening, not a channel of the ventricular system.",
+      "learningObjective": "Identify the caudal continuation of the ventricular system.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Lumbar cistern",
+        "Cerebral aqueduct",
+        "Central canal",
+        "Foramen magnum"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-010",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "choroid-plexus",
+        "csf-production"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which part of the ventricular system contains no choroid plexus?",
+      "explanation": "Choroid plexus lies in the body, atrium and temporal horn of each lateral ventricle, along the roof of the third ventricle, and in the lower roof of the fourth ventricle, extending out through the apertures of Luschka. The cerebral aqueduct, like the frontal and occipital horns, has no choroid plexus and acts purely as a conduit; because it is the narrowest channel in the system, it is also a common site of obstruction.",
+      "learningObjective": "Locate the choroid plexus within the ventricles.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Body of the lateral ventricle",
+        "Roof of the third ventricle",
+        "Roof of the fourth ventricle",
+        "Cerebral aqueduct"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-011",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "csf-production",
+        "csf-volume"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Approximately how much cerebrospinal fluid does a healthy adult produce each day?",
+      "explanation": "Adult production, mostly by the choroid plexus, is commonly taught as roughly 500 mL per day (about 20 mL per hour), so the total volume of about 150 mL is replaced several times daily. The figure of 150 mL is the total volume present at any moment, not the daily output. About 50 mL per day is far too little, and about 1,500 mL per day is roughly triple the accepted rate.",
+      "learningObjective": "State typical adult CSF production and total volume.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "About 50 mL",
+        "About 150 mL",
+        "About 500 mL",
+        "About 1,500 mL"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-012",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "csf-absorption",
+        "arachnoid-granulations",
+        "venous-sinus"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Arachnoid granulations return cerebrospinal fluid mainly into which venous structure?",
+      "explanation": "The largest and most numerous arachnoid granulations project into the superior sagittal sinus along the vertex, where fluid passes one way into venous blood. The cavernous sinus lies beside the sella and drains orbital and facial veins. The great cerebral vein of Galen drains deep cerebral veins into the straight sinus, and neither is the main site of fluid absorption.",
+      "learningObjective": "Identify where CSF is absorbed into the venous system.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Cavernous sinus",
+        "Superior sagittal sinus",
+        "Great cerebral vein",
+        "Straight sinus"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-013",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "hydrocephalus",
+        "foramen-of-monro",
+        "colloid-cyst"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A colloid cyst in the front of the third ventricle blocks both interventricular foramina. Which imaging pattern is expected?",
+      "explanation": "Ventricles upstream of a block dilate while those downstream stay normal. A cyst plugging both foramina of Monro traps fluid in both lateral ventricles, leaving the third and fourth normal; a one-sided block would enlarge only that lateral ventricle. Enlargement through the third ventricle with a normal fourth points to the aqueduct. Enlargement of all four with a ballooned fourth points to the fourth-ventricle outlets. An isolated large fourth ventricle needs both its inflow and outflow sealed, which does not fit a third-ventricle cyst.",
+      "learningObjective": "Predict ventricular enlargement from a block at the foramina of Monro.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Both lateral ventricles enlarged; third and fourth normal",
+        "Lateral and third ventricles enlarged; fourth normal",
+        "All four ventricles enlarged with ballooned fourth",
+        "Fourth ventricle enlarged; lateral and third normal"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-014",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "hydrocephalus",
+        "fourth-ventricle",
+        "foramen-of-magendie",
+        "foramen-of-luschka"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A posterior fossa cyst seals the median and both lateral apertures of the fourth ventricle. Which ventricles are expected to enlarge?",
+      "explanation": "The apertures of Magendie and Luschka are the main exits from the ventricular system into the subarachnoid space (the central canal is a negligible route), so sealing them traps fluid in every ventricle upstream: both lateral ventricles, the third and the fourth all enlarge, the fourth often markedly. Enlargement of the lateral ventricles alone fits a block at the foramina of Monro, and enlargement through the third with a normal fourth fits aqueductal obstruction. The fourth ventricle alone cannot dilate while its inflow from the aqueduct stays open.",
+      "learningObjective": "Predict ventricular enlargement from obstruction of the fourth-ventricle outlets.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Lateral ventricles only",
+        "Lateral and third only",
+        "All four ventricles",
+        "Fourth ventricle only"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-015",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "hydrocephalus",
+        "communicating-hydrocephalus",
+        "subarachnoid-hemorrhage"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Two weeks after an aneurysmal subarachnoid hemorrhage, imaging shows enlargement of all four ventricles with no mass along the pathways. What mechanism is most likely?",
+      "explanation": "Blood breakdown products and inflammation in the subarachnoid space clog the arachnoid granulations, so fluid leaves the ventricles freely but is not absorbed: a communicating hydrocephalus with all four ventricles enlarged. A choroid plexus papilloma can overproduce fluid but would show a mass and is not linked to recent hemorrhage. Aqueductal narrowing would spare the fourth ventricle. Atrophy enlarges ventricles slowly, with matching sulcal widening, rather than within two weeks of a bleed.",
+      "learningObjective": "Explain communicating hydrocephalus after subarachnoid hemorrhage.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Excess fluid output from a choroid plexus tumor",
+        "Narrowing of the cerebral aqueduct by scarring",
+        "Shrinkage of brain tissue after diffuse atrophy",
+        "Impaired fluid absorption at arachnoid granulations"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-016",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "normal-pressure-hydrocephalus",
+        "gait",
+        "dementia"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 74-year-old has a broad, shuffling 'magnetic' gait, urinary urgency and incontinence and slowed thinking. Imaging shows ventricles enlarged out of proportion to the sulci. Which condition best fits?",
+      "explanation": "Gait disturbance, urinary incontinence and cognitive slowing in an older adult, with ventricles large relative to the sulci, form the classic picture of normal pressure hydrocephalus, a communicating form in which some patients improve after fluid drainage or shunting. Hydrocephalus ex vacuo shows sulci widened in proportion to the ventricles. Alzheimer disease typically begins with memory loss, with gait and bladder change late. Acute aqueductal obstruction causes raised pressure with headache, vomiting and drowsiness rather than this slowly evolving triad.",
+      "learningObjective": "Recognize the clinical and imaging features of normal pressure hydrocephalus.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Normal pressure hydrocephalus",
+        "Hydrocephalus ex vacuo",
+        "Alzheimer disease alone",
+        "Acute aqueductal obstruction"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-017",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "hydrocephalus-ex-vacuo",
+        "atrophy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which feature best distinguishes hydrocephalus ex vacuo from true hydrocephalus?",
+      "explanation": "Ex vacuo enlargement is passive: brain tissue is lost, as in atrophy or after infarction, and both ventricles and sulci widen to fill the space at normal pressure, so shunting does not help. Raised pressure with headache and papilledema points to obstructive or communicating hydrocephalus. A ballooned fourth ventricle suggests outlet obstruction. Large ventricles with tight, effaced sulci indicate fluid under pressure pushing the brain outward, the opposite of tissue loss.",
+      "learningObjective": "Differentiate ventricular enlargement from atrophy versus raised fluid pressure.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Raised pressure causing headache and papilledema",
+        "Sulci widened in proportion to the large ventricles",
+        "Disproportionate ballooning of the fourth ventricle",
+        "Ventricles enlarged with tight, effaced sulci"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-018",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles-csf",
+        "hydrocephalus",
+        "pediatric",
+        "clinical-signs"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Why does an infant with hydrocephalus usually present with a rapidly enlarging head, whereas an adult presents with headache, vomiting and papilledema?",
+      "explanation": "Before the sutures fuse, the skull can expand, so rising pressure shows as increasing head circumference, a full or bulging anterior fontanelle, split sutures and sometimes downward 'sunset' gaze. The adult skull is rigid, so the same pressure rise produces headache, vomiting, papilledema and reduced alertness. Infants do not make several times more fluid per kilogram, adults keep their choroid plexus, and faster absorption would lessen rather than cause hydrocephalus.",
+      "learningObjective": "Contrast infant and adult presentations of hydrocephalus.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Infants produce several times more fluid per kilogram",
+        "Adult ventricles lose their choroid plexus with age",
+        "Open sutures let the infant skull expand with pressure",
+        "Infant arachnoid granulations absorb fluid faster"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-019",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "ventricles-csf",
+        "shunt",
+        "electrode-application",
+        "patient-safety"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "During measurement, the technologist finds a ventriculoperitoneal shunt valve under the scalp near the right T4 (T8) site. What is the best approach?",
+      "explanation": "Abrasion, pressure or collodion over a shunt valve or tubing risks skin breakdown, infection or valve damage, so the electrode is moved just off the hardware, the skin there is not abraded, and the displaced position is documented so the reader can interpret any asymmetry. Placing the electrode directly on the valve ignores that risk. Removing every right-sided electrode loses coverage needlessly when a small shift is enough. Pumping or pressing a valve is a clinical action outside the technologist's role.",
+      "learningObjective": "Apply electrodes safely around a ventricular shunt.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Place the electrode over the valve to keep the 10-20 spacing",
+        "Omit every right-sided electrode and document a limited montage",
+        "Press the valve to check it works before applying paste",
+        "Shift the electrode off the valve, avoid abrading it, and document"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ven-020",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "ventricles-csf",
+        "external-ventricular-drain",
+        "icu",
+        "patient-safety"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "An ICU patient has an external ventricular drain. To reach the occipital electrodes, the technologist needs the head of the bed changed. What is the best action?",
+      "explanation": "Drainage through an external ventricular drain depends on the height of the chamber relative to the head, usually zeroed near the tragus as a landmark for the foramen of Monro, so repositioning can cause dangerous over- or under-drainage. The nurse clamps or re-levels the drain per unit protocol before any move. Moving the bed and telling the nurse later leaves the drain mis-leveled during the change. Lowering the chamber risks over-drainage, ventricular collapse and bleeding. Disconnecting the tubing breaks a sterile system and invites infection.",
+      "learningObjective": "Coordinate patient repositioning safely around an external ventricular drain.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Ask the nurse to clamp or re-level the drain per protocol first",
+        "Change the bed height, then notify the nurse after recording",
+        "Lower the drain chamber so fluid keeps flowing during the move",
+        "Disconnect the drain tubing briefly so the head moves freely"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

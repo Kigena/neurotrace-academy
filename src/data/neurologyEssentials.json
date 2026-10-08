@@ -507,18 +507,9 @@
           ]
         },
         {
-          "title": "Ventricles and CSF flow",
-          "kind": "steps",
-          "items": [
-            "CSF is produced mainly by the choroid plexus in the ventricles (roughly 500 mL per day; about 150 mL present at any time, so it turns over several times daily).",
-            "Lateral ventricles (one per hemisphere).",
-            "Interventricular foramina (of Monro).",
-            "Third ventricle (between the two thalami).",
-            "Cerebral aqueduct (of Sylvius) through the midbrain; a common site of obstruction.",
-            "Fourth ventricle (between pons/medulla and cerebellum).",
-            "Out through the median aperture (Magendie) and two lateral apertures (Luschka) into the subarachnoid space.",
-            "Reabsorbed through arachnoid granulations into the superior sagittal sinus."
-          ]
+          "title": "Ventricles and CSF",
+          "kind": "text",
+          "text": "The four ventricles, every opening that connects them, where CSF is made and absorbed, hydrocephalus patterns and shunt precautions now have their own tab: Ventricles and CSF."
         },
         {
           "title": "Skull bones and electrode landmarks",
@@ -561,6 +552,342 @@
         "Nasion, inion and both preauricular points are the four landmarks for 10-20 measurement."
       ],
       "eegLink": "Accurate 10-20 placement depends on finding the nasion, inion and preauricular points, and the electrode names (C, T, P, O) map directly onto the lobes and sulci on this tab."
+    },
+    {
+      "id": "ventricles",
+      "title": "Ventricles and CSF",
+      "intro": "The ventricles are four connected, CSF-filled cavities deep inside the brain: two lateral ventricles, the third ventricle and the fourth ventricle. This tab covers their parts and neighbours, every opening that links them, how CSF is made, circulates and is absorbed, what happens when flow is blocked, and how shunts and drains change the way you set up an EEG.",
+      "sections": [
+        {
+          "title": "The ventricles and the parts of each lateral ventricle",
+          "kind": "table",
+          "head": [
+            "Cavity or part",
+            "Where it lies",
+            "Main walls and neighbours",
+            "Choroid plexus?",
+            "Electrodes roughly above (deep below the scalp)"
+          ],
+          "rows": [
+            [
+              "Frontal (anterior) horn of lateral ventricle",
+              "Frontal lobe, in front of the foramen of Monro",
+              "Roof: body of corpus callosum; anterior wall: genu; floor: rostrum. Medial wall: septum pellucidum. Lateral wall: head of the caudate nucleus",
+              "No",
+              "Fp1/Fp2 to F3/F4, near Fz"
+            ],
+            [
+              "Body of lateral ventricle",
+              "Frontal and parietal lobes, from the foramen of Monro back to the splenium",
+              "Roof: corpus callosum. Medial: septum pellucidum, with the fornix along its lower edge. Floor/lateral: thalamus and body of the caudate",
+              "Yes (along the floor, next to the fornix)",
+              "C3/C4, near Cz"
+            ],
+            [
+              "Atrium (trigone) of lateral ventricle",
+              "Junction of the parietal, occipital and temporal lobes, where body, occipital and temporal horns meet",
+              "Roof: corpus callosum (splenium); contains the glomus, the largest tuft of choroid plexus",
+              "Yes (glomus, often calcified on CT in adults)",
+              "P3/P4, toward T5/T6 (P7/P8)"
+            ],
+            [
+              "Occipital (posterior) horn of lateral ventricle",
+              "Occipital lobe",
+              "Medial wall bulges from the calcarine sulcus (calcar avis); size varies, often asymmetric",
+              "No",
+              "O1/O2"
+            ],
+            [
+              "Temporal (inferior) horn of lateral ventricle",
+              "Temporal lobe, curving down and forward to near the amygdala",
+              "Floor: hippocampus. Roof: tail of the caudate. Amygdala at its front tip",
+              "Yes",
+              "T3/T4 (T7/T8), front tip toward F7/F8"
+            ],
+            [
+              "Third ventricle",
+              "Midline slit in the diencephalon, between the two thalami",
+              "Lateral walls: thalamus above, hypothalamus below; the two thalami are often joined across the cavity by the interthalamic adhesion. Roof: tela choroidea under the fornix. Floor: hypothalamus (optic chiasm, infundibulum, mammillary bodies). Front: lamina terminalis. Back: pineal gland and posterior commissure",
+              "Yes (in the roof)",
+              "Deep midline under Cz, far from the scalp"
+            ],
+            [
+              "Cerebral aqueduct (of Sylvius)",
+              "Midbrain, a narrow channel",
+              "Tectum (colliculi) behind, tegmentum in front; surrounded by periaqueductal grey",
+              "No",
+              "Not relevant to scalp placement"
+            ],
+            [
+              "Fourth ventricle",
+              "Posterior fossa, between brainstem and cerebellum",
+              "Floor: rhomboid fossa on the back of the pons and upper medulla. Roof: cerebellum and the superior and inferior medullary vela",
+              "Yes (in the lower roof)",
+              "Below the 10-20 array, roughly under the inion"
+            ]
+          ],
+          "note": "Electrode correspondences are rough surface guides only. The ventricles are deep cavities and do not generate EEG; scalp activity comes from the cortex above them."
+        },
+        {
+          "title": "Every communication: from, through, to",
+          "kind": "table",
+          "head": [
+            "From",
+            "Opening",
+            "To",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Each lateral ventricle",
+              "Interventricular foramen (foramen of Monro), one per side",
+              "Third ventricle",
+              "Lies between the fornix and the front of the thalamus. A colloid cyst of the third ventricle can block both foramina"
+            ],
+            [
+              "Third ventricle",
+              "Cerebral aqueduct (aqueduct of Sylvius)",
+              "Fourth ventricle",
+              "Narrowest part of the system; aqueductal stenosis is a classic cause of non-communicating hydrocephalus"
+            ],
+            [
+              "Fourth ventricle",
+              "Median aperture (foramen of Magendie), single, midline",
+              "Cisterna magna (cerebellomedullary cistern) in the subarachnoid space",
+              "Mnemonic: Magendie = Medial"
+            ],
+            [
+              "Fourth ventricle",
+              "Lateral apertures (foramina of Luschka), paired",
+              "Subarachnoid space at the cerebellopontine angles, near the pontine cistern",
+              "Mnemonic: Luschka = Lateral. Tufts of choroid plexus can poke through them"
+            ],
+            [
+              "Fourth ventricle",
+              "Obex, then the central canal",
+              "Central canal of the lower medulla and spinal cord",
+              "Small and often partly closed in adults; not a major outflow route"
+            ],
+            [
+              "Subarachnoid space",
+              "Arachnoid granulations (villi)",
+              "Dural venous sinuses, mainly the superior sagittal sinus",
+              "One-way, pressure-dependent return of CSF to the venous blood"
+            ]
+          ]
+        },
+        {
+          "title": "CSF pathway",
+          "kind": "flow",
+          "items": [
+            "Lateral ventricles (choroid plexus)",
+            "Interventricular foramina (Monro)",
+            "Third ventricle",
+            "Cerebral aqueduct (Sylvius)",
+            "Fourth ventricle",
+            "Median aperture (Magendie) and lateral apertures (Luschka)",
+            "Subarachnoid space and cisterns",
+            "Arachnoid granulations",
+            "Superior sagittal sinus (venous blood)"
+          ]
+        },
+        {
+          "title": "CSF: production, cisterns, absorption and functions",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Production",
+              "body": "Mostly secreted by the choroid plexus (ependyma-covered capillary tufts); a smaller share comes from the brain's extracellular fluid. Production is fairly constant and does not fall much when pressure rises, which is why a block causes hydrocephalus.",
+              "points": [
+                "About 500 mL per day in adults (roughly 20 mL per hour)",
+                "About 150 mL present at any time, so it turns over 3 to 4 times a day",
+                "Only about 25 mL is inside the ventricles; the rest is in the subarachnoid space around brain and cord"
+              ]
+            },
+            {
+              "title": "Where the choroid plexus is (and is not)",
+              "body": "Present in the body, atrium and temporal horn of each lateral ventricle, the roof of the third ventricle and the roof of the fourth ventricle.",
+              "points": [
+                "Absent from the frontal horns, occipital horns and the cerebral aqueduct",
+                "The lateral-ventricle plexus is continuous with the third-ventricle plexus through the foramina of Monro"
+              ]
+            },
+            {
+              "title": "Cisterns",
+              "body": "Enlarged pockets of the subarachnoid space where the arachnoid bridges over gaps.",
+              "points": [
+                "Cisterna magna (cerebellomedullary): behind the medulla, below the cerebellum; receives CSF from Magendie",
+                "Pontine (prepontine): in front of the pons; basilar artery",
+                "Interpeduncular: between the cerebral peduncles",
+                "Quadrigeminal (superior) cistern: behind the midbrain; great cerebral vein (Galen) and pineal region",
+                "Lumbar cistern: below the end of the cord; the site of lumbar puncture"
+              ]
+            },
+            {
+              "title": "Absorption",
+              "body": "CSF passes through the arachnoid granulations into the dural venous sinuses, chiefly the superior sagittal sinus, and drains when CSF pressure exceeds venous pressure. Perineural and lymphatic routes add a smaller share.",
+              "points": [
+                "Scarring of the granulations after subarachnoid hemorrhage or meningitis causes communicating hydrocephalus",
+                "Venous sinus thrombosis can impair absorption and raise pressure"
+              ]
+            },
+            {
+              "title": "Functions",
+              "body": "CSF floats the brain so its effective weight falls from about 1,400 g to a few tens of grams, cushions it against impact, and keeps a stable chemical environment.",
+              "points": [
+                "Buoyancy and mechanical protection",
+                "Removes metabolic waste",
+                "Carries some hormones and signalling molecules",
+                "Buffers intracranial pressure: CSF can be displaced into the spinal canal when brain or blood volume rises (Monro-Kellie doctrine)"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Where the block is decides which ventricles enlarge",
+          "kind": "table",
+          "head": [
+            "Obstruction site",
+            "Typical causes",
+            "Enlarged",
+            "Normal or small",
+            "Type"
+          ],
+          "rows": [
+            [
+              "One foramen of Monro",
+              "Tumor or cyst next to the foramen",
+              "That lateral ventricle only",
+              "Other lateral, third and fourth",
+              "Non-communicating (obstructive)"
+            ],
+            [
+              "Both foramina of Monro",
+              "Colloid cyst of the third ventricle",
+              "Both lateral ventricles",
+              "Third and fourth",
+              "Non-communicating"
+            ],
+            [
+              "Cerebral aqueduct",
+              "Congenital aqueductal stenosis, pineal or tectal tumor, scarring after hemorrhage or infection",
+              "Both lateral and the third",
+              "Fourth",
+              "Non-communicating"
+            ],
+            [
+              "Fourth ventricle or its outlets (Magendie, Luschka)",
+              "Posterior fossa tumor, cerebellar hemorrhage or stroke with swelling, Dandy-Walker malformation, Chiari malformation",
+              "Lateral, third and (if the outlets are blocked) fourth",
+              "None upstream; the fourth may be compressed or effaced if a mass fills it",
+              "Non-communicating"
+            ],
+            [
+              "Subarachnoid space or arachnoid granulations",
+              "After subarachnoid or intraventricular hemorrhage, meningitis, high CSF protein; rarely overproduction from a choroid plexus papilloma",
+              "All four ventricles",
+              "None",
+              "Communicating"
+            ]
+          ],
+          "note": "Rule: ventricles upstream of the block enlarge, those downstream stay normal. If all four are enlarged, the problem is outside the ventricles (communicating) or at the fourth-ventricle outlets."
+        },
+        {
+          "title": "Types of hydrocephalus and how they present",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Non-communicating (obstructive)",
+              "body": "CSF cannot leave the ventricular system because of a block inside it. Can be treated with a shunt or, in suitable cases, an endoscopic third ventriculostomy that opens the third-ventricle floor into the cisterns."
+            },
+            {
+              "title": "Communicating",
+              "body": "CSF leaves the ventricles but is not absorbed normally (or, rarely, is overproduced). All ventricles enlarge. Usually treated with a shunt."
+            },
+            {
+              "title": "Normal pressure hydrocephalus (NPH)",
+              "body": "A communicating form in older adults with enlarged ventricles and opening pressure in or near the normal range. Classic triad: gait disturbance (magnetic, broad-based, shuffling), urinary incontinence and dementia (\"wet, wobbly and wacky\"). Gait often improves first after a shunt; a large-volume lumbar tap is used to predict response."
+            },
+            {
+              "title": "Hydrocephalus ex vacuo",
+              "body": "Ventricles and sulci look large because brain tissue has been lost (atrophy, old stroke, neurodegeneration), not because CSF pressure is high. It is not true hydrocephalus and is not treated with a shunt."
+            },
+            {
+              "title": "Signs in infants",
+              "body": "Skull sutures are open, so the head expands.",
+              "points": [
+                "Rapidly increasing head circumference crossing centile lines",
+                "Tense or bulging anterior fontanelle, split sutures",
+                "Downward gaze (sunsetting eyes), distended scalp veins",
+                "Irritability, vomiting, poor feeding, drowsiness"
+              ]
+            },
+            {
+              "title": "Signs in older children and adults",
+              "body": "The skull cannot expand, so pressure rises quickly.",
+              "points": [
+                "Headache, often worse on waking, with nausea and vomiting",
+                "Papilledema and blurred vision; sixth nerve palsy (double vision)",
+                "Drowsiness progressing to coma; Cushing response (hypertension, bradycardia, irregular breathing) is a late sign"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Shunts, drains and reservoirs: what the technologist does",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Ventriculoperitoneal (VP) shunt",
+              "body": "A permanent catheter from a lateral ventricle (via a frontal or parieto-occipital burr hole) to a valve, often with a palpable reservoir behind the ear or on the skull, then tunnelled under the skin of the neck and chest to the peritoneum. Other distal sites: right atrium (VA shunt) or pleura; a lumbar-peritoneal shunt starts in the lumbar cistern.",
+              "points": [
+                "Shunt malfunction or infection can present as headache, vomiting, drowsiness, a bulging fontanelle or redness along the tract: report such changes to the nurse or physician"
+              ]
+            },
+            {
+              "title": "External ventricular drain (EVD)",
+              "body": "A temporary catheter through a frontal burr hole into a lateral ventricle, draining to a bedside collection system levelled at a set height relative to a landmark at the ear (approximating the foramen of Monro). Used in ICU to relieve pressure and monitor ICP.",
+              "points": [
+                "Coordinate any head lifting or turning with nursing; the drain may need to be clamped and re-levelled by them, never by the technologist",
+                "Do not pull on, kink or disconnect the tubing; keep electrode leads clear of it",
+                "Keep away from the insertion site and dressing"
+              ]
+            },
+            {
+              "title": "Reservoirs",
+              "body": "A subcutaneous dome (for example an Ommaya reservoir, or the pumping chamber of a shunt) used to sample CSF, give intraventricular drugs or test shunt function. It feels like a soft bump under the scalp."
+            },
+            {
+              "title": "Programmable valves",
+              "body": "Many shunt valves have a pressure setting that is adjusted from outside with a magnet, and strong magnets (including MRI) may change some settings. Check the facility's precautions before bringing any magnet, magnetic tool or device near the valve.",
+              "points": [
+                "If you are unsure what kind of valve is present, ask before working near it"
+              ]
+            },
+            {
+              "title": "Electrode placement around hardware",
+              "body": "Find and note the shunt or drain site, burr holes and scars before measuring.",
+              "points": [
+                "Never place an electrode on, or press, rub or abrade over, the reservoir, valve, catheter tract or a fresh incision",
+                "Move the electrode slightly and place the opposite-side electrode symmetrically, or omit it, per lab policy",
+                "Record every hardware site and modified position on the head chart and in the technologist notes",
+                "Expect breach rhythm (higher amplitude, sharper faster activity) over burr holes and skull defects and do not call it epileptiform on that basis alone"
+              ]
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Lateral to third ventricle: foramen of Monro. Third to fourth: aqueduct of Sylvius. Fourth to subarachnoid space: Magendie (Medial, one) and Luschka (Lateral, two).",
+        "The cerebral aqueduct is the narrowest point and a classic obstruction site: lateral and third ventricles enlarge, the fourth stays normal.",
+        "All four ventricles enlarged suggests communicating hydrocephalus (absorption failure at the arachnoid granulations, e.g. after subarachnoid hemorrhage or meningitis) or a block at the fourth-ventricle outlets.",
+        "Choroid plexus is absent from the frontal horns, occipital horns and aqueduct; the glomus in the atrium is the largest tuft.",
+        "About 500 mL of CSF is made per day and about 150 mL is present at once; CSF returns to the blood through arachnoid granulations into the superior sagittal sinus.",
+        "The temporal horn lies in the temporal lobe with the hippocampus in its floor; the third ventricle sits between the thalami with the hypothalamus below and the pineal gland behind.",
+        "NPH triad: gait disturbance, urinary incontinence, dementia. Hydrocephalus ex vacuo is ventricular enlargement from brain loss and is not shunted.",
+        "Infants with hydrocephalus show a growing head and bulging fontanelle; adults show headache, vomiting, papilledema and drowsiness."
+      ],
+      "eegLink": "Before measuring, locate and chart any shunt, reservoir, EVD or burr hole, keep electrodes and pressure off them, coordinate head movement with nursing, and read higher-amplitude sharp activity over skull defects as possible breach rhythm."
     },
     {
       "id": "blood-supply",
@@ -1259,7 +1586,7 @@
             ],
             [
               "Hydrocephalus",
-              "Excess CSF with enlarged ventricles; obstructive (non-communicating) or communicating; in infants, enlarging head and bulging fontanelle",
+              "Excess CSF under pressure enlarging the ventricles (unlike ex vacuo enlargement from brain loss); obstructive (non-communicating) or communicating; in infants, enlarging head and bulging fontanelle",
               "Note shunt location and avoid placing electrodes over shunt hardware or reservoir"
             ],
             [
