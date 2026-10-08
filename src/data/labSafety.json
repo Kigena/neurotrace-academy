@@ -1,0 +1,1327 @@
+{
+  "title": "Lab Safety, OSHA and SDS",
+  "subtitle": "Workplace, chemical, electrical, infection and patient safety for the EEG technologist",
+  "tabs": [
+    {
+      "id": "overview",
+      "title": "Who Regulates What",
+      "intro": "Safety rules in an EEG lab come from several bodies, and exam questions often test which one owns a given rule. OSHA protects workers, The Joint Commission accredits the facility, CDC issues guidance, FDA regulates devices, NFPA writes fire and electrical codes, and the manufacturer writes the instructions for each product.",
+      "sections": [
+        {
+          "title": "Quick-reference: agencies and their scope",
+          "kind": "table",
+          "head": [
+            "Body",
+            "Type",
+            "What it covers",
+            "EEG lab example"
+          ],
+          "rows": [
+            [
+              "OSHA (Occupational Safety and Health Administration)",
+              "Federal regulator (US Dept. of Labor); law with fines",
+              "Worker safety: bloodborne pathogens, hazard communication, PPE, recordkeeping, General Duty Clause",
+              "Exposure control plan, SDS binder, free hepatitis B vaccine offer"
+            ],
+            [
+              "The Joint Commission (TJC)",
+              "Private accrediting body",
+              "Hospital standards incl. Environment of Care, Infection Control, National Patient Safety Goals",
+              "Two patient identifiers before testing; equipment management program"
+            ],
+            [
+              "CDC (Centers for Disease Control and Prevention)",
+              "Federal public health agency; issues guidelines, not enforceable regulations",
+              "Standard and transmission-based precautions, hand hygiene, disinfection guidance",
+              "Contact precautions for C. difficile; alcohol rub vs soap and water"
+            ],
+            [
+              "FDA (Food and Drug Administration)",
+              "Federal regulator",
+              "Medical devices (clearance, recalls), liquid chemical sterilants and high-level disinfectants for devices (EPA registers low- and intermediate-level surface disinfectants; the label sets contact time and kill claims), adverse device event reporting",
+              "EEG amplifier clearance; MedWatch report of a device-related injury"
+            ],
+            [
+              "NFPA (National Fire Protection Association)",
+              "Private standards organization; codes adopted by authorities and accreditors",
+              "NFPA 99 Health Care Facilities Code (electrical, medical gas); NFPA 101 Life Safety Code (fire, egress)",
+              "Hospital-grade receptacles, rules on power strips, oxygen fire risk"
+            ],
+            [
+              "Manufacturer",
+              "Instructions for use (IFU)",
+              "Correct use, cleaning, disinfection, maintenance of a specific product",
+              "Which disinfectant may be used on the headbox; electrode reprocessing"
+            ],
+            [
+              "Facility policy / biomedical engineering",
+              "Local rules",
+              "Inspection intervals, cleaning agents, emergency codes, incident reporting",
+              "Biomed safety sticker; leakage testing schedule"
+            ]
+          ],
+          "note": "When a national rule and the facility differ, the stricter requirement generally applies; on an exam, 'per facility policy and the manufacturer' is often the safest answer for specifics like intervals and products."
+        },
+        {
+          "title": "Regulation vs guideline vs standard",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Regulation (law)",
+              "body": "Legally enforceable with inspections and penalties.",
+              "points": [
+                "OSHA standards in 29 CFR 1910",
+                "FDA device rules"
+              ]
+            },
+            {
+              "title": "Accreditation standard",
+              "body": "Required to keep accreditation (and often Medicare payment eligibility), surveyed on site.",
+              "points": [
+                "The Joint Commission",
+                "National Patient Safety Goals"
+              ]
+            },
+            {
+              "title": "Guideline / recommendation",
+              "body": "Evidence-based advice; becomes binding when adopted by a regulator, accreditor or facility policy.",
+              "points": [
+                "CDC hand hygiene and isolation guidance",
+                "ACNS technical guidelines for EEG"
+              ]
+            },
+            {
+              "title": "Consensus code",
+              "body": "Written by standards bodies and adopted by authorities having jurisdiction.",
+              "points": [
+                "NFPA 99, NFPA 101",
+                "ANSI Z358.1 eyewash"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Key OSHA standards to recognize by name",
+          "kind": "table",
+          "head": [
+            "Standard",
+            "Citation",
+            "Core idea"
+          ],
+          "rows": [
+            [
+              "Bloodborne Pathogens",
+              "29 CFR 1910.1030",
+              "Protect workers from blood and other potentially infectious materials (OPIM)"
+            ],
+            [
+              "Hazard Communication (HazCom, 'right to know')",
+              "29 CFR 1910.1200",
+              "Labels, Safety Data Sheets and training for hazardous chemicals, aligned with GHS"
+            ],
+            [
+              "Personal Protective Equipment",
+              "29 CFR 1910.132",
+              "Employer assesses hazards and provides PPE"
+            ],
+            [
+              "Recordkeeping",
+              "29 CFR 1904",
+              "OSHA 300 log, 301 incident report, 300A annual summary"
+            ],
+            [
+              "General Duty Clause",
+              "OSH Act Section 5(a)(1)",
+              "Workplace free of recognized serious hazards even without a specific standard"
+            ]
+          ]
+        },
+        {
+          "title": "Who to call",
+          "kind": "list",
+          "items": [
+            "Damaged or suspect equipment: remove from service, tag it, notify biomedical/clinical engineering.",
+            "Chemical spill or exposure: SDS for first aid and cleanup; facility spill/hazmat procedure; employee health.",
+            "Needlestick or splash: first aid, then report immediately to supervisor and employee health.",
+            "Patient harm or near miss: facility incident (safety event) report.",
+            "Device-related serious injury or death: risk management, which handles required FDA/manufacturer reporting."
+          ]
+        }
+      ],
+      "pearls": [
+        "OSHA protects employees; The Joint Commission accredits organizations; CDC advises.",
+        "CDC guidelines are not law by themselves, but OSHA and TJC expect facilities to follow them.",
+        "NFPA 99 covers health care electrical and gas systems; NFPA 101 is the Life Safety Code.",
+        "The manufacturer's instructions for use decide which cleaner is safe for a given electrode or headbox.",
+        "Hospitals report device-related deaths to FDA and the manufacturer under the Safe Medical Devices Act; serious injuries go to the manufacturer.",
+        "National Patient Safety Goals (TJC) are the source of the two-identifier rule."
+      ],
+      "eegLink": "Every EEG setup touches several of these rule sets at once: OSHA for your gloves and the collodion SDS, TJC for patient ID, NFPA and biomed for the amplifier, and the manufacturer for cleaning."
+    },
+    {
+      "id": "osha",
+      "title": "OSHA Essentials",
+      "intro": "OSHA requires employers to provide a safe workplace, written programs, training and protective equipment at no cost to the employee. For EEG technologists the two most tested standards are Bloodborne Pathogens and Hazard Communication.",
+      "sections": [
+        {
+          "title": "General Duty Clause",
+          "kind": "text",
+          "text": "Section 5(a)(1) of the OSH Act requires each employer to keep the workplace free from recognized hazards that are causing or likely to cause death or serious physical harm. OSHA uses it when no specific standard exists, for example for workplace violence or some ergonomic hazards. Employees, in turn, must follow the safety rules that apply to their own conduct."
+        },
+        {
+          "title": "Bloodborne Pathogens Standard (29 CFR 1910.1030)",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Scope",
+              "body": "Applies to any employee with reasonably anticipated contact with blood or other potentially infectious materials (OPIM). Main pathogens: HBV, HCV, HIV.",
+              "points": [
+                "OPIM includes CSF and other body fluids visibly contaminated with blood",
+                "Needle electrodes and abraded skin create exposure risk"
+              ]
+            },
+            {
+              "title": "Exposure Control Plan",
+              "body": "Written plan that identifies job classifications at risk and the methods of control. Must be accessible to employees and reviewed and updated at least annually.",
+              "points": [
+                "Annual review must consider safer sharps devices",
+                "Front-line workers give input on device selection"
+              ]
+            },
+            {
+              "title": "Hepatitis B vaccine",
+              "body": "Offered free to at-risk employees within 10 working days of initial assignment, after training. An employee may decline by signing the declination form and can still get the vaccine later at no cost.",
+              "points": [
+                "Offered, not mandated by OSHA",
+                "Post-vaccination antibody testing per CDC recommendations"
+              ]
+            },
+            {
+              "title": "Engineering and work-practice controls",
+              "body": "Safer sharps devices, sharps containers, handwashing facilities, no eating or drinking where exposure is possible.",
+              "points": [
+                "Do not recap, bend or break contaminated needles",
+                "Sharps containers: closable, puncture resistant, leakproof, labeled, upright, not overfilled"
+              ]
+            },
+            {
+              "title": "PPE",
+              "body": "Gloves, gowns, eye protection and masks provided by the employer at no cost, in proper sizes, with alternatives for latex allergy.",
+              "points": [
+                "Employer cleans, repairs, replaces and disposes of PPE",
+                "Remove PPE before leaving the work area"
+              ]
+            },
+            {
+              "title": "Training and records",
+              "body": "Training at initial assignment, at least annually, and when tasks change; must allow questions to a knowledgeable person.",
+              "points": [
+                "Training records: kept 3 years",
+                "Medical records: duration of employment plus 30 years, kept confidential"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "After a needlestick or splash",
+          "kind": "steps",
+          "items": [
+            "Wash needlesticks and cuts with soap and water; flush splashes to nose or mouth with water; irrigate eyes with clean water or saline (eyewash).",
+            "Do not squeeze the wound, apply bleach or other caustics.",
+            "Report immediately to your supervisor and employee health; time matters because HIV post-exposure prophylaxis works best started within hours.",
+            "Document the route, circumstances and the source individual if known.",
+            "Employer provides a free, confidential medical evaluation and follow-up, including testing of the source when consent and law allow, and PEP when indicated.",
+            "Complete the incident report and sharps injury log entry; the employee receives the healthcare provider's written opinion (within 15 days)."
+          ]
+        },
+        {
+          "title": "Hazard Communication Standard / GHS (29 CFR 1910.1200)",
+          "kind": "table",
+          "head": [
+            "Element",
+            "What to know"
+          ],
+          "rows": [
+            [
+              "Purpose",
+              "Workers' right to know the hazards of chemicals they use; aligned with the UN Globally Harmonized System (GHS)"
+            ],
+            [
+              "Written HazCom program",
+              "Lists chemicals present and explains labels, SDS and training"
+            ],
+            [
+              "Shipped container label (6 elements)",
+              "Product identifier, signal word, hazard statement(s), pictogram(s), precautionary statement(s), supplier name/address/phone"
+            ],
+            [
+              "Signal words",
+              "'Danger' for more severe hazards; 'Warning' for less severe. Only one appears on a label"
+            ],
+            [
+              "Pictograms",
+              "Black symbol on white background inside a red diamond border; OSHA requires 8 (the environment pictogram is optional under OSHA)"
+            ],
+            [
+              "Secondary containers",
+              "Workplace containers (e.g., acetone decanted into a squeeze bottle) must be labeled with the product identifier and hazard information unless for immediate use by the person who filled it"
+            ],
+            [
+              "Safety Data Sheets",
+              "16-section format; readily accessible to employees on every shift"
+            ],
+            [
+              "Training",
+              "At initial assignment and whenever a new chemical hazard is introduced; covers labels, pictograms, SDS, protective measures"
+            ]
+          ]
+        },
+        {
+          "title": "GHS pictograms and EEG-lab examples",
+          "kind": "table",
+          "head": [
+            "Pictogram",
+            "Meaning",
+            "EEG lab example"
+          ],
+          "rows": [
+            [
+              "Flame",
+              "Flammable, self-heating, emits flammable gas",
+              "Collodion, ether, acetone, isopropyl alcohol"
+            ],
+            [
+              "Exclamation mark",
+              "Irritant, skin sensitizer, acute toxicity (less severe), narcotic effects",
+              "Some disinfectants, solvent vapors causing drowsiness"
+            ],
+            [
+              "Health hazard (person with starburst)",
+              "Carcinogen, respiratory sensitizer, reproductive or target-organ toxicity",
+              "Glutaraldehyde (respiratory sensitizer)"
+            ],
+            [
+              "Corrosion",
+              "Skin corrosion, serious eye damage, corrosive to metals",
+              "Concentrated bleach, some high-level disinfectants"
+            ],
+            [
+              "Skull and crossbones",
+              "Acute toxicity (severe)",
+              "Rare in EEG lab"
+            ],
+            [
+              "Flame over circle",
+              "Oxidizer",
+              "Oxygen cylinders"
+            ],
+            [
+              "Gas cylinder",
+              "Gas under pressure",
+              "Compressed air or oxygen cylinders"
+            ],
+            [
+              "Exploding bomb",
+              "Explosives, self-reactive, organic peroxides",
+              "Not typical in EEG lab"
+            ]
+          ]
+        },
+        {
+          "title": "Recordkeeping and employee rights",
+          "kind": "list",
+          "items": [
+            "OSHA 300 log of work-related injuries and illnesses; 301 incident report; 300A annual summary posted February 1 to April 30.",
+            "Logs and summaries are kept 5 years.",
+            "Report to OSHA: a work-related death within 8 hours; inpatient hospitalization, amputation or loss of an eye within 24 hours.",
+            "Needlesticks and sharps injuries from contaminated objects are recorded; employers that keep the 300 log also keep a sharps injury log without personal identifiers.",
+            "Employees may file a confidential complaint, request an inspection, see their exposure and medical records, and receive training in a language they understand.",
+            "Retaliation for reporting a hazard or injury is illegal (Section 11(c)); a whistleblower complaint generally must be filed within 30 days.",
+            "The OSHA 'Job Safety and Health: It's the Law' poster must be displayed."
+          ]
+        }
+      ],
+      "pearls": [
+        "Hepatitis B vaccine: free, within 10 working days, and a declination does not forfeit the right to receive it later.",
+        "The Exposure Control Plan is reviewed at least annually.",
+        "BBP training happens at hire and annually; HazCom training at hire and when a new hazard appears.",
+        "'Danger' outranks 'Warning'; never both on one label.",
+        "PPE is provided by the employer at no cost to the employee.",
+        "Never recap a used needle; drop it straight into a sharps container.",
+        "BBP medical records are kept for employment plus 30 years; training records 3 years.",
+        "OSHA rules protect the worker; patient safety rules come mainly from TJC and the facility."
+      ],
+      "eegLink": "Abrading skin, using needle electrodes, and handling electrodes soiled with blood or CSF are all bloodborne-pathogen exposures, and every bottle of collodion or acetone on your cart falls under HazCom."
+    },
+    {
+      "id": "sds-chemicals",
+      "title": "SDS and EEG Chemicals",
+      "intro": "A Safety Data Sheet is the manufacturer's standardized hazard summary for a chemical product. Know the 16-section order well enough to find first aid, PPE, storage and flash point quickly, and know the specific hazards of the products used to apply and remove EEG electrodes.",
+      "sections": [
+        {
+          "title": "The 16 SDS sections",
+          "kind": "table",
+          "head": [
+            "#",
+            "Section",
+            "Answers the question"
+          ],
+          "rows": [
+            [
+              "1",
+              "Identification",
+              "What is it, who makes it, emergency phone, recommended use"
+            ],
+            [
+              "2",
+              "Hazard(s) identification",
+              "How dangerous: GHS class, signal word, pictograms, hazard and precautionary statements"
+            ],
+            [
+              "3",
+              "Composition / information on ingredients",
+              "What is in it (e.g., ether, ethanol, nitrocellulose)"
+            ],
+            [
+              "4",
+              "First-aid measures",
+              "What to do for eye, skin, inhalation or ingestion exposure; symptoms"
+            ],
+            [
+              "5",
+              "Fire-fighting measures",
+              "Which extinguisher, fire hazards, combustion products"
+            ],
+            [
+              "6",
+              "Accidental release measures",
+              "How to contain and clean up a spill; PPE for cleanup"
+            ],
+            [
+              "7",
+              "Handling and storage",
+              "Safe handling, incompatibilities, storage conditions"
+            ],
+            [
+              "8",
+              "Exposure controls / personal protection",
+              "Exposure limits (PEL, TLV), ventilation, PPE needed"
+            ],
+            [
+              "9",
+              "Physical and chemical properties",
+              "Flash point, vapor pressure, vapor density, odor, appearance"
+            ],
+            [
+              "10",
+              "Stability and reactivity",
+              "What it reacts with; conditions to avoid"
+            ],
+            [
+              "11",
+              "Toxicological information",
+              "Routes of exposure, acute and chronic effects, carcinogenicity"
+            ],
+            [
+              "12",
+              "Ecological information",
+              "Environmental effects (not enforced by OSHA)"
+            ],
+            [
+              "13",
+              "Disposal considerations",
+              "How to discard (not enforced by OSHA)"
+            ],
+            [
+              "14",
+              "Transport information",
+              "Shipping classification (not enforced by OSHA)"
+            ],
+            [
+              "15",
+              "Regulatory information",
+              "Other applicable regulations (not enforced by OSHA)"
+            ],
+            [
+              "16",
+              "Other information",
+              "Date of preparation or last revision"
+            ]
+          ],
+          "note": "Sections 12 to 15 must be present for GHS consistency, but OSHA does not enforce their content because they fall under other agencies."
+        },
+        {
+          "title": "SDS access rules",
+          "kind": "list",
+          "items": [
+            "An SDS must be on hand for every hazardous chemical in the workplace.",
+            "SDSs must be readily accessible to employees during each work shift, in their work area, without having to ask permission.",
+            "Paper binders or electronic access are both acceptable if there are no barriers (working computer, trained staff, backup during power or network failure).",
+            "Manufacturers, importers or distributors supply the SDS; the employer keeps it current when products change.",
+            "Check the SDS before first use of a product, after an exposure, and for spill cleanup."
+          ]
+        },
+        {
+          "title": "EEG lab chemicals",
+          "kind": "table",
+          "head": [
+            "Product",
+            "Main hazard",
+            "Key precautions"
+          ],
+          "rows": [
+            [
+              "Collodion (nitrocellulose in ether and alcohol)",
+              "Extremely flammable; solvent vapors irritate eyes and airways and can cause drowsiness",
+              "Use with good ventilation or local exhaust; no flames or sparks nearby; cap bottle immediately; small working amounts; protect patient eyes"
+            ],
+            [
+              "Ether (collodion solvent)",
+              "Extremely flammable, very low flash point; vapor heavier than air and can travel along the floor to an ignition source; can form explosive peroxides with age",
+              "Store in approved flammables cabinet away from heat and oxidizers; ventilation; watch dating per SDS"
+            ],
+            [
+              "Acetone (collodion remover)",
+              "Highly flammable; eye irritant; drying to skin; vapors cause dizziness",
+              "Ventilation; avoid eye contact; gloves; label any secondary bottle"
+            ],
+            [
+              "Isopropyl or ethyl alcohol",
+              "Flammable; drying to skin",
+              "Allow to evaporate before applying electrodes or using electrical equipment; keep away from ignition sources"
+            ],
+            [
+              "Abrasive skin prep gel",
+              "Skin abrasion and irritation, risk of breaking skin",
+              "Light abrasion only; avoid over-abrading, especially in neonates and fragile skin"
+            ],
+            [
+              "Conductive paste / gel",
+              "Low hazard; possible skin irritation or allergy",
+              "Avoid bridging between electrodes (electrical salt bridge, not a chemical hazard); clean off after study"
+            ],
+            [
+              "Low- and intermediate-level disinfectants (quats, alcohol, bleach-based wipes)",
+              "Skin and eye irritation; bleach corrosive and reacts with ammonia or acids",
+              "Follow label contact (wet) time; gloves; never mix bleach with ammonia or acids"
+            ],
+            [
+              "Glutaraldehyde and other high-level disinfectants (e.g., OPA)",
+              "Respiratory and skin sensitizer (glutaraldehyde can cause occupational asthma and dermatitis); eye irritant",
+              "Closed containers; local exhaust or fume hood; nitrile or butyl gloves, eye protection; follow facility exposure monitoring"
+            ]
+          ]
+        },
+        {
+          "title": "Controls: ventilation, storage, spills, eyewash",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Ventilation",
+              "body": "General room ventilation dilutes vapors; local exhaust (a fume hood or source-capture extractor near the head) removes them at the source. Collodion work belongs in a well-ventilated room, ideally with local exhaust.",
+              "points": [
+                "Watch for headache, dizziness or eye irritation in staff or patient",
+                "Keep containers closed between uses"
+              ]
+            },
+            {
+              "title": "Storage",
+              "body": "Flammable liquids go in approved flammable-storage cabinets or containers, away from heat, sparks, oxidizers and oxygen.",
+              "points": [
+                "Keep only the amount needed at the bedside",
+                "Label every secondary container"
+              ]
+            },
+            {
+              "title": "Spills",
+              "body": "For a small solvent spill: remove ignition sources, ventilate, wear gloves and eye protection, absorb with spill-kit material, dispose of per SDS Section 6 and 13 and facility policy.",
+              "points": [
+                "Large or unknown spills: evacuate the area and call the facility hazmat/spill team",
+                "Check SDS Section 8 for PPE"
+              ]
+            },
+            {
+              "title": "Eyewash",
+              "body": "Flush the eye immediately and continuously for at least 15 minutes, holding lids open, then seek medical evaluation.",
+              "points": [
+                "ANSI Z358.1: station reachable within about 10 seconds of the hazard",
+                "Plumbed eyewash stations are activated weekly to verify flow and clear the line"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Compressed air for collodion drying",
+          "kind": "list",
+          "items": [
+            "Use a regulated, low-pressure air source designed for electrode drying, per manufacturer instructions.",
+            "Never point the air stream at eyes, ears, open wounds or skin openings; air can enter tissue and cause injury.",
+            "Shield the patient's eyes and face; flying collodion or debris is an eye hazard for patient and technologist.",
+            "Secure compressed gas cylinders upright with a chain or stand; never use oxygen as a substitute for air (fire risk).",
+            "Separately, OSHA limits compressed air used for cleaning to under 30 psi when dead-ended with chip guarding; do not use shop-style air to blow off clothing or skin."
+          ]
+        }
+      ],
+      "pearls": [
+        "Flash point is in Section 9; first aid in Section 4; PPE and exposure limits in Section 8; spills in Section 6; storage in Section 7; fire extinguisher in Section 5.",
+        "Section 2 is the hazard summary with the signal word and pictograms.",
+        "Section 16 holds the revision date.",
+        "SDSs must be accessible on every shift without barriers; electronic access counts.",
+        "Collodion is flammable because of its ether and alcohol solvent; acetone, the usual remover, is flammable too.",
+        "Ether vapor is heavier than air and settles low, so it can reach a distant ignition source.",
+        "Glutaraldehyde is a respiratory sensitizer: use it only with ventilation and proper PPE.",
+        "Flush an eye splash for at least 15 minutes."
+      ],
+      "eegLink": "A collodion setup combines a flammable solvent, an air source, the patient's eyes and often supplemental oxygen in one small space, so ventilation, eye protection and keeping oxygen away matter at every hookup."
+    },
+    {
+      "id": "electrical",
+      "title": "Electrical Safety",
+      "intro": "EEG connects the patient's body to line-powered equipment, so electrical safety is a core competency. Know the difference between macroshock and microshock, why leakage current matters, how the single-ground rule and isolated inputs protect the patient, and what to do with damaged equipment.",
+      "sections": [
+        {
+          "title": "Macroshock vs microshock",
+          "kind": "table",
+          "head": [
+            "Feature",
+            "Macroshock",
+            "Microshock"
+          ],
+          "rows": [
+            [
+              "Current path",
+              "Enters and exits through intact skin; spreads through the body",
+              "Delivered directly to or very near the heart"
+            ],
+            [
+              "Who is at risk",
+              "Anyone, including staff",
+              "Electrically susceptible patients: pacing wires, central lines, saline-filled catheters into the heart"
+            ],
+            [
+              "Approximate threshold at 60 Hz",
+              "About 1 mA felt; roughly 10 to 20 mA cannot let go; about 100 mA can cause ventricular fibrillation",
+              "Tens to about 100 microamperes can cause ventricular fibrillation"
+            ],
+            [
+              "Why so different",
+              "Skin resistance is high and current spreads out before reaching the heart",
+              "Skin is bypassed and current is concentrated at the myocardium"
+            ]
+          ],
+          "note": "Thresholds are approximate textbook values; they vary with frequency, duration, path and body size."
+        },
+        {
+          "title": "Core concepts",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Leakage current",
+              "body": "Small unintended current that flows from powered circuitry to the chassis or patient leads through stray capacitance and imperfect insulation. Normally it drains harmlessly through the ground wire.",
+              "points": [
+                "If the ground is broken, leakage can flow through a person who touches the device",
+                "Leakage too small to feel can still be dangerous as microshock"
+              ]
+            },
+            {
+              "title": "Grounding",
+              "body": "The third (round) prong connects the chassis to earth ground, giving leakage a low-resistance path away from people.",
+              "points": [
+                "Never use a two-prong adapter ('cheater plug') or remove the ground pin",
+                "Hospital-grade plugs and receptacles are often marked with a green dot"
+              ]
+            },
+            {
+              "title": "Single patient ground",
+              "body": "The patient should be connected to only one ground point. A second ground from another device creates a low-resistance path for current between devices.",
+              "points": [
+                "With multiple devices, use one common ground per facility policy and manufacturer instructions",
+                "Modern isolated EEG systems use an isolated reference/patient ground, not earth ground"
+              ]
+            },
+            {
+              "title": "Isolated inputs",
+              "body": "Modern EEG amplifiers electrically isolate the patient-connected circuit from line power (optical or transformer isolation), so leakage reaching the patient leads is kept very low.",
+              "points": [
+                "Isolation is a design feature, not a reason to skip inspections"
+              ]
+            },
+            {
+              "title": "Ground loops",
+              "body": "When equipment on the same patient is plugged into outlets with slightly different ground potentials, current can circulate through the patient and the leads, creating 60 Hz artifact and a shock risk.",
+              "points": [
+                "Plug all equipment used on the patient into the same outlet group when possible",
+                "60 Hz artifact can be a clue to a grounding problem"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Cords, plugs, extension cords and power strips",
+          "kind": "list",
+          "items": [
+            "Use three-prong, hospital-grade plugs; pull by the plug, never the cord.",
+            "Do not use household extension cords for patient care equipment.",
+            "Power strips (relocatable power taps) in patient care areas are limited by NFPA 99 and facility policy; use only facility-approved, inspected units, never daisy-chained.",
+            "Keep cords off the floor path and away from wet areas; do not roll beds or carts over them.",
+            "Do not touch the patient and a faulty device at the same time; keep liquids away from equipment."
+          ]
+        },
+        {
+          "title": "Equipment checks",
+          "kind": "table",
+          "head": [
+            "Check",
+            "Who",
+            "What"
+          ],
+          "rows": [
+            [
+              "Incoming inspection",
+              "Biomedical/clinical engineering",
+              "Every new or loaner device inspected and tested (including ground and leakage) before first patient use; safety tag applied"
+            ],
+            [
+              "Pre-use check",
+              "Technologist, every study",
+              "Look for frayed or cracked cords, bent or missing ground pins, loose plugs, damaged housing, current inspection sticker; perform calibration and impedance checks"
+            ],
+            [
+              "Periodic preventive maintenance and leakage testing",
+              "Biomed, per manufacturer and facility equipment-management program",
+              "Ground resistance and leakage current measurements; commonly taught as at least yearly, but the facility policy and manufacturer set the actual interval"
+            ],
+            [
+              "After repair, drop or spill",
+              "Biomed",
+              "Retest before return to service"
+            ]
+          ],
+          "note": "Commonly taught leakage limits: chassis leakage under 100 microamperes and patient-lead leakage under 10 microamperes for equipment that could contact a pathway to the heart (for example IEC type CF applied parts; most EEG amplifiers are type BF). Current code values depend on the edition of NFPA 99 and IEC 60601-1, so follow biomed's limits."
+        },
+        {
+          "title": "Damaged cord or equipment",
+          "kind": "steps",
+          "items": [
+            "Stop using it; if it is on a patient, disconnect the patient from the device safely.",
+            "Unplug the device by the plug if it can be done safely; do not attempt your own repair.",
+            "Tag it as defective / do not use, with a short description of the problem.",
+            "Remove it from service and notify biomedical engineering.",
+            "If anyone was shocked or injured, provide care, then complete an incident report; retain the device and accessories for investigation."
+          ]
+        },
+        {
+          "title": "High-risk environments",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Electrically susceptible patients",
+              "body": "Patients with temporary external pacing wires, central venous or intracardiac catheters are at microshock risk.",
+              "points": [
+                "Never touch exposed pacing wires and EEG equipment at the same time",
+                "Use only properly grounded, inspected equipment"
+              ]
+            },
+            {
+              "title": "ICU with multiple devices",
+              "body": "Ventilators, pumps, monitors and beds share the patient. Use one patient ground, plug into the same outlet group, and keep cords tidy.",
+              "points": [
+                "Do not move or unplug other devices without the nurse",
+                "Bed motors and pumps cause artifact; do not 'fix' it by adding grounds"
+              ]
+            },
+            {
+              "title": "MRI zone",
+              "body": "MRI suites are divided into four ACR zones; Zone IV is the magnet room. Ferromagnetic objects become projectiles, and conductive leads can heat and burn.",
+              "points": [
+                "Standard EEG equipment and electrodes must not enter Zone IV",
+                "Only MR-conditional systems, used exactly per manufacturer conditions and MRI staff screening"
+              ]
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Microshock needs a direct path to the heart and only microamperes of current; macroshock needs milliamperes through the skin.",
+        "Leakage current is harmless when the ground path works; a broken ground makes the person the path.",
+        "One patient, one ground: a second ground creates a dangerous current path and ground loops.",
+        "Never use a cheater plug or ordinary extension cord on patient equipment.",
+        "Damaged equipment: remove, tag, report to biomed; never repair it yourself.",
+        "The leakage-test interval is set by facility policy and the manufacturer; 'annually' is the commonly taught figure.",
+        "A new or loaner device needs biomed incoming inspection before patient use.",
+        "Standard EEG electrodes and leads never go into MRI Zone IV."
+      ],
+      "eegLink": "Persistent 60 Hz artifact may come from a ground loop, a broken ground or a faulty device, so it can be both a recording problem and a safety warning."
+    },
+    {
+      "id": "infection",
+      "title": "Infection Control",
+      "intro": "EEG electrodes touch many patients' scalps, so the lab must prevent transmission between patients and to staff. Know the precaution categories, hand hygiene exceptions, the Spaulding levels, and the special handling for prion disease.",
+      "sections": [
+        {
+          "title": "Precaution categories",
+          "kind": "table",
+          "head": [
+            "Category",
+            "Used for",
+            "Examples",
+            "Key PPE / room"
+          ],
+          "rows": [
+            [
+              "Standard precautions",
+              "Every patient, every time",
+              "Any blood, body fluid, non-intact skin, mucous membrane",
+              "Hand hygiene; gloves and other PPE based on anticipated exposure; respiratory hygiene; safe sharps"
+            ],
+            [
+              "Contact",
+              "Spread by touch with patient or surfaces",
+              "MRSA, VRE, C. difficile, scabies, lice, draining wounds, norovirus",
+              "Gown and gloves on entry; dedicated or disinfected equipment"
+            ],
+            [
+              "Droplet",
+              "Large respiratory droplets over short distances",
+              "Influenza, pertussis, Neisseria meningitidis, mumps",
+              "Surgical/procedure mask on entry to the room; single-patient room preferred"
+            ],
+            [
+              "Airborne",
+              "Small particles that stay suspended",
+              "Tuberculosis, measles, varicella (chickenpox), disseminated zoster",
+              "Fit-tested N95 or higher respirator; airborne infection isolation room (negative pressure, door closed)"
+            ]
+          ],
+          "note": "Some infections need combined precautions (e.g., varicella: airborne plus contact). Follow the sign on the door and facility policy."
+        },
+        {
+          "title": "Hand hygiene and PPE order",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Alcohol-based hand rub",
+              "body": "Preferred for routine hand hygiene when hands are not visibly soiled; rub all surfaces until dry.",
+              "points": [
+                "Before and after patient contact",
+                "After glove removal",
+                "Before clean procedures, after body-fluid risk, after touching surroundings"
+              ]
+            },
+            {
+              "title": "Soap and water",
+              "body": "Required when hands are visibly soiled; preferred after caring for patients with C. difficile or norovirus (especially in outbreaks), because alcohol does not reliably kill spores or norovirus.",
+              "points": [
+                "Wash at least 20 seconds with friction"
+              ]
+            },
+            {
+              "title": "Donning (CDC sequence)",
+              "body": "Gown, mask or respirator, goggles or face shield, gloves.",
+              "points": [
+                "Gloves go over the gown cuffs"
+              ]
+            },
+            {
+              "title": "Doffing (CDC sequence)",
+              "body": "Gloves, goggles or face shield, gown, mask or respirator, then hand hygiene.",
+              "points": [
+                "Gown and gloves may be removed together",
+                "Remove a respirator outside the room"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Spaulding classification",
+          "kind": "table",
+          "head": [
+            "Category",
+            "Contact",
+            "Required processing",
+            "EEG example"
+          ],
+          "rows": [
+            [
+              "Critical",
+              "Enters sterile tissue or the vascular system",
+              "Sterilization (or single-use sterile item)",
+              "Subdermal needle electrodes: sterile, single-use, then sharps container"
+            ],
+            [
+              "Semicritical",
+              "Mucous membranes or non-intact skin",
+              "High-level disinfection at minimum",
+              "Nasopharyngeal-type electrodes; electrodes used over broken skin"
+            ],
+            [
+              "Noncritical",
+              "Intact skin only",
+              "Low- or intermediate-level disinfection",
+              "Reusable scalp cup electrodes on intact skin, headbox, cables, measuring tape, bed rails"
+            ]
+          ],
+          "note": "Light skin prep on otherwise intact scalp is generally treated as noncritical contact; electrodes placed over wounds, incisions or broken skin are semicritical. Follow facility and manufacturer reprocessing policy."
+        },
+        {
+          "title": "Cleaning vs disinfection vs sterilization",
+          "kind": "list",
+          "items": [
+            "Cleaning: removes visible soil and organic material (paste, collodion, blood) with water and detergent; must come first, because residue blocks disinfectants.",
+            "Low-level disinfection: kills most vegetative bacteria and some viruses and fungi.",
+            "Intermediate-level disinfection: also kills mycobacteria (TB) and most viruses; label may claim tuberculocidal activity.",
+            "High-level disinfection: kills all microorganisms except large numbers of bacterial spores (e.g., glutaraldehyde, OPA).",
+            "Sterilization: destroys all microbial life including spores (steam, ethylene oxide, hydrogen peroxide plasma).",
+            "Always observe the product's labeled contact (wet) time and the electrode manufacturer's compatibility list."
+          ]
+        },
+        {
+          "title": "Reprocessing electrodes and equipment",
+          "kind": "steps",
+          "items": [
+            "Wear gloves; remove electrodes gently, removing collodion with remover and paste with warm water.",
+            "Clean electrodes promptly with water and mild detergent to remove all paste, gel, hair and blood; do not let residue dry.",
+            "Disinfect at the level matching the Spaulding category, for the full contact time.",
+            "Rinse if required by the product label, then dry completely before storage.",
+            "Wipe headbox, cables, measuring tapes, photic lamp and keyboard between patients with an approved disinfectant.",
+            "Discard single-use and disposable electrodes after one patient; never reuse them."
+          ]
+        },
+        {
+          "title": "Special situations",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "CJD and prion disease",
+              "body": "Prions resist routine disinfection and sterilization. Use disposable electrodes and supplies whenever possible and discard them per the facility prion protocol (often incineration).",
+              "points": [
+                "Plan ahead with infection control before the study",
+                "Reusable items must be handled by the facility's specific prion protocol or discarded",
+                "Needle electrodes are single-use and go to sharps"
+              ]
+            },
+            {
+              "title": "Isolation rooms",
+              "body": "Bring only needed supplies in; use disposable electrodes or dedicated equipment when possible; disinfect the machine before it leaves.",
+              "points": [
+                "Follow the door sign for PPE",
+                "Airborne isolation: N95 and keep the door closed"
+              ]
+            },
+            {
+              "title": "Scabies and lice",
+              "body": "Contact precautions with gown and gloves; disposable electrodes preferred; bag linens and clean equipment per policy.",
+              "points": [
+                "Head lice: consider delaying a non-urgent EEG until treated, per ordering provider and policy"
+              ]
+            },
+            {
+              "title": "Open wounds and broken skin",
+              "body": "Avoid placing electrodes over open lesions, incisions or rashes; shift the site slightly and document the change.",
+              "points": [
+                "Electrodes contacting non-intact skin become semicritical items",
+                "Wear gloves"
+              ]
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Standard precautions apply to every patient, regardless of diagnosis.",
+        "C. difficile and norovirus: soap and water is preferred (especially in outbreaks), because alcohol rub is not reliably effective.",
+        "Airborne precautions mean a fit-tested N95 and a negative-pressure room (TB, measles, varicella).",
+        "Clean before you disinfect; organic residue inactivates disinfectants.",
+        "Needle electrodes are critical items: sterile, single-use, into sharps.",
+        "Scalp electrodes on intact skin are noncritical and need low- or intermediate-level disinfection.",
+        "Prion (CJD) cases: disposable electrodes, discarded per prion protocol.",
+        "High-level disinfection kills everything except large numbers of spores; sterilization kills spores too."
+      ],
+      "eegLink": "The same reusable cup electrode may touch dozens of scalps a week, so a skipped cleaning step or a short contact time can spread infection between patients."
+    },
+    {
+      "id": "fire-emergency",
+      "title": "Fire and Emergencies",
+      "intro": "Technologists must respond to fires, medical emergencies and seizures while keeping patients and themselves safe. Know RACE and PASS, the extinguisher classes, the oxygen-fire link, seizure first aid and when to report an incident.",
+      "sections": [
+        {
+          "title": "Fire response: RACE then PASS",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "RACE",
+              "body": "Rescue anyone in immediate danger; Alarm (pull the alarm and call the facility emergency number); Contain or Confine (close doors); Extinguish if small and safe, or Evacuate.",
+              "points": [
+                "Rescue comes first",
+                "Shut off oxygen only per facility policy, usually by respiratory therapy or the charge nurse"
+              ]
+            },
+            {
+              "title": "PASS",
+              "body": "Pull the pin; Aim at the base of the fire; Squeeze the handle; Sweep side to side.",
+              "points": [
+                "Keep your back to an exit",
+                "If the fire is not out quickly, leave and close the door"
+              ]
+            },
+            {
+              "title": "Evacuation",
+              "body": "Horizontal evacuation (to the next smoke compartment beyond fire doors) usually comes before vertical evacuation.",
+              "points": [
+                "Do not use elevators in a fire unless directed",
+                "Move patients nearest the fire first"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fire classes and extinguishers",
+          "kind": "table",
+          "head": [
+            "Class",
+            "Fuel",
+            "Extinguisher",
+            "EEG lab example"
+          ],
+          "rows": [
+            [
+              "A",
+              "Ordinary combustibles: paper, cloth, wood, plastic",
+              "Water, ABC dry chemical",
+              "Linens, gauze, paper"
+            ],
+            [
+              "B",
+              "Flammable liquids and gases",
+              "CO2, ABC dry chemical",
+              "Collodion, ether, acetone, alcohol"
+            ],
+            [
+              "C",
+              "Energized electrical equipment",
+              "CO2, ABC dry chemical (never water)",
+              "EEG machine, power cords"
+            ],
+            [
+              "D",
+              "Combustible metals",
+              "Dry powder (special agent)",
+              "Not typical"
+            ],
+            [
+              "K",
+              "Cooking oils and fats",
+              "Wet chemical",
+              "Kitchens"
+            ]
+          ],
+          "note": "ABC dry chemical extinguishers are the most common general-purpose type in hospitals."
+        },
+        {
+          "title": "Oxygen and fire risk",
+          "kind": "list",
+          "items": [
+            "The fire triangle is fuel, heat (ignition) and oxygen; oxygen-enriched air makes materials ignite more easily and burn hotter.",
+            "Patients on oxygen plus flammable solvents (collodion, acetone, alcohol) plus a spark is the classic EEG fire scenario.",
+            "Keep solvents and open bottles away from oxygen sources; ask the nurse or respiratory therapist about pausing or redirecting oxygen only per facility policy.",
+            "Let alcohol and solvents evaporate fully before powering equipment near the area.",
+            "Oxygen cylinders must be secured upright and kept away from heat."
+          ]
+        },
+        {
+          "title": "Seizure first aid during an EEG",
+          "kind": "steps",
+          "items": [
+            "Note the start time and stay with the patient; call for help per facility policy.",
+            "Keep recording; make sure the patient's face and body are visible on video.",
+            "Protect the head, move hazards away, lower the bed, keep rails up and padded if available.",
+            "Do not restrain the patient and do not put anything in the mouth.",
+            "When movements allow, turn the patient on the side to keep the airway clear.",
+            "Test and document responsiveness and language, and annotate observed features on the record.",
+            "Activate the emergency response if a seizure lasts 5 minutes or longer, clusters without recovery, causes injury or breathing trouble, or per the patient's seizure plan."
+          ]
+        },
+        {
+          "title": "Other emergencies",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Emergency codes",
+              "body": "Plain-language or color codes vary by facility and state. Code Blue for cardiopulmonary arrest and Code Red for fire are widespread but not universal.",
+              "points": [
+                "Know your own facility's codes and emergency number"
+              ]
+            },
+            {
+              "title": "Falls",
+              "body": "Do not lift the patient alone; check for injury, call for help, keep the patient still if a head or spine injury is possible, and report the fall.",
+              "points": []
+            },
+            {
+              "title": "Anaphylaxis and latex allergy",
+              "body": "Signs include hives, swelling of lips or tongue, wheezing, stridor, low blood pressure. Stop the exposure, call the emergency team; epinephrine is the first-line treatment.",
+              "points": [
+                "Screen for latex allergy before the study",
+                "Use latex-free gloves and supplies for allergic patients"
+              ]
+            },
+            {
+              "title": "BLS basics (adult)",
+              "body": "Check responsiveness, shout for help and activate the emergency response, get an AED; check breathing and pulse for no more than 10 seconds; start compressions.",
+              "points": [
+                "Rate 100 to 120 per minute, depth at least 2 inches (5 cm), full recoil",
+                "30 compressions to 2 breaths without an advanced airway",
+                "Use the AED as soon as it arrives; minimize pauses"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Incident reporting",
+          "kind": "list",
+          "items": [
+            "Report any patient or staff injury, near miss, equipment failure or medication or chemical exposure through the facility's safety reporting system.",
+            "Write facts only: what happened, when, who was involved, what was done; no blame or opinions.",
+            "Report promptly, while details are fresh.",
+            "Document the clinical facts in the medical record, but do not mention that an incident report was filed.",
+            "Incident reports are quality-improvement tools, not disciplinary records."
+          ]
+        }
+      ],
+      "pearls": [
+        "RACE: Rescue, Alarm, Contain, Extinguish or Evacuate. Rescue comes first.",
+        "PASS: Pull, Aim at the base, Squeeze, Sweep.",
+        "Class B is flammable liquids (collodion, acetone); Class C is energized electrical. Never use water on Class C.",
+        "Oxygen plus solvent plus spark is the EEG fire triangle.",
+        "During a seizure: time it, protect, side position, nothing in the mouth, no restraint, keep recording.",
+        "Call for emergency help at 5 minutes of continuous seizure activity.",
+        "Do not write 'incident report filed' in the patient's chart.",
+        "Emergency code names vary by facility."
+      ],
+      "eegLink": "Seizures, falls and solvent-related fire hazards are all most likely during an EEG, so the technologist is often the first responder."
+    },
+    {
+      "id": "patient-ergonomics",
+      "title": "Patient Safety and Ergonomics",
+      "intro": "Patient safety starts with correct identification and continues through setup, activation procedures and electrode removal. Technologists must also protect their own bodies from lifting and repetitive strain injuries.",
+      "sections": [
+        {
+          "title": "Patient identification",
+          "kind": "list",
+          "items": [
+            "Use at least two patient identifiers (e.g., full name and date of birth, or medical record number) before the study; this is a Joint Commission National Patient Safety Goal.",
+            "Room or bed number is never an identifier.",
+            "Compare the identifiers with the order and the wristband; ask the patient to state them when able.",
+            "Enter identifiers correctly into the EEG system so the recording is filed under the right patient."
+          ]
+        },
+        {
+          "title": "Falls, bed rails and sleep-deprived patients",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Fall prevention",
+              "body": "Screen fall risk; keep the bed low and locked, call light in reach, rails per facility policy, non-slip footwear.",
+              "points": [
+                "Lead wires and headbox cables are trip hazards; secure them",
+                "Help the patient to the bathroom during long studies"
+              ]
+            },
+            {
+              "title": "Bed rails",
+              "body": "Rails can prevent falls but also cause entrapment; use according to facility policy and patient assessment.",
+              "points": [
+                "Padded rails for patients at seizure risk during monitoring"
+              ]
+            },
+            {
+              "title": "Sleep-deprived patients",
+              "body": "Sleep deprivation lowers seizure threshold and impairs alertness and balance.",
+              "points": [
+                "Patient should not drive to or from the study",
+                "Supervise ambulation and stay close during the recording"
+              ]
+            },
+            {
+              "title": "Sedated patients",
+              "body": "Monitor per facility sedation policy; the patient should be accompanied home by an adult.",
+              "points": []
+            }
+          ]
+        },
+        {
+          "title": "Pediatric safety",
+          "kind": "list",
+          "items": [
+            "Never leave an infant or young child unattended on a bed or table; keep crib rails up.",
+            "Keep small items (electrode caps, tape, cotton balls) away from a child's reach because of choking risk.",
+            "Route wires to avoid wrapping around the neck; keep leads bundled behind the head.",
+            "Neonatal and premature skin is thin and fragile: gentle prep, minimal abrasion, check for skin breakdown.",
+            "Keep a parent or caregiver involved; follow policy for restraints or immobilization."
+          ]
+        },
+        {
+          "title": "Skin injury, needle electrodes and electrode removal",
+          "kind": "table",
+          "head": [
+            "Risk",
+            "Prevention"
+          ],
+          "rows": [
+            [
+              "Abrasion injury",
+              "Light skin prep only; avoid over-scrubbing; extra care in neonates, elderly and patients on anticoagulants"
+            ],
+            [
+              "Pressure injury in long-term monitoring",
+              "Check the scalp and reposition electrodes at intervals set by facility policy; watch the occiput and areas under the head wrap; consider pressure-relief measures"
+            ],
+            [
+              "Collodion and solvent irritation",
+              "Protect eyes; small amounts; ventilation; check for allergy; remove gently with remover and avoid getting it into the eyes"
+            ],
+            [
+              "Chemical or thermal burn",
+              "No incompatible electrodes in MRI; keep solvents off broken skin"
+            ],
+            [
+              "Needle electrodes",
+              "Rarely used; sterile single-use only; standard precautions; never recap; dispose in a sharps container; document"
+            ]
+          ]
+        },
+        {
+          "title": "Hyperventilation and photic stimulation screening",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Hyperventilation: common contraindications",
+              "body": "Screen the history and the order before HV; when in doubt, ask the ordering or interpreting physician.",
+              "points": [
+                "Recent stroke, TIA or intracranial hemorrhage",
+                "Significant cardiac or pulmonary disease",
+                "Sickle cell disease or trait",
+                "Moyamoya disease",
+                "Raised intracranial pressure",
+                "Patient unable to cooperate safely; pregnancy per lab policy"
+              ]
+            },
+            {
+              "title": "During HV",
+              "body": "Watch for dizziness, tingling, chest pain, shortness of breath or a seizure.",
+              "points": [
+                "Stop and document if the patient becomes symptomatic or has a seizure",
+                "Do not leave a standing patient unsupported; HV is done seated or lying"
+              ]
+            },
+            {
+              "title": "Photic stimulation",
+              "body": "Ask about known photosensitivity or seizures triggered by lights and screens.",
+              "points": [
+                "Stop the flash train promptly if a photoparoxysmal response or seizure appears",
+                "Keep the lamp at the distance set by lab protocol; patient's eyes closed or open per protocol"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Technologist ergonomics and safe lifting",
+          "kind": "list",
+          "items": [
+            "Use lift equipment and get help for patient transfers; manual lifting of patients is a leading cause of back injury in health care.",
+            "NIOSH recommends that a single caregiver not manually lift more than about 35 lb of patient weight under ideal conditions.",
+            "Keep loads close, bend the knees, keep the back neutral and avoid twisting.",
+            "Raise the bed to working height during head measurement and electrode application.",
+            "Push carts rather than pull them; secure cables; take microbreaks to reduce repetitive strain at the keyboard."
+          ]
+        }
+      ],
+      "pearls": [
+        "Two identifiers, never the room number.",
+        "Sleep-deprived patients should not drive themselves home.",
+        "Never leave an infant unattended; keep crib rails up.",
+        "Sickle cell disease or trait, moyamoya and recent stroke are classic hyperventilation contraindications.",
+        "Stop photic stimulation as soon as a photoparoxysmal response appears.",
+        "Long-term monitoring needs scheduled skin checks to prevent pressure injury.",
+        "Use mechanical lifts and team lifts; about 35 lb is the NIOSH patient-lifting guide.",
+        "Needle electrodes are sterile and single-use; dispose in sharps without recapping."
+      ],
+      "eegLink": "Identification errors, falls, skin breakdown and activation-related events all happen at the EEG bedside, so the technologist's screening and vigilance prevent most of them."
+    }
+  ],
+  "mistakes": [
+    [
+      "The Joint Commission is the federal agency that enforces worker safety.",
+      "OSHA enforces worker safety; The Joint Commission is a private accrediting body."
+    ],
+    [
+      "CDC guidelines are federal laws.",
+      "CDC issues guidance; it becomes binding through OSHA, TJC or facility policy."
+    ],
+    [
+      "An employee who declines the hepatitis B vaccine loses the right to it.",
+      "The employee can request it later and still receive it free."
+    ],
+    [
+      "Employees pay for their own PPE.",
+      "OSHA requires the employer to provide PPE at no cost."
+    ],
+    [
+      "'Warning' is the more severe signal word.",
+      "'Danger' is more severe; 'Warning' is less severe."
+    ],
+    [
+      "SDSs can be kept in the manager's locked office.",
+      "SDSs must be readily accessible to employees on every shift without barriers."
+    ],
+    [
+      "Flash point is in the fire-fighting section of the SDS.",
+      "Flash point is in Section 9 (physical and chemical properties); Section 5 covers extinguishing."
+    ],
+    [
+      "Collodion is safe near oxygen once the bottle is capped.",
+      "Solvent vapor lingers; keep collodion and acetone away from oxygen and ignition sources and ventilate."
+    ],
+    [
+      "Adding a second ground improves safety in the ICU.",
+      "A patient should have only one ground; extra grounds create current paths and ground loops."
+    ],
+    [
+      "Leakage current too small to feel is always harmless.",
+      "Microamperes delivered near the heart can cause ventricular fibrillation (microshock)."
+    ],
+    [
+      "A technologist can tape a frayed cord and keep using it.",
+      "Remove the device from service, tag it and send it to biomedical engineering."
+    ],
+    [
+      "Alcohol hand rub works for C. difficile.",
+      "Soap and water is preferred for C. difficile (spores) and norovirus, especially in outbreaks."
+    ],
+    [
+      "Disinfecting electrodes can replace cleaning them.",
+      "Clean first; residue blocks the disinfectant."
+    ],
+    [
+      "Note in the chart that an incident report was filed.",
+      "Chart the clinical facts only; the incident report is filed separately."
+    ]
+  ],
+  "memory": [
+    [
+      "RACE",
+      "Rescue, Alarm, Contain/Confine, Extinguish or Evacuate (fire response)"
+    ],
+    [
+      "PASS",
+      "Pull, Aim, Squeeze, Sweep (extinguisher use)"
+    ],
+    [
+      "Fire classes A-B-C",
+      "A = Ash (ordinary combustibles), B = Barrel (flammable liquids), C = Current (electrical)"
+    ],
+    [
+      "Spaulding: critical, semicritical, noncritical",
+      "Sterile tissue = sterilize; mucous membrane or broken skin = high-level disinfection; intact skin = low/intermediate disinfection"
+    ]
+  ]
+}

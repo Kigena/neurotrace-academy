@@ -1,0 +1,1374 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-07",
+  "bank": "challenge",
+  "focus": "lab-safety-osha-sds",
+  "description": "Original lab safety questions covering OSHA, bloodborne pathogens, hazard communication and SDS, EEG lab chemicals, electrical and fire safety, infection control and emergency response. Text only; not yet medically verified.",
+  "totalQuestions": 50,
+  "questions": [
+    {
+      "id": "ch-saf-001",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "osha",
+        "general-duty-clause"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "When no specific OSHA standard addresses a serious, recognized workplace hazard, which provision of the OSH Act still obligates the employer to protect workers from it?",
+      "explanation": "The General Duty Clause in Section 5 of the 1970 OSH Act requires employers to keep the workplace free of recognized hazards likely to cause death or serious harm, even where no specific standard exists. Hazard Communication covers chemical hazard information, the Bloodborne Pathogens Standard covers blood and other potentially infectious materials, and medical device reporting is an FDA requirement rather than an OSHA worker-protection duty.",
+      "learningObjective": "Identify the General Duty Clause as OSHA's catch-all employer obligation.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "The General Duty Clause",
+        "The Hazard Communication Standard",
+        "The Bloodborne Pathogens Standard",
+        "The Medical Device Reporting rule"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-002",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "osha",
+        "agency-role"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which statement best describes the role of OSHA in a hospital EEG laboratory?",
+      "explanation": "OSHA, an agency of the U.S. Department of Labor, writes and enforces workplace safety and health standards for employees. Credentialing and scope of practice come from credentialing boards and state rules, premarket clearance of medical devices is an FDA function, and hospital accreditation with National Patient Safety Goals is the work of bodies such as The Joint Commission.",
+      "learningObjective": "Distinguish OSHA's worker-protection role from FDA, accreditation and credentialing roles.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "It licenses technologists and sets the scope of EEG practice",
+        "It approves EEG amplifiers before they can be sold in the United States",
+        "It sets and enforces standards that protect employee health and safety",
+        "It accredits hospitals for Medicare billing and patient safety goals"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-003",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "bloodborne-pathogens",
+        "exposure-control-plan"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Under the OSHA Bloodborne Pathogens Standard, how often must the employer review and update the written exposure control plan?",
+      "explanation": "The standard requires the exposure control plan to be reviewed and updated at least annually and whenever new or modified tasks and procedures affect occupational exposure, including consideration of safer sharps devices. Waiting for an inspection, a five-year cycle, or an exposure incident would leave the plan out of date and does not meet the rule.",
+      "learningObjective": "State the review frequency of the bloodborne pathogens exposure control plan.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Only when OSHA performs an inspection",
+        "At least annually and whenever tasks change",
+        "Every five years with the fire safety plan",
+        "Only after an employee reports an exposure"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-004",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "bloodborne-pathogens",
+        "hepatitis-b-vaccine"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A newly hired EEG technologist has occupational exposure to blood. What does the Bloodborne Pathogens Standard require regarding hepatitis B vaccination?",
+      "explanation": "Employers must make the hepatitis B vaccine series available at no cost to employees with occupational exposure, within 10 working days of initial assignment; an employee who declines signs the mandatory declination statement and may still accept the vaccine later. Charging the employee, limiting the offer to needle work, or waiting until after an exposure all conflict with the standard.",
+      "learningObjective": "Describe the employer's hepatitis B vaccination obligation and the declination process.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "It must be purchased by the employee before patient contact can begin",
+        "It is required only for staff who perform needle electrode studies",
+        "It must be offered only after the employee has a documented exposure",
+        "It must be offered at no cost, and a refusal is recorded on a signed declination"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-005",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "bloodborne-pathogens",
+        "post-exposure"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "While removing a subdermal needle electrode, a technologist sustains a needlestick. What is the best immediate sequence?",
+      "explanation": "After a percutaneous exposure the site is washed with soap and water and the exposure is reported immediately, because post-exposure evaluation and any prophylaxis are time-sensitive. Squeezing the wound and applying bleach or other caustic agents is not recommended, delaying the report until symptoms or the end of the shift loses the treatment window, and the exposure belongs in the employee incident and occupational health process rather than only in the patient chart.",
+      "learningObjective": "Apply correct first aid and reporting after an occupational needlestick.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Squeeze the wound and apply bleach, then report at the end of the shift",
+        "Cover the site and finish the study, then report it if symptoms appear",
+        "Wash the site with soap and water, then report at once for post-exposure evaluation",
+        "Apply alcohol to the site, then document the event only in the patient chart"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-006",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "bloodborne-pathogens",
+        "sharps"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which practice for used disposable needle electrodes is consistent with OSHA sharps requirements?",
+      "explanation": "Contaminated sharps go straight into a closable, puncture-resistant, leakproof, labeled or color-coded container placed close to where they are used. Two-handed recapping and bending needles are prohibited because they cause sticks, and a soft biohazard bag is not puncture-resistant.",
+      "learningObjective": "Select correct disposal of contaminated sharps.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Discard them promptly in a closable, puncture-resistant, labeled sharps container",
+        "Recap them with two hands before carrying them to the dirty utility room",
+        "Place them in a red biohazard bag with the used gauze and tape",
+        "Bend them flat so they cannot penetrate the regular trash bag"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-007",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "ppe",
+        "standard-precautions"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Following CDC guidance, which order is recommended for removing gown, gloves, eye protection and mask after an isolation-room EEG?",
+      "explanation": "CDC's sequence removes the most contaminated item, the gloves, first, then goggles or face shield, then gown, and the mask or respirator last, finishing with hand hygiene. All PPE comes off at the doorway before you leave the room, except a respirator, which is removed after you leave and close the door. Removing the mask or face protection first means touching the face with contaminated gloves, and leaving gloves on until late spreads contamination to the other items.",
+      "learningObjective": "Sequence PPE removal to minimize self-contamination.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Mask, gown, eye protection, then gloves, with hand hygiene at the end",
+        "Gown, mask, gloves, then eye protection, with hand hygiene at the end",
+        "Eye protection, mask, gloves, then gown, with hand hygiene at the end",
+        "Gloves, eye protection, gown, then mask, with hand hygiene at the end"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-008",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "hazard-communication",
+        "ghs",
+        "signal-words"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Under the GHS-aligned OSHA Hazard Communication Standard, which signal word on a chemical label indicates the more severe hazard?",
+      "explanation": "HazCom 2012 uses only two signal words: Danger for more severe hazards and Warning for less severe ones. Caution and Notice are not GHS signal words, although they appear on other kinds of signage.",
+      "learningObjective": "Identify the two GHS signal words and their relative severity.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Warning",
+        "Danger",
+        "Caution",
+        "Notice"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-009",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "hazard-communication",
+        "ghs",
+        "pictograms"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A bottle of collodion carries a GHS pictogram. Which pictogram is expected because of its main physical hazard?",
+      "explanation": "Collodion is a highly flammable liquid (nitrocellulose in ether and ethanol), so it carries the flame pictogram. Flame over circle marks oxidizers, the gas cylinder marks gases under pressure, and the exploding bomb marks explosives and self-reactive substances.",
+      "learningObjective": "Match collodion's flammability hazard to the GHS flame pictogram.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Flame over circle",
+        "Flame",
+        "Gas cylinder",
+        "Exploding bomb"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-010",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "hazard-communication",
+        "labels"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A technologist pours acetone from a supplier drum into a smaller squeeze bottle that will stay in the lab. What does Hazard Communication require for that bottle?",
+      "explanation": "Workplace secondary containers must carry the product identifier and hazard information (words, pictures or symbols) so anyone handling them knows the hazard; the only exemption is a portable container for the immediate use of the employee who filled it during that shift. A bottle that stays in the lab is not exempt, and a fill date or a person's name alone does not convey the hazard.",
+      "learningObjective": "Apply HazCom labeling rules to secondary containers.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Leave it unlabeled because it stays inside the lab",
+        "Label it only with the date it was filled",
+        "Label it only with the name of the person who filled it",
+        "Label it with the product identifier and its hazards"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-011",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "sds",
+        "availability"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What does OSHA require regarding Safety Data Sheets for chemicals used in the EEG lab?",
+      "explanation": "Employers must maintain an SDS for each hazardous chemical and keep it readily accessible to employees in their work area during each shift, on paper or electronically with reliable access and a backup. Locking them away, producing them only after a spill, or obtaining them only for an inspection defeats their purpose.",
+      "learningObjective": "State the SDS accessibility requirement.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "They must be readily accessible to employees during every work shift",
+        "They must be kept in the manager's locked office for document control",
+        "They must be provided to employees only when a spill has occurred",
+        "They must be requested from the supplier only during an inspection"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-012",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "sds",
+        "sections"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "How many sections does a Safety Data Sheet have under the GHS-aligned Hazard Communication Standard?",
+      "explanation": "The GHS format standardizes the SDS into 16 sections in a fixed order, from identification in Section 1 through other information in Section 16. The other numbers do not match the format; older MSDS forms had no required order or section count.",
+      "learningObjective": "Recall the 16-section SDS format.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "8",
+        "12",
+        "16",
+        "20"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-013",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "sds",
+        "sections",
+        "ppe"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A technologist wants to know which gloves and ventilation are needed when using a new electrode adhesive. Which SDS section should be checked?",
+      "explanation": "Section 8 lists exposure limits, engineering controls such as ventilation, and the personal protective equipment that should be worn. Section 4 covers first aid after exposure, Section 11 describes toxic effects and routes of exposure, and Section 14 covers shipping classification.",
+      "learningObjective": "Locate PPE and ventilation guidance in the SDS.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Section 4, First-aid measures",
+        "Section 8, Exposure controls/personal protection",
+        "Section 11, Toxicological information",
+        "Section 14, Transport information"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-014",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "sds",
+        "sections",
+        "spill"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A bottle of collodion tips over on the counter. Which SDS section gives containment and cleanup procedures?",
+      "explanation": "Section 6 describes spill response: personal precautions, containment and cleanup methods. Section 5 covers extinguishing media and fire hazards, Section 7 covers safe handling and storage conditions, and Section 13 covers disposal of waste product rather than the immediate spill response.",
+      "learningObjective": "Locate spill-response guidance in the SDS.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Section 5, Fire-fighting measures",
+        "Section 7, Handling and storage",
+        "Section 13, Disposal considerations",
+        "Section 6, Accidental release measures"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-015",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "sds",
+        "sections",
+        "storage"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A new supply of acetone arrives. Which SDS section tells staff about safe storage conditions and incompatible materials to keep it away from?",
+      "explanation": "Section 7 gives precautions for safe handling and conditions for safe storage, including incompatibilities. Section 1 identifies the product and supplier with emergency contact numbers, Section 8 covers exposure limits and PPE, and Section 16 holds revision dates and miscellaneous information.",
+      "learningObjective": "Locate storage guidance in the SDS.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Section 1, Identification",
+        "Section 8, Exposure controls/personal protection",
+        "Section 7, Handling and storage",
+        "Section 16, Other information"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-016",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "eeg-chemicals",
+        "collodion",
+        "ventilation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Which practice best reduces fire and inhalation hazards when applying electrodes with collodion?",
+      "explanation": "Collodion's ether and alcohol vapors are both flammable and irritating, so it is used with good ventilation or local exhaust, kept capped between uses, kept away from heat and sparks, and dried with compressed air rather than heat. Warming the bottle, using a heat gun, or leaving it open all increase vapor release and fire risk.",
+      "learningObjective": "Apply safe handling practices for collodion.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Use it in a well-ventilated area, away from ignition sources, dried with air",
+        "Warm the bottle on a heat pad first so the adhesive sets more quickly",
+        "Dry each electrode with a heat gun held close to the scalp",
+        "Keep the bottle uncapped during the hookup to avoid repeated handling"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-017",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "eeg-chemicals",
+        "eye-wash"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Acetone splashes into a technologist's eye during collodion removal. What is the most appropriate first action?",
+      "explanation": "Chemical eye exposures need prompt, continuous flushing with the eyelids held open for at least 15 minutes (the ANSI Z358.1 benchmark), followed by reporting and medical evaluation. A brief rinse is inadequate, attempting chemical neutralization in the eye is not recommended, and rubbing spreads the chemical and can abrade the cornea.",
+      "learningObjective": "Respond correctly to a chemical splash to the eye.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Rinse briefly with saline for 30 seconds, then report at shift end",
+        "Neutralize the solvent with a few drops of a dilute acid eye solution",
+        "Rub the eye gently with clean gauze to absorb the solvent first",
+        "Flush the eye at the eyewash station for at least 15 minutes, then report"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-018",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "eeg-chemicals",
+        "flammable-storage"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Where should bulk quantities of flammable liquids such as acetone and collodion be stored in the lab?",
+      "explanation": "Flammable liquids beyond small working amounts belong in an approved flammable storage cabinet, away from heat, sparks and oxidizers. A food refrigerator is not spark-proof and mixes chemicals with food, and storage near the electrical panel or under computer equipment places vapors near ignition sources.",
+      "learningObjective": "Choose proper storage for flammable lab chemicals.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "In the refrigerator used for staff food to keep the vapors cool",
+        "In an approved flammable storage cabinet away from ignition sources",
+        "On an open shelf beside the electrical panel for easy access",
+        "In a sealed drawer under the EEG acquisition computer"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-019",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "eeg-chemicals",
+        "abrasives",
+        "skin-integrity"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Why should a technologist avoid abrading the scalp until it bleeds during skin preparation?",
+      "explanation": "Excessive abrasion breaches the skin barrier, inviting infection and exposing the technologist to blood; electrodes that contact non-intact skin also need a higher level of disinfection than those on intact skin. Bleeding does not raise impedance or saturate amplifiers, and salt bridges are caused by gel or paste spreading between electrodes, not by abrasion.",
+      "learningObjective": "Relate excessive skin abrasion to infection control.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Bleeding raises electrode impedance well above the recommended limit",
+        "Broken skin raises infection risk and changes how electrodes must be reprocessed",
+        "Abraded skin creates a salt bridge between neighboring electrode sites",
+        "Blood on the scalp causes the amplifier to saturate for several minutes"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-020",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrical-safety",
+        "macroshock",
+        "microshock"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What distinguishes microshock from macroshock?",
+      "explanation": "Microshock occurs when current reaches the heart through a low-resistance direct pathway such as a pacing wire or central catheter, so currents in the microampere range can trigger ventricular fibrillation. Macroshock enters and leaves through intact skin and needs far larger currents to be dangerous; microshock is not harmless, and arcing from an outlet describes a different electrical fault.",
+      "learningObjective": "Differentiate microshock from macroshock and its clinical significance.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Microshock is current that is too small to cause any harm under any condition",
+        "Microshock flows only through intact skin from one hand to the opposite foot",
+        "Microshock is current that arcs through the air from a faulty wall outlet",
+        "Microshock is current delivered directly to the heart, so tiny currents can be lethal"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-021",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrical-safety",
+        "microshock",
+        "patient-risk"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which patient is most vulnerable to microshock during a portable EEG?",
+      "explanation": "Temporary pacing wires and central lines create a conductive path directly to the myocardium, so microampere leakage currents could induce fibrillation; such patients warrant extra care with grounding and with touching both the patient and equipment. A cochlear implant, vagus nerve stimulator or shunt does not provide a direct electrical conduit to the heart. Transcutaneous (pad) pacing does not create this direct pathway.",
+      "learningObjective": "Identify patients at increased microshock risk.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An ICU patient with temporary epicardial pacing wires exiting the chest",
+        "An outpatient with a cochlear implant during sleep",
+        "A child with a vagus nerve stimulator in the clinic",
+        "An adult with a ventriculoperitoneal shunt at the bedside"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-022",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrical-safety",
+        "leakage-current"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What is leakage current in EEG equipment?",
+      "explanation": "Leakage current is unintended current that flows from energized parts through insulation and stray capacitance to the chassis, ground or patient connections; a working ground conductor carries it away safely. Battery drain, high-impedance electrodes and the calibration signal are unrelated phenomena.",
+      "learningObjective": "Define leakage current and why grounding matters.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Current that drains the battery of the instrument when it is switched off",
+        "Current lost when electrode impedances exceed the recommended range",
+        "Unintended current from powered circuitry that can flow to the chassis or patient",
+        "Current injected on purpose by the calibration circuit into each channel"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-023",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrical-safety",
+        "inspection-interval",
+        "biomedical-engineering"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "How often should EEG instruments receive formal electrical safety checks such as ground resistance and leakage-current testing?",
+      "explanation": "Electrical safety testing is done by biomedical (clinical) engineering at incoming inspection, after any repair or modification, and then at scheduled intervals; the widely taught interval is at least yearly, but facility policy, accreditation requirements and the manufacturer's recommendations set the exact schedule. Testing only at installation, only after a shock, or only when line noise appears leaves hidden faults undetected.",
+      "learningObjective": "Describe the schedule for routine electrical safety inspection of EEG equipment.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Only once at installation, since modern instruments are fully isolated",
+        "At acceptance, after repairs, and on a scheduled interval set by policy",
+        "Only after a patient or staff member reports feeling a shock",
+        "Only when the technologist notices excess 60 Hz in the recording"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-024",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrical-safety",
+        "inspection-interval"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Many laboratory policies are written around a commonly taught minimum for scheduled electrical leakage and ground testing of patient-connected EEG equipment. What is that commonly taught minimum?",
+      "explanation": "Annual testing is the widely taught minimum and a common facility default for patient-connected equipment, but the governing interval comes from facility policy, the manufacturer and accreditation expectations, and some programs use risk-based schedules. A five-year or end-of-warranty interval is too infrequent, while the technologist's pre-use visual check of cords and plugs is different from formal leakage testing before each recording.",
+      "learningObjective": "Recall the commonly taught minimum interval for formal electrical safety testing.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "At least once every five years",
+        "Once at the end of the warranty",
+        "Once before each recording",
+        "At least once a year"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-025",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrical-safety",
+        "single-ground",
+        "ground-loop"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A patient on video-EEG is also connected to another bedside monitor that has its own patient ground electrode. What is the main safety concern?",
+      "explanation": "Connecting the patient to ground through two devices plugged into outlets at slightly different ground potentials can let current circulate through the patient (a ground loop), creating both a hazard and 60 Hz artifact; the single-ground principle means only one ground connection on the patient. The other choices describe faults that this setup does not cause.",
+      "learningObjective": "Apply the single-ground principle to avoid ground loops.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A floating ground, since neither device can reach the building ground",
+        "An open reference, since the monitor disconnects the EEG reference input",
+        "A ground loop, since two patient grounds at different potentials can pass current",
+        "A battery fault, since both devices draw on the same power supply"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-026",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrical-safety",
+        "isolated-amplifiers"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What is the safety purpose of isolated patient inputs on modern EEG amplifiers?",
+      "explanation": "Isolation (for example optical or transformer isolation) separates the patient-applied parts from mains-connected circuitry, so only minimal current can flow through the patient even during a fault. Isolation does not by itself improve common mode rejection, does not replace scheduled leakage testing, and does not make ungrounded outlets acceptable.",
+      "learningObjective": "Explain the protective role of isolated patient inputs.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "They limit the current that can flow through the patient connections",
+        "They raise the common mode rejection of the amplifier for each channel",
+        "They remove the need for routine leakage-current testing of the device",
+        "They allow the instrument to be plugged into ungrounded outlets safely"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-027",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrical-safety",
+        "extension-cords",
+        "grounding"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which practice reflects safe power connection for EEG equipment in patient-care areas?",
+      "explanation": "Equipment should be plugged directly into a properly grounded, hospital-grade receptacle; extension cords and adapters add resistance, trip hazards and potential ground breaks, and removing the grounding pin eliminates the safe path for leakage current. Any need for extra reach is handled with approved equipment according to facility policy.",
+      "learningObjective": "Select safe power connection practices for EEG instruments.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Use a household extension cord if the outlet is far from the bedside",
+        "Use a two-prong adapter if the bedside outlet does not fit the plug",
+        "Remove the grounding pin if the plug does not seat fully in the outlet",
+        "Plug directly into a hospital-grade grounded outlet without an extension cord"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-028",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "electrical-safety",
+        "touch-precaution"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "While adjusting electrodes on a patient with temporary epicardial or transvenous pacing wires, what electrical precaution should the technologist take?",
+      "explanation": "Simultaneously touching the patient and a chassis can let the technologist's body bridge leakage current to the patient, which matters greatly when a direct cardiac pathway exists. Gloves are for infection control, not electrical isolation, and removing the ground or adding a second ground increases rather than reduces hazard.",
+      "learningObjective": "Apply touch precautions for patients at microshock risk.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Wear rubber gloves only when the EEG cart is plugged into the wall",
+        "Avoid touching the patient and metal equipment surfaces at the same time",
+        "Turn off the EEG amplifier ground so the pacing wires stay isolated",
+        "Attach a second ground electrode to the patient to reduce stray current"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-029",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "infection-control",
+        "transmission-precautions"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A patient with suspected active pulmonary tuberculosis needs an EEG. Which precaution applies?",
+      "explanation": "Tuberculosis spreads by airborne droplet nuclei, so airborne precautions apply: an airborne infection isolation room and a fit-tested N95 or higher respirator. A surgical mask under droplet precautions does not filter small airborne particles, and contact or standard precautions alone do not address the respiratory route.",
+      "learningObjective": "Match tuberculosis to airborne precautions.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Droplet precautions with a standard surgical mask",
+        "Airborne precautions with a fit-tested N95 respirator",
+        "Contact precautions with a gown and gloves only",
+        "Standard precautions with no added respiratory protection"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-030",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "infection-control",
+        "transmission-precautions"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "An inpatient with influenza is scheduled for EEG. Which transmission-based precaution is appropriate in addition to standard precautions?",
+      "explanation": "Influenza spreads mainly by respiratory droplets, so droplet precautions with a facemask are used. Airborne precautions are reserved for organisms such as tuberculosis, measles and varicella, contact precautions alone omit respiratory protection, and protective isolation protects a vulnerable patient rather than staff.",
+      "learningObjective": "Match influenza to droplet precautions.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Airborne precautions with a negative-pressure room only",
+        "Contact precautions with gown and gloves only",
+        "Protective isolation for an immunocompromised host",
+        "Droplet precautions with a facemask"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-031",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "infection-control",
+        "standard-precautions"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What is the core principle of standard precautions?",
+      "explanation": "Standard precautions apply to every patient regardless of diagnosis, because infection status is often unknown; they include hand hygiene, PPE based on anticipated exposure, safe sharps handling and respiratory hygiene. Limiting barriers or hand hygiene to known infections defeats the purpose.",
+      "learningObjective": "State the principle of standard precautions.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Treat blood and body fluids from every patient as potentially infectious",
+        "Apply barrier protection only to patients with a confirmed infection",
+        "Use gloves only when the patient's chart lists a bloodborne pathogen",
+        "Reserve hand hygiene for contact with patients in isolation rooms"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-032",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "infection-control",
+        "spaulding"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Under the Spaulding classification, reusable cup electrodes applied to intact scalp are which category, and what level of processing do they need?",
+      "explanation": "Items that touch only intact skin are noncritical and need cleaning followed by low- or intermediate-level disinfection per facility policy. Semicritical items contact mucous membranes or non-intact skin and need high-level disinfection, and critical items enter sterile tissue or the vascular system and need sterilization or single use, such as needle electrodes.",
+      "learningObjective": "Classify scalp cup electrodes using the Spaulding scheme.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Critical; sterilization before each patient use",
+        "Semicritical; high-level disinfection before each patient use",
+        "Noncritical; cleaning plus low- or intermediate-level disinfection",
+        "Critical; single-use only with no reprocessing allowed"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-033",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "infection-control",
+        "spaulding",
+        "needle-electrodes"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Subdermal needle electrodes enter sterile tissue. Under the Spaulding classification they are which category?",
+      "explanation": "Devices that penetrate skin or enter sterile tissue are critical items and must be sterile; in practice EEG needle electrodes are disposable single-use devices. Semicritical items contact mucous membranes or non-intact skin, noncritical items contact intact skin, and environmental surfaces are cleaned separately.",
+      "learningObjective": "Classify needle electrodes as critical items.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Semicritical",
+        "Critical",
+        "Noncritical",
+        "Environmental"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-034",
+      "domainId": "domain-4",
+      "sectionId": "d4-quality-assurance-equipment-maintenance",
+      "topicTags": [
+        "infection-control",
+        "electrode-cleaning",
+        "contact-time"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A technologist wipes electrodes with an EPA-registered disinfectant and dries them immediately. Why may disinfection be inadequate?",
+      "explanation": "Each disinfectant label specifies a contact (wet or dwell) time that the surface must remain wet to achieve the claimed kill; drying early leaves organisms alive. Electrodes should be cleaned of paste and debris first, but saline rinsing, extra dilution or heating are not substitutes for following the label.",
+      "learningObjective": "Apply disinfectant contact time when reprocessing electrodes.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The disinfectant must be diluted further to avoid damaging the silver",
+        "The electrodes must be rinsed in saline before the disinfectant is applied",
+        "The disinfectant works only if it is heated to body temperature first",
+        "The surfaces must stay wet for the label's contact time to be effective"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-035",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "infection-control",
+        "cjd",
+        "prion"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An EEG is ordered for a patient with suspected Creutzfeldt-Jakob disease. What electrode practice is recommended?",
+      "explanation": "Prions resist conventional cleaning and disinfection, so disposable electrodes are used for known or suspected CJD and discarded (typically incinerated) according to infection-control direction. Soap, alcohol or routine low-level disinfection do not inactivate prions, and reusing such electrodes risks iatrogenic transmission.",
+      "learningObjective": "Apply prion precautions to EEG electrodes.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Use reusable cup electrodes and wash them in hot soapy water afterward",
+        "Use reusable cup electrodes and wipe them with alcohol after the study",
+        "Use disposable electrodes and discard them as directed by infection control",
+        "Use reusable cup electrodes and run them through a routine low-level soak"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-036",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "fire-safety",
+        "race"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "In the RACE fire response, what does the first step stand for?",
+      "explanation": "RACE stands for Rescue anyone in immediate danger, Alarm (activate the alarm and call), Confine the fire by closing doors, and Extinguish or Evacuate. Report, Restrain and Remove are not the steps of the acronym.",
+      "learningObjective": "Recall the RACE fire response sequence.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Rescue",
+        "Report",
+        "Restrain",
+        "Remove"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-037",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "fire-safety",
+        "pass"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "When using a portable extinguisher with the PASS technique, where should the nozzle be aimed?",
+      "explanation": "PASS is Pull the pin, Aim at the base of the fire, Squeeze the handle, and Sweep side to side. Aiming at the flames, smoke or the wall does not reach the burning fuel and wastes the agent.",
+      "learningObjective": "Apply the PASS technique.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "At the top of the flames",
+        "At the smoke above the fire",
+        "At the wall behind the fire",
+        "At the base of the fire"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-038",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "fire-safety",
+        "extinguisher-classes"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A spilled bottle of collodion ignites on a countertop. Which extinguisher class is designed for this type of fire?",
+      "explanation": "Burning flammable liquids such as collodion, acetone and ether are Class B fires. Class A covers ordinary combustibles, Class C covers energized electrical equipment, and Class K covers commercial cooking oils; a multipurpose ABC extinguisher also covers Class B.",
+      "learningObjective": "Identify flammable liquid fires as Class B.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Class A",
+        "Class B",
+        "Class C",
+        "Class K"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-039",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "fire-safety",
+        "oxygen"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A patient receiving supplemental oxygen needs collodion electrode removal at the bedside. Why is extra caution warranted?",
+      "explanation": "Oxygen is an oxidizer: it is not flammable itself, but an oxygen-enriched atmosphere lowers the ignition threshold and accelerates burning of flammable vapors, hair and linens. It does not form an explosive compound with acetone on the skin and has no effect on electrode impedance or lead heating.",
+      "learningObjective": "Explain the fire risk of oxygen-enriched environments.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Oxygen is itself a flammable gas that ignites when it reaches a solvent",
+        "Oxygen enrichment makes materials ignite more easily and burn more intensely",
+        "Oxygen reacts with acetone to form an explosive compound on the skin",
+        "Oxygen raises electrode impedance and makes the leads overheat"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-040",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "seizure-first-aid"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During a routine EEG, a patient has a generalized tonic-clonic seizure. Which action is appropriate for the technologist?",
+      "explanation": "The technologist protects the patient from injury, positions them on the side to help clear secretions, times the event, keeps recording and observing, calls for help per protocol, and documents the event. Nothing goes in the mouth, limbs are not restrained, the record should continue because the ictal EEG is diagnostic, and nothing is given by mouth until the patient is fully alert.",
+      "learningObjective": "Apply seizure first aid within technologist scope.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Place a bite block between the teeth and hold the limbs to limit movement",
+        "Stop the recording and remove the electrodes so the patient can move freely",
+        "Give the patient water once the jerking stops so the airway stays moist",
+        "Protect the head, turn the patient on the side when possible, and keep recording"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-041",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "seizure-first-aid",
+        "status-epilepticus",
+        "escalation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An outpatient's convulsive seizure has continued for 5 minutes on the EEG. What should the technologist do?",
+      "explanation": "Convulsive activity lasting about 5 minutes meets the operational definition for status epilepticus treatment, so emergency help is called per lab protocol while the technologist keeps the patient safe, continues recording and documents timing. Waiting longer delays treatment, hyperventilation is an activation procedure and not a treatment, and disconnecting adds nothing to patient safety.",
+      "learningObjective": "Recognize when a prolonged seizure requires emergency activation.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Activate the emergency response per protocol while protecting and observing",
+        "Wait 10 more minutes, then notify the physician if it has not stopped",
+        "Begin hyperventilation to help terminate the ongoing seizure activity",
+        "Disconnect the headbox so the patient can be moved to a stretcher"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-042",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "bls",
+        "cpr"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "During adult CPR, what compression rate is recommended by current BLS guidelines?",
+      "explanation": "Current AHA BLS guidance calls for 100 to 120 compressions per minute at a depth of at least 2 inches (5 cm) in adults, with full chest recoil. Slower rates reduce perfusion, and rates above 120 tend to reduce depth and recoil.",
+      "learningObjective": "Recall adult BLS compression rate.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "60 to 80 compressions per minute",
+        "80 to 100 compressions per minute",
+        "100 to 120 compressions per minute",
+        "120 to 150 compressions per minute"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-043",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "bls",
+        "unresponsive-patient"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During an EEG, a patient becomes unresponsive and is not breathing normally. What should the technologist do first?",
+      "explanation": "An unresponsive patient without normal breathing needs immediate help, emergency activation, an AED, and high-quality CPR per BLS. Checking impedances or finishing activations delays resuscitation, and documentation and physician notification are important but come after life-saving actions.",
+      "learningObjective": "Prioritize BLS actions for a patient in cardiac arrest.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Check impedances to confirm the flat record is not an artifact",
+        "Shout for help, activate the emergency response, and begin CPR",
+        "Finish the photic stimulation series before calling for assistance",
+        "Document the time on the record and then page the reading physician"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-044",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "latex-allergy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient reports a latex allergy at check-in. What is the best response?",
+      "explanation": "The allergy is honored by using latex-free gloves, tape, tubing and other supplies, flagging the allergy per protocol, and watching for reactions. Washing latex gloves does not remove the allergen, assuming no latex is present overlooks gloves, tape and other items, and recommending medication is outside technologist scope.",
+      "learningObjective": "Apply latex allergy precautions within technologist scope.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Use latex gloves washed first and record the allergy per protocol",
+        "Use standard supplies, since EEG electrodes contain no latex",
+        "Ask the patient to take an antihistamine before the hookup begins",
+        "Use latex-free gloves and supplies and record the allergy per protocol"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-045",
+      "domainId": "domain-4",
+      "sectionId": "d4-s4",
+      "topicTags": [
+        "falls",
+        "incident-report"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient trips over a lead wire and falls while walking to the bathroom during ambulatory hookup. What is the appropriate response?",
+      "explanation": "After a fall the patient should not be lifted until assessed; the technologist stays, calls for help per protocol, and completes a factual incident report, regardless of visible injury. Lifting immediately risks worsening an injury, the EEG report is not the place for the event analysis, and asking for a liability waiver is inappropriate.",
+      "learningObjective": "Respond to a patient fall and report it properly.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Help the patient up at once and continue, documenting only if injured",
+        "Record the fall in the EEG report as the cause of any artifact seen",
+        "Stay with the patient, call for help to assess, and complete an incident report",
+        "Ask the patient to sign a statement that the fall was not the lab's fault"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-046",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "incident-report",
+        "documentation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which practice is correct when completing an incident report about a patient event?",
+      "explanation": "Incident reports are quality and risk-management tools: they should be completed promptly with objective, factual descriptions, while the clinical facts of the event go in the medical record without mentioning the report itself. Assigning blame, delaying, or copying the report into the chart undermines the report's purpose and its protected status.",
+      "learningObjective": "Describe correct incident report practice.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Record objective facts promptly and do not reference the report in the chart",
+        "Record your opinion on who was at fault so the manager can take action",
+        "Wait until the patient is discharged so all details are known",
+        "Copy the full incident report into the patient's medical record"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-047",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "patient-identification"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Before starting an EEG, which approach correctly identifies the patient?",
+      "explanation": "National Patient Safety Goals require at least two patient-specific identifiers, such as name and date of birth or medical record number, checked against the order. Room or bed numbers are locations rather than identifiers, and asking a patient to confirm a name read aloud invites a mistaken yes.",
+      "learningObjective": "Apply two-identifier patient identification.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Use the room number and bed number on the order",
+        "Ask the patient to confirm the name you read aloud",
+        "Use the name on the door sign and the attending physician",
+        "Use two identifiers such as full name and date of birth"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-048",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "hyperventilation",
+        "screening",
+        "contraindications"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which patient history should prompt the technologist to withhold hyperventilation and consult the physician per lab protocol?",
+      "explanation": "Hyperventilation causes cerebral vasoconstriction and alkalosis, so it is generally avoided in sickle cell disease, recent stroke or hemorrhage, significant cardiopulmonary disease, moyamoya and raised intracranial pressure, with the decision made per protocol by the physician. Controlled mild asthma, an old fracture and allergic rhinitis are not usual reasons to omit it, though severe pulmonary disease would be.",
+      "learningObjective": "Screen for contraindications before hyperventilation.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Well-controlled asthma",
+        "Sickle cell disease",
+        "A healed wrist fracture",
+        "Seasonal allergic rhinitis"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-049",
+      "domainId": "domain-4",
+      "sectionId": "d4-patient-safety-standards",
+      "topicTags": [
+        "photic-stimulation",
+        "photoparoxysmal-response"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During photic stimulation, a generalized photoparoxysmal response appears. What should the technologist do?",
+      "explanation": "Once a generalized photoparoxysmal response appears, the flash train is stopped promptly to avoid provoking a seizure; the technologist observes the patient and documents the frequency and findings according to lab protocol. Increasing the rate, pushing on through the sequence, or repeating the trigger raise the chance of a clinical seizure.",
+      "learningObjective": "Respond safely to a photoparoxysmal response.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Increase the flash rate to determine the full range of sensitivity",
+        "End that flash train promptly and observe, then document per protocol",
+        "Have the patient close the eyes tightly and continue the full sequence",
+        "Repeat that frequency to confirm it, then document per protocol"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-saf-050",
+      "domainId": "domain-4",
+      "sectionId": "d4-s3",
+      "topicTags": [
+        "ergonomics",
+        "body-mechanics"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which practice best reduces back strain during long electrode application at the bedside?",
+      "explanation": "Good body mechanics keep the spine neutral: adjust the bed to about waist height, stay close to the work, bend at the knees rather than the waist, and turn with the feet instead of twisting. Working low, twisting the trunk and reaching from arm's length all increase spinal load.",
+      "learningObjective": "Apply ergonomic principles during patient hookup.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Lock the bed at its lowest height and bend at the waist to reach",
+        "Twist the trunk toward the headboard while keeping the feet still",
+        "Stand at arm's length from the bed to keep cords out of the way",
+        "Raise the bed to working height and keep the work close to the body"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea lab safety set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

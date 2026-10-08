@@ -121,6 +121,18 @@ function Sidebar({ isOpen, onClose }) {
               </svg>
               Neuroanatomy &amp; Syndromes
             </NavLink>
+            <NavLink to="/neurology-essentials" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4c-3 0-5 2-5 4.5 0 1 .3 1.8.8 2.5C6.7 11.6 6 12.7 6 14c0 2.2 1.8 4 4 4h.5v2h3v-2h.5c2.2 0 4-1.8 4-4 0-1.3-.7-2.4-1.8-3 .5-.7.8-1.5.8-2.5C17 6 15 4 12 4z" />
+              </svg>
+              Neurology Essentials
+            </NavLink>
+            <NavLink to="/lab-safety" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" />
+              </svg>
+              Lab Safety &amp; OSHA
+            </NavLink>
             <NavLink to="/standards" className={navLinkClasses} onClick={handleNavClick}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />

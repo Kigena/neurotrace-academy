@@ -1,0 +1,1388 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-07",
+  "bank": "challenge",
+  "focus": "neuroanatomy-cranial-pathways",
+  "description": "Cranial nerves, brain landmarks, CSF, motor and sensory pathways, localization signs and core neurophysiology for EEG technologists. Text only; not yet medically verified.",
+  "totalQuestions": 50,
+  "questions": [
+    {
+      "id": "ch-cn-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "mixed-nerves"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which set of cranial nerves carries both sensory and motor fibers?",
+      "explanation": "The trigeminal, facial, glossopharyngeal and vagus nerves are mixed: each carries sensation (face, taste, pharynx, viscera) and motor output (chewing, facial expression, swallowing, voice). The oculomotor, trochlear, abducens and hypoglossal set is motor only. Olfactory, optic and vestibulocochlear are purely sensory, and the accessory nerve is motor, so that grouping mixes types. The set with optic and accessory includes a pure sensory and a pure motor nerve.",
+      "learningObjective": "Identify the four mixed sensory-motor cranial nerves.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "V, VII, IX and X",
+        "III, IV, VI and XII",
+        "I, II, VIII and XI",
+        "II, III, VII and XI"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cranial-nerves",
+        "eye-movements",
+        "abducens"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient reports horizontal double vision and cannot move the right eye outward past midline; other eye movements are full. Which nerve is most likely affected?",
+      "explanation": "The lateral rectus abducts the eye and is supplied by the abducens nerve on the same side, so failed right abduction with horizontal diplopia points to the right sixth nerve. The trochlear nerve drives the superior oblique and produces vertical, not horizontal, diplopia. An oculomotor lesion impairs adduction, elevation and depression and often causes ptosis. A left sixth nerve lesion would limit the left eye, not the right.",
+      "learningObjective": "Localize an isolated abduction deficit to the ipsilateral abducens nerve.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Right trochlear nerve (CN IV)",
+        "Right oculomotor nerve (CN III)",
+        "Right abducens nerve (CN VI)",
+        "Left abducens nerve (CN VI)"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cranial-nerves",
+        "eye-movements",
+        "trochlear"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient has vertical double vision that is worst when walking down stairs and tilts the head away from the affected eye to compensate. Which nerve is most likely involved?",
+      "explanation": "The superior oblique muscle, supplied by the trochlear nerve, depresses the eye most effectively when it is turned inward, as when reading or looking down stairs; a palsy gives vertical diplopia and a compensatory head tilt away from the weak side. The abducens nerve causes horizontal diplopia on lateral gaze. The facial nerve moves facial muscles, not the globe. Optic nerve disease reduces vision but does not cause double vision from misalignment.",
+      "learningObjective": "Recognize the clinical pattern of a fourth nerve palsy.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Abducens nerve (CN VI)",
+        "Trochlear nerve (CN IV)",
+        "Facial nerve (CN VII)",
+        "Optic nerve (CN II)"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cranial-nerves",
+        "oculomotor",
+        "aneurysm"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A patient with sudden severe headache has a drooping left eyelid, a dilated left pupil, and a left eye resting down and out. Which nerve is affected, and what is a classic compressive cause?",
+      "explanation": "Ptosis, a down-and-out eye and a dilated pupil form a complete oculomotor palsy; pupillary fibers run on the outside of the nerve, so pupil involvement suggests compression, classically by a posterior communicating artery aneurysm. A sixth nerve palsy limits abduction only. A fourth nerve palsy gives vertical diplopia without ptosis or a large pupil, and diabetic ischemia more typically spares the pupil. Facial nerve inflammation weakens the face but does not move the eye or dilate the pupil.",
+      "learningObjective": "Link a pupil-involving third nerve palsy to compression by an aneurysm.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left CN VI; raised intracranial pressure from a tumor",
+        "Left CN IV; small-vessel ischemia from diabetes",
+        "Left CN VII; viral inflammation of the facial canal",
+        "Left CN III; posterior communicating artery aneurysm"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "corneal-reflex",
+        "trigeminal",
+        "facial"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In the corneal (blink) reflex, which nerves form the sensory and motor limbs?",
+      "explanation": "Touching the cornea activates the ophthalmic division of the trigeminal nerve, and the blink is produced by the orbicularis oculi through the facial nerve. Reversing these roles is incorrect because the facial nerve does not carry corneal sensation and the trigeminal nerve does not close the eyelid. The optic-to-oculomotor pairing describes the pupillary light reflex. The maxillary division does not supply the cornea, and the oculomotor nerve lifts rather than closes the lid.",
+      "learningObjective": "Identify the afferent and efferent limbs of the corneal reflex.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Sensory VII, motor V (mandibular)",
+        "Sensory II, motor III",
+        "Sensory V (ophthalmic), motor VII",
+        "Sensory V (maxillary), motor III"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cranial-nerves",
+        "facial-weakness",
+        "umn-vs-lmn"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A patient has weakness of the right lower face but can still wrinkle the right forehead and close the right eye firmly. Where is the lesion most likely located?",
+      "explanation": "The upper face receives corticobulbar input from both hemispheres, so a central (upper motor neuron) lesion weakens only the opposite lower face and spares the forehead. Damage to the right facial nerve or the right facial nucleus is a lower motor neuron lesion that weakens the entire right half of the face, forehead included. A left facial nerve lesion would weaken the left side, not the right.",
+      "learningObjective": "Distinguish a forehead-sparing central facial palsy from a peripheral one.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left motor cortex or its corticobulbar fibers",
+        "Right facial nerve within the facial canal",
+        "Right facial nucleus in the pons",
+        "Left facial nerve at the stylomastoid foramen"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "trigeminal",
+        "mastication"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "On opening the mouth, a patient's jaw deviates to the right, and the masseter on one side feels weak when the teeth are clenched. Which nerve is affected?",
+      "explanation": "The mandibular division of the trigeminal nerve supplies the muscles of chewing; when one side is weak, the intact opposite pterygoids push the jaw toward the weak side, so rightward deviation with a weak right masseter indicates a right-sided lesion. A left lesion would deviate the jaw to the left. The facial nerve moves the face, not the jaw muscles. The hypoglossal nerve moves the tongue.",
+      "learningObjective": "Apply the jaw-deviation sign to localize a trigeminal motor lesion.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Left trigeminal nerve, mandibular division",
+        "Right facial nerve, buccal branch",
+        "Right hypoglossal nerve to the tongue",
+        "Right trigeminal nerve, mandibular division"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "vestibulocochlear",
+        "acoustic-neuroma"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A vestibular schwannoma (acoustic neuroma) at the cerebellopontine angle most often first presents with which finding?",
+      "explanation": "A vestibular schwannoma is a benign Schwann-cell tumor of the eighth cranial nerve, and its typical first symptoms are unilateral sensorineural hearing loss and tinnitus, sometimes with imbalance; a large tumor can later affect the nearby fifth and seventh nerves. Loss of smell reflects the olfactory nerve far forward in the skull base. Diplopia looking down and in suggests the trochlear nerve. One-sided tongue weakness reflects the hypoglossal nerve in the lower brainstem.",
+      "learningObjective": "Associate acoustic neuroma with the eighth cranial nerve and its presenting signs.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Loss of smell on one side of the nose",
+        "One-sided hearing loss with ringing",
+        "Double vision on looking down and in",
+        "Weakness of the tongue on one side"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-009",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "gag-reflex",
+        "glossopharyngeal",
+        "vagus"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which pairing correctly describes the gag reflex pathway?",
+      "explanation": "Touching the posterior pharynx is sensed through the glossopharyngeal nerve, and the pharyngeal contraction is produced mainly by the vagus nerve. The hypoglossal nerve moves the tongue rather than the pharynx. Trigeminal sensation with facial motor output describes the corneal reflex. The accessory nerve is motor to neck and shoulder muscles and carries no pharyngeal sensation.",
+      "learningObjective": "State the afferent and efferent limbs of the gag reflex.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Sensory IX, motor X",
+        "Sensory X, motor XII",
+        "Sensory V, motor VII",
+        "Sensory XI, motor IX"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-010",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cranial-nerves",
+        "vagus",
+        "palate"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "When a patient says 'ah', the soft palate rises only on the left and the uvula is pulled toward the left. Which nerve is most likely damaged?",
+      "explanation": "The vagus nerve elevates the palate on its own side, so a right vagal lesion leaves the right side slack while the intact left side pulls the uvula toward the left, away from the lesion. A left vagal lesion would pull the uvula to the right. The hypoglossal nerve moves the tongue, not the palate. The accessory nerve supplies the neck and shoulder muscles.",
+      "learningObjective": "Localize a vagus lesion from uvular deviation.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left vagus nerve (CN X)",
+        "Right hypoglossal nerve (CN XII)",
+        "Right vagus nerve (CN X)",
+        "Left accessory nerve (CN XI)"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-011",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "accessory"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which bedside test examines the accessory nerve (CN XI)?",
+      "explanation": "The accessory nerve supplies the trapezius and sternocleidomastoid, tested by a resisted shoulder shrug and head turn. Tongue protrusion tests the hypoglossal nerve. Puffing the cheeks tests the facial nerve. Tracking a target tests the nerves that move the eyes (III, IV and VI).",
+      "learningObjective": "Choose the bedside test for the accessory nerve.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Sticking out the tongue in the midline",
+        "Shrugging the shoulders against resistance",
+        "Puffing out the cheeks against pressure",
+        "Following a moving target with the eyes"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-012",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cranial-nerves",
+        "hypoglossal"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient's tongue deviates to the left when protruded, and the left side of the tongue is thin with twitching. Where is the lesion?",
+      "explanation": "Each genioglossus pushes the tongue forward and toward the opposite side, so when the left one is weak the tongue points left; atrophy and fasciculations mark a lower motor neuron lesion of the left hypoglossal nerve or nucleus. A right-sided hypoglossal lesion would turn the tongue right. The glossopharyngeal nerve carries pharyngeal sensation and taste, not tongue movement. A cortical lesion can cause mild deviation but does not produce atrophy or fasciculations.",
+      "learningObjective": "Localize a lower motor neuron tongue weakness from deviation and atrophy.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Right hypoglossal nerve or nucleus",
+        "Left glossopharyngeal nerve",
+        "Right motor cortex, face area",
+        "Left hypoglossal nerve or nucleus"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-013",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "olfactory",
+        "bedside-testing"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Why is a mild odor such as coffee preferred over ammonia when testing the olfactory nerve?",
+      "explanation": "Pungent irritants like ammonia stimulate trigeminal pain fibers in the nasal lining, so a patient with no sense of smell may still respond and the test becomes misleading. Ammonia at testing strength does not injure the olfactory bulb. The optic nerve has no role in smell. Each nostril is tested separately by occluding the other, so the odor choice is not about stimulating both sides.",
+      "learningObjective": "Explain why a nonirritating odor is used to test CN I.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Ammonia damages the olfactory bulb",
+        "Coffee is sensed by the optic nerve",
+        "Ammonia irritates trigeminal endings",
+        "Coffee activates both nostrils together"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-014",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cranial-nerves",
+        "optic",
+        "pupillary-reflex"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "Light shone in the left eye produces no constriction of either pupil, while light in the right eye constricts both pupils. Which structure is most likely damaged?",
+      "explanation": "Both pupils constrict normally when the right eye is lit, so both oculomotor (efferent) pathways work; failure of both pupils to respond when the left eye is lit means the light signal is not getting in, an afferent defect of the left optic nerve. A left oculomotor lesion would leave the left pupil unreactive in every condition. A right optic nerve lesion would block the response when the right eye is lit. A right oculomotor lesion would stop the right pupil from ever constricting.",
+      "learningObjective": "Separate afferent (CN II) from efferent (CN III) pupillary defects.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left optic nerve",
+        "Left oculomotor nerve",
+        "Right optic nerve",
+        "Right oculomotor nerve"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-015",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "brain-landmarks",
+        "sylvian-fissure",
+        "lobes"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "The lateral (Sylvian) fissure separates which lobe from the frontal and parietal lobes?",
+      "explanation": "The lateral fissure runs along the side of the hemisphere with the frontal and parietal lobes above it and the temporal lobe below it. The occipital lobe lies at the back, bounded by the parieto-occipital sulcus. The limbic lobe sits on the medial surface around the corpus callosum. The insula is buried within the depths of the lateral fissure rather than being separated by it.",
+      "learningObjective": "Name the lobes divided by the lateral (Sylvian) fissure.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Occipital lobe",
+        "Limbic lobe",
+        "Insular cortex",
+        "Temporal lobe"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-016",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "brain-landmarks",
+        "central-sulcus",
+        "motor-cortex"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "The primary motor cortex is located in which gyrus?",
+      "explanation": "The precentral gyrus, just in front of the central (Rolandic) sulcus in the frontal lobe, holds the primary motor cortex. The postcentral gyrus, just behind the sulcus, is primary somatosensory cortex. The superior temporal gyrus contains auditory cortex. The cingulate gyrus is a medial limbic structure involved in emotion and attention.",
+      "learningObjective": "Locate the primary motor cortex.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Postcentral gyrus",
+        "Precentral gyrus",
+        "Superior temporal gyrus",
+        "Cingulate gyrus"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-017",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "brain-landmarks",
+        "postcentral-gyrus",
+        "sensory-cortex"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A focal seizure begins with tingling spreading up the left hand without any jerking. Which region most likely starts the seizure?",
+      "explanation": "Tingling is a sensory symptom from primary somatosensory cortex in the postcentral gyrus, and the left hand maps to the right hemisphere. The left postcentral gyrus represents the right side of the body. The right precentral gyrus would produce clonic jerking of the left hand. Calcarine cortex is visual and would give flashing lights or field symptoms.",
+      "learningObjective": "Localize a focal sensory seizure to contralateral postcentral cortex.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Right postcentral gyrus",
+        "Left postcentral gyrus",
+        "Right precentral gyrus",
+        "Right calcarine cortex"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-018",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "brain-landmarks",
+        "calcarine-sulcus",
+        "visual-cortex"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Primary visual cortex lines the banks of which sulcus?",
+      "explanation": "Primary visual cortex lies along the calcarine sulcus on the medial occipital lobe. The central sulcus divides motor from sensory cortex. The cingulate sulcus borders the limbic cingulate gyrus. The lateral sulcus separates the temporal lobe from the frontal and parietal lobes and borders auditory and language cortex.",
+      "learningObjective": "Locate primary visual cortex.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Central sulcus",
+        "Cingulate sulcus",
+        "Calcarine sulcus",
+        "Lateral sulcus"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-019",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "brain-landmarks",
+        "corpus-callosum",
+        "commissures"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What is the main function of the corpus callosum?",
+      "explanation": "The corpus callosum is the largest commissure, a band of white matter linking matching regions of the two hemispheres, and it helps bilateral spread of some discharges. Relaying body sensation to cortex is the job of the thalamus. The choroid plexus produces cerebrospinal fluid. Balance and coordination are handled mainly by the cerebellum.",
+      "learningObjective": "State the function of the corpus callosum.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Relaying sensation from body to cortex",
+        "Connecting the two cerebral hemispheres",
+        "Producing cerebrospinal fluid",
+        "Coordinating balance and posture"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-020",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "thalamus",
+        "sleep-spindles"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which structure relays almost all sensory input except smell to the cortex and helps pace sleep spindles?",
+      "explanation": "The thalamus is the relay station for every sensory pathway except olfaction, and thalamocortical circuits, driven by the thalamic reticular nucleus, generate sleep spindles. The hypothalamus regulates temperature, hunger and hormones. The cerebellum coordinates movement. The putamen is a basal ganglia nucleus involved in motor control.",
+      "learningObjective": "Describe the thalamus as sensory relay and spindle pacemaker.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hypothalamus",
+        "Cerebellum",
+        "Putamen",
+        "Thalamus"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-021",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "limbic-system",
+        "hippocampus"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "The hippocampus, often scarred in drug-resistant focal epilepsy, is part of which system and lobe?",
+      "explanation": "The hippocampus is a limbic structure in the medial temporal lobe that supports memory formation, and hippocampal sclerosis is a common cause of mesial temporal lobe epilepsy. It is not part of the basal ganglia and does not sit in the frontal lobe. The occipital lobe holds visual cortex, not the hippocampus. The midbrain is brainstem and contains structures such as the substantia nigra, not the hippocampus.",
+      "learningObjective": "Place the hippocampus within the limbic system and medial temporal lobe.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Basal ganglia, medial frontal lobe",
+        "Limbic system, lateral occipital lobe",
+        "Limbic system, medial temporal lobe",
+        "Brainstem, ventral midbrain"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-022",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "brainstem",
+        "cranial-nerve-nuclei"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "The nuclei of the oculomotor and trochlear nerves are found in which part of the brainstem?",
+      "explanation": "Cranial nerves III and IV arise from nuclei in the midbrain. The pons houses the nuclei for V, VI, VII and part of VIII. The medulla contains nuclei for IX, X and XII along with respiratory and cardiovascular centers. The thalamus is part of the diencephalon, not the brainstem, and contains no cranial nerve motor nuclei.",
+      "learningObjective": "Assign cranial nerve nuclei to brainstem levels.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Midbrain",
+        "Pons",
+        "Medulla",
+        "Thalamus"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-023",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "meninges",
+        "csf"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Cerebrospinal fluid circulating over the brain surface lies between which two layers?",
+      "explanation": "The subarachnoid space, between the arachnoid and the pia, carries cerebrospinal fluid and the major surface arteries. The potential space between dura and arachnoid is the subdural space, where bridging veins can bleed. The epidural space between skull and dura is where arterial epidural hematomas form. The pia adheres tightly to the cortex with no fluid-filled space between them.",
+      "learningObjective": "Identify the subarachnoid space and the meningeal layers.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Dura and arachnoid mater",
+        "Skull and dura mater",
+        "Pia mater and cortex",
+        "Arachnoid and pia mater"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-024",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "meninges",
+        "hematoma",
+        "terminology"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A blood collection between the skull and the dura, often from a torn middle meningeal artery after a temporal skull fracture, is called a(n):",
+      "explanation": "An epidural hematoma sits between the inner skull and the dura and classically follows a temporal fracture tearing the middle meningeal artery, sometimes with a lucid interval. A subdural hematoma lies beneath the dura, usually from torn bridging veins. Subarachnoid hemorrhage is bleeding into the cerebrospinal fluid space, often from an aneurysm. Intraventricular hemorrhage is blood within the ventricles.",
+      "learningObjective": "Define epidural hematoma and contrast it with other intracranial bleeds.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Subdural hematoma",
+        "Epidural hematoma",
+        "Subarachnoid hemorrhage",
+        "Intraventricular hemorrhage"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-025",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles",
+        "csf-flow"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which sequence correctly traces cerebrospinal fluid flow?",
+      "explanation": "Fluid made largely by choroid plexus in the lateral ventricles passes through the interventricular foramina to the third ventricle, down the cerebral aqueduct to the fourth ventricle, then out to the subarachnoid space and is absorbed by arachnoid granulations into the venous sinuses. Starting at the third ventricle reverses the first step. Placing the fourth ventricle before the aqueduct and third ventricle reverses the middle path. Running from fourth to lateral describes the flow backward.",
+      "learningObjective": "Trace the normal circulation of cerebrospinal fluid.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Lateral, third ventricle, aqueduct, fourth",
+        "Third, lateral ventricle, aqueduct, fourth",
+        "Lateral, fourth ventricle, aqueduct, third",
+        "Fourth, third ventricle, aqueduct, lateral"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-026",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ventricles",
+        "hydrocephalus"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Imaging shows enlarged lateral and third ventricles with a normal-sized fourth ventricle. Where is the flow most likely blocked?",
+      "explanation": "Ventricles upstream of a block enlarge while those downstream stay normal, so dilation stopping at the third ventricle points to the cerebral aqueduct, as in aqueductal stenosis. Obstruction at the fourth ventricle outlets would enlarge the fourth ventricle too. Impaired absorption at arachnoid granulations causes communicating hydrocephalus with all ventricles enlarged. The choroid plexus produces fluid and is not a site of obstruction.",
+      "learningObjective": "Localize obstructive hydrocephalus from the pattern of ventricular enlargement.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Foramina of Luschka and Magendie",
+        "Arachnoid granulations",
+        "Cerebral aqueduct",
+        "Choroid plexus of the fourth ventricle"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-027",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "skull-landmarks",
+        "10-20-system"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which pair of skull landmarks defines the midline front-to-back measurement in the 10-20 system?",
+      "explanation": "The midline measurement runs from the nasion, the depression at the bridge of the nose, to the inion, the bony bump at the back of the skull. The vertex (Cz) is the midpoint of that line, not one of its ends. The preauricular points define the side-to-side (coronal) measurement.",
+      "learningObjective": "Identify the anterior-posterior landmarks of the 10-20 system.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Vertex and inion",
+        "Nasion and inion",
+        "Nasion and vertex",
+        "Left and right preauricular points"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-028",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "rolandic-region",
+        "centrotemporal-spikes",
+        "localization"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "Spikes maximal at C3 and T3 (T7 in the 10-10 system) in a child whose seizures involve one side of the face, drooling and speech arrest arise from which cortex?",
+      "explanation": "C3 and T3 (T7) lie over the lower central (Rolandic) region next to the Sylvian fissure, where the face, mouth and throat are represented, matching seizures with facial twitching, drooling and speech arrest. Calcarine cortex is visual and would be near O1 or O2. Orbitofrontal cortex lies under Fp1 and F7 and is not the face motor area. Hippocampal discharges are deep and best seen at anterior temporal or sphenoidal sites and typically cause seizures with an aura and automatisms.",
+      "learningObjective": "Relate central and mid-temporal (C3 and T3/T7) electrodes to the lower Rolandic cortex.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Medial occipital cortex near the calcarine sulcus",
+        "Orbitofrontal cortex above the eyes",
+        "Mesial temporal cortex in the hippocampus",
+        "Lower Rolandic cortex near the Sylvian fissure"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-029",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "corticospinal-tract",
+        "decussation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A stroke in the left internal capsule causes weakness on the right side because corticospinal fibers cross at the:",
+      "explanation": "Most corticospinal fibers cross in the pyramidal decussation at the bottom of the medulla, so a lesion above that point weakens the opposite side of the body. In the midbrain the fibers run in the cerebral peduncle without crossing. They pass through the basis pontis still uncrossed. The anterior horn is where they end on lower motor neurons, well after the crossing.",
+      "learningObjective": "Locate the corticospinal decussation.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Upper midbrain (cerebral peduncle)",
+        "Middle pons (basis pontis)",
+        "Lower medulla (pyramidal decussation)",
+        "Lumbar spinal cord (anterior horn)"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-030",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "umn-vs-lmn",
+        "motor-signs"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which group of findings indicates a lower motor neuron lesion?",
+      "explanation": "Damage to the anterior horn cell or peripheral nerve causes wasting, fasciculations, low tone and reduced or absent reflexes. Spasticity, hyperreflexia and an extensor plantar response are upper motor neuron signs. Resting tremor, rigidity and bradykinesia point to basal ganglia disease. Intention tremor, dysmetria and a wide-based gait are cerebellar signs.",
+      "learningObjective": "Distinguish lower motor neuron signs from other motor syndromes.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Atrophy, fasciculations, reduced reflexes",
+        "Spasticity, brisk reflexes, Babinski sign",
+        "Resting tremor, rigidity, slow movement",
+        "Intention tremor, dysmetria, wide gait"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-031",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "babinski",
+        "corticospinal-tract"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient has an extensor plantar response on the left only, with brisk left-sided reflexes. Which pathway, on which side of the brain, is most likely affected?",
+      "explanation": "An extensor plantar (Babinski) response with hyperreflexia signals an upper motor neuron lesion of the corticospinal tract, and left-sided signs from a brain lesion point to the right hemisphere because the tract crosses in the medulla. A left hemisphere lesion would produce right-sided signs. The spinothalamic tract carries pain and temperature and does not cause a Babinski sign. Cerebellar lesions cause ataxia, not an extensor plantar response.",
+      "learningObjective": "Interpret a unilateral Babinski sign as a contralateral corticospinal lesion.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Corticospinal tract, left hemisphere",
+        "Spinothalamic tract, right hemisphere",
+        "Cerebellar pathway, left hemisphere",
+        "Corticospinal tract, right hemisphere"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-032",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "spasticity",
+        "rigidity",
+        "tone"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "How does spasticity differ from rigidity when a limb is moved passively?",
+      "explanation": "Spasticity, an upper motor neuron sign, is velocity-dependent and may give way suddenly (clasp-knife), whereas rigidity from basal ganglia disease resists evenly through the whole range regardless of speed (lead-pipe, or cogwheel with tremor). Swapping the speed dependence reverses the definitions. Lead-pipe describes rigidity and clasp-knife describes spasticity, so that pairing is reversed. Flaccid, reduced tone is a lower motor neuron or acute finding, not either of these.",
+      "learningObjective": "Contrast spasticity and rigidity.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Rigidity rises with speed; spasticity stays even",
+        "Spasticity rises with speed; rigidity stays even",
+        "Spasticity is lead-pipe; rigidity is clasp-knife",
+        "Both are flaccid and reduced at every speed"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-033",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cerebellum",
+        "ataxia"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient overshoots the target on finger-to-nose testing with the right hand and has a tremor that worsens near the target. Where is the lesion most likely?",
+      "explanation": "Dysmetria and intention tremor are cerebellar signs, and a cerebellar hemisphere controls the limbs on its own side, so right-hand signs point to the right hemisphere. A left cerebellar lesion would affect the left limbs. Substantia nigra disease produces a resting tremor that lessens with movement. A left precentral lesion would cause right-sided weakness rather than overshoot with intention tremor.",
+      "learningObjective": "Localize ipsilateral cerebellar limb signs.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Right cerebellar hemisphere",
+        "Left cerebellar hemisphere",
+        "Right substantia nigra",
+        "Left precentral gyrus"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-034",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "spinal-tracts",
+        "brown-sequard",
+        "dorsal-column",
+        "spinothalamic"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "After a stab wound hemisecting the left thoracic spinal cord, which sensory pattern is expected below the lesion?",
+      "explanation": "Dorsal column fibers for vibration and position ascend on the same side and cross in the medulla, so a left cord lesion removes them on the left. Spinothalamic fibers for pain and temperature cross within a segment or two of entry, so the left cord carries right-body pain, lost on the right. Reversing the sides misplaces both tracts. Losing both on one side would happen only if both tracts crossed at the same level, which they do not.",
+      "learningObjective": "Apply dorsal column and spinothalamic crossing levels to a hemisection.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Right vibration loss; left pain loss",
+        "Left vibration and pain loss together",
+        "Left vibration loss; right pain loss",
+        "Right vibration and pain loss together"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-035",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "aphasia",
+        "broca"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A right-handed patient speaks in slow, effortful, broken phrases but follows spoken commands well. Which area is most likely affected?",
+      "explanation": "Non-fluent speech with relatively preserved comprehension is Broca (expressive) aphasia, from the inferior frontal gyrus of the language-dominant hemisphere, the left in most right-handers. The left posterior superior temporal gyrus is Wernicke area, whose damage causes fluent speech with poor comprehension. The right inferior frontal gyrus is usually non-dominant for language. The calcarine cortex is visual.",
+      "learningObjective": "Localize expressive (Broca) aphasia.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Left superior temporal gyrus",
+        "Left inferior frontal gyrus",
+        "Right inferior frontal gyrus",
+        "Left calcarine cortex"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-036",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "aphasia",
+        "wernicke"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient speaks fluently but uses wrong and made-up words and cannot follow simple commands. This pattern is most consistent with:",
+      "explanation": "Fluent but meaningless speech with paraphasias and poor comprehension is Wernicke aphasia from the dominant posterior superior temporal gyrus. Broca aphasia is non-fluent with fairly good comprehension. Dysarthria is a problem of articulation with normal language content and understanding. Conduction aphasia spares comprehension, which this patient has lost, and mainly impairs repetition.",
+      "learningObjective": "Recognize receptive (Wernicke) aphasia.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Broca (expressive) aphasia",
+        "Dysarthria from cerebellar disease",
+        "Conduction aphasia with good comprehension",
+        "Wernicke (receptive) aphasia"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-037",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "visual-fields",
+        "optic-chiasm"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A pituitary tumor pressing upward on the optic chiasm typically causes which visual field defect?",
+      "explanation": "Crossing fibers in the chiasm come from the nasal retinas, which see the temporal fields, so midline chiasmal compression removes both outer (temporal) half-fields. A homonymous hemianopia comes from a lesion behind the chiasm, such as the optic tract or occipital cortex. Monocular blindness reflects an optic nerve lesion in front of the chiasm. An upper quadrantanopia results from damage to temporal-lobe optic radiations.",
+      "learningObjective": "Link chiasmal compression to bitemporal hemianopia.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Left homonymous hemianopia",
+        "Complete blindness in one eye",
+        "Bitemporal hemianopia",
+        "Right upper quadrantanopia"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-038",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "visual-fields",
+        "meyer-loop",
+        "temporal-lobe"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "After surgery on the right anterior temporal lobe for epilepsy, a patient notices a defect in vision. Which defect is most expected?",
+      "explanation": "Optic radiation fibers carrying the upper visual field loop forward through the temporal lobe (Meyer loop), so right anterior temporal resection often removes the upper quadrant of the opposite (left) field in both eyes, the so-called pie in the sky defect. A right-sided field defect would require a left-sided lesion. Lower quadrant fibers travel through the parietal lobe. Loss of both outer half-fields indicates chiasmal compression.",
+      "learningObjective": "Predict a contralateral superior quadrantanopia from Meyer loop injury.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left upper quadrant loss in both eyes",
+        "Right upper quadrant loss in both eyes",
+        "Left lower quadrant loss in both eyes",
+        "Outer half-field loss in both eyes"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-039",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "visual-fields",
+        "occipital-lobe"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A stroke in the right occipital lobe produces which field defect?",
+      "explanation": "The right occipital cortex receives information about the left visual field from both eyes, so damage removes the left half-field in each eye, often with macular sparing in posterior cerebral artery strokes. A right homonymous defect would need a left-sided lesion. Bitemporal loss comes from the chiasm. Monocular blindness comes from the eye or optic nerve, not occipital cortex.",
+      "learningObjective": "Localize a homonymous hemianopia to the contralateral occipital lobe.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Right homonymous hemianopia",
+        "Bitemporal hemianopia",
+        "Blindness of the right eye",
+        "Left homonymous hemianopia"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-040",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "horner-syndrome",
+        "sympathetic"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Horner syndrome consists of which triad on the affected side?",
+      "explanation": "Interruption of the sympathetic pathway to the face causes mild ptosis, a constricted pupil (miosis) and reduced facial sweating (anhidrosis). Ptosis with a dilated pupil and a down-and-out eye is a third nerve palsy. Sympathetic loss narrows rather than widens the lid opening. Facial droop with dry eye and taste loss reflects a facial nerve lesion.",
+      "learningObjective": "Recall the features of Horner syndrome.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Ptosis, large pupil, eye down and out",
+        "Ptosis, small pupil, reduced sweating",
+        "Wide lid opening, small pupil, tearing",
+        "Facial droop, dry eye, loss of taste"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-041",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "posturing",
+        "decorticate",
+        "decerebrate"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A comatose patient's arms extend and rotate inward with legs extended in response to a painful stimulus. This posture and its usual level are best described as:",
+      "explanation": "Arm extension with internal rotation and leg extension is decerebrate (extensor) posturing, which generally indicates dysfunction in the midbrain or upper pons, below the red nucleus, and carries a worse outlook. Decorticate posturing has flexed arms with extended legs and reflects damage above the red nucleus. Peripheral nerve disease causes weakness, not stereotyped posturing. The cerebellum is not the source of either posture.",
+      "learningObjective": "Differentiate decerebrate from decorticate posturing.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Decerebrate; midbrain or upper pons",
+        "Decorticate; hemispheres or diencephalon",
+        "Decerebrate; peripheral nerve in the arms",
+        "Decorticate; cerebellum and its outflow"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-042",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "glasgow-coma-scale",
+        "assessment"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient opens the eyes only to pain, makes moaning sounds without words, and pulls the hand away from a painful stimulus. What is the Glasgow Coma Scale total?",
+      "explanation": "Eyes opening to pain scores 2, incomprehensible sounds score 2, and withdrawal from pain scores 4, giving 8 out of a possible 15 (minimum 3). A total of 7 undercounts by scoring the motor response as abnormal flexion (3) instead of withdrawal (4). A total of 10 would require higher verbal or eye scores than described. A total of 11 would need localization or obeying commands plus inappropriate words.",
+      "learningObjective": "Compute a Glasgow Coma Scale score from described responses.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "7",
+        "10",
+        "8",
+        "11"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-043",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "membrane-potential",
+        "potassium"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "The resting membrane potential of a neuron (about -70 mV) is set mainly by:",
+      "explanation": "At rest, the membrane is most permeable to potassium, which leaks out down its concentration gradient (kept by the sodium-potassium pump) and leaves the inside negative. If sodium permeability dominated, the inside would be positive. Calcium entry is brief and linked to transmitter release, not the resting level. Glial cells buffer ions but do not set the neuronal resting potential by pumping chloride.",
+      "learningObjective": "Explain the ionic basis of the resting membrane potential.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "High resting permeability to sodium",
+        "High resting permeability to potassium",
+        "Steady inflow of calcium ions",
+        "Chloride pumped out by glial cells"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-044",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "action-potential",
+        "ion-channels"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "During the rising phase of an action potential, the membrane depolarizes because:",
+      "explanation": "Reaching threshold opens voltage-gated sodium channels, and sodium rushing in drives the rapid upstroke. Potassium channel opening causes repolarization, the falling phase. The sodium-potassium pump restores gradients slowly and does not produce the spike. Chloride entry through GABA-A channels hyperpolarizes or stabilizes the membrane, working against firing.",
+      "learningObjective": "Identify the ionic event of action potential depolarization.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Voltage-gated potassium channels open",
+        "The sodium-potassium pump speeds up",
+        "GABA-gated chloride channels open",
+        "Voltage-gated sodium channels open"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-045",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "eeg-generator",
+        "postsynaptic-potentials"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "The scalp EEG mainly reflects which electrical activity of cortical neurons?",
+      "explanation": "Scalp EEG records the summed slow postsynaptic potentials, both excitatory and inhibitory, of many synchronously active pyramidal cells. Axonal action potentials are too brief and poorly aligned to sum at the scalp. Inhibitory postsynaptic potentials also create current flow and contribute, so excluding them is incorrect. Glial potentials contribute mainly to very slow shifts and are not the main source.",
+      "learningObjective": "Identify the cellular generator of scalp EEG.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Summed action potentials along axons in white matter",
+        "Summed excitatory potentials only, without inhibition",
+        "Summed excitatory and inhibitory postsynaptic potentials",
+        "Summed glial cell potentials across the cortex surface"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-046",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "eeg-generator",
+        "pyramidal-cells",
+        "dipole"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Why are cortical pyramidal cells, rather than other neurons, the main source of the scalp EEG?",
+      "explanation": "Pyramidal cells line up side by side with apical dendrites perpendicular to the cortical surface, so their synchronized postsynaptic currents add into open-field dipoles that can be detected at the scalp. Action potential speed is not what makes a signal visible on EEG. Pyramidal cell bodies lie in the middle and deep layers (III and V), not directly against the skull, so closeness is not what makes them the main generator. Randomly oriented dendrites form closed fields that cancel and produce little scalp signal.",
+      "learningObjective": "Explain why pyramidal cell geometry makes them the EEG generator.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Their parallel apical dendrites align perpendicular to the cortical surface",
+        "Their axons fire the fastest action potentials in the brain",
+        "Their cell bodies lie close to the inner surface of the skull",
+        "Their dendrites are arranged randomly in all directions"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-047",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "neurotransmitters",
+        "gaba",
+        "glutamate"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which neurotransmitter is the main inhibitory transmitter in the brain?",
+      "explanation": "GABA is the principal inhibitory transmitter in the brain, and drugs that boost GABA-A receptors, such as benzodiazepines, suppress seizures and add beta activity to the EEG. Glutamate is the main excitatory transmitter. Dopamine is a modulator important in movement and reward. Acetylcholine acts at the neuromuscular junction and modulates arousal.",
+      "learningObjective": "Name the main inhibitory transmitter in the brain.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Glutamate",
+        "Dopamine",
+        "Acetylcholine",
+        "GABA"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-048",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "myelin",
+        "conduction"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Which cell forms myelin in the central nervous system, and how does myelin speed conduction?",
+      "explanation": "Oligodendrocytes myelinate central axons, and myelin lets the impulse jump between nodes of Ranvier (saltatory conduction), greatly increasing speed. Schwann cells myelinate peripheral nerves, not the brain and spinal cord. Astrocytes support neurons and do not form myelin. Myelin does not slow conduction at the nodes; it is what allows the fast jumping pattern.",
+      "learningObjective": "Identify central myelin-forming cells and saltatory conduction.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Schwann cell; impulses jump node to node",
+        "Oligodendrocyte; impulses jump node to node",
+        "Astrocyte; impulses spread more widely",
+        "Oligodendrocyte; impulses slow at each node"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-049",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "circle-of-willis",
+        "collateral-circulation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient with a complete blockage of one internal carotid artery has no stroke symptoms. What best explains the preserved blood supply?",
+      "explanation": "The circle of Willis links the carotid and vertebrobasilar systems through communicating arteries, so blood can cross from the other carotid or the posterior circulation to supply the affected hemisphere. The internal jugular vein drains blood away and cannot perfuse the brain. The middle meningeal artery supplies the dura and skull, not the brain tissue. Cerebrospinal fluid carries no oxygen supply to replace blood flow.",
+      "learningObjective": "Explain collateral perfusion through the circle of Willis.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Collateral flow through the circle of Willis",
+        "Flow reversal in the internal jugular vein",
+        "Direct supply from the middle meningeal artery",
+        "Extra cerebrospinal fluid made by choroid plexus"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-cn-050",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "stroke-terminology",
+        "thrombus",
+        "embolus"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A clot that breaks off from the heart and lodges in a distant cerebral artery is best called a(n):",
+      "explanation": "An embolus is material that travels in the bloodstream from its origin and blocks a vessel downstream. A thrombus is a clot that forms and stays at its site of origin. An aneurysm is a weakened, ballooning arterial wall rather than a clot. An infarct is the area of dead tissue that results from lost blood supply.",
+      "learningObjective": "Distinguish embolus, thrombus, aneurysm and infarct.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Thrombus",
+        "Aneurysm",
+        "Embolus",
+        "Infarct"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

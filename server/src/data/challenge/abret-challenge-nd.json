@@ -1,0 +1,1388 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-07",
+  "bank": "challenge",
+  "focus": "neurology-vascular-disorders",
+  "description": "Original questions on cerebral circulation, stroke, headache, cranial nerve disorders, neurodegenerative and neuromuscular disease, tumours, head trauma, infection and neurological terminology. Text only; not yet medically verified.",
+  "totalQuestions": 50,
+  "questions": [
+    {
+      "id": "ch-nd-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "circle-of-willis",
+        "vascular-anatomy"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which vessel joins the right and left anterior cerebral arteries at the front of the circle of Willis?",
+      "explanation": "The anterior communicating artery is the short bridge between the two anterior cerebral arteries, letting one carotid system support the other side. The posterior communicating artery links the internal carotid to the posterior cerebral artery instead. The anterior choroidal artery is a small internal carotid branch to the internal capsule and choroid plexus, not a cross-link. The basilar artery is formed by the vertebral arteries and feeds the back of the circle.",
+      "learningObjective": "Identify the anterior communicating artery as the link between the two anterior cerebral arteries.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Posterior communicating artery",
+        "Anterior communicating artery",
+        "Anterior choroidal artery",
+        "Basilar artery"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "circle-of-willis",
+        "vascular-anatomy"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "The posterior communicating artery connects which two vessels on each side of the circle of Willis?",
+      "explanation": "Each posterior communicating artery runs from the internal carotid artery back to the posterior cerebral artery, joining the anterior (carotid) and posterior (vertebrobasilar) circulations. The vertebral arteries fuse to form the basilar artery rather than being joined by a communicating vessel. The anterior and middle cerebral arteries are both terminal branches of the internal carotid. The middle and posterior cerebral arteries meet only through small surface leptomeningeal collaterals, not through a communicating artery.",
+      "learningObjective": "Describe how the posterior communicating artery links the carotid and vertebrobasilar systems.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Vertebral artery and basilar artery",
+        "Anterior cerebral and middle cerebral",
+        "Middle cerebral and posterior cerebral",
+        "Internal carotid and posterior cerebral"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "circle-of-willis",
+        "collateral-flow",
+        "carotid-occlusion"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Imaging shows a chronic complete occlusion of the left internal carotid artery, yet the patient has no neurological deficit. What best explains the preserved left hemisphere function?",
+      "explanation": "When one internal carotid closes slowly, blood can reach its territory from the opposite carotid through the anterior communicating artery and from the vertebrobasilar system through the posterior communicating artery, so the hemisphere stays perfused. Venous sinuses carry blood away from the brain and cannot deliver arterial supply. Cerebrospinal fluid does not supply meaningful oxygen to cortex. The middle meningeal artery supplies the dura and skull, so on its own it cannot perfuse a hemisphere.",
+      "learningObjective": "Explain how the circle of Willis provides collateral perfusion when a major artery is occluded.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Collateral flow through the communicating arteries of the circle of Willis",
+        "Reversed flow from the dural venous sinuses back into the cerebral cortex",
+        "Oxygen diffusing into cortex from the ventricular fluid",
+        "Increased flow in the left middle meningeal artery alone"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "mca",
+        "stroke-syndromes",
+        "aphasia"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A right-handed patient has an acute occlusion of the left middle cerebral artery main trunk. Which deficit pattern is most expected?",
+      "explanation": "The middle cerebral artery supplies the lateral convexity, including the face and arm areas of motor cortex and, in the dominant left hemisphere, the language areas, so contralateral face and arm weakness with aphasia is typical. Leg-predominant weakness points to the anterior cerebral artery, whose territory covers the medial leg area. Isolated visual field loss with normal strength fits the posterior cerebral artery. Bilateral leg weakness with incontinence suggests bilateral medial frontal (anterior cerebral) involvement, not one middle cerebral artery.",
+      "learningObjective": "Predict the deficits of a dominant-hemisphere middle cerebral artery stroke.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Right leg weakness greater than arm with intact language",
+        "Left visual field loss with normal limb strength",
+        "Right face and arm weakness with language impairment",
+        "Bilateral leg weakness with urinary incontinence"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "aca",
+        "stroke-syndromes"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Occlusion of which artery most typically causes weakness of the opposite leg that is greater than weakness of the arm?",
+      "explanation": "The anterior cerebral artery supplies the medial surface of the frontal and parietal lobes, where the leg and foot are represented on the motor and sensory strips, so its occlusion weakens the contralateral leg most. A middle cerebral artery stroke favors the face and arm. A posterior cerebral artery stroke mainly causes contralateral visual field loss. Vertebral artery disease produces brainstem and cerebellar signs rather than a leg-predominant cortical pattern.",
+      "learningObjective": "Associate the anterior cerebral artery territory with leg-predominant weakness.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Middle cerebral artery",
+        "Posterior cerebral artery",
+        "Anterior cerebral artery",
+        "Vertebral artery"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "pca",
+        "stroke-syndromes",
+        "visual-field"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A stroke in the territory of the right posterior cerebral artery most typically produces which finding?",
+      "explanation": "The posterior cerebral artery supplies the occipital lobe, and the right occipital cortex processes the left visual field of both eyes, so a left homonymous hemianopia results. A right hemianopia would come from a left occipital lesion. Leg-predominant weakness belongs to the anterior cerebral artery. Expressive aphasia arises from the dominant inferior frontal lobe in the middle cerebral territory, and aphasia is not described as right- or left-sided.",
+      "learningObjective": "Link posterior cerebral artery strokes to contralateral homonymous hemianopia.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Left homonymous hemianopia",
+        "Right homonymous hemianopia",
+        "Left leg monoparesis",
+        "Right-sided expressive aphasia"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "vertebrobasilar",
+        "posterior-circulation",
+        "stroke-syndromes"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient suddenly develops vertigo, double vision, slurred speech and unsteady gait, with facial numbness on one side and limb weakness on the other. Which circulation is most likely involved?",
+      "explanation": "Vertigo, diplopia, dysarthria, ataxia and crossed signs (cranial nerve findings on one side with limb findings on the other) point to the brainstem and cerebellum, which are supplied by the vertebral and basilar arteries. Anterior cerebral strokes cause leg weakness and frontal signs without crossed brainstem findings. Middle cerebral strokes cause face and arm weakness and cortical signs such as aphasia or neglect. Superior sagittal sinus thrombosis typically causes headache, seizures and raised pressure rather than this brainstem picture.",
+      "learningObjective": "Recognize the crossed brainstem and cerebellar signs of vertebrobasilar ischemia.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Anterior cerebral circulation",
+        "Vertebrobasilar circulation",
+        "Middle cerebral circulation",
+        "Superior sagittal sinus drainage"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "venous-sinuses",
+        "venous-drainage"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Blood collected in the dural venous sinuses leaves the skull mainly through which vessels?",
+      "explanation": "The sinuses converge through the transverse and sigmoid sinuses, which continue as the internal jugular veins at the jugular foramen, the main exit for cerebral venous blood. The external jugular veins drain mostly the scalp and face. The vein of Galen is a deep vein that empties into the straight sinus, so it lies upstream inside the skull. The superior ophthalmic veins drain the orbit into the cavernous sinus rather than serving as the main outflow.",
+      "learningObjective": "Trace cerebral venous drainage from the sinuses to the internal jugular veins.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "External jugular veins",
+        "Great cerebral vein of Galen",
+        "Superior ophthalmic veins",
+        "Internal jugular veins"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-009",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "venous-sinuses",
+        "falx-cerebri"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which dural venous sinus runs along the attached upper border of the falx cerebri in the midline?",
+      "explanation": "The superior sagittal sinus lies in the upper edge of the falx cerebri, directly beneath the midline vertex where the Cz region of the scalp sits, and drains toward the confluence of sinuses. The inferior sagittal sinus runs in the lower free edge of the falx and drains into the straight sinus. The transverse sinuses run laterally along the back edge of the tentorium. The cavernous sinuses sit on either side of the sella turcica at the skull base.",
+      "learningObjective": "Locate the superior sagittal sinus within the falx cerebri.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Superior sagittal sinus",
+        "Inferior sagittal sinus",
+        "Transverse sinus",
+        "Cavernous sinus"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-010",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "embolus",
+        "thrombus",
+        "stroke-mechanism"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A clot forms in the left atrium of a patient with atrial fibrillation, breaks free and lodges in a middle cerebral artery branch. What is the lodged clot called?",
+      "explanation": "An embolus is material that forms in one place, travels through the bloodstream and blocks a vessel elsewhere, which is exactly what a cardiac clot reaching the brain does. A thrombus is a clot that forms and stays at its site of origin on the vessel wall. An aneurysm is a weakened, bulging artery wall, not a clot. A lacune is the small cavity left after a deep penetrating-artery infarct.",
+      "learningObjective": "Differentiate an embolus from a thrombus by where the clot originates.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Thrombus",
+        "Aneurysm",
+        "Embolus",
+        "Lacune"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-011",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "ischemia",
+        "infarction",
+        "terminology"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What best distinguishes cerebral ischemia from cerebral infarction?",
+      "explanation": "Ischemia means blood supply is too low for normal function; if flow returns in time the tissue can recover, as in a transient ischemic attack. Infarction means the tissue has died from prolonged ischemia. Bleeding into tissue is hemorrhage, not ischemia. Both ischemia and infarction can affect gray and white matter. Both are usually arterial problems, although venous thrombosis can also cause them, so the arterial versus venous split is not the defining difference.",
+      "learningObjective": "Separate reversible ischemia from irreversible infarction.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Ischemia is bleeding into brain tissue; infarction is a blocked artery",
+        "Ischemia affects only white matter; infarction affects only gray matter",
+        "Ischemia is a venous process; infarction is an arterial process",
+        "Ischemia is reduced flow that may be reversible; infarction is tissue death"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-012",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "aneurysm",
+        "subarachnoid-hemorrhage"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What is the most common cause of a non-traumatic subarachnoid hemorrhage?",
+      "explanation": "Saccular aneurysms form at branch points around the circle of Willis, and their rupture releases arterial blood into the subarachnoid space; this accounts for most spontaneous subarachnoid hemorrhages. Torn bridging veins cause subdural hematomas, usually after trauma. A torn middle meningeal artery causes an epidural hematoma. Occlusion of a penetrating artery causes a lacunar infarct, an ischemic rather than hemorrhagic event.",
+      "learningObjective": "Identify ruptured saccular aneurysm as the main cause of spontaneous subarachnoid hemorrhage.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Tearing of cortical bridging veins",
+        "Rupture of a saccular (berry) aneurysm",
+        "Rupture of the middle meningeal artery",
+        "Occlusion of a deep penetrating artery"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-013",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "subarachnoid-hemorrhage",
+        "headache"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient describes an abrupt, explosive headache that peaked within a minute, followed by vomiting and a stiff neck. Which condition does this presentation most suggest?",
+      "explanation": "A thunderclap headache that reaches peak intensity almost instantly, with vomiting and neck stiffness from blood irritating the meninges, is the classic picture of subarachnoid hemorrhage and is treated as an emergency. Tension-type headache builds gradually and is mild to moderate and pressing. Migraine builds over minutes to hours and is sometimes preceded by an aura. Trigeminal neuralgia causes seconds-long electric jabs in the face rather than a sustained headache with meningeal signs.",
+      "learningObjective": "Recognize thunderclap headache with meningism as a warning of subarachnoid hemorrhage.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Tension-type headache",
+        "Migraine with visual aura",
+        "Trigeminal neuralgia",
+        "Subarachnoid hemorrhage"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-014",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "lacunar-infarct",
+        "eeg-after-stroke"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient has a pure motor hemiparesis from a small lacunar infarct in the internal capsule. What EEG result is most likely?",
+      "explanation": "Scalp EEG mainly reflects cortical activity, so a small deep lacune that spares the cortex often produces a normal or only mildly asymmetric recording despite a clear clinical deficit. Widespread hemispheric polymorphic delta with loss of alpha is expected after a large cortical infarct. Generalized 3 Hz spike-and-wave is the signature of absence epilepsy. Burst-suppression reflects severe diffuse dysfunction such as anoxic injury or deep anesthesia, not a small capsular stroke.",
+      "learningObjective": "Explain why small subcortical lacunar strokes may leave the EEG nearly normal.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Continuous hemispheric polymorphic delta and lost alpha",
+        "Little or no abnormality because the cortex is spared",
+        "Generalized 3 Hz spike-and-wave discharges on arousal",
+        "Diffuse burst-suppression pattern over both hemispheres"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-015",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "tia",
+        "stroke-definitions"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Under the current tissue-based definition, a transient ischemic attack is best described as:",
+      "explanation": "A transient ischemic attack is a temporary episode of focal brain, spinal cord or retinal dysfunction caused by ischemia, with no acute infarction on imaging; most episodes last minutes. The older 24-hour time limit has been replaced by the tissue-based definition, and any episode with acute infarction on imaging is a stroke, regardless of how long symptoms last. Brief loss of consciousness from global hypoperfusion describes syncope. A small deep infarct is a lacunar stroke, which by definition includes tissue death.",
+      "learningObjective": "State the tissue-based definition of a transient ischemic attack.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A focal deficit lasting over 24 hours that later recovers",
+        "Brief loss of consciousness from global low blood flow",
+        "Brief focal dysfunction from ischemia without acute infarction",
+        "A small deep infarct caused by a penetrating artery"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-016",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "watershed-infarct",
+        "hypoperfusion"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "After a prolonged cardiac arrest with severe hypotension, infarcts appear in the border zones between the anterior, middle and posterior cerebral artery territories. What are these called?",
+      "explanation": "Border-zone regions sit at the far ends of two arterial supplies, so they are the first to fail when overall perfusion pressure drops, producing watershed infarcts. Lacunar infarcts are small deep lesions from occlusion of a single penetrating artery. Embolic infarcts follow a clot lodging in one artery and are usually within a single territory. Venous infarcts follow sinus or cortical vein thrombosis and do not follow arterial border zones.",
+      "learningObjective": "Link global hypoperfusion with border-zone (watershed) infarction.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Watershed infarcts",
+        "Lacunar infarcts",
+        "Embolic infarcts",
+        "Venous infarcts"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-017",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "intracerebral-hemorrhage",
+        "hypertension"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which site is the most common location for an intracerebral hemorrhage caused by long-standing hypertension?",
+      "explanation": "Chronic hypertension damages small penetrating arteries, and the lenticulostriate branches supplying the putamen are the most frequent source of hypertensive hemorrhage, followed by thalamus, pons and cerebellum. The occipital and frontal poles are lobar locations more typical of other causes such as amyloid angiopathy or vascular malformations. The corpus callosum is an uncommon site for spontaneous hemorrhage.",
+      "learningObjective": "Identify the deep structures typically affected by hypertensive intracerebral hemorrhage.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Occipital pole of the cortex",
+        "Putamen of the basal ganglia",
+        "Corpus callosum genu",
+        "Frontal pole of the cortex"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-018",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "avm",
+        "vascular-malformation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which description best fits a cerebral arteriovenous malformation?",
+      "explanation": "An arteriovenous malformation is a tangle of abnormal vessels in which arterial blood passes straight into veins without a capillary bed; it can bleed or cause seizures. A pouch at an arterial branch point is a saccular aneurysm. A clot in a dural sinus is cerebral venous sinus thrombosis. A crescent of blood beneath the dura is a subdural hematoma.",
+      "learningObjective": "Define an arteriovenous malformation and contrast it with an aneurysm.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A thin-walled pouch bulging from an arterial branch point",
+        "A clot that blocks a dural sinus and slows drainage",
+        "A crescent of blood collected beneath the dura mater",
+        "A tangle of vessels shunting arteries directly into veins"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-019",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "eeg-after-stroke",
+        "polymorphic-delta",
+        "mca"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Two days after a large left middle cerebral artery cortical infarct, which EEG finding is most expected?",
+      "explanation": "A large cortical infarct produces focal arrhythmic (polymorphic) delta over the injured region on the same side, often with attenuation of alpha and beta activity there. Generalized 3 Hz spike-and-wave belongs to absence epilepsy, not focal structural injury. Abnormalities appear over the infarcted hemisphere, so right-sided changes with a preserved left side point to the wrong hemisphere. A large acute cortical infarct is expected to produce an asymmetry rather than a normal record.",
+      "learningObjective": "Predict the focal EEG changes after an acute cortical infarct.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Left-sided polymorphic delta with reduced faster activity",
+        "Generalized 3 Hz spike-and-wave with normal background",
+        "Right-sided rhythmic theta with a preserved left rhythm",
+        "Symmetric normal background with no focal change"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-020",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "lateralized-periodic-discharges",
+        "eeg-after-stroke"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which EEG pattern is commonly recorded in the days after an acute cortical stroke and reflects a structural lesion?",
+      "explanation": "Lateralized periodic discharges are repeating sharp waveforms over one hemisphere that are frequently seen after acute structural injury such as stroke, as well as in encephalitis and tumours; they should be reported because they can be associated with seizures. Positive occipital sharp transients and small sharp spikes are benign sleep variants. Mu rhythm is a normal central rhythm that blocks with movement of the opposite hand.",
+      "learningObjective": "Associate lateralized periodic discharges with acute structural lesions.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Positive occipital sharp transients",
+        "Small sharp spikes of sleep",
+        "Lateralized periodic discharges",
+        "Mu rhythm over the central area"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-021",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "migraine",
+        "trigeminovascular"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "In the standard teaching model, the throbbing pain of migraine is attributed mainly to:",
+      "explanation": "Migraine pain is explained by activation of the trigeminovascular system: trigeminal sensory fibres supplying meningeal and cranial vessels release peptides such as calcitonin gene-related peptide, causing neurogenic inflammation, and pain signals relay through the trigeminal nucleus in the brainstem. Vessel dilation, once thought to be the cause, is now considered secondary; older exam items still phrase the answer as dilation of cranial blood vessels, which is the expected choice over vasoconstriction. Muscle contraction was the old explanation for tension-type headache. Vascular compression of the trigeminal root is the usual cause of trigeminal neuralgia. Blocked ventricular outflow causes hydrocephalus with pressure headache, not migraine.",
+      "learningObjective": "Describe the trigeminovascular explanation of migraine pain.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Sustained contraction of the pericranial scalp muscles",
+        "An artery compressing the trigeminal nerve root entry",
+        "Trigeminal sensory fibres activated around meningeal vessels",
+        "Raised fluid pressure from blocked ventricular outflow"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-022",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "migraine",
+        "aura",
+        "cortical-spreading-depression"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient's visual aura begins as a small flickering zigzag that expands slowly across the visual field over about 20 minutes. Which mechanism best explains this aura?",
+      "explanation": "Cortical spreading depression is a wave of neuronal depolarization that creeps across the occipital cortex at a few millimetres per minute, followed by suppressed activity; its slow march explains a visual aura that expands over many minutes. Spike-and-wave bursts are seizure phenomena and do not produce a slowly marching visual aura. An arterial occlusion causes sudden negative field loss rather than a slowly spreading positive image. Chiasm compression causes fixed bitemporal field loss, not a moving aura.",
+      "learningObjective": "Relate migraine aura to cortical spreading depression.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A slow wave of cortical depolarization followed by suppression",
+        "A rapid generalized burst of spike-and-wave discharge",
+        "A sudden occlusion of one posterior cerebral artery",
+        "A transient compression of the optic chiasm"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-023",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "tension-type-headache",
+        "headache"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which feature is most typical of tension-type headache?",
+      "explanation": "Tension-type headache is usually bilateral, pressing or tightening like a band, mild to moderate, and not accompanied by nausea or worsened by routine activity. One-sided throbbing pain with photophobia is typical of migraine. Brief electric facial jabs set off by touch describe trigeminal neuralgia. Sudden explosive pain with neck stiffness raises concern for subarachnoid hemorrhage.",
+      "learningObjective": "Recognize the clinical features of tension-type headache.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "One-sided throbbing pain with light sensitivity",
+        "Bilateral pressing band-like pain without nausea",
+        "Electric facial jabs triggered by light touch",
+        "Sudden explosive pain with neck stiffness"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-024",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "trigeminal-neuralgia",
+        "cranial-nerves"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Trigeminal neuralgia, also called tic douloureux, involves which cranial nerve?",
+      "explanation": "Trigeminal neuralgia affects the fifth cranial nerve, which carries sensation from the face; patients feel brief, severe, shock-like pain usually in the maxillary or mandibular division, often triggered by chewing, talking or touch. Cranial nerve VII is the facial nerve, involved in Bell palsy. Cranial nerve IX is the glossopharyngeal nerve, which has its own rarer neuralgia felt in the throat and ear. Cranial nerve VIII carries hearing and balance.",
+      "learningObjective": "Identify cranial nerve V as the nerve involved in trigeminal neuralgia.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Cranial nerve VII",
+        "Cranial nerve IX",
+        "Cranial nerve VIII",
+        "Cranial nerve V"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-025",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "bell-palsy",
+        "facial-nerve",
+        "upper-vs-lower-motor-neuron"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient cannot close the right eye, wrinkle the right forehead or raise the right corner of the mouth. Limb strength is normal. Which explanation fits best?",
+      "explanation": "The forehead receives motor input from both hemispheres, so a cortical (upper motor neuron) lesion spares forehead movement; weakness of the whole half of the face, including the forehead, points to the facial nerve itself, as in Bell palsy. A left cortical stroke would weaken mainly the lower right face and usually the arm. The trigeminal nerve controls facial sensation and chewing, not facial expression. A schwannoma confined to hearing symptoms would not paralyze facial movement.",
+      "learningObjective": "Distinguish peripheral facial nerve palsy from central facial weakness using forehead involvement.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A peripheral right facial nerve palsy, as in Bell palsy",
+        "A left cortical stroke affecting the face motor area",
+        "A right trigeminal nerve lesion at the skull base",
+        "A right vestibular schwannoma limited to hearing"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-026",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "acoustic-neuroma",
+        "vestibular-schwannoma",
+        "cranial-nerves"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "An acoustic neuroma, more accurately called a vestibular schwannoma, grows on which cranial nerve?",
+      "explanation": "A vestibular schwannoma arises on the vestibulocochlear nerve, cranial nerve VIII, usually in the internal auditory canal and cerebellopontine angle, and typically causes one-sided hearing loss, tinnitus and imbalance. Cranial nerve VII travels beside it and can be stretched by a large tumour but is not its origin. Cranial nerve V may be compressed as the tumour enlarges. Cranial nerve X is the vagus nerve, which leaves the brainstem lower down.",
+      "learningObjective": "Identify cranial nerve VIII as the site of an acoustic neuroma.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Cranial nerve VII",
+        "Cranial nerve V",
+        "Cranial nerve VIII",
+        "Cranial nerve X"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-027",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "vestibular-schwannoma",
+        "meningioma",
+        "tumour-cell-origin"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A vestibular schwannoma arises from which cell type?",
+      "explanation": "Schwannomas grow from Schwann cells, which form myelin around peripheral and cranial nerve axons, including the vestibular part of nerve VIII; bilateral tumours suggest neurofibromatosis type 2. Astrocytes give rise to astrocytomas and glioblastoma. Arachnoid cap cells give rise to meningiomas. Ependymal cells give rise to ependymomas.",
+      "learningObjective": "Match tumour types to their cells of origin.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Astrocytes of the white matter",
+        "Arachnoid cap cells of the meninges",
+        "Ependymal cells lining the ventricles",
+        "Schwann cells of the nerve sheath"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-028",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "vestibular-schwannoma",
+        "cerebellopontine-angle",
+        "cranial-nerves"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "As a large vestibular schwannoma expands in the cerebellopontine angle, which neighbouring cranial nerves are most often affected next?",
+      "explanation": "The cerebellopontine angle holds nerves VII and VIII, with nerve V just above, so an enlarging schwannoma most often next affects the trigeminal nerve (facial numbness, reduced corneal reflex); facial weakness is less common and usually late because the facial nerve tolerates stretching. The olfactory and optic nerves lie at the front of the skull base, far from the angle. The oculomotor and trochlear nerves run near the midbrain and cavernous sinus. The hypoglossal and accessory nerves exit low in the posterior fossa and are affected only by very large tumours.",
+      "learningObjective": "Predict cranial nerve involvement from a cerebellopontine angle mass.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Olfactory and optic nerves",
+        "Trigeminal and facial nerves",
+        "Oculomotor and trochlear nerves",
+        "Hypoglossal and accessory nerves"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-029",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "multiple-sclerosis",
+        "demyelination"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Multiple sclerosis primarily damages which structure?",
+      "explanation": "Multiple sclerosis is an immune-mediated disease that strips myelin from axons in the brain, optic nerves and spinal cord, leaving plaques in white matter and causing relapsing symptoms such as optic neuritis. Peripheral nerve demyelination is the hallmark of Guillain-Barre syndrome. Antibodies against acetylcholine receptors cause myasthenia gravis. Loss of dopamine neurons in the substantia nigra causes Parkinson disease.",
+      "learningObjective": "Identify multiple sclerosis as a central nervous system demyelinating disease.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Myelin of the peripheral nerves",
+        "Acetylcholine receptors at the muscle",
+        "Dopamine neurons in the midbrain",
+        "Myelin in the central nervous system"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-030",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "parkinson-disease",
+        "basal-ganglia"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Parkinson disease results mainly from loss of dopamine-producing neurons in which structure?",
+      "explanation": "The motor features of Parkinson disease (rest tremor, rigidity, slowness of movement and postural instability) follow loss of dopamine neurons in the substantia nigra pars compacta of the midbrain. Caudate degeneration is characteristic of Huntington disease. Cerebellar vermis damage causes gait and truncal ataxia. Anterior horn cell loss produces lower motor neuron weakness, as in amyotrophic lateral sclerosis.",
+      "learningObjective": "Link Parkinson disease to dopamine neuron loss in the substantia nigra.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Caudate nucleus",
+        "Substantia nigra",
+        "Cerebellar vermis",
+        "Anterior horn of the cord"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-031",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "parkinson-disease",
+        "tremor-artifact",
+        "artifact-recognition"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "During a resting recording, a patient with Parkinson disease shows rhythmic 5 Hz waveforms in the electrodes near a trembling hand resting on the scalp. What is the best technologist response?",
+      "explanation": "Parkinsonian rest tremor (about 4 to 6 Hz) can be transmitted to nearby electrodes as rhythmic artifact; moving the hand off the scalp, watching the limb and annotating the tremor lets the reader separate artifact from cerebral activity. Reporting it as a seizure misinterprets mechanical artifact as a diagnosis, which is outside the technologist's role. Raising the low-frequency filter would distort genuine slow activity without removing a 5 Hz artifact. Lowering sensitivity hides both artifact and cerebral activity without identifying the source.",
+      "learningObjective": "Recognize and document tremor artifact in patients with Parkinson disease.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Report the activity to the reading physician as a seizure",
+        "Increase the low-frequency filter until the activity is gone",
+        "Reposition the hand, observe the limb and document the tremor",
+        "Reduce the sensitivity so the waveforms appear smaller"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-032",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "huntington-disease",
+        "basal-ganglia",
+        "genetics"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Huntington disease, an inherited disorder with chorea and cognitive decline, is associated with degeneration of which structure?",
+      "explanation": "Huntington disease is an autosomal dominant CAG-repeat expansion disorder in which the caudate nucleus (and putamen) atrophies early, producing chorea, psychiatric change and dementia. Substantia nigra loss is the core lesion of Parkinson disease. Cerebellar degeneration produces ataxia rather than chorea. The hippocampus is affected early in Alzheimer disease and is linked to memory, not chorea.",
+      "learningObjective": "Associate Huntington disease with caudate degeneration.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Caudate nucleus",
+        "Substantia nigra",
+        "Cerebellar hemispheres",
+        "Hippocampal formation"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-033",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "als",
+        "motor-neuron-disease",
+        "babinski"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient has muscle wasting and twitching (fasciculations) in the hands along with brisk reflexes and an extensor plantar response, while sensation is normal. Which disorder best fits?",
+      "explanation": "Amyotrophic lateral sclerosis destroys both lower motor neurons (wasting, fasciculations) and upper motor neurons of the corticospinal tract (brisk reflexes, Babinski sign) while sparing sensation. Guillain-Barre syndrome causes weakness with lost reflexes and often sensory symptoms. Myasthenia gravis causes fatigable weakness without wasting, fasciculations or reflex change. Multiple sclerosis can cause upper motor neuron signs but does not produce lower motor neuron wasting with fasciculations, and sensory symptoms are common.",
+      "learningObjective": "Recognize the mixed upper and lower motor neuron picture of ALS.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Guillain-Barre syndrome",
+        "Amyotrophic lateral sclerosis",
+        "Generalized myasthenia gravis",
+        "Relapsing multiple sclerosis"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-034",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "myasthenia-gravis",
+        "neuromuscular-junction"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Drooping eyelids and double vision that worsen toward the end of the day are typical of myasthenia gravis. What is the underlying problem?",
+      "explanation": "In myasthenia gravis, autoantibodies block or destroy postsynaptic acetylcholine receptors at the neuromuscular junction, so strength fades with repeated use, especially in eye and bulbar muscles. Post-infectious peripheral demyelination describes Guillain-Barre syndrome. Anterior horn cell degeneration occurs in amyotrophic lateral sclerosis. Brainstem plaques suggest multiple sclerosis, which does not cause typical fatigable weakness that worsens through the day.",
+      "learningObjective": "Explain the neuromuscular junction mechanism of myasthenia gravis.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Demyelination of peripheral nerves after an infection",
+        "Degeneration of anterior horn cells in the spinal cord",
+        "Inflammatory plaques in the brainstem white matter",
+        "Antibodies against acetylcholine receptors at the muscle"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-035",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "guillain-barre-syndrome",
+        "peripheral-neuropathy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Two weeks after a diarrheal illness, a patient develops weakness that starts in the legs and climbs upward, with absent reflexes. Which condition is most likely?",
+      "explanation": "Guillain-Barre syndrome is an acute immune attack on peripheral nerves, often after infections such as Campylobacter, causing ascending weakness and loss of reflexes that can reach breathing muscles. Amyotrophic lateral sclerosis progresses over months and shows upper motor neuron signs with preserved or brisk reflexes. Myasthenia gravis causes fatigable eye and bulbar weakness with normal reflexes. Parkinson disease produces tremor, rigidity and slowness rather than acute paralysis.",
+      "learningObjective": "Recognize the ascending areflexic weakness of Guillain-Barre syndrome.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Guillain-Barre syndrome",
+        "Amyotrophic lateral sclerosis",
+        "Myasthenia gravis",
+        "Parkinson disease"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-036",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cjd",
+        "prion",
+        "periodic-discharges",
+        "dementia"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient has a dementia that worsened over a few months, with startle-induced myoclonus. The EEG shows generalized periodic discharges (sharp-wave complexes) at about 1 Hz. Which disorder is most associated with this picture?",
+      "explanation": "Creutzfeldt-Jakob disease is a prion disorder causing rapidly progressive dementia and myoclonus, and its classic EEG finding is periodic sharp-wave complexes near 1 Hz. Normal pressure hydrocephalus progresses slowly with gait trouble and incontinence and has no characteristic periodic EEG. Alzheimer disease advances over years and shows diffuse background slowing. Huntington disease is a slowly progressive inherited chorea, with a low-voltage EEG rather than periodic complexes.",
+      "learningObjective": "Associate rapidly progressive dementia, myoclonus and periodic sharp waves with CJD.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Normal pressure hydrocephalus",
+        "Alzheimer disease",
+        "Creutzfeldt-Jakob disease",
+        "Huntington disease"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-037",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "normal-pressure-hydrocephalus",
+        "dementia"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which triad is classically associated with normal pressure hydrocephalus?",
+      "explanation": "Normal pressure hydrocephalus in older adults presents with a broad-based, shuffling magnetic gait, urinary incontinence and cognitive decline, often summarized as gait apraxia, urinary incontinence and dementia (Hakim triad). Headache, papilledema and vomiting indicate raised intracranial pressure from other causes. Fever, neck stiffness and confusion suggest meningitis. Rest tremor, rigidity and slowed movement are the motor signs of Parkinson disease.",
+      "learningObjective": "Recall the clinical triad of normal pressure hydrocephalus.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Headache, papilledema and early-morning vomiting",
+        "Fever, neck stiffness and acute confusion",
+        "Gait disturbance, urinary incontinence and dementia",
+        "Rest tremor, rigidity and slowed movement"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-038",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "hydrocephalus",
+        "ventricular-system",
+        "csf-flow"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Imaging shows enlarged lateral and third ventricles but a normal-sized fourth ventricle. Where is the obstruction to fluid flow most likely located?",
+      "explanation": "Cerebrospinal fluid flows from the lateral ventricles through the interventricular foramina to the third ventricle, then through the cerebral aqueduct to the fourth ventricle; a block at the aqueduct dilates everything upstream while the fourth ventricle stays normal. Blockage at the fourth ventricle outlets would enlarge the fourth ventricle too. Impaired absorption at the arachnoid granulations causes communicating hydrocephalus with all ventricles enlarged. A block at one interventricular foramen would enlarge only one lateral ventricle.",
+      "learningObjective": "Localize an obstruction in non-communicating hydrocephalus from the ventricular pattern.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Cerebral aqueduct of the midbrain",
+        "Foramina at the outlet of the fourth ventricle",
+        "Arachnoid granulations at the sagittal sinus",
+        "Interventricular foramen on one side"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-039",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "glioma",
+        "glioblastoma",
+        "brain-tumours"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which tumour is the most common primary malignant brain tumour in adults?",
+      "explanation": "Glioblastoma, the highest-grade astrocytic glioma, is the most common primary malignant brain tumour in adults and grows rapidly through the white matter. Meningioma is the most common primary intracranial tumour overall but is usually benign. Vestibular schwannomas and pituitary adenomas are usually benign tumours arising outside the brain substance.",
+      "learningObjective": "Identify glioblastoma as the most common primary malignant adult brain tumour.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Meningioma",
+        "Glioblastoma",
+        "Vestibular schwannoma",
+        "Pituitary adenoma"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-040",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "meningioma",
+        "brain-tumours",
+        "extra-axial"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A slow-growing, usually benign tumour attached to the dura compresses the underlying brain rather than infiltrating it. Which tumour fits best?",
+      "explanation": "Meningiomas arise from arachnoid cap cells, attach to the dura and push on the brain from outside (extra-axial), often growing slowly for years. Glioblastoma infiltrates the brain substance and grows quickly. Medulloblastoma is a malignant posterior fossa tumour mainly of children. Metastatic melanoma lodges within the brain tissue and is malignant.",
+      "learningObjective": "Describe the extra-axial, dura-based nature of meningioma.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Glioblastoma",
+        "Medulloblastoma",
+        "Metastatic melanoma",
+        "Meningioma"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-041",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "metastasis",
+        "brain-tumours"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "An adult with known lung cancer has several round brain lesions at the junction of gray and white matter. What is the most likely explanation?",
+      "explanation": "Metastases are the most common brain tumours in adults, often from lung, breast or melanoma, and reach the brain through the blood, lodging at the gray-white junction where vessels narrow; multiple lesions are typical. Meningiomas are dura-based and usually single. A low-grade glioma is usually a single, infiltrating lesion. Bilateral vestibular schwannomas occur in the cerebellopontine angles in neurofibromatosis type 2, not scattered through the hemispheres.",
+      "learningObjective": "Recognize the typical pattern of brain metastases.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Metastatic spread from the lung cancer",
+        "Several separate dura-based meningiomas",
+        "Primary low-grade glioma",
+        "Bilateral vestibular schwannomas"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-042",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "epidural-hematoma",
+        "head-trauma"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "After a blow to the side of the head, a patient is briefly knocked out, then talks normally for an hour before rapidly declining. Imaging shows a lens-shaped clot under the temporal bone. Which injury is this?",
+      "explanation": "An epidural hematoma typically follows a temporal bone fracture that tears the middle meningeal artery; arterial blood strips the dura from the skull, forming a biconvex lens limited by suture lines, and a lucid interval before decline is classic. Subdural hematomas come from venous bleeding and are crescent-shaped. Aneurysmal subarachnoid hemorrhage is spontaneous, with thunderclap headache rather than a lens-shaped clot. Diffuse axonal injury causes immediate, lasting coma without a focal clot.",
+      "learningObjective": "Distinguish epidural hematoma by mechanism, lucid interval and shape.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Subdural hematoma from torn cortical bridging veins",
+        "Subarachnoid hemorrhage from a ruptured aneurysm",
+        "Epidural hematoma from a torn middle meningeal artery",
+        "Diffuse axonal injury from rotational shearing"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-043",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "subdural-hematoma",
+        "head-trauma"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which feature is most typical of a subdural hematoma?",
+      "explanation": "Subdural hematomas form when bridging veins crossing from the cortex to the dural sinuses tear; the blood spreads in a crescent over the hemisphere, can cross suture lines, and may grow slowly, especially in older adults or people with brain atrophy. A lens-shaped arterial clot limited by sutures is an epidural hematoma. Blood in the basal cisterns from an aneurysm is subarachnoid hemorrhage. Small white matter hemorrhages from shearing suggest diffuse axonal injury.",
+      "learningObjective": "Describe the venous mechanism and crescent shape of subdural hematoma.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Arterial bleeding forming a lens limited by skull sutures",
+        "Blood spreading through the basal cisterns from an aneurysm",
+        "Small hemorrhages along white matter tracts from shearing",
+        "Venous bleeding from torn bridging veins forming a crescent"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-044",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "diffuse-axonal-injury",
+        "concussion",
+        "head-trauma"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "After a high-speed car crash with rapid rotation of the head, a patient is in a coma, yet the initial CT shows no large clot. Which injury best explains this?",
+      "explanation": "Rotational acceleration and deceleration shear long axons across the white matter, corpus callosum and brainstem; diffuse axonal injury can cause deep, lasting coma while CT appears nearly normal because the damage is microscopic. An epidural hematoma would be visible as a lens-shaped clot. A chronic subdural hematoma develops over weeks and appears as a crescent. Concussion causes brief, functional disturbance with recovery rather than prolonged coma.",
+      "learningObjective": "Recognize diffuse axonal injury as a cause of coma with a near-normal CT.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Epidural hematoma",
+        "Diffuse axonal injury",
+        "Chronic subdural hematoma",
+        "Simple concussion"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-045",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "encephalitis",
+        "hsv",
+        "meningitis",
+        "eeg-findings"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A febrile patient has confusion, odd behaviour and a seizure. The EEG shows periodic discharges over one temporal region. Which infection is most associated with this picture?",
+      "explanation": "Herpes simplex virus has a predilection for the temporal lobes, and its encephalitis typically brings fever, confusion, behaviour change and seizures, with lateralized periodic discharges over the affected temporal region. Meningitis without brain involvement mainly inflames the coverings, causing fever, headache and neck stiffness without a focal temporal pattern. A cerebellar abscess would cause ataxia and headache rather than temporal periodic discharges. Viral meningitis with a normal mental state lacks the encephalopathy seen here.",
+      "learningObjective": "Associate temporal lateralized periodic discharges with herpes simplex encephalitis.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Bacterial meningitis without brain involvement",
+        "Cerebral abscess in the cerebellum",
+        "Viral meningitis with normal mental state",
+        "Herpes simplex encephalitis"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-046",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "syncope",
+        "seizure",
+        "differential-diagnosis"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A young adult standing in a hot crowd feels light-headed, turns pale and sweaty, collapses, has a few brief limb jerks and is fully alert within a minute. Which explanation is most likely?",
+      "explanation": "A warning of light-headedness, pallor and sweating in a hot standing setting, followed by brief jerks and rapid full recovery, fits reflex (vasovagal) syncope; short myoclonic jerks from transient cerebral hypoperfusion are common and do not mean epilepsy. A generalized tonic-clonic seizure usually lasts longer and is followed by prolonged confusion. A focal impaired awareness seizure typically shows staring and automatisms rather than a pale collapse. A psychogenic event lacks the autonomic warning and is often prolonged, with eyes closed.",
+      "learningObjective": "Differentiate convulsive syncope from epileptic seizures by prodrome and recovery.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Generalized tonic-clonic seizure",
+        "Vasovagal syncope with brief jerks",
+        "Focal impaired awareness seizure",
+        "Psychogenic nonepileptic (functional) seizure"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-047",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cerebral-palsy",
+        "developmental"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which statement best describes cerebral palsy?",
+      "explanation": "Cerebral palsy is a group of permanent but non-progressive disorders of movement and posture caused by injury to the developing brain before, during or soon after birth; spastic forms are most common and epilepsy is a frequent companion. Progressive adult motor neuron loss describes amyotrophic lateral sclerosis. Inherited midlife caudate degeneration describes Huntington disease. Post-infectious peripheral nerve attack describes Guillain-Barre syndrome.",
+      "learningObjective": "Define cerebral palsy as a non-progressive disorder from early brain injury.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A progressive loss of motor neurons beginning in adulthood",
+        "An inherited degeneration of the caudate in midlife",
+        "A non-progressive movement disorder from early brain injury",
+        "An acute immune attack on peripheral nerves after infection"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-048",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "paraplegia",
+        "quadriplegia",
+        "terminology"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A patient with a thoracic spinal cord injury has paralysis of both legs but normal arm function. Which term describes this?",
+      "explanation": "Paraplegia is paralysis of both lower limbs, typical of a thoracic or lower cord injury. Quadriplegia (tetraplegia) involves all four limbs, usually from a cervical injury. Hemiplegia affects one side of the body. Monoplegia affects a single limb.",
+      "learningObjective": "Apply -plegia terms to the pattern of limb paralysis.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Paraplegia",
+        "Tetraplegia (quadriplegia)",
+        "Hemiplegia",
+        "Monoplegia"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-049",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "hemiparesis",
+        "terminology",
+        "suffixes"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "After a stroke, a patient can move the right arm and leg against gravity but they are weak. Which term best describes this?",
+      "explanation": "The suffix -paresis means partial weakness, and hemi- means one side, so weakness without full paralysis of one side is hemiparesis. Hemiplegia, from -plegia, means complete paralysis of one side. Hemianopia is loss of half of the visual field. Hemiballismus is a violent flinging movement of one side from a subthalamic lesion.",
+      "learningObjective": "Distinguish -paresis from -plegia and other hemi- terms.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Right hemiplegia",
+        "Right hemiparesis",
+        "Right hemianopia",
+        "Right hemiballismus"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nd-050",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "dysarthria",
+        "dysphasia",
+        "dysphagia",
+        "terminology"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A patient understands and chooses words normally but speaks with slurred, poorly articulated sounds. Which term describes this?",
+      "explanation": "Dysarthria is a motor speech problem affecting articulation, while language itself is intact. Dysphasia is an older, largely interchangeable term for an acquired language disorder; aphasia is now preferred. Dysphagia means difficulty swallowing. Aphasia is an acquired disorder of language (word finding, comprehension, repetition), not of articulation.",
+      "learningObjective": "Separate dysarthria from dysphasia, dysphagia and aphasia.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Dysphasia",
+        "Dysphagia",
+        "Aphasia",
+        "Dysarthria"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

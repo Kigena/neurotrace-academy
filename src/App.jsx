@@ -18,6 +18,8 @@ import AmplifierFilters from "./pages/AmplifierFilters.jsx";
 import MontageReferences from "./pages/MontageReferences.jsx";
 import DiffuseAbnormalities from "./pages/DiffuseAbnormalities.jsx";
 import NeuroSyndromes from "./pages/NeuroSyndromes.jsx";
+import NeurologyEssentials from "./pages/NeurologyEssentials.jsx";
+import LabSafety from "./pages/LabSafety.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
@@ -233,6 +235,18 @@ function AppContent() {
             <Route path="/neuro-syndromes" element={
               <ProtectedRoute>
                 <NeuroSyndromes />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/neurology-essentials" element={
+              <ProtectedRoute>
+                <NeurologyEssentials />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/lab-safety" element={
+              <ProtectedRoute>
+                <LabSafety />
               </ProtectedRoute>
             } />
           </Routes>

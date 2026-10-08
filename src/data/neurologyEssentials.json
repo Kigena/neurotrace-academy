@@ -1,0 +1,1462 @@
+{
+  "title": "Neurology Essentials",
+  "subtitle": "Neuroanatomy, neurophysiology and neurological disorders for EEG technologists",
+  "tabs": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "intro": "Neuroanatomy questions on the registry exam test whether you can link a structure to its function, its blood supply and the deficit a lesion causes. This page builds that chain one link at a time and ties each topic back to what you see at the EEG machine.",
+      "sections": [
+        {
+          "title": "How to study this page",
+          "kind": "steps",
+          "items": [
+            "Learn the map first: lobes, major sulci and the brainstem levels where cranial nerve nuclei sit.",
+            "Attach a function to each structure (motor strip, Broca area, visual cortex, thalamus).",
+            "Attach a blood supply to each region (ACA, MCA, PCA, vertebrobasilar).",
+            "Then practise reverse reasoning: given a deficit, name the lesion site, the artery and the expected EEG change.",
+            "Finish with the disorders tab, focusing on the EEG relevance line for each condition.",
+            "Test yourself with the mistakes and memory lists at the bottom of the page."
+          ]
+        },
+        {
+          "title": "What the exam tends to ask",
+          "kind": "list",
+          "items": [
+            "Which cranial nerve is tested by a given bedside manoeuvre, or which nerve is mixed.",
+            "Which sulcus separates two lobes, and where primary motor, sensory, visual and auditory cortex lie.",
+            "Which artery supplies a region and what deficit follows its occlusion.",
+            "Upper versus lower motor neuron signs, aphasia types and visual field defects.",
+            "How the scalp EEG is generated (summed postsynaptic potentials of pyramidal cells, dipoles).",
+            "Key features of common neurological disorders and the EEG or evoked potential finding linked to them.",
+            "Exact weighting of topics changes over time; check the current ABRET content outline before your exam."
+          ]
+        },
+        {
+          "title": "Quick-reference table",
+          "kind": "table",
+          "head": [
+            "Structure",
+            "Main job",
+            "Lesion clue"
+          ],
+          "rows": [
+            [
+              "Precentral gyrus (frontal)",
+              "Primary motor cortex",
+              "Contralateral weakness"
+            ],
+            [
+              "Postcentral gyrus (parietal)",
+              "Primary somatosensory cortex",
+              "Contralateral sensory loss"
+            ],
+            [
+              "Inferior frontal gyrus, dominant side",
+              "Broca area (speech output)",
+              "Non-fluent aphasia"
+            ],
+            [
+              "Posterior superior temporal gyrus, dominant side",
+              "Wernicke area (comprehension)",
+              "Fluent aphasia, poor comprehension"
+            ],
+            [
+              "Calcarine cortex (occipital)",
+              "Primary visual cortex",
+              "Contralateral homonymous hemianopia"
+            ],
+            [
+              "Hippocampus (medial temporal)",
+              "Memory formation",
+              "Memory impairment (dense amnesia if bilateral); common seizure focus"
+            ],
+            [
+              "Thalamus",
+              "Sensory relay; thalamocortical rhythms",
+              "Contralateral sensory loss; altered spindles or alpha"
+            ],
+            [
+              "Basal ganglia",
+              "Movement selection and scaling",
+              "Parkinsonism, chorea, dystonia"
+            ],
+            [
+              "Cerebellum",
+              "Coordination, same side",
+              "Ipsilateral ataxia, intention tremor"
+            ],
+            [
+              "Brainstem reticular formation",
+              "Arousal",
+              "Coma"
+            ]
+          ]
+        },
+        {
+          "title": "The localisation chain",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Where?",
+              "body": "Cortex, subcortical white matter, deep grey nuclei, brainstem, spinal cord, nerve, junction or muscle. Each level has a signature set of signs."
+            },
+            {
+              "title": "Which side?",
+              "body": "Cerebral hemisphere lesions cause contralateral body signs. Cerebellar lesions cause ipsilateral signs. Brainstem lesions cause crossed signs."
+            },
+            {
+              "title": "Which vessel?",
+              "body": "The deficit pattern points to a territory: leg-predominant suggests ACA, face and arm with aphasia suggests MCA, field cut with memory loss suggests PCA."
+            },
+            {
+              "title": "What EEG?",
+              "body": "Cortical and white-matter lesions produce focal slowing and attenuation; deep small lesions may leave the EEG normal; diffuse processes produce generalized slowing."
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Cerebrum: contralateral. Cerebellum: ipsilateral. Brainstem: crossed (cranial nerve on lesion side, body on the opposite side).",
+        "The central (Rolandic) sulcus divides frontal from parietal lobe; the lateral (Sylvian) fissure separates the temporal lobe below from the frontal and parietal lobes above.",
+        "Language is in the left hemisphere in nearly all right-handers and most left-handers.",
+        "Scalp EEG mainly records summed postsynaptic potentials of cortical pyramidal neurons, not action potentials.",
+        "A normal EEG does not exclude a small deep stroke or lesion.",
+        "Know the classic triads: NPH (gait, incontinence, dementia), Horner (ptosis, miosis, anhidrosis), Parkinson (tremor, rigidity, bradykinesia)."
+      ],
+      "eegLink": "Knowing the anatomy lets you predict where an abnormality should appear on the montage and write a technical description that the reader can trust."
+    },
+    {
+      "id": "cranial-nerves",
+      "title": "Cranial Nerves",
+      "intro": "Twelve paired nerves leave the brain and brainstem. For each, know the number, name, type (sensory, motor or mixed), main job, bedside test and what a lesion looks like. Several of them generate or shape the artifacts you troubleshoot daily.",
+      "sections": [
+        {
+          "title": "The twelve cranial nerves",
+          "kind": "table",
+          "head": [
+            "No.",
+            "Name",
+            "Type",
+            "Main functions",
+            "Bedside test",
+            "Lesion signs"
+          ],
+          "rows": [
+            [
+              "I",
+              "Olfactory",
+              "Sensory",
+              "Smell",
+              "Identify a familiar odour, one nostril at a time",
+              "Anosmia (often after head trauma)"
+            ],
+            [
+              "II",
+              "Optic",
+              "Sensory",
+              "Vision; afferent limb of pupillary light reflex",
+              "Acuity, visual fields, fundoscopy, light reflex",
+              "Visual loss or field defect; afferent pupil defect"
+            ],
+            [
+              "III",
+              "Oculomotor",
+              "Motor (with parasympathetic fibres)",
+              "Most eye movements (MR, SR, IR, IO), lid elevation, pupil constriction, accommodation",
+              "Follow a target; pupils to light",
+              "Eye down and out, ptosis, dilated pupil"
+            ],
+            [
+              "IV",
+              "Trochlear",
+              "Motor",
+              "Superior oblique: depresses the adducted eye, intorts",
+              "Look down and in",
+              "Vertical diplopia worse looking down (stairs, reading); head tilt away from lesion"
+            ],
+            [
+              "V",
+              "Trigeminal",
+              "Mixed",
+              "Facial sensation (V1, V2, V3); muscles of mastication; afferent corneal reflex",
+              "Light touch and pinprick on face; clench jaw; corneal reflex",
+              "Facial numbness; jaw deviates toward weak side on opening"
+            ],
+            [
+              "VI",
+              "Abducens",
+              "Motor",
+              "Lateral rectus: abducts the eye",
+              "Look laterally",
+              "Horizontal diplopia; eye cannot abduct, turned inward"
+            ],
+            [
+              "VII",
+              "Facial",
+              "Mixed",
+              "Facial expression; taste anterior two-thirds of tongue; tear and saliva glands; stapedius; efferent corneal reflex",
+              "Raise brows, close eyes tightly, smile, puff cheeks",
+              "Facial weakness; loss of taste; hyperacusis; dry eye"
+            ],
+            [
+              "VIII",
+              "Vestibulocochlear",
+              "Sensory",
+              "Hearing and balance",
+              "Finger rub or whisper; Rinne and Weber tuning fork tests",
+              "Hearing loss, tinnitus, vertigo, nystagmus"
+            ],
+            [
+              "IX",
+              "Glossopharyngeal",
+              "Mixed",
+              "Taste and sensation posterior third of tongue and pharynx; afferent gag reflex; parotid gland; carotid sinus input",
+              "Gag reflex (with X)",
+              "Reduced gag, mild swallowing difficulty"
+            ],
+            [
+              "X",
+              "Vagus",
+              "Mixed",
+              "Palate, pharynx and larynx muscles; parasympathetic to heart, lungs and gut; efferent gag reflex",
+              "Say 'ah' and watch the palate rise; voice quality; gag",
+              "Hoarseness, dysphagia; uvula deviates away from the lesion side"
+            ],
+            [
+              "XI",
+              "Accessory",
+              "Motor",
+              "Sternocleidomastoid and trapezius",
+              "Shrug shoulders; turn head against resistance",
+              "Weak shoulder shrug; weak head turn"
+            ],
+            [
+              "XII",
+              "Hypoglossal",
+              "Motor",
+              "Tongue muscles",
+              "Protrude tongue; push into cheek",
+              "Tongue deviates toward the weak side; atrophy and fasciculations if LMN"
+            ]
+          ],
+          "note": "MR medial rectus, SR superior rectus, IR inferior rectus, IO inferior oblique."
+        },
+        {
+          "title": "Sensory, motor or mixed",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Pure sensory",
+              "body": "I, II and VIII carry special senses only: smell, vision, hearing and balance."
+            },
+            {
+              "title": "Mainly motor",
+              "body": "III, IV, VI, XI and XII. III also carries parasympathetic fibres to the pupil and lens but is usually classed as motor."
+            },
+            {
+              "title": "Mixed",
+              "body": "V, VII, IX and X carry both sensory and motor fibres. This is a favourite exam question.",
+              "points": [
+                "V: face sensation + chewing",
+                "VII: taste + facial expression",
+                "IX: pharynx sensation + stylopharyngeus",
+                "X: viscera and larynx sensation + palate, pharynx, larynx muscles"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Eye movements: III, IV and VI",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "The SO4 LR6 rule",
+              "body": "Superior oblique is supplied by IV, lateral rectus by VI; every other extraocular muscle (and the levator of the lid) is supplied by III."
+            },
+            {
+              "title": "Third nerve palsy",
+              "body": "The eye rests down and out because the unopposed lateral rectus and superior oblique pull it. Ptosis and a dilated pupil complete the picture.",
+              "points": [
+                "A painful third nerve palsy with a dilated pupil raises concern for a posterior communicating artery aneurysm"
+              ]
+            },
+            {
+              "title": "Fourth nerve palsy",
+              "body": "Patients report vertical double vision on looking down, such as walking downstairs, and may tilt the head to compensate."
+            },
+            {
+              "title": "Sixth nerve palsy",
+              "body": "The eye cannot move outward. Because of its long course, VI is often affected by raised intracranial pressure as a false localising sign."
+            }
+          ]
+        },
+        {
+          "title": "Reflexes that pair two nerves",
+          "kind": "table",
+          "head": [
+            "Reflex",
+            "Afferent (sensory)",
+            "Efferent (motor)"
+          ],
+          "rows": [
+            [
+              "Pupillary light",
+              "II",
+              "III (parasympathetic)"
+            ],
+            [
+              "Corneal (blink)",
+              "V (V1)",
+              "VII"
+            ],
+            [
+              "Gag",
+              "IX",
+              "X"
+            ],
+            [
+              "Jaw jerk",
+              "V",
+              "V"
+            ]
+          ]
+        },
+        {
+          "title": "EEG relevance",
+          "kind": "list",
+          "items": [
+            "The eye is a dipole: cornea positive relative to retina. Eye movements controlled by III, IV and VI shift this field and create frontal artifact.",
+            "Eye closure or a blink turns the eyes upward (Bell phenomenon), bringing the positive cornea toward Fp1 and Fp2.",
+            "Lateral gaze makes the electrode on the side the eyes turn toward (F7 or F8) more positive and the opposite side more negative.",
+            "Lateral rectus (VI) muscle spikes can appear at F7 or F8 with rapid lateral eye movements.",
+            "Glossokinetic artifact comes from tongue movement (XII); the tongue tip is negative relative to its base, producing slow waves in temporal and frontal derivations.",
+            "Chewing and jaw clenching (V, muscles of mastication) produce bursts of temporal muscle artifact.",
+            "Photic stimulation travels via II through the optic chiasm, optic tracts and optic radiations to occipital cortex, where the driving response appears.",
+            "A facial nerve (VII) palsy can make blink and eyelid flutter artifact asymmetric."
+          ]
+        }
+      ],
+      "pearls": [
+        "Mixed nerves: V, VII, IX, X.",
+        "SO4 LR6, all the rest 3.",
+        "Hypoglossal lesion: tongue points toward the weak side. Vagus lesion: uvula points away from the weak side.",
+        "Corneal reflex tests V in and VII out; gag tests IX in and X out.",
+        "Optic nerve (II) is technically a tract of the CNS, myelinated by oligodendrocytes; it is affected in multiple sclerosis (optic neuritis).",
+        "Brainstem levels: III and IV nuclei in the midbrain; V, VI, VII and VIII mainly in the pons and pontomedullary junction; IX, X and XII in the medulla.",
+        "Cornea positive, retina negative: the basis of every eye-movement artifact."
+      ],
+      "eegLink": "Correctly naming eye-movement, glossokinetic and chewing artifacts depends on knowing which cranial nerve moves which structure and the direction of the resulting dipole."
+    },
+    {
+      "id": "brain-landmarks",
+      "title": "Brain Landmarks",
+      "intro": "This tab covers the surface map of the cerebrum, the deep structures, the coverings of the brain, the ventricles and the skull landmarks used to place electrodes. Most localisation questions start here.",
+      "sections": [
+        {
+          "title": "Lobes and their functions",
+          "kind": "table",
+          "head": [
+            "Lobe",
+            "Key functions",
+            "Lesion or seizure clues"
+          ],
+          "rows": [
+            [
+              "Frontal",
+              "Voluntary movement (precentral gyrus), planning, judgment, personality, speech output (Broca, dominant side), eye fields",
+              "Weakness, disinhibition, apathy, non-fluent aphasia; seizures often brief, nocturnal, hypermotor"
+            ],
+            [
+              "Parietal",
+              "Somatosensory processing (postcentral gyrus), spatial awareness, reading and calculation (dominant)",
+              "Sensory loss, neglect (usually right parietal), inferior quadrantanopia"
+            ],
+            [
+              "Temporal",
+              "Hearing (Heschl gyrus), language comprehension (Wernicke, dominant), memory (hippocampus), emotion (amygdala)",
+              "Fluent aphasia, memory loss, superior quadrantanopia; most common focal epilepsy site"
+            ],
+            [
+              "Occipital",
+              "Vision (calcarine cortex)",
+              "Contralateral homonymous hemianopia; visual auras"
+            ],
+            [
+              "Insula",
+              "Taste, visceral and autonomic sensation; lies deep in the lateral fissure",
+              "Autonomic and visceral seizure symptoms"
+            ]
+          ]
+        },
+        {
+          "title": "Fissures, sulci and gyri",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Longitudinal fissure",
+              "body": "Separates the two cerebral hemispheres; the falx cerebri dips into it and the corpus callosum lies at its floor."
+            },
+            {
+              "title": "Lateral (Sylvian) fissure",
+              "body": "Separates the temporal lobe below from the frontal and parietal lobes above; the insula is hidden in its depth."
+            },
+            {
+              "title": "Central (Rolandic) sulcus",
+              "body": "Separates frontal from parietal lobe. In front is the precentral gyrus (primary motor); behind is the postcentral gyrus (primary somatosensory). Centrotemporal (Rolandic) spikes take their name from this region."
+            },
+            {
+              "title": "Parieto-occipital sulcus",
+              "body": "On the medial surface, separating parietal from occipital lobe."
+            },
+            {
+              "title": "Calcarine sulcus",
+              "body": "On the medial occipital surface; its banks form the primary visual cortex."
+            },
+            {
+              "title": "Motor and sensory homunculus",
+              "body": "Along the pre- and postcentral gyri, the leg and foot are represented on the medial surface near the midline and the face and hand laterally near the Sylvian fissure."
+            }
+          ]
+        },
+        {
+          "title": "Deep structures",
+          "kind": "table",
+          "head": [
+            "Structure",
+            "Role",
+            "EEG or clinical note"
+          ],
+          "rows": [
+            [
+              "Brainstem (midbrain, pons, medulla)",
+              "Cranial nerve nuclei, long tracts, reticular activating system, breathing and cardiovascular centres",
+              "Damage to the reticular activating system causes coma"
+            ],
+            [
+              "Cerebellum",
+              "Coordination, balance, motor learning; acts on the same side of the body",
+              "Ipsilateral ataxia; sits under the tentorium in the posterior fossa"
+            ],
+            [
+              "Thalamus",
+              "Relay for nearly all sensation (except smell) to cortex; part of thalamocortical circuits",
+              "Thalamocortical circuits generate sleep spindles and help pace rhythms such as alpha"
+            ],
+            [
+              "Hypothalamus",
+              "Temperature, hunger, hormones via pituitary, circadian rhythm",
+              "Gelastic seizures with hypothalamic hamartoma"
+            ],
+            [
+              "Basal ganglia (caudate, putamen, globus pallidus, subthalamic nucleus, substantia nigra)",
+              "Initiation and scaling of movement",
+              "Parkinsonism, chorea, hemiballismus"
+            ],
+            [
+              "Limbic system (hippocampus, amygdala, cingulate gyrus, fornix, mammillary bodies)",
+              "Memory and emotion",
+              "Mesial temporal sclerosis; deja vu and fear auras"
+            ],
+            [
+              "Corpus callosum",
+              "Largest commissure linking the two hemispheres",
+              "Helps spread seizures between hemispheres; callosotomy limits spread of drop attacks"
+            ]
+          ]
+        },
+        {
+          "title": "Meninges and spaces",
+          "kind": "table",
+          "head": [
+            "Layer or space",
+            "Description",
+            "Clinical link"
+          ],
+          "rows": [
+            [
+              "Dura mater",
+              "Tough outer layer; two layers that separate to enclose venous sinuses; forms falx cerebri and tentorium",
+              "Tentorial herniation compresses III"
+            ],
+            [
+              "Epidural space",
+              "Potential space between skull and dura",
+              "Epidural hematoma, usually middle meningeal artery"
+            ],
+            [
+              "Subdural space",
+              "Potential space between dura and arachnoid",
+              "Subdural hematoma from torn bridging veins"
+            ],
+            [
+              "Arachnoid mater",
+              "Thin web-like middle layer",
+              "Arachnoid granulations return CSF to venous sinuses"
+            ],
+            [
+              "Subarachnoid space",
+              "Between arachnoid and pia; contains CSF and major arteries",
+              "Subarachnoid hemorrhage, often ruptured berry aneurysm"
+            ],
+            [
+              "Pia mater",
+              "Delicate inner layer adherent to the brain surface",
+              "Follows every gyrus and sulcus"
+            ]
+          ]
+        },
+        {
+          "title": "Ventricles and CSF flow",
+          "kind": "steps",
+          "items": [
+            "CSF is produced mainly by the choroid plexus in the ventricles (roughly 500 mL per day; about 150 mL present at any time, so it turns over several times daily).",
+            "Lateral ventricles (one per hemisphere).",
+            "Interventricular foramina (of Monro).",
+            "Third ventricle (between the two thalami).",
+            "Cerebral aqueduct (of Sylvius) through the midbrain; a common site of obstruction.",
+            "Fourth ventricle (between pons/medulla and cerebellum).",
+            "Out through the median aperture (Magendie) and two lateral apertures (Luschka) into the subarachnoid space.",
+            "Reabsorbed through arachnoid granulations into the superior sagittal sinus."
+          ]
+        },
+        {
+          "title": "Skull bones and electrode landmarks",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Bones",
+              "body": "Frontal, paired parietal, paired temporal, occipital, sphenoid and ethmoid. Main sutures: coronal, sagittal, lambdoid and squamous."
+            },
+            {
+              "title": "Nasion",
+              "body": "The depression at the bridge of the nose where the frontal and nasal bones meet; the front reference point for 10-20 measurements."
+            },
+            {
+              "title": "Inion",
+              "body": "The external occipital protuberance, the bony bump at the back of the skull; the rear reference point."
+            },
+            {
+              "title": "Preauricular points",
+              "body": "The depressions just in front of the tragus of each ear, at the root of the zygomatic arch; define the side-to-side measurement through Cz."
+            },
+            {
+              "title": "Fontanelles",
+              "body": "Soft spots in the infant skull. The posterior closes within the first months, the anterior usually during the second year (timing varies). Avoid pressure and needle electrodes over them."
+            },
+            {
+              "title": "Skull defects",
+              "body": "Burr holes, craniotomy sites and fractures reduce skull resistance, producing higher-amplitude, sharper-looking activity (breach rhythm). Document them on the head chart."
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Precentral gyrus = motor; postcentral gyrus = sensory. The central sulcus sits between them.",
+        "C3 and C4 lie roughly over the central (Rolandic) region; T3/T4 (T7/T8) over the mid-temporal region; O1/O2 over occipital cortex.",
+        "CSF pathway: lateral ventricles, foramina of Monro, third ventricle, aqueduct, fourth ventricle, Magendie and Luschka, subarachnoid space, arachnoid granulations.",
+        "Epidural = arterial; subdural = venous (bridging veins); subarachnoid = aneurysm until proven otherwise.",
+        "The thalamus relays all senses except smell (olfaction reaches the cortex without an obligatory thalamic relay).",
+        "The hippocampus sits in the medial temporal lobe and is the classic focus in mesial temporal lobe epilepsy.",
+        "Nasion, inion and both preauricular points are the four landmarks for 10-20 measurement."
+      ],
+      "eegLink": "Accurate 10-20 placement depends on finding the nasion, inion and preauricular points, and the electrode names (C, T, P, O) map directly onto the lobes and sulci on this tab."
+    },
+    {
+      "id": "blood-supply",
+      "title": "Blood Supply and Stroke",
+      "intro": "The brain receives blood through two internal carotid arteries (anterior circulation) and two vertebral arteries (posterior circulation), linked at the circle of Willis. Each artery feeds a territory with a predictable deficit when it is blocked, and the EEG reflects ischemia within seconds.",
+      "sections": [
+        {
+          "title": "Circle of Willis and collateral flow",
+          "kind": "list",
+          "items": [
+            "Internal carotid arteries give rise to the anterior cerebral (ACA) and middle cerebral (MCA) arteries.",
+            "Vertebral arteries join to form the basilar artery, which divides into the two posterior cerebral arteries (PCA).",
+            "The anterior communicating artery links the two ACAs; the posterior communicating arteries link each internal carotid to the PCA.",
+            "This ring allows collateral flow when one vessel narrows slowly, which is why some carotid occlusions cause no symptoms.",
+            "The circle is incomplete or variable in many people, so collateral protection differs between patients.",
+            "Communicating arteries and branch points are common sites of berry (saccular) aneurysms."
+          ]
+        },
+        {
+          "title": "Arterial territories and deficits",
+          "kind": "table",
+          "head": [
+            "Artery",
+            "Territory",
+            "Typical deficit when occluded"
+          ],
+          "rows": [
+            [
+              "Anterior cerebral (ACA)",
+              "Medial frontal and parietal lobes, including the leg area of the motor and sensory strips",
+              "Contralateral leg greater than arm weakness and sensory loss; apathy, abulia; urinary incontinence"
+            ],
+            [
+              "Middle cerebral (MCA)",
+              "Most of the lateral convexity: frontal, parietal and lateral temporal lobes; deep branches (lenticulostriate) to basal ganglia and internal capsule",
+              "Contralateral face and arm greater than leg weakness and sensory loss; aphasia if dominant; neglect if non-dominant; homonymous hemianopia; gaze deviation toward the lesion"
+            ],
+            [
+              "Posterior cerebral (PCA)",
+              "Occipital lobe, inferior and medial temporal lobe, thalamus",
+              "Contralateral homonymous hemianopia, often with macular sparing; memory loss; alexia without agraphia if dominant"
+            ],
+            [
+              "Vertebrobasilar",
+              "Brainstem, cerebellum, occipital lobes",
+              "Vertigo, diplopia, dysarthria, dysphagia, ataxia, crossed signs, coma; basilar occlusion can cause locked-in syndrome"
+            ]
+          ],
+          "note": "The MCA is the most commonly affected territory in ischemic stroke."
+        },
+        {
+          "title": "Venous drainage and the blood-brain barrier",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Venous sinuses",
+              "body": "Channels within the dura. The superior sagittal sinus drains to the confluence of sinuses; the inferior sagittal sinus joins the great cerebral vein to form the straight sinus, which also drains to the confluence, then the transverse and sigmoid sinuses, then the internal jugular veins."
+            },
+            {
+              "title": "Cavernous sinus",
+              "body": "Beside the pituitary; contains the internal carotid artery and cranial nerves III, IV, V1, V2 and VI."
+            },
+            {
+              "title": "Venous sinus thrombosis",
+              "body": "Clot in a sinus causes headache, raised pressure, seizures and hemorrhagic venous infarcts; seen with pregnancy, dehydration and clotting disorders."
+            },
+            {
+              "title": "Blood-brain barrier",
+              "body": "Formed by tight junctions between capillary endothelial cells, supported by astrocyte foot processes. It keeps many drugs, toxins and pathogens out of brain tissue; breakdown occurs with tumors, infection and stroke."
+            }
+          ]
+        },
+        {
+          "title": "Types of stroke and vascular lesions",
+          "kind": "table",
+          "head": [
+            "Type",
+            "Mechanism",
+            "Clues"
+          ],
+          "rows": [
+            [
+              "Thrombotic",
+              "Clot forms on an atherosclerotic plaque in a large artery",
+              "Often stepwise or stuttering onset, may occur during sleep"
+            ],
+            [
+              "Embolic",
+              "Clot travels from the heart (atrial fibrillation) or carotid plaque and lodges downstream",
+              "Sudden, maximal at onset; may affect several territories"
+            ],
+            [
+              "Lacunar",
+              "Small deep penetrating artery occlusion, linked to hypertension and diabetes",
+              "Pure motor, pure sensory, sensorimotor, ataxic hemiparesis or dysarthria-clumsy hand; no cortical signs such as aphasia; no cortical signs such as aphasia"
+            ],
+            [
+              "Transient ischemic attack (TIA)",
+              "Temporary focal ischemia without infarction on imaging",
+              "Symptoms resolve, usually within an hour; warning of future stroke"
+            ],
+            [
+              "Watershed (border zone)",
+              "Low flow between two territories, such as ACA-MCA, after hypotension or cardiac arrest",
+              "Proximal arm and shoulder weakness bilaterally"
+            ],
+            [
+              "Intracerebral hemorrhage",
+              "Bleeding into brain tissue, commonly from hypertension; also amyloid angiopathy",
+              "Headache, vomiting, declining consciousness; deep locations (basal ganglia, thalamus, pons, cerebellum)"
+            ],
+            [
+              "Subarachnoid hemorrhage",
+              "Bleeding into the subarachnoid space, usually from a ruptured berry aneurysm",
+              "Sudden 'worst headache of life', neck stiffness; risk of later vasospasm"
+            ],
+            [
+              "Aneurysm",
+              "Weak outpouching of an artery wall, often at circle of Willis branch points",
+              "Silent until rupture or nerve compression (painful III palsy)"
+            ],
+            [
+              "Arteriovenous malformation (AVM)",
+              "Tangle of vessels with direct artery-to-vein flow, no capillary bed",
+              "Hemorrhage or seizures in younger patients"
+            ]
+          ]
+        },
+        {
+          "title": "Ischemia versus infarction",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Ischemia",
+              "body": "Blood flow too low for normal function; neurons stop firing but are still alive and can recover if flow returns quickly. The area around an infarct that is still salvageable is called the penumbra."
+            },
+            {
+              "title": "Infarction",
+              "body": "Tissue death from prolonged or severe ischemia; the loss is permanent."
+            },
+            {
+              "title": "Flow thresholds (approximate)",
+              "body": "Normal cerebral blood flow is about 50 mL per 100 g per minute. EEG slowing appears as flow falls toward roughly 20 to 25, the EEG flattens near 10 to 15, and infarction becomes likely below about 10; infarction depends on both the depth and the duration of low flow.",
+              "points": [
+                "This is why EEG is used to monitor during carotid endarterectomy"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "EEG changes after stroke",
+          "kind": "list",
+          "items": [
+            "Within seconds of cortical ischemia: loss of faster frequencies, then slowing, then attenuation on the affected side.",
+            "Acute cortical infarct: focal polymorphic delta and reduced or absent alpha and beta over the lesion.",
+            "Lateralized periodic discharges (LPDs) may follow large acute cortical strokes and carry seizure risk.",
+            "Small subcortical lacunes often leave the EEG normal.",
+            "Thalamic strokes may alter spindles and background on the same side.",
+            "Over weeks, slowing usually lessens; persistent epileptiform discharges suggest risk of post-stroke epilepsy.",
+            "Large brainstem lesions can produce coma patterns such as alpha coma."
+          ]
+        }
+      ],
+      "pearls": [
+        "ACA = leg; MCA = face and arm plus language or neglect; PCA = vision.",
+        "Brainstem stroke gives crossed signs: cranial nerve deficit on one side, body weakness on the other.",
+        "Lacunar strokes lack cortical signs and often have a normal EEG.",
+        "Epidural bleeds are arterial, subarachnoid bleeds are usually aneurysmal, intracerebral bleeds are usually hypertensive.",
+        "The penumbra is ischemic but salvageable tissue; restoring flow quickly is the goal of acute stroke treatment.",
+        "Watershed infarcts follow global hypoperfusion such as cardiac arrest or severe hypotension.",
+        "During carotid endarterectomy monitoring, new ipsilateral slowing or attenuation after clamping must be reported to the surgical team immediately."
+      ],
+      "eegLink": "Because EEG changes within seconds of falling blood flow, recognising new focal slowing or attenuation lets the team act while tissue is still ischemic rather than infarcted."
+    },
+    {
+      "id": "pathways-signs",
+      "title": "Pathways and Signs",
+      "intro": "Clinical signs come from interrupting specific pathways. Knowing where each tract crosses tells you which side the lesion is on, and recognising motor, cerebellar and language signs helps you understand the patient and the request on the EEG order.",
+      "sections": [
+        {
+          "title": "Major long tracts",
+          "kind": "table",
+          "head": [
+            "Tract",
+            "Carries",
+            "Where it crosses"
+          ],
+          "rows": [
+            [
+              "Lateral corticospinal",
+              "Voluntary movement from motor cortex via internal capsule, cerebral peduncle, pons and medullary pyramids",
+              "Most fibres cross at the pyramidal decussation in the lower medulla"
+            ],
+            [
+              "Dorsal columns (medial lemniscus)",
+              "Fine touch, vibration, joint position sense",
+              "Crosses in the lower medulla"
+            ],
+            [
+              "Spinothalamic",
+              "Pain and temperature (and crude touch)",
+              "Crosses in the spinal cord within one or two segments of entry"
+            ]
+          ],
+          "note": "Half-cord lesion (Brown-Sequard): same-side weakness and loss of vibration and position, opposite-side loss of pain and temperature."
+        },
+        {
+          "title": "Upper versus lower motor neuron",
+          "kind": "table",
+          "head": [
+            "Feature",
+            "Upper motor neuron (brain, cord tracts)",
+            "Lower motor neuron (anterior horn, nerve)"
+          ],
+          "rows": [
+            [
+              "Tone",
+              "Increased: spasticity",
+              "Decreased: flaccid"
+            ],
+            [
+              "Reflexes",
+              "Brisk, with clonus",
+              "Reduced or absent"
+            ],
+            [
+              "Plantar response",
+              "Extensor (Babinski sign)",
+              "Flexor (normal)"
+            ],
+            [
+              "Muscle bulk",
+              "Mild disuse atrophy only",
+              "Marked atrophy"
+            ],
+            [
+              "Fasciculations",
+              "Absent",
+              "Present"
+            ],
+            [
+              "Examples",
+              "Stroke, MS, spinal cord injury",
+              "Peripheral neuropathy, GBS, polio; ALS has both"
+            ]
+          ]
+        },
+        {
+          "title": "Key motor signs",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Babinski sign",
+              "body": "Stroking the lateral sole makes the big toe extend upward and the other toes fan. Abnormal after infancy, it indicates a corticospinal (UMN) lesion; it is normal in young infants."
+            },
+            {
+              "title": "Clonus",
+              "body": "Rhythmic repeated contractions when a muscle is suddenly stretched, such as dorsiflexing the ankle. A sign of UMN damage. Can create rhythmic movement artifact."
+            },
+            {
+              "title": "Spasticity",
+              "body": "Velocity-dependent resistance to passive movement, often with a 'clasp-knife' give; UMN sign."
+            },
+            {
+              "title": "Rigidity",
+              "body": "Resistance throughout the range regardless of speed ('lead-pipe'); with superimposed tremor it feels like 'cogwheel'. Basal ganglia sign, typical of Parkinson disease."
+            }
+          ]
+        },
+        {
+          "title": "Cerebellar and basal ganglia signs",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Cerebellar",
+              "body": "Signs appear on the same side as the lesion.",
+              "points": [
+                "Ataxia and wide-based gait",
+                "Intention tremor (worse approaching a target)",
+                "Dysmetria (past-pointing)",
+                "Dysdiadochokinesia (clumsy rapid alternating movements)",
+                "Nystagmus and scanning speech"
+              ]
+            },
+            {
+              "title": "Basal ganglia: too little movement",
+              "body": "Hypokinetic disorders such as Parkinson disease.",
+              "points": [
+                "Resting tremor",
+                "Rigidity",
+                "Bradykinesia",
+                "Postural instability"
+              ]
+            },
+            {
+              "title": "Basal ganglia: too much movement",
+              "body": "Hyperkinetic disorders.",
+              "points": [
+                "Chorea (Huntington disease)",
+                "Hemiballismus (contralateral subthalamic nucleus)",
+                "Dystonia",
+                "Tics"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Higher cortical signs",
+          "kind": "table",
+          "head": [
+            "Sign",
+            "Features",
+            "Lesion site"
+          ],
+          "rows": [
+            [
+              "Broca (expressive) aphasia",
+              "Non-fluent, effortful speech; comprehension relatively preserved; patient aware and frustrated",
+              "Dominant inferior frontal gyrus"
+            ],
+            [
+              "Wernicke (receptive) aphasia",
+              "Fluent but meaningless speech with wrong words; poor comprehension; often unaware",
+              "Dominant posterior superior temporal gyrus"
+            ],
+            [
+              "Conduction aphasia",
+              "Fluent, comprehension good, repetition poor",
+              "Arcuate fasciculus"
+            ],
+            [
+              "Global aphasia",
+              "All language functions impaired",
+              "Large dominant MCA territory"
+            ],
+            [
+              "Neglect",
+              "Ignores one side of space and body",
+              "Usually right (non-dominant) parietal, causing left neglect"
+            ],
+            [
+              "Bitemporal hemianopia",
+              "Loss of both outer fields",
+              "Optic chiasm, often pituitary tumor"
+            ],
+            [
+              "Homonymous hemianopia",
+              "Loss of the same side of the field in both eyes",
+              "Contralateral optic tract, radiation or occipital cortex"
+            ],
+            [
+              "Superior quadrantanopia",
+              "Upper quadrant loss, opposite side",
+              "Temporal lobe (Meyer loop)"
+            ],
+            [
+              "Inferior quadrantanopia",
+              "Lower quadrant loss, opposite side",
+              "Parietal optic radiation"
+            ]
+          ]
+        },
+        {
+          "title": "Horner syndrome and posturing",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Horner syndrome",
+              "body": "Interruption of the sympathetic pathway to one side of the face: ptosis (mild), miosis (small pupil) and anhidrosis (reduced sweating). Causes include brainstem stroke, carotid dissection and lung apex tumor."
+            },
+            {
+              "title": "Decorticate posturing",
+              "body": "Arms flexed at elbows and wrists, legs extended. Suggests a lesion above the midbrain (hemispheres, internal capsule)."
+            },
+            {
+              "title": "Decerebrate posturing",
+              "body": "Arms and legs extended with arms internally rotated. Suggests a midbrain or upper pons lesion and carries a worse prognosis."
+            }
+          ]
+        },
+        {
+          "title": "Glasgow Coma Scale",
+          "kind": "table",
+          "head": [
+            "Component",
+            "Scores"
+          ],
+          "rows": [
+            [
+              "Eye opening (1-4)",
+              "4 spontaneous; 3 to voice; 2 to pain or pressure; 1 none"
+            ],
+            [
+              "Verbal response (1-5)",
+              "5 oriented; 4 confused; 3 inappropriate words; 2 incomprehensible sounds; 1 none"
+            ],
+            [
+              "Motor response (1-6)",
+              "6 obeys commands; 5 localises pain; 4 withdraws; 3 abnormal flexion (decorticate); 2 extension (decerebrate); 1 none"
+            ]
+          ],
+          "note": "Total ranges from 3 to 15. Commonly: 13-15 mild, 9-12 moderate, 8 or less severe (coma)."
+        }
+      ],
+      "pearls": [
+        "UMN: spastic, brisk reflexes, Babinski. LMN: flaccid, absent reflexes, atrophy, fasciculations.",
+        "Spasticity depends on speed of stretch; rigidity does not.",
+        "Corticospinal and dorsal column pathways cross in the medulla; spinothalamic crosses in the spinal cord.",
+        "Broca = broken speech, understands; Wernicke = fluent word salad, does not understand.",
+        "Pituitary tumor pressing the chiasm gives bitemporal hemianopia.",
+        "Decerebrate (extensor) posturing is lower and worse than decorticate (flexor).",
+        "The lowest possible GCS is 3, not 0.",
+        "A Babinski sign is normal in young infants."
+      ],
+      "eegLink": "Clinical signs on the requisition (hemiparesis, aphasia, field cut) predict where focal slowing or discharges are likely, guiding electrode checks and extra derivations."
+    },
+    {
+      "id": "neurophysiology",
+      "title": "Neurophysiology",
+      "intro": "The EEG is electricity produced by neurons. Understanding membrane potentials, synapses and dipoles explains why the scalp records what it does, why some sources are invisible, and how drugs change the recording.",
+      "sections": [
+        {
+          "title": "Resting membrane potential",
+          "kind": "list",
+          "items": [
+            "The inside of a resting neuron is negative relative to the outside, roughly -70 mV (typically -60 to -70 mV).",
+            "The sodium-potassium pump moves 3 Na+ out and 2 K+ in, using ATP, keeping Na+ high outside and K+ high inside.",
+            "At rest the membrane is most permeable to K+, which leaks out and leaves the interior negative.",
+            "Raising extracellular K+ depolarizes neurons and increases excitability."
+          ]
+        },
+        {
+          "title": "Action potential",
+          "kind": "steps",
+          "items": [
+            "A stimulus depolarizes the membrane to threshold (around -55 mV).",
+            "Voltage-gated Na+ channels open; Na+ rushes in and the inside becomes positive (overshoot).",
+            "Na+ channels inactivate and voltage-gated K+ channels open; K+ flows out and repolarizes the membrane.",
+            "A brief hyperpolarization (undershoot) follows before the resting level returns.",
+            "During the absolute refractory period no new spike can fire; during the relative refractory period a stronger stimulus is needed.",
+            "The action potential is all-or-none and lasts about 1 to 2 ms."
+          ]
+        },
+        {
+          "title": "Synapse, EPSP and IPSP",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Chemical synapse",
+              "body": "An action potential reaches the axon terminal, Ca2+ enters, and vesicles release neurotransmitter into the cleft to bind receptors on the next cell."
+            },
+            {
+              "title": "EPSP",
+              "body": "Excitatory postsynaptic potential: a small depolarization (often Na+ entry through glutamate receptors) that moves the cell toward threshold."
+            },
+            {
+              "title": "IPSP",
+              "body": "Inhibitory postsynaptic potential: a hyperpolarization or stabilisation, typically Cl- entry through GABA-A receptors or K+ exit through GABA-B receptors."
+            },
+            {
+              "title": "Summation",
+              "body": "Postsynaptic potentials are graded and add up over time (temporal summation) and across many synapses (spatial summation)."
+            }
+          ]
+        },
+        {
+          "title": "Why the scalp EEG shows postsynaptic potentials",
+          "kind": "list",
+          "items": [
+            "Scalp EEG mainly reflects summed EPSPs and IPSPs of large cortical pyramidal neurons.",
+            "Pyramidal cells are lined up in parallel with apical dendrites perpendicular to the cortical surface, so their currents add rather than cancel (an open field).",
+            "Postsynaptic potentials last tens of milliseconds and overlap in time across thousands of cells; action potentials are too brief and too poorly synchronized to sum at the scalp.",
+            "Many square centimetres of synchronously active cortex (classically at least 6 cm2, and typically 10 to 20 cm2 for most scalp-visible spikes) are needed for a discharge to be seen on scalp EEG.",
+            "Skull, scalp and CSF attenuate and spread the signal, so scalp amplitudes are far smaller than cortical ones.",
+            "Thalamocortical circuits help synchronize cortical activity and pace rhythms such as sleep spindles."
+          ]
+        },
+        {
+          "title": "Dipoles",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "What a dipole is",
+              "body": "Synaptic current enters the neuron at one place (a sink) and exits at another (a source), creating a negative pole and a positive pole along the cell."
+            },
+            {
+              "title": "Radial dipole",
+              "body": "Generated on the crown of a gyrus, perpendicular to the scalp; one pole faces the electrodes and is recorded well."
+            },
+            {
+              "title": "Tangential dipole",
+              "body": "Generated in the wall of a sulcus, parallel to the scalp; may show a negative and positive maximum at separate electrodes, as in the centrotemporal spikes of self-limited epilepsy with centrotemporal spikes (SeLECTS, formerly benign Rolandic epilepsy)."
+            },
+            {
+              "title": "Polarity",
+              "body": "Most scalp epileptiform discharges are surface-negative. Phase reversals in bipolar montages and maxima in referential montages locate the field."
+            }
+          ]
+        },
+        {
+          "title": "Neurotransmitters",
+          "kind": "table",
+          "head": [
+            "Transmitter",
+            "Main role",
+            "Clinical and EEG link"
+          ],
+          "rows": [
+            [
+              "Glutamate",
+              "Main excitatory transmitter of the brain (AMPA, NMDA receptors)",
+              "Excess glutamate drives seizures and excitotoxic injury"
+            ],
+            [
+              "GABA",
+              "Main inhibitory transmitter of the brain",
+              "Benzodiazepines and barbiturates enhance GABA-A, increasing beta activity on EEG"
+            ],
+            [
+              "Glycine",
+              "Inhibitory transmitter in spinal cord and brainstem",
+              "Strychnine and tetanus disrupt glycine inhibition"
+            ],
+            [
+              "Acetylcholine",
+              "Neuromuscular junction; basal forebrain arousal and memory; parasympathetic",
+              "Lost in Alzheimer disease; receptors attacked in myasthenia gravis"
+            ],
+            [
+              "Dopamine",
+              "Substantia nigra to striatum (movement); reward pathways",
+              "Lost in Parkinson disease"
+            ],
+            [
+              "Serotonin and norepinephrine",
+              "Brainstem nuclei (raphe, locus coeruleus) modulating mood, arousal and sleep",
+              "Involved in sleep-wake regulation"
+            ]
+          ]
+        },
+        {
+          "title": "Myelin and conduction",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Who makes myelin",
+              "body": "Oligodendrocytes in the central nervous system; Schwann cells in the peripheral nervous system."
+            },
+            {
+              "title": "Saltatory conduction",
+              "body": "The action potential jumps between nodes of Ranvier, making myelinated fibres much faster and more energy-efficient."
+            },
+            {
+              "title": "Speed",
+              "body": "Larger diameter and thicker myelin give faster conduction; small unmyelinated fibres (some pain fibres) are slowest."
+            },
+            {
+              "title": "Demyelination",
+              "body": "Slows or blocks conduction: central in multiple sclerosis (prolonged VEP latency), peripheral in Guillain-Barre syndrome (slowed nerve conduction)."
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Resting potential about -70 mV; threshold about -55 mV.",
+        "Depolarization = Na+ in; repolarization = K+ out.",
+        "Scalp EEG = summed postsynaptic potentials of vertically oriented pyramidal neurons, not action potentials.",
+        "Glutamate excites; GABA inhibits.",
+        "Benzodiazepines and barbiturates produce excess beta activity through GABA-A enhancement.",
+        "CNS myelin from oligodendrocytes, PNS myelin from Schwann cells.",
+        "Gyral crown sources are radial and seen best; sulcal sources are tangential and may be missed or show two poles."
+      ],
+      "eegLink": "Dipole orientation and the area of synchronous cortex explain why some discharges have a clean phase reversal, some show a horizontal dipole, and some deep or small sources never reach the scalp."
+    },
+    {
+      "id": "disorders",
+      "title": "Neurological Disorders",
+      "intro": "These are the conditions most often named in neuroanatomy questions and on EEG requisitions. For each, learn the core features and the EEG or evoked potential relevance, plus any practical point for the technologist.",
+      "sections": [
+        {
+          "title": "Headache and facial pain",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Migraine: modern view",
+              "body": "A primary brain disorder. Cortical spreading depression, a slow wave of neuronal depolarization followed by suppression moving across the cortex, is thought to cause the aura. Activation of the trigeminovascular system with release of peptides such as CGRP produces the pain.",
+              "points": [
+                "Migraine with aura was historically called classic migraine; without aura, common migraine",
+                "EEG is usually normal between attacks; focal slowing may occur during aura or hemiplegic migraine"
+              ]
+            },
+            {
+              "title": "Migraine: classic vascular theory",
+              "body": "Older teaching, still used in exam wording: the aura results from intracranial vasoconstriction and the headache from rebound vasodilation of cranial vessels. Blood-flow changes do occur but are now viewed as secondary rather than the root cause."
+            },
+            {
+              "title": "Tension-type headache",
+              "body": "Bilateral, pressing or band-like, mild to moderate, without significant nausea and not worsened by routine activity. EEG normal; scalp and jaw muscle tension can add muscle artifact."
+            },
+            {
+              "title": "Trigeminal neuralgia",
+              "body": "Brief electric-shock pain in V2 or V3 triggered by touch, chewing or wind, often from vascular compression of the nerve; MS is a cause in younger patients. Commonly treated with carbamazepine. Apply facial and frontopolar electrodes gently and ask about trigger zones."
+            }
+          ]
+        },
+        {
+          "title": "Cranial nerve and demyelinating disorders",
+          "kind": "table",
+          "head": [
+            "Disorder",
+            "Key features",
+            "EEG or EP relevance"
+          ],
+          "rows": [
+            [
+              "Bell palsy",
+              "Idiopathic LMN facial (VII) palsy: whole half of face weak including forehead; may lose taste and have hyperacusis. A central (UMN) lesion such as stroke spares the forehead",
+              "Blink and eyelid artifact may be asymmetric; protect the eye that will not close"
+            ],
+            [
+              "Acoustic neuroma (vestibular schwannoma)",
+              "Benign Schwann cell tumor of VIII at the cerebellopontine angle; one-sided hearing loss, tinnitus, imbalance; large tumors affect V and VII; bilateral tumors suggest neurofibromatosis type 2",
+              "BAEP shows prolonged interpeak latencies (I-III, I-V) or absent waves on the affected side"
+            ],
+            [
+              "Multiple sclerosis",
+              "Autoimmune CNS demyelination, more common in young women; relapsing-remitting course most common; optic neuritis, internuclear ophthalmoplegia, sensory symptoms, Lhermitte sign, symptoms worse with heat (Uhthoff)",
+              "VEP: prolonged P100 latency; EEG usually normal or nonspecific; seizures occur in a minority"
+            ]
+          ]
+        },
+        {
+          "title": "Movement and neuromuscular disorders",
+          "kind": "table",
+          "head": [
+            "Disorder",
+            "Key features",
+            "EEG or technologist relevance"
+          ],
+          "rows": [
+            [
+              "Parkinson disease",
+              "Loss of dopamine neurons in the substantia nigra; resting pill-rolling tremor about 4-6 Hz, rigidity, bradykinesia, postural instability",
+              "Rhythmic tremor artifact that can mimic rhythmic slowing; background may slow with dementia; deep brain stimulators cause artifact"
+            ],
+            [
+              "Huntington disease",
+              "Autosomal dominant CAG repeat expansion (HTT gene, chromosome 4); caudate atrophy; chorea, psychiatric change, dementia",
+              "Low-voltage background is often described; abundant movement artifact"
+            ],
+            [
+              "Amyotrophic lateral sclerosis (ALS)",
+              "Degeneration of both UMN and LMN; weakness, atrophy, fasciculations with brisk reflexes; sensation usually spared",
+              "EEG typically normal; EMG shows denervation; respiratory weakness matters for positioning"
+            ],
+            [
+              "Myasthenia gravis",
+              "Autoantibodies against postsynaptic acetylcholine receptors at the neuromuscular junction; fatigable weakness, ptosis, diplopia; linked to thymus abnormalities; treated with cholinesterase inhibitors such as pyridostigmine",
+              "Decrement on repetitive nerve stimulation; EEG unaffected; ptosis can alter eye artifacts"
+            ],
+            [
+              "Guillain-Barre syndrome",
+              "Acute immune peripheral demyelination, often after infection; ascending weakness, areflexia; high CSF protein with normal cell count; may need ventilation",
+              "Nerve conduction slowing; EEG normal. A paralysed patient may be fully awake: speak to and treat them as conscious"
+            ]
+          ]
+        },
+        {
+          "title": "Dementias and hydrocephalus",
+          "kind": "table",
+          "head": [
+            "Disorder",
+            "Key features",
+            "EEG relevance"
+          ],
+          "rows": [
+            [
+              "Alzheimer disease",
+              "Most common dementia; amyloid plaques and tau neurofibrillary tangles; cholinergic loss; gradual memory decline",
+              "Early EEG may be normal; later slowing of the posterior dominant rhythm and increased theta and delta"
+            ],
+            [
+              "Vascular dementia",
+              "Stepwise decline after multiple strokes or small-vessel disease",
+              "Focal or asymmetric slowing depending on infarcts"
+            ],
+            [
+              "Dementia with Lewy bodies",
+              "Fluctuating cognition, visual hallucinations, parkinsonism, REM sleep behaviour disorder; sensitive to antipsychotics",
+              "Posterior background slowing tends to appear earlier than in Alzheimer disease"
+            ],
+            [
+              "Creutzfeldt-Jakob disease (CJD)",
+              "Prion disease; rapidly progressive dementia with myoclonus",
+              "Periodic sharp wave complexes about 1 per second in sporadic CJD (may be absent early); use prion infection-control precautions per facility policy, often disposable electrodes"
+            ],
+            [
+              "Hydrocephalus",
+              "Excess CSF with enlarged ventricles; obstructive (non-communicating) or communicating; in infants, enlarging head and bulging fontanelle",
+              "Note shunt location and avoid placing electrodes over shunt hardware or reservoir"
+            ],
+            [
+              "Normal pressure hydrocephalus",
+              "Older adults; triad of magnetic gait, urinary incontinence and dementia; may improve with shunting",
+              "EEG nonspecific; gait instability is a fall risk in the lab"
+            ]
+          ]
+        },
+        {
+          "title": "Tumors and head trauma",
+          "kind": "table",
+          "head": [
+            "Condition",
+            "Key features",
+            "EEG relevance"
+          ],
+          "rows": [
+            [
+              "Glioma",
+              "Arises from glial cells; ranges from lower-grade tumors (for example some astrocytomas and oligodendrogliomas) to glioblastoma, the most aggressive, the most aggressive",
+              "Focal polymorphic delta from white matter involvement; slow-growing cortical tumors are especially epileptogenic"
+            ],
+            [
+              "Meningioma",
+              "Usually benign, extra-axial tumor from arachnoid cells, more common in women; compresses rather than invades brain",
+              "Focal slowing or discharges near the tumor; may cause seizures"
+            ],
+            [
+              "Metastases",
+              "Most common intracranial tumors in adults; often from lung, breast, melanoma; at the grey-white junction, frequently multiple",
+              "Multifocal slowing; seizures"
+            ],
+            [
+              "Epidural hematoma",
+              "Arterial (often middle meningeal artery) after temporal skull fracture; lens-shaped; does not cross sutures; classically a lucid interval (present in a minority) followed by rapid decline",
+              "Neurosurgical emergency; EEG rarely the first test"
+            ],
+            [
+              "Subdural hematoma",
+              "Torn bridging veins; crescent-shaped, crosses sutures; acute or chronic; elderly, alcohol use and anticoagulation increase risk",
+              "Reduced amplitude over the collection (fluid between cortex and electrodes) with slowing"
+            ],
+            [
+              "Concussion",
+              "Mild traumatic brain injury with transient dysfunction; imaging normal",
+              "EEG often normal or shows transient nonspecific slowing"
+            ],
+            [
+              "Diffuse axonal injury",
+              "Shearing of axons at grey-white junction, corpus callosum and brainstem from acceleration-deceleration; coma out of proportion to CT findings",
+              "Diffuse slowing; coma patterns in severe cases"
+            ]
+          ],
+          "note": "After craniotomy or skull fracture, expect breach rhythm over the defect and do not mistake it for epileptiform activity."
+        },
+        {
+          "title": "Infections and other conditions",
+          "kind": "table",
+          "head": [
+            "Condition",
+            "Key features",
+            "EEG or technologist relevance"
+          ],
+          "rows": [
+            [
+              "Meningitis",
+              "Inflammation of the meninges; fever, headache, neck stiffness, altered mental status; bacterial meningitis is an emergency",
+              "Diffuse slowing if the brain is involved; follow isolation precautions per facility policy (droplet precautions for suspected meningococcal disease)"
+            ],
+            [
+              "Encephalitis",
+              "Inflammation of brain tissue; confusion, seizures, fever. Herpes simplex encephalitis targets the temporal lobes",
+              "HSV: temporal slowing and lateralized periodic discharges are classic; diffuse slowing in others"
+            ],
+            [
+              "Brain abscess",
+              "Encapsulated pus collection; headache, fever, focal signs",
+              "Focal polymorphic delta over the abscess"
+            ],
+            [
+              "Syncope",
+              "Brief loss of consciousness from global cerebral hypoperfusion; prodrome of lightheadedness, pallor, sweating, dimming vision; quick recovery with little confusion; a few brief jerks can occur (convulsive syncope)",
+              "EEG during the event shows high-amplitude slowing, then flattening, then recovery, with no evolving rhythmic discharge; watch the ECG channel for asystole or bradycardia"
+            ],
+            [
+              "Seizure (for contrast)",
+              "May have aura, longer convulsion, lateral tongue biting, prolonged postictal confusion",
+              "Ictal EEG shows evolving rhythmic activity"
+            ],
+            [
+              "Cerebral palsy",
+              "Non-progressive motor disorder from injury to the developing brain; spastic type most common; often with epilepsy and intellectual disability",
+              "Muscle and movement artifact; positioning and comfort need planning; focal or multifocal abnormalities are common"
+            ]
+          ]
+        }
+      ],
+      "pearls": [
+        "Bell palsy (LMN) involves the forehead; stroke (UMN) spares the forehead.",
+        "Acoustic neuroma is a BAEP question: prolonged I-III or I-V interpeak latency on the tumor side.",
+        "MS is a VEP question: prolonged P100 latency.",
+        "Periodic sharp wave complexes about 1 Hz with rapid dementia and myoclonus suggest CJD.",
+        "HSV encephalitis favours the temporal lobes and can produce lateralized periodic discharges.",
+        "Subdural collections lower EEG amplitude over the affected side.",
+        "Syncope EEG: slowing then flattening then recovery; always record ECG.",
+        "NPH triad: wet, wobbly, wacky."
+      ],
+      "eegLink": "Knowing each disorder's expected pattern and practical needs (infection control, shunts, skull defects, tremor) helps you record a technically valid study and annotate it usefully."
+    }
+  ],
+  "mistakes": [
+    [
+      "The scalp EEG records action potentials.",
+      "It mainly records summed postsynaptic potentials of cortical pyramidal neurons."
+    ],
+    [
+      "Cranial nerve III is a mixed nerve because it has parasympathetic fibres.",
+      "The classic mixed nerves are V, VII, IX and X; III is classed as motor."
+    ],
+    [
+      "The superior oblique is supplied by III.",
+      "SO4 LR6: superior oblique by IV, lateral rectus by VI, the rest by III."
+    ],
+    [
+      "A hypoglossal lesion makes the tongue point away from the lesion.",
+      "The tongue deviates toward the weak side."
+    ],
+    [
+      "The central sulcus separates the temporal lobe from the frontal lobe.",
+      "The lateral (Sylvian) fissure does that; the central sulcus separates frontal from parietal."
+    ],
+    [
+      "A cerebellar lesion causes contralateral ataxia.",
+      "Cerebellar signs are ipsilateral."
+    ],
+    [
+      "Spasticity and rigidity are the same thing.",
+      "Spasticity is velocity-dependent (UMN); rigidity is constant through the range (basal ganglia)."
+    ],
+    [
+      "Epidural hematomas come from bridging veins.",
+      "Epidural is usually arterial (middle meningeal); subdural comes from bridging veins."
+    ],
+    [
+      "An ACA stroke mainly affects the face and arm.",
+      "ACA affects the leg; MCA affects face and arm more than leg."
+    ],
+    [
+      "Decerebrate posturing is flexion of the arms.",
+      "Decorticate is arm flexion; decerebrate is extension of arms and legs and is worse."
+    ],
+    [
+      "The lowest GCS score is 0.",
+      "The lowest GCS is 3 (1 in each of eye, verbal, motor)."
+    ],
+    [
+      "A normal EEG rules out stroke.",
+      "Small subcortical (lacunar) strokes often leave the EEG normal."
+    ],
+    [
+      "Bell palsy spares the forehead.",
+      "Bell palsy is LMN and involves the forehead; central facial weakness spares it."
+    ],
+    [
+      "Migraine is purely a vascular disorder.",
+      "The modern view is a primary brain disorder with cortical spreading depression and trigeminovascular activation; the vascular theory is historical."
+    ]
+  ],
+  "memory": [
+    [
+      "Oh Oh Oh To Touch And Feel Very Good Velvet, Ah Heaven",
+      "Cranial nerve names in order: olfactory, optic, oculomotor, trochlear, trigeminal, abducens, facial, vestibulocochlear, glossopharyngeal, vagus, accessory, hypoglossal"
+    ],
+    [
+      "Some Say Marry Money, But My Brother Says Big Brains Matter More",
+      "Cranial nerve type in order: S sensory, M motor, B both (mixed)"
+    ],
+    [
+      "SO4 LR6",
+      "Superior oblique by IV, lateral rectus by VI, all other eye muscles by III"
+    ],
+    [
+      "Wet, wobbly, wacky",
+      "Normal pressure hydrocephalus: incontinence, gait disturbance, dementia"
+    ],
+    [
+      "TRAP",
+      "Parkinson features: tremor, rigidity, akinesia/bradykinesia, postural instability"
+    ],
+    [
+      "Pie in the sky",
+      "Temporal (Meyer loop) lesion causes contralateral superior quadrantanopia"
+    ],
+    [
+      "Ptosis, miosis, anhidrosis",
+      "Horner syndrome triad"
+    ]
+  ]
+}
