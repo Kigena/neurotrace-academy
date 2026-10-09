@@ -1,0 +1,758 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-07",
+  "bank": "challenge",
+  "focus": "polarity-variants-measurement",
+  "description": "Polarity, measurement, filter, cardiac artifact and benign-variant versus not-benign pattern questions for Domain II. Text only; not yet medically verified.",
+  "totalQuestions": 27,
+  "questions": [
+    {
+      "id": "ch-pv-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "polarity",
+        "phase-reversal",
+        "bipolar-montage"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "In a longitudinal bipolar chain (F7-T7 above T7-P7), an interictal discharge is surface-negative and maximal at T7. Using the standard convention (input 1 negative relative to input 2 deflects upward), how does the discharge appear in these two channels?",
+      "explanation": "T7 is input 2 in F7-T7, so a negative T7 makes input 2 more negative and the pen moves downward; T7 is input 1 in T7-P7, so the same negativity deflects upward. The two channels point toward each other, a negative phase reversal at the shared electrode T7. Upward in both, or downward in both, would mean the shared electrode was not the maximum. Upward then downward is the pattern of a surface-positive maximum at T7 (pens pointing away from each other), which is the reverse of what this negative discharge produces.",
+      "learningObjective": "Predict the deflection direction of a surface-negative discharge in each channel of a bipolar chain.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Upward in F7-T7 and upward in T7-P7",
+        "Upward in F7-T7 and downward in T7-P7",
+        "Downward in F7-T7 and upward in T7-P7",
+        "Downward in F7-T7 and downward in T7-P7"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "polarity",
+        "referential-montage",
+        "reference-contamination"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 3,
+      "stem": "A 30-year-old is recorded with an ipsilateral ear reference (Fp1-A1, F3-A1, C3-A1, P3-A1, O1-A1, T7-A1). With each left anterior temporal spike, Fp1-A1 and O1-A1 show a small downward deflection even though those scalp sites lie far from the focus. What best explains this, and what is a sensible next step?",
+      "explanation": "The ear electrode sits close to the anterior temporal lobe, so it becomes negative with each spike. A negative input 2 drives the pen downward in every channel whose input 1 is quiet, which is why distant Fp1 and O1 channels show a small downward blip. Re-displaying to Cz, which is remote from the temporal lobes (though a poor choice for vertex activity), removes the contamination. Changing to 15 uV/mm only shrinks the display and does not correct the reference. A dipole at both Fp1 and O1 is an unsupported guess, and a 5 Hz low-frequency filter distorts slow components without addressing the cause. Reversed amplifier polarity would invert all activity, not only spike-linked deflections.",
+      "learningObjective": "Recognize an active ear reference and choose a reference remote from the temporal discharge.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The A1 reference is picking up the negative spike; re-display to a Cz reference",
+        "The spike spreads widely over the left scalp; change the sensitivity to 15 uV/mm",
+        "Fp1 and O1 carry a positive dipole end; add a 5 Hz low-frequency filter",
+        "The amplifier polarity is reversed; swap the input leads on those channels"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "referential-montage",
+        "localization",
+        "amplitude"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A spike is reviewed in an average-reference montage. Peak amplitudes are F8 160 uV, T8 110 uV, Fp2 70 uV and C4 40 uV, and no channel shows a phase reversal. What is the correct conclusion?",
+      "explanation": "In a referential montage each channel compares one scalp site with a common reference, so the field is mapped by amplitude and the highest-amplitude channel (F8) marks the maximum; phase reversals are a bipolar-montage tool and are not expected here when the reference is quiet. Saying the spike cannot be localized confuses bipolar and referential rules. The smallest value marks the edge of the field, not the focus. Involvement of several neighbouring channels with a clear gradient describes a focal field, not a generalized discharge.",
+      "learningObjective": "Localize a discharge in a referential montage by amplitude rather than phase reversal.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Without a phase reversal the spike cannot be localized in this montage",
+        "The maximum is at C4, because the smallest value marks the true focus",
+        "The discharge is generalized, because several channels are involved",
+        "The maximum is at F8, because referential maxima are read by amplitude"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "polarity",
+        "end-of-chain",
+        "bipolar-montage"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 3,
+      "stem": "In a longitudinal bipolar montage, a sharp wave produces a downward deflection of similar amplitude in P8-O2 and P4-O2, while T8-P8 and C4-P4 stay flat and no phase reversal appears anywhere. What does this most likely indicate, and how should it be confirmed?",
+      "explanation": "The only electrode common to both deflecting channels is O2, and it is input 2 in each, so a negative O2 drives both pens downward. Because O2 is the last electrode in the chain there is no following channel in which it is input 1, so no phase reversal can appear; a referential montage will show the maximum by amplitude. A positive P8 and P4 would also deflect T8-P8 and C4-P4, which are flat. Phase reversal is not required for a real discharge at the end of a chain, so calling it artifact is a common error. A midline source would involve Pz and Cz channels rather than only the right occipital pair.",
+      "learningObjective": "Recognize an end-of-chain discharge and confirm it with a referential montage.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A positive discharge at P8 and P4; confirm by lowering the high-frequency filter",
+        "A negative discharge at O2 at the chain's end; confirm with a referential montage",
+        "An artifact, since true discharges must phase reverse; re-gel the O2 electrode",
+        "A deep midline discharge near Pz; confirm with a transverse montage through Cz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "voltage-measurement",
+        "sensitivity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A sharp wave measures 12 mm peak to peak on a page recorded at 7 uV/mm. A reader who does not check the setting assumes the default 10 uV/mm. What is the true amplitude, and what value would the reader wrongly report?",
+      "explanation": "Voltage equals deflection in millimetres multiplied by sensitivity: 12 mm x 7 uV/mm = 84 uV, while 12 mm x 10 uV/mm = 120 uV is the inflated figure from assuming the default. Swapping the two values reverses the true and wrong settings. A value of 70 uV comes from multiplying the sensitivity by 10 rather than by the measured 12 mm. Values near 1.7 and 1.2 uV come from dividing millimetres by sensitivity instead of multiplying.",
+      "learningObjective": "Calculate amplitude from deflection and sensitivity and recognize the error of assuming a default setting.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "True amplitude 120 uV; the reader reports 84 uV",
+        "True amplitude 84 uV; the reader reports 120 uV",
+        "True amplitude 84 uV; the reader reports 70 uV",
+        "True amplitude 1.7 uV; the reader reports 1.2 uV"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "sensitivity",
+        "voltage-measurement",
+        "comparison"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Channel F4-C4 shows a 15 mm wave at 2 uV/mm. On a later page, a different wave in the same channel measures 6 mm at 5 uV/mm. Which statement about their true voltages is correct?",
+      "explanation": "Multiplying each deflection by its sensitivity gives 15 x 2 = 30 uV and 6 x 5 = 30 uV, so the voltages are equal. Comparing raw millimetres across pages with different sensitivities misleads, which is the error behind judging the first wave larger. A smaller uV/mm number is the more sensitive setting, so 2 uV/mm (not 5) is more sensitive. Sensitivity is a multiplier for converting millimetres to microvolts, not a divisor of the voltage.",
+      "learningObjective": "Compare waveform voltages recorded at different sensitivities.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The first wave is larger, since its deflection is 2.5 times taller",
+        "The second wave is larger, since 5 uV/mm is the more sensitive setting",
+        "The first wave is smaller, since its setting divides the voltage more",
+        "Both waves measure 30 uV, so their true voltages are the same"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "sensitivity",
+        "display-gain"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A 70 uV alpha rhythm measures 10 mm at 7 uV/mm. The technologist wants a more sensitive display to inspect low-voltage activity. Which adjustment achieves this, and how tall will the same alpha appear?",
+      "explanation": "A smaller uV/mm value means fewer microvolts are needed per millimetre, so 5 uV/mm is more sensitive, and the same 70 uV wave now draws 70 / 5 = 14 mm. Moving to 10 uV/mm makes the display less sensitive and the alpha shrinks to 7 mm, so it cannot be paired with a taller wave. A more sensitive setting cannot make the same signal smaller, so 5 uV/mm with 7 mm is inconsistent.",
+      "learningObjective": "Predict display height after a sensitivity change and identify the more sensitive setting.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Change to 5 uV/mm; the alpha now measures 14 mm",
+        "Change to 10 uV/mm; the alpha now measures 7 mm",
+        "Change to 10 uV/mm; the alpha now measures 14 mm",
+        "Change to 5 uV/mm; the alpha now measures 7 mm"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "frequency-measurement",
+        "paper-speed"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "At a display speed of 30 mm/s, the technologist counts 9 complete waves of a rhythm within 15 mm of tracing. What is its frequency, and which band is it in?",
+      "explanation": "At 30 mm/s, 15 mm represents 0.5 s, so 9 waves in 0.5 s equals 18 waves per second, an 18 Hz beta rhythm. Reporting 9 Hz forgets that the count covered only half a second. Halving instead of doubling gives 4.5 Hz. Dividing the wave count by millimetres (9 / 15) gives 0.6, which ignores the time base entirely.",
+      "learningObjective": "Convert a wave count over a measured distance into frequency.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "9 Hz, in the alpha band",
+        "4.5 Hz, in the theta band",
+        "18 Hz, in the beta band",
+        "0.6 Hz, in the delta band"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "duration",
+        "spike-vs-sharp-wave",
+        "paper-speed"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "On a display where 30 mm equals 1 second, a surface-negative transient that stands out from the background spans 3 mm from onset to end of its main component. How is it classified by duration?",
+      "explanation": "Each millimetre at 30 mm/s equals about 33 ms, so 3 mm is about 100 ms, inside the 70 to 200 ms range for a sharp wave (a spike is 20 to under 70 ms). Thirty milliseconds would need about 1 mm, and 3 ms confuses millimetres with milliseconds. Three hundred milliseconds would need about 9 mm, the time scale of a slow wave rather than this transient.",
+      "learningObjective": "Measure transient duration from paper speed and classify spike versus sharp wave.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A spike, since it lasts about 30 ms",
+        "A spike, since it lasts about 3 ms",
+        "A slow wave, since it lasts about 300 ms",
+        "A sharp wave, since it lasts about 100 ms"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "notch-filter",
+        "period-frequency"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A recording made where mains power is 50 Hz uses a 50 Hz notch filter. A waveform component with which period would the notch attenuate most?",
+      "explanation": "Frequency is the inverse of period, and 1 / 50 Hz = 0.02 s = 20 ms, so a 20 ms component sits at the notch and is attenuated most; fast spike components near this period can be blunted. A 50 ms period is 20 Hz, the common mix-up of milliseconds with hertz. A 5 ms period is 200 Hz, far above the notch. A 200 ms period is 5 Hz theta, well below it.",
+      "learningObjective": "Convert period to frequency to predict which waveform components a notch filter affects.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A component with a period of about 20 ms",
+        "A component with a period of about 50 ms",
+        "A component with a period of about 5 ms",
+        "A component with a period of about 200 ms"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "60-hz-artifact",
+        "impedance",
+        "troubleshooting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "During a routine EEG in a bipolar montage, 60 Hz interference appears only in the two channels that contain T8; every other channel is clean. What is the most likely cause, and what is the best first action?",
+      "explanation": "Interference confined to the two channels sharing one electrode points to that electrode: a high or mismatched impedance at T8 lets 60 Hz enter that input unequally, so checking and re-preparing T8 is the fix. Building wiring or a failed ground would contaminate many channels, and a notch only hides the problem while blunting fast activity. An amplifier fault would affect a single channel, not both channels that share T8.",
+      "learningObjective": "Localize 60 Hz artifact to a single electrode and correct the cause before filtering.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A building wiring fault; turn on the 60 Hz notch for the whole recording",
+        "A failed patient ground; replace the ground electrode before continuing",
+        "High or unequal impedance at T8; check and re-prepare that electrode",
+        "An amplifier channel fault; move the T8 channels to a spare amplifier"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "high-frequency-filter",
+        "muscle-artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Heavy temporalis muscle artifact obscures a recording. The technologist lowers the high-frequency filter from 70 Hz to 15 Hz. What is the main risk of this change?",
+      "explanation": "A low high-frequency filter rounds off brief muscle potentials, which can then resemble beta activity or spikes, and it also reduces the amplitude of genuine spikes; it is better to relax the muscle or fix the source. Delta attenuation is the effect of raising the low-frequency filter, not lowering the high-frequency filter. The notch works independently of the low-pass setting. A low-pass filter does not amplify slow waves.",
+      "learningObjective": "Explain how an aggressive high-frequency filter can disguise muscle artifact.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Delta activity under 2 Hz will be strongly attenuated in all channels",
+        "Muscle potentials may be smoothed into rhythmic beta- or spike-like waves",
+        "The 60 Hz notch will stop working while the low-pass filter is engaged",
+        "Displayed amplitude of slow waves will double and mimic focal slowing"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "ecg-artifact",
+        "referential-montage",
+        "artifact-identification"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "reasoningSteps": 3,
+      "stem": "A 62-year-old with a short, broad neck is recorded with an ear reference. Sharply contoured transients recur every 0.85 s in left-hemisphere ear-referenced channels, most prominent posteriorly, and each coincides exactly with the QRS complex in the ECG channel. Their interval stays constant into drowsiness. What are they, and what helps?",
+      "explanation": "Exact time-locking to the QRS, a fixed interval, a left-posterior field and ear-referenced channels (the ear picks up the cardiac field, especially with a short neck) identify ECG artifact; linked (averaged) ears or short interelectrode-distance bipolar derivations reduce it. Lateralized periodic discharges are not locked to each heartbeat. Pulse artifact is a slower wave starting about 200 to 300 ms after the QRS and confined to one electrode over an artery. Benign transients of sleep are not continuous with the heart rate and appear only in drowsiness and light sleep.",
+      "learningObjective": "Identify ECG artifact by timing and field and choose a montage that reduces it.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "ECG artifact; averaged ears or short bipolar derivations help reduce it",
+        "Lateralized periodic discharges; notify the reader per protocol right away",
+        "Pulse artifact; moving the involved electrode off the artery removes it",
+        "Benign epileptiform transients of sleep; document them as a normal variant"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "pulse-artifact",
+        "artifact-identification"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "reasoningSteps": 3,
+      "stem": "Rhythmic 1 to 1.5 Hz slow waves appear only in channels containing F8. Each wave begins about 200 to 300 ms after the QRS in the ECG channel, and the rate matches the heart rate. What is this, and what is the fix?",
+      "explanation": "A slow wave confined to one electrode, following each QRS by about 200 to 300 ms (the pulse travel time), is pulse artifact from an electrode over a scalp artery; moving the electrode slightly fixes it. ECG artifact is a sharp transient at the same instant as the QRS with a broader field, so changing the reference does not solve a single-electrode pulse problem. True focal delta is not time-locked to the heartbeat, so reporting it as slowing would be a misread. Glossokinetic artifact follows tongue movement, not the cardiac cycle.",
+      "learningObjective": "Distinguish pulse artifact from ECG artifact by timing and field.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "ECG artifact; switch to a linked-ear reference to cancel it",
+        "Focal frontal delta; mark it and report it as focal slowing",
+        "Glossokinetic artifact; ask the patient to stop talking briefly",
+        "Pulse artifact; reposition F8 slightly away from the artery"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "bets",
+        "benign-variants",
+        "small-sharp-spikes"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 47-year-old in drowsiness and light N2 sleep shows occasional low-voltage (about 40 uV), very brief (under 50 ms) diphasic spikes with no aftergoing slow wave, a wide field and independent occurrence over both hemispheres. The background is undisturbed, and they vanish in deeper sleep. What is the best description?",
+      "explanation": "Low amplitude, very short duration, no aftergoing slow wave, a broad field, shifting sides, adult age and confinement to drowsiness and light sleep fit benign epileptiform transients of sleep (small sharp spikes). Interictal spikes are usually larger, often followed by a slow wave, disrupt the background and persist in deeper sleep. Fourteen and six bursts are positive comb-like trains in adolescents. Hypnagogic hypersynchrony is high-amplitude slow activity in children, not brief spikes in adults.",
+      "learningObjective": "Recognize benign epileptiform transients of sleep and separate them from interictal spikes.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Interictal temporal spikes needing urgent notification of the physician",
+        "Fourteen and six positive bursts typical of adolescent drowsiness",
+        "Benign epileptiform transients of sleep, a benign adult variant",
+        "Hypnagogic hypersynchrony, an expected finding in drowsy adults"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "wicket",
+        "benign-variants"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 58-year-old in drowsiness shows occasional single, sharply contoured monophasic waves at T7 and, independently, at T8. Nearby pages show the same arciform waveform appearing in trains at about 8 Hz, with no aftergoing slow wave and no background disruption. How should the single waves be interpreted?",
+      "explanation": "Wicket waves are 6 to 11 Hz arciform temporal waves of older adults in drowsiness; isolated wickets are recognized by matching them to trains of the same shape, and they lack an aftergoing slow wave or background disruption. Calling the isolated waves sharp waves is the classic overread. Mu rhythm is central (C3, C4) and blocked by movement, not temporal. Breach rhythm requires a skull defect, which is not described here.",
+      "learningObjective": "Identify isolated wicket waves by comparing them with trains of the same morphology.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Mid-temporal sharp waves, since single waves stand out from the background",
+        "Wicket waves, since they match nearby arciform trains of the same shape",
+        "Mu rhythm, since arciform waves over the temporal regions define mu",
+        "Breach rhythm, since sharply contoured temporal waves follow skull defects"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "14-and-6",
+        "polarity",
+        "benign-variants"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 3,
+      "stem": "A drowsy 13-year-old shows brief comb-shaped bursts of fast activity, sometimes slowing to a slower rate, over the right posterior temporal region. They are clearest in a referential montage to the contralateral ear (P8-A1), where they point downward. What explains the direction, and what is the pattern?",
+      "explanation": "By convention a positive input 1 deflects downward, so downward spikes at P8 in P8-A1 are surface positive; brief comb-like 14 and 6 Hz trains in adolescent drowsiness, best seen with long interelectrode distances such as a contralateral ear reference, are 14 and 6 Hz positive bursts, a benign variant. A negative input 1 deflects upward, not downward. Brief stereotyped bursts without evolution are not a seizure. A negative input 2 deflects downward, not upward, and wickets are arciform temporal waves of older adults.",
+      "learningObjective": "Apply polarity convention to identify 14 and 6 Hz positive bursts.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Surface-positive spikes in input 1 deflect downward; 14 and 6 Hz positive bursts",
+        "Surface-negative spikes in input 1 deflect downward; 14 and 6 Hz positive bursts",
+        "Surface-positive spikes in input 1 deflect downward; a temporal electrographic seizure",
+        "Surface-negative spikes in input 2 deflect upward; wicket spikes of drowsiness"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "6-hz-spike-wave",
+        "wham-fold",
+        "benign-variants"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 25-year-old man, fully awake, shows 1-second bursts of 6 Hz spike-and-wave of high amplitude, maximal over the frontal regions. Which interpretation and action fit best?",
+      "explanation": "Six hertz spike-and-wave in wakefulness, at high amplitude, anterior and in a male fits the WHAM form, which is more often associated with seizures, so the technologist describes it fully and reports it for the interpreting physician. The FOLD form is female, occipital, low amplitude and drowsy, which does not match. The rate here is 6 Hz, not the 3 Hz rhythm of absence seizures. Hypnagogic hypersynchrony is a childhood drowsiness pattern without spike-and-wave.",
+      "learningObjective": "Separate WHAM from FOLD forms of 6 Hz spike-and-wave and report appropriately.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "FOLD type, so document it only as a benign normal variant",
+        "Generalized 3 Hz spike-and-wave; test awareness in each burst",
+        "Hypnagogic hypersynchrony, expected in adult drowsiness",
+        "WHAM type, with a higher seizure link; describe and report it"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "rmtd",
+        "benign-variants",
+        "evolution"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A drowsy 40-year-old shows a 10-second run of 5 to 6 Hz notched, flat-topped theta over the left mid-temporal region. Frequency and morphology are unchanged from start to end, there is no postictal slowing, and the patient responds normally. What is the best interpretation?",
+      "explanation": "Notched 5 to 7 Hz mid-temporal theta in drowsiness that stays monomorphic, without evolution in frequency, amplitude or field and without postictal change, is rhythmic mid-temporal theta of drowsiness, a benign variant. Seizures typically evolve and are often followed by slowing. Wickets are 6 to 11 Hz arciform waves, not flat-topped theta. TIRDA is rhythmic delta (below 4 Hz), not theta.",
+      "learningObjective": "Separate rhythmic mid-temporal theta of drowsiness from a seizure by the absence of evolution.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A temporal lobe seizure, since rhythmic theta in one region is ictal",
+        "Wicket waves, since mid-temporal waves in drowsiness are arciform",
+        "Rhythmic mid-temporal theta of drowsiness, since there is no evolution",
+        "TIRDA, since rhythmic temporal activity in drowsiness indicates epilepsy"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sreda",
+        "benign-variants",
+        "responsiveness"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 68-year-old, awake, abruptly develops rhythmic, sharply contoured theta over both parietal regions lasting 60 s, then stopping abruptly without postictal slowing. During the pattern the technologist tests responsiveness; the patient answers questions and later recalls a test word. What does this support?",
+      "explanation": "Subclinical rhythmic electrographic discharge of adults occurs in older adults, is often biparietal or posterior temporal, starts and stops abruptly without postictal slowing, and leaves the patient alert; documenting the responsiveness testing gives the reader the key evidence. Intact awareness and recall argue against a seizure rather than proving one. Periodic discharges are repeated complexes at intervals, not a continuous rhythmic run. Posterior slow waves of youth occur in children and adolescents mixed with the alpha rhythm.",
+      "learningObjective": "Recognize SREDA and the value of documented responsiveness testing.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An electrographic seizure; intact recall excludes an artifact source",
+        "SREDA, a benign adult variant; document the responsiveness testing",
+        "Lateralized periodic discharges; notify the physician per protocol",
+        "Posterior slow waves of youth persisting into late adult life"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "lambda",
+        "benign-variants"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A 24-year-old, awake and looking at a detailed picture, shows sharply contoured, surface-positive triangular transients at O1 and O2. They disappear when the eyes close or when the patient views a blank card. What are they?",
+      "explanation": "Lambda waves are surface-positive occipital transients during visual scanning in wakefulness and vanish with eye closure or a featureless visual field. POSTS look similar but occur in sleep, not while awake and scanning. Occipital spikes are surface negative and do not depend on looking at a detailed image. Lateral rectus spikes appear at F7 and F8 with horizontal eye movements, not occipitally.",
+      "learningObjective": "Recognize lambda waves by state and visual dependence.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Lambda waves, related to visual scanning",
+        "POSTS, related to light non-REM sleep",
+        "Occipital spikes, related to photosensitivity",
+        "Lateral rectus spikes from eye movement"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posts",
+        "polarity",
+        "benign-variants"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During N2 sleep in a 30-year-old, O1-A1 and O2-A2 show repeated, bilateral, synchronous triangular waves that deflect downward with a check-mark shape, sometimes in runs at 4 to 5 Hz. What are they?",
+      "explanation": "With O1 or O2 as input 1, a downward deflection means the occipital site is positive; surface-positive, check-mark occipital transients in light sleep, often in runs, are POSTS, a normal finding. Lambda waves share the polarity but need wakefulness with visual scanning. Occipital spikes are surface negative and would deflect upward here. Vertex waves are maximal at Cz, not occipital.",
+      "learningObjective": "Use polarity and state to identify positive occipital sharp transients of sleep.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Lambda waves, since they are surface positive over the occiput",
+        "Occipital spikes, since they recur in runs during sleep",
+        "Vertex waves, since they are sharp and appear in N2 sleep",
+        "POSTS, since a downward deflection here means surface positive"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "mu-rhythm",
+        "benign-variants",
+        "reactivity"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 35-year-old, awake with eyes open, shows an arciform 9 to 10 Hz rhythm at C3 and C4 that persists after eye opening. Which maneuver best confirms its identity?",
+      "explanation": "A central arciform rhythm that is not blocked by eye opening suggests mu rhythm, which attenuates with movement (or the thought of movement) of the opposite limb, so clenching the right fist should suppress it at C3. Eye closure tests the posterior alpha rhythm, which this is not. Photic stimulation tests occipital driving. Hyperventilation tests for slowing and absence-type discharges, not mu reactivity.",
+      "learningObjective": "Confirm mu rhythm with contralateral movement.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Ask the patient to close the eyes and see if it increases",
+        "Start photic stimulation and check for occipital driving",
+        "Ask the patient to clench the right fist and watch C3",
+        "Ask the patient to hyperventilate for three minutes"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "hypnagogic-hypersynchrony",
+        "benign-variants",
+        "pediatric"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A drowsy 5-year-old shows bursts lasting 2 to 4 s of high-amplitude (about 250 uV) 3 to 5 Hz sinusoidal waves, diffuse and maximal frontocentrally. They appear only in drowsiness, stop with arousal and contain no spikes. What is the best interpretation?",
+      "explanation": "Paroxysmal, high-amplitude, sinusoidal 3 to 5 Hz bursts in drowsiness in a young child, without spikes, are hypnagogic hypersynchrony, a normal developmental pattern. Absence epilepsy shows spike-and-wave, usually in wakefulness and with hyperventilation. Frontal intermittent rhythmic delta is a nonspecific sign of encephalopathy or structural dysfunction; it is usually 2 to 3 Hz and persists with the clinical state rather than appearing as brief paroxysmal 3 to 5 Hz bursts that stop on arousal. Posterior slow waves of youth are posterior and ride on the waking alpha rhythm.",
+      "learningObjective": "Recognize hypnagogic hypersynchrony in childhood drowsiness.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Generalized 3 Hz spike-and-wave, typical of absence epilepsy",
+        "Hypnagogic hypersynchrony, a normal finding of childhood drowsiness",
+        "Frontal intermittent rhythmic delta, a sign of an encephalopathy",
+        "Posterior slow waves of youth, which appear mostly in drowsiness"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "oirda",
+        "posterior-slow-waves-of-youth",
+        "not-benign"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 7-year-old, awake with eyes closed, shows 2 to 3 s trains of rhythmic 3 Hz sinusoidal delta over both occipital regions that increase during hyperventilation. Which interpretation and observation fit best?",
+      "explanation": "Rhythmic occipital delta trains in a child, enhanced by hyperventilation, are occipital intermittent rhythmic delta activity, which is associated with absence epilepsy; the technologist should watch for generalized spike-and-wave and test awareness during bursts. Posterior slow waves of youth are single slow waves fused with the alpha rhythm, not rhythmic trains, so labelling this benign is a known error. Lambda waves are brief positive transients during visual scanning with eyes open. Hypnagogic hypersynchrony occurs in drowsiness, not in alert eyes-closed wakefulness.",
+      "learningObjective": "Distinguish OIRDA from posterior slow waves of youth and know its clinical association.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "OIRDA, linked to absence epilepsy; watch for spike-wave and test awareness",
+        "Posterior slow waves of youth, a benign variant; note them as normal",
+        "Lambda waves, a normal finding; ask the patient to view a blank card",
+        "Hypnagogic hypersynchrony, a normal finding; note the drowsy state only"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "firda",
+        "tirda",
+        "not-benign"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Pattern 1: a confused 70-year-old with renal failure has bilateral frontal 2 to 2.5 Hz rhythmic delta bursts. Pattern 2: a 35-year-old with focal impaired awareness seizures has rhythmic 2 to 3 Hz delta trains over the left anterior temporal region in wakefulness and drowsiness. Which comparison is correct?",
+      "explanation": "Frontal intermittent rhythmic delta in adults is nonspecific and commonly seen with toxic-metabolic encephalopathy, whereas temporal intermittent rhythmic delta is strongly associated with temporal lobe epilepsy and carries similar weight to interictal discharges. Neither is a benign variant. Reversing the associations is a frequent error. Frontal rhythmic delta was once tied to deep midline lesions, but it is not specific, and temporal rhythmic delta points to temporal epilepsy rather than a midline lesion.",
+      "learningObjective": "Contrast FIRDA and TIRDA in specificity and clinical association.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Both are benign variants that need description only when they are frequent",
+        "Pattern 1 strongly suggests epilepsy; pattern 2 usually reflects metabolic illness",
+        "Pattern 1 is nonspecific, often encephalopathy; pattern 2 is linked to temporal epilepsy",
+        "Both are equally specific markers of a deep midline structural lesion"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-pv-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "breach-rhythm",
+        "not-benign",
+        "lpd"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 52-year-old had a right frontotemporal craniotomy 2 years ago. Over F8 and T8 the tracing shows higher-amplitude, sharply contoured 7 to 11 Hz and beta activity that is continuous rather than periodic, without aftergoing slow waves or evolution. What is the best interpretation and technologist action?",
+      "explanation": "A skull defect removes the high-resistance bone layer, so activity over it is larger and sharper, especially faster frequencies; this breach rhythm is not epileptiform by itself, and documenting the defect site lets the reader interpret it. Lateralized periodic discharges are repeated complexes at regular intervals, often with an acute lesion, not continuous fast activity. Wickets are arciform drowsy waves that do not depend on a defect. Bridging makes channels flat or identical rather than larger and sharper.",
+      "learningObjective": "Recognize breach rhythm over a skull defect and separate it from LPDs.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "LPDs from the old lesion; notify the physician now per protocol",
+        "Breach rhythm; document the skull defect site on the record",
+        "Wicket waves; expected in older adults during drowsiness",
+        "Electrode bridging; re-gel F8 and T8 until the activity resolves"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

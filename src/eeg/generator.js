@@ -257,7 +257,7 @@ export const FINDING_TYPES = [
   "mu", "muShapedAlpha", "firda", "polymorphicDelta", "spike", "sharp", "gsw", "polyspikeWave",
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
   "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine", "focalDelta", "burst",
-  "rhythm", "periodic", "ictal", "hypsarrhythmia", "electrodecrement", "fastBurst",
+  "rhythm", "periodic", "ictal", "hypsarrhythmia", "electrodecrement", "fastBurst", "sweat",
 ];
 
 /**
@@ -834,6 +834,21 @@ export function generateReferential(scene) {
           const sig = narrowband(n, 55, 30, gauss);
           for (let i = 0; i < n; i++) sig[i] *= amp * gateValue(time(i), f.from ?? 0, f.to ?? seconds, 0.05);
           addSource(V, field(s, 0.12), sig);
+        }
+        break;
+      }
+      case "sweat": {
+        // Sweat artifact: large, very slow (about 0.1 to 0.5 Hz) drifts at the sweaty sites, local to each electrode.
+        const amp = f.uv ?? 150;
+        for (const s of f.sites || ["F7", "T3", "Fp1"]) {
+          const ch = V[s];
+          if (!ch) continue;
+          const p1 = rng() * 6.28, p2 = rng() * 6.28;
+          const k = 0.7 + 0.6 * rng();
+          for (let i = 0; i < n; i++) {
+            const t = time(i);
+            ch[i] += amp * k * (0.65 * Math.sin(2 * Math.PI * 0.18 * t + p1) + 0.35 * Math.sin(2 * Math.PI * 0.41 * t + p2));
+          }
         }
         break;
       }

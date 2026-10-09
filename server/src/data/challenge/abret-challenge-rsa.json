@@ -1,0 +1,877 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-08",
+  "bank": "challenge",
+  "focus": "reference-reasoning",
+  "description": "Original two-step reasoning questions on choosing EEG references, recognizing active references, showing amplitude versus localizing, and working polarity subtractions. Text only; not yet medically verified.",
+  "totalQuestions": 31,
+  "questions": [
+    {
+      "id": "ch-rsa-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "reference-choice",
+        "inactive-reference"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "montage",
+      "reasoningSteps": 1,
+      "stem": "In a referential montage, what property makes an electrode a good common reference for a given recording?",
+      "explanation": "A reference works best when it is as inactive as possible for the activity of interest, which in practice means placing it outside that activity's field. A reference over the most active region subtracts the very signal being studied. Low impedance is needed for every electrode but does not make a site electrically quiet. A midline site is not automatically neutral; the vertex, for example, is very active in sleep.",
+      "learningObjective": "State the principle for choosing a referential montage reference.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "It sits directly over the region with the most activity",
+        "It has the lowest impedance of any electrode on the head",
+        "It sits away from the field of the activity being studied",
+        "It sits on the midline so it is equally near both sides"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "ipsilateral-ear",
+        "temporal-spike",
+        "active-reference"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A patient has frequent left anterior temporal spikes. In a montage with every left-sided electrode referred to the left ear, the spike looks smaller in F7 and T7 than expected. What best explains this?",
+      "explanation": "Anterior temporal spikes commonly spread to the ear and mastoid. When the ipsilateral ear shares the negativity, each channel records the electrode minus a partly negative reference, so the difference, and the displayed spike, shrinks near the focus. Distance from the spike would make the ear a better reference, not a worse one. Impedance does not create the amplitude loss described. Epileptiform spikes are typically surface-negative, and polarity alone would not cause cancellation within a channel.",
+      "learningObjective": "Explain why an ipsilateral ear reference underestimates temporal spike amplitude.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The left ear lies in the spike field, so part of the spike is subtracted out",
+        "The left ear is too far from the spike to register its true amplitude",
+        "The ear electrode has higher impedance, which enlarges distant channels",
+        "The spike is positive at the surface, so it cancels within each channel"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "polarity",
+        "subtraction",
+        "worked-values"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "At the peak of a spike, F7 is -100 uV and the left ear A1 is -40 uV. Using the convention Input 1 minus Input 2, with negative output plotted upward, what does channel F7-A1 show?",
+      "explanation": "The channel output is F7 minus A1: -100 minus -40 equals -60 uV. A negative result plots upward, so the pen goes up 60 uV. A value of 140 uV would come from adding the voltages instead of subtracting them. A downward deflection would require a positive result. An upward 100 uV is the true F7 value only if the reference were at zero, which this ear is not.",
+      "learningObjective": "Compute a referential channel output when the reference is partly active.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "An upward deflection of 140 uV",
+        "A downward deflection of 60 uV",
+        "An upward deflection of 100 uV",
+        "An upward deflection of 60 uV"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "contralateral-ear",
+        "amplitude-display",
+        "worked-values"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "At a spike peak, F7 is -100 uV, the left ear A1 is -40 uV and the right ear A2 is about 0 uV. Which comparison of F7-A1 and F7-A2 is correct?",
+      "explanation": "F7-A2 equals -100 minus 0, or -100 uV, an upward 100 uV that matches the true scalp value because the contralateral ear is outside the field. F7-A1 equals -100 minus -40, or -60 uV, so it shows only 60 uV and underestimates the spike. Stating that A1 gives 100 uV ignores its own negativity. The right ear does not share a left temporal field here, and an ear reference subtracts from, rather than adds to, the scalp signal.",
+      "learningObjective": "Show why a contralateral ear reference displays the true amplitude of a temporal spike.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "F7-A1 shows 100 uV up and better reflects true spike amplitude",
+        "F7-A2 shows 100 uV up and better reflects true spike amplitude",
+        "F7-A2 shows 60 uV up because both ears share the spike field",
+        "F7-A1 shows 140 uV up because the ear adds to the scalp signal"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "cz-reference",
+        "vertex-waves",
+        "sleep"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A Cz-referenced montage looked clean while the patient was awake. In stage N2 sleep, sharp transients appear at the same instant in nearly every channel, including O1-Cz and O2-Cz. What is the most likely explanation?",
+      "explanation": "Vertex waves and K-complexes are maximal at Cz, so in a Cz-referenced montage they are subtracted into every channel, producing simultaneous transients even over distant occipital sites. Real occipital spikes would be largest at O1 and O2, not equally present everywhere. Neck muscle artifact is fast, continuous activity rather than discrete sleep transients. A single high-impedance electrode affects its own channel, not the whole page.",
+      "learningObjective": "Recognize Cz reference contamination by vertex sharp waves in sleep.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Bilateral occipital spikes are appearing as the patient falls asleep",
+        "Vertex sharp waves at Cz are entering every channel through the reference",
+        "Muscle artifact from the posterior neck is spreading to the scalp",
+        "An electrode on the left temporal chain has developed high impedance"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "cz-reference",
+        "polarity",
+        "vertex-waves"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A vertex wave is -80 uV at Cz and close to 0 uV at O1. With Input 1 minus Input 2 and negative plotted up, how does the vertex wave appear in channel O1-Cz?",
+      "explanation": "The output is O1 minus Cz: 0 minus -80 equals +80 uV. A positive output plots downward, so the occipital channel shows an 80 uV downward wave that can be misread as occipital positivity when it actually comes from the active reference. An upward deflection would need a negative result. The channel is not flat because the reference itself is active. Adding the values is not how a differential amplifier works.",
+      "learningObjective": "Predict the polarity of reference-borne activity in a distant channel.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An 80 uV downward deflection that looks like occipital positivity",
+        "A flat line because the occipital electrode is inactive at that time",
+        "An 80 uV upward deflection that looks like occipital negativity",
+        "A 160 uV upward deflection from adding both electrode values"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "cz-reference",
+        "central-spike",
+        "reference-failure"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "Spikes are maximal at C3 with a field that reaches Cz. On a Cz-referenced montage the C3 spike looks small and faint deflections appear in right-sided channels. Which change best displays the true C3 amplitude?",
+      "explanation": "Because Cz sits in the spike field, subtracting it shrinks the C3 spike and injects reference activity into channels far from the focus. A reference outside the field, such as the right ear for left central electrodes, shows the full amplitude. Raising gain magnifies the reduced, contaminated signal rather than correcting it. C4 is not a standard common reference and may carry part of the field near the midline. A transverse bipolar chain helps localize by phase reversal but shows voltage differences, not absolute amplitude.",
+      "learningObjective": "Choose a reference when Cz lies within a central spike field.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Refer the left-sided electrodes to the contralateral ear",
+        "Keep the Cz reference and increase the gain for C3 alone",
+        "Refer the left-sided electrodes to the C4 site",
+        "Switch to a transverse bipolar chain through C3 and Cz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "average-reference",
+        "high-amplitude",
+        "false-activity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A very high-amplitude left temporal spike is present at T7 and F7. On an average reference montage that includes all electrodes, small downward deflections appear at the same time in right-sided channels. What explains this?",
+      "explanation": "The average reference is the mean of all scalp electrodes. A large negative spike at a few sites pulls that mean negative, so an inactive right-sided electrode minus a negative average gives a positive value, which plots as a small downward deflection. These mirror deflections are produced by the reference, not by a real right-sided field. The right ear is not part of an average reference, and amplifier saturation would clip the left channels rather than create mirrored activity. Removing the involved electrodes from the average reduces the problem.",
+      "learningObjective": "Recognize false opposite-polarity activity created by an average reference.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The spike is spreading through the skull to involve the right hemisphere as well",
+        "The right ear has become active and is contaminating every right-sided channel",
+        "The amplifier saturates on the left side and reflects the signal to the right",
+        "The spike makes the average negative, so quiet right sites read relatively positive"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "average-reference",
+        "generalized-discharge",
+        "reference-failure"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "Generalized spike-and-wave discharges appear noticeably lower in amplitude on an average reference montage than on an ear reference montage. Why?",
+      "explanation": "When a discharge involves most of the scalp, the mean of all electrodes carries a large share of it, so each electrode minus that active average shows only a fraction of its true voltage. A reference does not act as a frequency filter. A standard scalp average does not include the ear electrodes. Every electrode is still displayed; the reduction comes from subtraction, not from dropping channels.",
+      "learningObjective": "Explain why widespread discharges are attenuated on an average reference.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "An average reference filters out frequencies below about 5 Hz from each channel",
+        "Averaging adds the ear signals to every channel and cancels the wave component",
+        "A widespread discharge makes the average itself active, so much of it subtracts out",
+        "An average reference displays only the electrodes nearest the discharge maximum"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "linked-ears",
+        "asymmetry",
+        "false-activity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A patient has left temporal spikes that reach the left ear. A linked-ears reference is used for all channels. What artifact of reference choice is most likely?",
+      "explanation": "In a linked-ears reference the left ear's spike activity becomes part of the common reference, so it is subtracted into every channel, including right-sided ones that have no spike of their own. That makes a lateralized discharge look more bilateral. The ears are not both inactive here, joining them does not silence the right side, and linking ears averages their potentials rather than summing them to double the spike.",
+      "learningObjective": "Recognize how a linked-ears reference spreads a unilateral discharge.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The spike disappears from the left channels because both ears are inactive",
+        "Spike activity is carried into right-sided channels through the shared reference",
+        "The right-sided channels become flat because the ears are joined together",
+        "The left temporal spike doubles in size because two ears are summed"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "linked-ears",
+        "shorting",
+        "asymmetry"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 1,
+      "stem": "Why is physically joining the two ear electrodes with a wire discouraged when an interhemispheric asymmetry is under study?",
+      "explanation": "A direct wire between the ears creates a low-resistance path that lets current flow between the two sides of the head, pulling their potentials together and reducing a real asymmetry. Joining the wire does not selectively raise impedance on one side. Eye blinks produce frontal fields that do not specifically make the ears positive. Temporal activity is still displayed, though it may be distorted.",
+      "learningObjective": "Explain the shunting problem of physically linked ear references.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Current flowing between the ears can shunt and reduce the true asymmetry",
+        "The joined wire raises impedance and adds 60 Hz noise to only one side",
+        "The linked ears make the reference strongly positive during eye blinks",
+        "The joined ears block display of any activity in the temporal chains"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "laplacian",
+        "broad-field",
+        "reference-failure"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "Frontal intermittent rhythmic delta activity that is obvious on an ear reference montage looks much smaller on a Laplacian (source derivation) montage. Why?",
+      "explanation": "A Laplacian references each electrode to a weighted average of its immediate neighbors. A broad field such as frontal rhythmic delta is present at those neighbors too, so it is largely subtracted, while sharply focal activity is emphasized. The method is a spatial filter, not a frequency filter. It does not use the ears as reference. The reduced display reflects field breadth, not proof that the delta is artifact.",
+      "learningObjective": "Identify broad fields as the main weakness of the Laplacian reference.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The Laplacian applies a high-frequency filter that removes slow waves",
+        "The Laplacian uses the ears as its reference and they are very active",
+        "The delta activity is an artifact that only ear references can display",
+        "Neighboring electrodes share the broad field, so it is largely subtracted away"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "laplacian",
+        "focal-spike",
+        "montage-switch"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 1,
+      "stem": "A small focal spike looks smeared across several channels on an average reference montage. Which montage is best suited to sharpen its location?",
+      "explanation": "A Laplacian (source derivation) subtracts the local neighborhood from each electrode, which suppresses widespread activity and sharpens truly focal events. Linked ears, Cz and a noncephalic reference all use one common reference for every site, so they display the field as it spreads rather than narrowing it to its source.",
+      "learningObjective": "Choose the Laplacian montage to emphasize a focal discharge.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A linked-ears montage that refers all sites to both ears",
+        "A Cz-referenced montage that refers all sites to the vertex",
+        "A Laplacian montage that refers each site to its neighbors",
+        "A noncephalic montage that refers all sites to the chest"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "noncephalic-reference",
+        "ecg",
+        "balanced-reference"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 1,
+      "stem": "What is the purpose of balancing a sterno-vertebral noncephalic reference with a variable resistor?",
+      "explanation": "A noncephalic reference on the chest and spine avoids cerebral activity but sits close to the heart, so ECG enters every channel. Adjusting a variable resistor between the sternal and vertebral electrodes balances the cardiac field so it largely cancels. The aim is to keep cerebral activity out of the reference, not add it. Matching impedance to the ears is not the goal, and the resistor does not act as a muscle filter.",
+      "learningObjective": "Explain the balanced noncephalic reference and its ECG problem.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "To null the ECG that this off-scalp reference otherwise picks up",
+        "To increase cerebral activity reaching the reference electrode",
+        "To match the reference impedance to the ear electrodes exactly",
+        "To filter muscle activity from the neck during the recording"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "ear-reference",
+        "ecg",
+        "active-reference"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "Sharp, regular deflections synchronous with the QRS complex appear in every channel referred to A1 but not in channels referred to A2. What is the best interpretation and response?",
+      "explanation": "Activity that appears in every channel sharing one reference, and only those channels, comes from the reference. Time-locking to the QRS shows it is ECG picked up at the ear, a common problem with ear references. Switching those channels to another reference, such as the other ear, Cz or an average, removes it. Identical faults at every left electrode at once are unlikely. Rhythmic activity locked to the heartbeat is ECG artifact, not cerebral periodic discharges. Reversing the ECG channel would not change what A1 records.",
+      "learningObjective": "Identify ECG contamination of an ear reference and correct it.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Each left-sided electrode has the same bad contact and needs re-gelling",
+        "A1 is picking up ECG; re-refer those channels to a quieter reference",
+        "The patient has periodic discharges over the left hemisphere to report",
+        "The ECG channel is reversed and should be swapped at the input board"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "contralateral-ear",
+        "amplitude-display",
+        "field-mapping"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "The interpreting physician wants the voltage field of a right temporal spike displayed so that amplitudes at T8, F8 and P8 can be compared directly. Which montage best meets this request?",
+      "explanation": "Comparing amplitudes requires a referential montage with an inactive reference. The left ear lies outside a right temporal field, so each right-sided electrode minus the left ear approximates its true voltage. The right ear is often in the field and would shrink the spike near the focus. A bipolar chain shows differences between neighbors, which localizes by phase reversal but does not display absolute amplitude. Linked ears would include the active right ear and partly reduce the spike.",
+      "learningObjective": "Select a contralateral ear reference to display spike amplitude.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Right-sided electrodes referred to the right ear",
+        "A longitudinal bipolar chain over the right side",
+        "Right-sided electrodes referred to linked ears",
+        "Right-sided electrodes referred to the left ear"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "bipolar",
+        "phase-reversal",
+        "worked-values"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "In the chain F7-T7 and T7-P7, a spike measures F7 -40 uV, T7 -100 uV and P7 -40 uV. With negative plotted up, how do the two channels appear?",
+      "explanation": "F7-T7 is -40 minus -100, or +60 uV, which plots downward. T7-P7 is -100 minus -40, or -60 uV, which plots upward. The opposite deflections pointing toward each other mark a negative phase reversal at T7, the shared electrode. Reversing the directions misapplies the polarity convention. A bipolar channel shows differences, not the absolute 100 uV. F7 and P7 are equal, but each is paired with T7, so neither channel is flat.",
+      "learningObjective": "Work out a negative phase reversal from electrode voltages in a bipolar chain.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "F7-T7 deflects down 60 uV and T7-P7 deflects up 60 uV",
+        "F7-T7 deflects up 60 uV and T7-P7 deflects down 60 uV",
+        "Both channels deflect up 100 uV because T7 is most negative",
+        "Both channels are flat because F7 and P7 have equal values"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "bipolar",
+        "end-of-chain",
+        "montage-switch"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "In a longitudinal bipolar montage, a spike appears only as an upward deflection in Fp1-F7, smaller in F7-T7, with no phase reversal anywhere. What is the best next step?",
+      "explanation": "When the maximum lies at the electrode at the end of a bipolar chain, there is no neighbor beyond it to produce a phase reversal, so the spike shows only as a deflection that fades along the chain. A referential montage with an inactive reference shows which electrode is highest, here likely Fp1. The pattern points toward the front of the chain, not the posterior temporal region. Lack of a phase reversal does not by itself make an event artifact, and changing filters distorts the waveform without solving the end-of-chain problem.",
+      "learningObjective": "Recognize the end-of-chain problem and switch to a referential view.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Report a left posterior temporal focus at the end of the chain",
+        "Conclude the spike is artifact because no phase reversal occurred",
+        "Review it on a referential montage to see if the maximum is at Fp1",
+        "Increase the low-frequency filter until a phase reversal appears"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "bipolar",
+        "cancellation",
+        "equipotential"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A large discharge measures -80 uV at both F7 and T7 at the same instant. What does the F7-T7 bipolar channel show, and why?",
+      "explanation": "A bipolar channel records the difference between its two inputs, and -80 minus -80 is zero. Two electrodes sitting on an equipotential part of a broad field can therefore show a nearly flat channel even during a large discharge. That is why bipolar montages are poor at showing amplitude. The channel does not display the shared voltage, does not add the inputs, and neither input dominates when they are equal.",
+      "learningObjective": "Explain amplitude cancellation in bipolar channels over equipotential fields.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "An upward 80 uV deflection, because both sites are negative",
+        "Little or nothing, because equal voltages cancel in subtraction",
+        "An upward 160 uV deflection, because the two values are added",
+        "A downward 80 uV deflection, because the second input dominates"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "active-reference",
+        "ipsilateral-ear",
+        "recognition"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "On a left ear-referenced montage, a left temporal spike appears upward in T7-A1, while Fp1-A1, C3-A1 and O1-A1 all show small downward deflections at the same instant. Channels referred to the right ear show nothing on the right. What does this pattern indicate?",
+      "explanation": "When the reference shares a negative spike, a distant quiet electrode minus that negative reference gives a positive value, so every channel sharing the reference shows a simultaneous, similar downward deflection. The same instant, same shape across unrelated regions, and absence in channels with a different reference identify reference contamination. Independent spikes would not be time-locked with matching shapes. A true widespread positivity would also appear with a quiet reference. The right ear channels are clean, so the right ear is not the source.",
+      "learningObjective": "Identify an active reference from synchronous inverted deflections in distant channels.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The left frontal and occipital regions have independent spikes",
+        "The patient has a dipole with positivity over the whole left side",
+        "The right ear is active and is distorting the left-sided channels",
+        "A1 is active, so its spike appears inverted in distant channels"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "cz-reference",
+        "temporal-focus",
+        "reference-choice"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "An awake routine EEG is ordered to look for anterior temporal discharges. For the referential portion, which common reference is least likely to share the field of those discharges?",
+      "explanation": "Anterior temporal discharges often spread to the ears and mastoids, so ear references can partly cancel them. The vertex is distant from the temporal lobes and, in the awake state, relatively quiet, so a Cz reference displays temporal activity well. Linked ears still contain any ear involvement and do not cancel it. Using a temporal electrode as the reference places the reference inside the region of interest.",
+      "learningObjective": "Choose Cz as a reference for temporal discharges in the awake state.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A1, because the left ear is close to the left temporal lobe",
+        "Linked ears, because averaging both ears cancels any spike",
+        "Cz, because the vertex is far from the anterior temporal region",
+        "T7, because a mid-temporal site captures the full field"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "cz-reference",
+        "sleep",
+        "montage-switch"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A patient with suspected left temporal epilepsy has been recorded on a Cz reference. Once N2 sleep begins, vertex waves and spindles contaminate every channel. What is the best change for the referential review?",
+      "explanation": "Vertex waves and spindles are maximal near Cz, so in sleep that reference becomes active. An ear reference avoids the vertex, and choosing the ear contralateral to a left temporal focus keeps the reference outside the spike field. Raising the low-frequency filter changes waveforms without removing reference contamination. The ipsilateral left ear tends to share left temporal discharges and would reduce them. Mixing Cz into the reference keeps the vertex activity in every channel.",
+      "learningObjective": "Switch away from Cz when sleep transients activate the reference.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Use an ear reference, preferring the ear opposite the suspected focus",
+        "Keep the Cz reference and raise the low-frequency filter setting",
+        "Use the left ear for all channels because it is near the focus",
+        "Use a Cz reference with linked ears added as a second input"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "average-reference",
+        "eye-movement",
+        "false-activity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "On an average reference montage, each large eye blink is followed by small deflections of opposite direction in the occipital channels. What is the best fix?",
+      "explanation": "A blink makes Fp1 and Fp2 strongly positive, which shifts the average reference toward positive. Quiet occipital electrodes minus that positive average become relatively negative, producing small mirror deflections. Excluding the frontopolar electrodes from the average removes the source. A filter on the occipital channels would distort them without addressing the reference. These are reference-borne artifacts and should not be reported as cerebral transients. A notch filter targets mains interference, not blink fields.",
+      "learningObjective": "Correct blink contamination of an average reference by excluding frontopolar electrodes.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Raise the low-frequency filter on the occipital channels only",
+        "Remove Fp1 and Fp2 from the electrodes used to form the average",
+        "Report the deflections as bilateral occipital sharp transients",
+        "Apply a 60 Hz notch filter to every channel in the montage"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "polarity",
+        "convention",
+        "recall"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "montage",
+      "reasoningSteps": 1,
+      "stem": "By the standard EEG polarity convention, when does a channel deflect upward?",
+      "explanation": "EEG channels display Input 1 minus Input 2, and a negative result is plotted upward. So Input 1 being more negative than Input 2 produces an upward deflection. Input 1 being more positive, which is the same as Input 2 being more negative, gives a positive result and a downward deflection. Equal inputs give zero output and no deflection.",
+      "learningObjective": "State the polarity convention used in EEG displays.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "When Input 1 is more positive than Input 2",
+        "When Input 2 is more negative than Input 1",
+        "When both inputs have exactly the same value",
+        "When Input 1 is more negative than Input 2"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "linked-ears",
+        "worked-values",
+        "false-activity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A right temporal spike measures T8 -90 uV, right ear A2 -30 uV and left ear A1 0 uV. With an averaged linked-ears reference of about -15 uV, how does channel T7-linked ears appear if T7 is 0 uV?",
+      "explanation": "The output is T7 minus the reference: 0 minus -15 equals +15 uV, a positive value that plots downward. So a quiet left temporal electrode shows a small downward deflection time-locked to the right spike, which is reference-borne activity rather than a left-sided event. An upward deflection would require a negative result. The full right spike does not copy across. The channel is not flat because the shared reference is partly active.",
+      "learningObjective": "Calculate false contralateral activity introduced by a linked-ears reference.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A small 15 uV upward deflection at the time of the spike",
+        "A 90 uV upward deflection copied from the right temporal spike",
+        "A small 15 uV downward deflection at the time of the spike",
+        "A flat line because T7 is outside the spike field entirely"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "reference",
+        "muscle",
+        "cz"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An awake, anxious adult clenches the jaw, and dense 40 to 60 Hz muscle activity appears in every channel of an ear-referenced montage, even over the vertex and occipital regions. Which reference is the best choice for the rest of the waking record?",
+      "explanation": "The ear electrodes sit next to the temporalis and masseter, so their muscle activity enters every channel that shares them. Cz lies over the vertex, where there is little muscle beneath the scalp, so it stays quiet for temporal muscle and the cerebral activity is no longer buried. Linking the ears keeps both muscle-contaminated electrodes in the reference. An average reference includes the temporal electrodes, so their muscle is spread to every channel. Lowering the high-frequency filter does not remove the muscle and can make it look like beta or spikes; asking the patient to relax the jaw comes first.",
+      "learningObjective": "Choose a reference away from contaminating temporal muscle.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "An average reference, which shares the muscle evenly across all channels",
+        "The same ear reference with the high-frequency filter lowered to 15 Hz",
+        "A Cz reference, which lies over the vertex away from the temporal and jaw muscles",
+        "Linked ears, which average A1 and A2 so the muscle on each side cancels out"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "reference",
+        "muscle",
+        "contamination"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "In an ear-referenced montage, why does muscle from a tense jaw appear in channels far from the jaw, such as P3-A1 and O1-A1?",
+      "explanation": "Each channel is Input 1 minus Input 2. When the shared reference A1 is contaminated by temporalis and masseter muscle, that muscle appears, with the same timing, in every A1-referenced channel, including P3-A1 and O1-A1. Muscle potentials are local and do not travel across the skull to distant electrodes. Common mode rejection removes signals common to both inputs and has nothing to do with the speed of the activity. Neck muscle would be largest at the occipital electrodes only, not identical across all channels.",
+      "learningObjective": "Explain why a contaminated reference spreads muscle to distant channels.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Muscle potentials spread through the skull to the parietal and occipital electrodes",
+        "A1 sits next to the temporalis and masseter, so its muscle enters every A1-referenced channel",
+        "The amplifier common mode rejection fails whenever the muscle activity is fast",
+        "The occipital electrodes pick up the same muscle from the neck at the same moment"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-028",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "reference",
+        "14-and-6",
+        "benign-variant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A drowsy 14-year-old shows brief comb-like bursts with a positive peak near the right posterior temporal region. Which recording best displays them?",
+      "explanation": "These are 14 and 6 Hz positive bursts, a benign variant with a broad, low-amplitude posterior temporal field. A long interelectrode distance, such as a referential montage to the contralateral ear, records the full potential difference and shows them best. Short bipolar chains subtract neighbouring electrodes that share the broad field, so the bursts shrink or cancel. The ipsilateral ear sits inside the field and reduces them. A Laplacian derivation suppresses broad fields like this one.",
+      "learningObjective": "Choose the montage that best records 14 and 6 Hz positive bursts.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A referential montage to the contralateral (left) ear",
+        "A referential montage to the ipsilateral (right) ear, close to the field",
+        "A source (Laplacian) derivation that sharpens very focal activity",
+        "A transverse bipolar chain with short distances across the posterior head"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-029",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "14-and-6",
+        "bipolar",
+        "cancellation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "Why can 14 and 6 Hz positive bursts look much smaller in a longitudinal bipolar chain than in a referential montage to the contralateral ear?",
+      "explanation": "A bipolar channel shows the difference between two nearby electrodes. A broad, low-amplitude field like 14 and 6 Hz positive bursts is similar at neighbouring electrodes, so most of it cancels. A distant reference such as the contralateral ear keeps the whole potential. The bursts are surface positive, and montage choice changes display, not their polarity at the scalp. Filters are set the same in either montage. They occur in drowsiness and light sleep, and montage sensitivity does not change with state.",
+      "learningObjective": "Explain why broad fields cancel in short bipolar chains.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The bursts are negative at the surface and are inverted by the bipolar chain",
+        "The bursts occur only in sleep, when bipolar chains are less sensitive",
+        "Bipolar chains use a higher low-frequency filter that removes the bursts",
+        "Neighbouring electrodes share the broad field, so subtraction cancels it"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-030",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "sweat",
+        "low-frequency-filter",
+        "time-constant"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Slow sweat sway at about 0.3 Hz drifts across several channels while the technologist is looking for low-voltage beta. Which single change reduces the sway itself?",
+      "explanation": "Sweat sway is very slow activity, so it is reduced by the low-frequency filter: raising the cutoff shortens the time constant and attenuates slow drift while leaving beta untouched. Changing the sensitivity redraws everything at a new scale, so the sway and the low-voltage beta both shrink, and the target is under-read. The high-frequency filter acts on fast activity, not slow drift. The notch acts only near 60 Hz. Cooling and drying the patient comes first, and any filter change is documented.",
+      "learningObjective": "Choose the filter that reduces sweat sway without changing scale.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Change the sensitivity from 5 to 15 uV/mm so that the sway takes up less space",
+        "Raise the low-frequency filter, shortening the time constant",
+        "Turn on the 60 Hz notch filter to cut the slow baseline drift out",
+        "Lower the high-frequency filter so that the slow sway is smoothed away"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsa-031",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "time-constant",
+        "low-frequency-filter",
+        "sweat"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Raising the low-frequency filter from 0.5 Hz to 1 Hz changes the time constant from about 0.32 s to about 0.16 s. What does this do to a slow sweat drift?",
+      "explanation": "Time constant = 1 / (2 x pi x cutoff), so 0.5 Hz is about 0.32 s and 1 Hz about 0.16 s. A shorter time constant means a higher low-frequency cutoff, so slow drift is attenuated more strongly. A shorter time constant passes less slow activity, not more. Slow drift is exactly what this filter acts on. Fast activity is governed by the high-frequency filter, not the time constant.",
+      "learningObjective": "Relate low-frequency filter cutoff, time constant and slow drift.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The shorter time constant passes the slow drift more fully than before",
+        "The change affects only the fast activity and not the slow drift",
+        "The shorter time constant attenuates the slow drift more strongly",
+        "The shorter time constant leaves the slow drift exactly unchanged"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

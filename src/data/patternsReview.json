@@ -1,0 +1,1072 @@
+{
+  "title": "Patterns, Sleep, Drugs and Activation",
+  "subtitle": "Domain II quick review: polarity and measurement, benign variants, sleep, neonatal EEG, medication effects and activation procedures",
+  "tabs": [
+    {
+      "id": "polarity-measurement",
+      "title": "Polarity and Measurement",
+      "intro": "Every differential amplifier compares input 1 with input 2, and the pen direction tells you which input was more negative. Most Domain II reading errors come from forgetting that rule, from misreading sensitivity, or from mixing up period and frequency. Work the numbers until they are automatic.",
+      "sections": [
+        {
+          "title": "The negative-up convention",
+          "kind": "table",
+          "head": [
+            "Situation",
+            "Pen direction",
+            "Why"
+          ],
+          "rows": [
+            [
+              "Input 1 more negative than input 2",
+              "Up",
+              "The EEG convention: relative negativity at input 1 deflects upward"
+            ],
+            [
+              "Input 1 more positive than input 2",
+              "Down",
+              "Same rule in reverse"
+            ],
+            [
+              "Input 2 more negative than input 1",
+              "Down",
+              "A negative event that lands in input 2 looks like a positive one in that channel"
+            ],
+            [
+              "Input 2 more positive than input 1",
+              "Up",
+              "Positivity at input 2 is read as relative negativity at input 1"
+            ],
+            [
+              "Both inputs equal (same potential)",
+              "Flat (cancellation)",
+              "A differential amplifier only shows the difference; an event equally present at both inputs disappears"
+            ]
+          ],
+          "note": "So a surface-negative wave is not always an upward deflection. Its direction depends on which input it reaches more strongly in that derivation."
+        },
+        {
+          "title": "Polarity of common waveforms (at the scalp)",
+          "kind": "table",
+          "head": [
+            "Waveform",
+            "Usual surface polarity",
+            "Memory hook"
+          ],
+          "rows": [
+            [
+              "Spikes and sharp waves (epileptiform)",
+              "Negative (most)",
+              "Cortical discharges are usually surface-negative"
+            ],
+            [
+              "Vertex waves, K-complex (main sharp phase)",
+              "Negative",
+              "Large vertex negativity in N1 to N2"
+            ],
+            [
+              "Mu rhythm (sharp phase)",
+              "Negative arches",
+              "Comb-like arcs over C3/C4"
+            ],
+            [
+              "BETS / small sharp spikes, wicket spikes",
+              "Negative",
+              "Benign but still negative"
+            ],
+            [
+              "Lambda waves",
+              "Positive",
+              "Occipital, awake, visual scanning"
+            ],
+            [
+              "POSTS",
+              "Positive",
+              "The P in the name"
+            ],
+            [
+              "14 and 6 Hz positive spikes",
+              "Positive",
+              "The word positive is in the name"
+            ],
+            [
+              "Triphasic waves",
+              "Small negative, then the largest positive phase, then a slower negative",
+              "The dominant middle phase is positive"
+            ],
+            [
+              "ECG artifact (QRS)",
+              "QRS-locked sharp transients, usually largest on the left (left ear A1 and left temporal and posterior leads); ABRET describes the R wave as positive over the left posterior quadrant, but the displayed polarity depends on the montage",
+              "The heart's axis points down and left, so left-sided electrodes (especially the left ear) see it most"
+            ],
+            [
+              "Eye blink",
+              "Positive at Fp1/Fp2",
+              "The cornea is positive and rolls up toward Fp electrodes (Bell phenomenon)"
+            ]
+          ]
+        },
+        {
+          "title": "Localizing: phase reversal vs amplitude",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Bipolar montage: phase reversal",
+              "body": "Find the electrode shared by two adjacent channels where the deflections flip direction. That shared electrode is the maximum.",
+              "points": [
+                "Negative event: the two pens point toward each other",
+                "Positive event: the two pens point away from each other",
+                "End-of-chain problem: if the maximum is at the first or last electrode of a chain there is no reversal; check with a referential montage"
+              ]
+            },
+            {
+              "title": "Referential montage: amplitude",
+              "body": "Every channel shares one reference, so the channel with the largest deflection marks the maximum. No phase reversal is expected unless the reference itself is active.",
+              "points": [
+                "An active reference puts the same wave in every channel, sometimes in the opposite direction",
+                "A quiet channel can mean the electrode and reference carry equal potential"
+              ]
+            },
+            {
+              "title": "Choosing a reference",
+              "body": "Pick a reference far from the activity of interest. For temporal discharges, Cz is a good choice because ear electrodes pick up temporal activity themselves.",
+              "points": [
+                "Cz is a poor reference for vertex waves, spindles and central activity",
+                "Ear references are contaminated by mid and anterior temporal discharges and by ECG"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Measuring voltage: deflection (mm) x sensitivity (uV/mm)",
+          "kind": "table",
+          "head": [
+            "Measured peak-to-peak",
+            "Sensitivity",
+            "Voltage"
+          ],
+          "rows": [
+            [
+              "7 mm",
+              "7 uV/mm",
+              "49 uV"
+            ],
+            [
+              "10 mm",
+              "5 uV/mm",
+              "50 uV"
+            ],
+            [
+              "15 mm",
+              "2 uV/mm",
+              "30 uV"
+            ],
+            [
+              "4 mm",
+              "10 uV/mm",
+              "40 uV"
+            ],
+            [
+              "Same 50 uV wave redrawn",
+              "Changed from 5 to 10 uV/mm",
+              "Deflection shrinks from 10 mm to 5 mm; the voltage is unchanged"
+            ]
+          ],
+          "note": "Measure from the trough to the peak of the wave you are asked about, in the channel shown. The smaller the uV/mm number, the more sensitive the setting: 2 uV/mm draws a wave 2.5 times taller than 5 uV/mm."
+        },
+        {
+          "title": "Frequency and duration",
+          "kind": "list",
+          "items": [
+            "Frequency (Hz) = number of complete waves in 1 second; period = 1 / frequency.",
+            "At 30 mm/s paper speed, 1 s = 30 mm, so a wave 6 mm wide lasts 200 ms and repeats at 5 Hz.",
+            "Duration bands: spike 20 to under 70 ms; sharp wave 70 to 200 ms.",
+            "Bands: delta under 4 Hz, theta 4 to under 8 Hz, alpha 8 to 13 Hz, beta over 13 Hz.",
+            "Count waves over a full second, not one cycle, when the rhythm is irregular.",
+            "On digital review, check the displayed time base (seconds per page) before you count."
+          ]
+        },
+        {
+          "title": "Filters and waveform duration",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "60 Hz notch",
+              "body": "One cycle of 60 Hz lasts 1/60 s = about 16.7 ms. A notch filter strips energy near 60 Hz, so a waveform about 16 to 17 ms wide is attenuated most; a 50 ms wave is barely touched.",
+              "points": [
+                "Spikes are fast, so a notch can blunt their peaks",
+                "Fix the 60 Hz source (impedance, grounds, cords) before reaching for the notch",
+                "Where mains is 50 Hz, the matching period is 20 ms"
+              ]
+            },
+            {
+              "title": "High-frequency filter (low-pass)",
+              "body": "Lowering it (for example 70 to 15 Hz) shrinks fast activity and can make muscle look like beta or round off spikes.",
+              "points": []
+            },
+            {
+              "title": "Low-frequency filter (high-pass)",
+              "body": "Raising it (for example 1 to 5 Hz) shrinks slow waves and can hide focal delta.",
+              "points": []
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "A negative event at input 2 deflects down: never call a wave positive from its direction alone.",
+        "Negative phase reversal: pens point toward each other at the shared electrode.",
+        "2 uV/mm is more sensitive than 5 uV/mm; the smaller number gives the bigger trace.",
+        "Voltage = mm x uV/mm. Changing sensitivity changes the drawing, never the voltage.",
+        "60 Hz notch: 1/60 s = 16.7 ms, so the shortest (about 16 ms) waveform is affected most.",
+        "ECG artifact is time-locked to the QRS, usually largest over the left ear and left temporal and posterior leads, and can look like spikes; add an ECG channel to prove it.",
+        "Lennox-Gastaut slow spike-and-wave runs at about 1.5 to 2.5 Hz; classic absence spike-wave is about 3 Hz.",
+        "Use Cz, not the ears, as the reference when the question is temporal spikes."
+      ],
+      "eegLink": "Before marking any spike, confirm its polarity and field across two montages and note the sensitivity and filters in use."
+    },
+    {
+      "id": "variants",
+      "title": "Benign Variants",
+      "intro": "Benign variants look sharp or rhythmic but carry no link to epilepsy. Each has a typical age, state and location; matching those three details is how you tell them from true epileptiform discharges. A second group of rhythmic or periodic patterns looks similar but is not benign.",
+      "sections": [
+        {
+          "title": "Benign variants at a glance",
+          "kind": "table",
+          "head": [
+            "Variant",
+            "Age",
+            "State",
+            "Location",
+            "Polarity",
+            "How to tell from epileptiform"
+          ],
+          "rows": [
+            [
+              "BETS (benign epileptiform transients of sleep) = small sharp spikes",
+              "Adults",
+              "Drowsiness and light sleep; gone in deep sleep",
+              "Temporal, wide field, often bilateral independent",
+              "Negative",
+              "Low amplitude (under about 50 uV), very brief, little or no after-going slow wave, no background disruption; often opposite polarity over the other hemisphere"
+            ],
+            [
+              "Wicket spikes",
+              "Adults, usually over 30",
+              "Drowsiness and light sleep (sometimes awake)",
+              "Temporal",
+              "Negative",
+              "Arch-shaped 6 to 11 Hz runs; a single wicket matches the shape of the waves in the run, has no slow wave and does not disturb the background"
+            ],
+            [
+              "14 and 6 Hz positive spikes",
+              "Adolescents and young adults",
+              "Drowsiness and light sleep",
+              "Posterior temporal and nearby",
+              "Positive",
+              "Comb-like bursts under 1 s at 14 and/or 6 Hz; best seen in a referential montage with wide spacing (for example contralateral ear)"
+            ],
+            [
+              "6 Hz phantom spike-wave",
+              "Adolescents and adults",
+              "Awake and drowsy; fades in deeper sleep",
+              "Generalized (anterior or posterior maximum)",
+              "Tiny spike, negative",
+              "Brief 1 to 2 s bursts at 5 to 7 Hz with a very small spike; WHAM features raise concern, FOLD features favor benign"
+            ],
+            [
+              "Rhythmic midtemporal theta of drowsiness (psychomotor variant)",
+              "Adolescents and adults",
+              "Drowsiness",
+              "Midtemporal, one or both sides",
+              "Negative",
+              "Notched or flat-topped 5 to 7 Hz trains that stay monomorphic and do not evolve in frequency or field"
+            ],
+            [
+              "SREDA (subclinical rhythmic EEG discharge of adults)",
+              "Adults, usually over 50",
+              "Awake at rest (also drowsy)",
+              "Parietal and posterior temporal, bilateral",
+              "Sharply contoured theta/delta",
+              "Abrupt onset, lasts tens of seconds to minutes, no clinical change, no postictal slowing; patient can talk normally during it"
+            ],
+            [
+              "Lambda waves",
+              "Children and young adults mostly",
+              "Awake, eyes open, scanning a picture or text",
+              "Occipital",
+              "Positive",
+              "Vanish with eyes closed or a blank card; triangular, time-locked to saccades"
+            ],
+            [
+              "POSTS",
+              "Adolescents and adults (common 15 to 35)",
+              "N1 to N2 sleep",
+              "Occipital, bilateral",
+              "Positive",
+              "Checkmark shape, often in 4 to 5 Hz runs, only in sleep"
+            ],
+            [
+              "Mu rhythm",
+              "Any age; common in young people",
+              "Awake",
+              "Central (C3/C4)",
+              "Negative arches",
+              "7 to 11 Hz comb; blocked by moving or planning to move the opposite limb, not by eye opening"
+            ],
+            [
+              "Hypnagogic / hypnopompic hypersynchrony",
+              "Infants and children (about 3 months to early teens)",
+              "Drowsiness or arousal only",
+              "Generalized, often frontocentral",
+              "Mixed",
+              "High-amplitude 3 to 5 Hz runs that may have sharp notches but no true spikes, appearing only at state change"
+            ],
+            [
+              "Posterior slow waves of youth",
+              "Children and adolescents",
+              "Awake, eyes closed",
+              "Occipital",
+              "Delta riding under alpha",
+              "Block with eye opening along with the alpha and disappear in sleep"
+            ],
+            [
+              "Slow and fast alpha variants",
+              "Any age",
+              "Awake, eyes closed",
+              "Posterior",
+              "As alpha",
+              "Slow variant is a notched half-frequency of alpha; fast variant is double; both block with eye opening like alpha"
+            ],
+            [
+              "Breach rhythm",
+              "Any age after craniotomy or skull defect",
+              "Any",
+              "Over the bone defect",
+              "Mixed, sharp contour",
+              "Higher amplitude and faster than the other side; check the history. Focal slowing under it still counts"
+            ]
+          ]
+        },
+        {
+          "title": "Look-alikes that are NOT benign",
+          "kind": "table",
+          "head": [
+            "Pattern",
+            "Typical patient",
+            "What it looks like",
+            "What it suggests",
+            "Technologist action"
+          ],
+          "rows": [
+            [
+              "OIRDA (occipital intermittent rhythmic delta)",
+              "Children",
+              "Runs of about 3 Hz rhythmic delta over both occipital areas, blocked by eye opening, often increased by HV",
+              "Associated with childhood absence epilepsy; not a benign variant",
+              "Run full HV and watch for generalized 3 Hz spike-wave; test responsiveness"
+            ],
+            [
+              "FIRDA (frontal intermittent rhythmic delta)",
+              "Adults",
+              "Bursts of 1.5 to 3 Hz rhythmic frontal delta, often in drowsiness, attenuated by alerting",
+              "Nonspecific encephalopathy: toxic-metabolic, raised intracranial pressure, deep midline lesions",
+              "Document mental status, medications and alerting tests"
+            ],
+            [
+              "TIRDA (temporal intermittent rhythmic delta)",
+              "Adolescents and adults",
+              "Runs of rhythmic delta over one temporal region",
+              "Strongly linked to temporal lobe epilepsy; treated like an interictal epileptiform finding",
+              "Add sleep and anterior temporal electrodes per protocol"
+            ],
+            [
+              "LPDs (lateralized periodic discharges, formerly PLEDs)",
+              "Acutely ill adults",
+              "Sharp or spike complexes repeating at roughly regular intervals (often about 1 per second) over one hemisphere",
+              "Acute structural injury (stroke, HSV encephalitis, tumor) and high seizure risk",
+              "Notify per critical-value protocol; watch for evolution to seizure"
+            ]
+          ]
+        },
+        {
+          "title": "Telling benign from epileptiform: checklist",
+          "kind": "steps",
+          "items": [
+            "Note age and state: most sharp variants live in drowsiness and light sleep.",
+            "Look for an after-going slow wave and background disruption; true discharges usually have both.",
+            "Check the field: true spikes have a physiologic field over several electrodes; very narrow or shifting fields suggest a variant or artifact.",
+            "Check morphology across the run: a variant repeats one stable shape; a seizure evolves in frequency, amplitude and field.",
+            "Confirm polarity in two montages; positive sharp transients in an adult are usually variants (POSTS, lambda, 14 and 6).",
+            "Mark and describe; leave interpretation to the reader."
+          ]
+        }
+      ],
+      "pearls": [
+        "BETS and small sharp spikes are the same pattern: adult, light sleep, low and brief, no slow wave.",
+        "Lambda is awake and visual; POSTS is the sleeping cousin. Both are occipital and positive.",
+        "Mu is blocked by contralateral movement, alpha by eye opening.",
+        "6 Hz phantom spike-wave: WHAM is worrisome, FOLD is benign.",
+        "OIRDA is not benign: in a child it points toward absence epilepsy. Posterior slow waves of youth are the benign occipital pattern.",
+        "SREDA is rhythmic and long but the patient stays normal and there is no postictal slowing.",
+        "Hypnagogic hypersynchrony in a 4-year-old at sleep onset is normal; the same burst while fully awake is not."
+      ],
+      "eegLink": "Mislabeling a benign variant as epileptiform can lead to wrong diagnoses, so write the age, state and location next to any sharp transient you mark."
+    },
+    {
+      "id": "sleep",
+      "title": "Sleep",
+      "intro": "Sleep raises the yield of epileptiform discharges, and its normal transients mature on a timetable. Know the adult stages, when each sleep feature appears in infancy, and which extra channels to add when the patient's sleep looks disordered.",
+      "sections": [
+        {
+          "title": "Adult sleep staging features",
+          "kind": "table",
+          "head": [
+            "Stage",
+            "EEG",
+            "Eyes and EMG"
+          ],
+          "rows": [
+            [
+              "Wake (relaxed, eyes closed)",
+              "Posterior dominant alpha",
+              "Blinks, normal chin tone"
+            ],
+            [
+              "N1 (drowsy)",
+              "Alpha drops out; low-voltage mixed theta; vertex waves; POSTS may begin",
+              "Slow rolling eye movements; tone slightly lower"
+            ],
+            [
+              "N2",
+              "Sleep spindles (about 11 to 14 Hz, 0.5 to 2 s, maximal central) and K-complexes on a theta background",
+              "Usually no eye movements (slow rolling movements may persist early in N2)"
+            ],
+            [
+              "N3 (slow-wave sleep)",
+              "High-amplitude delta (about 0.5 to 2 Hz, over 75 uV peak-to-peak) in at least 20% of the epoch, frontal maximum",
+              "No eye movements"
+            ],
+            [
+              "REM",
+              "Low-voltage mixed frequency like N1; sawtooth waves at the vertex; alpha may appear 1 to 2 Hz slower than waking alpha",
+              "Rapid eye movements; chin EMG at its lowest (atonia); brief twitches; irregular breathing"
+            ]
+          ]
+        },
+        {
+          "title": "Development of sleep features",
+          "kind": "table",
+          "head": [
+            "Feature",
+            "First appears",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Sleep spindles",
+              "About 6 to 8 weeks after term",
+              "Long trains in infancy; asynchronous between hemispheres in the first year is normal"
+            ],
+            [
+              "Spindle synchrony",
+              "Should be synchronous by about 2 years",
+              "Persistent asynchrony after about 2 years is abnormal; a consistently absent spindle on one side is abnormal at any age after they develop"
+            ],
+            [
+              "Vertex waves",
+              "About 5 months",
+              "Become sharper and taller through childhood"
+            ],
+            [
+              "K-complexes",
+              "About 5 to 6 months",
+              "Often follow an arousing sound"
+            ],
+            [
+              "Hypnagogic hypersynchrony",
+              "From a few months of age",
+              "Fades by early adolescence"
+            ],
+            [
+              "Sleep onset",
+              "Newborns enter sleep through active (REM-like) sleep",
+              "By about 3 months, sleep onset is through NREM; REM at onset in an adult is abnormal"
+            ]
+          ]
+        },
+        {
+          "title": "Sleep disorders and what to add",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Obstructive sleep apnea",
+              "body": "Repeated arousals with snoring, pauses in breathing and desaturation. Add respiratory monitoring: airflow, chest/abdominal effort and pulse oximetry per protocol.",
+              "points": [
+                "Chin EMG alone does not show apnea",
+                "Document each arousal and what preceded it"
+              ]
+            },
+            {
+              "title": "Narcolepsy",
+              "body": "Sleep-onset REM: REM appearing within about 15 minutes of falling asleep. Eye leads and chin EMG let you prove REM.",
+              "points": [
+                "Formal testing is the MSLT, which looks for short sleep latency and two or more sleep-onset REM periods"
+              ]
+            },
+            {
+              "title": "NREM parasomnias",
+              "body": "Sleepwalking, sleep terrors and confusional arousals come out of N3, usually in the first third of the night.",
+              "points": [
+                "Video plus EEG separates them from nocturnal frontal lobe seizures"
+              ]
+            },
+            {
+              "title": "REM sleep behavior disorder",
+              "body": "Dream-enactment because REM atonia is lost. Chin and limb EMG show tone during REM.",
+              "points": [
+                "Video is essential",
+                "May precede Parkinson disease and related disorders"
+              ]
+            },
+            {
+              "title": "Periodic limb movements",
+              "body": "Repetitive leg jerks during sleep, often with arousals. Add anterior tibialis surface EMG on both legs.",
+              "points": [
+                "Movements recur at fairly regular intervals of seconds"
+              ]
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Spindles: 11 to 16 Hz (most 12 to 14 Hz) bursts lasting 0.5 s or more, maximal centrally, in N2.",
+        "Spindle asynchrony is normal in infancy and abnormal after about 2 years.",
+        "An adult who keeps waking with snoring needs respiration and oximetry, not just muscle tone.",
+        "REM within about 15 minutes of sleep onset in an adult suggests narcolepsy: document it with eye and chin channels.",
+        "Sawtooth waves belong to REM; POSTS and vertex waves to N1 and N2.",
+        "N3 needs high-amplitude delta in at least a fifth of the epoch."
+      ],
+      "eegLink": "When sleep looks abnormal, add the right polygraphic channel early and annotate the event; the reader cannot reconstruct what was not recorded."
+    },
+    {
+      "id": "neonatal",
+      "title": "Neonatal EEG",
+      "intro": "Neonatal EEG is read against conceptional age and state. Polygraphy (eyes, chin EMG, respiration, ECG) is needed to identify state, and many patterns that are normal at one age are abnormal at another.",
+      "sections": [
+        {
+          "title": "Neonatal states",
+          "kind": "table",
+          "head": [
+            "Feature",
+            "Active sleep (REM-like)",
+            "Quiet sleep (NREM-like)",
+            "Awake"
+          ],
+          "rows": [
+            [
+              "Eyes",
+              "Closed with rapid eye movements",
+              "Closed, no eye movements",
+              "Open"
+            ],
+            [
+              "Body",
+              "Twitches, grimaces, small limb movements",
+              "Few movements, occasional startles",
+              "Movements, crying possible"
+            ],
+            [
+              "Chin EMG",
+              "Low or absent",
+              "Present",
+              "Present"
+            ],
+            [
+              "Respiration",
+              "Irregular",
+              "Regular",
+              "Irregular"
+            ],
+            [
+              "EEG at term",
+              "Continuous mixed-frequency activity",
+              "Tracé alternant (or high-voltage slow)",
+              "Continuous mixed-frequency activity"
+            ]
+          ]
+        },
+        {
+          "title": "Continuity by age",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Tracé discontinu (preterm)",
+              "body": "Bursts of activity separated by very low-amplitude interburst periods. The gaps shorten as the baby matures.",
+              "points": [
+                "Normal in preterm infants",
+                "In a term baby a similar pattern is abnormal"
+              ]
+            },
+            {
+              "title": "Tracé alternant (term quiet sleep)",
+              "body": "High-voltage bursts alternate with lower but still clearly active periods lasting a few seconds.",
+              "points": [
+                "Emerges in the mid-30s weeks",
+                "Replaced by continuous slow-wave sleep by about 44 to 46 weeks"
+              ]
+            },
+            {
+              "title": "Continuous",
+              "body": "Activity without gaps. At term, active sleep and wakefulness are continuous.",
+              "points": [
+                "Burst suppression (invariant, unreactive) is abnormal at any age"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Delta brushes by conceptional age",
+          "kind": "table",
+          "head": [
+            "Conceptional age",
+            "Delta brushes"
+          ],
+          "rows": [
+            [
+              "About 26 to 28 weeks",
+              "Appear, most prominent centrally"
+            ],
+            [
+              "About 32 to 34 weeks",
+              "Peak abundance; spread to temporal and occipital areas"
+            ],
+            [
+              "About 36 to 38 weeks",
+              "Decreasing; mainly in quiet sleep"
+            ],
+            [
+              "Term and beyond",
+              "Rare; should be gone by about 44 weeks"
+            ]
+          ],
+          "note": "A delta brush is a delta wave with fast (beta-range) activity riding on it. Many brushes in a term or post-term infant suggest immaturity or dysfunction."
+        },
+        {
+          "title": "Sharp transients: normal vs abnormal",
+          "kind": "table",
+          "head": [
+            "Transient",
+            "Normal",
+            "Abnormal"
+          ],
+          "rows": [
+            [
+              "Frontal sharp transients (encoches frontales)",
+              "Diphasic, often bilateral and synchronous, in transitional/light sleep from about 34 to 35 weeks to a few weeks after term",
+              "Very frequent, consistently one-sided or persisting well past term"
+            ],
+            [
+              "Temporal sharp transients",
+              "Occasional, random, bilateral independent, in sleep",
+              "Persistent, repetitive, consistently lateralized, in runs, or present in wakefulness near term; a nonspecific sign of dysfunction on that side"
+            ],
+            [
+              "Positive rolandic (central) sharp waves",
+              "Not normal",
+              "Associated with white matter injury in preterm infants"
+            ]
+          ]
+        },
+        {
+          "title": "Conceptional age arithmetic",
+          "kind": "steps",
+          "items": [
+            "Conceptional age (CA) = gestational age at birth + time since birth (legal age).",
+            "Born at 30 weeks, now 6 weeks old: CA = 36 weeks.",
+            "Born at 34 weeks, now 4 weeks old: CA = 38 weeks; compare with term norms, not with a 4-week-old term baby.",
+            "Born at term (40 weeks), now 8 weeks old: CA = 48 weeks; spindles should be emerging.",
+            "Write gestational age, legal age and the sum on the requisition. ACNS now uses postmenstrual age (PMA = gestational age + chronological age) for this sum; older EEG texts called the same number conceptional age."
+          ]
+        }
+      ],
+      "pearls": [
+        "Active sleep: eye movements, twitches, absent chin EMG, irregular breathing.",
+        "Quiet sleep at term shows tracé alternant; preterm quiet sleep shows tracé discontinu.",
+        "Right temporal sharp transients during wakefulness at 38 weeks CA are a nonspecific sign of right temporal dysfunction: not normal, not proof of epilepsy.",
+        "Encoches frontales are normal frontal sharp transients near term.",
+        "Delta brushes are the hallmark of prematurity and should fade by term.",
+        "Without eye, chin, respiration and ECG channels, neonatal state cannot be scored."
+      ],
+      "eegLink": "Record long enough to capture a full sleep cycle (usually about an hour) and annotate state changes, because the reader judges each pattern against state and CA."
+    },
+    {
+      "id": "medications",
+      "title": "Medications",
+      "intro": "Drugs change the background, the fast activity and sometimes the epileptiform findings. Expect a question to give a drug history and a pattern and ask what explains it or what to document.",
+      "sections": [
+        {
+          "title": "Drug effects on the EEG",
+          "kind": "table",
+          "head": [
+            "Drug or class",
+            "Usual EEG effect",
+            "Toxicity or withdrawal"
+          ],
+          "rows": [
+            [
+              "Benzodiazepines (lorazepam, diazepam, alprazolam)",
+              "Increased beta, often frontal; drowsiness; may suppress epileptiform discharges",
+              "Abrupt withdrawal: seizures and photoparoxysmal responses"
+            ],
+            [
+              "Barbiturates (phenobarbital, pentobarbital)",
+              "Increased beta; high doses give slowing, burst suppression and even electrocerebral silence",
+              "Withdrawal is classically linked to photoparoxysmal responses and seizures; intoxication must be excluded before ECI testing"
+            ],
+            [
+              "Phenytoin",
+              "Little change at therapeutic levels",
+              "Toxicity: diffuse slowing; clinically nystagmus first, then ataxia and slurred speech as levels rise"
+            ],
+            [
+              "Carbamazepine",
+              "Little change at therapeutic levels",
+              "Toxicity slows the background; can aggravate absence and myoclonic seizures"
+            ],
+            [
+              "Valproate",
+              "Reduces generalized spike-wave and photoparoxysmal responses",
+              "High ammonia can cause encephalopathy with slowing and triphasic waves"
+            ],
+            [
+              "Lithium",
+              "Mild slowing even at therapeutic levels",
+              "Toxicity: diffuse slowing, triphasic waves, sharp or periodic discharges"
+            ],
+            [
+              "Tricyclic antidepressants",
+              "More theta and beta",
+              "Lower the seizure threshold; overdose causes slowing and epileptiform activity"
+            ],
+            [
+              "Antipsychotics (especially clozapine)",
+              "Slowing; clozapine can produce epileptiform discharges",
+              "Dose-related seizure risk"
+            ],
+            [
+              "Opioids",
+              "Slowing proportional to dose",
+              "Overdose: marked slowing; meperidine metabolite can cause seizures"
+            ],
+            [
+              "Propofol",
+              "Beta at light sedation, then slowing and burst suppression with deeper doses",
+              "Used to treat refractory status epilepticus"
+            ],
+            [
+              "Ketamine",
+              "Increased fast activity and theta rather than typical sedative slowing",
+              "Can make the record look less sedated than the patient is"
+            ],
+            [
+              "Alcohol",
+              "Acute: mild slowing; chronic: lower voltage",
+              "Withdrawal: seizures and enhanced photic (photomyogenic or photoparoxysmal) responses"
+            ],
+            [
+              "Neuromuscular blockers (rocuronium, vecuronium)",
+              "No cerebral effect",
+              "Remove muscle artifact; also hide clinical seizure signs, so EEG is the only seizure monitor"
+            ],
+            [
+              "Caffeine and stimulants",
+              "Can reduce drowsiness and increase fast activity",
+              "Can make sleep hard to obtain; high doses lower seizure threshold"
+            ]
+          ]
+        },
+        {
+          "title": "What to document",
+          "kind": "list",
+          "items": [
+            "Every current medication with dose and time of last dose, especially anti-seizure drugs and sedatives.",
+            "Sedation given for the test: drug, dose, route, time and who gave it, per facility policy.",
+            "Recent stopping or tapering of benzodiazepines, barbiturates, alcohol or anti-seizure drugs.",
+            "Paralytics: note that muscle artifact is gone because of the drug, not because the patient is calm.",
+            "Changes in the record that follow a dose (for example new beta 10 minutes after lorazepam)."
+          ]
+        },
+        {
+          "title": "Pattern to cause: quick links",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Diffuse excess beta",
+              "body": "Think sedative or hypnotic drug first: benzodiazepine or barbiturate.",
+              "points": [
+                "A focal lack of beta can point to cortical dysfunction or fluid over the cortex on that side"
+              ]
+            },
+            {
+              "title": "Triphasic waves",
+              "body": "Metabolic: hepatic, renal, lithium toxicity, hyperammonemia from valproate.",
+              "points": []
+            },
+            {
+              "title": "New photoparoxysmal response",
+              "body": "Ask about recent sedative or alcohol withdrawal.",
+              "points": []
+            },
+            {
+              "title": "Clean record in an intubated ICU patient",
+              "body": "Check whether a neuromuscular blocker is running; record its name and time.",
+              "points": []
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Benzodiazepines and barbiturates are the classic causes of excess beta.",
+        "Barbiturate withdrawal is the drug state most associated with photic-induced epileptiform discharges.",
+        "Nystagmus is the earliest and ataxia the most disabling clinical sign of phenytoin toxicity.",
+        "Lithium toxicity can produce triphasic waves even when the serum level looks acceptable.",
+        "Rocuronium has no cerebral effect; it only removes muscle artifact.",
+        "Exclude sedative intoxication and hypothermia before an ECI study."
+      ],
+      "eegLink": "A drug and timing note on the record lets the reader separate medication effect from new pathology."
+    },
+    {
+      "id": "activation",
+      "title": "Activation",
+      "intro": "Photic stimulation, hyperventilation and sleep deprivation are the standard activations. Know the normal responses, the atypical ones you must note, when to stop, and when not to start.",
+      "sections": [
+        {
+          "title": "Photic stimulation: set-up",
+          "kind": "steps",
+          "items": [
+            "Place the lamp about 30 cm (12 inches) from the nasion, in a dimmed room.",
+            "Step through flash rates from low to high (for example 1 to about 30 Hz) in short trains per lab protocol.",
+            "Record with eyes open and eyes closed during trains; eye closure itself can trigger responses in some patients.",
+            "Mark each flash rate on the record; event markers show time-locking.",
+            "Keep photic separate from the hyperventilation recovery period."
+          ]
+        },
+        {
+          "title": "Photic responses",
+          "kind": "table",
+          "head": [
+            "Response",
+            "What you see",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Photic driving",
+              "Occipital waves at the flash rate, time-locked, usually best near alpha frequencies",
+              "Normal; its absence is also normal"
+            ],
+            [
+              "Harmonic driving",
+              "Occipital response at a multiple of the flash rate",
+              "Normal"
+            ],
+            [
+              "Subharmonic driving",
+              "Response at a fraction (for example half) of the flash rate",
+              "Normal"
+            ],
+            [
+              "Markedly asymmetric driving",
+              "Clear driving on one side, little on the other",
+              "Atypical: the side with less response may be dysfunctional; note it"
+            ],
+            [
+              "Driving at low (delta-range) flash rates",
+              "High-amplitude occipital responses to 1 to 3 Hz flashes",
+              "Atypical beyond early childhood; note it, especially if large or spiky (for example in neuronal ceroid lipofuscinosis)"
+            ],
+            [
+              "Photomyogenic (photomyoclonic)",
+              "Frontal muscle spikes time-locked to each flash, about 50 ms later; stop when flashes stop; reduced by opening the eyes",
+              "Muscle, not brain; seen with anxiety and in drug or alcohol withdrawal"
+            ],
+            [
+              "Photoparoxysmal (photoconvulsive)",
+              "Generalized spikes or spike-wave, not strictly time-locked",
+              "Cerebral; linked to generalized epilepsies"
+            ],
+            [
+              "Self-limited vs self-sustained",
+              "Stops with the flash vs continues after it",
+              "Self-sustained (outlasting) responses are more strongly linked to epilepsy"
+            ]
+          ]
+        },
+        {
+          "title": "When to stop photic",
+          "kind": "list",
+          "items": [
+            "Stop the flashes as soon as a generalized photoparoxysmal response appears; do not run the full train.",
+            "Stop for any clinical seizure, and follow seizure first aid and notification per protocol.",
+            "Note the flash rate and eye state at which the response began."
+          ]
+        },
+        {
+          "title": "Hyperventilation",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Normal response",
+              "body": "Deep breathing for about 3 to 5 minutes lowers CO2 and constricts cerebral vessels. Diffuse slowing builds up, most in children and young adults and with low blood sugar.",
+              "points": [
+                "Slowing should settle within about a minute after HV stops",
+                "Record at least a minute of recovery"
+              ]
+            },
+            {
+              "title": "Abnormal response",
+              "body": "Focal or asymmetric slowing, epileptiform discharges, or slowing that persists or returns after HV stops.",
+              "points": [
+                "Moyamoya: slowing that reappears after HV (re-build-up) is typical",
+                "3 Hz spike-wave with staring: test responsiveness (give a word to recall)"
+              ]
+            },
+            {
+              "title": "Contraindications",
+              "body": "Decided by the ordering physician and lab policy.",
+              "points": [
+                "Recent stroke, TIA, or intracranial hemorrhage",
+                "Moyamoya and sickle cell disease",
+                "Significant heart or lung disease, uncontrolled hypertension",
+                "Raised intracranial pressure; a patient who cannot cooperate"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sleep deprivation and reflex activations",
+          "kind": "list",
+          "items": [
+            "Sleep deprivation raises the yield of interictal discharges, especially generalized (for example juvenile myoclonic epilepsy) and temporal ones; the patient should not drive afterward.",
+            "Reflex triggers tested only when the history suggests them: reading, music, startle, striped patterns, video games, eating, hot water, mental arithmetic, eye closure.",
+            "Record the exact stimulus and the patient's behavior with the EEG change."
+          ]
+        },
+        {
+          "title": "Related tests in one line",
+          "kind": "table",
+          "head": [
+            "Test",
+            "What it does"
+          ],
+          "rows": [
+            [
+              "Wada (intracarotid amobarbital)",
+              "Briefly anesthetizes one hemisphere to show which side holds language and memory before surgery; EEG confirms the drug effect"
+            ],
+            [
+              "SPECT",
+              "A blood-flow tracer; injected during a seizure (ictal SPECT) it shows increased flow at the focus"
+            ],
+            [
+              "PET (FDG)",
+              "Shows glucose metabolism; the focus is usually hypometabolic between seizures"
+            ],
+            [
+              "fMRI",
+              "Maps language and motor areas through blood-oxygen changes without radiation"
+            ],
+            [
+              "MEG",
+              "Records the brain's magnetic fields to localize spike sources"
+            ],
+            [
+              "Evoked potentials (VEP, BAEP, SSEP)",
+              "Averaged responses to repeated stimuli test conduction in visual, auditory and sensory pathways"
+            ]
+          ]
+        }
+      ],
+      "pearls": [
+        "Driving at the flash rate is normal; beyond early childhood, large driving at delta flash rates or marked asymmetry is atypical.",
+        "Photomyogenic responses are frontal, flash-locked muscle and stop with the flashes; photoparoxysmal responses are cerebral spike-wave.",
+        "Stop flashing at the first generalized photoparoxysmal response.",
+        "Slowing that lingers or returns after HV suggests cerebrovascular disease such as moyamoya.",
+        "Sickle cell disease and recent stroke are HV contraindications.",
+        "Wada = intracarotid amobarbital to lateralize language and memory."
+      ],
+      "eegLink": "Annotate every activation step (flash rate, eye state, HV start and stop, patient effort) so the reader can tie each change to its trigger."
+    }
+  ],
+  "mistakes": [
+    [
+      "A surface-negative wave always deflects up.",
+      "It deflects up only at input 1; at input 2 it deflects down."
+    ],
+    [
+      "5 uV/mm is more sensitive than 2 uV/mm.",
+      "The smaller number is more sensitive; 2 uV/mm draws a taller wave."
+    ],
+    [
+      "Voltage is the millimeters measured.",
+      "Voltage = mm x uV/mm; 8 mm at 7 uV/mm is 56 uV."
+    ],
+    [
+      "A 60 Hz notch affects a 50 ms wave most.",
+      "It affects waves near 1/60 s (about 16.7 ms) most."
+    ],
+    [
+      "Spindle asynchrony is never abnormal.",
+      "It is normal in infancy but abnormal after about 2 years."
+    ],
+    [
+      "A patient with repeated arousals needs chin EMG.",
+      "Suspected sleep apnea needs respiration and oximetry monitoring."
+    ],
+    [
+      "Photomyogenic is the atypical photic response.",
+      "Photomyogenic is muscle artifact; beyond early childhood, large driving at delta flash rates or marked asymmetry is atypical."
+    ],
+    [
+      "Temporal sharp transients are always normal in neonates.",
+      "Persistent, lateralized ones or ones in wakefulness at term suggest dysfunction on that side."
+    ],
+    [
+      "OIRDA is a benign variant.",
+      "OIRDA in children is linked to absence epilepsy; posterior slow waves of youth are the benign pattern."
+    ],
+    [
+      "Triphasic waves are mainly surface-negative.",
+      "The largest phase of a triphasic wave is positive."
+    ],
+    [
+      "Cz is a poor reference for temporal spikes.",
+      "Cz is far from the temporal lobes; ear references pick up temporal activity."
+    ],
+    [
+      "Rocuronium slows the EEG.",
+      "Neuromuscular blockers have no cerebral effect; they only remove muscle artifact."
+    ],
+    [
+      "Photic-induced discharges point to phenytoin toxicity.",
+      "They are most linked to barbiturate or sedative withdrawal."
+    ],
+    [
+      "Mu rhythm blocks with eye opening.",
+      "Mu blocks with contralateral movement; alpha blocks with eye opening."
+    ]
+  ],
+  "memory": [
+    [
+      "Negative up",
+      "Relative negativity at input 1 sends the pen up."
+    ],
+    [
+      "WHAM vs FOLD",
+      "6 Hz phantom spike-wave: Wake, High amplitude, Anterior, Male is more concerning; Female, Occipital, Low amplitude, Drowsy is benign."
+    ],
+    [
+      "Lambda = looking, POSTS = sleeping",
+      "Both are occipital and positive; state tells them apart."
+    ]
+  ]
+}

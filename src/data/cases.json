@@ -21248,6 +21248,378 @@
           "to": "/neuro-syndromes?tab=genetics&id=lis1dcx"
         }
       ]
+    },
+    {
+      "id": "case-0120",
+      "title": "Choosing the reference for a temporal spike",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2"
+      ],
+      "tags": [
+        "reference-reasoning",
+        "ear reference",
+        "reference contamination",
+        "montages",
+        "polarity"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 38,
+        "sex": "female",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Episodes of a rising stomach sensation followed by staring",
+      "history": {
+        "eventDescription": "A 38-year-old woman has brief episodes of a rising feeling in the stomach followed by staring and lip smacking. During drowsiness a sharp transient repeats over the left side. You review it in four montages to decide which reference shows it most truthfully. Your role is to choose and document montages and describe what you see with numbers; you do not name a diagnosis.",
+        "lastEventTiming": "1 week ago",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "drowsy"
+        ],
+        "background": "Drowsy background with a 9 Hz posterior rhythm",
+        "pdrHz": "9 Hz",
+        "epileptiform": "Repeating left anterior temporal sharp transients at about 1.4, 3.9, 6.6 and 8.8 s",
+        "focalFindings": "Maximal at F7, then T3",
+        "activation": "Drowsiness",
+        "artifacts": "Active ipsilateral ear reference (A1) in the referential montage"
+      },
+      "objectives": [
+        "Recognise an active ear reference from widespread inverted deflections",
+        "Choose a reference that suits the recording and explain why",
+        "Pick the montage that shows a temporal spike at its true amplitude"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 401,
+          "ageYears": 38,
+          "state": "drowsy",
+          "sensitivity": 7,
+          "montage": "referentialA1",
+          "montages": [
+            "referentialA1",
+            "referentialCz",
+            "referentialA2",
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9,
+            "pdrUv": 25,
+            "beta": 3,
+            "theta": 4,
+            "noise": 3
+          },
+          "findings": [
+            {
+              "type": "spike",
+              "center": [
+                -0.72,
+                0.25
+              ],
+              "sigma": 0.24,
+              "uv": 160,
+              "durMs": 70,
+              "slowWave": true,
+              "at": [
+                1.4,
+                3.9,
+                6.6,
+                8.8
+              ]
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "pattern-recognition",
+          "title": "Reading the All to A1 page",
+          "tracing": "t1",
+          "description": "The record opens in All to A1 at 7 uV/mm. Look at the transient at 1.4 s. F7-A1 and T3-A1 deflect upward, while Fp2-A1, F4-A1, F8-A1, T4-A1 and O2-A1 on the right all deflect downward at the same moment.",
+          "question": "What best explains the downward deflections in the right-sided channels?",
+          "options": [
+            "The transient is bilateral and is equally large over the right hemisphere",
+            "Eye movement is adding a positive wave to every channel at that moment",
+            "A1 is picking up the negative spike, so every channel shows it inverted",
+            "The amplifier is saturating and flipping polarity in the right-side channels"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Each channel reads electrode minus A1. A1 sits next to the left temporal field and goes negative with the spike, so subtracting it adds a positive (downward) wave of about 30 to 40 uV to nearly every channel: Fp2-A1 +38, F8-A1 +40, T4-A1 +30, O2-A1 +30 uV, about 4 to 6 mm at 7 uV/mm. The same contamination shrinks the true focus: F7-A1 is only -62 uV (about 9 mm), because the reference cancels part of it. A truly bilateral discharge would be negative (upward) on the right, not positive. Eye movement does not line up with each spike, and saturation would flatten the trace rather than invert it."
+        },
+        {
+          "step": 2,
+          "type": "recording-strategy",
+          "title": "A reference for the whole recording",
+          "tracing": "t1",
+          "description": "Switch between Cz ref and All to A2. In Cz ref, F7-Cz is -90 uV and T3-Cz -67 uV, while the right-side channels stay between about -11 and +17 uV. The patient is drowsy now and may drift into deeper sleep later in the study.",
+          "question": "Which reference would you choose for the referential pages of this wake and drowsy record, and why?",
+          "options": [
+            "Cz, because it is far from the left temporal field and keeps the right side quiet",
+            "A1, because it is closest to the focus and so shows the spike at its best",
+            "A2, because a contralateral ear is the most reliable reference in any state",
+            "Linked ears, so that the spike at A1 and the quiet A2 cancel each other out"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Cz is far from the left temporal field, so it barely moves with the spike: the right-side channels stay small (Fp2-Cz 14, F8-Cz 12, T4-Cz -11 uV) and the spike stands out at F7-Cz -90 uV (about 13 mm at 7 uV/mm) and T3-Cz -67 uV. A1 is the worst choice because it is the contaminated, active electrode. A2 shows the spike well here but becomes active for right temporal discharges and picks up ECG and muscle, so it is not ideal in every case. Linking the ears brings half of A1's spike into every channel instead of cancelling it. If the patient reaches sleep with vertex waves, move the referential pages off Cz (see step 4)."
+        },
+        {
+          "step": 3,
+          "type": "pattern-recognition",
+          "title": "Showing the true amplitude",
+          "tracing": "t1",
+          "description": "Compare the 1.4 s spike at F7 in each montage: F7-A1 -62 uV, F7-Cz -90 uV, F7-A2 -98 uV. In the longitudinal chain, Fp1-F7 is +91 uV and F7-T3 is -23 uV.",
+          "question": "Which montage gives the truest picture of the spike's amplitude, and what does it measure?",
+          "options": [
+            "All to A1: F7-A1 is about 9 mm, the most accurate because A1 is closest",
+            "Longitudinal: Fp1-F7 is about 13 mm, which is the true amplitude at F7",
+            "Cz ref: F7-Cz is about 13 mm, the largest value of the three references",
+            "All to A2: F7-A2 is about 14 mm (98 uV) and T3-A2 about 11 mm (75 uV)"
+          ],
+          "correctAnswer": 3,
+          "explanation": "A2 is on the far side of the head, so almost none of the spike reaches it and F7-A2 shows the most complete value: -98 uV, or 14 mm at 7 uV/mm, with T3-A2 -75 uV (about 11 mm). Cz takes a little away (F7-Cz -90 uV, about 13 mm), and A1 takes much more (F7-A1 -62 uV, about 9 mm). The longitudinal chain localises well, with the phase reversal at F7 (Fp1-F7 +91 down, F7-T3 -23 up), but a bipolar channel shows the difference between two electrodes, not the amplitude at one, so use it for location and the contralateral ear for size."
+        },
+        {
+          "step": 4,
+          "type": "recording-strategy",
+          "title": "When Cz would mislead",
+          "tracing": "t1",
+          "description": "Cz ref worked well on this page. Later the patient falls asleep, and a second patient on your list is referred for possible central (rolandic) discharges.",
+          "question": "In which situation would Cz become a poor reference choice?",
+          "options": [
+            "During wake with eyes closed, when the posterior rhythm is well formed",
+            "During sleep with vertex waves, or with spikes near C3, C4 or Cz",
+            "During hyperventilation, when slowing builds up over both hemispheres",
+            "During photic stimulation, when a driving response appears posteriorly"
+          ],
+          "correctAnswer": 1,
+          "explanation": "A reference works only while it is quiet. Vertex waves and spindles are largest at or near Cz, so in sleep Cz becomes active and puts these waves, inverted, into every channel, just as A1 did with the spike. The same happens with central spikes near C3, C4 or Cz. Then switch to a distant reference such as the ear away from any temporal focus, or rely on bipolar chains. Here Cz was already picking up a little of the field: C3-Cz is -32 uV against -40 uV in C3-A2, a reminder that Cz lies close to central activity. A posterior rhythm, slowing in hyperventilation and a posterior driving response are mostly away from the vertex, so Cz stays reasonably quiet for them."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Referential montages",
+          "to": "/montages-references?tab=referential"
+        },
+        {
+          "label": "Reference contamination",
+          "to": "/montages-references?tab=contamination"
+        },
+        {
+          "label": "Choosing a montage",
+          "to": "/montages-references?tab=choosing"
+        }
+      ]
+    },
+    {
+      "id": "case-0121",
+      "title": "Sweat and a low-voltage fast asymmetry",
+      "difficulty": "hard",
+      "domainFocus": [
+        "domain-2",
+        "domain-3"
+      ],
+      "tags": [
+        "settings-reasoning",
+        "sweat artifact",
+        "filters",
+        "sensitivity",
+        "asymmetry"
+      ],
+      "syndromeIds": [],
+      "patternIds": [],
+      "patient": {
+        "ageYears": 46,
+        "sex": "male",
+        "context": "outpatient"
+      },
+      "chiefComplaint": "Headaches; recorded in a warm room after a long wait",
+      "history": {
+        "eventDescription": "A 46-year-old man is recorded awake on a hot afternoon after waiting in a warm room. He looks flushed and his forehead is damp. The record starts at 15 uV/mm, LFF 1 Hz, HFF 70 Hz. Slow wandering baselines appear on the right, and there is a small fast rhythm over the left. Your role is to correct the recording conditions, choose settings, and describe what you see with numbers; you do not name a diagnosis.",
+        "lastEventTiming": "Ongoing",
+        "comorbidities": [],
+        "medications": []
+      },
+      "eegSummary": {
+        "state": [
+          "wake"
+        ],
+        "background": "9.5 Hz posterior rhythm with low-voltage fast activity",
+        "pdrHz": "9.5 Hz",
+        "epileptiform": "None",
+        "focalFindings": "20 Hz beta of higher amplitude over the left frontal and temporal chains",
+        "activation": "None",
+        "artifacts": "Sweat drift at Fp2, F8, T4, T6, F4 and C4"
+      },
+      "objectives": [
+        "Identify sweat artifact from its slow drift and electrode distribution",
+        "Fix the patient and electrodes before reaching for filters",
+        "Choose settings that remove drift but keep fast activity visible"
+      ],
+      "tracings": {
+        "t1": {
+          "seed": 402,
+          "ageYears": 46,
+          "state": "awake",
+          "sensitivity": 15,
+          "lff": 1,
+          "hff": 70,
+          "filterControls": true,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 30,
+            "beta": 2,
+            "theta": 2,
+            "noise": 2
+          },
+          "findings": [
+            {
+              "type": "rhythm",
+              "hz": 20,
+              "bwHz": 4,
+              "uv": 45,
+              "center": [
+                -0.45,
+                0.35
+              ],
+              "sigma": 0.45
+            },
+            {
+              "type": "sweat",
+              "uv": 160,
+              "sites": [
+                "Fp2",
+                "F8",
+                "T4",
+                "T6",
+                "F4",
+                "C4"
+              ]
+            }
+          ]
+        },
+        "t2": {
+          "seed": 403,
+          "ageYears": 46,
+          "state": "awake",
+          "sensitivity": 5,
+          "lff": 5,
+          "hff": 70,
+          "filterControls": true,
+          "montage": "longitudinal",
+          "montages": [
+            "longitudinal"
+          ],
+          "background": {
+            "pdrHz": 9.5,
+            "pdrUv": 30,
+            "beta": 2,
+            "theta": 2,
+            "noise": 2
+          },
+          "findings": [
+            {
+              "type": "rhythm",
+              "hz": 20,
+              "bwHz": 4,
+              "uv": 45,
+              "center": [
+                -0.45,
+                0.35
+              ],
+              "sigma": 0.45
+            }
+          ]
+        }
+      },
+      "taskFlow": [
+        {
+          "step": 1,
+          "type": "troubleshooting",
+          "title": "Wandering right-sided baselines",
+          "tracing": "t1",
+          "description": "At 15 uV/mm, LFF 1 Hz, HFF 70 Hz, the right-sided chains drift in slow swells lasting several seconds. Peak to peak: F8-T4 139 uV, T4-T6 122 uV, F4-C4 122 uV, Fp2-F4 117 uV, while the left chains Fp1-F7 41 uV and F7-T3 45 uV stay flat.",
+          "question": "What best describes the drifting activity?",
+          "options": [
+            "Delta slowing over the right hemisphere, at about 2 to 3 Hz",
+            "Sweat artifact: very slow drifts at a group of right-sided electrodes",
+            "Electrode pop at one electrode shared by all of the right chains",
+            "Muscle artifact from the right temporalis, slowed by the filters"
+          ],
+          "correctAnswer": 1,
+          "explanation": "The swells are far slower than 1 Hz and come only from channels that contain Fp2, F8, T4, T6, F4 and C4, reaching about 8 to 9 mm at 15 uV/mm (F8-T4 139 uV = 9.3 mm) against under 3 mm on the left (Fp1-F7 41 uV = 2.7 mm). Changing skin salt and moisture shifts the electrode potential slowly, which produces this drift. Cerebral delta is faster and has a field, not a set of damp electrodes. No single electrode is shared by all these chains, a pop is a sudden step, and muscle is fast, spiky activity rather than slow swells."
+        },
+        {
+          "step": 2,
+          "type": "troubleshooting",
+          "title": "First action",
+          "tracing": "t1",
+          "description": "The drift is clearly sweat. The patient is flushed with a damp forehead, and the room is warm.",
+          "question": "What should you do first?",
+          "options": [
+            "Raise the LFF to 5 Hz straight away and carry on recording unchanged",
+            "Change to a referential montage so the drift spreads over all channels",
+            "Lower the sensitivity to 30 uV/mm so the drift fits inside each channel",
+            "Cool the room and patient, dry the skin, and recheck right-side electrodes"
+          ],
+          "correctAnswer": 3,
+          "explanation": "Fix the cause before the display. Cool the room, use a fan, loosen blankets or clothing, dry the scalp, and check impedance and paste at Fp2, F8, T4, T6, F4 and C4, reapplying if needed. A filter only hides the drift on the screen, also removes real slow activity, and leaves the drift in the raw data. Lowering the sensitivity makes the small fast rhythm on the left even harder to see. Changing montage does not remove a signal generated at the electrodes. Use filters only for what remains after the conditions are corrected, and note them."
+        },
+        {
+          "step": 3,
+          "type": "settings-choice",
+          "title": "Settings that keep the target",
+          "tracing": "t1",
+          "description": "Some drift remains. Use the filter and sensitivity controls. With LFF 5 Hz, F8-T4 falls from 139 to 41 uV and F4-C4 from 122 to 41 uV, while Fp1-F7 goes from 41 to 34 uV. Adding HFF 15 Hz takes Fp1-F7 to 22 uV and F7-T3 from 38 to 25 uV.",
+          "question": "Which settings remove the residual sweat but keep the left fast rhythm readable?",
+          "options": [
+            "5 uV/mm, LFF 5 Hz, HFF 70 Hz",
+            "15 uV/mm, LFF 5 Hz, HFF 15 Hz",
+            "5 uV/mm, LFF 1 Hz, HFF 70 Hz",
+            "15 uV/mm, LFF 1 Hz, HFF 15 Hz"
+          ],
+          "correctAnswer": 0,
+          "explanation": "LFF 5 Hz cuts the drift by about 70 percent (F8-T4 139 to 41 uV) while leaving faster activity nearly unchanged (Fp1-F7 41 to 34 uV). Then 5 uV/mm makes the low-voltage fast activity visible: Fp1-F7 (34 uV) is about 7 mm instead of 2.3 mm at 15 uV/mm. HFF 70 Hz keeps the 20 Hz beta; HFF 15 Hz cuts it, and the left chains lose 12 to 13 uV (Fp1-F7 34 to 22, F7-T3 38 to 25) against 5 uV on the right (Fp2-F4 37 to 32, F4-C4 41 to 36), so the asymmetry shrinks. At 15 uV/mm the left frontal chains sit at only 2 to 2.5 mm. Raising sensitivity with LFF still at 1 Hz would make F8-T4 about 28 mm and the drift would swamp the page."
+        },
+        {
+          "step": 4,
+          "type": "report-writing",
+          "title": "Documenting and describing",
+          "tracing": "t2",
+          "description": "With the room cooled, electrodes rechecked and the new settings applied (5 uV/mm, LFF 5 Hz, HFF 70 Hz), the drift is gone. Measured on the 20 Hz rhythm itself, the beta reaches about 25 uV peak to peak in Fp1-F7 and F7-T3 against 12 to 18 uV in F8-T4 and Fp2-F8, and about 32 uV in Fp1-F3 against 17 uV in Fp2-F4.",
+          "question": "Which report entry is within technologist scope?",
+          "options": [
+            "Left 20 Hz beta from a likely skull defect; sweat artifact removed by filtering",
+            "Sweat drift on the right; beta asymmetry probably from medication; LFF now 5 Hz",
+            "Right sweat drift; cooled and rechecked; LFF 1 to 5 Hz, 5 uV/mm; 20 Hz beta higher on left",
+            "Right-sided slowing with excess left beta; record reviewed at the settings used"
+          ],
+          "correctAnswer": 2,
+          "explanation": "Log the artifact and its electrodes (Fp2, F8, T4, T6, F4, C4), what you did (cooled the patient, dried and rechecked electrodes), and each setting change with the time (LFF 1 to 5 Hz, 15 to 5 uV/mm), so the reader knows the low frequencies were filtered. Then describe the finding with numbers and location: 20 Hz beta of higher amplitude over the left frontal and temporal chains. Naming a cause such as a skull defect or a medication is the reader's role. Calling the drift right-sided slowing labels artifact as a cerebral finding, and leaving out the setting changes hides that the display was altered."
+        }
+      ],
+      "learningLinks": [
+        {
+          "label": "Filters",
+          "to": "/amplifier-controls?tab=filters"
+        },
+        {
+          "label": "Sensitivity",
+          "to": "/amplifier-controls?tab=sensitivity"
+        },
+        {
+          "label": "Amplifier lab",
+          "to": "/amplifier-controls?tab=lab"
+        }
+      ]
     }
   ]
 }

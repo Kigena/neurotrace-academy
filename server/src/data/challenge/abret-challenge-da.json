@@ -1,0 +1,738 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-08",
+  "bank": "challenge",
+  "focus": "drugs-activation",
+  "description": "Original multi-step questions on medication effects, sedative withdrawal, ECI confounders, photic stimulation responses, hyperventilation, sleep deprivation, reflex activation and critical findings during recordings. Text only; not yet medically verified.",
+  "totalQuestions": 26,
+  "questions": [
+    {
+      "id": "ch-da-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "benzodiazepine",
+        "beta",
+        "medication-documentation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 45-year-old received lorazepam 2 mg IV for agitation 40 minutes before the EEG. The record shows diffuse 18-24 Hz activity of 30-40 uV, maximal frontocentrally, over a normal 9 Hz posterior rhythm. What is the most appropriate technologist response?",
+      "explanation": "Benzodiazepines (and barbiturates) characteristically add diffuse, frontally predominant beta, often above 25 uV, and recording the drug, dose and administration time lets the reader attribute it correctly. The activity is diffuse, continuous and unevolving, so it does not meet the features of a focal seizure and does not need urgent notification. Filtering it out would hide a real cerebral finding the reader needs to see. Muscle artifact is sharper, more irregular and usually broader in frequency, and the drug history already explains the pattern.",
+      "learningObjective": "Link benzodiazepine administration to excess beta and record the medication details.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Notify the reader at once that a focal fast-frequency seizure has begun",
+        "Set the high-frequency filter to 15 Hz so the beta no longer shows",
+        "Document the drug, dose and time given as the likely source of the beta",
+        "Re-apply the frontal electrodes because the fast activity is muscle"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "barbiturate-withdrawal",
+        "photoparoxysmal",
+        "photic"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 30-year-old who took butalbital-containing headache tablets daily stopped them abruptly 2 days ago. During 15 Hz photic stimulation, generalized 3-4 Hz spike-and-wave appears and continues for 2 s after the train ends. Which statement best links the history and the finding?",
+      "explanation": "Butalbital is a barbiturate, and abrupt withdrawal from barbiturates or other sedatives lowers the seizure threshold; photic-induced epileptiform discharges are the classic finding. A generalized spike-and-wave discharge that outlasts the train is a photoparoxysmal response. Suppression of spikes applies to ongoing barbiturate use, not withdrawal, and a generalized discharge is not explained by an electrode problem. A photomyogenic response is frontal muscle activity time-locked to the flashes that stops with the train. Drug beta is continuous fast activity, not 3-4 Hz spike-and-wave.",
+      "learningObjective": "Associate sedative or barbiturate withdrawal with photoparoxysmal responses.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Sedative withdrawal raises cortical excitability, favoring a photoparoxysmal response",
+        "Barbiturate use suppresses spikes, so the discharge is most likely electrode artifact",
+        "Withdrawal tremor causes frontal muscle spikes, so this is a photomyogenic response",
+        "Barbiturates produce excess beta, which is being mistaken here for spike-and-wave"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "phenytoin",
+        "toxicity",
+        "nystagmus",
+        "ataxia"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An outpatient taking phenytoin arrives with a wide-based unsteady gait, and the technologist notices jerking eye movements on lateral gaze. The dose was raised last week. The EEG shows mild diffuse theta slowing. Which information is most important to record?",
+      "explanation": "Ataxia and nystagmus are classic signs of phenytoin toxicity, which can also slow the EEG background; a recent dose increase makes this the key clinical context. Recording the dose change, last dose time and the observed signs lets the reader interpret the slowing. Family history is useful background but does not explain this new presentation. Caffeine does not produce nystagmus or diffuse theta slowing. Head measurement is part of electrode placement, not an explanation of the findings.",
+      "learningObjective": "Recognize signs of phenytoin toxicity and record the relevant medication details.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The family history of epilepsy and the age at which seizures first began",
+        "The caffeine intake, since stimulants cause nystagmus and diffuse slowing",
+        "The patient's head circumference, so electrode spacing can be recalculated",
+        "The phenytoin dose change, last dose time, and the ataxia and nystagmus seen"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "phenytoin",
+        "therapeutic-level"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "At a therapeutic serum level, what effect does phenytoin typically have on the EEG background?",
+      "explanation": "At therapeutic levels phenytoin usually causes little or no visible change in the background; diffuse slowing appears mainly with toxicity. Triphasic waves are linked to metabolic encephalopathies and lithium toxicity. Burst-suppression is seen with deep anesthesia or severe injury, not routine phenytoin therapy. Phenytoin does not produce 3 Hz spike-and-wave, which is the signature of absence epilepsy.",
+      "learningObjective": "Contrast therapeutic and toxic phenytoin effects on the EEG.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Generalized triphasic waves at 1.5-2 Hz",
+        "Little or no visible change in the background",
+        "Burst-suppression with flat intervals of 2-5 s",
+        "Abundant 3 Hz spike-and-wave in wakefulness"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "lithium",
+        "triphasic-waves",
+        "toxicity",
+        "notification"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 68-year-old with bipolar disorder is referred for new confusion and coarse tremor. Medications: lithium, levothyroxine, atorvastatin and lisinopril (recently started). The EEG shows generalized frontally predominant 1.5-2 Hz triphasic waves with no posterior rhythm. Which action best fits technologist scope?",
+      "explanation": "Lithium toxicity causes confusion, coarse tremor, diffuse slowing and triphasic-like waves, and ACE inhibitors such as lisinopril raise lithium levels, so a new drug interaction is plausible. A marked change with altered mental status warrants describing the pattern, highlighting the lithium history and notifying the provider per protocol. Labelling it status epilepticus and requesting medication is diagnosis and prescribing, outside technologist scope. Generalized triphasic waves with absent posterior rhythm are not a drowsy variant. Advising dose changes is also outside scope.",
+      "learningObjective": "Connect lithium toxicity to triphasic waves and respond within technologist scope.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Report the pattern as nonconvulsive status and ask the nurse to give lorazepam",
+        "Describe the pattern, flag the lithium history and notify the provider per protocol",
+        "Document the pattern as a drowsy variant and complete the routine study as usual",
+        "Advise the family that the lithium dose should be reduced before the next dose"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "clozapine",
+        "antipsychotic",
+        "seizure-threshold"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient takes metoprolol, omeprazole, clozapine and lorazepam. After a recent dose increase in one of them, the EEG shows new generalized sharp waves and diffuse slowing. Which dose increase best explains this?",
+      "explanation": "Clozapine is the antipsychotic most strongly linked to dose-related EEG slowing, epileptiform discharges and seizures, and a recent dose increase fits the new findings. Metoprolol slows the heart rate but does not cause epileptiform discharges. Omeprazole has no meaningful EEG effect. Lorazepam adds beta and tends to suppress, not provoke, epileptiform activity.",
+      "learningObjective": "Identify antipsychotic effects on seizure threshold and the EEG.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Metoprolol, a beta blocker for blood pressure",
+        "Omeprazole, an acid reducer for reflux",
+        "Clozapine, an antipsychotic for schizophrenia",
+        "Lorazepam, a benzodiazepine for anxiety"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "tricyclic",
+        "overdose",
+        "ecg-channel",
+        "critical-finding"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During an EEG on an ICU patient admitted after a tricyclic antidepressant overdose, the ECG channel changes from a narrow-complex rhythm at 100/min to a wide-complex rhythm at 160/min. What should the technologist do first?",
+      "explanation": "Tricyclic overdose is cardiotoxic, and a new wide-complex tachycardia is a potentially life-threatening arrhythmia, so it is a critical finding that must be reported immediately per protocol. Documenting it only for the next report delays care. Measuring the complex more precisely is not the priority. A notch filter does not turn a narrow complex into a wide, fast one.",
+      "learningObjective": "Recognize a drug-related cardiac critical finding on the ECG channel and escalate it.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Alert the bedside nurse and provider at once per the emergency protocol",
+        "Document the change and include it in the report sent the next morning",
+        "Increase the ECG channel sensitivity to measure the QRS width precisely",
+        "Turn off the 60 Hz notch filter because it is distorting the ECG complex"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "propofol",
+        "burst-suppression",
+        "annotation",
+        "icu"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "On cEEG, a continuous 5-6 Hz background changes to 1-2 s bursts separated by 3-6 s of suppression about 10 minutes after the propofol infusion rate was doubled. What should the technologist annotate?",
+      "explanation": "Propofol at high doses produces burst-suppression, and a change that follows a doubled infusion rate is most likely a drug effect; annotating the time and rate lets the reader correlate the two. Burst-suppression is not an evolving seizure pattern, and ordering medication is outside scope. Disconnected leads would not produce repeated generalized bursts across all channels. K-complexes occur against a sleep background, not between periods of near-flat suppression.",
+      "learningObjective": "Attribute propofol-related burst-suppression and annotate infusion changes.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The onset as a new electrographic seizure that requires rescue medication",
+        "An electrode failure, since flat intervals indicate disconnected leads",
+        "A sleep transition, since the bursts resemble K-complexes in stage N2",
+        "The time and new infusion rate, as the likely cause of the burst-suppression"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "alcohol-withdrawal",
+        "photomyogenic",
+        "photic"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A patient 20 hours after their last alcoholic drink has tremor. During 14 Hz photic stimulation, frontal spikes appear at the flash rate with eyelid flutter and stop as soon as the train ends. How should this be classified and handled?",
+      "explanation": "Frontal muscle spikes time-locked to each flash, with eyelid flutter, that stop when the train ends are a photomyogenic response; it is seen with alcohol or sedative withdrawal and anxiety, and is documented without stopping the procedure. A photoparoxysmal response is cerebral spike-and-wave, usually generalized, and may outlast the train. Photic driving is occipital, not frontal muscle. A subharmonic response is occipital activity at a fraction of the flash rate, whereas these spikes match the flash rate.",
+      "learningObjective": "Distinguish a photomyogenic from a photoparoxysmal response in alcohol withdrawal.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Photoparoxysmal response; end photic and report it as epileptiform",
+        "Photic driving; record it as a normal occipital following response",
+        "Photomyogenic response; note the flash rate and continue the protocol",
+        "Subharmonic response; annotate it as a half-rate occipital response"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neuromuscular-blocker",
+        "rocuronium",
+        "muscle-artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "An ICU recording is obscured by continuous temporal muscle artifact. After rocuronium is given for ventilation, the artifact disappears and a 7-8 Hz background with intermittent left temporal rhythmic sharp activity becomes visible. How should the newly visible activity be viewed?",
+      "explanation": "Neuromuscular blockers act at the neuromuscular junction; they remove EMG artifact but do not cross into the brain to change cerebral rhythms or provide sedation. Activity revealed after the artifact clears is therefore genuine cerebral activity and should be reviewed as such. Blockers do not generate cortical discharges, do not suppress cortical activity, and are not sedatives.",
+      "learningObjective": "Explain what neuromuscular blockade does and does not change in the EEG.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "As a drug effect, since blockers create rhythmic cortical discharges",
+        "As cerebral activity that the muscle had hidden, unchanged by the blocker",
+        "As invalid, because paralytics suppress cortical activity with muscle",
+        "As sedation-related, because rocuronium slows the cerebral background"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "neuromuscular-blocker",
+        "awareness",
+        "reactivity",
+        "notification"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A patient on a rocuronium infusion with no sedative running is on cEEG. A 9-10 Hz posterior rhythm blocks each time the nurse calls the patient's name. What is the most important point to communicate?",
+      "explanation": "A reactive posterior rhythm that blocks to voice indicates wakefulness. Because rocuronium paralyzes without sedating, the patient may be aware but unable to move or signal distress, which the team must know promptly per protocol. Paralytics do not cause coma. The paralytic removes muscle artifact rather than creating it. A reactive 9-10 Hz rhythm is the opposite of deep sedation, so routine documentation alone is inadequate.",
+      "learningObjective": "Recognize possible awareness under neuromuscular blockade and escalate it.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The patient may be awake but unable to move; alert the care team per protocol",
+        "The blocker has caused coma, so reactivity testing is no longer meaningful",
+        "The rhythm is muscle artifact, so tell the team the EEG cannot be read",
+        "The rhythm reflects deep sedation, so routine documentation is enough"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "neuromuscular-blocker",
+        "electrographic-seizure",
+        "critical-finding"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A pharmacologically paralyzed ICU patient on cEEG develops right hemispheric rhythmic sharp activity that evolves from 4 Hz to 6 Hz over 90 seconds, with no visible movement. What should the technologist do?",
+      "explanation": "Paralysis abolishes the motor signs of a seizure, so an evolving rhythmic pattern must be judged on the EEG alone; evolution in frequency and field is a hallmark of an electrographic seizure and is a critical finding to report. Absence of movement is expected under paralysis and does not make the pattern artifact. Neuromuscular blockers do not cause cortical discharges. Waiting for movement cannot resolve the question in a paralyzed patient.",
+      "learningObjective": "Escalate electrographic seizures in a paralyzed patient without relying on clinical signs.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Mark it as rhythmic artifact, since a seizure would produce movement",
+        "Note it as a blocker effect, since paralytics cause rhythmic sharp waves",
+        "Wait for clinical movement before deciding whether to notify anyone",
+        "Treat it as a possible seizure hidden by paralysis and notify per protocol"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "eci",
+        "hypothermia",
+        "sedative-overdose",
+        "prerequisites"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An ECI study is requested for a patient found unresponsive in a cold apartment beside an empty phenobarbital bottle. Core temperature is 31 C. Which statement is correct?",
+      "explanation": "Marked hypothermia and CNS-depressant intoxication, especially barbiturates, can each suppress cerebral activity reversibly, so they must be excluded or corrected before a flat record can be interpreted as ECI. Correct technical settings or a longer recording cannot overcome these confounders. High-dose barbiturates suppress the EEG, up to burst-suppression or inactivity, rather than raising amplitude.",
+      "learningObjective": "Identify sedative overdose and hypothermia as conditions to exclude before ECI.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "ECI can be confirmed now if the sensitivity is set to 2 uV/mm",
+        "Only the temperature matters, because barbiturates raise amplitude",
+        "Hypothermia and the barbiturate must be addressed before ECI is judged",
+        "ECI can be confirmed if the recording runs for at least 60 minutes"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "eci",
+        "sensitivity"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "When an EEG is reviewed for electrocerebral inactivity, which sensitivity should be used, and why?",
+      "explanation": "ECI recordings use 2 uV/mm because a smaller number means each millimetre represents fewer microvolts, making activity of about 2 uV visible. A routine 7 uV/mm setting could hide very low-amplitude activity. A 5 uV/mm setting is less sensitive than 2 uV/mm, not more. A 10 uV/mm setting reduces sensitivity further and could make residual activity look absent.",
+      "learningObjective": "State the ECI sensitivity and explain what sensitivity numbers mean.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "2 uV/mm, so very low-amplitude cerebral activity becomes visible",
+        "7 uV/mm, so artifacts look smaller on the routine display",
+        "5 uV/mm, because 5 uV/mm is more sensitive than 2 uV/mm",
+        "10 uV/mm, so large ECG artifact does not overlap channels"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-setup",
+        "lamp-distance"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A trainee places the photic lamp about 1 m from the patient and sees no driving at any flash rate in a patient with a normal 10 Hz posterior rhythm. Which correction is most likely to help?",
+      "explanation": "The standard set-up places the lamp about 30 cm in front of the nasion so the flashes reach the retina with adequate intensity; at 1 m the stimulus is much weaker. The light must reach the eyes, not the back of the head. Changing to 15 uV/mm makes waves smaller, not larger. Eye closure does not block driving; trains are given with eyes open and closed, and eye closure is often the more provocative condition for photoparoxysmal responses. Absent driving can also be normal, so a weak stimulus is checked first.",
+      "learningObjective": "Apply the standard photic lamp position.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Place the lamp behind the head facing O1 and O2",
+        "Move the lamp to about 30 cm in front of the nasion",
+        "Change the sensitivity to 15 uV/mm to enlarge waves",
+        "Test with eyes open only, since closure blocks driving"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-driving",
+        "harmonic"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "During 8 Hz flashes, the occipital channels show a clear rhythmic response at 16 Hz. How should this response be described?",
+      "explanation": "A response at a whole multiple of the flash rate (16 Hz for 8 Hz flashes) is harmonic driving, a normal variation. Subharmonic responses occur at a fraction of the flash rate, such as 4 Hz here. A photoparoxysmal response is epileptiform spike or spike-and-wave activity, not a faster sinusoidal response. A fundamental response would be at 8 Hz.",
+      "learningObjective": "Classify harmonic driving from flash and response frequencies.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "A subharmonic driving response at twice the rate",
+        "A photoparoxysmal response, since it is faster",
+        "A fundamental driving response at the flash rate",
+        "A harmonic driving response at twice the flash rate"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photic-driving",
+        "subharmonic"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "An occipital driving response at 9 Hz is described as subharmonic, at one half of the flash rate. Which flash rate produced it?",
+      "explanation": "A subharmonic response is at a fraction of the flash rate, so a 9 Hz half-rate response comes from 18 Hz flashes. A 9 Hz response to 4.5 Hz flashes would be harmonic (twice the flash rate). A 9 Hz response to 9 Hz flashes is fundamental driving. 13 Hz flashes would give a half-rate response at 6.5 Hz, not 9 Hz.",
+      "learningObjective": "Calculate flash rate from a subharmonic response.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "18 Hz flashes",
+        "4.5 Hz flashes",
+        "9 Hz flashes",
+        "13 Hz flashes"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "atypical-photic",
+        "delta-driving",
+        "low-flash-rate"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In a 4-year-old with developmental regression, 1 Hz and 2 Hz flashes each evoke high-amplitude occipital spikes time-locked to every flash, while faster rates produce ordinary driving. How should this be handled?",
+      "explanation": "Prominent driving or spike-like responses at delta flash rates (1-3 Hz) are atypical; very large responses to slow flashes in a regressing child are associated with conditions such as late-infantile neuronal ceroid lipofuscinosis (CLN2). The technologist documents the flash rates and amplitude so the reader can assess it. A photomyogenic response is frontal muscle activity, not occipital. Normal driving is mostly seen at medium flash rates and is not spike-like and high in amplitude at 1-2 Hz. A time-locked evoked response that ends with each flash is not a seizure.",
+      "learningObjective": "Recognize driving at delta flash rates as an atypical photic response.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Classify it as a photomyogenic response because it follows every flash",
+        "Report it as normal driving, because the responses match the flash rate",
+        "Document it as an atypical response at low flash rates, with rate and amplitude",
+        "End all photic, since any response to 1 Hz flashes means a seizure"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "asymmetric-driving",
+        "photic"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Photic driving at 6-18 Hz is consistently about 60 uV at O2 and 15 uV at O1. Impedances are equal and electrode positions have been verified. What is the best approach?",
+      "explanation": "Mild driving asymmetry is common, but a consistent difference of this size after technical causes are excluded is a reportable finding that may reflect a structural or functional abnormality, so it is documented for the reader. A fourfold difference is not slight. Reversed leads would mirror the display, not create an amplitude difference. Deciding which hemisphere is abnormal is interpretation; the side with less driving is not automatically the abnormal one, and labelling is the reader's role.",
+      "learningObjective": "Evaluate and document marked photic driving asymmetry.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Record it as normal, because driving is often slightly unequal",
+        "Document the marked, persistent asymmetry, as it can reflect a lesion",
+        "Swap the O1 and O2 leads, as the asymmetry means they are reversed",
+        "Verify the lamp angle, then label the right hemisphere as abnormal"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photoparoxysmal",
+        "self-sustained",
+        "stop-photic"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "At 18 Hz with eyes closed, generalized 3-4 Hz polyspike-and-wave appears and continues for 3 s after the flash train ends. What is the correct response?",
+      "explanation": "A generalized epileptiform discharge that outlasts the stimulus is a self-sustained photoparoxysmal response, most strongly associated with epilepsy, so the train is stopped to avoid provoking a seizure; the patient is observed and the provoking rate, eye state and duration are documented. Repeating the rate or completing every remaining rate adds seizure risk without benefit. Photomyogenic responses are frontal muscle spikes that stop with the train, not generalized polyspike-and-wave that continues afterwards.",
+      "learningObjective": "Respond correctly to a self-sustained photoparoxysmal response.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Repeat the same rate twice to confirm the response is reproducible",
+        "Continue through 30 Hz, since the protocol lists every flash rate",
+        "Record it as photomyogenic and note its spread over frontal muscle",
+        "End photic, observe the patient, and document the rate and duration"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "recovery",
+        "normal-build-up"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "In a healthy 10-year-old, 3 minutes of hyperventilation produces high-amplitude generalized 2-3 Hz slowing. When should the background normally return to baseline?",
+      "explanation": "Build-up of slowing during HV is normal, especially in children, and the background normally recovers within about a minute after HV stops. Slowing that persists longer, or reappears after recovery, is unusual and may indicate hypoglycemia or cerebrovascular disease. Recovery does not depend on drowsiness or drinking.",
+      "learningObjective": "State the normal recovery time after hyperventilation.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Only after five to ten minutes of rest",
+        "Only after a short period of drowsiness",
+        "Within about a minute after HV ends",
+        "Only after the child drinks something"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "moyamoya",
+        "re-build-up",
+        "notification"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 9-year-old with recurrent transient arm weakness performs HV. Slowing builds up, clears, then reappears 1-2 minutes after HV ended, while the child reports arm tingling. Which response is most appropriate?",
+      "explanation": "Slowing that returns after the initial recovery (re-build-up), with new focal symptoms, is a recognized sign of moyamoya-type cerebrovascular disease, in which HV-induced vasoconstriction can cause ischemia. The technologist documents the timing and symptoms and notifies per protocol; HV should not be repeated. Normal build-up clears within about a minute and does not return. Treating presumed hypoglycemia without an order and repeating HV both exceed scope and add risk. Repeating HV to look for absences ignores the ischemic warning signs.",
+      "learningObjective": "Recognize post-HV re-build-up as a cerebrovascular warning sign and respond safely.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Document the timing and symptoms and notify the provider per protocol",
+        "Document it as normal post-HV slowing in a child and continue the study",
+        "Give juice for presumed low glucose and then repeat HV to confirm it",
+        "Ask the child to hyperventilate again to see if absence seizures occur"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "contraindications"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which referral note should lead the technologist to omit hyperventilation and confirm with the ordering provider?",
+      "explanation": "HV causes hypocapnia and cerebral vasoconstriction, which can provoke ischemia or a crisis in sickle cell disease, so it is omitted pending provider confirmation; other common contraindications include recent stroke or hemorrhage, moyamoya, raised intracranial pressure and significant cardiac or pulmonary disease. Suspected absence epilepsy is a main indication for HV. Mild allergies are not a contraindication. A remote migraine history alone is not a standard contraindication.",
+      "learningObjective": "Identify conditions that contraindicate hyperventilation.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Childhood absence epilepsy treated with ethosuximide",
+        "Sickle cell disease with a painful crisis last month",
+        "Mild seasonal allergies treated with a nasal spray",
+        "Migraine with aura, with the last attack in March"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "hypoglycemia",
+        "documentation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A teenager who skipped breakfast and lunch before a 3 pm EEG shows marked generalized slowing during HV that is still present 2 minutes after HV ends. What should the technologist document?",
+      "explanation": "Low blood glucose enhances and prolongs the HV build-up, so documenting the time since the last meal lets the reader interpret the prolonged generalized slowing. The slowing is generalized, not focal. Breathing effort produces muscle and movement artifact, not generalized rhythmic slowing. Fasting does not abolish the posterior rhythm.",
+      "learningObjective": "Relate fasting to prolonged HV build-up and document it.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A focal abnormality that needs urgent notification to the reader",
+        "Muscle artifact caused by the effort of the rapid deep breathing",
+        "An absent posterior rhythm caused by the long period of fasting",
+        "The time since the last meal, since low glucose exaggerates HV slowing"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "sleep-deprivation",
+        "caffeine",
+        "jme"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient with suspected juvenile myoclonic epilepsy arrives for a sleep-deprived EEG after sleeping 3 hours, but drank three energy drinks to stay awake. Why is this worth recording?",
+      "explanation": "Sleep deprivation raises the yield of epileptiform discharges, particularly in generalized epilepsies such as JME, partly by promoting drowsiness, sleep and awakening during the study. Stimulants can prevent sleep and reduce that yield, so intake is recorded. Caffeine does not produce polyspike-and-wave. It has no meaningful effect on electrode impedance. Stimulants do not block photic responses, and photic stimulation is valuable in JME.",
+      "learningObjective": "Explain sleep-deprivation goals and factors that reduce its yield.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Caffeine causes polyspike-and-wave that mimics the suspected epilepsy",
+        "Energy drinks lower impedance, so electrode values will mislead",
+        "Caffeine can prevent sleep and lower the yield of the deprived study",
+        "Stimulants block photic responses, so photic must be omitted today"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-da-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "reflex-epilepsy",
+        "reading",
+        "special-activation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 19-year-old reports jaw jerks after reading textbooks for long periods. Routine HV and photic stimulation are normal. Which special activation best tests this history?",
+      "explanation": "Jaw jerks triggered by reading suggest reading epilepsy, a reflex epilepsy, so the trigger itself (prolonged reading aloud and silently) is the most relevant activation, with careful documentation of timing. Longer HV and extended photic rates do not reproduce the specific trigger. Mental arithmetic triggers some reflex seizures but is not the trigger in this history.",
+      "learningObjective": "Choose a special activation that matches a reported reflex trigger.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Repeat HV for a further 5 minutes with the eyes kept closed",
+        "Have the patient read aloud and silently for an extended period",
+        "Repeat photic stimulation with flash rates extended to 60 Hz",
+        "Record during mental arithmetic, the usual reflex seizure trigger"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

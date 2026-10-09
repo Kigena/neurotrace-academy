@@ -1,0 +1,733 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-08",
+  "bank": "challenge",
+  "focus": "settings-reasoning",
+  "description": "Original two-step questions on removing artifact while preserving the target pattern through sensitivity, LFF, HFF, notch and time-constant choices. Text only; not yet medically verified.",
+  "totalQuestions": 25,
+  "questions": [
+    {
+      "id": "ch-rsb-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "sweat-artifact",
+        "low-voltage-fast",
+        "asymmetry"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A 52-year-old has a right frontal 18-22 Hz rhythm of about 10 uV that is missing on the left. As the room warms, a slow rolling sway appears in many channels. The technologist has turned on a fan and dried the scalp, but some sway remains. Which display combination best reduces the sway while keeping the asymmetry readable?",
+      "explanation": "Two steps: sweat sway is very slow (well under 1 Hz), so a raised LFF reduces it while barely touching 18-22 Hz activity; and a 10 uV target needs a large display, so a small uV/mm number is chosen (smaller uV/mm = bigger waveforms; at 5 uV/mm the rhythm is about 2 mm). At 15 uV/mm the same rhythm is under 1 mm and the asymmetry fades into the baseline. An HFF of 15 Hz cuts into the beta band and reduces the very rhythm being compared. An LFF of 0.1 Hz passes the sway and makes it worse. The real fix (cooling and drying the patient, re-prepping if needed) comes first, and any setting change is documented on the record.",
+      "learningObjective": "Choose sensitivity and filters that remove sweat sway while preserving a low-voltage fast asymmetry.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Sensitivity 15 uV/mm, LFF 3 Hz, HFF 70 Hz",
+        "Sensitivity 5 uV/mm, LFF 3 Hz, HFF 15 Hz",
+        "Sensitivity 5 uV/mm, LFF 3 Hz, HFF 70 Hz",
+        "Sensitivity 5 uV/mm, LFF 0.1 Hz, HFF 70 Hz"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "settings-reasoning",
+        "sweat-artifact",
+        "low-voltage-fast",
+        "sensitivity-direction"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "To clean up sweat sway in a patient with a subtle 10 uV beta asymmetry, a technologist changes the settings to sensitivity 20 uV/mm, LFF 5 Hz, HFF 70 Hz. What is the main problem with this choice?",
+      "explanation": "The filters are reasonable (the 5 Hz LFF reduces slow sway and the 70 Hz HFF leaves beta intact), but the sensitivity is wrong for the target: a larger uV/mm number means a smaller display, so a 10 uV beta rhythm becomes about 0.5 mm and the asymmetry is hard to see. Raising the uV/mm number shrinks the sway too, rather than enlarging it. A low filter attenuates slow activity, not beta. A 70 Hz high filter passes the beta band. Cooling and drying the patient is the first fix, and each setting change is documented.",
+      "learningObjective": "Recognize when a sensitivity change hides a low-voltage target.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The low-voltage beta shrinks to a near-flat line, hiding the asymmetry",
+        "The sweat sway grows larger because the sensitivity number was raised",
+        "The 5 Hz low filter removes the beta while leaving the sweat sway intact",
+        "The 70 Hz high filter removes the beta range that is under evaluation"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "sweat-artifact",
+        "focal-slowing",
+        "low-frequency-filter"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A patient with a suspected left temporal lesion shows 1-2 Hz polymorphic delta at T7 and P7. Midway through the study, slow sweat sway spreads across both hemispheres. What is the best response?",
+      "explanation": "Here the target is itself slow, so the usual filter fix backfires: a 5 Hz LFF (time constant about 0.03 s) strongly attenuates 1-2 Hz delta and could make the focus look small or absent, even if the change is documented. The right move is to correct the cause (cool the room, dry the scalp, re-prep high-impedance electrodes) and keep the LFF where the delta is preserved. The HFF acts on fast activity and does nothing for slow sway. A smaller uV/mm number (3 uV/mm) enlarges everything, including the sway, so the record becomes harder to read. Any setting change that is made is documented.",
+      "learningObjective": "Protect a slow-wave target by fixing sweat artifact at the source instead of raising the LFF.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Raise the LFF to 5 Hz so the sway is removed, and document the filter change on the record",
+        "Lower the HFF to 15 Hz so the slow baseline looks smoother across both hemispheres",
+        "Change the sensitivity to 3 uV/mm so the focal delta stands out more from the sway",
+        "Cool and dry the patient, re-prep as needed, and keep the LFF at 1 Hz"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "settings-reasoning",
+        "time-constant",
+        "focal-slowing",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A technologist is choosing a time constant to tame sweat sway while still displaying a 1.5 Hz focal delta. Which setting would attenuate that delta the most?",
+      "explanation": "Time constant and LFF are inversely related (TC = 1 / (2 x pi x f)), so the shortest time constant corresponds to the highest LFF and reduces the most slow activity. A 0.03 s time constant (about 5 Hz) sits well above 1.5 Hz and cuts the delta sharply. The 0.16 s (about 1 Hz) setting passes most of it, and 0.3 s and 1.6 s pass even more. For a slow target, the sweat itself is fixed first (cool, dry, re-prep), sensitivity stays where the delta is readable (smaller uV/mm gives a bigger display), and any change is documented.",
+      "learningObjective": "Relate time constant to LFF and predict its effect on slow targets.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A time constant of 0.16 s (LFF about 1 Hz)",
+        "A time constant of 0.03 s (LFF about 5 Hz)",
+        "A time constant of 0.3 s (LFF about 0.5 Hz)",
+        "A time constant of 1.6 s (LFF about 0.1 Hz)"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "settings-reasoning",
+        "time-constant",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A low-frequency filter setting of 1 Hz corresponds to which approximate time constant?",
+      "explanation": "TC = 1 / (2 x pi x f); for 1 Hz this is about 0.16 s. A value of 0.016 s corresponds to roughly 10 Hz, 0.3 s to about 0.5 Hz, and 1.6 s to about 0.1 Hz. Knowing these equivalents lets the technologist read older records or systems labeled in time constants. Sensitivity is separate from filtering (smaller uV/mm gives a bigger display), and any filter change made to manage artifact, after the source is corrected, is documented.",
+      "learningObjective": "Convert a 1 Hz LFF to its time constant.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "0.016 s",
+        "0.16 s",
+        "0.3 s",
+        "1.6 s"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "muscle-artifact",
+        "spikes",
+        "high-frequency-filter"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "During an EEG for possible left temporal spikes, jaw clenching produces dense muscle artifact over T7 and F7. After asking the patient to part the lips and relax the jaw, which combination best preserves spike detection?",
+      "explanation": "The fix for muscle is relaxation, not heavy filtering: once the jaw is slack, standard settings show true spikes with their full sharpness. An HFF of 15 Hz rounds muscle bursts into waves that can mimic beta or spikes and blunts real spikes. A larger uV/mm number (20 uV/mm) shrinks the display, so small spikes shrink along with the muscle. A 5 Hz LFF does not affect muscle and distorts the aftergoing slow wave. If a filter change is still needed, it is brief and documented on the record.",
+      "learningObjective": "Manage muscle artifact without hiding spikes.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Sensitivity 7 uV/mm, LFF 1 Hz, HFF 15 Hz",
+        "Sensitivity 20 uV/mm, LFF 1 Hz, HFF 70 Hz",
+        "Sensitivity 7 uV/mm, LFF 5 Hz, HFF 70 Hz",
+        "Sensitivity 7 uV/mm, LFF 1 Hz, HFF 70 Hz"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-sensitivity-time-constants",
+      "topicTags": [
+        "settings-reasoning",
+        "muscle-artifact",
+        "spikes",
+        "high-frequency-filter"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Muscle artifact obscures a temporal region where spikes are suspected, and a technologist lowers the HFF from 70 Hz to 15 Hz. What is the most likely effect on the display?",
+      "explanation": "Muscle potentials are brief and broadband; a low HFF does not erase them but smooths them into rhythmic, rounded waves that can look like beta or even sharp transients, creating false positives. At the same time, a spike's steep rise is fast-frequency content, so the filter lowers its peak and widens it, creating false negatives. A high filter does not reduce slow background, and its effect extends well below 60 Hz. The first fix is relaxing the jaw or repositioning; any filter change is documented. Sensitivity is separate: a smaller uV/mm makes everything bigger.",
+      "learningObjective": "Predict how a low HFF distorts muscle and spikes.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Muscle bursts become rounded waves that can mimic beta or spikes, and true spikes lose height",
+        "Muscle is removed completely, and true spikes become taller and easier to identify on review",
+        "Spikes become sharper, because the slow background behind them is filtered out of the trace",
+        "Only the 60 Hz component changes, so both the muscle and the true spikes look the same"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "muscle-artifact",
+        "beta-asymmetry"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "The right hemisphere appears to show more 20-30 Hz activity than the left, but the patient is clenching the right side of the jaw. What is the best way to decide whether the beta asymmetry is real?",
+      "explanation": "Muscle overlaps the beta range, so tension on one side can create a false beta asymmetry. Correcting the cause and comparing relaxed epochs at standard filters shows whether the difference persists. A 15 Hz HFF reduces beta on both sides, so it can hide or fake an asymmetry instead of testing it. A larger uV/mm number shrinks both sides and makes a real difference harder to see (smaller uV/mm = bigger display). An LFF acts on slow activity, not beta, and filters are not set differently on one side to equalize a finding. Any setting change used is documented.",
+      "learningObjective": "Separate a true beta asymmetry from one-sided muscle artifact.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Lower the HFF to 15 Hz on both sides so the beta amplitudes come to match",
+        "Change the sensitivity to 15 uV/mm so both sides look equal on the display",
+        "Have the patient relax the jaw and compare relaxed epochs at HFF 70 Hz",
+        "Raise the LFF to 5 Hz on the right side to remove the extra fast activity"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "60-hz-interference",
+        "impedance",
+        "low-voltage-fast"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "In a patient being evaluated for low-voltage fast activity over the right frontal region, F4 alone shows a thick band of 60 Hz interference. What is the best first step?",
+      "explanation": "Single-channel 60 Hz interference usually means a high or mismatched electrode impedance, so the cause is fixed by re-prepping F4. A notch can hide the warning sign of a poor electrode and trims fast content near 60 Hz, so it is a secondary measure that is documented if used. An HFF of 15 Hz reduces the low-voltage fast target itself. A larger uV/mm number shrinks the display and hides the low-voltage activity along with the interference (smaller uV/mm = bigger display). Any setting change is documented.",
+      "learningObjective": "Fix 60 Hz interference at the electrode before reaching for filters.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Check and re-prep F4 to lower and match its impedance, then reassess",
+        "Turn on the 60 Hz notch filter for the rest of the record and proceed",
+        "Lower the HFF to 15 Hz on all channels so the interference disappears",
+        "Change the sensitivity to 20 uV/mm so the interference looks smaller"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-sensitivity-time-constants",
+      "topicTags": [
+        "settings-reasoning",
+        "notch-filter",
+        "60-hz-interference"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Why is a 60 Hz notch filter treated as a last resort when fast activity or spikes are part of the clinical question?",
+      "explanation": "A notch acts on a narrow band around 60 Hz, so it can trim the sharpest parts of spikes and fast activity and, more importantly, mask the impedance problem that caused the interference. It has no meaningful effect on delta. It attenuates rather than enlarges, and display size is set by sensitivity (smaller uV/mm = bigger display). ECG energy lies mostly below 40 Hz, so a 60 Hz notch does not reduce it. The cause is fixed first (re-prep, check leads and nearby equipment), and the notch, if used, is documented.",
+      "learningObjective": "Explain the trade-offs of the 60 Hz notch filter.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "It removes delta activity under 2 Hz and can hide a slow-wave focus",
+        "It enlarges all fast activity and can make normal beta look abnormal",
+        "It trims fast content near 60 Hz and can hide a poor electrode contact",
+        "It removes ECG artifact and can hide the cardiac rhythm in the record"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "ecg-artifact",
+        "sharp-waves",
+        "montage"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "In an ear-referenced montage, regular sharp ECG deflections appear in many channels of an obese patient with suspected small left temporal sharp waves. Which approach best reduces the artifact without hiding the target?",
+      "explanation": "ECG energy overlaps the EEG band, so filters cannot reduce it selectively. A bipolar montage or a reference away from the neck reduces pickup, and an ECG channel lets the reader match each deflection to the QRS. A 5 Hz LFF leaves the sharp QRS largely intact while distorting slow activity. A 15 Hz HFF blunts true sharp waves as much as the ECG. A larger uV/mm number shrinks the small sharp waves along with the ECG (smaller uV/mm = bigger display). Montage or reference changes and any setting change are documented.",
+      "learningObjective": "Manage ECG artifact with montage and monitoring rather than filters.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Raise the LFF to 5 Hz so the ECG deflections are removed from all channels",
+        "Lower the HFF to 15 Hz so the sharp ECG peaks become blunted and smaller",
+        "Change the sensitivity to 20 uV/mm so the ECG deflections look smaller",
+        "Review in a bipolar montage, add an ECG channel, and keep standard filters"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "eye-movement",
+        "frontal-slowing",
+        "eye-leads"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A drowsy patient shows 1-2 Hz waves maximal at Fp1 and Fp2 that might be eye movement or frontal slowing. Which approach best separates the two?",
+      "explanation": "Eye leads show whether the waves are in phase with eye movements (eye artifact) or not (cerebral). Keeping the LFF at 1 Hz preserves true frontal delta for that comparison. A 5 Hz LFF reduces both the eye artifact and real slowing, so a finding could vanish. A larger uV/mm number shrinks the frontal waves without telling their source (smaller uV/mm = bigger display). An HFF change acts on fast activity and does not separate the two. Gentle closing of the eyes or a light pad over the lids can reduce eye movement, and any setting change is documented.",
+      "learningObjective": "Use eye leads to separate eye movement from frontal slowing.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Raise the LFF to 5 Hz so the frontal slow waves are filtered away",
+        "Add infraorbital or outer canthal eye leads and keep the LFF at 1 Hz",
+        "Change the sensitivity to 20 uV/mm so the frontal waves look smaller",
+        "Lower the HFF to 15 Hz so the frontal channels look smoother overall"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "settings-reasoning",
+        "low-voltage-record",
+        "sensitivity-direction"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "At 7 uV/mm, an adult's entire record shows activity under 20 uV, and the background is hard to characterize. Impedances have been checked and are low. What is the best settings change?",
+      "explanation": "A smaller uV/mm number means more display per microvolt, so going to 2-3 uV/mm enlarges low-voltage activity to readable heights. A larger number (15 uV/mm) shrinks the background further. Raising the LFF reduces slow components of an already low background. Lowering the HFF reduces fast components. Low impedances come first because higher sensitivity also enlarges noise, and the sensitivity change is documented on the record.",
+      "learningObjective": "Increase sensitivity appropriately for a low-voltage record.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Change the sensitivity to 2-3 uV/mm so the background is displayed larger",
+        "Change the sensitivity to 15 uV/mm so the background is displayed cleaner",
+        "Raise the LFF to 5 Hz so the low background is easier to characterize",
+        "Lower the HFF to 15 Hz so the low background is less affected by noise"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "settings-reasoning",
+        "high-amplitude",
+        "sensitivity-direction",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "In an infant, 300-500 uV bursts overlap neighboring channels at 7 uV/mm. Which change best displays the bursts without losing information?",
+      "explanation": "At 7 uV/mm a 350 uV burst deflects 50 mm and crashes into neighboring traces; at 20 uV/mm it is about 17 mm. A larger uV/mm number shrinks the display (smaller uV/mm = bigger display), so 15-20 uV/mm greatly reduces the overlap (a 350 uV burst is about 17-23 mm) while keeping waveform shape; very large bursts may need a further sensitivity step, not a filter. A smaller number (3 uV/mm) makes the overlap worse. Using the LFF or HFF to reduce height changes waveform content rather than scale and can hide slow or sharp components. Electrode and lead checks come first if the bursts are suspected artifact, and the change is documented.",
+      "learningObjective": "Lower sensitivity for high-amplitude activity instead of filtering it.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Change the sensitivity to 3 uV/mm to show more detail in each burst",
+        "Raise the LFF to 5 Hz so the bursts lose height and stop overlapping",
+        "Lower the HFF to 15 Hz so the bursts lose height and stop overlapping",
+        "Change the sensitivity to 15-20 uV/mm and keep the filters unchanged"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "movement-artifact",
+        "spikes",
+        "settings"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A 7-year-old rocks the head during the recording, causing slow drifting baselines. The referral asks about centrotemporal spikes. After the leads are secured and the head is supported, which settings fit the target?",
+      "explanation": "Securing the leads and supporting the head reduces most drift, so standard settings show spikes with full sharpness and readable size. An HFF of 15 Hz blunts spike peaks. A larger uV/mm number (30 uV/mm) shrinks spikes to a few millimeters (smaller uV/mm = bigger display). A 0.1 Hz LFF lets slow drift wander across channels. If drift persists, a modest LFF increase can help, since spikes are mostly fast content, and any change is documented.",
+      "learningObjective": "Choose settings for spikes after correcting movement drift.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Sensitivity 7 uV/mm, LFF 1 Hz, HFF 15 Hz",
+        "Sensitivity 30 uV/mm, LFF 1 Hz, HFF 70 Hz",
+        "Sensitivity 7 uV/mm, LFF 1 Hz, HFF 70 Hz",
+        "Sensitivity 7 uV/mm, LFF 0.1 Hz, HFF 70 Hz"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-sensitivity-time-constants",
+      "topicTags": [
+        "settings-reasoning",
+        "sweat-artifact",
+        "spike-and-wave",
+        "low-frequency-filter"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "During sweat sway, a technologist raises the LFF from 1 Hz to 3 Hz in a patient with frequent spike-and-slow-wave discharges. Which feature of the discharges is most at risk of being distorted?",
+      "explanation": "A spike is mostly fast content and survives a moderate LFF, but the following slow wave sits near the cutoff and is attenuated and shortened, which changes how the complex looks. A low filter does not reduce the fast spike peak, does not add 60 Hz interference, and does not affect beta. Cooling and drying the patient comes first, sensitivity stays where the complexes are readable (smaller uV/mm = bigger display), and the filter change is documented.",
+      "learningObjective": "Predict how an LFF increase alters spike-and-wave complexes.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The sharp peak of each spike is removed fully",
+        "The slow wave after each spike loses amplitude",
+        "The 60 Hz content riding on each spike grows",
+        "The background beta between the bursts is lost"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "settings-reasoning",
+        "sensitivity-direction"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What happens on the display when the sensitivity is changed from 10 uV/mm to 5 uV/mm?",
+      "explanation": "Sensitivity is microvolts per millimeter; a smaller number means fewer microvolts are needed for each millimeter, so halving it doubles the waveform height. Making the number larger shrinks the display. Sensitivity does not change display speed and is not a filter. When artifact drives a sensitivity change, the cause is fixed first and the change is documented.",
+      "learningObjective": "State the direction of a sensitivity change.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Each waveform is drawn twice as tall",
+        "Each waveform is drawn half as tall",
+        "The paper or screen speed is doubled",
+        "Activity under 5 Hz is filtered away"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-sensitivity-time-constants",
+      "topicTags": [
+        "settings-reasoning",
+        "sweat-artifact",
+        "low-voltage-fast",
+        "high-frequency-filter"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "For a patient with a subtle low-voltage fast asymmetry, a technologist facing sweat sway sets sensitivity 7 uV/mm, LFF 5 Hz, HFF 15 Hz. What is the likely result?",
+      "explanation": "The 5 Hz LFF correctly reduces very slow sway, but a 15 Hz HFF attenuates beta, modestly near 15 Hz and strongly at 20-30 Hz, so the asymmetry may vanish. Each filter acts on one end: the LFF trims slow activity and the HFF trims fast activity, not the reverse. Raising the LFF reduces rather than passes slow sway. Keeping HFF at 70 Hz and using a smaller uV/mm (bigger display) suits a low-voltage fast target. Cooling the patient comes first and each change is documented.",
+      "learningObjective": "Identify a filter combination that hides a fast target.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The sway and the beta are both shown unchanged at these settings",
+        "The low filter removes the beta, while the high filter removes sway",
+        "The sway shrinks, but the 15 Hz high filter reduces much of the beta",
+        "The sway worsens, because a 5 Hz low filter passes slow components"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "settings-reasoning",
+        "time-constant",
+        "low-frequency-filter",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A record notes that during a sweat episode the time constant was changed from 0.3 s to 0.03 s. What does that change mean?",
+      "explanation": "Time constant and LFF are inversely related (TC = 1 / (2 x pi x f)); 0.3 s is about 0.5 Hz and 0.03 s is about 5 Hz, so the change raised the LFF tenfold and cut slow activity. Time constant describes the low filter, not the HFF, and has nothing to do with sensitivity (where smaller uV/mm gives a bigger display). That this change appears on the record is good practice, and it follows attempts to fix the cause by cooling and drying the patient.",
+      "learningObjective": "Interpret a time-constant change during artifact management.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The LFF was lowered from about 5 Hz to about 0.5 Hz",
+        "The HFF was lowered from about 70 Hz to about 35 Hz",
+        "The sensitivity was increased by a factor of about 10",
+        "The LFF was raised from about 0.5 Hz to about 5 Hz"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "settings-reasoning",
+        "sweat-artifact",
+        "focal-slowing",
+        "low-frequency-filter"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "To clean sweat sway in a record with a right frontal 2 Hz focus, a technologist sets the LFF to 5 Hz. What will the reader most likely see?",
+      "explanation": "A 5 Hz LFF is a high-pass filter well above 2 Hz, so it lowers and shortens the focal delta, which can turn a clear focus into an ambiguous one. Correcting sway does not enlarge the delta; only sensitivity changes display size (smaller uV/mm = bigger display). Filters act on all activity in their range, not only on artifact, and they do not change location. The right fix is cooling, drying and re-prepping, with the LFF kept low enough to preserve delta, and any change is documented.",
+      "learningObjective": "Predict how raising the LFF hides a slow-wave focus.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Focal delta that looks larger, because sway no longer competes with it",
+        "Focal delta that looks smaller and shorter, so the focus may be missed",
+        "Focal delta that is unchanged, because the LFF acts only on the sweat",
+        "Focal delta that shifts toward the left side, away from the sway area"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "muscle-artifact",
+        "spikes",
+        "high-frequency-filter"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "An agitated patient with suspected temporal spikes still has frontotemporal muscle after repeated relaxation attempts. Which filter approach is the most reasonable compromise?",
+      "explanation": "When muscle cannot be reduced at the source, a moderate HFF (35 Hz) on selected epochs, checked against the unfiltered view, reduces muscle while keeping most spike sharpness; the reader knows a spike seen only at 35 Hz needs caution. A 15 Hz HFF for the rest of the study blunts spikes and turns muscle into spike-like waves. A larger uV/mm number shrinks spikes with the muscle (smaller uV/mm = bigger display). An LFF has no effect on muscle. Relaxation comes first, and each filter change is documented.",
+      "learningObjective": "Choose a filter compromise for muscle when spikes are the target.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Record the rest of the study at HFF 15 Hz to remove the muscle bursts",
+        "Keep HFF 70 Hz and change sensitivity to 30 uV/mm to shrink the muscle",
+        "Raise the LFF to 5 Hz with HFF 70 Hz so that the muscle bursts disappear",
+        "Review selected epochs at HFF 35 Hz and compare them with HFF 70 Hz"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "low-voltage-record",
+        "60-hz-interference",
+        "impedance"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A very low-voltage record is being displayed at 2 uV/mm, and several channels now show prominent 60 Hz interference. What is the best response?",
+      "explanation": "At 2 uV/mm (small uV/mm = big display) even small interference is magnified, so high or unequal impedances and loose or hanging leads must be corrected. Changing to 15 uV/mm hides the low-voltage activity the record needs to show. A notch with a 15 Hz HFF reduces real fast content. An LFF acts on slow activity and does not touch 60 Hz. The source is fixed first, and any setting change is documented.",
+      "learningObjective": "Fix interference without giving up needed sensitivity.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Recheck impedances and lead dressing while keeping the high sensitivity",
+        "Change the sensitivity to 15 uV/mm so that the interference disappears",
+        "Turn on the notch and lower the HFF to 15 Hz to remove the interference",
+        "Raise the LFF to 5 Hz so that the interference is filtered from the record"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-sensitivity-time-constants",
+      "topicTags": [
+        "settings-reasoning",
+        "eye-movement",
+        "frontal-slowing",
+        "low-frequency-filter"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "To suppress frequent blink artifact, a technologist raises the LFF to 5 Hz in a patient being evaluated for frontal intermittent rhythmic delta. What is the main consequence?",
+      "explanation": "Blinks and frontal rhythmic delta share the slow range, so a 5 Hz LFF attenuates both and can erase the very finding in question. The filter cannot tell artifact from brain activity in the same band, and reducing blinks does not enlarge the delta (only a smaller uV/mm number enlarges the display). Blinks are slow and are trimmed by the LFF, not the HFF. Eye leads, a light pad over closed lids or gentle eye closure address the source, and any filter change is documented.",
+      "learningObjective": "Recognize that LFF changes for eye artifact can hide frontal delta.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Only the blinks are removed, because they are slower than the frontal delta",
+        "The frontal delta becomes more prominent, because the blinks are now removed",
+        "Both the blinks and the frontal delta are attenuated, so the delta may be missed",
+        "The blinks are removed by the HFF, so the LFF change has little effect at all"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "settings-reasoning",
+        "sensitivity-direction",
+        "low-voltage-fast",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A 15 uV beta rhythm is displayed first at 15 uV/mm and then at 5 uV/mm. About how tall is it at each setting?",
+      "explanation": "Height = amplitude / sensitivity: 15 / 15 = 1 mm and 15 / 5 = 3 mm. A smaller uV/mm number gives a bigger display, which is why low-voltage targets need a smaller number. The distractors read the sensitivity number as the height, swap the two results, or divide sensitivity by amplitude instead of amplitude by sensitivity (5/15 is about 0.3 mm). When artifact prompts the settings review, the source is corrected first and any change is documented.",
+      "learningObjective": "Calculate display height at different sensitivities.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "15 mm at 15 uV/mm and 5 mm at 5 uV/mm",
+        "1 mm at 15 uV/mm and 3 mm at 5 uV/mm",
+        "3 mm at 15 uV/mm and 1 mm at 5 uV/mm",
+        "1 mm at 15 uV/mm and 0.3 mm at 5 uV/mm"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-rsb-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "settings-reasoning",
+        "artifact-workflow",
+        "settings"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "troubleshooting",
+      "reasoningSteps": 1,
+      "stem": "Which approach best describes good practice when an artifact hides the pattern a recording is meant to show?",
+      "explanation": "The source (sweat, loose leads, muscle tension, high impedance) is corrected first, because filters cannot separate artifact from brain activity in the same frequency band. Any remaining setting change is targeted at the artifact while sparing the target, and is documented so the reader knows what was changed. Filtering first can hide the target and the warning signs of a bad electrode. Sensitivity scales everything equally (smaller uV/mm = bigger display) and cannot separate artifact from EEG. Heavy filtering throughout distorts the record even if it is later restored.",
+      "learningObjective": "Apply the source-first rule for artifact management.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Correct the source first, then change settings selectively and note them",
+        "Change the filters first, then correct the source if the artifact remains",
+        "Change the sensitivity first, since it removes artifact but leaves the EEG",
+        "Apply the strongest filters available, then restore them before the end"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea reference and settings reasoning set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

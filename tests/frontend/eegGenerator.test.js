@@ -152,3 +152,18 @@ describe("synthetic EEG generator", () => {
     expect(() => validateScene({ findings: [{ type: "nope" }] })).toThrow(/unknown finding/);
   });
 });
+
+describe("sweat artifact", () => {
+  const p2p = (d) => Math.max(...d) - Math.min(...d);
+  const scene = (lff) => ({ seed: 9, ekg: false, lff, background: QUIET, findings: [{ type: "sweat", uv: 150, sites: ["F8", "T4"] }] });
+  it("drifts slowly only in channels that include a sweaty electrode", () => {
+    const page = renderScene(scene(0.1));
+    expect(p2p(ch(page, "F8-T4"))).toBeGreaterThan(40);
+    expect(p2p(ch(page, "F7-T3"))).toBeLessThan(5);
+  });
+  it("is removed largely by raising the low-frequency filter", () => {
+    const low = p2p(ch(renderScene(scene(0.1)), "F8-T4"));
+    const high = p2p(ch(renderScene(scene(5)), "F8-T4"));
+    expect(high).toBeLessThan(low * 0.25);
+  });
+});

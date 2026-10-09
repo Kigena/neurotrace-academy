@@ -127,6 +127,12 @@ function Sidebar({ isOpen, onClose }) {
               </svg>
               Neurology Essentials
             </NavLink>
+            <NavLink to="/patterns-review" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12h3l2-6 4 12 3-9 2 3h4" />
+              </svg>
+              Patterns, Sleep &amp; Drugs
+            </NavLink>
             <NavLink to="/lab-safety" className={navLinkClasses} onClick={handleNavClick}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" />

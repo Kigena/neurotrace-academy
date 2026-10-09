@@ -1,0 +1,771 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-08",
+  "bank": "challenge",
+  "focus": "sleep-neonatal-pediatric",
+  "description": "Original multi-step questions on adult sleep features, maturation of sleep in infants and children, sleep disorders and the channels to add, and neonatal EEG by conceptional age. Text only; not yet medically verified.",
+  "totalQuestions": 27,
+  "questions": [
+    {
+      "id": "ch-sn-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "k-complex",
+        "spindle",
+        "sleep-staging"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 35-year-old dozing during a routine EEG hears a door slam. A 0.7 s high-amplitude negative-then-positive wave appears, maximal at Fz and Cz, followed at once by a 1 s run of 13 Hz activity at Cz. Which stage and features does this show?",
+      "explanation": "A long (at least 0.5 s), high-amplitude, frontocentral negative-positive wave that can be triggered by a sound, followed by a 12-14 Hz central burst, is a K-complex with a spindle, the defining pair of stage N2. A vertex wave is shorter and sharper, and returning alpha would signal arousal rather than a central 13 Hz burst. Stage N3 is defined by sustained high-amplitude delta, not a single wave with fast activity. REM sawtooth waves are 2-5 Hz notched trains, not a single evoked wave with a spindle.",
+      "learningObjective": "Identify a K-complex and spindle and assign stage N2.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Stage N1, with a vertex wave followed by alpha",
+        "Stage N3, with a delta wave followed by beta",
+        "Stage N2, with a K-complex followed by a spindle",
+        "REM sleep, with a sawtooth wave then beta"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posts",
+        "polarity",
+        "drowsiness"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 24-year-old in light sleep shows repeated triangular transients at O1 and O2 at about 4 per second. In O1-Avg and O2-Avg channels (negative up) they point downward, and they persist with the eyes closed. What are they?",
+      "explanation": "With the negative-up convention, a downward deflection at the active electrode means that electrode is relatively positive. Surface-positive, monophasic, triangular occipital transients in trains during light sleep are POSTS, a normal sleep feature. Epileptiform spikes are typically surface-negative and would point up in these channels. Lambda waves look similar but need the eyes open and scanning a scene, which cannot happen during sleep with the eyes closed. Photic driving needs a flash stimulus time-locked to the response; ordinary room lighting does not produce it.",
+      "learningObjective": "Use polarity and state to identify POSTS.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Positive occipital sharp transients of sleep, a normal finding",
+        "Negative occipital spikes, to be marked as epileptiform",
+        "Lambda waves, produced by visual scanning of the room",
+        "Photic driving at 4 Hz, caused by flicker of room lights"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "rem-sleep",
+        "sawtooth-waves",
+        "polygraphy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In a 50-year-old, a page shows low-voltage mixed frequencies, runs of notched 3 Hz triangular waves at Cz, then rapid conjugate deflections at F7 and F8, with a nearly flat chin EMG. What are the 3 Hz waves?",
+      "explanation": "The combination of low-voltage mixed background, rapid eye movements and loss of chin muscle tone marks REM sleep, and the notched 2-5 Hz central trains that precede bursts of eye movements are sawtooth waves. Vertex waves are single sharp transients of drowsiness and light sleep, not rhythmic trains with REMs and atonia. Frontal intermittent rhythmic delta is frontally maximal, smooth and seen in wake or drowsiness, not tied to REM. Hypnagogic hypersynchrony is a high-amplitude childhood drowsy pattern, not part of adult REM sleep.",
+      "learningObjective": "Recognize REM sawtooth waves using polygraphic context.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Vertex waves of stage N1 sleep",
+        "Frontal intermittent rhythmic delta",
+        "Hypnagogic hypersynchrony of drowsiness",
+        "Sawtooth waves of REM sleep"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "spindles",
+        "asynchrony",
+        "maturation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 4-year-old's sleep record shows 13 Hz central spindles that consistently occur over one hemisphere at a time and rarely together. How should this be regarded?",
+      "explanation": "Spindles are often asynchronous between hemispheres in infancy, but they become synchronous by about 2 years of age, so persistent asynchrony in a 4-year-old is abnormal and the technologist should describe it clearly for the reader. Asynchrony is not expected to persist until puberty. Spindle synchrony does carry meaning, because persistent asynchrony beyond infancy can reflect impaired interhemispheric function. Frequency is a separate feature; an 8 Hz cut-off is not the criterion for judging asynchrony.",
+      "learningObjective": "Apply the age limit for normal spindle asynchrony.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Normal, as spindles stay asynchronous until puberty",
+        "Abnormal, as spindles are synchronous by about age 2",
+        "Normal, as spindle synchrony carries no meaning",
+        "Abnormal only if spindle frequency falls below 8 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "spindles",
+        "asynchrony",
+        "infant"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy term-born 6-month-old shows 12-14 Hz central spindles that appear independently over each side, in roughly equal numbers, and are seldom synchronous. How should this be regarded?",
+      "explanation": "Spindles emerge in the first months after term and are commonly asynchronous during infancy, becoming synchronous by about 2 years. Equal, independent spindles over each side at 6 months are therefore normal; a consistent absence on one side would be a different matter. Spindles are not synchronous from their first appearance. They appear by about 2-3 months post-term, not at 2 years. The sleep feature can be judged on its own merits without a waking sample.",
+      "learningObjective": "Recognize normal spindle asynchrony in infancy.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Abnormal, as spindles are synchronous from onset",
+        "Normal for age, as asynchrony is expected in infancy",
+        "Abnormal, as spindles do not emerge until age 2",
+        "Uninterpretable without first recording wakefulness"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "spindles",
+        "maturation",
+        "infant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A term-born infant is recorded at 4 months of age in clear NREM sleep for 20 minutes, and no spindles appear in any channel. What is the significance?",
+      "explanation": "Sleep spindles normally appear about 6-8 weeks after term and are expected by about 3 months, so their absence through 20 minutes of clear NREM sleep at 4 months is unexpected and worth describing. The 2-year mark relates to spindle synchrony, not spindle onset. Spindles belong to NREM sleep in infants as in adults, not REM. Preterm infants do not show true sleep spindles; the fast activity of prematurity is the delta brush.",
+      "learningObjective": "Apply the age of spindle onset to judge an infant sleep record.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Expected for age, as spindles first emerge at about 2 years",
+        "Expected for age, as infant spindles occur only in REM sleep",
+        "Unexpected for age, as spindles usually appear by about 3 months",
+        "Unexpected for age, as spindles are present from the first week after term"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "vertex-waves",
+        "pediatric",
+        "benign-variant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 7-year-old in stage N2 has very sharp, high-amplitude vertex waves that are symmetric, phase-reverse at Cz in a transverse chain and mix with K-complexes. What is the best approach?",
+      "explanation": "Vertex waves in children are often strikingly sharp and tall, but a symmetric midline field that phase-reverses at Cz in sleep, mixed with K-complexes, is the normal pattern. Centrotemporal spikes sit at C3/C4 and T7/T8, not the midline, and are typically unilateral or independent. A Cz reference would place the active vertex in every channel and spread the waves across the montage rather than clarify them. Movement artifact lacks a clean cerebral field and phase reversal, and waking the child loses the sleep sample.",
+      "learningObjective": "Distinguish sharp vertex waves of childhood from epileptiform discharges.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Recognize them as sharp vertex waves, normal for age",
+        "Mark them as centrotemporal spikes of rolandic epilepsy",
+        "Switch to a Cz reference to display them more clearly",
+        "Treat them as head-movement artifact and wake the child"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "hypnagogic-hypersynchrony",
+        "pediatric",
+        "drowsiness"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 3-year-old becoming drowsy suddenly shows diffuse 200 uV rhythmic 4 Hz waves lasting several seconds, with no spikes, then drifts into sleep with spindles. What is this pattern?",
+      "explanation": "Paroxysmal bursts of high-amplitude, rhythmic 3-5 Hz activity at drowsiness onset in a young child, without spikes, followed by normal sleep, are hypnagogic hypersynchrony, a normal finding from infancy into childhood. Absence discharges contain a spike in each complex and usually appear in wakefulness or with hyperventilation. Frontal intermittent rhythmic delta is slower and frontally maximal rather than diffuse at sleep onset. Encephalopathic slowing is persistent rather than a brief transitional burst followed by normal sleep architecture.",
+      "learningObjective": "Recognize hypnagogic hypersynchrony as a normal pediatric drowsy pattern.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Generalized 3 Hz spike-and-wave of absence epilepsy",
+        "Frontal intermittent rhythmic delta from a deep lesion",
+        "Diffuse slowing of encephalopathy that needs urgent review",
+        "Hypnagogic hypersynchrony, a normal childhood drowsy pattern"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "vertex-waves",
+        "k-complex",
+        "maturation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "In which patient would the absence of vertex waves and K-complexes during clear NREM sleep be least surprising?",
+      "explanation": "Vertex waves and K-complexes are not features of neonatal sleep; they emerge over the first months of life, around 5-6 months. A 2-week-old term infant therefore lacks them normally. By 8 months they are generally present, and in a school-age child or an adult their absence throughout clear NREM sleep would be unexpected.",
+      "learningObjective": "Recall when vertex waves and K-complexes appear in development.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "A healthy 8-month-old infant",
+        "A healthy 6-year-old child",
+        "A term newborn aged 2 weeks",
+        "A healthy 30-year-old adult"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "sleep-apnea",
+        "respiration",
+        "oximetry",
+        "polygraphy"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 3,
+      "stem": "A 52-year-old with loud snoring and daytime sleepiness enters stage N2 several times, but each time the EEG abruptly shows alpha and muscle artifact after 30-40 s, with a jump in ECG rate. What addition helps most?",
+      "explanation": "Repeated cyclic arousals out of sleep with a heart-rate surge in a middle-aged person who snores point to obstructive breathing events, so airflow, respiratory effort and oxygen saturation show whether apneas or hypopneas cause the arousals. Chin EMG measures muscle tone and helps stage REM, but does not show breathing. Extra temporal electrodes address epileptiform activity, which nothing here suggests. Hyperventilation is a waking activation procedure and does not explain sleep arousals.",
+      "learningObjective": "Choose respiratory monitoring for repeated sleep arousals.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A submental chin EMG channel to measure muscle tone",
+        "Airflow and respiratory effort channels with pulse oximetry",
+        "Extra T1 and T2 electrodes to look for temporal spikes",
+        "A repeat run of hyperventilation to provoke the arousals"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "narcolepsy",
+        "sleep-onset-rem",
+        "eog",
+        "chin-emg"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 19-year-old with excessive sleepiness and knee buckling when laughing falls asleep in the routine EEG. Within 8 minutes of sleep onset, low-voltage mixed activity and rapid conjugate deflections at F7 and F8 appear. What is the best technologist action?",
+      "explanation": "The history (sleepiness plus emotion-triggered weakness, suggesting cataplexy) and REM features within minutes of sleep onset raise the question of sleep-onset REM, which is expected about 90 minutes into sleep in a healthy adult. Eye and chin channels confirm REM, and the onset time must be recorded and passed on. Slow rolling eye movements are gradual, not rapid conjugate deflections, so calling this N1 misses the finding. REM sleep is not a seizure hazard. The high-frequency filter would distort the record and remove useful information rather than identify it. REM within 15 minutes of sleep onset is termed a sleep-onset REM period.",
+      "learningObjective": "Recognize and document possible sleep-onset REM.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Add EOG and chin EMG, note the timing, and report possible early REM",
+        "Document it as stage N1 with slow rolling eye movements only",
+        "Wake the patient, as REM in a routine EEG carries seizure risk",
+        "Lower the high-frequency filter to remove the eye deflections"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "rem-behaviour-disorder",
+        "chin-emg",
+        "video"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 67-year-old man punches and shouts during dreams. On video-EEG, a period with low-voltage mixed activity, sawtooth waves and REMs shows sustained chin EMG and bursts of limb movement. What does this show?",
+      "explanation": "REM sleep normally brings near-complete loss of chin and limb muscle tone. Persistent chin EMG and limb bursts during otherwise typical REM is REM sleep without atonia, the polygraphic hallmark of REM behaviour disorder, so the technologist documents the timing and behaviour on video. Sleepwalking arises from slow-wave sleep, not from REM with sawtooth waves. A seizure would show an evolving rhythmic discharge rather than intact REM features. Healthy REM does not raise chin tone.",
+      "learningObjective": "Identify REM sleep without atonia.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Arousal from stage N3, typical of adult sleepwalking",
+        "Frontal lobe seizure activity hidden by muscle artifact",
+        "Normal REM sleep, in which chin tone rises with dreaming",
+        "REM sleep without atonia, typical of REM behaviour disorder"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "parasomnia",
+        "night-terrors",
+        "n3"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 6-year-old has episodes of screaming and confusion about 90 minutes after falling asleep and remembers nothing next day. When should the technologist expect a typical episode to arise?",
+      "explanation": "Sleep terrors are disorders of arousal from slow-wave (N3) sleep, which dominates the first third of the night, fitting episodes about 90 minutes after sleep onset with amnesia. REM-related events, such as nightmares, cluster late in the night and are usually recalled. Drowsiness and pre-sleep wakefulness are too early and too light for an NREM arousal disorder.",
+      "learningObjective": "Link a pediatric parasomnia to its sleep stage and timing.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "On arousal from REM sleep in the last third of the night",
+        "During stage N1 drowsiness right at the start of sleep",
+        "On arousal from N3 sleep in the first third of the night",
+        "During quiet wakefulness just before sleep onset"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "periodic-limb-movements",
+        "leg-emg",
+        "polygraphy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "On an overnight EEG, a 58-year-old has brief bursts of movement artifact every 20-40 s during stage N2, often followed by a K-complex or alpha arousal. Which addition best characterizes this?",
+      "explanation": "Repetitive movements at regular intervals of roughly 5-90 s in NREM sleep, with arousals, suggest periodic limb movements, which are measured with surface EMG over the anterior tibialis of each leg. Chin EMG tracks tone for REM staging and does not capture leg movements. Neck electrodes would add more muscle artifact without identifying the source. An extra ECG lead helps with cardiac artifact, not periodic movement.",
+      "learningObjective": "Choose leg EMG to document periodic limb movements.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Surface EMG over both anterior tibialis muscles",
+        "Surface EMG over the submental chin muscles",
+        "Extra electrodes over the posterior neck muscles",
+        "A second ECG lead placed across the chest"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "conceptional-age",
+        "calculation",
+        "calc-core",
+        "trace-alternant"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 31 weeks' gestation is now 7 weeks old. What is the conceptional age, and which quiet-sleep pattern is expected?",
+      "explanation": "Conceptional age (now often called postmenstrual age) is gestational age at birth plus age since birth: 31 + 7 = 38 weeks. Near term, quiet sleep shows tracé alternant, with bursts alternating with lower-amplitude but not flat segments. Tracé discontinu belongs to prematurity, so it would be immature at 38 weeks. Using the birth age alone ignores the 7 weeks of maturation since delivery. Adding the 7 weeks twice gives 45 weeks, and even then spindles are not yet expected.",
+      "learningObjective": "Calculate conceptional age and predict the expected quiet-sleep pattern.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "38 weeks, with tracé discontinu in quiet sleep",
+        "38 weeks, with tracé alternant in quiet sleep",
+        "31 weeks, with tracé discontinu in quiet sleep",
+        "45 weeks, with spindles in continuous slow sleep"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "dysmaturity",
+        "conceptional-age",
+        "delta-brushes"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "An infant born at 28 weeks is now 10 weeks old. Quiet sleep shows tracé discontinu with near-flat intervals of 15-20 s and abundant delta brushes. How is this best described?",
+      "explanation": "Conceptional age is 28 + 10 = 38 weeks, when quiet sleep should show tracé alternant with only occasional delta brushes. Long near-flat intervals and abundant brushes fit a record several weeks younger, and a gap of more than about 2 weeks between EEG age and conceptional age is called dysmature. Birth gestation alone is not the age used, because maturation continues after delivery. Delta brushes peak around 32-34 weeks and wane toward term. Discontinuity decreases with maturity, so it cannot indicate an advanced record.",
+      "learningObjective": "Recognize a dysmature neonatal EEG from conceptional age and pattern.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Normal for 28 weeks, the age used to judge maturity",
+        "Normal for 38 weeks, as delta brushes peak at term",
+        "Advanced for age, as discontinuity marks term maturity",
+        "Dysmature, resembling an age well below the actual 38 weeks"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal-states",
+        "quiet-sleep",
+        "polygraphy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 40-week conceptional age neonate has closed eyes, no eye movements on EOG, regular respiration and chin EMG present. The EEG alternates 4-6 s bursts with lower-amplitude segments. What state is this?",
+      "explanation": "Regular breathing, no eye movements and preserved chin tone define quiet sleep, and at term quiet sleep shows tracé alternant, which matches the bursts alternating with lower-amplitude segments. Active sleep has rapid eye movements, irregular breathing and low chin tone with continuous activity, so neither active-sleep choice fits. Wakefulness requires open eyes or behavioural signs of waking, and activité moyenne is continuous rather than alternating.",
+      "learningObjective": "Assign neonatal quiet sleep from polygraphy and EEG.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Quiet sleep, showing tracé alternant",
+        "Active sleep, showing tracé alternant",
+        "Quiet wakefulness, with activité moyenne",
+        "Active sleep, with low-voltage activity"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal-states",
+        "active-sleep",
+        "polygraphy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In a term neonate whose EEG is continuous and could pass for wakefulness, which polygraphic set identifies active sleep?",
+      "explanation": "Active sleep in the neonate has continuous EEG similar to wake, so the state is set by the polygraph: eyes closed, rapid eye movements, irregular respiration, low or absent chin EMG and frequent twitches. Open eyes indicate wakefulness. Absent eye movements, regular breathing and chin tone describe quiet sleep. Prolonged apneas are not a defining state marker and high chin tone argues against active sleep.",
+      "learningObjective": "Use polygraphy to identify neonatal active sleep.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Eyes open, no eye movements, regular breaths, high chin tone",
+        "Eyes closed, no eye movements, regular breaths, high chin tone",
+        "Eyes closed, rapid eye movements, irregular breaths, low chin tone",
+        "Eyes closed, slow eye movements, long apneas, high chin tone"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "delta-brushes",
+        "conceptional-age",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In which infant would abundant delta brushes in both sleep states be most expected?",
+      "explanation": "Conceptional ages are 40 weeks (34+6), 32 weeks (27+5), 46 weeks (38+8) and 52 weeks (40+12). Delta brushes are most abundant around 32 to 34 weeks, in all states. By term they are sparse and mostly in quiet sleep, and they have normally disappeared by about 44 weeks, so plentiful brushes at 46 or 52 weeks would be clearly abnormal.",
+      "learningObjective": "Combine conceptional age arithmetic with the time course of delta brushes.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Born at 34 weeks and now 6 weeks old",
+        "Born at 27 weeks and now 5 weeks old",
+        "Born at 38 weeks and now 8 weeks old",
+        "Born at 40 weeks and now 12 weeks old"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "frontal-sharp-transients",
+        "neonatal",
+        "normal-variant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 39-week conceptional age neonate in transitional sleep shows bilateral, synchronous, blunt diphasic sharp waves of 80 uV at Fp1 and Fp2, mixed with some rhythmic frontal delta. How should these be regarded?",
+      "explanation": "Frontal sharp transients (encoches frontales) are blunt, often bilaterally synchronous frontal sharp waves of the near-term infant, often with rhythmic anterior delta during transitional sleep, and they fade after about 44 weeks. They are normal at 39 weeks. Their blunt, symmetric, state-related character does not fit an epileptiform focus. Eye movements produce opposite-polarity deflections at the eye and frontal sites and are confirmed, not removed, by an EOG channel. These transients emerge around 35 weeks, so they are not a remnant of very early prematurity.",
+      "learningObjective": "Recognize normal frontal sharp transients near term.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Frontal spikes that indicate a bifrontal seizure focus",
+        "Eye movement artifact that requires EOG to remove",
+        "Dysmature features normally gone before 30 weeks",
+        "Frontal sharp transients, a normal feature at this age"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "temporal-sharp-transients",
+        "lateralized",
+        "neonatal"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 41-week conceptional age neonate has frequent left temporal sharp transients that appear only on the left and continue while the infant is awake. How should this be regarded?",
+      "explanation": "Temporal sharp transients are normal in sleep in preterm and near-term infants when they are sporadic and shift from side to side. When they are frequent, consistently on one side and present in wakefulness at term, they suggest focal dysfunction on that side, but they are not by themselves epileptiform, so the technologist describes them and reports them per protocol. Calling them normal ignores the persistence, lateralization and waking occurrence. A seizure requires an evolving rhythmic discharge, not isolated transients. Dysmaturity concerns an immature overall background, not a lateralized focal sign.",
+      "learningObjective": "Judge when neonatal temporal sharp transients become abnormal.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A normal maturational transient to document as expected",
+        "A definite epileptic focus that confirms neonatal seizures",
+        "A non-specific sign of left temporal dysfunction to report",
+        "A sign of dysmaturity that will be gone by 44 weeks"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "temporal-sharp-transients",
+        "preterm",
+        "normal-variant"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 33-week conceptional age infant in sleep has occasional temporal sharp transients that occur independently over either side, along with delta brushes. How should these be regarded?",
+      "explanation": "Sporadic, shifting temporal sharp transients during sleep are a normal feature of preterm EEG and become less frequent toward term. With delta brushes present, the record fits about 33 weeks. They are not limited to term infants. Concern arises when they are frequent, persistently on one side, occur in runs, or appear in wakefulness. Isolated transients without evolution are not seizure onsets.",
+      "learningObjective": "Recognize normal temporal sharp transients in preterm sleep.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Normal for this conceptional age",
+        "Abnormal, as they belong only to term infants",
+        "Abnormal, unless the infant is fully awake",
+        "Abnormal, as each one marks a seizure onset"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "interburst-interval",
+        "term",
+        "discontinuity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 40-week conceptional age neonate after perinatal asphyxia shows bursts separated by 25-30 s of activity under 10 uV, in every state, with no cycling. What is the best approach?",
+      "explanation": "At term, quiet-sleep tracé alternant has interburst segments of only a few seconds that remain clearly visible (about 25-50 uV), and wake and active sleep are continuous. Near-flat intervals of 25-30 s in all states without state change are markedly excessive for 40 weeks, so the technologist measures and reports them per protocol. Tracé alternant does not have near-flat intervals of this length. Tracé discontinu belongs to prematurity, not term. Impedance problems affect single channels rather than producing synchronous suppression across the whole montage.",
+      "learningObjective": "Recognize abnormal interburst intervals in a term neonate.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Normal tracé alternant for term; document it as age-appropriate",
+        "Excessive discontinuity for term; measure intervals and notify per protocol",
+        "Normal tracé discontinu for term; note it in the routine log",
+        "Electrode artifact from high impedance; re-gel and continue"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "interburst-interval",
+        "preterm",
+        "trace-discontinu"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 25 weeks and now 1 week old shows bursts separated by low-voltage intervals of up to 25-30 s in all states. How should this be regarded?",
+      "explanation": "The conceptional age is 26 weeks, when tracé discontinu with long low-voltage interburst intervals, often 20-30 s or more, is the normal background in every state. Calling it burst suppression applies term criteria to a very preterm infant. Tracé alternant appears near term and has short, higher-amplitude interburst segments. Electrode failure would not create synchronous quiet periods across all channels.",
+      "learningObjective": "Apply conceptional age to interpret preterm interburst intervals.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Burst suppression signaling severe encephalopathy",
+        "Tracé alternant appropriate to a term infant",
+        "Electrode failure during each quiet interval",
+        "Expected discontinuity for this conceptional age"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "trace-alternant",
+        "maturation",
+        "dysmaturity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 40 weeks is recorded at 3 months of age. Quiet sleep still shows clear tracé alternant, and no spindles appear. How should this be regarded?",
+      "explanation": "At 3 months post-term the conceptional age is about 53 weeks. Tracé alternant gives way to continuous slow-wave sleep by about 44-46 weeks, and spindles usually appear by about 2-3 months, so this record is immature for age. Tracé alternant does not persist to 1 year, and spindles are expected well before 6 months. Tracé alternant is a neonatal pattern, not the adult form of slow-wave sleep.",
+      "learningObjective": "Judge maturity of a post-term infant sleep record.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Normal, as tracé alternant persists until about 1 year",
+        "Normal, as spindles are not seen until about 6 months",
+        "Immature, as tracé alternant fades by about 44-46 weeks",
+        "Mature, as tracé alternant is the adult slow-wave pattern"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "sleep-activation",
+        "centrotemporal-spikes",
+        "pediatric"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An 8-year-old has night-time episodes of one-sided facial twitching and drooling. After 20 minutes the awake EEG is normal. What best raises the yield of the study?",
+      "explanation": "The history suggests self-limited epilepsy with centrotemporal spikes, whose discharges are often sparse or absent awake but markedly activated by drowsiness and sleep, so obtaining sleep (with sleep deprivation if the protocol calls for it) gives the best yield. Hyperventilation mainly activates generalized absence discharges. Photic stimulation targets photosensitive epilepsies. Chin EMG records muscle tone and would not show the spikes.",
+      "learningObjective": "Choose sleep as the activation for suspected centrotemporal spikes.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Extending hyperventilation, as these spikes are HV-driven",
+        "Recording sleep, as centrotemporal spikes increase in sleep",
+        "Repeating photic stimulation at higher flash frequencies",
+        "Adding a chin EMG channel to capture the facial twitching"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sn-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "n3",
+        "delta",
+        "sleep-staging",
+        "measurement"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In a 30-year-old, a 30 s page shows 1-2 Hz frontal waves of 90-120 uV peak-to-peak taking up about 40% of the page. Which stage is this?",
+      "explanation": "Stage N3 is scored when slow waves of 0.5-2 Hz with at least 75 uV peak-to-peak amplitude, measured frontally, occupy 20% or more of a 30 s epoch, so 40% qualifies. The over-50% figure comes from the older stage 4 rule and is not the current threshold for N3. REM is a low-voltage mixed-frequency stage. Drowsiness does not contain sustained high-amplitude delta.",
+      "learningObjective": "Apply the current amplitude and percentage criteria for stage N3.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "N3, as high-amplitude delta fills over 20% of the epoch",
+        "N2, as delta must fill over half the epoch for N3",
+        "REM, as slow waves define the deepest dreaming sleep",
+        "N1, as any delta activity marks early drowsiness"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea patterns and activation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

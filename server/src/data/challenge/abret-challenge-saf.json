@@ -622,7 +622,7 @@
       "competency": "technical",
       "reasoningSteps": 2,
       "stem": "How often should EEG instruments receive formal electrical safety checks such as ground resistance and leakage-current testing?",
-      "explanation": "Electrical safety testing is done by biomedical (clinical) engineering at incoming inspection, after any repair or modification, and then at scheduled intervals; the widely taught interval is at least yearly, but facility policy, accreditation requirements and the manufacturer's recommendations set the exact schedule. Testing only at installation, only after a shock, or only when line noise appears leaves hidden faults undetected.",
+      "explanation": "Electrical safety testing is done by biomedical (clinical) engineering at incoming inspection, after any repair or modification, and then at scheduled intervals. ABRET practice keys have used a semiannual (every six months) interval, while in practice facility policy, accreditation requirements, NFPA 99 risk-based programs and the manufacturer's recommendations set the exact schedule. Waiting for a shock report or excess line noise, or testing only at installation, leaves hazards undetected.",
       "learningObjective": "Describe the schedule for routine electrical safety inspection of EEG equipment.",
       "questionType": "conceptual",
       "references": [],
