@@ -325,8 +325,10 @@ function CaseDetail() {
     try {
       const saved = await caseProgressApi.complete(id, { correct, total, title: eegCase?.title || "" });
       setProgress(saved);
+      return true;
     } catch (err) {
       console.error("Could not save case progress:", err);
+      return false;
     }
   };
 
