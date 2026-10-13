@@ -21,6 +21,7 @@ const TABS = [
   ["sensitivity", "Sensitivity"],
   ["timebase", "Time base"],
   ["filters", "Filters"],
+  ["differential", "Differential amplifier"],
   ["lab", "Filter Lab"],
   ["mistakes", "Common mistakes"],
   ["practice", "Practice"],
@@ -288,6 +289,51 @@ function Filters() {
   );
 }
 
+function Differential() {
+  const ratio = (db) => Math.round(10 ** (db / 20)).toLocaleString("en-US");
+  const keep = (f, fc) => pct(highPassGain(f, fc));
+  return (
+    <div className="space-y-5">
+      <p className="max-w-3xl text-slate-600">
+        Every EEG channel comes from a differential amplifier: it amplifies the difference between Input 1 and Input 2 and rejects what the two inputs share.
+        Three exam ideas follow from that: common mode rejection (CMRR), input impedance, and why electrode impedances must be balanced.
+      </p>
+      <Card title="Differentiation and amplification" tone="indigo">
+        <p>The amplifier works on two principles: it takes the <strong>difference</strong> between its inputs (Input 1 minus Input 2) and then <strong>amplifies</strong> that difference.</p>
+        <p>A signal that is identical at both inputs (in phase and equal in size), such as mains interference picked up by the body, is a <strong>common mode</strong> signal and is cancelled. Cerebral activity that differs between the two electrodes is passed and amplified.</p>
+        <Formula>Output = gain x (Input 1 - Input 2)</Formula>
+      </Card>
+      <Card title="Common mode rejection ratio (CMRR)">
+        <p>CMRR compares how strongly the amplifier boosts a difference signal with how strongly it lets a common mode signal through. It is quoted in decibels (dB), not in hertz.</p>
+        <Formula>CMRR (dB) = 20 x log10(differential gain / common mode gain)</Formula>
+        <Table
+          head={["CMRR", "Difference signal favoured by", "Note"]}
+          rows={[
+            ["70 dB", `about ${ratio(70)} to 1`, "Below the ACNS 2016 minimum"],
+            ["90 dB", `about ${ratio(90)} to 1`, "ACNS Guideline 4 (2016): at least 90 dB"],
+            ["100 dB", `${ratio(100)} to 1`, "Ten times more rejection than 80 dB"],
+          ]}
+          note="Each extra 20 dB is ten times more rejection."
+        />
+        <p>Rejection works only if both inputs see the same thing. Unequal electrode impedances make the same mains signal arrive differently at the two inputs, so part of it becomes a difference signal and appears as 60 Hz artifact. That is why impedances must be <strong>balanced</strong>, not just low.</p>
+      </Card>
+      <Card title="Input impedance: why it must be very high">
+        <p>The electrode and the amplifier input form a voltage divider. The brain signal is shared between the electrode-skin impedance and the amplifier&apos;s input impedance, and only the part across the input is recorded.</p>
+        <p>A <strong>very high input impedance</strong> (many megohms, far above the 100 ohm to 10 kilohm electrode range of ACNS Guideline 1) means almost all of the signal reaches the amplifier and little current is drawn through the electrodes. A low input impedance would lose amplitude and, with unequal electrodes, worsen common mode rejection.</p>
+        <p className="text-xs text-slate-500">The 2016 ACNS Guidelines 1 to 7 do not set a numeric input impedance; exam items ask for the principle (very high).</p>
+      </Card>
+      <Card title="Keeping a slow wave without touching a spike">
+        <p>The low frequency filter (LFF) acts on slow activity; a spike is fast, so it is barely affected by the LFF. To show a 0.5 Hz wave better, <strong>lower</strong> the LFF; raising it does the opposite.</p>
+        <Table
+          head={["LFF setting", "Time constant", "0.5 Hz wave kept", "20 Hz spike kept"]}
+          rows={[0.3, 0.5, 1].map((fc) => [`${fc} Hz`, `${timeConstantFromCutoff(fc).toFixed(2)} s`, keep(0.5, fc), keep(20, fc)])}
+          note="Single-pole filter, as in this app's Filter Lab."
+        />
+      </Card>
+    </div>
+  );
+}
+
 function Lab() {
   const steps = [
     ["Read the calibration pulse", "A 50 µV pulse starts near 0.5 s. Switch the LFF between 0.1 and 5.3 Hz: the flat top sags faster as the LFF rises. Use the Caliper to time how long the top takes to fall to about 37% of its height and compare it with the TC in the page header (this works best at LFF 0.3 Hz and above; at 0.1 Hz the TC of 1.6 s is nearly as long as the pulse)."],
@@ -422,6 +468,7 @@ export default function AmplifierFilters() {
         {tab === "sensitivity" && <Sensitivity />}
         {tab === "timebase" && <TimeBase />}
         {tab === "filters" && <Filters />}
+        {tab === "differential" && <Differential />}
         {tab === "lab" && <Lab />}
         {tab === "mistakes" && <Mistakes />}
         {tab === "practice" && <Practice />}

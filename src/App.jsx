@@ -22,6 +22,7 @@ import NeurologyEssentials from "./pages/NeurologyEssentials.jsx";
 import LabSafety from "./pages/LabSafety.jsx";
 import ProfessionalPractice from "./pages/ProfessionalPractice.jsx";
 import PatternsReview from "./pages/PatternsReview.jsx";
+import AcnsGuide from "./pages/AcnsGuide.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
@@ -261,6 +262,12 @@ function AppContent() {
             <Route path="/patterns-review" element={
               <ProtectedRoute>
                 <PatternsReview />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/acns" element={
+              <ProtectedRoute>
+                <AcnsGuide />
               </ProtectedRoute>
             } />
           </Routes>

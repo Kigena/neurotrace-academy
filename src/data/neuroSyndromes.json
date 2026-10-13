@@ -3543,7 +3543,7 @@
         "steps": [
           "Identify the patient, record medications, last meal, sleep history, seizure history and any head injury or skull defect before applying electrodes.",
           "Measure the head and place electrodes by the International 10-20 system (add 10-10 or supplementary electrodes when your protocol or the clinical question requires it).",
-          "Prepare the skin and keep electrode impedances within your lab's limit (between 100 ohms and 5 kilohms, per your lab protocol, with matched values between electrodes).",
+          "Prepare the skin and keep electrode impedances within your lab's limit (ACNS Guideline 1, 2016: no more than 10 kilohms and not below 100 ohms; many labs target under 5 kilohms; keep values matched between electrodes).",
           "Add an ECG channel and eye-movement and, as needed, EMG or respiration channels to help identify artifact and state.",
           "Run the calibration and biological-calibration (eye blink, eye movement, jaw clench) checks and confirm filter and sensitivity settings per lab protocol.",
           "Display the record in standard bipolar (longitudinal and transverse) and referential montages, and switch montages as needed to localize and verify findings."

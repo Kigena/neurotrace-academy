@@ -2750,7 +2750,7 @@
             "Use a montage that leaves out the eight high-impedance electrodes"
           ],
           "correctAnswer": 0,
-          "explanation": "ACNS standards call for impedances below 5 kOhm and reasonably balanced. The fix is at the source: clean the skin, abrade gently, reapply paste/gel and reseat. Gain changes amplify the noise along with the signal. Recording with eight poor contacts gives a noisy, unreliable study, and leaving out those electrodes drops most of the parasagittal coverage."
+          "explanation": "Impedances should be reasonably balanced and within limits (ACNS Guideline 1, 2016, allows up to 10 kOhm and not below 100 Ohm; many labs aim for under 5 kOhm). The fix is at the source: clean the skin, abrade gently, reapply paste/gel and reseat. Gain changes amplify the noise along with the signal. Recording with eight poor contacts gives a noisy, unreliable study, and leaving out those electrodes drops most of the parasagittal coverage."
         },
         {
           "step": 2,

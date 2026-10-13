@@ -1,13 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Card, Table } from "./ui.jsx";
+import EegTracing from "../EegTracing.jsx";
 
 /**
  * Generic tabbed study guide rendered from a JSON content file
  * (tabs with text, list, table, cards and steps sections, plus pearls, common mistakes and memory aids).
  */
 
+function TracingQuiz({ s }) {
+  const [pick, setPick] = useState(null);
+  const done = pick !== null;
+  return (
+    <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-4">
+      {s.title && <h3 className="text-base font-semibold text-slate-900">{s.title}</h3>}
+      <EegTracing scene={s.scene} caption={s.caption || "NeuroLinea synthetic tracing."} />
+      <p className="text-sm font-medium text-slate-900">{s.question}</p>
+      <div className="grid gap-2">
+        {s.options.map((o, i) => {
+          const tone = !done ? "border-slate-300 bg-white hover:bg-slate-50" : i === s.answer ? "border-emerald-500 bg-emerald-50" : i === pick ? "border-rose-400 bg-rose-50" : "border-slate-200 bg-white opacity-70";
+          return (
+            <button key={o} type="button" disabled={done} onClick={() => setPick(i)} className={`rounded-lg border px-3 py-2 text-left text-sm ${tone}`}>
+              <span className="mr-2 font-semibold">{String.fromCharCode(65 + i)}.</span>{o}
+            </button>
+          );
+        })}
+      </div>
+      {done && (
+        <div className={`rounded-lg px-3 py-2 text-sm ${pick === s.answer ? "bg-emerald-50 text-emerald-900" : "bg-rose-50 text-rose-900"}`}>
+          <strong>{pick === s.answer ? "Correct. " : "Not quite. "}</strong>{s.explanation}
+          <button type="button" onClick={() => setPick(null)} className="ml-2 font-semibold underline">Try again</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Section({ s }) {
+  if (s.kind === "tracingQuiz") return <TracingQuiz s={s} />;
+  if (s.kind === "tracing") {
+    return (
+      <div className="space-y-2">
+        {s.title && <h3 className="text-base font-semibold text-slate-900">{s.title}</h3>}
+        <EegTracing scene={s.scene} caption={s.caption || "NeuroLinea synthetic tracing."} />
+      </div>
+    );
+  }
   if (s.kind === "flow") {
     return (
       <div className="space-y-2">

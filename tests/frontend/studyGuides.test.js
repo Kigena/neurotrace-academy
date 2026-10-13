@@ -1,16 +1,19 @@
 import { describe, expect, it } from "vitest";
+import { validateScene } from "../../src/eeg/generator.js";
 import neuro from "../../src/data/neurologyEssentials.json";
 import safety from "../../src/data/labSafety.json";
 import ethics from "../../src/data/professionalPractice.json";
 import patterns from "../../src/data/patternsReview.json";
+import acns from "../../src/data/acnsGuide.json";
 
-const KINDS = new Set(["text", "list", "table", "cards", "steps", "flow"]);
+const KINDS = new Set(["text", "list", "table", "cards", "steps", "flow", "tracing", "tracingQuiz"]);
 
 describe.each([
   ["neurology essentials", neuro],
   ["lab safety", safety],
   ["ethics and professional practice", ethics],
   ["patterns, sleep, drugs and activation", patterns],
+  ["ACNS guidelines and terminology", acns],
 ])("%s study guide", (_, data) => {
   it("has unique tabs whose sections match the renderer schema", () => {
     expect(data.title).toBeTruthy();
@@ -25,6 +28,11 @@ describe.each([
         if (s.kind === "text") expect(s.text).toBeTruthy();
         if (s.kind === "list" || s.kind === "steps" || s.kind === "flow") expect(s.items.length).toBeGreaterThan(0);
         if (s.kind === "cards") expect(s.cards.length).toBeGreaterThan(0);
+        if (s.kind === "tracingQuiz") {
+          expect(s.options[s.answer], `${t.id}: ${s.title}`).toBeTruthy();
+          expect(() => validateScene(s.scene), `${t.id}: ${s.title}`).not.toThrow();
+        }
+        if (s.kind === "tracing") expect(() => validateScene(s.scene), `${t.id}: ${s.title}`).not.toThrow();
         if (s.kind === "table") for (const r of s.rows) expect(r.length, `${t.id}: ${s.title}`).toBe(s.head.length);
       }
     }

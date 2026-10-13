@@ -1,0 +1,452 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-12",
+  "bank": "challenge",
+  "focus": "differential-amplifier",
+  "description": "Original items on differential amplification, common mode rejection, CMRR, input and electrode impedance, and single-pole low frequency filter effects. Text only; not yet medically verified.",
+  "totalQuestions": 16,
+  "questions": [
+    {
+      "id": "ch-dif2-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "differential-amplifier",
+        "amplifier-principle"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "The output of each EEG channel's differential amplifier is proportional to which quantity?",
+      "explanation": "A differential amplifier subtracts the Input 2 voltage from the Input 1 voltage and then amplifies that difference; this is why a channel shows only what differs between its two electrodes. Summing the inputs would add shared noise instead of removing it. Averaging is what a common average reference does when building a derived reference, not what each amplifier outputs. Multiplying the inputs has no role in EEG amplification.",
+      "learningObjective": "State that a differential amplifier amplifies Input 1 minus Input 2.",
+      "questionType": "recall",
+      "difficulty": "easy",
+      "options": [
+        "The sum of the voltages at Input 1 and Input 2",
+        "The difference between Input 1 and Input 2",
+        "The average of the voltages at Input 1 and Input 2",
+        "The product of the voltages at Input 1 and Input 2"
+      ],
+      "answerIndex": 1,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "common-mode",
+        "differential-amplifier"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A voltage that arrives at both inputs of a differential amplifier with the same amplitude and the same phase is described as a:",
+      "explanation": "A common mode signal is one that is identical in amplitude and phase at both inputs, so subtraction removes it. A differential-mode signal is one that differs between the inputs, which is what the amplifier is meant to pass. A phase reversal is a bipolar montage localisation sign, not a description of amplifier input conditions. An isoelectric tracing is the result of rejection rather than the name of the input condition.",
+      "learningObjective": "Define a common mode signal.",
+      "questionType": "recall",
+      "difficulty": "easy",
+      "options": [
+        "Differential-mode signal",
+        "Phase-reversed signal",
+        "Common mode signal",
+        "Isoelectric signal"
+      ],
+      "answerIndex": 2,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "common-mode",
+        "mains-interference",
+        "60-hz"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Why does a well-prepared recording show little 60 Hz mains interference even though the patient's whole body picks up that field?",
+      "explanation": "Mains interference couples onto the body broadly, so it appears at nearly the same amplitude and phase at both electrodes of a channel; the differential amplifier subtracts it out. Scalp tissue does not shield the body from an external field. Clinical sampling rates (commonly 256 Hz or more) easily capture 60 Hz, so slow sampling is not the reason. The low frequency filter attenuates slow activity, not 60 Hz; a notch filter is the one aimed at mains frequency.",
+      "learningObjective": "Explain how common mode rejection removes mains interference.",
+      "questionType": "conceptual",
+      "difficulty": "easy",
+      "options": [
+        "The field reaches both inputs almost equally and is cancelled by subtraction",
+        "The scalp tissue absorbs the 60 Hz field before it reaches the electrodes",
+        "The analog-to-digital converter samples too slowly to register 60 Hz energy",
+        "The low frequency filter removes 60 Hz energy from every channel by design"
+      ],
+      "answerIndex": 0,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "cmrr",
+        "decibels"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Common mode rejection ratio (CMRR) in decibels is calculated as:",
+      "explanation": "Because gain is a voltage ratio, CMRR in decibels is 20 log10 of the differential gain divided by the common-mode gain. Inverting the ratio would give a negative number for a good amplifier. Multiplying 20 by the raw ratio skips the logarithm and gives meaningless huge values. The 10 log10 form applies to power ratios, and multiplying the two gains does not express rejection at all.",
+      "learningObjective": "Write the decibel formula for CMRR.",
+      "questionType": "recall",
+      "difficulty": "medium",
+      "options": [
+        "10 times log10 of common-mode gain divided by differential gain",
+        "20 times the ratio of differential gain to common-mode gain",
+        "10 times log10 of differential gain times common-mode gain",
+        "20 times log10 of differential gain divided by common-mode gain"
+      ],
+      "answerIndex": 3,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "cmrr",
+        "decibels"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "An amplifier specification lists a CMRR of 90 dB. Approximately how much more is a differential signal amplified than a common mode signal?",
+      "explanation": "90 dB divided by 20 gives 4.5, and 10 to the power 4.5 is about 31,600, so the differential signal is amplified roughly 31,600 times more than a common mode signal. 900 to 1 treats decibels as a simple multiple of ten. About 3,160 to 1 corresponds to 70 dB. About 316,000 to 1 corresponds to 110 dB.",
+      "learningObjective": "Convert a CMRR in decibels to a gain ratio.",
+      "questionType": "conceptual",
+      "difficulty": "medium",
+      "options": [
+        "About 900 to 1",
+        "About 3,160 to 1",
+        "About 31,600 to 1",
+        "About 316,000 to 1"
+      ],
+      "answerIndex": 2,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "cmrr",
+        "acns-guideline-4",
+        "standards"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Under ACNS Guideline 4 (2016) for recording clinical EEG on digital media, the lowest acceptable common mode rejection ratio for each channel is:",
+      "explanation": "ACNS Guideline 4 (2016) states that CMRR should be at least 90 dB, and preferably higher, for each channel. 60 dB and 75 dB fall below that minimum and would let considerably more common mode interference through. 120 dB exceeds the minimum; it is a desirable figure, but it is not the stated floor.",
+      "learningObjective": "Recall the ACNS 2016 minimum CMRR.",
+      "questionType": "recall",
+      "difficulty": "medium",
+      "options": [
+        "60 dB",
+        "90 dB",
+        "75 dB",
+        "120 dB"
+      ],
+      "answerIndex": 1,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "input-impedance",
+        "electrode-impedance"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Compared with the electrode impedances it connects to, an EEG amplifier's input impedance is designed to be:",
+      "explanation": "The electrode impedance and the amplifier input impedance act as a voltage divider, so the input impedance must be very much higher than the electrode impedance for nearly all of the scalp voltage to appear at the amplifier. Equal impedances would lose about half the signal. An input impedance at half or far below the electrode value would lose most of the signal and degrade common mode rejection.",
+      "learningObjective": "State the required relationship between input impedance and electrode impedance.",
+      "questionType": "recall",
+      "difficulty": "easy",
+      "options": [
+        "Roughly equal to the electrode impedance",
+        "About half of the electrode impedance",
+        "Many times lower than the electrode impedance",
+        "Many times higher than the electrode impedance"
+      ],
+      "answerIndex": 3,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "time-constant",
+        "low-frequency-filter"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Raising the low frequency filter from 0.5 Hz to 1 Hz changes the time constant from about 0.32 s to about:",
+      "explanation": "The time constant equals 1 divided by (2 pi times the cutoff frequency); for 1 Hz that is about 0.16 s, so doubling the cutoff halves the time constant. 0.64 s doubles it instead, which would match a lower cutoff near 0.25 Hz. 0.53 s is the time constant for a 0.3 Hz setting. 1.0 s confuses the time constant with the reciprocal of the frequency.",
+      "learningObjective": "Relate low frequency filter cutoff to time constant.",
+      "questionType": "conceptual",
+      "difficulty": "medium",
+      "options": [
+        "0.16 s",
+        "0.64 s",
+        "0.53 s",
+        "1.0 s"
+      ],
+      "answerIndex": 0,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "cmrr",
+        "decibels"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Two EEG systems are compared on the bench: one has a CMRR of 80 dB and the other 100 dB. How much greater is the second system's ability to reject a common mode signal?",
+      "explanation": "Each 20 dB step in CMRR is a tenfold change in the gain ratio: 80 dB is 10,000 to 1 and 100 dB is 100,000 to 1, a tenfold improvement. Twice as great assumes decibel numbers scale linearly. Twenty times confuses the 20 dB difference with the ratio. One hundred times would require a 40 dB difference.",
+      "learningObjective": "Use the 20 dB per tenfold rule to compare amplifiers.",
+      "questionType": "application",
+      "difficulty": "medium",
+      "options": [
+        "Twice as great",
+        "Ten times as great",
+        "Twenty times as great",
+        "One hundred times as great"
+      ],
+      "answerIndex": 1,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "impedance-mismatch",
+        "common-mode",
+        "mains-interference",
+        "troubleshooting"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "During setup, F3 measures 3 kOhm and C3 measures 18 kOhm; the others are 2 to 4 kOhm. 60 Hz appears mainly in channels that include C3. What best explains this?",
+      "explanation": "Each electrode impedance forms a divider with the amplifier input, so a high impedance at C3 lets the shared 60 Hz voltage arrive at a different amplitude than at its partner; the difference is no longer common mode and is amplified. Re-prepping C3 to a low, matched value restores rejection. The motor strip location does not generate mains noise. The low frequency filter acts on slow activity, not 60 Hz. The amplifier still subtracts regardless of impedance; it is the imbalance that turns noise into a difference.",
+      "learningObjective": "Explain why unbalanced electrode impedances defeat common mode rejection.",
+      "questionType": "application",
+      "difficulty": "hard",
+      "options": [
+        "Unequal impedances let mains noise reach the inputs unequally, so subtraction fails",
+        "C3 picks up 60 Hz from the scalp only because it sits over the motor strip",
+        "The low frequency filter passes more 60 Hz when one impedance is elevated",
+        "The differential amplifier adds the two inputs when one impedance is high"
+      ],
+      "answerIndex": 0,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "input-impedance",
+        "voltage-divider",
+        "electrode-impedance"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "In a teaching demonstration, a 10 kOhm electrode feeds an amplifier whose input impedance is only 90 kOhm. About what fraction of the scalp voltage reaches the amplifier?",
+      "explanation": "The fraction is the input impedance divided by the total: 90 divided by (90 plus 10) equals 0.9, so about 90 percent arrives and 10 percent is lost across the electrode. 10 percent inverts the divider. 50 percent would occur only if the two impedances were equal. 99.99 percent is what a very high input impedance, on the order of 100 MOhm, would deliver, which is why real amplifiers use input impedances far above electrode impedance.",
+      "learningObjective": "Apply the voltage divider to input and electrode impedance.",
+      "questionType": "application",
+      "difficulty": "hard",
+      "options": [
+        "10 percent",
+        "50 percent",
+        "90 percent",
+        "99.99 percent"
+      ],
+      "answerIndex": 2,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "input-impedance",
+        "amplitude-loss",
+        "common-mode"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A faulty headbox channel develops an input impedance far lower than normal. What effect is most expected on that channel?",
+      "explanation": "With a low input impedance, more of the signal is dropped across the electrode impedance, so displayed amplitude falls; small impedance differences between electrodes also have a larger effect, so common mode noise is rejected less well. Amplitude would not rise and rejection would not improve. In a digital system the filter bandwidth and time constant are set by the filter settings, not by input impedance (and in older AC-coupled designs a lower input resistance would shorten, not lengthen, the time constant).",
+      "learningObjective": "Predict the consequences of low amplifier input impedance.",
+      "questionType": "conceptual",
+      "difficulty": "medium",
+      "options": [
+        "Higher amplitude and stronger rejection of common mode noise",
+        "Unchanged amplitude with a narrower recorded bandwidth",
+        "Unchanged amplitude with a slower time constant",
+        "Lower amplitude and weaker rejection of common mode noise"
+      ],
+      "answerIndex": 3,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "low-frequency-filter",
+        "filter-math",
+        "slow-waves"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A single-pole low frequency filter is set to 0.3 Hz. Using gain = f / sqrt(f^2 + fc^2), about what percentage of a 0.5 Hz wave's amplitude is displayed?",
+      "explanation": "0.5 divided by the square root of (0.25 plus 0.09) is 0.5 divided by about 0.583, which is about 0.86, so roughly 86 percent is displayed. About 45 percent is what a 1 Hz setting gives. About 71 percent is the result when the cutoff equals the wave frequency at 0.5 Hz. About 97 percent would require a much lower cutoff, near 0.12 Hz.",
+      "learningObjective": "Calculate low frequency filter attenuation of a slow wave.",
+      "questionType": "application",
+      "difficulty": "hard",
+      "options": [
+        "About 45 percent",
+        "About 71 percent",
+        "About 86 percent",
+        "About 97 percent"
+      ],
+      "answerIndex": 2,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "low-frequency-filter",
+        "spikes",
+        "slow-waves"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A recording has a 0.5 Hz slow wave and a spike whose main energy is near 20 Hz. If the low frequency filter is raised from 0.3 Hz to 1 Hz, what happens to each?",
+      "explanation": "At a 1 Hz cutoff, 0.5 divided by the square root of 1.25 is about 0.45, so the slow wave drops to about 45 percent, while 20 divided by the square root of 401 is about 0.999, so the spike is essentially unaffected. A low frequency filter does not reduce a 20 Hz component by the same fraction as a 0.5 Hz one. About 86 percent is the slow-wave value at the original 0.3 Hz setting. About 71 percent applies only when the cutoff equals 0.5 Hz, and even then the spike would be unchanged.",
+      "learningObjective": "Contrast low frequency filter effects on slow waves and spikes.",
+      "questionType": "application",
+      "difficulty": "hard",
+      "options": [
+        "Slow wave falls to about 45 percent; spike is nearly unchanged",
+        "Slow wave falls to about 45 percent; spike also falls to 45 percent",
+        "Slow wave stays near 86 percent; spike is nearly unchanged",
+        "Slow wave falls to about 71 percent; spike falls to about 71 percent"
+      ],
+      "answerIndex": 0,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "low-frequency-filter",
+        "cutoff",
+        "slow-waves"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A 0.5 Hz posterior slow wave is recorded with the low frequency filter set to exactly 0.5 Hz. Roughly what fraction of its true amplitude is displayed?",
+      "explanation": "At the cutoff frequency a single-pole filter passes 1 divided by the square root of 2, about 0.71, which is the -3 dB point. About 50 percent is a common misconception about the cutoff; that would be -6 dB. About 86 percent applies with a 0.3 Hz cutoff. About 100 percent would apply only if the cutoff were far below 0.5 Hz.",
+      "learningObjective": "Recall the amplitude passed at the cutoff frequency.",
+      "questionType": "application",
+      "difficulty": "medium",
+      "options": [
+        "About 50 percent",
+        "About 71 percent",
+        "About 86 percent",
+        "About 100 percent"
+      ],
+      "answerIndex": 1,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dif2-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "time-constant",
+        "low-frequency-filter",
+        "conversion"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "An older protocol specifies a time constant of 0.53 s rather than a low frequency filter setting. Which cutoff is equivalent on a digital system?",
+      "explanation": "Cutoff frequency equals 1 divided by (2 pi times the time constant): 1 divided by about 3.33 gives about 0.3 Hz. 0.1 Hz corresponds to a time constant near 1.6 s. 0.5 Hz corresponds to about 0.32 s. 1.0 Hz corresponds to about 0.16 s.",
+      "learningObjective": "Convert a time constant to a low frequency filter cutoff.",
+      "questionType": "application",
+      "difficulty": "medium",
+      "options": [
+        "0.1 Hz",
+        "0.5 Hz",
+        "1.0 Hz",
+        "0.3 Hz"
+      ],
+      "answerIndex": 3,
+      "references": [],
+      "author": "NeuroLinea amplifier fundamentals set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

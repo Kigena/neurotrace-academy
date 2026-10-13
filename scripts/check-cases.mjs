@@ -22,7 +22,7 @@ const neuro = read("src/data/neuroSyndromes.json");
 const syndromes = neuro.syndromes;
 
 const validLinks = new Set(["/standards", "/workflow"]);
-for (const t of ["", "?tab=sensitivity", "?tab=timebase", "?tab=filters", "?tab=lab", "?tab=mistakes"]) validLinks.add(`/amplifier-controls${t}`);
+for (const t of ["", "?tab=sensitivity", "?tab=timebase", "?tab=filters", "?tab=differential", "?tab=lab", "?tab=mistakes"]) validLinks.add(`/amplifier-controls${t}`);
 for (const t of ["", "?tab=referential", "?tab=contamination", "?tab=choosing", "?tab=bipolar", "?tab=lab", "?tab=mistakes"]) validLinks.add(`/montages-references${t}`);
 for (const t of ["", "?tab=grades", "?tab=finder", "?tab=role", "?tab=mistakes"]) validLinks.add(`/diffuse-abnormalities${t}`);
 for (const t of ["", "?tab=anatomy", "?tab=physiology", "?tab=regions", "?tab=syndromes", "?tab=genetics", "?tab=recording", "?tab=patterns", "?tab=finder", "?tab=mistakes"]) validLinks.add(`/neuro-syndromes${t}`);

@@ -1,0 +1,1419 @@
+{
+  "title": "ACNS Guidelines and Terminology",
+  "subtitle": "The 2016 technical Guidelines 1 to 7 and the 2021 Critical Care EEG Terminology: the exact numbers, units and definitions ABRET asks about",
+  "tabs": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "intro": "The American Clinical Neurophysiology Society (ACNS) writes the North American standards that ABRET draws on for many short, number-based questions. Two document families matter most: the 2016 technical Guidelines 1 to 7 and the 2021 Standardized Critical Care EEG Terminology. Learn the numbers together with their units, because the wrong unit is the usual distractor.",
+      "sections": [
+        {
+          "title": "What ACNS is",
+          "kind": "text",
+          "text": "ACNS is the professional society for clinical neurophysiology in North America. It publishes its guidelines and consensus statements in the Journal of Clinical Neurophysiology and posts them free at acns.org/practice/guidelines. The guidelines set minimum standards: meeting them does not guarantee a good study, and each lab is expected to do better than the minimum. Where a guideline leaves a detail to local practice (record retention, consent for video, sedation), follow facility policy."
+        },
+        {
+          "title": "The two document families",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "2016 Guidelines 1 to 7 (technical)",
+              "body": "Seven papers published together in J Clin Neurophysiol, August 2016 (vol. 33, issue 4). They tell you how to record: electrodes, impedance, filters, sensitivity, montages, digital specifications, pediatric and neonatal changes, the electrocerebral inactivity (ECI) protocol and report format.",
+              "points": [
+                "G1 Minimum technical requirements",
+                "G2 Electrode position nomenclature (10-10)",
+                "G3 Standard montages",
+                "G4 Recording on digital media",
+                "G5 Pediatric and neonatal standards",
+                "G6 Suspected cerebral death (ECI)",
+                "G7 EEG reporting"
+              ]
+            },
+            {
+              "title": "2021 Critical Care EEG Terminology",
+              "body": "Hirsch et al., J Clin Neurophysiol 2021;38:1-29. It tells you how to name what you see in ICU EEG: background, sporadic discharges, rhythmic and periodic patterns, seizures, BIRDs and the ictal-interictal continuum.",
+              "points": [
+                "Used for all ages except neonates (neonates have a separate ACNS terminology)",
+                "Replaced the 2012 version",
+                "Added ESz, ESE, ECSz, ECSE, BIRDs, IIC, UI, identical bursts, CAPE and extreme delta brush"
+              ]
+            },
+            {
+              "title": "Companion: 2015 cEEG consensus",
+              "body": "Herman et al. 2015, Consensus Statement on Continuous EEG in Critically Ill Adults and Children, Part II. It covers personnel, equipment and the technologist's daily tasks during ICU monitoring.",
+              "points": [
+                "Its review and reporting minimums are repeated in the 2021 terminology"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "How ABRET asks about ACNS material",
+          "kind": "list",
+          "items": [
+            "Short stems that want one exact number, threshold, category name or definition.",
+            "Distractors are often the neighbouring number (4 vs 6 cycles, 20% vs 50%, 5 vs 10 minutes).",
+            "Or the wrong unit: dB vs Hz, µV vs µV/mm, seconds vs minutes, samples per second vs Hz.",
+            "Or the right definition attached to the wrong category (the 'lateralized' definition offered for 'generalized').",
+            "Or the wrong montage: asymmetry is judged on a referential recording, not bipolar.",
+            "Read every option to the end: 'no higher than 1 Hz' and 'no lower than 70 Hz' are limits in opposite directions."
+          ]
+        },
+        {
+          "title": "Most-tested numbers",
+          "kind": "table",
+          "head": [
+            "Item",
+            "Value with unit",
+            "Source"
+          ],
+          "rows": [
+            [
+              "Minimum channels, routine EEG",
+              "16 channels",
+              "G1"
+            ],
+            [
+              "Electrodes",
+              "All 21 of the 10-20 System",
+              "G1"
+            ],
+            [
+              "Impedance",
+              "Up to 10 kΩ acceptable; not below 100 Ω (suggests a short or salt bridge); keep balanced",
+              "G1"
+            ],
+            [
+              "Square-wave calibration",
+              "At least 10 s at the start",
+              "G1"
+            ],
+            [
+              "Routine sensitivity",
+              "5 to 10 µV/mm (7 µV/mm common start)",
+              "G1"
+            ],
+            [
+              "Low-frequency filter",
+              "No higher than 1 Hz (time constant at least 0.16 s)",
+              "G1"
+            ],
+            [
+              "High-frequency filter",
+              "No lower than 70 Hz",
+              "G1"
+            ],
+            [
+              "Display",
+              "10 to 20 s per page",
+              "G1"
+            ],
+            [
+              "Routine recording length",
+              "At least 20 min technically satisfactory",
+              "G1"
+            ],
+            [
+              "Hyperventilation",
+              "At least 3 min, plus at least 1 min afterwards",
+              "G1"
+            ],
+            [
+              "Sampling rate",
+              "At least 256 samples per second (512 preferable)",
+              "G4"
+            ],
+            [
+              "A/D resolution",
+              "At least 16 bits per sample",
+              "G4"
+            ],
+            [
+              "Common mode rejection ratio",
+              "At least 90 dB per channel",
+              "G4"
+            ],
+            [
+              "Added noise",
+              "Less than 1 µV peak to peak, 0.5 to 100 Hz",
+              "G4"
+            ],
+            [
+              "Interchannel crosstalk",
+              "Less than 1% (40 dB down)",
+              "G4"
+            ],
+            [
+              "ECI sensitivity",
+              "2 µV/mm for at least 30 min of the recording",
+              "G6"
+            ],
+            [
+              "ECI interelectrode distance",
+              "At least 10 cm",
+              "G6"
+            ],
+            [
+              "Neonatal low-frequency filter",
+              "0.3 to 0.6 Hz (time constant 0.27 to 0.53 s)",
+              "G5"
+            ],
+            [
+              "Minimum cycles for rhythmic or periodic",
+              "6 consecutive cycles",
+              "2021 terminology"
+            ],
+            [
+              "Marked asymmetry",
+              "At least 50% voltage (referential) or more than 1 Hz",
+              "2021 terminology"
+            ],
+            [
+              "Electrographic seizure",
+              "Discharges averaging more than 2.5 Hz for at least 10 s, or definite evolution for at least 10 s",
+              "2021 terminology"
+            ],
+            [
+              "Electrographic status epilepticus",
+              "At least 10 continuous min, or at least 20% of any 60 min",
+              "2021 terminology"
+            ]
+          ],
+          "note": "The 2016 Guidelines 1 to 7 do not state an amplifier input impedance value; do not quote one as an ACNS 2016 requirement."
+        }
+      ],
+      "pearls": [
+        "CMRR is a ratio expressed in decibels (dB). A Hz option for CMRR is always wrong.",
+        "Sensitivity is µV/mm (input voltage per trace deflection). A smaller number is more sensitive: 2 µV/mm shows smaller signals than 7 µV/mm.",
+        "The ECI threshold is a voltage (2 µV peak to peak); the ECI display setting is a sensitivity (2 µV/mm). Same digit, different unit.",
+        "Sampling is in samples per second; 256 was chosen as more than three times a 70 Hz high-frequency filter.",
+        "Numbering changed in 2016: today's Guideline 2 was previously Guideline 5, Guideline 3 was previously 6 and Guideline 5 was previously 2.",
+        "The 2021 terminology is not meant for neonates."
+      ],
+      "eegLink": "Most of these numbers are settings you choose or verify at the machine, so knowing them is both exam knowledge and daily practice."
+    },
+    {
+      "id": "guidelines",
+      "title": "Guidelines 1-7",
+      "intro": "Each 2016 guideline covers one part of the recording chain. Guideline 1 is the base standard; Guidelines 5 and 6 say what to change for children, neonates and ECI. Learn each number with its direction (minimum or maximum) and unit.",
+      "sections": [
+        {
+          "title": "One row per guideline",
+          "kind": "table",
+          "head": [
+            "Guideline",
+            "Covers",
+            "Key requirements"
+          ],
+          "rows": [
+            [
+              "1 Minimum Technical Requirements",
+              "Routine EEG at all ages except the very young",
+              "16 channels minimum; 21 electrodes (10-20); impedance up to 10 kΩ, not below 100 Ω; 10 s calibration; 5 to 10 µV/mm; LFF no higher than 1 Hz, HFF no lower than 70 Hz; 10 to 20 s/page; at least 20 min; HV at least 3 min; single-channel ECG"
+            ],
+            [
+              "2 Electrode Position Nomenclature",
+              "The 10-10 extension of the 10-20 System",
+              "T3/T4 renamed T7/T8; T5/T6 renamed P7/P8; old names still acceptable; F9/F10, T9/T10, P9/P10 sit 10% below the standard temporal row; 10-5 system not accepted by ACNS or IFCN"
+            ],
+            [
+              "3 Standard Montages",
+              "Minimum set of montages for general use",
+              "Classes LB, TB and R; designed for 16, 18 and 20 channels; at least one montage of each class per recording; left above right; anterior above posterior"
+            ],
+            [
+              "4 Recording on Digital Media",
+              "Digital acquisition, storage and display",
+              "At least 256 samples/s; at least 16 bits; CMRR at least 90 dB; noise under 1 µV p-p (0.5 to 100 Hz); crosstalk under 1%; 1 s = 25 to 35 mm on screen; time stamp on every page"
+            ],
+            [
+              "5 Pediatric EEG",
+              "Changes to Guideline 1 for children and neonates",
+              "Children: 10 or 15 µV/mm when needed; HV first, photic last. Neonates (to 4 to 8 weeks post-term): at least 12 cerebral channels plus polygraphy; LFF 0.3 to 0.6 Hz; 7 µV/mm; Cz always included"
+            ],
+            [
+              "6 Suspected Cerebral Death",
+              "Recording to document electrocerebral inactivity (ECI)",
+              "Full electrode set incl. Fz, Cz, Pz; 100 to 10,000 Ω; pairs at least 10 cm apart; 2 µV/mm for at least 30 min; HFF not below 30 Hz, LFF not above 1 Hz; test system integrity; stimulate; qualified technologist"
+            ],
+            [
+              "7 EEG Reporting",
+              "Standard format for an adult routine EEG report",
+              "Five sections: History, Technical Description, EEG Description, Impression, Clinical Correlation"
+            ]
+          ]
+        },
+        {
+          "title": "Guideline 1 details worth knowing",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Electrodes and ground",
+              "body": "Electrodes should not attenuate 0.5 to 70 Hz; Ag/AgCl or gold disks held with collodion work best. Needle electrodes are not recommended for routine use.",
+              "points": [
+                "Always place an isolated ground per the manufacturer",
+                "Never connect an electrode to the chassis or earth ground",
+                "Recheck impedance whenever a possibly artifactual pattern appears"
+              ]
+            },
+            {
+              "title": "Recording reference",
+              "body": "Record referentially so montages can be rebuilt, using an extra electrode that is not one of the 10-20 or 10-10 sites, commonly between Cz and Pz.",
+              "points": [
+                "Linked ears as the recording reference is specifically discouraged"
+              ]
+            },
+            {
+              "title": "Calibration and filters",
+              "body": "At least 10 s of square-wave calibration at the start. Biologic calibration is not needed for digital systems. After calibration, review 30 s on the system reference montage without the notch filter.",
+              "points": [
+                "LFF no higher than 1 Hz (-3 dB), time constant at least 0.16 s",
+                "HFF no lower than 70 Hz (-3 dB)",
+                "Use the 60 Hz notch only when other measures fail"
+              ]
+            },
+            {
+              "title": "During the recording",
+              "body": "View at least 3 montages while recording, including at least one bipolar and one referential. Record eyes open and eyes closed.",
+              "points": [
+                "Photic lamp at least 30 cm from the face, before HV or at least 3 min after it",
+                "HV at least 3 min, at least 1 min of recording after, and at least 1 min of baseline before",
+                "Note state, stimuli, movements and patient effort"
+              ]
+            },
+            {
+              "title": "Critical results",
+              "body": "The technologist notifies the interpreting physician and supervisor of critical results, including electrographic or clinical seizures and other significant clinical events.",
+              "points": [
+                "Basic data sheet: name, age, date/time, technologist, indication, last seizure, state, all medications, skull defects"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Guideline 4: digital specifications",
+          "kind": "table",
+          "head": [
+            "Parameter",
+            "Requirement"
+          ],
+          "rows": [
+            [
+              "Sampling rate",
+              "At least 256 samples per second; higher such as 512 preferable"
+            ],
+            [
+              "Resolution",
+              "At least 16 bits per sample including sign bit (most amplifiers now use 24)"
+            ],
+            [
+              "Common mode rejection ratio",
+              "At least 90 dB for each channel, preferably higher"
+            ],
+            [
+              "Additional noise",
+              "Less than 1 µV peak to peak at any frequency from 0.5 to 100 Hz, including 60 Hz"
+            ],
+            [
+              "Interchannel crosstalk",
+              "Less than 1%, i.e. 40 dB down or better"
+            ],
+            [
+              "Automatic logging",
+              "Impedances, sampling frequency, filters, gain, montage and any changes made during the recording"
+            ],
+            [
+              "Storage",
+              "Optical discs not recommended; server storage for inpatient studies of 24 h or more; read and write a public format such as EDF or EDF+; stand-alone viewer"
+            ],
+            [
+              "Display",
+              "1 s occupies 25 to 35 mm; at least 128 data points/s on screen for a 10 s page (at least 1,280 pixels); at least 10 mm per channel for up to 21 channels; scales shown on screen; time stamp on every page"
+            ],
+            [
+              "Review",
+              "Per-channel filter control; easy access to raw EEG even when trends or detections are shown; bipolar and referential reformatting"
+            ]
+          ]
+        },
+        {
+          "title": "Guidelines 2 and 3: naming and montages",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "10-10 naming logic",
+              "body": "Each letter set lies on one coronal line and each number on one sagittal line, so the name gives coordinates. Intermediate rows are AF, FC/FT, CP/TP and PO.",
+              "points": [
+                "AF is the only deviation from a strict combinatorial name",
+                "P with 6 or less = parietal; P with 7 or more = posterior temporal",
+                "FT9/FT10 closely approximate T1/T2",
+                "The 10-10 system has more than 70 positions"
+              ]
+            },
+            {
+              "title": "Montage designations",
+              "body": "The class is LB (longitudinal bipolar), TB (transverse bipolar) or R (referential). The number left of the point is the channel count; the number right of it is the alternative.",
+              "points": [
+                "Example: LB-16.2 is the second 16-channel longitudinal bipolar option",
+                "No more than three alternatives per class and size"
+              ]
+            },
+            {
+              "title": "Montage principles",
+              "body": "Use at least 16 channels and all 21 electrodes, both bipolar and referential montages, simple straight chains with equal interelectrode distances, anterior above posterior and left above right.",
+              "points": [
+                "Label each channel's derivation",
+                "Include a single ECG channel",
+                "Average reference often omits Fp1, Fp2, F7 and F8 to limit eye artifact"
+              ]
+            },
+            {
+              "title": "Choosing a reference",
+              "body": "Cz beats ear references when temporal lobe epilepsy is suspected, because temporal fields often reach A1/A2. Cz is a poor choice when sleep activity is prominent; an ear reference is better for a frontal focus."
+            }
+          ]
+        },
+        {
+          "title": "Guideline 5: pediatric and neonatal standards",
+          "kind": "table",
+          "head": [
+            "Item",
+            "Children",
+            "Neonates and young infants (to 4 to 8 weeks post-term)"
+          ],
+          "rows": [
+            [
+              "Channels",
+              "As adults",
+              "At least 12 cerebral channels plus at least 2 polygraphic (16 or more helps)"
+            ],
+            [
+              "Electrodes",
+              "All 21; no needle electrodes",
+              "Full 21 or reduced array: Fp1, Fp2, C3, Cz, C4, T7(T3), T8(T4), O1, O2, A1, A2; AF3/AF4 may replace Fp1/Fp2; never needles"
+            ],
+            [
+              "Impedance",
+              "As Guideline 1",
+              "Less than 10 kΩ allowed to protect tender skin; avoid marked mismatch"
+            ],
+            [
+              "Sensitivity",
+              "May reduce to 10 or even 15 µV/mm; run part at about 7 µV/mm",
+              "Usually 7 µV/mm"
+            ],
+            [
+              "Low-frequency filter",
+              "As adults",
+              "0.3 to 0.6 Hz (time constant 0.27 to 0.53 s), not 1 Hz"
+            ],
+            [
+              "Activation",
+              "HV at the start, photic at the end; a second HV at least 10 min after the first; photic at least 1 to 30 flashes/s",
+              "Photic not recommended; never sedate for sleep"
+            ],
+            [
+              "Duration",
+              "Include drowsiness, sleep and arousal",
+              "20 to 30 min usually insufficient; at least 60 min if the pattern is invariant; include a full epoch of quiet sleep"
+            ],
+            [
+              "Documentation",
+              "State at start and each montage change",
+              "Gestational, chronological and postmenstrual age in weeks; temperature if hypothermic"
+            ],
+            [
+              "Polygraphy",
+              "As needed",
+              "ECG (lead 1), respiration, eye movements (E1 0.5 cm above and E2 0.5 cm below the outer canthi of opposite eyes, each referred to an ear), submental EMG at 3 µV/mm, LFF about 5 Hz, HFF 70 Hz"
+            ]
+          ],
+          "note": "Postmenstrual age = gestational age + chronological age. The American Academy of Pediatrics advises against the term conceptional age."
+        },
+        {
+          "title": "Guideline 6: ECI recording",
+          "kind": "steps",
+          "items": [
+            "Use a full set of scalp electrodes including Fz, Cz and Pz; never a 1- or 2-channel device.",
+            "Keep impedances below 10,000 Ω and above 100 Ω; avoid needle electrodes and electrode caps.",
+            "Test the whole system by touching each electrode to create an artifact.",
+            "Use montages with electrode pairs at least 10 cm apart (double-distance links such as Fp1-C3, C3-O1).",
+            "Record at 2 µV/mm or more sensitive (for example 1 µV/mm) for at least 30 min of the recording, with a calibration of 2 or 5 µV; total recording at least 30 min.",
+            "Set the HFF no lower than 30 Hz and the LFF no higher than 1 Hz; if the notch is used, also record without it.",
+            "Monitor ECG, add a noncephalic (dorsum of the hand) monitor and others as needed; check machine noise with a 10,000 Ω resistor across the inputs.",
+            "Apply intense somatosensory, auditory and visual stimuli and annotate the response.",
+            "Performed by a qualified technologist (R. EEG T. encouraged) under a qualified electroencephalographer.",
+            "If ECI is in doubt, repeat after at least 6 h in adults and at least 24 h in neonates and children.",
+            "Record temperature, blood pressure, oxygen saturation, all medications and last sedative dose, and toxicology results."
+          ]
+        },
+        {
+          "title": "Guideline 7: report structure",
+          "kind": "list",
+          "items": [
+            "History: identifiers, age, reason for the study, relevant history, neuroactive medications, imaging, prior EEGs.",
+            "Technical description: date and place, number of electrodes, 10-20 or 10-10 placement, extra or moved electrodes, special review settings, premedication with dose, sleep deprivation, state.",
+            "EEG description: posterior dominant rhythm in Hz with amplitude in the most alert state, reactivity, other background, sleep, activation responses, abnormalities, artifacts, ECG and video findings.",
+            "Impression: normal or abnormal first, then the main abnormalities ranked (preferably no more than three or four).",
+            "Clinical correlation: plain-language meaning for the referring clinician; no specific treatment orders.",
+            "Artifacts are reported when they mimic cerebral activity, are excessive, interfere (more than 50% of the tracing in more than 50% of electrodes) or are diagnostically useful."
+          ]
+        }
+      ],
+      "pearls": [
+        "Guideline 1: 'no higher than 1 Hz' LFF and 'no lower than 70 Hz' HFF. ECI changes only the HFF floor, to 30 Hz.",
+        "The minimum CMRR in the 2016 guidelines is 90 dB (Guideline 4), not a Hz value.",
+        "Impedance has a floor as well as a ceiling: below 100 Ω suggests a salt bridge or short.",
+        "Linked ears are discouraged as the digital recording reference; use an extra electrode, commonly between Cz and Pz.",
+        "Neonatal LFF is 0.3 to 0.6 Hz, lower than the adult 1 Hz, so slow activity is preserved.",
+        "ECI repeat interval: at least 6 h in adults, at least 24 h in neonates and children.",
+        "Cz is always included in neonatal montages because positive rolandic sharp waves and some seizures may appear only there.",
+        "A guideline report has five sections; the impression starts with normal or abnormal."
+      ],
+      "eegLink": "Before you press record, check channels, electrodes, impedance, calibration, filters, sensitivity and reference against Guideline 1, then apply the age or ECI changes."
+    },
+    {
+      "id": "terminology",
+      "title": "2021 Terminology",
+      "intro": "The 2021 terminology names rhythmic and periodic patterns by joining Main Term 1 (where) to Main Term 2 (what), then adding modifiers. Definitions are precise and the numbers are tested. Old names such as PLEDs are no longer used.",
+      "sections": [
+        {
+          "title": "Main Term 1: where the pattern is",
+          "kind": "table",
+          "head": [
+            "Term",
+            "Definition"
+          ],
+          "rows": [
+            [
+              "G: Generalized",
+              "Any bilaterally synchronous and symmetric pattern, even with a restricted field (e.g. bifrontal). Shifting predominance that is not consistently (over 80%) on one side is still generalized."
+            ],
+            [
+              "L: Lateralized",
+              "Unilateral; or bilateral but clearly and consistently higher amplitude on one side (bilateral asymmetric); or bilateral with a consistent lead-in from the same side (bilateral asynchronous). Includes focal, regional and hemispheric."
+            ],
+            [
+              "BI: Bilateral Independent",
+              "Two independent lateralized patterns, one in each hemisphere, occurring at the same time."
+            ],
+            [
+              "UI: Unilateral Independent",
+              "Two independent patterns in the same hemisphere occurring at the same time (new in 2021)."
+            ],
+            [
+              "Mf: Multifocal",
+              "At least three independent lateralized patterns, at least one in each hemisphere, all occurring at the same time."
+            ]
+          ],
+          "note": "Generalized patterns can add a predominance: frontally, occipitally or midline predominant when that region is at least 50% higher in voltage, otherwise 'not otherwise specified'. Independent patterns at different times (left one hour, right later) are two lateralized patterns, not BI."
+        },
+        {
+          "title": "Main Term 2: what the pattern is",
+          "kind": "table",
+          "head": [
+            "Term",
+            "Definition"
+          ],
+          "rows": [
+            [
+              "PDs: Periodic Discharges",
+              "A repeated waveform of fairly uniform shape and duration with a clear interval between discharges, recurring at nearly regular intervals."
+            ],
+            [
+              "RDA: Rhythmic Delta Activity",
+              "A repeated waveform of fairly uniform shape and duration with no interval between waves; frequency 0.5 to 4 Hz. Irregular or polymorphic delta is not RDA."
+            ],
+            [
+              "SW: Spike-and-wave or Sharp-and-wave",
+              "Spike, polyspike or sharp wave consistently followed by a slow wave, repeating with no interval between complexes. If there is an interval, it is PDs."
+            ],
+            [
+              "Nearly regular / rhythmic",
+              "Cycle length (period) varies by less than 50% from one cycle to the next in most (over 50%) cycle pairs."
+            ],
+            [
+              "Minimum length",
+              "At least 6 consecutive cycles (e.g. 1 Hz for 6 s, or 3 Hz for 2 s)."
+            ],
+            [
+              "Discharge vs burst",
+              "Discharge: under 0.5 s with any number of phases, or 0.5 s or longer with no more than 3 phases. Burst: 0.5 s or longer with at least 4 phases."
+            ]
+          ]
+        },
+        {
+          "title": "Building a name",
+          "kind": "flow",
+          "items": [
+            "Confirm it is a rhythmic or periodic pattern lasting at least 6 cycles.",
+            "Choose Main Term 1: G, L, BI, UI or Mf.",
+            "Choose Main Term 2: PDs, RDA or SW.",
+            "Join them: L + PDs = LPDs; G + RDA = GRDA; BI + PDs = BIPDs; G + SW = GSW.",
+            "Add plus modifiers where they apply: LPDs+F, GRDA+S, LPDs+FR.",
+            "Add the main modifiers: prevalence, duration, frequency, phases, sharpness, amplitude, SI/ST, evolution.",
+            "Example: 'Left LPDs, frequent, 1 Hz, sharp, 3 phases, medium amplitude, fluctuating'."
+          ]
+        },
+        {
+          "title": "Main modifiers with cut-offs",
+          "kind": "table",
+          "head": [
+            "Modifier",
+            "Categories"
+          ],
+          "rows": [
+            [
+              "Prevalence (% of record or epoch)",
+              "Continuous at least 90%; Abundant 50 to 89%; Frequent 10 to 49%; Occasional 1 to 9%; Rare under 1%"
+            ],
+            [
+              "Duration",
+              "Very long at least 1 h; Long 10 to 59 min; Intermediate 1 to 9.9 min; Brief 10 to 59 s; Very brief under 10 s"
+            ],
+            [
+              "Frequency",
+              "Typical, minimum and maximum: under 0.5, 0.5, 1, 1.5, 2, 2.5 Hz; 3, 3.5 and 4 Hz only if very brief"
+            ],
+            [
+              "Number of phases",
+              "1 + number of baseline crossings, in longitudinal bipolar: 1, 2, 3 or more than 3 (PDs and SW, not RDA)"
+            ],
+            [
+              "Sharpness",
+              "Spiky under 70 ms; Sharp 70 to 200 ms; Sharply contoured (sharp shape but too long); Blunt (smooth or sinusoidal); measured at baseline; PDs and SW only"
+            ],
+            [
+              "Absolute amplitude",
+              "Peak to trough in longitudinal bipolar: Very low under 20 µV; Low 20 to 49 µV; Medium 50 to 149 µV; High at least 150 µV"
+            ],
+            [
+              "Relative amplitude (PDs only)",
+              "Discharge voltage divided by the background between discharges: 2 or less, or more than 2"
+            ],
+            [
+              "Polarity (minor modifier)",
+              "Of the dominant phase, judged in a referential montage: positive, negative, dipole tangential or unclear"
+            ]
+          ],
+          "note": "PDs or SW with a typical frequency above 2.5 Hz lasting 10 s or more are seizures, not PDs. No rhythmic or periodic pattern can have a typical frequency above 4 Hz."
+        },
+        {
+          "title": "Evolution, fluctuation and stimulus effects",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Evolving",
+              "body": "At least two unequivocal sequential changes in the same category: frequency (two consecutive changes in one direction of at least 0.5 Hz each), morphology (two changes to a new shape) or location (spreading into or out of two 10-20 electrodes).",
+              "points": [
+                "Each step must last at least 3 cycles",
+                "The feature must not stay unchanged for 5 min or more along the way",
+                "Amplitude change alone is not evolution"
+              ]
+            },
+            {
+              "title": "Fluctuating",
+              "body": "Three or more changes, no more than 1 min apart, in frequency (at least 0.5 Hz), morphology or location (at least one interelectrode distance), without meeting evolution.",
+              "points": [
+                "Example: 1 to 1.5 to 1 to 1.5 Hz"
+              ]
+            },
+            {
+              "title": "Static",
+              "body": "Neither evolving nor fluctuating."
+            },
+            {
+              "title": "SI- and ST-",
+              "body": "Stimulus-induced: reproducibly brought on or made worse by an alerting stimulus. Stimulus-terminated: reproducibly stopped or attenuated by one. Otherwise spontaneous, or unknown if untested.",
+              "points": [
+                "SIRPIDs is the umbrella for all SI- patterns; name the specific one (e.g. SI-LPDs)",
+                "Record the type of stimulus"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Plus modifiers",
+          "kind": "table",
+          "head": [
+            "Modifier",
+            "Meaning",
+            "Applies to"
+          ],
+          "rows": [
+            [
+              "+F",
+              "Superimposed fast activity (theta or faster) that belongs to the pattern, not to the background",
+              "PDs or RDA"
+            ],
+            [
+              "+R",
+              "Superimposed rhythmic or quasi-rhythmic delta",
+              "PDs only"
+            ],
+            [
+              "+S",
+              "Associated spikes, sharp waves or sharp contour, at least once every 10 s, not as an SW pattern",
+              "RDA only"
+            ],
+            [
+              "+FR / +FS",
+              "Both features",
+              "+FR for PDs; +FS for RDA"
+            ],
+            [
+              "Extreme delta brush",
+              "A subtype of +F: abundant or continuous RDA+F (or blunt-delta PDs+F) with fast activity locked to the delta wave",
+              "RDA or PDs"
+            ]
+          ],
+          "note": "Plus never applies to SW. If a pattern is both PDs and RDA with similar prominence, code PDs+R, not RDA+S."
+        },
+        {
+          "title": "Obsolete terms and their replacements",
+          "kind": "table",
+          "head": [
+            "Old term",
+            "Current term"
+          ],
+          "rows": [
+            [
+              "PLEDs",
+              "LPDs"
+            ],
+            [
+              "BIPLEDs",
+              "BIPDs"
+            ],
+            [
+              "GPEDs / PEDs",
+              "GPDs"
+            ],
+            [
+              "PLEDs+",
+              "LPDs+"
+            ],
+            [
+              "Triphasic waves (as a pattern name)",
+              "GPDs (or SW) 'with triphasic morphology'"
+            ],
+            [
+              "FIRDA",
+              "Frontally predominant GRDA (with prevalence, duration and frequency stated)"
+            ],
+            [
+              "Semirhythmic delta",
+              "Quasi-RDA"
+            ],
+            [
+              "Paroxysmal",
+              "Sudden onset (absent to well developed within 3 s)"
+            ],
+            [
+              "Subclinical seizure",
+              "Nonconvulsive (preferred)"
+            ]
+          ],
+          "note": "The 'E' for epileptiform was dropped because many periodic patterns are not epileptic. Triphasic morphology is a minor modifier: negative-positive-negative, each phase longer than the one before, with the positive phase highest."
+        }
+      ],
+      "pearls": [
+        "6 cycles to qualify as rhythmic or periodic; 3 cycles for each step of evolution or fluctuation.",
+        "'Generalized' needs bilateral, synchronous and symmetric. Bilateral but consistently asymmetric is lateralized.",
+        "'Consistent' in this terminology means more than 80% of instances.",
+        "All voltages are peak to trough in a standard longitudinal bipolar 10-20 montage, except symmetry, which is judged referentially.",
+        "Relative amplitude is used only for PDs.",
+        "+R is only for PDs and +S is only for RDA.",
+        "Duration categories changed in 2021: intermediate is 1 to 9.9 min to match the ILAE 10 min focal status point.",
+        "RDA ranges from 0.5 to 4 Hz; anything faster and at least 0.5 s long is BIRDs or a seizure."
+      ],
+      "eegLink": "When you annotate a cEEG, using the standard name and modifiers lets the reader and the database agree on what you saw."
+    },
+    {
+      "id": "seizures",
+      "title": "Seizures, BIRDs, IIC",
+      "intro": "The 2021 terminology defines electrographic and electroclinical seizures and status epilepticus, largely from the Salzburg criteria, and adds BIRDs and the ictal-interictal continuum. The technologist recognizes and annotates these patterns and notifies per protocol; the physician interprets.",
+      "sections": [
+        {
+          "title": "Seizure and status definitions",
+          "kind": "table",
+          "head": [
+            "Term",
+            "Definition"
+          ],
+          "rows": [
+            [
+              "Electrographic seizure (ESz)",
+              "Epileptiform discharges averaging more than 2.5 Hz for at least 10 s (more than 25 discharges in 10 s), OR any pattern with definite evolution lasting at least 10 s"
+            ],
+            [
+              "Electrographic status epilepticus (ESE)",
+              "ESz for at least 10 continuous minutes, OR for a total of at least 20% of any 60-minute period"
+            ],
+            [
+              "Electroclinical seizure (ECSz)",
+              "Any EEG pattern with a definite clinical correlate time-locked to it (any duration), OR with EEG and clinical improvement after a parenteral antiseizure medication"
+            ],
+            [
+              "Electroclinical status epilepticus (ECSE)",
+              "ECSz for at least 10 continuous minutes or at least 20% of any 60 minutes; with bilateral tonic-clonic activity, 5 continuous minutes is enough"
+            ],
+            [
+              "Possible ECSE",
+              "An IIC pattern present at least 10 continuous min or 20% of any hour that improves on EEG with parenteral medication but without clinical improvement"
+            ]
+          ],
+          "note": "An ECSz can be shorter than 10 s if the clinical correlate is definite; an ESz cannot. 'Nonconvulsive' is preferred over 'subclinical'."
+        },
+        {
+          "title": "BIRDs (Brief Potentially Ictal Rhythmic Discharges)",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Core definition",
+              "body": "Focal or generalized rhythmic activity faster than 4 Hz (at least 6 waves at a regular rate) lasting 0.5 s up to under 10 s, not a normal pattern or benign variant, not part of burst suppression, with no definite clinical correlate, and with at least one of: evolution, a match to the patient's discharges or seizures, or sharp contour.",
+              "points": [
+                "Paroxysmal fast activity of 0.5 to under 10 s also counts as BIRDs"
+              ]
+            },
+            {
+              "title": "Definite BIRDs",
+              "body": "Evolution (evolving BIRDs), or the same morphology and location as the patient's interictal discharges or seizures."
+            },
+            {
+              "title": "Possible BIRDs",
+              "body": "Sharply contoured, without evolution or a match to the patient's discharges or seizures."
+            },
+            {
+              "title": "The 10-second line",
+              "body": "The same evolving rhythm lasting 10 s or more is an electrographic seizure. Under 10 s it is BIRDs (if over 4 Hz) or an evolving RPP."
+            }
+          ]
+        },
+        {
+          "title": "Ictal-interictal continuum (IIC)",
+          "kind": "list",
+          "items": [
+            "A purely electrographic term (synonym: possible ESz or possible ESE), not a diagnosis.",
+            "Criterion A: any PD or SW pattern averaging more than 1.0 and up to 2.5 Hz over 10 s (more than 10 and up to 25 discharges in 10 s).",
+            "Criterion B: any PD or SW pattern averaging 0.5 to 1.0 Hz over 10 s (5 to 10 discharges) WITH a plus modifier or fluctuation.",
+            "Criterion C: any lateralized RDA (LRDA, BIRDA, UIRDA, MfRDA, not GRDA) averaging more than 1 Hz for at least 10 s WITH a plus modifier or fluctuation.",
+            "And the pattern must not already qualify as ESz or ESE.",
+            "Stimulus-induced IIC patterns take the SI- prefix."
+          ]
+        },
+        {
+          "title": "Technologist actions during cEEG",
+          "kind": "flow",
+          "items": [
+            "Collect clinical data: history, level of consciousness, recent procedures, sedatives, paralytics, antiseizure drugs.",
+            "Use at least 16 electrodes (10-20); note skull defects, drains and bolts; move the homologous electrode symmetrically; impedances under 10,000 Ω.",
+            "Stay at the bedside for the first 20 min; test reactivity with visual, auditory, tactile and painful stimuli and annotate each.",
+            "Teach ICU staff the event button, camera, emergency electrode removal, logging events and how to reach EEG staff.",
+            "Check recording quality at least twice daily, impedance and scalp daily, and test reactivity per protocol; re-gel as needed.",
+            "Annotate events and suspected seizures, highlight segments, and notify the electroencephalographer of significant EEG changes per facility protocol.",
+            "Physician review: first 30 to 60 min as soon as possible, then at least twice daily; written report at least every 24 h."
+          ]
+        },
+        {
+          "title": "ILAE 2015 time points (one line)",
+          "kind": "text",
+          "text": "ILAE 2015: tonic-clonic status t1 5 min, t2 30 min; focal status with impaired consciousness t1 10 min, t2 over 60 min (t1 = treat as status, t2 = risk of long-term harm)."
+        }
+      ],
+      "pearls": [
+        "ESz has two routes: more than 2.5 Hz for at least 10 s, or definite evolution for at least 10 s.",
+        "ESE is 10 continuous minutes or 20% of any hour; the 20% replaced the older 50%.",
+        "Convulsive (bilateral tonic-clonic) status needs only 5 continuous minutes.",
+        "BIRDs are faster than 4 Hz and last 0.5 s to under 10 s.",
+        "GRDA is never on the IIC; lateralized RDA can be, if over 1 Hz with a plus or fluctuation.",
+        "Seizures are a critical result: notify the interpreting physician and supervisor (Guideline 1, 3.12) per facility protocol.",
+        "A subtle clinical sign such as face twitching or nystagmus, time-locked to the EEG, makes it an electroclinical seizure."
+      ],
+      "eegLink": "Counting discharges in a 10 s window and timing the pattern decides whether you annotate PDs, IIC or seizure, and whether you call the physician now."
+    },
+    {
+      "id": "background",
+      "title": "Background",
+      "intro": "Section A of the 2021 terminology describes the background: symmetry, dominant frequency, posterior dominant rhythm, continuity, reactivity, state changes, voltage and more. Each has defined categories with numbers.",
+      "sections": [
+        {
+          "title": "Symmetry",
+          "kind": "table",
+          "head": [
+            "Category",
+            "Voltage",
+            "Frequency"
+          ],
+          "rows": [
+            [
+              "Symmetric",
+              "No consistent asymmetry",
+              "No consistent asymmetry"
+            ],
+            [
+              "Mild asymmetry",
+              "Consistent asymmetry under 50%",
+              "Consistent asymmetry of 0.5 to 1 Hz"
+            ],
+            [
+              "Marked asymmetry",
+              "50% or more",
+              "More than 1 Hz"
+            ]
+          ],
+          "note": "Voltage asymmetry is judged on an appropriate referential recording, not a bipolar one. When background features are asymmetric, describe each hemisphere separately."
+        },
+        {
+          "title": "Dominant frequency and posterior dominant rhythm",
+          "kind": "list",
+          "items": [
+            "Predominant background frequency when most awake or after stimulation: beta (over 13 Hz), alpha, theta or delta; report each if two or three are equally prominent.",
+            "Posterior dominant rhythm: must attenuate with eye opening to qualify.",
+            "Measure its frequency more than 1 s after eye closure to avoid alpha squeak.",
+            "Report it to the nearest 0.5 Hz; categories are present, absent or unclear."
+          ]
+        },
+        {
+          "title": "Continuity",
+          "kind": "table",
+          "head": [
+            "Category",
+            "% of record attenuated or suppressed"
+          ],
+          "rows": [
+            [
+              "Continuous",
+              "Under 1%"
+            ],
+            [
+              "Nearly continuous",
+              "1 to 9% (periods of at least 1 s)"
+            ],
+            [
+              "Discontinuous",
+              "10 to 49%"
+            ],
+            [
+              "Burst attenuation / burst suppression",
+              "50 to 99%"
+            ],
+            [
+              "Attenuation / suppression",
+              "More than 99%"
+            ]
+          ],
+          "note": "Suppression: lower-voltage periods under 10 µV. Attenuation: lower-voltage periods of at least 10 µV but under 50% of the higher-voltage background. Example: 2 s bursts with 8 s suppression = burst suppression, 80% suppression."
+        },
+        {
+          "title": "Bursts",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Burst",
+              "body": "Averages at least 0.5 s and has at least 4 phases (at least 3 baseline crossings). Shorter or fewer phases make it a discharge. Bursts can last up to 30 s.",
+              "points": [
+                "Suppression-burst is a synonym for burst-suppression",
+                "Describe burst location with G, L, BI, UI or Mf"
+              ]
+            },
+            {
+              "title": "Interburst interval",
+              "body": "The attenuated or suppressed period between bursts. Report typical burst and interburst durations."
+            },
+            {
+              "title": "Highly epileptiform bursts",
+              "body": "Two or more spikes or sharp waves in most (over 50%) bursts at an average of 1 Hz or faster within a burst, or a rhythmic ictal-appearing pattern in most bursts."
+            },
+            {
+              "title": "Identical bursts",
+              "body": "The first 0.5 s or more of each burst (or of each stereotyped cluster) looks similar in all channels in over 90% of bursts. New in 2021."
+            }
+          ]
+        },
+        {
+          "title": "Voltage",
+          "kind": "table",
+          "head": [
+            "Category",
+            "Definition"
+          ],
+          "rows": [
+            [
+              "High",
+              "Most or all activity at least 150 µV"
+            ],
+            [
+              "Normal",
+              "Between low and high"
+            ],
+            [
+              "Low",
+              "Most or all activity under 20 µV, not qualifying as suppressed"
+            ],
+            [
+              "Suppressed",
+              "All activity under 10 µV"
+            ]
+          ],
+          "note": "Measured peak to trough in longitudinal bipolar with standard 10-20 electrodes. In nearly continuous or discontinuous records, voltage refers to the higher-voltage portion."
+        },
+        {
+          "title": "Testing reactivity",
+          "kind": "steps",
+          "items": [
+            "Reactivity is a change in cerebral EEG activity (voltage or frequency, including attenuation) after stimulation.",
+            "Use escalating stimuli: visual (light), auditory (clap, call name), tactile (shake limb, nostril tickle), then noxious (sternal rub, nail bed pressure, trapezius squeeze).",
+            "Annotate each stimulus and the time it was given; follow the facility protocol.",
+            "Muscle or eye-blink artifact alone does not count as reactive.",
+            "If unreactive, repeat a second round of noxious stimuli from the unstimulated state.",
+            "Categories: reactive, unreactive, SIRPIDs-only, unclear, unknown (not tested or maximally alert).",
+            "Record sedatives or paralytics and their timing, because they limit interpretation."
+          ]
+        },
+        {
+          "title": "State, sleep transients and other features",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "State changes (replaces 'variability')",
+              "body": "At least 2 sustained background types related to alertness or stimulation, each lasting at least 60 s. The 2021 version merged the old 'variability' and 'stage II sleep transients' items here.",
+              "points": [
+                "Present with normal N2 transients",
+                "Present with abnormal N2 transients (describe K-complexes and spindles separately)",
+                "Present without N2 transients",
+                "Absent"
+              ]
+            },
+            {
+              "title": "CAPE",
+              "body": "Cyclic alternating pattern of encephalopathy: two background patterns, each at least 10 s, alternating regularly for at least 6 cycles."
+            },
+            {
+              "title": "AP gradient",
+              "body": "Lower-voltage faster activity in front and higher-voltage slower activity behind, persisting at least 1 continuous minute; can be present, absent or reversed."
+            },
+            {
+              "title": "Breach effect",
+              "body": "Higher-amplitude, sharper, mainly faster activity over or near a skull defect; give its location."
+            },
+            {
+              "title": "Sporadic discharges",
+              "body": "Abundant: at least 1 per 10 s (not periodic). Frequent: at least 1/min but under 1 per 10 s. Occasional: at least 1/h but under 1/min. Rare: under 1/h."
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "Marked asymmetry = 50% or more in voltage on a referential recording, or more than 1 Hz in frequency.",
+        "Suppression is under 10 µV; low voltage is under 20 µV; high is at least 150 µV.",
+        "Burst suppression = 50 to 99% of the record suppressed or attenuated; discontinuous = 10 to 49%.",
+        "A burst needs at least 0.5 s and at least 4 phases.",
+        "The PDR must be shown to attenuate with eye opening and is reported to the nearest 0.5 Hz.",
+        "A state must last at least 60 s; the state changes item replaced 'variability' in 2021.",
+        "Eye-blink or muscle artifact after a stimulus is not EEG reactivity."
+      ],
+      "eegLink": "Measuring percentages, voltages and the response to standardized stimuli at the bedside gives the reader the background data the terminology requires."
+    },
+    {
+      "id": "name-it",
+      "title": "Name the pattern",
+      "intro": "Six NeuroLinea tracings of ICU patterns. Measure with the caliper, look at where the activity is and whether there is a gap between waves, then choose the ACNS name. Use the Cz reference button to compare the two sides.",
+      "sections": [
+        {
+          "title": "Tracing 1",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 501,
+            "ageYears": 67,
+            "state": "awake",
+            "sensitivity": 7,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal",
+              "referentialCz"
+            ],
+            "background": {
+              "pdrHz": 7,
+              "pdrUv": 20,
+              "theta": 5,
+              "delta": 3,
+              "beta": 2,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "periodic",
+                "intervalS": 1.25,
+                "firstAt": 0.6,
+                "uv": 160,
+                "center": [
+                  -0.65,
+                  0.25
+                ],
+                "sigma": 0.38,
+                "durMs": 230,
+                "side": "left"
+              }
+            ]
+          },
+          "question": "A 67-year-old after a left-sided stroke. Which ACNS name fits this page?",
+          "options": [
+            "LRDA at about 1.5 Hz over the left hemisphere",
+            "LPDs at about 0.8 Hz (1 Hz category) over the left hemisphere",
+            "GPDs at about 0.8 Hz (1 Hz category), generalized",
+            "A left electrographic seizure"
+          ],
+          "answer": 1,
+          "explanation": "Discrete sharp complexes repeat with a clear gap between them about every 1.25 s (about 0.8 Hz, coded in the ACNS 1 Hz frequency category), at nearly regular intervals, over the left channels only, and there are more than 6 on the page. A repeating waveform with an interval between discharges is a periodic discharge (PD), and one-sided location makes it lateralized: LPDs. Rhythmic delta would have no gap between waves, the right side is quiet so it is not generalized, and it does not evolve, so it is not a seizure.",
+          "caption": "Left-sided periodic complexes."
+        },
+        {
+          "title": "Tracing 2",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 502,
+            "ageYears": 72,
+            "state": "stupor",
+            "sensitivity": 10,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal",
+              "referentialCz"
+            ],
+            "background": {
+              "pdrHz": 0,
+              "pdrUv": 0,
+              "theta": 6,
+              "delta": 6,
+              "beta": 1,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "periodic",
+                "intervalS": 1.0,
+                "firstAt": 0.4,
+                "uv": 180,
+                "center": [
+                  0,
+                  0.25
+                ],
+                "sigma": 0.55,
+                "durMs": 200,
+                "diffuse": 0.7
+              }
+            ]
+          },
+          "question": "A 72-year-old with renal failure, stuporous. Which ACNS name fits?",
+          "options": [
+            "GRDA at about 1 Hz",
+            "LPDs at about 1 Hz over the right side",
+            "GPDs at about 1 Hz",
+            "Bilateral independent PDs"
+          ],
+          "answer": 2,
+          "explanation": "Sharp complexes appear in both hemispheres at the same moment and with similar size about once per second, each separated from the next by background, so they are periodic (interval between discharges), generalized (bilateral, bisynchronous and symmetric): GPDs at about 1 Hz. GRDA would be continuous rhythmic waves without an interval. They are not one-sided, and they are synchronous, so neither LPDs nor bilateral independent PDs fit.",
+          "caption": "Generalized periodic complexes in a stuporous patient."
+        },
+        {
+          "title": "Tracing 3",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 503,
+            "ageYears": 59,
+            "state": "awake",
+            "sensitivity": 7,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal",
+              "referentialCz"
+            ],
+            "background": {
+              "pdrHz": 8.5,
+              "pdrUv": 30,
+              "theta": 3,
+              "beta": 2,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "rhythmicDelta",
+                "hz": 1.5,
+                "uv": 130,
+                "center": [
+                  -0.7,
+                  0.15
+                ],
+                "sigma": 0.3,
+                "runs": [
+                  [
+                    1.5,
+                    7.5
+                  ]
+                ]
+              }
+            ]
+          },
+          "question": "A 59-year-old with confusion. Which full ACNS description fits this page?",
+          "options": [
+            "LPDs at 1.5 Hz, left temporal",
+            "LRDA at 1.5 Hz, very brief (under 10 s)",
+            "GRDA at 1.5 Hz, brief (10 to 59 s)",
+            "LRDA at 1.5 Hz, brief (10 to 59 s)"
+          ],
+          "answer": 1,
+          "explanation": "Rhythmic delta waves follow one another with no gap at about 1.5 Hz over the left temporal channels, from about 1.5 to 7.5 s, so the run lasts about 6 s. Rhythmic delta that is one-sided is LRDA, and a run under 10 s is very brief in the ACNS duration scale (brief is 10 to 59 s). Periodic discharges would have an interval between waveforms, and the right side is not involved, so it is not generalized.",
+          "caption": "Left temporal rhythmic delta."
+        },
+        {
+          "title": "Tracing 4",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 504,
+            "ageYears": 64,
+            "state": "drowsy",
+            "sensitivity": 10,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal",
+              "referentialCz"
+            ],
+            "background": {
+              "pdrHz": 7.5,
+              "pdrUv": 20,
+              "theta": 5,
+              "beta": 2,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "rhythmicDelta",
+                "hz": 2,
+                "uv": 160,
+                "center": [
+                  0,
+                  0.6
+                ],
+                "sigma": 0.6,
+                "runs": [
+                  [
+                    2.2,
+                    8.6
+                  ]
+                ]
+              }
+            ]
+          },
+          "question": "A drowsy 64-year-old. Which ACNS name fits, and which older term does it replace?",
+          "options": [
+            "GRDA, frontally predominant, at about 2 Hz; it replaces FIRDA",
+            "LRDA at about 2 Hz; it replaces TIRDA",
+            "GPDs at about 2 Hz; it replaces triphasic waves",
+            "Generalized spike-and-wave at about 2 Hz"
+          ],
+          "answer": 0,
+          "explanation": "Rhythmic delta at about 2 Hz without a gap between waves appears over both hemispheres together and is largest frontally: generalized rhythmic delta activity, with the 'frontally predominant' modifier. The ACNS terminology replaced older terms such as FIRDA with this descriptive name. It is bilateral and symmetric, so it is not lateralized; there is no interval between waves, so it is not periodic; and there are no spikes.",
+          "caption": "Bifrontal rhythmic delta."
+        },
+        {
+          "title": "Tracing 5",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 505,
+            "ageYears": 45,
+            "state": "awake",
+            "sensitivity": 7,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal",
+              "referentialCz"
+            ],
+            "background": {
+              "pdrHz": 9,
+              "pdrUv": 30,
+              "theta": 3,
+              "beta": 2,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "rhythm",
+                "hz": 5.5,
+                "bwHz": 0.5,
+                "uv": 140,
+                "center": [
+                  -0.7,
+                  0.2
+                ],
+                "sigma": 0.25,
+                "runs": [
+                  [
+                    4.0,
+                    5.6
+                  ]
+                ],
+                "rampS": 0.1
+              }
+            ]
+          },
+          "question": "An awake 45-year-old in the ICU whose earlier seizures began in the left temporal region with this same rhythm. Which ACNS term fits the burst near 4 to 5.6 s?",
+          "options": [
+            "LPDs",
+            "An electrographic seizure",
+            "BIRDs (brief potentially ictal rhythmic discharges)",
+            "Very brief LRDA"
+          ],
+          "answer": 2,
+          "explanation": "A run of about 5.5 Hz rhythmic activity lasts about 1.6 s (roughly 9 cycles) over the left temporal channels and then stops. Rhythmic activity faster than 4 Hz lasting at least 0.5 s but under 10 s, not a normal variant, and evolving, sharply contoured or matching the patient's discharges or seizures, is called BIRDs; matching the patient's seizures makes these definite BIRDs. It is too short to be an electrographic seizure (at least 10 s), too fast to be rhythmic delta, and it is not a repeating discharge with intervals, so it is not LPDs.",
+          "caption": "A brief left temporal run."
+        },
+        {
+          "title": "Tracing 6",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 506,
+            "ageYears": 52,
+            "state": "awake",
+            "sensitivity": 7,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal",
+              "referentialCz"
+            ],
+            "background": {
+              "pdrHz": 8.5,
+              "pdrUv": 25,
+              "theta": 3,
+              "beta": 2,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "ictal",
+                "center": [
+                  0.7,
+                  0.2
+                ],
+                "sigma": 0.25,
+                "start": 1.5,
+                "end": 10,
+                "hzStart": 7,
+                "hzEnd": 4,
+                "uvStart": 25,
+                "uvEnd": 110,
+                "spread": {
+                  "center": [
+                    0.3,
+                    0.3
+                  ],
+                  "sigma": 0.5,
+                  "delayS": 3.0,
+                  "k": 0.6
+                },
+                "label": "Onset"
+              }
+            ]
+          },
+          "question": "Rhythmic activity begins on the right at about 1.5 s and becomes slower, larger and wider by the end of the page. What must be true before it meets the ACNS definition of an electrographic seizure?",
+          "options": [
+            "It must reach a frequency of at least 3 Hz",
+            "It must last at least 6 cycles",
+            "It must be accompanied by a clinical change",
+            "It must continue with definite evolution for at least 10 s"
+          ],
+          "answer": 3,
+          "explanation": "A pattern with definite evolution (here frequency and location evolve; the amplitude increase alone does not count toward evolution) counts as an electrographic seizure once it lasts at least 10 s; on this page it has lasted about 8.5 s, so follow it onto the next page and time it. Discharges averaging over 2.5 Hz for 10 s are the other route, so a 3 Hz threshold is not the rule. Six cycles is the minimum for calling something rhythmic or periodic, not a seizure, and a clinical change is not required for an electrographic seizure. Mark the onset, test responsiveness and notify per protocol.",
+          "caption": "Right temporal evolving rhythmic activity."
+        }
+      ],
+      "pearls": [
+        "Gap between waveforms = periodic (PD); no gap = rhythmic (RDA).",
+        "One side; or both sides but consistently larger on one side (asymmetric) or consistently starting on one side (asynchronous) = lateralized (L). Both sides synchronous and symmetric = generalized (G).",
+        "Duration: very brief under 10 s, brief 10 to 59 s.",
+        "Seizure: over 2.5 Hz for at least 10 s, or definite evolution for at least 10 s.",
+        "BIRDs: over 4 Hz, at least 0.5 s and under 10 s."
+      ]
+    }
+  ],
+  "mistakes": [
+    [
+      "Judge voltage asymmetry on a bipolar montage",
+      "Use an appropriate referential recording; bipolar subtraction can hide or create asymmetry"
+    ],
+    [
+      "A rhythmic or periodic pattern needs 4 cycles",
+      "It needs at least 6 consecutive cycles (3 cycles is the minimum for each step of evolution)"
+    ],
+    [
+      "CMRR is specified in Hz",
+      "CMRR is a ratio in dB; the 2016 minimum is 90 dB (Guideline 4)"
+    ],
+    [
+      "ECI requires 2 µV sensitivity",
+      "Sensitivity is 2 µV/mm; 2 µV peak to peak is the ECI voltage threshold"
+    ],
+    [
+      "Bilateral synchronous but asymmetric is generalized",
+      "Generalized must also be symmetric; consistently higher on one side is lateralized (bilateral asymmetric)"
+    ],
+    [
+      "Periodic means a fixed number of phases or duration",
+      "Periodic means a clear interval with cycle length varying by under 50% in most cycle pairs"
+    ],
+    [
+      "PLEDs, BIPLEDs and triphasic waves are current terms",
+      "Use LPDs, BIPDs and GPDs with triphasic morphology"
+    ],
+    [
+      "Electrographic status epilepticus needs 30 minutes",
+      "ESE is at least 10 continuous minutes or at least 20% of any 60 minutes"
+    ],
+    [
+      "Raise the LFF above 1 Hz to clean up slow artifact",
+      "Guideline 1: LFF no higher than 1 Hz and HFF no lower than 70 Hz for routine recording"
+    ],
+    [
+      "Changing from 7 to 10 µV/mm makes waves bigger",
+      "A larger µV/mm number is less sensitive, so waves get smaller"
+    ],
+    [
+      "Linked ears are a good digital recording reference",
+      "They are specifically discouraged; use an extra electrode, commonly between Cz and Pz"
+    ],
+    [
+      "Digital EEG needs only 200 samples per second",
+      "Guideline 4 minimum is 256 samples per second, with 512 preferable"
+    ],
+    [
+      "A pattern that grows in amplitude is evolving",
+      "Amplitude change alone is neither evolution nor fluctuation"
+    ],
+    [
+      "Neonatal EEG uses the adult 1 Hz LFF",
+      "Neonatal LFF is 0.3 to 0.6 Hz (time constant 0.27 to 0.53 s)"
+    ]
+  ],
+  "memory": [
+    [
+      "Prevalence 1-10-50-90",
+      "Rare under 1%, occasional 1-9%, frequent 10-49%, abundant 50-89%, continuous 90% or more"
+    ],
+    [
+      "Voltage 10-20-150",
+      "Suppressed under 10 µV, low under 20 µV, high at least 150 µV"
+    ],
+    [
+      "Seizure 10 / 2.5 / 25",
+      "More than 2.5 Hz for at least 10 s, i.e. more than 25 discharges in 10 s"
+    ],
+    [
+      "Six to count, three to step",
+      "6 cycles to qualify as rhythmic or periodic; 3 cycles for each step of evolution or fluctuation"
+    ],
+    [
+      "Continuity 1-10-50-99",
+      "Nearly continuous 1-9%, discontinuous 10-49%, burst suppression 50-99%, suppression over 99%"
+    ]
+  ]
+}

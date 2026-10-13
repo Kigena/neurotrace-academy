@@ -1,0 +1,856 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-12",
+  "bank": "challenge",
+  "focus": "acns-terminology",
+  "description": "Original definition and pattern-naming questions on the ACNS Standardized Critical Care EEG Terminology (2021): main terms, modifiers, background, seizures, ESE, BIRDs and the ictal-interictal continuum. Text only; not yet medically verified.",
+  "totalQuestions": 30,
+  "questions": [
+    {
+      "id": "ch-act-001",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "rhythmic-periodic",
+        "minimum-cycles"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Under the 2021 ACNS critical care EEG terminology, how many consecutive cycles must a pattern last before it can be called rhythmic or periodic?",
+      "explanation": "ACNS 2021 states that a pattern qualifies as rhythmic or periodic only if it continues for at least six cycles (for example 1 Hz for 6 seconds or 3 Hz for 2 seconds). Three cycles is the minimum each step must persist when judging evolution, not the minimum for calling a pattern rhythmic or periodic. Four cycles is too few and is a common miscount. Ten is the number of discharges in 10 seconds used for the 1 Hz boundary of the ictal-interictal continuum, not the cycle minimum. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "State the minimum number of cycles for a rhythmic or periodic pattern.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "At least 6 cycles",
+        "At least 3 cycles",
+        "At least 4 cycles",
+        "At least 10 cycles"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-002",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "periodic-discharges",
+        "nearly-regular"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "ACNS 2021 says periodic discharges recur at 'nearly regular intervals'. What does nearly regular mean in that document?",
+      "explanation": "ACNS defines nearly regular as a period (cycle length) that changes by less than 50% from one cycle to the next in the majority (more than 50%) of cycle pairs. A 10% limit applied to every pair is far stricter than the definition. Comparing discharge duration with the interval describes waveform shape, not regularity of recurrence. Phase relationship between hemispheres concerns synchrony and localization (main term 1), not periodicity. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Define nearly regular intervals for periodic discharges.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Cycle length varies by less than 10% from one cycle to the next in every cycle pair",
+        "Each discharge lasts less than 50% of the interval that follows it in most pairs",
+        "Cycle length varies by less than 50% from one cycle to the next in most cycle pairs",
+        "Discharges keep the same phase relationship between hemispheres in most cycles"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-003",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "main-term-1",
+        "generalized"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which description matches 'Generalized' as main term 1 in the 2021 ACNS critical care EEG terminology?",
+      "explanation": "ACNS 2021 calls any bilaterally synchronous and symmetric pattern generalized, even if its field is restricted (for example bifrontal). A bilateral synchronous pattern that is consistently higher on one side is lateralized (bilateral asymmetric), not generalized. Generalized patterns do not need to involve every region equally; frontal, occipital or midline predominance is added as a modifier. Patterns appearing in each hemisphere at different times are separate lateralized patterns. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Define generalized as main term 1.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Bilaterally synchronous, even when one hemisphere is consistently higher in amplitude",
+        "Bilaterally synchronous and symmetric, even with a restricted field such as bifrontal",
+        "Present over every region of both hemispheres with equal amplitude in each region",
+        "Seen in both hemispheres at some time in the record, whether or not simultaneously"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-004",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "prevalence-modifier"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "In the ACNS 2021 prevalence modifier, what proportion of the record or epoch defines a pattern as 'frequent'?",
+      "explanation": "ACNS prevalence categories are continuous (90% or more), abundant (50 to 89%), frequent (10 to 49%), occasional (1 to 9%) and rare (under 1%). So 1 to 9% is occasional, 50 to 89% is abundant and 90% or more is continuous; only 10 to 49% is frequent. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Recall the ACNS prevalence categories.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "1% to 9%",
+        "10% to 49%",
+        "50% to 89%",
+        "90% or more"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-005",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "duration-modifier"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A rhythmic pattern's typical run lasts about 4 minutes. Which ACNS 2021 duration term applies?",
+      "explanation": "ACNS duration categories are very long (1 hour or more), long (10 to 59 minutes), intermediate (1 to 9.9 minutes), brief (10 to 59 seconds) and very brief (under 10 seconds). A 4-minute run falls in the 1 to 9.9 minute band, so it is intermediate. Brief covers 10 to 59 seconds, long starts at 10 minutes, and very brief is under 10 seconds. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Apply the ACNS duration categories.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Intermediate duration",
+        "Brief",
+        "Long",
+        "Very brief"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-006",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "acns-terminology",
+        "background",
+        "symmetry"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 1,
+      "stem": "In ACNS 2021 background description, which finding defines a marked voltage asymmetry?",
+      "explanation": "ACNS 2021 calls a consistent voltage asymmetry of 50% or more (or a frequency asymmetry above 1 Hz) marked, and under 50% (or 0.5 to 1 Hz) mild. Absolute voltages are measured on longitudinal bipolar, but the document prefers an appropriate referential recording for judging voltage symmetry, because bipolar channels show only differences between neighbouring electrodes. A 25% difference is mild. Consistent means present more than 80% of the time, so a single epoch on any montage is not enough. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Define mild and marked background asymmetry and the montage used to judge it.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Consistent voltage asymmetry of 50% or more, judged on a referential recording",
+        "Consistent voltage asymmetry of 50% or more, judged on a longitudinal bipolar recording",
+        "Consistent voltage asymmetry of 25% or more, judged on a referential recording",
+        "Any voltage asymmetry seen in at least one epoch on a transverse bipolar recording"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-007",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "plus-modifier"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which ACNS 2021 plus modifier can be applied to rhythmic delta activity (RDA) but not to periodic discharges?",
+      "explanation": "In ACNS 2021, +S (sharp waves, spikes or sharply contoured) applies to RDA only, and the sharp features must appear at least once every 10 seconds without forming an SW pattern. +R applies to PDs only. +F (theta or faster activity) can be added to either PDs or RDA. +FR is a PD combination, the RDA counterpart being +FS. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Match each plus modifier to the patterns it can describe.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "+S, associated sharp waves, spikes or sharp contour",
+        "+R, superimposed rhythmic or quasi-rhythmic delta",
+        "+F, superimposed fast activity of theta or faster",
+        "+FR, combined fast and rhythmic delta activity"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-008",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "obsolete-terms",
+        "BIPDs"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A report from an older lab describes 'BIPLEDs'. Which ACNS standardized term replaces it?",
+      "explanation": "The ACNS terminology (2012 table of old and new terms, kept in 2021) replaced BIPLEDs with BIPDs, bilateral independent periodic discharges, dropping 'epileptiform' because not all periodic discharges are epileptic. LPDs replaced PLEDs (one lateralized pattern), GPDs replaced GPEDs, and MfPDs needs at least three independent lateralized patterns with one in each hemisphere. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Translate obsolete periodic-pattern names into ACNS terms.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "LPDs",
+        "GPDs",
+        "MfPDs",
+        "BIPDs"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-009",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "BIRDs"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which frequency and duration limits define brief potentially ictal rhythmic discharges (BIRDs) in ACNS 2021?",
+      "explanation": "ACNS 2021 defines BIRDs as focal or generalized rhythmic activity above 4 Hz (at least six waves at a regular rate) lasting from 0.5 to under 10 seconds, not a normal variant, not part of burst suppression and without a definite clinical correlate. 10 to 59 seconds is the brief duration band, and runs of 10 seconds or more with seizure features become electrographic seizures. Rhythmic activity of 4 Hz or slower is RDA territory. 2.5 Hz is the electrographic seizure rate threshold, not the BIRDs threshold. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "State the frequency and duration criteria for BIRDs.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Rhythmic activity faster than 4 Hz lasting 10 to 59 seconds",
+        "Rhythmic activity of 4 Hz or slower lasting 0.5 to under 10 seconds",
+        "Rhythmic activity faster than 2.5 Hz lasting 1 to under 30 seconds",
+        "Rhythmic activity faster than 4 Hz lasting 0.5 to under 10 seconds"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-010",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "status-epilepticus",
+        "ESE"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which criterion defines electrographic status epilepticus (ESE) in ACNS 2021?",
+      "explanation": "ACNS 2021 defines ESE as an electrographic seizure lasting 10 or more continuous minutes, or totalling 20% or more of any 60-minute period. The 20% burden was lowered from the earlier 50%. The 5-minute limit applies to electroclinical status with bilateral tonic-clonic activity, not ESE. Thirty minutes is an older convulsive status definition, and 24-hour windows are not used for this cutoff. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "State the ACNS criteria for electrographic status epilepticus.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Electrographic seizure for 5 continuous minutes or 50% of any 60-minute period",
+        "Electrographic seizure for 30 continuous minutes or 20% of any 24-hour period",
+        "Electrographic seizure for 10 continuous minutes or 20% of any 60-minute period",
+        "Electrographic seizure for 10 continuous minutes or 50% of any 24-hour period"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-011",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "naming",
+        "LRDA",
+        "prevalence-modifier",
+        "duration-modifier"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 3,
+      "stem": "During a 1-hour epoch, delta waves at about 1.5 Hz appear over the left temporal chain only, with no interval between waves. Runs typically last 20 to 40 seconds, and together they occupy about 30% of the epoch. What is the ACNS 2021 name?",
+      "explanation": "Waves without an interval between them are rhythmic, so the main term 2 is RDA, and a left-only field makes it lateralized: LRDA. Prevalence comes from the share of the epoch (30% is frequent, 10 to 49%), while duration comes from the typical run length (20 to 40 seconds is brief, 10 to 59 seconds). Occasional would need 1 to 9% of the epoch. Intermediate needs runs of 1 to 9.9 minutes. LPDs would need a clear interval between discharges. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Assemble a full ACNS name from location, waveform, frequency, prevalence and duration.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Occasional, brief 1.5 Hz LRDA",
+        "Frequent, intermediate 1.5 Hz LRDA",
+        "Frequent, brief 1.5 Hz LPDs",
+        "Frequent, brief 1.5 Hz LRDA"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-012",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "acns-terminology",
+        "naming",
+        "GPDs",
+        "triphasic-morphology",
+        "obsolete-terms"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "An encephalopathic patient shows symmetric, bilaterally synchronous discharges at 1 Hz separated by flat intervals. Each has a brief negative phase, a longer high-amplitude positive phase and a still longer negative phase. They fill about 60% of the record. What is the ACNS 2021 description?",
+      "explanation": "Symmetric, bilaterally synchronous discharges with an interval between them are generalized periodic discharges (GPDs). Negative-positive-negative phases, each longer than the one before (the positive phase is typically the highest), meet the ACNS 'triphasic morphology' modifier, which is added to the term rather than used as 'triphasic waves', an old name the ACNS table replaced. 60% of the record is abundant (50 to 89%); continuous needs 90% or more. The triphasic modifier applies to PDs and SW, not RDA, and these discharges have intervals, so GRDA is wrong. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Name GPDs with triphasic morphology and the correct prevalence.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Abundant 1 Hz triphasic waves, generalized type",
+        "Continuous 1 Hz GPDs with triphasic morphology",
+        "Abundant 1 Hz GRDA with triphasic morphology",
+        "Abundant 1 Hz GPDs with triphasic morphology"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-013",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "main-term-1",
+        "lateralized",
+        "bilateral-asymmetric"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "Periodic discharges at 1 Hz appear in both hemispheres at the same instant, but on a referential montage the right side is about twice the amplitude of the left in nearly every discharge. Which main term 1 applies?",
+      "explanation": "ACNS 2021 includes bilateral patterns that are clearly and consistently (more than 80% of the time) higher on one side under lateralized, as 'bilateral asymmetric', so these are LPDs. Generalized requires both synchrony and symmetry, so calling a consistently asymmetric bilateral pattern generalized is the classic error. BIPDs need two independent, asynchronous patterns, and these discharges are simultaneous. Multifocal needs at least three independent patterns. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Classify a bilateral synchronous but asymmetric pattern.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Generalized, right predominant (GPDs)",
+        "Lateralized, bilateral asymmetric (LPDs)",
+        "Bilateral independent (BIPDs)",
+        "Multifocal (MfPDs)"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-014",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "main-term-1",
+        "generalized",
+        "shifting-predominance"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "Bilaterally synchronous periodic discharges are sometimes higher on the left and sometimes higher on the right. Across the hour, the left is higher in about 55% of discharges. How are they classified under ACNS 2021?",
+      "explanation": "ACNS 2021 keeps a bilateral pattern with shifting predominance as generalized unless it is consistently, meaning more than 80% of the time, lateralized to one side. Being higher on the left in 55% of discharges is not consistent, so these are generalized. A simple majority does not make a pattern lateralized. Bilateral independent requires two asynchronous patterns, one per hemisphere, whereas these are synchronous. Unilateral independent requires two independent patterns in the same hemisphere. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Apply the 80% consistency rule to shifting predominance.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Lateralized left, because the left is higher in most discharges",
+        "Bilateral independent, because the higher side keeps switching",
+        "Unilateral independent, because two populations seem to exist",
+        "Generalized, because no side leads more than 80% of the time"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-015",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "main-term-1",
+        "bilateral-independent",
+        "sequential-patterns"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Left temporal periodic discharges run for the first hour and then stop. Two hours later, right parietal periodic discharges begin and last 40 minutes; the two never overlap. How should they be described?",
+      "explanation": "Bilateral independent (BI) requires an independent pattern in each hemisphere occurring simultaneously, overlapping in time. ACNS 2021 states that patterns on the left and then later on the right are LPDs from the left and LPDs from the right, not BIPDs. Multifocal needs at least three simultaneous independent patterns with one in each hemisphere. Unilateral independent means two simultaneous independent patterns in the same hemisphere. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Distinguish simultaneous BI patterns from sequential lateralized patterns.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Bilateral independent periodic discharges",
+        "Multifocal periodic discharges, two foci",
+        "Unilateral independent periodic discharges",
+        "Left LPDs and, separately, right LPDs"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-016",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "main-term-1",
+        "multifocal"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Three periodic discharge populations run at the same time, each at its own rate: left temporal, right frontal and right occipital. Which ACNS 2021 term fits?",
+      "explanation": "Multifocal requires at least three independent lateralized patterns occurring simultaneously, with at least one in each hemisphere: here there are three, on both sides. BIPDs describes exactly one independent pattern per hemisphere. Unilateral independent describes two simultaneous independent patterns in one hemisphere, and the left-sided population rules that out as the whole description. Generalized requires one bilaterally synchronous, symmetric pattern, not independent rates. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Recognize multifocal periodic discharges.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Multifocal periodic discharges (MfPDs)",
+        "Bilateral independent periodic discharges (BIPDs)",
+        "Unilateral independent periodic discharges (UIPDs)",
+        "Generalized periodic discharges (GPDs)"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-017",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "minimum-cycles",
+        "rhythmic"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Four runs of regular frontal delta are measured. Which one is long enough to be coded as rhythmic delta activity under ACNS 2021?",
+      "explanation": "Number of cycles equals frequency multiplied by duration, and ACNS requires at least six cycles. 3 Hz for 2 seconds gives 6 cycles and qualifies (the document uses this very pairing as an example). 1 Hz for 4 seconds gives 4 cycles, 1.5 Hz for 3 seconds gives 4.5 cycles, and 2 Hz for 2.5 seconds gives 5 cycles, so none reaches six. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Count cycles to decide whether a run qualifies as rhythmic.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "1 Hz lasting 4 seconds",
+        "1.5 Hz lasting 3 seconds",
+        "3 Hz lasting 2 seconds",
+        "2 Hz lasting 2.5 seconds"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-018",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "electrographic-seizure",
+        "periodic-discharges"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Right hemisphere periodic discharges speed up to an average of 3 Hz and hold that rate, without other change, for 14 seconds, with no visible clinical change. How does ACNS 2021 classify this run?",
+      "explanation": "An electrographic seizure includes epileptiform discharges averaging more than 2.5 Hz for 10 seconds or longer (more than 25 discharges in 10 seconds). ACNS 2021 states that PDs above 2.5 Hz lasting 10 seconds or more should be called seizures, not PDs. The IIC rate band stops at 2.5 Hz. BIRDs need rhythmic activity above 4 Hz lasting under 10 seconds. A clinical correlate is not required for an electrographic seizure. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Apply the 2.5 Hz and 10 second criteria for electrographic seizures.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Electrographic seizure",
+        "Ictal-interictal continuum pattern",
+        "Brief potentially ictal rhythmic discharges",
+        "Lateralized periodic discharges, 3 Hz"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-019",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "IIC",
+        "periodic-discharges"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Left LPDs run steadily at 2 Hz for 3 minutes with no evolution, no plus features and no clinical correlate. Where does this fit in ACNS 2021?",
+      "explanation": "Any PD or SW pattern averaging more than 1.0 and up to 2.5 Hz over 10 seconds (more than 10 and up to 25 discharges) is on the IIC, provided it does not qualify as a seizure. At 2 Hz without evolution, the seizure rate threshold (above 2.5 Hz) and the evolution criterion are not met, so lasting longer than 10 seconds is not enough for a seizure. ESE requires an electrographic seizure first. BIRDs require rhythmic activity above 4 Hz lasting under 10 seconds. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Place a 2 Hz periodic pattern on the ictal-interictal continuum.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Electrographic seizure",
+        "Ictal-interictal continuum",
+        "Electrographic status epilepticus",
+        "Brief potentially ictal rhythmic discharges"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-020",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "IIC",
+        "plus-modifier"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "Which of these patterns, each lasting several minutes without evolution, meets the ACNS 2021 ictal-interictal continuum criteria?",
+      "explanation": "For PDs or SW averaging 0.5 to 1.0 Hz, the IIC requires a plus modifier or fluctuation, so 0.75 Hz LPDs+F qualify while the same LPDs without a plus or fluctuation do not. The RDA criterion covers lateralized RDA above 1 Hz with a plus or fluctuation and specifically excludes GRDA. GPDs at 0.4 Hz are below the 0.5 Hz lower limit, and triphasic morphology is not a plus modifier. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Apply the plus-modifier and frequency rules of the IIC.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "0.75 Hz LPDs with no plus modifier and no fluctuation",
+        "1.5 Hz GRDA with associated sharp waves (GRDA+S)",
+        "0.75 Hz LPDs with superimposed fast activity (LPDs+F)",
+        "0.4 Hz GPDs with triphasic morphology"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-021",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "status-epilepticus",
+        "seizure-burden"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "In one hour of cEEG, five separate electrographic seizures occur, each lasting 3 minutes, with no clinical signs. How does this fit the ACNS 2021 categories?",
+      "explanation": "Five seizures of 3 minutes total 15 minutes, which is 25% of the hour. ESE is met by either 10 continuous minutes or a total of 20% or more of any 60-minute period, so the burden criterion is satisfied even though no single seizure lasts 10 minutes. Nonconvulsive seizures are still seizures, not IIC patterns. Electroclinical status needs a definite clinical correlate or clinical improvement with treatment, which is absent here. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Calculate hourly seizure burden to identify ESE.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Recurrent seizures only, as none lasts 10 continuous minutes",
+        "Electrographic status epilepticus by the 20% hourly burden",
+        "Ictal-interictal continuum, as the seizures are nonconvulsive",
+        "Electroclinical status epilepticus by the 20% hourly burden"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-022",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "status-epilepticus",
+        "seizure-burden"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "Over 3 hours, a patient has a 90-second electrographic seizure about every 10 minutes, about 6 per hour. Total seizure time is 27 minutes. How does ACNS 2021 classify this?",
+      "explanation": "The ESE burden rule looks at any 60-minute window: 6 seizures of 90 seconds is 9 minutes per hour, 15%, below the 20% cutoff, and no seizure lasts 10 continuous minutes. Adding seizure time across 3 hours and comparing it with the 10-minute continuous rule mixes two different criteria. Frequent recurrence is not itself an ESE criterion. Each event lasts at least 10 seconds and meets seizure criteria, so they remain electrographic seizures, not IIC patterns. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Distinguish recurrent seizures from ESE using the hourly burden.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "ESE, since total seizure time exceeds 10 minutes",
+        "Recurrent electrographic seizures not meeting ESE",
+        "ESE, since seizures recur at least every 10 minutes",
+        "Ictal-interictal continuum, since each is under 2 minutes"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-023",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "BIRDs",
+        "definite-vs-possible"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 5 Hz sharply contoured rhythmic run lasts 4 seconds at T7, with no evolution and no clinical change. It matches the shape and location of the patient's earlier left temporal seizures. What is the ACNS 2021 term?",
+      "explanation": "Rhythmic activity above 4 Hz lasting 0.5 to under 10 seconds without a clinical correlate is BIRDs. It is 'definite' when it evolves or matches the morphology and location of the patient's interictal discharges or seizures, as here. 'Possible' is for sharply contoured runs without either feature. An electrographic seizure needs at least 10 seconds. RDA is limited to 4 Hz or slower, and 'brief' means 10 to 59 seconds. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Separate definite from possible BIRDs and from seizures.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Possible BIRDs",
+        "Definite BIRDs",
+        "Electrographic seizure",
+        "Brief LRDA at 5 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-024",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "evolution",
+        "electrographic-seizure"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A focal rhythmic run at F8 starts at 6 Hz, slows to 5 Hz and then to 4 Hz, spreading to T8, and ends after 15 seconds. The patient shows no clinical change. What is the ACNS 2021 classification?",
+      "explanation": "Any pattern with definite evolution lasting 10 seconds or more meets the second criterion for an electrographic seizure, whatever its rate. Evolving BIRDs are limited to runs under 10 seconds, and this one lasts 15. Fluctuation describes changes that do not qualify as evolution, but here there are two sequential frequency steps of at least 0.5 Hz in one direction. RDA covers 4 Hz or slower only; an evolving run above 4 Hz is BIRDs only if it lasts under 10 seconds, and evolution lasting 10 seconds or more makes it an electrographic seizure. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Use the evolution criterion and duration to identify an electrographic seizure.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Definite BIRDs, because of the evolution",
+        "Ictal-interictal continuum, fluctuating type",
+        "Lateralized RDA with evolution, brief",
+        "Electrographic seizure by the evolution criterion"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-025",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "evolution",
+        "fluctuation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Which frequency sequence qualifies as evolution in frequency under ACNS 2021, assuming each rate persists for at least 3 cycles?",
+      "explanation": "Evolution in frequency needs at least two consecutive changes in the same direction, each by at least 0.5 Hz, with each rate lasting at least three cycles, reached without the frequency staying unchanged for five or more minutes. Rising 1.5 to 2 to 2.5 Hz meets this. Going up then back down is not two changes in the same direction. Steps of 0.25 Hz are below the 0.5 Hz minimum. A 7-minute plateau breaks the five-minute rule; the document gives this exact 3-2-1.5 Hz example as not evolving. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Apply the ACNS definition of evolution in frequency.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "2 Hz, then 2.5 Hz, then back to 2 Hz within 40 seconds",
+        "1 Hz, then 1.25 Hz, then 1.5 Hz within 40 seconds",
+        "1.5 Hz, then 2 Hz, then 2.5 Hz within 40 seconds",
+        "3 Hz for 1 min, then 2 Hz for 7 min, then 1.5 Hz"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-026",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "plus-modifier",
+        "PDs-plus-R"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Over the left hemisphere, 1 Hz periodic sharp discharges run alongside rhythmic 2 Hz delta that is not time-locked to them, and both are about equally prominent. How should it be coded?",
+      "explanation": "When a pattern qualifies as both PDs and RDA with roughly equal prominence, ACNS 2021 says to code it as PDs+R rather than RDA+S; RDA that is not time-locked to the PDs is what +R describes. LRDA+S would be used only when RDA is the pattern with sharp features. +F requires theta or faster activity, not delta. +R cannot be applied to RDA. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Choose between PDs+R and RDA+S.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "LPDs+R",
+        "LRDA+S",
+        "LPDs+F",
+        "LRDA+R"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-027",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "acns-terminology",
+        "background",
+        "symmetry",
+        "montage-choice"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "On a longitudinal bipolar montage the left background looks about 30% lower than the right. On an ipsilateral-ear referential montage it measures about 35 µV on the left versus 90 µV on the right, on most pages. How should the asymmetry be graded?",
+      "explanation": "ACNS 2021 prefers an appropriate referential recording for judging voltage symmetry. A left side of 35 µV against 90 µV on the right is about 61% lower, consistently present, which is 50% or more: marked asymmetry. The bipolar 30% figure reflects electrode-to-electrode differences and understates the hemispheric difference, so grading from it or averaging the two gives the wrong category. A transverse bipolar view is not required. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Grade background asymmetry using referential measurements.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Mild asymmetry, from the bipolar measurement",
+        "Mild asymmetry, from averaging the two montages",
+        "Marked asymmetry, from the referential measurement",
+        "No grade until it is seen on a transverse bipolar"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-028",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "acns-terminology",
+        "background",
+        "continuity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Throughout the record, periods under 10 µV, each lasting 2 to 4 seconds, alternate with higher-voltage activity. On sampled pages they take up about 3.5 seconds of every 10 seconds. Which ACNS 2021 continuity term applies?",
+      "explanation": "3.5 seconds of every 10 is about 35% suppression. ACNS 2021 grades continuity by the share of the record that is attenuated or suppressed: nearly continuous 1 to 9%, discontinuous 10 to 49%, burst attenuation or suppression 50 to 99%, and suppression or attenuation more than 99%. 35% therefore falls in the discontinuous band, and the higher-voltage periods rule out continuous suppression. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Classify background continuity by percentage of suppression.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Discontinuous",
+        "Burst suppression",
+        "Nearly continuous",
+        "Suppression"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-029",
+      "domainId": "domain-3",
+      "sectionId": "d3-s3",
+      "topicTags": [
+        "acns-terminology",
+        "naming",
+        "GRDA",
+        "prevalence-modifier",
+        "duration-modifier"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 3,
+      "stem": "Bifrontal, symmetric, synchronous 2 Hz delta with no interval between waves occurs in runs of about 5 seconds, roughly once a minute. What is the ACNS 2021 name?",
+      "explanation": "Five seconds per minute is about 8% of the record, which is occasional (1 to 9%), not frequent (10 to 49%). Each run lasting about 5 seconds is very brief (under 10 seconds); brief means 10 to 59 seconds, so mixing the run length with the prevalence gives the wrong label. A symmetric, synchronous bifrontal pattern is generalized even with a restricted field, so it is GRDA with frontal predominance, not LRDA. Ten 2 Hz cycles also clear the six-cycle minimum. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Keep prevalence and duration separate when naming a pattern.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Frequent, very brief 2 Hz GRDA, frontally predominant",
+        "Occasional, very brief 2 Hz GRDA, frontally predominant",
+        "Occasional, brief 2 Hz GRDA, frontally predominant",
+        "Occasional, very brief 2 Hz LRDA, bifrontal"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-act-030",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "acns-terminology",
+        "stimulus-induced",
+        "SIRPIDs"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In a drowsy ICU patient, 1 Hz generalized periodic discharges appear each time the nurse suctions or speaks loudly, and they also occur occasionally at rest. Which ACNS 2021 prefix applies?",
+      "explanation": "A pattern reproducibly brought about or exacerbated by an alerting stimulus is stimulus-induced (SI-), and ACNS 2021 states it still qualifies even when some or most instances occur spontaneously. ST- is for patterns reproducibly terminated or attenuated by stimulation. Spontaneous means never clearly induced or changed by stimulation. Unknown is reserved for untested or unclear cases. The specific term (SI-GPDs) is preferred over the general SIRPIDs label, and the stimulus type should be noted. (ACNS Standardized Critical Care EEG Terminology, 2021 version.)",
+      "learningObjective": "Apply the stimulus-induced modifier.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "ST-GPDs, stimulus-terminated",
+        "Spontaneous GPDs, no prefix",
+        "SI-GPDs, stimulus-induced",
+        "Unknown, as some occur at rest"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS terminology set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

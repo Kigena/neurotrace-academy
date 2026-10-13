@@ -1,0 +1,872 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-12",
+  "bank": "challenge",
+  "focus": "acns-guidelines",
+  "description": "Original recall and scenario questions on the 2016 ACNS EEG Guidelines 1-7: instrumentation, digital acquisition, impedance, nomenclature, montages, pediatric and neonatal standards, electrocerebral inactivity recording and EEG reporting. Text only; not yet medically verified.",
+  "totalQuestions": 30,
+  "questions": [
+    {
+      "id": "ch-acg-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-4",
+        "cmrr",
+        "amplifier"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Per ACNS Guideline 4 (Recording Clinical EEG on Digital Media, 2016), what is the minimum common mode rejection ratio for each channel of a digital EEG amplifier?",
+      "explanation": "ACNS Guideline 4 states that the common mode rejection ratio should be at least 90 dB, and preferably higher, for each channel. CMRR is a ratio expressed in decibels, so a figure in hertz is the wrong unit; hertz describes frequency, as in filter settings. 40 dB is the Guideline 4 figure for interchannel crosstalk (less than 1%, or 40 dB down), not for CMRR. 60 dB falls well short of the 90 dB minimum and would let more common-mode interference, such as mains noise, through to the tracing.",
+      "learningObjective": "State the ACNS Guideline 4 minimum common mode rejection ratio and its unit.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "At least 90 dB",
+        "At least 60 dB",
+        "At least 90 Hz",
+        "At least 40 dB"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-4",
+        "sampling-rate",
+        "aliasing"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "ACNS Guideline 4 sets a minimum sampling rate for acquiring clinical EEG onto digital media. What is it?",
+      "explanation": "ACNS Guideline 4 sets the minimum at 256 samples per second, chosen to be more than three times a typical 70 Hz high-frequency filter setting. 512 samples per second is described as preferable (it helps prevent aliasing on high-resolution screens and suits automated detection) but it is not the minimum. 128 samples per second is less than twice 70 Hz, so activity near the filter edge would alias. 200 samples per second is below the stated 256 minimum and gives less than three samples per cycle at 70 Hz.",
+      "learningObjective": "Recall the minimum digital EEG sampling rate in ACNS Guideline 4 and why it was chosen.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "128 samples per second",
+        "512 samples per second",
+        "256 samples per second",
+        "200 samples per second"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-4",
+        "analog-to-digital",
+        "dynamic-range"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What minimum analog-to-digital resolution does ACNS Guideline 4 require for each digitized EEG sample?",
+      "explanation": "ACNS Guideline 4 requires at least 16 bits per sample, including any sign bit; it notes that 16 bits with a 0.05 µV step still allows excursions of about plus or minus 1.638 mV without clipping. Most modern amplifiers record at 24 bits, which exceeds the requirement but is not the stated minimum. 8 and 12 bits fall below the minimum and would give either coarse voltage steps or a dynamic range too narrow for EEG plus artifact.",
+      "learningObjective": "State the minimum A/D resolution for clinical digital EEG per ACNS Guideline 4.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "At least 8 bits per sample",
+        "At least 16 bits per sample",
+        "At least 12 bits per sample",
+        "At least 24 bits per sample"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-4",
+        "system-noise"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "According to ACNS Guideline 4, additional noise added by a digital EEG recording system should stay below what level at any frequency from 0.5 to 100 Hz, including 60 Hz?",
+      "explanation": "ACNS Guideline 4 limits additional recording noise to less than 1 µV peak to peak at any frequency between 0.5 and 100 Hz, including 60 Hz. 1 mV is a thousand times larger, the wrong unit for an amplifier noise floor, and larger than most EEG itself. 5 and 10 µV peak to peak would be comparable to low-voltage EEG and would make low-amplitude activity, such as that sought in suspected cerebral death, impossible to judge.",
+      "learningObjective": "Recall the Guideline 4 limit on system noise for digital EEG.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "1 mV peak to peak",
+        "1 µV peak to peak",
+        "5 µV peak to peak",
+        "10 µV peak to peak"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-1",
+        "channels"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "ACNS Guideline 1 names a minimum number of simultaneously recorded channels needed to show the areas producing most normal and abnormal EEG patterns. What is it?",
+      "explanation": "ACNS Guideline 1 states that 16 channels of simultaneous recording are the minimum needed to display most normal and abnormal patterns, with more channels encouraged. 12 cerebral channels is the neonatal minimum in Guideline 5, not the general standard. 21 is the number of electrodes in the 10-20 system, not the channel minimum. 8 channels gives too little coverage and raises the chance of interpretive errors, especially for transients.",
+      "learningObjective": "State the ACNS Guideline 1 minimum channel count for clinical EEG.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "16 channels",
+        "8 channels",
+        "12 channels",
+        "21 channels"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrodes-impedance",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-1",
+        "impedance"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "For routine recording with modern digital equipment, which electrode impedance range does ACNS Guideline 1 treat as acceptable?",
+      "explanation": "ACNS Guideline 1 (section 2.4) accepts impedances up to 10 kΩ with modern digital equipment, provided they are balanced, and warns that readings below 100 Ω usually mean a shunt or short circuit such as a salt bridge. 5 kΩ is an older, stricter teaching figure, and its 1 kΩ floor is not in the guideline. Megaohm values belong to the scale of amplifier input impedance, not electrode-to-skin contact. 10 to 100 kΩ would be far too high and invite noise and poor common mode rejection.",
+      "learningObjective": "State the electrode impedance limits in ACNS Guideline 1.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Up to 10 kΩ, and not below 100 Ω",
+        "Up to 5 kΩ, and not below 1 kΩ",
+        "Up to 10 MΩ, and not below 100 kΩ",
+        "Up to 100 kΩ, and not below 10 kΩ"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-1",
+        "sensitivity"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What sensitivity range does ACNS Guideline 1 recommend for routine adult EEG recording?",
+      "explanation": "ACNS Guideline 1 sets routine sensitivity at 5 to 10 µV/mm, with 7 µV/mm a common starting point. Millivolts per millimeter is the wrong unit and would flatten EEG to invisibility. 1 to 2 µV/mm is the very high sensitivity used for suspected cerebral death (Guideline 6), where routine EEG would overlap channels. 10 to 20 µV/mm is less sensitive than the routine range; Guideline 1 warns that at 20 µV/mm significant low-amplitude activity may be missed.",
+      "learningObjective": "Recall the routine sensitivity range and its unit in ACNS Guideline 1.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "5 to 10 µV/mm",
+        "5 to 10 mV/mm",
+        "1 to 2 µV/mm",
+        "10 to 20 µV/mm"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-1",
+        "recording-duration"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Per ACNS Guideline 1, what is the minimum amount of technically satisfactory baseline recording in a routine EEG?",
+      "explanation": "ACNS Guideline 1 requires at least 20 minutes of technically satisfactory, artifact-free recording (activation procedures included), and encourages longer recordings. 30 minutes is the Guideline 6 minimum for an electrocerebral inactivity study. 60 minutes is the Guideline 5 figure that may be needed for neonates with invariant patterns. 10 minutes is too short to assess baseline activity.",
+      "learningObjective": "State the minimum routine EEG recording time and distinguish it from ECI and neonatal durations.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "10 minutes",
+        "30 minutes",
+        "60 minutes",
+        "20 minutes"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-1",
+        "hyperventilation",
+        "activation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Per ACNS Guideline 1, what is the minimum hyperventilation duration, and how long should recording continue after overbreathing stops?",
+      "explanation": "ACNS Guideline 1 calls for hyperventilation for a minimum of 3 minutes with recording continued for at least 1 minute afterward, plus at least 1 minute in the same montage before it starts and a note on the quality of effort. The 3-minute post-HV figure is the Guideline 1 wait before photic stimulation if photic follows HV, not the post-HV recording minimum. 5 minutes is sometimes used in practice but is not the stated minimum, and 2 minutes with 30 seconds after falls short of both requirements.",
+      "learningObjective": "Recall the hyperventilation timing requirements in ACNS Guideline 1.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "3 minutes of HV, then at least 3 minutes of recording",
+        "5 minutes of HV, then at least 1 minute of recording",
+        "2 minutes of HV, then at least 30 seconds of recording",
+        "3 minutes of HV, then at least 1 minute of recording"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-1",
+        "filters"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A technologist starts every routine adult EEG with the low-frequency filter at 5 Hz and the high-frequency filter at 35 Hz to keep the tracing clean. Which change brings the default settings in line with ACNS Guideline 1?",
+      "explanation": "ACNS Guideline 1 says the low-frequency filter should be no higher than 1 Hz (time constant at least 0.16 s) and the high-frequency filter no lower than 70 Hz for standard recordings; tighter settings can hide delta abnormalities, distort spikes and make muscle look like spikes. Adding the notch filter is reserved for when other measures fail and does not fix the filter problem. Lowering only the low filter leaves the 35 Hz high filter below 70 Hz. 30 Hz is the Guideline 6 lower limit for an ECI study, not the routine standard.",
+      "learningObjective": "Correct routine filter settings that fall short of ACNS Guideline 1.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Keep both filters as set and add the 60 Hz notch filter as well",
+        "Low filter at 0.1 Hz, with the high filter kept at 35 Hz",
+        "Low filter at 1 Hz or lower, high filter at 70 Hz or higher",
+        "Low filter at 1 Hz or lower, high filter at 30 Hz or higher"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-4",
+        "sampling-rate",
+        "equipment-selection"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A clinic is comparing digital EEG systems for routine recording with a 70 Hz high-frequency filter. One system samples at 200 Hz, uses a 16-bit converter and has a CMRR of 100 dB. Measured against ACNS Guideline 4, what is the shortfall?",
+      "explanation": "ACNS Guideline 4 requires sampling at no less than 256 samples per second (more than three times a 70 Hz high filter), so 200 Hz falls short. A 16-bit converter meets the at-least-16-bit requirement. A CMRR of 100 dB exceeds the 90 dB minimum. A 70 Hz high-frequency filter is the routine setting that Guideline 1 recommends, not a deficiency.",
+      "learningObjective": "Check an EEG system specification against the Guideline 4 acquisition minimums.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The 16-bit converter is below the minimum digitizing resolution",
+        "The 100 dB CMRR is below the minimum common mode rejection",
+        "The 70 Hz high filter is below the minimum display bandwidth",
+        "The sampling rate is below the 256 samples per second minimum"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-6",
+        "eci",
+        "sensitivity"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "ACNS Guideline 6 (2016) gives a sensitivity requirement for EEG recorded in suspected cerebral death. Which statement matches it?",
+      "explanation": "ACNS Guideline 6 requires sensitivity to be increased to a maximum of 2 µV/mm (2 µV/mm or more sensitive; 1.5 or 1 µV/mm adds confidence) for at least 30 minutes of the recording, calling it the most important and most often overlooked specification. 10 minutes is too short, since self-limited inactive periods of up to 20 minutes occur. At 7 µV/mm a 2 µV signal would be under 0.3 mm tall, about one screen pixel, so it could not be seen. 2 mV/mm uses the wrong unit and would make the display a thousand times less sensitive.",
+      "learningObjective": "State the ECI sensitivity and duration requirement in ACNS Guideline 6.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Increase to 2 µV/mm for at least 10 minutes",
+        "Keep at 7 µV/mm for at least 30 minutes",
+        "Increase to 2 mV/mm for at least 30 minutes",
+        "Increase to 2 µV/mm for at least 30 minutes"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-6",
+        "eci",
+        "interelectrode-distance"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "montage",
+      "reasoningSteps": 1,
+      "stem": "ACNS Guideline 6 requires that montages used to judge electrocerebral inactivity include electrode pairs separated by at least what distance?",
+      "explanation": "ACNS Guideline 6 requires electrode pairs at least 10 cm apart, and defines ECI as no non-artifactual activity over 2 µV peak to peak from scalp pairs 10 cm or more apart. About 6 to 6.5 cm is the average adult interelectrode distance in the standard 10-20 array, which is why double-distance linkages such as Fp1-C3 are recommended. 5 cm is shorter still and would cancel more shared activity. 20 cm is not the stated requirement.",
+      "learningObjective": "Recall the minimum interelectrode distance for ECI recordings.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "6 cm",
+        "10 cm",
+        "5 cm",
+        "20 cm"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-6",
+        "eci",
+        "filters"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which pair of filter limits does ACNS Guideline 6 state for an electrocerebral inactivity recording?",
+      "explanation": "ACNS Guideline 6 says the high-frequency (low pass) filter should not be set below 30 Hz and the low-frequency (high pass) filter not above 1 Hz, so that low-voltage fast and slow activity is not attenuated. Reversing the directions turns minimums into maximums and would allow far more filtering. A 15 Hz high filter would attenuate beta-range activity, and a 5 Hz low filter would suppress the theta and delta potentials that may persist near ECI. Guideline 6 also allows the notch filter only with care and with comparison segments recorded without it.",
+      "learningObjective": "Recall the ECI filter limits in ACNS Guideline 6.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "High filter not set above 30 Hz; low filter not set below 1 Hz",
+        "High filter not set below 15 Hz; low filter not set above 5 Hz",
+        "High filter not set below 30 Hz; low filter not set above 5 Hz",
+        "High filter not set below 30 Hz; low filter not set above 1 Hz"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-6",
+        "eci",
+        "sensitivity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "An EEG for suspected cerebral death has 30 minutes of recording with a full electrode set, double-distance bipolar pairs, an ECG channel and impedances of 2 to 5 kΩ, all displayed at 7 µV/mm. Which ACNS Guideline 6 requirement has been missed?",
+      "explanation": "ACNS Guideline 6 requires the sensitivity to be increased to a maximum of 2 µV/mm (2 µV/mm or more sensitive; 1.5 or 1 µV/mm adds confidence) for at least 30 minutes; at 7 µV/mm a 2 µV signal is under 0.3 mm tall and cannot be seen, so this study cannot support ECI. Impedances of 2 to 5 kΩ already sit within the Guideline 6 range (over 100 Ω and under 10,000 Ω). 30 minutes meets the minimum duration, so 60 minutes is not the missing item. Lowering the high filter to 15 Hz would break the Guideline 6 rule that it not be set below 30 Hz.",
+      "learningObjective": "Identify a sensitivity shortfall in an ECI study.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Impedances lowered below 1 kΩ at every scalp electrode",
+        "Recording extended to a minimum of 60 minutes in total",
+        "High filter lowered to 15 Hz for the whole recording",
+        "Sensitivity raised to 2 µV/mm for at least 30 minutes"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-6",
+        "eci",
+        "interelectrode-distance"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "During an ECI recording, the technologist uses only the standard adjacent-electrode longitudinal bipolar montage (Fp1-F3, F3-C3, C3-P3 and so on). What should be added to meet ACNS Guideline 6?",
+      "explanation": "ACNS Guideline 6 requires electrode pairs at least 10 cm apart, so double-distance linkages (for example Fp1-C3, C3-O1, F3-P3) are recommended; standard adjacent 10-20 pairs are only about 6 to 6.5 cm apart and can make low-voltage activity look absent. Guideline 6 notes that ear references are almost invariably too contaminated by ECG to be useful. Closely spaced pairs shorten the distance and lower recorded amplitude. An average reference does not provide the specified 10 cm pairings; Guideline 6 names a Cz reference as acceptable only when 10 cm spacing is kept.",
+      "learningObjective": "Apply the ECI interelectrode distance rule when choosing montages.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Double-distance pairs such as Fp1-C3 and C3-O1, 10 cm or more apart",
+        "A linked-ears referential montage to raise the voltage in every channel",
+        "Closely spaced 10-10 pairs such as C1-C2 to sharpen the localization",
+        "An average reference montage built from all of the scalp electrodes"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-6",
+        "eci",
+        "recording-duration"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A technologist records 20 minutes at 2 µV/mm in a patient with suspected cerebral death and sees no cerebral activity. Per ACNS Guideline 6, why is this not yet enough?",
+      "explanation": "ACNS Guideline 6 notes that self-limited periods of apparent inactivity lasting up to 20 minutes can occur in low-voltage records, so each ECI recording should be at least 30 minutes long at 2 µV/mm. There is no 10-minute cap on high sensitivity. The 6-hour figure is the shortest suggested interval before repeating an inconclusive adult study, not a substitute for adequate duration. Sleep cycles are irrelevant here, and 60 minutes is a Guideline 5 neonatal figure.",
+      "learningObjective": "Explain the ECI minimum recording duration.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "High sensitivity is limited to 10 minutes, so the rest must run at 7 µV/mm",
+        "Twenty minutes suffices only if a repeat study follows within six hours",
+        "Inactive stretches of up to 20 minutes occur, so 30 minutes is the minimum",
+        "Sixty minutes is required so that a full sleep cycle can be captured"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-6",
+        "eci",
+        "calibration"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "Before an ECI recording at 2 µV/mm, a technologist runs the usual 50 µV square-wave calibration and the traces overlap across the screen. What does ACNS Guideline 6 advise?",
+      "explanation": "ACNS Guideline 6 advises calibrating with a signal close to the size of the activity being sought, so a 2 or 5 µV signal is appropriate for ECI; it states that a 50 µV signal at 2 or 1 µV/mm is useless because the traces overlap. Calibration is described as essential, not optional. A 100 µV signal would overlap even more. Calibrating at 7 µV/mm does not test the scaling actually used for the 2 µV/mm recording.",
+      "learningObjective": "Choose an appropriate calibration signal for an ECI study.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Calibrate with a 2 or 5 µV signal near the size of the signal sought",
+        "Skip calibration, since it adds nothing at very high sensitivity",
+        "Calibrate with a 100 µV signal so each deflection is easier to see",
+        "Calibrate at 7 µV/mm, then switch to 2 µV/mm without recalibrating"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrodes-impedance",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-6",
+        "eci",
+        "impedance",
+        "salt-bridge"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "During an ECI study, two adjacent electrodes read 40 Ω and a smear of paste joins them on the scalp. Why does ACNS Guideline 6 treat this as a problem?",
+      "explanation": "ACNS Guideline 6 requires interelectrode impedances under 10,000 Ω but over 100 Ω, noting that potentials drop off markedly below 100 Ω and that paste spreading between electrodes creates a shunt that attenuates the signal, a possible cause of a false ECI record. Mains interference is linked to high or unmatched impedances, not to very low ones. Readings below 100 Ω are a fault, not an ideal. Guideline 6 says needle electrodes should be avoided for ECI.",
+      "learningObjective": "Recognize a salt bridge as a cause of false electrocerebral inactivity.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Low impedance raises 60 Hz pickup, which hides activity at 2 µV/mm",
+        "A paste bridge under 100 Ω shunts the signal and can mimic a flat record",
+        "Readings under 100 Ω are ideal for ECI and need no further action",
+        "Low readings matter only for needle electrodes, preferred for ECI"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrodes-impedance",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-2",
+        "10-10-system",
+        "nomenclature"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "In the 10-10 nomenclature endorsed by ACNS Guideline 2, which names replace the 10-20 terms T3, T4, T5 and T6?",
+      "explanation": "ACNS Guideline 2 renames T3/T4 as T7/T8 and T5/T6 as P7/P8 so that each letter sits on one coronal line and each number on one sagittal line. T9/T10 are positions 10% below T7/T8, not renamed 10-20 sites. P5/P6 lie on different sagittal lines, and P numbered 6 or less means parietal. FT7/FT8 and TP7/TP8 are intermediate 10-10 positions between the standard coronal lines. Guideline 2 also accepts continued use of the old terms, or both, at present.",
+      "learningObjective": "Convert 10-20 temporal electrode names to 10-10 nomenclature.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "T7, T8, T9 and T10",
+        "T5, T6, P5 and P6",
+        "T7, T8, P7 and P8",
+        "FT7, FT8, TP7 and TP8"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-electrodes-impedance",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-2",
+        "10-10-system",
+        "anterior-temporal"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Per ACNS Guideline 2, which 10-10 positions closely approximate the anterior temporal T1/T2 positions and may make T1/T2 unnecessary?",
+      "explanation": "ACNS Guideline 2 notes that, although measured differently, FT9/FT10 closely approximate T1/T2, and that the 10-10 temporal positions (FT7/FT8, FT9/FT10, T9/T10) may make T1/T2 unnecessary in suspected temporal lobe epilepsy. F9/F10 lie 10% below F7/F8 on the frontal coronal line. FC1/FC2 are parasagittal frontocentral sites suggested for mesial frontal lobe epilepsy. TP9/TP10 sit over the posterior temporal region, not the anterior temporal tip.",
+      "learningObjective": "Identify 10-10 electrodes that substitute for T1/T2.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "F9 and F10",
+        "FT9 and FT10",
+        "FC1 and FC2",
+        "TP9 and TP10"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-3",
+        "montage-nomenclature"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "montage",
+      "reasoningSteps": 1,
+      "stem": "Under the ACNS Guideline 3 naming scheme, what does the montage label LB-18.2 indicate?",
+      "explanation": "ACNS Guideline 3 labels montage class as LB (longitudinal bipolar), TB (transverse bipolar) or R (referential); the number before the point is the number of channels (16, 18 or 20), and the 2 or 3 after the point marks an alternative montage of the same class and size. The number counts channels, not electrodes, and the suffix is not a revision date. LB does not stand for linked or lateral bipolar, and the suffix has nothing to do with reference choice or hemisphere blocks.",
+      "learningObjective": "Decode an ACNS Guideline 3 montage designation.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Longitudinal bipolar, 18 electrodes, second revision",
+        "Longitudinal bipolar, 18 channels, second alternative",
+        "Linked bipolar, 18 channels, second reference choice",
+        "Lateral bipolar, 18 channels, second hemisphere block"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-3",
+        "montage-design"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "A new 18-channel bipolar montage lists right-hemisphere chains above left ones and runs each chain from occipital to frontal (O2-P4, P4-C4, and so on). Which ACNS Guideline 3 principles does it break?",
+      "explanation": "ACNS Guideline 3 recommends a left-above-right order of derivations and that tracings from more anterior electrodes be placed above those from more posterior electrodes; this montage reverses both. Some alternative montages (LB.2) start at the midline, but that is an option, not a rule. Guideline 3 does not require referential channels above bipolar ones, and it places the ECG on one channel without specifying the top. There is no rule placing transverse chains above longitudinal ones.",
+      "learningObjective": "Recognize montage layouts that break Guideline 3 ordering principles.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Each chain must start at the midline, and lateral chains follow after it",
+        "Left leads go above right leads, and anterior derivations above posterior",
+        "Referential channels go above bipolar ones, and ECG goes at the very top",
+        "Transverse chains go above longitudinal ones, and the vertex goes first"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-1",
+        "recording-reference",
+        "digital-eeg"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A lab sets its digital system's recording reference to linked ears (A1 plus A2) so that every montage is ear-referenced at acquisition. What does ACNS Guideline 1 recommend instead?",
+      "explanation": "ACNS Guideline 1 says the digital recording reference should be an additional electrode (or combination) that is not one of the 10-20 or 10-10 sites, commonly one placed between Cz and Pz, and it specifically discourages linked ears as the recording reference. Using Cz would sacrifice a standard site, because the system reference itself cannot easily be reformatted. The isolated ground is a separate safety connection placed per the manufacturer and is not the recording reference.",
+      "learningObjective": "Choose a digital recording reference consistent with ACNS Guideline 1.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Linked ears kept as is, because ear references can be remontaged later",
+        "Cz itself as the recording reference, keeping only the 10-20 electrode set",
+        "The isolated ground electrode used as the recording reference for all inputs",
+        "An extra electrode, such as one between Cz and Pz, as the recording reference"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-1",
+        "montage-review",
+        "digital-eeg"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "To save time, a technologist watches an entire routine digital recording in a single longitudinal bipolar montage, reasoning that the reader can remontage later. Per ACNS Guideline 1, what is expected during acquisition?",
+      "explanation": "ACNS Guideline 1 states that displaying the data in only one montage during acquisition is not acceptable and that the technologist should view at least 3 montages, including at least one bipolar and one referential, to catch poor electrode connections and subtle findings that need action (such as added electrodes). Two bipolar montages fall short on both number and type. Later reformatting by the reader does not replace live review. All-referential viewing omits the required bipolar montage.",
+      "learningObjective": "State the Guideline 1 requirement for montages viewed during recording.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "At least 2 montages, both bipolar, chosen by the technologist",
+        "One montage live, provided all montages are reviewed afterward",
+        "At least 3 montages, including one bipolar and one referential",
+        "At least 3 montages, each of them referenced to the ear electrodes"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-026",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-5",
+        "neonatal",
+        "channels"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "For neonates and young infants, how many cerebral channels does ACNS Guideline 5 call for at minimum, in addition to polygraphic channels?",
+      "explanation": "ACNS Guideline 5 calls for at least 12 cerebral channels in neonates and young infants, plus two and often more polygraphic channels such as ECG and respiration. Sixteen or more channels is described as adding flexibility, and 16 is the general minimum in Guideline 1, but it is not the neonatal minimum. 21 is the number of 10-20 electrodes. 8 cerebral channels is below the stated minimum.",
+      "learningObjective": "Recall the neonatal channel minimum in ACNS Guideline 5.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "At least 12 cerebral channels",
+        "At least 8 cerebral channels",
+        "At least 16 cerebral channels",
+        "At least 21 cerebral channels"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-027",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-5",
+        "neonatal",
+        "filters"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A technologist sets up a term neonate's EEG using the lab's adult default low-frequency filter of 1 Hz. What does ACNS Guideline 5 recommend instead?",
+      "explanation": "ACNS Guideline 5 recommends a low-frequency filter between 0.3 and 0.6 Hz (time constants of about 0.27 to 0.53 s) for young infants rather than the usual 1 Hz, to preserve the slow activity typical of neonatal EEG. 1.5 to 3 Hz would attenuate slow activity even more. 5 Hz is the Guideline 5 setting for the submental EMG channel, not for EEG. Guideline 5 names a 0.3 to 0.6 Hz low-frequency filter for EEG; its only 'not direct current' remark concerns the respirogram channel.",
+      "learningObjective": "Set the neonatal low-frequency filter per ACNS Guideline 5.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A low-frequency filter between 1.5 and 3 Hz",
+        "A low-frequency filter of 5 Hz, as for chin EMG",
+        "A low-frequency filter between 0.3 and 0.6 Hz",
+        "A low-frequency filter turned off, for DC input"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-028",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-5",
+        "neonatal",
+        "postmenstrual-age"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A NICU EEG requisition gives the baby's age only as 10 days old. Per ACNS Guideline 5, what age information must be available to the interpreting physician?",
+      "explanation": "ACNS Guideline 5 states that gestational age at birth, chronological age and postmenstrual age on the day of recording, stated in weeks, are essential to interpretation; postmenstrual age is gestational age plus chronological age. The guideline follows the American Academy of Pediatrics in using postmenstrual age instead of conceptional age, which differs by about two weeks. Maternal details do not replace the infant's ages. Postmenstrual age is not counted from a request date. If hypothermia is present, the body temperature should also be recorded.",
+      "learningObjective": "List the age data required for a neonatal EEG.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Gestational age at birth, chronological age, and postmenstrual age, in weeks",
+        "Conceptional age alone, as the preferred term for neonatal EEG reporting",
+        "Chronological age in days, plus the mother's age and the type of delivery",
+        "Postmenstrual age alone, counted from the date the EEG was requested"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-029",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-5",
+        "pediatric",
+        "hyperventilation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An 8-year-old referred for suspected absence seizures shows no change during a first hyperventilation trial done at the start of the study. Per ACNS Guideline 5, which approach may raise the yield?",
+      "explanation": "ACNS Guideline 5 states that if hyperventilation fails to bring out diagnostic findings in suspected absence or other generalized seizures, a second trial done at least 10 minutes after the first may have a higher yield. Starting again immediately does not allow the stated interval. An hour of rest is not required and wastes recording time. Guideline 5 advises hyperventilation at the beginning and photic stimulation at the end of the study to maximize spontaneous sleep, so moving HV after photic goes against that order.",
+      "learningObjective": "Apply the Guideline 5 recommendation for a repeat hyperventilation trial.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A second hyperventilation trial begun as soon as the first one ends",
+        "A second hyperventilation trial at least 10 minutes after the first",
+        "A second hyperventilation trial only after a full hour of rest",
+        "A second hyperventilation trial at the very end, after photic stimulation"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-acg-030",
+      "domainId": "domain-2",
+      "sectionId": "d2-s2",
+      "topicTags": [
+        "acns-guidelines",
+        "guideline-7",
+        "eeg-report"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "ACNS Guideline 7 recommends that a routine scalp EEG report contain five sections. Which list matches them?",
+      "explanation": "ACNS Guideline 7 sets five report sections: History, Technical Description, EEG Description, Impression and Clinical Correlation. It advises against specific therapeutic suggestions in the report, so a treatment plan section is not part of it. Medications belong within the History, and the guideline does not have a separate diagnosis section. Montage details fall under the Technical Description, and the guideline does not include an orders section, although suggestions for further testing may appear in the Clinical Correlation.",
+      "learningObjective": "Name the five sections of a routine EEG report per ACNS Guideline 7.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "History, Technical Description, EEG Description, Impression, Treatment Plan",
+        "Indication, Medication List, EEG Description, Diagnosis, Clinical Correlation",
+        "History, Technical Description, EEG Description, Impression, Clinical Correlation",
+        "History, Montage Listing, EEG Description, Impression, Follow-up Orders"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ACNS guidelines set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}
