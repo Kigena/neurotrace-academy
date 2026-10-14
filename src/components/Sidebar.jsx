@@ -139,6 +139,12 @@ function Sidebar({ isOpen, onClose }) {
               </svg>
               ACNS Guidelines
             </NavLink>
+            <NavLink to="/icu-eeg" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16v10H4zM8 20h8M12 16v4M6 11h3l1.5-3 2 6 1.5-3H18" />
+              </svg>
+              ICU &amp; cEEG
+            </NavLink>
             <NavLink to="/lab-safety" className={navLinkClasses} onClick={handleNavClick}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" />

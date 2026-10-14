@@ -5,6 +5,7 @@ import safety from "../../src/data/labSafety.json";
 import ethics from "../../src/data/professionalPractice.json";
 import patterns from "../../src/data/patternsReview.json";
 import acns from "../../src/data/acnsGuide.json";
+import icu from "../../src/data/icuEeg.json";
 
 const KINDS = new Set(["text", "list", "table", "cards", "steps", "flow", "tracing", "tracingQuiz"]);
 
@@ -14,6 +15,7 @@ describe.each([
   ["ethics and professional practice", ethics],
   ["patterns, sleep, drugs and activation", patterns],
   ["ACNS guidelines and terminology", acns],
+  ["ICU and continuous EEG", icu],
 ])("%s study guide", (_, data) => {
   it("has unique tabs whose sections match the renderer schema", () => {
     expect(data.title).toBeTruthy();

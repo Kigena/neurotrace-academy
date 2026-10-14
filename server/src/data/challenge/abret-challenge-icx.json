@@ -1,0 +1,739 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-13",
+  "bank": "challenge",
+  "focus": "icu-stimulation-technique",
+  "description": "Original scenario and recall questions on reactivity testing and stimulation in coma, ICU device artifacts, and long-term cEEG technique with qEEG trends (CSA, aEEG, alpha-delta ratio, burst suppression ratio). Text only; not yet medically verified.",
+  "totalQuestions": 25,
+  "questions": [
+    {
+      "id": "ch-icx-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "stimulation-sequence",
+        "coma"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "An intubated, comatose patient on cEEG cannot hyperventilate, cannot follow a command to open the eyes, and photic stimulation is not part of the unit's ICU routine. The reading physician asks for reactivity testing. Which approach best fits a standardized method?",
+      "explanation": "When the usual activation procedures cannot be done, reactivity is tested with a fixed escalating sequence: auditory stimuli (name, loud voice, clap), then visual and tactile stimuli (passive eye opening, light touch), then noxious stimuli allowed by facility policy, with a quiet pause before and after each so any change can be tied to one stimulus. Beginning with the strongest noxious stimulus skips the milder steps that can show a response and adds unnecessary discomfort and movement artifact. Giving several stimuli at once makes it impossible to say which one caused a change. Photic driving tests occipital response to flicker and is not the reactivity test asked for in a comatose patient.",
+      "learningObjective": "Describe a standardized escalating stimulus sequence for reactivity testing in coma.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Repeat photic stimulation at rising flash rates until a driving response finally appears",
+        "Apply auditory, tactile and noxious stimuli together so any response is as large as possible",
+        "Apply stimuli in an escalating order from auditory to tactile to noxious, pausing between each",
+        "Start with the strongest noxious stimulus so a single trial answers the question quickly"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "baseline",
+        "timing"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "During ICU reactivity testing, the technologist waits through several seconds of undisturbed recording before each stimulus and keeps recording for several seconds afterwards. What is the main purpose of this pause?",
+      "explanation": "Reactivity is a change in cerebral activity after a stimulus, so the reader needs an undisturbed stretch before the stimulus to compare with the stretch after it; the pause after each stimulus also lets the background return to baseline before the next one. Impedance does not change from stimulus to stimulus in a way that needs a pause. Amplifier calibration is done at the start and end of a recording, not between stimuli. Sedation is changed by the medical team, not as part of the stimulus timing, and changing it mid-test would confound the result.",
+      "learningObjective": "Explain why a quiet baseline is recorded before and after each stimulus.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "It gives a stable pre-stimulus background to compare against the post-stimulus segment",
+        "It allows the amplifier calibration to be rerun before the next stimulus is applied",
+        "It gives the nurse time to adjust sedation doses before the next stimulus is applied",
+        "It lets electrode impedances settle again after the previous stimulus was delivered"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "muscle-artifact",
+        "stimulus-artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "Right after a trapezius squeeze, a 2-second burst of very fast, spiky activity appears in the temporal channels on both sides. The diffuse delta under it looks the same before and after, and the video shows a grimace. How should this response be described?",
+      "explanation": "Two steps: the fast, spiky activity is temporal, matches a grimace on video and leaves the cerebral background unchanged, so it is muscle artifact; and by ACNS definition, muscle or eye-blink artifact after a stimulus does not count as reactivity. Reactivity needs a change in the cerebral activity itself, such as a change in amplitude or frequency, so new activity is not enough. A seizure would show an evolving rhythmic cerebral pattern, not a 2-second muscle burst tied to a grimace. Drug-related beta is a sustained background feature and does not appear and disappear with each stimulus.",
+      "learningObjective": "Separate stimulus-related muscle artifact from true EEG reactivity.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "EEG reactivity, because any new activity after a stimulus counts as a response",
+        "Sedative-related beta activity that happened to start during the stimulus trial",
+        "A brief stimulus-induced electrographic seizure arising from both temporal lobes",
+        "Muscle artifact from the grimace, which on its own does not count as EEG reactivity"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "si-lpds",
+        "sirpids"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Each time a noxious stimulus allowed by protocol is applied, left-hemisphere lateralized periodic discharges appear for about 20 seconds and then fade. Between stimuli the background shows no periodic discharges. What fits best, and what should the technologist do?",
+      "explanation": "Discharges that appear reliably with each stimulus and are absent between stimuli are stimulus-induced (the ACNS SI modifier, here SI-LPDs, part of the SIRPIDs group). The technologist marks each stimulus so the link can be seen and reports per the unit's protocol; the physician interprets it. Stimulus-induced periodic discharges are not the same as normal arousal reactivity, and reactivity standards do not count them as a reassuring response. Artifact would not form a periodic cerebral field over one hemisphere that recurs with each stimulus. Calling them spontaneous ignores the clear timing link to stimulation.",
+      "learningObjective": "Recognize stimulus-induced periodic discharges and handle them within technologist scope.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Spontaneous LPDs unrelated to stimulation; report them as a background finding",
+        "Stimulus-induced LPDs; mark every stimulus and report the finding per protocol",
+        "Normal arousal reactivity; record it as a reassuring response to the stimuli",
+        "Left-sided electrode artifact; re-gel the left electrodes and repeat the trial"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "confounders",
+        "sedation",
+        "hypothermia",
+        "paralytics"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A post-cardiac arrest patient is at 33 °C under targeted temperature management, on a propofol infusion and a neuromuscular blocker. Reactivity testing is planned. Which statement about these conditions is correct?",
+      "explanation": "Sedatives and hypothermia can damp the EEG background and its response to stimulation, so the drugs, doses, temperature and time of each test are written down for the reader to weigh. A neuromuscular blocker acts at the neuromuscular junction, not on the cortex; it removes muscle artifact and visible movement but does not by itself stop the EEG from changing. Cooling tends to suppress rather than increase reactivity, so an absent response during cooling is less, not more, reliable. Sedatives act on the brain and change the EEG directly, not only muscle activity.",
+      "learningObjective": "Identify sedation, hypothermia and paralytics as confounders of reactivity testing.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The paralytic blocks cortical responses, so EEG reactivity cannot be judged until it wears off",
+        "Sedation and cooling can reduce EEG reactivity, so doses, temperature and test times are recorded",
+        "Cooling increases EEG reactivity, so an absent response during cooling is more reliable",
+        "Sedation only changes muscle artifact, so it has no effect on the EEG response to stimuli"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "acns-terminology",
+        "definition"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "In ACNS critical care EEG terminology, which finding after a stimulus counts as reactivity?",
+      "explanation": "ACNS terminology defines reactivity as a change in cerebral EEG activity with stimulation, such as a change in amplitude or frequency, and attenuation counts. Eye blinks and muscle bursts are artifacts and are excluded. A limb withdrawal is a clinical motor response; it may be noted, but it is not EEG reactivity if the EEG does not change. A heart rate rise is an autonomic response on the ECG channel, not a change in cerebral activity.",
+      "learningObjective": "State the ACNS definition of EEG reactivity.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A rise in heart rate on the ECG channel within a few seconds of the stimulus",
+        "A limb withdrawal seen on the synchronized video, with no change in the EEG",
+        "A change in the amplitude or frequency of cerebral activity, including attenuation",
+        "A burst of eye blinks or muscle activity in the frontal channels after the stimulus"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "annotation",
+        "documentation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "During a reactivity test in the ICU, what should the technologist enter on the record for each stimulus?",
+      "explanation": "Each stimulus is marked at the moment it is given, with its type, strength and side, so the reader can line up any change with the exact stimulus and judge reproducibility. Start and end times alone do not show which segment followed which stimulus. Marking only stimuli that seemed to produce a change biases the record and hides negative trials the reader needs. Deciding whether the EEG is reactive is interpretation, which belongs to the reading physician; the technologist marks and describes.",
+      "learningObjective": "List what to annotate for each stimulus during reactivity testing.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The exact time, the type and strength of the stimulus, and the side it was applied to",
+        "Only the stimuli that were followed by a visible change in the ongoing recording",
+        "Only the start and end times of the whole test session and its overall duration",
+        "The technologist's verdict on whether that stimulus showed reactive or unreactive EEG"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "scope-of-practice",
+        "cardiac-arrest",
+        "prognosis"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "After reactivity testing in a patient resuscitated from cardiac arrest, a family member asks the technologist, \"No change on the screen means he won't wake up, right?\" What is the best response?",
+      "explanation": "Prognosis after cardiac arrest is a medical judgement made by the physician from several tests together, so the technologist stays within scope by explaining who interprets the study and passing the question to the team. Telling the family that absent reactivity predicts a poor outcome is a prognosis, outside technologist scope, and may be wrong once other findings are weighed. Calling the recording normal is an interpretation and may be false reassurance. Reactivity is a recognized part of post-arrest EEG review, so calling it only a research tool is inaccurate.",
+      "learningObjective": "Respond to family questions about reactivity within technologist scope.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Say that reactivity testing is a research tool that the physician does not use clinically",
+        "Say the recording looked normal so the family can feel less worried for the time being",
+        "Explain that no reactivity predicts a poor outcome and that the physician will confirm it",
+        "Explain that the reading physician interprets the study and offer to pass the question on"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "passive-eye-opening",
+        "eye-artifact"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "As part of a reactivity sequence, the technologist opens a comatose patient's eyelids by hand. Large slow deflections appear in Fp1 and Fp2 at that moment. Where should a change in the cerebral background be looked for?",
+      "explanation": "Passive eye opening moves the eyeball and lid, which creates frontopolar artifact from the corneoretinal potential and handling, so a true change in cerebral activity is judged in channels away from the eyes. The large frontopolar deflection is the artifact itself, and artifact does not count as reactivity. The ECG reflects heart activity, not cerebral reactivity. Passive eye opening is one of the stimuli used in reactivity protocols, so excluding it from all sequences is wrong.",
+      "learningObjective": "Separate eye artifact from cerebral change during passive eye opening.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "In Fp1 and Fp2, since the largest change after the stimulus is the clearest reactive sign",
+        "In no channel, since passive eye opening is not used in any reactivity test sequence",
+        "In central and posterior channels, since the frontopolar change is likely eye or lid artifact",
+        "In the ECG channel, since cardiac changes are the main marker of reactivity in coma"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "reactivity-testing",
+        "burst-suppression",
+        "reproducibility"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A patient has a burst-suppression background with bursts at irregular intervals. One second after a loud clap, a burst occurs. What is the most appropriate approach?",
+      "explanation": "Bursts occur spontaneously in burst suppression, so a single burst after one clap may be chance. Repeating the stimulus and seeing whether bursts follow it consistently shows whether the link is reproducible, and the reader then decides. Calling it reactive from one trial ignores spontaneous bursting. Burst suppression can show stimulus-related bursts, so saying it cannot change is wrong. Auditory stimuli remain valid in this setting; switching to photic stimulation does not solve the timing problem.",
+      "learningObjective": "Use repeated trials to judge reproducibility of a response in a discontinuous background.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Mark the response as reactive, since a burst came right after the loud clap",
+        "Repeat the stimulus several times to see whether bursts follow it consistently",
+        "Switch to photic stimulation, since auditory stimuli are not valid in this state",
+        "Mark the response as unreactive, since burst suppression cannot change at all"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "icu-artifact",
+        "ventilator"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "In a ventilated patient, slow, rounded waves appear in the right temporal chain about every 4 seconds. The ventilator is set to 15 breaths per minute. What is the best next step?",
+      "explanation": "A rate of 15 breaths per minute gives one breath every 4 seconds, which matches the waves; checking them against chest movement or ventilator cycling on video confirms the source, and moving tubing off the leads or securing the leads (or removing water in the tubing) fixes it. Raising the low-frequency filter only reduces slow activity on display, hides real slow waves, and skips finding the cause. Pausing ventilation to check an artifact puts the patient at risk. Calling a breath-locked wave a periodic discharge without checking the timing would send a false finding to the physician.",
+      "learningObjective": "Confirm and fix ventilator artifact by matching it to the breathing cycle.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Label the waves as right temporal periodic discharges and notify the reading physician",
+        "Ask the nurse to pause the ventilator briefly so the artifact can be confirmed directly",
+        "Raise the low-frequency filter to 5 Hz and continue the recording without further review",
+        "Match the wave timing to the breaths on video, then move the tubing away from the leads"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "icu-artifact",
+        "iv-pump"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "Narrow, identical spikes appear at a perfectly steady rate in several left-sided channels, with no field spreading to neighbouring electrodes. An infusion pump on the left side of the bed has its line running close to the left-side electrode leads. How is the source best confirmed?",
+      "explanation": "Unchanging shape, a fixed machine-like rate and no physiological field point to electrical artifact from the pump; checking with the nurse whether the spikes track the pump's cycle confirms it, and moving the line or pump away from the leads and checking the ground usually helps. Arousal tests cerebral behaviour, not a device source. Lowering the high-frequency filter only hides the spikes and can also blur real sharp activity. Changing the display speed alters how the spikes look but does not identify where they come from.",
+      "learningObjective": "Confirm IV pump artifact by matching it to the device cycle.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "With the nurse, check whether the spikes keep time with the pump's delivery cycle",
+        "Check whether the spikes change in shape and spread when the patient is aroused",
+        "Increase the paper speed so the spikes look wider and easier to tell apart",
+        "Lower the high-frequency filter until the spikes are no longer visible on screen"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "icu-artifact",
+        "crrt",
+        "dialysis"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A patient on CRRT shows a steady rhythmic waveform over several channels. It does not change in frequency, amplitude or field over 20 minutes, and the patient is unchanged clinically. What should the technologist do?",
+      "explanation": "A rhythm that never evolves in frequency, amplitude or field and runs alongside a machine suggests artifact from the CRRT roller pump or lines; matching it to the pump rate and annotating it lets the reader set it aside. Seizures typically evolve, so a fixed rhythm with a device nearby should be checked before anything is called a seizure. Only the treating team can stop dialysis, and stopping it to check an artifact is unsafe. Reactivity is a cerebral response to a stimulus given to the patient, not a waveform that follows equipment.",
+      "learningObjective": "Recognize and confirm CRRT artifact that can mimic rhythmic patterns.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Record it as reactivity, since the rhythm started after the CRRT circuit was moved",
+        "Disconnect the CRRT circuit for a minute so the waveform can be checked without it",
+        "Compare the rhythm with the CRRT pump rate and its timing on video, then annotate it",
+        "Report it as an electrographic seizure because it has been rhythmic for 20 minutes"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "icu-artifact",
+        "bed-vibration",
+        "percussion"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "Rhythmic 3 to 4 Hz activity appears suddenly in many channels and stops just as suddenly 10 minutes later. The patient is on a specialty bed with a percussion and vibration mode. Which step best confirms the cause?",
+      "explanation": "An abrupt start and stop across many channels at a mechanical rate suggests bed percussion or vibration; video, the bed's settings and the nurse's record of the therapy confirm it, and the times are annotated. Changing the bed's therapy is a nursing decision, so turning it off without the nurse is outside the technologist's role. Reporting it as a cerebral pattern before checking the bed risks a false alarm. Poor contacts produce focal or electrode-specific artifact, not a sudden, widespread rhythm with a clean on and off.",
+      "learningObjective": "Confirm bed percussion or vibration artifact with video and nursing input.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Report the activity at once as generalized rhythmic delta that needs urgent review",
+        "Check the video and bed settings for the vibration cycle and ask the nurse when it ran",
+        "Re-apply every electrode, since abrupt rhythmic activity points to poor contacts",
+        "Turn the bed's vibration off without telling the nurse so the artifact stops at once"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "icu-artifact",
+        "cooling",
+        "shivering",
+        "ttm"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "During targeted temperature management with a surface cooling device, dense fast activity starts to cover most channels and the video shows fine trembling of the jaw and shoulders. What is the best action?",
+      "explanation": "Fine trembling on video with dense fast activity across many channels is shivering, a muscle artifact common during cooling; annotating it and telling the nurse lets the medical team manage shivering, which also matters for the patient. Sedative beta does not come with visible trembling and would not explain the video. Leaving a low high-frequency filter on for the whole study can hide spikes and other fast activity. Adjusting temperature management is a medical decision and is not done by the technologist.",
+      "learningObjective": "Identify shivering artifact during cooling and respond within scope.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Annotate it as shivering muscle artifact and inform the nurse so the team can address it",
+        "Turn off the cooling device for a few minutes so the trembling can settle down",
+        "Lower the high-frequency filter to 15 Hz and leave it there for the rest of the study",
+        "Annotate it as diffuse beta from sedation and inform the nurse that no action is needed"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "icu-artifact",
+        "ecmo"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A patient on ECMO has continuous fine artifact in the channels nearest the cannula and circuit tubing. Its rate stays the same no matter what the patient is doing. What is the most suitable approach?",
+      "explanation": "Pumps and circuits can introduce steady artifact that does not change with the patient's state. Routing and securing leads away from the circuit where it is safe, and annotating the source, reduces and explains it. ECMO cannot be stopped to obtain a cleaner recording. Dropping electrodes from one side loses coverage the reader needs for comparison between hemispheres. Calling a steady, state-independent device artifact a focal rhythm would mislead the reader.",
+      "learningObjective": "Manage and annotate ECMO-related artifact safely.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Ask the perfusionist to stop the pump briefly so a clean segment can be recorded",
+        "Remove the electrodes near the cannula and record from the other side of the head",
+        "Report the artifact as a focal fast rhythm over the side nearest the cannula",
+        "Secure the leads away from the circuit where safe and annotate the artifact's source"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "icu-artifact",
+        "pacemaker",
+        "ecg"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "Very brief, sharp transients appear at a regular rate in many channels in a patient with a cardiac pacemaker. What is the quickest way to confirm their source?",
+      "explanation": "Pacemaker artifact is time-locked to the pacing spike, so lining the transients up against the ECG channel confirms the source fast; they are then annotated. Passive eye opening checks ocular or cerebral response, not cardiac pacing. Pacemaker artifact appears widely without a believable cerebral field, so examining its field alone does not tie it to the pacemaker; the ECG does. Changing montage alters how the transient appears but does not tie it to the pacemaker.",
+      "learningObjective": "Confirm pacemaker artifact using the ECG channel.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Check whether each transient disappears when the montage is changed to average",
+        "Check whether each transient changes when the patient's eyes are opened by hand",
+        "Check whether each transient lines up with a pacing spike on the ECG channel",
+        "Check whether each transient has a field that spreads to the nearby electrodes"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "icu-artifact",
+        "chest-physiotherapy",
+        "patting",
+        "video"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A rhythmic 2 to 3 Hz pattern appears in several channels for 5 minutes in a patient whose chart lists chest physiotherapy every four hours. What should the technologist do first?",
+      "explanation": "Patting during chest physiotherapy can cause rhythmic artifact that looks like rhythmic delta or a seizure; video confirms the patting, and marking its start and end lets the reader set that segment aside. Chest physiotherapy is a well-known source of rhythmic artifact, so reporting it as a possible seizure before checking video is premature. Raising the low-frequency filter hides slow activity without confirming the source. Chest physiotherapy is ordered care; the technologist annotates it rather than asking to stop it.",
+      "learningObjective": "Confirm patting or chest physiotherapy artifact with video and annotation.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Review the synchronized video for patting and mark the start and end of the therapy",
+        "Ask the nurse to stop all chest physiotherapy until the EEG recording is finished",
+        "Raise the low-frequency filter so the slow rhythmic waves are reduced on the display",
+        "Report the pattern as a possible seizure, since chest therapy does not cause artifact"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "ceeg-technique",
+        "electrodes",
+        "imaging-compatibility"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A patient with a large ICH is starting cEEG and will probably need repeat head CT and possibly MRI in the coming days. Which electrode choice best fits this situation?",
+      "explanation": "CT/MRI-compatible electrodes (for example conductive plastic or similar designs labelled for imaging) cause little streak artifact and can stay on through scans, avoiding repeated removal and reapplication, provided they are used within their MRI labelling. Standard metal cup electrodes cause CT streaking and can heat in MRI; cutting the leads does not make them safe. Standard silver-silver chloride disks are metal; they cause CT streaking and are not labelled MRI safe, so no electrode is safe 'at any magnet strength' unless its labelling says so. Metal needle electrodes also cause streak artifact and are not chosen to improve CT images.",
+      "learningObjective": "Select imaging-compatible electrodes for patients needing repeat imaging.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Silver-silver chloride disks, which are MRI safe at any magnet strength",
+        "CT/MRI-compatible electrodes, so the montage can stay on through imaging",
+        "Standard gold cup electrodes, since cutting the leads makes them MRI safe",
+        "Bare metal needle electrodes, which reduce streak artifact on head CT"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "ceeg-indications",
+        "duration",
+        "acns-consensus"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Per the 2015 ACNS consensus statement (Part I, indications) on cEEG in critically ill patients, what is the usual minimum duration for screening for nonconvulsive seizures, and when is a longer recording advised?",
+      "explanation": "The ACNS consensus recommends at least 24 hours of cEEG to screen for nonconvulsive seizures in most critically ill patients and suggests longer recording (at least 48 hours) in comatose patients or when periodic or other high-risk patterns are present, because seizures may appear late. One or six hours would miss many seizures that start later. Seventy-two hours and a week are longer than the usual screening minimum. The longer recording is tied to coma and high-risk patterns, not only to a witnessed clinical seizure, and 12 hours is below the recommended minimum.",
+      "learningObjective": "Recall recommended cEEG screening durations from the ACNS consensus.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "At least 12 hours, and about 24 hours only after a clinical seizure has been witnessed",
+        "At least 1 hour, and about 6 hours in comatose patients or when periodic discharges appear",
+        "At least 72 hours, and about 1 week in comatose patients or when periodic discharges appear",
+        "At least 24 hours, and at least 48 hours in comatose patients or when periodic discharges appear"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "ceeg-technique",
+        "skin-integrity",
+        "collodion"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A patient has had collodion-applied electrodes on for three days of cEEG, with generalized edema and the head resting on the occiput. Which practice best protects the skin?",
+      "explanation": "Long recordings, edema and pressure points such as the occiput raise the risk of skin breakdown, so the skin is inspected at the intervals set by protocol, electrodes are moved or padded as needed, and findings are recorded. Waiting until the end of the study can miss an injury that is already forming. Impedance reflects the electrical contact, not the state of the skin under the electrode. Adding more collodion does not spread pressure and can make skin problems worse.",
+      "learningObjective": "Apply routine skin checks during multi-day cEEG.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Apply extra collodion over all electrodes daily so that pressure is spread more evenly",
+        "Inspect the skin only if the impedance of an electrode rises above the limit set by protocol",
+        "Inspect the skin under and around the electrodes at protocol intervals, focusing on the occiput",
+        "Leave the electrodes alone until the study ends so that the collodion seal is not disturbed"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "ceeg-technique",
+        "video",
+        "event-correlation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Why is time-locked video considered an essential part of ICU cEEG?",
+      "explanation": "Video synchronized with the EEG shows what was happening at the bedside, such as suctioning, patting, movements or a clinical event, so the reader can tell artifact from cerebral change and see clinical correlates. Video adds to annotations; it does not replace them, because notes record things the camera may not show. Reactivity is judged from the EEG itself, not from video alone. Video does not change the electrical quality of the EEG signal.",
+      "learningObjective": "Explain the role of time-locked video in ICU cEEG.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "It provides an extra recording channel that improves the EEG signal-to-noise ratio",
+        "It lets the reader link EEG changes to care, movements or events seen at the bedside",
+        "It lets the reader judge EEG reactivity from video alone when the EEG is unclear",
+        "It replaces the need for a technologist to annotate events and care during the study"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "qeeg",
+        "csa",
+        "aeeg",
+        "trend-review"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "On the qEEG panel, the CSA shows repeated flame-shaped bursts of increased power and the aEEG band rises in arch shapes at the same times. What should the technologist do?",
+      "explanation": "Flame-shaped power increases on CSA with arch-shaped rises on aEEG can mark seizures, but artifact such as chewing or movement can look the same, so the raw EEG at each time is reviewed and, if it shows a pattern on the unit's critical list, the finding is reported per protocol. Trends are screening tools that need raw EEG review, so calling each flame a seizure would overcall. Waiting for the morning report delays a possibly time-sensitive finding. Rescaling the display hides the change without explaining it.",
+      "learningObjective": "Respond to CSA and aEEG trend changes by reviewing raw EEG and notifying per protocol.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Review the raw EEG at each marked time and notify per protocol if it shows a listed pattern",
+        "Report each flame as a confirmed seizure, since the trend panel is more reliable than raw EEG",
+        "Adjust the trend scale until the flames look smaller, then continue routine monitoring",
+        "Note the trend change for the morning report, since trends are reviewed only once a day"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "qeeg",
+        "alpha-delta-ratio",
+        "sah",
+        "dci"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A patient on day 6 after subarachnoid hemorrhage is on cEEG for delayed cerebral ischemia (DCI) surveillance. The left-hemisphere alpha-delta ratio trend drops steadily over two hours, while the right stays stable. What is the best next step?",
+      "explanation": "A sustained fall in the alpha-delta ratio on one side can be an early warning of ischemia from vasospasm in DCI surveillance. The technologist first rules out a technical cause, such as a lifted electrode or artifact on the left, by checking electrodes and raw EEG, and then notifies per protocol so the team can act. Sleep tends to affect both hemispheres, so a one-sided drop should not be put off until the shift summary. Diagnosing vasospasm and ordering imaging belong to the medical team. Resetting the baseline hides the change the monitoring is meant to catch.",
+      "learningObjective": "Respond to a falling alpha-delta ratio during DCI surveillance.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Record it as normal sleep slowing and report it in the next scheduled shift summary",
+        "Tell the nurse that the patient has vasospasm and needs an urgent CT angiogram",
+        "Reset the qEEG baseline to the current values so the trend shows a flat line again",
+        "Check the left electrodes and raw EEG for artifact, then notify per the DCI protocol"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icx-025",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "icu-stimulation-technique",
+        "qeeg",
+        "burst-suppression-ratio",
+        "anesthetic-titration"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During an anesthetic infusion for refractory status epilepticus, the burst suppression ratio trend rises from 40% to 85% over an hour. What does this change show?",
+      "explanation": "The burst suppression ratio is the percentage of an epoch spent in suppression, so a rise from 40% to 85% means the EEG is spending more time suppressed. The physician titrates the drug against this target; the technologist checks the raw EEG and reports per protocol. Reading the ratio as time in bursts reverses its meaning. The ratio measures time in suppression, not burst amplitude. Impedance is a technical measure and is not what the ratio reports.",
+      "learningObjective": "Interpret the burst suppression ratio trend.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A larger share of each epoch is spent in bursts, so the record is less suppressed",
+        "A larger share of each epoch is spent in suppression, so the record is more suppressed",
+        "The bursts have become higher in amplitude, while the time in suppression is unchanged",
+        "The number of electrodes with high impedance has increased during the last hour"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

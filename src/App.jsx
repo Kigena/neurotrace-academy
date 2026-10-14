@@ -23,6 +23,7 @@ import LabSafety from "./pages/LabSafety.jsx";
 import ProfessionalPractice from "./pages/ProfessionalPractice.jsx";
 import PatternsReview from "./pages/PatternsReview.jsx";
 import AcnsGuide from "./pages/AcnsGuide.jsx";
+import IcuEeg from "./pages/IcuEeg.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
@@ -268,6 +269,12 @@ function AppContent() {
             <Route path="/acns" element={
               <ProtectedRoute>
                 <AcnsGuide />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/icu-eeg" element={
+              <ProtectedRoute>
+                <IcuEeg />
               </ProtectedRoute>
             } />
           </Routes>

@@ -1,0 +1,757 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-13",
+  "bank": "challenge",
+  "focus": "icu-orders-indications",
+  "description": "Original questions on decoding ICU orders and chart abbreviations, what each cEEG order asks, and ACNS 2015 consensus cEEG indications and durations. Text only; not yet medically verified.",
+  "totalQuestions": 25,
+  "questions": [
+    {
+      "id": "ch-icu-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "cardiac-arrest",
+        "ttm"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Order on a CVICU patient: \"61M, out-of-hospital CA, ROSC after 18 min, intubated, TTM 36 °C x24h, propofol gtt, cisatracurium PRN shivering. cEEG to r/o NCS.\" Decoded, what is this cEEG primarily asked to answer?",
+      "explanation": "CA is cardiac arrest, ROSC is return of spontaneous circulation, TTM is targeted temperature management, gtt is a continuous drip and PRN means as needed; cisatracurium is a neuromuscular blocker. A sedated patient who may also receive a paralytic for shivering cannot reliably show clinical seizures, so the order asks whether nonconvulsive (electrographic) seizures are occurring; any prognostic use of the record is the physician's interpretation. Brain death determination is a separate, specific test with its own prerequisites and is not what 'r/o NCS' asks. Shivering is managed clinically and is a source of muscle artifact, not the question the EEG answers. Coronary perfusion is assessed with cardiac tools, not EEG.",
+      "learningObjective": "Decode a post-cardiac-arrest cooling order and state the question cEEG is asked to answer.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Whether the brain death criteria are met during cooling",
+        "Whether shivering is controlled well enough to stop sedation",
+        "Whether nonconvulsive seizures occur while sedation and paralysis hide them",
+        "Whether coronary perfusion recovered after the return of pulse"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "tbi",
+        "icp"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Order: \"24F, sTBI after MVC, GCS 6T, R frontal contusions, ICP monitor, CPP goal >60 mmHg. Unexplained ICP spikes overnight. cEEG ?Sz.\" What do ICP and CPP stand for, and what is the EEG asked?",
+      "explanation": "ICP is intracranial pressure and CPP is cerebral perfusion pressure (mean arterial pressure minus ICP). The ACNS 2015 consensus lists unexplained ICP elevations among paroxysmal events that may be seizures, so the team wants to know whether the spikes coincide with electrographic seizures. 'Intracranial pulse' and 'cortical perfusion pressure' are not the standard expansions. Measuring brain oxygen is done with a dedicated tissue probe, probe position is checked with imaging, and sedation depth is judged clinically with scales such as RASS, so none of these is the question marked '?Sz'. GCS 6T means a Glasgow Coma Scale of 6 with the verbal score untestable because the patient is intubated.",
+      "learningObjective": "Decode ICP and CPP and link unexplained ICP spikes to a seizure question.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Intracranial pressure and cerebral perfusion pressure; are the spikes seizures",
+        "Intracranial pulse and cerebral pulse pressure; is the probe placed correctly",
+        "Intracranial pressure and cortical perfusion pressure; is brain oxygen falling",
+        "Intracerebral pressure and cranial pulse pressure; is sedation deep enough"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "ich",
+        "ivh",
+        "evd"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Order: \"72M, L thalamic ICH w/ IVH, EVD open at 10 cmH2O, HOB 30°, GCS 9 and fluctuating. cEEG r/o NCS.\" Before you turn his head to place posterior electrodes, what is the most appropriate preparation?",
+      "explanation": "ICH is intracerebral hemorrhage, IVH is intraventricular hemorrhage, EVD is an external ventricular drain levelled to a set height (10 cmH2O), and HOB is head of bed. Changing head or bed position can change drainage through an open EVD, so the technologist coordinates with the bedside nurse, who levels or clamps the drain per unit protocol; the technologist does not adjust it. Lowering the bed flat and re-zeroing the drain yourself is outside technologist scope. The drain insertion site is a sterile dressing that must not be disturbed or used as an electrode site. Removing the head dressing to measure is unnecessary and risks contaminating the drain site.",
+      "learningObjective": "Recognise an EVD in an ICU order and coordinate electrode placement with nursing.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Lay the bed flat for easier access, then re-zero the drain per protocol",
+        "Remove the head dressing so the full 10-20 measurement can be made",
+        "Clean the drain insertion site with alcohol so an electrode can sit there",
+        "Ask the nurse to level or clamp the drain per protocol before moving him"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "refractory-status",
+        "burst-suppression"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Order: \"35F, RSE, failed LZP + LEV load. Midazolam gtt titrating to BS on cEEG x24h, then wean. Notify neuro on call for Sz recurrence.\" Decoded, what is the cEEG being used for?",
+      "explanation": "RSE is refractory status epilepticus, LZP is lorazepam, LEV is levetiracetam, gtt is a continuous infusion and BS is burst suppression. The cEEG guides titration of the infusion to a burst-suppression target, then watches for seizures returning during the wean; ACNS 2015 advises recording for the whole period continuous IV antiseizure drugs are used. Seizure recurrence is a critical finding the technologist reports per protocol, without interpreting it as a diagnosis. Localising a focus for surgery and recording sleep architecture are not the purpose of an infusion order. 'BS' here is burst suppression, not a brain stem measure, and brain stem function is not tested by titrating an anesthetic.",
+      "learningObjective": "Decode a refractory status infusion order and state the two jobs of cEEG.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Localise a seizure focus for epilepsy surgery and notify neurosurgery",
+        "Confirm the burst suppression target and detect seizures during the wean",
+        "Record normal sleep stages so the drip can be stopped by protocol",
+        "Measure brain stem function before the midazolam drip is increased"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "ecmo",
+        "paralytics",
+        "pediatric"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "PICU order: \"7-mo, VA-ECMO day 2 after cardiac surgery, vecuronium gtt, heparin gtt. cEEG to screen for ESz.\" What does the order tell you about the study's purpose and setup?",
+      "explanation": "VA-ECMO is veno-arterial extracorporeal membrane oxygenation, vecuronium is a neuromuscular blocker given by continuous drip (gtt), and ESz means electrographic seizures. A paralysed infant cannot show clinical seizures, which is why ACNS 2015 lists paralysis (for example on ECMO) as an indication for cEEG. Heparin anticoagulation means extra care with scalp prep and avoiding needle electrodes unless policy allows, and the pump and circuit can add artifact. The order does not ask to measure blood flow through the circuit or to time paralytic weaning. 'ESz' is not 'evoked seizure' and photic stimulation is not part of an ICU ECMO study.",
+      "learningObjective": "Decode an ECMO order and anticipate the paralytic, anticoagulation and artifact issues.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Seizures hidden by paralysis; gentle prep on heparin; expect pump artifact",
+        "Circuit blood flow; place electrodes near the cannula to measure it",
+        "Paralytic level; record only when the vecuronium drip is paused",
+        "Evoked seizures; prepare the photic stimulator for the bedside study"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "hie",
+        "neonatal",
+        "therapeutic-hypothermia"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "NICU note: \"39 wk, Apgars 1/3/5, cord pH 6.90, mod HIE, TH 33.5 °C x72h started at 4 h of life. cEEG for Sz detection and background.\" What do HIE and TH mean, and why is EEG preferred over watching for clinical seizures?",
+      "explanation": "HIE is hypoxic-ischemic encephalopathy and TH is therapeutic hypothermia (whole-body cooling to about 33.5 °C for 72 hours). Many neonatal seizures are electrographic only or show subtle signs, so bedside observation misses them, and EEG also describes the background the team uses in its assessment. Hypoxic ischemic edema and thermal hyperthermia are not the meanings here. Cooling does not stop seizures from occurring, and neonatal seizures are not reliably obvious clinically. EEG does not measure core temperature; cooling is controlled with a probe and the cooling device, which can itself add artifact to the record.",
+      "learningObjective": "Decode a neonatal cooling note and explain why EEG is needed for seizure detection.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hypoxic ischemic edema, thermal hyperthermia; seizures are easy to see",
+        "Hypoxic-ischemic encephalopathy, hypothermia; cooling prevents seizures",
+        "Hypoxic-ischemic encephalopathy, hypothermia; many seizures are silent",
+        "Hypoxic ischemic edema, target heating; EEG tracks the core temperature"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "sepsis",
+        "altered-mental-status",
+        "rass"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "MICU note: \"68F, urosepsis, AMS x2d, RASS -2 off sedation x12h, no focal deficits, h/o ESRD on HD. EEG r/o NCSE.\" Decoded, what question is the EEG answering?",
+      "explanation": "AMS is altered mental status, RASS -2 is light sedation (briefly awakens to voice), h/o means history of, ESRD is end-stage renal disease and HD is hemodialysis. 'r/o NCSE' means rule out nonconvulsive status epilepticus: the team wants to know whether her unexplained drowsiness off sedation is from ongoing seizures rather than sepsis or uremia alone, an indication listed in the ACNS 2015 consensus. The EEG does not test whether dialysis is adequate or whether sepsis has cleared; those are laboratory and clinical judgements. A drowsy patient who wakes to voice is not a brain death candidate, and brain death is a separate test with strict prerequisites.",
+      "learningObjective": "Decode a septic encephalopathy note and identify the NCSE question.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Whether dialysis has removed enough toxins to stop the HD",
+        "Whether the infection has cleared enough to stop antibiotics",
+        "Whether she meets the criteria for brain death off sedation",
+        "Whether her unexplained drowsiness is from ongoing seizures"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "convulsive-status",
+        "post-convulsive"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "NICU order: \"46M, GCSE in ED, tx w/ LZP 4 mg IV x2 + LEV 60 mg/kg IV. Convulsions stopped 45 min ago; still not following commands. cEEG STAT.\" Why is cEEG being ordered urgently?",
+      "explanation": "GCSE is generalized convulsive status epilepticus, tx means treated, LZP is lorazepam and LEV is levetiracetam. After convulsions stop, a patient who stays unresponsive may be in nonconvulsive status rather than a slow post-ictal recovery; ACNS 2015 lists persistently abnormal mental status after GCSE as an indication and advises considering cEEG when the patient is not clearly improving within about 10 minutes or remains impaired beyond 30 minutes. The EEG does not measure drug levels, which are checked in blood. Classifying an epilepsy syndrome is not the acute question. Waiting for the patient to wake fully would defeat the purpose of an urgent study.",
+      "learningObjective": "Recognise post-convulsive status as an urgent cEEG indication.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "To measure whether the lorazepam level has reached the target",
+        "To look for nonconvulsive status after the convulsions stopped",
+        "To classify his epilepsy syndrome before he is discharged home",
+        "To record a baseline once he is fully awake and following commands"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-009",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "sah",
+        "dci",
+        "qeeg",
+        "adr"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Order: \"53F, aSAH, WFNS 3, mFisher 4, ACOM aneurysm clipped yesterday. Daily TCDs. cEEG w/ qEEG ADR trend for DCI.\" What is the team watching for, and which trend change should you report per protocol?",
+      "explanation": "aSAH is aneurysmal subarachnoid hemorrhage, WFNS and modified Fisher are clinical and CT grading scales (mFisher 4 means thick blood with intraventricular extension, a high vasospasm risk), TCD is transcranial Doppler and DCI is delayed cerebral ischemia from vasospasm. A sustained fall in the alpha-delta ratio (ADR) is a published early warning of ischemia, and the technologist reports it per protocol while the physician interprets it. A rising ADR reflects relatively more fast activity, not ischemia. 'Diffuse cortical injury' and 'deep cerebral infarct' are not what DCI means in this setting, and burst suppression or a simple amplitude rise is not the trend change used for DCI surveillance.",
+      "learningObjective": "Decode an SAH vasospasm order and name the qEEG change that signals possible DCI.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Delayed cerebral ischemia; a sustained fall in the alpha-delta ratio",
+        "Delayed cerebral ischemia; a sustained rise in the alpha-delta ratio",
+        "Diffuse cortical injury; a new burst suppression pattern per protocol",
+        "Deep cerebral infarct; a rise in the amplitude of the trend display"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-010",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "sdh",
+        "craniotomy",
+        "video-eeg"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "SICU note: \"80M, L SDH s/p crani POD 1, 3 episodes of R arm twitching today, LEV 500 mg BID. vEEG to characterize events.\" What should you prepare for this study?",
+      "explanation": "SDH is subdural hematoma, s/p crani means status post craniotomy, POD 1 is postoperative day 1, LEV is levetiracetam and BID is twice daily. vEEG to characterize events means the video must show the right arm so events can be matched to the EEG, and push-button marks help. The left skull defect can produce breach rhythm (higher amplitude, sharper activity) that the reader needs flagged in the notes, and electrodes are kept off the incision and dressing. Leaving the left side unrecorded would miss the likely source. Photic stimulation is not a priority in this setting, and the surgery was on the left, so the defect is not on the right.",
+      "learningObjective": "Decode a post-craniotomy order and prepare video and electrode placement accordingly.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Camera on the face only; skip left electrodes to protect the incision",
+        "Camera on the legs; photic stimulation to provoke the twitching events",
+        "Camera on the right arm; note a left skull defect and avoid the incision",
+        "Camera on the monitor; note a right skull defect and avoid the dressing"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-011",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "pediatric",
+        "encephalitis",
+        "lpds",
+        "duration"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "PICU note: \"5yo, fever, AMS, GCS 10, r/o HSV encephalitis, LP done, acyclovir IV q8h. Routine EEG: R temporal LPDs. cEEG r/o NCS.\" Decoded, what do LPDs imply for monitoring?",
+      "explanation": "LPDs are lateralized periodic discharges, r/o means rule out, LP is lumbar puncture and q8h is every 8 hours. Periodic discharges on a routine EEG are listed in ACNS 2015 as an indication for cEEG because they carry a high seizure risk, and the consensus notes that patients with periodic discharges or coma may need 48 hours or more of monitoring. Low-voltage photic discharges and limb plethysmography are not what LPD stands for. Periodic discharges do not mean seizures can be excluded with a 30-minute study; they argue for longer monitoring.",
+      "learningObjective": "Decode LPDs in an encephalitis order and link them to longer monitoring.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Low-voltage photic discharges; a short routine study will suffice",
+        "Lateralized periodic discharges; a 30-minute study can exclude seizures",
+        "Limb plethysmography data; record the arm pulses with the EEG",
+        "Lateralized periodic discharges; plan monitoring for 48 h or more"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-012",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "icu-orders",
+        "abbreviations",
+        "stroke",
+        "thrombectomy"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "NICU order: \"64F, L MCA AIS s/p mechanical thrombectomy, TICI 2b. GCS dropped 14→10 overnight, CT neg for hemorrhage. cEEG r/o NCS.\" Decoded, what is being asked of the EEG?",
+      "explanation": "AIS is acute ischemic stroke in the left middle cerebral artery (MCA) territory, s/p means status post, TICI 2b is a reperfusion grade after thrombectomy, and CT negative for hemorrhage means bleeding has been excluded. An unexplained drop in GCS after acute supratentorial injury is an ACNS 2015 indication for cEEG to look for nonconvulsive seizures. The EEG is not used to grade reperfusion, which comes from angiography, and it cannot detect hemorrhage, which the CT already addressed. A stroke in the left MCA territory is not a reason to map language with EEG at the bedside.",
+      "learningObjective": "Decode a post-thrombectomy order and recognise the NCS question behind a GCS drop.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Whether the artery stayed open after the thrombectomy",
+        "Whether seizures explain the unexplained fall in GCS",
+        "Whether a new hemorrhage formed that CT has missed",
+        "Whether language cortex can be mapped before rehab"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-013",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "cEEG-indications",
+        "acns-2015",
+        "duration"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Per the ACNS 2015 consensus on continuous EEG in critically ill patients, for how long should cEEG generally be recorded when screening for nonconvulsive seizures?",
+      "explanation": "The consensus (Herman et al., J Clin Neurophysiol 2015, Part I) recommends at least 24 hours of recording when nonconvulsive seizures are suspected, because many seizures in critically ill patients first appear hours into monitoring. A 30-minute or 2-hour study misses a substantial share of seizures in this population. Seventy-two hours as a fixed minimum overstates the general recommendation; longer recording is advised for selected patients rather than for everyone.",
+      "learningObjective": "State the minimum cEEG duration recommended for NCS screening.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "At least 30 minutes",
+        "At least 2 hours",
+        "At least 24 hours",
+        "At least 72 hours"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-014",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "cEEG-indications",
+        "acns-2015",
+        "duration"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Under the ACNS 2015 consensus, which ICU patient is the best example of someone who may need cEEG for 48 hours or more rather than the standard minimum?",
+      "explanation": "The consensus advises at least 24 hours for most patients and notes that comatose patients, those with periodic discharges and those who are pharmacologically sedated may need 48 hours or more, because their seizures tend to appear later. An awake, conversant patient after a single provoked seizure, a patient whose spells are already captured on video, and a patient being monitored only for sedation depth do not fit the groups singled out for extended seizure monitoring.",
+      "learningObjective": "Identify patients who need extended (48 h or more) cEEG.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A comatose patient whose first hour shows periodic discharges",
+        "An alert patient after one provoked seizure who is conversing",
+        "A patient whose typical spells were captured on video already",
+        "A patient monitored only to judge the depth of light sedation"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-015",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "cEEG-indications",
+        "acns-2015",
+        "refractory-status",
+        "duration"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Per ACNS 2015, how long should cEEG continue when a patient is treated with continuous IV antiseizure drug infusions for status epilepticus?",
+      "explanation": "The consensus recommends recording for the entire period that continuous IV antiseizure drugs are used and notes that cEEG is often continued for at least 24 hours after the infusions are withdrawn, because seizures can recur during and after the wean. Stopping when burst suppression first appears is premature, since seizures may return. Recording only the first hour of the drip or only after the drip stops leaves the titration unmonitored.",
+      "learningObjective": "State the recommended cEEG duration around continuous IV antiseizure drug therapy.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Only during the first hour of the infusion",
+        "Until the first burst suppression appears",
+        "Only after the infusion has been stopped",
+        "Throughout it, and often 24 h after weaning"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-016",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "cEEG-indications",
+        "acns-2015",
+        "post-convulsive"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "ACNS 2015 suggests cEEG after generalized convulsive status epilepticus when the patient is not clearly improving within what time after convulsions stop?",
+      "explanation": "The consensus advises considering cEEG when a patient is not clearly improving within about 10 minutes, or has impaired consciousness beyond 30 minutes, after the motor seizure stops, because nonconvulsive status can persist after visible convulsions end. Waiting 6 hours, 24 hours or until the next morning would delay detection of ongoing seizures.",
+      "learningObjective": "State the time window after GCSE that should prompt cEEG.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Within about 6 hours",
+        "Within about 10 minutes",
+        "Within about 24 hours",
+        "By the next morning"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-017",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "cEEG-indications",
+        "acns-2015",
+        "sah",
+        "dci",
+        "duration"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "For detecting delayed cerebral ischemia after subarachnoid hemorrhage, until about when does ACNS 2015 suggest cEEG be continued?",
+      "explanation": "The consensus suggests starting cEEG before the highest-risk vasospasm window (around day 3), and continuing until the vasospasm window has passed, about day 14 after the hemorrhage. Stopping at 24 or 48 hours would end monitoring before vasospasm usually begins. Day 30 extends well beyond the window the consensus describes.",
+      "learningObjective": "State the monitoring window for DCI after SAH.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Until about day 14",
+        "Until hour 24 only",
+        "Until hour 48 only",
+        "Until about day 30"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-018",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "cEEG-indications",
+        "acns-2015",
+        "review-frequency"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Per ACNS 2015, at a minimum how often should a cEEG recorded to detect nonconvulsive seizures be reviewed by the electroencephalographer?",
+      "explanation": "The consensus advises interpretation at least twice daily (about every 12 hours), more often when seizures are frequent, and at least three times daily when monitoring for vasospasm after SAH. Once a week or once at the end of the study would leave seizures unrecognised for long periods. Once daily is less than the recommended minimum. Between reviews, the technologist reports critical findings per protocol.",
+      "learningObjective": "State the minimum review frequency for seizure-detection cEEG.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Once a week only",
+        "Once daily only",
+        "At least twice daily",
+        "Once, at the end"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-019",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "cEEG-indications",
+        "acns-2015",
+        "paroxysmal-events"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A sedated, intubated TBI patient has the following overnight observations. Which one best fits the ACNS 2015 indication 'paroxysmal events suspected to be seizures'?",
+      "explanation": "The consensus lists subtle twitching, nystagmus, gaze deviation, unexplained apnea or tachycardia and unexplained ICP spikes as paroxysmal events that may be seizures and warrant video cEEG. Brief nystagmus with a sudden heart-rate rise is that kind of episodic change. A gradual fever rise, a slow fall in urine output and a steady rise in oxygen needs are continuous trends with medical causes rather than paroxysmal events.",
+      "learningObjective": "Recognise paroxysmal ICU events that justify video cEEG.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A slow rise in temperature over six hours",
+        "A gradual fall in urine output across the shift",
+        "A steady rise in oxygen needs since admission",
+        "Brief bursts of nystagmus with sudden tachycardia"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-020",
+      "domainId": "domain-1",
+      "sectionId": "d1-s1",
+      "topicTags": [
+        "icu-orders-indications",
+        "cEEG-indications",
+        "acns-2015",
+        "recommendation-strength"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "The ACNS 2015 consensus gives its strongest recommendation (\"recommends\" rather than \"suggests\") for which use of cEEG?",
+      "explanation": "The consensus recommends cEEG for diagnosing nonconvulsive seizures, nonconvulsive status epilepticus and other paroxysmal events, and for judging how well seizure treatment is working. It only suggests cEEG as an adjunct to detect ischemia in high-risk patients and to assess level of consciousness during IV sedation or induced coma. Its prognosis section, which includes cardiac arrest, says EEG can help predict outcome but gives no formal recommendation for prolonged monitoring for that purpose.",
+      "learningObjective": "Distinguish recommended from suggested cEEG indications in ACNS 2015.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Prognosis in the days after cardiac arrest",
+        "Detecting seizures and judging their treatment",
+        "Checking the depth of IV sedation in coma",
+        "Detecting ischemia in high-risk patients"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-021",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "icu-orders-indications",
+        "abbreviations",
+        "evd"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "On an ICU chart, what does EVD stand for?",
+      "explanation": "EVD is an external ventricular drain, a catheter placed into a lateral ventricle to drain cerebrospinal fluid and often to measure intracranial pressure. The technologist works around it and leaves levelling or clamping to nursing per protocol. Epidural venous device, emergency ventilator drive and extended video documentation are not standard meanings of EVD.",
+      "learningObjective": "Decode EVD.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "External ventricular drain",
+        "Epidural venous device",
+        "Emergency ventilator drive",
+        "Extended video documentation"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-022",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "icu-orders-indications",
+        "abbreviations",
+        "dnr",
+        "code-status"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A patient's chart lists \"Code status: DNR.\" What does this mean for care during your cEEG hookup?",
+      "explanation": "DNR means do not resuscitate: if cardiopulmonary arrest occurs, CPR is not started, but all other ordered care, including the EEG, continues. If the patient deteriorates, the technologist still alerts the nurse per protocol. DNR does not cancel diagnostic tests, does not forbid repositioning, and does not mean that no treatment of any kind is given.",
+      "learningObjective": "Interpret a DNR code status correctly at the bedside.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Diagnostic tests are cancelled, including EEG",
+        "He is not to be repositioned for any reason",
+        "No CPR if he arrests; other care continues",
+        "No treatment of any kind is to be provided"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-023",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "icu-orders-indications",
+        "abbreviations",
+        "npo"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A patient you are about to record is \"NPO after midnight\" for a procedure and asks you for a drink of water. What does NPO mean?",
+      "explanation": "NPO is from the Latin nil per os, nothing by mouth, so the patient should not be given food or drink; the technologist refers the request to the nurse. 'No procedures ordered', 'nurse present only' and 'nightly pain orders' are not meanings of NPO.",
+      "learningObjective": "Decode NPO and act within scope.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "No procedures ordered",
+        "Nurse present only",
+        "Nightly pain orders",
+        "Nothing by mouth"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-024",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "icu-orders-indications",
+        "abbreviations",
+        "ttm",
+        "cardiac-arrest"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "In a post-cardiac-arrest order, what does TTM stand for?",
+      "explanation": "TTM is targeted temperature management, the controlled cooling or fever prevention used after cardiac arrest; cooling pads and devices can add artifact to the EEG. Transcranial thermal mapping, total tissue monitoring and timed trend measurement are not standard expansions.",
+      "learningObjective": "Decode TTM.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Transcranial thermal mapping",
+        "Targeted temperature management",
+        "Total tissue monitoring mode",
+        "Timed trend measurement"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-icu-025",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "icu-orders-indications",
+        "abbreviations",
+        "rass",
+        "sedation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A nursing note reads \"RASS -4.\" What does this describe?",
+      "explanation": "RASS is the Richmond Agitation-Sedation Scale, from +4 (combative) to -5 (unarousable). A score of -4 is deep sedation: no response to voice, but movement or eye opening to physical stimulation. Restless agitation is a positive score, a drowsy patient who briefly wakes to voice is -2 or -1, and no response to voice or touch is -5.",
+      "learningObjective": "Decode a RASS score.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Deep sedation: no response to voice, moves to touch",
+        "Agitation: restless and pulling at the lines and tubes",
+        "Light sedation: wakes to voice briefly with eye contact",
+        "Unarousable: no response to voice or physical stimulus"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea ICU and cEEG set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

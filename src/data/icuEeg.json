@@ -1,0 +1,1622 @@
+{
+  "title": "ICU and Continuous EEG",
+  "subtitle": "Decode the order, know why the EEG is there, record it well, and test reactivity safely",
+  "tabs": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "intro": "Continuous EEG (cEEG) in the ICU is a long recording, usually with video, in patients who cannot tell you what is happening in their brain. Most ICU seizures are nonconvulsive, so the EEG is often the only way to see them. Your first job is to read the order and work out what question the team wants the EEG to answer.",
+      "sections": [
+        {
+          "title": "What cEEG is for",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Find hidden seizures",
+              "body": "Detect nonconvulsive seizures (NCS) and nonconvulsive status epilepticus (NCSE) in patients with altered mental status or coma.",
+              "points": [
+                "Main and strongest indication in the ACNS consensus",
+                "A 30 to 60 minute routine EEG misses many NCS"
+              ]
+            },
+            {
+              "title": "Guide treatment",
+              "body": "Show whether seizure treatment is working, and help titrate infusions toward a target the physician sets (for example seizure suppression or burst suppression)."
+            },
+            {
+              "title": "Detect ischemia",
+              "body": "Watch for new slowing and loss of fast activity in patients at high risk of stroke, such as after subarachnoid hemorrhage when vasospasm can cause delayed cerebral ischemia (DCI)."
+            },
+            {
+              "title": "Track sedation and coma depth",
+              "body": "Show the depth of sedation or pharmacological coma, especially when the patient is paralyzed and cannot be examined."
+            },
+            {
+              "title": "Describe severity and support prognosis",
+              "body": "Background continuity, reactivity and patterns are used by the physician to grade encephalopathy and, for example, after cardiac arrest. The technologist records and describes; the physician interprets."
+            },
+            {
+              "title": "Characterize events",
+              "body": "Capture twitching, posturing, eye deviation or vital-sign spikes on video and EEG to decide whether they are seizures."
+            }
+          ]
+        },
+        {
+          "title": "Who orders it and who is involved",
+          "kind": "list",
+          "items": [
+            "Ordered by the treating team: neurocritical care, neurology, neurosurgery, intensivists, pediatric or neonatal teams, often after a neurology consult.",
+            "The neurodiagnostic technologist (NDT) sets up, maintains quality, tests reactivity, marks events, screens trends and notifies per protocol.",
+            "The electroencephalographer (EEG reader) interprets, reports at least daily, and gives interim calls for important changes.",
+            "The bedside nurse (RN) presses the event button, reports clinical events, and is your partner for skin, positioning, stimulation and safety.",
+            "Respiratory therapy, perfusion (ECMO) and dialysis staff own devices that can produce artifact; know who to ask."
+          ]
+        },
+        {
+          "title": "How to read an ICU order",
+          "kind": "steps",
+          "items": [
+            "Identify the main diagnosis and injury (for example SAH, TBI, HIE after cardiac arrest).",
+            "Find the timeline: hospital day, post-op day (POD), post-bleed day, time since ROSC. Timing tells you the risk window.",
+            "Note the severity: GCS, Hunt-Hess, FOUR score, RASS. A low GCS or deep RASS means you cannot rely on the clinical exam.",
+            "List devices: EVD, ICP monitor, craniotomy or craniectomy site, ECMO, CRRT, cooling. These change electrode placement and artifact.",
+            "List drugs: sedatives and their infusion rates (gtt), antiseizure medications, paralytics. These change the EEG and reactivity testing.",
+            "Read the question: 'r/o NCSE', 'DCI surveillance', 'titrate to burst suppression', 'prognosis post-arrest', 'characterize events'.",
+            "Translate it into what you must do: full montage, special electrode positions, video framing, stimulation testing, which trends to watch, what triggers a call."
+          ]
+        },
+        {
+          "title": "Worked decoding example",
+          "kind": "table",
+          "head": [
+            "Order fragment",
+            "Meaning",
+            "What it means at the EEG"
+          ],
+          "rows": [
+            [
+              "71F, HD 3, s/p L crani for acute SDH evacuation, POD 1",
+              "Hospital day 3; status post left craniotomy to remove an acute subdural hematoma; first day after surgery",
+              "Fresh left surgical site and dressing: no electrodes on the incision, substitute or omit positions and document. Breach effect (sharper, faster activity) over the skull defect is expected."
+            ],
+            [
+              "GCS 7T, RASS -4 on propofol gtt",
+              "Glasgow Coma Scale 7 with T meaning intubated (verbal not testable); deeply sedated on a propofol drip",
+              "Exam is poor, so seizures could be silent. Propofol slows and may suppress the background; note the rate at hookup and each change."
+            ],
+            [
+              "LEV 1 g IV BID, h/o EtOH use",
+              "Levetiracetam 1 gram intravenously twice daily; history of alcohol use",
+              "Already on an antiseizure medication; alcohol history raises risk of withdrawal and seizures. Record the drug and dose times."
+            ],
+            [
+              "L gaze deviation x2 per RN",
+              "Nurse saw left eye deviation twice",
+              "Frame the face on video, ask the RN to press the event button and describe events. Eye leads help."
+            ],
+            [
+              "cEEG to r/o NCSE, MRI planned",
+              "Continuous EEG to rule out nonconvulsive status epilepticus; MRI coming",
+              "Main question is seizures. Use CT/MRI-compatible electrodes per policy, at least 24 h, notify reader per protocol of any possible seizure."
+            ]
+          ],
+          "note": "Invented example for teaching. The technologist translates the order into a recording plan; the reader decides what the EEG shows."
+        }
+      ],
+      "pearls": [
+        "Most seizures in critically ill patients are nonconvulsive, so they are invisible without EEG.",
+        "Read the order for four things: diagnosis, timing, devices, drugs. Then the question.",
+        "'T' after a GCS (for example 7T) means intubated; the verbal score cannot be tested.",
+        "A fresh craniotomy or craniectomy changes electrode placement and causes breach rhythm; document both.",
+        "Technologist scope: record, test, mark, describe, notify per protocol. Never diagnose or give prognosis to the family or team.",
+        "Write the sedative, paralytic and antiseizure doses at hookup; the reader needs them to interpret the record."
+      ],
+      "eegLink": "Every set-up choice (electrode type, positions, video framing, stimulation, which trends you watch) should come from the question in the order."
+    },
+    {
+      "id": "abbreviations",
+      "title": "ICU Abbreviations",
+      "intro": "ICU orders and charts are dense with shorthand. Each table gives the abbreviation, what it stands for, and why it matters when you are at the EEG machine. Local usage varies, so when an abbreviation is ambiguous, ask.",
+      "sections": [
+        {
+          "title": "Diagnoses and injuries",
+          "kind": "table",
+          "head": [
+            "Abbreviation",
+            "Meaning",
+            "Why it matters at the EEG"
+          ],
+          "rows": [
+            [
+              "SAH / aSAH",
+              "Subarachnoid hemorrhage / aneurysmal SAH",
+              "Seizure risk plus vasospasm and delayed cerebral ischemia; cEEG may be ordered for DCI surveillance."
+            ],
+            [
+              "DCI",
+              "Delayed cerebral ischemia",
+              "Ischemia days after SAH, often from vasospasm; EEG shows loss of fast activity and new slowing, often before clinical change."
+            ],
+            [
+              "ICH",
+              "Intracerebral (intraparenchymal) hemorrhage",
+              "Cortical bleeds carry seizure risk; expect focal slowing over the bleed."
+            ],
+            [
+              "IVH",
+              "Intraventricular hemorrhage",
+              "Often has an EVD; in neonates a prematurity complication graded I to IV."
+            ],
+            [
+              "SDH",
+              "Subdural hematoma",
+              "Acute or chronic; may have craniotomy or burr holes; seizure risk; low voltage over the collection."
+            ],
+            [
+              "EDH",
+              "Epidural hematoma",
+              "Usually traumatic and surgical; avoid incision sites."
+            ],
+            [
+              "TBI",
+              "Traumatic brain injury",
+              "Seizure and NCSE risk; skull fractures, lacerations and craniectomy affect placement."
+            ],
+            [
+              "DAI",
+              "Diffuse axonal injury",
+              "Severe TBI pattern; diffuse slowing and coma, often with sedation."
+            ],
+            [
+              "HIE",
+              "Hypoxic-ischemic encephalopathy",
+              "After cardiac arrest or in neonates after birth asphyxia; cEEG for seizures and background grading."
+            ],
+            [
+              "CA / OHCA / IHCA",
+              "Cardiac arrest / out-of-hospital / in-hospital cardiac arrest",
+              "Post-arrest cEEG is used for seizures and, by the physician, prognosis."
+            ],
+            [
+              "ROSC",
+              "Return of spontaneous circulation",
+              "Time zero after arrest; note hours since ROSC on the record."
+            ],
+            [
+              "AIS / CVA / LVO",
+              "Acute ischemic stroke / cerebrovascular accident / large vessel occlusion",
+              "Focal slowing and attenuation; seizures possible with cortical strokes."
+            ],
+            [
+              "TIA",
+              "Transient ischemic attack",
+              "Usually no lasting EEG change; may be confused with seizure."
+            ],
+            [
+              "CVST",
+              "Cerebral venous sinus thrombosis",
+              "High seizure risk; often with hemorrhagic venous infarcts."
+            ],
+            [
+              "SE / CSE / GCSE",
+              "Status epilepticus / convulsive SE / generalized convulsive SE",
+              "After GCSE stops clinically, many patients keep seizing electrographically."
+            ],
+            [
+              "NCS / NCSE",
+              "Nonconvulsive seizures / nonconvulsive status epilepticus",
+              "The main thing cEEG is looking for."
+            ],
+            [
+              "RSE / SRSE",
+              "Refractory SE / super-refractory SE",
+              "Continuous IV anesthetic infusions; cEEG to titrate and detect breakthrough."
+            ],
+            [
+              "NORSE / FIRES",
+              "New-onset refractory status epilepticus / febrile infection-related epilepsy syndrome",
+              "Prolonged cEEG with infusion titration; FIRES is the subtype preceded by a febrile illness."
+            ],
+            [
+              "AMS",
+              "Altered mental status",
+              "Unexplained AMS is a top indication for cEEG."
+            ],
+            [
+              "PRES",
+              "Posterior reversible encephalopathy syndrome",
+              "Seizures common; posterior (occipital) predominant findings."
+            ],
+            [
+              "HE / uremia",
+              "Hepatic encephalopathy / uremic encephalopathy (AKI, CKD, ESRD)",
+              "Toxic-metabolic slowing; generalized periodic discharges with triphasic morphology may appear."
+            ],
+            [
+              "ARDS / PNA",
+              "Acute respiratory distress syndrome / pneumonia",
+              "Ventilator and prone-position issues; more ventilator artifact."
+            ],
+            [
+              "MOF / MODS",
+              "Multi-organ failure / multiple organ dysfunction syndrome",
+              "Mixed metabolic causes of encephalopathy; many devices and artifacts."
+            ]
+          ]
+        },
+        {
+          "title": "Scores and scales",
+          "kind": "table",
+          "head": [
+            "Abbreviation",
+            "Meaning",
+            "Why it matters at the EEG"
+          ],
+          "rows": [
+            [
+              "GCS",
+              "Glasgow Coma Scale, 3 to 15 (eye, verbal, motor)",
+              "8 or less is commonly described as coma; T suffix means intubated."
+            ],
+            [
+              "FOUR score",
+              "Full Outline of UnResponsiveness: eye, motor, brainstem reflexes, respiration, each 0 to 4 (total 0 to 16)",
+              "Works in intubated patients because it has no verbal part."
+            ],
+            [
+              "RASS",
+              "Richmond Agitation-Sedation Scale, +4 (combative) to -5 (unarousable)",
+              "Tells you sedation depth; deep negative scores predict a slow, less reactive EEG."
+            ],
+            [
+              "CAM-ICU",
+              "Confusion Assessment Method for the ICU",
+              "Delirium screen; delirium is a reason for EEG in some patients."
+            ],
+            [
+              "H-H",
+              "Hunt and Hess grade for SAH, 1 to 5",
+              "Grades 3 to 5 are the high-risk group for DCI surveillance in the ACNS consensus (poor grade usually means 4 to 5) are the high-risk group for DCI surveillance."
+            ],
+            [
+              "WFNS",
+              "World Federation of Neurosurgical Societies SAH grade, 1 to 5 (GCS-based)",
+              "Another SAH severity grade; higher means sicker."
+            ],
+            [
+              "mFisher",
+              "Modified Fisher scale, 0 to 4 (blood amount on CT)",
+              "Higher grades predict higher vasospasm risk."
+            ],
+            [
+              "ICH score",
+              "Intracerebral hemorrhage score, 0 to 6",
+              "Severity and mortality estimate for ICH."
+            ],
+            [
+              "NIHSS",
+              "National Institutes of Health Stroke Scale, 0 to 42",
+              "Stroke deficit severity; a sudden rise may need EEG to exclude seizure."
+            ],
+            [
+              "mRS",
+              "Modified Rankin Scale, 0 to 6",
+              "Outcome and disability scale used in studies and baseline history."
+            ],
+            [
+              "Apgar",
+              "Newborn score 0 to 10 at 1 and 5 minutes (and later)",
+              "Low scores flag possible neonatal HIE."
+            ],
+            [
+              "Sarnat",
+              "Sarnat stage of neonatal encephalopathy (mild, moderate, severe)",
+              "Moderate to severe HIE usually means therapeutic hypothermia with cEEG."
+            ]
+          ]
+        },
+        {
+          "title": "Devices and procedures",
+          "kind": "table",
+          "head": [
+            "Abbreviation",
+            "Meaning",
+            "Why it matters at the EEG"
+          ],
+          "rows": [
+            [
+              "EVD",
+              "External ventricular drain",
+              "Tube through the skull, usually frontal; avoid the site; do not touch, clamp or kink; ask RN before moving the head."
+            ],
+            [
+              "ICP / bolt",
+              "Intracranial pressure / parenchymal ICP monitor",
+              "Scalp hardware; place around it; note ICP spikes as possible seizure triggers or results."
+            ],
+            [
+              "CPP / MAP",
+              "Cerebral perfusion pressure (MAP minus ICP) / mean arterial pressure",
+              "Low CPP can cause ischemic EEG changes; teams may target MAP during vasospasm."
+            ],
+            [
+              "PbtO2",
+              "Partial pressure of brain tissue oxygen (measured by a parenchymal probe)",
+              "Another bolt; drops may coincide with EEG change."
+            ],
+            [
+              "s/p crani / DHC",
+              "Status post craniotomy / decompressive hemicraniectomy",
+              "Skull defect: breach rhythm; never press on the flap; no electrodes on incisions."
+            ],
+            [
+              "VPS",
+              "Ventriculoperitoneal shunt",
+              "Avoid the valve and tubing; programmable valves may be affected by magnets."
+            ],
+            [
+              "ETT / trach",
+              "Endotracheal tube / tracheostomy",
+              "Intubated patient cannot speak; tube ties and holders limit some electrode sites."
+            ],
+            [
+              "Vent (AC, SIMV, PEEP)",
+              "Mechanical ventilator and its modes and settings",
+              "Ventilator artifact at the breath rate; tubing condensation causes extra artifact."
+            ],
+            [
+              "ECMO (VA / VV)",
+              "Extracorporeal membrane oxygenation (veno-arterial / veno-venous)",
+              "High seizure and stroke risk; anticoagulated so scalp bleeds easily; pump and circuit artifact."
+            ],
+            [
+              "CRRT / HD",
+              "Continuous renal replacement therapy / hemodialysis",
+              "Rhythmic pump artifact; electrolyte and fluid shifts can change the EEG."
+            ],
+            [
+              "IABP / LVAD",
+              "Intra-aortic balloon pump / left ventricular assist device",
+              "Rhythmic artifact tied to the cardiac cycle or pump."
+            ],
+            [
+              "TTM",
+              "Targeted temperature management (controlled temperature)",
+              "Cooling slows the EEG; rewarming is a seizure-risk period; cooling pads can cause artifact and shivering EMG."
+            ],
+            [
+              "TCD",
+              "Transcranial Doppler",
+              "Bedside vasospasm test over temples and occiput; probes and gel can disturb electrodes; mark the study time."
+            ],
+            [
+              "CTA / CTP / DSA",
+              "CT angiography / CT perfusion / digital subtraction (catheter) angiography",
+              "Patient leaves the unit; plan for transport, imaging-compatible electrodes and documenting the gap."
+            ],
+            [
+              "MRI",
+              "Magnetic resonance imaging",
+              "Only electrodes and leads approved for MRI by the manufacturer and facility may stay on; otherwise remove and re-apply."
+            ],
+            [
+              "LP",
+              "Lumbar puncture",
+              "Patient positioned on side; movement artifact; mark the time."
+            ],
+            [
+              "A-line / CVC / PICC",
+              "Arterial line / central venous catheter / peripherally inserted central catheter",
+              "Sources of pulse and pump artifact; respect sterile dressings in the neck."
+            ],
+            [
+              "NGT / OGT / PEG",
+              "Nasogastric tube / orogastric tube / percutaneous gastrostomy",
+              "Feeding and suctioning cause artifact; NG tube can limit nasal stimulation."
+            ]
+          ]
+        },
+        {
+          "title": "Drugs, orders, timing and chart shorthand",
+          "kind": "table",
+          "head": [
+            "Abbreviation",
+            "Meaning",
+            "Why it matters at the EEG"
+          ],
+          "rows": [
+            [
+              "gtt",
+              "Drip (continuous infusion)",
+              "'Midaz gtt' means a running infusion; record rate and each change."
+            ],
+            [
+              "IV / IM / PO / PR / SL",
+              "Intravenous / intramuscular / by mouth / rectal / sublingual",
+              "Route affects how fast a drug changes the EEG; IV bolus effects can appear within minutes."
+            ],
+            [
+              "ASM (older AED)",
+              "Antiseizure medication (antiepileptic drug)",
+              "Record names and dose times; a seizure stopping right after a dose is important to mark."
+            ],
+            [
+              "LEV, fosPHT, VPA, LCM",
+              "Levetiracetam, fosphenytoin, valproate, lacosamide",
+              "Common IV second-line ASMs; note the time each load is given."
+            ],
+            [
+              "Midaz, propofol, ketamine, pentobarb",
+              "Midazolam, propofol, ketamine, pentobarbital",
+              "Anesthetic infusions for refractory SE; titrated to an EEG goal set by the physician."
+            ],
+            [
+              "Dex / precedex",
+              "Dexmedetomidine",
+              "Sedative with relatively preserved arousal; still note it."
+            ],
+            [
+              "NMB / paralytic",
+              "Neuromuscular blocker (for example vecuronium, rocuronium, cisatracurium)",
+              "No muscle artifact and no visible convulsions; seizures can only be seen on EEG. Motor responses to stimulation are absent."
+            ],
+            [
+              "Nimodipine",
+              "Calcium channel blocker given after aneurysmal SAH",
+              "Identifies a post-SAH patient in the vasospasm window; can drop blood pressure."
+            ],
+            [
+              "HTS / mannitol",
+              "Hypertonic saline / mannitol",
+              "Treat raised ICP; tells you the brain is swollen."
+            ],
+            [
+              "Pressors",
+              "Vasopressors (for example norepinephrine)",
+              "Used for shock or to raise MAP in vasospasm."
+            ],
+            [
+              "NPO",
+              "Nothing by mouth",
+              "Do not give the patient water or food; affects sleep-deprivation and drug-timing questions."
+            ],
+            [
+              "PRN",
+              "As needed",
+              "PRN sedative or ASM doses must be logged with time; they change the EEG."
+            ],
+            [
+              "STAT",
+              "Immediately",
+              "A STAT cEEG means start as soon as possible; screening placement may come first."
+            ],
+            [
+              "q1h / q2h / q4h",
+              "Every 1 / 2 / 4 hours",
+              "Neuro checks every hour or two disturb the patient and appear on the EEG; learn the schedule."
+            ],
+            [
+              "BID / TID / QID",
+              "Twice / three times / four times daily",
+              "Dose schedule; 'daily' should be written out because 'QD' is on the Joint Commission do-not-use list."
+            ],
+            [
+              "POD / HD",
+              "Post-operative day / hospital day",
+              "Timeline; post-bleed day matters for DCI risk window."
+            ],
+            [
+              "s/p",
+              "Status post (after)",
+              "'s/p coiling' means the aneurysm has already been treated."
+            ],
+            [
+              "h/o / c/o",
+              "History of / complains of",
+              "Prior epilepsy changes the interpretation of new findings."
+            ],
+            [
+              "r/o",
+              "Rule out",
+              "'r/o NCSE' is the question the EEG must answer."
+            ],
+            [
+              "w/u",
+              "Work-up",
+              "The EEG is part of a larger evaluation."
+            ],
+            [
+              "Dx / Hx / Tx / Sx / Rx",
+              "Diagnosis / history / treatment / symptoms / prescription",
+              "Common chart shorthand."
+            ],
+            [
+              "NKDA",
+              "No known drug allergies",
+              "Also check for adhesive, collodion or latex allergy before set-up."
+            ],
+            [
+              "DNR / DNAR / DNI",
+              "Do not resuscitate / do not attempt resuscitation / do not intubate",
+              "Code status; you still record per the order and call for help per policy."
+            ],
+            [
+              "POLST",
+              "Physician (provider) orders for life-sustaining treatment",
+              "Portable form stating treatment wishes; not your decision but part of the context."
+            ],
+            [
+              "CMO",
+              "Comfort measures only",
+              "Monitoring may be discontinued; confirm with the team before removing."
+            ]
+          ]
+        },
+        {
+          "title": "EEG and monitoring terms",
+          "kind": "table",
+          "head": [
+            "Abbreviation",
+            "Meaning",
+            "Why it matters at the EEG"
+          ],
+          "rows": [
+            [
+              "cEEG / CCEEG",
+              "Continuous EEG / critical care continuous EEG",
+              "Long ICU recording, usually with video."
+            ],
+            [
+              "vEEG / cvEEG",
+              "Video EEG / continuous video EEG",
+              "Video lets the reader separate artifact and clinical events."
+            ],
+            [
+              "LTM",
+              "Long-term monitoring",
+              "Umbrella term for prolonged EEG in the ICU or EMU."
+            ],
+            [
+              "qEEG",
+              "Quantitative EEG",
+              "Computed trends that compress hours of EEG into one screen."
+            ],
+            [
+              "CSA",
+              "Compressed spectral array; the color version is the color density spectral array (CDSA), a spectrogram",
+              "Shows power by frequency over time; seizures often appear as bright repeated 'flames'."
+            ],
+            [
+              "aEEG",
+              "Amplitude-integrated EEG",
+              "Compressed amplitude band; used widely by neonatal teams."
+            ],
+            [
+              "ADR / RAV",
+              "Alpha-delta ratio / relative alpha variability",
+              "Trends used for DCI surveillance after SAH; a sustained drop is a warning sign."
+            ],
+            [
+              "BSR",
+              "Burst suppression ratio (percent of time suppressed)",
+              "Used to track the depth of burst suppression during anesthetic titration."
+            ],
+            [
+              "ESz / ESE",
+              "Electrographic seizure / electrographic status epilepticus (ACNS 2021)",
+              "ESz: epileptiform discharges faster than 2.5 Hz for 10 s or more, or a definite evolving pattern for 10 s or more. ESE: ESz for 10 continuous minutes or 20% of any 60-minute period."
+            ],
+            [
+              "ECSz / ECSE",
+              "Electroclinical seizure / electroclinical status epilepticus",
+              "EEG seizure with a time-locked clinical correlate, or EEG and clinical improvement after an IV antiseizure medication."
+            ],
+            [
+              "IIC",
+              "Ictal-interictal continuum",
+              "Patterns that do not meet seizure criteria but may be causing harm; physician decides on treatment."
+            ],
+            [
+              "LPDs / GPDs / BIPDs",
+              "Lateralized / generalized / bilateral independent periodic discharges",
+              "High-risk patterns; LPDs strongly associated with seizures. Old terms PLEDs, GPEDs, BIPLEDs."
+            ],
+            [
+              "LRDA / GRDA",
+              "Lateralized / generalized rhythmic delta activity",
+              "LRDA is associated with seizure risk."
+            ],
+            [
+              "BIRDs",
+              "Brief potentially ictal rhythmic discharges",
+              "Runs of rhythmic activity faster than 4 Hz lasting 0.5 to under 10 s, with evolution or epileptiform-like morphology; associated with seizures."
+            ],
+            [
+              "SI- / ST-",
+              "Stimulus-induced / stimulus-terminated modifiers",
+              "Patterns reproducibly brought on or made worse (SI-), or stopped or reduced (ST-), by an alerting stimulus; you must mark every stimulus to allow this."
+            ],
+            [
+              "SIRPIDs",
+              "Stimulus-induced rhythmic, periodic, or ictal-appearing discharges",
+              "Patterns triggered by stimulation or care; not the same as normal reactivity."
+            ],
+            [
+              "PDR",
+              "Posterior dominant rhythm",
+              "Usually absent in coma; its return is noted by the reader."
+            ],
+            [
+              "NDT / R. EEG T.",
+              "Neurodiagnostic technologist / Registered EEG Technologist",
+              "The person who records, maintains and notifies."
+            ]
+          ]
+        },
+        {
+          "title": "Units and wards",
+          "kind": "table",
+          "head": [
+            "Abbreviation",
+            "Meaning",
+            "Why it matters at the EEG"
+          ],
+          "rows": [
+            [
+              "ICU",
+              "Intensive care unit",
+              "General term; electrically and acoustically noisy."
+            ],
+            [
+              "Neuro ICU / NSICU / NCCU",
+              "Neuroscience or neurocritical care unit",
+              "Most SAH, ICH, TBI and status patients."
+            ],
+            [
+              "NICU",
+              "Neonatal ICU (some hospitals also use it for neuro ICU)",
+              "Ambiguous: confirm whether the patient is a newborn before you choose montage and supplies."
+            ],
+            [
+              "PICU / PCICU",
+              "Pediatric ICU / pediatric cardiac ICU",
+              "Children; post-cardiac surgery and ECMO patients may need cEEG."
+            ],
+            [
+              "MICU",
+              "Medical ICU",
+              "Sepsis, liver failure, overdoses, post-arrest patients."
+            ],
+            [
+              "SICU / STICU",
+              "Surgical ICU / surgical trauma ICU",
+              "Post-op and trauma patients, including TBI in some hospitals."
+            ],
+            [
+              "CVICU / CCU",
+              "Cardiovascular ICU / coronary (cardiac) care unit",
+              "Post-arrest, ECMO, LVAD and cardiac surgery patients."
+            ],
+            [
+              "EMU",
+              "Epilepsy monitoring unit",
+              "Planned admissions for event capture, not critical care; different staffing and goals."
+            ],
+            [
+              "ED / OR / PACU",
+              "Emergency department / operating room / post-anesthesia care unit",
+              "Places where STAT or emergent EEGs may start."
+            ],
+            [
+              "IMC / step-down",
+              "Intermediate care unit",
+              "Lower acuity; patient may be transferred while still on monitoring."
+            ]
+          ]
+        }
+      ],
+      "pearls": [
+        "H-H and WFNS grade SAH severity; mFisher grades the amount of blood on CT, which predicts vasospasm.",
+        "GCS ranges 3 to 15; RASS ranges +4 to -5; FOUR score has no verbal part.",
+        "'NICU' can mean neonatal or neuro ICU: confirm before you pack supplies.",
+        "s/p means status post, POD means post-operative day, r/o means rule out.",
+        "A paralytic (NMB) removes all visible convulsions and muscle artifact; only the EEG can show seizures.",
+        "gtt means an infusion; log rate changes on the record.",
+        "LPDs, GPDs, LRDA and BIRDs are ACNS terms you will read in reports; know the full names."
+      ],
+      "eegLink": "If you can decode the abbreviations, you know the risk window, the devices around the head, and the question the EEG must answer."
+    },
+    {
+      "id": "indications",
+      "title": "Indications",
+      "intro": "The ACNS consensus statement on continuous EEG in critically ill adults and children (Herman et al., 2015) lists when cEEG is useful and what it is looking for. Recommendations are expert opinion, and each facility writes its own protocol from them.",
+      "sections": [
+        {
+          "title": "Consensus indications and what the EEG is looking for",
+          "kind": "table",
+          "head": [
+            "Indication",
+            "Examples",
+            "What the EEG is looking for"
+          ],
+          "rows": [
+            [
+              "Persistent abnormal mental status after convulsive SE or clinical seizures",
+              "Patient not waking after convulsions stopped",
+              "Ongoing electrographic seizures or NCSE"
+            ],
+            [
+              "Acute supratentorial brain injury with altered mental status",
+              "TBI, ICH, SAH, ischemic stroke, CNS infection, tumor, post-neurosurgery",
+              "NCS, periodic and rhythmic patterns, focal changes"
+            ],
+            [
+              "Fluctuating or unexplained altered mental status",
+              "Sepsis, metabolic encephalopathy, unexplained coma",
+              "NCS hidden behind encephalopathy"
+            ],
+            [
+              "Periodic discharges on routine EEG",
+              "LPDs, GPDs, BIPDs found on a short study",
+              "Whether seizures occur over a longer window"
+            ],
+            [
+              "Pharmacologic paralysis with seizure risk",
+              "Paralyzed patients, some ECMO and TTM patients",
+              "Seizures that cannot be seen clinically"
+            ],
+            [
+              "Suspected clinical events",
+              "Twitching, posturing, eye deviation, autonomic surges",
+              "Whether the events have an EEG correlate"
+            ],
+            [
+              "Assessing treatment of seizures and status",
+              "Infusions for refractory SE",
+              "Seizure control, breakthrough seizures, depth of suppression"
+            ],
+            [
+              "Identifying cerebral ischemia",
+              "Poor-grade SAH, other high-risk patients",
+              "Loss of fast activity, increasing slowing, trend changes"
+            ],
+            [
+              "Monitoring sedation and pharmacological coma",
+              "IV sedation, induced coma",
+              "Depth of suppression, burst suppression"
+            ],
+            [
+              "Severity of encephalopathy and prognosis",
+              "Post cardiac arrest, other comatose patients",
+              "Background continuity, voltage, reactivity, patterns; physician interprets"
+            ]
+          ]
+        },
+        {
+          "title": "Duration and review",
+          "kind": "list",
+          "items": [
+            "Start as soon as possible when nonconvulsive seizures are suspected.",
+            "At least 24 hours of recording is recommended for seizure screening in most patients.",
+            "48 hours or more may be needed in comatose patients, patients with periodic discharges, or sedated patients.",
+            "A routine 30 to 60 minute EEG finds NCS in only about half of patients who have them; most are found within 24 to 48 hours.",
+            "No epileptiform discharges early in the recording lowers the chance of later seizures, which helps the physician decide when to stop.",
+            "The consensus suggests reader review at least twice daily for seizure indications and at least three times daily for vasospasm monitoring; facilities may review more often."
+          ]
+        },
+        {
+          "title": "Cardiac arrest and TTM",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Why EEG after arrest",
+              "body": "Comatose survivors are at high risk of nonconvulsive seizures, and the EEG background is one of several tools the physician uses for prognosis."
+            },
+            {
+              "title": "During cooling and rewarming",
+              "body": "Sedation, paralytics and low temperature all slow or suppress the EEG. Rewarming is a period when seizures may appear, so keep recording and mark temperature changes.",
+              "points": [
+                "Record temperature, sedation and paralytic status on the record",
+                "Shivering produces muscle artifact; note when anti-shivering drugs are given"
+              ]
+            },
+            {
+              "title": "Serial versus continuous",
+              "body": "The consensus notes that in adults after arrest, brief serial EEGs had similar yield to continuous recording in one study; many centers still use cEEG. Follow facility protocol."
+            },
+            {
+              "title": "Technologist role",
+              "body": "Perform standardized reactivity testing, describe and mark, notify per protocol. Never comment on prognosis to family or staff."
+            }
+          ]
+        },
+        {
+          "title": "SAH and delayed cerebral ischemia",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Who and when",
+              "body": "Highest-risk patients are higher-grade SAH (Hunt-Hess 3 to 5, the group the ACNS consensus flags for DCI surveillance) and those with thick blood on CT. Recording should start before the vasospasm window (about day 3) and continue until it has passed (about day 14)."
+            },
+            {
+              "title": "What ischemia looks like",
+              "body": "First a loss of fast (alpha and beta) activity, then increasing slow (delta) activity. New or worsening focal slowing is a warning sign."
+            },
+            {
+              "title": "Alpha-delta ratio",
+              "body": "The ratio of alpha power to delta power. A sustained fall, especially regional, can precede clinical DCI. In one small study of poor-grade SAH, a drop of more than 10% from baseline across consecutive measurements, or more than 50% in one measurement, predicted DCI."
+            },
+            {
+              "title": "Relative alpha variability",
+              "body": "Loss of the normal fluctuation of alpha power over time is another ischemia warning trend."
+            },
+            {
+              "title": "What you do",
+              "body": "Watch the qEEG trends, check the raw EEG for artifact when a trend drops, and notify the reader per protocol so the team can image or treat."
+            }
+          ]
+        },
+        {
+          "title": "Refractory status and burst-suppression titration",
+          "kind": "steps",
+          "items": [
+            "The physician sets the EEG goal: seizure suppression, or burst suppression with a target such as interburst interval or BSR.",
+            "Record the infusion drugs and rates at baseline and log every bolus and rate change on the record.",
+            "Watch the raw EEG and BSR trend; ACNS 2021 defines burst suppression as 50 to 99% of the record suppressed or attenuated, and suppression as voltage under 10 microvolts.",
+            "Report breakthrough seizures, bursts that look ictal, or suppression deeper or lighter than the goal, per protocol.",
+            "Keep recording through the wean, when seizures often recur, and afterwards for as long as the physician orders."
+          ]
+        },
+        {
+          "title": "Pediatric and neonatal notes",
+          "kind": "list",
+          "items": [
+            "Children, and especially infants, may be at higher risk of nonconvulsive seizures than adults.",
+            "Common pediatric indications: after convulsive SE, TBI including abusive head trauma, post-cardiac arrest, ECMO, encephalitis, after cardiac surgery.",
+            "Neonates are covered by a separate ACNS guideline. Many neonatal seizures are electrographic only, so clinical observation misses them.",
+            "Neonatal HIE treated with therapeutic hypothermia is a main neonatal cEEG indication, usually through cooling and rewarming.",
+            "Neonatal teams often use aEEG at the bedside; a full conventional neonatal montage is the reference for confirming seizures.",
+            "Use age-appropriate electrode numbers and positions, and gentle skin products: neonatal skin is fragile."
+          ]
+        }
+      ],
+      "pearls": [
+        "Strongest consensus indication: finding NCS and NCSE.",
+        "At least 24 h for seizure screening; 48 h or more if comatose, sedated or periodic discharges.",
+        "SAH vasospasm window: roughly day 3 to day 14 after the bleed.",
+        "Ischemia on EEG: fast activity fades first, slowing increases next.",
+        "A sustained drop in alpha-delta ratio is a DCI warning sign that must be checked against the raw EEG.",
+        "Burst suppression (ACNS 2021) means 50 to 99% of the record is suppressed or attenuated.",
+        "Keep recording during rewarming after TTM and during the wean of anesthetic infusions; seizures may appear then."
+      ],
+      "eegLink": "Knowing the indication tells you which trend to watch, how long to record, and what kind of change needs an urgent call."
+    },
+    {
+      "id": "technique",
+      "title": "Technique and Artifacts",
+      "intro": "Long ICU recordings must stay clean for days on patients who are moved, imaged, suctioned and turned. Set-up choices protect both the data and the skin, and good documentation makes the record interpretable.",
+      "sections": [
+        {
+          "title": "Set-up for long-term ICU recording",
+          "kind": "steps",
+          "items": [
+            "Verify two identifiers and the order; check allergies (adhesive, collodion, latex) and isolation precautions.",
+            "Talk with the RN: drains, incisions, fractures, lines, upcoming imaging or procedures, sedation and paralytics.",
+            "Measure and apply a full 10-20 array (a minimum of 16 scalp electrodes per the consensus); reduced or hairline montages are only for rapid screening until the full set can be applied.",
+            "Move positions around incisions, drains and bolts, keep left-right symmetry where possible, and document every substitution.",
+            "Add ECG at minimum; add eye, EMG or respiratory channels as useful.",
+            "Check impedances and run a calibration and biocal; review the first part of the record for quality.",
+            "Stay for an initial period to confirm quality and perform baseline reactivity testing (the consensus describes the first 20 minutes).",
+            "Show the RN the event button and how to reach EEG staff; set the camera."
+          ]
+        },
+        {
+          "title": "Electrode choices and imaging compatibility",
+          "kind": "table",
+          "head": [
+            "Option",
+            "Use",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Disk electrodes with collodion",
+              "Preferred for stable multi-day recording",
+              "Collodion is flammable and needs ventilation; follow facility policy and SDS. Some centers use adhesive paste and covers instead."
+            ],
+            [
+              "CT/MRI-compatible electrodes (conductive plastic or similar)",
+              "Patients likely to be imaged (more than half of cEEG patients need neuroimaging)",
+              "Reduce CT streak artifact; MRI use only within the manufacturer's labeling and facility policy."
+            ],
+            [
+              "Subdermal wire electrodes",
+              "Very prolonged recording in some centers",
+              "May reduce skin breakdown; placement per policy and credentials."
+            ],
+            [
+              "Subdermal needle electrodes",
+              "Rapid emergency recording, per policy",
+              "Generally not recommended for prolonged recording and not MRI compatible; sharps and infection precautions."
+            ],
+            [
+              "Caps or templates",
+              "Rapid set-up or when an NDT is not available",
+              "Caps need disinfection between patients; replace with a measured montage when possible."
+            ]
+          ]
+        },
+        {
+          "title": "Video",
+          "kind": "list",
+          "items": [
+            "Time-synchronized video is recommended for ICU cEEG.",
+            "Frame the whole body if possible, with the face visible; wall or pole mounting keeps the view stable.",
+            "Ask staff not to cover the patient's face and limbs completely; recheck framing after turns and procedures.",
+            "Audio is optional but helps identify events and care activities.",
+            "Follow facility privacy policy for camera placement and who may view recordings."
+          ]
+        },
+        {
+          "title": "Quality, impedance and skin checks",
+          "kind": "table",
+          "head": [
+            "Check",
+            "Frequency in the ACNS consensus",
+            "What to do"
+          ],
+          "rows": [
+            [
+              "Recording quality review",
+              "At least twice daily",
+              "Look for bad channels, artifact, video framing, correct patient and time."
+            ],
+            [
+              "Electrode impedance",
+              "At least daily, and whenever the recording changes",
+              "Consensus calls under 10 kilohms acceptable for cEEG (routine EEG guidelines aim for under 5 kilohms). Re-gel or re-apply as needed."
+            ],
+            [
+              "Skin inspection",
+              "Daily",
+              "Look under and around electrodes for redness, breakdown or infection; document and report per written protocol."
+            ],
+            [
+              "Reader review",
+              "At least twice daily (three times for vasospasm)",
+              "Daily written report; interim reports for important changes."
+            ]
+          ],
+          "note": "Many facilities check more often, especially in neonates, edematous or anticoagulated patients, and patients on cooling or pressors."
+        },
+        {
+          "title": "Documentation on the record",
+          "kind": "list",
+          "items": [
+            "Patient state, sedation and paralytic drugs with rates; temperature during TTM.",
+            "Electrode substitutions, skull defects, drains and incisions.",
+            "Each stimulus with time, type, side and observed response.",
+            "Nursing care, suctioning, turning, chest physiotherapy, bathing, procedures and transports.",
+            "Medication boluses, especially ASMs and sedatives.",
+            "Clinical events reported by staff and what the RN saw.",
+            "Every notification: who, when, what was reported, per protocol."
+          ]
+        },
+        {
+          "title": "ICU artifact table",
+          "kind": "table",
+          "head": [
+            "Source",
+            "How it looks",
+            "How to confirm",
+            "Fix"
+          ],
+          "rows": [
+            [
+              "Ventilator",
+              "Slow or sharp waves repeating at the breath rate; water in tubing causes irregular bursts",
+              "Time-locked to respiration; compare with vent rate or a respiration channel; video",
+              "Ask RT to drain condensate; reposition tubing away from leads; note it on the record"
+            ],
+            [
+              "IV infusion pump",
+              "Brief spikes or sharp transients at a regular interval",
+              "Repeats at a fixed rhythm unrelated to the brain; video shows the pump near the leads",
+              "Move the pump or lead wires apart; note it"
+            ],
+            [
+              "CRRT or dialysis",
+              "Rhythmic waves at the pump rate, often in many channels",
+              "Rate matches the pump; disappears when the pump pauses",
+              "Route lead wires away from circuit; note it"
+            ],
+            [
+              "Air mattress or percussion/vibration bed",
+              "Rhythmic slow or fast activity, sometimes in all channels",
+              "Matches bed cycling; video and bed settings",
+              "Ask whether the mode can be paused for a check; note it"
+            ],
+            [
+              "Cooling device and shivering",
+              "Pump-related rhythmic artifact; shivering gives fast muscle activity",
+              "Matches device; shivering visible on video",
+              "Separate leads from pads and tubing; note anti-shivering drugs"
+            ],
+            [
+              "ECMO circuit",
+              "Rhythmic or noisy artifact; can mimic rhythmic patterns",
+              "Steady relation to pump; unchanged across the head",
+              "Route leads away; record circuit changes; ask perfusion if needed"
+            ],
+            [
+              "Pacemaker",
+              "Very sharp narrow spikes",
+              "Time-locked to pacer spikes in the ECG channel",
+              "Note it; ensure ECG channel is clean"
+            ],
+            [
+              "ECG and pulse",
+              "Sharp waves (ECG) or slow waves (pulse) locked to the heartbeat",
+              "Lines up with QRS in the ECG channel",
+              "Re-position the electrode off the vessel; check references"
+            ],
+            [
+              "Chest physiotherapy or patting",
+              "Rhythmic slow or sharp waves at the patting rate, can look like rhythmic delta",
+              "Video shows patting; stops when care stops",
+              "Mark the activity; do not report as a pattern"
+            ],
+            [
+              "Suctioning, oral care, turning",
+              "Large movement and muscle artifact",
+              "Video and RN log",
+              "Mark care times; let the EEG settle before testing reactivity"
+            ],
+            [
+              "Chewing, hiccups, tremor, myoclonus",
+              "Repeated muscle or movement bursts",
+              "Video; EMG channel; some myoclonus has an EEG correlate",
+              "Mark and describe; let the reader decide"
+            ],
+            [
+              "Electrode pop or drying gel",
+              "Sudden steep deflection in one electrode",
+              "Only one electrode involved; high impedance",
+              "Re-gel or replace electrode"
+            ],
+            [
+              "60 Hz interference",
+              "Fine fast regular activity",
+              "Exactly 60 Hz (50 Hz in some countries); worse with high impedance",
+              "Fix impedance, unplug unneeded equipment per policy, move cables; notch filter only as a last resort and document it"
+            ],
+            [
+              "Sweat",
+              "Very slow wandering baseline",
+              "Many electrodes; fever or warm room",
+              "Cool the patient's environment if allowed; re-prep"
+            ]
+          ]
+        }
+      ],
+      "pearls": [
+        "Full 10-20 array (at least 16 electrodes) for standard cEEG; reduced montages are for screening only.",
+        "Collodion is preferred for stable long-term electrodes; CT/MRI-compatible electrodes when imaging is likely.",
+        "Subdermal needles are not recommended for prolonged recording and are not MRI compatible.",
+        "Consensus: impedance under 10 kilohms acceptable; check at least daily and quality at least twice daily.",
+        "Inspect the skin under electrodes daily and document; report breakdown per protocol.",
+        "Always record ECG with ICU EEG; it separates cardiac artifact from cerebral activity.",
+        "If an artifact is rhythmic, ask what machine near the patient runs at that rhythm."
+      ],
+      "eegLink": "A clean ICU record depends on knowing every machine at the bedside and writing down every care activity."
+    },
+    {
+      "id": "qeeg",
+      "title": "Quantitative EEG Trends",
+      "intro": "qEEG trends compress hours of EEG into one screen so changes can be found quickly. They are screening tools: every trend change must be checked on the raw EEG because artifact makes trends lie.",
+      "sections": [
+        {
+          "title": "Common trends",
+          "kind": "table",
+          "head": [
+            "Trend",
+            "What it shows",
+            "Typical use"
+          ],
+          "rows": [
+            [
+              "CSA / CDSA (color spectrogram)",
+              "Power at each frequency over time, color coded",
+              "Seizures often appear as repeated bright 'flames'; slowing shifts power to low frequencies"
+            ],
+            [
+              "aEEG",
+              "Filtered, rectified, compressed amplitude band over time",
+              "Neonatal background and seizures (seizures often raise the lower margin briefly)"
+            ],
+            [
+              "Rhythmicity spectrogram",
+              "How rhythmic the EEG is at each frequency",
+              "Highlights rhythmic patterns and possible seizures"
+            ],
+            [
+              "Asymmetry index",
+              "Difference in power between hemispheres",
+              "Shows lateralized seizures or new focal slowing"
+            ],
+            [
+              "Burst suppression ratio (BSR)",
+              "Percent of each epoch that is suppressed",
+              "Tracking depth of anesthetic coma"
+            ],
+            [
+              "Alpha-delta ratio (ADR)",
+              "Alpha power divided by delta power",
+              "DCI surveillance after SAH; a sustained drop is a warning"
+            ],
+            [
+              "Relative alpha variability",
+              "How much alpha power fluctuates over time",
+              "Loss of variability is a DCI warning sign"
+            ],
+            [
+              "Envelope / amplitude trend",
+              "Overall voltage over time",
+              "Changes in voltage, suppression, seizures"
+            ],
+            [
+              "Automated seizure detection",
+              "Software flags possible seizures",
+              "Screening aid; false positives and missed seizures both happen"
+            ]
+          ]
+        },
+        {
+          "title": "Display settings",
+          "kind": "list",
+          "items": [
+            "For seizure screening, the consensus suggests trend screens of 2 hours or less, with 30 to 60 minutes preferred.",
+            "Short seizures can be missed if the trend averages over long epochs.",
+            "For ischemia trends, longer windows (several hours) help show slow changes.",
+            "Trends cannot be interpreted in isolation from the raw EEG, and therapy changes should follow review of the raw EEG by the reader."
+          ]
+        },
+        {
+          "title": "When a trend changes: technologist steps",
+          "kind": "flow",
+          "items": [
+            "Trend change noticed (flame, asymmetry, BSR shift, ADR drop)",
+            "Open the raw EEG at that exact time",
+            "Check video, impedance and care log for artifact",
+            "Describe what the raw EEG shows and mark it",
+            "If a possible seizure, new pattern or sustained change: notify the reader per protocol",
+            "Document the time, what was seen and who was notified"
+          ]
+        },
+        {
+          "title": "Trend traps",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Muscle and chewing",
+              "body": "Raise high-frequency power and can look like an arousal or a seizure flame."
+            },
+            {
+              "title": "Patting and bed vibration",
+              "body": "Rhythmic artifact can create a false rhythmicity or seizure flag."
+            },
+            {
+              "title": "A bad electrode",
+              "body": "One high-impedance electrode can create a false asymmetry or a fake ADR drop."
+            },
+            {
+              "title": "Sedation changes",
+              "body": "A propofol bolus can reduce fast activity and change BSR; check the drug log before calling it ischemia or deepening coma."
+            }
+          ]
+        }
+      ],
+      "pearls": [
+        "qEEG is a screening tool; the raw EEG is the reference.",
+        "CSA shows frequency power over time; repeated bright flames suggest seizures.",
+        "aEEG is a compressed amplitude band widely used in neonatal ICUs.",
+        "BSR is the percent of time suppressed.",
+        "Falling ADR after SAH is a DCI warning; check artifact and drug changes first, then notify per protocol.",
+        "Seizure trend windows: 30 to 60 minutes preferred, 2 hours or less."
+      ],
+      "eegLink": "Trends let one technologist watch many patients, but only if every trend alarm is checked on the raw EEG."
+    },
+    {
+      "id": "stimulation",
+      "title": "Stimulation and Reactivity",
+      "intro": "Comatose or sedated patients cannot hyperventilate, look at photic stimulation on command, or open their eyes when asked. Instead, the technologist tests reactivity with a standardized, escalating sequence of stimuli and marks each one carefully.",
+      "sections": [
+        {
+          "title": "Why standard activation is not possible",
+          "kind": "list",
+          "items": [
+            "Hyperventilation needs a cooperative, breathing patient; ventilated patients cannot do it, and changing CO2 in brain injury is a medical decision.",
+            "Eye opening and closing on command needs a patient who follows commands.",
+            "Photic stimulation is rarely useful in coma and is done only if ordered.",
+            "Reactivity testing replaces these: it asks whether the brain's electrical activity changes when the patient is stimulated."
+          ]
+        },
+        {
+          "title": "Standardized escalating stimulus sequence",
+          "kind": "steps",
+          "items": [
+            "Check with the RN: sedation and paralytic status, recent care, pain and injuries, anything to avoid (fractures, lines, raised ICP concerns).",
+            "Wait for a quiet, settled baseline with no care in progress, and record it before the first stimulus.",
+            "Auditory: call the patient's name in a normal voice, then loudly, in each ear; then a loud clap.",
+            "Tactile: light touch on the arm or face.",
+            "Passive eye opening: gently open the eyes (this also helps identify eye-movement artifact).",
+            "Nasal tickle with a cotton swab, if allowed and the nose is free of tubes.",
+            "Noxious stimulation per facility policy: for example nail-bed pressure, trapezius squeeze, or sternal rub. Suctioning by the RN can also be used as a stimulus.",
+            "Between stimuli, let the EEG return to its baseline before giving the next one.",
+            "If no change after one round, a second round of standardized noxious stimulation is suggested (ACNS 2021), starting again from a settled, unstimulated baseline, before the reader calls it unreactive before calling it unreactive.",
+            "Repeat testing at the times your protocol sets (for example at hookup and on daily rounds)."
+          ]
+        },
+        {
+          "title": "Marking each stimulus",
+          "kind": "list",
+          "items": [
+            "Mark the exact start of each stimulus with type, side and intensity (for example 'loud voice R ear', 'trapezius squeeze L').",
+            "Mark what you saw clinically: eye opening, grimace, limb movement, breathing over the vent, heart-rate change, nothing.",
+            "Mark care events that act as stimuli (suctioning, turning) even when you did not test.",
+            "Without exact marks the reader cannot separate reactivity from chance, or label a pattern SI-."
+          ]
+        },
+        {
+          "title": "Reactivity, artifact or stimulus-induced pattern",
+          "kind": "table",
+          "head": [
+            "What you see after the stimulus",
+            "What it is",
+            "How to describe it"
+          ],
+          "rows": [
+            [
+              "Change in cerebral voltage or frequency, including attenuation or new faster activity",
+              "Reactivity (ACNS 2021 definition)",
+              "Describe the change and the stimulus; the reader categorizes it"
+            ],
+            [
+              "Only muscle activity or eye-blink artifact",
+              "Not reactivity",
+              "Note the artifact; do not call the EEG reactive"
+            ],
+            [
+              "Movement artifact from your hands or the bed",
+              "Artifact",
+              "Mark it so the reader does not mistake it"
+            ],
+            [
+              "Rhythmic, periodic or ictal-appearing discharges that start or worsen with stimulation",
+              "SIRPIDs; patterns get the SI- prefix (for example SI-LPDs, SI-GRDA)",
+              "Mark the stimulus and onset; stop that stimulus; notify per protocol if ictal-appearing"
+            ],
+            [
+              "A pattern that stops or attenuates with stimulation",
+              "Stimulus-terminated (ST-) modifier",
+              "Mark and describe"
+            ],
+            [
+              "No change after two rounds",
+              "Possibly unreactive; reader decides",
+              "Document stimuli, confounders and that testing was adequate"
+            ],
+            [
+              "Too much artifact or inadequate testing",
+              "Reactivity 'unclear'",
+              "Document why testing could not be judged"
+            ]
+          ],
+          "note": "ACNS 2021 reactivity categories: reactive, unreactive, SIRPIDs only, unclear, unknown (not tested, or patient fully alert throughout). The reader assigns them, not the technologist."
+        },
+        {
+          "title": "Confounders to record",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Sedatives and anesthetics",
+              "body": "Can reduce or abolish reactivity. Record drugs, doses and the time of the last bolus."
+            },
+            {
+              "title": "Paralytics",
+              "body": "Remove motor responses and muscle artifact, so you cannot judge clinical arousal; the EEG may still change. Record that the patient is paralyzed."
+            },
+            {
+              "title": "Hypothermia",
+              "body": "Low temperature slows the EEG and may reduce reactivity; record temperature."
+            },
+            {
+              "title": "Metabolic state and recent seizures",
+              "body": "Post-ictal state and severe metabolic disturbances can blunt responses; note them."
+            },
+            {
+              "title": "Stimulus artifact",
+              "body": "Your own movements, the voice of staff, or bed motion can create false changes; keep still leads and note it."
+            }
+          ]
+        },
+        {
+          "title": "Safety, dignity and what not to do",
+          "kind": "list",
+          "items": [
+            "Always tell the patient what you are about to do, even if they appear unresponsive; hearing may be preserved.",
+            "Coordinate with the RN; explain to family members at the bedside what testing involves.",
+            "Use the minimum force needed and the stimuli your facility allows; never cause bruising or skin injury.",
+            "Do not use pins, sharp objects or burning stimuli.",
+            "Do not stimulate on injured, fractured, burned or surgical areas, or near drains and lines.",
+            "Do not test during a seizure or right after a sedative bolus unless the protocol says so; note timing instead.",
+            "Do not keep stimulating if stimulation triggers ictal-appearing patterns; mark it and notify per protocol.",
+            "Do not call a response 'reactive' because of muscle or eye artifact, and never tell the family what the result means."
+          ]
+        }
+      ],
+      "pearls": [
+        "ACNS 2021: reactivity is a change in cerebral EEG activity to stimulation, in voltage or frequency, including attenuation.",
+        "Muscle activity or eye-blink artifact alone does not count as reactivity.",
+        "Use a standardized, escalating sequence: auditory, tactile, then noxious per protocol.",
+        "If unreactive after one round, perform a second round of standardized noxious stimulation.",
+        "SIRPIDs are stimulus-induced rhythmic, periodic or ictal-appearing discharges; they are not normal reactivity.",
+        "SI- means reproducibly brought on or made worse (exacerbated) by stimulation; ST- means reproducibly terminated or reduced by it.",
+        "Record sedation, paralytics and temperature with every test; they change reactivity."
+      ],
+      "eegLink": "Reactivity and stimulus-induced patterns are only interpretable if every stimulus is standardized and marked with time, type and response."
+    },
+    {
+      "id": "reactivity-lab",
+      "title": "Reactivity lab",
+      "intro": "Three stuporous ICU patients. At the 'Stimulus' mark (5 s) the technologist called the patient's name in a loud voice, one stimulus with its own mark. Compare the settled 5 s before with the 5 s after, and decide what you would document. In practice the protocol continues one stimulus at a time (tactile, then noxious per policy), each marked and followed by a settling pause.",
+      "sections": [
+        {
+          "title": "Patient 1",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 601,
+            "ageYears": 61,
+            "state": "stupor",
+            "sensitivity": 10,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal"
+            ],
+            "findings": [
+              {
+                "type": "electrodecrement",
+                "at": [
+                  5.0
+                ],
+                "durS": 6,
+                "depth": 0.55,
+                "slowUv": 0,
+                "marker": "Stimulus"
+              },
+              {
+                "type": "rhythm",
+                "hz": 6,
+                "bwHz": 1.5,
+                "uv": 60,
+                "center": [
+                  0,
+                  0.2
+                ],
+                "sigma": 0.9,
+                "runs": [
+                  [
+                    5.3,
+                    10
+                  ]
+                ]
+              }
+            ],
+            "background": {
+              "pdrHz": 0,
+              "pdrUv": 0,
+              "theta": 5,
+              "delta": 6,
+              "beta": 1,
+              "noise": 3
+            }
+          },
+          "question": "What does the record show after the stimulus?",
+          "options": [
+            "No change: the background is unreactive",
+            "Reactivity: the background attenuates and becomes faster after the stimulus",
+            "Stimulus-induced periodic discharges",
+            "Muscle artifact only, so reactivity cannot be judged"
+          ],
+          "answer": 1,
+          "explanation": "Before the mark the background is a mixed theta and delta pattern; after it the overall amplitude drops to roughly half and the slow waves give way to lower-voltage, faster theta, and the change lasts for seconds, beyond the moment of stimulation. A reproducible change in background amplitude or frequency after a stimulus, which is not artifact, is reactivity. Document the stimulus, its time and type, and the change you saw; repeat the stimulus to confirm per protocol.",
+          "caption": "Background before and after a stimulus."
+        },
+        {
+          "title": "Patient 2",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 602,
+            "ageYears": 70,
+            "state": "stupor",
+            "sensitivity": 10,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal"
+            ],
+            "findings": [
+              {
+                "type": "electrodecrement",
+                "at": [
+                  5.0
+                ],
+                "durS": 0.3,
+                "depth": 0.0,
+                "slowUv": 0,
+                "marker": "Stimulus"
+              },
+              {
+                "type": "periodic",
+                "intervalS": 1.1,
+                "firstAt": 0.2,
+                "from": 5.4,
+                "to": 10,
+                "uv": 200,
+                "center": [
+                  0,
+                  0.25
+                ],
+                "sigma": 0.55,
+                "durMs": 180,
+                "diffuse": 0.7
+              }
+            ],
+            "background": {
+              "pdrHz": 0,
+              "pdrUv": 0,
+              "theta": 5,
+              "delta": 6,
+              "beta": 1,
+              "noise": 3
+            }
+          },
+          "question": "What should you document after the stimulus?",
+          "options": [
+            "Reactivity: the background became faster after the stimulus",
+            "Generalized periodic discharges appearing after the stimulus (possibly stimulus-induced); mark and notify",
+            "Artifact from the nurse's hands on the electrodes",
+            "An electrographic seizure, because discharges started"
+          ],
+          "answer": 1,
+          "explanation": "Before the mark there are no discharges; within about half a second of the stimulus, sharp complexes appear in both hemispheres at about 1 Hz with gaps between them. Periodic discharges brought on by alerting are called stimulus-induced (SIRPIDs; ACNS 2021 prefers naming the specific pattern, for example SI-GPDs). Whether the pattern is SI- depends on it being reproducible with repeated stimulation, and the reader decides. This is not a reactive background, it is not hand artifact because it is generalized and periodic, and it does not meet seizure criteria on this page. Mark the stimulus time and type and notify per protocol.",
+          "caption": "Discharges appearing after a stimulus."
+        },
+        {
+          "title": "Patient 3",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 603,
+            "ageYears": 58,
+            "state": "stupor",
+            "sensitivity": 10,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal"
+            ],
+            "findings": [
+              {
+                "type": "electrodecrement",
+                "at": [
+                  5.0
+                ],
+                "durS": 0.3,
+                "depth": 0.0,
+                "slowUv": 0,
+                "marker": "Stimulus"
+              },
+              {
+                "type": "muscle",
+                "from": 5.0,
+                "to": 5.9,
+                "sites": [
+                  "Fp1",
+                  "Fp2",
+                  "F7",
+                  "F8",
+                  "T3",
+                  "T4"
+                ],
+                "uv": 28
+              }
+            ],
+            "background": {
+              "pdrHz": 0,
+              "pdrUv": 0,
+              "theta": 5,
+              "delta": 6,
+              "beta": 1,
+              "noise": 3
+            }
+          },
+          "question": "How should this response be described?",
+          "options": [
+            "Reactive, because the frontal and temporal channels changed after the stimulus",
+            "Stimulus-induced rhythmic delta in the frontal channels",
+            "Electrographic seizure in the temporal channels",
+            "No EEG change to this stimulus: only brief muscle artifact, with an unchanged background"
+          ],
+          "answer": 3,
+          "explanation": "Fast, spiky muscle activity appears in the frontopolar and temporal channels for under a second around the stimulus, then the theta-delta background continues unchanged in amplitude and frequency. Artifact caused by the stimulus itself does not count as reactivity, so there is no EEG change to this stimulus. Continue the escalating sequence (tactile, then noxious stimuli per protocol, and a second round from a settled baseline) before reactivity can be judged; the reader assigns the reactivity category. Record sedation, paralytics and temperature, because they can suppress reactivity.",
+          "caption": "Stimulus with only muscle artifact."
+        }
+      ],
+      "pearls": [
+        "Mark every stimulus with its time and type: name, loud voice, clap, touch, then the protocol's noxious stimulus.",
+        "Wait and watch: compare a stable stretch before with several seconds after.",
+        "Artifact from the stimulus is not reactivity.",
+        "Discharges that appear after alerting are stimulus-induced (SI-), not reactivity.",
+        "Record sedation, paralytics and temperature: they can blunt reactivity."
+      ]
+    }
+  ],
+  "mistakes": [
+    [
+      "A normal-looking patient on the vent cannot be seizing because nobody sees convulsions.",
+      "Most ICU seizures are nonconvulsive, and paralytics hide all motor signs; only the EEG shows them."
+    ],
+    [
+      "A 30 minute routine EEG is enough to rule out seizures in a comatose patient.",
+      "Routine EEG misses many NCS; at least 24 h is recommended, 48 h or more if comatose, sedated or with periodic discharges."
+    ],
+    [
+      "'NICU' always means neonatal ICU.",
+      "Some hospitals also use it for neuro ICU; confirm before choosing supplies and montage."
+    ],
+    [
+      "Hunt-Hess and mFisher measure the same thing.",
+      "Hunt-Hess grades the clinical severity of SAH; mFisher grades the amount of blood on CT."
+    ],
+    [
+      "A few electrodes on the forehead are fine for days of ICU monitoring.",
+      "Standard cEEG uses a full 10-20 array of at least 16 electrodes; reduced montages are only for rapid screening."
+    ],
+    [
+      "Subdermal needles are a good choice for multi-day recording and MRI.",
+      "Needles are not recommended for prolonged recording and are not MRI compatible; use collodion disks or imaging-compatible electrodes per policy."
+    ],
+    [
+      "A bright flame on the spectrogram is a seizure.",
+      "qEEG only screens; check the raw EEG, video and care log for artifact before notifying per protocol."
+    ],
+    [
+      "A falling alpha-delta ratio after SAH should be ignored until the patient gets worse.",
+      "A sustained ADR drop or new focal slowing can precede clinical DCI; check artifact and sedation, then notify per protocol."
+    ],
+    [
+      "Eye blinks or a grimace on the EEG after a sternal rub mean the EEG is reactive.",
+      "Muscle and eye artifacts do not count; reactivity is a change in cerebral activity."
+    ],
+    [
+      "SIRPIDs show the brain is reacting normally.",
+      "SIRPIDs are stimulus-induced rhythmic, periodic or ictal-appearing discharges, a separate category from reactivity."
+    ],
+    [
+      "Give stimuli back to back to save time.",
+      "Wait for a settled baseline, give each stimulus in order, let the EEG return to baseline, and mark each with time, type and response."
+    ],
+    [
+      "The technologist can tell the family the EEG shows poor prognosis after cardiac arrest.",
+      "Prognosis is the physician's role; the technologist records, describes, marks and notifies per protocol."
+    ]
+  ],
+  "memory": [
+    [
+      "FOUR score",
+      "Four parts: Eye, Motor, Brainstem reflexes, Respiration, each 0 to 4"
+    ],
+    [
+      "Order decoding: Dx, Time, Devices, Drugs, Question",
+      "The five things to pull out of every ICU cEEG order"
+    ]
+  ]
+}
