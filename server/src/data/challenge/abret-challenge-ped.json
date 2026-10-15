@@ -1,0 +1,512 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-14",
+  "bank": "challenge",
+  "focus": "pediatric-eeg",
+  "description": "Original items on infant and child EEG maturation: posterior rhythm by age, spindles, vertex waves, hypnagogic hypersynchrony, youth waves, pediatric hyperventilation, infantile spasms and Lennox-Gastaut. Text only; not yet medically verified.",
+  "totalQuestions": 18,
+  "questions": [
+    {
+      "id": "ch-ped-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posterior-dominant-rhythm",
+        "maturation",
+        "pediatric"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An alert, cooperative 4-year-old has a posterior rhythm of 5 Hz that blocks well with eye opening and is symmetric. How should this frequency be regarded?",
+      "explanation": "By about 3 years the posterior dominant rhythm normally reaches roughly 8 Hz, so 5 Hz in an alert 4-year-old is slower than expected and should be measured and described for the reader. A 5 Hz rhythm belongs to late infancy, not the preschool years. Good reactivity and symmetry are reassuring features, but they do not make an age-inappropriate frequency normal. Blocking on eye opening is expected of a true posterior rhythm, so loss of reactivity is a separate abnormality rather than a condition for calling the rate slow.",
+      "learningObjective": "Judge whether a posterior dominant rhythm frequency is appropriate for a preschool child.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Normal for age, as 5 Hz is typical until about age 6",
+        "Slow for age, as about 8 Hz is expected by age 3",
+        "Normal for age, since reactivity matters more than rate",
+        "Slow for age, but only if it fails to block on opening"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posterior-dominant-rhythm",
+        "maturation",
+        "infant"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy term-born 8-month-old, awake and calm, shows a 5 to 6 Hz occipital rhythm that appears when the eyes are closed and attenuates when they open. How should this be regarded?",
+      "explanation": "The posterior rhythm first emerges at about 3-4 Hz around 3-4 months post-term and reaches roughly 5-6 Hz in the second half of the first year, so a reactive 5-6 Hz rhythm at 8 months is normal. An 8 Hz rhythm is not expected until about 3 years. A reactive posterior rhythm is normally present well before the first birthday. Theta-range background in an infant is the expected maturational frequency, not a sign of encephalopathy when it is reactive and age-appropriate.",
+      "learningObjective": "Recognize the normal posterior rhythm frequency in late infancy.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Slow, as 8 Hz is expected by about 6 months",
+        "Abnormal, as no posterior rhythm exists before 1 year",
+        "Slow, as awake theta in a child suggests encephalopathy",
+        "Normal, as it falls in the expected range for this age"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posterior-dominant-rhythm",
+        "corrected-age",
+        "prematurity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "An infant born at 30 weeks' gestation is recorded at 6 months chronological age. Awake with eyes closed, a reactive 3.5 Hz occipital rhythm is seen. How should this be interpreted?",
+      "explanation": "Born 10 weeks early, this infant has a corrected (post-term) age of about 3.5 to 4 months, the age at which a 3-4 Hz posterior rhythm typically first appears, so the finding fits the corrected age. Maturational milestones in infancy are judged by corrected age, not only in the neonatal period. An 8 Hz rhythm is a preschool milestone, not one for 6 months. Healthy preterm-born infants do develop a posterior rhythm, following the corrected-age timetable.",
+      "learningObjective": "Apply corrected age when judging posterior rhythm frequency in a preterm-born infant.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Within the expected range once age is corrected for prematurity",
+        "Slow, because a 6-month-old should already show about 8 Hz",
+        "Abnormal, because preterm infants do not form a posterior rhythm",
+        "Slow, since corrected age is used only in the neonatal period"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posterior-dominant-rhythm",
+        "maturation",
+        "school-age"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A fully alert 10-year-old, with eyes closed and no drowsiness, shows a symmetric reactive posterior rhythm of 7 Hz throughout the record. How should this be regarded?",
+      "explanation": "By 3 years the posterior rhythm reaches about 8 Hz and it continues to rise, reaching roughly 9 Hz or more in most children by about 9-10 years, so a steady 7 Hz rhythm in an alert 10-year-old is slow and should be measured and described. Most children reach adult-range frequencies (about 10 Hz) by about 8-10 years. Reactivity does not make an age-inappropriate frequency normal. Symmetry is a separate feature; a symmetric rhythm can still be too slow.",
+      "learningObjective": "Identify a slow posterior rhythm in a school-age child.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Normal, as adult rates are reached only after puberty",
+        "Normal, as any reactive rhythm in a child is acceptable",
+        "Slow for age; measure it and describe it for the reader",
+        "Slow for age, but only when the rhythm is asymmetric"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posterior-dominant-rhythm",
+        "technique",
+        "infant"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A technologist recording a 7-month-old wants to show the posterior rhythm, but the infant will not close the eyes on request. What is the best approach?",
+      "explanation": "Passive eye closure, gently shading or closing the infant's eyes while awake, brings out the posterior rhythm, and annotating the closure and opening lets the reader measure frequency and reactivity. Photic driving is a stimulus-locked response, not the spontaneous posterior rhythm. The posterior rhythm is a waking rhythm and is replaced by sleep patterns, so waiting for sleep defeats the aim. Crying adds muscle and movement artifact and obscures background activity.",
+      "learningObjective": "Use passive eye closure to show the posterior rhythm in infants.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Run photic stimulation at 10 Hz to drive a posterior rhythm",
+        "Gently cover the eyes by hand and note rhythm and reactivity",
+        "Wait for sleep, when the posterior rhythm is easiest to see",
+        "Have a parent make the infant cry to raise its alertness"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-spindles",
+        "asymmetry",
+        "infant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy-appearing 10-month-old is recorded in NREM sleep for 30 minutes. Spindles occur often at C3 and Cz but are never seen at C4. How should this be regarded?",
+      "explanation": "Asynchrony, meaning spindles that occur on each side at different times, is normal in infancy; but consistent absence of spindles over one hemisphere throughout a good sample of sleep is a persistent asymmetry that suggests dysfunction on the side lacking spindles, and it should be described. Asynchrony is not the same as one-sided absence. Spindles in infancy appear independently over both hemispheres rather than developing on one side first. Synchrony is not expected until about 2 years, so demanding synchrony at 10 months is wrong.",
+      "learningObjective": "Distinguish normal infant spindle asynchrony from persistent unilateral spindle absence.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Normal, as spindle asynchrony is expected under age 2",
+        "Normal, as spindles mature on one side at a time",
+        "Abnormal, as spindles are persistently absent on one side",
+        "Abnormal, as every spindle at this age should be synchronous"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-spindles",
+        "corrected-age",
+        "prematurity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "An infant born at 32 weeks' gestation is recorded at 2 months chronological age during quiet sleep. No sleep spindles are seen. How should this be regarded?",
+      "explanation": "Born 8 weeks early, this infant is about 40 weeks postmenstrual age at 2 months chronological age, that is, near term by corrected age. Spindles typically emerge around 6-8 weeks after term, so their absence now is expected. Counting weeks from birth instead of from term ignores prematurity. Spindles are not a feature of the newborn or preterm EEG. Preterm birth does not speed brain maturation; the EEG follows postmenstrual age.",
+      "learningObjective": "Use corrected age to judge expected spindle onset in a preterm-born infant.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Abnormal, as spindles appear by 6 to 8 weeks after birth",
+        "Abnormal, as spindles are present at birth in preterm infants",
+        "Unexpected, as prematurity speeds up spindle development",
+        "Expected, as the infant is only about term by corrected age"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "vertex-waves",
+        "k-complexes",
+        "maturation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy 18-month-old sleeps for 25 minutes during a routine EEG. Spindles are well formed, but no vertex waves or K-complexes appear in any NREM sleep. How should this be regarded?",
+      "explanation": "Vertex waves typically emerge between about 3 and 6 months, and K-complexes by about 6 months, so at 18 months they should accompany well-formed NREM sleep; their absence over a good sleep sample is unexpected and worth describing. They are not delayed until 3 years; they are often most prominent and sharp in early childhood. They belong to drowsiness and light NREM sleep (N1-N2), not specifically N3. They are sleep transients, not waking features.",
+      "learningObjective": "Know when vertex waves and K-complexes appear in infancy.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Unexpected, as they are usually present by about 6 months",
+        "Expected, as they first appear at about 3 years of age",
+        "Expected, as children show them only in deep N3 sleep",
+        "Unexpected, as they normally appear during wakefulness"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "hypnagogic-hypersynchrony",
+        "absence",
+        "spike-wave"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 6-year-old with staring spells shows bursts of high-amplitude generalized 3 to 4 Hz activity. Which feature most favors absence spike-and-wave over hypnagogic hypersynchrony?",
+      "explanation": "Hypnagogic hypersynchrony is a normal drowsiness pattern of high-amplitude, rhythmic 3-5 Hz waves; sharp components may be mixed in, but it lacks the regular, repeating spike-and-wave complexes of absence. Absence discharges appear in full wakefulness (often provoked by hyperventilation) with impaired responsiveness. Very high amplitude and a diffuse field occur in both. A 3-4 Hz frequency with frontocentral emphasis is shared as well. Bursts of several seconds are typical of both, so duration does not separate them; state and spike content do.",
+      "learningObjective": "Distinguish hypnagogic hypersynchrony from absence spike-and-wave by state and morphology.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Amplitude above 200 uV with a diffuse field",
+        "A 3 to 4 Hz rate with a frontocentral maximum",
+        "Clear spike components while fully awake",
+        "Bursts that each last for several seconds"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "hypnagogic-hypersynchrony",
+        "maturation"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "In which healthy child would hypnagogic hypersynchrony during drowsiness be least expected?",
+      "explanation": "Hypnagogic hypersynchrony appears in infancy, is very common from late infancy through the preschool years, becomes less frequent in later childhood and is rarely seen after about 12-13 years, so a 16-year-old is the least likely to show it. A 9-month-old and a 3-year-old fall in the age range where it is most common. A 7-year-old may still show it, though less often than a toddler.",
+      "learningObjective": "Recall the age range of hypnagogic hypersynchrony.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "A 9-month-old infant",
+        "A 16-year-old adolescent",
+        "A 3-year-old toddler",
+        "A 7-year-old school child"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posterior-slow-waves-of-youth",
+        "normal-variant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An alert 11-year-old, eyes closed, shows single 2 to 3 Hz waves at O1 and O2 with alpha riding on them. They vanish with eye opening along with the alpha and are absent in drowsiness. What are they?",
+      "explanation": "Posterior slow waves of youth are single slow waves fused with the posterior alpha rhythm in children and adolescents; they share the alpha's reactivity, blocking with eye opening and disappearing in drowsiness, and are normal. OIRDA consists of rhythmic trains of repeated 2-4 Hz waves and is linked to absence epilepsy. Lesional focal slowing is usually more persistent, irregular and less reactive, and does not ride with the alpha. Lambda waves occur with the eyes open while scanning, not with the eyes closed.",
+      "learningObjective": "Identify posterior slow waves of youth by their link to the alpha rhythm.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Occipital intermittent rhythmic delta activity",
+        "Focal occipital slowing from a structural lesion",
+        "Lambda waves related to visual scanning",
+        "Posterior slow waves of youth, a normal finding"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "pediatric",
+        "buildup"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 7-year-old performs hyperventilation well. By 90 s, diffuse 2 to 3 Hz high-amplitude delta builds up, maximal frontally. The child keeps counting, and the slowing clears within 30 s after stopping. What best describes this?",
+      "explanation": "High-amplitude, diffuse, often frontally maximal slowing during hyperventilation is a normal and particularly prominent response in children; responsiveness is preserved and the background returns to baseline shortly after the effort ends. Documenting the onset, the effort and the recovery time completes the record. Urgent review is not needed for an expected response. Absence seizures contain spike-and-wave complexes and impaired responsiveness, neither of which is present. FIRDA is a resting-state pattern, not a response to overbreathing that clears on stopping.",
+      "learningObjective": "Recognize a normal pediatric hyperventilation buildup.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A normal buildup for age; note its onset and recovery",
+        "An abnormal buildup that needs urgent physician review",
+        "Absence seizures; test responsiveness and repeat the test",
+        "Frontal intermittent rhythmic delta from encephalopathy"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "asymmetry",
+        "pediatric"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During hyperventilation, a 9-year-old develops prominent 2 to 3 Hz slowing over the left hemisphere, while the right side stays near baseline throughout. How should this be handled?",
+      "explanation": "Hyperventilation-induced slowing in a normal child is diffuse and roughly symmetric; a consistently one-sided buildup is an asymmetric response that may point to dysfunction on the side that slows, so it should be documented with the timing and effort and reported per protocol. Children's buildup is typically bilateral, not unilateral. Treating it as normal and documenting only the effort misses a significant asymmetry. Breathing artifact does not produce sustained unilateral delta, and filtering would hide real activity.",
+      "learningObjective": "Recognize an asymmetric hyperventilation response as abnormal.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "As normal, since children's buildup is often one-sided",
+        "As normal; document the effort and the response only",
+        "As asymmetric buildup to be documented and reported",
+        "As breathing artifact that is safe to filter out"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "absence",
+        "responsiveness"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Midway through hyperventilation, an 8-year-old shows 3 Hz generalized spike-and-wave and stops counting aloud. What should the technologist do?",
+      "explanation": "During a suspected absence discharge the technologist checks awareness, for example by giving a word or a command to recall afterwards, and marks onset and offset so the reader can relate the discharge to the clinical change; the record is then reported per protocol. Restarting the timer at once skips the observation that makes the event useful. Changing sensitivity may help viewing but does nothing to capture the clinical correlate. Giving a diagnosis to the family is outside the technologist's role.",
+      "learningObjective": "Test and document responsiveness during a hyperventilation-provoked discharge.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Restart the test at once with a fresh 3-minute timer",
+        "Test responsiveness during the burst and mark onset and end",
+        "Lower the sensitivity so the high burst is easier to read",
+        "Report a likely absence diagnosis to the family right away"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "hyperventilation",
+        "contraindication",
+        "moyamoya"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "For which child is hyperventilation usually withheld unless the physician specifically orders it?",
+      "explanation": "In moyamoya disease, the vasoconstriction caused by hyperventilation can trigger ischemic symptoms or stroke, and a re-buildup of slowing after hyperventilation is characteristic, so the procedure is withheld unless the physician orders it (sickle cell disease is another commonly cited reason). Hyperventilation is especially useful in suspected or treated absence epilepsy. A remote history of febrile seizures is not a contraindication. Attention deficit disorder does not make hyperventilation unsafe, although cooperation may need coaching.",
+      "learningObjective": "Know the pediatric contraindications to hyperventilation.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A child on treatment for childhood absence epilepsy",
+        "A child with a past history of simple febrile seizures",
+        "A child with a diagnosis of attention deficit disorder",
+        "A child with moyamoya disease, as it may cause ischemia"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "infantile-spasms",
+        "hypsarrhythmia",
+        "electrodecremental"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 6-month-old has clusters of brief flexion jerks on waking. Between them the EEG is chaotic, over 200 uV, with multifocal spikes. With each jerk, a high slow wave is followed by diffuse attenuation. What does this show?",
+      "explanation": "Infantile spasms in the first year typically occur in clusters on arousal; the interictal background is hypsarrhythmia, chaotic high-amplitude slowing with multifocal spikes, and each spasm is marked by an electrodecremental event: often a generalized slow transient followed by diffuse voltage attenuation, sometimes with low-voltage fast activity. Slow spike-and-wave and generalized paroxysmal fast activity belong to Lennox-Gastaut syndrome in older children. Burst suppression (as in the early infantile epileptic encephalopathies) has suppressed intervals between bursts, not a continuous chaotic high-voltage background. Regular 3 Hz spike-and-wave is the absence pattern of school-age children.",
+      "learningObjective": "Identify hypsarrhythmia and electrodecremental events in infantile spasms.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hypsarrhythmia, with electrodecremental events during spasms",
+        "Slow spike-and-wave, with generalized fast activity in spasms",
+        "Burst suppression, with periodic sharp waves during spasms",
+        "3 Hz spike-and-wave, with myoclonic jerk artifact in spasms"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "lennox-gastaut",
+        "slow-spike-and-wave",
+        "differential"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 5-year-old has tonic seizures in sleep and frequent drop attacks. Awake, the EEG shows generalized 2 Hz spike-and-wave on a slow background; in sleep, bursts of generalized 10 to 20 Hz fast activity appear. What does this suggest?",
+      "explanation": "Generalized slow spike-and-wave below about 2.5 Hz, a slow background, and runs of generalized paroxysmal fast activity in sleep (often with tonic seizures) in a young child with drops point to Lennox-Gastaut syndrome. Hypsarrhythmia is a chaotic, disorganized background of infancy, not organized slow spike-and-wave. Childhood absence epilepsy shows regular 3 Hz spike-and-wave on a normal background. Centrotemporal spikes are focal, sleep-activated discharges with a normal background and no tonic seizures.",
+      "learningObjective": "Distinguish slow spike-and-wave of Lennox-Gastaut from other childhood epileptic patterns.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hypsarrhythmia of infantile spasms",
+        "Childhood absence epilepsy pattern",
+        "Slow spike-and-wave of Lennox-Gastaut",
+        "Centrotemporal spikes of childhood"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ped-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "infantile-spasms",
+        "documentation",
+        "video-eeg"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A 5-month-old is referred for possible infantile spasms; the parents report clusters of jerks soon after naps. Which recording plan is most useful?",
+      "explanation": "Spasms often cluster on arousal, so recording sleep and the transition to waking on time-synced video, with surface EMG over the deltoids to time each contraction, lets the reader confirm the electrodecremental correlate and the clinical event; hypsarrhythmia may also be clearest in sleep. Recording only wakefulness misses both the arousal clusters and sleep-related features. Deep sedation would suppress the very events being sought. Ending before the nap discards the most likely time of spasms, and photic stimulation does not provoke them.",
+      "learningObjective": "Plan a recording that captures infantile spasms and their EEG correlate.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Record wakefulness only, since spasms vanish in sleep",
+        "Capture sleep and awakening on video with deltoid EMG",
+        "Sedate deeply so the record is free of movement artifact",
+        "Use photic stimulation first, then end before napping"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

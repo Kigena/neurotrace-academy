@@ -1,0 +1,1476 @@
+{
+ "title": "Neonatal and Pediatric EEG",
+ "subtitle": "Age is the reference range: what appears, peaks and disappears from 24 weeks PMA to adolescence",
+ "tabs": [
+  {
+   "id": "overview",
+   "title": "Overview",
+   "intro": "A neonatal or pediatric EEG has no single normal. The same tracing can be normal at 30 weeks and clearly abnormal at 40 weeks, so every reading starts with the exact age. Your first technical job is to get the ages right and write them on the record.",
+   "sections": [
+    {
+     "title": "Why age is everything",
+     "kind": "cards",
+     "cards": [
+      {
+       "title": "Normal changes week by week",
+       "body": "In the premature brain, continuity, synchrony, reactivity and named graphoelements change every 2 to 3 weeks. The reader compares the tracing to the expected pattern for that postmenstrual age (PMA)."
+      },
+      {
+       "title": "Discontinuity can be normal",
+       "body": "Long flat gaps between bursts are expected at 25 weeks and abnormal at term. Without the PMA, nobody can call a gap normal or pathological."
+      },
+      {
+       "title": "Dysmaturity is an age mismatch",
+       "body": "An EEG that looks at least 2 weeks younger than the stated PMA is called dysmature. This can only be judged if the PMA on the record is correct."
+      },
+      {
+       "title": "Children keep maturing",
+       "body": "After the neonatal period the posterior rhythm speeds up, spindles become synchronous and new sleep transients appear, so a 7 Hz posterior rhythm is normal at 2 years and slow at 10 years."
+      }
+     ]
+    },
+    {
+     "title": "Age terms you must document",
+     "kind": "table",
+     "head": [
+      "Term",
+      "Definition",
+      "Note"
+     ],
+     "rows": [
+      [
+       "Gestational age (GA)",
+       "Time from the first day of the last menstrual period (LMP) to the day of birth",
+       "Fixed at birth; for example born at 28 weeks"
+      ],
+      [
+       "Chronological age",
+       "Time elapsed since birth",
+       "Days, weeks or months of life"
+      ],
+      [
+       "Postmenstrual age (PMA)",
+       "GA + chronological age",
+       "The age used to read neonatal EEG; ACNS and the American Academy of Pediatrics prefer this term"
+      ],
+      [
+       "Conceptional age (CA)",
+       "Older term; strictly it counts from conception, about 2 weeks after the LMP",
+       "Many classic EEG texts and exam items use 'CA' to mean what we now call PMA"
+      ],
+      [
+       "Corrected age",
+       "Chronological age minus the weeks born before 40 weeks",
+       "Used for preterm infants after discharge, for example for milestones"
+      ]
+     ],
+     "note": "ACNS Guideline 5 says GA at birth, chronological age and PMA on the day of the recording, in weeks, are essential and must be given to the electroencephalographer. ACNS neonatal terminology: preterm under 37 weeks PMA, term 37 up to 44 weeks PMA, post-term 44 to 48 weeks PMA."
+    },
+    {
+     "title": "PMA arithmetic: worked examples",
+     "kind": "steps",
+     "items": [
+      "Born at 28 weeks GA, now 6 weeks old: PMA = 28 + 6 = 34 weeks. Expect a preterm pattern: continuous when awake, tracé discontinu in quiet sleep, delta brushes near their peak.",
+      "Born at 26 weeks GA, now 14 weeks old: PMA = 26 + 14 = 40 weeks. Read it as a term EEG even though the baby has been alive for over 3 months.",
+      "Born at 40 weeks GA, now 10 days old: PMA = 40 + 1.4 = about 41.5 weeks. Term pattern; tracé alternant in quiet sleep is still normal.",
+      "Born at 32 weeks GA, now 12 weeks old: PMA = 44 weeks; corrected age = 12 - (40 - 32) = 4 weeks. Delta brushes and frontal sharp transients should be gone, and tracé alternant is fading.",
+      "Born at 30 weeks GA, now 20 weeks old: PMA = 50 weeks (about 10 weeks post-term). Sleep spindles should now be present, and sleep onset is still usually into active sleep.",
+      "Exam trap: an old question giving 'conceptional age' usually means PMA. Use the number as given; do not subtract 2 weeks unless the item clearly defines CA from conception."
+     ]
+    },
+    {
+     "title": "One-glance timeline: 24 weeks PMA to adolescence",
+     "kind": "table",
+     "head": [
+      "Age",
+      "Background",
+      "Hallmarks"
+     ],
+     "rows": [
+      [
+       "24-28 wk PMA",
+       "Tracé discontinu in all states, long flat gaps, bursts almost all synchronous",
+       "Monorhythmic occipital delta, temporal theta bursts (temporal sawtooth), first delta brushes"
+      ],
+      [
+       "29-32 wk",
+       "Still discontinuous; awake and active sleep gaining continuity; normal asynchrony appears",
+       "Delta brushes increasing; temporal theta still present (ACNS: maximal 29-32 wk; exam keys: hallmark 24-28 wk); reactivity first appears at 30-32 wk"
+      ],
+      [
+       "32-35 wk",
+       "Continuous when awake by 34 wk; tracé discontinu only in quiet sleep",
+       "Delta brushes peak 32-34 wk; anterior dysrhythmia from 32 wk; frontal sharp transients from 34 wk"
+      ],
+      [
+       "36-41 wk (term)",
+       "Activité moyenne awake and in active sleep; tracé alternant in quiet sleep; synchronous",
+       "Frontal sharp transients, anterior dysrhythmia, few sporadic temporal sharp transients; delta brushes rare"
+      ],
+      [
+       "42-46 wk",
+       "Tracé alternant minimal by 42 wk, gone by 46 wk; continuous slow quiet sleep",
+       "Frontal sharp transients and anterior dysrhythmia gone by about 44 wk; delta brushes gone by about 44 wk"
+      ],
+      [
+       "About 6-8 wk post-term",
+       "Continuous in all states",
+       "Sleep spindles appear (asynchronous at first)"
+      ],
+      [
+       "3-4 months",
+       "Sleep onset begins to shift from active sleep to NREM",
+       "Posterior rhythm about 3-4 Hz emerges with eye closure"
+      ],
+      [
+       "About 5-6 months",
+       "NREM stages becoming adult-like",
+       "Vertex waves and K-complexes emerging; hypnagogic hypersynchrony can appear"
+      ],
+      [
+       "About 1 year",
+       "Posterior rhythm about 5-6 Hz",
+       "Spindles still often asynchronous"
+      ],
+      [
+       "About 2 years",
+       "Posterior rhythm about 6-7 Hz",
+       "Spindles should be synchronous; sharp vertex waves can come in runs"
+      ],
+      [
+       "About 3 years",
+       "Posterior rhythm about 8 Hz (lower alpha)",
+       "Hyperventilation can usually be performed with coaching"
+      ],
+      [
+       "About 8-10 years to adolescence",
+       "Posterior rhythm 9-10 Hz, adult-like by mid-teens",
+       "Posterior slow waves of youth common; lambda waves; hypnagogic hypersynchrony fades"
+      ]
+     ],
+     "note": "Ages are typical ranges from standard texts; individual normal infants vary by a few weeks. Postnatal infant ages here are post-term."
+    },
+    {
+     "title": "Technologist scope",
+     "kind": "list",
+     "items": [
+      "Record, measure, mark and describe: state, stimuli, clinical events, medications, temperature and artifacts.",
+      "Document GA, chronological age and PMA on every neonatal study, plus hypothermia status and body temperature.",
+      "Notify the reading physician or team per protocol when you see possible seizures or a severely abnormal background; do not interpret, diagnose or give a prognosis to the family or staff.",
+      "Use age-appropriate settings: neonatal display commonly 15 mm/s (a 20-second page), which makes waves look sharper than at 30 mm/s."
+     ]
+    }
+   ],
+   "pearls": [
+    "PMA = gestational age + chronological age, in weeks.",
+    "Older texts and many exam items use conceptional age (CA) for what is now called PMA.",
+    "Term by EEG convention runs 37 up to 44 weeks PMA; post-term is 44-48 weeks.",
+    "A 26-week baby who is 14 weeks old is read as a 40-week term EEG.",
+    "The same discontinuous tracing can be normal at 26 weeks and burst suppression-like at term: always check PMA first.",
+    "Dysmaturity = EEG normal for an infant at least 2 weeks younger than the stated PMA."
+   ],
+   "eegLink": "A wrong PMA on the requisition can turn a normal premature EEG into an abnormal report, so confirm GA and date of birth before you start."
+  },
+  {
+   "id": "maturation",
+   "title": "Maturation week by week",
+   "intro": "Neonatal EEG maturation follows a predictable order. Continuity increases, synchrony dips and returns, reactivity and states appear, and each named graphoelement has its own window. Learn the windows as appear, peak and disappear.",
+   "sections": [
+    {
+     "title": "Week-by-week table (PMA)",
+     "kind": "table",
+     "head": [
+      "PMA",
+      "Continuity",
+      "Synchrony",
+      "Reactivity and variability",
+      "State differentiation",
+      "Graphoelements"
+     ],
+     "rows": [
+      [
+       "24-26 wk",
+       "Tracé discontinu in all states; long low-voltage gaps",
+       "Bursts nearly all synchronous (hypersynchrony of the very premature)",
+       "Nascent variability from about 25 wk; no reactivity",
+       "Very little; rudimentary cycling and first brief continuity with REM at about 25 wk",
+       "Monorhythmic occipital delta; temporal theta bursts appearing; first delta brushes"
+      ],
+      [
+       "27-29 wk",
+       "Mostly discontinuous; brief continuous runs when awake by 28 wk; quiet-sleep tracé discontinu emerges at about 28 wk",
+       "Still mostly synchronous until about 27-29 wk, then drops",
+       "Variability increasingly apparent by 28 wk; no reliable reactivity",
+       "Some periods of full active sleep by 28-31 wk; much sleep is indeterminate",
+       "Temporal theta bursts prominent; delta brushes increasing; occipital delta"
+      ],
+      [
+       "30-32 wk",
+       "Awake and active sleep more continuous; maximum normal interburst interval shorter than in the very premature",
+       "Normal asynchrony: only about 70% of bursts synchronous around 29-30 wk",
+       "Variability well established by 30-31 wk; reactivity first appears at 30-32 wk",
+       "Active sleep clearer; quiet sleep still discontinuous",
+       "Delta brushes abundant (maximal in active sleep up to 32 wk); temporal theta still present (ACNS maximum 29-32 wk; exam keys place its hallmark window at 24-28 wk); anterior dysrhythmia appears at 32 wk"
+      ],
+      [
+       "33-35 wk",
+       "Awake persistently continuous from 34 wk; active sleep consistently continuous after 34 wk; tracé discontinu confined to quiet sleep",
+       "Synchrony steadily increasing",
+       "Reactivity present, not with every stimulus",
+       "Polygraphy (respiration, chin EMG, movements) reliably matches state from 32-34 wk",
+       "Delta brushes peak 32-34 wk, then mainly in quiet sleep; temporal theta and monorhythmic delta end by about 34 wk; frontal sharp transients begin at 34 wk; tracé alternant first seen at 34-36 wk"
+      ],
+      [
+       "36-38 wk",
+       "Tracé alternant replacing tracé discontinu in quiet sleep",
+       "By 38 wk no substantial asynchrony should remain",
+       "Reactivity clear",
+       "Active, quiet and awake states well defined; sleep cycles lengthen",
+       "Delta brushes decreasing, mainly in quiet sleep; frontal sharp transients and anterior dysrhythmia prominent"
+      ],
+      [
+       "38-42 wk (term)",
+       "Continuous awake and in active sleep (activité moyenne); tracé alternant in quiet sleep with short gaps that never fall below about 25 µV",
+       "Nearly 100% synchronous",
+       "Reactive to stimulation",
+       "Clear cycling; sleep onset into active sleep; active sleep about 50-60% of the sleep cycle",
+       "Frontal sharp transients, anterior dysrhythmia, sporadic random temporal sharp transients; delta brushes only occasional in quiet sleep up to about 40 wk"
+      ],
+      [
+       "44-46 wk",
+       "Continuous in all states; tracé alternant minimal by 42 wk and gone by 46 wk, replaced by continuous high-voltage slow quiet sleep",
+       "Synchronous",
+       "Reactive",
+       "Quiet sleep looks like early NREM; sleep onset still active sleep",
+       "Frontal sharp transients and anterior dysrhythmia gone by about 44 wk; delta brushes gone; sleep spindles first appear by about 46 wk"
+      ]
+     ],
+     "note": "Based mainly on the ACNS neonatal terminology (Tsuchida 2013). Windows overlap by a week or two between sources; exam keys may quote slightly different edges."
+    },
+    {
+     "title": "Normal maximum interburst interval (ACNS neonatal terminology)",
+     "kind": "table",
+     "head": [
+      "PMA",
+      "Longest normal interburst interval",
+      "Interburst voltage"
+     ],
+     "rows": [
+      [
+       "Under 30 weeks",
+       "About 35 seconds",
+       "Under 25 µV"
+      ],
+      [
+       "30-33 weeks",
+       "About 20 seconds",
+       "Under 25 µV"
+      ],
+      [
+       "34-36 weeks",
+       "About 10 seconds",
+       "About 25 µV"
+      ],
+      [
+       "37-40 weeks",
+       "About 6 seconds",
+       "Over 25 µV (tracé alternant gaps never fully flatten)"
+      ]
+     ],
+     "note": "ACNS defines an interburst interval as attenuation below about 25-50 µV lasting 2 seconds or more. These are consensus compromise values; labs may use other published norms."
+    },
+    {
+     "title": "Appear, peak, disappear",
+     "kind": "table",
+     "head": [
+      "Feature",
+      "Appears",
+      "Peaks",
+      "Gone by"
+     ],
+     "rows": [
+      [
+       "Monorhythmic occipital delta",
+       "24 wk",
+       "Very premature",
+       "About 34 wk"
+      ],
+      [
+       "Temporal theta bursts (temporal sawtooth)",
+       "24 wk",
+       "Very premature (ACNS: maximal 29-32 wk; many exam keys teach 24-28 wk as the hallmark window)",
+       "About 32-34 wk"
+      ],
+      [
+       "Delta brushes",
+       "About 24-26 wk",
+       "32-34 wk",
+       "Rare after 40 wk; absent by about 44 wk"
+      ],
+      [
+       "Anterior dysrhythmia",
+       "32 wk",
+       "Term",
+       "About 44 wk"
+      ],
+      [
+       "Frontal sharp transients (encoches frontales)",
+       "34 wk",
+       "Term (transition from active to quiet sleep)",
+       "About 44 wk"
+      ],
+      [
+       "Tracé discontinu",
+       "From the earliest ages",
+       "Before 28 wk (all states)",
+       "Rare at 38 wk and older"
+      ],
+      [
+       "Tracé alternant",
+       "34-36 wk",
+       "Term quiet sleep",
+       "Minimal by 42 wk, gone by 46 wk"
+      ],
+      [
+       "Sleep spindles",
+       "About 46-48 wk (6-8 weeks post-term)",
+       "Infancy",
+       "Persist for life; synchronous by about 2 years"
+      ]
+     ]
+    },
+    {
+     "title": "Synchrony curve in plain words",
+     "kind": "list",
+     "items": [
+      "Before about 27-29 weeks: bursts are almost all synchronous between hemispheres.",
+      "Around 29-30 weeks: synchrony dips to about 70%; this asynchrony is normal.",
+      "30-37 weeks: synchrony climbs back.",
+      "From 38 weeks: no substantial asynchrony; persistent asynchrony is abnormal.",
+      "ACNS rule: a burst is synchronous if left and right onsets are within 1.5 seconds of each other."
+     ]
+    }
+   ],
+   "pearls": [
+    "Continuity order: awake first, then active sleep, quiet sleep last.",
+    "Delta brushes peak at 32-34 weeks PMA and should be gone by about 44 weeks.",
+    "Temporal theta bursts mark the very premature (about 24-32 weeks); they are not a term finding.",
+    "Frontal sharp transients and anterior dysrhythmia belong to 34-44 weeks.",
+    "Tracé alternant: first at 34-36 weeks, minimal by 42, gone by 46 weeks.",
+    "Reactivity to stimulation first appears at about 30-32 weeks PMA.",
+    "Synchrony is high before 29 weeks, dips around 30 weeks, and is near 100% again at term."
+   ],
+   "eegLink": "When you label state and PMA well, the reader can compare each feature to its expected window and spot dysmaturity."
+  },
+  {
+   "id": "states",
+   "title": "States and set-up",
+   "intro": "Neonatal sleep states are defined by EEG plus behavior plus polygraphy, not EEG alone. A term baby falls asleep into active (REM-like) sleep, and an adequate study must capture quiet sleep too. Your set-up and notes make state scoring possible.",
+   "sections": [
+    {
+     "title": "Three main states at term",
+     "kind": "table",
+     "head": [
+      "Feature",
+      "Wakefulness",
+      "Active sleep (REM-like)",
+      "Quiet sleep (NREM-like)"
+     ],
+     "rows": [
+      [
+       "Eyes",
+       "Open",
+       "Closed, with bursts of rapid eye movements",
+       "Closed, no REM"
+      ],
+      [
+       "Respiration",
+       "Irregular",
+       "Irregular",
+       "Regular"
+      ],
+      [
+       "Chin EMG",
+       "Present, with movement",
+       "Low (atonia), phasic twitches",
+       "Tonic activity present"
+      ],
+      [
+       "Body movements",
+       "Frequent",
+       "Small and large movements, twitches, facial grimaces, sucking",
+       "Few; occasional startles or sucking"
+      ],
+      [
+       "EEG",
+       "Activité moyenne: continuous low-medium voltage mixed theta-delta with some beta",
+       "Activité moyenne or low-voltage irregular, continuous; looks like wake",
+       "Tracé alternant near term, then continuous high-voltage slow activity"
+      ],
+      [
+       "Heart rate",
+       "Variable",
+       "Variable",
+       "Steadier"
+      ]
+     ],
+     "note": "Transitional sleep mixes features while changing state; indeterminate sleep cannot be assigned. A high share of indeterminate sleep is abnormal at term."
+    },
+    {
+     "title": "Sleep onset and cycling",
+     "kind": "cards",
+     "cards": [
+      {
+       "title": "Term newborn: active-sleep onset",
+       "body": "A healthy term infant goes from wake straight into active sleep. Sleep-onset REM is normal in infants, unlike adults.",
+       "points": [
+        "ACNS terminology: true until about 3-4 months after term",
+        "After that, sleep onset shifts to NREM, as in adults"
+       ]
+      },
+      {
+       "title": "Proportions at term",
+       "body": "Active sleep takes about 50-60% of the sleep cycle, quiet sleep about 30-40% and transitional sleep about 10-15%."
+      },
+      {
+       "title": "Cycle length",
+       "body": "A neonatal sleep cycle (active, transitional, then quiet) lasts about 30-50 minutes before 35 weeks and about 50-65 minutes after; a full sleep-wake cycle at term is about 3-4 hours."
+      },
+      {
+       "title": "Preterm",
+       "body": "Rudimentary cycling begins near 25 weeks. Before about 32-34 weeks, eyes open is the most reliable sign of wakefulness."
+      }
+     ]
+    },
+    {
+     "title": "How to annotate state",
+     "kind": "steps",
+     "items": [
+      "At the start of the record and each montage change, note state, eyes open or closed, head position and behavior.",
+      "Annotate every state change as you see it: awake, crying, feeding, drowsy, active sleep (REM seen), quiet sleep (regular breathing).",
+      "Note eye movements, sucking, startles, hiccups, jitteriness, handling by staff, suctioning and patting, because these make rhythmic artifacts.",
+      "Note stimuli and the infant's response (EEG and clinical), with timing as close as possible to the event.",
+      "Note medications given, feeds, and temperature or cooling status.",
+      "A state is scored when its features last about 1 minute or longer (ACNS terminology)."
+     ]
+    },
+    {
+     "title": "Neonatal technical set-up (ACNS Guideline 5, 2016)",
+     "kind": "list",
+     "items": [
+      "Applies to neonates and young infants up to about 4-8 weeks post-term.",
+      "At least 12 cerebral channels plus at least two (often more) polygraphic channels; 16 or more channels gives flexibility.",
+      "Reduced-array minimum: Fp1, Fp2, C3, Cz, C4, T7 (T3), T8 (T4), O1, O2, A1, A2. AF3/AF4 may replace Fp1/Fp2; mastoids (M1/M2) may replace ears.",
+      "Cz is always included: positive rolandic (vertex) sharp waves and some seizures may show only there.",
+      "Measure electrode sites; if a site must move (IV, hematoma), move the homologous site too and note it.",
+      "Disk electrodes with paste preferred; acetone or ether fumes may be unacceptable; never needle electrodes.",
+      "Impedances under 10 kΩ are allowed for fragile skin, but keep them balanced.",
+      "Polygraphy: ECG (lead I preferred), respiration (thoracic or abdominal strain gauge or impedance), eye movements E1 and E2 referred to one ear, submental (chin) EMG.",
+      "Settings: sensitivity usually 7 µV/mm; low-frequency filter 0.3-0.6 Hz rather than 1 Hz; chin EMG about 3 µV/mm with LFF about 5 Hz and HFF 70 Hz.",
+      "Duration: 20-30 minutes is usually not enough. Capture both major sleep states, including a full epoch of quiet sleep. With an invariant pattern, record at least 60 minutes.",
+      "Schedule at feeding time and feed after electrode application. Never sedate a neonate for a sleep recording. Photic stimulation is not recommended.",
+      "Document GA, chronological age, PMA, medications, and hypothermia with body temperature."
+     ]
+    },
+    {
+     "title": "Why polygraphy matters",
+     "kind": "cards",
+     "cards": [
+      {
+       "title": "Scoring state",
+       "body": "Neonatal EEG alone does not reliably tell wake from active sleep; breathing pattern, REM and chin tone do."
+      },
+      {
+       "title": "Spotting artifact",
+       "body": "Babies can breathe up to about 100 times a minute; rhythmic 'delta' in step with the respiration channel is artifact. ECG artifact and patting are common too."
+      },
+      {
+       "title": "Clinical value",
+       "body": "Apnea, bradycardia and heart-rate changes can be the clinical story, for example in apnea or subtle seizures."
+      }
+     ]
+    }
+   ],
+   "pearls": [
+    "A term infant enters ACTIVE sleep at sleep onset.",
+    "Sleep onset shifts to NREM at about 3-4 months post-term.",
+    "Quiet sleep at term = regular breathing, no REM, tonic chin EMG, tracé alternant.",
+    "Guideline 5: at least 12 cerebral channels plus polygraphy; Cz always included.",
+    "Neonatal LFF 0.3-0.6 Hz, not 1 Hz; sensitivity about 7 µV/mm.",
+    "Invariant tracing: record at least 60 minutes; variable tracing: include a full quiet-sleep epoch.",
+    "No sedation and no photic stimulation for neonates."
+   ],
+   "eegLink": "Without polygraphy and state notes, the reader cannot tell normal tracé alternant from pathological discontinuity."
+  },
+  {
+   "id": "graphoelements",
+   "title": "Graphoelements",
+   "intro": "Graphoelements are normal, named waveforms that belong to a specific PMA window. They are normal only when seen at the right age, in the right state, symmetric and not excessive. Out-of-window or one-sided, they become clues to abnormality.",
+   "sections": [
+    {
+     "title": "Normal neonatal graphoelements",
+     "kind": "cards",
+     "cards": [
+      {
+       "title": "Delta brushes",
+       "body": "A slow delta wave (about 0.3-1.5 Hz) with fast activity riding on it (about 8-12 or 18-22 Hz). Central, temporal and occipital.",
+       "points": [
+        "Appear about 24-26 wk; peak 32-34 wk",
+        "Maximal in active sleep up to 32 wk, then mainly quiet sleep",
+        "Occasional in quiet sleep to about 40 wk; gone by about 44 wk",
+        "Also called beta-delta complexes or spindle-delta bursts"
+       ]
+      },
+      {
+       "title": "Temporal theta bursts (temporal sawtooth)",
+       "body": "Short (about 2 s) runs of sharply contoured 4-7 Hz theta over the temporal regions.",
+       "points": [
+        "Hallmark of the very premature, about 24-32 wk",
+        "Many exam keys: 24-28 wk",
+        "Gone by about 32-34 wk; not a term or infant finding"
+       ]
+      },
+      {
+       "title": "Monorhythmic occipital delta",
+       "body": "Moderately high-voltage rhythmic delta, mainly occipital, synchronous and symmetric.",
+       "points": [
+        "24-34 wk"
+       ]
+      },
+      {
+       "title": "Frontal sharp transients (encoches frontales)",
+       "body": "Broad, mainly diphasic frontal sharp transients, usually bilateral and synchronous, most common in transition from active to quiet sleep.",
+       "points": [
+        "About 34-44 wk",
+        "Often mixed with anterior dysrhythmia"
+       ]
+      },
+      {
+       "title": "Anterior dysrhythmia",
+       "body": "Bursts or brief runs of frontal rhythmic delta, synchronous and symmetric. Normal despite its name.",
+       "points": [
+        "About 32-44 wk"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Temporal sharp transients: normal vs abnormal",
+     "kind": "table",
+     "head": [
+      "Feature",
+      "Physiologic (normal)",
+      "Abnormal"
+     ],
+     "rows": [
+      [
+       "Background",
+       "Normal for PMA",
+       "Often abnormal for PMA"
+      ],
+      [
+       "Distribution",
+       "Random, both sides independently, mid-temporal or central",
+       "Persistently on one side or one region, or atypical sites (frontal, vertex, occipital)"
+      ],
+      [
+       "State",
+       "Mainly sleep, especially discontinuous quiet sleep",
+       "Persist in wakefulness or continuous active sleep"
+      ],
+      [
+       "Form",
+       "Single, sporadic, often simple diphasic",
+       "Frequent, repetitive, in runs or trains, polyphasic, high voltage"
+      ],
+      [
+       "Age",
+       "Near-term and term",
+       "Persisting beyond about 44 weeks, or excessive at any age"
+      ],
+      [
+       "Meaning",
+       "Normal maturational finding",
+       "Non-specific sign of dysfunction in that region (for example right temporal sharp transients in wakefulness at 38 wk = right temporal dysfunction)"
+      ]
+     ],
+     "note": "ACNS terminology quotes published thresholds: negative sharp waves more than about 11 per hour (preterm) or 13 per hour (term) were associated with abnormal outcome. Count them in continuous portions (wake or active sleep), not inside tracé alternant bursts."
+    },
+    {
+     "title": "Positive sharp waves (abnormal)",
+     "kind": "cards",
+     "cards": [
+      {
+       "title": "Positive rolandic sharp waves (PRS)",
+       "body": "Surface-positive sharp waves at C3, C4 and often maximal at Cz (positive vertex sharp waves). Classically in preterm infants with intraventricular hemorrhage; now linked most closely to white matter injury such as periventricular leukomalacia.",
+       "points": [
+        "Reason Cz is mandatory in neonatal montages",
+        "Positive polarity: look for the downward deflection in a referential view"
+       ]
+      },
+      {
+       "title": "Positive temporal sharp waves",
+       "body": "Excessive positive sharp waves over the mid-temporal region in a term infant can mean focal pathology such as a localized hemorrhage or white matter injury.",
+       "points": [
+        "Rare scattered ones occur in healthy infants",
+        "ACNS cites up to about 3/hour preterm and 1.5/hour term as possibly normal"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Spikes and sharp waves in neonatal display",
+     "kind": "list",
+     "items": [
+      "Spike: under 100 ms; sharp wave: 100-200 ms (ACNS neonatal terminology).",
+      "At the usual neonatal display of 15 mm/s, waves look sharper than at 30 mm/s; expand the time base before calling something a spike.",
+      "Sharply contoured activity inside a burst is not a separate sharp transient."
+     ]
+    }
+   ],
+   "pearls": [
+    "Delta brush = 0.3-1.5 Hz delta wave + 8-22 Hz fast activity on top.",
+    "Delta brushes: peak 32-34 wk; ACNS: occasional to about 40 wk; exam key: gone by about 44 wk.",
+    "Temporal theta bursts are a very-premature finding (about 24-28 wk in many exam keys).",
+    "Encoches frontales = frontal sharp transients, about 34-44 wk, synchronous, in transitional sleep.",
+    "One-sided temporal sharp transients in wakefulness at term = non-specific focal dysfunction, not normal.",
+    "Positive rolandic sharp waves = white matter injury (PVL), classically with IVH in preterms.",
+    "A normal graphoelement in the wrong age window is a sign of dysmaturity."
+   ],
+   "eegLink": "Note state at the moment you see a sharp transient; the same wave is read differently in quiet sleep and in wakefulness."
+  },
+  {
+   "id": "abnormal-neonatal",
+   "title": "Abnormal neonatal EEG",
+   "intro": "Abnormal neonatal background patterns run from mild dysmaturity to an isoelectric record, and neonatal seizures look different from adult seizures. Most neonatal seizures are focal and many have no visible clinical sign. The technologist's notes and timely notification matter a great deal here.",
+   "sections": [
+    {
+     "title": "Background abnormalities from mild to severe",
+     "kind": "table",
+     "head": [
+      "Pattern",
+      "Key features",
+      "How it differs from normal"
+     ],
+     "rows": [
+      [
+       "Dysmaturity",
+       "EEG normal for an infant at least 2 weeks younger than the stated PMA",
+       "Persistent dysmaturity is abnormal and linked to worse outcome"
+      ],
+      [
+       "Excessive discontinuity",
+       "Interburst intervals too long or too flat for PMA, but bursts still contain normal graphoelements; some variability or reactivity",
+       "Compare IBIs to the age table"
+      ],
+      [
+       "Burst suppression",
+       "Invariant, unreactive; bursts of non-specific activity (often sharp) with no normal graphoelements; interburst voltage under about 5 µV",
+       "Tracé alternant has normal content, gaps over 25 µV, reactivity and state change; burst suppression has none of these"
+      ],
+      [
+       "Borderline low voltage",
+       "Continuous, some normal features, voltage persistently 10-25 µV",
+       "Significance uncertain"
+      ],
+      [
+       "Low voltage suppressed (low voltage undifferentiated)",
+       "Persistently under 10 µV, no normal features, invariant, unreactive",
+       "Suggests severe diffuse injury"
+      ],
+      [
+       "Electrocerebral inactivity (isoelectric)",
+       "No cerebral activity at or above 2 µV at 2 µV/mm sensitivity",
+       "Requires the specific ECI recording standards; otherwise report only as 'may be consistent with ECI'"
+      ],
+      [
+       "Abnormal asymmetry",
+       "Persistent voltage difference more than 2:1 or clear difference in features between sides",
+       "Think focal lesion: stroke, hemorrhage, sinovenous thrombosis; rule out electrode or scalp causes"
+      ],
+      [
+       "Abnormal asynchrony",
+       "Too many asynchronous bursts for PMA (onsets more than 1.5 s apart)",
+       "Abnormal from about 38 wk"
+      ]
+     ],
+     "note": "Values are from the ACNS neonatal terminology. Scalp edema, cephalohematoma and poor electrodes can falsely lower voltage."
+    },
+    {
+     "title": "Tracé alternant vs burst suppression",
+     "kind": "cards",
+     "cards": [
+      {
+       "title": "Tracé alternant (normal, term quiet sleep)",
+       "body": "Bursts of 50-150 µV delta lasting a few seconds alternate with shorter 25-50 µV mixed theta-delta. Gaps never flatten.",
+       "points": [
+        "Changes with state; disappears when the baby wakes or enters active sleep",
+        "Reactive to stimulation",
+        "Contains normal graphoelements"
+       ]
+      },
+      {
+       "title": "Burst suppression (abnormal)",
+       "body": "Bursts of disorganized, often sharp activity separated by near-flat periods. Unchanged throughout the record.",
+       "points": [
+        "No state change, no reactivity",
+        "No normal graphoelements in the bursts",
+        "In a term infant after asphyxia: severe hypoxic-ischemic injury"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Hypoxic-ischemic encephalopathy (HIE): EEG severity",
+     "kind": "table",
+     "head": [
+      "Grade (general)",
+      "EEG picture",
+      "Typical meaning"
+     ],
+     "rows": [
+      [
+       "Normal or mildly abnormal",
+       "Continuous, normal or slightly low voltage, state changes present, mild asymmetry or immaturity",
+       "Good outlook"
+      ],
+      [
+       "Moderately abnormal",
+       "Discontinuous, longer interburst intervals, poor sleep-wake cycling, some asymmetry",
+       "Intermediate; trend over time matters"
+      ],
+      [
+       "Severely (majorly) abnormal",
+       "Burst suppression, or severely attenuated, unreactive, with bursts every 10-20 s or longer",
+       "Severe injury; poor outcome likely, especially if it persists"
+      ],
+      [
+       "Inactive",
+       "Isoelectric or near-isoelectric background",
+       "Very severe injury"
+      ]
+     ],
+     "note": "Published scales (for example the 4-grade schemes used by Murray and by Boylan's group) differ in exact cut-offs, so learn the order of severity, not numbers. Therapeutic hypothermia changes the prognostic value of early EEG, so cooling and body temperature must be documented."
+    },
+    {
+     "title": "Neonatal seizures (ACNS neonatal terminology)",
+     "kind": "cards",
+     "cards": [
+      {
+       "title": "Definition",
+       "body": "A sudden, abnormal, repetitive and evolving EEG pattern of at least 2 µV lasting at least 10 seconds. Evolution means a clear change in frequency, voltage, morphology or location.",
+       "points": [
+        "Under 10 s with evolution = brief rhythmic discharge (BRD), not a seizure",
+        "Over 10 s without evolution = rhythmic or periodic activity, not a seizure",
+        "No minimum frequency, unlike older children and adults",
+        "Two seizures are separate only if 10 s or more apart"
+       ]
+      },
+      {
+       "title": "Focal, not generalized",
+       "body": "Term neonatal seizures are focal: rhythmic focal spikes, sharp waves or rhythmic delta, theta or alpha-range activity that builds up in one region, often central or temporal, and may spread or migrate.",
+       "points": [
+        "The immature brain does not produce generalized 3 Hz spike-and-wave",
+        "'Diffuse' neonatal seizures are asynchronous focal seizures in many regions",
+        "Multifocal = at least 3 independent foci, at least one per hemisphere"
+       ]
+      },
+      {
+       "title": "Status epilepticus",
+       "body": "Summed seizure time of 50% or more of any 1-hour epoch.",
+       "points": [
+        "Seizure burden: seizures per hour or percent of time seizing"
+       ]
+      },
+      {
+       "title": "Electroclinical dissociation",
+       "body": "Many neonatal seizures are EEG-only. After antiseizure medication, clinical signs often stop while EEG seizures continue (uncoupling).",
+       "points": [
+        "Clinical-only events: some posturing or movements have no EEG correlate",
+        "EEG (ideally with video) is needed to confirm a neonatal seizure"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "What the technologist marks and notifies",
+     "kind": "steps",
+     "items": [
+      "Mark the start and end of any rhythmic, evolving discharge and the region where it begins and spreads.",
+      "Observe the baby: note subtle signs (eye deviation, sucking, pedaling, apnea, heart-rate change, focal clonic jerks) and whether any EEG change occurs with them.",
+      "Test suspicious movements: gentle restraint or repositioning stops jitteriness, not clonic seizures; note the result.",
+      "Note medications and times (for example phenobarbital loading) and cooling status and temperature.",
+      "Mark severe background patterns: burst suppression, low voltage, invariant and unreactive records, asymmetry; test reactivity toward the end of the study and note the stimulus and response.",
+      "Notify the reading physician or NICU team per protocol for possible seizures, status epilepticus or a newly severe background; do not interpret or prognosticate to the family or staff."
+     ]
+    }
+   ],
+   "pearls": [
+    "Neonatal electrographic seizure: evolving, at least 10 seconds.",
+    "Brief rhythmic discharge (BRD) = evolving but under 10 s.",
+    "Full-term neonatal seizures are focal, not generalized spike-and-wave.",
+    "Neonatal status = seizures for 50% or more of an hour.",
+    "Burst suppression = invariant, unreactive, no normal graphoelements in the bursts.",
+    "Term asphyxia with unreactive severe attenuation and bursts every 10-20 s = severe HIE.",
+    "Positive rolandic sharp waves = white matter injury (PVL).",
+    "After medication, EEG seizures often continue without clinical signs."
+   ],
+   "eegLink": "In the NICU your annotation of a subtle movement, and whether the EEG changed with it, often decides whether a baby is treated."
+  },
+  {
+   "id": "infancy-childhood",
+   "title": "Infancy and childhood",
+   "intro": "After the neonatal period the EEG keeps maturing for more than a decade. The posterior rhythm speeds up, sleep transients appear and become synchronous, and children have several normal patterns that look alarming to the untrained eye.",
+   "sections": [
+    {
+     "title": "Posterior dominant rhythm by age",
+     "kind": "table",
+     "head": [
+      "Age",
+      "Typical frequency",
+      "Notes"
+     ],
+     "rows": [
+      [
+       "3-4 months",
+       "About 3-4 Hz",
+       "First reactive occipital rhythm; best seen with passive eye closure"
+      ],
+      [
+       "About 6-12 months",
+       "About 5-6 Hz",
+       "Blocks with eye opening"
+      ],
+      [
+       "About 2 years",
+       "About 6-7 Hz",
+       ""
+      ],
+      [
+       "About 3 years",
+       "About 8 Hz",
+       "Lower edge of alpha"
+      ],
+      [
+       "About 8-10 years",
+       "About 9-10 Hz",
+       "Near adult"
+      ],
+      [
+       "Mid-teens",
+       "Adult 9-11 Hz",
+       "Maturation essentially complete"
+      ]
+     ],
+     "note": "Typical teaching values; sources differ by a month or a Hz. A posterior rhythm under about 8 Hz after age 3 is usually called slow. Guideline 5: in infants over 3 months, passive eye closure (a hand over the eyes) or peek-a-boo helps bring out the rhythm."
+    },
+    {
+     "title": "Sleep transients by age",
+     "kind": "cards",
+     "cards": [
+      {
+       "title": "Sleep spindles",
+       "body": "Appear about 6-8 weeks post-term (about 46-48 weeks PMA). Early spindles are long, central and often asynchronous between hemispheres.",
+       "points": [
+        "Should be synchronous by about 2 years",
+        "Asynchrony before 2 years is normal; persistent asymmetry or absence on one side is not"
+       ]
+      },
+      {
+       "title": "Vertex waves and K-complexes",
+       "body": "Begin to appear at about 5-6 months; in young children vertex waves are high voltage, very sharp and may come in runs.",
+       "points": [
+        "Do not mistake for epileptiform discharges"
+       ]
+      },
+      {
+       "title": "Hypnagogic hypersynchrony",
+       "body": "Paroxysmal bursts or long runs of high-voltage, rhythmic 3-5 Hz generalized slowing in drowsiness (and on arousal), often maximal frontally or centrally.",
+       "points": [
+        "From about 3-6 months; most common in infants and toddlers; usually fades by about 11-12 years",
+        "Normal; may contain sharp components"
+       ]
+      },
+      {
+       "title": "Posterior slow waves of youth",
+       "body": "Delta waves fused with the posterior rhythm in the occipital region, blocking with eye opening like the alpha rhythm.",
+       "points": [
+        "Children and adolescents, most common in later childhood",
+        "Normal; should be symmetric"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Other normal patterns",
+     "kind": "list",
+     "items": [
+      "Mu rhythm: arch-shaped 7-11 Hz central rhythm, blocked by movement or thinking of moving the opposite hand; more common in older children and adolescents.",
+      "Lambda waves: positive occipital sharp transients during visual scanning with eyes open (for example looking at pictures); common in children; disappear with eyes closed or a blank wall.",
+      "Occipital spikes or sharp waves in young children with poor vision should be interpreted with caution.",
+      "In young children, sensitivity may need reducing to 10-15 µV/mm because of high voltage, but run part of the record at about 7 µV/mm (Guideline 5)."
+     ]
+    },
+    {
+     "title": "Hyperventilation and activation in children",
+     "kind": "list",
+     "items": [
+      "Children produce a fast, high-voltage slow-wave build-up during HV, often earlier and larger than adults; this is normal if it resolves promptly afterward.",
+      "Build-up is often posterior or diffuse in young children and frontal in adolescents and adults.",
+      "Guideline 5: do HV at the beginning and photic stimulation at the end, so the child can fall asleep; photic over at least 1-30 flashes per second while awake.",
+      "If HV fails to show findings in suspected absence epilepsy, a second trial at least 10 minutes after the first may help.",
+      "Most children can do HV from about 3 years with coaching (pinwheel, blowing games).",
+      "Record drowsiness, sleep onset and arousal continuously; natural sleep preferred, sleep deprivation or melatonin may help; sedation is an institutional decision."
+     ]
+    },
+    {
+     "title": "Infantile spasms (West syndrome)",
+     "kind": "cards",
+     "cards": [
+      {
+       "title": "Clinical",
+       "body": "Clusters of brief flexor, extensor or mixed spasms, typically starting between about 3 and 12 months, often on waking. Triad: spasms, hypsarrhythmia and developmental arrest or regression."
+      },
+      {
+       "title": "Hypsarrhythmia (interictal)",
+       "body": "Chaotic, very high-voltage (often over 200 µV), asynchronous slow waves with multifocal spikes and sharp waves and no organized background.",
+       "points": [
+        "Often fragments into discontinuous bursts in NREM sleep",
+        "Modified hypsarrhythmia variants are common"
+       ]
+      },
+      {
+       "title": "Electrodecremental event (ictal)",
+       "body": "The spasm itself is usually a generalized high-voltage slow wave or sharp wave followed by sudden diffuse voltage attenuation, often with low-voltage fast activity, lasting about a second to several seconds.",
+       "points": [
+        "It is the ictal correlate; the EEG flattens during the spasm",
+        "Not slow spike-and-wave (that is Lennox-Gastaut)"
+       ]
+      },
+      {
+       "title": "Technologist tips",
+       "body": "Record sleep and the waking period, when clusters are most likely. Keep video on the whole body, add deltoid or other surface EMG if possible, and mark each spasm."
+      }
+     ]
+    }
+   ],
+   "pearls": [
+    "Posterior rhythm about 3-4 Hz at 3-4 months, 5-6 Hz by about 1 year, 8 Hz by about 3 years, 9-10 Hz by about 8-10 years.",
+    "Spindles appear 6-8 weeks post-term and should be synchronous by about 2 years (not 6 months).",
+    "Vertex waves and K-complexes appear at about 5-6 months.",
+    "Hypnagogic hypersynchrony is normal drowsy slowing in infants and young children.",
+    "Infantile spasms = electrodecremental events on EEG; the interictal pattern is hypsarrhythmia.",
+    "Slow spike-and-wave belongs to Lennox-Gastaut syndrome, not infantile spasms.",
+    "Posterior slow waves of youth block with eye opening and are normal."
+   ],
+   "eegLink": "Children's normal variants are high voltage and sharp, so clear state labels (drowsy, HV, eyes open) are what let the reader call them normal."
+  },
+  {
+   "id": "name-the-age",
+   "title": "Name the age",
+   "intro": "Each neonatal tracing hides the age. Read the continuity, the graphoelements and the state, then decide which age fits. The last two tracings ask you to measure a child's posterior rhythm against the milestones.",
+   "sections": [
+    {
+     "title": "Tracing 1",
+     "kind": "tracingQuiz",
+     "scene": {
+      "seed": 701,
+      "sensitivity": 10,
+      "montage": "longitudinal",
+      "montages": [
+       "longitudinal"
+      ],
+      "background": {
+       "pdrHz": 0,
+       "pdrUv": 0,
+       "beta": 0.5,
+       "theta": 0.5,
+       "delta": 0.5,
+       "noise": 2
+      },
+      "findings": [
+       {
+        "type": "burst",
+        "uv": 90,
+        "runs": [
+         [
+          0.6,
+          2.6
+         ],
+         [
+          6.8,
+          8.6
+         ]
+        ],
+        "rampS": 0.15,
+        "sharpPerS": 0.6
+       },
+       {
+        "type": "temporalTheta",
+        "at": [
+         0.9,
+         7.2
+        ],
+        "hz": 5,
+        "uv": 120,
+        "durS": 1.2
+       },
+       {
+        "type": "deltaBrush",
+        "at": [
+         1.2,
+         7.6
+        ],
+        "uv": 160,
+        "fastUv": 30,
+        "center": [
+         0,
+         0.05
+        ],
+        "sigma": 0.35
+       }
+      ]
+     },
+     "caption": "NeuroLinea synthetic tracing, age hidden. Bursts separated by near-flat interburst periods.",
+     "question": "Bursts are separated by almost flat stretches, and each burst carries rhythmic temporal theta and delta brushes. Which postmenstrual age fits best?",
+     "options": [
+      "About 26 to 29 weeks",
+      "About 36 to 38 weeks",
+      "About 38 to 40 weeks",
+      "About 44 to 46 weeks"
+     ],
+     "answer": 0,
+     "explanation": "Temporal theta bursts (temporal sawtooth) belong to the very premature brain, described from about 24 weeks and fading through the early 30s (ACNS 2013 gives about 24 to 34 weeks; exam keys often say 24 to 28), and a discontinuous record with a very low-voltage interburst (tracé discontinu) fits that age. Delta brushes are present but have not yet peaked. By 36 to 38 weeks temporal theta has gone, delta brushes are declining and quiet sleep is moving to tracé alternant; at term, quiet sleep shows tracé alternant with an active interburst; by about 44 weeks delta brushes have gone."
+    },
+    {
+     "title": "Tracing 2",
+     "kind": "tracingQuiz",
+     "scene": {
+      "seed": 702,
+      "sensitivity": 10,
+      "montage": "longitudinal",
+      "montages": [
+       "longitudinal"
+      ],
+      "background": {
+       "pdrHz": 0,
+       "pdrUv": 0,
+       "beta": 1.5,
+       "theta": 4,
+       "delta": 6,
+       "noise": 3
+      },
+      "findings": [
+       {
+        "type": "deltaBrush",
+        "at": [
+         0.6,
+         2.4,
+         4.3,
+         6.2,
+         8.1
+        ],
+        "uv": 130,
+        "fastUv": 35,
+        "center": [
+         0,
+         0
+        ],
+        "sigma": 0.3
+       },
+       {
+        "type": "deltaBrush",
+        "at": [
+         1.4,
+         3.5,
+         5.4,
+         7.3,
+         9.0
+        ],
+        "uv": 120,
+        "fastUv": 30,
+        "center": [
+         -0.45,
+         -0.6
+        ],
+        "sigma": 0.3
+       },
+       {
+        "type": "deltaBrush",
+        "at": [
+         1.9,
+         5.0,
+         8.6
+        ],
+        "uv": 110,
+        "fastUv": 30,
+        "center": [
+         0.45,
+         -0.6
+        ],
+        "sigma": 0.3
+       }
+      ]
+     },
+     "caption": "NeuroLinea synthetic tracing, age hidden.",
+     "question": "Abundant delta brushes (slow waves with fast activity riding on them) appear over central and temporal regions in a fairly continuous record. Which age fits best?",
+     "options": [
+      "About 24 to 26 weeks",
+      "About 32 to 34 weeks",
+      "About 40 to 42 weeks",
+      "About 46 to 48 weeks"
+     ],
+     "answer": 1,
+     "explanation": "Delta brushes are most abundant around 32 to 34 weeks postmenstrual age. They are sparser in the very premature (when temporal theta is the signature), fade toward term (research reviews put their disappearance at about 38-42 weeks; exam keys often say gone by about 44 weeks), so a record full of them at 46 to 48 weeks would be abnormal (dysmature)."
+    },
+    {
+     "title": "Tracing 3",
+     "kind": "tracingQuiz",
+     "scene": {
+      "seed": 703,
+      "state": "quietSleep",
+      "sensitivity": 10,
+      "montage": "longitudinal",
+      "montages": [
+       "longitudinal"
+      ],
+      "background": {
+       "pdrHz": 0,
+       "pdrUv": 0,
+       "beta": 1.5,
+       "theta": 3,
+       "delta": 3.5,
+       "noise": 3
+      },
+      "findings": [
+       {
+        "type": "burst",
+        "uv": 130,
+        "runs": [
+         [
+          0.4,
+          3.2
+         ],
+         [
+          5.6,
+          8.6
+         ]
+        ],
+        "rampS": 0.3,
+        "sharpPerS": 0.8
+       },
+       {
+        "type": "sharp",
+        "center": [
+         -0.3,
+         0.85
+        ],
+        "sigma": 0.25,
+        "uv": 70,
+        "durMs": 140,
+        "at": [
+         1.5,
+         6.9
+        ]
+       },
+       {
+        "type": "sharp",
+        "center": [
+         0.3,
+         0.85
+        ],
+        "sigma": 0.25,
+        "uv": 70,
+        "durMs": 140,
+        "at": [
+         1.52,
+         6.92
+        ]
+       }
+      ]
+     },
+     "caption": "NeuroLinea synthetic tracing, age hidden, quiet sleep. Small frontal sharp transients appear in the bursts.",
+     "question": "In quiet sleep, high-voltage bursts alternate with lower-voltage but clearly active stretches, and small frontal sharp transients appear. Which description fits?",
+     "options": [
+      "Tracé discontinu of a 27-week infant",
+      "Tracé alternant of a term newborn",
+      "Burst suppression after severe asphyxia",
+      "Hypsarrhythmia of a 6-month-old infant"
+     ],
+     "answer": 1,
+     "explanation": "Tracé alternant is the quiet-sleep pattern of the term newborn: the interburst is lower in voltage but never flat, and frontal sharp transients (encoches frontales) are a normal term graphoelement. Tracé discontinu has a near-flat interburst. Burst suppression has a suppressed interburst and is invariant and unreactive. Hypsarrhythmia is chaotic, very high-voltage multifocal activity with no alternating structure."
+    },
+    {
+     "title": "Tracing 4",
+     "kind": "tracingQuiz",
+     "scene": {
+      "seed": 704,
+      "sensitivity": 10,
+      "montage": "longitudinal",
+      "montages": [
+       "longitudinal"
+      ],
+      "background": {
+       "pdrHz": 0,
+       "pdrUv": 0,
+       "beta": 2.5,
+       "theta": 6,
+       "delta": 5,
+       "noise": 4
+      },
+      "findings": [
+       {
+        "type": "lateralEye",
+        "at": 2.1,
+        "dir": "left",
+        "uv": 110
+       },
+       {
+        "type": "lateralEye",
+        "at": 6.0,
+        "dir": "right",
+        "uv": 110
+       }
+      ]
+     },
+     "caption": "NeuroLinea synthetic tracing, age hidden. Recorded about 2 minutes after a term newborn fell asleep.",
+     "question": "A 40-week newborn fell asleep 2 minutes ago. The record is continuous and mixed in frequency, with rapid lateral eye movements. What is the state, and is it expected?",
+     "options": [
+      "Quiet sleep; expected as the first state at term",
+      "Wakefulness; the infant has not yet fallen asleep",
+      "Active sleep; expected as the first state at term",
+      "Active sleep; abnormal so soon after sleep onset"
+     ],
+     "answer": 2,
+     "explanation": "Term newborns enter sleep through active sleep (the forerunner of REM). A continuous mixed record with rapid eye movements, in an infant observed to be asleep, is active sleep, and seeing it at sleep onset is normal; sleep-onset active sleep persists until about 3-4 months post-term (ACNS: about 4 months). Quiet sleep (tracé alternant at term) follows later in the cycle. Behavioural observation and the polygraphic channels separate active sleep from wakefulness."
+    },
+    {
+     "title": "Tracing 5",
+     "kind": "tracingQuiz",
+     "scene": {
+      "seed": 705,
+      "pmaWeeks": 40,
+      "ageYears": 0,
+      "state": "quietSleep",
+      "sensitivity": 10,
+      "montage": "longitudinal",
+      "montages": [
+       "longitudinal"
+      ],
+      "background": {
+       "pdrHz": 0,
+       "pdrUv": 0,
+       "beta": 1.5,
+       "theta": 4,
+       "delta": 5,
+       "noise": 3
+      },
+      "findings": [
+       {
+        "type": "ictal",
+        "center": "C3",
+        "sigma": 0.22,
+        "start": 0.8,
+        "end": 10,
+        "hzStart": 3,
+        "hzEnd": 1.5,
+        "uvStart": 40,
+        "uvEnd": 130,
+        "label": "Onset"
+       }
+      ]
+     },
+     "caption": "NeuroLinea synthetic tracing. The discharge continues on the next pages for about 40 seconds; no clinical change was seen.",
+     "question": "A rhythmic discharge begins at C3, slows and grows in amplitude as it evolves, and stays focal. What does this show?",
+     "options": [
+      "A focal electrographic seizure, typical of neonates",
+      "Generalized 3 Hz spike-and-wave, typical of neonates",
+      "Normal frontal sharp transients of the term infant",
+      "A rhythmic artifact from the cooling blanket pump"
+     ],
+     "answer": 0,
+     "explanation": "Neonatal seizures are typically focal: a rhythmic, evolving discharge from one region lasting at least 10 seconds (ACNS neonatal terminology). Generalized spike-and-wave needs a mature brain and is not how neonatal seizures look. Frontal sharp transients are brief, isolated and frontal. An artifact would not evolve in frequency and amplitude within a field around C3. With no clinical change this is electrographic-only, which is common in neonates; mark it and notify per protocol."
+    },
+    {
+     "title": "Tracing 6",
+     "kind": "tracingQuiz",
+     "scene": {
+      "seed": 706,
+      "pmaWeeks": 40,
+      "ageYears": 0,
+      "state": "semicomatose",
+      "sensitivity": 10,
+      "montage": "longitudinal",
+      "montages": [
+       "longitudinal"
+      ],
+      "background": {
+       "pdrHz": 0,
+       "pdrUv": 0,
+       "beta": 0.3,
+       "theta": 0.3,
+       "delta": 0.3,
+       "noise": 1.5
+      },
+      "findings": [
+       {
+        "type": "burst",
+        "uv": 160,
+        "runs": [
+         [
+          1.0,
+          2.0
+         ]
+        ],
+        "rampS": 0.05,
+        "sharpPerS": 2
+       }
+      ]
+     },
+     "caption": "NeuroLinea synthetic tracing. The next burst appeared about 14 seconds later; the record did not change with stimulation.",
+     "question": "A term newborn after severe birth asphyxia shows brief bursts separated by long, almost flat periods, unchanged by stimulation. What is this pattern?",
+     "options": [
+      "Tracé alternant, normal quiet sleep at term",
+      "Burst suppression, a severely abnormal background",
+      "Tracé discontinu, normal for a term newborn",
+      "Low-amplitude active sleep, normal at term"
+     ],
+     "answer": 1,
+     "explanation": "Bursts separated by long suppressed periods in a term newborn, invariant and unreactive, is burst suppression, one of the most severe backgrounds after hypoxic-ischemic injury. Tracé alternant has an active interburst and cycles with sleep states. Tracé discontinu is normal only in the premature. Active sleep is continuous. The technologist documents the pattern, tests and marks reactivity, and notifies per protocol; grading and prognosis are the physician's."
+    },
+    {
+     "title": "Tracing 7",
+     "kind": "tracingQuiz",
+     "scene": {
+      "seed": 711,
+      "ageYears": 1,
+      "state": "awake",
+      "sensitivity": 10,
+      "montage": "longitudinal",
+      "montages": [
+       "longitudinal"
+      ],
+      "background": {
+       "pdrHz": 6,
+       "pdrUv": 50,
+       "theta": 3,
+       "delta": 2,
+       "beta": 1,
+       "noise": 3
+      }
+     },
+     "caption": "NeuroLinea synthetic tracing. Use the caliper to time the posterior rhythm.",
+     "question": "A 12-month-old is awake with eyes closed. Measure the posterior dominant rhythm. Is it appropriate for age?",
+     "options": [
+      "Yes; about 5 to 6 Hz is typical near 12 months",
+      "No; it should already be 9 to 10 Hz at 12 months",
+      "No; a posterior rhythm should not exist before 3 years",
+      "Yes; but only because it is above 8 Hz in this child"
+     ],
+     "answer": 0,
+     "explanation": "The posterior rhythm first appears around 3 to 4 months at about 3 to 4 Hz, reaches about 5 to 6 Hz by 12 months, and about 8 Hz by 3 years. Adult values of 9 to 10 Hz come later in childhood. A 6 Hz rhythm at 12 months is expected."
+    },
+    {
+     "title": "Tracing 8",
+     "kind": "tracingQuiz",
+     "scene": {
+      "seed": 712,
+      "ageYears": 7,
+      "state": "awake",
+      "sensitivity": 10,
+      "montage": "longitudinal",
+      "montages": [
+       "longitudinal"
+      ],
+      "background": {
+       "pdrHz": 5,
+       "pdrUv": 60,
+       "theta": 3,
+       "delta": 2,
+       "beta": 1,
+       "noise": 3
+      }
+     },
+     "caption": "NeuroLinea synthetic tracing. Use the caliper to time the posterior rhythm.",
+     "question": "A 7-year-old is awake, alert, with eyes closed. Measure the posterior dominant rhythm. What should you document?",
+     "options": [
+      "A normal posterior rhythm for a 7-year-old",
+      "A posterior rhythm slower than expected for age",
+      "A posterior rhythm faster than expected for age",
+      "No posterior rhythm, because children lack one"
+     ],
+     "answer": 1,
+     "explanation": "By about 3 years the posterior rhythm reaches about 8 Hz, so a 5 Hz rhythm in an alert 7-year-old is slow for age. Confirm the child is truly alert (drowsiness slows the rhythm), document the measured frequency and its reactivity to eye opening, and let the physician interpret it."
+    }
+   ]
+  }
+ ],
+ "mistakes": [
+  [
+   "Delta brushes are a normal term and early-infancy finding, still abundant at 44-46 weeks PMA.",
+   "Delta brushes peak at 32-34 weeks and are only occasional in quiet sleep near term (ACNS: up to about 40 weeks); exam keys say gone by about 44 weeks PMA (CA)."
+  ],
+  [
+   "Temporal theta bursts are a term or early-infancy finding (about 44-52 weeks).",
+   "Temporal theta bursts mark the very premature infant: about 24-28 weeks in exam keys (ACNS: 24-34 weeks, maximal 29-32), gone by about 34 weeks."
+  ],
+  [
+   "Right temporal sharp transients in wakefulness at 38 weeks are normal.",
+   "Normal temporal sharp transients are sporadic, bilateral and mostly in sleep; persistent one-sided ones in wakefulness are a non-specific sign of dysfunction on that side."
+  ],
+  [
+   "A term newborn falls asleep into quiet sleep.",
+   "A term newborn enters active (REM-like) sleep at sleep onset; this persists until about 3-4 months post-term."
+  ],
+  [
+   "Term neonatal seizures look like generalized spike-and-wave.",
+   "Neonatal seizures are focal: rhythmic, evolving focal spikes, sharp waves or rhythmic waves, lasting at least 10 seconds."
+  ],
+  [
+   "Spindles should be synchronous by 6 months.",
+   "Spindles start asynchronous at 6-8 weeks post-term and should be synchronous by about 2 years."
+  ],
+  [
+   "Infantile spasms show slow spike-and-wave.",
+   "The spasm correlates with an electrodecremental event; the interictal pattern is hypsarrhythmia. Slow spike-and-wave is Lennox-Gastaut."
+  ],
+  [
+   "Bursts every 10-20 s with unreactive severe attenuation after term asphyxia could be normal tracé alternant.",
+   "That is burst suppression: severe hypoxic-ischemic injury. Tracé alternant is reactive, varies with state and its gaps stay above about 25 µV."
+  ],
+  [
+   "Gestational age is the age used to read a neonatal EEG.",
+   "Read the EEG by PMA = gestational age + chronological age; GA alone ignores time since birth."
+  ],
+  [
+   "Any discontinuous neonatal EEG is abnormal.",
+   "Tracé discontinu is normal in prematures and tracé alternant is normal in term quiet sleep; judge gaps against the PMA."
+  ],
+  [
+   "If a baby stops twitching after phenobarbital, the seizures have stopped.",
+   "Electroclinical dissociation is common: EEG-only seizures often continue after medication, so keep recording and notify per protocol."
+  ],
+  [
+   "A 30-minute neonatal EEG with the 1 Hz adult low-frequency filter is enough.",
+   "Guideline 5: usually longer, capturing active and quiet sleep (at least 60 minutes if the pattern is invariant), with LFF 0.3-0.6 Hz and polygraphy."
+  ]
+ ],
+ "memory": [
+  [
+   "PMA = GA + chronological age",
+   "Postmenstrual age adds gestational age at birth to time since birth"
+  ],
+  [
+   "Brushes peak 32-34, gone by 44",
+   "Delta brush window; the two 4s"
+  ],
+  [
+   "Spindles: 2 months appear, 2 years together",
+   "Spindles appear about 6-8 weeks post-term and are synchronous by about 2 years"
+  ],
+  [
+   "Spasm = sudden flattening",
+   "Infantile spasm ictal pattern is an electrodecremental event"
+  ]
+ ]
+}

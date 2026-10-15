@@ -257,7 +257,7 @@ export const FINDING_TYPES = [
   "mu", "muShapedAlpha", "firda", "polymorphicDelta", "spike", "sharp", "gsw", "polyspikeWave",
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
   "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine", "focalDelta", "burst",
-  "rhythm", "periodic", "ictal", "hypsarrhythmia", "electrodecrement", "fastBurst", "sweat",
+  "rhythm", "periodic", "ictal", "hypsarrhythmia", "electrodecrement", "fastBurst", "sweat", "deltaBrush", "temporalTheta",
 ];
 
 /**
@@ -834,6 +834,49 @@ export function generateReferential(scene) {
           const sig = narrowband(n, 55, 30, gauss);
           for (let i = 0; i < n; i++) sig[i] *= amp * gateValue(time(i), f.from ?? 0, f.to ?? seconds, 0.05);
           addSource(V, field(s, 0.12), sig);
+        }
+        break;
+      }
+      case "deltaBrush": {
+        // Neonatal delta brush: a slow (about 0.5-1.5 Hz) surface-negative delta wave with a burst of
+        // 8-20 Hz fast activity riding on it. One event per time in `at`.
+        const times = Array.isArray(f.at) ? f.at : [f.at];
+        const amp = f.uv ?? 120;
+        const fastUv = f.fastUv ?? 30;
+        const fastHz = f.fastHz ?? 14;
+        const dur = 1 / (2 * (f.hz ?? 0.8)); // half cycle of the delta wave
+        const sig = new Float64Array(n);
+        for (const t0 of times) {
+          const ph = rng() * 6.28;
+          for (let i = 0; i < n; i++) {
+            const u = (time(i) - t0) / dur;
+            if (u < 0 || u > 1) continue;
+            const win = Math.sin(Math.PI * u);
+            sig[i] += -amp * win + fastUv * win * win * Math.sin(2 * Math.PI * fastHz * time(i) + ph);
+          }
+        }
+        addSource(V, field(f.center ?? [0, 0], f.sigma ?? 0.3), sig);
+        break;
+      }
+      case "temporalTheta": {
+        // Temporal theta bursts of prematurity: brief, sharply contoured 4-7 Hz runs over the temporal regions.
+        const times = Array.isArray(f.at) ? f.at : [f.at];
+        const hz = f.hz ?? 5;
+        const amp = f.uv ?? 80;
+        const dur = f.durS ?? 1;
+        for (const side of f.sides || ["left", "right"]) {
+          const sig = new Float64Array(n);
+          for (const t0 of times) {
+            const ph = rng() * 6.28;
+            for (let i = 0; i < n; i++) {
+              const u = (time(i) - t0) / dur;
+              if (u < 0 || u > 1) continue;
+              const w = Math.sin(Math.PI * u);
+              const p = 2 * Math.PI * hz * time(i) + ph;
+              sig[i] += -amp * w * (Math.sin(p) + 0.3 * Math.sin(2 * p + 0.6));
+            }
+          }
+          addSource(V, field(side === "left" ? [-0.75, 0.05] : [0.75, 0.05], f.sigma ?? 0.25), sig);
         }
         break;
       }

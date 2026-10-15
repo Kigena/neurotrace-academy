@@ -18,12 +18,12 @@ const FOOTER = 30;
 const GROUPS = { longitudinal: [4, 4, 4, 4, 2], transverse: [3, 4, 4, 4, 3], referential: [8, 8], referentialA2: [8, 8], referentialA1: [8, 8], referentialCz: [8, 8], linkedEars: [8, 8], average: [8, 8], laplacian: [8, 8, 3], eyeCheck: [2, 2, 2, 2, 2, 2, 2] };
 const MONTAGE_TAB = { longitudinal: "Longitudinal", transverse: "Transverse", referential: "Ipsi ear", referentialA2: "All to A2", referentialA1: "All to A1", referentialCz: "Cz ref", linkedEars: "Linked ears", average: "Average", laplacian: "Laplacian", eyeCheck: "Eye check" };
 const SENSITIVITIES = [1, 2, 3, 5, 7, 10, 15, 20, 30, 50];
-const STATE_LABEL = { awake: "awake", drowsy: "drowsy", n2: "stage N2 sleep", stupor: "stuporous", semicomatose: "semicomatose", coma: "comatose", sleep: "asleep" };
+const STATE_LABEL = { activeSleep: "active sleep", quietSleep: "quiet sleep", awake: "awake", drowsy: "drowsy", n2: "stage N2 sleep", stupor: "stuporous", semicomatose: "semicomatose", coma: "comatose", sleep: "asleep" };
 
 function ageText(age) {
   if (age == null) return null;
   if (age < 1) return `${Math.round(age * 12)} months`;
-  return `${age} years`;
+  return `${age} year${age === 1 ? "" : "s"}`;
 }
 
 function pathFor(data, x0, y0, pxPerSample, pxPerUv) {
@@ -102,7 +102,7 @@ function TracingSvg({ scene, montage, sens, caliper, onCaliper, ruler, onRuler, 
   const rul = ruler && Math.abs(ruler.y2 - ruler.y1) > 1 ? ruler : null;
   const rulMm = rul ? Math.abs(rul.y2 - rul.y1) / PX_PER_MM : 0;
   const lffTc = timeConstantFromCutoff(scene.lff ?? 1);
-  const stateText = [ageText(scene.ageYears), STATE_LABEL[scene.state] || scene.state].filter(Boolean).join(", ");
+  const stateText = [scene.pmaWeeks ? `${scene.pmaWeeks} weeks PMA` : ageText(scene.ageYears), STATE_LABEL[scene.state] || scene.state].filter(Boolean).join(", ");
 
   return (
     <svg

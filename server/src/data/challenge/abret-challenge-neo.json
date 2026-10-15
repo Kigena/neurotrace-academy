@@ -1,0 +1,632 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-14",
+  "bank": "challenge",
+  "focus": "neonatal-eeg",
+  "description": "Neonatal EEG age reasoning: PMA arithmetic, maturational graphoelements, continuity, states, abnormal patterns and neonatal seizures. Text only; not yet medically verified.",
+  "totalQuestions": 22,
+  "questions": [
+    {
+      "id": "ch-neo-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "PMA",
+        "sleep-states"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 34 weeks' gestation is recorded at 6 weeks of age after a feed. The first sleep epoch shows rapid eye movements, irregular breathing, low chin EMG and continuous mixed activity. How should this sleep onset be regarded?",
+      "explanation": "PMA is 34 + 6 = 40 weeks. Term newborns and young infants normally fall asleep into active sleep (rapid eye movements, irregular respiration, low chin tone, continuous activity); this sleep-onset active sleep persists until about 3 months post-term, after which NREM onset takes over. Calling it dysmature or insisting sleep must begin in quiet sleep applies an adult or older-infant rule. Sleep-onset REM is a meaningful narcolepsy marker only in older children and adults, not in a newborn whose normal pattern is active-sleep onset.",
+      "learningObjective": "Compute PMA and recognize sleep-onset active sleep as normal at term.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Dysmature, as quiet sleep should lead at 40 weeks",
+        "Sleep-onset REM that suggests narcolepsy",
+        "Mislabelled wake, as sleep must begin in quiet sleep",
+        "Expected active-sleep onset for 40 weeks PMA"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "PMA",
+        "delta-brush",
+        "dysmaturity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 30 weeks' gestation is now 16 weeks old. Quiet sleep still contains frequent delta brushes over the central and temporal regions. How should this be regarded?",
+      "explanation": "PMA is 30 + 16 = 46 weeks. Delta brushes are most abundant around 32-34 weeks, decline toward term (lingering mainly in quiet sleep) and normally disappear around term (research reviews give about 38-42 weeks PMA; exam keys often say gone by about 44 weeks), so frequent brushes at 46 weeks are out of place for age and suggest dysmaturity or an abnormal background. They do not persist to 52 weeks, they do not peak near this age, and preterm birth does not need extra correction because PMA already accounts for prematurity.",
+      "learningObjective": "Apply the delta brush disappearance age (by term, and certainly by about 44 weeks PMA) after computing PMA.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Expected, as brushes persist until about 52 weeks",
+        "Expected, as brushes reach their peak near this age",
+        "Expected, as preterm birth delays brushes indefinitely",
+        "Persisting past the age at which brushes have faded"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "delta-brush",
+        "graphoelements"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which description matches the frequency content of a delta brush in a premature infant?",
+      "explanation": "A delta brush is a slow delta wave (roughly 0.3-1.5 Hz) with low-to-moderate amplitude fast activity, typically about 8-22 Hz (ranges up to 25 Hz are also reported), riding on it, resembling a brush. Theta with gamma-range fast activity describes no standard neonatal graphoelement. Alpha riding on slower waves is not the brush definition, and sharp waves with superimposed spikes describe an epileptiform complex rather than a normal maturational transient.",
+      "learningObjective": "Recall the frequency components of a delta brush.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "4-7 Hz theta with superimposed 30-40 Hz fast activity",
+        "0.3-1.5 Hz delta with superimposed 8-22 Hz fast activity",
+        "8-12 Hz alpha riding on a slower 2-3 Hz wave",
+        "1-3 Hz sharp waves with superimposed 3-5 Hz spikes"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "delta-brush",
+        "maturation"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "At roughly which postmenstrual age are delta brushes most abundant in the neonatal EEG?",
+      "explanation": "Delta brushes appear in very premature infants, become most prominent around 32-34 weeks PMA, then decline toward term (persisting mainly in quiet sleep) and are normally absent around term (about 38-42 weeks PMA in research reviews; exam keys often say by 44 weeks). At 24-26 weeks they are present but sparser and the record is dominated by long discontinuity. At 38-40 weeks they are fading, and by 44-46 weeks they should long since have gone.",
+      "learningObjective": "Recall the peak age of delta brushes.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "About 32-34 weeks",
+        "About 24-26 weeks",
+        "About 38-40 weeks",
+        "About 44-46 weeks"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "temporal-theta",
+        "seizure-mimic"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 26 weeks' gestation is recorded at 3 weeks of age. Brief 4-6 Hz sharply contoured rhythmic bursts of 1-2 s appear over each temporal region independently, without change in frequency or spread. What is the best interpretation?",
+      "explanation": "PMA is 26 + 3 = 29 weeks. Temporal theta bursts (temporal sawtooth) are a hallmark of the very premature EEG: brief, rhythmic 4-6 Hz, sharply contoured, independent over each temporal region, and they fade by the early 30s weeks. They are not seizures, because they are brief (well under the 10 s ACNS minimum) and do not evolve in frequency, morphology or location. Temporal sharp transients are single sharp waves, not rhythmic bursts. Glossokinetic artifact is slow and frontally or diffusely distributed with tongue movement, not focal theta rhythm.",
+      "learningObjective": "Distinguish temporal theta of prematurity from neonatal seizures after computing PMA.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Temporal seizures that need urgent notification",
+        "Temporal sharp transients of dysfunction",
+        "Temporal theta bursts, normal at 29 weeks PMA",
+        "Glossokinetic artifact from sucking movements"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "PMA",
+        "temporal-theta"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In which infant would bursts of temporal theta (temporal sawtooth) be most expected as a normal finding?",
+      "explanation": "Convert each to PMA: 25 + 4 = 29 weeks, 30 + 8 = 38 weeks, 36 + 6 = 42 weeks, 38 + 10 = 48 weeks. Temporal theta bursts belong to the very premature EEG, roughly the late 20s to early 30s weeks PMA, and fade before term. Only the 29-week infant falls in that window; the 38, 42 and 48 week infants are past the age when temporal theta is an expected feature, regardless of their birth gestational age.",
+      "learningObjective": "Compute PMA for several infants and match it to the age of temporal theta bursts.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Born at 30 weeks and now 8 weeks old",
+        "Born at 25 weeks and now 4 weeks old",
+        "Born at 36 weeks and now 6 weeks old",
+        "Born at 38 weeks and now 10 weeks old"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "trace-discontinu",
+        "burst-suppression"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 27 weeks is recorded at 2 weeks of age. The EEG is discontinuous: bursts with delta brushes alternate with low-voltage intervals of varying length, the bursts lengthen after handling, and continuity improves in active sleep. How should this be described?",
+      "explanation": "PMA is 27 + 2 = 29 weeks, an age at which a discontinuous background (tracé discontinu) is normal. The features that make it physiological are variability of interburst intervals, reactivity to handling, state-related change in continuity and maturational graphoelements such as delta brushes within bursts. Burst suppression is invariant and unreactive with very depressed interbursts. Tracé alternant belongs to quiet sleep near term and has active low-to-moderate voltage between bursts. Low-voltage undifferentiated activity is continuous and featureless, not bursting.",
+      "learningObjective": "Separate normal tracé discontinu from burst suppression using variability, reactivity and state.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Burst suppression, a severely abnormal pattern",
+        "Tracé alternant, which is advanced for this PMA",
+        "Tracé discontinu, appropriate for 29 weeks PMA",
+        "Low-voltage undifferentiated, a moderate abnormality"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "burst-suppression",
+        "trace-discontinu"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which feature most favors pathological burst suppression over normal premature tracé discontinu?",
+      "explanation": "Burst suppression is invariant and unreactive: the interburst intervals are very depressed and the pattern does not change with state, handling or noxious stimulation. Normal tracé discontinu varies: its interburst intervals change with state, bursts carry age-appropriate graphoelements such as delta brushes and temporal theta, and stimulation alters the pattern. The three other features are markers of a healthy premature discontinuous background.",
+      "learningObjective": "Name the defining features of neonatal burst suppression.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A fixed pattern unchanged by state or stimulation",
+        "Bursts that contain delta brushes and theta",
+        "Interburst intervals that vary with sleep state",
+        "Burst length that increases after handling"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "trace-alternant",
+        "trace-discontinu"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What best separates tracé alternant at term from the tracé discontinu of a very premature infant?",
+      "explanation": "In tracé alternant (quiet sleep near term) the segments between high-voltage bursts are not quiet: they contain continuous lower-amplitude mixed activity, and the intervals are short. In tracé discontinu of the very premature infant the interburst intervals are very low voltage and can be long. Long near-flat intervals describe premature discontinuity, not tracé alternant. Tracé alternant is a quiet-sleep pattern, not a waking one, and temporal theta bursts belong to early prematurity rather than term bursts.",
+      "learningObjective": "Contrast tracé alternant and tracé discontinu by interburst content.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Between bursts the record is nearly flat for 20 s",
+        "Bursts occur only during wakefulness and feeding",
+        "Between bursts there is ongoing lower-voltage activity",
+        "Bursts are composed mainly of temporal theta"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "HIE",
+        "hypothermia",
+        "prognosis"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A term infant receives therapeutic hypothermia after perinatal asphyxia, with continuous EEG. Which serial change is the most favorable for outcome?",
+      "explanation": "In hypoxic-ischemic encephalopathy the EEG background and its time course carry prognosis: early recovery of continuity and the reappearance of sleep-wake cycling are favorable signs. Burst suppression persisting beyond the first day or two, progressive voltage decline toward low voltage or inactivity, and an invariant unreactive background are all associated with severe injury and poor outcome. The technologist records, documents stimulation and reports changes per protocol; interpretation rests with the physician.",
+      "learningObjective": "Identify favorable versus unfavorable serial EEG findings in neonatal HIE.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Burst suppression that persists beyond 48 hours",
+        "A gradual fall in overall background voltage",
+        "Return of a continuous background with sleep-wake cycling",
+        "A fixed pattern with no change to stimulation"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "low-voltage",
+        "technique"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "A term neonate after cardiac arrest has a record that looks nearly flat at a sensitivity of 7 uV/mm. What is the most appropriate next technologist step?",
+      "explanation": "Very low-voltage neonatal records must be reviewed at higher sensitivity (for example 2 uV/mm) to show any low-amplitude cerebral activity, with impedances checked, ECG and other artifact identified, and documented auditory, tactile and noxious stimulation to test reactivity. Reducing sensitivity makes low-voltage activity even harder to see. Ending the study early loses the information the physician needs. Raising the low-frequency filter to 5 Hz would remove the slow activity that dominates the neonatal EEG.",
+      "learningObjective": "Apply recording technique for a very low-voltage neonatal record.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Reduce sensitivity to 15 uV/mm and widen the filter settings",
+        "Shorten the study and report the record as inactive",
+        "Increase sensitivity to 2 uV/mm and document reactivity testing",
+        "Raise the low-frequency filter to 5 Hz to steady the baseline"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "positive-rolandic-sharp-waves",
+        "IVH",
+        "PVL"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A preterm infant with a known grade 3 intraventricular hemorrhage has frequent surface-positive sharp waves at C3, C4 and Cz. With which process are these most closely associated?",
+      "explanation": "Positive rolandic sharp waves are surface-positive sharp transients over the central (rolandic) and vertex regions. They are a recognized marker of deep white matter injury, such as periventricular leukomalacia, and are often seen with intraventricular hemorrhage. They are not a benign maturational feature or a normal active-sleep transient, and they are not a specific metabolic sign of hypoglycemia. The technologist describes their location, polarity and frequency and reports them.",
+      "learningObjective": "Associate positive rolandic sharp waves with white matter injury in preterm infants.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Periventricular white matter injury",
+        "Benign maturation of the motor cortex",
+        "Hypoglycemia from inadequate feeding",
+        "Normal transients of active sleep"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "positive-rolandic-sharp-waves",
+        "polarity",
+        "bipolar-montage"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "In a longitudinal bipolar chain Fp1-C3, C3-O1, a sharp transient produces deflections in the two channels that point away from each other at C3. What does this indicate?",
+      "explanation": "With the convention that input 1 negative relative to input 2 deflects upward, a positive field at C3 drives Fp1-C3 upward (C3 more positive than Fp1) and C3-O1 downward, so the pens diverge or point away from each other at C3: a positive phase reversal. A negative maximum at C3 would make the deflections point toward each other. A maximum at Fp1 would appear at the end of the chain without a phase reversal at C3, and an O1 artifact would not create a reversal centered on C3. Recognizing positive polarity is how positive rolandic sharp waves are identified.",
+      "learningObjective": "Use phase reversal direction in a bipolar chain to identify a positive sharp wave.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A negative sharp wave maximal at the C3 electrode",
+        "A negative sharp wave maximal at the Fp1 electrode",
+        "Electrode artifact confined to the O1 electrode",
+        "A positive sharp wave maximal at the C3 electrode"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "seizure",
+        "subclinical"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "On cEEG in a term neonate, rhythmic 2 Hz sharp waves at C4 grow in amplitude, slow and spread to T4 over 40 s. The infant lies still, with no visible change. What is the best technologist response?",
+      "explanation": "This event is rhythmic, evolves in amplitude, frequency and location, and lasts well over the 10 s ACNS neonatal minimum, so it meets criteria for an electrographic seizure. Neonatal seizures are frequently subclinical (EEG-only), so the absence of a visible sign does not exclude one. The technologist marks onset, offset and spread, documents the infant's behavior and notifies per protocol. A brief rhythmic discharge lasts under 10 s. Temporal theta is a brief premature pattern, not an evolving 40 s event, and artifact is unlikely while the infant lies still.",
+      "learningObjective": "Recognize an evolving electrographic-only neonatal seizure and respond within scope.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Label it a brief rhythmic discharge that needs no report",
+        "Annotate it as temporal theta, normal for term age",
+        "Mark it as an electrographic seizure and notify per protocol",
+        "Label it movement artifact as no clinical sign appeared"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "brief-rhythmic-discharge",
+        "ACNS-terminology"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In a term neonate, a run of rhythmic 3 Hz sharp waves at T3 lasts 6 s and then stops. Using ACNS neonatal terminology, how is this best labelled?",
+      "explanation": "The ACNS neonatal terminology defines an electrographic seizure as a sudden, repetitive, evolving pattern lasting at least 10 s. Shorter rhythmic runs are called brief rhythmic discharges (BRDs); they are annotated because they are associated with a higher risk of seizures. Not every rhythmic run qualifies as a seizure. A temporal sharp transient is a single isolated sharp wave, not a 6 s run. A tracé alternant burst is a mixed-frequency high-voltage segment, not a focal rhythmic sharp-wave run.",
+      "learningObjective": "Apply the 10 s criterion separating neonatal seizures from brief rhythmic discharges.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Electrographic seizure, as any rhythmic run qualifies",
+        "Temporal sharp transient, as it is a single waveform",
+        "Burst of tracé alternant during quiet sleep",
+        "Brief rhythmic discharge, below the 10 s seizure minimum"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "seizure",
+        "electroclinical-dissociation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A term neonate with rhythmic right arm jerking receives a loading dose of phenobarbital. The jerking stops, but focal evolving discharges continue over the left central region. What does this illustrate?",
+      "explanation": "After antiseizure medication, neonates often lose the clinical signs of seizures while electrographic seizures continue: electroclinical uncoupling or dissociation. This is why continuous EEG rather than bedside observation is used to judge response. The cessation of jerking does not mean seizure control. Evolving focal rhythmic discharges are not muscle artifact, and post-ictal activity is suppression or slowing rather than ongoing evolving discharges. The technologist keeps recording, marks each event and notifies per protocol.",
+      "learningObjective": "Recognize electroclinical uncoupling after neonatal seizure treatment.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Electroclinical uncoupling, with seizures persisting on EEG",
+        "Successful treatment, as the clinical signs have stopped",
+        "Post-treatment artifact from muscle relaxation",
+        "Normal post-ictal activity that is expected to fade"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "seizure",
+        "ictal-pattern"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A term neonate has an acute left middle cerebral artery stroke. Which ictal EEG appearance is most typical of seizures in this setting?",
+      "explanation": "Neonatal seizures are typically focal: a rhythmic discharge (sharp waves, spikes or rhythmic delta, theta or alpha) begins in one region, commonly central or temporal, and evolves in frequency, amplitude, morphology or spread. The immature brain rarely generates generalized patterns, so generalized 3 Hz spike-and-wave belongs to childhood absence epilepsy. Hypsarrhythmia with electrodecremental events is the infantile spasms pattern of later infancy, and generalized polyspikes with myoclonus suggest other, older-age epilepsies.",
+      "learningObjective": "Recall that neonatal seizures are focal and evolving rather than generalized.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Generalized 3 Hz spike-and-wave with abrupt onset",
+        "A focal rhythmic discharge that evolves in one region",
+        "Hypsarrhythmia with electrodecremental events",
+        "Bilateral synchronous polyspikes with myoclonus"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "jitteriness",
+        "seizure-mimic",
+        "documentation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A term neonate has a fine rhythmic tremor of both arms that stops when the limbs are gently held and returns with handling. The EEG shows no change. What is the best technologist action?",
+      "explanation": "Stimulus-sensitive tremor that stops with gentle restraint, with no EEG correlate, is typical of jitteriness rather than seizure; clonic seizures persist despite restraint. The technologist documents the observation, the restraint test and the absence of EEG change so the physician can interpret it. Labelling it a seizure misrepresents the data. Changing the low-frequency filter will not reveal a clinical tremor, and electrode leads do not cause tremor.",
+      "learningObjective": "Document a seizure mimic (jitteriness) accurately.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Mark it as an electroclinical seizure and notify",
+        "Document the restraint test and the unchanged EEG",
+        "Reduce the low-frequency filter to show the tremor",
+        "Remove the arm leads as they cause the tremor"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "frontal-sharp-transients",
+        "PMA",
+        "maturation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 38 weeks is recorded at 12 weeks of age. Frequent high-voltage frontal sharp transients persist in sleep and wakefulness. How should this be regarded?",
+      "explanation": "PMA is 38 + 12 = 50 weeks. Frontal sharp transients (encoches frontales) become a regular feature at about 34-35 weeks, are prominent around term in transitional and quiet sleep, and normally fade by about 44-46 weeks. Frequent, high-voltage transients at 50 weeks that also persist into wakefulness are out of keeping with age and should be described and reported. They neither peak nor first appear at 50 weeks, and their timing is clearly age-dependent.",
+      "learningObjective": "Compute PMA and judge frontal sharp transients against their maturational window.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Persisting past the age at which they usually fade",
+        "Expected, as they peak around this postmenstrual age",
+        "Expected, as they first appear around this age",
+        "Expected, as their timing has no maturational link"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "frontal-sharp-transients",
+        "maturation"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "At about which postmenstrual age do frontal sharp transients (encoches frontales) first become a regular feature of the neonatal EEG?",
+      "explanation": "Frontal sharp transients emerge as a regular feature around 34-35 weeks PMA, are most prominent near term in transitional and quiet sleep, and fade by about 44-46 weeks. At 24-26 weeks the EEG is dominated by discontinuity, delta brushes and temporal theta rather than frontal sharp transients. By 44-46 weeks they are disappearing, and at 52-54 weeks they should be gone.",
+      "learningObjective": "Recall the age at which frontal sharp transients appear.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "About 24-26 weeks",
+        "About 34-35 weeks",
+        "About 44-46 weeks",
+        "About 52-54 weeks"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "neonatal",
+        "interhemispheric-synchrony",
+        "PMA"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An infant born at 31 weeks is recorded at 2 weeks of age. In the discontinuous segments, some bursts begin on one side more than 1.5 s before the other. How should this be regarded?",
+      "explanation": "PMA is 31 + 2 = 33 weeks. Interhemispheric synchrony of bursts follows a maturational course: the very premature EEG shows hypersynchronous bursts, a period of relative asynchrony follows around the early-to-mid 30s weeks, and synchrony is nearly complete by term. Some asynchronous bursts at 33 weeks are therefore expected. Full synchrony is not reached by 30 weeks, a callosal lesion is not implied by age-appropriate asynchrony, and burst synchrony is established near term rather than at age 2 (the age-2 milestone applies to sleep spindles).",
+      "learningObjective": "Judge interhemispheric burst synchrony against PMA.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Abnormal, as bursts are fully synchronous by 30 weeks",
+        "Abnormal, as asynchrony points to a callosal lesion",
+        "Expected, as bursts remain asynchronous until age 2",
+        "Expected partial asynchrony for 33 weeks PMA"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-neo-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "neonatal",
+        "sleep-states",
+        "polygraphy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A 38-week PMA neonate has eyes open, irregular breathing, frequent limb movement with chin EMG present, and a continuous mixed-frequency EEG. Which state is this?",
+      "explanation": "Neonatal state is assigned from behavior and polygraphy together. Open eyes with body movement, irregular respiration and present chin tone, with a continuous mixed-frequency EEG, define wakefulness. Active sleep has closed eyes with rapid eye movements, irregular respiration and low chin tone. Quiet sleep has closed eyes, no eye movements, regular respiration and tracé alternant or high-voltage slow activity. Indeterminate sleep is used when features of the sleep states do not agree, and closed eyes are required.",
+      "learningObjective": "Identify neonatal wakefulness from behavioral and polygraphic features.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Wakefulness",
+        "Active sleep",
+        "Quiet sleep",
+        "Indeterminate sleep"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}
