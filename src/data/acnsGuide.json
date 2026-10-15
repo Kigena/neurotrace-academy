@@ -509,6 +509,38 @@
           "note": "Generalized patterns can add a predominance: frontally, occipitally or midline predominant when that region is at least 50% higher in voltage, otherwise 'not otherwise specified'. Independent patterns at different times (left one hour, right later) are two lateralized patterns, not BI."
         },
         {
+          "title": "Generalized or secondary bilateral synchrony?",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Primary (generalized) bilateral synchrony",
+              "body": "Discharges arise over both hemispheres at the same moment from thalamocortical networks, as in the genetic (idiopathic) generalized epilepsies.",
+              "points": [
+                "Symmetric, bilaterally synchronous onset with no consistent lead from one region",
+                "Example: the 3 Hz spike-and-wave of childhood absence epilepsy"
+              ]
+            },
+            {
+              "title": "Secondary bilateral synchrony",
+              "body": "A focal (or multifocal) cortical discharge spreads so rapidly, largely through the corpus callosum, that it looks like a bilateral, synchronous discharge. It reflects rapid generalization from one or more sources.",
+              "points": [
+                "Clues: a consistent focal lead-in before each bilateral discharge (Blume and Pillay required focal spikes leading the bilateral burst by at least 2 seconds; computer analysis looks for a gap of roughly 10 ms or more between the hemispheres), amplitude asymmetry, independent focal discharges elsewhere in the record, and a focal start to the clinical seizures",
+                "Frontal and mesial frontal foci are the classic source",
+                "It means a focal epilepsy that can look generalized, which changes treatment and surgical planning"
+              ]
+            },
+            {
+              "title": "How to show it on the record",
+              "points": [
+                "Expand the time base (for example 60 mm/s on screen) to see which channels start first",
+                "Review on a referential montage as well as bipolar chains",
+                "Mark every burst so the reader can compare onsets; the reader decides the interpretation",
+                "ACNS 2021 calls a bilateral pattern 'lateralized' when it is clearly and consistently larger on one side (bilateral asymmetric) or has a consistent lead-in from the same side (bilateral asynchronous), so describe the asymmetry and the lead-in rather than labelling it"
+              ]
+            }
+          ]
+        },
+        {
           "title": "Main Term 2: what the pattern is",
           "kind": "table",
           "head": [
@@ -725,7 +757,8 @@
         "Relative amplitude is used only for PDs.",
         "+R is only for PDs and +S is only for RDA.",
         "Duration categories changed in 2021: intermediate is 1 to 9.9 min to match the ILAE 10 min focal status point.",
-        "RDA ranges from 0.5 to 4 Hz; anything faster and at least 0.5 s long is BIRDs or a seizure."
+        "RDA ranges from 0.5 to 4 Hz; anything faster and at least 0.5 s long is BIRDs or a seizure.",
+        "Secondary bilateral synchrony = rapid generalization from one or more focal sources; look for a consistent focal lead-in and asymmetry (ACNS 2021: lateralized, bilateral asynchronous)."
       ],
       "eegLink": "When you annotate a cEEG, using the standard name and modifiers lets the reader and the database agree on what you saw."
     },
@@ -1325,6 +1358,78 @@
           "answer": 3,
           "explanation": "A pattern with definite evolution (here frequency and location evolve; the amplitude increase alone does not count toward evolution) counts as an electrographic seizure once it lasts at least 10 s; on this page it has lasted about 8.5 s, so follow it onto the next page and time it. Discharges averaging over 2.5 Hz for 10 s are the other route, so a 3 Hz threshold is not the rule. Six cycles is the minimum for calling something rhythmic or periodic, not a seizure, and a clinical change is not required for an electrographic seizure. Mark the onset, test responsiveness and notify per protocol.",
           "caption": "Right temporal evolving rhythmic activity."
+        },
+        {
+          "title": "Tracing 7",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 802,
+            "ageYears": 24,
+            "state": "awake",
+            "sensitivity": 10,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal",
+              "referentialA2"
+            ],
+            "background": {
+              "pdrHz": 10,
+              "pdrUv": 40,
+              "theta": 1.5,
+              "delta": 1,
+              "beta": 1.5,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "sharp",
+                "center": "F3",
+                "sigma": 0.22,
+                "uv": 130,
+                "durMs": 80,
+                "at": [
+                  2.0,
+                  6.4
+                ]
+              },
+              {
+                "type": "gsw",
+                "from": 2.11,
+                "to": 3.3,
+                "hz": 3,
+                "startHz": 3.2,
+                "uv": 280,
+                "center": [
+                  -0.3,
+                  0.4
+                ],
+                "sigma": 0.6
+              },
+              {
+                "type": "gsw",
+                "from": 6.51,
+                "to": 7.6,
+                "hz": 3,
+                "startHz": 3.2,
+                "uv": 280,
+                "center": [
+                  -0.3,
+                  0.4
+                ],
+                "sigma": 0.6
+              }
+            ]
+          },
+          "caption": "NeuroLinea synthetic tracing. Every burst in this 24-year-old's record started the same way.",
+          "question": "Each burst begins with a sharp wave at F3 about a tenth of a second before bilateral spike-and-wave, and the left side stays larger. Which description fits best?",
+          "options": [
+            "Primary generalized discharges of genetic epilepsy",
+            "Secondary bilateral synchrony from a left frontal source",
+            "Two independent foci firing in each hemisphere",
+            "Hypnagogic hypersynchrony at the onset of drowsiness"
+          ],
+          "answer": 1,
+          "explanation": "A consistent focal lead-in at F3 followed by bilateral spike-and-wave that stays left-predominant is the picture of secondary bilateral synchrony: rapid generalization from a focal (here left frontal) source. Primary generalized discharges of genetic generalized epilepsy start symmetrically with no consistent focal lead. Independent foci would fire at different times, not as one bilateral burst. Hypnagogic hypersynchrony is a drowsiness pattern of children, not a focal-onset discharge in an adult. Expand the time base and review a referential montage to show the lead-in, and mark each burst for the reader."
         }
       ],
       "pearls": [

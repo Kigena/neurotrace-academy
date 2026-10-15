@@ -1,0 +1,693 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-15",
+  "bank": "challenge",
+  "focus": "photic-variants-synchrony",
+  "description": "Photomyogenic versus photoparoxysmal responses, secondary bilateral synchrony, benign-variant aliases, FIRDA and neurologic syndromes linked to focal epilepsy. Text only; not yet medically verified.",
+  "totalQuestions": 24,
+  "questions": [
+    {
+      "id": "ch-vx-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photomyogenic",
+        "photic",
+        "withdrawal"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A photomyogenic (photomyoclonic) response is most likely to be enhanced by which circumstance?",
+      "explanation": "The photomyogenic response is a muscle response of the frontal and periorbital muscles driven by the flashes, and it is enhanced by withdrawal from alcohol, barbiturates or benzodiazepines, by tension and by eye closure. Keeping the eyes open tends to abolish it rather than enhance it. Relaxing the face and jaw reduces the muscle contraction that produces it. Moving the lamp farther away weakens the stimulus and would make any photic response less likely, not more.",
+      "learningObjective": "Identify the conditions that enhance a photomyogenic response.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Keeping the eyes open through each flash train",
+        "Recent withdrawal from alcohol or barbiturates",
+        "Full relaxation of the facial and jaw muscles",
+        "Moving the photic lamp farther from the face"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photomyogenic",
+        "photic",
+        "bedside-test",
+        "eye-opening"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "During 14 flashes per second with eyes closed, sharp spikes appear at Fp1, Fp2, F7 and F8 at a fixed short delay after each flash. Their amplitude grows as the train continues, the eyelids flutter, and the spikes stop the moment the flashes stop. Which bedside step best tests whether these are muscle potentials?",
+      "explanation": "Frontal spikes locked to each flash at a short fixed latency, growing through the train, with eyelid flutter and an abrupt end when the flashes stop describe a photomyogenic response; eye opening (or relaxing the face) abolishes it, which confirms a muscle origin. A higher flash rate does not separate muscle from cerebral activity and adds stimulation without answering the question. Hyperventilation tests a different activation pathway and does not address the photic finding. Lowering the high-frequency filter would shrink both muscle spikes and genuine cerebral spikes, so it distorts the record without discriminating between them.",
+      "learningObjective": "Use eye opening to confirm a photomyogenic response at the bedside.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Ask the patient to open the eyes and watch whether they disappear",
+        "Raise the flash rate to 25 per second and watch whether they persist",
+        "Repeat hyperventilation and watch whether the spikes become generalized",
+        "Lower the high-frequency filter to 15 Hz and watch whether they shrink"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photoparoxysmal",
+        "photomyogenic",
+        "comparison"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Which feature points to a photoparoxysmal (cerebral) response rather than a photomyogenic (muscle) response during photic stimulation?",
+      "explanation": "A photoparoxysmal response is cerebral: generalized spikes, polyspikes or spike-wave with a field spreading beyond the frontopolar leads and not tied one-to-one to each flash. Strict time-locking to every flash at a short latency, frontopolar maxima with eyelid flutter, and abolition by eye opening are each features of the photomyogenic muscle response, which is not epileptiform.",
+      "learningObjective": "Distinguish a photoparoxysmal response from a photomyogenic response.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Spikes locked to every flash at a fixed short latency",
+        "Maximal spikes in Fp1 and Fp2 with eyelid flutter",
+        "Generalized spike-wave with a field beyond the frontal leads",
+        "Disappearance of the spikes as soon as the eyes open"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photoparoxysmal",
+        "epidemiology",
+        "genetic-generalized-epilepsy",
+        "jme"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Photoparoxysmal responses are found most often in which group of patients?",
+      "explanation": "Photoparoxysmal responses peak in childhood and adolescence, are more common in females, and are strongly linked to genetic generalized epilepsies, juvenile myoclonic epilepsy in particular. Alcohol withdrawal in older adults is associated with the photomyogenic muscle response instead. Infants with hypsarrhythmia and middle-aged adults with temporal lobe epilepsy are not the groups in which photosensitivity clusters.",
+      "learningObjective": "Recognize the population in which photoparoxysmal responses are most common.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Older adults withdrawing from heavy alcohol use",
+        "Infants with hypsarrhythmia and spasms",
+        "Middle-aged men with temporal lobe epilepsy",
+        "Adolescent girls with genetic generalized epilepsy"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-s4",
+      "topicTags": [
+        "photoparoxysmal",
+        "photic",
+        "technologist-action",
+        "annotation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A 16-year-old is having photic stimulation with eyes closed. One second into the 16 per second train, generalized polyspike-and-wave appears that is not locked to the individual flashes. What is the best immediate action by the technologist?",
+      "explanation": "Generalized polyspike-and-wave that is not flash-locked is a photoparoxysmal response; the train is ended at the first generalized discharge to avoid provoking a seizure, and the flash rate and eye condition are annotated for the reader. Finishing the train or raising the rate prolongs a provocative stimulus without adding needed information. Documenting it as muscle artifact misdescribes a cerebral response and continuing the sequence keeps provoking it.",
+      "learningObjective": "Respond correctly to a photoparoxysmal response during photic stimulation.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Stop that flash train promptly and annotate the rate and eye state",
+        "Finish the full train so the discharge can be fully characterized",
+        "Raise the rate to 30 per second to find the upper limit of response",
+        "Document the burst as muscle artifact and continue the full sequence"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "secondary-bilateral-synchrony",
+        "definition",
+        "corpus-callosum"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which statement best defines secondary bilateral synchrony?",
+      "explanation": "In secondary bilateral synchrony a focal or multifocal cortical source drives a discharge that spreads rapidly, largely through the corpus callosum, so both hemispheres look synchronous. Simultaneous generation through thalamocortical circuits describes primary bilateral synchrony of genetic generalized epilepsy. Discharges at different times from each temporal lobe are bilateral independent discharges. Synchrony produced by an active reference is a montage artifact, not a cerebral spread pattern.",
+      "learningObjective": "Define secondary bilateral synchrony and separate it from primary bilateral synchrony.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Discharges made at the same instant in both hemispheres by thalamocortical circuits",
+        "Independent discharges arising at different times from the two temporal lobes",
+        "Focal or multifocal discharges spreading so fast that both sides appear synchronous",
+        "Synchronous waves created in both hemispheres by an active common reference lead"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "secondary-bilateral-synchrony",
+        "primary-bilateral-synchrony",
+        "lead-in"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "Which finding most strongly favors secondary rather than primary bilateral synchrony for generalized spike-wave bursts?",
+      "explanation": "A reproducible focal lead-in, here in the right frontal channels before every burst, indicates a focal source spreading rapidly to both sides, the hallmark of secondary bilateral synchrony. Symmetric HV-provoked 3 Hz spike-wave, simultaneous onset in all channels, and polyspikes on awakening over a normal background are features of primary bilateral synchrony in genetic generalized epilepsy.",
+      "learningObjective": "Recognize the EEG clues that favor secondary bilateral synchrony.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Symmetric 3 Hz spike-wave bursts provoked by hyperventilation",
+        "A consistent lead in the right frontal leads before each burst",
+        "Bursts that begin at the same instant in every channel",
+        "Generalized polyspikes on awakening with a normal background"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "secondary-bilateral-synchrony",
+        "frontal-lobe",
+        "expanded-time-base"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 9-year-old has seizures that begin with forced turning of the head to the left. The EEG shows generalized 2 to 2.5 Hz spike-wave bursts. With an expanded time base, each burst consistently starts at F4 before the other channels, always on the right, and isolated F4 spikes occur between bursts. Which description fits best?",
+      "explanation": "Three clues converge on secondary bilateral synchrony: a reproducible right frontal lead-in that is always on the same side, independent F4 spikes between bursts, and a focal clinical onset (head turning) pointing to the right frontal lobe, a classic source for rapid spread. Childhood absence epilepsy shows symmetric 3 Hz spike-wave without a reproducible focal lead. Bilateral independent discharges would occur at different times rather than as synchronous bursts. The 6 Hz spike-and-wave variant is brief, faster and low in amplitude, unlike these 2 to 2.5 Hz bursts. No fixed lead time defines it; consistency and laterality matter more than the number of milliseconds.",
+      "learningObjective": "Integrate lead-in, interictal focal spikes and semiology to identify secondary bilateral synchrony.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Primary generalized spike-wave of childhood absence epilepsy",
+        "Bilateral independent epileptiform discharges of both frontal lobes",
+        "Benign 6 Hz spike-and-wave variant seen in drowsy adolescents",
+        "Secondary bilateral synchrony arising from a right frontal source"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "secondary-bilateral-synchrony",
+        "technologist-action",
+        "time-base",
+        "referential-montage"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "montage",
+      "reasoningSteps": 2,
+      "stem": "Generalized spike-wave bursts in an adult look slightly larger on the right, and the technologist suspects a focal onset. Which recording step best helps the reader judge whether a consistent lead-in is present?",
+      "explanation": "A short but consistent focal lead-in is easiest to see when the time base is expanded, and a referential montage shows each electrode's own onset and amplitude; marking the bursts lets the reader find them quickly. Compressing the time base hides small timing differences. A low high-frequency filter blunts sharp onsets rather than sharpening them. Reducing the display gain may tidy the page but does nothing to reveal which side leads.",
+      "learningObjective": "Apply recording techniques that expose a focal lead-in to generalized bursts.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Expand the time base and review marked bursts in a referential montage",
+        "Compress the time base so that more bursts fit on each page of the record",
+        "Apply a 15 Hz high-frequency filter so that each burst onset looks sharper",
+        "Turn sensitivity down so the bursts fit within the channel boundaries"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "bets",
+        "small-sharp-spikes",
+        "alias",
+        "benign-variants"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "The older term \"small sharp spikes\" refers to which benign pattern?",
+      "explanation": "Small sharp spikes is an alternative name for benign epileptiform transients of sleep: low-voltage, very brief spikes in adults during drowsiness and light sleep. POSTS are surface-positive occipital transients of sleep, a different pattern despite the similar acronym. Wicket spikes are arciform temporal waves in older adults, and rhythmic midtemporal theta of drowsiness is the former psychomotor variant.",
+      "learningObjective": "Match small sharp spikes to BETS.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Positive occipital sharp transients of sleep (POSTS)",
+        "Benign epileptiform transients of sleep (BETS)",
+        "Wicket spikes of the mid-temporal regions",
+        "Rhythmic midtemporal theta of drowsiness"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "lambda-waves",
+        "saccades",
+        "benign-variants"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Lambda waves are produced in association with which eye activity?",
+      "explanation": "Lambda waves are surface-positive occipital transients time-locked to saccades when an awake person with eyes open scans a patterned scene, as in reading. Slow roving eye movements belong to drowsiness, when lambda waves are not seen. Upward eye rolling with blinks produces frontal blink artifact. Fixing the gaze on a blank, featureless field removes the saccades and makes lambda waves vanish.",
+      "learningObjective": "Link lambda waves to visual scanning saccades.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Slow roving eye movements during drowsiness",
+        "Upward rolling of the eyes with each blink",
+        "Saccades while scanning a detailed picture",
+        "Steady fixation on a blank, uniform field"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posts",
+        "bets",
+        "comparison",
+        "polarity"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Which feature belongs to positive occipital sharp transients of sleep (POSTS) but not to benign epileptiform transients of sleep (BETS)?",
+      "explanation": "POSTS are surface-positive, triangular transients maximal over the occipital leads in sleep, whereas BETS are surface-negative spikes with a temporal or widespread field. Both patterns appear in drowsiness and light sleep, so state does not separate them. Low amplitude and brief duration describe BETS, not a distinguishing feature of POSTS. Both are seen in healthy adults, so that does not discriminate them either.",
+      "learningObjective": "Contrast POSTS and BETS by polarity and location.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Appearance during drowsiness and light sleep",
+        "Low amplitude with a very brief duration",
+        "Occurrence in otherwise healthy adults",
+        "Surface-positive polarity maximal at O1 and O2"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "lambda-waves",
+        "posts",
+        "state",
+        "benign-variants"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "In a 28-year-old, sharp surface-positive transients appear at O1 and O2 while the patient is awake and reading. When the technologist holds up a blank white card for the patient to stare at, they vanish. Later, during N2 sleep, similar occipital positive transients return. How are the two findings best labeled?",
+      "explanation": "Occipital positive transients in an awake, scanning patient that disappear when the visual field is made blank are lambda waves; their sleeping counterpart with similar shape and polarity is POSTS. Calling the awake pattern POSTS ignores the state and the saccade dependence. BETS are surface-negative and not occipital-positive, so they do not fit the sleep finding. Labeling both as occipital spikes treats two benign, state-dependent transients as epileptiform.",
+      "learningObjective": "Separate lambda waves from POSTS by state and response to a blank field.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "POSTS while awake, and POSTS again during sleep",
+        "Lambda waves while awake, and POSTS during sleep",
+        "Lambda waves while awake, and BETS during sleep",
+        "Occipital spikes while awake and again during sleep"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "alias",
+        "terminology",
+        "rmtd",
+        "benign-variants"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Which pairing of an older EEG term with its current or alternative name is correct?",
+      "explanation": "The psychomotor variant is now called rhythmic midtemporal theta of drowsiness. Ctenoids is an old name for 14 and 6 Hz positive spikes, not wicket spikes. Small sharp spikes are BETS, not positive occipital sharp transients of sleep. PLEDs (periodic lateralized epileptiform discharges) are now termed lateralized periodic discharges, not generalized periodic discharges.",
+      "learningObjective": "Match legacy EEG terms to their current names.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Psychomotor variant and rhythmic midtemporal theta",
+        "Ctenoids and wicket spikes of older adults",
+        "Small sharp spikes and positive occipital transients",
+        "PLEDs and generalized periodic discharges"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "firda",
+        "reactivity",
+        "state"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "How does frontal intermittent rhythmic delta activity (FIRDA) typically respond when a drowsy patient is alerted?",
+      "explanation": "FIRDA is typically reactive: it appears or increases in drowsiness and with hyperventilation and attenuates with alerting or eye opening. Lack of reactivity is not the usual behavior. Emergence only with full alertness reverses the true relationship to state, and enlargement with eye opening is the opposite of the attenuation usually seen.",
+      "learningObjective": "Describe the typical reactivity of FIRDA.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "It is unaffected by changes in state or stimulation",
+        "It emerges mainly once the patient is fully alert",
+        "It attenuates when the patient is alerted or opens the eyes",
+        "It becomes larger and more frequent with eye opening"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "firda",
+        "acns-terminology",
+        "grda"
+      ],
+      "cognitiveLevel": 2,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "In the 2021 ACNS standardized critical care EEG terminology, the pattern traditionally called FIRDA is described as which of the following?",
+      "explanation": "ACNS terminology classifies FIRDA as generalized rhythmic delta activity (GRDA) with a frontally predominant field. Lateralized rhythmic delta is confined mainly to one hemisphere. Generalized periodic discharges with triphasic morphology are discrete periodic waveforms rather than a rhythmic delta train. Brief potentially ictal rhythmic discharges are short runs of faster rhythmic activity, not the slow delta of FIRDA.",
+      "learningObjective": "Translate FIRDA into ACNS 2021 terminology.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Lateralized rhythmic delta activity over the frontal lobe",
+        "Generalized periodic discharges with triphasic morphology",
+        "Brief potentially ictal rhythmic discharges at the frontal poles",
+        "Generalized rhythmic delta activity with frontal predominance"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "firda",
+        "not-benign",
+        "awake-adult"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A fully awake 42-year-old has repeated bursts of 2 Hz rhythmic delta maximal over both frontal regions. Which statement best describes this finding?",
+      "explanation": "FIRDA in an awake adult is an abnormal finding, but it is nonspecific: it can accompany toxic-metabolic encephalopathy, raised intracranial pressure, or deep midline and posterior fossa lesions. It is not a benign variant of healthy adults. It does not localize a seizure focus because it is bilateral and nonepileptiform. Hypnagogic hypersynchrony is a drowsiness pattern of children, not a finding of an awake adult.",
+      "learningObjective": "Recognize FIRDA in an awake adult as abnormal but nonspecific.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "It is a benign variant often seen in healthy middle-aged adults",
+        "It is abnormal in an awake adult and nonspecific as to cause",
+        "It reliably marks a seizure focus in one frontal lobe",
+        "It is the expected hypnagogic pattern of an awake adult"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "firda",
+        "encephalopathy",
+        "toxic-metabolic",
+        "reactivity"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A confused 66-year-old with liver failure shows bursts of 2 Hz rhythmic delta over both frontal regions. The bursts increase during drowsiness and fade when the technologist calls the patient's name. Which underlying process is this pattern most consistent with?",
+      "explanation": "Reactive frontal rhythmic delta in a confused patient with organ failure fits FIRDA, which is most often seen with diffuse toxic-metabolic dysfunction (and also with raised intracranial pressure or deep midline lesions). A temporal epileptogenic focus produces temporal intermittent rhythmic delta, not a frontal bilateral pattern. Childhood absence epilepsy is associated with occipital intermittent rhythmic delta in children. FIRDA is not a feature of healthy aging. The technologist describes and reports the pattern; the interpreting physician relates it to the cause.",
+      "learningObjective": "Relate reactive FIRDA to its common nonspecific causes.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A diffuse toxic-metabolic encephalopathy",
+        "A focal epileptogenic lesion in one temporal lobe",
+        "Childhood absence epilepsy persisting into later life",
+        "Normal frontal slowing that comes with healthy aging"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "firda",
+        "eye-movement-artifact",
+        "troubleshooting",
+        "technologist-action"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "In a drowsy patient, 2 Hz rhythmic waves appear at Fp1 and Fp2 and smaller ones at F3 and F4. The technologist wants to know whether this is FIRDA or slow eye-movement artifact. Which step is most useful?",
+      "explanation": "Eye leads placed below or beside the eyes show whether the waves reverse with eye movement (artifact) or share the cerebral frontal field with spread to F3 and F4 (FIRDA); the technologist then annotates the finding and the patient's state. Raising the low-frequency filter removes the delta without identifying its source and distorts genuine slowing. Reducing sensitivity only changes how large it looks. A notch filter removes mains interference near 50 or 60 Hz and has no effect on 2 Hz activity.",
+      "learningObjective": "Separate FIRDA from slow eye-movement artifact with extra eye leads.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Raise the low-frequency filter until the frontal delta disappears",
+        "Reduce sensitivity so that the frontal delta looks less prominent",
+        "Add infraorbital eye leads and compare them with the frontal channels",
+        "Turn on the notch filter for the frontal channels only"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "tuberous-sclerosis",
+        "focal-epilepsy",
+        "neurocutaneous"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A child referred for focal seizures has several hypopigmented ash-leaf macules and facial angiofibromas. Which disorder do these findings suggest?",
+      "explanation": "Ash-leaf macules and facial angiofibromas are skin signs of tuberous sclerosis complex, in which cortical tubers commonly cause focal seizures and infantile spasms. Sturge-Weber syndrome presents with a facial port-wine stain rather than hypopigmented macules. Lambert-Eaton syndrome is a presynaptic neuromuscular junction disorder and Tolosa-Hunt syndrome is a painful ophthalmoplegia from cavernous sinus inflammation; neither causes epilepsy.",
+      "learningObjective": "Recognize tuberous sclerosis complex as a cause of focal epilepsy.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "easy",
+      "options": [
+        "Sturge-Weber syndrome",
+        "Lambert-Eaton syndrome",
+        "Tolosa-Hunt syndrome",
+        "Tuberous sclerosis complex"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "guillain-barre",
+        "peripheral-nervous-system",
+        "focal-epilepsy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which disorder is least likely to cause epileptic seizures, because it affects the peripheral rather than the central nervous system?",
+      "explanation": "Guillain-Barre syndrome is an acute inflammatory polyneuropathy of peripheral nerves and roots, with weakness and areflexia, so it does not directly cause cortical seizures. Tuberous sclerosis complex (cortical tubers), Rasmussen encephalitis (progressive inflammation of one hemisphere) and Sturge-Weber syndrome (leptomeningeal angioma) all involve the cerebral cortex and are recognized causes of focal epilepsy.",
+      "learningObjective": "Sort disorders by central versus peripheral involvement to predict epilepsy risk.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Tuberous sclerosis complex",
+        "Guillain-Barre syndrome",
+        "Rasmussen encephalitis",
+        "Sturge-Weber syndrome"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sturge-weber",
+        "asymmetry",
+        "attenuation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 3-year-old with a port-wine stain over the right forehead and upper eyelid has focal seizures. Which background finding would be most expected on the EEG?",
+      "explanation": "A port-wine stain in the first trigeminal (V1) distribution with seizures suggests Sturge-Weber syndrome, in which the leptomeningeal angioma and underlying cortical damage usually reduce voltage over the affected (here right) hemisphere, often with focal discharges. Generalized 3 Hz spike-wave over a normal background is typical of a genetic generalized epilepsy. Hypsarrhythmia is the pattern of infantile spasms, not the expected background here. Increased fast activity over one side suggests a skull defect (breach rhythm), whereas Sturge-Weber typically causes attenuation.",
+      "learningObjective": "Predict ipsilateral attenuation in Sturge-Weber syndrome.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Generalized 3 Hz spike-wave with a normal background",
+        "Hypsarrhythmia with high-amplitude chaotic slowing",
+        "Reduced amplitude over the right hemisphere",
+        "Higher-amplitude fast activity over the right side"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "rasmussen-encephalitis",
+        "epilepsia-partialis-continua",
+        "focal-epilepsy"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 7-year-old has had near-continuous jerking of the right hand for weeks, and MRI shows progressive atrophy of the left hemisphere. Which condition best fits?",
+      "explanation": "Persistent focal motor seizures (epilepsia partialis continua) with progressive atrophy of one hemisphere are characteristic of Rasmussen encephalitis. Hypothalamic hamartoma is associated with gelastic (laughing) seizures. Tolosa-Hunt syndrome is painful ophthalmoplegia from cavernous sinus inflammation and does not cause seizures. Childhood absence epilepsy features brief absences with generalized 3 Hz spike-wave and normal imaging.",
+      "learningObjective": "Recognize Rasmussen encephalitis from epilepsia partialis continua and hemispheric atrophy.",
+      "questionType": "clinical-integration",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Rasmussen encephalitis",
+        "Hypothalamic hamartoma",
+        "Tolosa-Hunt syndrome",
+        "Childhood absence epilepsy"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-vx-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "lambert-eaton",
+        "tolosa-hunt",
+        "localization",
+        "neuromuscular-junction"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which pairing of a disorder with its main site of involvement is correct?",
+      "explanation": "Lambert-Eaton myasthenic syndrome is caused by antibodies to presynaptic voltage-gated calcium channels at the neuromuscular junction, often with small cell lung cancer, and strength and reflexes may briefly improve after exercise, and the motor response (CMAP) increases after about 10 s of maximal exercise. Tolosa-Hunt syndrome involves the cavernous sinus and orbital apex, not the temporal cortex. Guillain-Barre syndrome affects peripheral nerves and roots, not the hippocampus. Tuberous sclerosis complex causes cortical tubers in the brain, not nerve-root disease.",
+      "learningObjective": "Localize Lambert-Eaton, Tolosa-Hunt, Guillain-Barre and tuberous sclerosis to their sites of involvement.",
+      "questionType": "conceptual",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Tolosa-Hunt syndrome and the temporal lobe cortex",
+        "Guillain-Barre syndrome and the hippocampus",
+        "Tuberous sclerosis complex and the nerve roots",
+        "Lambert-Eaton syndrome and the presynaptic terminal"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea photic, variants and synchrony set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

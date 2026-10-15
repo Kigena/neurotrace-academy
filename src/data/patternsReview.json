@@ -347,6 +347,62 @@
           ]
         },
         {
+          "title": "Exam aliases: prompt word to pattern",
+          "kind": "table",
+          "head": [
+            "If the question says",
+            "It means",
+            "Key point"
+          ],
+          "rows": [
+            [
+              "Small sharp spikes (SSS)",
+              "BETS (benign epileptiform transients of sleep)",
+              "Adult drowsiness and light sleep; low, brief, little or no slow wave; not POSTS"
+            ],
+            [
+              "Saccadic eye movement while scanning a picture",
+              "Lambda waves",
+              "Occipital, positive, awake with eyes open; vanish with a blank field or eyes closed"
+            ],
+            [
+              "Checkmark-shaped occipital positives in sleep",
+              "POSTS (positive occipital sharp transients of sleep)",
+              "The sleeping cousin of lambda; mainly N1 and N2 sleep"
+            ],
+            [
+              "Comb-like positive bursts at 14 and 6 per second",
+              "14 and 6 Hz positive spikes (ctenoids)",
+              "Adolescents, drowsiness, posterior temporal; wide referential montage shows them best"
+            ],
+            [
+              "Psychomotor variant",
+              "Rhythmic midtemporal theta of drowsiness (RMTD)",
+              "Notched 5 to 7 Hz trains that do not evolve"
+            ],
+            [
+              "Photomyoclonic response",
+              "Photomyogenic response",
+              "Frontal muscle spikes locked to the flashes"
+            ],
+            [
+              "Photoconvulsive response",
+              "Photoparoxysmal response",
+              "Cerebral spike-wave provoked by flashes"
+            ],
+            [
+              "PLEDs",
+              "LPDs (lateralized periodic discharges)",
+              "ACNS 2021 name"
+            ],
+            [
+              "FIRDA",
+              "Frontally predominant GRDA",
+              "ACNS 2021 name; reactive to alerting"
+            ]
+          ]
+        },
+        {
           "title": "Look-alikes that are NOT benign",
           "kind": "table",
           "head": [
@@ -388,6 +444,92 @@
           ]
         },
         {
+          "title": "FIRDA in depth",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "What it is",
+              "body": "Intermittent runs of fairly regular 1.5 to 3 Hz delta, maximal over the frontal regions. ACNS 2021 calls it frontally predominant GRDA (generalized rhythmic delta activity).",
+              "points": [
+                "Typically reactive: it often appears or increases in drowsiness and with hyperventilation, and attenuates or disappears with alerting or eye opening",
+                "Not a normal finding in a fully awake adult of any age; describe it and test alerting",
+                "Nonspecific: toxic-metabolic encephalopathy, raised intracranial pressure, deep midline or posterior fossa lesions and diffuse cerebral dysfunction"
+              ]
+            },
+            {
+              "title": "How it differs from its neighbours",
+              "points": [
+                "OIRDA: occipital, in children, linked to absence epilepsy",
+                "TIRDA: temporal, linked to temporal lobe epilepsy",
+                "LRDA: lateralized rhythmic delta, linked to seizures in the critically ill",
+                "Triphasic waves: periodic complexes rather than rhythmic delta, also often metabolic",
+                "Eye movement artifact: frontal slow waves that match the eye channels; check with infraorbital or outer-canthus electrodes"
+              ]
+            },
+            {
+              "title": "What the technologist does",
+              "points": [
+                "Alert the patient during a run (name, eye opening) and mark the stimulus and the response",
+                "Note the state the runs come from, the patient's mental status and medications",
+                "Use eye monitors to separate FIRDA from eye movement"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Does it react?",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 803,
+            "ageYears": 70,
+            "state": "drowsy",
+            "sensitivity": 10,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal"
+            ],
+            "background": {
+              "pdrHz": 7.5,
+              "pdrUv": 20,
+              "theta": 4,
+              "delta": 2,
+              "beta": 1.5,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "firda",
+                "hz": 2.2,
+                "uv": 120,
+                "runs": [
+                  [
+                    0.4,
+                    2.6
+                  ],
+                  [
+                    3.8,
+                    5.8
+                  ]
+                ]
+              },
+              {
+                "type": "eyesOpen",
+                "at": 6.0
+              }
+            ]
+          },
+          "caption": "NeuroLinea synthetic tracing. A drowsy 70-year-old with kidney failure. At the Eyes open mark the technologist called her name and she opened her eyes.",
+          "question": "Rhythmic 2 Hz delta runs appear frontally while she dozes. What best describes the pattern and its behaviour?",
+          "options": [
+            "Frontal rhythmic delta that attenuates when she is alerted",
+            "Eye movement artifact that persists once she is alerted",
+            "A benign drowsy variant expected in healthy adults",
+            "Lateralized rhythmic delta confined to the left frontal area"
+          ],
+          "answer": 0,
+          "explanation": "This is FIRDA (ACNS 2021: frontally predominant GRDA): runs of rhythmic frontal delta in drowsiness that attenuate when the patient is alerted. Reactivity is typical of FIRDA, which is a nonspecific sign of diffuse dysfunction such as a toxic-metabolic encephalopathy, not a normal adult variant. It is bilateral, not lateralized. Eye movement artifact would follow eye movements and would not vanish as the eyes open; confirm with eye monitors and mark the alerting stimulus."
+        },
+        {
           "title": "Telling benign from epileptiform: checklist",
           "kind": "steps",
           "items": [
@@ -407,7 +549,9 @@
         "6 Hz phantom spike-wave: WHAM is worrisome, FOLD is benign.",
         "OIRDA is not benign: in a child it points toward absence epilepsy. Posterior slow waves of youth are the benign occipital pattern.",
         "SREDA is rhythmic and long but the patient stays normal and there is no postictal slowing.",
-        "Hypnagogic hypersynchrony in a 4-year-old at sleep onset is normal; the same burst while fully awake is not."
+        "Hypnagogic hypersynchrony in a 4-year-old at sleep onset is normal; the same burst while fully awake is not.",
+        "Small sharp spikes = BETS; saccadic eye movement = lambda.",
+        "FIRDA typically reacts: it attenuates with alerting or eye opening and grows in drowsiness. It is not normal in awake adults."
       ],
       "eegLink": "Mislabeling a benign variant as epileptiform can lead to wrong diagnoses, so write the age, state and location next to any sharp transient you mark."
     },
@@ -902,6 +1046,199 @@
           ]
         },
         {
+          "title": "Photomyogenic or photoparoxysmal: what changes each",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Photomyogenic (photomyoclonic) response",
+              "body": "Repetitive muscle spikes over the frontal and periorbital electrodes, time-locked to each flash at a latency of about 50 to 60 ms, often with visible eyelid or facial twitching. It is muscle, not brain.",
+              "points": [
+                "Enhanced by: eye closure (much less with the eyes open), withdrawal from alcohol, barbiturates or benzodiazepines, and tension or anxiety",
+                "Often grows as the flash train continues and stops at once when the flashes stop",
+                "Reduced or abolished by opening the eyes or relaxing the face",
+                "Not epileptiform; describe it as a photomyogenic response and note any withdrawal history"
+              ]
+            },
+            {
+              "title": "Photoparoxysmal (photoconvulsive) response",
+              "body": "Cerebral generalized spikes, polyspikes or spike-and-wave provoked by the flashes, most often at middle flash rates (around 15 to 20 per second).",
+              "points": [
+                "Linked to the genetic generalized epilepsies, especially juvenile myoclonic epilepsy, and to photosensitive epilepsy",
+                "Most common in childhood and adolescence, and more common in females",
+                "Eye closure during the flashes is a strong trigger",
+                "Responses that outlast the flashes (self-sustained) are more strongly linked to epilepsy; stop flashing at the first generalized response and mark it"
+              ]
+            },
+            {
+              "title": "Exam trap: who gets which",
+              "points": [
+                "Juvenile myoclonic epilepsy goes with the photoparoxysmal response, not the photomyogenic one",
+                "Alcohol or barbiturate withdrawal goes with the photomyogenic response (and can also lower the seizure threshold)",
+                "Frontal, flash-locked and stops with the flashes = muscle; generalized spike-wave that may outlast the flashes = brain"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Read the photic response",
+          "kind": "tracingQuiz",
+          "scene": {
+            "seed": 801,
+            "ageYears": 45,
+            "state": "awake",
+            "sensitivity": 10,
+            "montage": "longitudinal",
+            "montages": [
+              "longitudinal",
+              "referentialA2"
+            ],
+            "background": {
+              "pdrHz": 10,
+              "pdrUv": 40,
+              "theta": 1.5,
+              "delta": 1,
+              "beta": 1.5,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "spike",
+                "center": [
+                  0,
+                  1.05
+                ],
+                "sigma": 0.3,
+                "durMs": 24,
+                "uv": 70,
+                "at": [
+                  2.05,
+                  2.1167,
+                  2.1833,
+                  2.25,
+                  2.3167,
+                  2.3833,
+                  2.45,
+                  2.5167,
+                  2.5833,
+                  2.65,
+                  2.7167,
+                  2.7833,
+                  2.85,
+                  2.9167,
+                  2.9833,
+                  3.05,
+                  3.1167,
+                  3.1833,
+                  3.25,
+                  3.3167,
+                  3.3833,
+                  3.45,
+                  3.5167,
+                  3.5833,
+                  3.65,
+                  3.7167,
+                  3.7833,
+                  3.85,
+                  3.9167,
+                  3.9833,
+                  4.05,
+                  4.1167,
+                  4.1833,
+                  4.25,
+                  4.3167,
+                  4.3833,
+                  4.45,
+                  4.5167,
+                  4.5833,
+                  4.65,
+                  4.7167,
+                  4.7833,
+                  4.85,
+                  4.9167,
+                  4.9833,
+                  5.05,
+                  5.1167,
+                  5.1833,
+                  5.25,
+                  5.3167,
+                  5.3833,
+                  5.45,
+                  5.5167,
+                  5.5833,
+                  5.65,
+                  5.7167,
+                  5.7833,
+                  5.85,
+                  5.9167,
+                  5.9833,
+                  6.05,
+                  6.1167,
+                  6.1833,
+                  6.25,
+                  6.3167,
+                  6.3833,
+                  6.45,
+                  6.5167,
+                  6.5833,
+                  6.65,
+                  6.7167,
+                  6.7833,
+                  6.85,
+                  6.9167,
+                  6.9833
+                ]
+              },
+              {
+                "type": "rhythm",
+                "hz": 15,
+                "bwHz": 0.3,
+                "uv": 12,
+                "center": [
+                  0,
+                  -0.95
+                ],
+                "sigma": 0.35,
+                "runs": [
+                  [
+                    2.0,
+                    7.0
+                  ]
+                ]
+              },
+              {
+                "type": "electrodecrement",
+                "at": [
+                  2.0
+                ],
+                "durS": 0.1,
+                "depth": 0,
+                "slowUv": 0,
+                "marker": "Photic 15/s on"
+              },
+              {
+                "type": "electrodecrement",
+                "at": [
+                  7.0
+                ],
+                "durS": 0.1,
+                "depth": 0,
+                "slowUv": 0,
+                "marker": "Photic off"
+              }
+            ]
+          },
+          "caption": "NeuroLinea synthetic tracing. A 45-year-old, eyes closed, two days after stopping heavy daily drinking. Photic stimulation at 15 flashes per second between the marks.",
+          "question": "Small, very brief spikes appear over Fp1, Fp2 and the frontal electrodes with every flash and stop when the flashes stop. What are they, and what should happen if the patient opens the eyes?",
+          "options": [
+            "Photomyogenic muscle spikes; they should lessen with the eyes open",
+            "Photoparoxysmal discharges; they should outlast the flashes",
+            "Photic driving; it should move to the occipital channels",
+            "Eye blink artifact; it should match the blink rate"
+          ],
+          "answer": 0,
+          "explanation": "Frontal spikes locked to every flash, at a short fixed latency, that stop with the flashes are muscle: a photomyogenic (photomyoclonic) response. It is enhanced by eye closure and by alcohol or barbiturate withdrawal, as in this patient, and lessens when the eyes open or the face relaxes. A photoparoxysmal response is cerebral generalized spike-wave, not flash-locked frontal muscle. Photic driving is occipital (seen here as small 15 Hz waves posteriorly). Blinks are large, slow frontal deflections, not tiny fast spikes at the flash rate."
+        },
+        {
           "title": "When to stop photic",
           "kind": "list",
           "items": [
@@ -992,7 +1329,8 @@
         "Stop flashing at the first generalized photoparoxysmal response.",
         "Slowing that lingers or returns after HV suggests cerebrovascular disease such as moyamoya.",
         "Sickle cell disease and recent stroke are HV contraindications.",
-        "Wada = intracarotid amobarbital to lateralize language and memory."
+        "Wada = intracarotid amobarbital to lateralize language and memory.",
+        "Photomyogenic response is enhanced by eye closure and by alcohol or barbiturate withdrawal; JME goes with the photoparoxysmal response."
       ],
       "eegLink": "Annotate every activation step (flash rate, eye state, HV start and stop, patient effort) so the reader can tie each change to its trigger."
     }

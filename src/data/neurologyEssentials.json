@@ -1607,7 +1607,7 @@
           "rows": [
             [
               "Glioma",
-              "Arises from glial cells; ranges from lower-grade tumors (for example some astrocytomas and oligodendrogliomas) to glioblastoma, the most aggressive, the most aggressive",
+              "Arises from glial cells; ranges from lower-grade tumors (for example some astrocytomas and oligodendrogliomas) to glioblastoma, the most aggressive",
               "Focal polymorphic delta from white matter involvement; slow-growing cortical tumors are especially epileptogenic"
             ],
             [
@@ -1683,6 +1683,67 @@
               "Muscle and movement artifact; positioning and comfort need planning; focal or multifocal abnormalities are common"
             ]
           ]
+        },
+        {
+          "title": "Which syndromes cause epilepsy? Brain versus nerve and muscle",
+          "kind": "table",
+          "head": [
+            "Syndrome",
+            "Where the problem is",
+            "Key features",
+            "Epilepsy and EEG"
+          ],
+          "rows": [
+            [
+              "Tuberous sclerosis complex",
+              "Brain (cortex) and many other organs",
+              "Autosomal dominant (TSC1 or TSC2, mTOR pathway). Cortical tubers, subependymal nodules and giant cell astrocytoma; hypomelanotic (ash-leaf) macules, facial angiofibromas, shagreen patch; cardiac rhabdomyomas, renal angiomyolipomas",
+              "Epilepsy in most patients, usually focal seizures arising from tubers; infantile spasms are common. Multifocal discharges, focal slowing or hypsarrhythmia; some patients are candidates for surgery"
+            ],
+            [
+              "Sturge-Weber syndrome",
+              "Brain (leptomeninges) and skin",
+              "Facial port-wine birthmark in the ophthalmic (V1) area, leptomeningeal angioma, cortical calcification, glaucoma",
+              "Focal seizures from the affected hemisphere; lower voltage and slowing over the angioma"
+            ],
+            [
+              "Rasmussen encephalitis",
+              "One cerebral hemisphere",
+              "Chronic inflammation in childhood with progressive weakness and decline on one side",
+              "Drug-resistant focal seizures, often epilepsia partialis continua; one-sided slowing and discharges"
+            ],
+            [
+              "Hypothalamic hamartoma",
+              "Hypothalamus",
+              "Benign malformation; may cause early puberty",
+              "Gelastic (laughing) seizures that start in infancy; scalp EEG may look normal early"
+            ],
+            [
+              "Neurofibromatosis type 1",
+              "Nerves, skin and brain",
+              "Cafe-au-lait spots, neurofibromas, freckling, Lisch nodules, optic gliomas",
+              "Epilepsy is less common than in tuberous sclerosis; focal when present"
+            ],
+            [
+              "Lambert-Eaton myasthenic syndrome",
+              "Presynaptic neuromuscular junction",
+              "Antibodies to voltage-gated calcium channels, often with small cell lung cancer; proximal weakness, dry mouth, strength briefly improves with effort",
+              "Not a cause of epilepsy. Nerve studies show small motor responses that increase after exercise or fast repetitive stimulation"
+            ],
+            [
+              "Guillain-Barre syndrome",
+              "Peripheral nerves and roots",
+              "Post-infectious inflammatory polyradiculoneuropathy; ascending weakness, lost reflexes, raised CSF protein with normal cell count; may need ventilation",
+              "Not a cause of epilepsy. Nerve conduction slowing, conduction block and abnormal F-waves"
+            ],
+            [
+              "Tolosa-Hunt syndrome",
+              "Cavernous sinus or superior orbital fissure",
+              "Granulomatous inflammation causing painful ophthalmoplegia (III, IV, VI and V1), steroid-responsive",
+              "Not a cause of epilepsy"
+            ]
+          ],
+          "note": "Seizures need cortex. Neuromuscular junction, nerve root and cranial nerve syndromes cause weakness or ophthalmoplegia, not epilepsy."
         }
       ],
       "pearls": [
@@ -1693,7 +1754,8 @@
         "HSV encephalitis favours the temporal lobes and can produce lateralized periodic discharges.",
         "Subdural collections lower EEG amplitude over the affected side.",
         "Syncope EEG: slowing then flattening then recovery; always record ECG.",
-        "NPH triad: wet, wobbly, wacky."
+        "NPH triad: wet, wobbly, wacky.",
+        "Tuberous sclerosis, Sturge-Weber and Rasmussen encephalitis cause focal epilepsy; Lambert-Eaton, Guillain-Barre and Tolosa-Hunt do not."
       ],
       "eegLink": "Knowing each disorder's expected pattern and practical needs (infection control, shunts, skull defects, tremor) helps you record a technically valid study and annotate it usefully."
     }
