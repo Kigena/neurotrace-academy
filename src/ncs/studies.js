@@ -92,7 +92,7 @@ export const STUDIES = {
       { site: "ulnAE", segCm: 10, label: "Above elbow", acrossElbow: true },
     ],
     healthy: { amp: 10000, term: 1.1, cvDistal: 45, cvSeg: { ulnBE: 60, ulnAE: 58 }, imax: 20 },
-    limits: { lat: 3.7, amp: 6000, cv: 52, cvAcross: 50 }, // across elbow: AANEM 2008 (<50 m/s or >10 m/s slower than forearm)
+    limits: { lat: 3.7, amp: 6000, cv: 52, cvAcross: 50 }, // across elbow: AANEM 2008 (<50 m/s or >10 m/s slower than forearm); matches the hub table
     spread: { site: "medWrist", muscle: "apb", other: "medianMotor", nerve: "median" },
   },
   fibularMotor: {
