@@ -158,9 +158,13 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
       {Object.values(model.SURFACE).map((pts, i) => (
         <path key={i} d={smoothPath(pts, false)} fill="none" stroke={LAYER_STYLE.surface} strokeWidth="1.2" strokeDasharray="4 3" opacity="0.8" />
       ))}
-      {layers.muscle && model.MUSCLES.map((m) => (
-        <path key={m.name} d={smoothPath(m.pts)} fill={m.tendon ? LAYER_STYLE.tendon.fill : LAYER_STYLE.muscle.fill} stroke={m.tendon ? LAYER_STYLE.tendon.stroke : LAYER_STYLE.muscle.stroke} strokeWidth="1"><title>{m.name}</title></path>
-      ))}
+      {layers.muscle && model.MUSCLES.map((m) => {
+        const fill = m.tendon ? LAYER_STYLE.tendon.fill : LAYER_STYLE.muscle.fill;
+        const stroke = m.tendon ? LAYER_STYLE.tendon.stroke : LAYER_STYLE.muscle.stroke;
+        return m.pts
+          ? <path key={m.name} d={smoothPath(m.pts)} fill={fill} stroke={stroke} strokeWidth="1"><title>{m.name}</title></path>
+          : <ellipse key={m.name} cx={m.cx} cy={m.cy} rx={m.rx} ry={m.ry} transform={`rotate(${m.rot || 0} ${m.cx} ${m.cy})`} fill={fill} stroke={stroke} strokeWidth="1"><title>{m.name}</title></ellipse>;
+      })}
       {layers.bone && (
         <g>
           {model.BONES.map((b) => (
@@ -173,8 +177,9 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
       )}
       {layers.nerve && (
         <g>
-          {model.NERVE_BRANCHES.map((b) => <path key={b.name} d={smoothPath(b.pts, false)} fill="none" stroke={LAYER_STYLE.nerve} strokeWidth="2" opacity="0.8"><title>{b.name}</title></path>)}
-          <path d={smoothPath(model.NERVE, false)} fill="none" stroke={LAYER_STYLE.nerve} strokeWidth="3"><title>Sural nerve</title></path>
+          {(model.NERVE_DRAW || [...(model.NERVE_BRANCHES || []).map((b) => ({ ...b, thin: true })), { name: "Sural nerve", pts: model.NERVE }]).map((nv) => (
+            <path key={nv.name} d={smoothPath(nv.pts, false)} fill="none" stroke={nv.color || LAYER_STYLE.nerve} strokeWidth={nv.thin ? 2 : 3} opacity={nv.thin ? 0.8 : 1}><title>{nv.name}</title></path>
+          ))}
         </g>
       )}
       {layers.landmarks && model.LANDMARKS.map((l) => (

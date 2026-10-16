@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import NcsWorkbench from "../components/ncs/NcsWorkbench.jsx";
-import SuralWorkspace from "../components/ncs/SuralWorkspace.jsx";
+import NerveWorkspace from "../components/ncs/NerveWorkspace.jsx";
+import { WORKSPACES } from "../ncs/workspaces.js";
 import { emptyStudyState } from "../ncs/state.js";
 import { accuracyChecks, flagsFor, measurements, techniqueChecks } from "../ncs/grading.js";
 import { LIMB_REF_TEMP, RECOMMENDED, SITES, STIM_SITES, STUDIES, gainLabel } from "../ncs/studies.js";
@@ -13,7 +14,7 @@ import data from "../data/ncsCases.json";
  * guide generated from the study catalog, and a pitfalls list.
  */
 
-const TABS = [["sural", "Sural workspace (new)"], ["bench", "Bench"], ["cases", "Cases"], ["setup", "Set-up guide"], ["pitfalls", "Technical pitfalls"]];
+const TABS = [["workspace", "Interactive workspace (new)"], ["bench", "Bench"], ["cases", "Cases"], ["setup", "Set-up guide"], ["pitfalls", "Technical pitfalls"]];
 const STORE = "neurolinea.ncsLab.v1";
 const ALL = Object.keys(STUDIES);
 
@@ -43,6 +44,23 @@ function Bench() {
         A healthy volunteer. Pick a study, place the electrodes, set the machine and stimulate. Use the temperature slider to see what a cold limb does, flip the stimulator, move G1 off the motor point or change the filters, then press Check my technique.
       </p>
       <NcsWorkbench studyIds={ALL} patient={{}} env={env} setEnv={setEnv} states={states} setStates={setStates} allowTempEdit />
+    </div>
+  );
+}
+
+function Workspace() {
+  const [study, setStudy] = useState("sural");
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-sm font-medium text-slate-700">Study:</span>
+        {Object.values(WORKSPACES).map((w) => (
+          <button key={w.id} type="button" onClick={() => setStudy(w.id)}
+            className={`rounded-md px-3 py-1.5 text-sm font-semibold ${study === w.id ? "bg-slate-900 text-white" : "border border-slate-300 bg-white text-slate-700"}`}>{w.label}</button>
+        ))}
+        <span className="text-xs text-slate-500">Other studies are on the Bench tab until they move to this workspace.</span>
+      </div>
+      <NerveWorkspace key={study} config={WORKSPACES[study]} />
     </div>
   );
 }
@@ -311,7 +329,7 @@ function Pitfalls() {
 export default function NcsLab() {
   const [params, setParams] = useSearchParams();
   const raw = params.get("tab");
-  const tab = TABS.some(([id]) => id === raw) ? raw : "sural";
+  const tab = TABS.some(([id]) => id === raw) ? raw : "workspace";
   return (
     <div className="space-y-6">
       <header>
@@ -326,13 +344,13 @@ export default function NcsLab() {
       <div className="sticky top-[57px] z-20 -mx-4 border-b border-slate-200 bg-slate-50/95 px-4 backdrop-blur-sm">
         <nav className="-mb-px flex gap-1 overflow-x-auto" role="tablist" aria-label="NCS lab sections">
           {TABS.map(([id, label]) => (
-            <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => setParams(id === "sural" ? {} : { tab: id })}
+            <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => setParams(id === "workspace" ? {} : { tab: id })}
               className={`whitespace-nowrap border-b-2 px-3 py-3 text-sm font-medium ${tab === id ? "border-indigo-600 text-indigo-700" : "border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-800"}`}>{label}</button>
           ))}
         </nav>
       </div>
       <div role="tabpanel">
-        {tab === "sural" && <SuralWorkspace />}
+        {tab === "workspace" && <Workspace />}
         {tab === "bench" && <Bench />}
         {tab === "cases" && <Cases />}
         {tab === "setup" && <SetupGuide />}
