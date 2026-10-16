@@ -19,7 +19,7 @@ import { LIMB_REF_TEMP, STIM_SITES, STUDIES } from "./studies.js";
 
 export const FS = 50; // samples per ms (50 kHz)
 
-function mulberry32(seed) {
+export function mulberry32(seed) {
   let a = seed >>> 0;
   return () => {
     a = (a + 0x6d2b79f5) >>> 0;
@@ -30,7 +30,7 @@ function mulberry32(seed) {
   };
 }
 
-function gaussFrom(rng) {
+export function gaussFrom(rng) {
   let u = 0;
   while (u === 0) u = rng();
   return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * rng());
@@ -49,7 +49,7 @@ function gauss(x, mu, sd) {
 }
 
 // Second-order Butterworth biquad (bilinear transform), applied causally like an analog amplifier.
-function biquad(data, type, fc) {
+export function biquad(data, type, fc) {
   const fs = FS * 1000;
   const w = Math.tan((Math.PI * Math.min(fc, fs * 0.45)) / fs);
   const q = Math.SQRT1_2;
@@ -235,7 +235,6 @@ export function simulate({ studyId, stimSiteId, setup = {}, patient = {}, intens
   if (setup.cathodeDistal === false) onset += (10 * 2) / timing.cv; // ~2 cm cathode-anode spacing
   if (study.type === "motor" && frac > 0 && frac < 0.9) onset += 0.15 * (1 - frac);
 
-  const site = STIM_SITES[stimSiteId];
   const sameNerve = assessed.stim === "ok";
   const absent = path.absent || assessed.stim === "wrongLimb";
   let peak = null, amp = 0;
@@ -251,7 +250,16 @@ export function simulate({ studyId, stimSiteId, setup = {}, patient = {}, intens
       if (!sameNerve || assessed.g1 === "offPoint") { lead = 0.3; negScale = 0.75; }
       if (assessed.g1 === "wrong") { A *= 0.15; lead = 0.5; }
       if (assessed.g2 === "wrong") A *= 0.45; // reference on active tissue cancels part of the response
-      const spread = study.spread && site?.distal && intensity > 1.6 * imax;
+      // Very high current at the wrist also excites the neighbouring nerve.
+      const spread = study.spread && stimSiteId === study.distalStim && intensity > 1.6 * imax;
+      const spreadDirect = spread && setup.g1 === study.spread.muscle; // G1 sits on that nerve's muscle
+      const otherAmp = spread ? STUDIES[study.spread.other].healthy.amp : 0;
+      if (spread) {
+        assessed.problems.push({
+          code: "current-spread",
+          text: `The current (${Math.round(intensity)} mA) is high enough to spread to the ${study.spread.nerve} nerve at the wrist${spreadDirect ? ", and G1 sits on a muscle that nerve supplies, so you are recording that muscle's own CMAP" : ", adding a volume-conducted response from its muscles"}. Lower the current to just above the level where the response stops growing.`,
+        });
+      }
       const sign = assessed.g1 === "swapped" ? -1 : 1;
       const shift = lead > 0 ? 0.6 : 0;
       for (let i = 0; i < n; i++) {
@@ -259,7 +267,8 @@ export function simulate({ studyId, stimSiteId, setup = {}, patient = {}, intens
         let v = lead * A * bump(x, 0.7, 2);
         v += -negScale * A * bump(x - shift, tauN, 2);
         v += 0.42 * negScale * A * bump(x - shift - 2.6 * disp, 2.8 * disp, 2);
-        if (spread) v += 0.3 * a0 * (0.6 * bump(x - 0.2, 0.8, 2) - bump(x - 0.9, 2.4, 2));
+        if (spreadDirect) v += -0.85 * otherAmp * bump(x + 0.4, 2.2, 2) + 0.36 * otherAmp * bump(x - 2.2, 2.8, 2);
+        else if (spread) v += 0.3 * a0 * (0.6 * bump(x - 0.2, 0.8, 2) - bump(x - 0.9, 2.4, 2));
         raw[i] += sign * v;
       }
       peak = onset + shift + tauN;

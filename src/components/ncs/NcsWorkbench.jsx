@@ -158,7 +158,7 @@ export default function NcsWorkbench({ studyIds, patient, env, setEnv, states, s
         <section className="space-y-3 rounded-xl border border-slate-200 bg-white p-4 xl:col-span-3">
           <h3 className="text-sm font-semibold text-slate-900">2. Machine and stimulation</h3>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
-            <Select label="Gain" value={st.machine.gain} onChange={(v) => setMachine({ gain: +v })}>{GAINS.map((g) => <option key={g} value={g}>{gainLabel(g)}</option>)}</Select>
+            <Select label="Gain" value={st.machine.gain} onChange={(v) => setMachine({ gain: +v })}>{GAINS.filter((g) => (study.type === "motor" ? g >= 500 : g <= 100)).map((g) => <option key={g} value={g}>{gainLabel(g)}</option>)}</Select>
             <Select label="Sweep" value={st.machine.sweep} onChange={(v) => setMachine({ sweep: +v })}>{SWEEPS.map((g) => <option key={g} value={g}>{g} ms/div</option>)}</Select>
             <Select label="Low filter" value={st.machine.lff} onChange={(v) => setMachine({ lff: +v })}>{LFFS.map((g) => <option key={g} value={g}>{g} Hz</option>)}</Select>
             <Select label="High filter" value={st.machine.hff} onChange={(v) => setMachine({ hff: +v })}>{HFFS.map((g) => <option key={g} value={g}>{g >= 1000 ? `${g / 1000} kHz` : `${g} Hz`}</option>)}</Select>
@@ -186,6 +186,11 @@ export default function NcsWorkbench({ studyIds, patient, env, setEnv, states, s
             <button type="button" onClick={stimulate} className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Stimulate</button>
           </div>
           {last && <p className="text-xs text-slate-500">Tip: raise the current until the response stops growing, then add about 20% for a supramaximal response.</p>}
+          {last?.sweep.problems.some((p) => p.code === "current-spread") && (
+            <p className="rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
+              <strong>Observation:</strong> muscles supplied by the {study.spread.nerve} nerve twitched as well. {last.sweep.problems.find((p) => p.code === "current-spread").text}
+            </p>
+          )}
 
           <NcsTrace rows={rows} gain={st.machine.gain} sweepMsPerDiv={st.machine.sweep} markMode={markMode} onMark={onMark} />
           <div className="flex flex-wrap gap-2">

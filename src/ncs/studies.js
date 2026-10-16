@@ -80,7 +80,7 @@ export const STUDIES = {
     proximal: [{ site: "medElbow", segCm: 22, label: "Elbow" }],
     healthy: { amp: 9000, term: 1.4, cvDistal: 40, cvSeg: { medElbow: 57 }, imax: 22 },
     limits: { lat: 4.5, amp: 4100, cv: 49 },
-    spread: { site: "ulnWrist", note: "Current spreading to the ulnar nerve adds ulnar-innervated thenar muscles." },
+    spread: { site: "ulnWrist", muscle: "adm", other: "ulnarMotor", nerve: "ulnar" },
   },
   ulnarMotor: {
     distalLabel: "Wrist",
@@ -93,7 +93,7 @@ export const STUDIES = {
     ],
     healthy: { amp: 10000, term: 1.1, cvDistal: 45, cvSeg: { ulnBE: 60, ulnAE: 58 }, imax: 20 },
     limits: { lat: 3.7, amp: 6000, cv: 52, cvAcross: 50 }, // across elbow: AANEM 2008 (<50 m/s or >10 m/s slower than forearm)
-    spread: { site: "medWrist", note: "Current spreading to the median nerve adds median-innervated hand muscles." },
+    spread: { site: "medWrist", muscle: "apb", other: "medianMotor", nerve: "median" },
   },
   fibularMotor: {
     distalLabel: "Ankle",

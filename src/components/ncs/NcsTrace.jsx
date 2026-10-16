@@ -55,12 +55,25 @@ export default function NcsTrace({ rows, gain, sweepMsPerDiv, markMode, onMark }
         const base = y0 + DIV * 2.3;
         const sw = row.sweep;
         const n = sw ? Math.min(sw.data.length, Math.round(sweepMsPerDiv * 10 * sw.fs) + 1) : 0;
+        // Like a real screen, a trace may run into the neighbouring rows; only the screen edge clips it.
         let d = "";
+        let offRow = false;
         for (let i = 0; i < n; i++) {
           const x = LABEL_W + (i / sw.fs) * pxPerMs;
-          const y = Math.max(y0 + 2, Math.min(y0 + rowH - 2, base + sw.data[i] * pxPerUv));
+          const raw = base + sw.data[i] * pxPerUv;
+          if (i / sw.fs > 0.6 && (raw < y0 || raw > y0 + rowH)) offRow = true; // ignore the stimulus artifact
+          const y = Math.max(TOP, Math.min(height - 22, raw));
           d += (i ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1);
         }
+        const pathOf = (swp) => {
+          let dd = "";
+          const nn = Math.min(swp.data.length, Math.round(sweepMsPerDiv * 10 * swp.fs) + 1);
+          for (let i = 0; i < nn; i++) {
+            const y = Math.max(TOP, Math.min(height - 22, base + swp.data[i] * pxPerUv));
+            dd += (i ? "L" : "M") + (LABEL_W + (i / swp.fs) * pxPerMs).toFixed(1) + " " + y.toFixed(1);
+          }
+          return dd;
+        };
         const mark = (ms, label, color) => {
           if (ms == null) return null;
           const x = LABEL_W + ms * pxPerMs;
@@ -81,7 +94,9 @@ export default function NcsTrace({ rows, gain, sweepMsPerDiv, markMode, onMark }
             ))}
             <text x={8} y={y0 + 22} fill="#e2e8f0" fontSize="12" fontWeight="600">{row.label}</text>
             {row.sub && <text x={8} y={y0 + 38} fill="#94a3b8" fontSize="10">{row.sub}</text>}
+            {(row.overlays || []).map((o) => <path key={o.id} d={pathOf(o.sweep)} fill="none" stroke={o.color} strokeWidth="1.2" opacity="0.85" />)}
             {sw && <path d={d} fill="none" stroke="#fbbf24" strokeWidth="1.4" />}
+            {offRow && <text x={8} y={y0 + rowH - 10} fill="#fca5a5" fontSize="10">Too tall: reduce the gain</text>}
             {mark(row.marks?.onset, "O", "#38bdf8")}
             {mark(row.marks?.peak, "P", "#f472b6")}
           </g>

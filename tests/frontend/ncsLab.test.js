@@ -59,6 +59,16 @@ describe("NCS generator", () => {
     expect(max).toBeGreaterThan(Math.abs(min)); // main deflection now positive (downward on screen)
   });
 
+  it("flags current spread and records the neighbouring muscle when G1 sits on it", () => {
+    const s = STUDIES.medianMotor;
+    const ok = run("medianMotor", "medWrist", good(s), {}, 28);
+    expect(ok.problems.map((p) => p.code)).not.toContain("current-spread");
+    const onAdm = run("medianMotor", "medWrist", { ...good(s), g1: "adm", g2: "d5prox" }, {}, 40);
+    expect(onAdm.problems.map((p) => p.code)).toContain("current-spread");
+    const lowOnAdm = run("medianMotor", "medWrist", { ...good(s), g1: "adm", g2: "d5prox" }, {}, 28);
+    expect(Math.max(...onAdm.data.map(Math.abs))).toBeGreaterThan(3 * Math.max(...lowOnAdm.data.slice(100).map(Math.abs)));
+  });
+
   it("underestimates the across-elbow distance with the elbow straight", () => {
     expect(measuredSegment("ulnarMotor", "ulnAE", { elbowFlexed: true })).toBe(10);
     expect(measuredSegment("ulnarMotor", "ulnAE", { elbowFlexed: false })).toBe(8);
