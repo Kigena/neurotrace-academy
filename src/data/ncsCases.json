@@ -1,0 +1,216 @@
+{
+  "cases": [
+    {
+      "id": "ncs-cts",
+      "title": "Night-time hand numbness",
+      "referral": "52F, R hand numbness thumb/index/middle, wakes at night and shakes the hand. NCS R arm, r/o CTS.",
+      "temp": { "arm": 32.5, "leg": 31 },
+      "required": ["medianMotor", "medianSensory", "ulnarMotor", "ulnarSensory"],
+      "why": "Suspected carpal tunnel syndrome needs median motor and sensory studies plus ulnar studies in the same hand, so the median results can be compared with a nerve that does not pass through the carpal tunnel.",
+      "path": {
+        "medianMotor": { "termAdd": 1.9, "amp": 0.85 },
+        "medianSensory": { "onsetAdd": 1.3, "amp": 0.3 }
+      },
+      "questions": [
+        {
+          "q": "Taken together, what pattern do your median and ulnar results show?",
+          "options": ["Focal median slowing at the wrist with normal ulnar studies", "Diffuse slowing in both nerves, as in a polyneuropathy", "Ulnar slowing across the elbow with normal median studies", "Normal studies, with the abnormal values due to a cold hand"],
+          "answer": 0,
+          "explanation": "The median distal motor latency and sensory peak latency are prolonged and the median SNAP is small, while the ulnar studies in the same hand are normal and the hand was warm. That is focal median slowing at the wrist, the pattern the physician will interpret in the light of the symptoms. A polyneuropathy would affect the ulnar nerve too, and the elbow segment is not involved."
+        },
+        {
+          "q": "In a milder case with normal routine values, which extra study is commonly added to look for subtle median slowing at the wrist?",
+          "options": ["A median-ulnar comparison over the same distance (for example to digit 4)", "Repetitive nerve stimulation of the abductor digiti minimi", "A sural sensory study on the same side", "A blink reflex study on the symptomatic side"],
+          "answer": 0,
+          "explanation": "Comparison studies (median versus ulnar to digit 4, median versus radial to the thumb, or palmar mixed comparisons) measure two nerves over the same distance in the same hand, so a small median delay stands out. This app's reference lists a difference of 0.5 ms or more as abnormal. RNS, sural and blink reflex studies answer different questions."
+        }
+      ]
+    },
+    {
+      "id": "ncs-une",
+      "title": "Little finger numbness and a weak grip",
+      "referral": "61M, R numbness little finger and ulnar half of ring finger, weak grip, leans on elbows at work. NCS R arm, r/o ulnar neuropathy at the elbow.",
+      "temp": { "arm": 32.8, "leg": 31 },
+      "required": ["ulnarMotor", "ulnarSensory", "medianMotor", "medianSensory"],
+      "why": "Suspected ulnar neuropathy needs ulnar motor studies with stimulation below and above the elbow (elbow flexed), an ulnar sensory study, and median studies to show the problem is confined to the ulnar nerve.",
+      "path": {
+        "ulnarMotor": { "cvSeg": { "ulnAE": 32 }, "block": { "ulnAE": 0.6 }, "disp": { "ulnAE": 1.2 } },
+        "ulnarSensory": { "amp": 0.22 }
+      },
+      "questions": [
+        {
+          "q": "Where along the ulnar nerve is the abnormality?",
+          "options": ["Across the elbow, with slowing and an amplitude drop above the elbow", "At the wrist, with a prolonged distal motor latency", "Throughout the forearm, with uniform slowing in every segment", "In the median nerve, with ulnar studies within limits"],
+          "answer": 0,
+          "explanation": "The wrist and below-elbow responses are normal, but the above-elbow response is smaller and the across-elbow velocity is slow compared with the forearm. That localizes the slowing and partial block to the elbow segment. The distal latency is normal and the median studies are normal."
+        },
+        {
+          "q": "Why must the elbow be flexed when you stimulate and measure across it?",
+          "options": ["So the tape measures the true nerve length and the velocity is not falsely slow", "So the nerve moves away from the stimulator and needs less current", "So the hand muscles relax and the CMAP becomes larger", "So the ground electrode makes better contact with the skin"],
+          "answer": 0,
+          "explanation": "With the elbow straight the ulnar nerve lies slack in the groove, so the skin measurement underestimates the nerve length and the calculated across-elbow velocity looks slower than it is. Flexing the elbow (about 70 to 90 degrees) takes up the slack, so the surface distance matches the nerve. Flexion does not reduce the current needed, enlarge the CMAP or change ground contact."
+        }
+      ]
+    },
+    {
+      "id": "ncs-cold",
+      "title": "A cold hand on a winter morning",
+      "referral": "28F, intermittent tingling both hands, normal exam. Arrived from outside. NCS R arm, r/o CTS.",
+      "temp": { "arm": 26.5, "leg": 27 },
+      "required": ["medianMotor", "medianSensory", "ulnarSensory"],
+      "why": "Median motor and sensory studies with an ulnar sensory comparison answer the CTS question. The trap in this case is temperature: measure it first.",
+      "path": {},
+      "questions": [
+        {
+          "q": "If you had recorded this hand without warming it, how would the results have misled the reader?",
+          "options": ["Prolonged latencies and slow velocities that mimic a neuropathy", "Low amplitudes that mimic axonal loss in every nerve", "Absent responses that mimic a complete nerve injury", "Faster velocities that hide a real demyelinating neuropathy"],
+          "answer": 0,
+          "explanation": "Cooling slows conduction: latencies lengthen and velocities fall, while amplitudes tend to rise. A cold hand can therefore make a healthy median nerve look like carpal tunnel syndrome or a neuropathy. It does not abolish responses or speed conduction up."
+        },
+        {
+          "q": "What is the best way to deal with the low temperature?",
+          "options": ["Warm the limb to the lab's target and recheck the temperature before recording", "Record now and apply a correction factor without measuring the temperature", "Increase the current to 100 mA so that the responses are supramaximal", "Lower the high filter to 500 Hz so that the slower responses look sharper"],
+          "answer": 0,
+          "explanation": "Warming (warm packs, a heating lamp or warm water per lab policy) to at least the lab target, about 32 °C in the hand in this app, and rechecking is the preferred approach. Correction factors are a fallback some labs use only with a documented temperature. Raising the current or changing filters does not correct for temperature."
+        }
+      ]
+    },
+    {
+      "id": "ncs-axonal",
+      "title": "Burning feet in diabetes",
+      "referral": "67M, T2DM x15 yr, burning feet, reduced ankle jerks. NCS R leg, r/o polyneuropathy.",
+      "temp": { "arm": 32.5, "leg": 28.5 },
+      "required": ["sural", "fibularMotor", "tibialMotor"],
+      "optional": ["medianSensory", "ulnarSensory", "medianMotor", "ulnarMotor"],
+      "why": "A length-dependent polyneuropathy is screened in the longest nerves first: sural sensory, fibular and tibial motor studies in the leg. Arm studies are often added to show the gradient and exclude a superimposed entrapment.",
+      "path": {
+        "sural": { "amp": 0.15, "cvFactor": 0.9 },
+        "fibularMotor": { "amp": 0.18, "cvFactor": 0.88 },
+        "tibialMotor": { "amp": 0.3, "cvFactor": 0.9 },
+        "medianSensory": { "amp": 0.6 }
+      },
+      "questions": [
+        {
+          "q": "Which description fits these leg results best?",
+          "options": ["Low sensory and motor amplitudes with mildly reduced velocities", "Markedly slow velocities with conduction block in every nerve", "Normal sensory responses with low motor amplitudes only", "Focal slowing confined to the segment across the fibular head"],
+          "answer": 0,
+          "explanation": "The sural SNAP and the fibular and tibial CMAPs are small while velocities are only mildly reduced, the pattern of a length-dependent axonal sensorimotor polyneuropathy. Demyelination would give marked slowing and block, normal SNAPs would point away from a neuropathy, and there is no focal change at the fibular head."
+        },
+        {
+          "q": "The sural response is only a few microvolts. Which step helps you record and measure it reliably?",
+          "options": ["Average several sweeps and confirm the electrode placement", "Set the gain to 200 µV per division so it looks cleaner", "Raise the low filter to 200 Hz to remove the baseline drift", "Move G1 to the medial malleolus where the nerve is larger"],
+          "answer": 0,
+          "explanation": "Averaging reduces random noise while the time-locked response stays, and checking G1 behind the lateral malleolus and G2 distal along the foot rules out a placement error. A gain of 200 µV per division would make a small SNAP almost flat, a 200 Hz low filter would shrink it further, and the sural nerve runs behind the lateral, not medial, malleolus."
+        }
+      ]
+    },
+    {
+      "id": "ncs-aidp",
+      "title": "Ascending weakness after a stomach bug",
+      "referral": "45F, 9 days of ascending weakness and tingling after a diarrhoeal illness, areflexia. NCS, r/o GBS (AIDP).",
+      "temp": { "arm": 32.6, "leg": 30.8 },
+      "required": ["medianMotor", "ulnarMotor", "fibularMotor", "medianSensory", "sural"],
+      "optional": ["tibialMotor", "ulnarSensory"],
+      "why": "Suspected Guillain-Barre syndrome needs several motor nerves with proximal stimulation (to look for slowing, conduction block and dispersion) and sensory studies in the arm and leg (to look for sural sparing).",
+      "path": {
+        "medianMotor": { "termAdd": 3.5, "cvSeg": { "medElbow": 28 }, "block": { "medElbow": 0.45 }, "disp": { "medElbow": 1.6 }, "imaxFactor": 1.6 },
+        "ulnarMotor": { "termAdd": 2.5, "cvSeg": { "ulnBE": 30, "ulnAE": 28 }, "block": { "ulnBE": 0.6 }, "disp": { "ulnBE": 1.5 }, "imaxFactor": 1.5 },
+        "fibularMotor": { "amp": 0.5, "termAdd": 2.5, "cvSeg": { "fibBFH": 27, "fibPop": 26 }, "block": { "fibBFH": 0.6 }, "imaxFactor": 1.4 },
+        "medianSensory": { "absent": true }
+      },
+      "questions": [
+        {
+          "q": "Which features of the motor studies point toward demyelination?",
+          "options": ["Prolonged distal latencies, slow velocities, conduction block and dispersion", "Low amplitudes with normal latencies and normal velocities", "Normal motor studies with absent sensory responses only", "A decrement of the response during repeated stimulation"],
+          "answer": 0,
+          "explanation": "Demyelination slows conduction (long distal latencies, slow velocities), makes some fibres fail to conduct (conduction block) and spreads out arrival times (temporal dispersion). Pure low amplitudes suggest axonal loss, and a decrement on repetitive stimulation is a neuromuscular junction finding."
+        },
+        {
+          "q": "The median sensory response is absent while the sural response is normal. What is this called?",
+          "options": ["Sural sparing, often seen in acquired demyelinating neuropathy", "A length-dependent pattern of a diabetic axonal neuropathy", "A technical failure of the sural recording that should be redone", "A sign that the lesion is proximal to the dorsal root ganglion"],
+          "answer": 0,
+          "explanation": "An abnormal arm SNAP with a normal sural SNAP is the reverse of the length-dependent pattern and is called sural sparing, a supportive finding in Guillain-Barre syndrome. A length-dependent neuropathy affects the sural nerve first. A preganglionic lesion would leave the SNAPs normal."
+        },
+        {
+          "q": "Why did you need more current than usual to reach a maximal response?",
+          "options": ["Demyelinated nerves can have raised stimulation thresholds", "The ground electrode was placed on the wrong limb", "The high filter setting raises the current that is needed", "Supramaximal current is lower in warm limbs than in cold ones"],
+          "answer": 0,
+          "explanation": "Demyelinated or swollen nerves can need more current to excite every axon, so keep raising the current until the response stops growing before calling a response low. The ground and filter settings do not change the threshold."
+        }
+      ]
+    },
+    {
+      "id": "ncs-fibular",
+      "title": "Foot drop after weight loss",
+      "referral": "38M, R foot drop 3 wk after losing 15 kg, crosses legs at work, numb dorsum of foot. NCS R leg.",
+      "temp": { "arm": 32.5, "leg": 31 },
+      "required": ["fibularMotor", "tibialMotor", "sural"],
+      "why": "Foot drop needs fibular motor studies with stimulation below and above the fibular head, plus a tibial motor and a sural study to show whether nerves outside the fibular territory are involved.",
+      "path": {
+        "fibularMotor": { "cvSeg": { "fibPop": 28 }, "block": { "fibPop": 0.45 } }
+      },
+      "questions": [
+        {
+          "q": "Where is the conduction abnormality?",
+          "options": ["Across the fibular head, between the below-head and popliteal sites", "At the ankle, with a prolonged distal motor latency", "In the tibial nerve, with the fibular nerve within limits", "In the sural nerve, with the motor studies within limits"],
+          "answer": 0,
+          "explanation": "The ankle and below-fibular-head responses are normal but the popliteal response is much smaller and the across-knee velocity is slow, so the block and slowing sit at the fibular head, a common compression site with weight loss and leg crossing. The tibial and sural studies are normal."
+        },
+        {
+          "q": "Which sensory study tests the sensory branch of the same nerve?",
+          "options": ["Superficial fibular sensory study", "Sural sensory study", "Saphenous sensory study", "Medial plantar sensory study"],
+          "answer": 0,
+          "explanation": "The superficial fibular (peroneal) nerve is a branch of the common fibular nerve and supplies the dorsum of the foot. The sural nerve comes mainly from the tibial nerve (medial sural cutaneous), often joined by a communicating branch of the common fibular nerve, so it is not a direct test of the fibular sensory fibres. The saphenous nerve is a branch of the femoral nerve, and the medial plantar nerve is a branch of the tibial nerve."
+        }
+      ]
+    },
+    {
+      "id": "ncs-dip",
+      "title": "A CMAP with a positive dip",
+      "referral": "30F, healthy volunteer for a technique check. A colleague set up the median motor study; the response starts with a small positive dip.",
+      "temp": { "arm": 32.6, "leg": 31 },
+      "required": ["medianMotor"],
+      "why": "Only the median motor study is needed. The task is to find and fix the set-up problem.",
+      "preset": { "medianMotor": { "g1": "thenarProx", "g2": "d1", "ground": "dorsumHand", "skinPrepped": true, "distalCm": 8 } },
+      "path": {},
+      "questions": [
+        {
+          "q": "What was causing the initial positive deflection?",
+          "options": ["G1 was not over the motor point of the muscle", "The stimulation was already supramaximal", "The low filter was set at 10 Hz", "The hand was warmer than 32 °C"],
+          "answer": 0,
+          "explanation": "A CMAP should start with a sharp negative takeoff when G1 sits over the motor point. If G1 is off the motor point, the response is first seen at a distance as a positive deflection. Supramaximal current, a 10 Hz low filter and a warm hand do not cause it."
+        },
+        {
+          "q": "With G1 correctly placed, an initial positive dip appears only when the median nerve is stimulated at the elbow. What is a classic cause?",
+          "options": ["A median-to-ulnar (Martin-Gruber) anastomosis in the forearm", "Carpal tunnel syndrome slowing the distal median segment", "A cold hand slowing conduction in the median nerve", "A loose ground electrode on the back of the hand"],
+          "answer": 0,
+          "explanation": "In a Martin-Gruber anastomosis some median-nerve fibres cross to the ulnar nerve in the forearm. Elbow stimulation then also activates ulnar-innervated hand muscles, whose volume-conducted response reaches the APB electrode as a positive dip, especially when carpal tunnel syndrome slows the median fibres. A cold hand or a loose ground does not give a positive dip at one site only."
+        }
+      ]
+    },
+    {
+      "id": "ncs-root",
+      "title": "Neck pain and a numb thumb",
+      "referral": "50M, neck pain radiating to the R thumb, numb thumb, weak elbow flexion. NCS R arm, CTS vs C6 radiculopathy.",
+      "temp": { "arm": 32.7, "leg": 31 },
+      "required": ["medianMotor", "medianSensory", "radialSensory"],
+      "optional": ["ulnarSensory", "ulnarMotor"],
+      "why": "Thumb numbness can come from the median nerve at the wrist, the superficial radial nerve or the C6 root. Median motor and sensory and superficial radial sensory studies separate a nerve lesion from a root lesion.",
+      "path": {},
+      "questions": [
+        {
+          "q": "Median and superficial radial sensory responses are normal although the thumb is numb. What does that suggest?",
+          "options": ["A lesion proximal to the dorsal root ganglion, such as a root lesion", "Carpal tunnel syndrome affecting the median nerve at the wrist", "A brachial plexus lesion distal to the dorsal root ganglion", "A radial nerve lesion at the spiral groove of the humerus"],
+          "answer": 0,
+          "explanation": "The dorsal root ganglion lies in the intervertebral foramen, outside the dura. A root lesion is proximal to it, so the sensory axons from the ganglion to the skin stay intact and the SNAPs stay normal even though the patient feels numb. Carpal tunnel syndrome, plexus lesions and radial nerve lesions damage those axons and lower the SNAPs."
+        },
+        {
+          "q": "Which test does the physician usually add to look for a radiculopathy?",
+          "options": ["Needle EMG including the paraspinal muscles", "Repetitive nerve stimulation of the hand", "A blink reflex study on the same side", "A sural sensory study on the same side"],
+          "answer": 0,
+          "explanation": "Needle EMG of muscles in the C6 myotome, including the paraspinals, looks for denervation in a root pattern. Repetitive stimulation tests the neuromuscular junction, the blink reflex tests the trigeminal and facial pathways, and the sural nerve is in the leg."
+        }
+      ]
+    }
+  ]
+}

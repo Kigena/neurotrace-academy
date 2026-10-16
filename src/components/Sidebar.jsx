@@ -217,6 +217,12 @@ function Sidebar({ isOpen, onClose }) {
               </svg>
               NCS/EMG Study Hub
             </NavLink>
+            <NavLink to="/ncs-lab" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12h4l2-5 3 10 2-5h7M5 19h14" />
+              </svg>
+              NCS Practical Lab
+            </NavLink>
           </div>
 
           <div className="mb-4">

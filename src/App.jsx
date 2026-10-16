@@ -25,6 +25,7 @@ import PatternsReview from "./pages/PatternsReview.jsx";
 import AcnsGuide from "./pages/AcnsGuide.jsx";
 import IcuEeg from "./pages/IcuEeg.jsx";
 import NeonatalPediatric from "./pages/NeonatalPediatric.jsx";
+import NcsLab from "./pages/NcsLab.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
@@ -216,6 +217,12 @@ function AppContent() {
             <Route path="/emg-ncs" element={
               <ProtectedRoute>
                 <EmgNcsStudy />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/ncs-lab" element={
+              <ProtectedRoute>
+                <NcsLab />
               </ProtectedRoute>
             } />
 
