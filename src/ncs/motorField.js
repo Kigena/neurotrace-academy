@@ -44,6 +44,11 @@ function ellipseCoords(p, s) {
 export function electrodeView(p, src) {
   const r = ellipseCoords(p, src);
   const dEP = dist(p, src.ep);
+  if (src.depth) {
+    // A muscle on the far side of the limb in this view: always distant, by at least its depth.
+    const dEdge = Math.hypot(Math.max(0, r - 1) * ((src.rx + src.ry) / 2), src.depth);
+    return { inside: false, w: 0.3 / (1 + (dEdge / 15) ** 2), lead: 0.6, dEP: Math.hypot(dEP, src.depth), dEdge };
+  }
   if (r <= 1) return { inside: true, w: 0.25 + 0.75 / (1 + (dEP / 14) ** 2), lead: Math.max(0, Math.min(0.5, (dEP - 5) / 30)), dEP };
   const dEdge = (r - 1) * ((src.rx + src.ry) / 2);
   return { inside: false, w: 0.3 / (1 + (dEdge / 15) ** 2), lead: 0.6, dEP, dEdge };

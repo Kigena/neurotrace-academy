@@ -125,5 +125,39 @@ PROTOCOLS["fibular-motor-edb"] = {
   ],
 };
 
+PROTOCOLS["tibial-motor-ah"] = {
+  study: "tibialMotor",
+  label: "Tibial motor, recording abductor hallucis (belly-tendon), 8 cm",
+  distanceMm: 80,
+  settings: { gain: 5000, sweep: 5, lff: 10, hff: 10000, averages: 1 },
+  limits: { lat: 6.1, amp: 4.4, cv: 39 },
+  maxDrop: 0.7, // AANEM normal ankle-to-knee amplitude drop up to about 70%
+  targetTempC: 30,
+  target: "ahb",
+  hints: {
+    limb: "foot",
+    muscle: "abductor hallucis",
+    g1Fix: "Move G1 onto the abductor hallucis about 1 cm below and 1 cm behind the navicular tubercle.",
+    g2Ok: "G2 is over the 1st MTP joint, an electrically quiet site.",
+    g2Fix: "Put G2 over the 1st MTP joint on the medial side of the big toe.",
+    sitePanel: { distal: false, knee: true },
+    siteNames: { distal: "ankle", knee: "popliteal" },
+    siteHint: {
+      distal: "at the ankle it lies behind the medial malleolus, between the malleolus and the Achilles tendon",
+      knee: "in the popliteal fossa it runs down the middle, over or just lateral to the popliteal pulse, and lies deep, so firm pressure is needed",
+    },
+  },
+  steps: [
+    "Measure the foot temperature and warm the foot if it is below 30 °C.",
+    "G1 on the abductor hallucis, about 1 cm below and 1 cm behind the navicular tubercle (the motor point). The AANEM reference data used G1 slightly anterior-inferior to the tubercle, so follow your lab's method consistently.",
+    "G2 over the 1st MTP joint on the medial side of the big toe: the belly-tendon method.",
+    "Ground on the same limb between the stimulator and the recording electrodes, for example the front of the ankle or dorsum of the foot.",
+    "Ankle: measure 8 cm proximally from G1 and put the cathode behind the medial malleolus, between it and the Achilles tendon, anode proximal.",
+    "Popliteal fossa (back-of-knee view): cathode in the middle of the fossa at or just above the crease, over or just lateral to the popliteal pulse. The nerve is deep, so press firmly and expect to need more current.",
+    "Raise the current at each site until the response stops growing, then add about 20%. Drifting laterally along the biceps tendon reaches the fibular nerve instead.",
+    "Mark onset and negative peak at both sites; tape popliteal to ankle cathode along the course of the nerve; velocity = distance / latency difference. A fall in amplitude from ankle to knee is common in the tibial nerve (AANEM reports normal drops of up to about 70%).",
+  ],
+};
+
 export const SENSORY_GAINS = [5, 10, 20, 50, 100]; // µV/div
 export const MOTOR_GAINS = [500, 1000, 2000, 5000, 10000]; // µV/div, shown as mV/div

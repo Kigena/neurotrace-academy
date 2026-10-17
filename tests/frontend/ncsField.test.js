@@ -72,7 +72,7 @@ describe("field-based sural simulation", () => {
 });
 
 import * as A from "../../src/ncs/anatomy/medianArmView.js";
-import { simulateMotor, explainMotor } from "../../src/ncs/motorField.js";
+import { electrodeView, simulateMotor, explainMotor } from "../../src/ncs/motorField.js";
 import { WORKSPACES } from "../../src/ncs/workspaces.js";
 
 describe("median motor arm model", () => {
@@ -252,5 +252,52 @@ describe("fibular motor (EDB)", () => {
     const f = explainMotor({ geo: hi.geo, protocol: F, intensity: 80, machine: { gain: 5000, lff: 10, hff: 10000 }, tempC: 31, tempChecked: true, site: "pop", model: L, setup: {} });
     expect(f.some((x) => x.id === "spread" && !x.ok)).toBe(true);
     expect(f.find((x) => x.id === "temp").text).toMatch(/foot/i);
+  });
+});
+
+import * as KNEEV from "../../src/ncs/anatomy/kneePosteriorView.js";
+
+describe("tibial motor (abductor hallucis)", () => {
+  const W = WORKSPACES.tibialMotor;
+  const T = W.model;
+  const TP = PROTOCOLS["tibial-motor-ah"];
+  const stimOn = (place, pts, panel) => {
+    const pr = project(place, pts);
+    const a = Math.atan2(pr.ty, pr.tx);
+    return { x: place.x - Math.cos(a) * 15, y: place.y - Math.sin(a) * 15, angle: a, panel };
+  };
+  const trun = (stim, I = 40, o = {}) => W.simulate({ model: T, setup: { g1: T.PLACES.ahMotorPoint, g2: T.PLACES.mtp1, ground: T.PLACES.groundDorsum, stim, contact: good, ...o }, machine: { lff: 10, hff: 10000, sweep: 5 }, patient: { tempC: 31 }, intensity: I, seed: 4 });
+  const ankle = () => stimOn(T.PLACES.ankle8, T.NERVES.tibial.routes.ahb, "main");
+  const knee = (place = KNEEV.PLACES.popMid, pts = KNEEV.NERVES.tibial.route) => stimOn(place, pts, "knee");
+
+  it("keeps places and nerves on the skin in both views", () => {
+    for (const [id, p] of Object.entries(T.PLACES)) expect(inPolygon(p, T.SKIN), id).toBe(true);
+    for (const [id, p] of Object.entries(KNEEV.PLACES)) expect(inPolygon(p, KNEEV.SKIN), id).toBe(true);
+    for (const [x, y] of T.NERVES.tibial.routes.ahb) expect(inPolygon({ x, y }, T.SKIN)).toBe(true);
+  });
+
+  it("gives normal distal values and a plausible leg velocity from ankle and popliteal fossa", () => {
+    const a = trun(ankle()), k = trun(knee(), 60);
+    expect(a.truth.onset).toBeLessThan(TP.limits.lat);
+    expect(a.truth.amp / 1000).toBeGreaterThan(TP.limits.amp);
+    expect(Math.abs(a.geo.surfaceDistMm - 80)).toBeLessThan(3);
+    const cv = (a.geo.stim.target.pc.s - k.geo.stim.target.pc.s) / (k.truth.onset - a.truth.onset);
+    expect(cv).toBeGreaterThan(TP.limits.cv);
+    expect(cv).toBeLessThan(60);
+    expect(k.truth.imax).toBeGreaterThan(a.truth.imax);
+    expect(explainMotor({ geo: a.geo, protocol: TP, intensity: 40, machine: { gain: 5000, lff: 10, hff: 10000 }, tempC: 31, tempChecked: true, site: "distal", model: T, setup: {} }).filter((x) => !x.ok)).toEqual([]);
+  });
+
+  it("loses the AH response when the popliteal cathode drifts onto the fibular nerve", () => {
+    const lat = trun(knee(KNEEV.PLACES.popLateral, KNEEV.NERVES.fibular.route), 40);
+    expect(lat.truth.fired.edb).toBeGreaterThan(0.8);
+    expect(lat.truth.fired.ahb).toBeLessThan(0.1);
+    expect(lat.truth.amp).toBeLessThan(500);
+  });
+
+  it("shows a positive dip with G1 off the motor point and keeps far-side muscles distant", () => {
+    expect(trun(ankle(), 40, { g1: T.PLACES.archMid }).truth.positiveFirst).toBe(true);
+    const edb = T.SOURCES.find((s) => s.id === "edb");
+    expect(electrodeView(T.PLACES.ahMotorPoint, edb).w).toBeLessThan(0.1);
   });
 });

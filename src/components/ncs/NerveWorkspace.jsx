@@ -177,7 +177,8 @@ export default function NerveWorkspace({ config }) {
       const across = config.sites.find((x) => x.id === sid)?.across;
       if (sid !== "distal" && cvFor(sid) != null && cvFor(sid) < (across && L.cvAcross ? L.cvAcross : L.cv)) out.push(across ? "slow across-elbow velocity" : "slow velocity");
       const prev = prevSite(sid);
-      if (prev && a != null && ampOf(prev) != null && a < 0.8 * ampOf(prev)) out.push("amplitude drop over 20% from the previous site");
+      const maxDrop = P.maxDrop ?? 0.2; // fraction; tibial studies allow much larger normal drops
+      if (prev && a != null && ampOf(prev) != null && a < (1 - maxDrop) * ampOf(prev)) out.push(`amplitude drop over ${Math.round(maxDrop * 100)}% from the previous site`);
     } else {
       if (marks[sid]?.peak != null && marks[sid].peak > L.peak) out.push("peak latency prolonged");
       if (a != null && a < L.amp) out.push("low amplitude");

@@ -1,6 +1,8 @@
 import * as SURAL from "./anatomy/suralView.js";
 import * as MEDIAN from "./anatomy/medianArmView.js";
 import * as LEG from "./anatomy/legLateralView.js";
+import * as LEGM from "./anatomy/legMedialView.js";
+import * as KNEE from "./anatomy/kneePosteriorView.js";
 import { describeSetup, explainSetup, simulateField } from "./fieldSim.js";
 import { describeMotor, explainMotor, simulateMotor } from "./motorField.js";
 import { pointAt, project } from "./geometry.js";
@@ -17,6 +19,10 @@ const suralS1 = project(SURAL.PLACES.behindLatMall, SURAL.NERVE).s;
 
 /** The medial elbow geometry follows the elbow position chosen by the learner. */
 export const elbowModel = (setup) => (setup?.elbowFlexed ? FLEXED : EXTENDED);
+const TIBIAL_CTX = {
+  panelOf: (setup) => (setup.stim?.panel === "knee" ? KNEE : null),
+  anchors: LEGM.KNEE_ANCHORS,
+};
 const ULNAR_CTX = {
   panelOf: (setup) => (setup.stim?.panel === "elbow" ? elbowModel(setup) : null),
   anchors: MEDIAN.ULNAR_ANCHORS,
@@ -88,6 +94,34 @@ export const WORKSPACES = {
       { ...LEG.PLACES.ankle8, r: 7, label: "Ankle cathode" },
       { ...LEG.PLACES.bfh, r: 7, label: "Below-fibular-head cathode" },
       { ...LEG.PLACES.pop, r: 8, label: "Popliteal cathode" },
+    ],
+  },
+  tibialMotor: {
+    id: "tibialMotor",
+    label: "Tibial motor (AH)",
+    kind: "motor",
+    model: LEGM,
+    protocol: PROTOCOLS["tibial-motor-ah"],
+    limb: "foot",
+    gains: MOTOR_GAINS,
+    panels: [
+      { id: "main", label: "Leg and foot (medial)" },
+      { id: "knee", label: "Back of the knee", model: () => KNEE, nerve: "tibial" },
+    ],
+    sites: [
+      { id: "distal", label: "Ankle", panel: "main", distLabel: "Distance, G1 to cathode (cm)" },
+      { id: "knee", label: "Popliteal fossa", panel: "knee", distLabel: "Segment, popliteal to ankle cathode (cm)" },
+    ],
+    ctx: TIBIAL_CTX,
+    simulate: (args) => simulateMotor({ ...args, targetId: "ahb", ctx: TIBIAL_CTX }),
+    describe: (model, setup) => describeMotor(model, setup, { targetId: "ahb", ctx: TIBIAL_CTX }),
+    explain: (args) => explainMotor(args),
+    targets: () => [
+      { ...LEGM.PLACES.ahMotorPoint, r: 6, label: "G1", panel: "main" },
+      { ...LEGM.PLACES.mtp1, r: 6, label: "G2", panel: "main" },
+      { ...LEGM.PLACES.groundDorsum, r: 12, label: "Ground zone", panel: "main" },
+      { ...LEGM.PLACES.ankle8, r: 7, label: "Ankle cathode", panel: "main" },
+      { ...KNEE.PLACES.popMid, r: 9, label: "Popliteal cathode", panel: "knee" },
     ],
   },
   ulnarMotor: {
