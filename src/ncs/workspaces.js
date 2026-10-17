@@ -70,7 +70,7 @@ export const WORKSPACES = {
       { ...MEDS.PLACES.indexDist, r: 6, label: "G2" },
       { ...MEDS.PLACES.palmGround, r: 10, label: "Ground zone" },
       { ...MEDS.PLACES.wrist14, r: 7, label: "Wrist cathode" },
-      { ...MEDS.PLACES.palm7, r: 7, label: "Palm cathode" },
+      { ...MEDS.PLACES.palm7, r: 9, label: "Palm cathode" },
     ],
   },
   medianMotor: {

@@ -335,7 +335,7 @@ describe("median sensory (antidromic, digit 2/3)", () => {
   it("records from the finger the rings are on, and loses the SNAP with close rings or the wrong nerve", () => {
     expect(srun({ g1: PLc.middleProx, g2: PLc.middleDist }).geo.primary).toBe("middle");
     expect(srun({ g1: PLc.ringProx, g2: { x: 161, y: 540 } }).truth.amp).toBeLessThan(15);
-    expect(srun({ g2: { x: 119, y: 520 } }).truth.amp).toBeLessThan(0.7 * srun().truth.amp);
+    expect(srun({ g2: { x: 119, y: 510 } }).truth.amp).toBeLessThan(0.7 * srun().truth.amp);
     expect(srun({}, PLc.wristUlnar).truth.amp).toBeLessThan(2);
     expect(srun({}, PLc.wrist14, 27).truth.peak).toBeGreaterThan(srun().truth.peak + 0.2);
   });
