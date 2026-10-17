@@ -135,7 +135,8 @@ export const PLACES = {
   forearmDistal: { x: 155, y: 300, label: "Distal forearm, proximal to the wrist stimulation site" },
   wristMedian8: { x: 141, y: 345, label: "Wrist, between FCR and palmaris longus, about 8 cm from G1" },
   wristFcr: { x: 129, y: 345, label: "Over the FCR tendon at the wrist" },
-  wristUlnar: { x: 175, y: 352, label: "Wrist, just radial to the FCU tendon (ulnar nerve)" },
+  wristUlnar: { x: 175, y: 349, label: "Wrist, just radial to the FCU tendon (ulnar nerve), about 8 cm from the ADM" },
+  littleFinger: { x: 183, y: 502, label: "Little finger, over the proximal phalanx" },
   midForearm: { x: 150, y: 240, label: "Middle of the forearm" },
   elbowMedian: { x: 166, y: 128, label: "Cubital fossa, medial to the brachial pulse" },
   elbowLateral: { x: 134, y: 128, label: "Cubital fossa, lateral to the biceps tendon" },
@@ -149,3 +150,7 @@ export const VIEWS = [
 ];
 
 export const ORIENTATION = { title: "Right forearm and hand · anterior (palmar) view", top: "Proximal (elbow)", bottom: "Distal (fingers)", left: "Lateral (radial, thumb side)", right: "Medial (ulnar side)" };
+
+// Ulnar nerve points on the main route that match the below-elbow and
+// above-elbow sites of the medial elbow view (src/ncs/anatomy/ulnarElbowView.js).
+export const ULNAR_ANCHORS = { be: { x: 189, y: 148 }, ae: { x: 186, y: 48 } };

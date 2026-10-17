@@ -130,8 +130,82 @@ describe("median motor arm model", () => {
   it("defines complete workspace configurations", () => {
     for (const w of Object.values(WORKSPACES)) {
       expect(w.sites.length).toBeGreaterThan(0);
-      expect(w.targets().every((t) => inPolygon(t, w.model.SKIN))).toBe(true);
+      for (const flexed of [true, false]) {
+        const setup = { elbowFlexed: flexed };
+        for (const t of w.targets(setup)) {
+          const m = (t.panel ?? "main") === "main" ? w.model : w.panels.find((p) => p.id === t.panel).model(setup);
+          expect(inPolygon(t, m.SKIN), `${w.id} ${t.label}`).toBe(true);
+        }
+      }
       expect(w.model.VIEWS.length).toBeGreaterThan(2);
     }
+  });
+});
+
+import { EXTENDED, FLEXED } from "../../src/ncs/anatomy/ulnarElbowView.js";
+import { carryStimulator, globalToLocal, localToGlobal } from "../../src/ncs/panels.js";
+import { dist } from "../../src/ncs/geometry.js";
+
+describe("ulnar motor across the elbow", () => {
+  const W = WORKSPACES.ulnarMotor;
+  const A2 = W.model;
+  const U = PROTOCOLS["ulnar-motor-adm"];
+  const anchors = A2.ULNAR_ANCHORS;
+  const stimAt = (place, panel, model) => {
+    const route = panel === "elbow" ? model.NERVES.ulnar.route : A2.NERVES.ulnar.routes.adm;
+    const pr = project(place, route);
+    const ang = Math.atan2(pr.ty, pr.tx);
+    return { x: place.x - Math.cos(ang) * 15, y: place.y - Math.sin(ang) * 15, angle: ang, panel };
+  };
+  const setupFor = (stim, flexed) => ({ g1: A2.PLACES.hypothenar, g2: A2.PLACES.littleFinger, ground: A2.PLACES.palmGround, stim, contact: good, elbowFlexed: flexed });
+  const urun = (stim, flexed, I = 50) => W.simulate({ model: A2, setup: setupFor(stim, flexed), machine: { lff: 10, hff: 10000, sweep: 3 }, patient: { tempC: 33 }, intensity: I, seed: 5 });
+
+  it("keeps elbow places on the skin and maps both geometries onto the same nerve", () => {
+    for (const m of [FLEXED, EXTENDED]) {
+      for (const [id, p] of Object.entries(m.PLACES)) expect(inPolygon(p, m.SKIN), `${m.id} ${id}`).toBe(true);
+      const sBe = project(m.PLACES.be, m.NERVES.ulnar.route).s;
+      const g = localToGlobal(m, A2, "ulnar", anchors, sBe);
+      expect(Math.abs(globalToLocal(m, A2, "ulnar", anchors, g) - sBe)).toBeLessThan(0.5);
+    }
+  });
+
+  it("gives the same latencies flexed or straight but a shorter skin tape when straight", () => {
+    const lat = (m, flexed) => urun(stimAt(m.PLACES.ae, "elbow", m), flexed).truth.onset - urun(stimAt(m.PLACES.be, "elbow", m), flexed).truth.onset;
+    expect(Math.abs(lat(FLEXED, true) - lat(EXTENDED, false))).toBeLessThan(0.05);
+    expect(dist(EXTENDED.PLACES.ae, EXTENDED.PLACES.be)).toBeLessThan(dist(FLEXED.PLACES.ae, FLEXED.PLACES.be));
+  });
+
+  it("records increasing latencies at wrist, below and above elbow within the limits", () => {
+    const w = urun(stimAt(A2.PLACES.wristUlnar, "main"), true, 35);
+    const be = urun(stimAt(FLEXED.PLACES.be, "elbow", FLEXED), true);
+    const ae = urun(stimAt(FLEXED.PLACES.ae, "elbow", FLEXED), true);
+    expect(w.truth.onset).toBeLessThan(U.limits.lat);
+    expect(w.truth.amp / 1000).toBeGreaterThan(U.limits.amp);
+    expect(be.truth.onset).toBeGreaterThan(w.truth.onset);
+    expect(ae.truth.onset).toBeGreaterThan(be.truth.onset);
+    expect(100 / (ae.truth.onset - be.truth.onset)).toBeGreaterThan(U.limits.cvAcross);
+    expect(ae.truth.amp).toBeGreaterThan(0.8 * be.truth.amp);
+  });
+
+  it("warns when the elbow is straight and when the above-elbow cathode drifts onto the median nerve", () => {
+    const be = urun(stimAt(EXTENDED.PLACES.be, "elbow", EXTENDED), false);
+    const f = explainMotor({ geo: be.geo, protocol: U, intensity: 50, machine: { gain: 5000, lff: 10, hff: 10000 }, tempC: 33, tempChecked: true, site: "be", model: A2, setup: setupFor(null, false) });
+    expect(f.some((x) => x.id === "elbow" && !x.ok)).toBe(true);
+    const med = urun(stimAt(FLEXED.MEDIAN_SPOT, "elbow", FLEXED), true, 30);
+    expect(med.truth.fired.apb).toBeGreaterThan(0.5);
+    expect(med.truth.fired.adm).toBeLessThan(0.2);
+    // Excessive current at the correct above-elbow site also reaches the nearby median nerve.
+    const over = urun(stimAt(FLEXED.PLACES.ae, "elbow", FLEXED), true, 60);
+    expect(over.truth.fired.apb).toBeGreaterThan(0.3);
+    const g = explainMotor({ geo: over.geo, protocol: U, intensity: 60, machine: { gain: 5000, lff: 10, hff: 10000 }, tempC: 33, tempChecked: true, site: "ae", model: A2, setup: setupFor(null, true) });
+    expect(g.some((x) => x.id === "spread" && !x.ok)).toBe(true);
+  });
+
+  it("carries the stimulator to the other geometry at the same place along the nerve", () => {
+    const st = stimAt(FLEXED.PLACES.be, "elbow", FLEXED);
+    const moved = carryStimulator(st, FLEXED, EXTENDED, A2, "ulnar", anchors);
+    const g1 = localToGlobal(FLEXED, A2, "ulnar", anchors, project(st, FLEXED.NERVES.ulnar.route).s);
+    const g2 = localToGlobal(EXTENDED, A2, "ulnar", anchors, project(moved, EXTENDED.NERVES.ulnar.route).s);
+    expect(Math.abs(g1 - g2)).toBeLessThan(2);
   });
 });

@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import AnatomyCanvas from "./AnatomyCanvas.jsx";
 import NcsTrace from "./NcsTrace.jsx";
 import { CONTACT, stimPoles } from "../../ncs/fieldSim.js";
 import { autoMark } from "../../ncs/generator.js";
-import { dist, polylineLength, project } from "../../ncs/geometry.js";
+import { polylineLength } from "../../ncs/geometry.js";
+import { carryStimulator } from "../../ncs/panels.js";
 import { AVERAGES, HFFS, LFFS, SWEEPS, gainLabel } from "../../ncs/studies.js";
 
 /**
@@ -52,11 +53,12 @@ export default function NerveWorkspace({ config }) {
   const motor = kind === "motor";
   const fmtAmp = (uv) => (uv == null ? "-" : motor ? `${(uv / 1000).toFixed(2)} mV` : `${uv.toFixed(1)} µV`);
   const [mode, setMode] = useState("guided");
-  const [view, setView] = useState(MODEL.VIEWS[0].box);
+  const [panel, setPanel] = useState("main");
+  const [views, setViews] = useState({});
   const [layers, setLayers] = useState({ muscle: false, bone: true, nerve: false, landmarks: true });
   const [tool, setTool] = useState("g1");
-  const [setup, setSetup] = useState({ g1: null, g2: null, ground: null, stim: null, contact: freshContact() });
-  const [tape, setTape] = useState([]);
+  const [setup, setSetup] = useState({ g1: null, g2: null, ground: null, stim: null, contact: freshContact(), elbowFlexed: false });
+  const [tapeState, setTapeState] = useState({ key: "main", pts: [] });
   const [machine, setMachine] = useState({ ...P.settings });
   const [intensity, setIntensity] = useState(10);
   const [temp, setTemp] = useState({ c: motor ? 29.5 : 28.5, checked: false });
@@ -79,6 +81,21 @@ export default function NerveWorkspace({ config }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [full]);
 
+  const panelDef = config.panels?.find((p) => p.id === panel);
+  const viewModel = panel === "main" || !panelDef ? MODEL : panelDef.model(setup);
+  const panelKey = panel === "main" ? "main" : `${panel}-${viewModel.id}`;
+  const view = views[panelKey] ?? viewModel.VIEWS[0].box;
+  const setView = useCallback((v) => setViews((all) => ({ ...all, [panelKey]: typeof v === "function" ? v(all[panelKey] ?? viewModel.VIEWS[0].box) : v })), [panelKey, viewModel]);
+  const tape = tapeState.key === panelKey ? tapeState.pts : [];
+  const setTape = (pts) => setTapeState({ key: panelKey, pts });
+  const stimPanel = setup.stim?.panel ?? "main";
+  const canvasSetup = {
+    ...setup,
+    g1: panel === "main" ? setup.g1 : null,
+    g2: panel === "main" ? setup.g2 : null,
+    ground: panel === "main" ? setup.ground : null,
+    stim: setup.stim && stimPanel === panel ? setup.stim : null,
+  };
   const assessment = mode === "assessment";
   const reveal = !!submitted;
   const effLayers = {
@@ -88,15 +105,24 @@ export default function NerveWorkspace({ config }) {
     landmarks: mode !== "assessment" ? layers.landmarks : false,
     bone: mode !== "assessment" ? layers.bone : reveal,
   };
-  const targets = mode === "guided" || reveal ? config.targets() : null;
+  const targets = mode === "guided" || reveal ? config.targets(setup).filter((t) => (t.panel ?? "main") === panel) : null;
 
   const place = (key, value) => {
     if (submitted) return;
-    setSetup((s) => ({ ...s, [key]: value }));
+    if (key !== "stim" && panel !== "main") return; // recording electrodes and ground live on the main view
+    setSetup((s) => ({ ...s, [key]: key === "stim" && value ? { ...value, panel } : value }));
+  };
+  const toggleElbow = (flexed) => {
+    setSetup((s) => {
+      const next = { ...s, elbowFlexed: flexed };
+      const elbow = config.panels?.find((p) => p.id === "elbow");
+      if (elbow && s.stim?.panel === "elbow") next.stim = carryStimulator(s.stim, elbow.model(s), elbow.model(next), MODEL, elbow.nerve, config.ctx.anchors);
+      return next;
+    });
   };
   const placeAt = (key, placeId) => {
     if (!placeId) return place(key, null);
-    const p = MODEL.PLACES[placeId];
+    const p = (key === "stim" ? viewModel : MODEL).PLACES[placeId];
     if (key !== "stim") return place(key, { x: p.x, y: p.y });
     // Put the cathode on the chosen spot; the stimulator body extends proximally.
     const angle = setup.stim?.angle ?? Math.PI / 2;
@@ -111,7 +137,7 @@ export default function NerveWorkspace({ config }) {
     setMarks((m) => ({ ...m, [site]: {} }));
     const key = posKey(setup) + site;
     setRecruit((rc) => ({ key, points: [...(rc.key === key ? rc.points : []), { I: intensity, amp: r.truth.amp }] }));
-    if (!assessment) setFeedback(config.explain({ geo: r.geo, protocol: P, intensity, machine, tempC: temp.c, tempChecked: temp.checked, site, model: MODEL }));
+    if (!assessment) setFeedback(config.explain({ geo: r.geo, protocol: P, intensity, machine, tempC: temp.c, tempChecked: temp.checked, site, model: MODEL, setup }));
   };
 
   const savePlacement = () => {
@@ -128,12 +154,17 @@ export default function NerveWorkspace({ config }) {
   };
   const tapeCm = tape.length > 1 ? polylineLength(tape) / 10 : null;
   const onsetOf = (sid) => marks[sid]?.onset ?? null;
+  const prevSite = (sid) => {
+    const i = config.sites.findIndex((x) => x.id === sid);
+    return i > 0 ? config.sites[i - 1].id : null;
+  };
   const cvFor = (sid) => {
     const d = +dists[sid];
     if (!d) return null;
     if (!motor) return onsetOf(sid) ? (10 * d) / onsetOf(sid) : null;
-    if (sid === "distal") return null;
-    const a = onsetOf("distal"), b = onsetOf(sid);
+    const prev = prevSite(sid);
+    if (!prev) return null;
+    const a = onsetOf(prev), b = onsetOf(sid);
     return a != null && b != null && b > a ? (10 * d) / (b - a) : null;
   };
   const flags = (sid) => {
@@ -143,7 +174,10 @@ export default function NerveWorkspace({ config }) {
     if (motor) {
       if (sid === "distal" && onsetOf(sid) != null && onsetOf(sid) > L.lat) out.push("distal latency prolonged");
       if (sid === "distal" && a != null && a / 1000 < L.amp) out.push("low amplitude");
-      if (sid !== "distal" && cvFor(sid) != null && cvFor(sid) < L.cv) out.push("slow velocity");
+      const across = config.sites.find((x) => x.id === sid)?.across;
+      if (sid !== "distal" && cvFor(sid) != null && cvFor(sid) < (across && L.cvAcross ? L.cvAcross : L.cv)) out.push(across ? "slow across-elbow velocity" : "slow velocity");
+      const prev = prevSite(sid);
+      if (prev && a != null && ampOf(prev) != null && a < 0.8 * ampOf(prev)) out.push("amplitude drop over 20% from the previous site");
     } else {
       if (marks[sid]?.peak != null && marks[sid].peak > L.peak) out.push("peak latency prolonged");
       if (a != null && a < L.amp) out.push("low amplitude");
@@ -159,7 +193,7 @@ export default function NerveWorkspace({ config }) {
     for (const s of config.sites) {
       const r = records[s.id];
       if (!r) { items.push({ ok: false, text: `${s.label}: no response recorded.` }); continue; }
-      for (const f of config.explain({ geo: r.sweep.geo, protocol: P, intensity: r.intensity, machine, tempC: r.temp, tempChecked: temp.checked, site: s.id, model: MODEL })) {
+      for (const f of config.explain({ geo: r.sweep.geo, protocol: P, intensity: r.intensity, machine, tempC: r.temp, tempChecked: temp.checked, site: s.id, model: MODEL, setup: r.setup })) {
         if (!items.some((x) => x.id === f.id && x.ok === f.ok && x.text === f.text)) items.push({ ...f, text: `${s.label}: ${f.text}` });
       }
     }
@@ -182,15 +216,20 @@ export default function NerveWorkspace({ config }) {
         if (cvFor("distal")) meas.push({ ok: Math.abs(cvFor("distal") - trueCv) <= 3, text: `Velocity: you calculated ${cvFor("distal").toFixed(0)} m/s; with the true distance and onset it is about ${trueCv.toFixed(0)} m/s.` });
       }
     }
-    if (motor && records.elbow && distalRec?.cathode && records.elbow.cathode) {
-      const surf = dist(records.elbow.cathode, distalRec.cathode);
-      const route = MODEL.NERVES.median.routes.apb;
-      const nerveSeg = Math.abs(project(distalRec.cathode, route).s - project(records.elbow.cathode, route).s);
-      meas.push({ ok: dists.elbow !== undefined && dists.elbow !== "" && Math.abs(+dists.elbow * 10 - surf) <= 7, text: `Segment distance: you entered ${dists.elbow || "nothing"} cm; the skin distance between the two cathode positions was ${(surf / 10).toFixed(1)} cm (along the nerve ${(nerveSeg / 10).toFixed(1)} cm).` });
-      const t1 = distalRec.sweep.truth.onset, t2 = records.elbow.sweep.truth.onset;
-      if (t1 != null && t2 != null && cvFor("elbow")) {
-        const trueCv = nerveSeg / (t2 - t1);
-        meas.push({ ok: Math.abs(cvFor("elbow") - trueCv) <= 4, text: `Forearm velocity: you calculated ${cvFor("elbow").toFixed(0)} m/s; with the true nerve length and onsets it is about ${trueCv.toFixed(0)} m/s.` });
+    if (motor) {
+      for (const st of config.sites) {
+        const prev = prevSite(st.id);
+        const a = records[prev], b = records[st.id];
+        if (!prev || !a || !b) continue;
+        const sa = a.sweep.geo.stim?.target?.pc?.s, sb = b.sweep.geo.stim?.target?.pc?.s;
+        if (sa == null || sb == null) continue;
+        const nerveSeg = Math.abs(sa - sb);
+        meas.push({ ok: dists[st.id] !== undefined && dists[st.id] !== "" && Math.abs(+dists[st.id] * 10 - nerveSeg) <= 10, text: `${st.label} segment: you entered ${dists[st.id] || "nothing"} cm; the nerve between the two cathode positions is ${(nerveSeg / 10).toFixed(1)} cm.` });
+        const t1 = a.sweep.truth.onset, t2 = b.sweep.truth.onset;
+        if (t1 != null && t2 != null && t2 > t1 && cvFor(st.id)) {
+          const trueCv = nerveSeg / (t2 - t1);
+          meas.push({ ok: Math.abs(cvFor(st.id) - trueCv) <= 4, text: `${st.label} velocity: you calculated ${cvFor(st.id).toFixed(0)} m/s; with the true nerve length and onsets it is about ${trueCv.toFixed(0)} m/s.` });
+        }
       }
     }
     setSubmitted({ items: items.length ? items : [{ ok: false, text: "No response recorded." }], meas, last });
@@ -198,8 +237,8 @@ export default function NerveWorkspace({ config }) {
   };
 
   const reset = () => {
-    setSetup({ g1: null, g2: null, ground: null, stim: null, contact: freshContact() });
-    setRecords({}); setMarks({}); setTape([]); setDists({}); setFeedback(null); setSubmitted(null); setSite(config.sites[0].id);
+    setSetup({ g1: null, g2: null, ground: null, stim: null, contact: freshContact(), elbowFlexed: false });
+    setRecords({}); setMarks({}); setTapeState({ key: "main", pts: [] }); setPanel("main"); setDists({}); setFeedback(null); setSubmitted(null); setSite(config.sites[0].id);
     setRecruit({ key: "", points: [] }); setTemp({ c: motor ? 29.5 : 28.5, checked: false }); setMachine({ ...P.settings }); setTool("g1");
   };
 
@@ -215,14 +254,23 @@ export default function NerveWorkspace({ config }) {
 
   const anatomy = (
     <section className={full ? "fixed inset-0 z-50 flex flex-col gap-2 overflow-auto bg-white p-3" : "space-y-2 rounded-xl border border-slate-200 bg-white p-3 lg:col-span-2"}>
+      {config.panels && (
+        <div className="flex flex-wrap items-center gap-1.5" role="tablist" aria-label="Anatomy views">
+          {config.panels.map((p) => (
+            <button key={p.id} type="button" role="tab" aria-selected={panel === p.id} onClick={() => { setPanel(p.id); if (p.id !== "main" && ["g1", "g2", "ground"].includes(tool)) setTool("stim"); }}
+              className={`rounded-full px-3 py-1 text-xs font-semibold ${panel === p.id ? "bg-slate-900 text-white" : "border border-slate-300 bg-white text-slate-700"}`}>{p.label}</button>
+          ))}
+          {stimPanel !== panel && setup.stim && <span className="text-xs text-slate-500">The stimulator is on the other view.</span>}
+        </div>
+      )}
       <div className="flex flex-wrap items-center gap-1.5">
         {TOOLS.map(([id, label]) => (
-          <button key={id} type="button" onClick={() => setTool(id)} disabled={!!submitted && id !== "move"}
+          <button key={id} type="button" onClick={() => setTool(id)} disabled={(!!submitted && id !== "move") || (panel !== "main" && ["g1", "g2", "ground"].includes(id))}
             className={`rounded-md px-2.5 py-1.5 text-xs font-semibold ${tool === id ? "bg-indigo-600 text-white" : "border border-slate-300 bg-white text-slate-700"} disabled:opacity-40`}>{label}</button>
         ))}
         {tape.length > 0 && <button type="button" onClick={() => setTape([])} className="rounded-md border border-violet-300 px-2 py-1.5 text-xs font-semibold text-violet-700">Clear tape</button>}
         <span className="mx-1 h-5 w-px bg-slate-200" />
-        {MODEL.VIEWS.map((v) => <button key={v.id} type="button" onClick={() => setView(v.box)} className="rounded-md border border-slate-300 bg-white px-2 py-1.5 text-xs text-slate-700">{v.label}</button>)}
+        {viewModel.VIEWS.map((v) => <button key={v.id} type="button" onClick={() => setView(v.box)} className="rounded-md border border-slate-300 bg-white px-2 py-1.5 text-xs text-slate-700">{v.label}</button>)}
         <button type="button" aria-label="Zoom in" onClick={() => setView((v) => ({ x: v.x + v.w * 0.1, y: v.y + v.h * 0.1, w: v.w * 0.8, h: v.h * 0.8 }))} className="rounded-md border border-slate-300 px-2 py-1.5 text-xs font-bold">+</button>
         <button type="button" aria-label="Zoom out" onClick={() => setView((v) => ({ x: v.x - v.w * 0.125, y: v.y - v.h * 0.125, w: v.w * 1.25, h: v.h * 1.25 }))} className="rounded-md border border-slate-300 px-2 py-1.5 text-xs font-bold">&minus;</button>
         <button type="button" onClick={() => setFull((f) => !f)} className="rounded-md border border-slate-300 px-2 py-1.5 text-xs font-semibold">{full ? "Exit full screen" : "Full screen"}</button>
@@ -239,13 +287,13 @@ export default function NerveWorkspace({ config }) {
         <span className="text-slate-500">Scroll to zoom, drag the background to pan, drag electrodes to move them, drag the blue handle to rotate the stimulator.</span>
       </div>
       <div className="relative overflow-hidden rounded-lg border border-slate-200">
-        <AnatomyCanvas model={MODEL} view={view} setView={setView} layers={effLayers} setup={setup} onPlace={place}
+        <AnatomyCanvas model={viewModel} view={view} setView={setView} layers={effLayers} setup={canvasSetup} onPlace={place}
           tool={submitted ? "move" : tool} onToolDone={() => setTool("move")} tape={tape} setTape={setTape} targets={targets} height={canvasH} />
-        <div className="pointer-events-none absolute inset-x-0 top-1 text-center text-xs font-semibold text-slate-600">&uarr; {MODEL.ORIENTATION.top}</div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-1 text-center text-xs font-semibold text-slate-600">&darr; {MODEL.ORIENTATION.bottom}</div>
-        <div className="pointer-events-none absolute left-1 top-1/2 max-w-[5rem] -translate-y-1/2 text-xs font-semibold text-slate-600">&larr; {MODEL.ORIENTATION.left}</div>
-        <div className="pointer-events-none absolute right-1 top-1/2 max-w-[5rem] -translate-y-1/2 text-right text-xs font-semibold text-slate-600">{MODEL.ORIENTATION.right} &rarr;</div>
-        <div className="pointer-events-none absolute left-2 top-6 rounded bg-white/80 px-2 py-0.5 text-xs font-bold text-slate-800">{MODEL.ORIENTATION.title}</div>
+        <div className="pointer-events-none absolute inset-x-0 top-1 text-center text-xs font-semibold text-slate-600">&uarr; {viewModel.ORIENTATION.top}</div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-1 text-center text-xs font-semibold text-slate-600">&darr; {viewModel.ORIENTATION.bottom}</div>
+        <div className="pointer-events-none absolute left-1 top-1/2 max-w-[5rem] -translate-y-1/2 text-xs font-semibold text-slate-600">&larr; {viewModel.ORIENTATION.left}</div>
+        <div className="pointer-events-none absolute right-1 top-1/2 max-w-[5rem] -translate-y-1/2 text-right text-xs font-semibold text-slate-600">{viewModel.ORIENTATION.right} &rarr;</div>
+        <div className="pointer-events-none absolute left-2 top-6 rounded bg-white/80 px-2 py-0.5 text-xs font-bold text-slate-800">{viewModel.ORIENTATION.title}</div>
       </div>
       <details className="text-sm">
         <summary className="cursor-pointer text-xs font-semibold text-slate-600">Place by landmark (keyboard and screen-reader alternative)</summary>
@@ -254,7 +302,7 @@ export default function NerveWorkspace({ config }) {
             <Field key={k} label={label}>
               <select className={sel} value="" onChange={(e) => placeAt(k, e.target.value)}>
                 <option value="">Choose a landmark…</option>
-                {Object.entries(MODEL.PLACES).map(([id, p]) => <option key={id} value={id}>{p.label}</option>)}
+                {Object.entries((k === "stim" ? viewModel : MODEL).PLACES).map(([id, p]) => <option key={id} value={id}>{p.label}</option>)}
               </select>
             </Field>
           ))}
@@ -292,6 +340,12 @@ export default function NerveWorkspace({ config }) {
               : <button type="button" onClick={() => setTemp((t) => ({ ...t, checked: true }))} className="rounded border border-slate-300 bg-white px-2 py-0.5 text-xs font-semibold">Measure</button>}
             <button type="button" onClick={() => setTemp({ c: P.targetTempC + 1.5, checked: true })} className="rounded border border-amber-300 bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-900">Warm the {config.limb}</button>
           </div>
+          {config.elbowToggle && (
+            <label className="flex items-center gap-2 rounded-lg bg-slate-50 p-2 text-sm text-slate-700">
+              <input type="checkbox" checked={!!setup.elbowFlexed} disabled={!!submitted} onChange={(e) => toggleElbow(e.target.checked)} />
+              Elbow flexed about 90° (otherwise straight)
+            </label>
+          )}
           <div className="grid grid-cols-2 gap-2">
             {[["g1", "G1 contact"], ["g2", "G2 contact"], ["ground", "Ground contact"], ["stim", "Stimulator contact"]].map(([k, label]) => (
               <Field key={k} label={label}>
