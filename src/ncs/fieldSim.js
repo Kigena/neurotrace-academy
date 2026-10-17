@@ -1,5 +1,6 @@
 import { biquad, FS, gaussFrom, mulberry32, recruitFraction } from "./generator.js";
 import { dist, inPolygon, project } from "./geometry.js";
+import { crossed, nerveOf, pathTime, zoneCvAt, zonesOf } from "./pathology.js";
 
 /**
  * Field-based sensory NCS simulation on an anatomy model.
@@ -48,7 +49,7 @@ function monopolar(t, arrive, disp) {
 // Sensory branches the electrodes can see (for example the digital nerves to two fingers);
 // a single-nerve model has one branch. Each branch is a full route from proximal.
 export function sensoryBranches(model) {
-  return model.SENS_BRANCHES || [{ id: "main", pts: model.NERVE, weight: 1 }];
+  return model.SENS_BRANCHES || [{ id: "main", pts: model.NERVE, weight: 1, nerve: model.SENS_NERVE || "sural" }];
 }
 
 export function describeSetup(model, setup, patient = {}) {
@@ -73,7 +74,7 @@ export function describeSetup(model, setup, patient = {}) {
     const towardRec = out.proj.g1 ? Math.sign(out.proj.g1.s - pc.s) : 1;
     const reversed = align > 0.5 && Math.sign(pa.s - pc.s) === towardRec;
     const contactK = setup.contact?.stim === "good" ? 1 : setup.contact?.stim === "dry" ? 1.4 : 1.15;
-    const base = patient.imaxBase ?? 18;
+    const base = (patient.imaxBase ?? 18) * (nerveOf(patient, primary.nerve).imaxFactor ?? 1);
     // The impulse starts under the cathode. With the anode toward the recording electrodes the
     // cathode is farther away (longer latency) and the anode can partly block the volley (more current).
     const imax = base * (1 + (pc.d / STIM_MM) ** 2) * (1 + 0.5 * (1 - align)) * (reversed ? 1.3 : 1) * contactK;
@@ -126,17 +127,23 @@ export function simulateField({ model, setup, machine = {}, patient = {}, intens
     for (const b of sensoryBranches(model)) {
       const pcb = project(st.cathode, b.pts);
       const sAct = pcb.s; // each nerve is excited under the cathode, by its own distance from it
+      const np = nerveOf(patient, b.nerve);
+      if (np.sensoryAbsent) continue;
+      const zones = zonesOf(patient, b.nerve);
+      const cvB = cv * (np.cvFactor ?? 1);
       const imaxB = st.imax * (1 + (pcb.d / STIM_MM) ** 2) / (1 + (st.pc.d / STIM_MM) ** 2);
-      const A = A0 * recruitFraction(intensity, imaxB);
+      const A = A0 * (np.sensoryAmp ?? 1) * recruitFraction(intensity, imaxB);
       if (A <= 0) continue;
       for (const [k, sign] of elec) {
         const p = project(setup[k], b.pts);
         const w = (b.weight ?? 1) * (model.nerveScale ? model.nerveScale(p.s) : 1) / (1 + (p.d / FIELD_MM) ** 2);
         if (w < 0.005) continue;
         const L = Math.abs(p.s - sAct);
-        const arrive = L / cv;
-        const disp = (1 + 0.35 * (L / 140)) * (1 + 0.04 * dT);
-        for (let i = 0; i < n; i++) resp[i] += sign * A * w * monopolar(i / FS, arrive, disp);
+        const arrive = pathTime(b.pts, sAct, p.s, (y) => cvB * zoneCvAt(zones, y, "sensory"));
+        const lesion = crossed(b.pts, sAct, p.s, zones, "sensory");
+        const disp = (1 + 0.35 * (L / 140)) * (1 + 0.04 * dT) * lesion.disp;
+        const Ae = A * lesion.conduct / Math.sqrt(lesion.disp);
+        for (let i = 0; i < n; i++) resp[i] += sign * Ae * w * monopolar(i / FS, arrive, disp);
       }
     }
   }

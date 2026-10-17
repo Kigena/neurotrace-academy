@@ -21,8 +21,8 @@ const LITTLE = [...ULNAR_TRUNK, [171, 400], [176, 420], [175, 450], [178, 470], 
 const RING_ULNAR = [...ULNAR_TRUNK, [171, 400], [176, 420], [174, 465], [168, 475], [166, 500], [166, 562]];
 
 export const SENS_BRANCHES = [
-  { id: "little", pts: LITTLE, weight: 1 },
-  { id: "ringUlnar", pts: RING_ULNAR, weight: 0.6 },
+  { id: "little", pts: LITTLE, weight: 1, nerve: "ulnar" },
+  { id: "ringUlnar", pts: RING_ULNAR, weight: 0.6, nerve: "ulnar" },
   ...MEDS.SENS_BRANCHES,
 ];
 export const NERVE = LITTLE;

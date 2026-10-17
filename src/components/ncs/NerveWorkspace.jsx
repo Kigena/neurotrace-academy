@@ -5,6 +5,7 @@ import { CONTACT, stimPoles } from "../../ncs/fieldSim.js";
 import { autoMark } from "../../ncs/generator.js";
 import { polylineLength } from "../../ncs/geometry.js";
 import { carryStimulator } from "../../ncs/panels.js";
+import { ampOf as ampOfS, assessStudy, cvFor as cvForS, fmtAmpFor, flagsFor } from "../../ncs/assess.js";
 import { AVERAGES, HFFS, LFFS, SWEEPS, gainLabel } from "../../ncs/studies.js";
 
 /**
@@ -25,6 +26,21 @@ const TOOLS = [["move", "Move / pan"], ["g1", "Place G1"], ["g2", "Place G2"], [
 const STIM_HALF = 15;
 const freshContact = () => ({ g1: "unprepped", g2: "unprepped", ground: "unprepped", stim: "unprepped" });
 const posKey = (s) => JSON.stringify([s.g1, s.g2, s.ground, s.stim, s.contact]);
+
+/** Starting set-up, optionally pre-placed from place names (used by cases that start with a set-up to fix). */
+function presetSetup(config, preset) {
+  const base = { g1: null, g2: null, ground: null, stim: null, contact: freshContact(), elbowFlexed: false };
+  if (!preset) return base;
+  const P = config.model.PLACES;
+  const pt = (k) => (preset[k] && P[preset[k]] ? { x: P[preset[k]].x, y: P[preset[k]].y } : null);
+  const out = { ...base, g1: pt("g1"), g2: pt("g2"), ground: pt("ground") };
+  if (preset.contact) out.contact = { g1: preset.contact, g2: preset.contact, ground: preset.contact, stim: preset.contact };
+  if (preset.stim && P[preset.stim]) {
+    const c = P[preset.stim];
+    out.stim = { x: c.x, y: c.y - STIM_HALF, angle: Math.PI / 2, panel: "main" }; // cathode on the spot, anode proximal
+  }
+  return out;
+}
 
 function Field({ label, children }) {
   return <label className="flex flex-col gap-1 text-xs font-medium text-slate-600">{label}{children}</label>;
@@ -48,20 +64,28 @@ function RecruitPlot({ points, unit }) {
   );
 }
 
-export default function NerveWorkspace({ config }) {
+/**
+ * Props for use inside a graded case: patient (pathology merged into every
+ * simulation), initialTemp (limb temperature at the start), preset (electrode
+ * and stimulator places by name), onState (reports records, marks and
+ * distances to the case) and caseMode (hides the standalone Assessment mode,
+ * since the case scores the work itself).
+ */
+export default function NerveWorkspace({ config, patient: casePatient, initialTemp, preset, onState, caseMode = false }) {
   const { model: MODEL, protocol: P, kind } = config;
   const motor = kind === "motor";
-  const fmtAmp = (uv) => (uv == null ? "-" : motor ? `${(uv / 1000).toFixed(2)} mV` : `${uv.toFixed(1)} µV`);
-  const [mode, setMode] = useState("guided");
+  const fmtAmp = fmtAmpFor(kind);
+  const [mode, setMode] = useState(caseMode ? "practice" : "guided");
   const [panel, setPanel] = useState("main");
   const [views, setViews] = useState({});
   const [layers, setLayers] = useState({ muscle: false, bone: true, nerve: false, landmarks: true });
   const [tool, setTool] = useState("g1");
-  const [setup, setSetup] = useState({ g1: null, g2: null, ground: null, stim: null, contact: freshContact(), elbowFlexed: false });
+  const [setup, setSetup] = useState(() => presetSetup(config, preset));
   const [tapeState, setTapeState] = useState({ key: "main", pts: [] });
   const [machine, setMachine] = useState({ ...P.settings });
   const [intensity, setIntensity] = useState(10);
-  const [temp, setTemp] = useState({ c: motor ? 29.5 : 28.5, checked: false });
+  const startTemp = initialTemp ?? (motor ? 29.5 : 28.5);
+  const [temp, setTemp] = useState({ c: startTemp, checked: false });
   const [site, setSite] = useState(config.sites[0].id);
   const [records, setRecords] = useState({});
   const [marks, setMarks] = useState({});
@@ -131,7 +155,7 @@ export default function NerveWorkspace({ config }) {
 
   const stimulate = () => {
     seed.current += 1;
-    const r = config.simulate({ model: MODEL, setup, machine, patient: { ...(config.patient || {}), tempC: temp.c, refTempC: P.targetTempC }, intensity, seed: seed.current });
+    const r = config.simulate({ model: MODEL, setup, machine, patient: { ...(config.patient || {}), ...(casePatient || {}), tempC: temp.c, refTempC: P.targetTempC }, intensity, seed: seed.current });
     const rec = { sweep: r, intensity, temp: temp.c, setup, cathode: setup.stim ? stimPoles(setup.stim).cathode : null };
     setRecords((x) => ({ ...x, [site]: rec }));
     setMarks((m) => ({ ...m, [site]: {} }));
@@ -146,101 +170,27 @@ export default function NerveWorkspace({ config }) {
     setSaved((s) => [...s, { id: `p${Date.now()}`, name: `Placement ${s.length + 1} (${config.sites.find((x) => x.id === site).label})`, site, setup, sweep: rec.sweep, color: COMPARE_COLORS[s.length % COMPARE_COLORS.length] }]);
   };
 
-  const ampOf = (sid) => {
-    const r = records[sid], m = marks[sid] || {};
-    if (!r || m.onset == null || m.peak == null) return null;
-    const d = r.sweep.data, fs = r.sweep.fs;
-    return Math.abs(d[Math.round(m.peak * fs)] - d[Math.round(m.onset * fs)]);
-  };
+  const S = { records, marks, dists, tempChecked: temp.checked, machine };
+  const ampOf = (sid) => ampOfS(S, sid);
   const tapeCm = tape.length > 1 ? polylineLength(tape) / 10 : null;
-  const onsetOf = (sid) => marks[sid]?.onset ?? null;
-  const prevSite = (sid) => {
-    const i = config.sites.findIndex((x) => x.id === sid);
-    return i > 0 ? config.sites[i - 1].id : null;
-  };
-  const cvFor = (sid) => {
-    const d = +dists[sid];
-    if (!d) return null;
-    if (!motor) return onsetOf(sid) ? (10 * d) / onsetOf(sid) : null;
-    const prev = prevSite(sid);
-    if (!prev) return null;
-    const a = onsetOf(prev), b = onsetOf(sid);
-    return a != null && b != null && b > a ? (10 * d) / (b - a) : null;
-  };
-  const flags = (sid) => {
-    const out = [];
-    const L = P.siteLimits?.[sid] || P.limits;
-    const a = ampOf(sid);
-    if (motor) {
-      if (sid === "distal" && onsetOf(sid) != null && onsetOf(sid) > L.lat) out.push("distal latency prolonged");
-      if (sid === "distal" && a != null && a / 1000 < L.amp) out.push("low amplitude");
-      const across = config.sites.find((x) => x.id === sid)?.across;
-      if (sid !== "distal" && cvFor(sid) != null && cvFor(sid) < (across && L.cvAcross ? L.cvAcross : L.cv)) out.push(across ? "slow across-elbow velocity" : "slow velocity");
-      const prev = prevSite(sid);
-      const maxDrop = P.maxDrop ?? 0.2; // fraction; tibial studies allow much larger normal drops
-      if (prev && a != null && ampOf(prev) != null && a < (1 - maxDrop) * ampOf(prev)) out.push(`amplitude drop over ${Math.round(maxDrop * 100)}% from the previous site`);
-    } else {
-      if (marks[sid]?.peak != null && marks[sid].peak > L.peak) out.push("peak latency prolonged");
-      if (a != null && a < L.amp) out.push("low amplitude");
-    }
-    return out;
-  };
+  const cvFor = (sid) => cvForS(config, S, sid);
+  const flags = (sid) => flagsFor(config, S, sid);
   const distalRec = records.distal;
   const distanceValid = distalRec && (motor ? Math.abs((distalRec.sweep.geo.surfaceDistMm ?? 0) - P.distanceMm) <= 5 : Math.abs((distalRec.sweep.geo.trueDistMm ?? 0) - P.distanceMm) <= 10);
 
+  useEffect(() => {
+    onState?.({ records, marks, dists, tempChecked: temp.checked, machine });
+  }, [onState, records, marks, dists, temp.checked, machine]);
+
   const submit = () => {
-    const last = records[site] || Object.values(records)[0];
-    const items = [];
-    for (const s of config.sites) {
-      const r = records[s.id];
-      if (!r) { items.push({ ok: false, text: `${s.label}: no response recorded.` }); continue; }
-      for (const f of config.explain({ geo: r.sweep.geo, protocol: P, intensity: r.intensity, machine, tempC: r.temp, tempChecked: temp.checked, site: s.id, model: MODEL, setup: r.setup })) {
-        if (!items.some((x) => x.id === f.id && x.ok === f.ok && x.text === f.text)) items.push({ ...f, text: `${s.label}: ${f.text}` });
-      }
-    }
-    const meas = [];
-    for (const s of config.sites) {
-      const r = records[s.id];
-      const t = r?.sweep.truth;
-      if (!t?.present) continue;
-      const m = marks[s.id] || {};
-      meas.push({ ok: m.onset != null && t.onset != null && Math.abs(m.onset - t.onset) <= 0.2, text: `${s.label} onset: you marked ${m.onset?.toFixed(2) ?? "nothing"} ms; the screen shows about ${t.onset?.toFixed(2)} ms.` });
-      if (!motor) meas.push({ ok: m.peak != null && Math.abs(m.peak - t.peak) <= 0.2, text: `${s.label} peak: you marked ${m.peak?.toFixed(2) ?? "nothing"} ms; the screen shows about ${t.peak.toFixed(2)} ms.` });
-      const a = ampOf(s.id);
-      meas.push({ ok: a != null && Math.abs(a - t.amp) <= 0.15 * t.amp, text: `${s.label} amplitude: you measured ${a != null ? fmtAmp(a) : "nothing"}; the screen shows about ${fmtAmp(t.amp)}.` });
-    }
-    if (distalRec) {
-      const actual = motor ? distalRec.sweep.geo.surfaceDistMm : distalRec.sweep.geo.trueDistMm;
-      if (actual != null) meas.push({ ok: dists.distal !== undefined && dists.distal !== "" && Math.abs(+dists.distal * 10 - actual) <= 5, text: `Distal distance: you entered ${dists.distal || "nothing"} cm; it was ${(actual / 10).toFixed(1)} cm.` });
-      if (!motor && distalRec.sweep.truth.onset) {
-        const trueCv = distalRec.sweep.geo.trueDistMm / distalRec.sweep.truth.onset;
-        if (cvFor("distal")) meas.push({ ok: Math.abs(cvFor("distal") - trueCv) <= 3, text: `Velocity: you calculated ${cvFor("distal").toFixed(0)} m/s; with the true distance and onset it is about ${trueCv.toFixed(0)} m/s.` });
-      }
-    }
-    if (motor) {
-      for (const st of config.sites) {
-        const prev = prevSite(st.id);
-        const a = records[prev], b = records[st.id];
-        if (!prev || !a || !b) continue;
-        const sa = a.sweep.geo.stim?.target?.pc?.s, sb = b.sweep.geo.stim?.target?.pc?.s;
-        if (sa == null || sb == null) continue;
-        const nerveSeg = Math.abs(sa - sb);
-        meas.push({ ok: dists[st.id] !== undefined && dists[st.id] !== "" && Math.abs(+dists[st.id] * 10 - nerveSeg) <= 10, text: `${st.label} segment: you entered ${dists[st.id] || "nothing"} cm; the nerve between the two cathode positions is ${(nerveSeg / 10).toFixed(1)} cm.` });
-        const t1 = a.sweep.truth.onset, t2 = b.sweep.truth.onset;
-        if (t1 != null && t2 != null && t2 > t1 && cvFor(st.id)) {
-          const trueCv = nerveSeg / (t2 - t1);
-          meas.push({ ok: Math.abs(cvFor(st.id) - trueCv) <= 4, text: `${st.label} velocity: you calculated ${cvFor(st.id).toFixed(0)} m/s; with the true nerve length and onsets it is about ${trueCv.toFixed(0)} m/s.` });
-        }
-      }
-    }
-    setSubmitted({ items: items.length ? items : [{ ok: false, text: "No response recorded." }], meas, last });
+    setSubmitted(assessStudy(config, S));
     setLayers((l) => ({ ...l, nerve: true }));
   };
 
   const reset = () => {
-    setSetup({ g1: null, g2: null, ground: null, stim: null, contact: freshContact(), elbowFlexed: false });
+    setSetup(presetSetup(config, preset));
     setRecords({}); setMarks({}); setTapeState({ key: "main", pts: [] }); setPanel("main"); setDists({}); setFeedback(null); setSubmitted(null); setSite(config.sites[0].id);
-    setRecruit({ key: "", points: [] }); setTemp({ c: motor ? 29.5 : 28.5, checked: false }); setMachine({ ...P.settings }); setTool("g1");
+    setRecruit({ key: "", points: [] }); setTemp({ c: startTemp, checked: false }); setMachine({ ...P.settings }); setTool("g1");
   };
 
   const rows = config.sites.filter((s) => records[s.id]).map((s) => ({
@@ -323,7 +273,7 @@ export default function NerveWorkspace({ config }) {
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
-        {MODES.map(([id, label, hint]) => (
+        {MODES.filter(([id]) => !caseMode || id !== "assessment").map(([id, label, hint]) => (
           <button key={id} type="button" title={hint} onClick={() => { setMode(id); setSubmitted(null); setFeedback(null); }}
             className={`rounded-full px-3 py-1.5 text-sm font-semibold ${mode === id ? "bg-indigo-600 text-white" : "border border-slate-300 bg-white text-slate-700"}`}>{label}</button>
         ))}

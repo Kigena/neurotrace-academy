@@ -82,8 +82,8 @@ export const BONE_SHAPES = BONE_SHAPES_SRC.map((b) => ({ ...b, cx: mx(b.cx) }));
 const THUMB = mpts(THUMB_SRC);
 const WEB = mpts(WEB_SRC);
 export const SENS_BRANCHES = [
-  { id: "thumb", pts: THUMB, weight: 1 },
-  { id: "web", pts: WEB, weight: 0.6 },
+  { id: "thumb", pts: THUMB, weight: 1, nerve: "radial" },
+  { id: "web", pts: WEB, weight: 0.6, nerve: "radial" },
 ];
 export const NERVE = THUMB;
 

@@ -3,6 +3,8 @@ import { autoMark, maximalCurrent, measuredSegment, simulate } from "../../src/n
 import { techniqueChecks } from "../../src/ncs/grading.js";
 import { SITES, STIM_SITES, STUDIES, stimSitesFor } from "../../src/ncs/studies.js";
 import data from "../../src/data/ncsCases.json";
+import { WORKSPACES } from "../../src/ncs/workspaces.js";
+import { idealRecord } from "../../src/ncs/ideal.js";
 
 const good = (s) => ({
   g1: s.g1[0], g2: s.pairs ? s.pairs[s.g1[0]] : s.g2[0], ground: "x", distalCm: s.stdDist,
@@ -94,13 +96,19 @@ describe("NCS technique grading", () => {
   });
 });
 
-describe("NCS cases", () => {
+describe("NCS cases on the interactive workspace", () => {
+  const rec = (studyId, siteId, c) => idealRecord(WORKSPACES[studyId], siteId, c.ws || {});
+  const byId = (id) => data.cases.find((c) => c.id === id);
+  const segCv = (a, b) => Math.abs(a.geo.stim.target.pc.s - b.geo.stim.target.pc.s) / (b.truth.onset - a.truth.onset);
+
   it("are well formed", () => {
     const ids = new Set();
     for (const c of data.cases) {
       expect(ids.has(c.id)).toBe(false);
       ids.add(c.id);
-      for (const id of [...c.required, ...(c.optional || []), ...Object.keys(c.path), ...Object.keys(c.preset || {})]) expect(STUDIES[id], `${c.id}: ${id}`).toBeTruthy();
+      for (const id of [...c.required, ...(c.optional || []), ...Object.keys(c.preset || {})]) expect(WORKSPACES[id], `${c.id}: ${id}`).toBeTruthy();
+      for (const [id, pre] of Object.entries(c.preset || {})) for (const k of ["g1", "g2", "ground", "stim"]) if (pre[k]) expect(WORKSPACES[id].model.PLACES[pre[k]], `${c.id} ${k}`).toBeTruthy();
+      expect(c.ws).toBeTruthy();
       for (const q of c.questions) {
         expect(q.options).toHaveLength(4);
         expect(q.answer).toBeGreaterThanOrEqual(0);
@@ -110,17 +118,44 @@ describe("NCS cases", () => {
     }
   });
 
-  it("produce abnormal values where the case says so", () => {
-    const cts = data.cases.find((c) => c.id === "ncs-cts");
-    const s = STUDIES.medianMotor;
-    const r = run("medianMotor", "medWrist", good(s), { path: cts.path });
-    expect(r.truth.onset).toBeGreaterThan(s.limits.lat);
-    const une = data.cases.find((c) => c.id === "ncs-une");
-    const u = STUDIES.ulnarMotor;
-    const be = run("ulnarMotor", "ulnBE", good(u), { path: une.path }).truth;
-    const ae = run("ulnarMotor", "ulnAE", good(u), { path: une.path }).truth;
-    const cv = (10 * measuredSegment("ulnarMotor", "ulnAE", good(u))) / (ae.onset - be.onset);
-    expect(cv).toBeLessThan(u.limits.cvAcross);
-    expect(ae.amp).toBeLessThan(be.amp * 0.75);
+  it("carpal tunnel: slow median across the wrist, normal palm and ulnar", () => {
+    const c = byId("ncs-cts");
+    const L = WORKSPACES.medianMotor.protocol.limits, LS = WORKSPACES.medianSensory.protocol;
+    expect(rec("medianMotor", "distal", c).truth.onset).toBeGreaterThan(L.lat);
+    expect(rec("medianSensory", "distal", c).truth.peak).toBeGreaterThan(LS.limits.peak);
+    expect(rec("medianSensory", "palm", c).truth.peak).toBeLessThan(LS.siteLimits.palm.peak);
+    expect(rec("ulnarSensory", "distal", c).truth.peak).toBeLessThan(WORKSPACES.ulnarSensory.protocol.limits.peak);
+  });
+
+  it("ulnar neuropathy at the elbow: slowing and drop across the elbow only", () => {
+    const c = byId("ncs-une");
+    const w = rec("ulnarMotor", "distal", c), be = rec("ulnarMotor", "be", c), ae = rec("ulnarMotor", "ae", c);
+    expect(segCv(w, be)).toBeGreaterThan(WORKSPACES.ulnarMotor.protocol.limits.cv);
+    expect(segCv(be, ae)).toBeLessThan(WORKSPACES.ulnarMotor.protocol.limits.cvAcross);
+    expect(ae.truth.amp).toBeLessThan(0.8 * be.truth.amp);
+  });
+
+  it("axonal neuropathy, AIDP with sural sparing, and fibular neuropathy at the fibular head", () => {
+    expect(rec("sural", "distal", byId("ncs-axonal")).truth.amp).toBeLessThan(WORKSPACES.sural.protocol.limits.amp);
+    const g = byId("ncs-aidp");
+    expect(rec("medianSensory", "distal", g).truth.present).toBe(false);
+    expect(rec("sural", "distal", g).truth.amp).toBeGreaterThan(WORKSPACES.sural.protocol.limits.amp);
+    expect(segCv(rec("medianMotor", "distal", g), rec("medianMotor", "elbow", g))).toBeLessThan(WORKSPACES.medianMotor.protocol.limits.cv);
+    const f = byId("ncs-fibular");
+    const bfh = rec("fibularMotor", "bfh", f), pop = rec("fibularMotor", "pop", f);
+    expect(segCv(rec("fibularMotor", "distal", f), bfh)).toBeGreaterThan(WORKSPACES.fibularMotor.protocol.limits.cv);
+    expect(segCv(bfh, pop)).toBeLessThan(WORKSPACES.fibularMotor.protocol.limits.cvAcross);
+  });
+
+  it("healthy cases stay within limits once the limb is warm", () => {
+    for (const id of ["ncs-cold", "ncs-dip", "ncs-root"]) {
+      const c = byId(id);
+      for (const sid of c.required) {
+        const cfg = WORKSPACES[sid];
+        const r = idealRecord(cfg, "distal", c.ws);
+        if (cfg.kind === "motor") expect(r.truth.onset, `${id} ${sid}`).toBeLessThan(cfg.protocol.limits.lat);
+        else expect(r.truth.peak, `${id} ${sid}`).toBeLessThan(cfg.protocol.limits.peak);
+      }
+    }
   });
 });

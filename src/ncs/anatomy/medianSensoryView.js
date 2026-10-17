@@ -25,9 +25,9 @@ const RING_RADIAL = [...ARM.MEDIAN_TRUNK, [143, 413], [150, 440], [156, 470], [1
 const ULNAR_DIGITAL = [[172, 392], [176, 420], [176, 450], [174, 486], [180, 540]];
 
 export const SENS_BRANCHES = [
-  { id: "index", pts: INDEX, weight: 1 },
-  { id: "middle", pts: MIDDLE, weight: 1 },
-  { id: "ringRadial", pts: RING_RADIAL, weight: 0.6 },
+  { id: "index", pts: INDEX, weight: 1, nerve: "median" },
+  { id: "middle", pts: MIDDLE, weight: 1, nerve: "median" },
+  { id: "ringRadial", pts: RING_RADIAL, weight: 0.6, nerve: "median" },
 ];
 export const NERVE = INDEX; // default branch for drawing order and fallbacks
 

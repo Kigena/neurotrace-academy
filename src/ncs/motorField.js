@@ -2,6 +2,7 @@ import { biquad, FS, gaussFrom, mulberry32, recruitFraction } from "./generator.
 import { dist, inPolygon, polylineLength, project } from "./geometry.js";
 import { CONTACT, stimPoles } from "./fieldSim.js";
 import { localToGlobal } from "./panels.js";
+import { crossed, nerveOf, pathTime, zoneCvAt, zonesOf } from "./pathology.js";
 
 /**
  * Field-based motor NCS simulation on an anatomy model.
@@ -61,21 +62,10 @@ function cmapShape(x, lead, disp = 1) {
   return lead * bump(x, 0.7) - k * bump(x - shift, 2.2 * disp) + 0.42 * k * bump(x - shift - 2.6 * disp, 2.8 * disp);
 }
 
-// Travel time (ms) from arc length s0 to the end of the route; slower distal segment.
-function travelTime(route, s0, nerve, cvScale) {
-  let acc = 0, t = 0;
-  for (let i = 1; i < route.length; i++) {
-    const [x0, y0] = route[i - 1];
-    const [x1, y1] = route[i];
-    const len = Math.hypot(x1 - x0, y1 - y0);
-    const a = Math.max(acc, s0), b = acc + len;
-    if (b > a) {
-      const cv = ((y0 + y1) / 2 >= nerve.distalFromY ? nerve.distalCv : nerve.cv) * cvScale;
-      t += (b - a) / cv;
-    }
-    acc += len;
-  }
-  return t;
+// Travel time (ms) from arc length s0 to the end of the route; slower distal segment and any lesion zones.
+function travelTime(route, s0, nerve, cvScale, zones = []) {
+  const cvAt = (y) => (y >= nerve.distalFromY ? nerve.distalCv : nerve.cv) * cvScale * zoneCvAt(zones, y, "motor");
+  return pathTime(route, s0, polylineLength(route), cvAt);
 }
 
 /**
@@ -83,11 +73,11 @@ function travelTime(route, s0, nerve, cvScale) {
  * a secondary panel (ctx.panelOf), the cathode is projected onto that panel's
  * drawing of the nerve and its arc length mapped onto the main route.
  */
-function stimCoupling(model, nerveId, routeId, setup, ctx) {
+function stimCoupling(model, nerveId, routeId, setup, ctx, patient) {
   const nerve = model.NERVES[nerveId];
   const route = nerve.routes[routeId];
   const { cathode, anode } = stimPoles(setup.stim);
-  const contactK = setup.contact?.stim === "good" ? 1 : setup.contact?.stim === "dry" ? 1.4 : 1.15;
+  const contactK = (setup.contact?.stim === "good" ? 1 : setup.contact?.stim === "dry" ? 1.4 : 1.15) * (nerveOf(patient, nerveId).imaxFactor ?? 1);
   const panel = ctx?.panelOf?.(setup);
   if (panel) {
     const pn = panel.NERVES[nerveId];
@@ -122,9 +112,9 @@ export function describeMotor(model, setup, opts = {}) {
   for (const k of ["g1", "g2"]) if (setup[k]) out.views[k] = Object.fromEntries(model.SOURCES.map((s) => [s.id, electrodeView(setup[k], s)]));
   if (setup.stim) {
     const { cathode, anode } = stimPoles(setup.stim);
-    const tgt = stimCoupling(model, target.nerve, target.route, setup, opts.ctx);
+    const tgt = stimCoupling(model, target.nerve, target.route, setup, opts.ctx, opts.patient);
     const nerves = {};
-    for (const s of model.SOURCES) if (!nerves[s.nerve]) nerves[s.nerve] = stimCoupling(model, s.nerve, s.route, setup, opts.ctx);
+    for (const s of model.SOURCES) if (!nerves[s.nerve]) nerves[s.nerve] = stimCoupling(model, s.nerve, s.route, setup, opts.ctx, opts.patient);
     const stimOnSkin = panel ? inPolygon(cathode, panel.SKIN) && inPolygon(anode, panel.SKIN) : onSkin(cathode) && onSkin(anode);
     out.stim = { cathode, anode, onSkin: stimOnSkin, target: tgt, nerves, imax: tgt.imax, reversed: tgt.reversed, align: tgt.align, panel: !!panel };
     if (setup.g1 && !panel) out.surfaceDistMm = dist(setup.g1, cathode);
@@ -149,7 +139,7 @@ export function simulateMotor({ model, setup, machine = {}, patient = {}, intens
   const sweepMs = (machine.sweep ?? 3) * 10;
   const n = Math.round(sweepMs * FS) + 1;
   const rng = mulberry32(seed);
-  const geo = describeMotor(model, setup, { targetId, ctx });
+  const geo = describeMotor(model, setup, { targetId, ctx, patient });
   const resp = new Float64Array(n);
   const extra = new Float64Array(n);
   const dT = Math.max(0, (patient.refTempC ?? 32) - (patient.tempC ?? 32.5));
@@ -159,15 +149,20 @@ export function simulateMotor({ model, setup, machine = {}, patient = {}, intens
 
   if (rec && geo.stim?.onSkin) {
     for (const src of model.SOURCES) {
-      const c = stimCoupling(model, src.nerve, src.route, setup, ctx);
+      const c = stimCoupling(model, src.nerve, src.route, setup, ctx, patient);
       const frac = recruitFraction(intensity, c.imax);
       fired[src.id] = frac;
-      if (frac <= 0) continue;
-      const lat = (c.nerve.term + (patient.termAdd ?? 0)) * (1 + 0.08 * dT) + travelTime(c.route, c.pc.s, c.nerve, cvScale);
-      // Longer conduction distance: slight physiological dispersion and amplitude fall.
-      const pathMm = Math.max(0, polylineLength(c.route) - c.pc.s);
-      const disp = 1 + 0.0006 * pathMm;
-      const A = src.amp * (patient.ampFactor ?? 1) * frac * (1 + 0.025 * dT) / (1 + 0.0003 * pathMm);
+      const np = nerveOf(patient, src.nerve);
+      if (frac <= 0 || np.motorAbsent) continue;
+      const zones = zonesOf(patient, src.nerve);
+      const routeEnd = polylineLength(c.route);
+      const lat = (c.nerve.term + (patient.termAdd ?? 0) + (np.termAdd ?? 0)) * (1 + 0.08 * dT) + travelTime(c.route, c.pc.s, c.nerve, cvScale * (np.cvFactor ?? 1), zones);
+      // Longer conduction distance: slight physiological dispersion and amplitude fall;
+      // impulses that pass through a lesion zone are partly blocked and more dispersed.
+      const pathMm = Math.max(0, routeEnd - c.pc.s);
+      const lesion = crossed(c.route, c.pc.s, routeEnd, zones, "motor");
+      const disp = (1 + 0.0006 * pathMm) * lesion.disp;
+      const A = src.amp * (patient.ampFactor ?? 1) * (np.motorAmp ?? 1) * lesion.conduct * frac * (1 + 0.025 * dT) / (1 + 0.0003 * pathMm) / Math.sqrt(lesion.disp);
       for (const [k, sign] of [["g1", 1], ["g2", -1]]) {
         const ev = geo.views[k][src.id];
         for (let i = 0; i < n; i++) resp[i] += sign * A * ev.w * cmapShape(i / FS - lat, ev.lead, disp);
