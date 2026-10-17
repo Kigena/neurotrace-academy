@@ -233,15 +233,15 @@ PROTOCOLS["radial-sens-anti"] = {
   targetTempC: 32,
   hints: {
     limb: "hand",
-    g1Where: "The superficial radial nerve crosses the EPL tendon at the anatomical snuffbox, where it can often be rolled under a fingertip.",
+    g1Where: "The superficial radial nerve runs through the anatomical snuffbox, crossing the thumb extensor tendons, where it can often be rolled under a fingertip.",
     g2Fix: "Put G2 3-4 cm distal along the dorsum of the thumb.",
     stimWhere: "Place the stimulator 10 cm proximal, over the lateral edge of the radius in the distal forearm.",
     groundOnLimb: true,
   },
   steps: [
     "Measure the hand temperature and warm the hand if it is below 32 °C.",
-    "Ask the patient to extend the thumb to show the snuffbox; feel for the nerve rolling over the EPL tendon.",
-    "G1 over the nerve where it crosses the EPL tendon; G2 3-4 cm distal along the dorsum of the thumb.",
+    "Ask the patient to extend the thumb to show the snuffbox; feel for the nerve rolling over the thumb extensor tendons.",
+    "G1 over the nerve in the snuffbox; G2 3-4 cm distal along the dorsum of the thumb.",
     "Ground on the same limb, for example the back of the hand.",
     "Measure 10 cm proximally from G1 along the course of the nerve; cathode over the lateral edge of the radius, anode proximal.",
     "Raise the current until the SNAP stops growing, then add about 20%. The nerve is superficial, so little current is needed.",
