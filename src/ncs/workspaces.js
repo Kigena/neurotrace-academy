@@ -1,5 +1,6 @@
 import * as SURAL from "./anatomy/suralView.js";
 import * as MEDIAN from "./anatomy/medianArmView.js";
+import * as LEG from "./anatomy/legLateralView.js";
 import { describeSetup, explainSetup, simulateField } from "./fieldSim.js";
 import { describeMotor, explainMotor, simulateMotor } from "./motorField.js";
 import { pointAt, project } from "./geometry.js";
@@ -62,6 +63,31 @@ export const WORKSPACES = {
       { ...MEDIAN.PLACES.wristMedian8, r: 7, label: "Wrist cathode" },
       { ...MEDIAN.PLACES.elbowMedian, r: 8, label: "Elbow cathode" },
       { ...MEDIAN.PLACES.palmGround, r: 12, label: "Ground zone" },
+    ],
+  },
+  fibularMotor: {
+    id: "fibularMotor",
+    label: "Fibular motor (EDB)",
+    kind: "motor",
+    model: LEG,
+    protocol: PROTOCOLS["fibular-motor-edb"],
+    limb: "foot",
+    gains: MOTOR_GAINS,
+    sites: [
+      { id: "distal", label: "Ankle", distLabel: "Distance, G1 to cathode (cm)" },
+      { id: "bfh", label: "Below fibular head", distLabel: "Segment, below fibular head to ankle cathode (cm)" },
+      { id: "pop", label: "Popliteal fossa", across: true, distLabel: "Segment across the fibular head, popliteal to below-head (cm)" },
+    ],
+    simulate: (args) => simulateMotor({ ...args, targetId: "edb" }),
+    describe: (model, setup) => describeMotor(model, setup, { targetId: "edb" }),
+    explain: (args) => explainMotor(args),
+    targets: () => [
+      { ...LEG.PLACES.edbMotorPoint, r: 6, label: "G1" },
+      { ...LEG.PLACES.mtp5, r: 6, label: "G2" },
+      { ...LEG.PLACES.groundAnkle, r: 12, label: "Ground zone" },
+      { ...LEG.PLACES.ankle8, r: 7, label: "Ankle cathode" },
+      { ...LEG.PLACES.bfh, r: 7, label: "Below-fibular-head cathode" },
+      { ...LEG.PLACES.pop, r: 8, label: "Popliteal cathode" },
     ],
   },
   ulnarMotor: {

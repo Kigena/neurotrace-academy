@@ -92,5 +92,38 @@ PROTOCOLS["ulnar-motor-adm"] = {
   ],
 };
 
+PROTOCOLS["fibular-motor-edb"] = {
+  study: "fibularMotor",
+  label: "Fibular (peroneal) motor, recording EDB (belly-tendon), 8 cm",
+  distanceMm: 80,
+  settings: { gain: 5000, sweep: 5, lff: 10, hff: 10000, averages: 1 },
+  limits: { lat: 6.5, amp: 1.3, cv: 38, cvAcross: 42 },
+  targetTempC: 30,
+  target: "edb",
+  hints: {
+    limb: "foot",
+    muscle: "EDB",
+    g1Fix: "Move G1 onto the middle of the EDB belly on the dorsolateral foot, just in front of the lateral malleolus.",
+    g2Ok: "G2 is over the 5th MTP joint, an electrically quiet site.",
+    g2Fix: "Put G2 over the 5th MTP joint on the lateral border of the foot.",
+    siteHint: {
+      distal: "at the ankle the deep fibular nerve lies just lateral to the tibialis anterior tendon",
+      bfh: "below the knee it winds around the fibular neck just below the fibular head",
+      pop: "above the knee it runs along the medial border of the biceps femoris tendon in the lateral popliteal fossa",
+    },
+  },
+  steps: [
+    "Measure the foot temperature and warm the foot if it is below 30 °C.",
+    "G1 on the middle of the EDB belly on the dorsolateral foot (the motor point), about 2-4 cm in front of and below the lateral malleolus.",
+    "G2 over the 5th MTP joint on the lateral border of the foot: the belly-tendon method.",
+    "Ground on the same limb between the stimulator and the recording electrodes, for example the ankle or dorsum of the foot.",
+    "Ankle: measure 8 cm proximally from G1 and put the cathode just lateral to the tibialis anterior tendon, anode proximal. Raise the current to a supramaximal level.",
+    "Below the fibular head: cathode just below (distal to) the fibular head, over the lateral fibular neck.",
+    "Lateral popliteal fossa: cathode about 10 cm above the below-fibular-head site, along the medial border of the biceps femoris tendon. Avoid drifting toward the middle of the fossa (tibial nerve).",
+    "Mark onset and negative peak at each site. Tape ankle to below fibular head, and below fibular head to popliteal fossa, along the course of the nerve.",
+    "Compare the leg and across-knee velocities and the amplitude at each site; a drop of more than about 20% across the fibular head suggests conduction block.",
+  ],
+};
+
 export const SENSORY_GAINS = [5, 10, 20, 50, 100]; // µV/div
 export const MOTOR_GAINS = [500, 1000, 2000, 5000, 10000]; // µV/div, shown as mV/div

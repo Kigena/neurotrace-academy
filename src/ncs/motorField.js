@@ -255,7 +255,7 @@ export function explainMotor({ geo, protocol, intensity, machine, tempC, tempChe
       : `The cathode is about ${Number.isFinite(t.pc.d) ? cm(t.pc.d) : "far"} cm from the ${nerveName}${H.siteHint?.[site] ? ` (${H.siteHint[site]})` : ""}, so far more current is needed${Number.isFinite(t.imax) ? ` (maximal at about ${Math.round(t.imax)} mA)` : ""}.`);
     if (t.align < 0.7) add("stim-angle", false, "The stimulator is rotated across the nerve; align both poles along it.");
     add("polarity", !t.reversed, t.reversed
-      ? "The anode lies between the cathode and the recording electrodes. The impulse starts under the cathode, now farther from the muscle, so the latency is longer, and the anode can partly block it. Turn the stimulator so the cathode points toward the hand."
+      ? `The anode lies between the cathode and the recording electrodes. The impulse starts under the cathode, now farther from the muscle, so the latency is longer, and the anode can partly block it. Turn the stimulator so the cathode points toward the ${H.limb || "hand"}.`
       : "Cathode toward the recording electrodes.");
     if (site === "distal" && geo.surfaceDistMm != null) {
       const off = Math.abs(geo.surfaceDistMm - protocol.distanceMm);
@@ -277,7 +277,8 @@ export function explainMotor({ geo, protocol, intensity, machine, tempC, tempChe
   const s = protocol.settings;
   add("settings", machine.gain >= 2000 && machine.gain <= 5000 && machine.lff >= 2 && machine.lff <= 10 && machine.hff >= 5000,
     `Motor settings for this protocol: ${s.gain / 1000} mV/div, low filter ${s.lff} Hz, high filter ${s.hff / 1000} kHz.`);
-  if (!tempChecked) add("temp", false, "Measure the hand temperature first.");
-  else add("temp", tempC >= protocol.targetTempC, tempC >= protocol.targetTempC ? "Hand warm enough." : `The hand is ${tempC.toFixed(1)} °C; warm it to at least ${protocol.targetTempC} °C. Cold prolongs latencies and slows conduction.`);
+  const limb = H.limb || "hand";
+  if (!tempChecked) add("temp", false, `Measure the ${limb} temperature first.`);
+  else add("temp", tempC >= protocol.targetTempC, tempC >= protocol.targetTempC ? `${limb[0].toUpperCase()}${limb.slice(1)} warm enough.` : `The ${limb} is ${tempC.toFixed(1)} °C; warm it to at least ${protocol.targetTempC} °C. Cold prolongs latencies and slows conduction.`);
   return out;
 }

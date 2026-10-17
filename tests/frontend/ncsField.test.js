@@ -209,3 +209,48 @@ describe("ulnar motor across the elbow", () => {
     expect(Math.abs(g1 - g2)).toBeLessThan(2);
   });
 });
+
+describe("fibular motor (EDB)", () => {
+  const W = WORKSPACES.fibularMotor;
+  const L = W.model;
+  const F = PROTOCOLS["fibular-motor-edb"];
+  const stimOn = (place, nerve = "fibular", rt = "edb") => {
+    const pr = project(place, L.NERVES[nerve].routes[rt]);
+    const a = Math.atan2(pr.ty, pr.tx);
+    return { x: place.x - Math.cos(a) * 15, y: place.y - Math.sin(a) * 15, angle: a };
+  };
+  const frun = (stim, I = 40, o = {}) => W.simulate({ model: L, setup: { g1: L.PLACES.edbMotorPoint, g2: L.PLACES.mtp5, ground: L.PLACES.groundAnkle, stim, contact: good, ...o }, machine: { lff: 10, hff: 10000, sweep: 5 }, patient: { tempC: 31 }, intensity: I, seed: 4 });
+
+  it("keeps places and the nerve on the skin", () => {
+    for (const [id, p] of Object.entries(L.PLACES)) expect(inPolygon(p, L.SKIN), id).toBe(true);
+    for (const [x, y] of L.NERVES.fibular.routes.edb) expect(inPolygon({ x, y }, L.SKIN)).toBe(true);
+  });
+
+  it("gives normal latencies, amplitudes and velocities at ankle, below fibular head and popliteal fossa", () => {
+    const a = frun(stimOn(L.PLACES.ankle8)), b = frun(stimOn(L.PLACES.bfh)), c = frun(stimOn(L.PLACES.pop), 45);
+    expect(a.truth.onset).toBeLessThan(F.limits.lat);
+    expect(a.truth.amp / 1000).toBeGreaterThan(F.limits.amp);
+    expect(Math.abs(a.geo.surfaceDistMm - 80)).toBeLessThan(3);
+    const r = L.NERVES.fibular.routes.edb;
+    const s = (x) => project(x.geo.stim.cathode, r).s;
+    expect((s(a) - s(b)) / (b.truth.onset - a.truth.onset)).toBeGreaterThan(F.limits.cv);
+    expect((s(b) - s(c)) / (c.truth.onset - b.truth.onset)).toBeGreaterThan(F.limits.cvAcross);
+    expect(c.truth.amp).toBeGreaterThan(0.8 * b.truth.amp);
+    const bad = explainMotor({ geo: a.geo, protocol: F, intensity: 40, machine: { gain: 5000, lff: 10, hff: 10000 }, tempC: 31, tempChecked: true, site: "distal", model: L, setup: {} }).filter((x) => !x.ok);
+    expect(bad).toEqual([]);
+  });
+
+  it("records only a small positive-first response with G1 off the EDB and needs more current over the deep shin", () => {
+    const off = frun(stimOn(L.PLACES.ankle8), 40, { g1: L.PLACES.dorsumMid });
+    expect(off.truth.positiveFirst).toBe(true);
+    expect(off.truth.amp).toBeLessThan(1000);
+    expect(frun(stimOn(L.PLACES.midShin)).truth.imax).toBeGreaterThan(2 * frun(stimOn(L.PLACES.ankle8)).truth.imax);
+  });
+
+  it("warns about tibial co-stimulation with excessive current at the knee", () => {
+    const hi = frun(stimOn(L.PLACES.pop), 80);
+    const f = explainMotor({ geo: hi.geo, protocol: F, intensity: 80, machine: { gain: 5000, lff: 10, hff: 10000 }, tempC: 31, tempChecked: true, site: "pop", model: L, setup: {} });
+    expect(f.some((x) => x.id === "spread" && !x.ok)).toBe(true);
+    expect(f.find((x) => x.id === "temp").text).toMatch(/foot/i);
+  });
+});
