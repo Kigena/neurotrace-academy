@@ -5,6 +5,7 @@ import * as LEGM from "./anatomy/legMedialView.js";
 import * as KNEE from "./anatomy/kneePosteriorView.js";
 import * as MEDS from "./anatomy/medianSensoryView.js";
 import * as ULNS from "./anatomy/ulnarSensoryView.js";
+import * as RADS from "./anatomy/radialDorsalView.js";
 import { describeSetup, explainSetup, simulateField } from "./fieldSim.js";
 import { describeMotor, explainMotor, simulateMotor } from "./motorField.js";
 import { pointAt, project } from "./geometry.js";
@@ -92,6 +93,26 @@ export const WORKSPACES = {
       { ...ULNS.PLACES.littleDist, r: 6, label: "G2" },
       { ...ULNS.PLACES.palmGround, r: 10, label: "Ground zone" },
       { ...ULNS.PLACES.wrist14, r: 7, label: "Wrist cathode" },
+    ],
+  },
+  radialSensory: {
+    id: "radialSensory",
+    label: "Radial sensory",
+    kind: "sensory",
+    model: RADS,
+    protocol: PROTOCOLS["radial-sens-anti"],
+    limb: "hand",
+    gains: SENSORY_GAINS,
+    patient: { cv: 57, amp: 25, imaxBase: 10 },
+    sites: [{ id: "distal", label: "Forearm (10 cm)", distLabel: "Distance, cathode to G1 (cm)" }],
+    simulate: (args) => simulateField({ ...args, patient: { cv: 57, amp: 25, imaxBase: 10, ...args.patient } }),
+    describe: (model, setup) => describeSetup(model, setup, { imaxBase: 10 }),
+    explain: (args) => explainSetup(args),
+    targets: () => [
+      { ...RADS.PLACES.snuffbox, r: 6, label: "G1" },
+      { ...RADS.PLACES.thumbDorsum, r: 6, label: "G2" },
+      { ...RADS.PLACES.handGround, r: 10, label: "Ground zone" },
+      { ...RADS.PLACES.forearm10, r: 7, label: "Cathode" },
     ],
   },
   medianMotor: {

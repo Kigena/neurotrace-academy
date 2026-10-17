@@ -53,8 +53,11 @@ export function sensoryBranches(model) {
 
 export function describeSetup(model, setup, patient = {}) {
   const branches = sensoryBranches(model);
-  // The branch closest to G1 is the one this recording is about.
-  const primary = setup.g1 ? branches.reduce((a, b) => (project(setup.g1, b.pts).d < project(setup.g1, a.pts).d ? b : a)) : branches[0];
+  // The recording is about the branch under G1; where two branches run under one ring (the ring
+  // finger), prefer the one the cathode is actually stimulating.
+  const cath = setup.stim ? stimPoles(setup.stim).cathode : null;
+  const score = (b) => project(setup.g1, b.pts).d + (cath ? 0.5 * project(cath, b.pts).d : 0);
+  const primary = setup.g1 ? branches.reduce((a, b) => (score(b) < score(a) ? b : a)) : branches[0];
   const path = primary.pts;
   const onSkin = (p) => !!p && inPolygon(p, model.SKIN);
   const out = { placed: {}, onSkin: {}, proj: {} };

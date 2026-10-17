@@ -19,18 +19,22 @@ export const { VIEWBOX, SKIN, SURFACE, MUSCLES, BONES, BONE_SHAPES, ORIENTATION 
 // The trunk divides at the distal edge of the transverse carpal ligament (about 3 cm distal to the crease).
 const INDEX = [...ARM.MEDIAN_TRUNK, [143, 413], [140, 425], [132, 455], [124, 482], [120, 500], [119, 530], [119, 556]];
 const MIDDLE = [...ARM.MEDIAN_TRUNK, [143, 413], [138, 430], [133, 460], [131, 486], [134, 500], [134, 566]];
+// Common digital nerve of the 3rd web space to the radial half of the ring finger.
+const RING_RADIAL = [...ARM.MEDIAN_TRUNK, [143, 413], [150, 440], [156, 470], [158, 500], [158, 560]];
 // Ulnar digital nerves (drawn for orientation only): little finger and the ulnar half of the ring finger.
 const ULNAR_DIGITAL = [[172, 392], [176, 420], [176, 450], [174, 486], [180, 540]];
 
 export const SENS_BRANCHES = [
   { id: "index", pts: INDEX, weight: 1 },
   { id: "middle", pts: MIDDLE, weight: 1 },
+  { id: "ringRadial", pts: RING_RADIAL, weight: 0.6 },
 ];
 export const NERVE = INDEX; // default branch for drawing order and fallbacks
 
 export const NERVE_DRAW = [
   { name: "Median nerve and digital nerve to the index finger", pts: INDEX },
   { name: "Median digital nerve to the middle finger (radial side)", pts: MIDDLE.slice(ARM.MEDIAN_TRUNK.length - 1) },
+  { name: "Median digital nerve to the radial half of the ring finger", pts: RING_RADIAL.slice(ARM.MEDIAN_TRUNK.length - 1), thin: true },
   { name: "Ulnar nerve (hypothenar branch)", pts: ARM.NERVES.ulnar.routes.adm, color: "#22c55e", thin: true },
   { name: "Ulnar digital nerves (little finger and ulnar half of the ring finger)", pts: ULNAR_DIGITAL, color: "#22c55e", thin: true },
   { name: "Ulnar digital twig to the ring finger", pts: [[176, 450], [168, 470], [166, 500]], color: "#22c55e", thin: true },
@@ -46,7 +50,7 @@ export const PLACES = {
   indexDist: { ...at(INDEX, IDX_G1, 35), label: "Index finger, ring about 3.5 cm further distal" },
   middleProx: { ...MID_G1, label: "Middle finger, ring over the proximal phalanx" },
   middleDist: { ...at(MIDDLE, MID_G1, 35), label: "Middle finger, ring about 3.5 cm further distal" },
-  ringProx: { x: 161, y: 506, label: "Ring finger, ring over the proximal phalanx" },
+  ringProx: { x: 161, y: 500, label: "Ring finger, ring over the proximal phalanx (median radial half, ulnar ulnar half)" },
   littleProx: { x: 183, y: 502, label: "Little finger, ring over the proximal phalanx (ulnar)" },
   wrist14: { ...at(INDEX, IDX_G1, -140), label: "Wrist, between FCR and palmaris longus, 14 cm from G1 along the nerve" },
   palm7: { ...at(INDEX, IDX_G1, -70), label: "Palm, over the median nerve, 7 cm from an index-finger G1" },

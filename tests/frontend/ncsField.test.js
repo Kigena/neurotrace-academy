@@ -334,7 +334,10 @@ describe("median sensory (antidromic, digit 2/3)", () => {
 
   it("records from the finger the rings are on, and loses the SNAP with close rings or the wrong nerve", () => {
     expect(srun({ g1: PLc.middleProx, g2: PLc.middleDist }).geo.primary).toBe("middle");
-    expect(srun({ g1: PLc.ringProx, g2: { x: 161, y: 540 } }).truth.amp).toBeLessThan(15);
+    // The radial half of the ring finger is median: a smaller but real median SNAP.
+    const ringM = srun({ g1: PLc.ringProx, g2: { x: 160, y: 535 } });
+    expect(ringM.truth.amp).toBeGreaterThan(5);
+    expect(ringM.truth.amp).toBeLessThan(srun().truth.amp);
     expect(srun({ g2: { x: 119, y: 510 } }).truth.amp).toBeLessThan(0.7 * srun().truth.amp);
     expect(srun({}, PLc.wristUlnar).truth.amp).toBeLessThan(2);
     expect(srun({}, PLc.wrist14, 27).truth.peak).toBeGreaterThan(srun().truth.peak + 0.2);
@@ -373,8 +376,38 @@ describe("ulnar sensory (antidromic, digit 5)", () => {
     const med = stimOn(PU.wristMedian, ULNSV.SENS_BRANCHES[2].pts);
     expect(urun({}, med, 20).truth.amp).toBeLessThan(3);
     expect(urun({}, med, 60).truth.amp).toBeGreaterThan(5);
-    const ring = urun({ g1: PU.ringProx, g2: { x: 162, y: 535 } });
+    const ring = urun({ g1: PU.ringProx, g2: { x: 163, y: 535 } });
+    expect(ring.geo.primary).toBe("ringUlnar");
     expect(ring.truth.amp).toBeLessThan(urun().truth.amp);
     expect(ring.truth.amp).toBeGreaterThan(5);
+  });
+});
+
+import * as RADV from "../../src/ncs/anatomy/radialDorsalView.js";
+
+describe("radial sensory (superficial radial, antidromic)", () => {
+  const W = WORKSPACES.radialSensory;
+  const RS = PROTOCOLS["radial-sens-anti"];
+  const PR = RADV.PLACES;
+  const stimOn = (place) => {
+    const pr = project(place, RADV.NERVE);
+    const a = Math.atan2(pr.ty, pr.tx);
+    return { x: place.x - Math.cos(a) * 15, y: place.y - Math.sin(a) * 15, angle: a };
+  };
+  const mach = { lff: 20, hff: 2000, sweep: 1, gain: 20 };
+  const rrun = (o = {}, place = PR.forearm10, I = 14) => W.simulate({ model: RADV, setup: { g1: PR.snuffbox, g2: PR.thumbDorsum, ground: PR.handGround, stim: stimOn(place), contact: good, ...o }, machine: mach, patient: { tempC: 33 }, intensity: I, seed: 3 });
+
+  it("keeps places and branches on the skin", () => {
+    for (const [id, p] of Object.entries(PR)) expect(inPolygon(p, RADV.SKIN), id).toBe(true);
+    for (const b of RADV.SENS_BRANCHES) for (const [x, y] of b.pts) expect(inPolygon({ x, y }, RADV.SKIN), b.id).toBe(true);
+  });
+
+  it("records a normal SNAP at 10 cm and misses the nerve from the middle of the forearm", () => {
+    const r = rrun();
+    expect(r.truth.peak).toBeLessThan(RS.limits.peak);
+    expect(r.truth.amp).toBeGreaterThan(RS.limits.amp);
+    expect(Math.abs(r.geo.trueDistMm - 100)).toBeLessThan(3);
+    expect(explainSetup({ geo: r.geo, protocol: RS, intensity: 14, machine: mach, tempC: 33, tempChecked: true, site: "distal" }).filter((x) => !x.ok)).toEqual([]);
+    expect(rrun({}, PR.forearmMid).truth.amp).toBeLessThan(2);
   });
 });

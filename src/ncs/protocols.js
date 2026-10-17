@@ -222,5 +222,32 @@ PROTOCOLS["ulnar-sens-anti"] = {
   ],
 };
 
+PROTOCOLS["radial-sens-anti"] = {
+  study: "radialSensory",
+  label: "Superficial radial sensory, antidromic, 10 cm",
+  direction: "antidromic",
+  distanceMm: 100,
+  separationMm: [30, 40],
+  settings: { gain: 20, sweep: 1, lff: 20, hff: 2000, averages: 1 },
+  limits: { peak: 2.8, amp: 7 },
+  targetTempC: 32,
+  hints: {
+    limb: "hand",
+    g1Where: "The superficial radial nerve crosses the EPL tendon at the anatomical snuffbox, where it can often be rolled under a fingertip.",
+    g2Fix: "Put G2 3-4 cm distal along the dorsum of the thumb.",
+    stimWhere: "Place the stimulator 10 cm proximal, over the lateral edge of the radius in the distal forearm.",
+    groundOnLimb: true,
+  },
+  steps: [
+    "Measure the hand temperature and warm the hand if it is below 32 °C.",
+    "Ask the patient to extend the thumb to show the snuffbox; feel for the nerve rolling over the EPL tendon.",
+    "G1 over the nerve where it crosses the EPL tendon; G2 3-4 cm distal along the dorsum of the thumb.",
+    "Ground on the same limb, for example the back of the hand.",
+    "Measure 10 cm proximally from G1 along the course of the nerve; cathode over the lateral edge of the radius, anode proximal.",
+    "Raise the current until the SNAP stops growing, then add about 20%. The nerve is superficial, so little current is needed.",
+    "Mark onset and negative peak; the reference values here use peak latency at 10 cm.",
+  ],
+};
+
 export const SENSORY_GAINS = [5, 10, 20, 50, 100]; // µV/div
 export const MOTOR_GAINS = [500, 1000, 2000, 5000, 10000]; // µV/div, shown as mV/div
