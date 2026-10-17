@@ -79,3 +79,48 @@ export function smoothPath(pts, closed = true) {
   }
   return closed ? `${d} Z` : d;
 }
+
+/**
+ * Points along the same smooth open curve that smoothPath(pts, false) draws
+ * (Catmull-Rom through every point), sampled `per` times per segment.
+ */
+export function splinePoints(pts, per = 12) {
+  const n = pts.length;
+  if (n < 3) return pts.slice();
+  const at = (i) => pts[Math.max(0, Math.min(n - 1, i))];
+  const out = [pts[0]];
+  for (let i = 0; i < n - 1; i++) {
+    const p0 = at(i - 1), p1 = at(i), p2 = at(i + 1), p3 = at(i + 2);
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    for (let k = 1; k <= per; k++) {
+      const t = k / per, u = 1 - t;
+      out.push([
+        u * u * u * p1[0] + 3 * u * u * t * c1[0] + 3 * u * t * t * c2[0] + t * t * t * p2[0],
+        u * u * u * p1[1] + 3 * u * u * t * c1[1] + 3 * u * t * t * c2[1] + t * t * t * p2[1],
+      ]);
+    }
+  }
+  return out;
+}
+
+/** Length of the smooth curve through the points (a flexible tape laid along them). */
+export const curveLength = (pts) => polylineLength(splinePoints(pts));
+
+/**
+ * Keep a traced path manageable: Ramer-Douglas-Peucker simplification keeps
+ * the points where the course bends and drops those within `tolMm` of the
+ * straight line between their neighbours.
+ */
+export function thinPath(pts, tolMm = 1.5) {
+  if (pts.length < 3) return pts;
+  const [ax, ay] = pts[0], [bx, by] = pts[pts.length - 1];
+  const len = Math.hypot(bx - ax, by - ay) || 1e-9;
+  let far = 0, farD = 0;
+  for (let i = 1; i < pts.length - 1; i++) {
+    const d = len < 1e-6 ? Math.hypot(pts[i][0] - ax, pts[i][1] - ay) : Math.abs((bx - ax) * (ay - pts[i][1]) - (ax - pts[i][0]) * (by - ay)) / len;
+    if (d > farD) { far = i; farD = d; }
+  }
+  if (farD <= tolMm) return [pts[0], pts[pts.length - 1]];
+  return [...thinPath(pts.slice(0, far + 1), tolMm).slice(0, -1), ...thinPath(pts.slice(far), tolMm)];
+}

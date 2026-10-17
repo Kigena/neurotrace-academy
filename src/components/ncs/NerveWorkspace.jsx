@@ -3,7 +3,7 @@ import AnatomyCanvas from "./AnatomyCanvas.jsx";
 import NcsTrace from "./NcsTrace.jsx";
 import { CONTACT, stimPoles } from "../../ncs/fieldSim.js";
 import { autoMark } from "../../ncs/generator.js";
-import { polylineLength } from "../../ncs/geometry.js";
+import { curveLength } from "../../ncs/geometry.js";
 import { carryStimulator } from "../../ncs/panels.js";
 import { ampOf as ampOfS, assessStudy, cvFor as cvForS, fmtAmpFor, flagsFor } from "../../ncs/assess.js";
 import { AVERAGES, HFFS, LFFS, SWEEPS, gainLabel } from "../../ncs/studies.js";
@@ -81,7 +81,8 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
   const [layers, setLayers] = useState({ muscle: false, bone: true, nerve: false, landmarks: true });
   const [tool, setTool] = useState("g1");
   const [setup, setSetup] = useState(() => presetSetup(config, preset));
-  const [tapeState, setTapeState] = useState({ key: "main", pts: [] });
+  const [tapeState, setTapeState] = useState({ key: "main", pts: [], active: false });
+  const [showTargets, setShowTargets] = useState(false);
   const [machine, setMachine] = useState({ ...P.settings });
   const [intensity, setIntensity] = useState(10);
   const startTemp = initialTemp ?? (motor ? 29.5 : 28.5);
@@ -111,7 +112,13 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
   const view = views[panelKey] ?? viewModel.VIEWS[0].box;
   const setView = useCallback((v) => setViews((all) => ({ ...all, [panelKey]: typeof v === "function" ? v(all[panelKey] ?? viewModel.VIEWS[0].box) : v })), [panelKey, viewModel]);
   const tape = tapeState.key === panelKey ? tapeState.pts : [];
-  const setTape = (pts) => setTapeState({ key: panelKey, pts });
+  const tapeActive = tapeState.key === panelKey && tapeState.active;
+  // Accepts a list or an updater (current points -> new points), so press and release in one gesture both count.
+  const setTape = (v) => setTapeState((t) => {
+    const cur = t.key === panelKey ? t.pts : [];
+    return { key: panelKey, pts: typeof v === "function" ? v(cur) : v, active: t.key === panelKey ? t.active : false };
+  });
+  const setTapeActive = (active) => setTapeState((t) => ({ ...t, key: panelKey, active }));
   const stimPanel = setup.stim?.panel ?? "main";
   const canvasSetup = {
     ...setup,
@@ -129,7 +136,8 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
     landmarks: mode !== "assessment" ? layers.landmarks : false,
     bone: mode !== "assessment" ? layers.bone : reveal,
   };
-  const targets = mode === "guided" || reveal ? config.targets(setup).filter((t) => (t.panel ?? "main") === panel) : null;
+  // Target zones are hints, shown only when asked for in Guided mode (or after an assessment).
+  const targets = (mode === "guided" && showTargets) || reveal ? config.targets(setup).filter((t) => (t.panel ?? "main") === panel) : null;
 
   const place = (key, value) => {
     if (submitted) return;
@@ -172,7 +180,7 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
 
   const S = { records, marks, dists, tempChecked: temp.checked, machine };
   const ampOf = (sid) => ampOfS(S, sid);
-  const tapeCm = tape.length > 1 ? polylineLength(tape) / 10 : null;
+  const tapeCm = tape.length > 1 ? curveLength(tape) / 10 : null;
   const cvFor = (sid) => cvForS(config, S, sid);
   const flags = (sid) => flagsFor(config, S, sid);
   const distalRec = records.distal;
@@ -189,7 +197,7 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
 
   const reset = () => {
     setSetup(presetSetup(config, preset));
-    setRecords({}); setMarks({}); setTapeState({ key: "main", pts: [] }); setPanel("main"); setDists({}); setFeedback(null); setSubmitted(null); setSite(config.sites[0].id);
+    setRecords({}); setMarks({}); setTapeState({ key: "main", pts: [], active: false }); setPanel("main"); setDists({}); setFeedback(null); setSubmitted(null); setSite(config.sites[0].id);
     setRecruit({ key: "", points: [] }); setTemp({ c: startTemp, checked: false }); setMachine({ ...P.settings }); setTool("g1");
   };
 
@@ -197,6 +205,13 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
     id: s.id, label: s.label, sub: `${records[s.id].intensity} mA`, sweep: records[s.id].sweep, marks: marks[s.id] || {},
     overlays: saved.filter((x) => compare.includes(x.id) && x.site === s.id).map((x) => ({ id: x.id, sweep: x.sweep, color: x.color })),
   }));
+  useEffect(() => {
+    if (!tapeActive) return undefined;
+    const onKey = (e) => e.key === "Escape" && setTapeState((t) => ({ ...t, active: false }));
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [tapeActive]);
+
   const canvasH = full ? Math.max(420, (typeof window !== "undefined" ? window.innerHeight : 800) - 170) : 620;
   const autoMarkAll = () => setMarks(Object.fromEntries(Object.entries(records).map(([sid, r]) => {
     const m = autoMark(r.sweep, kind);
@@ -219,7 +234,8 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
           <button key={id} type="button" onClick={() => setTool(id)} disabled={(!!submitted && id !== "move") || (panel !== "main" && ["g1", "g2", "ground"].includes(id))}
             className={`rounded-md px-2.5 py-1.5 text-xs font-semibold ${tool === id ? "bg-indigo-600 text-white" : "border border-slate-300 bg-white text-slate-700"} disabled:opacity-40`}>{label}</button>
         ))}
-        {tape.length > 0 && <button type="button" onClick={() => setTape([])} className="rounded-md border border-violet-300 px-2 py-1.5 text-xs font-semibold text-violet-700">Clear tape</button>}
+        {tapeActive && <button type="button" onClick={() => setTapeActive(false)} className="rounded-md bg-violet-600 px-2 py-1.5 text-xs font-semibold text-white">Finish tape</button>}
+        {tape.length > 0 && <button type="button" onClick={() => setTapeState({ key: panelKey, pts: [], active: false })} className="rounded-md border border-violet-300 px-2 py-1.5 text-xs font-semibold text-violet-700">Clear tape</button>}
         <span className="mx-1 h-5 w-px bg-slate-200" />
         {viewModel.VIEWS.map((v) => <button key={v.id} type="button" onClick={() => setView(v.box)} className="rounded-md border border-slate-300 bg-white px-2 py-1.5 text-xs text-slate-700">{v.label}</button>)}
         <button type="button" aria-label="Zoom in" onClick={() => setView((v) => ({ x: v.x + v.w * 0.1, y: v.y + v.h * 0.1, w: v.w * 0.8, h: v.h * 0.8 }))} className="rounded-md border border-slate-300 px-2 py-1.5 text-xs font-bold">+</button>
@@ -235,11 +251,22 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
             </label>
           );
         })}
-        <span className="text-slate-500">Scroll to zoom, drag the background to pan, drag electrodes to move them, drag the blue handle to rotate the stimulator.</span>
+        {mode === "guided" && (
+          <label className="flex items-center gap-1 font-semibold text-emerald-800">
+            <input type="checkbox" checked={showTargets} onChange={(e) => setShowTargets(e.target.checked)} /> Show target zones (hints)
+          </label>
+        )}
+        <span className="text-slate-500">
+          {tool === "tape"
+            ? (tapeActive
+              ? "Tape: hold and trace along the nerve, or move and click to add bends; the tape curves smoothly and the distance follows the pointer. Double-click, Esc or Finish to end."
+              : "Tape: press on the start point to measure. After finishing, drag the white points to bend the tape along the nerve.")
+            : "Scroll to zoom, drag the background to pan, drag electrodes to move them, drag the blue handle to rotate the stimulator."}
+        </span>
       </div>
       <div className="relative overflow-hidden rounded-lg border border-slate-200">
         <AnatomyCanvas model={viewModel} view={view} setView={setView} layers={effLayers} setup={canvasSetup} onPlace={place}
-          tool={submitted ? "move" : tool} onToolDone={() => setTool("move")} tape={tape} setTape={setTape} targets={targets} height={canvasH} />
+          tool={submitted ? "move" : tool} onToolDone={() => setTool("move")} tape={tape} setTape={setTape} tapeActive={tapeActive} setTapeActive={setTapeActive} targets={targets} height={canvasH} />
         <div className="pointer-events-none absolute inset-x-0 top-1 text-center text-xs font-semibold text-slate-600">&uarr; {viewModel.ORIENTATION.top}</div>
         <div className="pointer-events-none absolute inset-x-0 bottom-1 text-center text-xs font-semibold text-slate-600">&darr; {viewModel.ORIENTATION.bottom}</div>
         <div className="pointer-events-none absolute left-1 top-1/2 max-w-[5rem] -translate-y-1/2 text-xs font-semibold text-slate-600">&larr; {viewModel.ORIENTATION.left}</div>

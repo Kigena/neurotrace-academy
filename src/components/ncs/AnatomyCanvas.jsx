@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { polylineLength, smoothPath } from "../../ncs/geometry.js";
+import { curveLength, smoothPath, thinPath } from "../../ncs/geometry.js";
 import { stimPoles } from "../../ncs/fieldSim.js";
 
 /**
@@ -27,9 +27,22 @@ function toModelPoint(svg, e) {
   return { x: +p.x.toFixed(1), y: +p.y.toFixed(1) };
 }
 
-export default function AnatomyCanvas({ model, view, setView, layers, setup, onPlace, tool, onToolDone, tape, setTape, targets, height = 560 }) {
+/*
+ * Tape measure (tool "tape"), a flexible tape like the EEG caliper:
+ * - press on the start point, then hold and trace along the nerve (the tape
+ *   follows the path), or release and move: a live line follows the pointer
+ *   with the running distance; click to add a bend;
+ * - points are joined by a smooth curve and the distance is measured along it;
+ * - double-click (or Finish / Esc in the workspace) to end;
+ * - once finished, drag any tape point to reshape the curve; pressing away
+ *   from the points starts a new measurement.
+ */
+export default function AnatomyCanvas({ model, view, setView, layers, setup, onPlace, tool, onToolDone, tape, setTape, tapeActive, setTapeActive, targets, height = 560 }) {
   const svgRef = useRef(null);
   const drag = useRef(null);
+  const tapeDown = useRef(null);
+  const [hover, setHover] = useState(null);
+  const [tracing, setTracing] = useState(false);
   const [px, setPx] = useState({ w: 800, h: height });
 
   useEffect(() => {
@@ -64,7 +77,27 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
     const p = toModel(e);
     const handle = e.target.closest?.("[data-handle]")?.getAttribute("data-handle");
     if (tool === "tape") {
-      setTape([...(tape || []), [p.x, p.y]]);
+      e.currentTarget.setPointerCapture?.(e.pointerId);
+      // Reshape a finished tape by dragging one of its points.
+      if (!tapeActive && tape?.length) {
+        let best = -1, bestD = 9 * k;
+        tape.forEach(([x, y], i) => { const d = Math.hypot(x - p.x, y - p.y); if (d < bestD) { best = i; bestD = d; } });
+        if (best >= 0) {
+          drag.current = { kind: "tapePt", i: best };
+          return;
+        }
+      }
+      const pt = [p.x, p.y];
+      const continuing = tapeActive;
+      setTape((cur) => {
+        const pts = continuing && cur.length ? cur : [];
+        const last = pts[pts.length - 1];
+        // a double-click sends two presses at the same spot: ignore the duplicate
+        return !last || Math.hypot(last[0] - pt[0], last[1] - pt[1]) > 1 ? [...pts, pt] : pts;
+      });
+      setTapeActive(true);
+      tapeDown.current = { x: p.x, y: p.y, last: { x: p.x, y: p.y }, traced: false };
+      setHover(p);
       return;
     }
     if (["g1", "g2", "ground"].includes(tool)) {
@@ -83,6 +116,20 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
     else drag.current = { kind: "pan", sx: e.clientX, sy: e.clientY, v: view };
   };
   const onMove = (e) => {
+    if (tool === "tape") {
+      const p = toModel(e);
+      setHover(p);
+      if (drag.current?.kind === "tapePt") {
+        const i = drag.current.i;
+        setTape((cur) => cur.map((q, j) => (j === i ? [p.x, p.y] : q)));
+      } else if (tapeDown.current && Math.hypot(p.x - tapeDown.current.last.x, p.y - tapeDown.current.last.y) >= 3) {
+        // button held: trace the course
+        setTape((cur) => [...cur, [p.x, p.y]]);
+        tapeDown.current = { ...tapeDown.current, last: p, traced: true };
+        setTracing(true);
+      }
+      return;
+    }
     const d = drag.current;
     if (!d) return;
     if (d.kind === "pan") {
@@ -96,7 +143,24 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
     } else if (d.key === "stim") onPlace("stim", { ...setup.stim, x: p.x + d.dx, y: p.y + d.dy });
     else onPlace(d.key, { x: p.x + d.dx, y: p.y + d.dy });
   };
-  const onUp = () => { drag.current = null; };
+  const onUp = () => {
+    drag.current = null;
+    if (tool === "tape" && tapeDown.current) {
+      // a traced stretch is thinned to a few points so it stays a smooth, editable curve
+      if (tapeDown.current.traced) setTape((cur) => thinPath(cur, 1.5));
+      tapeDown.current = null;
+      setTracing(false);
+    }
+  };
+  const onLeave = () => {
+    drag.current = null;
+    tapeDown.current = null;
+    setTracing(false);
+    setHover(null);
+  };
+  const onDouble = () => {
+    if (tool === "tape") setTapeActive(false);
+  };
 
   const label = (x, y, text, color, anchor = "start") => (
     <text x={x} y={y} fontSize={fs} fontWeight="700" fill={color} textAnchor={anchor} stroke="#fff" strokeWidth={3 * k} paintOrder="stroke" pointerEvents="none">{text}</text>
@@ -138,7 +202,10 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
     );
   }
 
-  const tapeLen = tape && tape.length > 1 ? polylineLength(tape) : 0;
+  const tapeLen = tape && tape.length > 1 ? curveLength(tape) : 0;
+  const live = tool === "tape" && tapeActive && tape?.length && hover && !tracing ? [...tape, [hover.x, hover.y]] : null;
+  const liveLen = live ? curveLength(live) : 0;
+  const editing = tool === "tape" && !tapeActive;
 
   return (
     <svg
@@ -150,7 +217,8 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
       onPointerDown={onDown}
       onPointerMove={onMove}
       onPointerUp={onUp}
-      onPointerLeave={onUp}
+      onPointerLeave={onLeave}
+      onDoubleClick={onDouble}
       role="img"
       aria-label={model.ORIENTATION.title}
     >
@@ -191,14 +259,17 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
       {targets && targets.map((t) => (
         <g key={t.label} pointerEvents="none">
           <circle cx={t.x} cy={t.y} r={t.r} fill="rgba(34,197,94,0.12)" stroke="#16a34a" strokeDasharray={`${4 * k} ${3 * k}`} strokeWidth={1.2 * k} />
-          {label(t.x - t.r - 4 * k, t.y + 4 * k, t.label, "#15803d", "end")}
+          {label(t.x - t.r - 4 * k, t.y + 4 * k, `Target: ${t.label}`, "#15803d", "end")}
         </g>
       ))}
       {tape && tape.length > 0 && (
         <g pointerEvents="none">
-          <polyline points={tape.map((p) => p.join(",")).join(" ")} fill="none" stroke="#7c3aed" strokeWidth={2.5 * k} strokeDasharray={`${6 * k} ${3 * k}`} />
-          {tape.map((p, i) => <circle key={i} cx={p[0]} cy={p[1]} r={3 * k} fill="#7c3aed" />)}
-          {tapeLen > 0 && label(tape[tape.length - 1][0] + 8 * k, tape[tape.length - 1][1] - 6 * k, `${(tapeLen / 10).toFixed(1)} cm`, "#6d28d9")}
+          <path d={smoothPath(tape, false)} fill="none" stroke="#7c3aed" strokeWidth={2.5 * k} strokeDasharray={`${6 * k} ${3 * k}`} />
+          {tape.map((p, i) => <circle key={i} cx={p[0]} cy={p[1]} r={(editing ? 4.5 : 3) * k} fill={editing ? "#fff" : "#7c3aed"} stroke="#7c3aed" strokeWidth={1.5 * k} />)}
+          {live && <path d={smoothPath(live.slice(-3), false)} fill="none" stroke="#7c3aed" strokeWidth={2 * k} strokeDasharray={`${3 * k} ${3 * k}`} opacity="0.8" />}
+          {live
+            ? label(hover.x + 10 * k, hover.y - 8 * k, `${(liveLen / 10).toFixed(1)} cm`, "#6d28d9")
+            : tapeLen > 0 && label(tape[tape.length - 1][0] + 8 * k, tape[tape.length - 1][1] - 6 * k, `${(tapeLen / 10).toFixed(1)} cm`, "#6d28d9")}
         </g>
       )}
       {electrode("ground", "#16a34a", "Ground", 7)}
