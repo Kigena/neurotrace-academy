@@ -4,6 +4,7 @@ import * as LEG from "./anatomy/legLateralView.js";
 import * as LEGM from "./anatomy/legMedialView.js";
 import * as KNEE from "./anatomy/kneePosteriorView.js";
 import * as MEDS from "./anatomy/medianSensoryView.js";
+import * as ULNS from "./anatomy/ulnarSensoryView.js";
 import { describeSetup, explainSetup, simulateField } from "./fieldSim.js";
 import { describeMotor, explainMotor, simulateMotor } from "./motorField.js";
 import { pointAt, project } from "./geometry.js";
@@ -71,6 +72,26 @@ export const WORKSPACES = {
       { ...MEDS.PLACES.palmGround, r: 10, label: "Ground zone" },
       { ...MEDS.PLACES.wrist14, r: 7, label: "Wrist cathode" },
       { ...MEDS.PLACES.palm7, r: 9, label: "Palm cathode" },
+    ],
+  },
+  ulnarSensory: {
+    id: "ulnarSensory",
+    label: "Ulnar sensory",
+    kind: "sensory",
+    model: ULNS,
+    protocol: PROTOCOLS["ulnar-sens-anti"],
+    limb: "hand",
+    gains: SENSORY_GAINS,
+    patient: { cv: 57, amp: 28, imaxBase: 13 },
+    sites: [{ id: "distal", label: "Wrist (14 cm)", distLabel: "Distance, cathode to G1 (cm)" }],
+    simulate: (args) => simulateField({ ...args, patient: { cv: 57, amp: 28, imaxBase: 13, ...args.patient } }),
+    describe: (model, setup) => describeSetup(model, setup, { imaxBase: 13 }),
+    explain: (args) => explainSetup(args),
+    targets: () => [
+      { ...ULNS.PLACES.littleProx, r: 6, label: "G1" },
+      { ...ULNS.PLACES.littleDist, r: 6, label: "G2" },
+      { ...ULNS.PLACES.palmGround, r: 10, label: "Ground zone" },
+      { ...ULNS.PLACES.wrist14, r: 7, label: "Wrist cathode" },
     ],
   },
   medianMotor: {

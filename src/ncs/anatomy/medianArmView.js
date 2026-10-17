@@ -71,7 +71,7 @@ export const BONE_SHAPES = [
 
 // Nerve routes, each from proximal to the muscle it supplies (arc length is used for latency).
 export const MEDIAN_TRUNK = [[166, 0], [166, 60], [167, 105], [166, 128], [161, 160], [154, 210], [148, 270], [145, 330], [143, 372], [143, 392], [142, 408]];
-const ULNAR_TRUNK = [[184, 0], [186, 60], [188, 100], [190, 122], [188, 145], [189, 200], [183, 270], [177, 330], [173, 372], [172, 392]];
+const ULNAR_TRUNK = [[178, 0], [181, 60], [186, 100], [190, 122], [188, 145], [189, 200], [183, 270], [177, 330], [173, 372], [172, 392]];
 
 export const NERVES = {
   median: {
@@ -153,4 +153,4 @@ export const ORIENTATION = { title: "Right forearm and hand · anterior (palmar)
 
 // Ulnar nerve points on the main route that match the below-elbow and
 // above-elbow sites of the medial elbow view (src/ncs/anatomy/ulnarElbowView.js).
-export const ULNAR_ANCHORS = { be: { x: 189, y: 148 }, ae: { x: 186, y: 48 } };
+export const ULNAR_ANCHORS = { be: { x: 189, y: 148 }, ae: { x: 180, y: 48 } };

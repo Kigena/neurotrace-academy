@@ -195,5 +195,32 @@ PROTOCOLS["median-sens-anti"] = {
   ],
 };
 
+PROTOCOLS["ulnar-sens-anti"] = {
+  study: "ulnarSensory",
+  label: "Ulnar sensory, antidromic, digit 5, 14 cm",
+  direction: "antidromic",
+  distanceMm: 140,
+  separationMm: [30, 40],
+  settings: { gain: 20, sweep: 1, lff: 20, hff: 2000, averages: 1 },
+  limits: { peak: 4.0, amp: 6 },
+  targetTempC: 32,
+  hints: {
+    limb: "hand",
+    g1Where: "The ulnar digital nerves run along both sides of the little finger, so a ring around its proximal phalanx sits over them.",
+    g2Fix: "Put G2 on the little finger, 3-4 cm distal to G1.",
+    stimWhere: "Place the stimulator at the wrist, just radial to the FCU tendon.",
+    groundOnLimb: true,
+  },
+  steps: [
+    "Measure the hand temperature and warm the hand if it is below 32 °C.",
+    "Ring G1 around the proximal phalanx of the little finger.",
+    "Ring G2 on the little finger, 3-4 cm further distal.",
+    "Ground on the same limb, for example the palm or the back of the hand.",
+    "Wrist: measure 14 cm proximally from G1 along the course of the nerve; cathode just radial to the FCU tendon, anode proximal.",
+    "Raise the current until the SNAP stops growing, then add about 20%. Average a few responses if the baseline is noisy.",
+    "Mark onset and negative peak; the reference values here use peak latency at 14 cm.",
+  ],
+};
+
 export const SENSORY_GAINS = [5, 10, 20, 50, 100]; // µV/div
 export const MOTOR_GAINS = [500, 1000, 2000, 5000, 10000]; // µV/div, shown as mV/div

@@ -117,11 +117,15 @@ export function simulateField({ model, setup, machine = {}, patient = {}, intens
   const rec = geo.onSkin.g1 && geo.onSkin.g2;
   const frac = st && st.onSkin ? recruitFraction(intensity, st.imax) : 0;
 
-  if (rec && st && frac > 0 && !patient.absent) {
-    const A = (ampScale / idealAmplitude()) * frac;
+  if (rec && st?.onSkin && intensity > 0 && !patient.absent) {
+    const A0 = ampScale / idealAmplitude();
     const elec = [["g1", 1], ["g2", -1]];
     for (const b of sensoryBranches(model)) {
-      const sAct = project(st.cathode, b.pts).s; // the shared trunk is excited under the cathode
+      const pcb = project(st.cathode, b.pts);
+      const sAct = pcb.s; // each nerve is excited under the cathode, by its own distance from it
+      const imaxB = st.imax * (1 + (pcb.d / STIM_MM) ** 2) / (1 + (st.pc.d / STIM_MM) ** 2);
+      const A = A0 * recruitFraction(intensity, imaxB);
+      if (A <= 0) continue;
       for (const [k, sign] of elec) {
         const p = project(setup[k], b.pts);
         const w = (b.weight ?? 1) * (model.nerveScale ? model.nerveScale(p.s) : 1) / (1 + (p.d / FIELD_MM) ** 2);

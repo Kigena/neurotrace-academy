@@ -340,3 +340,41 @@ describe("median sensory (antidromic, digit 2/3)", () => {
     expect(srun({}, PLc.wrist14, 27).truth.peak).toBeGreaterThan(srun().truth.peak + 0.2);
   });
 });
+
+import * as ULNSV from "../../src/ncs/anatomy/ulnarSensoryView.js";
+
+describe("ulnar sensory (antidromic, digit 5)", () => {
+  const W = WORKSPACES.ulnarSensory;
+  const US = PROTOCOLS["ulnar-sens-anti"];
+  const PU = ULNSV.PLACES;
+  const stimOn = (place, pts = ULNSV.SENS_BRANCHES[0].pts) => {
+    const pr = project(place, pts);
+    const a = Math.atan2(pr.ty, pr.tx);
+    return { x: place.x - Math.cos(a) * 15, y: place.y - Math.sin(a) * 15, angle: a };
+  };
+  const mach = { lff: 20, hff: 2000, sweep: 1, gain: 20 };
+  const urun = (o = {}, stim = stimOn(PU.wrist14), I = 18) => W.simulate({ model: ULNSV, setup: { g1: PU.littleProx, g2: PU.littleDist, ground: PU.palmGround, stim, contact: good, ...o }, machine: mach, patient: { tempC: 33 }, intensity: I, seed: 3 });
+
+  it("keeps places and every branch on the skin", () => {
+    for (const [id, p] of Object.entries(PU)) expect(inPolygon(p, ULNSV.SKIN), id).toBe(true);
+    for (const b of ULNSV.SENS_BRANCHES) for (const [x, y] of b.pts) expect(inPolygon({ x, y }, ULNSV.SKIN), b.id).toBe(true);
+  });
+
+  it("records a normal little-finger SNAP with a clean set-up", () => {
+    const r = urun();
+    expect(r.truth.peak).toBeLessThan(US.limits.peak);
+    expect(r.truth.amp).toBeGreaterThan(US.limits.amp);
+    expect(Math.abs(r.geo.trueDistMm - 140)).toBeLessThan(3);
+    expect(explainSetup({ geo: r.geo, protocol: US, intensity: 18, machine: mach, tempC: 33, tempChecked: true, site: "distal" }).filter((x) => !x.ok)).toEqual([]);
+  });
+
+  it("separates nerves: wrong finger or wrong nerve gives almost nothing, overstimulation spreads", () => {
+    expect(urun({ g1: PU.indexProx, g2: { x: 119, y: 533 } }).truth.amp).toBeLessThan(3);
+    const med = stimOn(PU.wristMedian, ULNSV.SENS_BRANCHES[2].pts);
+    expect(urun({}, med, 20).truth.amp).toBeLessThan(3);
+    expect(urun({}, med, 60).truth.amp).toBeGreaterThan(5);
+    const ring = urun({ g1: PU.ringProx, g2: { x: 162, y: 535 } });
+    expect(ring.truth.amp).toBeLessThan(urun().truth.amp);
+    expect(ring.truth.amp).toBeGreaterThan(5);
+  });
+});
