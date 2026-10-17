@@ -3,6 +3,7 @@ import * as MEDIAN from "./anatomy/medianArmView.js";
 import * as LEG from "./anatomy/legLateralView.js";
 import * as LEGM from "./anatomy/legMedialView.js";
 import * as KNEE from "./anatomy/kneePosteriorView.js";
+import * as MEDS from "./anatomy/medianSensoryView.js";
 import { describeSetup, explainSetup, simulateField } from "./fieldSim.js";
 import { describeMotor, explainMotor, simulateMotor } from "./motorField.js";
 import { pointAt, project } from "./geometry.js";
@@ -46,6 +47,30 @@ export const WORKSPACES = {
       { ...pointAt(SURAL.NERVE, suralS1 + 35), r: 6, label: "G2" },
       { ...pointAt(SURAL.NERVE, suralS1 - 140), r: 8, label: "Cathode" },
       { ...pointAt(SURAL.NERVE, suralS1 - 60), r: 16, label: "Ground zone" },
+    ],
+  },
+  medianSensory: {
+    id: "medianSensory",
+    label: "Median sensory",
+    kind: "sensory",
+    model: MEDS,
+    protocol: PROTOCOLS["median-sens-anti"],
+    limb: "hand",
+    gains: SENSORY_GAINS,
+    patient: { cv: 57, amp: 35, imaxBase: 14 },
+    sites: [
+      { id: "distal", label: "Wrist (14 cm)", distLabel: "Distance, cathode to G1 (cm)" },
+      { id: "palm", label: "Palm (7 cm)", distLabel: "Distance, palm cathode to G1 (cm)" },
+    ],
+    simulate: (args) => simulateField({ ...args, patient: { cv: 57, amp: 35, imaxBase: 14, ...args.patient } }),
+    describe: (model, setup) => describeSetup(model, setup, { imaxBase: 14 }),
+    explain: (args) => explainSetup(args),
+    targets: () => [
+      { ...MEDS.PLACES.indexProx, r: 6, label: "G1" },
+      { ...MEDS.PLACES.indexDist, r: 6, label: "G2" },
+      { ...MEDS.PLACES.palmGround, r: 10, label: "Ground zone" },
+      { ...MEDS.PLACES.wrist14, r: 7, label: "Wrist cathode" },
+      { ...MEDS.PLACES.palm7, r: 7, label: "Palm cathode" },
     ],
   },
   medianMotor: {

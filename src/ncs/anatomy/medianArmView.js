@@ -70,7 +70,7 @@ export const BONE_SHAPES = [
 ];
 
 // Nerve routes, each from proximal to the muscle it supplies (arc length is used for latency).
-const MEDIAN_TRUNK = [[166, 0], [166, 60], [167, 105], [166, 128], [161, 160], [154, 210], [148, 270], [145, 330], [143, 372], [143, 392], [142, 408]];
+export const MEDIAN_TRUNK = [[166, 0], [166, 60], [167, 105], [166, 128], [161, 160], [154, 210], [148, 270], [145, 330], [143, 372], [143, 392], [142, 408]];
 const ULNAR_TRUNK = [[184, 0], [186, 60], [188, 100], [190, 122], [188, 145], [189, 200], [183, 270], [177, 330], [173, 372], [172, 392]];
 
 export const NERVES = {

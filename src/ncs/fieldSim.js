@@ -45,8 +45,17 @@ function monopolar(t, arrive, disp) {
 }
 
 /** Geometry and coupling of the current set-up (no time series). */
+// Sensory branches the electrodes can see (for example the digital nerves to two fingers);
+// a single-nerve model has one branch. Each branch is a full route from proximal.
+export function sensoryBranches(model) {
+  return model.SENS_BRANCHES || [{ id: "main", pts: model.NERVE, weight: 1 }];
+}
+
 export function describeSetup(model, setup, patient = {}) {
-  const path = model.NERVE;
+  const branches = sensoryBranches(model);
+  // The branch closest to G1 is the one this recording is about.
+  const primary = setup.g1 ? branches.reduce((a, b) => (project(setup.g1, b.pts).d < project(setup.g1, a.pts).d ? b : a)) : branches[0];
+  const path = primary.pts;
   const onSkin = (p) => !!p && inPolygon(p, model.SKIN);
   const out = { placed: {}, onSkin: {}, proj: {} };
   for (const k of ["g1", "g2", "ground"]) {
@@ -67,6 +76,7 @@ export function describeSetup(model, setup, patient = {}) {
     const imax = base * (1 + (pc.d / STIM_MM) ** 2) * (1 + 0.5 * (1 - align)) * (reversed ? 1.3 : 1) * contactK;
     out.stim = { cathode, anode, pc, pa, align, reversed, imax, onSkin: onSkin(cathode) && onSkin(anode), sAct: pc.s };
   }
+  out.primary = primary.id;
   if (out.proj.g1 && out.stim) out.trueDistMm = Math.abs(out.proj.g1.s - out.stim.sAct);
   if (out.proj.g1 && out.proj.g2) out.separationMm = Math.abs(out.proj.g2.s - out.proj.g1.s);
   if (setup.ground && out.stim && out.proj.g1) {
@@ -110,13 +120,17 @@ export function simulateField({ model, setup, machine = {}, patient = {}, intens
   if (rec && st && frac > 0 && !patient.absent) {
     const A = (ampScale / idealAmplitude()) * frac;
     const elec = [["g1", 1], ["g2", -1]];
-    for (const [k, sign] of elec) {
-      const p = geo.proj[k];
-      const w = (model.nerveScale ? model.nerveScale(p.s) : 1) / (1 + (p.d / FIELD_MM) ** 2);
-      const L = Math.abs(p.s - st.sAct);
-      const arrive = L / cv;
-      const disp = (1 + 0.35 * (L / 140)) * (1 + 0.04 * dT);
-      for (let i = 0; i < n; i++) resp[i] += sign * A * w * monopolar(i / FS, arrive, disp);
+    for (const b of sensoryBranches(model)) {
+      const sAct = project(st.cathode, b.pts).s; // the shared trunk is excited under the cathode
+      for (const [k, sign] of elec) {
+        const p = project(setup[k], b.pts);
+        const w = (b.weight ?? 1) * (model.nerveScale ? model.nerveScale(p.s) : 1) / (1 + (p.d / FIELD_MM) ** 2);
+        if (w < 0.005) continue;
+        const L = Math.abs(p.s - sAct);
+        const arrive = L / cv;
+        const disp = (1 + 0.35 * (L / 140)) * (1 + 0.04 * dT);
+        for (let i = 0; i < n; i++) resp[i] += sign * A * w * monopolar(i / FS, arrive, disp);
+      }
     }
   }
 
@@ -178,8 +192,11 @@ export function simulateField({ model, setup, machine = {}, patient = {}, intens
  * Mechanism-level feedback on the set-up and the last stimulation.
  * Returns [{ id, ok, text }]. Wording uses surface landmarks, not the hidden nerve.
  */
-export function explainSetup({ geo, protocol, intensity, machine, tempC, tempChecked }) {
+export function explainSetup({ geo, protocol, intensity, machine, tempC, tempChecked, site }) {
   const out = [];
+  const H = protocol.hints || {};
+  const limb = H.limb || "foot";
+  const targetMm = protocol.siteDistanceMm?.[site] ?? protocol.distanceMm;
   const add = (id, ok, text) => out.push({ id, ok, text });
   const cm = (mm) => (mm / 10).toFixed(1);
   if (!geo.placed.g1 || !geo.placed.g2) add("electrodes", false, "Place both recording electrodes (G1 and G2) on the skin.");
@@ -189,7 +206,7 @@ export function explainSetup({ geo, protocol, intensity, machine, tempC, tempChe
     const pct = Math.round(100 / (1 + (d1 / FIELD_MM) ** 2));
     add("g1-nerve", d1 <= 5, d1 <= 5
       ? "G1 sits over the nerve course."
-      : `G1 is about ${cm(d1)} cm from the nerve course, so it sees only about ${pct}% of the potential it would directly over the nerve. The sural nerve runs in the groove between the lateral malleolus and the Achilles tendon.`);
+      : `G1 is about ${cm(d1)} cm from the nerve course, so it sees only about ${pct}% of the potential it would directly over the nerve. ${H.g1Where || ""}`);
     const sep = geo.separationMm;
     const [lo, hi] = protocol.separationMm;
     add("separation", sep >= lo - 3 && sep <= hi + 5, sep < lo - 3
@@ -197,14 +214,14 @@ export function explainSetup({ geo, protocol, intensity, machine, tempC, tempChe
       : sep > hi + 5
         ? `G1 and G2 are ${cm(sep)} cm apart along the nerve. G2 records its own later deflection, which distorts the waveform and the duration.`
         : `G1-G2 spacing ${cm(sep)} cm along the nerve.`);
-    if (geo.proj.g2.d > 15) add("g2-off", false, `G2 is about ${cm(geo.proj.g2.d)} cm off the nerve course, so the recording becomes nearly monopolar: the shape and amplitude no longer match the bipolar reference method.`);
+    if (geo.proj.g2.d > 15) add("g2-off", false, `G2 is about ${cm(geo.proj.g2.d)} cm off the nerve course, so the recording no longer matches the bipolar reference method: it becomes nearly monopolar, or it picks up a different nerve whose signal cancels part of G1's. ${H.g2Fix || ""}`);
   }
   if (!geo.placed.ground) add("ground", false, "No ground: expect a large stimulus artifact and mains noise.");
   else if (!geo.onSkin.ground) add("ground", false, "The ground is off the limb, so it is not grounding the patient.");
-  else if (geo.groundBetween === false) add("ground", false, "Place the ground between the stimulator and the recording electrodes to reduce the stimulus artifact.");
-  else add("ground", true, "Ground placed between stimulator and recording electrodes.");
+  else if (geo.groundBetween === false && !H.groundOnLimb) add("ground", false, "Place the ground between the stimulator and the recording electrodes to reduce the stimulus artifact.");
+  else add("ground", true, H.groundOnLimb ? "Ground on the same limb." : "Ground placed between stimulator and recording electrodes.");
   const st = geo.stim;
-  if (!st) add("stim", false, "Place the stimulator on the posterior calf.");
+  if (!st) add("stim", false, H.stimWhere || "Place the stimulator over the nerve.");
   else {
     if (!st.onSkin) add("stim-skin", false, "The stimulator is not fully on the skin.");
     add("stim-nerve", st.pc.d <= 6, st.pc.d <= 6
@@ -215,10 +232,10 @@ export function explainSetup({ geo, protocol, intensity, machine, tempC, tempChe
       ? "The anode lies between the cathode and the recording electrodes. The impulse starts under the cathode, which is now farther from G1, so the latency is longer, and the anode can partly block the volley, so more current is needed. Turn the stimulator so the cathode faces G1."
       : "Cathode toward the recording electrodes.");
     if (geo.trueDistMm != null) {
-      const off = Math.abs(geo.trueDistMm - protocol.distanceMm);
+      const off = Math.abs(geo.trueDistMm - targetMm);
       add("distance", off <= 10, off <= 10
         ? `Stimulation about ${cm(geo.trueDistMm)} cm from G1 along the nerve.`
-        : `The cathode is about ${cm(geo.trueDistMm)} cm from G1 along the nerve, but the reference values assume ${cm(protocol.distanceMm)} cm, so the comparison does not apply.`);
+        : `The cathode is about ${cm(geo.trueDistMm)} cm from G1 along the nerve, but the reference values for this site assume ${cm(targetMm)} cm, so the comparison does not apply.`);
     }
     if (intensity > 0 && st.imax) {
       if (intensity < 1.2 * st.imax) add("supramax", false, "The response may still be submaximal: raise the current until the amplitude stops growing, then add about 20%.");
@@ -229,7 +246,7 @@ export function explainSetup({ geo, protocol, intensity, machine, tempC, tempChe
   const s = protocol.settings;
   add("settings", machine.gain <= 50 && machine.lff >= 10 && machine.lff <= 20 && machine.hff >= 2000 && machine.hff <= 3000,
     `Sensory settings for this protocol: ${s.gain} µV/div, low filter ${s.lff} Hz, high filter ${s.hff / 1000} kHz.`);
-  if (!tempChecked) add("temp", false, "Measure the foot temperature first.");
-  else add("temp", tempC >= protocol.targetTempC, tempC >= protocol.targetTempC ? "Foot warm enough." : `The foot is ${tempC.toFixed(1)} °C; warm it to at least ${protocol.targetTempC} °C. Cold slows conduction and enlarges the SNAP.`);
+  if (!tempChecked) add("temp", false, `Measure the ${limb} temperature first.`);
+  else add("temp", tempC >= protocol.targetTempC, tempC >= protocol.targetTempC ? `${limb[0].toUpperCase()}${limb.slice(1)} warm enough.` : `The ${limb} is ${tempC.toFixed(1)} °C; warm it to at least ${protocol.targetTempC} °C. Cold slows conduction and enlarges the SNAP.`);
   return out;
 }

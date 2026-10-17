@@ -131,7 +131,7 @@ export default function NerveWorkspace({ config }) {
 
   const stimulate = () => {
     seed.current += 1;
-    const r = config.simulate({ model: MODEL, setup, machine, patient: { tempC: temp.c, refTempC: P.targetTempC }, intensity, seed: seed.current });
+    const r = config.simulate({ model: MODEL, setup, machine, patient: { ...(config.patient || {}), tempC: temp.c, refTempC: P.targetTempC }, intensity, seed: seed.current });
     const rec = { sweep: r, intensity, temp: temp.c, setup, cathode: setup.stim ? stimPoles(setup.stim).cathode : null };
     setRecords((x) => ({ ...x, [site]: rec }));
     setMarks((m) => ({ ...m, [site]: {} }));
@@ -169,7 +169,7 @@ export default function NerveWorkspace({ config }) {
   };
   const flags = (sid) => {
     const out = [];
-    const L = P.limits;
+    const L = P.siteLimits?.[sid] || P.limits;
     const a = ampOf(sid);
     if (motor) {
       if (sid === "distal" && onsetOf(sid) != null && onsetOf(sid) > L.lat) out.push("distal latency prolonged");

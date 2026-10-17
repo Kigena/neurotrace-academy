@@ -301,3 +301,42 @@ describe("tibial motor (abductor hallucis)", () => {
     expect(electrodeView(T.PLACES.ahMotorPoint, edb).w).toBeLessThan(0.1);
   });
 });
+
+import * as MEDSV from "../../src/ncs/anatomy/medianSensoryView.js";
+
+describe("median sensory (antidromic, digit 2/3)", () => {
+  const W = WORKSPACES.medianSensory;
+  const MS = PROTOCOLS["median-sens-anti"];
+  const PLc = MEDSV.PLACES;
+  const stimOn = (place) => {
+    const pr = project(place, MEDSV.SENS_BRANCHES[0].pts);
+    const a = Math.atan2(pr.ty, pr.tx);
+    return { x: place.x - Math.cos(a) * 15, y: place.y - Math.sin(a) * 15, angle: a };
+  };
+  const mach = { lff: 20, hff: 2000, sweep: 1, gain: 20 };
+  const srun = (o = {}, place = PLc.wrist14, tempC = 33) => W.simulate({ model: MEDSV, setup: { g1: PLc.indexProx, g2: PLc.indexDist, ground: PLc.palmGround, stim: stimOn(place), contact: good, ...o }, machine: mach, patient: { tempC }, intensity: 25, seed: 3 });
+
+  it("keeps places on the skin", () => {
+    for (const [id, p] of Object.entries(PLc)) expect(inPolygon(p, MEDSV.SKIN), id).toBe(true);
+  });
+
+  it("records normal SNAPs at wrist and palm against the site-specific limits", () => {
+    const w = srun(), p = srun({}, PLc.palm7);
+    expect(w.truth.peak).toBeLessThan(MS.limits.peak);
+    expect(w.truth.amp).toBeGreaterThan(MS.limits.amp);
+    expect(Math.abs(w.geo.trueDistMm - 140)).toBeLessThan(3);
+    expect(p.truth.peak).toBeLessThan(MS.siteLimits.palm.peak);
+    expect(Math.abs(p.geo.trueDistMm - 70)).toBeLessThan(3);
+    for (const [site, r] of [["distal", w], ["palm", p]]) {
+      expect(explainSetup({ geo: r.geo, protocol: MS, intensity: 25, machine: mach, tempC: 33, tempChecked: true, site }).filter((x) => !x.ok)).toEqual([]);
+    }
+  });
+
+  it("records from the finger the rings are on, and loses the SNAP with close rings or the wrong nerve", () => {
+    expect(srun({ g1: PLc.middleProx, g2: PLc.middleDist }).geo.primary).toBe("middle");
+    expect(srun({ g1: PLc.ringProx, g2: { x: 161, y: 540 } }).truth.amp).toBeLessThan(15);
+    expect(srun({ g2: { x: 119, y: 520 } }).truth.amp).toBeLessThan(0.7 * srun().truth.amp);
+    expect(srun({}, PLc.wristUlnar).truth.amp).toBeLessThan(2);
+    expect(srun({}, PLc.wrist14, 27).truth.peak).toBeGreaterThan(srun().truth.peak + 0.2);
+  });
+});

@@ -14,6 +14,12 @@ export const PROTOCOLS = {
     settings: { gain: 20, sweep: 1, lff: 20, hff: 2000, averages: 1 },
     limits: { peak: 4.5, amp: 4 },
     targetTempC: 30,
+    hints: {
+      limb: "foot",
+      g1Where: "The sural nerve runs in the groove between the lateral malleolus and the Achilles tendon.",
+      g2Fix: "Put G2 3-4 cm further distal along the nerve, below the malleolus.",
+      stimWhere: "Place the stimulator on the posterior calf.",
+    },
     steps: [
       "Measure the foot temperature and warm the limb if it is below 30 °C.",
       "Find the groove between the lateral malleolus and the Achilles tendon. G1 goes there, over the sural nerve, about 1-1.5 cm behind the malleolus.",
@@ -156,6 +162,36 @@ PROTOCOLS["tibial-motor-ah"] = {
     "Popliteal fossa (back-of-knee view): cathode in the middle of the fossa at or just above the crease, over or just lateral to the popliteal pulse. The nerve is deep, so press firmly and expect to need more current.",
     "Raise the current at each site until the response stops growing, then add about 20%. Drifting laterally along the biceps tendon reaches the fibular nerve instead.",
     "Mark onset and negative peak at both sites; tape popliteal to ankle cathode along the course of the nerve; velocity = distance / latency difference. A fall in amplitude from ankle to knee is common in the tibial nerve (AANEM reports normal drops of up to about 70%).",
+  ],
+};
+
+PROTOCOLS["median-sens-anti"] = {
+  study: "medianSensory",
+  label: "Median sensory, antidromic, digit 2 or 3, 14 cm",
+  direction: "antidromic",
+  distanceMm: 140,
+  siteDistanceMm: { distal: 140, palm: 70 },
+  separationMm: [30, 40],
+  settings: { gain: 20, sweep: 1, lff: 20, hff: 2000, averages: 1 },
+  limits: { peak: 4.0, amp: 10 },
+  siteLimits: { palm: { peak: 2.4, amp: 10 } },
+  targetTempC: 32,
+  hints: {
+    limb: "hand",
+    g1Where: "The digital nerves run along both sides of the finger, so a ring around the proximal phalanx of the index or middle finger sits over them.",
+    g2Fix: "Put G2 on the same finger as G1, 3-4 cm further distal.",
+    stimWhere: "Place the stimulator at the wrist, between the FCR and palmaris longus tendons.",
+    groundOnLimb: true, // one ground (palm or back of the hand) serves both the wrist and palm sites
+  },
+  steps: [
+    "Measure the hand temperature and warm the hand if it is below 32 °C.",
+    "Ring G1 around the proximal phalanx of the index (or middle) finger.",
+    "Ring G2 on the same finger, 3-4 cm further distal.",
+    "Ground on the same limb between the stimulator and the recording electrodes, for example the palm or the back of the hand.",
+    "Wrist: measure 14 cm proximally from G1 along the course of the nerve; cathode between the FCR and palmaris longus tendons, anode proximal.",
+    "Raise the current until the SNAP stops growing, then add about 20%. Average a few responses if the baseline is noisy.",
+    "Palm (optional, for carpal tunnel): cathode over the median nerve in the palm, 7 cm from G1. Compare palm-to-digit with wrist-to-digit.",
+    "Mark onset and negative peak; the reference values here use peak latency at 14 cm (wrist) and 7 cm (palm).",
   ],
 };
 
