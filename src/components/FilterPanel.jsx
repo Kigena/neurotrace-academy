@@ -6,8 +6,11 @@ function FilterPanel({ category, onCategoryChange, location, onLocationChange })
     "normal",
     "normal_variant",
     "epileptiform",
+    "ictal",
+    "slowing",
     "periodic",
     "encephalopathy",
+    "artifact",
   ];
   const locations = [
     "all",

@@ -28,14 +28,4 @@ describe('pattern / syndrome images', () => {
     expect(missing).toEqual([]);
   });
 
-  it('every pattern in the recognition quiz has at least one usable image', async () => {
-    const patterns = JSON.parse(fs.readFileSync(path.join(dataDir, 'neurotrace_patterns_library_v2.json'), 'utf8'));
-    const unusable = patterns
-      .filter((p) => {
-        const imgs = Array.isArray(p.images) && p.images.length ? p.images : [p.image].filter(Boolean);
-        return !imgs.some((i) => fs.existsSync(path.join(root, 'public', i)));
-      })
-      .map((p) => p.id);
-    expect(unusable).toEqual([]);
-  });
 });

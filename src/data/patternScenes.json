@@ -1,0 +1,1564 @@
+{
+ "pattern_pdr": {
+  "scene": {
+   "ageYears": 30,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "eyesOpen",
+     "at": 7
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Posterior 10 Hz alpha, maximal O1/O2, waxing and waning, and blocking when the eyes open at 7 s."
+ },
+ "pattern_sleep_spindles": {
+  "scene": {
+   "ageYears": 35,
+   "state": "n2",
+   "findings": [
+    {
+     "type": "spindle",
+     "at": [
+      1.2,
+      4.4,
+      7.6
+     ],
+     "uv": 45,
+     "durS": 1.0,
+     "center": "C3",
+     "sigma": 0.25
+    },
+    {
+     "type": "spindle",
+     "at": [
+      1.2,
+      4.4,
+      7.6
+     ],
+     "uv": 45,
+     "durS": 1.0,
+     "center": "C4",
+     "sigma": 0.25
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Sleep spindles: 13 Hz waxing-waning bursts about 1 s long, maximal centrally (C3/Cz/C4), in N2 sleep."
+ },
+ "pattern_k_complex": {
+  "scene": {
+   "ageYears": 35,
+   "state": "n2",
+   "findings": [
+    {
+     "type": "kComplex",
+     "at": [
+      2.2,
+      6.4
+     ],
+     "uv": 260,
+     "center": [
+      0,
+      0.25
+     ],
+     "sigma": 0.36
+    },
+    {
+     "type": "spindle",
+     "at": [
+      7.0
+     ],
+     "uv": 55,
+     "center": [
+      0,
+      0
+     ],
+     "sigma": 0.28
+    }
+   ],
+   "seed": 11
+  },
+  "note": "K-complexes: a negative sharp wave followed by a slower positive wave, over 0.5 s in total, maximal frontocentrally; the second is followed by a spindle."
+ },
+ "pattern_mu_rhythm": {
+  "scene": {
+   "ageYears": 25,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "mu",
+     "uv": 50
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Mu rhythm: arciform 9-10 Hz activity over C3 and C4 with the eyes open (posterior alpha is blocked), sharp negative peaks and rounded positive phases."
+ },
+ "pattern_wicket_spikes": {
+  "scene": {
+   "ageYears": 58,
+   "state": "drowsy",
+   "findings": [
+    {
+     "type": "arciform",
+     "center": "T3",
+     "sigma": 0.2,
+     "hz": 7.5,
+     "uv": 75,
+     "runs": [
+      [
+       1.4,
+       2.4
+      ],
+      [
+       5.6,
+       6.4
+      ],
+      [
+       8.4,
+       8.9
+      ]
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Wicket spikes: trains of 7-8 Hz arciform waves over the left temporal chain in drowsiness, with no after-going slow wave and no disturbance of the background."
+ },
+ "pattern_lambda_waves": {
+  "scene": {
+   "ageYears": 22,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "sharp",
+     "center": [
+      0,
+      -0.8
+     ],
+     "sigma": 0.33,
+     "uv": -70,
+     "durMs": 220,
+     "at": [
+      1.1,
+      1.9,
+      3.6,
+      4.3,
+      6.0,
+      6.9,
+      8.5
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Lambda waves: surface-positive triangular sharp transients at O1/O2 while the eyes are open and scanning; they disappear if the patient looks at a blank surface."
+ },
+ "pattern_posts": {
+  "scene": {
+   "ageYears": 24,
+   "state": "n2",
+   "findings": [
+    {
+     "type": "sharp",
+     "center": [
+      0,
+      -0.8
+     ],
+     "sigma": 0.33,
+     "uv": -90,
+     "durMs": 120,
+     "at": [
+      0.9,
+      1.15,
+      1.4,
+      1.65,
+      4.3,
+      4.55,
+      4.8,
+      7.6,
+      7.85,
+      8.1
+     ]
+    },
+    {
+     "type": "spindle",
+     "at": [
+      2.6
+     ],
+     "uv": 50,
+     "center": [
+      0,
+      0
+     ],
+     "sigma": 0.28
+    }
+   ],
+   "seed": 11
+  },
+  "note": "POSTS: runs of surface-positive, sharply contoured occipital transients at about 4 Hz in N2 sleep; spindles mark the sleep stage."
+ },
+ "pattern_rmtd": {
+  "scene": {
+   "ageYears": 30,
+   "state": "drowsy",
+   "findings": [
+    {
+     "type": "temporalTheta",
+     "sides": [
+      "left"
+     ],
+     "hz": 6,
+     "durS": 3.6,
+     "at": [
+      3
+     ],
+     "uv": 75
+    }
+   ],
+   "seed": 11
+  },
+  "note": "RMTD: a run of notched 6 Hz theta over the left mid-temporal region in drowsiness, monomorphic, without evolution in frequency or field."
+ },
+ "pattern_bets": {
+  "scene": {
+   "ageYears": 45,
+   "state": "n2",
+   "findings": [
+    {
+     "type": "spike",
+     "center": "T3",
+     "sigma": 0.38,
+     "uv": 68,
+     "durMs": 45,
+     "at": [
+      2.3
+     ]
+    },
+    {
+     "type": "spike",
+     "center": "T4",
+     "sigma": 0.38,
+     "uv": 65,
+     "durMs": 45,
+     "at": [
+      6.8
+     ]
+    },
+    {
+     "type": "spindle",
+     "at": [
+      4.4
+     ],
+     "uv": 50,
+     "center": [
+      0,
+      0
+     ],
+     "sigma": 0.28
+    }
+   ],
+   "seed": 11
+  },
+  "note": "BETS/BSSS: very small (under 50 uV), very brief spikes with a wide field in N2 sleep, one on each side; no slow wave and no effect on the background."
+ },
+ "pattern_vertex_sharp_waves": {
+  "scene": {
+   "ageYears": 12,
+   "state": "drowsy",
+   "findings": [
+    {
+     "type": "vertex",
+     "at": [
+      2.0,
+      5.3,
+      7.9
+     ],
+     "uv": 130
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Vertex sharp waves: high-amplitude negative sharp transients maximal at Cz, phase reversing at Cz in the midline chain, in drowsiness."
+ },
+ "pattern_fast_alpha_variant": {
+  "scene": {
+   "ageYears": 28,
+   "state": "awake",
+   "background": {
+    "pdrHz": 18,
+    "pdrUv": 40
+   },
+   "findings": [
+    {
+     "type": "eyesOpen",
+     "at": 7.5
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Fast alpha variant: posterior rhythm at about twice the alpha frequency (18 Hz) with the same distribution and reactivity, blocking with eye opening at 7.5 s."
+ },
+ "pattern_slow_alpha_variant": {
+  "scene": {
+   "ageYears": 30,
+   "state": "awake",
+   "background": {
+    "pdrUv": 18
+   },
+   "findings": [
+    {
+     "type": "muShapedAlpha",
+     "hz": 5,
+     "uv": 70,
+     "reactive": true
+    },
+    {
+     "type": "eyesOpen",
+     "at": 7.5
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Slow alpha variant: notched 5 Hz posterior waves (a subharmonic of alpha) mixed with alpha, with the same distribution and blocking on eye opening at 7.5 s."
+ },
+ "pattern_alpha_squeak": {
+  "scene": {
+   "ageYears": 26,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "eyesClosed",
+     "at": 2.0
+    },
+    {
+     "type": "rhythm",
+     "hz": 12.5,
+     "bwHz": 0.5,
+     "center": [
+      0,
+      -0.72
+     ],
+     "sigma": 0.33,
+     "uv": 55,
+     "runs": [
+      [
+       2.25,
+       2.95
+      ]
+     ],
+     "rampS": 0.15
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Alpha squeak: for a fraction of a second after the eyes close (2 s), posterior alpha is faster (about 12-13 Hz) before settling to its usual frequency."
+ },
+ "pattern_midline_theta": {
+  "scene": {
+   "ageYears": 30,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "rhythm",
+     "hz": 6,
+     "bwHz": 0.5,
+     "center": "Fz",
+     "sigma": 0.2,
+     "uv": 70,
+     "runs": [
+      [
+       1.8,
+       5.0
+      ],
+      [
+       6.4,
+       9.2
+      ]
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Midline theta (Ciganek): rhythmic 6 Hz theta confined to Fz-Cz in the waking state, seen in the midline chain only."
+ },
+ "pattern_sreda": {
+  "scene": {
+   "ageYears": 68,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "ictal",
+     "center": [
+      0,
+      -0.42
+     ],
+     "sigma": 0.32,
+     "start": 1.5,
+     "end": 10,
+     "hzStart": 3,
+     "hzEnd": 6.5,
+     "uvStart": 70,
+     "uvEnd": 110
+    }
+   ],
+   "seed": 11
+  },
+  "note": "SREDA: a bilateral, parietal-maximal rhythmic discharge in an older adult that begins as slower waves and becomes a sharply contoured 5-6 Hz rhythm, without clinical change or post-ictal slowing."
+ },
+ "pattern_14_6_hz_positive_bursts": {
+  "scene": {
+   "ageYears": 14,
+   "state": "drowsy",
+   "montages": [
+    "referentialA1",
+    "longitudinal"
+   ],
+   "findings": [
+    {
+     "type": "arciform",
+     "polarity": "positive",
+     "center": "T6",
+     "sigma": 0.22,
+     "hz": 14,
+     "uv": 100,
+     "runs": [
+      [
+       2.0,
+       2.8
+      ]
+     ]
+    },
+    {
+     "type": "arciform",
+     "polarity": "positive",
+     "center": "T6",
+     "sigma": 0.22,
+     "hz": 6,
+     "uv": 100,
+     "runs": [
+      [
+       6.0,
+       6.9
+      ]
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "14- and 6-Hz positive bursts: comb-like positive spikes over the right posterior temporal region at 14 Hz (2 s) and 6 Hz (6 s), clearest referred to the contralateral ear."
+ },
+ "pattern_6_hz_spike_wave": {
+  "scene": {
+   "ageYears": 25,
+   "state": "drowsy",
+   "montages": [
+    "linkedEars",
+    "longitudinal"
+   ],
+   "background": {
+    "theta": 4,
+    "pdrUv": 12
+   },
+   "findings": [
+    {
+     "type": "gsw",
+     "from": 4.0,
+     "to": 5.0,
+     "hz": 6,
+     "startHz": 6,
+     "tScale": 0.5,
+     "spikeK": 0.45,
+     "uv": 70,
+     "center": [
+      0,
+      -0.6
+     ],
+     "sigma": 0.45,
+     "label": ""
+    }
+   ],
+   "seed": 11
+  },
+  "note": "6 Hz (phantom) spike-and-wave: a 1-s burst of tiny spikes with 6 Hz waves, low amplitude and posterior (occipital) in a drowsy adult (the FOLD form)."
+ },
+ "pattern_hypnagogic_hypersynchrony": {
+  "scene": {
+   "ageYears": 4,
+   "state": "drowsy",
+   "findings": [
+    {
+     "type": "rhythmicDelta",
+     "hz": 4,
+     "center": [
+      0,
+      0.05
+     ],
+     "sigma": 0.6,
+     "uv": 300,
+     "runs": [
+      [
+       2.0,
+       6.0
+      ]
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Hypnagogic hypersynchrony: a burst of high-amplitude, diffuse 4 Hz rhythmic waves in a drowsy young child."
+ },
+ "pattern_posterior_slow_waves_youth": {
+  "scene": {
+   "ageYears": 13,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "sharp",
+     "center": [
+      0,
+      -0.78
+     ],
+     "sigma": 0.33,
+     "uv": 110,
+     "durMs": 330,
+     "at": [
+      1.3,
+      3.9,
+      6.5
+     ]
+    },
+    {
+     "type": "eyesOpen",
+     "at": 8.5
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Posterior slow waves of youth: single delta waves fused with the posterior alpha (alpha riding on them), blocking with eye opening at 8.5 s."
+ },
+ "pattern_breach_rhythm": {
+  "scene": {
+   "ageYears": 50,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "arciform",
+     "center": "C4",
+     "sigma": 0.17,
+     "hz": 9,
+     "uv": 70
+    },
+    {
+     "type": "rhythm",
+     "hz": 22,
+     "bwHz": 5,
+     "center": "C4",
+     "sigma": 0.16,
+     "uv": 30
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Breach rhythm: higher-amplitude, sharper arciform 9 Hz activity with extra beta over C4 (a skull defect), without the evolution or after-going slow waves of epileptiform activity."
+ },
+ "pattern_photic_driving": {
+  "scene": {
+   "ageYears": 20,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "photic",
+     "hz": 8,
+     "from": 2,
+     "to": 8,
+     "uv": 28
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Photic driving: a posterior response time-locked to each 8 Hz flash, present only during stimulation (between the markers)."
+ },
+ "pattern_hv_buildup": {
+  "scene": {
+   "ageYears": 9,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "rhythmicDelta",
+     "hz": 2.5,
+     "center": [
+      0,
+      0.3
+     ],
+     "sigma": 0.95,
+     "uv": 200,
+     "runs": [
+      [
+       0.5,
+       10
+      ]
+     ]
+    }
+   ],
+   "seed": 11,
+   "montages": [
+    "linkedEars",
+    "longitudinal"
+   ]
+  },
+  "note": "Hyperventilation buildup: diffuse, frontally predominant high-amplitude rhythmic delta in a child during hyperventilation; it should resolve within about a minute after HV ends."
+ },
+ "pattern_three_hz_gsw": {
+  "scene": {
+   "ageYears": 8,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "gsw",
+     "from": 3,
+     "to": 8.5,
+     "uv": 330,
+     "label": ""
+    }
+   ],
+   "seed": 11
+  },
+  "note": "3 Hz generalized spike-and-wave: a sudden, frontally maximal, regular 3-3.5 Hz spike-and-wave burst on a normal background (typical absence)."
+ },
+ "pattern_hypsarrhythmia": {
+  "scene": {
+   "ageYears": 0.6,
+   "state": "awake",
+   "sensitivity": 20,
+   "findings": [
+    {
+     "type": "hypsarrhythmia",
+     "uv": 280,
+     "spikes": 18
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Hypsarrhythmia: very high amplitude, chaotic asynchronous slow waves with multifocal spikes and no organized background, in an infant."
+ },
+ "pattern_focal_spikes_temporal": {
+  "scene": {
+   "ageYears": 34,
+   "state": "drowsy",
+   "findings": [
+    {
+     "type": "spike",
+     "center": [
+      -0.72,
+      0.25
+     ],
+     "sigma": 0.2,
+     "uv": 130,
+     "durMs": 60,
+     "slowWave": true,
+     "at": [
+      1.4,
+      4.1,
+      6.6,
+      8.7
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Left anterior temporal spikes: phase reversal across F7-T3 (F7 and T3 equally involved, so F7-T3 is nearly flat) with after-going slow waves and a field limited to the left temporal chain."
+ },
+ "pattern_focal_spikes_frontal": {
+  "scene": {
+   "ageYears": 27,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "spike",
+     "center": "F4",
+     "sigma": 0.2,
+     "uv": 130,
+     "durMs": 55,
+     "slowWave": true,
+     "at": [
+      1.8,
+      5.2,
+      8.0
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Right frontal spikes: phase reversal at F4 with after-going slow waves, maximal over the right frontal region."
+ },
+ "pattern_centrotemporal_spikes": {
+  "scene": {
+   "ageYears": 8,
+   "state": "n2",
+   "findings": [
+    {
+     "type": "spike",
+     "center": [
+      -0.62,
+      0.02
+     ],
+     "sigma": 0.2,
+     "uv": 170,
+     "durMs": 70,
+     "slowWave": true,
+     "at": [
+      0.9,
+      1.9,
+      3.2,
+      4.1,
+      5.6,
+      6.4,
+      7.9,
+      9.0
+     ],
+     "positive": {
+      "center": [
+       0,
+       0.75
+      ],
+      "sigma": 0.35,
+      "k": 0.35
+     }
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Centrotemporal spikes: frequent high-amplitude diphasic spikes maximal at C3/T3 with frontal positivity (a horizontal dipole), activated by sleep, in a school-age child."
+ },
+ "pattern_slow_spike_wave": {
+  "scene": {
+   "ageYears": 6,
+   "state": "awake",
+   "background": {
+    "pdrHz": 6,
+    "pdrUv": 30,
+    "theta": 9
+   },
+   "findings": [
+    {
+     "type": "gsw",
+     "from": 1,
+     "to": 9.6,
+     "hz": 2.2,
+     "startHz": 2.5,
+     "tScale": 1.5,
+     "uv": 260,
+     "label": ""
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Slow spike-and-wave: generalized sharp-and-slow complexes at about 2-2.5 Hz on a slow background (Lennox-Gastaut)."
+ },
+ "pattern_polyspike_wave": {
+  "scene": {
+   "ageYears": 16,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "polyspikeWave",
+     "at": 2.5,
+     "spikes": 4,
+     "uv": 280
+    },
+    {
+     "type": "polyspikeWave",
+     "at": 6.8,
+     "spikes": 5,
+     "uv": 260
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Generalized polyspike-and-wave: bursts of several spikes followed by a slow wave, frontally predominant, on a normal background (juvenile myoclonic epilepsy)."
+ },
+ "pattern_gpfa": {
+  "scene": {
+   "ageYears": 10,
+   "state": "n2",
+   "findings": [
+    {
+     "type": "fastBurst",
+     "at": [
+      2.0,
+      6.6
+     ],
+     "durS": 1.6,
+     "hz": 18,
+     "uv": 120
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Generalized paroxysmal fast activity: bursts of 18 Hz fast rhythmic activity (range 10-25 Hz), frontally predominant, in sleep (Lennox-Gastaut tonic seizures)."
+ },
+ "pattern_pswcs": {
+  "scene": {
+   "ageYears": 66,
+   "state": "stupor",
+   "background": {
+    "delta": 3,
+    "theta": 3
+   },
+   "findings": [
+    {
+     "type": "periodic",
+     "intervalS": 1.0,
+     "shape": "sharp",
+     "durMs": 260,
+     "uv": 190,
+     "center": [
+      0,
+      0.1
+     ],
+     "sigma": 0.6,
+     "diffuse": 0.7,
+     "jitterS": 0.03
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Periodic sharp wave complexes: generalized sharp complexes repeating about once per second on a slow, low background (Creutzfeldt-Jakob disease)."
+ },
+ "pattern_pleds": {
+  "scene": {
+   "ageYears": 70,
+   "state": "stupor",
+   "findings": [
+    {
+     "type": "periodic",
+     "side": "left",
+     "center": "T3",
+     "sigma": 0.32,
+     "intervalS": 1.2,
+     "shape": "sharpSlow",
+     "durMs": 150,
+     "uv": 230
+    },
+    {
+     "type": "polymorphicDelta",
+     "side": "left",
+     "uv": 25
+    }
+   ],
+   "seed": 11
+  },
+  "note": "PLEDs (LPDs): sharp-and-slow complexes repeating about every 1.2 s over the left hemisphere, maximal at T3, with a suppressed slow left background."
+ },
+ "pattern_sturge_weber": {
+  "scene": {
+   "ageYears": 6,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "polymorphicDelta",
+     "side": "right",
+     "uv": 10,
+     "attenuate": 0.3
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Sturge-Weber pattern: attenuated background and polymorphic delta over the affected (right) hemisphere, with normal activity on the left."
+ },
+ "pattern_photoparoxysmal": {
+  "scene": {
+   "ageYears": 14,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "photic",
+     "hz": 16,
+     "from": 2,
+     "to": 6,
+     "uv": 18
+    },
+    {
+     "type": "gsw",
+     "from": 3.4,
+     "to": 7.0,
+     "hz": 3.5,
+     "startHz": 4,
+     "uv": 260,
+     "label": ""
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Photoparoxysmal response: generalized spike-and-wave triggered by 16 Hz photic stimulation, starting during stimulation and outlasting it by about 1 s."
+ },
+ "pattern_tirda": {
+  "scene": {
+   "ageYears": 32,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "rhythmicDelta",
+     "hz": 2,
+     "center": [
+      -0.74,
+      0.18
+     ],
+     "sigma": 0.22,
+     "uv": 95,
+     "runs": [
+      [
+       2.0,
+       5.2
+      ],
+      [
+       7.6,
+       9.6
+      ]
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "TIRDA: runs of rhythmic 2 Hz delta confined to the left anterior temporal region (F7/T3) on a normal background, a marker of temporal lobe epilepsy."
+ },
+ "pattern_focal_seizure_temporal": {
+  "scene": {
+   "ageYears": 38,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "ictal",
+     "center": "T3",
+     "sigma": 0.28,
+     "start": 2.5,
+     "end": 11,
+     "hzStart": 7,
+     "hzEnd": 4,
+     "uvStart": 30,
+     "uvEnd": 130,
+     "spread": {
+      "center": "F7",
+      "delayS": 1.5,
+      "k": 0.5,
+      "sigma": 0.3
+     }
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Left temporal seizure: rhythmic 7 Hz theta at T3 that slows and grows to high-amplitude 4-5 Hz activity over seconds (evolution in frequency, amplitude and field)."
+ },
+ "pattern_diffuse_slowing": {
+  "scene": {
+   "ageYears": 72,
+   "state": "awake",
+   "background": {
+    "pdrHz": 6.5,
+    "pdrUv": 30,
+    "theta": 9
+   },
+   "findings": [
+    {
+     "type": "diffuseSlowing",
+     "hz": 2,
+     "uv": 55
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Diffuse slowing: the posterior rhythm is slowed to about 6.5 Hz with abundant diffuse theta and delta over both hemispheres."
+ },
+ "pattern_focal_slowing": {
+  "scene": {
+   "ageYears": 55,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "focalDelta",
+     "center": "T3",
+     "sigma": 0.25,
+     "uv": 100
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Focal slowing: continuous irregular (polymorphic) delta confined to the left temporal region, with a normal right hemisphere."
+ },
+ "pattern_firda": {
+  "scene": {
+   "ageYears": 70,
+   "state": "drowsy",
+   "findings": [
+    {
+     "type": "firda",
+     "hz": 2.2,
+     "uv": 160,
+     "runs": [
+      [
+       1.5,
+       3.8
+      ],
+      [
+       6.5,
+       8.6
+      ]
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "FIRDA: runs of rhythmic 2 Hz delta, bifrontally maximal, on a mildly slow background in an encephalopathic adult."
+ },
+ "pattern_oirda": {
+  "scene": {
+   "ageYears": 7,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "rhythmicDelta",
+     "hz": 3,
+     "uv": 120,
+     "runs": [
+      [
+       2.0,
+       4.6
+      ],
+      [
+       7.0,
+       8.8
+      ]
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "OIRDA: runs of rhythmic 3 Hz delta maximal over the occipital regions in a child (often seen with absence epilepsy)."
+ },
+ "pattern_triphasic_waves": {
+  "scene": {
+   "ageYears": 68,
+   "state": "stupor",
+   "findings": [
+    {
+     "type": "triphasic",
+     "at": [
+      0.8,
+      1.45,
+      2.1,
+      3.0,
+      3.65,
+      4.3,
+      5.6,
+      6.25,
+      6.9,
+      7.8,
+      8.45,
+      9.1
+     ],
+     "uv": 200
+    }
+   ],
+   "seed": 11,
+   "background": {
+    "delta": 6,
+    "theta": 5
+   }
+  },
+  "note": "Triphasic waves: blunt complexes with a dominant positive middle phase, frontally maximal with a fronto-occipital lag, on a slow background (metabolic encephalopathy)."
+ },
+ "pattern_burst_suppression": {
+  "scene": {
+   "ageYears": 55,
+   "state": "semicomatose",
+   "findings": [
+    {
+     "type": "burst",
+     "runs": [
+      [
+       0.8,
+       2.1
+      ],
+      [
+       5.0,
+       6.2
+      ],
+      [
+       8.6,
+       9.7
+      ]
+     ],
+     "uv": 160
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Burst suppression: bursts of mixed high-amplitude activity with sharp transients alternating with a suppressed (near-flat) background."
+ },
+ "pattern_alpha_coma": {
+  "scene": {
+   "ageYears": 60,
+   "state": "semicomatose",
+   "findings": [
+    {
+     "type": "rhythm",
+     "hz": 10,
+     "bwHz": 0.5,
+     "center": [
+      0,
+      0.5
+     ],
+     "sigma": 0.38,
+     "uv": 55
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Alpha coma: diffuse, frontally predominant, monotonous 10 Hz alpha in a comatose patient, not reactive to stimulation."
+ },
+ "pattern_extreme_delta_brush": {
+  "scene": {
+   "ageYears": 24,
+   "state": "stupor",
+   "background": {
+    "delta": 3,
+    "theta": 3
+   },
+   "findings": [
+    {
+     "type": "deltaBrush",
+     "at": [
+      0.3,
+      1.05,
+      1.8,
+      2.55,
+      3.3,
+      4.05,
+      4.8,
+      5.55,
+      6.3,
+      7.05,
+      7.8,
+      8.55,
+      9.3
+     ],
+     "hz": 1.3,
+     "uv": 190,
+     "fastHz": 22,
+     "fastUv": 45,
+     "center": [
+      0,
+      0.2
+     ],
+     "sigma": 0.42
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Extreme delta brush: continuous rhythmic delta with a burst of beta riding on each delta wave, in an adult with anti-NMDA receptor encephalitis."
+ },
+ "pattern_eci": {
+  "scene": {
+   "ageYears": 50,
+   "state": "semicomatose",
+   "sensitivity": 2,
+   "background": {
+    "beta": 0,
+    "theta": 0,
+    "delta": 0,
+    "noise": 0.6
+   },
+   "ekgContamination": 7,
+   "findings": [],
+   "seed": 11
+  },
+  "note": "Electrocerebral inactivity: no cerebral activity over 2 uV at 2 uV/mm; only EKG artifact and instrument noise remain. ECI recordings use double-distance (at least 10 cm) electrode spacing."
+ },
+ "pattern_eye_blink": {
+  "scene": {
+   "ageYears": 30,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "blink",
+     "at": [
+      1.5,
+      4.2,
+      7.8
+     ]
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Eye blinks: large positive (downward in the Fp1-F7 and Fp2-F8 chains) slow deflections at Fp1/Fp2, symmetric, with no field beyond the frontal poles."
+ },
+ "pattern_lateral_eye": {
+  "scene": {
+   "ageYears": 30,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "lateralEye",
+     "dir": "left",
+     "at": 2.0,
+     "durS": 1.6,
+     "uv": 130
+    },
+    {
+     "type": "lateralEye",
+     "dir": "right",
+     "at": 6.0,
+     "durS": 1.6,
+     "uv": 130
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Lateral eye movements: opposite-polarity deflections at F7 and F8 (looking left at 2 s, right at 6 s), the cornea making the near side positive."
+ },
+ "pattern_muscle_artifact": {
+  "scene": {
+   "ageYears": 30,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "muscle",
+     "sites": [
+      "F7",
+      "T3",
+      "F8",
+      "T4"
+     ],
+     "uv": 22,
+     "from": 2.5,
+     "to": 6.5
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Muscle (EMG) artifact: very fast, spiky, high-frequency activity over the temporal regions during jaw clenching, obscuring the background."
+ },
+ "pattern_electrode_pop": {
+  "scene": {
+   "ageYears": 40,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "electrodePop",
+     "electrode": "T4",
+     "at": [
+      2.1,
+      5.4,
+      8.2
+     ],
+     "uv": 200
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Electrode pop: abrupt, steep deflections with an exponential decay confined to one electrode (T4), with no field and no physiological shape."
+ },
+ "pattern_60hz": {
+  "scene": {
+   "ageYears": 40,
+   "state": "awake",
+   "findings": [
+    {
+     "type": "sine",
+     "sites": [
+      "T4"
+     ],
+     "hz": 60,
+     "uv": 22
+    }
+   ],
+   "seed": 11
+  },
+  "note": "60 Hz interference: a thick, monotonous band of 60 Hz activity in the channels containing one high-impedance electrode (T4)."
+ },
+ "pattern_ekg_artifact": {
+  "scene": {
+   "ageYears": 60,
+   "state": "drowsy",
+   "montages": [
+    "referential",
+    "longitudinal"
+   ],
+   "ekgContamination": 18,
+   "heartRate": 76,
+   "findings": [],
+   "seed": 11
+  },
+  "note": "EKG artifact: small sharp transients time-locked to the QRS in the EKG channel, best seen in ear-referenced and temporal channels."
+ },
+ "pattern_glossokinetic": {
+  "scene": {
+   "ageYears": 30,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "glossokinetic",
+     "at": [
+      1.8,
+      4.6,
+      7.4
+     ],
+     "uv": 160
+    }
+   ],
+   "seed": 11,
+   "montages": [
+    "eyeCheck",
+    "longitudinal"
+   ]
+  },
+  "note": "Glossokinetic artifact: broad, synchronous delta-like waves largest at the infraorbital leads (IO1/IO2), smaller at Fp1/Fp2, with tongue movement during speech."
+ },
+ "pattern_sweat_artifact": {
+  "scene": {
+   "ageYears": 30,
+   "state": "awake",
+   "lff": 0.3,
+   "preRollS": 6,
+   "findings": [
+    {
+     "type": "sweat",
+     "sites": [
+      "F7",
+      "T3",
+      "Fp1"
+     ],
+     "uv": 120
+    }
+   ],
+   "seed": 11
+  },
+  "note": "Sweat artifact: very slow (under 0.5 Hz) high-amplitude sways at a few left frontotemporal electrodes, visible with a low LFF setting."
+ },
+ "pattern_photomyogenic": {
+  "note": "Photomyogenic response: frontal muscle spikes time-locked to each 12 Hz flash, confined to Fp/F electrodes and stopping the moment stimulation stops (no cerebral spike-and-wave).",
+  "scene": {
+   "seed": 11,
+   "ageYears": 40,
+   "state": "awake",
+   "eyesOpen": true,
+   "findings": [
+    {
+     "type": "photic",
+     "hz": 12,
+     "from": 2,
+     "to": 7,
+     "uv": 12
+    },
+    {
+     "type": "spike",
+     "center": [
+      -0.35,
+      0.85
+     ],
+     "sigma": 0.22,
+     "uv": 70,
+     "durMs": 22,
+     "at": [
+      2.055,
+      2.1383,
+      2.2217,
+      2.305,
+      2.3883,
+      2.4717,
+      2.555,
+      2.6383,
+      2.7217,
+      2.805,
+      2.8883,
+      2.9717,
+      3.055,
+      3.1383,
+      3.2217,
+      3.305,
+      3.3883,
+      3.4717,
+      3.555,
+      3.6383,
+      3.7217,
+      3.805,
+      3.8883,
+      3.9717,
+      4.055,
+      4.1383,
+      4.2217,
+      4.305,
+      4.3883,
+      4.4717,
+      4.555,
+      4.6383,
+      4.7217,
+      4.805,
+      4.8883,
+      4.9717,
+      5.055,
+      5.1383,
+      5.2217,
+      5.305,
+      5.3883,
+      5.4717,
+      5.555,
+      5.6383,
+      5.7217,
+      5.805,
+      5.8883,
+      5.9717,
+      6.055,
+      6.1383,
+      6.2217,
+      6.305,
+      6.3883,
+      6.4717,
+      6.555,
+      6.6383,
+      6.7217,
+      6.805,
+      6.8883,
+      6.9717
+     ]
+    },
+    {
+     "type": "spike",
+     "center": [
+      0.35,
+      0.85
+     ],
+     "sigma": 0.22,
+     "uv": 65,
+     "durMs": 22,
+     "at": [
+      2.059,
+      2.1423,
+      2.2257,
+      2.309,
+      2.3923,
+      2.4757,
+      2.559,
+      2.6423,
+      2.7257,
+      2.809,
+      2.8923,
+      2.9757,
+      3.059,
+      3.1423,
+      3.2257,
+      3.309,
+      3.3923,
+      3.4757,
+      3.559,
+      3.6423,
+      3.7257,
+      3.809,
+      3.8923,
+      3.9757,
+      4.059,
+      4.1423,
+      4.2257,
+      4.309,
+      4.3923,
+      4.4757,
+      4.559,
+      4.6423,
+      4.7257,
+      4.809,
+      4.8923,
+      4.9757,
+      5.059,
+      5.1423,
+      5.2257,
+      5.309,
+      5.3923,
+      5.4757,
+      5.559,
+      5.6423,
+      5.7257,
+      5.809,
+      5.8923,
+      5.9757,
+      6.059,
+      6.1423,
+      6.2257,
+      6.309,
+      6.3923,
+      6.4757,
+      6.559,
+      6.6423,
+      6.7257,
+      6.809,
+      6.8923,
+      6.9757
+     ]
+    }
+   ]
+  }
+ },
+ "pattern_electrodecrement": {
+  "note": "Infantile spasm (electrodecremental event): a generalized high-amplitude slow wave followed by abrupt attenuation of the hypsarrhythmic background for about 2 s.",
+  "scene": {
+   "seed": 11,
+   "ageYears": 0.7,
+   "state": "awake",
+   "sensitivity": 20,
+   "findings": [
+    {
+     "type": "hypsarrhythmia",
+     "uv": 260,
+     "spikes": 14
+    },
+    {
+     "type": "electrodecrement",
+     "at": 4.5,
+     "durS": 2.2,
+     "depth": 0.85,
+     "slowUv": 320
+    }
+   ]
+  }
+ },
+ "pattern_sspe": {
+  "note": "SSPE periodic complexes: stereotyped high-amplitude, generalized slow complexes repeating at long intervals (here about 4.5 s) on a slow background.",
+  "scene": {
+   "seed": 11,
+   "ageYears": 11,
+   "state": "awake",
+   "background": {
+    "pdrHz": 7,
+    "pdrUv": 25,
+    "theta": 7
+   },
+   "findings": [
+    {
+     "type": "periodic",
+     "intervalS": 4.5,
+     "firstAt": 1.2,
+     "shape": "broad",
+     "uv": 700,
+     "center": [
+      0,
+      0.15
+     ],
+     "sigma": 0.35,
+     "diffuse": 0.6,
+     "jitterS": 0.05
+    }
+   ]
+  }
+ }
+}

@@ -5,6 +5,8 @@ import patternsData from "../data/patterns.json";
 import workflowData from "../data/workflow-domains.json";
 import { getPatternQuizTags } from "../utils/patternQuizTags";
 import ContextualAI from "../components/ContextualAI.jsx";
+import EegTracing from "../components/EegTracing.jsx";
+import patternScenes from "../data/patternScenes.json";
 import apiService from "../services/apiService";
 
 function PatternDetail() {
@@ -44,7 +46,6 @@ function PatternDetail() {
 
   // Try v2 first, then fall back to v1
   let pattern = patternsV2Data.find((p) => p.id === id);
-  console.log("DEBUG PatternDetail:", { id, pattern, hasImage: !!pattern?.image, images: pattern?.images });
 
   if (!pattern) {
     const v1Pattern = patternsData.find((p) => p.id === id);
@@ -201,55 +202,11 @@ function PatternDetail() {
                 </div>
               )}
 
-              {/* Pattern Image(s) */}
-              {(pattern.images && pattern.images.length > 0) || pattern.image ? (
+              {/* Generated EEG example */}
+              {patternScenes[pattern.id] ? (
                 <div className="mt-6 pt-6 border-t border-slate-200">
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">
-                    {pattern.images && pattern.images.length > 1 ? "EEG Examples" : "EEG Example"}
-                  </h3>
-                  <div className="space-y-4">
-                    {/* Multiple images */}
-                    {pattern.images && pattern.images.length > 0 ? (
-                      pattern.images.map((imgSrc, idx) => (
-                        <div key={idx} className="rounded-md border border-slate-300 bg-slate-50 p-4 overflow-x-auto">
-                          <img
-                            src={imgSrc}
-                            alt={`EEG example ${idx + 1} showing ${pattern.name}`}
-                            className="w-full max-w-4xl mx-auto rounded border border-slate-200 shadow-sm"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                            }}
-                          />
-                          <p className="text-xs text-slate-600 mt-2 italic text-center">
-                            {pattern.name} - Example {idx + 1}
-                          </p>
-                        </div>
-                      ))
-                    ) : (
-                      /* Single image */
-                      pattern.image && (
-                        <div className="rounded-md border border-slate-300 bg-slate-50 p-4 overflow-x-auto">
-                          <img
-                            src={pattern.image}
-                            alt={`EEG example showing ${pattern.name}`}
-                            className="w-full max-w-4xl mx-auto rounded border border-slate-200 shadow-sm"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                              const placeholder = e.target.nextElementSibling;
-                              if (placeholder) placeholder.style.display = 'block';
-                            }}
-                          />
-                          <div className="hidden text-xs text-slate-500 italic text-center py-4 border border-slate-200 rounded bg-slate-50">
-                            <p>EEG image for {pattern.name}</p>
-                            <p className="mt-1">Place image at: {pattern.image}</p>
-                          </div>
-                          <p className="text-xs text-slate-600 mt-2 italic text-center">
-                            {pattern.name} - EEG Example
-                          </p>
-                        </div>
-                      )
-                    )}
-                  </div>
+                  <h3 className="text-sm font-semibold text-slate-900 mb-3">EEG Example</h3>
+                  <EegTracing scene={patternScenes[pattern.id].scene} caption={`NeuroLinea synthetic tracing. ${patternScenes[pattern.id].note}`} />
                 </div>
               ) : null}
             </div>
@@ -354,55 +311,11 @@ function PatternDetail() {
                 <p className="text-sm text-slate-600">No ABRET pearls listed.</p>
               )}
 
-              {/* Pattern Image(s) in ABRET Tab */}
-              {(pattern.images && pattern.images.length > 0) || pattern.image ? (
+              {/* Generated EEG example in ABRET Tab */}
+              {patternScenes[pattern.id] ? (
                 <div className="mt-6 pt-6 border-t border-slate-200">
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">
-                    {pattern.images && pattern.images.length > 1 ? "EEG Examples" : "EEG Example"}
-                  </h3>
-                  <div className="space-y-4">
-                    {/* Multiple images */}
-                    {pattern.images && pattern.images.length > 0 ? (
-                      pattern.images.map((imgSrc, idx) => (
-                        <div key={idx} className="rounded-md border border-slate-300 bg-slate-50 p-4 overflow-x-auto">
-                          <img
-                            src={imgSrc}
-                            alt={`EEG example ${idx + 1} showing ${pattern.name}`}
-                            className="w-full max-w-4xl mx-auto rounded border border-slate-200 shadow-sm"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                            }}
-                          />
-                          <p className="text-xs text-slate-600 mt-2 italic text-center">
-                            {pattern.name} - Example {idx + 1}
-                          </p>
-                        </div>
-                      ))
-                    ) : (
-                      /* Single image */
-                      pattern.image && (
-                        <div className="rounded-md border border-slate-300 bg-slate-50 p-4 overflow-x-auto">
-                          <img
-                            src={pattern.image}
-                            alt={`EEG example showing ${pattern.name}`}
-                            className="w-full max-w-4xl mx-auto rounded border border-slate-200 shadow-sm"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                              const placeholder = e.target.nextElementSibling;
-                              if (placeholder) placeholder.style.display = 'block';
-                            }}
-                          />
-                          <div className="hidden text-xs text-slate-500 italic text-center py-4 border border-slate-200 rounded bg-slate-50">
-                            <p>EEG image for {pattern.name}</p>
-                            <p className="mt-1">Place image at: {pattern.image}</p>
-                          </div>
-                          <p className="text-xs text-slate-600 mt-2 italic text-center">
-                            {pattern.name} - EEG Example
-                          </p>
-                        </div>
-                      )
-                    )}
-                  </div>
+                  <h3 className="text-sm font-semibold text-slate-900 mb-3">EEG Example</h3>
+                  <EegTracing scene={patternScenes[pattern.id].scene} caption={`NeuroLinea synthetic tracing. ${patternScenes[pattern.id].note}`} />
                 </div>
               ) : null}
             </div>

@@ -258,6 +258,7 @@ export const FINDING_TYPES = [
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
   "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine", "focalDelta", "burst",
   "rhythm", "periodic", "ictal", "hypsarrhythmia", "electrodecrement", "fastBurst", "sweat", "deltaBrush", "temporalTheta",
+  "arciform", "kComplex", "photic",
 ];
 
 /**
@@ -373,7 +374,8 @@ export function generateReferential(scene) {
           for (let i = 0; i < n; i++) {
             phi += (2 * Math.PI * hz) / FS;
             const e = 0.5 + 0.5 * Math.tanh(1.2 * env[i]);
-            sig[i] = -amp * e * (Math.cos(phi) + 0.42 * Math.cos(2 * phi + 0.3));
+            const blocked = f.reactive && eyesOpenAt(time(i)) ? 0.15 : 1;
+            sig[i] = -amp * e * blocked * (Math.cos(phi) + 0.42 * Math.cos(2 * phi + 0.3));
           }
           addSource(V, field(side === "left" ? [-0.25, -0.75] : [0.28, -0.72], 0.3), sig);
         }
@@ -641,14 +643,16 @@ export function generateReferential(scene) {
           const frac = (tk - from) / Math.max(0.1, to - from);
           tk += 1 / (startHz + (endHz - startHz) * Math.min(1, frac * 2.5));
         }
+        const ts = f.tScale ?? 1; // stretches the complex: <1 for 6 Hz phantom, >1 for slow spike-and-wave
+        const sk = f.spikeK ?? 0.8;
         for (let i = 0; i < n; i++) {
           const t = time(i);
           let v = 0;
           for (const t0 of onsets) {
-            if (t < t0 - 0.1 || t > t0 + 0.45) continue;
-            v += -0.8 * asymGauss(t, t0, 0.009, 0.015); // spike
-            v += 0.35 * asymGauss(t, t0 + 0.05, 0.02, 0.03); // positive trough
-            v += -1.0 * asymGauss(t, t0 + 0.17, 0.06, 0.07); // dome (slow wave)
+            if (t < t0 - 0.1 * ts || t > t0 + 0.45 * ts) continue;
+            v += -sk * asymGauss(t, t0, 0.009 * ts, 0.015 * ts); // spike
+            v += 0.35 * asymGauss(t, t0 + 0.05 * ts, 0.02 * ts, 0.03 * ts); // positive trough
+            v += -1.0 * asymGauss(t, t0 + 0.17 * ts, 0.06 * ts, 0.07 * ts); // dome (slow wave)
           }
           sig[i] = amp * v;
         }
@@ -761,7 +765,7 @@ export function generateReferential(scene) {
           }
           sig[i] = amp * v;
         }
-        addSource(V, field([0, 0.05], 0.45), sig);
+        addSource(V, field(f.center ?? [0, 0.05], f.sigma ?? 0.45), sig);
         break;
       }
       case "blink":
@@ -893,6 +897,62 @@ export function generateReferential(scene) {
             ch[i] += amp * k * (0.65 * Math.sin(2 * Math.PI * 0.18 * t + p1) + 0.35 * Math.sin(2 * Math.PI * 0.41 * t + p2));
           }
         }
+        break;
+      }
+      case "arciform": {
+        // Trains of arciform (comb-like) waves at a chosen site: wicket spikes, breach rhythm, 14- and 6-Hz positive bursts.
+        // Sharp peaks are surface negative unless polarity is "positive".
+        const hz = f.hz ?? 8;
+        const amp = (f.uv ?? 60) / 2.4;
+        const pol = f.polarity === "positive" ? -1 : 1;
+        const runs = f.runs || [[0, seconds]];
+        const sig = new Float64Array(n);
+        let phi = rng() * 6.28;
+        for (let i = 0; i < n; i++) {
+          const t = time(i);
+          phi += (2 * Math.PI * hz) / FS;
+          let g = 0;
+          for (const [a, b] of runs) g = Math.max(g, gateValue(t, a, b, f.rampS ?? 0.12));
+          sig[i] = -pol * amp * g * (Math.cos(phi) + 0.38 * Math.cos(2 * phi));
+        }
+        addSource(V, field(f.center ?? "T3", f.sigma ?? 0.2, f.side ? { side: f.side } : {}), sig);
+        break;
+      }
+      case "kComplex": {
+        // K-complex: a well-delineated negative sharp wave followed by a slower positive component,
+        // at least 0.5 s in total, maximal frontocentrally.
+        const amp = f.uv ?? 150;
+        const times = Array.isArray(f.at) ? f.at : [f.at];
+        const sig = new Float64Array(n);
+        for (let i = 0; i < n; i++) {
+          const t = time(i);
+          let v = 0;
+          for (const t0 of times) if (Math.abs(t - t0) < 1.2) v += -asymGauss(t, t0, 0.07, 0.1) + 0.55 * asymGauss(t, t0 + 0.32, 0.13, 0.2);
+          sig[i] = amp * v;
+        }
+        addSource(V, field(f.center ?? [0, 0.3], f.sigma ?? 0.5), sig);
+        break;
+      }
+      case "photic": {
+        // Intermittent photic stimulation: a posterior visual response time-locked to every flash
+        // (photic driving when the response follows the flash rate).
+        const hz = f.hz ?? 10;
+        const from = f.from ?? 1;
+        const to = f.to ?? seconds - 1;
+        const amp = f.uv ?? 30;
+        const flashes = [];
+        for (let tf = from; tf < to; tf += 1 / hz) flashes.push(tf);
+        const sig = new Float64Array(n);
+        for (let i = 0; i < n; i++) {
+          const t = time(i);
+          if (t < from - 0.1 || t > to + 0.4) continue;
+          let v = 0;
+          for (const tf of flashes) if (t > tf && t - tf < 0.35) v += -asymGauss(t, tf + 0.1, 0.018, 0.025) + 0.55 * asymGauss(t, tf + 0.15, 0.02, 0.03);
+          sig[i] = amp * (f.driving === false ? 0 : 1) * v;
+        }
+        addSource(V, field(f.center ?? [0, -0.77], f.sigma ?? 0.3), sig);
+        markers.push({ at: from, label: f.label ?? `Photic ${hz} Hz` });
+        markers.push({ at: to, label: "Off" });
         break;
       }
       case "electrodePop": {

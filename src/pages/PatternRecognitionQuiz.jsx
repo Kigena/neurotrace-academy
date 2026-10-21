@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import patternsData from '../data/neurotrace_patterns_library_v2.json';
+import patternScenes from '../data/patternScenes.json';
+import EegTracing from '../components/EegTracing.jsx';
 
 /**
  * Pattern Recognition Quiz - Visual EEG Pattern Identification
- * Tests ability to identify patterns, normal variants, and epileptiform discharges
+ * Tests ability to identify patterns, normal variants, epileptiform discharges,
+ * slowing/coma patterns and artifacts. Every question shows a NeuroLinea synthetic
+ * tracing (src/data/patternScenes.json) drawn with a fresh random seed, so the
+ * background differs each time while the pattern stays the same.
  */
 const PatternRecognitionQuiz = () => {
     const navigate = useNavigate();
@@ -15,33 +20,15 @@ const PatternRecognitionQuiz = () => {
     const [showExplanation, setShowExplanation] = useState(false);
     const [quizQuestions, setQuizQuestions] = useState([]);
     const [quizComplete, setQuizComplete] = useState(false);
-    // Questions whose EEG image failed to load are skipped and not scored.
-    const [skippedQuestions, setSkippedQuestions] = useState(() => new Set());
-    const [difficulty, setDifficulty] = useState('mixed'); // easy, medium, hard, mixed
+const [difficulty, setDifficulty] = useState('mixed'); // easy, medium, hard, mixed
     const [categoryFilter, setCategoryFilter] = useState('all'); // all, normal, variants, epileptiform, artifacts
 
-    // Filter patterns that have images
-    const getPatternsWithImages = () => {
-        return patternsData.filter(p => {
-            // Check if pattern has either a single image or an images array
-            const hasSingleImage = p.image && p.image !== '';
-            const hasImagesArray = p.images && Array.isArray(p.images) && p.images.length > 0;
-            return hasSingleImage || hasImagesArray;
-        });
-    };
-
-    // Get the best image to display for a pattern
-    const getPatternImage = (pattern) => {
-        // Prefer images array first (more likely to exist), then fall back to single image
-        if (pattern.images && Array.isArray(pattern.images) && pattern.images.length > 0) {
-            return pattern.images[0]; // Use first image from array
-        }
-        return pattern.image || '';
-    };
+    // Patterns that have a generated tracing
+    const getPatternsWithTracings = () => patternsData.filter((p) => patternScenes[p.id]);
 
     // Generate quiz questions
     const generateQuiz = (numQuestions = 20) => {
-        const availablePatterns = getPatternsWithImages();
+        const availablePatterns = getPatternsWithTracings();
         
         // Filter by category if not 'all'
         let filteredPatterns = availablePatterns;
@@ -50,6 +37,7 @@ const PatternRecognitionQuiz = () => {
                 'normal': ['NORMAL'],
                 'variants': ['NORMAL_VARIANT', 'BENIGN_VARIANT'],
                 'epileptiform': ['EPILEPTIFORM', 'ICTAL', 'INTERICTAL'],
+                'slowing': ['SLOWING'],
                 'artifacts': ['ARTIFACT']
             };
             filteredPatterns = availablePatterns.filter(p => 
@@ -88,6 +76,8 @@ const PatternRecognitionQuiz = () => {
 
             return {
                 pattern,
+                scene: { ...patternScenes[pattern.id].scene, seed: 1 + Math.floor(Math.random() * 100000) },
+                note: patternScenes[pattern.id].note,
                 options,
                 correctAnswer: pattern.id,
                 explanation: generateExplanation(pattern)
@@ -112,10 +102,9 @@ const PatternRecognitionQuiz = () => {
         setCurrentQuestion(0);
         setScore(0);
         setQuizComplete(false);
-        setSkippedQuestions(new Set());
     };
 
-    const handleAnswerSelect = (patternId) => {
+    const handleAnswerSelect= (patternId) => {
         if (showExplanation) return; // Prevent changing answer after showing explanation
         setSelectedAnswer(patternId);
     };
@@ -151,7 +140,6 @@ const PatternRecognitionQuiz = () => {
         setShowExplanation(false);
         setQuizComplete(false);
         setQuizQuestions([]);
-        setSkippedQuestions(new Set());
     };
 
     const getCategoryBadgeColor = (category) => {
@@ -162,6 +150,7 @@ const PatternRecognitionQuiz = () => {
             'EPILEPTIFORM': 'bg-red-100 text-red-800',
             'ICTAL': 'bg-red-200 text-red-900',
             'INTERICTAL': 'bg-orange-100 text-orange-800',
+            'SLOWING': 'bg-amber-100 text-amber-800',
             'ARTIFACT': 'bg-gray-100 text-gray-800'
         };
         return colorMap[category] || 'bg-slate-100 text-slate-800';
@@ -169,7 +158,7 @@ const PatternRecognitionQuiz = () => {
 
     // Introduction Screen
     if (!quizStarted || quizQuestions.length === 0) {
-        const availablePatterns = getPatternsWithImages();
+        const availablePatterns = getPatternsWithTracings();
         
         return (
             <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-8 px-4">
@@ -216,12 +205,13 @@ const PatternRecognitionQuiz = () => {
                             <label className="block text-sm font-semibold text-slate-700 mb-3">
                                 Select Category:
                             </label>
-                            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                            <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
                                 {[
                                     { value: 'all', label: 'All Patterns', icon: '🧠' },
                                     { value: 'normal', label: 'Normal', icon: '✅' },
                                     { value: 'variants', label: 'Variants', icon: '🔄' },
                                     { value: 'epileptiform', label: 'Epileptiform', icon: '⚡' },
+                                    { value: 'slowing', label: 'Slowing & coma', icon: '🌊' },
                                     { value: 'artifacts', label: 'Artifacts', icon: '⚠️' }
                                 ].map(cat => (
                                     <button
@@ -251,8 +241,8 @@ const PatternRecognitionQuiz = () => {
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="font-semibold text-slate-900">Real EEG Images</p>
-                                        <p className="text-sm text-slate-600">Identify patterns from actual EEG recordings</p>
+                                        <p className="font-semibold text-slate-900">Live EEG Tracings</p>
+                                        <p className="text-sm text-slate-600">Read a full 10-s page; change sensitivity, montage and use the caliper. A new background every attempt</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
@@ -299,15 +289,7 @@ const PatternRecognitionQuiz = () => {
                             Start Pattern Recognition Quiz
                         </button>
 
-                        {availablePatterns.length < 10 && (
-                            <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                                <p className="text-sm text-yellow-800">
-                                    <strong>Note:</strong> Some pattern images may not be available yet. 
-                                    To add images, place them in <code>public/images/patterns/</code> with names matching the pattern data.
-                                </p>
-                            </div>
-                        )}
-                    </div>
+</div>
                 </div>
             </div>
         );
@@ -315,7 +297,7 @@ const PatternRecognitionQuiz = () => {
 
     // Quiz Complete Screen
     if (quizComplete) {
-        const scoredCount = quizQuestions.length - skippedQuestions.size;
+        const scoredCount = quizQuestions.length;
         const percentage = scoredCount > 0 ? Math.round((score / scoredCount) * 100) : 0;
         const passed = percentage >= 70;
 
@@ -349,9 +331,6 @@ const PatternRecognitionQuiz = () => {
                                 <div className="bg-blue-50 p-6 rounded-xl border border-blue-200">
                                     <p className="text-sm text-blue-700 font-medium mb-2">Your Score</p>
                                     <p className="text-4xl font-bold text-blue-900">{score}/{scoredCount}</p>
-                                    {skippedQuestions.size > 0 && (
-                                        <p className="text-xs text-blue-700 mt-1">{skippedQuestions.size} skipped (image unavailable)</p>
-                                    )}
                                 </div>
                                 <div className="bg-purple-50 p-6 rounded-xl border border-purple-200">
                                     <p className="text-sm text-purple-700 font-medium mb-2">Percentage</p>
@@ -410,7 +389,7 @@ const PatternRecognitionQuiz = () => {
                             Question {currentQuestion + 1} of {quizQuestions.length}
                         </span>
                         <span className="text-sm font-medium text-purple-700">
-                            Score: {score}/{currentQuestion + (showExplanation ? 1 : 0) - [...skippedQuestions].filter((i) => i <= currentQuestion).length}
+                            Score: {score}/{currentQuestion + (showExplanation ? 1 : 0)}
                         </span>
                     </div>
                     <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
@@ -426,26 +405,15 @@ const PatternRecognitionQuiz = () => {
                     <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white">
                         <h2 className="text-2xl font-bold mb-2">Identify this EEG Pattern</h2>
                         <p className="text-purple-100">
-                            Study the EEG image and select the correct pattern name
+                            Read the tracing (age and state are in the header) and select the correct pattern name
                         </p>
                     </div>
 
-                    {/* EEG Image */}
-                    <div className="p-8 bg-slate-50">
-                        <div className="bg-white border-4 border-slate-300 rounded-xl overflow-hidden shadow-lg">
-                            <img
-                                src={getPatternImage(question.pattern)}
-                                alt="EEG Pattern"
-                                className="w-full h-auto"
-                                onError={(e) => {
-                                    e.target.onerror = null;
-                                    setSkippedQuestions((prev) => new Set(prev).add(currentQuestion));
-                                    e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2YxZjVmOSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NDc0OGIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FRUcgUGF0dGVybiBJbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg==';
-                                }}
-                            />
-                        </div>
+                    {/* EEG tracing (the teaching caption appears only after answering) */}
+                    <div className="p-4 sm:p-6 bg-slate-50">
+                        <EegTracing key={currentQuestion} scene={question.scene} caption={showExplanation ? question.note : undefined} />
                         <p className="text-xs text-slate-500 mt-2 text-center italic">
-                            Tip: Look for key features like frequency, morphology, and location
+                            Tip: Look at frequency, morphology, polarity, location, state and age
                         </p>
                     </div>
 
@@ -534,6 +502,11 @@ const PatternRecognitionQuiz = () => {
                                         }`}>
                                             {isCorrect ? 'Correct!' : 'Incorrect'}
                                         </h4>
+                                        <p className={`text-sm mb-2 font-medium ${
+                                            isCorrect ? 'text-green-900' : 'text-red-900'
+                                        }`}>
+                                            On this page: {question.note}
+                                        </p>
                                         <p className={`text-sm mb-3 ${
                                             isCorrect ? 'text-green-800' : 'text-red-800'
                                         }`}>
@@ -558,20 +531,8 @@ const PatternRecognitionQuiz = () => {
                         )}
 
                         {/* Action Buttons */}
-                        {skippedQuestions.has(currentQuestion) && (
-                            <p className="mt-6 text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg p-3">
-                                The EEG image for this question could not be loaded, so it will be skipped and not scored.
-                            </p>
-                        )}
                         <div className="mt-6 flex gap-3">
-                            {skippedQuestions.has(currentQuestion) ? (
-                                <button
-                                    onClick={handleNextQuestion}
-                                    className="flex-1 py-3 bg-slate-600 text-white font-bold rounded-lg hover:bg-slate-700 transition-all"
-                                >
-                                    {currentQuestion < quizQuestions.length - 1 ? 'Skip Question →' : 'View Results'}
-                                </button>
-                            ) : !showExplanation ? (
+                            {!showExplanation ? (
                                 <button
                                     onClick={handleSubmitAnswer}
                                     disabled={!selectedAnswer}

@@ -9,7 +9,6 @@
     "morphology": "Sinusoidal, symmetric rhythm maximal posteriorly",
     "frequency_hz": "8–13",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/pdr.png",
     "key_features": [
       "Posterior maximum",
       "Reactive to eye opening"
@@ -73,7 +72,6 @@
     "morphology": "Arch-like, wicket-shaped rhythm",
     "frequency_hz": "8–10",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/mu-rhythm.png",
     "key_features": [
       "Central location (C3, C4, Cz)",
       "Blocks with movement or intention to move"
@@ -122,7 +120,6 @@
     "morphology": "Intermittent trains of monophasic arciform waveforms or single spike-like waveforms",
     "frequency_hz": "6–11",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/wicket-spikes.png",
     "key_features": [
       "Intermittent trains of monophasic arciform waveforms",
       "May occur as single spike-like waveforms",
@@ -187,7 +184,6 @@
     "morphology": "Spike followed by slow wave complexes",
     "frequency_hz": "3",
     "amplitude_uv": "high",
-    "image": "/images/patterns/3-hz-generalized-spike-wave.png",
     "key_features": [
       "Generalized and synchronous",
       "Abrupt onset and offset",
@@ -245,7 +241,6 @@
     "morphology": "Chaotic, high-amplitude slow waves with multifocal spikes",
     "frequency_hz": "irregular",
     "amplitude_uv": "very high",
-    "image": "/images/patterns/hypsarrhythmia.png",
     "key_features": [
       "Chaotic pattern",
       "High-amplitude slow waves",
@@ -315,7 +310,6 @@
     "morphology": "Sharp, triangular positive waves",
     "frequency_hz": "variable",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/lambda-waves.png",
     "key_features": [
       "Positive polarity",
       "Occipital location",
@@ -370,7 +364,6 @@
     "morphology": "Sharp, positive triangular waves",
     "frequency_hz": "variable",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/posts.png",
     "key_features": [
       "Positive polarity",
       "Occipital location",
@@ -425,7 +418,6 @@
     "morphology": "Rhythmic bursts or trains of theta waves (5–7 Hz) usually with a notched appearance",
     "frequency_hz": "5–7",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/rmtd.png",
     "key_features": [
       "Also known as Rhythmic Mid-Temporal Discharges (RMTD) and psychomotor variant",
       "Composed of rhythmic bursts or trains of theta waves",
@@ -488,7 +480,6 @@
     "morphology": "Low-voltage (<50 µV) and short-duration (<50 ms) monophasic or diphasic spike with abrupt ascending limb and steep descending limb",
     "frequency_hz": "variable",
     "amplitude_uv": "<50",
-    "image": "/images/patterns/bets-bsss.png",
     "key_features": [
       "Also known as small sharp spikes (SSS) or benign epileptiform transients of sleep (BETS)",
       "Seen in adults during drowsiness and light sleep",
@@ -552,7 +543,6 @@
     "morphology": "Sharp waves maximal at vertex",
     "frequency_hz": "variable",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/vertex-sharp-waves.png",
     "key_features": [
       "Vertex maximum (Cz)",
       "Occur during sleep",
@@ -602,7 +592,6 @@
     "morphology": "Rhythmic 11–15 Hz activity in brief bursts",
     "frequency_hz": "11–15",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/sleep-spindles.png",
     "key_features": [
       "Rhythmic 11–15 Hz",
       "Brief bursts (0.5–2 seconds)",
@@ -654,7 +643,6 @@
     "morphology": "Sharp negative wave followed by positive wave",
     "frequency_hz": "variable",
     "amplitude_uv": "high",
-    "image": "/images/patterns/k-complex.png",
     "key_features": [
       "Sharp negative-positive complex",
       "Frontal/central maximum",
@@ -704,7 +692,6 @@
     "morphology": "Sharp waves with aftergoing slow waves",
     "frequency_hz": "variable",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/focal-spikes-temporal.png",
     "key_features": [
       "Sharp morphology",
       "Aftergoing slow waves",
@@ -761,7 +748,6 @@
     "morphology": "Sharp waves with aftergoing slow waves",
     "frequency_hz": "variable",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/focal-spikes-frontal.png",
     "key_features": [
       "Sharp morphology",
       "Aftergoing slow waves",
@@ -813,7 +799,6 @@
     "morphology": "Slow waves (theta/delta)",
     "frequency_hz": "4–7 (theta) or <4 (delta)",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/diffuse-slowing.png",
     "key_features": [
       "Bilateral and symmetric",
       "Persists in alert wakefulness",
@@ -869,7 +854,6 @@
     "morphology": "Slow waves (theta/delta)",
     "frequency_hz": "4–7 (theta) or <4 (delta)",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/focal-slowing.png",
     "key_features": [
       "Regional",
       "Persists across states",
@@ -925,7 +909,6 @@
     "morphology": "Rhythmic delta activity",
     "frequency_hz": "1–3",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/firda.png",
     "key_features": [
       "Rhythmic",
       "Intermittent bursts",
@@ -977,7 +960,6 @@
     "morphology": "Rhythmic delta activity",
     "frequency_hz": "1–3",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/oirda.png",
     "key_features": [
       "Rhythmic",
       "Intermittent bursts",
@@ -1034,7 +1016,6 @@
     "morphology": "Notched appearance, twice as fast as PDR",
     "frequency_hz": "16–26",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/fast-alpha-variant.png",
     "key_features": [
       "Harmonic of PDR (twice as fast)",
       "Posterior location",
@@ -1092,7 +1073,6 @@
     "morphology": "Notched appearance, half as fast as PDR",
     "frequency_hz": "4–6.5",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/slow-alpha-variant.png",
     "key_features": [
       "Harmonic of PDR (half as fast)",
       "Posterior location",
@@ -1151,7 +1131,6 @@
     "morphology": "Transient increase in frequency immediately after eye closure",
     "frequency_hz": "transient increase",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/alpha-squeak.png",
     "key_features": [
       "Transient frequency increase",
       "Occurs immediately after eye closure (first 0.5–1 s)",
@@ -1203,7 +1182,6 @@
     "morphology": "Rhythmic train of 5–7 Hz smooth, sinusoidal, arciform, spiky, or mu-like activity",
     "frequency_hz": "5–7",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/midline-theta.png",
     "key_features": [
       "Most prominent in central vertex lead (Cz)",
       "Rhythmic 5–7 Hz",
@@ -1260,13 +1238,6 @@
     "morphology": "Abrupt onset of mixed frequencies in delta and theta ranges that evolve into rhythmic pattern with sharp-contoured components 5–7 Hz",
     "frequency_hz": "5–7 (evolving from mixed delta/theta)",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/sreda-1.png",
-    "images": [
-      "/images/patterns/sreda-1.png",
-      "/images/patterns/sreda-2.png",
-      "/images/patterns/sreda-3.png",
-      "/images/patterns/sreda-4.png"
-    ],
     "key_features": [
       "Uncommon pattern",
       "Age >50 years",
@@ -1327,7 +1298,6 @@
     "morphology": "Short trains of arch-shaped waveforms with alternating positive spiky components and negative smooth rounded waveform resembling sleep spindle with sharp positive phase",
     "frequency_hz": "14 (predominant), 6 (can occur independently or with 14)",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/14-6-hz-positive-bursts.png",
     "key_features": [
       "Also known as ctenoids",
       "Occurs during drowsiness and light sleep",
@@ -1391,7 +1361,6 @@
     "morphology": "Brief bursts of subtle low-amplitude spikes followed by more prominent slow wave",
     "frequency_hz": "5–7",
     "amplitude_uv": "low",
-    "image": "/images/patterns/6-hz-spike-wave.jpg",
     "key_features": [
       "Also known as phantom spike-and-wave",
       "Brief bursts of 5–7 Hz",
@@ -1453,7 +1422,6 @@
     "morphology": "Three-phase waveform: negative-positive-negative",
     "frequency_hz": "1.5–2.5",
     "amplitude_uv": "high",
-    "image": "/images/patterns/triphasic-waves.png",
     "key_features": [
       "Three-phase morphology (negative-positive-negative)",
       "Frontal-predominant",
@@ -1513,7 +1481,6 @@
     "morphology": "Alternating bursts of activity and suppression periods",
     "frequency_hz": "variable (bursts)",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/burst-suppression.png",
     "key_features": [
       "Alternating bursts and suppression",
       "Bursts contain mixed frequencies",
@@ -1573,7 +1540,6 @@
     "morphology": "Alpha frequency (8-13 Hz) but non-reactive",
     "frequency_hz": "8–13",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/alpha-coma.png",
     "key_features": [
       "Alpha frequency (8-13 Hz)",
       "Non-reactive to stimulation",
@@ -1633,7 +1599,6 @@
     "morphology": "Periodic sharp waves at 1-2 Hz, bilateral and synchronous",
     "frequency_hz": "1–2",
     "amplitude_uv": "high",
-    "image": "/images/patterns/pswcs.png",
     "key_features": [
       "Periodic sharp waves",
       "1-2 Hz frequency",
@@ -1704,7 +1669,6 @@
     "morphology": "Rhythmic delta with superimposed beta activity",
     "frequency_hz": "1–3 (delta) with 20–30 (beta)",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/extreme-delta-brush.png",
     "key_features": [
       "Rhythmic delta activity",
       "Superimposed beta activity",
@@ -1764,7 +1728,6 @@
     "morphology": "Slow spike-and-wave complexes at 1.5-2.5 Hz",
     "frequency_hz": "1.5–2.5",
     "amplitude_uv": "high",
-    "image": "/images/patterns/slow-spike-wave.png",
     "key_features": [
       "Slower than typical 3 Hz spike-and-wave",
       "1.5-2.5 Hz frequency",
@@ -1826,7 +1789,6 @@
     "morphology": "Multiple spikes followed by slow wave",
     "frequency_hz": "3–6",
     "amplitude_uv": "high",
-    "image": "/images/patterns/polyspike-wave.png",
     "key_features": [
       "Multiple spikes (2-5+) followed by slow wave",
       "Generalized distribution",
@@ -1887,7 +1849,6 @@
     "morphology": "Generalized fast activity (beta/gamma range) in paroxysmal bursts",
     "frequency_hz": "20–50",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/gpfa.png",
     "key_features": [
       "Fast activity (beta/gamma range, 20-50 Hz)",
       "Paroxysmal bursts",
@@ -1950,7 +1911,6 @@
     "morphology": "Periodic sharp waves or spikes, lateralized to one hemisphere, occurring at regular intervals (typically 0.5–2 Hz)",
     "frequency_hz": "0.5–2",
     "amplitude_uv": "variable, often high",
-    "image": "/images/patterns/pleds.png",
     "key_features": [
       "Periodic (recurring at regular intervals)",
       "Lateralized (unilateral or predominantly one hemisphere)",
@@ -2027,7 +1987,6 @@
     "morphology": "Focal slowing and epileptiform discharges, background asymmetry",
     "frequency_hz": "variable",
     "amplitude_uv": "variable",
-    "image": "/images/patterns/sturge-weber.png",
     "key_features": [
       "Unilateral focal abnormalities",
       "Focal slowing",
@@ -2094,6 +2053,1554 @@
       "quiz_tags": ["sturge-weber", "sws", "neurocutaneous", "focal-seizures", "port-wine-stain"]
     },
     "micro_quiz": []
+  },
+  {
+    "id": "pattern_hypnagogic_hypersynchrony",
+    "name": "Hypnagogic Hypersynchrony",
+    "category": "NORMAL_VARIANT",
+    "topography": [
+      "generalized",
+      "frontocentral"
+    ],
+    "state": [
+      "drowsy"
+    ],
+    "age_notes": "Infants and young children (about 3 months to 13 years, most prominent age 1-5)",
+    "morphology": "Bursts or runs of high-amplitude, diffuse, rhythmic 3-5 Hz waves at the onset of drowsiness",
+    "frequency_hz": "3-5",
+    "amplitude_uv": "often >100",
+    "key_features": [
+      "Paroxysmal bursts of high-voltage rhythmic theta/delta",
+      "Diffuse, often frontocentral or posterior maximum",
+      "Appears at the transition from wake to drowsiness",
+      "No spikes embedded (notched waves may occur)",
+      "Disappears in deeper sleep and on arousal"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_three_hz_gsw",
+        "why_confused": "Both are paroxysmal generalized rhythmic bursts",
+        "how_to_distinguish": "Hypnagogic hypersynchrony has no true spikes and appears only in drowsiness; GSW has a spike before every wave"
+      },
+      {
+        "pattern_id": "pattern_firda",
+        "why_confused": "Both are rhythmic delta/theta bursts",
+        "how_to_distinguish": "Age and state: hypnagogic hypersynchrony is a drowsy-child normal; FIRDA is seen in adults with encephalopathy or structural disease"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "drowsiness in children"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "If spikes are embedded or the bursts occur in full wakefulness"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters"
+      ],
+      "montage_effects": [
+        "Seen in all montages because it is diffuse"
+      ],
+      "sensitivity_notes": "May need 10-15 uV/mm because of the high amplitude"
+    },
+    "abret_exam_pearls": [
+      "Hypnagogic hypersynchrony is a normal drowsy pattern of childhood.",
+      "Do not call it generalized spike-and-wave unless true spikes are present."
+    ],
+    "report_language": {
+      "how_to_describe": "Bursts of diffuse high-amplitude rhythmic 4 Hz activity at drowsiness onset, consistent with hypnagogic hypersynchrony.",
+      "avoid_saying": [
+        "Epileptiform",
+        "Generalized discharge"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "hypnagogic",
+        "pediatric",
+        "normal-variant"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_posterior_slow_waves_youth",
+    "name": "Posterior Slow Waves of Youth",
+    "category": "NORMAL_VARIANT",
+    "topography": [
+      "occipital"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Children and adolescents (most common 8-14 years); rare after 21",
+    "morphology": "Intermittent delta waves fused with the posterior alpha (alpha riding on the slow wave)",
+    "frequency_hz": "2.5-4.5",
+    "amplitude_uv": "up to 120% of alpha",
+    "key_features": [
+      "Single delta waves intermixed with the posterior dominant rhythm",
+      "Alpha 'rides' on the slow wave (fused complex)",
+      "Bilateral, may be asymmetric",
+      "Block with eye opening like the alpha rhythm",
+      "Disappear in sleep"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_oirda",
+        "why_confused": "Both are posterior delta in children",
+        "how_to_distinguish": "PSWY are single waves fused with alpha that block with eye opening; OIRDA is rhythmic runs of 3 Hz delta"
+      },
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both are posterior slow waves",
+        "how_to_distinguish": "PSWY are intermittent, reactive and fused with alpha; focal slowing is continuous, polymorphic and not reactive"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "normal awake children and adolescents"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "If persistently unilateral or very frequent, or seen after age 21"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard filters"
+      ],
+      "montage_effects": [
+        "Best in posterior bipolar (P3-O1, P4-O2) and referential"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "PSWY share the alpha rhythm's reactivity: they block with eye opening.",
+      "They are a normal finding in youth, not posterior slowing."
+    ],
+    "report_language": {
+      "how_to_describe": "Posterior slow waves of youth, reactive to eye opening.",
+      "avoid_saying": [
+        "Posterior slowing",
+        "Abnormal"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "pswy",
+        "pediatric",
+        "normal-variant"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_breach_rhythm",
+    "name": "Breach Rhythm",
+    "category": "NORMAL_VARIANT",
+    "topography": [
+      "focal",
+      "over skull defect"
+    ],
+    "state": [
+      "wake",
+      "drowsy",
+      "sleep"
+    ],
+    "age_notes": "Any age after craniotomy or skull fracture",
+    "morphology": "Higher-amplitude, sharper (arciform, mu-like) rhythms with more beta over a skull defect",
+    "frequency_hz": "6-11 and 20-25",
+    "amplitude_uv": "up to 3x the other side",
+    "key_features": [
+      "Increased amplitude over a skull defect (bone attenuates EEG)",
+      "Sharply contoured, arciform, mu-like activity",
+      "Increased beta over the same area",
+      "No after-going slow wave and no evolution",
+      "History of craniotomy or skull defect"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_spikes_temporal",
+        "why_confused": "Sharp waveforms are seen focally",
+        "how_to_distinguish": "Breach waveforms are rhythmic, arciform and lack after-going slow waves; check the surgical history"
+      },
+      {
+        "pattern_id": "pattern_mu_rhythm",
+        "why_confused": "Both are arciform central rhythms",
+        "how_to_distinguish": "Breach rhythm is asymmetric and over the skull defect; mu is symmetric and blocks with contralateral movement"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "patients after craniotomy or with skull fractures"
+      ],
+      "associated_with": [
+        "skull defect"
+      ],
+      "when_concerning": [
+        "If true spikes with slow waves or rhythmic evolving activity appear within the breach"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard; muscle beta near the defect may increase"
+      ],
+      "montage_effects": [
+        "Compare homologous electrodes; note the defect on the head map"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Always document skull defects; they change amplitude and shape locally.",
+      "Breach rhythm is not epileptiform by itself."
+    ],
+    "report_language": {
+      "how_to_describe": "Breach rhythm over the right central region, consistent with the known skull defect.",
+      "avoid_saying": [
+        "Right central sharp waves"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "breach",
+        "skull-defect",
+        "normal-variant"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_photic_driving",
+    "name": "Photic Driving Response",
+    "category": "NORMAL",
+    "topography": [
+      "occipital"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Any age; most prominent in children and young adults",
+    "morphology": "Posterior rhythmic waves time-locked to each flash, at the flash rate or a harmonic",
+    "frequency_hz": "flash rate",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Occipital responses time-locked to photic stimulation",
+      "Same frequency as the flash rate (or a harmonic/subharmonic)",
+      "Present only during the train of flashes",
+      "Usually symmetric",
+      "Its absence is not abnormal"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_photoparoxysmal",
+        "why_confused": "Both occur during photic stimulation",
+        "how_to_distinguish": "Photic driving is posterior and time-locked to the flash; a photoparoxysmal response is generalized spike-and-wave not locked to the flash and may outlast the stimulus"
+      },
+      {
+        "pattern_id": "pattern_lambda_waves",
+        "why_confused": "Both are posterior sharp transients",
+        "how_to_distinguish": "Lambda waves occur with visual scanning, not with a flashing light"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "normal intermittent photic stimulation"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Marked persistent asymmetry may suggest a lesion on the side of the lower response"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard"
+      ],
+      "montage_effects": [
+        "Best in occipital bipolar and referential channels"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Photic driving is a normal response.",
+      "Driving at the flash frequency is time-locked; a response that does not follow the flash is not driving."
+    ],
+    "report_language": {
+      "how_to_describe": "Symmetric photic driving at the stimulation frequencies.",
+      "avoid_saying": [
+        "Photoparoxysmal response"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "photic",
+        "activation",
+        "normal"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_hv_buildup",
+    "name": "Hyperventilation Buildup",
+    "category": "NORMAL",
+    "topography": [
+      "generalized",
+      "frontal"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Most prominent in children and young adults",
+    "morphology": "Diffuse high-amplitude rhythmic delta/theta that builds during hyperventilation",
+    "frequency_hz": "1-4",
+    "amplitude_uv": "high, often >100",
+    "key_features": [
+      "Gradual build-up of diffuse rhythmic slow activity during HV",
+      "Frontally predominant in children and adults (posterior in some young children)",
+      "Resolves within about 1 minute of stopping HV",
+      "Enhanced by hypoglycemia",
+      "No spikes"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_three_hz_gsw",
+        "why_confused": "HV activates absence seizures",
+        "how_to_distinguish": "Buildup has no spikes; 3 Hz GSW has a spike with every wave and the patient may be unresponsive"
+      },
+      {
+        "pattern_id": "pattern_firda",
+        "why_confused": "Both are frontal rhythmic delta",
+        "how_to_distinguish": "HV buildup happens only during HV and resolves after it"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "normal hyperventilation"
+      ],
+      "associated_with": [
+        "hypoglycemia enhances it"
+      ],
+      "when_concerning": [
+        "Persistence more than about 1 minute after HV, asymmetry, or spikes"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard"
+      ],
+      "montage_effects": [
+        "Seen in all montages"
+      ],
+      "sensitivity_notes": "May need a lower sensitivity (10-15 uV/mm)"
+    },
+    "abret_exam_pearls": [
+      "HV buildup is normal; note the duration after HV ends.",
+      "Asymmetric buildup or persistence after HV is reportable."
+    ],
+    "report_language": {
+      "how_to_describe": "Normal symmetric buildup during hyperventilation, resolving after HV.",
+      "avoid_saying": [
+        "Abnormal slowing"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "hyperventilation",
+        "activation",
+        "normal"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_centrotemporal_spikes",
+    "name": "Centrotemporal Spikes (SeLECTS)",
+    "category": "EPILEPTIFORM",
+    "topography": [
+      "centrotemporal"
+    ],
+    "state": [
+      "wake",
+      "drowsy",
+      "sleep"
+    ],
+    "age_notes": "School-age children (about 3-13 years)",
+    "morphology": "High-amplitude diphasic spikes or sharp waves with a slow wave, maximal at C3/C4-T3/T4, with a horizontal dipole (frontal positivity)",
+    "frequency_hz": "isolated or clustered",
+    "amplitude_uv": "100-300",
+    "key_features": [
+      "Stereotyped diphasic spikes followed by a slow wave",
+      "Maximum at the central-midtemporal electrodes",
+      "Tangential (horizontal) dipole: negative centrotemporal, positive frontal",
+      "Markedly activated by drowsiness and sleep",
+      "Normal background",
+      "Can be unilateral, bilateral or shifting"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_spikes_temporal",
+        "why_confused": "Both are temporal spikes",
+        "how_to_distinguish": "Centrotemporal spikes are maximal at C-T with a frontal positive dipole in a school-age child; anterior temporal spikes are maximal at F7/T3"
+      },
+      {
+        "pattern_id": "pattern_wicket_spikes",
+        "why_confused": "Both are sharp waveforms near the temporal region",
+        "how_to_distinguish": "Wicket spikes are arciform trains without slow waves in adults"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "self-limited epilepsy with centrotemporal spikes"
+      ],
+      "associated_with": [
+        "nocturnal hemifacial seizures"
+      ],
+      "when_concerning": [
+        "Continuous spike-wave in sleep (ESES) or developmental regression"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard"
+      ],
+      "montage_effects": [
+        "Bipolar chains show phase reversal at C3/T3; referential shows the frontal positivity"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Sleep markedly increases centrotemporal spikes; record sleep.",
+      "The horizontal dipole is a classic exam clue."
+    ],
+    "report_language": {
+      "how_to_describe": "Frequent left centrotemporal spikes with a horizontal dipole, activated by sleep.",
+      "avoid_saying": [
+        "Temporal lobe spikes"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "centrotemporal",
+        "selects",
+        "epileptiform",
+        "pediatric"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_photoparoxysmal",
+    "name": "Photoparoxysmal Response",
+    "category": "EPILEPTIFORM",
+    "topography": [
+      "generalized"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Most common in children and adolescents; genetic generalized epilepsies",
+    "morphology": "Generalized spike-and-wave or polyspike-and-wave provoked by photic stimulation",
+    "frequency_hz": "2.5-4 (discharge)",
+    "amplitude_uv": "high",
+    "key_features": [
+      "Generalized epileptiform discharges triggered by intermittent photic stimulation",
+      "Not time-locked to the flashes",
+      "Most often at 14-20 Hz flash rates",
+      "A response that outlasts the stimulus (self-sustained) is more strongly linked to epilepsy",
+      "Stop stimulation as soon as it appears"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_photic_driving",
+        "why_confused": "Both appear during photic stimulation",
+        "how_to_distinguish": "Driving is posterior and follows the flash; a PPR is generalized spike-and-wave"
+      },
+      {
+        "pattern_id": "pattern_three_hz_gsw",
+        "why_confused": "Both are generalized spike-and-wave",
+        "how_to_distinguish": "A PPR is provoked by photic stimulation"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "juvenile myoclonic epilepsy",
+        "other genetic generalized epilepsies",
+        "photosensitive epilepsy"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Self-sustained discharges or clinical myoclonus"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard"
+      ],
+      "montage_effects": [
+        "Seen in all montages"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Stop photic stimulation as soon as a photoparoxysmal response starts.",
+      "Report the flash frequencies that provoked it and whether it outlasted the stimulus."
+    ],
+    "report_language": {
+      "how_to_describe": "Photoparoxysmal response at 16 Hz with generalized spike-and-wave outlasting the stimulus.",
+      "avoid_saying": [
+        "Photic driving"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "photoparoxysmal",
+        "photic",
+        "epileptiform"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_tirda",
+    "name": "Temporal Intermittent Rhythmic Delta Activity (TIRDA)",
+    "category": "EPILEPTIFORM",
+    "topography": [
+      "temporal"
+    ],
+    "state": [
+      "wake",
+      "drowsy",
+      "sleep"
+    ],
+    "age_notes": "Adults and adolescents with temporal lobe epilepsy",
+    "morphology": "Runs of rhythmic, sinusoidal 1-3 Hz delta over one anterior temporal region",
+    "frequency_hz": "1-3",
+    "amplitude_uv": "50-100",
+    "key_features": [
+      "Rhythmic sinusoidal delta in runs of a few seconds",
+      "Confined to the anterior temporal region (F7/T3 or F8/T4)",
+      "Normal background elsewhere",
+      "Strongly associated with temporal lobe epilepsy (same significance as temporal spikes)",
+      "Does not evolve"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both are focal temporal delta",
+        "how_to_distinguish": "TIRDA is rhythmic and intermittent; focal polymorphic slowing is irregular and often continuous"
+      },
+      {
+        "pattern_id": "pattern_firda",
+        "why_confused": "Both are intermittent rhythmic delta",
+        "how_to_distinguish": "TIRDA is unilateral temporal; FIRDA is bifrontal"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "temporal lobe epilepsy"
+      ],
+      "associated_with": [
+        "mesial temporal sclerosis"
+      ],
+      "when_concerning": [
+        "Evolution into a seizure"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard"
+      ],
+      "montage_effects": [
+        "Temporal chains, phase reversal at F7/T3"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "TIRDA carries the same epileptogenic significance as temporal spikes.",
+      "Distinguish rhythmic (TIRDA) from polymorphic (structural) delta."
+    ],
+    "report_language": {
+      "how_to_describe": "Intermittent rhythmic delta over the left anterior temporal region (TIRDA).",
+      "avoid_saying": [
+        "Nonspecific slowing"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "tirda",
+        "temporal",
+        "epileptiform"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_focal_seizure_temporal",
+    "name": "Focal-Onset Seizure (Temporal Evolution)",
+    "category": "ICTAL",
+    "topography": [
+      "temporal"
+    ],
+    "state": [
+      "wake",
+      "drowsy",
+      "sleep"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Rhythmic activity that evolves in frequency, amplitude and field, usually theta slowing to delta",
+    "frequency_hz": "evolving (e.g. 7 to 4)",
+    "amplitude_uv": "increasing",
+    "key_features": [
+      "Abrupt rhythmic activity in one region",
+      "Evolution in frequency (often faster to slower), amplitude (rising) and field (spreading)",
+      "May begin with attenuation or low-voltage fast activity",
+      "Often post-ictal slowing or suppression afterwards",
+      "Distinct from the background"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_rmtd",
+        "why_confused": "Both are rhythmic temporal theta",
+        "how_to_distinguish": "RMTD is monomorphic and does not evolve; a seizure evolves in frequency, amplitude and field"
+      },
+      {
+        "pattern_id": "pattern_sreda",
+        "why_confused": "Both are rhythmic evolving-looking patterns",
+        "how_to_distinguish": "SREDA is bilateral parietal in older adults without clinical change or post-ictal slowing"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "temporal lobe epilepsy"
+      ],
+      "associated_with": [
+        "clinical seizure (automatisms, impaired awareness)"
+      ],
+      "when_concerning": [
+        "Always: notify per lab protocol and test the patient"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard; a lower LFF shows slow ictal activity better"
+      ],
+      "montage_effects": [
+        "Temporal chains; compare the two sides"
+      ],
+      "sensitivity_notes": "May need a lower sensitivity as amplitude rises"
+    },
+    "abret_exam_pearls": [
+      "Evolution in frequency, amplitude and field defines an electrographic seizure.",
+      "Test responsiveness and document clinical signs."
+    ],
+    "report_language": {
+      "how_to_describe": "Electrographic seizure arising from the left temporal region with evolution in frequency and amplitude.",
+      "avoid_saying": [
+        "Rhythmic artifact without checking"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "seizure",
+        "ictal",
+        "temporal",
+        "evolution"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_eci",
+    "name": "Electrocerebral Inactivity (ECI)",
+    "category": "SLOWING",
+    "topography": [
+      "generalized"
+    ],
+    "state": [
+      "coma"
+    ],
+    "age_notes": "Any age (special criteria for neonates and young children)",
+    "morphology": "No cerebral activity over 2 uV at a sensitivity of 2 uV/mm; only artifacts remain",
+    "frequency_hz": "-",
+    "amplitude_uv": "<2",
+    "key_features": [
+      "No electrocerebral activity over 2 uV",
+      "Recorded at 2 uV/mm with double-distance electrodes",
+      "At least 30 minutes of recording",
+      "Artifacts (EKG, ventilator) may remain and must be identified",
+      "Interelectrode impedances 100-10,000 ohms; reactivity testing performed"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_burst_suppression",
+        "why_confused": "Both have very low voltage stretches",
+        "how_to_distinguish": "Burst suppression has bursts; ECI has none"
+      },
+      {
+        "pattern_id": "pattern_alpha_coma",
+        "why_confused": "Both occur in coma",
+        "how_to_distinguish": "Alpha coma has a clear 10 Hz rhythm"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "brain death evaluation"
+      ],
+      "associated_with": [
+        "drug intoxication and hypothermia must be excluded"
+      ],
+      "when_concerning": [
+        "Always a critical finding"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "LFF no higher than 1 Hz, HFF no lower than 30 Hz"
+      ],
+      "montage_effects": [
+        "Double-distance electrodes (at least 10 cm apart)"
+      ],
+      "sensitivity_notes": "2 uV/mm required"
+    },
+    "abret_exam_pearls": [
+      "ECI recording standards: 2 uV/mm, at least 30 minutes, double-distance montages, check the system with a touch test.",
+      "Identify every remaining waveform as artifact (e.g. EKG)."
+    ],
+    "report_language": {
+      "how_to_describe": "No electrocerebral activity was seen at 2 uV/mm (electrocerebral inactivity).",
+      "avoid_saying": [
+        "Flat EEG",
+        "Brain dead"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "eci",
+        "brain-death",
+        "coma"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_eye_blink",
+    "name": "Eye Blink Artifact",
+    "category": "ARTIFACT",
+    "topography": [
+      "frontopolar"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Large, smooth, positive deflections at Fp1/Fp2 (cornea positive moving up under the eyelid)",
+    "frequency_hz": "-",
+    "amplitude_uv": "100-400",
+    "key_features": [
+      "Symmetric positive deflection at Fp1 and Fp2",
+      "Field falls off quickly behind the frontal poles",
+      "Downward in Fp1-F3/Fp1-F7 (input 1 positive)",
+      "Bell's phenomenon: the eyes roll up during a blink",
+      "Absent when the eyes are closed and still"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_firda",
+        "why_confused": "Both are frontal slow waves",
+        "how_to_distinguish": "Blinks are positive at Fp1/Fp2 with a very steep frontal field; FIRDA is rhythmic negative delta with a wider field"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "awake patients"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Not removed by filters"
+      ],
+      "montage_effects": [
+        "Infraorbital or eye leads confirm (opposite polarity below the eye)"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "The cornea is positive relative to the retina.",
+      "A blink moves the cornea up toward Fp1/Fp2, so Fp1/Fp2 become positive (downward in Fp-F channels)."
+    ],
+    "report_language": {
+      "how_to_describe": "Eye blink artifact.",
+      "avoid_saying": [
+        "Frontal slowing"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "eye",
+        "blink"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_lateral_eye",
+    "name": "Lateral Eye Movement Artifact",
+    "category": "ARTIFACT",
+    "topography": [
+      "anterior temporal"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Opposite-polarity slow deflections at F7 and F8 when the eyes look to the side",
+    "frequency_hz": "-",
+    "amplitude_uv": "50-150",
+    "key_features": [
+      "Looking left: F7 becomes positive and F8 negative",
+      "Opposite deflections in the left and right temporal chains",
+      "Square or ramp shape lasting as long as the gaze",
+      "Lateral rectus spikes may appear at the start of saccades",
+      "Confirm with LOC/ROC eye leads"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both are anterior temporal slow waves",
+        "how_to_distinguish": "Eye movement is opposite in phase on the two sides and follows gaze"
+      },
+      {
+        "pattern_id": "pattern_eye_blink",
+        "why_confused": "Both are eye artifacts",
+        "how_to_distinguish": "Blinks are symmetric at Fp1/Fp2; lateral movements are opposite at F7/F8"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "awake patients",
+        "REM sleep"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Not removed by filters"
+      ],
+      "montage_effects": [
+        "Best seen in Fp1-F7 / Fp2-F8 and F7-T3 / F8-T4"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "The eye that turns toward an electrode brings its positive cornea near it.",
+      "F7 and F8 are out of phase with each other in lateral eye movement."
+    ],
+    "report_language": {
+      "how_to_describe": "Lateral eye movement artifact.",
+      "avoid_saying": [
+        "Temporal slowing"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "eye",
+        "lateral"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_muscle_artifact",
+    "name": "Muscle (EMG) Artifact",
+    "category": "ARTIFACT",
+    "topography": [
+      "temporal",
+      "frontal"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Very fast, spiky, high-frequency activity (over 20 Hz) over the temporalis and frontalis muscles",
+    "frequency_hz": ">20",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Very short (<20 ms) spiky potentials in dense runs",
+      "Over muscles: temporal (jaw clenching), frontal (frowning)",
+      "Obscures the background",
+      "Disappears with relaxation or sleep",
+      "Reduced (not removed) by lowering the HFF"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_gpfa",
+        "why_confused": "Both are fast activity",
+        "how_to_distinguish": "GPFA is rhythmic 10-25 Hz generalized cerebral activity; muscle is irregular, faster and over muscles"
+      },
+      {
+        "pattern_id": "pattern_breach_rhythm",
+        "why_confused": "Both increase fast activity locally",
+        "how_to_distinguish": "Breach rhythm is rhythmic and over a skull defect"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "tense or talking patients"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral, but it can hide seizures"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Lowering the HFF smooths muscle into beta-like activity, which can then look like cerebral fast activity"
+      ],
+      "montage_effects": [
+        "Temporal and frontal channels"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Ask the patient to relax the jaw or open the mouth slightly.",
+      "Over-filtering muscle can make it look like cerebral beta."
+    ],
+    "report_language": {
+      "how_to_describe": "Muscle artifact over the temporal regions.",
+      "avoid_saying": [
+        "Fast activity"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "muscle",
+        "emg"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_electrode_pop",
+    "name": "Electrode Pop",
+    "category": "ARTIFACT",
+    "topography": [
+      "single electrode"
+    ],
+    "state": [
+      "any"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Sudden, steep deflections with an exponential return, confined to one electrode",
+    "frequency_hz": "-",
+    "amplitude_uv": "large",
+    "key_features": [
+      "Abrupt vertical onset with a slow exponential decay",
+      "Present only in channels that contain the faulty electrode",
+      "Phase reversal at that electrode with no field around it",
+      "Repeats irregularly",
+      "Caused by a sudden impedance change (drying gel, loose electrode)"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_spikes_temporal",
+        "why_confused": "Both are sharp focal transients",
+        "how_to_distinguish": "A pop has no field to neighbouring electrodes and no physiological shape (steep rise, exponential fall)"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "poor electrode contact"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral; fix the electrode"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Not removed by filters"
+      ],
+      "montage_effects": [
+        "Check the channels sharing the electrode in a referential montage"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "A potential confined to one electrode with no field is almost always artifact.",
+      "Re-apply or re-gel the electrode."
+    ],
+    "report_language": {
+      "how_to_describe": "Electrode pop at T4.",
+      "avoid_saying": [
+        "Spike"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "electrode",
+        "pop"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_60hz",
+    "name": "60 Hz Interference",
+    "category": "ARTIFACT",
+    "topography": [
+      "single electrode or widespread"
+    ],
+    "state": [
+      "any"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Monotonous 60 Hz (50 Hz in some countries) sinusoidal activity that thickens the trace",
+    "frequency_hz": "60",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Exactly 60 Hz, perfectly regular",
+      "Usually in channels with a high-impedance or unequal-impedance electrode",
+      "Looks like a thick band at standard paper speed",
+      "Removed by the notch filter, but the cause should be fixed",
+      "Widespread when the ground is poor"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_muscle_artifact",
+        "why_confused": "Both are high-frequency",
+        "how_to_distinguish": "60 Hz is perfectly regular; muscle is irregular and spiky"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "impedance mismatch",
+        "nearby electrical equipment"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "The notch filter removes it; fix impedances rather than relying on the notch"
+      ],
+      "montage_effects": [
+        "Find the electrode common to the affected channels"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "60 Hz in a few channels points to one bad electrode; in all channels, suspect the ground or the environment.",
+      "The notch filter can hide a poor electrode."
+    ],
+    "report_language": {
+      "how_to_describe": "60 Hz interference at T4; the electrode was re-applied.",
+      "avoid_saying": [
+        "Fast activity"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "60hz",
+        "interference"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_ekg_artifact",
+    "name": "EKG Artifact",
+    "category": "ARTIFACT",
+    "topography": [
+      "temporal",
+      "ear"
+    ],
+    "state": [
+      "any"
+    ],
+    "age_notes": "More common in short, obese or older patients",
+    "morphology": "Small sharp transients time-locked to the QRS complex in the EKG channel",
+    "frequency_hz": "heart rate",
+    "amplitude_uv": "small",
+    "key_features": [
+      "Every transient lines up with an R wave in the EKG channel",
+      "Most prominent in ear-referenced and left temporal channels",
+      "Regular, at the heart rate",
+      "Can mimic periodic sharp waves",
+      "Linked-ear or average references may change its look"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_pleds",
+        "why_confused": "Both are periodic sharp transients",
+        "how_to_distinguish": "EKG artifact is exactly time-locked to the QRS and recurs at the heart rate"
+      },
+      {
+        "pattern_id": "pattern_eci",
+        "why_confused": "EKG artifact remains in ECI recordings",
+        "how_to_distinguish": "Identify it as artifact using the EKG channel"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "most patients to some degree"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Not removed by filters"
+      ],
+      "montage_effects": [
+        "Most obvious with ear references (A1/A2)"
+      ],
+      "sensitivity_notes": "More obvious at high sensitivity"
+    },
+    "abret_exam_pearls": [
+      "Always record an EKG channel to identify cardiac artifacts.",
+      "Pulse artifact (slow waves after the QRS) is a different, mechanical artifact."
+    ],
+    "report_language": {
+      "how_to_describe": "EKG artifact in the ear-referenced channels.",
+      "avoid_saying": [
+        "Periodic discharges"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "ekg",
+        "cardiac"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_glossokinetic",
+    "name": "Glossokinetic Artifact",
+    "category": "ARTIFACT",
+    "topography": [
+      "frontal",
+      "temporal"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Broad delta-like waves with tongue movement (tongue tip negative relative to the base)",
+    "frequency_hz": "<4",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Slow waves during talking, chewing or swallowing",
+      "Broad frontal and temporal field, in phase on both sides",
+      "Clearer at infraorbital leads than at Fp1/Fp2",
+      "Disappears when the tongue is still",
+      "Reproducible by asking the patient to say 'la la la'"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_firda",
+        "why_confused": "Both are frontal delta",
+        "how_to_distinguish": "Glossokinetic waves follow tongue movement and can be reproduced on request"
+      },
+      {
+        "pattern_id": "pattern_eye_blink",
+        "why_confused": "Both are frontal slow artifacts",
+        "how_to_distinguish": "Blinks are maximal at Fp1/Fp2; glossokinetic waves are broader and larger below the eyes"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "talking or chewing patients"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Not removed by filters"
+      ],
+      "montage_effects": [
+        "Infraorbital or chin leads help"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Ask the patient to say 'la la la' or 'Tom Thumb' to reproduce glossokinetic artifact.",
+      "Note talking on the recording."
+    ],
+    "report_language": {
+      "how_to_describe": "Glossokinetic artifact with talking.",
+      "avoid_saying": [
+        "Frontal slowing"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "glossokinetic",
+        "tongue"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_sweat_artifact",
+    "name": "Sweat Artifact",
+    "category": "ARTIFACT",
+    "topography": [
+      "frontal",
+      "temporal"
+    ],
+    "state": [
+      "any"
+    ],
+    "age_notes": "Any age, warm environment or fever",
+    "morphology": "Very slow (under 0.5 Hz), high-amplitude sways at a few electrodes",
+    "frequency_hz": "<0.5",
+    "amplitude_uv": "large",
+    "key_features": [
+      "Very slow baseline sway (period of 2 s or longer)",
+      "Usually at a few electrodes (forehead, temporal)",
+      "Caused by sweat changing the electrode-skin potential",
+      "Reduced by a higher LFF, but the patient should be cooled",
+      "Can bridge electrodes (salt bridge) if severe"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both are slow focal activity",
+        "how_to_distinguish": "Sweat is much slower (<0.5 Hz) and has no cerebral field"
+      },
+      {
+        "pattern_id": "pattern_diffuse_slowing",
+        "why_confused": "Both are slow",
+        "how_to_distinguish": "Diffuse slowing is 1-4 Hz cerebral activity"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "warm rooms",
+        "fever",
+        "anxious patients"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Raising the LFF (for example to 1 Hz) reduces it"
+      ],
+      "montage_effects": [
+        "Seen in the channels with the sweaty electrodes"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Cool the patient (fan, lower room temperature) rather than only raising the LFF.",
+      "A salt bridge flattens the channels between the bridged electrodes."
+    ],
+    "report_language": {
+      "how_to_describe": "Sweat artifact at the left frontotemporal electrodes.",
+      "avoid_saying": [
+        "Slowing"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "sweat"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_photomyogenic",
+    "name": "Photomyogenic (Photomyoclonic) Response",
+    "category": "ARTIFACT",
+    "topography": [
+      "frontal",
+      "frontopolar"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Any age; more common in adults, anxiety, alcohol or drug withdrawal",
+    "morphology": "Muscle spikes over the frontal leads time-locked to each photic flash",
+    "frequency_hz": "flash rate",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Brief muscle (EMG) potentials at Fp1/Fp2/F7/F8 with each flash",
+      "Time-locked to the flashes, about 50-60 ms after each one",
+      "Stops immediately when stimulation stops",
+      "May be accompanied by visible eyelid or facial twitching",
+      "No cerebral spike-and-wave field"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_photoparoxysmal",
+        "why_confused": "Both appear during photic stimulation",
+        "how_to_distinguish": "The photomyogenic response is frontal muscle locked to each flash and ends with the stimulus; a photoparoxysmal response is generalized spike-and-wave that may outlast it"
+      },
+      {
+        "pattern_id": "pattern_photic_driving",
+        "why_confused": "Both are locked to the flashes",
+        "how_to_distinguish": "Driving is posterior cerebral activity; the photomyogenic response is frontal muscle"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "intermittent photic stimulation"
+      ],
+      "associated_with": [
+        "anxiety",
+        "alcohol or drug withdrawal"
+      ],
+      "when_concerning": [
+        "Not epileptiform; document it as muscle"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Muscle is reduced by a lower HFF but should not be filtered away"
+      ],
+      "montage_effects": [
+        "Frontal channels; posterior channels are spared"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "A photomyogenic response is a muscle artifact, not a photoparoxysmal response.",
+      "Asking the patient to open the eyes or relax the face reduces it."
+    ],
+    "report_language": {
+      "how_to_describe": "Photomyogenic response at 12 Hz, frontal muscle time-locked to the flashes, ceasing with the stimulus.",
+      "avoid_saying": [
+        "Photoparoxysmal response"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "photic",
+        "photomyogenic",
+        "artifact"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_electrodecrement",
+    "name": "Electrodecremental Event (Infantile Spasm)",
+    "category": "ICTAL",
+    "topography": [
+      "generalized"
+    ],
+    "state": [
+      "wake",
+      "sleep"
+    ],
+    "age_notes": "Infants (typically 3-12 months), West syndrome",
+    "morphology": "A generalized high-voltage slow wave followed by abrupt diffuse attenuation of the background, often with low-amplitude fast activity",
+    "frequency_hz": "-",
+    "amplitude_uv": "slow wave 200+, then low",
+    "key_features": [
+      "Generalized high-amplitude slow transient at onset",
+      "Abrupt diffuse voltage attenuation lasting about 1-several seconds",
+      "Low-amplitude fast activity may ride on the attenuation",
+      "Occurs on a hypsarrhythmic background",
+      "Correlates with a clinical spasm (flexor or extensor)"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_hypsarrhythmia",
+        "why_confused": "Both are part of West syndrome",
+        "how_to_distinguish": "Hypsarrhythmia is the interictal background; the electrodecrement is the ictal correlate of a spasm"
+      },
+      {
+        "pattern_id": "pattern_burst_suppression",
+        "why_confused": "Both include low-voltage stretches",
+        "how_to_distinguish": "Burst suppression alternates bursts and suppression throughout; an electrodecrement is a single event after a slow wave in an infant with hypsarrhythmia"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "infantile spasms (West syndrome)"
+      ],
+      "associated_with": [
+        "tuberous sclerosis",
+        "hypoxic-ischemic injury",
+        "malformations"
+      ],
+      "when_concerning": [
+        "Always: notify per lab protocol; spasms need urgent treatment"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard"
+      ],
+      "montage_effects": [
+        "Seen in all montages"
+      ],
+      "sensitivity_notes": "Lower sensitivity (15-20 uV/mm) for the hypsarrhythmic background"
+    },
+    "abret_exam_pearls": [
+      "The ictal correlate of an infantile spasm is an electrodecremental response.",
+      "Video of the spasm and EMG from the deltoids help confirm it."
+    ],
+    "report_language": {
+      "how_to_describe": "Electrodecremental event with a generalized slow wave, correlating with a clinical spasm.",
+      "avoid_saying": [
+        "Normalization of the background"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "infantile-spasm",
+        "electrodecrement",
+        "west",
+        "ictal"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_sspe",
+    "name": "SSPE Periodic Complexes",
+    "category": "EPILEPTIFORM",
+    "topography": [
+      "generalized"
+    ],
+    "state": [
+      "wake",
+      "sleep"
+    ],
+    "age_notes": "Children and adolescents (subacute sclerosing panencephalitis after measles)",
+    "morphology": "Stereotyped high-amplitude generalized slow (or sharp-and-slow) complexes repeating at long, regular intervals",
+    "frequency_hz": "every 4-15 s",
+    "amplitude_uv": "300-1500",
+    "key_features": [
+      "Very high amplitude, stereotyped generalized complexes",
+      "Long regular interval (usually 4-15 s)",
+      "Each complex lasts 0.5-3 s",
+      "Often time-locked to myoclonic jerks",
+      "Background progressively slow and disorganized"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_pswcs",
+        "why_confused": "Both are generalized periodic complexes",
+        "how_to_distinguish": "PSWCs (CJD) repeat about once per second; SSPE complexes repeat every 4-15 s in a child"
+      },
+      {
+        "pattern_id": "pattern_triphasic_waves",
+        "why_confused": "Both are periodic",
+        "how_to_distinguish": "Triphasic waves repeat at 1.5-2.5 Hz in metabolic encephalopathy"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "subacute sclerosing panencephalitis"
+      ],
+      "associated_with": [
+        "prior measles infection",
+        "myoclonus"
+      ],
+      "when_concerning": [
+        "Always significant"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Use a low LFF so the slow complexes are not distorted"
+      ],
+      "montage_effects": [
+        "Seen in all montages"
+      ],
+      "sensitivity_notes": "Lower sensitivity for the high-amplitude complexes"
+    },
+    "abret_exam_pearls": [
+      "SSPE: long-interval periodic complexes (4-15 s) in a child; CJD: about 1 s.",
+      "Note any myoclonic jerks time-locked to the complexes."
+    ],
+    "report_language": {
+      "how_to_describe": "Generalized periodic complexes repeating every 4-5 s, consistent with SSPE in the clinical context.",
+      "avoid_saying": [
+        "Burst suppression"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "sspe",
+        "periodic",
+        "pediatric"
+      ]
+    },
+    "micro_quiz": []
   }
 ]
-
