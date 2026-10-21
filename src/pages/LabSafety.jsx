@@ -3,6 +3,7 @@ import StudyGuidePage from "../components/study/StudyGuidePage.jsx";
 import data from "../data/labSafety.json";
 
 const PRACTICE = {
+  studySet: "lab-safety",
   text: "Questions on OSHA, Safety Data Sheets, electrical safety, infection control, fire and emergencies are in this app's practice and Challenge questions under Domain IV. Start a quiz and choose the safety topics.",
   links: [
     ["Recording guide: hyperventilation and photic safety screening", "/neuro-syndromes?tab=recording"],

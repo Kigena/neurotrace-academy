@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import EegTracing from "../components/EegTracing.jsx";
+import SectionQuiz from "../components/study/SectionQuiz.jsx";
 import Calculators from "../components/amplifier/Calculators.jsx";
 import ResponseCurve from "../components/amplifier/ResponseCurve.jsx";
 import labScene from "../data/amplifierLab.json";
@@ -393,6 +394,7 @@ function Practice() {
   const cases = (casesData.starterCases || []).filter((c) => (c.tags || []).includes("amplifier-controls"));
   return (
     <div className="space-y-5">
+      <SectionQuiz setKey="amplifier-controls" />
       <Card title="Practice with tracings" tone="indigo">
         <p>These cases put the rules to work on tracings you can measure and filter.</p>
         {cases.length === 0 ? (
@@ -410,7 +412,7 @@ function Practice() {
           </ul>
         )}
       </Card>
-      <Card title="Practice questions">
+      <Card title="More practice">
         <p>Questions on sensitivity, time constants, filters and calibration are included in this app's practice questions. Start a quiz and choose the instrumentation and filters topics, or use Review Incorrect to revisit misses.</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <Link to="/quiz" className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Open quizzes</Link>

@@ -18,9 +18,15 @@ export const quizApi = {
    *   { kind: 'custom', mode, questionCount, filters: {domains, sections, tags, difficulty}, shuffle }
    *   { kind: 'preset', presetId }
    *   { kind: 'domain-quickstart', domainId }
+   *   { kind: 'study-set', studySet, questionCount: 10 | 20 | 'all' }
    */
   createSession(body) {
     return apiService.post("/quiz/sessions", body);
+  },
+
+  /** Study-page question sets with counts: { sets: [{ key, title, count }] }. */
+  getStudySets() {
+    return apiService.get("/quiz/study-sets");
   },
 
   getActiveSession() {

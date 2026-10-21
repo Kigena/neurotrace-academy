@@ -175,16 +175,23 @@ function QuizSession() {
   }, [submitSession]);
 
   // Resume an active session (survives page reloads) and load presets.
+  // Opened from a study page's section quiz (?studySet=...&questions=10|20|all),
+  // start that section's questions instead, then drop the parameters so a
+  // reload resumes this session rather than starting another.
   useEffect(() => {
     let cancelled = false;
+    const studySet = searchParams.get("studySet");
     (async () => {
       try {
         const [active, presetData] = await Promise.all([
-          quizApi.getActiveSession(),
+          studySet
+            ? quizApi.createSession({ kind: "study-set", studySet, questionCount: searchParams.get("questions") || "all" })
+            : quizApi.getActiveSession(),
           quizApi.getPresets().catch(() => ({ presets: [] })),
         ]);
         if (cancelled) return;
         setPresets(presetData.presets || []);
+        if (studySet) navigate("/quiz/session", { replace: true });
         if (active?.session) {
           applyActivePayload(active);
           if (active.session.expired) submitRef.current(active.session.sessionId);
@@ -198,6 +205,8 @@ function QuizSession() {
     return () => {
       cancelled = true;
     };
+    // Runs once on open: the URL is read at mount and then cleared.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [applyActivePayload]);
 
   // Initialize config from URL params

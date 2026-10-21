@@ -12,6 +12,7 @@ import { buildReviewQueue, CONFIDENCE_LEVELS, selectMisconceptionDrill } from '.
 import { describeMisconception, errorCodeFor, isMisconceptionCode } from '../services/misconceptions.js';
 import { completePlanItem, findTodaysItem, startPlanItem } from '../services/dailyPlan.js';
 import { DIAGNOSTIC_TIME_LIMIT_SEC, selectDiagnostic } from '../services/diagnostic.js';
+import { STUDY_SETS, countStudySets, isStudySet, parseStudySetSize, selectStudySet } from '../services/studySets.js';
 import { ladderRungs, levelMixForRung, MAX_ADAPTIVE_INSERTS, MIN_LEVEL, pickAdaptiveQuestion } from '../services/adaptiveLadder.js';
 import {
     DOMAIN_QUICKSTART,
@@ -389,6 +390,18 @@ router.get('/presets', (req, res) => {
     });
 });
 
+// Study-page question sets with how many servable questions each holds.
+router.get('/study-sets', async (req, res) => {
+    try {
+        const ids = (await Question.find(CHALLENGE_POOL).select('questionId').lean()).map((q) => q.questionId);
+        const counts = countStudySets(ids);
+        res.json({ sets: Object.entries(STUDY_SETS).map(([key, s]) => ({ key, title: s.title, count: counts[key] })) });
+    } catch (error) {
+        console.error('Study sets error:', error.message);
+        res.status(500).json({ error: 'Failed to load study sets' });
+    }
+});
+
 // Create a session. The server selects questions, fixes the option order,
 // sets the time limit and returns only answer-free question data.
 router.post('/sessions', async (req, res) => {
@@ -403,7 +416,7 @@ router.post('/sessions', async (req, res) => {
         let config;
 
         // Spaced review and misconception drills may draw on either bank.
-        const poolQuery = kind === 'challenge' ? CHALLENGE_POOL
+        const poolQuery = kind === 'challenge' || kind === 'study-set' ? CHALLENGE_POOL
             : kind === 'review-due' || kind === 'misconception' || kind === 'diagnostic' || kind === 'preset' ? SERVABLE
                 : FOUNDATION_POOL;
         const pool = await Question.find(poolQuery).select(POOL_FIELDS).lean();
@@ -470,6 +483,16 @@ router.post('/sessions', async (req, res) => {
             }
             selected = selectChallenge(challengePool, size, Math.random, mix);
             config = { domains: [], sections: [], tags: calcDrill ? [...competencies, CALC_CORE_TAG] : competencies, difficulty: [], shuffle: true, questionCount: selected.length };
+        } else if (kind === 'study-set') {
+            // The questions written for one study page (its Practice tab).
+            if (!isStudySet(body.studySet)) return res.status(400).json({ error: 'Unknown study set' });
+            const size = parseStudySetSize(body.questionCount);
+            if (!size) return res.status(400).json({ error: 'questionCount must be 10, 20 or "all"' });
+            selected = selectStudySet(pool, body.studySet, size);
+            if (!selected.length) return res.status(400).json({ error: 'No questions are available for this section yet' });
+            mode = 'practice';
+            timeLimitSec = null;
+            config = { domains: [], sections: [], tags: [`study-set:${body.studySet}`], difficulty: [], shuffle: true, questionCount: selected.length };
         } else if (kind === 'weak-areas') {
             const size = Number.parseInt(body.questionCount, 10);
             if (!WEAK_AREA_SIZES.includes(size)) {

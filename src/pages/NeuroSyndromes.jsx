@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import EegTracing from "../components/EegTracing.jsx";
+import SectionQuiz from "../components/study/SectionQuiz.jsx";
 import { Card, Table } from "../components/study/ui.jsx";
 import data from "../data/neuroSyndromes.json";
 import scenes from "../data/syndromeScenes.json";
@@ -473,6 +474,7 @@ function Practice() {
   const cases = (casesData.starterCases || []).filter((c) => (c.tags || []).includes("neuro-syndromes"));
   return (
     <div className="space-y-5">
+      <SectionQuiz setKey="neuro-syndromes" />
       <Card title="Practice with tracings" tone="indigo">
         <p>These cases ask you to tie anatomy and mechanism to the recording in front of you.</p>
         {cases.length === 0 ? (
@@ -490,7 +492,7 @@ function Practice() {
           </ul>
         )}
       </Card>
-      <Card title="Practice questions">
+      <Card title="More practice">
         <p>Questions on neuroanatomy, pathophysiology and syndromes are included in this app&apos;s practice questions. Start a quiz and choose the neuroanatomy and syndrome topics, or use Review Incorrect to revisit misses.</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <Link to="/quiz" className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Open quizzes</Link>

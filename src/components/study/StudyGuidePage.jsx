@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Card, Table } from "./ui.jsx";
+import SectionQuiz from "./SectionQuiz.jsx";
 import EegTracing from "../EegTracing.jsx";
 
 /**
@@ -140,7 +141,8 @@ function Mistakes({ mistakes, memory }) {
 function Practice({ practice }) {
   return (
     <div className="space-y-5">
-      <Card title="Practice questions" tone="indigo">
+      {practice.studySet && <SectionQuiz setKey={practice.studySet} />}
+      <Card title={practice.studySet ? "More practice" : "Practice questions"} tone={practice.studySet ? "slate" : "indigo"}>
         <p>{practice.text}</p>
         <div className="flex flex-wrap gap-2 pt-1">
           <Link to="/quiz" className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Start a quiz</Link>

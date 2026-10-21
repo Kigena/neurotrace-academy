@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import EegTracing from "../components/EegTracing.jsx";
+import SectionQuiz from "../components/study/SectionQuiz.jsx";
 import { Card, Table } from "../components/study/ui.jsx";
 import grades from "../data/diffuseGrades.json";
 import casesData from "../data/cases.json";
@@ -295,6 +296,7 @@ function Practice() {
   const cases = (casesData.starterCases || []).filter((c) => (c.tags || []).includes("diffuse-grades"));
   return (
     <div className="space-y-5">
+      <SectionQuiz setKey="diffuse-abnormalities" />
       <Card title="Practice with tracings" tone="indigo">
         <p>These cases put the grades to work on recordings you can measure.</p>
         {cases.length === 0 ? (
@@ -312,7 +314,7 @@ function Practice() {
           </ul>
         )}
       </Card>
-      <Card title="Practice questions">
+      <Card title="More practice">
         <p>Questions on diffuse slowing, background activity and the grades are included in this app&apos;s practice questions. Start a quiz and choose the diffuse-slowing topics, or use Review Incorrect to revisit misses.</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <Link to="/quiz" className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Open quizzes</Link>

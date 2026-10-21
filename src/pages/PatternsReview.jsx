@@ -3,6 +3,7 @@ import StudyGuidePage from "../components/study/StudyGuidePage.jsx";
 import data from "../data/patternsReview.json";
 
 const PRACTICE = {
+  studySet: "patterns-review",
   text: "Questions on polarity and measurement, benign variants, sleep, neonatal patterns, medication effects and activation are in this app's practice and Challenge questions under Domain II. Start a quiz and choose the waveform, activation and special protocol topics.",
   links: [
     ["Montages and references", "/montages-references"],

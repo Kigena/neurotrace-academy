@@ -3,6 +3,7 @@ import StudyGuidePage from "../components/study/StudyGuidePage.jsx";
 import data from "../data/professionalPractice.json";
 
 const PRACTICE = {
+  studySet: "professional-practice",
   text: "Questions on the ABRET Code of Ethics, HIPAA/HITECH, professional conduct, allergies and skin integrity are in this app's practice and Challenge questions under Domain IV. Start a quiz and choose the ethics and confidentiality topics.",
   links: [
     ["Lab Safety, OSHA and SDS", "/lab-safety"],

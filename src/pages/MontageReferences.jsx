@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import EegTracing from "../components/EegTracing.jsx";
+import SectionQuiz from "../components/study/SectionQuiz.jsx";
 import PhaseCalc from "../components/montage/PhaseCalc.jsx";
 import { Card, Formula, Table } from "../components/study/ui.jsx";
 import lab from "../data/montageLab.json";
@@ -243,6 +244,7 @@ function Practice() {
   const cases = (casesData.starterCases || []).filter((c) => (c.tags || []).includes("montages"));
   return (
     <div className="space-y-5">
+      <SectionQuiz setKey="montages-references" />
       <Card title="Practice with tracings" tone="indigo">
         <p>These cases put the rules to work on recordings you can switch between montages.</p>
         {cases.length === 0 ? (
@@ -260,7 +262,7 @@ function Practice() {
           </ul>
         )}
       </Card>
-      <Card title="Practice questions">
+      <Card title="More practice">
         <p>Montage and referencing questions are included in this app&apos;s practice questions. Start a quiz and choose the montage topics, or use Review Incorrect to revisit misses.</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <Link to="/quiz" className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Open quizzes</Link>
