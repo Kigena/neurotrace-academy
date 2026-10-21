@@ -420,6 +420,68 @@
           ]
         },
         {
+          "title": "Brodmann areas worth knowing",
+          "kind": "table",
+          "head": [
+            "Area",
+            "Location",
+            "Function"
+          ],
+          "rows": [
+            [
+              "4",
+              "Precentral gyrus (frontal)",
+              "Primary motor cortex"
+            ],
+            [
+              "6",
+              "Premotor cortex and supplementary motor area, in front of area 4",
+              "Planning and sequencing movement"
+            ],
+            [
+              "8",
+              "Posterior middle frontal gyrus (frontal eye field)",
+              "Voluntary eye movements to the opposite side"
+            ],
+            [
+              "3, 1, 2",
+              "Postcentral gyrus (parietal)",
+              "Primary somatosensory cortex"
+            ],
+            [
+              "17",
+              "Banks of the calcarine sulcus (occipital)",
+              "Primary visual cortex"
+            ],
+            [
+              "18, 19",
+              "Around area 17",
+              "Visual association cortex"
+            ],
+            [
+              "41, 42",
+              "Transverse temporal (Heschl) gyri, on the upper surface of the superior temporal gyrus",
+              "Auditory cortex (41 primary, 42 secondary)"
+            ],
+            [
+              "22 (posterior part)",
+              "Posterior superior temporal gyrus, dominant hemisphere",
+              "Wernicke area: language comprehension; damage causes fluent (receptive) aphasia"
+            ],
+            [
+              "44, 45",
+              "Inferior frontal gyrus, dominant hemisphere",
+              "Broca area: speech production; damage causes non-fluent (expressive) aphasia"
+            ],
+            [
+              "39, 40",
+              "Angular and supramarginal gyri (inferior parietal lobule)",
+              "Reading, writing, calculation (dominant); spatial attention (non-dominant)"
+            ]
+          ],
+          "note": "Expressive = Broca = frontal (44, 45); receptive = Wernicke = posterior superior temporal (22). The arcuate fasciculus links them; damage there causes conduction aphasia (poor repetition)."
+        },
+        {
           "title": "Deep structures",
           "kind": "table",
           "head": [
@@ -446,7 +508,7 @@
             [
               "Hypothalamus",
               "Temperature, hunger, hormones via pituitary, circadian rhythm",
-              "Gelastic seizures with hypothalamic hamartoma"
+              "Hypothalamic hamartoma: gelastic (laughing) seizures and/or central precocious puberty (early puberty from early activation of the hypothalamic-pituitary-gonadal axis)"
             ],
             [
               "Basal ganglia (caudate, putamen, globus pallidus, subthalamic nucleus, substantia nigra)",
@@ -1247,6 +1309,21 @@
               "Inferior quadrantanopia",
               "Lower quadrant loss, opposite side",
               "Parietal optic radiation"
+            ],
+            [
+              "Apraxia",
+              "Cannot carry out a learned, purposeful movement on command although strength, sensation, coordination and comprehension are intact (for example cannot mime brushing teeth). Not the same as ataxia, which is incoordination from cerebellar or sensory disease",
+              "Usually dominant (left) parietal or frontal cortex and their connections"
+            ],
+            [
+              "Agnosia",
+              "Cannot recognize objects, faces (prosopagnosia) or sounds despite intact primary sensation",
+              "Association cortex: occipitotemporal for visual agnosia and prosopagnosia"
+            ],
+            [
+              "Scotoma",
+              "An island of lost or reduced vision inside an otherwise normal visual field (a blind spot). A central scotoma is typical of optic neuritis; a shimmering, expanding scintillating scotoma is a common migraine aura",
+              "Usually retina or optic nerve for a fixed scotoma; occipital cortex for a migraine scintillating scotoma"
             ]
           ]
         },
@@ -1612,7 +1689,7 @@
             ],
             [
               "Meningioma",
-              "Usually benign, extra-axial tumor from arachnoid cells, more common in women; compresses rather than invades brain",
+              "Usually benign, slow-growing, well-circumscribed (often described as encapsulated) extra-axial tumor from arachnoid cap cells, more common in women; compresses rather than invades brain",
               "Focal slowing or discharges near the tumor; may cause seizures"
             ],
             [
@@ -1681,6 +1758,21 @@
               "Cerebral palsy",
               "Non-progressive motor disorder from injury to the developing brain; spastic type most common; often with epilepsy and intellectual disability",
               "Muscle and movement artifact; positioning and comfort need planning; focal or multifocal abnormalities are common"
+            ],
+            [
+              "Subdural empyema",
+              "Pus in the subdural space, usually spreading from sinusitis, otitis or after surgery; fever, headache, focal deficits and seizures; a neurosurgical emergency",
+              "Focal or hemispheric slowing and attenuation on the affected side; seizures are common; follow the facility's infection-control and wound-site rules for electrode placement"
+            ],
+            [
+              "Wernicke encephalopathy",
+              "Acute thiamine (vitamin B1) deficiency, classically with alcohol use disorder or malnutrition; triad of confusion, ophthalmoplegia/nystagmus and gait ataxia; give IV thiamine before or with glucose (do not delay treating hypoglycemia); the full triad is present in only a minority; untreated it can leave Korsakoff amnesia; lesions involve the mammillary bodies and medial thalamus",
+              "EEG nonspecific: normal or diffuse slowing"
+            ],
+            [
+              "Tay-Sachs disease",
+              "Classic infantile form: Inherited GM2 gangliosidosis (hexosaminidase A deficiency); infants are normal at birth, then show an exaggerated startle to sound (hyperacusis) in the first months, cherry-red spot, loss of milestones, enlarging head and seizures",
+              "EEG becomes progressively slow with epileptiform discharges; myoclonic and other seizures"
             ]
           ]
         },
@@ -1744,6 +1836,43 @@
             ]
           ],
           "note": "Seizures need cortex. Neuromuscular junction, nerve root and cranial nerve syndromes cause weakness or ophthalmoplegia, not epilepsy."
+        },
+        {
+          "title": "How epilepsy syndromes and seizures change over time",
+          "kind": "table",
+          "head": [
+            "Progression",
+            "How often",
+            "Why"
+          ],
+          "rows": [
+            [
+              "West syndrome to Lennox-Gastaut syndrome",
+              "Common",
+              "Many children with infantile spasms (often with structural or genetic causes) later develop the tonic seizures and slow spike-and-wave of Lennox-Gastaut"
+            ],
+            [
+              "Ohtahara syndrome (now early infantile DEE; burst suppression) to West syndrome",
+              "Common",
+              "Early infantile epileptic encephalopathies often evolve with age: burst suppression to hypsarrhythmia, sometimes then to Lennox-Gastaut"
+            ],
+            [
+              "Focal seizure (aware or impaired awareness) to focal to bilateral tonic-clonic seizure",
+              "Common",
+              "This is spread within a seizure rather than a change of syndrome: focal seizures often spread to both hemispheres (formerly secondary generalization)"
+            ],
+            [
+              "Childhood absence epilepsy to generalized tonic-clonic seizures",
+              "Occurs in a minority",
+              "Some children with absence seizures develop tonic-clonic seizures, usually in adolescence"
+            ],
+            [
+              "Self-limited epilepsy with centrotemporal spikes (rolandic) to absence epilepsy",
+              "Rare",
+              "Rolandic epilepsy is a focal, self-limited syndrome that usually remits by adolescence; it is not expected to turn into a generalized absence epilepsy; the atypical evolution to watch for is EE-SWAS (formerly CSWS)"
+            ]
+          ],
+          "note": "Pattern to remember: epileptic encephalopathies of infancy (Ohtahara, West) tend to evolve into other encephalopathies such as Lennox-Gastaut; self-limited childhood syndromes such as rolandic epilepsy tend to remit."
         }
       ],
       "pearls": [

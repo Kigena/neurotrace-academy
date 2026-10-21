@@ -1,0 +1,895 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-20",
+  "bank": "challenge",
+  "focus": "domain-1",
+  "description": "Original questions on the hypothalamus and precocious puberty, apraxia and agnosia, hemorrhage and empyema, migraine, scotoma, aphasia and Brodmann areas, meningioma, epilepsy syndrome evolution, eye-movement nerves, brainstem vital centres, MS and the EEG, Tay-Sachs, and Wernicke-Korsakoff. Text only; not yet medically verified.",
+  "totalQuestions": 32,
+  "questions": [
+    {
+      "id": "ch-nx-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "hypothalamus",
+        "precocious-puberty"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A 6-year-old has early breast development and a growth spurt. Imaging shows a small mass at the tuber cinereum. Which structure is involved?",
+      "explanation": "A hypothalamic hamartoma at the tuber cinereum can switch on the hypothalamic-pituitary-gonadal axis early, causing central precocious puberty. The fornix carries hippocampal output to the mammillary bodies for memory. Pineal tumors can also cause early puberty in boys, but they arise behind the third ventricle, not at the tuber cinereum. The caudate belongs to the basal ganglia and controls movement.",
+      "learningObjective": "Link central precocious puberty with the hypothalamus (hypothalamic hamartoma).",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Fornix",
+        "Hypothalamus",
+        "Caudate nucleus",
+        "Pineal gland"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "hypothalamus",
+        "gelastic-seizures",
+        "precocious-puberty"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A child has brief bouts of mirthless laughing and early puberty. Where is the lesion most likely to be?",
+      "explanation": "Gelastic (laughing) seizures together with precocious puberty point to a hypothalamic hamartoma. Surface EEG may be unremarkable or misleading because the generator is deep. Hippocampal sclerosis gives mesial temporal seizures with deja vu or fear auras. Occipital dysplasia gives visual seizures. Vermis tumors cause truncal ataxia, not laughing seizures.",
+      "learningObjective": "Recognize the gelastic seizure plus precocious puberty pairing as hypothalamic hamartoma.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Cerebellar vermis (tumor)",
+        "Hippocampus (sclerosis)",
+        "Hypothalamus (hamartoma)",
+        "Occipital cortex (dysplasia)"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "hypothalamus",
+        "functions"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which function is controlled mainly by the hypothalamus?",
+      "explanation": "The hypothalamus regulates temperature, hunger, thirst, circadian rhythm and the pituitary. The thalamus relays sensation (except smell) to the cortex. The cerebellum coordinates movement. The hippocampus forms new long-term memories.",
+      "learningObjective": "State the main functions of the hypothalamus.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Relay of touch and pain signals to the cortex",
+        "Fine coordination of limb and eye movements",
+        "Formation of new long-term declarative memory",
+        "Body temperature and pituitary hormone release"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "apraxia",
+        "terminology"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A patient with normal strength, sensation, coordination and comprehension can name a comb but cannot mime combing their hair on command. What is this called?",
+      "explanation": "Apraxia is loss of the ability to perform a learned, purposeful movement even though strength, sensation, coordination and comprehension are intact. Ataxia is incoordination from cerebellar or sensory disease. Aphasia is a language disorder. Agnosia is failure to recognize objects despite intact sensation.",
+      "learningObjective": "Define apraxia and separate it from ataxia, aphasia and agnosia.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Aphasia",
+        "Apraxia",
+        "Ataxia",
+        "Agnosia"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "ataxia",
+        "apraxia",
+        "cerebellum"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient's arm wavers and overshoots when reaching for a cup, and the gait is wide-based. Which term fits, and where is the lesion?",
+      "explanation": "Overshoot (dysmetria), intention tremor and a wide-based gait are ataxia, typical of cerebellar disease on the same side. Apraxia is a planning failure with normal coordination. Agnosia is a recognition failure. Aphasia affects language.",
+      "learningObjective": "Distinguish ataxia (coordination) from apraxia (motor planning).",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Ataxia, from cerebellar disease",
+        "Aphasia, from frontal disease",
+        "Apraxia, from parietal disease",
+        "Agnosia, from occipital disease"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "agnosia",
+        "prosopagnosia",
+        "localization"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "After a stroke a patient sees normally but cannot recognize familiar faces. Which region is most likely damaged?",
+      "explanation": "Prosopagnosia, a visual agnosia for faces, comes from occipitotemporal (fusiform gyrus) damage, usually bilateral or right-sided. Primary motor cortex lesions cause weakness. The dominant inferior frontal gyrus (Broca area) causes non-fluent aphasia. The medulla controls breathing and cardiovascular reflexes.",
+      "learningObjective": "Localize prosopagnosia to occipitotemporal cortex.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Dominant inferior frontal gyrus",
+        "Occipitotemporal (fusiform) cortex",
+        "Medulla oblongata",
+        "Primary motor cortex"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "subarachnoid-hemorrhage",
+        "aneurysm"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 45-year-old has a sudden, worst-ever headache with neck stiffness and becomes drowsy. A berry aneurysm is suspected. What is the most likely bleed?",
+      "explanation": "Berry aneurysms sit on the circle of Willis inside the subarachnoid space, so rupture causes subarachnoid hemorrhage: thunderclap headache, meningism and reduced consciousness. Subdural hematomas come from torn bridging veins, often after minor trauma in older adults. Epidural hematomas follow skull fracture with middle meningeal artery injury. Lobar hemorrhage is usually amyloid angiopathy or hypertension.",
+      "learningObjective": "Connect ruptured berry aneurysm with subarachnoid hemorrhage.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Subarachnoid hemorrhage",
+        "Epidural hematoma",
+        "Subdural hematoma",
+        "Lobar intracerebral hemorrhage"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "meninges",
+        "subdural-hematoma"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A subdural hematoma most often comes from which vessels?",
+      "explanation": "Bridging veins cross the subdural space from the cortex to the dural sinuses and tear with acceleration-deceleration injury, especially in older adults with brain atrophy. The middle meningeal artery causes epidural hematoma. Berry aneurysms cause subarachnoid hemorrhage. Lenticulostriate arteries cause deep hypertensive bleeds.",
+      "learningObjective": "Identify the vessel source of subdural hematoma.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Lenticulostriate arteries",
+        "Middle meningeal artery",
+        "Torn bridging veins",
+        "Circle of Willis aneurysms"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-009",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "subdural-empyema",
+        "infection",
+        "terminology"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What does an empyema contain?",
+      "explanation": "An empyema is a collection of pus in an existing space; a subdural empyema is pus between the dura and arachnoid, often spreading from sinusitis or ear infection. A clot in that space is a hematoma. A CSF-filled sac is a hygroma or cyst. Air is pneumocephalus.",
+      "learningObjective": "Define empyema as a pus collection.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Blood clot",
+        "Air",
+        "Pus",
+        "Cerebrospinal fluid"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-010",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "subdural-empyema",
+        "infection"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A teenager with frontal sinusitis develops fever, headache, hemiparesis and seizures. Imaging shows a thin collection over one hemisphere. Which is most likely?",
+      "explanation": "Fever, sinusitis, focal deficits and seizures with a thin extra-axial collection describe a subdural empyema, a neurosurgical emergency. A chronic subdural hematoma follows minor trauma in older adults without fever. An arachnoid cyst is a congenital CSF collection. Normal pressure hydrocephalus causes gait, urinary and cognitive change in older adults.",
+      "learningObjective": "Recognize subdural empyema from its infectious source and acute course.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Normal pressure hydrocephalus",
+        "Arachnoid cyst",
+        "Chronic subdural hematoma",
+        "Subdural empyema"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-011",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "migraine",
+        "aura"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What separates the older terms 'classic' and 'common' migraine?",
+      "explanation": "Classic migraine is the old name for migraine with aura; common migraine is migraine without aura. Between attacks the EEG is usually normal in both, and either type can be one-sided. Focal slowing may occur during an aura or in hemiplegic migraine.",
+      "learningObjective": "Match classic and common migraine with and without aura.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Classic migraine causes an abnormal EEG between attacks",
+        "Common migraine has an aura; classic migraine has none",
+        "Classic migraine has an aura; common migraine has none",
+        "Common migraine is unilateral; classic migraine is bilateral"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-012",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "epilepsy-syndromes",
+        "west-syndrome",
+        "lennox-gastaut"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which change in epilepsy syndrome over time is most expected?",
+      "explanation": "Infantile epileptic encephalopathies tend to evolve: many children with West syndrome later develop Lennox-Gastaut syndrome. Self-limited epilepsy with centrotemporal spikes (rolandic) usually remits by adolescence and does not become a generalized syndrome. Absence epilepsy begins after infancy, so it cannot turn into infantile spasms, and rolandic epilepsy does not lead to West syndrome.",
+      "learningObjective": "Know which syndrome transitions are common (West to LGS) and which are rare.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Infantile spasms evolving into Lennox-Gastaut",
+        "Absence epilepsy evolving into infantile spasms",
+        "Rolandic epilepsy evolving into West syndrome",
+        "Rolandic epilepsy evolving into absence epilepsy"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-013",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "epilepsy-syndromes",
+        "rolandic",
+        "prognosis"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 9-year-old with nocturnal hemifacial seizures has centrotemporal spikes on a normal background. Parents ask how this epilepsy usually evolves. What is most accurate?",
+      "explanation": "Self-limited epilepsy with centrotemporal spikes (rolandic epilepsy) has an excellent outlook; seizures and spikes usually resolve by mid-adolescence. Evolution into absence epilepsy or Lennox-Gastaut is rare. Regression would suggest atypical evolution, such as epileptic encephalopathy with spike-wave activation in sleep (EE-SWAS, formerly CSWS), and needs prompt review.",
+      "learningObjective": "State the self-limited course of rolandic epilepsy.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "It usually leads to developmental decline",
+        "It usually becomes absence epilepsy",
+        "It usually becomes Lennox-Gastaut",
+        "It usually stops by adolescence"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-014",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "focal-seizures",
+        "bilateral-tonic-clonic"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What is the current name for a focal seizure that spreads to involve both sides with stiffening and jerking?",
+      "explanation": "When a focal seizure spreads to both hemispheres and becomes a convulsion, ILAE terminology calls it a focal to bilateral tonic-clonic seizure, formerly secondarily generalized. It is a common progression. A generalized tonic-clonic seizure starts in both hemispheres at once. Atypical absence and myoclonic-atonic seizures are generalized seizure types.",
+      "learningObjective": "Name focal to bilateral tonic-clonic spread.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Atypical absence seizure",
+        "Focal to bilateral tonic-clonic seizure",
+        "Myoclonic-atonic seizure",
+        "Primary generalized tonic-clonic seizure"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-015",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cranial-nerves",
+        "eye-movement"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which cranial nerve moves the eye outward (abduction)?",
+      "explanation": "The abducens nerve supplies the lateral rectus, which abducts the eye. The trochlear nerve supplies the superior oblique (down and in). The facial nerve closes the eyelids but does not move the eyeball. The optic nerve carries vision. Eye movements depend on III, IV and VI.",
+      "learningObjective": "Name the nerve for lateral rectus (VI) among the eye-movement nerves III, IV and VI.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Optic nerve (II)",
+        "Trochlear nerve (IV)",
+        "Facial nerve (VII)",
+        "Abducens nerve (VI)"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-016",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cranial-nerves",
+        "oculomotor",
+        "herniation"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient with an expanding temporal hematoma develops a dilated pupil and an eye turned down and out on the same side. Which nerve is compressed?",
+      "explanation": "Uncal (tentorial) herniation compresses the oculomotor nerve: parasympathetic fibres on its surface are hit first (dilated pupil), then the muscles it supplies weaken, leaving the eye pulled down and out by the intact IV and VI. An abducens palsy turns the eye in. A trochlear palsy causes vertical double vision. The trigeminal nerve is sensory to the face and motor to the jaw.",
+      "learningObjective": "Recognize a third nerve palsy from herniation.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Trigeminal nerve (V)",
+        "Oculomotor nerve (III)",
+        "Trochlear nerve (IV)",
+        "Abducens nerve (VI)"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-017",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "multiple-sclerosis",
+        "eeg-findings"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In which disease is the routine EEG most likely to be normal?",
+      "explanation": "Multiple sclerosis mainly damages white-matter tracts (cortical lesions occur but are less prominent), so the routine EEG is usually normal or shows only nonspecific slowing, and seizures are uncommon (evoked potentials, such as a delayed VEP P100, are more useful). CJD shows periodic sharp wave complexes, HSV encephalitis shows temporal slowing and lateralized periodic discharges, and advanced Alzheimer disease shows background slowing.",
+      "learningObjective": "Know that MS usually leaves the EEG normal while cortical diseases do not.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Multiple sclerosis",
+        "Creutzfeldt-Jakob disease",
+        "Herpes simplex encephalitis",
+        "Advanced Alzheimer disease"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-018",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "tay-sachs",
+        "metabolic",
+        "infant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 5-month-old who seemed normal at birth now startles excessively to sounds, is losing skills and has a cherry-red spot on eye exam. Which disorder fits?",
+      "explanation": "Tay-Sachs disease (GM2 gangliosidosis, hexosaminidase A deficiency) presents in early infancy with an exaggerated startle to sound, regression and a cherry-red macula, later with seizures. West syndrome causes clusters of spasms with hypsarrhythmia but not a cherry-red spot. Rolandic epilepsy begins in school-age children. Huntington disease is an adult-onset movement disorder.",
+      "learningObjective": "Recognize the infantile presentation of Tay-Sachs disease.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Tay-Sachs disease",
+        "Rolandic epilepsy",
+        "West syndrome",
+        "Huntington disease"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-019",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "hyperacusis",
+        "startle",
+        "terminology"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "In an infant who is starting to lose milestones, an exaggerated startle to ordinary sounds is a classic early sign of which group of disorders?",
+      "explanation": "Hyperacusis with an excessive startle in the first months is a classic early sign of Tay-Sachs and related GM2 gangliosidoses, which are lysosomal storage disorders. Benign focal epilepsies of childhood begin later and do not cause hyperacusis. Peripheral neuropathies cause weakness and sensory loss. Adult basal ganglia degenerations such as Huntington disease begin in adulthood.",
+      "learningObjective": "Link infantile hyperacusis with lysosomal storage disorders.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Peripheral nerve demyelinating diseases",
+        "Benign childhood focal epilepsies",
+        "Adult basal ganglia degenerations",
+        "Lysosomal storage disorders such as Tay-Sachs"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-020",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "medulla",
+        "brainstem",
+        "vital-functions"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Damage to which structure most directly threatens breathing and blood pressure control?",
+      "explanation": "The medulla contains the respiratory and cardiovascular centres, so lesions or compression there (for example tonsillar herniation) can stop breathing. The midbrain holds the III and IV nuclei and pupillary pathways. The cerebellum coordinates movement. The thalamus relays sensation.",
+      "learningObjective": "Locate the vital respiratory and cardiovascular centres in the medulla.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Medulla oblongata",
+        "Midbrain",
+        "Thalamus",
+        "Cerebellar hemisphere"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-021",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "brainstem",
+        "herniation",
+        "medulla",
+        "eeg-icu"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "During ICU monitoring, a patient with a large posterior fossa mass suddenly develops irregular breathing and bradycardia. Which herniation is most likely, and why is it dangerous?",
+      "explanation": "A posterior fossa mass pushes the cerebellar tonsils down through the foramen magnum, compressing the medulla, where the respiratory and cardiovascular centres sit; irregular breathing, bradycardia and hypertension are late, life-threatening signs, so notify the team immediately. Subfalcine herniation shifts the cingulate gyrus under the falx. Uncal herniation compresses the oculomotor nerve and midbrain, not the chiasm. Upward herniation compresses the midbrain from below, not the frontal lobe.",
+      "learningObjective": "Relate tonsillar herniation to medullary failure.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Tonsillar herniation compressing the medulla",
+        "Uncal herniation compressing the optic chiasm",
+        "Upward herniation compressing the frontal lobe",
+        "Subfalcine herniation compressing the cingulate"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-022",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "wernicke-encephalopathy",
+        "thiamine",
+        "nutrition"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A malnourished man with alcohol use disorder is confused, has nystagmus and walks unsteadily. Which deficiency is most likely?",
+      "explanation": "Confusion, eye-movement abnormalities and gait ataxia form the triad of Wernicke encephalopathy from thiamine deficiency; it is treated urgently with IV thiamine, given before or with glucose (never delay treating hypoglycemia). Vitamin B12 deficiency develops more slowly and affects the spinal cord (dorsal columns), nerves and cognition. Vitamin B6 deficiency causes neuropathy and, in infants, seizures. Folate deficiency causes anemia and neural tube defects in pregnancy rather than this acute triad.",
+      "learningObjective": "Recognize Wernicke encephalopathy as thiamine deficiency.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Cobalamin (vitamin B12)",
+        "Folate (vitamin B9)",
+        "Thiamine (vitamin B1)",
+        "Pyridoxine (vitamin B6)"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-023",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "korsakoff",
+        "mammillary-bodies",
+        "memory"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "After an episode of Wernicke encephalopathy, a patient cannot form new memories and fills the gaps with invented stories. Damage to which structures is most typical?",
+      "explanation": "Korsakoff syndrome (anterograde amnesia with confabulation) follows Wernicke encephalopathy and is linked to damage of the mammillary bodies and medial (dorsomedial) thalamus, parts of the memory circuit that also includes the hippocampus and fornix. Visual cortex damage affects vision, cerebellar damage causes ataxia, and precentral gyrus damage causes weakness.",
+      "learningObjective": "Link Korsakoff amnesia to the mammillary bodies and medial thalamus.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Primary visual cortex and optic radiation",
+        "Mammillary bodies and medial thalamus",
+        "Precentral gyrus and corticospinal tract",
+        "Lateral cerebellar hemispheres and dentate nuclei"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-024",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "fornix",
+        "limbic-system",
+        "memory"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which structure carries output from the hippocampus to the mammillary bodies?",
+      "explanation": "The fornix is the main output tract of the hippocampus, arching to the mammillary bodies as part of the Papez memory circuit. The corpus callosum links the two hemispheres. The internal capsule carries motor and sensory fibres between cortex and brainstem. The arcuate fasciculus links Wernicke and Broca areas for language.",
+      "learningObjective": "Identify the fornix as the hippocampal output to the mammillary bodies.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Corpus callosum",
+        "Arcuate fasciculus",
+        "Internal capsule",
+        "Fornix"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-025",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "scotoma",
+        "visual-fields",
+        "terminology"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What is a scotoma?",
+      "explanation": "A scotoma is a localized area of lost or reduced vision surrounded by normal field, like the normal blind spot. Raised intraocular pressure is ocular hypertension, the main risk factor for glaucoma (which can cause field loss but is not the term). Retinal inflammation is retinitis. A tumor of the sclera is a scleral tumor.",
+      "learningObjective": "Define scotoma.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A tumor of the outer coat of the eye",
+        "An island of lost vision within the visual field",
+        "A rise in pressure inside the eye",
+        "Inflammation of the retina"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-026",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "scotoma",
+        "migraine",
+        "optic-neuritis"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Before a headache, a patient sees a shimmering zigzag blind spot that slowly expands over 20 minutes. What is this, and where does it arise?",
+      "explanation": "A slowly spreading, shimmering scotoma lasting minutes before a headache is the classic migraine visual aura, thought to reflect cortical spreading depression across the occipital cortex. Optic neuritis gives a fixed central scotoma with painful eye movement. A chiasmal lesion causes loss of both outer fields. An optic tract lesion causes a fixed same-sided field loss in both eyes.",
+      "learningObjective": "Recognize the scintillating scotoma of migraine aura and its cortical origin.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Bitemporal hemianopia from the chiasm",
+        "Homonymous hemianopia from the optic tract",
+        "Central scotoma from optic neuritis",
+        "Scintillating scotoma from occipital cortex"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-027",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "aphasia",
+        "broca",
+        "localization"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Damage to which area most typically causes expressive (non-fluent) aphasia?",
+      "explanation": "Broca area in the dominant inferior frontal gyrus (Brodmann 44 and 45) plans speech output; damage gives effortful, non-fluent speech with relatively preserved comprehension. Wernicke area damage gives fluent speech with poor comprehension. Postcentral gyrus damage gives sensory loss. Damage to one primary auditory cortex alone rarely causes a language deficit.",
+      "learningObjective": "Localize expressive aphasia to Broca area.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Primary somatosensory cortex (postcentral gyrus)",
+        "Primary auditory cortex (transverse temporal gyri)",
+        "Broca area (dominant inferior frontal gyrus)",
+        "Wernicke area (dominant superior temporal gyrus)"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-028",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "wernicke-area",
+        "temporal-lobe",
+        "localization"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Where is Wernicke area?",
+      "explanation": "Wernicke area is the posterior part of the superior temporal gyrus (posterior Brodmann 22) in the dominant hemisphere, next to the auditory cortex. The posterior inferior frontal gyrus is Broca area. The inferior temporal gyrus is involved in visual object recognition. The calcarine banks form the primary visual cortex.",
+      "learningObjective": "Locate Wernicke area in the posterior superior temporal gyrus.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Posterior inferior frontal gyrus, dominant side",
+        "Medial occipital lobe, along the calcarine sulcus",
+        "Posterior superior temporal gyrus, dominant side",
+        "Posterior inferior temporal gyrus, dominant side"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-029",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "aphasia",
+        "wernicke",
+        "broca",
+        "conduction-aphasia"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient speaks fluently and understands well but cannot repeat a sentence. Which structure is most likely damaged?",
+      "explanation": "Fluent speech with good comprehension but poor repetition is conduction aphasia, from damage to the arcuate fasciculus that links Wernicke and Broca areas. Broca damage makes speech non-fluent. Wernicke damage impairs comprehension. Corpus callosum damage disconnects the hemispheres but does not cause this aphasia.",
+      "learningObjective": "Separate conduction aphasia from Broca and Wernicke aphasia.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Corpus callosum",
+        "Broca area",
+        "Arcuate fasciculus",
+        "Wernicke area"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-030",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "brodmann",
+        "auditory-cortex"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Brodmann areas 41 and 42 are concerned with which function?",
+      "explanation": "Area 41 (primary) lies on the transverse temporal (Heschl) gyri and area 42 (secondary) borders it on the superior temporal gyrus; together they form the auditory cortex. Vision is area 17 (with 18 and 19), voluntary movement is area 4, and touch and position sense are areas 3, 1 and 2 on the postcentral gyrus.",
+      "learningObjective": "Match Brodmann areas 41 and 42 with hearing.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hearing",
+        "Voluntary movement",
+        "Touch and position sense",
+        "Vision"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-031",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "meningioma",
+        "tumors"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which description best fits a typical meningioma?",
+      "explanation": "Most meningiomas are benign, slow-growing, well-circumscribed (often described as encapsulated) tumors that arise from arachnoid cap cells outside the brain and compress rather than invade it. Rapid, infiltrating growth describes high-grade gliomas such as glioblastoma. Metastases come from cancers elsewhere. Tumors arising from neurons are rare.",
+      "learningObjective": "Describe the typical behavior of a meningioma.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Usually a metastasis from lung cancer",
+        "Rapidly growing and infiltrating brain tissue",
+        "Arising from neurons within the cortex",
+        "Slow-growing, well-circumscribed and extra-axial"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nx-032",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "meningioma",
+        "eeg-findings"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A woman with a slow-growing convexity meningioma over the left frontal region has an EEG. What finding is most expected near the tumor?",
+      "explanation": "A meningioma compresses the underlying cortex, so the EEG may show focal slowing (and sometimes focal sharp activity or seizures) over the tumor; small, slow-growing tumors can also leave the EEG normal. Generalized 3 Hz spike-and-wave belongs to absence epilepsy, periodic sharp wave complexes to CJD, and unreactive diffuse alpha to alpha coma.",
+      "learningObjective": "Predict focal slowing over a meningioma.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Generalized 3 Hz spike-and-wave",
+        "Focal slowing over the left frontal region",
+        "Diffuse alpha that does not react",
+        "Periodic sharp wave complexes at 1 Hz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 2 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}
