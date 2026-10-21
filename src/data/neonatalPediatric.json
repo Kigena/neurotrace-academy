@@ -975,6 +975,7 @@
      "kind": "tracingQuiz",
      "scene": {
       "seed": 701,
+      "lff": 0.5,
       "sensitivity": 10,
       "montage": "longitudinal",
       "montages": [
@@ -1047,6 +1048,7 @@
      "kind": "tracingQuiz",
      "scene": {
       "seed": 702,
+      "lff": 0.5,
       "sensitivity": 10,
       "montage": "longitudinal",
       "montages": [
@@ -1128,6 +1130,7 @@
      "kind": "tracingQuiz",
      "scene": {
       "seed": 703,
+      "lff": 0.5,
       "state": "quietSleep",
       "sensitivity": 10,
       "montage": "longitudinal",
@@ -1205,6 +1208,7 @@
      "kind": "tracingQuiz",
      "scene": {
       "seed": 704,
+      "lff": 0.5,
       "sensitivity": 10,
       "montage": "longitudinal",
       "montages": [
@@ -1249,6 +1253,7 @@
      "kind": "tracingQuiz",
      "scene": {
       "seed": 705,
+      "lff": 0.5,
       "pmaWeeks": 40,
       "ageYears": 0,
       "state": "quietSleep",
@@ -1296,6 +1301,7 @@
      "kind": "tracingQuiz",
      "scene": {
       "seed": 706,
+      "lff": 0.5,
       "pmaWeeks": 40,
       "ageYears": 0,
       "state": "semicomatose",
