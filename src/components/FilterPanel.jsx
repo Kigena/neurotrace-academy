@@ -11,6 +11,8 @@ function FilterPanel({ category, onCategoryChange, location, onLocationChange })
     "periodic",
     "encephalopathy",
     "artifact",
+    "medication",
+    "neonatal",
   ];
   const locations = [
     "all",

@@ -3602,5 +3602,826 @@
       ]
     },
     "micro_quiz": []
+  },
+  {
+    "id": "pattern_rem_sawtooth",
+    "name": "REM Sleep with Sawtooth Waves",
+    "category": "NORMAL",
+    "topography": [
+      "generalized",
+      "vertex",
+      "frontal (eye leads)"
+    ],
+    "state": [
+      "REM sleep"
+    ],
+    "age_notes": "Any age; REM normally first appears about 60-90 minutes after sleep onset in adults",
+    "morphology": "Low-voltage mixed-frequency background with rapid eye movements and runs of notched 2-6 Hz sawtooth waves",
+    "frequency_hz": "2-6 (sawtooth)",
+    "amplitude_uv": "low background",
+    "key_features": [
+      "Low-voltage, mixed-frequency background resembling drowsiness",
+      "Rapid conjugate eye movements (opposite polarity at F7 and F8)",
+      "Sawtooth waves: serrated 2-6 Hz runs, maximal centrally (vertex/frontocentral)",
+      "Loss of chin EMG tone on PSG",
+      "No spindles, K-complexes or vertex waves"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_lateral_eye",
+        "why_confused": "Both show lateral eye movements",
+        "how_to_distinguish": "REM movements are rapid, repeated and occur in sleep with sawtooth waves; waking eye movements occur with alpha and blinks"
+      },
+      {
+        "pattern_id": "pattern_rmtd",
+        "why_confused": "Both are notched theta",
+        "how_to_distinguish": "Sawtooth waves are vertex runs in REM; RMTD is mid-temporal in drowsiness"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "normal sleep"
+      ],
+      "associated_with": [
+        "sleep-onset REM in narcolepsy"
+      ],
+      "when_concerning": [
+        "REM within 15 minutes of sleep onset in a routine EEG (sleep-onset REM) is reportable"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard"
+      ],
+      "montage_effects": [
+        "Eye movements best in Fp-F7/Fp-F8 or LOC/ROC channels; sawtooth in the midline chain"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Sleep-onset REM on a routine EEG suggests narcolepsy or sleep deprivation.",
+      "Sawtooth waves are a marker of REM sleep."
+    ],
+    "report_language": {
+      "how_to_describe": "REM sleep with rapid eye movements and vertex sawtooth waves.",
+      "avoid_saying": [
+        "Drowsiness"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "rem",
+        "sleep",
+        "sawtooth"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_excess_beta",
+    "name": "Excess Beta (Medication Effect)",
+    "category": "MEDICATION",
+    "topography": [
+      "frontal",
+      "frontocentral",
+      "diffuse"
+    ],
+    "state": [
+      "wake",
+      "drowsy",
+      "sleep"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Increased amount and amplitude of 18-25 Hz beta, often anterior predominant",
+    "frequency_hz": "18-25",
+    "amplitude_uv": ">25",
+    "key_features": [
+      "Abundant beta activity over 25 uV",
+      "Usually frontocentral or diffuse",
+      "Normal posterior alpha may persist",
+      "Most often from benzodiazepines or barbiturates (also chloral hydrate)",
+      "Often more prominent in drowsiness and light sleep"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_muscle_artifact",
+        "why_confused": "Both are fast activity",
+        "how_to_distinguish": "Beta is rhythmic and sinusoidal; muscle is irregular, spiky and over the muscles"
+      },
+      {
+        "pattern_id": "pattern_breach_rhythm",
+        "why_confused": "Both increase beta",
+        "how_to_distinguish": "Breach rhythm is focal over a skull defect; drug beta is diffuse and symmetric"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "benzodiazepines",
+        "barbiturates",
+        "chloral hydrate"
+      ],
+      "associated_with": [
+        "sedative medication"
+      ],
+      "when_concerning": [
+        "Focal reduction of beta suggests a lesion or fluid collection on that side"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "A low HFF can hide beta"
+      ],
+      "montage_effects": [
+        "Seen in all montages"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Excess beta is the most common medication effect on EEG; list sedatives on the requisition.",
+      "Asymmetry of beta (lower on one side) points to the abnormal side."
+    ],
+    "report_language": {
+      "how_to_describe": "Excess diffuse beta activity, likely a medication effect.",
+      "avoid_saying": [
+        "Fast epileptiform activity"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "beta",
+        "medication",
+        "benzodiazepine"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_pulse_artifact",
+    "name": "Pulse Artifact",
+    "category": "ARTIFACT",
+    "topography": [
+      "single electrode"
+    ],
+    "state": [
+      "any"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Slow wave at one electrode, recurring at the heart rate a fixed delay after each QRS",
+    "frequency_hz": "heart rate",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Smooth slow or triangular wave at a single electrode",
+      "Fixed delay (about 200-300 ms) after each QRS in the EKG channel",
+      "Caused by the electrode moving over a pulsating artery",
+      "Disappears when the electrode is moved slightly",
+      "Different from EKG artifact, which coincides with the QRS"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_ekg_artifact",
+        "why_confused": "Both recur at the heart rate",
+        "how_to_distinguish": "EKG artifact is sharp and simultaneous with the QRS; pulse artifact is a slow wave about 200-300 ms later"
+      },
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both are focal slow waves",
+        "how_to_distinguish": "Pulse artifact is perfectly regular and time-locked to the EKG"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "electrodes over the superficial temporal artery"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral; move the electrode"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Not removed by filters"
+      ],
+      "montage_effects": [
+        "Confined to channels containing that electrode"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "EKG artifact: at the QRS. Pulse artifact: after the QRS.",
+      "Fix pulse artifact by moving the electrode off the artery."
+    ],
+    "report_language": {
+      "how_to_describe": "Pulse artifact at T4, time-locked to the EKG.",
+      "avoid_saying": [
+        "Periodic slow waves"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "pulse",
+        "ekg"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_salt_bridge",
+    "name": "Salt Bridge Artifact",
+    "category": "ARTIFACT",
+    "topography": [
+      "between two electrodes"
+    ],
+    "state": [
+      "any"
+    ],
+    "age_notes": "Any age; common with sweating or excess paste",
+    "morphology": "An abnormally low-amplitude, nearly isoelectric channel between two bridged electrodes",
+    "frequency_hz": "-",
+    "amplitude_uv": "very low in one channel",
+    "key_features": [
+      "One channel much lower than its neighbours (nearly flat)",
+      "Sweat, gel or paste connects two adjacent electrodes",
+      "The bridged electrodes record the same potential",
+      "Neighbouring channels look normal",
+      "Low impedance between the two electrodes on an impedance check"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both are focal changes",
+        "how_to_distinguish": "A bridge makes one channel flat, not slow"
+      },
+      {
+        "pattern_id": "pattern_sturge_weber",
+        "why_confused": "Both show a region of low amplitude",
+        "how_to_distinguish": "A bridge flattens one channel only; cerebral attenuation affects a region and shows in referential montages"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "sweating",
+        "excessive conductive paste"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Never cerebral; it hides real activity"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Not related to filters"
+      ],
+      "montage_effects": [
+        "Flat in bipolar between the bridged pair; normal in referential channels"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "A flat channel between two electrodes means they record the same potential: think salt bridge.",
+      "Clean and re-apply the electrodes; avoid excess paste."
+    ],
+    "report_language": {
+      "how_to_describe": "Salt bridge between F3 and C3; electrodes cleaned and re-applied.",
+      "avoid_saying": [
+        "Attenuation"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "salt-bridge",
+        "electrode"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_chewing_artifact",
+    "name": "Chewing Artifact",
+    "category": "ARTIFACT",
+    "topography": [
+      "temporal"
+    ],
+    "state": [
+      "wake"
+    ],
+    "age_notes": "Any age",
+    "morphology": "Rhythmic bursts of muscle activity over the temporal regions, one with each chew",
+    "frequency_hz": "about 1 burst/s",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Repeated bursts of high-frequency muscle potentials",
+      "Bilateral temporal (temporalis muscles)",
+      "Regular rhythm at the chewing rate",
+      "Clean background between bursts",
+      "Stops when the patient stops chewing"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_muscle_artifact",
+        "why_confused": "Both are EMG",
+        "how_to_distinguish": "Chewing gives rhythmic bursts; tonic muscle is continuous"
+      },
+      {
+        "pattern_id": "pattern_gpfa",
+        "why_confused": "Both are bursts of fast activity",
+        "how_to_distinguish": "Chewing bursts are irregular EMG over the temporal muscles at the chewing rate"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "eating",
+        "gum",
+        "rhythmic jaw movements",
+        "seizure automatisms"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Rhythmic chewing during an event may be an automatism: look underneath for a seizure"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "A lower HFF reduces but does not remove it"
+      ],
+      "montage_effects": [
+        "Temporal channels"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Chewing automatisms in temporal lobe seizures can mask the ictal pattern.",
+      "Note eating or gum chewing on the recording."
+    ],
+    "report_language": {
+      "how_to_describe": "Chewing artifact over both temporal regions.",
+      "avoid_saying": [
+        "Fast activity"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "artifact",
+        "chewing",
+        "muscle"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_trace_discontinu",
+    "name": "Tracé Discontinu (Prematurity)",
+    "category": "NEONATAL",
+    "topography": [
+      "generalized"
+    ],
+    "state": [
+      "all states in very premature infants"
+    ],
+    "age_notes": "Discontinuous in all states below about 30 weeks PMA; persists in quiet sleep until about 34-36 weeks, when it becomes tracé alternant",
+    "morphology": "Bursts of mixed activity separated by long, very low-voltage interburst intervals",
+    "frequency_hz": "-",
+    "amplitude_uv": "bursts 50-300, interburst very low",
+    "key_features": [
+      "Discontinuous background in all states",
+      "Bursts contain delta brushes, temporal theta and sharp transients",
+      "Very low-voltage interburst intervals",
+      "Maximum normal interburst interval shortens with age (for example up to about 30 s at 26-27 weeks)",
+      "Becomes continuous in active sleep and wake as the infant matures"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_burst_suppression",
+        "why_confused": "Both alternate bursts and low voltage",
+        "how_to_distinguish": "Tracé discontinu is age-appropriate and variable; burst suppression is invariant, unreactive and abnormal at that age"
+      },
+      {
+        "pattern_id": "pattern_trace_alternant",
+        "why_confused": "Both are discontinuous",
+        "how_to_distinguish": "Tracé alternant (term quiet sleep) has interburst activity that is reduced but clearly present"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "normal premature infants"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Interburst intervals too long for the PMA, or no variability or reactivity"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard neonatal filters (LFF about 0.5 Hz)"
+      ],
+      "montage_effects": [
+        "Neonatal montage with fewer electrodes"
+      ],
+      "sensitivity_notes": "Neonatal recordings are usually displayed at 10 uV/mm (some labs use 7) and 15 mm/s paper speed"
+    },
+    "abret_exam_pearls": [
+      "Always interpret neonatal EEG against the post-menstrual age (PMA).",
+      "Discontinuity is normal in prematurity; judge interburst duration for age."
+    ],
+    "report_language": {
+      "how_to_describe": "Discontinuous background appropriate for 28 weeks PMA (tracé discontinu).",
+      "avoid_saying": [
+        "Burst suppression"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "neonatal",
+        "premature",
+        "discontinuous"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_trace_alternant",
+    "name": "Tracé Alternant",
+    "category": "NEONATAL",
+    "topography": [
+      "generalized"
+    ],
+    "state": [
+      "quiet sleep"
+    ],
+    "age_notes": "Term and near-term newborns (about 37-44 weeks PMA); gone by about 46 weeks",
+    "morphology": "High-voltage bursts alternating with lower-voltage interburst activity every few seconds",
+    "frequency_hz": "-",
+    "amplitude_uv": "bursts 50-150, interburst 25-50",
+    "key_features": [
+      "Seen in quiet (NREM) sleep of term newborns",
+      "Bursts of 3-8 s alternate with lower-voltage segments of 4-8 s",
+      "Interburst activity is reduced but not suppressed",
+      "Often frontal sharp transients (encoches frontales)",
+      "Replaced by continuous slow-wave sleep after about 44-46 weeks"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_trace_discontinu",
+        "why_confused": "Both are discontinuous",
+        "how_to_distinguish": "In tracé alternant the interburst activity is clearly present; tracé discontinu has very low interburst voltage"
+      },
+      {
+        "pattern_id": "pattern_burst_suppression",
+        "why_confused": "Both alternate",
+        "how_to_distinguish": "Tracé alternant only appears in quiet sleep and is reactive"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "normal term newborn quiet sleep"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Persistence after about 46 weeks PMA, or a suppressed interburst"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard neonatal filters"
+      ],
+      "montage_effects": [
+        "Neonatal montage"
+      ],
+      "sensitivity_notes": "Neonatal recordings are usually displayed at 10 uV/mm (some labs use 7) and 15 mm/s paper speed"
+    },
+    "abret_exam_pearls": [
+      "Tracé alternant is the normal quiet-sleep pattern of the term newborn.",
+      "Document the state: tracé alternant belongs to quiet sleep."
+    ],
+    "report_language": {
+      "how_to_describe": "Tracé alternant in quiet sleep, normal for term age.",
+      "avoid_saying": [
+        "Burst suppression"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "neonatal",
+        "term",
+        "quiet-sleep"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_delta_brushes",
+    "name": "Delta Brushes of Prematurity",
+    "category": "NEONATAL",
+    "topography": [
+      "central",
+      "occipital",
+      "temporal"
+    ],
+    "state": [
+      "active sleep",
+      "quiet sleep"
+    ],
+    "age_notes": "About 26 weeks to term (most abundant 32-34 weeks; rare at term, gone by about 44 weeks)",
+    "morphology": "0.5-1.5 Hz delta waves with superimposed 8-20 Hz fast activity",
+    "frequency_hz": "0.5-1.5 with 8-20",
+    "amplitude_uv": "delta 50-250",
+    "key_features": [
+      "Delta wave with a 'brush' of fast activity riding on it",
+      "Central (rolandic), occipital and temporal",
+      "Peak abundance around 32-34 weeks PMA",
+      "Decrease toward term and disappear by about 44 weeks",
+      "A normal maturational feature"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_extreme_delta_brush",
+        "why_confused": "Both have fast activity on delta",
+        "how_to_distinguish": "Delta brushes are normal in prematurity; extreme delta brush is an adult pattern in anti-NMDA receptor encephalitis"
+      },
+      {
+        "pattern_id": "pattern_temporal_theta_prematurity",
+        "why_confused": "Both are premature graphoelements",
+        "how_to_distinguish": "Temporal theta is 4-6 Hz rhythmic theta without an underlying delta wave"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "normal premature infants"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Persistence after term, or asymmetry between hemispheres"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard neonatal filters"
+      ],
+      "montage_effects": [
+        "Neonatal montage"
+      ],
+      "sensitivity_notes": "Neonatal recordings are usually displayed at 10 uV/mm (some labs use 7) and 15 mm/s paper speed"
+    },
+    "abret_exam_pearls": [
+      "Delta brushes are a hallmark of prematurity, most abundant at 32-34 weeks PMA.",
+      "Their persistence beyond term is a sign of immaturity (dysmaturity)."
+    ],
+    "report_language": {
+      "how_to_describe": "Abundant delta brushes appropriate for 32 weeks PMA.",
+      "avoid_saying": [
+        "Seizure",
+        "Spikes"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "neonatal",
+        "premature",
+        "delta-brush"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_temporal_theta_prematurity",
+    "name": "Temporal Theta of Prematurity (Temporal Sawtooth)",
+    "category": "NEONATAL",
+    "topography": [
+      "temporal"
+    ],
+    "state": [
+      "active sleep",
+      "quiet sleep"
+    ],
+    "age_notes": "Very premature infants, about 26-32 weeks PMA (most prominent around 26-30)",
+    "morphology": "Brief, sharply contoured 4-6 Hz rhythmic runs over the temporal regions",
+    "frequency_hz": "4-6",
+    "amplitude_uv": "up to about 200",
+    "key_features": [
+      "Short bursts of rhythmic, sharply contoured theta",
+      "Over both temporal regions, often asynchronous",
+      "Embedded in the bursts of a discontinuous background",
+      "Disappear by about 32-33 weeks PMA (replaced by temporal alpha bursts)",
+      "A normal maturational feature"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_neonatal_seizure",
+        "why_confused": "Both are rhythmic focal activity",
+        "how_to_distinguish": "Temporal theta runs are brief, age-appropriate and do not evolve; a seizure evolves and lasts at least 10 s"
+      },
+      {
+        "pattern_id": "pattern_delta_brushes",
+        "why_confused": "Both are premature graphoelements",
+        "how_to_distinguish": "Delta brushes have an underlying delta wave"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "normal premature infants"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Persistence after about 33 weeks PMA"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard neonatal filters"
+      ],
+      "montage_effects": [
+        "Neonatal montage"
+      ],
+      "sensitivity_notes": "Neonatal recordings are usually displayed at 10 uV/mm (some labs use 7) and 15 mm/s paper speed"
+    },
+    "abret_exam_pearls": [
+      "Temporal theta is a marker of early prematurity (about 26-30 weeks PMA).",
+      "It is a normal graphoelement, not a seizure."
+    ],
+    "report_language": {
+      "how_to_describe": "Temporal theta bursts appropriate for 28 weeks PMA.",
+      "avoid_saying": [
+        "Temporal seizure activity"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "neonatal",
+        "premature",
+        "temporal-theta"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_encoches_frontales",
+    "name": "Encoches Frontales (Frontal Sharp Transients)",
+    "category": "NEONATAL",
+    "topography": [
+      "frontal"
+    ],
+    "state": [
+      "quiet sleep",
+      "transitional sleep"
+    ],
+    "age_notes": "Newborns about 35-44 weeks PMA; disappear by about 46-48 weeks",
+    "morphology": "Broad, bilaterally synchronous diphasic frontal sharp transients",
+    "frequency_hz": "-",
+    "amplitude_uv": "50-150",
+    "key_features": [
+      "Broad diphasic sharp transients at Fp1/Fp2 or F3/F4",
+      "Bilateral and synchronous (may be briefly asymmetric)",
+      "Most common in quiet and transitional sleep",
+      "Often accompanied by anterior slow dysrhythmia (frontal rhythmic delta)",
+      "Normal in the term newborn"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_spikes_frontal",
+        "why_confused": "Both are frontal sharp waves",
+        "how_to_distinguish": "Encoches frontales are broad, bilateral and synchronous in a newborn of the right age; epileptiform sharp waves are focal and persistent"
+      },
+      {
+        "pattern_id": "pattern_eye_blink",
+        "why_confused": "Both are frontal transients",
+        "how_to_distinguish": "Blinks are positive slow deflections in an awake patient"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "normal term newborns"
+      ],
+      "associated_with": [
+        "anterior slow dysrhythmia"
+      ],
+      "when_concerning": [
+        "Persistent strictly unilateral or very frequent frontal sharp waves, or persistence beyond about 48 weeks"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard neonatal filters"
+      ],
+      "montage_effects": [
+        "Neonatal montage"
+      ],
+      "sensitivity_notes": "Neonatal recordings are usually displayed at 10 uV/mm (some labs use 7) and 15 mm/s paper speed"
+    },
+    "abret_exam_pearls": [
+      "Encoches frontales are normal frontal sharp transients of the term newborn.",
+      "They are bilaterally synchronous; a strictly one-sided frontal focus is not."
+    ],
+    "report_language": {
+      "how_to_describe": "Normal bilateral frontal sharp transients (encoches frontales).",
+      "avoid_saying": [
+        "Frontal spikes"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "neonatal",
+        "term",
+        "frontal-sharp"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_neonatal_seizure",
+    "name": "Neonatal Electrographic Seizure",
+    "category": "ICTAL",
+    "topography": [
+      "focal",
+      "central"
+    ],
+    "state": [
+      "any"
+    ],
+    "age_notes": "Newborns (term and preterm)",
+    "morphology": "A focal rhythmic discharge that evolves in frequency, amplitude and morphology, lasting at least 10 s",
+    "frequency_hz": "evolving, often delta-theta",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Sudden rhythmic focal activity, often central (C3/C4) or temporal",
+      "Evolution in frequency, amplitude, morphology or field",
+      "At least 10 s long by definition",
+      "Usually focal; generalized 3 Hz spike-and-wave does not occur in newborns",
+      "Many neonatal seizures are electrographic only (no clinical sign)"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_temporal_theta_prematurity",
+        "why_confused": "Both are rhythmic focal activity",
+        "how_to_distinguish": "Temporal theta is brief and age-appropriate; a seizure evolves and lasts at least 10 s"
+      },
+      {
+        "pattern_id": "pattern_pleds",
+        "why_confused": "Both are focal repetitive activity",
+        "how_to_distinguish": "Periodic discharges recur without evolution; a seizure evolves"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "hypoxic-ischemic encephalopathy",
+        "stroke",
+        "hemorrhage",
+        "infection",
+        "metabolic disorders"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Always: notify per lab protocol"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard neonatal filters"
+      ],
+      "montage_effects": [
+        "Neonatal montage; video helps detect subtle clinical signs"
+      ],
+      "sensitivity_notes": "Neonatal recordings are usually displayed at 10 uV/mm (some labs use 7) and 15 mm/s paper speed"
+    },
+    "abret_exam_pearls": [
+      "Neonatal seizures are mostly focal and often subclinical, so continuous EEG is needed.",
+      "An electrographic seizure must last at least 10 s."
+    ],
+    "report_language": {
+      "how_to_describe": "Electrographic seizure arising from the left central region, evolving over 10 s.",
+      "avoid_saying": [
+        "Rhythmic artifact without checking"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "neonatal",
+        "seizure",
+        "ictal"
+      ]
+    },
+    "micro_quiz": []
   }
 ]

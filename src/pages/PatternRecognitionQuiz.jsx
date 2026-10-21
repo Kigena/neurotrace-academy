@@ -38,6 +38,7 @@ const [difficulty, setDifficulty] = useState('mixed'); // easy, medium, hard, mi
                 'variants': ['NORMAL_VARIANT', 'BENIGN_VARIANT'],
                 'epileptiform': ['EPILEPTIFORM', 'ICTAL', 'INTERICTAL'],
                 'slowing': ['SLOWING'],
+                'neonatal': ['NEONATAL'],
                 'artifacts': ['ARTIFACT']
             };
             filteredPatterns = availablePatterns.filter(p => 
@@ -151,6 +152,8 @@ const [difficulty, setDifficulty] = useState('mixed'); // easy, medium, hard, mi
             'ICTAL': 'bg-red-200 text-red-900',
             'INTERICTAL': 'bg-orange-100 text-orange-800',
             'SLOWING': 'bg-amber-100 text-amber-800',
+            'NEONATAL': 'bg-pink-100 text-pink-800',
+            'MEDICATION': 'bg-violet-100 text-violet-800',
             'ARTIFACT': 'bg-gray-100 text-gray-800'
         };
         return colorMap[category] || 'bg-slate-100 text-slate-800';
@@ -205,13 +208,14 @@ const [difficulty, setDifficulty] = useState('mixed'); // easy, medium, hard, mi
                             <label className="block text-sm font-semibold text-slate-700 mb-3">
                                 Select Category:
                             </label>
-                            <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
+                            <div className="grid grid-cols-2 md:grid-cols-7 gap-3">
                                 {[
                                     { value: 'all', label: 'All Patterns', icon: '🧠' },
                                     { value: 'normal', label: 'Normal', icon: '✅' },
                                     { value: 'variants', label: 'Variants', icon: '🔄' },
                                     { value: 'epileptiform', label: 'Epileptiform', icon: '⚡' },
                                     { value: 'slowing', label: 'Slowing & coma', icon: '🌊' },
+                                    { value: 'neonatal', label: 'Neonatal', icon: '👶' },
                                     { value: 'artifacts', label: 'Artifacts', icon: '⚠️' }
                                 ].map(cat => (
                                     <button

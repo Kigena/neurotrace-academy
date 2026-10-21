@@ -258,7 +258,7 @@ export const FINDING_TYPES = [
   "vertex", "spindle", "blink", "eyesClosed", "eyesOpen", "lateralEye", "muscle", "electrodePop",
   "diffuseSlowing", "triphasic", "rhythmicDelta", "glossokinetic", "sine", "focalDelta", "burst",
   "rhythm", "periodic", "ictal", "hypsarrhythmia", "electrodecrement", "fastBurst", "sweat", "deltaBrush", "temporalTheta",
-  "arciform", "kComplex", "photic",
+  "arciform", "kComplex", "photic", "pulse", "saltBridge",
 ];
 
 /**
@@ -955,6 +955,24 @@ export function generateReferential(scene) {
         markers.push({ at: to, label: "Off" });
         break;
       }
+      case "pulse":
+        // added with the EKG below, once the beat times are known
+        break;
+      case "saltBridge": {
+        // Sweat or gel bridging two electrodes: both record the same (averaged) potential,
+        // so the channel between them is isoelectric.
+        const [a, b] = f.electrodes || ["F3", "C3"];
+        const keep = f.residual ?? 0.06; // a bridge is low-resistance, not a perfect short
+        post.push((name) => {
+          if (name !== a) return;
+          for (let i = 0; i < n; i++) {
+            const m = (V[a][i] + V[b][i]) / 2;
+            V[a][i] = m + keep * (V[a][i] - m);
+            V[b][i] = m + keep * (V[b][i] - m);
+          }
+        });
+        break;
+      }
       case "electrodePop": {
         const ch = V[f.electrode || "T4"];
         const times = Array.isArray(f.at) ? f.at : [f.at];
@@ -994,6 +1012,17 @@ export function generateReferential(scene) {
         v += 0.28 * asymGauss(t, b + 0.25, 0.06, 0.07); // T
       }
       ekg[i] = -900 * v; // displayed with negative up: R points up
+    }
+    // Pulse artifact: an electrode over an artery moves with each pulse wave, giving a slow
+    // wave about 200-300 ms after every QRS at that electrode only.
+    for (const f of findings) {
+      if (f.type !== "pulse") continue;
+      const ch = V[f.electrode || "T4"];
+      const delay = (f.delayMs ?? 250) / 1000;
+      for (let i = 0; i < n; i++) {
+        const t = time(i);
+        for (const b of beats) if (Math.abs(t - b - delay) < 0.6) ch[i] += -(f.uv ?? 60) * asymGauss(t, b + delay, 0.08, 0.16);
+      }
     }
     const contam = scene.ekgContamination ?? 4;
     const earSites = scene.ekgOppositeEars

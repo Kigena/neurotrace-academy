@@ -39,10 +39,23 @@ describe("pattern recognition tracings", () => {
     expect(count(["EPILEPTIFORM", "ICTAL", "INTERICTAL"])).toBeGreaterThanOrEqual(4);
     expect(count(["SLOWING"])).toBeGreaterThanOrEqual(4);
     expect(count(["ARTIFACT"])).toBeGreaterThanOrEqual(4);
+    expect(count(["NEONATAL"])).toBeGreaterThanOrEqual(4);
   });
 });
 
 describe("new generator findings", () => {
+  it("a salt bridge leaves the bridged channel nearly flat but its neighbours normal", () => {
+    const page = renderScene({ seed: 3, findings: [{ type: "saltBridge", electrodes: ["F3", "C3"] }] }, "longitudinal");
+    expect(pp(ch(page, "F3-C3"), 1, 9)).toBeLessThan(0.15 * pp(ch(page, "C3-P3"), 1, 9));
+  });
+
+  it("pulse artifact appears at one electrode only, after each QRS", () => {
+    const base = { seed: 4, background: QUIET };
+    const a = renderScene({ ...base, findings: [{ type: "pulse", electrode: "T4", uv: 80 }] }, "referentialA1");
+    expect(pp(ch(a, "T4-A1"), 1, 9)).toBeGreaterThan(60);
+    expect(pp(ch(a, "T3-A1"), 1, 9)).toBeLessThan(pp(ch(a, "T4-A1"), 1, 9) / 3);
+  });
+
   it("lambda-style transients with negative uv are surface positive at O1 (downward in O1-LE)", () => {
     const page = renderScene({ background: QUIET, ekg: false, findings: [{ type: "sharp", center: [0, -0.8], sigma: 0.33, uv: -70, durMs: 220, at: [5] }] }, "linkedEars");
     const d = win(ch(page, "O1-LE"), 4.8, 5.3);
