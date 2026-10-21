@@ -36,12 +36,13 @@ function pathFor(data, x0, y0, pxPerSample, pxPerUv) {
   return d;
 }
 
-function TracingSvg({ scene, montage, sens, caliper, onCaliper, ruler, onRuler, tool }) {
-  const svgRef = useRef(null);
-  const drag = useRef(null);
-  const page = useMemo(() => renderScene(scene, montage), [scene, montage]);
-  const seconds = page.seconds;
-  const pxPerSec = TRACE_W / seconds;
+/**
+ * Channel layout and trace paths for a rendered page. Computed once in
+ * EegTracing and shared by the inline and enlarged views, so opening the
+ * enlarged view does not re-run the simulation or rebuild the paths.
+ */
+function buildLayout(page, montage, sens, ekgSens) {
+  const pxPerSec = TRACE_W / page.seconds;
   const pxPerSample = pxPerSec / page.fs;
   const pxPerUv = PX_PER_MM / sens;
   const groups = GROUPS[montage] || [page.channels.length];
@@ -63,8 +64,17 @@ function TracingSvg({ scene, montage, sens, caliper, onCaliper, ruler, onRuler, 
   }
   const ekgY = page.ekg ? y + 4 : null;
   const height = (ekgY ?? y) + ROW * 0.6 + FOOTER;
+  const paths = page.channels.map((ch, c) => pathFor(ch.data, LABEL_W, rows[c], pxPerSample, pxPerUv));
+  const ekgPath = page.ekg ? pathFor(page.ekg, LABEL_W, ekgY, pxPerSample, PX_PER_MM / ekgSens) : null;
+  return { pxPerSec, pxPerUv, rows, ekgY, height, paths, ekgPath };
+}
+
+const TracingSvg = React.memo(function TracingSvg({ scene, page, layout, sens, caliper, onCaliper, ruler, onRuler, tool }) {
+  const svgRef = useRef(null);
+  const drag = useRef(null);
+  const seconds = page.seconds;
+  const { pxPerSec, pxPerUv, rows, ekgY, height, paths, ekgPath } = layout;
   const width = LABEL_W + TRACE_W + 64;
-  const ekgSens = scene.ekgSens ?? 100;
   const calUv = sens <= 10 ? 50 : sens <= 20 ? 100 : 200;
 
   const toPoint = (evt) => {
@@ -145,13 +155,13 @@ function TracingSvg({ scene, montage, sens, caliper, onCaliper, ruler, onRuler, 
       {page.channels.map((ch, c) => (
         <g key={ch.label}>
           <text x={6} y={rows[c] + 4} fontSize="11" fill="#1e293b" fontFamily="ui-monospace, monospace">{ch.label}</text>
-          <path d={pathFor(ch.data, LABEL_W, rows[c], pxPerSample, pxPerUv)} fill="none" stroke="#0f172a" strokeWidth={0.75} clipPath="url(#trace-area)" />
+          <path d={paths[c]} fill="none" stroke="#0f172a" strokeWidth={0.75} clipPath="url(#trace-area)" />
         </g>
       ))}
       {page.ekg && (
         <g>
           <text x={6} y={ekgY + 4} fontSize="11" fill="#1e293b" fontFamily="ui-monospace, monospace">EKG</text>
-          <path d={pathFor(page.ekg, LABEL_W, ekgY, pxPerSample, PX_PER_MM / ekgSens)} fill="none" stroke="#334155" strokeWidth={0.75} clipPath="url(#trace-area)" />
+          <path d={ekgPath} fill="none" stroke="#334155" strokeWidth={0.75} clipPath="url(#trace-area)" />
         </g>
       )}
 
@@ -199,7 +209,7 @@ function TracingSvg({ scene, montage, sens, caliper, onCaliper, ruler, onRuler, 
       )}
     </svg>
   );
-}
+});
 
 export default function EegTracing({ scene, caption }) {
   const montages = scene.montages?.length ? scene.montages : [scene.montage || "longitudinal"];
@@ -236,6 +246,8 @@ export default function EegTracing({ scene, caption }) {
   }, [enlarged]);
 
   const liveScene = useMemo(() => ({ ...scene, lff, hff, notch }), [scene, lff, hff, notch]);
+  const page = useMemo(() => renderScene(liveScene, montage), [liveScene, montage]);
+  const layout = useMemo(() => buildLayout(page, montage, sens, scene.ekgSens ?? 100), [page, montage, sens, scene.ekgSens]);
   const withCurrent = (choices, value) => (choices.includes(value) ? choices : [...choices, value].sort((a, b) => a - b));
 
   const toolbar = (
@@ -317,7 +329,7 @@ export default function EegTracing({ scene, caption }) {
   );
 
   const svg = (
-    <TracingSvg scene={liveScene} montage={montage} sens={sens} caliper={caliper} onCaliper={setCaliper} ruler={ruler} onRuler={setRuler} tool={tool} />
+    <TracingSvg scene={liveScene} page={page} layout={layout} sens={sens} caliper={caliper} onCaliper={setCaliper} ruler={ruler} onRuler={setRuler} tool={tool} />
   );
 
   return (

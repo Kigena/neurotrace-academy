@@ -1596,12 +1596,12 @@
     "topography": ["generalized"],
     "state": ["wake", "sleep"],
     "age_notes": "Adults, highly characteristic of CJD",
-    "morphology": "Periodic sharp waves at 1-2 Hz, bilateral and synchronous",
-    "frequency_hz": "1–2",
+    "morphology": "Periodic sharp waves at 0.5-2 Hz (typically about 1 Hz), bilateral and synchronous",
+    "frequency_hz": "0.5–2 (typically about 1)",
     "amplitude_uv": "high",
     "key_features": [
       "Periodic sharp waves",
-      "1-2 Hz frequency",
+      "0.5-2 Hz (typically about 1 Hz)",
       "Bilateral and synchronous",
       "Highly characteristic of CJD",
       "Background slowing"
@@ -1610,12 +1610,12 @@
       {
         "pattern_id": "pattern_pleds",
         "why_confused": "Both are periodic patterns",
-        "how_to_distinguish": "PSWCs are bilateral and synchronous; PLEDs are lateralized"
+        "how_to_distinguish": "PSWCs are bilateral and synchronous; LPDs are lateralized"
       },
       {
         "pattern_id": "pattern_gpds",
         "why_confused": "Both are periodic generalized patterns",
-        "how_to_distinguish": "PSWCs are 1-2 Hz and characteristic of CJD; GPDs are more variable"
+        "how_to_distinguish": "In ACNS 2021 terms PSWCs are GPDs; 'PSWCs' is the CJD-specific clinical name"
       }
     ],
     "clinical_context": {
@@ -1642,14 +1642,14 @@
       "sensitivity_notes": "Standard sensitivity adequate"
     },
     "abret_exam_pearls": [
-      "Periodic sharp wave complexes (PSWCs) at 1-2 Hz are highly characteristic of CJD but can occur in other prion diseases.",
-      "PSWCs are bilateral and synchronous, distinguishing them from lateralized periodic patterns like PLEDs.",
+      "Periodic sharp wave complexes (PSWCs) at 0.5-2 Hz (typically about 1 Hz) are highly characteristic of CJD but can occur in other prion diseases.",
+      "PSWCs are bilateral and synchronous, distinguishing them from lateralized periodic patterns like LPDs.",
       "CJD is characterized by rapidly progressive dementia over weeks to months (not years), with myoclonus, cerebellar dysfunction, and PSWCs on EEG.",
       "EEG may be normal or nonspecific early in CJD, becoming diagnostic later with PSWCs. Absence of PSWCs does not exclude CJD, especially early or in variant forms.",
       "Myoclonus in CJD is often stimulus-sensitive (sound, touch, light) and correlates with PSWCs on EEG."
     ],
     "report_language": {
-      "how_to_describe": "Periodic sharp wave complexes (PSWCs) at 1-2 Hz, bilateral and synchronous, highly characteristic of CJD.",
+      "how_to_describe": "Periodic sharp wave complexes (PSWCs) at about 1 Hz, bilateral and synchronous, highly characteristic of CJD.",
       "avoid_saying": ["Pathognomonic of CJD (can occur in other prion diseases)"]
     },
     "cross_links": {
@@ -1923,17 +1923,17 @@
       {
         "pattern_id": "pattern_pswcs",
         "why_confused": "Both are periodic patterns",
-        "how_to_distinguish": "PLEDs are lateralized (unilateral); PSWCs are bilateral and synchronous"
+        "how_to_distinguish": "LPDs are lateralized (unilateral); PSWCs are bilateral and synchronous"
       },
       {
         "pattern_id": "pattern_gpds",
         "why_confused": "Both are periodic patterns",
-        "how_to_distinguish": "PLEDs are lateralized (unilateral); GPDs are generalized (bilateral)"
+        "how_to_distinguish": "LPDs are lateralized (unilateral); GPDs are generalized (bilateral)"
       },
       {
         "pattern_id": "pattern_focal_slowing",
         "why_confused": "Both involve focal/lateralized activity",
-        "how_to_distinguish": "PLEDs are periodic epileptiform discharges; focal slowing is continuous polymorphic delta without periodic spikes"
+        "how_to_distinguish": "LPDs are periodic discharges; focal slowing is continuous polymorphic delta without periodic spikes"
       }
     ],
     "clinical_context": {
@@ -1960,15 +1960,15 @@
       "sensitivity_notes": "Standard sensitivity adequate; may need adjustment for high-amplitude discharges"
     },
     "abret_exam_pearls": [
-      "PLEDs are periodic, lateralized epileptiform discharges indicating acute/subacute focal cortical dysfunction.",
+      "LPDs (formerly PLEDs) are lateralized periodic discharges indicating acute/subacute focal cortical dysfunction.",
       "Most commonly seen in acute stroke, but also in HSE, brain tumors, trauma, and other acute structural lesions.",
-      "PLEDs are lateralized (unilateral), distinguishing them from bilateral periodic patterns like PSWCs (CJD) or GPDs.",
+      "LPDs are lateralized (unilateral), distinguishing them from bilateral periodic patterns like PSWCs (CJD) or GPDs.",
       "May be ictal or interictal; clinical correlation is essential for interpretation.",
       "Often seen in ICU settings; requires immediate notification of medical team."
     ],
     "report_language": {
-      "how_to_describe": "Periodic lateralized epileptiform discharges (PLEDs) over the [hemisphere/region] at [frequency] Hz, consistent with acute/subacute focal cortical dysfunction.",
-      "avoid_saying": ["Diagnostic of [specific condition] - PLEDs are seen in multiple conditions and require clinical correlation"]
+      "how_to_describe": "Lateralized periodic discharges (LPDs) over the [hemisphere/region] at [frequency] Hz, consistent with acute/subacute focal cortical dysfunction.",
+      "avoid_saying": ["Diagnostic of [specific condition] - LPDs are seen in multiple conditions and require clinical correlation"]
     },
     "cross_links": {
       "workflow_sections": ["D2-S8-SPECIAL-PROTOCOLS", "D3-09-ENCEPHALOPATHY-DIFFERENTIALS"],
@@ -4468,7 +4468,7 @@
       ],
       "associated_with": [],
       "when_concerning": [
-        "Above 2.5 Hz for at least 10 s is an electrographic seizure; 1-2.5 Hz is on the ictal-interictal continuum"
+        "Above 2.5 Hz for at least 10 s is an electrographic seizure; more than 1 and up to 2.5 Hz is on the ictal-interictal continuum"
       ]
     },
     "settings_sensitivity": {
@@ -4485,7 +4485,7 @@
       "Count discharges in 10 s: over 25 (above 2.5 Hz) is a seizure; over 10 to 25 is IIC."
     ],
     "report_language": {
-      "how_to_describe": "GPDs, frequent, 1 Hz, sharp, medium amplitude.",
+      "how_to_describe": "GPDs, frequent, 1 Hz, sharp, high amplitude.",
       "avoid_saying": [
         "GPEDs",
         "Triphasic waves (as a pattern name)"
@@ -4517,7 +4517,7 @@
     "age_notes": "Adults in the ICU",
     "morphology": "Rhythmic delta (0.5-4 Hz) of fairly uniform shape with no interval between waves, over one hemisphere",
     "frequency_hz": "0.5-4",
-    "amplitude_uv": "medium",
+    "amplitude_uv": "high",
     "key_features": [
       "Rhythmic delta waves following one another without a gap",
       "Unilateral, or bilateral but consistently larger on one side",
@@ -4602,7 +4602,7 @@
     "amplitude_uv": "medium to high",
     "key_features": [
       "Periodic discharges over both hemispheres",
-      "The two sides run independently: different rates, timing and morphology",
+      "The two sides run independently (asynchronous, often at different rates; morphology may be similar or different)",
       "Present at the same time (not left now, right later)",
       "Replaces the old term BIPLEDs",
       "Associated with more severe injury and coma than unilateral LPDs"
@@ -4644,7 +4644,7 @@
       "Independent patterns at different times are two separate lateralized patterns, not BIPDs."
     ],
     "report_language": {
-      "how_to_describe": "BIPDs, left about 0.8 Hz and right about 1.2 Hz, sharp, high amplitude.",
+      "how_to_describe": "BIPDs, left about 0.6 Hz and right about 1 Hz, sharp, high amplitude.",
       "avoid_saying": [
         "BIPLEDs"
       ]
@@ -4672,7 +4672,7 @@
     "state": [
       "any"
     ],
-    "age_notes": "Critically ill adults and neonates",
+    "age_notes": "Critically ill adults and children (the 2021 terminology excludes neonates)",
     "morphology": "Rhythmic activity faster than 4 Hz lasting 0.5 s to under 10 s, not a normal variant",
     "frequency_hz": ">4",
     "amplitude_uv": "variable",
@@ -4681,7 +4681,8 @@
       "Lasts at least 0.5 s and under 10 s",
       "Not a normal pattern, benign variant or part of burst suppression",
       "Definite BIRDs: evolution, or same morphology/location as the patient's discharges or seizures",
-      "Possible BIRDs: sharply contoured but no evolution or match"
+      "Possible BIRDs: sharply contoured but no evolution or match",
+      "No definite clinical correlate (with one, it is an electroclinical seizure)"
     ],
     "common_confusions": [
       {
