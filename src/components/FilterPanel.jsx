@@ -13,6 +13,7 @@ function FilterPanel({ category, onCategoryChange, location, onLocationChange })
     "artifact",
     "medication",
     "neonatal",
+    "critical_care",
   ];
   const locations = [
     "all",

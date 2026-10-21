@@ -275,7 +275,7 @@ export function generateReferential(scene) {
   const state = scene.state || "awake";
   const bg = { ...DEFAULT_BG[state] || DEFAULT_BG.awake, ...(scene.background || {}) };
   const findings = scene.findings || [];
-  const markers = [];
+  const markers = (scene.annotations || []).map((m) => ({ ...m })); // e.g. a stimulus mark on a SIRPIDs page
   const post = []; // functions run on every electrode after all sources are summed
 
   const V = {};
@@ -439,6 +439,11 @@ export function generateReferential(scene) {
           sig[i] = amp * v;
         }
         addSource(V, field(f.center ?? [0, 0.1], f.sigma ?? 0.9, f.side ? { side: f.side } : {}), sig);
+        if (f.mirror) {
+          // bilateral, synchronous and symmetric: the same discharge from the mirror-image site
+          const [cx, cy] = resolveCenter(f.center ?? [0, 0.1]);
+          addSource(V, field([-cx, cy], f.sigma ?? 0.9), sig);
+        }
         if (f.diffuse) {
           // generalized complexes reach every electrode with its own gain, so bipolar chains everywhere show them
           for (const name of CORE_NAMES) {

@@ -40,6 +40,7 @@ describe("pattern recognition tracings", () => {
     expect(count(["SLOWING"])).toBeGreaterThanOrEqual(4);
     expect(count(["ARTIFACT"])).toBeGreaterThanOrEqual(4);
     expect(count(["NEONATAL"])).toBeGreaterThanOrEqual(4);
+    expect(count(["CRITICAL_CARE"])).toBeGreaterThanOrEqual(4);
   });
 });
 
@@ -47,6 +48,21 @@ describe("new generator findings", () => {
   it("a salt bridge leaves the bridged channel nearly flat but its neighbours normal", () => {
     const page = renderScene({ seed: 3, findings: [{ type: "saltBridge", electrodes: ["F3", "C3"] }] }, "longitudinal");
     expect(pp(ch(page, "F3-C3"), 1, 9)).toBeLessThan(0.15 * pp(ch(page, "C3-P3"), 1, 9));
+  });
+
+  it("mirrored periodic discharges are bilaterally symmetric for any seed", () => {
+    const f = { type: "periodic", center: [-0.35, 0.3], sigma: 0.28, uv: 200, intervalS: 1, mirror: true };
+    for (const seed of [1, 2, 3, 4, 5]) {
+      const page = renderScene({ seed, background: QUIET, ekg: false, findings: [f] }, "longitudinal");
+      for (const [l, r] of [["F3-C3", "F4-C4"], ["Fp1-F3", "Fp2-F4"], ["C3-P3", "C4-P4"]]) {
+        expect(pp(ch(page, l), 1, 9)).toBeCloseTo(pp(ch(page, r), 1, 9), 0);
+      }
+    }
+  });
+
+  it("scene annotations appear as markers", () => {
+    const page = renderScene({ annotations: [{ at: 3, label: "Sternal rub" }] }, "longitudinal");
+    expect(page.markers).toContainEqual({ at: 3, label: "Sternal rub" });
   });
 
   it("pulse artifact appears at one electrode only, after each QRS", () => {

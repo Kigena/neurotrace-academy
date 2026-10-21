@@ -901,7 +901,7 @@
   },
   {
     "id": "pattern_firda",
-    "name": "Frontal Intermittent Rhythmic Delta Activity (FIRDA)",
+    "name": "FIRDA (Frontally Predominant GRDA)",
     "category": "SLOWING",
     "topography": ["frontal"],
     "state": ["awake", "sleep"],
@@ -1414,7 +1414,7 @@
   },
   {
     "id": "pattern_triphasic_waves",
-    "name": "Triphasic Waves",
+    "name": "Triphasic Waves (GPDs with Triphasic Morphology)",
     "category": "SLOWING",
     "topography": ["frontal", "generalized"],
     "state": ["wake", "drowsy"],
@@ -1903,7 +1903,7 @@
   },
   {
     "id": "pattern_pleds",
-    "name": "Periodic Lateralized Epileptiform Discharges (PLEDs)",
+    "name": "Lateralized Periodic Discharges (LPDs; formerly PLEDs)",
     "category": "EPILEPTIFORM",
     "topography": ["lateralized", "unilateral"],
     "state": ["wake", "sleep"],
@@ -4420,6 +4420,542 @@
         "neonatal",
         "seizure",
         "ictal"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_gpds",
+    "name": "Generalized Periodic Discharges (GPDs)",
+    "category": "CRITICAL_CARE",
+    "topography": [
+      "generalized"
+    ],
+    "state": [
+      "coma",
+      "stupor"
+    ],
+    "age_notes": "Adults in the ICU",
+    "morphology": "Repeated discharges of fairly uniform shape over both hemispheres, bilaterally synchronous and symmetric, with a clear interval between them",
+    "frequency_hz": "usually 0.5-2.5",
+    "amplitude_uv": "medium to high",
+    "key_features": [
+      "Periodic: a clear interval of background between discharges",
+      "Generalized: bilaterally synchronous and symmetric (may be frontally predominant)",
+      "Nearly regular interval (cycle length varies under 50%)",
+      "At least 6 consecutive cycles to qualify",
+      "Replaces the old terms GPEDs/PEDs; 'triphasic waves' are now GPDs with triphasic morphology"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_triphasic_waves",
+        "why_confused": "Both are generalized periodic patterns",
+        "how_to_distinguish": "Triphasic waves are GPDs with a blunt negative-positive-negative shape and fronto-occipital lag, typical of metabolic encephalopathy"
+      },
+      {
+        "pattern_id": "pattern_pswcs",
+        "why_confused": "Both are generalized periodic sharp complexes",
+        "how_to_distinguish": "PSWCs of CJD repeat about once per second with a rapidly progressive dementia; GPDs are a descriptive ICU term for any cause"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "toxic-metabolic encephalopathy",
+        "anoxic injury",
+        "sepsis",
+        "cefepime or lithium toxicity",
+        "CJD"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Above 2.5 Hz for at least 10 s is an electrographic seizure; 1-2.5 Hz is on the ictal-interictal continuum"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard ICU settings"
+      ],
+      "montage_effects": [
+        "ACNS voltages are measured peak to trough in a longitudinal bipolar montage; symmetry is judged referentially"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "GPDs need bilaterally synchronous and symmetric discharges with an interval between them.",
+      "Count discharges in 10 s: over 25 (above 2.5 Hz) is a seizure; over 10 to 25 is IIC."
+    ],
+    "report_language": {
+      "how_to_describe": "GPDs, frequent, 1 Hz, sharp, medium amplitude.",
+      "avoid_saying": [
+        "GPEDs",
+        "Triphasic waves (as a pattern name)"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "acns",
+        "gpds",
+        "periodic",
+        "icu"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_lrda",
+    "name": "Lateralized Rhythmic Delta Activity (LRDA)",
+    "category": "CRITICAL_CARE",
+    "topography": [
+      "temporal",
+      "lateralized"
+    ],
+    "state": [
+      "any"
+    ],
+    "age_notes": "Adults in the ICU",
+    "morphology": "Rhythmic delta (0.5-4 Hz) of fairly uniform shape with no interval between waves, over one hemisphere",
+    "frequency_hz": "0.5-4",
+    "amplitude_uv": "medium",
+    "key_features": [
+      "Rhythmic delta waves following one another without a gap",
+      "Unilateral, or bilateral but consistently larger on one side",
+      "At least 6 cycles; frequency 0.5 to 4 Hz",
+      "Irregular (polymorphic) delta is not RDA",
+      "Strongly associated with acute seizures, similar to LPDs"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_firda",
+        "why_confused": "Both are rhythmic delta",
+        "how_to_distinguish": "FIRDA (frontally predominant GRDA) is generalized and is never on the IIC; LRDA is lateralized and carries seizure risk"
+      },
+      {
+        "pattern_id": "pattern_focal_slowing",
+        "why_confused": "Both are lateralized delta",
+        "how_to_distinguish": "Focal slowing is irregular and polymorphic; LRDA is rhythmic"
+      },
+      {
+        "pattern_id": "pattern_tirda",
+        "why_confused": "Both are lateralized rhythmic delta",
+        "how_to_distinguish": "TIRDA is the outpatient term for temporal rhythmic delta in epilepsy; in the ICU the ACNS name is LRDA"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "acute structural lesions",
+        "critically ill patients"
+      ],
+      "associated_with": [
+        "acute seizures"
+      ],
+      "when_concerning": [
+        "LRDA over 1 Hz for at least 10 s with a plus modifier or fluctuation is on the IIC"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard ICU settings"
+      ],
+      "montage_effects": [
+        "ACNS voltages are measured peak to trough in a longitudinal bipolar montage; symmetry is judged referentially"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "GRDA is never on the IIC; LRDA can be (over 1 Hz with +F/+S or fluctuation).",
+      "RDA ranges 0.5-4 Hz; faster rhythmic activity is BIRDs or a seizure."
+    ],
+    "report_language": {
+      "how_to_describe": "LRDA over the left temporal region, 1.5 Hz, very brief.",
+      "avoid_saying": [
+        "Focal slowing"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "acns",
+        "lrda",
+        "rhythmic-delta",
+        "icu"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_bipds",
+    "name": "Bilateral Independent Periodic Discharges (BIPDs)",
+    "category": "CRITICAL_CARE",
+    "topography": [
+      "bilateral independent"
+    ],
+    "state": [
+      "coma",
+      "stupor"
+    ],
+    "age_notes": "Adults in the ICU",
+    "morphology": "Two independent lateralized periodic patterns, one over each hemisphere, occurring at the same time",
+    "frequency_hz": "each usually 0.5-2",
+    "amplitude_uv": "medium to high",
+    "key_features": [
+      "Periodic discharges over both hemispheres",
+      "The two sides run independently: different rates, timing and morphology",
+      "Present at the same time (not left now, right later)",
+      "Replaces the old term BIPLEDs",
+      "Associated with more severe injury and coma than unilateral LPDs"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_gpds",
+        "why_confused": "Both have periodic discharges on both sides",
+        "how_to_distinguish": "GPDs are synchronous and symmetric; BIPDs are independent on each side"
+      },
+      {
+        "pattern_id": "pattern_pleds",
+        "why_confused": "Both are lateralized periodic discharges",
+        "how_to_distinguish": "LPDs are on one side; BIPDs have an independent pattern on each side at the same time"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "anoxic injury",
+        "CNS infection (for example herpes encephalitis)",
+        "multifocal structural injury"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "High risk of seizures and poor outcome"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard ICU settings"
+      ],
+      "montage_effects": [
+        "ACNS voltages are measured peak to trough in a longitudinal bipolar montage; symmetry is judged referentially"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "BI means two independent lateralized patterns at the same time, one in each hemisphere.",
+      "Independent patterns at different times are two separate lateralized patterns, not BIPDs."
+    ],
+    "report_language": {
+      "how_to_describe": "BIPDs, left about 0.8 Hz and right about 1.2 Hz, sharp, high amplitude.",
+      "avoid_saying": [
+        "BIPLEDs"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "acns",
+        "bipds",
+        "periodic",
+        "icu"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_birds",
+    "name": "Brief Potentially Ictal Rhythmic Discharges (BIRDs)",
+    "category": "CRITICAL_CARE",
+    "topography": [
+      "focal",
+      "generalized"
+    ],
+    "state": [
+      "any"
+    ],
+    "age_notes": "Critically ill adults and neonates",
+    "morphology": "Rhythmic activity faster than 4 Hz lasting 0.5 s to under 10 s, not a normal variant",
+    "frequency_hz": ">4",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Rhythmic activity over 4 Hz with at least 6 waves at a regular rate",
+      "Lasts at least 0.5 s and under 10 s",
+      "Not a normal pattern, benign variant or part of burst suppression",
+      "Definite BIRDs: evolution, or same morphology/location as the patient's discharges or seizures",
+      "Possible BIRDs: sharply contoured but no evolution or match"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_focal_seizure_temporal",
+        "why_confused": "Both are rhythmic focal activity",
+        "how_to_distinguish": "The same rhythm lasting 10 s or more is an electrographic seizure; under 10 s it is BIRDs"
+      },
+      {
+        "pattern_id": "pattern_rmtd",
+        "why_confused": "Both are brief rhythmic temporal theta",
+        "how_to_distinguish": "RMTD is a benign drowsy variant; BIRDs are not normal variants and match the patient's seizures or evolve"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "critically ill patients",
+        "patients with recent seizures"
+      ],
+      "associated_with": [
+        "higher seizure risk"
+      ],
+      "when_concerning": [
+        "Annotate and notify per protocol; they predict seizures"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard ICU settings"
+      ],
+      "montage_effects": [
+        "ACNS voltages are measured peak to trough in a longitudinal bipolar montage; symmetry is judged referentially"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "BIRDs are faster than 4 Hz and last 0.5 s to under 10 s.",
+      "The same evolving rhythm lasting 10 s or more is an electrographic seizure."
+    ],
+    "report_language": {
+      "how_to_describe": "Definite BIRDs over the left temporal region, 5.5 Hz, 1.6 s, matching the patient's seizure onset.",
+      "avoid_saying": [
+        "Brief seizure"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "acns",
+        "birds",
+        "icu"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_sirpids",
+    "name": "Stimulus-Induced Rhythmic, Periodic or Ictal Discharges (SIRPIDs)",
+    "category": "CRITICAL_CARE",
+    "topography": [
+      "generalized",
+      "lateralized"
+    ],
+    "state": [
+      "coma",
+      "stupor"
+    ],
+    "age_notes": "Critically ill, usually comatose patients",
+    "morphology": "A rhythmic, periodic or ictal pattern reproducibly brought on by an alerting stimulus",
+    "frequency_hz": "per the pattern",
+    "amplitude_uv": "variable",
+    "key_features": [
+      "Appears reproducibly after alerting stimuli (sternal rub, suctioning, exam, noise)",
+      "Can be periodic, rhythmic or ictal-appearing",
+      "Coded with the SI- prefix on the specific pattern (for example SI-GPDs)",
+      "The stimulus and its timing must be annotated",
+      "Stimulus-terminated (ST-) patterns stop with stimulation instead"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_gpds",
+        "why_confused": "SIRPIDs are often GPDs",
+        "how_to_distinguish": "SIRPIDs appear only after stimulation; spontaneous GPDs do not depend on it"
+      },
+      {
+        "pattern_id": "pattern_muscle_artifact",
+        "why_confused": "Stimulation often causes movement artifact",
+        "how_to_distinguish": "SIRPIDs are cerebral discharges with a field; artifact follows the movement"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "comatose ICU patients"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Ictal-appearing SIRPIDs can be seizures; report them"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard ICU settings"
+      ],
+      "montage_effects": [
+        "ACNS voltages are measured peak to trough in a longitudinal bipolar montage; symmetry is judged referentially"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Always annotate the stimulus (type and time) when testing reactivity.",
+      "SIRPIDs is the umbrella term; name the specific pattern with SI- (for example SI-LPDs)."
+    ],
+    "report_language": {
+      "how_to_describe": "SI-GPDs, induced reproducibly by sternal rub.",
+      "avoid_saying": [
+        "Arousal response"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "acns",
+        "sirpids",
+        "stimulus",
+        "icu"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_iic_lpds",
+    "name": "Ictal-Interictal Continuum (LPDs at about 2 Hz)",
+    "category": "CRITICAL_CARE",
+    "topography": [
+      "lateralized"
+    ],
+    "state": [
+      "coma",
+      "stupor"
+    ],
+    "age_notes": "Critically ill adults",
+    "morphology": "A periodic or spike-and-wave pattern faster than 1 Hz and up to 2.5 Hz (or slower with a plus modifier or fluctuation) that is not yet a seizure",
+    "frequency_hz": "1-2.5",
+    "amplitude_uv": "medium to high",
+    "key_features": [
+      "IIC is an electrographic term (possible ESz or ESE), not a diagnosis",
+      "Criterion A: PDs or SW averaging more than 1 and up to 2.5 Hz over 10 s (more than 10 and up to 25 in 10 s)",
+      "Criterion B: 0.5-1 Hz with a plus modifier or fluctuation",
+      "Criterion C: lateralized RDA over 1 Hz for at least 10 s with a plus modifier or fluctuation",
+      "Must not already meet seizure criteria"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_pleds",
+        "why_confused": "Both are LPDs",
+        "how_to_distinguish": "LPDs at about 1 Hz or slower without plus features are not IIC; at more than 1 and up to 2.5 Hz they are"
+      },
+      {
+        "pattern_id": "pattern_focal_seizure_temporal",
+        "why_confused": "Both can be rhythmic and lateralized",
+        "how_to_distinguish": "Above 2.5 Hz for 10 s, or definite evolution for 10 s, is an electrographic seizure"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "critically ill patients"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Notify per protocol; physicians may trial antiseizure medication"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard ICU settings"
+      ],
+      "montage_effects": [
+        "ACNS voltages are measured peak to trough in a longitudinal bipolar montage; symmetry is judged referentially"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Count discharges in 10 s: 10 or fewer is not IIC (without plus/fluctuation), over 10 to 25 is IIC, over 25 is a seizure.",
+      "GRDA is never on the IIC."
+    ],
+    "report_language": {
+      "how_to_describe": "Left LPDs at about 2 Hz, sharp, on the ictal-interictal continuum.",
+      "avoid_saying": [
+        "Status epilepticus (unless criteria are met)"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "acns",
+        "iic",
+        "lpds",
+        "icu"
+      ]
+    },
+    "micro_quiz": []
+  },
+  {
+    "id": "pattern_secondary_bilateral_synchrony",
+    "name": "Secondary Bilateral Synchrony",
+    "category": "EPILEPTIFORM",
+    "topography": [
+      "frontal",
+      "generalized"
+    ],
+    "state": [
+      "wake",
+      "sleep"
+    ],
+    "age_notes": "Any age; focal (often frontal) epilepsies",
+    "morphology": "Bilateral spike-and-wave preceded by a consistent focal lead-in, usually with persistent asymmetry",
+    "frequency_hz": "per discharge",
+    "amplitude_uv": "high",
+    "key_features": [
+      "A consistent focal spike or sharp wave just before each bilateral discharge",
+      "The bilateral discharge stays larger on the side of the focus",
+      "Independent focal discharges elsewhere in the record",
+      "Mesial frontal foci are the classic source",
+      "ACNS 2021 calls a consistently asymmetric or lead-in pattern 'lateralized'"
+    ],
+    "common_confusions": [
+      {
+        "pattern_id": "pattern_three_hz_gsw",
+        "why_confused": "Both show bilateral spike-and-wave",
+        "how_to_distinguish": "Primary generalized GSW starts symmetrically with no consistent focal lead"
+      },
+      {
+        "pattern_id": "pattern_focal_spikes_frontal",
+        "why_confused": "Both have a frontal focus",
+        "how_to_distinguish": "Secondary bilateral synchrony adds rapid spread into bilateral spike-and-wave"
+      }
+    ],
+    "clinical_context": {
+      "seen_in": [
+        "focal epilepsy (frontal lobe)"
+      ],
+      "associated_with": [],
+      "when_concerning": [
+        "Changes treatment and surgical planning: a focal epilepsy that looks generalized"
+      ]
+    },
+    "settings_sensitivity": {
+      "filters": [
+        "Standard"
+      ],
+      "montage_effects": [
+        "Expand the time base and review referentially to see which channels lead"
+      ],
+      "sensitivity_notes": "Standard"
+    },
+    "abret_exam_pearls": [
+      "Look for a consistent focal lead-in before each bilateral burst.",
+      "Describe the asymmetry and lead-in; the reader decides the interpretation."
+    ],
+    "report_language": {
+      "how_to_describe": "Bilateral spike-and-wave consistently preceded by a left frontal sharp wave, left predominant.",
+      "avoid_saying": [
+        "Primary generalized"
+      ]
+    },
+    "cross_links": {
+      "workflow_sections": [],
+      "standards_sections": [],
+      "quiz_tags": [
+        "acns",
+        "secondary-bilateral-synchrony",
+        "frontal"
       ]
     },
     "micro_quiz": []
