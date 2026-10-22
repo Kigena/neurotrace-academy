@@ -54,7 +54,7 @@ const DEFS = { lobes: LOBES, areas: AREAS, arteries: ARTERIES };
 const FIELD = { lobes: "lobe", areas: "area", arteries: "artery" };
 
 /** Creator of the 3D model, for the CC BY 4.0 credit (set from the model's listing). */
-const MODEL_AUTHOR = "";
+const MODEL_AUTHOR = "danes_dysfunction";
 const keyFor = (layer, p) => (layer === "lobes" ? lobeAt(p) : layer === "areas" ? areaAt(p) : layer === "arteries" ? arteryAt(p) : null);
 const mix = (c, k) => c.map((v) => 1 - k + v * k);
 
@@ -357,7 +357,7 @@ export default function Brain3D() {
 
       <p className="text-xs text-slate-500">
         Region outlines are teaching approximations drawn on a stylized surface model, not a segmented atlas; language areas are shown on the left hemisphere, which is dominant for language in most people.
-        3D model: &ldquo;Stylized Human Brain&rdquo;{MODEL_AUTHOR ? ` by ${MODEL_AUTHOR}` : ""}, licensed{" "}
+        3D model: &ldquo;Stylized Human Brain Anatomy&rdquo; by {MODEL_AUTHOR} (Fab), licensed{" "}
         <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer" className="underline">CC BY 4.0</a>.
         Changes by NeuroLinea: textures resized for the web, region overlays and electrodes added.
       </p>

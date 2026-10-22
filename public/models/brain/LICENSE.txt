@@ -1,8 +1,8 @@
-"Stylized Human Brain" 3D model
+"Stylized Human Brain Anatomy" 3D model by danes_dysfunction
 Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
 https://creativecommons.org/licenses/by/4.0/
 
-Source: Fab (fab.com). Creator: see the model's Fab listing.
+Source: Fab (fab.com). Creator: danes_dysfunction.
 
 Changes made by NeuroLinea: the textures were resized and recompressed for
 the web (brain-color.jpg, brain-normal.jpg, brain-roughness.jpg) and the files
