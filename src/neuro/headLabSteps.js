@@ -22,7 +22,7 @@ export const STEPS = [
   {
     id: "landmarks",
     title: "Find the landmarks",
-    intro: "All 10-20 measurements start from four skull landmarks. Rotate the head and click each one.",
+    intro: "All 10-20 measurements start from four skull landmarks. Turn the head with the arrow buttons, a right-drag or a drag on the background, then click each one.",
     tasks: [
       { type: "pick", target: "nasion", prompt: "Click the nasion: the dip at the bridge of the nose, level with the eyes." },
       { type: "pick", target: "inion", prompt: "Click the inion: the most prominent bony point at the back of the skull, in the midline." },

@@ -83,7 +83,14 @@ export default function HeadMeasureLab() {
     const key = new THREE.DirectionalLight(0xffffff, 1.4);
     scene.add(key);
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
+    // Calm, deliberate rotation: no drift after release, slower turning, right-drag or
+    // background-drag to rotate (pressing on the head is reserved for pointing).
+    controls.enableDamping = false;
+    controls.rotateSpeed = 0.45;
+    controls.zoomSpeed = 0.6;
+    controls.enablePan = false;
+    controls.mouseButtons = { LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.ROTATE };
+    controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_ROTATE };
     controls.minDistance = 30;
     controls.maxDistance = 110;
     controls.target.set(0, 168, 3);
@@ -102,6 +109,13 @@ export default function HeadMeasureLab() {
     const ro = new ResizeObserver(resize);
     ro.observe(mount);
     resize();
+    t.rotateBy = (dTheta, dPhi) => {
+      const off = camera.position.clone().sub(controls.target);
+      const sph = new THREE.Spherical().setFromVector3(off);
+      sph.theta += dTheta;
+      sph.phi = Math.min(Math.PI - 0.15, Math.max(0.15, sph.phi + dPhi));
+      t.anim = { from: camera.position.clone(), to: new THREE.Vector3().setFromSpherical(sph).add(controls.target), k: 0 };
+    };
     t.setView = (dir) => { t.anim = { from: camera.position.clone(), to: v3(dir).normalize().multiplyScalar(62).add(controls.target), k: 0 }; };
 
     let raf;
@@ -216,14 +230,24 @@ export default function HeadMeasureLab() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const onPointerDown = (e) => {
+  const pointing = () => (mode === "free" || task?.type === "pick" || task?.type === "mark" || task?.type === "tape");
+  const touches = useRef(new Set());
+  // Runs before OrbitControls sees the press: a left press on the head is for pointing, never rotating.
+  const onPointerDownCapture = (e) => {
     const t = T.current;
+    if (e.pointerType === "touch") {
+      touches.current.add(e.pointerId);
+      if (touches.current.size > 1) { t.controls.enabled = true; cancelDraft(); return; } // two fingers rotate and zoom
+    }
+    if (e.button === 0 && pointing() && hitAt(e)) t.controls.enabled = false;
+  };
+  const onPointerDown = (e) => {
     down.current = { x: e.clientX, y: e.clientY };
+    if (e.button !== 0) return; // right button rotates
     const kind = tapeActive();
-    if (!kind || draft.current) return; // with a tape anchored, dragging rotates the head
+    if (!kind || draft.current) return;
     const p = hitAt(e);
     if (!p) return; // background drag rotates
-    t.controls.enabled = false;
     const start = mode === "guided" && task ? snap(p, [task.from, task.to]) : p;
     draft.current = { kind, start, samples: [start], end: start, res: null, pressed: true };
     e.currentTarget.setPointerCapture?.(e.pointerId);
@@ -236,6 +260,8 @@ export default function HeadMeasureLab() {
   const onPointerUp = (e) => {
     const t = T.current;
     t.controls.enabled = true;
+    touches.current.delete(e.pointerId);
+    if (e.button !== 0) { down.current = null; return; }
     const moved = down.current ? Math.hypot(e.clientX - down.current.x, e.clientY - down.current.y) : 99;
     down.current = null;
     const d = draft.current;
@@ -245,7 +271,7 @@ export default function HeadMeasureLab() {
       if (moved >= 6 && d.res && dist(d.start, d.end) > 1) { draft.current = null; setLive(null); finishTape(d); }
       return;
     }
-    if (moved >= 6) return; // that was a rotation
+    if (moved >= 6) return; // a drag: a rotation from the background, or nothing on the head
     const p = hitAt(e);
     if (!p) return;
     if (d) {
@@ -410,7 +436,7 @@ export default function HeadMeasureLab() {
 
       <div className="grid gap-3 lg:grid-cols-[1fr_320px]">
         <div className="relative min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-b from-slate-50 to-slate-200">
-          <div ref={mountRef} className="h-[440px] w-full touch-none sm:h-[560px]" onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} />
+          <div ref={mountRef} className="h-[440px] w-full touch-none sm:h-[560px]" onPointerDownCapture={onPointerDownCapture} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onContextMenu={(e) => e.preventDefault()} />
           <div ref={labelsRef} className="pointer-events-none absolute inset-0" />
           {live && (
             <div className="pointer-events-none fixed z-50 -translate-y-8 rounded bg-slate-900 px-2 py-0.5 text-xs font-bold text-white" style={{ left: live.x + 12, top: live.y }}>
@@ -426,6 +452,11 @@ export default function HeadMeasureLab() {
             {VIEWS.map(([l, dir]) => (
               <button key={l} type="button" onClick={() => T.current.setView?.(dir)} className="rounded-md bg-white/90 px-2 py-1 text-xs font-semibold text-slate-700 shadow-sm hover:bg-white">{l}</button>
             ))}
+            <span className="ml-auto flex gap-1" aria-label="Rotate">
+              {[["◀", "Turn left", 0.26, 0], ["▶", "Turn right", -0.26, 0], ["▲", "Tilt up", 0, -0.2], ["▼", "Tilt down", 0, 0.2]].map(([l, title, a, b]) => (
+                <button key={title} type="button" title={title} aria-label={title} onClick={() => T.current.rotateBy?.(a, b)} className="rounded-md bg-white/90 px-2 py-1 text-xs font-semibold text-slate-700 shadow-sm hover:bg-white">{l}</button>
+              ))}
+            </span>
           </div>
         </div>
 
@@ -433,7 +464,7 @@ export default function HeadMeasureLab() {
           {mode === "free" ? (
             <section className="rounded-xl border border-slate-200 bg-white p-4">
               <h4 className="font-semibold text-slate-900">Free practice</h4>
-              <p className="mt-1 text-slate-600">Click a start point on the head, move along the route you want (rotate by dragging), then click the end point; or press and drag for short distances. The tape follows the scalp; the caliper measures the straight-line distance. Esc cancels.</p>
+              <p className="mt-1 text-slate-600">Click a start point on the head, move along the route you want, then click the end point; or press and drag for short distances. Turn the head with right-drag, by dragging the background, or with the arrows. The tape follows the scalp; the caliper measures the straight-line distance. Esc cancels.</p>
               {freeResult && <p className="mt-3 rounded-lg bg-slate-100 px-3 py-2 font-semibold text-slate-900">{freeResult.kind === "tape" ? "Tape" : "Caliper"}: {freeResult.length.toFixed(1)} cm</p>}
             </section>
           ) : done ? (
@@ -453,7 +484,7 @@ export default function HeadMeasureLab() {
               <div className="text-xs font-semibold uppercase tracking-wide text-indigo-700">Step {stepIdx + 1} of {STEPS.length} · {step.title}</div>
               {taskIdx === 0 && <p className="text-slate-700">{step.intro}</p>}
               <p className="font-semibold text-slate-900">{task.prompt}</p>
-              {task.type === "tape" && !feedback && <p className="text-slate-600">Click the start point to hook the tape, rotate the head by dragging, then click the end point. The tape follows the pointer with its length. Esc cancels.</p>}
+              {task.type === "tape" && !feedback && <p className="text-slate-600">Click the start point to hook the tape, turn the head (right-drag, drag the background, or the arrows), then click the end point. The tape follows the pointer with its length. Esc cancels.</p>}
               {hoverHint && !feedback && <p className="text-slate-600">{hoverHint}</p>}
               {task.type === "calc" && !feedback && (
                 <form className="flex gap-2" onSubmit={(e) => { e.preventDefault(); submitCalc(); }}>
