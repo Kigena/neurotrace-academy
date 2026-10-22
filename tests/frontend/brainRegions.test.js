@@ -65,4 +65,21 @@ describe("3D brain regions", () => {
     for (const b of gltf.buffers) expect(fs.existsSync(path.join(dir, b.uri)), b.uri).toBe(true);
     expect(fs.readFileSync(path.join(dir, "LICENSE.txt"), "utf8")).toMatch(/CC BY 4\.0/);
   });
+
+  it("classifies the cortex under every electrode as expected", () => {
+    // electrode hit points (mm) measured on the model by projecting the 10-20 positions onto the cortex
+    const hits = { Fp1: [14, 37, 42], Fp2: [-14, 37, 43], F7: [25, 38, 16], F3: [25, 62, 28], Fz: [0, 74, 32], F4: [-25, 62, 28], F8: [-25, 38, 16],
+      T3: [32, 38, -2], T4: [-33, 38, -2], T5: [31, 38, -25], T6: [-31, 38, -25], P3: [24, 62, -31], Pz: [0, 73, -34], P4: [-24, 62, -32], O1: [14, 37, -44], O2: [-14, 37, -44] };
+    const expected = { Fp: "frontal", F: "frontal", T: "temporal", P: "parietal", O: "occipital" };
+    for (const [name, p] of Object.entries(hits)) expect(lobeAt(p), name).toBe(expected[name.replace(/\d|z/g, "")]);
+    for (const c of [[29, 67, -2], [0, 85, -2], [-30, 68, -2]]) expect(["motor", "sensory"]).toContain(areaAt(c)); // C3, Cz, C4 on the central strips
+  });
+
+  it("keeps the temporal pole in MCA territory and the precuneus in ACA territory", () => {
+    expect(arteryAt([25, 28, 12])).toBe("mca"); // temporal pole, inferior
+    expect(lobeAt([30, 30, -8])).toBe("temporal");
+    expect(arteryAt([30, 30, -8])).toBe("pca"); // inferior temporal surface behind the pole
+    expect(arteryAt([4, 70, -25])).toBe("aca"); // medial parietal (precuneus)
+    expect(lobeAt([5, 28, 2])).toBe("brainstem"); // base of the brain between the temporal lobes
+  });
 });

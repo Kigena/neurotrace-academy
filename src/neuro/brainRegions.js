@@ -29,17 +29,17 @@ export const TENTORIUM_Y = 32;
 export const LOBES = {
   frontal: { label: "Frontal lobe", color: [0.55, 0.72, 1.0], text: "Voluntary movement (precentral gyrus), planning, judgment, personality and, on the dominant side, speech output (Broca area)." },
   parietal: { label: "Parietal lobe", color: [0.62, 0.9, 0.62], text: "Touch and position sense (postcentral gyrus), spatial attention, and reading and calculation on the dominant side." },
-  temporal: { label: "Temporal lobe", color: [1.0, 0.8, 0.45], text: "Hearing (Heschl gyrus), language comprehension on the dominant side (Wernicke area), memory and emotion (hippocampus, amygdala). The most common site of focal epilepsy." },
+  temporal: { label: "Temporal lobe", color: [1.0, 0.8, 0.45], text: "Hearing (Heschl gyrus), language comprehension on the dominant side (Wernicke area), memory and emotion (hippocampus, amygdala). The most common site of focal epilepsy in adults." },
   occipital: { label: "Occipital lobe", color: [0.85, 0.6, 1.0], text: "Vision (calcarine cortex); the posterior dominant (alpha) rhythm is maximal over the occipital regions." },
   cerebellum: { label: "Cerebellum", color: [1.0, 0.62, 0.62], text: "Coordination and balance on the same side of the body; sits below the tentorium in the posterior fossa and does not contribute to the scalp EEG." },
   brainstem: { label: "Brainstem", color: [0.75, 0.75, 0.75], text: "Midbrain, pons and medulla: cranial nerve nuclei, long tracts, the reticular activating system (consciousness) and breathing centres." },
 };
 
 export const AREAS = {
-  motor: { label: "Primary motor cortex (precentral gyrus)", color: [0.35, 0.55, 1.0], text: "Brodmann 4. Controls voluntary movement of the opposite side; leg near the midline, face and hand laterally. Lies under the C3/C4 region." },
+  motor: { label: "Primary motor cortex (precentral gyrus)", color: [0.35, 0.55, 1.0], text: "Brodmann 4. Controls voluntary movement of the opposite side; leg near the midline, face and hand laterally. The hand area lies under C3/C4 and the leg area near Cz." },
   sensory: { label: "Primary somatosensory cortex (postcentral gyrus)", color: [0.35, 0.8, 0.45], text: "Brodmann 3, 1, 2. Touch and position sense from the opposite side, mapped like the motor strip." },
   broca: { label: "Broca area (left inferior frontal gyrus)", color: [1.0, 0.45, 0.45], text: "Brodmann 44 and 45 on the dominant side. Damage causes non-fluent (expressive) aphasia. Lies near F7." },
-  wernicke: { label: "Wernicke area (left posterior superior temporal gyrus)", color: [1.0, 0.6, 0.2], text: "Posterior Brodmann 22 on the dominant side. Damage causes fluent (receptive) aphasia with poor comprehension. Lies near T5 (P7)." },
+  wernicke: { label: "Wernicke area (left posterior superior temporal gyrus)", color: [1.0, 0.6, 0.2], text: "Posterior Brodmann 22 on the dominant side. Damage causes fluent (receptive) aphasia with poor comprehension. Lies between T3 and T5 (T7-P7)." },
   auditory: { label: "Primary auditory cortex (Heschl gyrus)", color: [0.95, 0.85, 0.3], text: "Brodmann 41 and 42 on the upper surface of the superior temporal gyrus, mostly hidden inside the Sylvian fissure; shown here where it meets the surface." },
   visual: { label: "Primary visual cortex", color: [0.75, 0.45, 1.0], text: "Brodmann 17 around the calcarine sulcus, mostly on the medial surface; the occipital pole is shown. Damage causes a contralateral homonymous field defect." },
 };
@@ -58,7 +58,7 @@ const side = (x) => (Math.abs(x) < 3 ? "midline" : x > 0 ? "left" : "right");
 /** Lobe at a surface point (mm). */
 export function lobeAt([x, y, z]) {
   const ax = Math.abs(x);
-  if (ax < 12 && y < 25 && z > -32 && z < 4) return "brainstem";
+  if (ax < 12 && y < 32 && z > -32 && z < 8) return "brainstem"; // includes the midbrain and base of the brain between the temporal lobes
   if (z < -6 && y < TENTORIUM_Y && !(z > -12 && ax > 22)) return "cerebellum";
   if (z < occipitalZ(y)) return "occipital";
   const ys = sylvianY(z);
@@ -91,13 +91,13 @@ export function areaAt(p) {
 
 /** Arterial territory at a surface point. */
 export function arteryAt(p) {
-  const [x, y] = p;
+  const [x, y, z] = p;
   const lobe = lobeAt(p);
   if (lobe === "brainstem" || lobe === "cerebellum") return "vb";
   if (lobe === "occipital") return "pca";
-  if (lobe === "temporal" && y < 31) return "pca"; // inferior temporal surface
+  if (lobe === "temporal" && y < 31 && z < 0) return "pca"; // inferior temporal surface behind the pole (the pole is MCA)
   if (Math.abs(x) < 13 && y > 50) return "aca"; // parasagittal strip of the convexity
-  if (Math.abs(x) < 8 && lobe === "frontal") return "aca"; // medial frontal
+  if (Math.abs(x) < 8 && (lobe === "frontal" || lobe === "parietal")) return "aca"; // medial frontal and parietal (precuneus)
   return "mca";
 }
 
@@ -138,8 +138,8 @@ export const ELECTRODE_INFO = {
   Fz: "Midline frontal: medial frontal cortex and supplementary motor area; frontal midline theta.",
   T3: "Left mid-temporal (T7): superior and middle temporal gyri, near the auditory cortex. A common site of temporal discharges.",
   T4: "Right mid-temporal (T8): superior and middle temporal gyri, near the auditory cortex.",
-  C3: "Left central (Rolandic) region over the motor and sensory hand area: mu rhythm and centrotemporal spikes.",
-  C4: "Right central (Rolandic) region over the motor and sensory hand area: mu rhythm and centrotemporal spikes.",
+  C3: "Left central (Rolandic) region over the motor and sensory hand area: mu rhythm and centrotemporal spikes (with T3/T4).",
+  C4: "Right central (Rolandic) region over the motor and sensory hand area: mu rhythm and centrotemporal spikes (with T3/T4).",
   Cz: "Vertex over the leg area of the motor and sensory strips (paracentral lobule): vertex waves and K-complexes are maximal here.",
   T5: "Left posterior temporal (P7), near Wernicke area on the dominant side.",
   T6: "Right posterior temporal (P8): the inferior and middle temporal gyri toward the temporo-occipital junction.",

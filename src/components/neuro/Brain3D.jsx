@@ -36,16 +36,16 @@ const SIDE_TEXT = { left: "Left hemisphere", right: "Right hemisphere", midline:
 const QUIZ = [
   { q: "Click the area whose damage causes expressive (non-fluent) aphasia.", ok: (h) => h.area === "broca", show: ["areas", "broca"], a: "Broca area, in the left (dominant) inferior frontal gyrus." },
   { q: "Click the area whose damage causes fluent aphasia with poor comprehension.", ok: (h) => h.area === "wernicke", show: ["areas", "wernicke"], a: "Wernicke area, in the left posterior superior temporal gyrus." },
-  { q: "Click the strip of cortex that starts voluntary movement.", ok: (h) => h.area === "motor", show: ["areas", "motor"], a: "The precentral gyrus, just in front of the central sulcus." },
+  { q: "Click the primary motor cortex, which sends voluntary movement commands to the opposite side of the body.", ok: (h) => h.area === "motor", show: ["areas", "motor"], a: "The precentral gyrus, just in front of the central sulcus." },
   { q: "Click the lobe that contains the primary visual cortex.", ok: (h) => h.lobe === "occipital", show: ["lobes", "occipital"], a: "The occipital lobe; primary visual cortex surrounds the calcarine sulcus." },
-  { q: "Click the lobe where most focal epilepsies begin.", ok: (h) => h.lobe === "temporal", show: ["lobes", "temporal"], a: "The temporal lobe, especially its mesial structures." },
+  { q: "Click the lobe where focal epilepsy most often begins in adults.", ok: (h) => h.lobe === "temporal", show: ["lobes", "temporal"], a: "The temporal lobe, especially its mesial structures." },
   { q: "Click the structure below the tentorium that coordinates movement on the same side.", ok: (h) => h.lobe === "cerebellum", show: ["lobes", "cerebellum"], a: "The cerebellum, in the posterior fossa below the tentorium." },
   { q: "Click cortex supplied by the anterior cerebral artery.", ok: (h) => h.artery === "aca", show: ["arteries", "aca"], a: "The ACA supplies the medial surface and a strip along the top of the frontal and parietal lobes." },
   { q: "Click the territory most often affected in ischemic stroke.", ok: (h) => h.artery === "mca", show: ["arteries", "mca"], a: "The MCA supplies most of the lateral convexity." },
   { q: "Click cortex supplied by the posterior cerebral artery.", ok: (h) => h.artery === "pca", show: ["arteries", "pca"], a: "The PCA supplies the occipital lobe and the inferior and medial temporal lobe." },
   { q: "Click the electrode over the left central (hand) region.", ok: (h) => h.electrode === "C3", electrodes: true, a: "C3 lies over the left central (Rolandic) hand area." },
   { q: "Click the electrode where vertex waves are maximal.", ok: (h) => h.electrode === "Cz", electrodes: true, a: "Cz, the vertex, over the leg area of the motor and sensory strips." },
-  { q: "Click the electrode near Wernicke area on the dominant side.", ok: (h) => h.electrode === "T5", electrodes: true, a: "T5 (P7), the left posterior temporal electrode." },
+  { q: "Click the left posterior temporal electrode, the one closest to Wernicke area.", ok: (h) => h.electrode === "T5", electrodes: true, a: "T5 (P7), the left posterior temporal electrode." },
   { q: "Click an electrode where the posterior dominant rhythm is maximal.", ok: (h) => h.electrode === "O1" || h.electrode === "O2", electrodes: true, a: "O1 or O2, over the occipital lobes." },
   { q: "Click the right frontopolar electrode, where eye blinks are largest.", ok: (h) => h.electrode === "Fp2", electrodes: true, a: "Fp2, the right frontopolar electrode (Fp1 is on the left)." },
 ];
@@ -356,7 +356,7 @@ export default function Brain3D() {
       </div>
 
       <p className="text-xs text-slate-500">
-        Region outlines are teaching approximations drawn on a stylized surface model, not a segmented atlas; language areas are shown on the left (dominant) hemisphere.
+        Region outlines are teaching approximations drawn on a stylized surface model, not a segmented atlas; language areas are shown on the left hemisphere, which is dominant for language in most people.
         3D model: &ldquo;Stylized Human Brain&rdquo;{MODEL_AUTHOR ? ` by ${MODEL_AUTHOR}` : ""}, licensed{" "}
         <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer" className="underline">CC BY 4.0</a>.
         Changes by NeuroLinea: textures resized for the web, region overlays and electrodes added.
