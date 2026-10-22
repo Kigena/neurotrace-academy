@@ -114,6 +114,49 @@
               "body": "Cortical and white-matter lesions produce focal slowing and attenuation; deep small lesions may leave the EEG normal; diffuse processes produce generalized slowing."
             }
           ]
+        },
+        {
+          "title": "Elements of the patient history",
+          "kind": "table",
+          "head": [
+            "What to record",
+            "Why it matters for the EEG"
+          ],
+          "rows": [
+            [
+              "Reason for the study and a description of the events (what happens, how long, how often)",
+              "Tells you what to capture and which activations and montages matter"
+            ],
+            [
+              "Time of the last seizure or event",
+              "Postictal slowing or suppression can follow a recent seizure"
+            ],
+            [
+              "Every medication with dose, time of last dose and recent changes, including sedation given for the test",
+              "Sedatives add beta and sleep; withdrawal provokes discharges and seizures"
+            ],
+            [
+              "Sleep the night before (deprivation) and last meal",
+              "Drowsiness and sleep change the record; low glucose causes slowing"
+            ],
+            [
+              "Recent treatments and procedures, such as dialysis this morning, surgery, ECT or anesthesia",
+              "Dialysis shifts fluid, urea and electrolytes (dialysis disequilibrium) and can cause slowing or seizures; anesthesia and ECT also alter the EEG"
+            ],
+            [
+              "Head injury, skull defects, craniotomy, shunts or other hardware",
+              "Breach rhythm over defects; electrode placement around wounds and shunts"
+            ],
+            [
+              "Level of consciousness, cooperation, and handedness when relevant",
+              "Guides interpretation of the background and language localization"
+            ],
+            [
+              "Relevant medical history (renal or liver failure, infection, metabolic disorders) and family history of epilepsy",
+              "Metabolic encephalopathies slow the background; family history supports genetic epilepsy"
+            ]
+          ],
+          "note": "Document anything that changes the recording or its interpretation: recent treatments such as dialysis, medications and their timing, sleep the night before and the last seizure all belong in the history."
         }
       ],
       "pearls": [
@@ -519,6 +562,11 @@
               "Limbic system (hippocampus, amygdala, cingulate gyrus, fornix, mammillary bodies)",
               "Memory and emotion",
               "Mesial temporal sclerosis; deja vu and fear auras"
+            ],
+            [
+              "Uncus (anterior medial temporal lobe, over the amygdala)",
+              "Part of the primary olfactory cortex",
+              "Uncinate seizures: olfactory hallucinations (usually an unpleasant smell such as burning rubber) as a mesial temporal aura; the uncus can also herniate medially over the tentorial edge (uncal herniation) and compress cranial nerve III"
             ],
             [
               "Corpus callosum",
@@ -1044,7 +1092,7 @@
             [
               "Lacunar",
               "Small deep penetrating artery occlusion, linked to hypertension and diabetes",
-              "Pure motor, pure sensory, sensorimotor, ataxic hemiparesis or dysarthria-clumsy hand; no cortical signs such as aphasia; no cortical signs such as aphasia"
+              "Pure motor, pure sensory, sensorimotor, ataxic hemiparesis or dysarthria-clumsy hand; no cortical signs such as aphasia"
             ],
             [
               "Transient ischemic attack (TIA)",
@@ -1060,6 +1108,11 @@
               "Intracerebral hemorrhage",
               "Bleeding into brain tissue, commonly from hypertension; also amyloid angiopathy",
               "Headache, vomiting, declining consciousness; deep locations (basal ganglia, thalamus, pons, cerebellum)"
+            ],
+            [
+              "Cerebellar hemorrhage",
+              "Hypertensive bleed into a cerebellar hemisphere or vermis",
+              "Sudden headache, vomiting, vertigo, inability to stand or walk (truncal and gait ataxia), limb incoordination on the same side, nystagmus; can compress the brainstem and block the fourth ventricle (hydrocephalus), so it is a neurosurgical emergency"
             ],
             [
               "Subarachnoid hemorrhage",
@@ -1284,6 +1337,11 @@
               "Global aphasia",
               "All language functions impaired",
               "Large dominant MCA territory"
+            ],
+            [
+              "Dysarthria",
+              "Slurred or poorly articulated speech from weak or uncoordinated speech muscles; language itself (word choice, comprehension, reading, writing) is normal. Contrast with aphasia, a language disorder",
+              "Corticobulbar tracts, brainstem (cranial nerves V, VII, IX, X, XII), cerebellum (scanning speech) or basal ganglia, neuromuscular junction or muscle"
             ],
             [
               "Neglect",
@@ -1629,6 +1687,11 @@
               "Guillain-Barre syndrome",
               "Acute immune peripheral demyelination, often after infection; ascending weakness, areflexia; high CSF protein with normal cell count; may need ventilation",
               "Nerve conduction slowing; EEG normal. A paralysed patient may be fully awake: speak to and treat them as conscious"
+            ],
+            [
+              "Hereditary ataxias (Friedreich ataxia, spinocerebellar ataxias) and olivopontocerebellar atrophy",
+              "Progressive gait and limb ataxia, dysarthria and falls, often running in families. Friedreich ataxia (autosomal recessive) usually starts in childhood or adolescence with loss of reflexes, scoliosis and heart disease; spinocerebellar ataxias (autosomal dominant) usually begin in adulthood; olivopontocerebellar atrophy, degeneration of the inferior olives, pons and cerebellum, occurs in some spinocerebellar ataxias and in sporadic multiple system atrophy",
+              "EEG is usually normal or nonspecific; ataxia and falls make the lab a fall risk, so assist transfers"
             ]
           ]
         },

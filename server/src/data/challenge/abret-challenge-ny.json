@@ -1,0 +1,595 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-10-21",
+  "bank": "challenge",
+  "focus": "domain-1",
+  "description": "Original questions on the uncus and olfactory auras, dysarthria versus aphasia, MCA and basilar strokes, cerebellar hemorrhage, hereditary ataxias, Huntington disease, consciousness, barbiturate sedation, the patient history, ictal SPECT and Landau-Kleffner syndrome. Text only; not yet medically verified.",
+  "totalQuestions": 21,
+  "questions": [
+    {
+      "id": "ch-ny-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "uncus",
+        "olfactory",
+        "temporal-lobe"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A seizure arising from the uncus most typically begins with which symptom?",
+      "explanation": "The uncus, on the anterior medial temporal lobe over the amygdala, is part of the primary olfactory cortex, so seizures there (uncinate fits) start with olfactory hallucinations, usually an unpleasant smell. Flashing lights point to the occipital lobe, hand tingling to the postcentral gyrus and face jerking to the lower precentral gyrus.",
+      "learningObjective": "Link the uncus with olfactory hallucinations (uncinate seizures).",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Jerking of one side of the face",
+        "Flashing lights in one field",
+        "A sudden unpleasant smell",
+        "Tingling of one hand"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "uncus",
+        "mesial-temporal",
+        "aura"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Before her seizures a patient smells burning rubber that no one else notices, then stares and lip-smacks. Where do the seizures most likely begin?",
+      "explanation": "A phantom unpleasant smell followed by staring and oral automatisms is a mesial temporal seizure starting near the uncus and amygdala, the olfactory and limbic cortex. Occipital seizures begin with visual phenomena, frontal (Broca area) seizures with speech arrest, and parietal seizures with sensory symptoms.",
+      "learningObjective": "Localize an olfactory aura to the mesial temporal lobe.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Mesial temporal lobe",
+        "Superior parietal lobule",
+        "Inferior frontal gyrus",
+        "Lateral occipital lobe"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-medical-terminology",
+      "topicTags": [
+        "dysarthria",
+        "speech",
+        "terminology"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "What is dysarthria?",
+      "explanation": "Dysarthria is a motor speech disorder: words are chosen correctly but articulated poorly because the speech muscles are weak or uncoordinated. Loss of comprehension and word-finding difficulty are forms of aphasia, a language disorder. Difficulty swallowing is dysphagia.",
+      "learningObjective": "Define dysarthria and separate it from aphasia and dysphagia.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Loss of the ability to understand speech",
+        "Difficulty swallowing food and liquids",
+        "Inability to find the right words",
+        "Poorly articulated (slurred) speech"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "dysarthria",
+        "aphasia",
+        "localization"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient's speech is slurred, but she follows complex commands, names objects correctly and writes normal sentences. What does this suggest?",
+      "explanation": "Normal comprehension, naming and writing show that language is intact; only articulation is affected, which is dysarthria. It points to the corticobulbar pathways, brainstem nuclei, cerebellum or basal ganglia rather than the language cortex. Every aphasia disturbs language itself, including writing.",
+      "learningObjective": "Distinguish dysarthria (articulation) from aphasia (language).",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Dysarthria, not aphasia",
+        "Receptive aphasia, not dysarthria",
+        "Conduction aphasia, not dysarthria",
+        "Expressive aphasia, not dysarthria"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "mca",
+        "stroke",
+        "localization"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "An occlusion of the right middle cerebral artery would most likely cause which deficit?",
+      "explanation": "The right MCA supplies the lateral right hemisphere, including the face and arm areas of the motor strip, so weakness is on the left side, face and arm more than leg, often with left neglect and a left field cut. Leg-predominant weakness points to the anterior cerebral artery. A right hemianopia would come from the left hemisphere.",
+      "learningObjective": "Predict contralateral face and arm weakness from an MCA occlusion.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Left leg weakness more than arm",
+        "Right homonymous hemianopia",
+        "Left face and arm weakness",
+        "Right face and arm weakness"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "mca",
+        "stroke",
+        "blood-supply"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which artery's territory is most often affected in ischemic stroke?",
+      "explanation": "The middle cerebral artery is the largest branch of the internal carotid and continues its straight course, so emboli most often lodge in it; MCA territory stroke is the most common. ACA and PCA strokes are less frequent. The anterior communicating artery is a short connector and a common aneurysm site rather than a stroke territory.",
+      "learningObjective": "State that the MCA territory is most often involved in stroke.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Posterior cerebral artery",
+        "Anterior cerebral artery",
+        "Anterior communicating artery",
+        "Middle cerebral artery"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "hemiparesis",
+        "motor-cortex",
+        "localization"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Weakness of the right arm and leg from a cortical lesion most likely involves which area?",
+      "explanation": "Voluntary movement starts in the precentral gyrus of the frontal lobe, and the corticospinal tract crosses in the lower medulla, so right-sided weakness means a left motor cortex lesion. The postcentral gyrus is sensory. The cerebellum causes ataxia on the same side, not weakness.",
+      "learningObjective": "Localize contralateral hemiparesis to the opposite frontal motor cortex.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Left postcentral gyrus (parietal lobe)",
+        "Left precentral gyrus (frontal lobe)",
+        "Left cerebellar hemisphere",
+        "Right precentral gyrus (frontal lobe)"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "reticular-formation",
+        "consciousness",
+        "brainstem"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which structure keeps the cerebral cortex awake and maintains consciousness?",
+      "explanation": "The ascending reticular activating system, running from the brainstem reticular formation through the thalamus to the cortex, sustains wakefulness; damage to it, or to both hemispheres, causes coma. The striate cortex is the primary visual area, the vermis coordinates the trunk and the basal ganglia scale movement.",
+      "learningObjective": "Link consciousness to the reticular activating system.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Reticular activating system of the brainstem",
+        "Striate (primary visual) cortex",
+        "Cerebellar vermis",
+        "Basal ganglia"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-009",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "basilar-artery",
+        "locked-in",
+        "brainstem-stroke"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "After a basilar artery occlusion, a patient cannot move any limb or speak but is awake and answers questions with vertical eye movements. What is this?",
+      "explanation": "Infarction of the ventral pons interrupts the corticospinal and corticobulbar tracts, giving quadriplegia and loss of speech, while the reticular activating system and vertical gaze pathways are spared: the patient is conscious (locked-in syndrome). The EEG usually shows a reactive, near-normal background. A vegetative state or coma lacks awareness. Global aphasia does not cause quadriplegia.",
+      "learningObjective": "Recognize locked-in syndrome after basilar artery occlusion.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Global aphasia from dominant MCA infarction",
+        "Locked-in syndrome from ventral pontine infarction",
+        "Coma from bilateral hemispheric infarction",
+        "Persistent vegetative state from cortical injury"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-010",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cerebellar-hemorrhage",
+        "cerebellum"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A hypertensive man suddenly has a headache, vomits repeatedly and cannot stand or walk, although his limb strength is normal. Where is the bleed most likely?",
+      "explanation": "Sudden headache, vomiting and inability to stand or walk with preserved strength (truncal and gait ataxia, often with vertigo and nystagmus) point to a cerebellar hemorrhage, an emergency because the swelling can compress the brainstem and block CSF flow. Occipital bleeds cause visual field loss, dominant frontal bleeds cause weakness and non-fluent aphasia, and callosal lesions cause disconnection signs.",
+      "learningObjective": "Recognize the presentation of cerebellar hemorrhage.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Dominant frontal lobe",
+        "Occipital lobe",
+        "Cerebellum",
+        "Corpus callosum"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-011",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "hereditary-ataxia",
+        "friedreich-ataxia"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 14-year-old has a slowly worsening unsteady gait, absent ankle reflexes, scoliosis and a heart murmur; a sibling is similarly affected. Which condition fits best?",
+      "explanation": "Friedreich ataxia, the most common inherited ataxia, is autosomal recessive (so siblings are affected while parents are not), begins in childhood or adolescence and combines progressive ataxia, lost reflexes, scoliosis and cardiomyopathy. Guillain-Barre syndrome is acute and acquired. Myasthenia gravis causes fatigable weakness without ataxia. Parkinson disease starts in later adulthood.",
+      "learningObjective": "Recognize Friedreich ataxia among the hereditary ataxias.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Guillain-Barre syndrome",
+        "Myasthenia gravis",
+        "Parkinson disease",
+        "Friedreich ataxia"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-012",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "olivopontocerebellar-atrophy",
+        "hereditary-ataxia"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Olivopontocerebellar atrophy mainly causes which problem?",
+      "explanation": "Olivopontocerebellar atrophy is a degeneration of the inferior olives, pons and cerebellum (seen in some inherited spinocerebellar ataxias and in multiple system atrophy) that causes progressive ataxia, dysarthria and unsteadiness. Fatigable eye weakness suggests myasthenia gravis, sudden monocular vision loss suggests a retinal vascular event or optic neuritis, and chorea with psychiatric change suggests Huntington disease.",
+      "learningObjective": "Associate olivopontocerebellar atrophy with progressive ataxia.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Recurrent attacks of chorea and psychosis",
+        "Fatigable weakness of the eye muscles",
+        "Sudden loss of vision in one eye",
+        "Progressive ataxia and loss of coordination"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-013",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "huntington",
+        "basal-ganglia"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "The brain atrophy that is most characteristic of Huntington disease affects which structure?",
+      "explanation": "Huntington disease, an autosomal dominant CAG repeat disorder, characteristically causes atrophy of the caudate nucleus and putamen (basal ganglia), widening the frontal horns of the lateral ventricles; it produces chorea, psychiatric change and dementia. Cerebellar, occipital and hypothalamic atrophy are not its hallmark.",
+      "learningObjective": "Know that Huntington disease atrophies the caudate (basal ganglia).",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Occipital cortex",
+        "Caudate nucleus",
+        "Hypothalamus",
+        "Cerebellar vermis"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-014",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "barbiturates",
+        "sedation",
+        "medications"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "As the dose of each drug class is raised quickly, which is most likely to cause deep sedation and stop breathing?",
+      "explanation": "Barbiturates depress the brain in a dose-dependent way with no ceiling: rising doses move from sedation to anesthesia, burst suppression and respiratory arrest. Benzodiazepines alone have a relative ceiling effect and are much safer in oral overdose, although rapid IV doses or combination with other depressants can still stop breathing. SSRIs are not sedative hypnotics. Phenothiazine antipsychotics sedate but rarely cause this degree of CNS depression on their own.",
+      "learningObjective": "Rank barbiturates as the most sedating class with rising doses.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Benzodiazepines",
+        "Phenothiazine antipsychotics",
+        "Barbiturates",
+        "Selective serotonin reuptake inhibitors"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-015",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "history",
+        "dialysis",
+        "documentation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "When taking the history before a routine EEG, which detail is most important to document?",
+      "explanation": "Recent dialysis shifts fluid, urea and electrolytes and can cause slowing, triphasic-like waves or seizures (dialysis disequilibrium), so it can explain findings and belongs in the history. Arrival time, room preferences and how the patient travelled do not affect the recording or its interpretation.",
+      "learningObjective": "Identify clinically relevant history items such as recent dialysis.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The patient prefers the window blinds open",
+        "The patient had hemodialysis this morning",
+        "The patient drove to the appointment",
+        "The patient arrived ten minutes early"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-016",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "history",
+        "medications",
+        "sleep-deprivation",
+        "documentation"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A patient is booked for a sleep-deprived EEG. Which set of details is most important to record before starting?",
+      "explanation": "Hours of sleep confirm the deprivation, the time of the last seizure explains postictal changes, and medication doses and timing (especially anti-seizure drugs and sedatives) alter the background and the yield. The other details do not change the recording or its interpretation.",
+      "learningObjective": "Choose the history elements that affect an EEG's interpretation.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hours slept, last seizure time and last medication doses",
+        "Favourite music, usual diet and their weekend hobbies",
+        "Shoe size, blood type and their current home address",
+        "Hair colour, height and the colour of both eyes"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-017",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "spect",
+        "epilepsy-surgery",
+        "imaging"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which test shows the seizure onset zone as an area of increased blood flow when the tracer is injected during a seizure?",
+      "explanation": "In ictal SPECT the tracer is injected within seconds of seizure onset and fixes the blood-flow pattern, so the onset zone appears hyperperfused. Interictal PET instead shows reduced glucose metabolism (hypometabolism) in the epileptogenic region. CT and MRI show structure, not blood flow during a seizure.",
+      "learningObjective": "Match ictal SPECT with ictal hyperperfusion and interictal PET with hypometabolism.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Interictal PET",
+        "Non-contrast CT",
+        "Structural MRI",
+        "Ictal SPECT"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-018",
+      "domainId": "domain-1",
+      "sectionId": "d1-neurophysiology-seizure-mechanisms",
+      "topicTags": [
+        "landau-kleffner",
+        "aphasia",
+        "epilepsy-syndromes"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A previously normal 5-year-old gradually stops understanding speech. The EEG shows frequent temporal discharges that become much more frequent in sleep. Which syndrome fits?",
+      "explanation": "Landau-Kleffner syndrome is an acquired epileptic aphasia: a child who developed normally loses language comprehension (verbal auditory agnosia) with temporal-predominant discharges that are strongly activated in sleep. Lennox-Gastaut causes multiple seizure types with slow spike-and-wave, juvenile myoclonic epilepsy begins in adolescence with morning myoclonus, and West syndrome begins in infancy with spasms.",
+      "learningObjective": "Recognize Landau-Kleffner syndrome as acquired epileptic aphasia.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Landau-Kleffner syndrome",
+        "Juvenile myoclonic epilepsy",
+        "Lennox-Gastaut syndrome",
+        "West syndrome"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-019",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "mca",
+        "aphasia",
+        "localization",
+        "eeg-findings"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A right-handed patient suddenly has right arm and face weakness and speaks in short, effortful phrases while understanding well. Where would you expect focal slowing on the EEG, and from which artery?",
+      "explanation": "Right face and arm weakness with non-fluent (Broca) aphasia in a right-handed person localizes to the left frontal lobe in the superior division of the left MCA, so focal delta is expected over the left frontotemporal region (F3, F7, C3, T3). Right MCA strokes cause left-sided weakness and neglect, left PCA strokes cause a right hemianopia, and bilateral ACA strokes cause leg weakness and abulia.",
+      "learningObjective": "Combine deficit, artery and expected EEG change in an MCA stroke.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Right frontotemporal region, right middle cerebral artery",
+        "Bilateral frontal region, both anterior cerebral arteries",
+        "Left frontotemporal region, left middle cerebral artery",
+        "Left occipital region, left posterior cerebral artery"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-020",
+      "domainId": "domain-1",
+      "sectionId": "d1-neuroanatomy-eeg-localization",
+      "topicTags": [
+        "cerebellum",
+        "laterality"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A tumor in the left cerebellar hemisphere causes clumsiness on which side of the body?",
+      "explanation": "Cerebellar hemisphere lesions cause incoordination on the same side: the cerebellum's output crosses once to the opposite motor cortex and the corticospinal tract crosses back, so the effects end up ipsilateral. Cortical and internal capsule lesions, by contrast, cause weakness on the opposite side.",
+      "learningObjective": "State that cerebellar hemisphere signs are ipsilateral.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The left side",
+        "Both sides equally",
+        "Neither side",
+        "The right side"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-ny-021",
+      "domainId": "domain-1",
+      "sectionId": "d1-s5",
+      "topicTags": [
+        "dialysis",
+        "metabolic-encephalopathy",
+        "eeg-findings"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During a long dialysis session, a patient becomes confused, has a headache and then a seizure. What is the most likely explanation?",
+      "explanation": "Rapid removal of urea during dialysis can leave the brain relatively hyperosmolar, so water shifts in and causes cerebral edema: headache, confusion, and sometimes seizures (dialysis disequilibrium syndrome), with diffuse slowing on EEG. Normal pressure hydrocephalus develops slowly with gait, urinary and cognitive change. Rolandic epilepsy is a childhood syndrome. A cerebellar hemorrhage causes vomiting and ataxia and, being below the tentorium, rarely causes seizures.",
+      "learningObjective": "Recognize dialysis disequilibrium as a cause of confusion and seizures.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Acute cerebellar hemorrhage",
+        "Dialysis disequilibrium syndrome",
+        "Benign rolandic epilepsy",
+        "Normal pressure hydrocephalus"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

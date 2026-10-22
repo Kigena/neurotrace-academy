@@ -4,7 +4,7 @@
 // ch-nx-001); sets may overlap where a file serves two pages.
 
 export const STUDY_SETS = {
-    'neurology-essentials': { title: 'Neurology Essentials', prefixes: ['ch-cn', 'ch-nd', 'ch-nx', 'ch-ven'] },
+    'neurology-essentials': { title: 'Neurology Essentials', prefixes: ['ch-cn', 'ch-nd', 'ch-nx', 'ch-ny', 'ch-ven'] },
     'neuro-syndromes': { title: 'Neuroanatomy, Pathophysiology and Syndromes', prefixes: ['ch-nan', 'ch-syn', 'ch-gen'] },
     'lab-safety': { title: 'Lab Safety, OSHA and SDS', prefixes: ['ch-saf'] },
     'professional-practice': { title: 'Ethics, HIPAA and Professional Practice', prefixes: ['ch-eth', 'ch-hip', 'ch-b10'] },
