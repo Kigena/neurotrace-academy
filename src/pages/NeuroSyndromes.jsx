@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { Suspense, lazy, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import EegTracing from "../components/EegTracing.jsx";
 import SectionQuiz from "../components/study/SectionQuiz.jsx";
@@ -18,9 +18,13 @@ import ContextualAI from "../components/ContextualAI.jsx";
  * Content lives in src/data/neuroSyndromes.json; tracings in src/data/syndromeScenes.json.
  */
 
+// three.js is large, so the 3D brain loads only when its tab is opened.
+const Brain3D = lazy(() => import("../components/neuro/Brain3D.jsx"));
+
 const TABS = [
   ["overview", "Overview"],
   ["anatomy", "Anatomy"],
+  ["brain3d", "3D brain"],
   ["physiology", "Pathophysiology"],
   ["regions", "Regions and lesions"],
   ["syndromes", "Syndromes"],
@@ -550,6 +554,11 @@ export default function NeuroSyndromes() {
       <div role="tabpanel">
         {tab === "overview" && <Overview go={go} />}
         {tab === "anatomy" && <Anatomy />}
+        {tab === "brain3d" && (
+          <Suspense fallback={<p className="text-sm text-slate-500">Loading the 3D brain...</p>}>
+            <Brain3D />
+          </Suspense>
+        )}
         {tab === "physiology" && <Physiology />}
         {tab === "regions" && <Regions />}
         {tab === "syndromes" && <Syndromes id={itemId} setId={select} />}
