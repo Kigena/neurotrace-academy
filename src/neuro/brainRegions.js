@@ -27,28 +27,28 @@ export const TENTORIUM_Y = 32;
 // ------------------------------------------------------------- definitions
 
 export const LOBES = {
-  frontal: { label: "Frontal lobe", color: [0.55, 0.72, 1.0], text: "Voluntary movement (precentral gyrus), planning, judgment, personality and, on the dominant side, speech output (Broca area)." },
-  parietal: { label: "Parietal lobe", color: [0.62, 0.9, 0.62], text: "Touch and position sense (postcentral gyrus), spatial attention, and reading and calculation on the dominant side." },
-  temporal: { label: "Temporal lobe", color: [1.0, 0.8, 0.45], text: "Hearing (Heschl gyrus), language comprehension on the dominant side (Wernicke area), memory and emotion (hippocampus, amygdala). The most common site of focal epilepsy in adults." },
-  occipital: { label: "Occipital lobe", color: [0.85, 0.6, 1.0], text: "Vision (calcarine cortex); the posterior dominant (alpha) rhythm is maximal over the occipital regions." },
-  cerebellum: { label: "Cerebellum", color: [1.0, 0.62, 0.62], text: "Coordination and balance on the same side of the body; sits below the tentorium in the posterior fossa and does not contribute to the scalp EEG." },
-  brainstem: { label: "Brainstem", color: [0.75, 0.75, 0.75], text: "Midbrain, pons and medulla: cranial nerve nuclei, long tracts, the reticular activating system (consciousness) and breathing centres." },
+  frontal: { label: "Frontal lobe", color: [0.2, 0.47, 0.85], text: "Voluntary movement (precentral gyrus), planning, judgment, personality and, on the dominant side, speech output (Broca area)." },
+  parietal: { label: "Parietal lobe", color: [0.18, 0.66, 0.38], text: "Touch and position sense (postcentral gyrus), spatial attention, and reading and calculation on the dominant side." },
+  temporal: { label: "Temporal lobe", color: [0.95, 0.68, 0.1], text: "Hearing (Heschl gyrus), language comprehension on the dominant side (Wernicke area), memory and emotion (hippocampus, amygdala). The most common site of focal epilepsy in adults." },
+  occipital: { label: "Occipital lobe", color: [0.58, 0.35, 0.8], text: "Vision (calcarine cortex); the posterior dominant (alpha) rhythm is maximal over the occipital regions." },
+  cerebellum: { label: "Cerebellum", color: [0.86, 0.3, 0.38], text: "Coordination and balance on the same side of the body; sits below the tentorium in the posterior fossa and does not contribute to the scalp EEG." },
+  brainstem: { label: "Brainstem", color: [0.1, 0.66, 0.7], text: "Midbrain, pons and medulla: cranial nerve nuclei, long tracts, the reticular activating system (consciousness) and breathing centres." },
 };
 
 export const AREAS = {
-  motor: { label: "Primary motor cortex (precentral gyrus)", color: [0.35, 0.55, 1.0], text: "Brodmann 4. Controls voluntary movement of the opposite side; leg near the midline, face and hand laterally. The hand area lies under C3/C4 and the leg area near Cz." },
-  sensory: { label: "Primary somatosensory cortex (postcentral gyrus)", color: [0.35, 0.8, 0.45], text: "Brodmann 3, 1, 2. Touch and position sense from the opposite side, mapped like the motor strip." },
-  broca: { label: "Broca area (left inferior frontal gyrus)", color: [1.0, 0.45, 0.45], text: "Brodmann 44 and 45 on the dominant side. Damage causes non-fluent (expressive) aphasia. Lies near F7." },
-  wernicke: { label: "Wernicke area (left posterior superior temporal gyrus)", color: [1.0, 0.6, 0.2], text: "Posterior Brodmann 22 on the dominant side. Damage causes fluent (receptive) aphasia with poor comprehension. Lies between T3 and T5 (T7-P7)." },
-  auditory: { label: "Primary auditory cortex (Heschl gyrus)", color: [0.95, 0.85, 0.3], text: "Brodmann 41 and 42 on the upper surface of the superior temporal gyrus, mostly hidden inside the Sylvian fissure; shown here where it meets the surface." },
-  visual: { label: "Primary visual cortex", color: [0.75, 0.45, 1.0], text: "Brodmann 17 around the calcarine sulcus, mostly on the medial surface; the occipital pole is shown. Damage causes a contralateral homonymous field defect." },
+  motor: { label: "Primary motor cortex (precentral gyrus)", color: [0.15, 0.4, 0.9], text: "Brodmann 4. Controls voluntary movement of the opposite side; leg near the midline, face and hand laterally. The hand area lies under C3/C4 and the leg area near Cz." },
+  sensory: { label: "Primary somatosensory cortex (postcentral gyrus)", color: [0.15, 0.68, 0.35], text: "Brodmann 3, 1, 2. Touch and position sense from the opposite side, mapped like the motor strip." },
+  broca: { label: "Broca area (left inferior frontal gyrus)", color: [0.9, 0.2, 0.25], text: "Brodmann 44 and 45 on the dominant side. Damage causes non-fluent (expressive) aphasia. Lies near F7." },
+  wernicke: { label: "Wernicke area (left posterior superior temporal gyrus)", color: [0.98, 0.55, 0.05], text: "Posterior Brodmann 22 on the dominant side. Damage causes fluent (receptive) aphasia with poor comprehension. Lies between T3 and T5 (T7-P7)." },
+  auditory: { label: "Primary auditory cortex (Heschl gyrus)", color: [0.95, 0.85, 0.15], text: "Brodmann 41 and 42 on the upper surface of the superior temporal gyrus, mostly hidden inside the Sylvian fissure; shown here where it meets the surface." },
+  visual: { label: "Primary visual cortex", color: [0.6, 0.3, 0.85], text: "Brodmann 17 around the calcarine sulcus, mostly on the medial surface; the occipital pole is shown. Damage causes a contralateral homonymous field defect." },
 };
 
 export const ARTERIES = {
-  aca: { label: "Anterior cerebral artery (ACA)", color: [0.45, 0.65, 1.0], text: "Medial frontal and parietal lobes and a strip of the upper convexity, including the leg area of the motor and sensory strips. Occlusion: leg-predominant weakness on the opposite side." },
-  mca: { label: "Middle cerebral artery (MCA)", color: [1.0, 0.55, 0.45], text: "Most of the lateral convexity: face and arm areas, Broca and Wernicke areas. The most commonly affected territory in ischemic stroke; occlusion causes face and arm weakness, aphasia (dominant) or neglect (non-dominant)." },
-  pca: { label: "Posterior cerebral artery (PCA)", color: [0.6, 0.85, 0.5], text: "Occipital lobe, inferior and medial temporal lobe and thalamus. Occlusion: contralateral homonymous hemianopia, often with macular sparing." },
-  vb: { label: "Vertebrobasilar system", color: [0.8, 0.7, 0.9], text: "Brainstem and cerebellum. Occlusion: vertigo, diplopia, dysarthria, ataxia, crossed signs; basilar occlusion can cause locked-in syndrome." },
+  aca: { label: "Anterior cerebral artery (ACA)", color: [0.2, 0.45, 0.9], text: "Medial frontal and parietal lobes and a strip of the upper convexity, including the leg area of the motor and sensory strips. Occlusion: leg-predominant weakness on the opposite side." },
+  mca: { label: "Middle cerebral artery (MCA)", color: [0.88, 0.28, 0.25], text: "Most of the lateral convexity: face and arm areas, Broca and Wernicke areas. The most commonly affected territory in ischemic stroke; occlusion causes face and arm weakness, aphasia (dominant) or neglect (non-dominant)." },
+  pca: { label: "Posterior cerebral artery (PCA)", color: [0.2, 0.68, 0.35], text: "Occipital lobe, inferior and medial temporal lobe and thalamus. Occlusion: contralateral homonymous hemianopia, often with macular sparing." },
+  vb: { label: "Vertebrobasilar system", color: [0.6, 0.4, 0.8], text: "Brainstem and cerebellum. Occlusion: vertigo, diplopia, dysarthria, ataxia, crossed signs; basilar occlusion can cause locked-in syndrome." },
 };
 
 // ------------------------------------------------------------ classifiers

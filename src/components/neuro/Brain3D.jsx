@@ -56,7 +56,36 @@ const FIELD = { lobes: "lobe", areas: "area", arteries: "artery" };
 /** Creator of the 3D model, for the CC BY 4.0 credit (set from the model's listing). */
 const MODEL_AUTHOR = "danes_dysfunction";
 const keyFor = (layer, p) => (layer === "lobes" ? lobeAt(p) : layer === "areas" ? areaAt(p) : layer === "arteries" ? arteryAt(p) : null);
-const mix = (c, k) => c.map((v) => 1 - k + v * k);
+// Overlay strength: how much of the region colour replaces the model's own paint.
+const OVERLAY = 0.8;
+const OVERLAY_FOCUS = 0.92;
+const OVERLAY_DIM = 0.12;
+
+/**
+ * Paint region colours over the model instead of multiplying them into its
+ * texture (which is grey on the cortex but tan on the temporal lobe,
+ * cerebellum and brainstem, so multiplied tints came out muddy). The
+ * texture's brightness is kept so gyri and sulci stay visible.
+ */
+function addOverlayShader(material) {
+  material.onBeforeCompile = (shader) => {
+    shader.vertexShader = shader.vertexShader
+      .replace("#include <common>", "#include <common>\nattribute vec4 overlay;\nvarying vec4 vOverlay;")
+      .replace("#include <begin_vertex>", "#include <begin_vertex>\nvOverlay = overlay;");
+    shader.fragmentShader = shader.fragmentShader
+      .replace("#include <common>", "#include <common>\nvarying vec4 vOverlay;")
+      .replace(
+        "#include <color_fragment>",
+        [
+          "#include <color_fragment>",
+          "float ovLum = dot(diffuseColor.rgb, vec3(0.299, 0.587, 0.114));",
+          "diffuseColor.rgb = mix(diffuseColor.rgb, vOverlay.rgb * mix(0.3, 1.45, ovLum), vOverlay.a);",
+        ].join("\n"),
+      );
+  };
+  material.customProgramCacheKey = () => "neurolinea-overlay";
+  material.needsUpdate = true;
+}
 
 export default function Brain3D() {
   const mountRef = useRef(null);
@@ -149,10 +178,9 @@ export default function Brain3D() {
           for (let i = 0; i < pos.count; i++) arr[i] = keyFor(L, [mm[i * 3], mm[i * 3 + 1], mm[i * 3 + 2]]);
           t.keys[L] = arr;
         }
-        t.colors = new THREE.BufferAttribute(new Float32Array(pos.count * 3), 3);
-        t.mesh.geometry.setAttribute("color", t.colors);
-        t.mesh.material.vertexColors = true;
-        t.mesh.material.needsUpdate = true;
+        t.colors = new THREE.BufferAttribute(new Float32Array(pos.count * 4), 4);
+        t.mesh.geometry.setAttribute("overlay", t.colors);
+        addOverlayShader(t.mesh.material);
         // electrodes projected onto the cortex
         const rc = new THREE.Raycaster();
         const c = new THREE.Vector3(...HEAD_CENTER).multiplyScalar(0.001);
@@ -193,10 +221,11 @@ export default function Brain3D() {
     const keys = t.keys[effLayer];
     const defs = DEFS[effLayer];
     for (let i = 0; i < t.colors.count; i++) {
-      let c = [1, 1, 1];
       const k = keys ? keys[i] : null;
-      if (k && defs[k]) c = effFocus ? (k === effFocus ? defs[k].color : mix(defs[k].color, 0.18)) : mix(defs[k].color, 0.75);
-      arr[i * 3] = c[0]; arr[i * 3 + 1] = c[1]; arr[i * 3 + 2] = c[2];
+      const d = k && defs[k];
+      const a = !d ? 0 : effFocus ? (k === effFocus ? OVERLAY_FOCUS : OVERLAY_DIM) : OVERLAY;
+      const c = d ? d.color : [1, 1, 1];
+      arr[i * 4] = c[0]; arr[i * 4 + 1] = c[1]; arr[i * 4 + 2] = c[2]; arr[i * 4 + 3] = a;
     }
     t.colors.needsUpdate = true;
   }, [effLayer, effFocus]);
