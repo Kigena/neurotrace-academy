@@ -26,6 +26,7 @@ import AcnsGuide from "./pages/AcnsGuide.jsx";
 import IcuEeg from "./pages/IcuEeg.jsx";
 import NeonatalPediatric from "./pages/NeonatalPediatric.jsx";
 import NcsLab from "./pages/NcsLab.jsx";
+import HeadMeasureLabPage from "./pages/HeadMeasureLabPage.jsx";
 import Standards from "./pages/Standards.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
@@ -223,6 +224,12 @@ function AppContent() {
             <Route path="/ncs-lab" element={
               <ProtectedRoute>
                 <NcsLab />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/head-measurement" element={
+              <ProtectedRoute>
+                <HeadMeasureLabPage />
               </ProtectedRoute>
             } />
 

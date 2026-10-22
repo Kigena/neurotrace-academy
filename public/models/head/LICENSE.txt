@@ -1,0 +1,11 @@
+"Soldier head" 3D model by Davlet (Fab, fab.com)
+Licence: Fab Standard License (Fab End User License Agreement).
+
+This model is incorporated into the NeuroLinea 10-20 Measurement Lab and is
+used only as part of that lab. It is not offered for standalone download or
+redistribution; under the Fab Standard License it may not be resold or
+redistributed on a standalone basis.
+
+Changes made by NeuroLinea: converted from FBX to glTF (head and eye meshes
+merged, vertices welded, materials and textures removed). Landmarks and 10-20
+positions are computed by the app at runtime.

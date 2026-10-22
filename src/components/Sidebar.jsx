@@ -205,6 +205,12 @@ function Sidebar({ isOpen, onClose }) {
               </svg>
               Montages &amp; References
             </NavLink>
+            <NavLink to="/head-measurement" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3a7 7 0 00-7 7c0 3 1.5 5 3 6v4h8v-4c1.5-1 3-3 3-6a7 7 0 00-7-7zM9 10h.01M15 10h.01" />
+              </svg>
+              10-20 Measurement Lab
+            </NavLink>
           </div>
 
           <div className="mb-4">
