@@ -837,9 +837,14 @@
        "First reactive occipital rhythm; best seen with passive eye closure"
       ],
       [
-       "About 6-12 months",
-       "About 5-6 Hz",
+       "5-6 months",
+       "About 5 Hz",
        "Blocks with eye opening"
+      ],
+      [
+       "12 months",
+       "About 5-6 Hz",
+       "Common exam item: 5-6 Hz at 1 year"
       ],
       [
        "About 2 years",
@@ -916,7 +921,7 @@
      "kind": "list",
      "items": [
       "Children produce a fast, high-voltage slow-wave build-up during HV, often earlier and larger than adults; this is normal if it resolves promptly afterward.",
-      "Build-up is often posterior or diffuse in young children and frontal in adolescents and adults.",
+      "Location changes with age: in children the build-up is typically maximal posteriorly (occipital), and in adolescents and adults it is maximal frontally. Both are normal if symmetric and they settle within about a minute after HV.",
       "Guideline 5: do HV at the beginning and photic stimulation at the end, so the child can fall asleep; photic over at least 1-30 flashes per second while awake.",
       "If HV fails to show findings in suspected absence epilepsy, a second trial at least 10 minutes after the first may help.",
       "Most children can do HV from about 3 years with coaching (pinwheel, blowing games).",

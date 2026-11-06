@@ -2356,7 +2356,8 @@
     "category": "NORMAL",
     "topography": [
       "generalized",
-      "frontal"
+      "posterior (children)",
+      "frontal (adolescents and adults)"
     ],
     "state": [
       "wake"
@@ -2367,7 +2368,7 @@
     "amplitude_uv": "high, often >100",
     "key_features": [
       "Gradual build-up of diffuse rhythmic slow activity during HV",
-      "Frontally predominant in children and adults (posterior in some young children)",
+      "Posterior (occipital) maximum in children; frontal maximum in adolescents and adults",
       "Resolves within about 1 minute of stopping HV",
       "Enhanced by hypoglycemia",
       "No spikes"
@@ -2380,7 +2381,7 @@
       },
       {
         "pattern_id": "pattern_firda",
-        "why_confused": "Both are frontal rhythmic delta",
+        "why_confused": "In adults both are frontal rhythmic delta",
         "how_to_distinguish": "HV buildup happens only during HV and resolves after it"
       }
     ],

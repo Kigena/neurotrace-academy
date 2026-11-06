@@ -224,6 +224,68 @@
       "intro": "Each card lists what you should expect in each stage at that age. Ages for the neonate are given as postmenstrual age (PMA); after that, as age after a term birth.",
       "sections": [
         {
+          "title": "Posterior dominant rhythm (PDR) by age",
+          "kind": "table",
+          "head": [
+            "Age",
+            "Expected PDR (awake, eyes closed)",
+            "Notes"
+          ],
+          "rows": [
+            [
+              "Newborn to 2 months",
+              "None",
+              "No organised occipital rhythm yet"
+            ],
+            [
+              "3-4 months",
+              "About 3-4 Hz",
+              "First reactive occipital rhythm; best seen with passive eye closure"
+            ],
+            [
+              "5-6 months",
+              "About 5 Hz",
+              ""
+            ],
+            [
+              "12 months",
+              "About 5-6 Hz",
+              "A common exam item: 5-6 Hz at 1 year"
+            ],
+            [
+              "2 years",
+              "About 6-7 Hz",
+              ""
+            ],
+            [
+              "3 years",
+              "About 8 Hz",
+              "From here on, under 8 Hz is slow for age"
+            ],
+            [
+              "5-8 years",
+              "About 8-9 Hz",
+              "Posterior slow waves of youth may mix in"
+            ],
+            [
+              "About 10 years",
+              "About 10 Hz",
+              "Adult frequency reached"
+            ],
+            [
+              "Adolescent and adult",
+              "8.5-11 Hz (mostly 9-11 Hz)",
+              "Under 8 Hz is slow at any age after 3 years"
+            ],
+            [
+              "Older adult",
+              "May slow slightly but stays 8 Hz or more",
+              "A PDR under 8 Hz is not explained by age alone"
+            ]
+          ],
+          "note": "Typical teaching values; sources differ by about 1 Hz. The rhythm should block with eye opening and be symmetric (the right side may be slightly higher in amplitude)."
+        },
+        {
           "title": "Newborn to old age",
           "kind": "cards",
           "cards": [
@@ -261,7 +323,7 @@
               "title": "3-12 months",
               "body": "All the adult NREM features are now present but look different.",
               "points": [
-                "Wake: posterior rhythm about 4 Hz at 3-4 months, about 5-6 Hz by 6 months and about 6 Hz by 12 months",
+                "Wake: posterior rhythm about 3-4 Hz at 3-4 months, about 5 Hz at 5-6 months and about 5-6 Hz at 12 months",
                 "N1: diffuse slowing; hypnagogic hypersynchrony may begin (from about 3-6 months)",
                 "N2: vertex waves and K-complexes from about 4-6 months; spindles abundant, long and asynchronous",
                 "N3: high-voltage delta, often over 100-200 µV",
@@ -347,7 +409,7 @@
             ],
             [
               "3-12 months",
-              "Posterior rhythm about 3-4 Hz at 3-4 months, about 5-6 Hz by 6 months and about 6 Hz by 12 months",
+              "Posterior rhythm about 3-4 Hz at 3-4 months, about 5 Hz at 5-6 months, about 5-6 Hz at 12 months",
               "Diffuse slowing; hypnagogic hypersynchrony may begin"
             ],
             [

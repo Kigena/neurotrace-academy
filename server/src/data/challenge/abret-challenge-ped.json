@@ -4,7 +4,7 @@
   "bank": "challenge",
   "focus": "pediatric-eeg",
   "description": "Original items on infant and child EEG maturation: posterior rhythm by age, spindles, vertex waves, hypnagogic hypersynchrony, youth waves, pediatric hyperventilation, infantile spasms and Lennox-Gastaut. Text only; not yet medically verified.",
-  "totalQuestions": 18,
+  "totalQuestions": 20,
   "questions": [
     {
       "id": "ch-ped-001",
@@ -266,7 +266,7 @@
         "hypnagogic-hypersynchrony",
         "maturation"
       ],
-      "cognitiveLevel": 2,
+      "cognitiveLevel": 3,
       "competency": "clinical",
       "reasoningSteps": 1,
       "stem": "In which healthy child would hypnagogic hypersynchrony during drowsiness be least expected?",
@@ -324,8 +324,8 @@
       "cognitiveLevel": 3,
       "competency": "clinical",
       "reasoningSteps": 2,
-      "stem": "A 7-year-old performs hyperventilation well. By 90 s, diffuse 2 to 3 Hz high-amplitude delta builds up, maximal frontally. The child keeps counting, and the slowing clears within 30 s after stopping. What best describes this?",
-      "explanation": "High-amplitude, diffuse, often frontally maximal slowing during hyperventilation is a normal and particularly prominent response in children; responsiveness is preserved and the background returns to baseline shortly after the effort ends. Documenting the onset, the effort and the recovery time completes the record. Urgent review is not needed for an expected response. Absence seizures contain spike-and-wave complexes and impaired responsiveness, neither of which is present. FIRDA is a resting-state pattern, not a response to overbreathing that clears on stopping.",
+      "stem": "A 7-year-old performs hyperventilation well. By 90 s, diffuse 2 to 3 Hz high-amplitude delta builds up, maximal posteriorly. The child keeps counting, and the slowing clears within 30 s after stopping. What best describes this?",
+      "explanation": "High-amplitude, diffuse slowing during hyperventilation is a normal and particularly prominent response in children, and in children it is typically maximal posteriorly (in adolescents and adults it is frontal); responsiveness is preserved and the background returns to baseline shortly after the effort ends. Documenting the onset, the effort and the recovery time completes the record. Urgent review is not needed for an expected response. Absence seizures contain spike-and-wave complexes and impaired responsiveness, neither of which is present. FIRDA is a resting-state pattern, not a response to overbreathing that clears on stopping.",
       "learningObjective": "Recognize a normal pediatric hyperventilation buildup.",
       "questionType": "application",
       "references": [],
@@ -507,6 +507,62 @@
       "answerIndex": 1,
       "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
       "qaStatus": "UNREVIEWED"
+    },
+    {
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "competency": "clinical",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED",
+      "id": "ch-ped-019",
+      "topicTags": [
+        "posterior-rhythm",
+        "maturation",
+        "infant"
+      ],
+      "cognitiveLevel": 3,
+      "reasoningSteps": 1,
+      "stem": "A healthy 13-month-old is resting quietly with the eyes closed. Which posterior dominant rhythm frequency is expected?",
+      "options": [
+        "About 5-6 Hz",
+        "About 2-3 Hz",
+        "About 8-9 Hz",
+        "About 10-11 Hz"
+      ],
+      "answerIndex": 0,
+      "explanation": "The posterior rhythm is about 3-4 Hz at 3-4 months, about 5-6 Hz at 1 year, about 8 Hz by 3 years and about 10 Hz by 10 years. At 13 months, 5-6 Hz is expected; 2-3 Hz would be slow, and 8-11 Hz are values for older children and adults.",
+      "learningObjective": "State the expected posterior rhythm frequency at 1 year."
+    },
+    {
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "competency": "clinical",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "author": "NeuroLinea neonatal and pediatric set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED",
+      "id": "ch-ped-020",
+      "topicTags": [
+        "hyperventilation",
+        "build-up",
+        "maturation"
+      ],
+      "cognitiveLevel": 4,
+      "reasoningSteps": 2,
+      "stem": "Each of these healthy patients shows a normal, symmetric build-up during hyperventilation. In which one is the build-up most likely to be maximal frontally?",
+      "options": [
+        "A 4-year-old girl",
+        "A 6-year-old boy",
+        "An 8-year-old girl",
+        "A 24-year-old man"
+      ],
+      "answerIndex": 3,
+      "explanation": "The location of the normal hyperventilation build-up changes with age: in children it is typically maximal posteriorly (occipital), and in adolescents and adults it is maximal frontally. The three children would be expected to show a posterior maximum, so the adult is the best answer.",
+      "learningObjective": "Relate the location of the normal hyperventilation build-up to age."
     }
   ]
 }

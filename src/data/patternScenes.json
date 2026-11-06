@@ -596,9 +596,9 @@
      "hz": 2.5,
      "center": [
       0,
-      0.3
+      -0.45
      ],
-     "sigma": 0.95,
+     "sigma": 0.75,
      "uv": 200,
      "runs": [
       [
@@ -614,7 +614,7 @@
     "longitudinal"
    ]
   },
-  "note": "Hyperventilation buildup: diffuse, frontally predominant high-amplitude rhythmic delta in a child during hyperventilation; it should resolve within about a minute after HV ends."
+  "note": "Hyperventilation buildup: bilateral, symmetric high-amplitude rhythmic delta, maximal posteriorly, in a 9-year-old during hyperventilation. This posterior maximum is typical of children; in adolescents and adults the build-up is frontal. It should resolve within about a minute after HV ends."
  },
  "pattern_three_hz_gsw": {
   "scene": {
