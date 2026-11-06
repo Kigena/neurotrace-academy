@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import EegTracing from "../components/EegTracing.jsx";
 import SectionQuiz from "../components/study/SectionQuiz.jsx";
@@ -9,7 +9,7 @@ import stacks from "../data/filterStacks.json";
 import FilterStack from "../components/amplifier/FilterStack.jsx";
 import casesData from "../data/cases.json";
 import {
-  HFF_CHOICES, LFF_CHOICES, durationMs, frequencyHz, heightFromVoltage, highPassGain, lowPassGain, timeConstantFromCutoff,
+  HFF_CHOICES, LFF_CHOICES, aliasFrequency, durationMs, frequencyHz, heightFromVoltage, highPassGain, lowPassGain, timeConstantFromCutoff,
 } from "../eeg/filters";
 
 /**
@@ -23,6 +23,7 @@ const TABS = [
   ["timebase", "Time base"],
   ["filters", "Filters"],
   ["differential", "Differential amplifier"],
+  ["digital", "Digital recording"],
   ["lab", "Filter Lab"],
   ["mistakes", "Common mistakes"],
   ["practice", "Practice"],
@@ -335,6 +336,74 @@ function Differential() {
   );
 }
 
+function AliasCalculator() {
+  const [f, setF] = useState(60);
+  const [fs, setFs] = useState(100);
+  const nyquist = fs / 2;
+  const ok = f < nyquist;
+  const seen = aliasFrequency(f, fs);
+  return (
+    <div className="space-y-2 rounded-lg border border-slate-200 bg-white p-3">
+      <div className="flex flex-wrap items-end gap-3 text-sm">
+        <label className="flex flex-col font-semibold text-slate-700">Signal (Hz)
+          <input type="number" min="0" step="1" value={f} onChange={(e) => setF(Math.max(0, Number(e.target.value)))} className="mt-1 w-24 rounded border border-slate-300 px-2 py-1" />
+        </label>
+        <label className="flex flex-col font-semibold text-slate-700">Sampling rate (samples/s)
+          <input type="number" min="1" step="1" value={fs} onChange={(e) => setFs(Math.max(1, Number(e.target.value)))} className="mt-1 w-28 rounded border border-slate-300 px-2 py-1" />
+        </label>
+      </div>
+      <p className={`rounded-lg px-3 py-2 text-sm ${ok ? "bg-emerald-50 text-emerald-900" : "bg-rose-50 text-rose-900"}`}>
+        Nyquist frequency = {fs} / 2 = <strong>{nyquist} Hz</strong>.{" "}
+        {ok
+          ? `A ${f} Hz signal is below it, so it is recorded at its true frequency.`
+          : f === nyquist
+            ? `A ${f} Hz signal sits exactly at it, so it cannot be recorded reliably: depending on where the samples fall it loses amplitude or vanishes. The sampling rate would need to exceed ${2 * f} samples/s.`
+            : seen === 0
+              ? `A ${f} Hz signal is a whole multiple of the sampling rate, so every sample lands at the same point of the wave and it appears as a flat line or steady offset (aliasing). The sampling rate would need to exceed ${2 * f} samples/s.`
+              : `A ${f} Hz signal is above it, so it is under-sampled and appears as a false ${+seen.toFixed(2)} Hz wave (aliasing). The sampling rate would need to exceed ${2 * f} samples/s.`}
+      </p>
+    </div>
+  );
+}
+
+function Digital() {
+  return (
+    <div className="space-y-5">
+      <p className="max-w-3xl text-slate-600">
+        A digital EEG samples each channel many times per second (horizontal, in time) and converts each sample into a number (vertical, in amplitude) with an
+        analog-to-digital converter (ADC). Most digital instrumentation questions come down to these two resolutions, aliasing, clipping and filter shape.
+      </p>
+      <Card title="Sampling rate, Nyquist and aliasing" tone="indigo">
+        <p>To record a frequency faithfully the sampling rate must be <strong>more than twice</strong> that frequency. Half the sampling rate is the <strong>Nyquist frequency</strong>: the highest frequency that can be represented.</p>
+        <Formula>Nyquist frequency = sampling rate / 2</Formula>
+        <p>A signal above the Nyquist frequency is <strong>under-sampled</strong> and reappears as a slower, false wave: <strong>aliasing</strong>. For example a 60 Hz sine wave sampled at 100 Hz (Nyquist 50 Hz) appears as a 40 Hz wave. Aliasing cannot be removed after recording, so the amplifier applies an <strong>anti-aliasing</strong> (low-pass) filter below the Nyquist frequency before sampling.</p>
+        <p>ACNS Guideline 4 (2016) asks for at least <strong>256 samples per second</strong> (Nyquist 128 Hz), with 512 preferable.</p>
+        <AliasCalculator />
+      </Card>
+      <Card title="Vertical and horizontal resolution">
+        <Table
+          head={["", "What it is", "Set by", "Example"]}
+          rows={[
+            ["Vertical resolution", "The smallest amplitude step the ADC can tell apart", "The number of bits: n bits give 2^n levels across the input range", "12 bits = 4,096 levels; 16 bits = 65,536 levels. ACNS Guideline 4: at least 16 bits"],
+            ["Horizontal resolution", "The time between samples", "The sampling rate: interval = 1 / sampling rate", "256 samples/s gives a sample every 3.9 ms; 512 samples/s every 2 ms"],
+          ]}
+          note="Vertical = amplitude = bits. Horizontal = time = sampling rate."
+        />
+      </Card>
+      <Card title="Clipping (saturation)">
+        <p>Each ADC accepts only a limited input range (its <strong>dynamic range</strong>). A signal that goes beyond that range is <strong>clipped</strong>: the tops are cut off flat because every value beyond the limit is stored as the limit. Clipped data are lost and cannot be restored by changing the display.</p>
+        <p>Display sensitivity (for example 7 or 20 µV/mm) only changes how the stored data are drawn, so it does not cause clipping. On a screen a large wave can overlap neighbouring channels, but that is a display effect, not clipping. Clipping usually comes from very large signals or offsets such as a poor or drying electrode, movement or a large DC offset: fix the source.</p>
+      </Card>
+      <Card title="Filter sharpness: rolloff">
+        <p>The <strong>rolloff</strong> (slope) of a filter is how quickly it attenuates beyond the cutoff, in decibels per octave. It decides how <strong>sharp</strong> the frequency response curve is. A single-pole filter rolls off about 6 dB per octave; steeper filters (12, 24 dB per octave) give a sharper corner. A notch filter is a very sharp, narrow band-reject filter centred on the mains frequency.</p>
+      </Card>
+      <Card title="Input impedance">
+        <p>The amplifier input impedance must be <strong>very high</strong> compared with the electrode impedance, so almost all of the signal reaches the amplifier. See the Differential amplifier tab.</p>
+      </Card>
+    </div>
+  );
+}
+
 function Lab() {
   const steps = [
     ["Read the calibration pulse", "A 50 µV pulse starts near 0.5 s. Switch the LFF between 0.1 and 5.3 Hz: the flat top sags faster as the LFF rises. Use the Caliper to time how long the top takes to fall to about 37% of its height and compare it with the TC in the page header (this works best at LFF 0.3 Hz and above; at 0.1 Hz the TC of 1.6 s is nearly as long as the pulse)."],
@@ -471,6 +540,7 @@ export default function AmplifierFilters() {
         {tab === "timebase" && <TimeBase />}
         {tab === "filters" && <Filters />}
         {tab === "differential" && <Differential />}
+        {tab === "digital" && <Digital />}
         {tab === "lab" && <Lab />}
         {tab === "mistakes" && <Mistakes />}
         {tab === "practice" && <Practice />}

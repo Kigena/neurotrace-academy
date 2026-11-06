@@ -12,14 +12,14 @@ export const STUDY_SETS = {
     acns: { title: 'ACNS Guidelines and Terminology', prefixes: ['ch-acg', 'ch-act'] },
     'icu-eeg': { title: 'ICU and Continuous EEG', prefixes: ['ch-icu', 'ch-icx', 'ch-b8'] },
     'neonatal-pediatric': { title: 'Neonatal and Pediatric EEG', prefixes: ['ch-neo', 'ch-ped', 'ch-sn', 'ch-b5'] },
-    'amplifier-controls': { title: 'Amplifier Controls and Filters', prefixes: ['ch-amp', 'ch-dif2', 'ch-calc', 'ch-rsb', 'ch-tga', 'ch-b6'] },
+    'amplifier-controls': { title: 'Amplifier Controls and Filters', prefixes: ['ch-amp', 'ch-dif2', 'ch-calc', 'ch-rsb', 'ch-tga', 'ch-b6', 'ch-dg'] },
     'montages-references': { title: 'Montages and References', prefixes: ['ch-mon', 'ch-rsa', 'ch-tgb', 'ch-b4'] },
     'diffuse-abnormalities': { title: 'Diffuse Abnormalities', prefixes: ['ch-dif'] },
 };
 
 /** Allowed quiz lengths; "all" serves every question in the set (up to the cap). */
 export const STUDY_SET_SIZES = [10, 20, 'all'];
-export const STUDY_SET_MAX = 250; // above the largest set (amplifier controls, 225)
+export const STUDY_SET_MAX = 260; // above the largest set (amplifier controls, 247)
 
 export function isStudySet(key) {
     return typeof key === 'string' && Object.prototype.hasOwnProperty.call(STUDY_SETS, key);

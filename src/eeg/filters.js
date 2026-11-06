@@ -59,3 +59,9 @@ export const phaseToMs = (deg, f) => (deg / 360) * (1000 / f);
 
 /** Net timing shift (ms) of a sine through LFF and HFF: negative = earlier, positive = later. */
 export const netShiftMs = (f, lff, hff) => phaseToMs(lowPassPhaseDeg(f, hff) - highPassPhaseDeg(f, lff), f);
+
+/** Frequency at which a sampled sine wave appears: folded about multiples of the sampling rate (aliasing above fs/2). */
+export function aliasFrequency(f, fs) {
+  const r = f % fs;
+  return Math.min(r, fs - r);
+}

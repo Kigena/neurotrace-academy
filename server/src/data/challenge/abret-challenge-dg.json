@@ -1,0 +1,609 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-11-05",
+  "bank": "challenge",
+  "focus": "domain-2",
+  "description": "Original questions on digital recording (sampling rate, Nyquist, aliasing, vertical and horizontal resolution, clipping), amplifier input impedance, filter rolloff and EMG versus EKG artifact. Text only; not yet medically verified.",
+  "totalQuestions": 22,
+  "questions": [
+    {
+      "id": "ch-dg-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "nyquist",
+        "sampling-rate"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "A system samples each channel 256 times per second. What is the highest frequency it can represent faithfully?",
+      "explanation": "The Nyquist frequency is half the sampling rate: 256 / 2 = 128 Hz. Frequencies above it are under-sampled and alias. Doubling the rate (512) would be needed to reach 256 Hz, and 64 Hz is a quarter of the rate.",
+      "learningObjective": "Calculate the Nyquist frequency from the sampling rate.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "64 Hz",
+        "256 Hz",
+        "128 Hz",
+        "512 Hz"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "aliasing",
+        "nyquist"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A 60 Hz sine wave is sampled at 100 samples per second. How does it appear in the recording?",
+      "explanation": "The Nyquist frequency at 100 samples/s is 50 Hz. A 60 Hz signal lies above it, so it is under-sampled and folds back to 100 - 60 = 40 Hz: aliasing. It cannot be recorded at its true frequency, it does not vanish, and sampling does not create harmonics.",
+      "learningObjective": "Predict the alias frequency of an under-sampled signal.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "As a false 40 Hz wave",
+        "As a 120 Hz harmonic",
+        "As a true 60 Hz wave",
+        "As a flat line"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "aliasing",
+        "undersampling"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What is the result of sampling a signal at less than twice its frequency?",
+      "explanation": "Sampling below twice the signal frequency (under-sampling) makes the signal appear as a slower, false frequency: aliasing. Clipping comes from exceeding the converter's input range, common mode rejection is a differential amplifier property, and crosstalk is leakage between channels.",
+      "learningObjective": "Link under-sampling with aliasing.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Crosstalk",
+        "Clipping",
+        "Aliasing",
+        "Common mode rejection"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "anti-aliasing",
+        "filters"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Why does a digital EEG apply a low-pass filter before the signal is sampled?",
+      "explanation": "An anti-aliasing (low-pass) filter attenuates activity above the Nyquist frequency before the analog-to-digital converter samples it, because aliased activity cannot be separated out afterwards. It is not a notch filter, it does not affect electrode impedance, and bit depth is a property of the converter.",
+      "learningObjective": "Explain the purpose of the anti-aliasing filter.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "To attenuate 60 Hz from balanced electrodes",
+        "To lower the impedance of the electrodes",
+        "To attenuate activity above Nyquist",
+        "To increase the number of bits per sample"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "vertical-resolution",
+        "bits"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What determines the vertical (amplitude) resolution of a digital EEG?",
+      "explanation": "Vertical resolution is the smallest amplitude step the converter can distinguish, set by its number of bits (n bits give 2^n levels). The sampling rate sets horizontal (time) resolution, page width sets the display, and the HFF shapes frequency content.",
+      "learningObjective": "Associate vertical resolution with ADC bit depth.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The high frequency filter setting",
+        "The paper speed or page width",
+        "The sampling rate in samples per second",
+        "The converter's number of bits"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "vertical-resolution",
+        "bits",
+        "calculation",
+        "calc-core"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "How many amplitude levels can a 12-bit analog-to-digital converter represent?",
+      "explanation": "The number of levels is 2 to the power of the bit count: 2^12 = 4,096. 1,024 is 10 bits and 65,536 is 16 bits (the ACNS minimum). Twelve is the bit count itself, not the number of levels.",
+      "learningObjective": "Calculate the levels available from a given bit depth.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "4,096",
+        "1,024",
+        "12",
+        "65,536"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "horizontal-resolution",
+        "sampling-rate"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A system samples at 500 samples per second. What is the time between samples?",
+      "explanation": "The sampling interval is 1 / sampling rate: 1 / 500 s = 0.002 s = 2 ms. This is the horizontal (time) resolution. 0.5 ms would need 2,000 samples/s, 5 ms is 200 samples/s and 20 ms is 50 samples/s.",
+      "learningObjective": "Convert a sampling rate into the sampling interval.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "20 ms",
+        "2 ms",
+        "5 ms",
+        "0.5 ms"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "acns-guideline-4",
+        "sampling-rate",
+        "bits"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "According to ACNS Guideline 4 (2016), what are the minimum sampling rate and resolution for routine digital EEG?",
+      "explanation": "ACNS Guideline 4 asks for at least 256 samples per second (512 preferable) and at least 16 bits per sample including the sign bit. The other pairs are either below the minimum or describe higher specifications than required.",
+      "learningObjective": "State the ACNS minimum digital specifications.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "256 samples/s and 16 bits",
+        "1,000 samples/s and 24 bits",
+        "128 samples/s and 8 bits",
+        "200 samples/s and 12 bits"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "clipping",
+        "dynamic-range"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "When does clipping of the waveforms occur in a digital recording?",
+      "explanation": "Clipping (saturation) happens when the input goes beyond the analog-to-digital converter's range: values beyond the limit are stored at the limit, so peaks are flattened and lost. A high sampling rate, the display sensitivity and the notch filter do not cut off the stored signal.",
+      "learningObjective": "Define clipping as exceeding the ADC input range.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "When the input exceeds the ADC range",
+        "When the sampling rate is very high",
+        "When the notch filter is turned on",
+        "When the display sensitivity is 20 µV/mm"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "clipping",
+        "display-sensitivity"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "Waveforms in one channel have flat tops on review. Changing the display sensitivity from 7 to 20 µV/mm does not restore the peaks. What is the best explanation?",
+      "explanation": "Display sensitivity only changes how stored data are drawn. If flat tops persist at any sensitivity, the signal was clipped when it exceeded the converter's range during recording, and the lost peaks cannot be recovered; the cause (for example a poor electrode or a large offset) must be fixed. A low HFF rounds waves rather than flattening them, and changing the montage cannot restore data that were never stored.",
+      "learningObjective": "Distinguish acquisition clipping from display effects.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The display sensitivity is still too high",
+        "The signal was clipped during acquisition",
+        "The montage needs to be changed",
+        "The high frequency filter is too low"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "input-impedance",
+        "differential-amplifier"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "How should the input impedance of an EEG amplifier compare with the electrode impedance?",
+      "explanation": "The electrode and the amplifier input act as a voltage divider, so a very high input impedance lets almost all of the signal reach the amplifier and draws little current through the electrodes. A low or matched input impedance would lose amplitude and worsen common mode rejection.",
+      "learningObjective": "State that amplifier input impedance must be very high.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "It should be slightly lower",
+        "It should be equal",
+        "It should be as low as possible",
+        "It should be very much higher"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "input-impedance",
+        "voltage-divider"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "Why does a very high amplifier input impedance help preserve the EEG amplitude?",
+      "explanation": "With a very high input impedance, the electrode-skin impedance is a tiny fraction of the circuit, so nearly all of the voltage appears across the amplifier input. It does not raise the common mode signal, has nothing to do with sampling, and does not remove 60 Hz on its own.",
+      "learningObjective": "Explain the voltage-divider reason for high input impedance.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "It increases the sampling rate",
+        "It removes 60 Hz interference by itself",
+        "Less signal is lost at the electrodes",
+        "It raises the common mode signal"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "rolloff",
+        "filters"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "What determines how sharp a filter's frequency response curve is beyond its cutoff?",
+      "explanation": "The rolloff is how quickly the filter attenuates past the cutoff, usually in decibels per octave; a steeper rolloff gives a sharper corner. Bandwidth is the range passed, electrode capacitance is not a filter control, and the notch filter only attenuates a narrow band around the mains frequency.",
+      "learningObjective": "Associate filter sharpness with rolloff.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The electrode capacitance",
+        "The notch frequency",
+        "The filter rolloff",
+        "The amplifier bandwidth"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "rolloff",
+        "decibels"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A simple single-pole low frequency filter is set at 1 Hz. Well below the cutoff, about how much does the amplitude fall for each halving of frequency?",
+      "explanation": "A single-pole filter rolls off at about 6 dB per octave once well past the cutoff, so each halving of frequency roughly halves the amplitude. The 3 dB (70.7%) point is the cutoff itself, 20 dB per decade is the same slope expressed per tenfold change, and 1 dB is far too little; 6 dB is roughly half the amplitude.",
+      "learningObjective": "Apply the 6 dB per octave rolloff of a single-pole filter.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "About 6 dB",
+        "About 20 dB",
+        "About 3 dB",
+        "About 1 dB"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "notch-filter"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which filter has the narrowest, sharpest rejection band?",
+      "explanation": "A notch filter rejects a narrow band centred on the mains frequency with a very sharp response. The LFF and HFF roll off gradually over a wide range, and the anti-aliasing filter is a low-pass filter below the Nyquist frequency.",
+      "learningObjective": "Identify the notch filter as a narrow band-reject filter.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The 70 Hz high frequency filter",
+        "The 1 Hz low frequency filter",
+        "The anti-aliasing filter",
+        "The 60 Hz notch filter"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "emg-artifact",
+        "ekg-artifact",
+        "artifacts"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "In an ear-referenced montage, one channel shows dense, very fast spiky activity of irregular rhythm that is not time-locked to the EKG channel. What is it most likely to be?",
+      "explanation": "Dense, very fast, irregular spiky activity that is not locked to the QRS is muscle artifact (EMG), for example from the temporalis near the ear. EKG artifact recurs at the heart rate in time with the QRS, BETS are single tiny spikes in sleep, and rhythmic temporal theta is a 5-7 Hz rhythm.",
+      "learningObjective": "Distinguish EMG from EKG artifact by rhythm and EKG timing.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Benign epileptiform transients of sleep",
+        "Muscle (EMG) artifact",
+        "EKG artifact",
+        "Rhythmic temporal theta of drowsiness"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "ekg-artifact",
+        "ear-reference"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "Sharp deflections recur about once a second in the A1-T3 and T4-A2 channels and line up with each R wave in the EKG channel. What are they?",
+      "explanation": "Deflections recurring at the heart rate and time-locked to the R wave are EKG artifact, which is often largest at the ear (A1/A2) electrodes. Periodic discharges are cerebral and not locked to the QRS, muscle artifact is irregular and much faster, and an electrode pop is a single abrupt deflection at one electrode.",
+      "learningObjective": "Identify EKG artifact by its time-lock to the QRS.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Periodic lateralized discharges",
+        "EKG artifact picked up by the ear electrodes",
+        "Electrode pop at T3",
+        "Muscle artifact from jaw clenching"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s5",
+      "topicTags": [
+        "emg-artifact",
+        "troubleshooting"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "Fast muscle artifact obscures the temporal channels in an awake patient. Which is the best first step?",
+      "explanation": "Muscle artifact is best stopped at its source: relaxing the jaw (or opening the mouth slightly) stops temporalis activity. The LFF does not affect fast muscle potentials, lowering the sampling rate risks aliasing without removing EMG, and the notch filter targets only 60 Hz.",
+      "learningObjective": "Choose the source-directed fix for EMG artifact.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Switch off the notch filter",
+        "Ask the patient to relax the jaw",
+        "Raise the low frequency filter",
+        "Lower the sampling rate to 128"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "aliasing",
+        "sampling-rate",
+        "muscle"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A system sampling at 128 samples per second records muscle activity at 90 Hz. What problem can this cause?",
+      "explanation": "At 128 samples/s the Nyquist frequency is 64 Hz, so 90 Hz muscle activity is under-sampled and folds back to 128 - 90 = 38 Hz, a false slower rhythm. This is why ACNS asks for at least 256 samples/s with an anti-aliasing filter. Clipping depends on amplitude, CMRR on the amplifier inputs, and impedance on the electrodes.",
+      "learningObjective": "Recognize aliasing risk from an inadequate sampling rate.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "The electrode impedance rises",
+        "Common mode rejection fails badly",
+        "It is clipped at the converter limit",
+        "It aliases into a false slower rhythm"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "clipping",
+        "aliasing",
+        "vertical-resolution"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "troubleshooting",
+      "reasoningSteps": 3,
+      "stem": "A tracing shows flat-topped high-amplitude waves in one channel and a false slow rhythm in all channels. Which pair of causes best explains both findings?",
+      "explanation": "Flat tops limited to one channel point to that channel exceeding the converter's input range (clipping), for example from a large electrode offset. A false slow rhythm in every channel points to under-sampling (aliasing), a system-wide sampling-rate problem. Display sensitivity does not clip stored data, a high sampling rate prevents aliasing, a low HFF rounds rather than flattens, and more bits and high input impedance improve fidelity.",
+      "learningObjective": "Combine clipping and aliasing to explain a tracing.",
+      "questionType": "analysis",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "A low display sensitivity combined with a high sampling rate",
+        "A low HFF setting combined with the notch filter switched off",
+        "Too many ADC bits combined with a high input impedance",
+        "Converter overload in that channel combined with too low a sampling rate"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "impedance-balance",
+        "60hz"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "troubleshooting",
+      "reasoningSteps": 2,
+      "stem": "60 Hz artifact appears in channels sharing one electrode even though the amplifier input impedance is very high. What is the most likely cause?",
+      "explanation": "Common mode rejection depends on the two inputs seeing the mains signal equally. A high or unbalanced electrode impedance turns part of the common mode 60 Hz into a difference signal in every channel using that electrode. A very high input impedance, a high sampling rate and more bits do not cause 60 Hz artifact.",
+      "learningObjective": "Link 60 Hz artifact to unbalanced electrode impedance.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The amplifier input impedance is too high",
+        "That electrode's impedance is high and unbalanced",
+        "The sampling rate is above 256 samples/s",
+        "The converter has 24 bits"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "horizontal-resolution",
+        "sampling-rate"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "technical",
+      "reasoningSteps": 1,
+      "stem": "Which change improves the horizontal (time) resolution of a digital EEG?",
+      "explanation": "Horizontal resolution is the time between samples, which shrinks as the sampling rate rises. More bits improve vertical (amplitude) resolution, display sensitivity changes only how the data are drawn, and the LFF shapes slow activity.",
+      "learningObjective": "Separate horizontal (sampling rate) from vertical (bits) resolution.",
+      "questionType": "recall",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Raising the sampling rate",
+        "Raising the number of ADC bits",
+        "Raising the low frequency filter",
+        "Lowering the display sensitivity"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import { FS, renderScene } from "../../src/eeg/generator.js";
 import {
   highPassGain, lowPassGain, bandGain, gainToDb, timeConstantFromCutoff, cutoffFromTimeConstant,
   sensitivity, voltageFromHeight, heightFromVoltage, amplitudeFromCalibration, durationMs, widthMm, frequencyHz,
-  highPassPhaseDeg, lowPassPhaseDeg, phaseToMs, netShiftMs,
+  highPassPhaseDeg, lowPassPhaseDeg, phaseToMs, netShiftMs, aliasFrequency,
 } from "../../src/eeg/filters.js";
 
 const QUIET = { pdrUv: 0, beta: 0, theta: 0, delta: 0, noise: 0 };
@@ -163,5 +163,14 @@ describe("filters shift timing, not frequency", () => {
     expect(later[2]).toBeGreaterThan(later[1]);
     expect(later[2]).toBeGreaterThan(4); // ms, around 6-7 for a digital single-pole at 15 Hz
     expect(later[2]).toBeLessThan(9);
+  });
+});
+
+describe("aliasing", () => {
+  it("folds frequencies above the Nyquist frequency", () => {
+    expect(aliasFrequency(60, 100)).toBe(40); // 60 Hz sampled at 100 Hz looks like 40 Hz
+    expect(aliasFrequency(30, 256)).toBe(30); // below Nyquist: unchanged
+    expect(aliasFrequency(200, 256)).toBe(56);
+    expect(aliasFrequency(512, 256)).toBe(0);
   });
 });
