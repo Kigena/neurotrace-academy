@@ -157,6 +157,43 @@
             ]
           ],
           "note": "Document anything that changes the recording or its interpretation: recent treatments such as dialysis, medications and their timing, sleep the night before and the last seizure all belong in the history."
+        },
+        {
+          "title": "Further reading (free, from the authors and publishers)",
+          "kind": "links",
+          "intro": "These open in a new tab on the author's or publisher's own site. Read them alongside this page; NeuroLinea does not host copies.",
+          "items": [
+            {
+              "title": "OpenStax Anatomy and Physiology 2e, Chapter 13: Anatomy of the Nervous System",
+              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/13-introduction",
+              "source": "OpenStax (Rice University)",
+              "note": "Lobes, brainstem, cerebellum, ventricles, blood supply and cranial nerves, with labelled diagrams."
+            },
+            {
+              "title": "OpenStax Anatomy and Physiology 2e, Chapter 14: The Somatic Nervous System",
+              "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/14-introduction",
+              "source": "OpenStax (Rice University)",
+              "note": "Sensory and motor pathways, the special senses and reflexes."
+            },
+            {
+              "title": "Neuroscience Online",
+              "url": "https://nba.uth.tmc.edu/neuroscience/",
+              "source": "McGovern Medical School at UTHealth",
+              "note": "Open-access neuroscience textbook: neurons, sensory and motor systems, higher functions."
+            },
+            {
+              "title": "Neuroanatomy Online",
+              "url": "https://nba.uth.tmc.edu/neuroanatomy/",
+              "source": "McGovern Medical School at UTHealth",
+              "note": "Open-access interactive neuroanatomy laboratory with brain sections and brainstem levels."
+            },
+            {
+              "title": "HY Neuroanatomy",
+              "url": "https://mehlmanmedical.com/hy-neuroanatomy/",
+              "source": "Mehlman Medical",
+              "note": "A short high-yield review, free to download from the author's page."
+            }
+          ]
         }
       ],
       "pearls": [
@@ -284,6 +321,75 @@
             ]
           ],
           "note": "MR medial rectus, SR superior rectus, IR inferior rectus, IO inferior oblique."
+        },
+        {
+          "title": "Where each cranial nerve leaves the brain",
+          "kind": "table",
+          "head": [
+            "Level",
+            "Nerves",
+            "Exit point"
+          ],
+          "rows": [
+            [
+              "Forebrain",
+              "I, II",
+              "I from the olfactory bulb under the frontal lobe; II reaches the optic chiasm at the base of the diencephalon. Neither is a brainstem nerve."
+            ],
+            [
+              "Midbrain",
+              "III, IV",
+              "III leaves the front, between the cerebral peduncles. IV is the only nerve to leave the back of the brainstem, just below the inferior colliculi, and the only one whose fibres all cross before it leaves."
+            ],
+            [
+              "Pons",
+              "V",
+              "Leaves the side of the mid-pons, where the pons meets the middle cerebellar peduncle"
+            ],
+            [
+              "Pontomedullary junction",
+              "VI, VII, VIII",
+              "VI near the midline; VII and VIII laterally at the cerebellopontine angle (the site of vestibular schwannoma)"
+            ],
+            [
+              "Medulla",
+              "IX, X, XI, XII",
+              "IX and X behind the olive; XII between the pyramid and the olive; XI's spinal part rises from the upper cervical cord through the foramen magnum"
+            ]
+          ],
+          "note": "Memory aid 2-2-4-4: two above the brainstem (I, II), two in the midbrain (III, IV), four at the pons (V-VIII), four in the medulla (IX-XII)."
+        },
+        {
+          "title": "Brainstem levels and the evoked potential pathways",
+          "kind": "table",
+          "head": [
+            "Level",
+            "Key structures",
+            "Evoked potential link"
+          ],
+          "rows": [
+            [
+              "Midbrain",
+              "Superior colliculi (visual reflexes, linked to the lateral geniculate body); inferior colliculi (auditory relay to the medial geniculate body); cerebral peduncles (corticospinal fibres); substantia nigra; red nucleus; cerebral aqueduct; III and IV nuclei",
+              "BAEP wave V arises around the lateral lemniscus ending in the inferior colliculus"
+            ],
+            [
+              "Pons",
+              "Basis pontis (corticospinal fibres and pontine nuclei that feed the middle cerebellar peduncle); tegmentum (medial lemniscus, reticular formation); V-VIII nuclei; superior olivary complex",
+              "BAEP wave III (superior olive, lower pons) and wave IV (lateral lemniscus)"
+            ],
+            [
+              "Medulla",
+              "Pyramids and the pyramidal decussation (most corticospinal fibres cross here); olive; gracile and cuneate nuclei, whose fibres cross as the medial lemniscus; cochlear nuclei; breathing and cardiovascular centres; IX-XII nuclei",
+              "BAEP wave II (cochlear nucleus region); SSEP dorsal column nuclei (the cervicomedullary potential)"
+            ],
+            [
+              "Thalamus (above the brainstem)",
+              "Lateral geniculate (vision), medial geniculate (hearing), ventral posterolateral nucleus (body sensation)",
+              "VEP relay in the lateral geniculate; SSEP relay in the ventral posterolateral nucleus"
+            ]
+          ],
+          "note": "BAEP waves I-V: I distal VIII nerve, II proximal VIII nerve or cochlear nucleus, III superior olive, IV lateral lemniscus, V lateral lemniscus to inferior colliculus. Several waves have more than one generator."
         },
         {
           "title": "Sensory, motor or mixed",
@@ -523,6 +629,97 @@
             ]
           ],
           "note": "Expressive = Broca = frontal (44, 45); receptive = Wernicke = posterior superior temporal (22). The arcuate fasciculus links them; damage there causes conduction aphasia (poor repetition)."
+        },
+        {
+          "title": "Primary and association areas: loss versus excitation",
+          "kind": "table",
+          "head": [
+            "Area",
+            "Where",
+            "Damage (loss of function)",
+            "Excitation (seizure or stimulation)"
+          ],
+          "rows": [
+            [
+              "Primary motor cortex",
+              "Precentral gyrus; body map upside down, leg on the medial surface, face low on the lateral surface",
+              "Contralateral weakness",
+              "Contralateral clonic jerking that may march from hand to face or arm (Jacksonian march)"
+            ],
+            [
+              "Supplementary motor area",
+              "Medial frontal lobe, in front of the leg motor area",
+              "Reduced spontaneous movement and speech",
+              "Asymmetric tonic posturing (fencing posture), often with awareness kept"
+            ],
+            [
+              "Frontal eye field",
+              "Posterior middle frontal gyrus",
+              "Eyes deviate toward the side of the lesion",
+              "Eyes and head turn away from the side of the focus (versive seizure)"
+            ],
+            [
+              "Broca area (dominant)",
+              "Inferior frontal gyrus, just in front of the motor face area",
+              "Non-fluent (expressive, motor) aphasia: understands but cannot form words",
+              "Speech arrest"
+            ],
+            [
+              "Primary somatosensory cortex",
+              "Postcentral gyrus; same upside-down body map",
+              "Contralateral numbness and loss of position sense",
+              "Contralateral tingling or numbness (sensory aura), which may march"
+            ],
+            [
+              "Somatosensory association cortex",
+              "Superior parietal lobule, behind the postcentral gyrus",
+              "Astereognosis (cannot identify objects by touch); neglect, mainly with right-sided lesions",
+              "Complex body sensations"
+            ],
+            [
+              "Angular and supramarginal gyri (dominant)",
+              "Inferior parietal lobule",
+              "Alexia with agraphia; Gerstmann syndrome (finger agnosia, left-right confusion, acalculia, agraphia)",
+              "Rarely produces clear symptoms"
+            ],
+            [
+              "Primary gustatory cortex",
+              "Insula and the frontoparietal operculum, beside the face area of the sensory strip",
+              "Usually subtle or unnoticed; taste projects mainly to the same side and partly to both, so one-sided loss is mild",
+              "Taste aura, often unpleasant"
+            ],
+            [
+              "Primary auditory cortex",
+              "Transverse temporal (Heschl) gyri of the superior temporal gyrus",
+              "One side alone does not cause deafness, because each ear projects to both hemispheres",
+              "Simple sounds such as buzzing or ringing"
+            ],
+            [
+              "Wernicke area (dominant)",
+              "Posterior superior temporal gyrus, just behind the auditory cortex",
+              "Fluent (receptive, sensory) aphasia: speaks fluently but cannot understand",
+              "Receptive language disturbance during the seizure"
+            ],
+            [
+              "Olfactory cortex",
+              "Uncus and piriform cortex, mesial temporal lobe",
+              "Usually unnoticed on one side",
+              "Smell aura, often unpleasant (uncinate seizure)"
+            ],
+            [
+              "Primary visual cortex",
+              "Banks of the calcarine sulcus, medial occipital lobe and pole",
+              "Contralateral homonymous hemianopia",
+              "Elementary visual hallucinations: flashes, colours, simple shapes"
+            ],
+            [
+              "Visual association cortex",
+              "Around the primary visual cortex and into the inferior temporal lobe",
+              "Visual agnosia; prosopagnosia (faces)",
+              "Formed visual hallucinations (people, scenes), more with temporo-occipital foci"
+            ]
+          ],
+          "note": "A useful rule: damage takes something away (a negative symptom) and excitation adds something (a positive symptom) in the same body part or sense."
         },
         {
           "title": "Deep structures",
@@ -1017,6 +1214,78 @@
           ]
         },
         {
+          "title": "Anterior circulation: heart to brain",
+          "kind": "flow",
+          "items": [
+            "Aortic arch",
+            "Common carotid (right via the brachiocephalic trunk, left directly from the arch)",
+            "Bifurcation in the neck (about C3-C4)",
+            "Internal carotid (no branches in the neck)",
+            "Ophthalmic, posterior communicating and anterior choroidal branches",
+            "Anterior and middle cerebral arteries"
+          ]
+        },
+        {
+          "title": "Posterior circulation: heart to brain",
+          "kind": "flow",
+          "items": [
+            "Subclavian artery",
+            "Vertebral artery (through the transverse foramina of the cervical vertebrae)",
+            "Foramen magnum; PICA branch",
+            "Both vertebrals join at the lower border of the pons",
+            "Basilar artery (AICA, pontine and superior cerebellar branches)",
+            "Two posterior cerebral arteries at the midbrain"
+          ]
+        },
+        {
+          "title": "Smaller arteries worth knowing",
+          "kind": "table",
+          "head": [
+            "Artery",
+            "From",
+            "Supplies",
+            "When blocked"
+          ],
+          "rows": [
+            [
+              "Ophthalmic",
+              "Internal carotid",
+              "Eye and retina",
+              "Transient one-eye blindness (amaurosis fugax) is a carotid warning sign"
+            ],
+            [
+              "Anterior choroidal",
+              "Internal carotid",
+              "Posterior limb of the internal capsule, optic tract, choroid plexus",
+              "Hemiparesis, hemisensory loss and hemianopia"
+            ],
+            [
+              "Lenticulostriate",
+              "Middle cerebral",
+              "Basal ganglia and internal capsule",
+              "Lacunar infarcts and hypertensive hemorrhage"
+            ],
+            [
+              "Posterior inferior cerebellar (PICA)",
+              "Vertebral",
+              "Lateral medulla and inferior cerebellum",
+              "Lateral medullary (Wallenberg) syndrome: vertigo, ataxia, dysphagia, same-side face and opposite-side body pain and temperature loss, Horner syndrome"
+            ],
+            [
+              "Anterior inferior cerebellar (AICA)",
+              "Basilar",
+              "Lateral pons, inner ear (labyrinthine artery)",
+              "Vertigo, hearing loss, facial weakness, ataxia"
+            ],
+            [
+              "Superior cerebellar",
+              "Basilar",
+              "Upper cerebellum and upper pons",
+              "Limb and gait ataxia"
+            ]
+          ]
+        },
+        {
           "title": "Arterial territories and deficits",
           "kind": "table",
           "head": [
@@ -1069,6 +1338,53 @@
               "body": "Formed by tight junctions between capillary endothelial cells, supported by astrocyte foot processes. It keeps many drugs, toxins and pathogens out of brain tissue; breakdown occurs with tumors, infection and stroke."
             }
           ]
+        },
+        {
+          "title": "The major dural venous sinuses",
+          "kind": "table",
+          "head": [
+            "Sinus",
+            "Where",
+            "Drains to"
+          ],
+          "rows": [
+            [
+              "Superior sagittal",
+              "Upper border of the falx cerebri, under the midline of the skull; receives CSF through arachnoid granulations",
+              "Confluence of sinuses"
+            ],
+            [
+              "Inferior sagittal",
+              "Lower free edge of the falx",
+              "Straight sinus"
+            ],
+            [
+              "Straight",
+              "Where the falx meets the tentorium; formed by the inferior sagittal sinus and the great cerebral vein (of Galen)",
+              "Confluence of sinuses"
+            ],
+            [
+              "Occipital",
+              "Small, in the falx cerebelli",
+              "Confluence of sinuses"
+            ],
+            [
+              "Transverse (paired)",
+              "Along the back edge of the tentorium",
+              "Sigmoid sinus"
+            ],
+            [
+              "Sigmoid (paired)",
+              "S-shaped groove behind the ear",
+              "Internal jugular vein at the jugular foramen"
+            ],
+            [
+              "Cavernous (paired)",
+              "Beside the pituitary",
+              "Petrosal sinuses, then the jugular system"
+            ]
+          ],
+          "note": "Path: superior sagittal and straight sinuses meet at the confluence (deep to the inion, at the internal occipital protuberance), then transverse, sigmoid and internal jugular vein. Thrombosis of a sinus, most often the superior sagittal or transverse, can cause seizures and venous infarcts."
         },
         {
           "title": "Types of stroke and vascular lesions",
@@ -1305,6 +1621,40 @@
                 "Hemiballismus (contralateral subthalamic nucleus)",
                 "Dystonia",
                 "Tics"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "The cerebellum: parts, connections and where the lesion is",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Parts",
+              "body": "Sits in the posterior fossa under the tentorium, behind the pons, medulla and fourth ventricle. Two hemispheres are joined by the midline vermis; the small flocculonodular lobe handles balance and eye movements.",
+              "points": [
+                "Each hemisphere controls the same side of the body"
+              ]
+            },
+            {
+              "title": "Three peduncles",
+              "body": "Superior to the midbrain (mainly output, through the dentate nucleus to the red nucleus and thalamus); middle to the pons (the largest, input from the cortex through the pontine nuclei); inferior to the medulla (input from the spinal cord, inferior olive and vestibular system).",
+              "points": [
+                "Memory aid: the middle peduncle carries the cortex's plan in; the superior peduncle carries the correction out"
+              ]
+            },
+            {
+              "title": "Hemisphere versus vermis",
+              "body": "A hemisphere lesion causes limb ataxia, dysmetria, intention tremor and dysdiadochokinesia on the same side, with falls toward that side. A vermis lesion causes truncal ataxia: unsteady sitting and standing and a wide-based gait, with the limbs relatively spared.",
+              "points": [
+                "Alcohol-related degeneration affects the anterior vermis, so gait is worst"
+              ]
+            },
+            {
+              "title": "Dysarthria is not aphasia",
+              "body": "Cerebellar dysarthria (slurred or scanning speech) is a problem of coordinating the lips, tongue and larynx; language is intact. Broca aphasia is a language problem in the dominant frontal lobe.",
+              "points": [
+                "Ask the patient to write: the aphasic patient's writing is also affected"
               ]
             }
           ]

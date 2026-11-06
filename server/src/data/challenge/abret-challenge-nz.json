@@ -1,0 +1,666 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-11-05",
+  "bank": "challenge",
+  "focus": "domain-1",
+  "description": "Original questions on cranial nerve exit points and brainstem levels, evoked potential relays, primary and association cortex (loss versus excitation), cerebellar anatomy and signs, the arterial route to the brain and the dural venous sinuses. Text only; not yet medically verified.",
+  "totalQuestions": 24,
+  "questions": [
+    {
+      "id": "ch-nz-001",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "brainstem"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which cranial nerve is the only one to leave the back (dorsal surface) of the brainstem?",
+      "explanation": "The trochlear nerve leaves the dorsal midbrain just below the inferior colliculi, and its fibres cross before exiting. The oculomotor nerve leaves the front of the midbrain between the cerebral peduncles, the abducens leaves the front at the pontomedullary junction, and the hypoglossal leaves the medulla between the pyramid and the olive.",
+      "learningObjective": "Identify the cranial nerve that exits the dorsal brainstem.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Oculomotor (III)",
+        "Abducens (VI)",
+        "Trochlear (IV)",
+        "Hypoglossal (XII)"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-002",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "brainstem"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which cranial nerve leaves the medulla between the pyramid and the olive?",
+      "explanation": "The hypoglossal nerve emerges in the groove between the pyramid and the olive. The vagus and glossopharyngeal nerves leave behind the olive, the facial nerve leaves at the pontomedullary junction, and the trigeminal nerve leaves the side of the mid-pons.",
+      "learningObjective": "Locate the exit of the hypoglossal nerve.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hypoglossal (XII)",
+        "Vagus (X)",
+        "Facial (VII)",
+        "Trigeminal (V)"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-003",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "brainstem",
+        "cerebellopontine-angle"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A tumour at the right cerebellopontine angle first causes right-sided hearing loss and tinnitus. Which other cranial nerve, leaving at the same spot, is most at risk next?",
+      "explanation": "The facial and vestibulocochlear nerves leave together at the lateral pontomedullary junction, the cerebellopontine angle, and travel into the internal auditory canal, so a vestibular schwannoma there threatens the facial nerve. The hypoglossal nerve leaves the medulla, the trochlear the dorsal midbrain, and the optic nerve is not a brainstem nerve.",
+      "learningObjective": "Relate the cerebellopontine angle to the nerves that leave there.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Right hypoglossal (XII)",
+        "Right trochlear (IV)",
+        "Right facial (VII)",
+        "Right optic (II)"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-004",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cranial-nerves",
+        "brainstem"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "At which level do cranial nerves III and IV leave the brainstem?",
+      "explanation": "The oculomotor and trochlear nerves both leave the midbrain, III from the front and IV from the back. The trigeminal nerve leaves the pons; VI, VII and VIII leave at the pontomedullary junction; and IX to XII leave the medulla.",
+      "learningObjective": "Assign cranial nerves III and IV to the midbrain.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Medulla",
+        "Pons",
+        "Pontomedullary junction",
+        "Midbrain"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-005",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "brainstem",
+        "colliculi",
+        "evoked-potentials"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "The inferior colliculi of the midbrain belong mainly to which pathway?",
+      "explanation": "The inferior colliculi are auditory relay nuclei that project to the medial geniculate body of the thalamus, and BAEP wave V arises in this region. The superior colliculi serve visual reflexes and are linked with the lateral geniculate. Corticospinal fibres run in the cerebral peduncles, and smell does not pass through the brainstem.",
+      "learningObjective": "Distinguish the superior and inferior colliculi.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The auditory pathway, relaying to the medial geniculate",
+        "The visual reflex pathway to the lateral geniculate",
+        "The corticospinal motor pathway to the cord",
+        "The pathway for smell to the uncus"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-006",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "baep",
+        "brainstem",
+        "evoked-potentials"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "BAEP wave III is generated mainly at which level?",
+      "explanation": "Wave III arises mainly from the superior olivary complex in the lower pons. Wave I comes from the distal eighth nerve, wave V from the lateral lemniscus ending at the inferior colliculus, and the auditory cortex produces later responses, not the BAEP waves.",
+      "learningObjective": "Match BAEP wave III to its brainstem generator.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The distal eighth nerve",
+        "The lower pons",
+        "The inferior colliculus",
+        "The auditory cortex"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-007",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "vep",
+        "thalamus",
+        "evoked-potentials"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "In the visual pathway, which thalamic nucleus relays signals from the optic tract to the visual cortex?",
+      "explanation": "The optic tract ends in the lateral geniculate body, which projects through the optic radiations to the calcarine cortex. The medial geniculate relays hearing, the ventral posterolateral nucleus relays body sensation, and the pulvinar is an association nucleus, not the main visual relay.",
+      "learningObjective": "Name the thalamic relay for vision.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Medial geniculate body",
+        "Ventral posterolateral nucleus",
+        "Lateral geniculate body",
+        "Pulvinar alone"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-008",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "corticospinal",
+        "medulla",
+        "decussation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Where do most corticospinal fibres cross to the opposite side?",
+      "explanation": "Most corticospinal fibres cross in the pyramidal decussation at the lower medulla, which is why a hemisphere lesion causes weakness on the opposite side. The internal capsule, cerebral peduncle and pons carry the fibres before they cross.",
+      "learningObjective": "Locate the pyramidal decussation.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "In the internal capsule",
+        "In the cerebral peduncle",
+        "In the middle of the pons",
+        "In the lower medulla"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-009",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "auditory-cortex",
+        "temporal-lobe"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "After a small stroke destroys the left primary auditory cortex, how is hearing usually affected?",
+      "explanation": "Each ear sends input to the auditory cortex of both hemispheres, so damage to one side does not cause deafness in either ear. Unilateral deafness points to the ear, the eighth nerve or the cochlear nucleus. Losing hearing in both ears needs damage on both sides.",
+      "learningObjective": "Explain why a unilateral auditory cortex lesion spares hearing.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Hearing is largely preserved in both ears",
+        "The right ear becomes completely deaf",
+        "The left ear becomes completely deaf",
+        "Both ears become completely deaf"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-010",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "somatosensory-cortex",
+        "focal-seizure"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A focal seizure starting in the left postcentral gyrus most likely begins with which symptom?",
+      "explanation": "The postcentral gyrus is the primary somatosensory cortex, so excitation there produces tingling or numbness on the opposite side. Jerking comes from the precentral (motor) gyrus, buzzing from the auditory cortex, and flashes from the visual cortex; flashes from a left-sided focus would also be in the right visual field.",
+      "learningObjective": "Predict the aura from a postcentral gyrus focus.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Jerking of the right hand",
+        "Tingling in the right hand",
+        "Buzzing in the left ear",
+        "Flashing lights on the left"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-011",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "frontal-eye-field",
+        "versive-seizure"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A seizure begins in the right frontal eye field. Which way do the eyes and head turn during the seizure?",
+      "explanation": "Each frontal eye field drives the eyes toward the opposite side, so excitation of the right frontal eye field turns the eyes and head to the left (a versive seizure). A destructive lesion does the reverse: the eyes look toward the side of the lesion because the other side's eye field is unopposed.",
+      "learningObjective": "Predict gaze deviation in a frontal eye field seizure versus a lesion.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "To the right, toward the focus",
+        "Upward, with no side bias",
+        "Downward, toward the chest",
+        "To the left, away from the focus"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-012",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "gustatory-cortex",
+        "insula"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Primary taste cortex is located mainly in which region?",
+      "explanation": "Taste reaches the insula and the adjacent frontoparietal operculum, next to the face area of the sensory strip, so insular and opercular seizures can begin with a taste aura. The calcarine cortex is visual, the superior parietal lobule is somatosensory association cortex, and the supplementary motor area is motor.",
+      "learningObjective": "Locate the primary gustatory cortex.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Calcarine cortex of the occipital lobe",
+        "Superior parietal lobule",
+        "Insula and the frontoparietal operculum",
+        "Medial frontal supplementary area"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-013",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "angular-gyrus",
+        "alexia"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Damage to the dominant angular gyrus is classically associated with which deficit?",
+      "explanation": "The dominant angular gyrus links visual words with language, so damage there causes alexia with agraphia and can produce Gerstmann syndrome. Pure word deafness follows damage near the auditory cortex, non-fluent aphasia follows Broca area damage, and neglect usually follows non-dominant (right) parietal damage.",
+      "learningObjective": "Link the dominant angular gyrus to reading and writing.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Alexia with agraphia",
+        "Pure word deafness",
+        "Non-fluent aphasia",
+        "Contralateral neglect"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-014",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "visual-cortex",
+        "occipital-seizure"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A seizure arising in the primary visual cortex most typically produces which experience?",
+      "explanation": "Excitation of the primary visual cortex produces elementary visual hallucinations such as flashes, colours and simple shapes. Formed scenes point to visual association or temporo-occipital cortex, smells to the uncus, and a rising epigastric feeling to the mesial temporal lobe.",
+      "learningObjective": "Distinguish elementary from formed visual auras.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Vivid scenes with people talking",
+        "Flashes and simple coloured shapes",
+        "A strong smell of burning rubber",
+        "A rising feeling in the stomach"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-015",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cerebellum",
+        "vermis",
+        "ataxia"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A patient has a wide-based, unsteady gait and cannot sit upright without swaying, but finger-to-nose testing is nearly normal. Where is the lesion most likely?",
+      "explanation": "Truncal ataxia with relatively normal limb coordination points to the midline vermis. A hemisphere lesion causes limb ataxia, dysmetria and intention tremor on the same side. The superior colliculus serves visual reflexes, not balance.",
+      "learningObjective": "Separate vermis from hemisphere cerebellar lesions.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The left cerebellar hemisphere",
+        "The right cerebellar hemisphere",
+        "The cerebellar vermis",
+        "The superior colliculus"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-016",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cerebellum",
+        "laterality"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "A right cerebellar hemisphere infarct causes intention tremor and past-pointing in which limb?",
+      "explanation": "A cerebellar hemisphere controls the same side of the body, because its pathways cross twice, so a right hemisphere lesion affects the right limbs. Both arms equally would suggest a diffuse or midline problem, and gait-only ataxia suggests the vermis.",
+      "learningObjective": "State the side of cerebellar limb signs.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Left arm, opposite the lesion",
+        "Both arms equally",
+        "Neither arm; only gait changes",
+        "Right arm, same side as lesion"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-017",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cerebellum",
+        "peduncles"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which cerebellar peduncle is the largest and carries input from the cerebral cortex by way of the pontine nuclei?",
+      "explanation": "The middle cerebellar peduncle is the largest and brings cortical input relayed through the pontine nuclei. The superior peduncle carries most of the output to the midbrain and thalamus, and the inferior peduncle brings input from the spinal cord, olive and vestibular system. The cerebral peduncle is part of the midbrain, not the cerebellum.",
+      "learningObjective": "Identify the function of each cerebellar peduncle.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Superior cerebellar peduncle",
+        "Middle cerebellar peduncle",
+        "Inferior cerebellar peduncle",
+        "Cerebral peduncle"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-018",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "cerebellum",
+        "dysarthria",
+        "aphasia"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A patient with a cerebellar stroke speaks in a slurred, broken rhythm. Which finding best shows this is dysarthria rather than aphasia?",
+      "explanation": "Dysarthria is a problem of coordinating the muscles of speech, so language itself is intact and writing is normal. In aphasia, language is impaired, so writing is also affected. Slow irregular speech, poor intelligibility and awareness of the problem can occur in both.",
+      "learningObjective": "Separate cerebellar dysarthria from aphasia.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Speech is slow and irregular in rhythm",
+        "Words are hard to understand by ear",
+        "Written sentences are normal in content",
+        "The patient is aware the speech is odd"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-019",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "blood-supply",
+        "carotid"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "From which vessel does the left common carotid artery arise?",
+      "explanation": "The left common carotid comes directly off the aortic arch. On the right, the brachiocephalic trunk divides into the right common carotid and right subclavian arteries. The subclavian arteries give rise to the vertebral arteries, not the carotids.",
+      "learningObjective": "Describe the origins of the common carotid arteries.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Directly from the aortic arch",
+        "From the brachiocephalic trunk",
+        "From the left subclavian artery",
+        "From the left vertebral artery"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-020",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "blood-supply",
+        "vertebral",
+        "pica"
+      ],
+      "cognitiveLevel": 6,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A patient has vertigo, hoarseness, trouble swallowing, a left Horner syndrome, loss of pain sensation on the left face and right body, and left-sided ataxia. Which artery is most likely blocked?",
+      "explanation": "This is lateral medullary (Wallenberg) syndrome, caused by occlusion of the posterior inferior cerebellar artery or the vertebral artery that gives rise to it. The crossed pattern of facial and body sensory loss marks the brainstem. ACA and MCA strokes cause cortical signs, and a basilar tip occlusion affects the midbrain, thalamus and occipital lobes.",
+      "learningObjective": "Recognise lateral medullary syndrome and its artery.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Left anterior cerebral",
+        "Left middle cerebral",
+        "Basilar tip",
+        "Left posterior inferior cerebellar"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-021",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "blood-supply",
+        "basilar"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Where do the two vertebral arteries join to form the basilar artery?",
+      "explanation": "The vertebral arteries enter the skull through the foramen magnum and join at the lower border of the pons (the pontomedullary junction) to form the basilar artery, which divides into the two posterior cerebral arteries at the midbrain. The cavernous sinus contains the internal carotid artery.",
+      "learningObjective": "Locate the start and end of the basilar artery.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "At the level of the midbrain",
+        "At the lower border of the pons",
+        "Inside the cavernous sinus",
+        "At the foramen magnum in the neck"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-022",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "venous-sinuses"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which two vessels join to form the straight sinus?",
+      "explanation": "The inferior sagittal sinus and the great cerebral vein (of Galen) form the straight sinus, which runs where the falx meets the tentorium to the confluence of sinuses. The superior sagittal and occipital sinuses also drain to the confluence, the transverse sinus continues as the sigmoid, and the cavernous sinus drains through the petrosal sinuses.",
+      "learningObjective": "Describe the formation of the straight sinus.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Superior sagittal sinus and occipital sinus",
+        "Transverse sinus and sigmoid sinus",
+        "Cavernous sinus and the petrosal sinuses",
+        "Inferior sagittal sinus and great cerebral vein"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-023",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "venous-sinuses",
+        "jugular"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Through which sinus does most venous blood finally leave the skull to enter the internal jugular vein?",
+      "explanation": "Blood flows from the superior sagittal and straight sinuses to the confluence, then along the transverse sinuses into the sigmoid sinuses, which pass through the jugular foramen to become the internal jugular veins.",
+      "learningObjective": "Trace venous drainage to the internal jugular vein.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Sigmoid sinus",
+        "Straight sinus",
+        "Superior sagittal sinus",
+        "Inferior sagittal sinus"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-nz-024",
+      "domainId": "domain-1",
+      "sectionId": "d1-brain-structures-functions",
+      "topicTags": [
+        "brainstem",
+        "ssep",
+        "medial-lemniscus"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "Touch and vibration fibres from the left leg ascend the left dorsal column. Where do they first synapse and then cross to the right?",
+      "explanation": "Dorsal column fibres from the leg synapse in the gracile nucleus of the lower medulla, and the second-order fibres cross as the medial lemniscus before reaching the opposite ventral posterolateral thalamus and postcentral gyrus. Pain and temperature fibres, not touch and vibration, synapse in the dorsal horn and cross in the cord. This is the SSEP pathway.",
+      "learningObjective": "Trace the dorsal column-medial lemniscus pathway for SSEPs.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "In the right postcentral gyrus",
+        "In the gracile nucleus of the lower medulla",
+        "In the dorsal horn at the level of entry",
+        "In the left ventral posterolateral thalamus"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea neurology essentials set 3 (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

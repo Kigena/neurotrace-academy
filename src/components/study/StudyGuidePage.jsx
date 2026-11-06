@@ -37,8 +37,30 @@ function TracingQuiz({ s }) {
   );
 }
 
+function ReadingLinks({ s }) {
+  return (
+    <Card title={s.title} tone="slate">
+      {s.intro && <p>{s.intro}</p>}
+      <ul className="space-y-3 pt-1">
+        {s.items.map((it) => (
+          <li key={it.url}>
+            <a href={it.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-indigo-700 hover:underline">
+              {it.title}
+              <span aria-hidden="true"> &#8599;</span>
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            <div className="text-xs text-slate-500">{it.source}</div>
+            {it.note && <p className="text-sm text-slate-700">{it.note}</p>}
+          </li>
+        ))}
+      </ul>
+    </Card>
+  );
+}
+
 function Section({ s }) {
   if (s.kind === "tracingQuiz") return <TracingQuiz s={s} />;
+  if (s.kind === "links") return <ReadingLinks s={s} />;
   if (s.kind === "tracing") {
     return (
       <div className="space-y-2">
