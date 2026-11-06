@@ -1,0 +1,1330 @@
+{
+  "title": "Sleep Staging Across the Lifespan",
+  "subtitle": "What wake, N1, N2, N3 and REM look like from the premature newborn to old age, and which age-dependent findings are normal or abnormal",
+  "tabs": [
+    {
+      "id": "rules",
+      "title": "How staging works",
+      "intro": "Sleep is scored in 30-second epochs, and each epoch takes the stage that fills most of it. The EEG, the eye leads (EOG) and the chin EMG are read together. The rules below follow the AASM scoring manual; the same stages apply to children from 2 months post-term, with age-adjusted features.",
+      "sections": [
+        {
+          "title": "The five adult stages",
+          "kind": "table",
+          "head": [
+            "Stage",
+            "EEG",
+            "Eye leads",
+            "Chin EMG"
+          ],
+          "rows": [
+            [
+              "W (wake)",
+              "Alpha (posterior dominant rhythm) over more than half the epoch with eyes closed; with eyes open, low-voltage mixed activity",
+              "Blinks (about 0.5-2 Hz), reading or scanning movements, rapid voluntary movements",
+              "Normal to high"
+            ],
+            [
+              "N1",
+              "Alpha attenuated and replaced by low-amplitude mixed-frequency (4-7 Hz) activity over more than half the epoch; vertex sharp waves; in people without alpha, slowing of 1 Hz or more from wake",
+              "Slow rolling (sinusoidal) eye movements",
+              "Usually a little lower than wake"
+            ],
+            [
+              "N2",
+              "K-complexes not linked to an arousal, or trains of sleep spindles, on a theta background",
+              "Usually none; slow eye movements may linger early",
+              "Lower than wake"
+            ],
+            [
+              "N3",
+              "Slow waves of 0.5-2 Hz over 75 µV peak-to-peak, measured frontally, filling 20% or more of the epoch; spindles may persist",
+              "None (frontal delta can spread into the eye leads)",
+              "Low, often lower than N2"
+            ],
+            [
+              "R (REM)",
+              "Low-amplitude mixed frequency like N1; sawtooth waves (2-6 Hz, central); alpha may appear 1-2 Hz slower than waking alpha",
+              "Rapid eye movements: sharp, conjugate, irregular",
+              "Lowest of the night (atonia), with brief twitches"
+            ]
+          ],
+          "note": "The older stages 3 and 4 (20-50% and over 50% delta) were combined into N3 in 2007."
+        },
+        {
+          "title": "Graphoelement definitions used for scoring",
+          "kind": "table",
+          "head": [
+            "Waveform",
+            "Definition",
+            "Where it is largest"
+          ],
+          "rows": [
+            [
+              "Vertex sharp wave",
+              "Sharply contoured wave under 0.5 s, standing out from the background",
+              "Central (Cz)"
+            ],
+            [
+              "K-complex",
+              "Well-delineated negative sharp wave immediately followed by a positive component, 0.5 s or more in total",
+              "Frontal"
+            ],
+            [
+              "Sleep spindle",
+              "Train of distinct 11-16 Hz waves (most often 12-14 Hz), 0.5 s or more",
+              "Central"
+            ],
+            [
+              "Slow wave",
+              "0.5-2 Hz, over 75 µV peak-to-peak",
+              "Frontal (F4-M1 is the standard measuring derivation)"
+            ],
+            [
+              "Sawtooth waves",
+              "Trains of sharply contoured or triangular 2-6 Hz waves, often before a burst of eye movements",
+              "Central"
+            ]
+          ]
+        },
+        {
+          "title": "Rules that trip people up",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Starting N2",
+              "body": "Score N2 when a K-complex not associated with an arousal, or a train of spindles, appears in the first half of the epoch or the last half of the previous one.",
+              "points": [
+                "A K-complex followed by an arousal does not by itself start N2",
+                "Once N2 starts, keep scoring N2 without new spindles until an arousal, a stage change, or a major body movement followed by slow eye movements and low-amplitude mixed-frequency EEG"
+              ]
+            },
+            {
+              "title": "N3 is about amount and size",
+              "body": "Count the slow waves only if they exceed 75 µV peak-to-peak, measured frontally, and add up to 20% of the epoch (6 s of 30).",
+              "points": [
+                "Frequency alone does not make N3",
+                "With age the waves get smaller, so fewer epochs reach the 75 µV line"
+              ]
+            },
+            {
+              "title": "REM needs three things",
+              "body": "Low-voltage mixed EEG, rapid eye movements and low chin tone.",
+              "points": [
+                "Rapid eye movements with normal chin tone suggest wake",
+                "REM with preserved tone is the hallmark of REM sleep behaviour disorder"
+              ]
+            },
+            {
+              "title": "Arousal",
+              "body": "An abrupt shift to theta, alpha or frequencies over 16 Hz (not spindles) lasting 3 s or more after at least 10 s of stable sleep.",
+              "points": [
+                "In REM an arousal also needs a rise in chin EMG for at least 1 s"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "How staging changes with age (AASM)",
+          "kind": "table",
+          "head": [
+            "Age (post-term)",
+            "States or stages scored",
+            "Key point"
+          ],
+          "rows": [
+            [
+              "Under 37 weeks PMA (premature)",
+              "Active, quiet, indeterminate",
+              "Not covered by the AASM manual; states are scored from EEG with behaviour and polygraphy, and much of sleep is indeterminate"
+            ],
+            [
+              "Term to 2 months",
+              "W, N (NREM), R (REM), T (transitional)",
+              "Infant rules: NREM is one stage (N) because spindles, K-complexes and organised slow waves are not yet reliable"
+            ],
+            [
+              "2 months and older",
+              "W, N1, N2, N3, R",
+              "Pediatric rules: the same stages as adults, scored with the dominant posterior rhythm for the child's age"
+            ],
+            [
+              "Child with no spindles, K-complexes or slow waves yet",
+              "N",
+              "If NREM cannot be split, score the whole of it as N"
+            ]
+          ]
+        },
+        {
+          "title": "Sleep architecture by age",
+          "kind": "table",
+          "head": [
+            "Age",
+            "REM share",
+            "Deep sleep (N3)",
+            "Cycle length",
+            "Sleep onset"
+          ],
+          "rows": [
+            [
+              "Term newborn",
+              "About 50% (active sleep)",
+              "Quiet sleep about 30-40%",
+              "About 50-60 min",
+              "Into active (REM) sleep"
+            ],
+            [
+              "Infant (about 3-12 months)",
+              "About 30-40%, falling",
+              "Slow-wave sleep develops by about 2-6 months",
+              "About 50-60 min",
+              "Into NREM from about 3-4 months"
+            ],
+            [
+              "Young child",
+              "About 25-30%",
+              "Highest of life; very high-voltage slow waves",
+              "Lengthening toward adult",
+              "NREM"
+            ],
+            [
+              "Adolescent",
+              "About 20-25%",
+              "Falls steeply (slow-wave amplitude drops)",
+              "About 90 min",
+              "NREM; sleep phase drifts later"
+            ],
+            [
+              "Adult",
+              "About 20-25%",
+              "About 15-20% in young adults",
+              "About 90-110 min",
+              "NREM; REM latency about 70-120 min"
+            ],
+            [
+              "Older adult (65+)",
+              "Slightly less",
+              "Much less, sometimes almost none (men more than women)",
+              "About 90 min",
+              "NREM; more N1, more awakenings, earlier bedtime"
+            ]
+          ],
+          "note": "Typical teaching values; studies differ by a few percent. REM within 15 minutes of sleep onset (a sleep-onset REM period) is normal in young infants and abnormal in adults."
+        }
+      ],
+      "pearls": [
+        "30-second epochs; the stage filling most of the epoch wins.",
+        "N3 = 0.5-2 Hz, over 75 µV, frontal, at least 20% of the epoch.",
+        "Spindles 11-16 Hz (usually 12-14), central; K-complexes 0.5 s or more, frontal.",
+        "Infants under 2 months are scored W, N, R or T; from 2 months the adult stages apply."
+      ]
+    },
+    {
+      "id": "ages",
+      "title": "Age groups",
+      "intro": "Each card lists what you should expect in each stage at that age. Ages for the neonate are given as postmenstrual age (PMA); after that, as age after a term birth.",
+      "sections": [
+        {
+          "title": "Newborn to old age",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Premature newborn (under 37 weeks PMA)",
+              "body": "States, not stages: active sleep, quiet sleep and a lot of indeterminate sleep.",
+              "points": [
+                "Quiet sleep: tracé discontinu, bursts with very low-voltage gaps that shorten as PMA rises",
+                "Active sleep and wake become continuous first (by about 34 weeks)",
+                "Delta brushes (peak about 32-34 weeks) and temporal theta (about 26-32 weeks)",
+                "No spindles, vertex waves or K-complexes"
+              ]
+            },
+            {
+              "title": "Term newborn (37-44 weeks PMA)",
+              "body": "Active, quiet and transitional sleep in cycles of about 50-60 minutes.",
+              "points": [
+                "Sleep onset is into active sleep (REM-like): continuous low-voltage mixed activity, rapid eye movements, irregular breathing",
+                "Quiet sleep: tracé alternant (bursts alternating with lower but never flat activity) or continuous high-voltage slow activity",
+                "Frontal sharp transients and anterior dysrhythmia, mostly in transitional sleep",
+                "Tracé alternant fades by about 44-46 weeks PMA"
+              ]
+            },
+            {
+              "title": "1-3 months",
+              "body": "NREM becomes continuous slow sleep, and the first sleep transients appear.",
+              "points": [
+                "Spindles first appear at about 6-8 weeks post-term: long, central, often asynchronous",
+                "Sleep onset moves from REM to NREM by about 3-4 months",
+                "A reactive occipital rhythm of about 3-4 Hz appears at 3-4 months",
+                "Under 2 months, score W, N, R, T; from 2 months, adult stages"
+              ]
+            },
+            {
+              "title": "3-12 months",
+              "body": "All the adult NREM features are now present but look different.",
+              "points": [
+                "Wake: posterior rhythm about 4 Hz at 3-4 months, about 5-6 Hz by 6 months and about 6 Hz by 12 months",
+                "N1: diffuse slowing; hypnagogic hypersynchrony may begin (from about 3-6 months)",
+                "N2: vertex waves and K-complexes from about 4-6 months; spindles abundant, long and asynchronous",
+                "N3: high-voltage delta, often over 100-200 µV",
+                "REM about 30-40% of sleep"
+              ]
+            },
+            {
+              "title": "1-3 years",
+              "body": "The age of the most dramatic drowsiness.",
+              "points": [
+                "Wake: posterior rhythm about 6-7 Hz at 2 years, about 8 Hz by 3 years",
+                "N1: hypnagogic hypersynchrony (bursts or runs of 3-5 Hz, often 100-300 µV) is at its most common; rhythmic anterior theta",
+                "N2: spindles should become synchronous by about 2 years; vertex waves tall and sharp",
+                "N3: very high-voltage delta"
+              ]
+            },
+            {
+              "title": "3-12 years (school age)",
+              "body": "The deepest sleep of life; vertex waves can look spiky.",
+              "points": [
+                "Wake: posterior rhythm 8 Hz by 3 years, about 10 Hz by 10 years; posterior slow waves of youth",
+                "N1: hypnagogic hypersynchrony fading, usually gone by about 11-12 years",
+                "N2: vertex waves very sharp, tall and sometimes in runs; synchronous spindles; slower frontal spindles are common",
+                "N3: abundant delta, often over 200 µV",
+                "Arousal: hypnopompic hypersynchrony (rhythmic high-voltage slow activity) is normal"
+              ]
+            },
+            {
+              "title": "Adolescence (about 12-18 years)",
+              "body": "Adult-like staging with less deep sleep.",
+              "points": [
+                "Wake: adult alpha 9-11 Hz",
+                "N1: POSTS, 14- and 6-Hz positive bursts and other benign variants are most common now and in young adults",
+                "N2: adult spindles and K-complexes",
+                "N3: amount and amplitude fall steeply through the teens",
+                "Sleep phase shifts later (late bedtime, late waking)"
+              ]
+            },
+            {
+              "title": "Adult (about 18-60 years)",
+              "body": "The reference pattern for the AASM rules.",
+              "points": [
+                "N1: alpha dropout, slow rolling eye movements, vertex waves, POSTS",
+                "N2: spindles 12-14 Hz centrally, K-complexes frontally",
+                "N3: 15-20% of the night in young adults, decreasing with age",
+                "REM: about 20-25%, in 4-6 cycles; REM periods lengthen toward morning"
+              ]
+            },
+            {
+              "title": "Older adult (over about 60 years)",
+              "body": "Lighter, more broken sleep with smaller transients.",
+              "points": [
+                "Wake: posterior rhythm may slow slightly but should stay at 8 Hz or more",
+                "N1: more of it, and more awakenings; brief left or bilateral temporal theta in drowsiness can be age-related; wicket spikes",
+                "N2: spindles fewer, smaller and shorter; K-complexes fewer and smaller",
+                "N3: slow waves smaller, so many fail the 75 µV rule; N3 may be almost absent",
+                "REM slightly reduced; earlier bedtime and waking"
+              ]
+            }
+          ]
+        }
+      ],
+      "eegLink": "Write the patient's exact age (and PMA in infants) on the record before you comment on sleep. Almost every sleep feature is normal at one age and abnormal at another."
+    },
+    {
+      "id": "stages",
+      "title": "Stage by age",
+      "intro": "The same information arranged by stage, so you can compare one stage across ages.",
+      "sections": [
+        {
+          "title": "Wake (eyes closed) and drowsiness",
+          "kind": "table",
+          "head": [
+            "Age",
+            "Wake",
+            "Drowsiness (N1)"
+          ],
+          "rows": [
+            [
+              "Term newborn",
+              "Activité moyenne: continuous low-voltage mixed activity",
+              "Not scored separately; behaviour and eye leads are needed"
+            ],
+            [
+              "3-12 months",
+              "Posterior rhythm about 3-4 Hz at 3-4 months, about 5-6 Hz by 6 months and about 6 Hz by 12 months",
+              "Diffuse slowing; hypnagogic hypersynchrony may begin"
+            ],
+            [
+              "1-3 years",
+              "About 6-7 Hz at 2 years, about 8 Hz by 3 years",
+              "Hypnagogic hypersynchrony (paroxysmal 3-5 Hz bursts); rhythmic anterior theta"
+            ],
+            [
+              "3-12 years",
+              "8-10 Hz; posterior slow waves of youth",
+              "Hypnagogic hypersynchrony becoming rare; posterior rhythm slows before it fades"
+            ],
+            [
+              "Adolescent and adult",
+              "9-11 Hz alpha",
+              "Alpha dropout, slow rolling eye movements, vertex waves, POSTS"
+            ],
+            [
+              "Older adult",
+              "Alpha may be slightly slower but 8 Hz or more",
+              "More frequent; occasional temporal theta; wicket spikes"
+            ]
+          ]
+        },
+        {
+          "title": "N2",
+          "kind": "table",
+          "head": [
+            "Age",
+            "Spindles",
+            "Vertex waves and K-complexes"
+          ],
+          "rows": [
+            [
+              "Under 6-8 weeks",
+              "Absent",
+              "Absent"
+            ],
+            [
+              "2-12 months",
+              "Long trains (often over 2 s), 12-14 Hz, central, often comb-like and asynchronous",
+              "Appear at about 4-6 months"
+            ],
+            [
+              "1-2 years",
+              "Becoming synchronous; should be synchronous by about 2 years",
+              "Tall, sharp"
+            ],
+            [
+              "3-12 years",
+              "Synchronous; central 12-14 Hz plus slower frontal spindles",
+              "Very sharp, tall, sometimes in runs; may look spiky"
+            ],
+            [
+              "Adult",
+              "12-14 Hz, 0.5-2 s, central",
+              "K-complexes frontal, often with a spindle"
+            ],
+            [
+              "Older adult",
+              "Fewer, smaller, shorter",
+              "Fewer, smaller"
+            ]
+          ],
+          "note": "Spindles that are consistently absent or smaller on one side are abnormal at any age once spindles have developed."
+        },
+        {
+          "title": "N3 (slow-wave sleep)",
+          "kind": "table",
+          "head": [
+            "Age",
+            "What it looks like",
+            "Amount"
+          ],
+          "rows": [
+            [
+              "Term newborn",
+              "Quiet sleep: tracé alternant or continuous high-voltage slow activity",
+              "About 30-40% of sleep"
+            ],
+            [
+              "Infant",
+              "High-voltage delta (often over 100-200 µV) from about 2-6 months",
+              "Rising"
+            ],
+            [
+              "Child",
+              "Very high-voltage delta, often 200 µV or more",
+              "Highest of life"
+            ],
+            [
+              "Adolescent",
+              "Delta still large but falling",
+              "Falling steeply"
+            ],
+            [
+              "Adult",
+              "Frontal 0.5-2 Hz delta over 75 µV",
+              "About 15-20% in young adults"
+            ],
+            [
+              "Older adult",
+              "Smaller delta, often under 75 µV",
+              "Much less; may be almost absent"
+            ]
+          ]
+        },
+        {
+          "title": "REM",
+          "kind": "table",
+          "head": [
+            "Age",
+            "What it looks like",
+            "Share and timing"
+          ],
+          "rows": [
+            [
+              "Term newborn",
+              "Active sleep: continuous low-voltage mixed activity, rapid eye movements, irregular breathing, twitches",
+              "About 50%; sleep onset is into active sleep"
+            ],
+            [
+              "Infant",
+              "Low-voltage mixed activity with rapid eye movements",
+              "About 30-40%; sleep onset into NREM from about 3-4 months"
+            ],
+            [
+              "Child",
+              "Like adult REM; sawtooth waves",
+              "About 25%"
+            ],
+            [
+              "Adult",
+              "Low-voltage mixed activity, sawtooth waves, rapid eye movements, atonia",
+              "About 20-25%; first REM about 70-120 min after sleep onset"
+            ],
+            [
+              "Older adult",
+              "As adult",
+              "Slightly less"
+            ]
+          ]
+        }
+      ],
+      "pearls": [
+        "Spindles appear at about 6-8 weeks post-term and should be synchronous by about 2 years.",
+        "Vertex waves and K-complexes appear at about 4-6 months.",
+        "Hypnagogic hypersynchrony: from about 3-6 months, most common at 1-3 years, gone by about 11-12 years.",
+        "Deep sleep peaks in childhood and falls through adolescence and old age."
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "Graphoelement timeline",
+      "intro": "When each sleep waveform appears, peaks and disappears. Exam questions often give an age and a waveform and ask whether it belongs.",
+      "sections": [
+        {
+          "title": "Sleep waveforms over the lifespan",
+          "kind": "table",
+          "head": [
+            "Waveform",
+            "Appears",
+            "Most typical age",
+            "Fades or changes",
+            "Stage"
+          ],
+          "rows": [
+            [
+              "Tracé alternant",
+              "About 34-36 weeks PMA",
+              "Term",
+              "Gone by about 44-46 weeks PMA",
+              "Quiet sleep"
+            ],
+            [
+              "Sleep spindles",
+              "About 6-8 weeks post-term",
+              "Infancy (long trains)",
+              "Fewer and smaller in old age",
+              "N2 (and N3)"
+            ],
+            [
+              "Vertex waves",
+              "About 4-6 months",
+              "Childhood (tall, sharp, in runs)",
+              "Smaller in old age",
+              "N1, N2"
+            ],
+            [
+              "K-complexes",
+              "About 4-6 months",
+              "Adulthood",
+              "Fewer and smaller in old age",
+              "N2"
+            ],
+            [
+              "High-voltage slow waves",
+              "About 2-6 months",
+              "Childhood",
+              "Fall in adolescence and old age",
+              "N3"
+            ],
+            [
+              "Hypnagogic hypersynchrony",
+              "About 3-6 months",
+              "1-3 years",
+              "Usually gone by about 11-12 years",
+              "N1 (and arousal)"
+            ],
+            [
+              "Rhythmic anterior theta",
+              "Childhood",
+              "Children and young adults",
+              "Less common in older adults",
+              "N1"
+            ],
+            [
+              "POSTS",
+              "Uncommon before about 4 years",
+              "Adolescents and young adults",
+              "Less common in old age",
+              "N1, N2"
+            ],
+            [
+              "Sawtooth waves",
+              "Infancy onward (with organised REM)",
+              "Any age after infancy",
+              "Persist through adult life",
+              "REM"
+            ],
+            [
+              "14- and 6-Hz positive bursts",
+              "Childhood",
+              "About 13-14 years",
+              "Rare after about 30 years",
+              "N1, light N2"
+            ],
+            [
+              "BETS (small sharp spikes)",
+              "Adolescence",
+              "Adults",
+              "",
+              "N1, N2"
+            ],
+            [
+              "Wicket spikes",
+              "Adulthood",
+              "Over about 30, most often over 50",
+              "",
+              "Drowsiness, light sleep"
+            ]
+          ],
+          "note": "BETS, 14- and 6-Hz positive bursts and wicket spikes are benign variants: know their age, state and location."
+        }
+      ],
+      "pearls": [
+        "Before 2 months: no spindles. Before 4 months: no vertex waves or K-complexes. Neither absence is abnormal.",
+        "POSTS are rare in toddlers and common in teenagers and young adults."
+      ]
+    },
+    {
+      "id": "tracings",
+      "title": "Tracings",
+      "intro": "Synthetic tracings made by the NeuroLinea EEG generator. They are built to show each stage's key features clearly, not to reproduce any real patient. Use Enlarge to see the details.",
+      "sections": [
+        {
+          "title": "Adult wake, eyes closed",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 35,
+            "state": "awake",
+            "findings": [],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 35-year-old, relaxed with eyes closed: a 10 Hz posterior dominant rhythm."
+        },
+        {
+          "title": "Adult N1",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 35,
+            "state": "stage N1 sleep",
+            "background": {
+              "pdrHz": 8.5,
+              "pdrUv": 5,
+              "theta": 6,
+              "beta": 4,
+              "delta": 3,
+              "noise": 4
+            },
+            "findings": [
+              {
+                "type": "lateralEye",
+                "dir": "left",
+                "at": 0.6,
+                "durS": 2.6,
+                "uv": 45
+              },
+              {
+                "type": "lateralEye",
+                "dir": "right",
+                "at": 4.4,
+                "durS": 2.8,
+                "uv": 45
+              },
+              {
+                "type": "vertex",
+                "at": [
+                  3.1,
+                  8.2
+                ],
+                "uv": 150
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 35-year-old in N1: alpha has dropped out, low-voltage theta, slow rolling eye movements in the eye leads and vertex sharp waves at Cz."
+        },
+        {
+          "title": "Adult N2",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 35,
+            "state": "n2",
+            "findings": [
+              {
+                "type": "spindle",
+                "at": [
+                  1.0,
+                  7.2
+                ],
+                "uv": 40,
+                "durS": 1.0,
+                "center": [
+                  0,
+                  0.05
+                ],
+                "sigma": 0.4
+              },
+              {
+                "type": "kComplex",
+                "at": [
+                  4.0
+                ],
+                "uv": 200,
+                "center": [
+                  0,
+                  0.3
+                ],
+                "sigma": 0.45
+              },
+              {
+                "type": "spindle",
+                "at": [
+                  4.7
+                ],
+                "uv": 45,
+                "durS": 0.9,
+                "center": [
+                  0,
+                  0.05
+                ],
+                "sigma": 0.4
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 35-year-old in N2: central spindles and a frontocentral K-complex with a spindle riding on its end."
+        },
+        {
+          "title": "Adult N3",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 35,
+            "state": "stage N3 sleep",
+            "background": {
+              "pdrHz": 0,
+              "pdrUv": 0,
+              "beta": 2.5,
+              "theta": 4,
+              "delta": 6,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "diffuseSlowing",
+                "hz": 1.1,
+                "bwHz": 0.6,
+                "uv": 170,
+                "frontal": 0.5
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 35-year-old in N3: frontally maximal 1 Hz delta well over 75 µV filling the page."
+        },
+        {
+          "title": "Adult REM",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 35,
+            "state": "REM sleep",
+            "background": {
+              "pdrHz": 0,
+              "pdrUv": 0,
+              "beta": 4,
+              "theta": 6,
+              "delta": 2,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "lateralEye",
+                "dir": "left",
+                "at": 1.0,
+                "durS": 0.3,
+                "uv": 120
+              },
+              {
+                "type": "lateralEye",
+                "dir": "right",
+                "at": 1.45,
+                "durS": 0.3,
+                "uv": 120
+              },
+              {
+                "type": "lateralEye",
+                "dir": "left",
+                "at": 2.0,
+                "durS": 0.3,
+                "uv": 120
+              },
+              {
+                "type": "lateralEye",
+                "dir": "right",
+                "at": 6.3,
+                "durS": 0.3,
+                "uv": 120
+              },
+              {
+                "type": "lateralEye",
+                "dir": "left",
+                "at": 6.8,
+                "durS": 0.3,
+                "uv": 120
+              },
+              {
+                "type": "lateralEye",
+                "dir": "right",
+                "at": 7.4,
+                "durS": 0.3,
+                "uv": 120
+              },
+              {
+                "type": "arciform",
+                "center": "Cz",
+                "sigma": 0.45,
+                "hz": 3,
+                "uv": 70,
+                "runs": [
+                  [
+                    3.0,
+                    5.2
+                  ]
+                ]
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 35-year-old in REM: low-voltage mixed activity, sharp rapid eye movements in the eye leads and a run of sawtooth waves at the vertex."
+        },
+        {
+          "title": "Term newborn quiet sleep",
+          "kind": "tracing",
+          "scene": {
+            "pmaWeeks": 40,
+            "ageYears": 0,
+            "state": "quietSleep",
+            "sensitivity": 10,
+            "lff": 0.5,
+            "background": {
+              "pdrHz": 0,
+              "pdrUv": 0,
+              "beta": 1.5,
+              "theta": 3,
+              "delta": 3.5,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "burst",
+                "uv": 130,
+                "runs": [
+                  [
+                    0.2,
+                    3.6
+                  ],
+                  [
+                    7.4,
+                    10
+                  ]
+                ],
+                "rampS": 0.3,
+                "sharpPerS": 0.8
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. Term newborn in quiet sleep: tracé alternant, bursts alternating with lower-voltage activity that is never flat."
+        },
+        {
+          "title": "Infant N2 (6 months)",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 0.5,
+            "state": "n2",
+            "sensitivity": 10,
+            "background": {
+              "theta": 9,
+              "delta": 14,
+              "beta": 2
+            },
+            "findings": [
+              {
+                "type": "spindle",
+                "at": [
+                  0.6,
+                  6.0
+                ],
+                "uv": 40,
+                "hz": 13.5,
+                "durS": 2.2,
+                "center": "C3",
+                "sigma": 0.3
+              },
+              {
+                "type": "spindle",
+                "at": [
+                  3.1,
+                  8.0
+                ],
+                "uv": 40,
+                "hz": 13.5,
+                "durS": 1.8,
+                "center": "C4",
+                "sigma": 0.3
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 6-month-old in N2 at 10 µV/mm: long 13-14 Hz spindle trains that appear independently over the left and right central regions. Asynchrony is normal at this age."
+        },
+        {
+          "title": "Toddler drowsiness (3 years)",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 3,
+            "state": "drowsy",
+            "sensitivity": 10,
+            "background": {
+              "pdrHz": 7,
+              "pdrUv": 12,
+              "theta": 9
+            },
+            "findings": [
+              {
+                "type": "rhythmicDelta",
+                "hz": 4,
+                "center": [
+                  0,
+                  0.05
+                ],
+                "sigma": 0.6,
+                "uv": 260,
+                "runs": [
+                  [
+                    2.4,
+                    6.6
+                  ]
+                ]
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 3-year-old becoming drowsy at 10 µV/mm: a burst of high-voltage, diffuse 4 Hz hypnagogic hypersynchrony."
+        },
+        {
+          "title": "Child N2 (7 years)",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 7,
+            "state": "n2",
+            "sensitivity": 10,
+            "background": {
+              "theta": 8,
+              "delta": 10
+            },
+            "findings": [
+              {
+                "type": "vertex",
+                "at": [
+                  1.2,
+                  1.75,
+                  2.3,
+                  6.9
+                ],
+                "uv": 220
+              },
+              {
+                "type": "spindle",
+                "at": [
+                  4.2,
+                  8.4
+                ],
+                "uv": 45,
+                "durS": 1.1,
+                "center": [
+                  0,
+                  0.05
+                ],
+                "sigma": 0.4
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 7-year-old in N2 at 10 µV/mm: tall, very sharp vertex waves, some in a run, and synchronous central spindles."
+        },
+        {
+          "title": "Child N3 (7 years)",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 7,
+            "state": "stage N3 sleep",
+            "sensitivity": 15,
+            "background": {
+              "pdrHz": 0,
+              "pdrUv": 0,
+              "beta": 2.5,
+              "theta": 8,
+              "delta": 12,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "diffuseSlowing",
+                "hz": 1.1,
+                "bwHz": 0.6,
+                "uv": 330,
+                "frontal": 0.45
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 7-year-old in N3 at 15 µV/mm: very high-voltage frontal delta, far above the 75 µV threshold."
+        },
+        {
+          "title": "Older adult N2 (78 years)",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 78,
+            "state": "n2",
+            "background": {
+              "theta": 5,
+              "delta": 5
+            },
+            "findings": [
+              {
+                "type": "spindle",
+                "at": [
+                  5.6
+                ],
+                "uv": 22,
+                "durS": 0.6,
+                "center": [
+                  0,
+                  0.05
+                ],
+                "sigma": 0.4
+              },
+              {
+                "type": "kComplex",
+                "at": [
+                  2.4
+                ],
+                "uv": 95,
+                "center": [
+                  0,
+                  0.3
+                ],
+                "sigma": 0.45
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 78-year-old in N2: a small, short spindle and a low K-complex. Transients shrink with age."
+        },
+        {
+          "title": "Older adult slow waves (78 years)",
+          "kind": "tracing",
+          "scene": {
+            "ageYears": 78,
+            "state": "deep NREM sleep",
+            "background": {
+              "pdrHz": 0,
+              "pdrUv": 0,
+              "beta": 2.5,
+              "theta": 4,
+              "delta": 6,
+              "noise": 3
+            },
+            "findings": [
+              {
+                "type": "diffuseSlowing",
+                "hz": 1.1,
+                "bwHz": 0.6,
+                "uv": 75,
+                "frontal": 0.5,
+                "runs": [
+                  [
+                    1.0,
+                    4.5
+                  ]
+                ]
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. 78-year-old in deep NREM: 1 Hz frontal delta near 75 µV in only part of the page, so by the amplitude and 20% rules this epoch may not be scored N3."
+        },
+        {
+          "kind": "tracingQuiz",
+          "title": "Check yourself: drowsy toddler",
+          "scene": {
+            "ageYears": 3,
+            "state": "drowsy",
+            "sensitivity": 10,
+            "background": {
+              "pdrHz": 7,
+              "pdrUv": 12,
+              "theta": 9
+            },
+            "findings": [
+              {
+                "type": "rhythmicDelta",
+                "hz": 4,
+                "center": [
+                  0,
+                  0.05
+                ],
+                "sigma": 0.6,
+                "uv": 260,
+                "runs": [
+                  [
+                    2.4,
+                    6.6
+                  ]
+                ]
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. Drowsy 3-year-old.",
+          "question": "A healthy 3-year-old is drifting off to sleep when this burst appears and then settles. What is the best description?",
+          "options": [
+            "Generalized spike-and-wave of absence epilepsy",
+            "Hypnagogic hypersynchrony, a normal drowsy pattern",
+            "Diffuse slowing from encephalopathy",
+            "Frontal intermittent rhythmic delta"
+          ],
+          "answer": 1,
+          "explanation": "High-voltage, diffuse, rhythmic 3-5 Hz waves at sleep onset in a toddler are hypnagogic hypersynchrony, normal from about 3-6 months to about 11-12 years. There are no spikes, so it is not spike-and-wave. It is brief and tied to drowsiness, unlike encephalopathic slowing, and it is a 3-5 Hz drowsy burst in a healthy child, not the intermittent frontal delta of an encephalopathic patient."
+        },
+        {
+          "kind": "tracingQuiz",
+          "title": "Check yourself: infant spindles",
+          "scene": {
+            "ageYears": 0.5,
+            "state": "n2",
+            "sensitivity": 10,
+            "background": {
+              "theta": 9,
+              "delta": 14,
+              "beta": 2
+            },
+            "findings": [
+              {
+                "type": "spindle",
+                "at": [
+                  0.6,
+                  6.0
+                ],
+                "uv": 40,
+                "hz": 13.5,
+                "durS": 2.2,
+                "center": "C3",
+                "sigma": 0.3
+              },
+              {
+                "type": "spindle",
+                "at": [
+                  3.1,
+                  8.0
+                ],
+                "uv": 40,
+                "hz": 13.5,
+                "durS": 1.8,
+                "center": "C4",
+                "sigma": 0.3
+              }
+            ],
+            "seed": 21
+          },
+          "caption": "NeuroLinea synthetic tracing. Healthy 6-month-old in NREM sleep.",
+          "question": "In this healthy 6-month-old, spindles appear over the left and right central regions at different times. How should this be reported?",
+          "options": [
+            "Abnormal asynchrony suggesting a corpus callosum defect",
+            "Abnormal: spindles should not appear before 1 year",
+            "Normal for age: spindles become synchronous by about 2 years",
+            "Abnormal: these are 14-Hz positive bursts"
+          ],
+          "answer": 2,
+          "explanation": "Spindles appear at about 6-8 weeks post-term and are often asynchronous through infancy; they should be synchronous by about 2 years. Consistent absence or asymmetry on one side would be abnormal, but independent timing is not. 14- and 6-Hz positive bursts are posterior temporal and positive, in older children and adolescents."
+        }
+      ]
+    },
+    {
+      "id": "pitfalls",
+      "title": "Age pitfalls",
+      "intro": "The same finding can be normal at one age and a red flag at another.",
+      "sections": [
+        {
+          "title": "Normal at one age, abnormal at another",
+          "kind": "table",
+          "head": [
+            "Finding",
+            "Normal when",
+            "Abnormal or worth reporting when"
+          ],
+          "rows": [
+            [
+              "REM at sleep onset",
+              "Newborns and young infants (to about 3-4 months)",
+              "Adults: a sleep-onset REM period suggests narcolepsy, sleep deprivation, REM rebound after stopping REM-suppressing drugs, or other disorders"
+            ],
+            [
+              "Asynchronous spindles",
+              "Under about 2 years",
+              "Persistent after about 2 years"
+            ],
+            [
+              "No spindles",
+              "Under about 6-8 weeks post-term",
+              "After about 3 months in clear NREM sleep"
+            ],
+            [
+              "No vertex waves or K-complexes",
+              "Under about 4-6 months",
+              "Absent on one side at any age after they develop"
+            ],
+            [
+              "Hypnagogic hypersynchrony",
+              "About 3 months to 11-12 years",
+              "In an adult it is unusual; look carefully for epileptiform features"
+            ],
+            [
+              "Very sharp, tall vertex waves in runs",
+              "Children",
+              "Must not be called epileptiform: check that they are symmetric, maximal at the vertex and tied to sleep"
+            ],
+            [
+              "Posterior rhythm of 7 Hz",
+              "Around 2 years",
+              "Slow after about 3 years (under 8 Hz)"
+            ],
+            [
+              "Little or no N3",
+              "Older adults",
+              "In a child or young adult, look for fragmentation (apnea, pain, drugs)"
+            ],
+            [
+              "Tracé alternant",
+              "Term quiet sleep to about 44-46 weeks PMA",
+              "Persisting well after about 46 weeks PMA (delayed maturation)"
+            ],
+            [
+              "Brief temporal theta in drowsiness",
+              "Older adults, occasional and mild",
+              "Frequent, persistent in wake, or with delta"
+            ]
+          ]
+        },
+        {
+          "title": "Things that change the picture at any age",
+          "kind": "cards",
+          "cards": [
+            {
+              "title": "Drugs",
+              "body": "Benzodiazepines and barbiturates add beta and increase spindle-range activity while reducing deep sleep. Many antidepressants suppress REM, and stopping them can cause REM rebound.",
+              "points": [
+                "Note medications on the record before staging"
+              ]
+            },
+            {
+              "title": "Sleep deprivation",
+              "body": "Shortens sleep latency, deepens and increases N3 on recovery, and can bring REM early.",
+              "points": [
+                "A useful activation for epileptiform discharges"
+              ]
+            },
+            {
+              "title": "Sleep disorders",
+              "body": "Apnea fragments sleep with arousals; narcolepsy brings REM early; REM sleep behaviour disorder keeps chin tone in REM.",
+              "points": [
+                "Add respiratory and limb channels when the history suggests them"
+              ]
+            }
+          ]
+        }
+      ],
+      "eegLink": "When you see something in sleep that looks sharp, write the age, the stage and whether it is symmetric before you call the reader.",
+      "pearls": [
+        "Sleep-onset REM: normal in infants, abnormal in adults.",
+        "Asynchronous spindles: normal under about 2 years.",
+        "Hypnagogic hypersynchrony is normal in children and unusual in adults."
+      ]
+    }
+  ],
+  "mistakes": [
+    [
+      "N3 needs delta over more than half of the epoch.",
+      "N3 needs 0.5-2 Hz waves over 75 µV in 20% or more of the epoch; 50% was the old stage 4."
+    ],
+    [
+      "A 6-week-old without spindles has an abnormal record.",
+      "Spindles appear at about 6-8 weeks post-term, so their absence is expected this early."
+    ],
+    [
+      "Asynchronous spindles always mean a structural problem.",
+      "They are normal until about 2 years; only persistent asynchrony after that, or a consistent one-sided absence, is abnormal."
+    ],
+    [
+      "Hypnagogic hypersynchrony is generalized spike-and-wave.",
+      "It is normal high-voltage rhythmic 3-5 Hz slowing at sleep onset in children, with no spikes."
+    ],
+    [
+      "A term newborn falling straight into REM is abnormal.",
+      "Sleep onset into active (REM-like) sleep is normal until about 3-4 months."
+    ],
+    [
+      "Older adults have the same amount of deep sleep as young adults.",
+      "Slow waves shrink with age, so N3 falls and may be almost absent."
+    ],
+    [
+      "Infants are scored with the same five stages from birth.",
+      "Under 2 months post-term the AASM infant rules use W, N, R and T."
+    ],
+    [
+      "Tall, sharp vertex waves in a child are epileptiform.",
+      "They are a normal childhood feature when symmetric, central and tied to sleep."
+    ]
+  ],
+  "memory": [
+    [
+      "2-4-6 (months)",
+      "Spindles by about 2 months; vertex waves and K-complexes by about 4-6 months"
+    ],
+    [
+      "75 / 20 / 2",
+      "N3: over 75 µV, at least 20% of the epoch, 2 Hz or slower"
+    ],
+    [
+      "HH 3 m to 12 y",
+      "Hypnagogic hypersynchrony from about 3-6 months to about 11-12 years"
+    ],
+    [
+      "REM: 50, 25, 20",
+      "About 50% of newborn sleep, 25% in childhood, 20-25% in adults"
+    ]
+  ]
+}

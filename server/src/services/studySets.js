@@ -15,6 +15,7 @@ export const STUDY_SETS = {
     'amplifier-controls': { title: 'Amplifier Controls and Filters', prefixes: ['ch-amp', 'ch-dif2', 'ch-calc', 'ch-rsb', 'ch-tga', 'ch-b6', 'ch-dg'] },
     'montages-references': { title: 'Montages and References', prefixes: ['ch-mon', 'ch-rsa', 'ch-tgb', 'ch-b4'] },
     'diffuse-abnormalities': { title: 'Diffuse Abnormalities', prefixes: ['ch-dif'] },
+    'sleep-staging': { title: 'Sleep Staging Across the Lifespan', prefixes: ['ch-sl', 'ch-sn'] },
 };
 
 /** Allowed quiz lengths; "all" serves every question in the set (up to the cap). */

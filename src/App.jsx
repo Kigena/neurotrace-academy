@@ -20,6 +20,7 @@ import DiffuseAbnormalities from "./pages/DiffuseAbnormalities.jsx";
 import NeuroSyndromes from "./pages/NeuroSyndromes.jsx";
 import NeurologyEssentials from "./pages/NeurologyEssentials.jsx";
 import LabSafety from "./pages/LabSafety.jsx";
+import SleepStaging from "./pages/SleepStaging.jsx";
 import ProfessionalPractice from "./pages/ProfessionalPractice.jsx";
 import PatternsReview from "./pages/PatternsReview.jsx";
 import AcnsGuide from "./pages/AcnsGuide.jsx";
@@ -260,6 +261,12 @@ function AppContent() {
             <Route path="/neurology-essentials" element={
               <ProtectedRoute>
                 <NeurologyEssentials />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/sleep-staging" element={
+              <ProtectedRoute>
+                <SleepStaging />
               </ProtectedRoute>
             } />
 

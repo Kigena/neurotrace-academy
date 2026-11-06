@@ -1,0 +1,681 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-11-05",
+  "bank": "challenge",
+  "focus": "sleep-staging-lifespan",
+  "description": "Original questions on sleep staging rules and on how wake, N1, N2, N3 and REM change from infancy to old age. Text only; not yet medically verified.",
+  "totalQuestions": 24,
+  "questions": [
+    {
+      "id": "ch-sl-001",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-staging",
+        "n3",
+        "measurement"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In a 28-year-old, a 30 s epoch shows spindles and 1-2 Hz frontal waves of 90-110 uV peak-to-peak that add up to about 4 s. How is the epoch scored?",
+      "explanation": "N3 needs slow waves of 0.5-2 Hz over 75 uV filling at least 20% of the epoch, which is 6 s of 30. Four seconds is about 13%, so the epoch stays N2 even though each wave is large enough. Spindles can persist in N3, so they do not decide the stage, and N1 does not contain high-amplitude delta.",
+      "learningObjective": "Apply both the amplitude and the 20% duration criteria for N3.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "N2, as slow waves fill under 20% of it",
+        "N3, as the slow waves exceed 75 uV",
+        "N3, as spindles cannot occur in N2",
+        "N1, as delta marks light drowsiness"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-002",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-staging",
+        "n3",
+        "aging"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "In a healthy 76-year-old, deep NREM sleep shows 1 Hz frontal waves of 50-65 uV filling about half of each epoch. What is the best interpretation?",
+      "explanation": "Slow-wave amplitude falls with age, and the N3 rule still needs waves over 75 uV, so many epochs of an older adult's deepest sleep are scored N2 and N3 may be almost absent. The rule has no age adjustment. This is expected sleep architecture in an older adult, not encephalopathy or a drug effect.",
+      "learningObjective": "Explain why scored N3 decreases in older adults.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Encephalopathy, as delta in sleep is abnormal at 76",
+        "N3 is scored, since amplitude rules relax after 65",
+        "A drug effect, as healthy elders keep 100 uV delta",
+        "Age-related loss of slow-wave amplitude; scored as N2"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-003",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-staging",
+        "infant",
+        "aasm-infant-rules"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A term-born infant is studied at 5 weeks post-term. Which set of stages does the AASM infant scoring use at this age?",
+      "explanation": "From term to 2 months post-term, the AASM infant rules score wake, N (NREM as one stage), R and T (transitional), because spindles, K-complexes and organised slow waves are not yet reliable enough to split NREM. The five adult stages apply from 2 months. Active, quiet and indeterminate are the premature newborn's states.",
+      "learningObjective": "Choose the correct scoring scheme for a young infant.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "W, N1, N2, N3 and R",
+        "W, N, R and T",
+        "Active, quiet and indeterminate",
+        "W, NREM and arousal"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-004",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posterior-rhythm",
+        "maturation",
+        "infant"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy 4-month-old has a 4 Hz occipital rhythm that blocks when the eyes open. What does this show?",
+      "explanation": "A reactive occipital rhythm first appears at about 3-4 months at about 3-4 Hz, so 4 Hz that blocks with eye opening is normal. About 8 Hz is expected by 3 years, not 4 months. The rhythm is reactive and posterior, not diffuse slowing, and hypnagogic hypersynchrony is a drowsy burst rather than a resting rhythm.",
+      "learningObjective": "Judge the posterior rhythm against age norms in infancy.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Diffuse slowing from a metabolic cause",
+        "A delayed rhythm, as 8 Hz is expected",
+        "A normal posterior rhythm for this age",
+        "Hypnagogic hypersynchrony in drowsiness"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-005",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "n3",
+        "maturation",
+        "amplitude"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy 6-year-old in deep sleep shows frontal 1 Hz waves of 250-300 uV filling most of the page at 15 uV/mm. How should it be described?",
+      "explanation": "Children have the largest slow waves of life, often over 200 uV, and the most N3. Diffuse, symmetric, frontally maximal delta in deep sleep at this age is normal. There is no evolution or spike component to suggest seizure activity, and it is cerebral rather than artifact.",
+      "learningObjective": "Recognise normal high-voltage slow-wave sleep in children.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Normal N3, as childhood slow waves are very large",
+        "Abnormal, as delta over 150 uV suggests a lesion",
+        "Electrode artifact, as such voltage is not cerebral",
+        "Status epilepticus, as the delta is continuous"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-006",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "rem",
+        "newborn",
+        "sleep-architecture"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "About what share of a healthy term newborn's sleep is active (REM-like) sleep?",
+      "explanation": "Active sleep makes up about half of a term newborn's sleep, falling to about 25% in childhood and 20-25% in adults. About 20% is the adult figure, and the other values are too low for a newborn.",
+      "learningObjective": "State the REM proportion at birth and how it changes.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "About 10%",
+        "About 20%",
+        "About 33%",
+        "About 50%"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-007",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-onset-rem",
+        "infant",
+        "maturation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy 6-week-old falls asleep and within 3 minutes shows low-voltage mixed activity, rapid eye movements and irregular breathing. What is this?",
+      "explanation": "Young infants normally enter sleep through active (REM) sleep, and sleep onset shifts to NREM at about 3-4 months. A sleep-onset REM period is a concern in adults, not in a 6-week-old. Behaviour and breathing separate this from wakefulness.",
+      "learningObjective": "Know when sleep-onset REM is normal.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A sleep-onset REM period suggesting narcolepsy",
+        "Normal: young infants enter sleep through REM",
+        "Wakefulness, as REM cannot appear this early",
+        "Abnormal, as NREM must come first at any age"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-008",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "drowsiness",
+        "rhythmic-anterior-theta",
+        "child"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy 9-year-old becoming drowsy shows the posterior rhythm fading and runs of 5-6 Hz rhythmic theta over the frontal regions. Which stage and interpretation fit?",
+      "explanation": "Loss of the posterior rhythm with rhythmic anterior (frontal) theta is a normal drowsy pattern in children and young adults and marks N1. It is symmetric and tied to drowsiness, so it is not a focus. N2 needs spindles or K-complexes, and REM needs rapid eye movements and low chin tone.",
+      "learningObjective": "Recognise rhythmic anterior theta as a normal N1 feature.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Wake, with a frontal theta focus",
+        "N2, as theta replaces spindles",
+        "N1, with rhythmic anterior theta",
+        "REM, as theta follows alpha loss"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-009",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "n3",
+        "adolescence",
+        "maturation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Compared with a 9-year-old, what usually happens to slow-wave sleep in a 17-year-old?",
+      "explanation": "Slow-wave sleep is greatest in childhood and falls steeply through adolescence as slow-wave amplitude drops, a change linked to brain maturation. It keeps declining with age. REM does not rise in adolescence; it stays at about 20-25%.",
+      "learningObjective": "Describe the adolescent fall in slow-wave sleep.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "The amount and amplitude fall steeply",
+        "It rises to its highest level in life",
+        "It is unchanged until about 60 years",
+        "It turns into REM, which rises in teens"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-010",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "posts",
+        "maturation",
+        "benign-variant"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Positive occipital sharp transients of sleep (POSTS) would be most expected in which patient?",
+      "explanation": "POSTS are uncommon before about 4 years and are most common in adolescents and young adults in N1 and N2. They become less common with age and belong to light sleep, not N3. A 21-year-old in N2 is the best fit.",
+      "learningObjective": "Link POSTS to the ages and stages where they are expected.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A 6-month-old in N2",
+        "A 2-year-old in N1",
+        "A 21-year-old in N2",
+        "An 85-year-old in N3"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-011",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-spindle",
+        "definition",
+        "sleep-staging"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Which description matches a sleep spindle as defined for scoring?",
+      "explanation": "A spindle is a train of distinct 11-16 Hz waves (most often 12-14 Hz) lasting 0.5 s or more, largest centrally. The 2-6 Hz central train describes sawtooth waves of REM, the 0.5-2 Hz frontal wave is a slow wave, and the 8-12 Hz posterior rhythm is waking alpha.",
+      "learningObjective": "Define sleep spindles by frequency, duration and location.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A 2-6 Hz central train of notched waves",
+        "An 11-16 Hz train of 0.5 s or more, central",
+        "A 0.5-2 Hz frontal wave over 75 uV",
+        "An 8-12 Hz posterior rhythm with eyes closed"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-012",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "k-complex",
+        "arousal",
+        "sleep-staging"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "In an epoch otherwise scored N1, a single K-complex appears and is followed within 1 s by an arousal with alpha lasting 5 s. How does this K-complex affect scoring?",
+      "explanation": "N2 starts with a K-complex unassociated with an arousal, or with spindles. A K-complex followed within about 1 s by an arousal does not start N2 on its own. A single K-complex does not make N3, and an arousal does not create REM.",
+      "learningObjective": "Apply the arousal rule for K-complexes.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "It starts N2 on its own, since any K-complex counts",
+        "It changes the epoch to N3, as K-complexes are slow",
+        "It changes the epoch to REM, as arousal ends NREM",
+        "It does not start N2, as it is tied to an arousal"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-013",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "rem",
+        "alpha",
+        "sleep-staging"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "During REM in a 40-year-old whose waking alpha is 10 Hz, brief bursts of posterior rhythmic activity appear. What frequency is typical for these bursts?",
+      "explanation": "Alpha in REM is typically 1-2 Hz slower than the person's waking alpha, so about 8-9 Hz here. Spindle-range activity belongs to N2, sawtooth waves are 2-6 Hz central REM waves, and beta near 18-20 Hz suggests a medication effect.",
+      "learningObjective": "Recognise REM alpha and its frequency.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "About 8-9 Hz, 1-2 Hz slower than wake",
+        "About 13-14 Hz, the spindle range",
+        "About 3 Hz, as in sawtooth waves",
+        "About 18-20 Hz, as in drug beta"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-014",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "wake",
+        "eye-movements",
+        "sleep-staging"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A 33-year-old has no visible alpha even with eyes closed. Which finding best supports scoring an epoch as wake?",
+      "explanation": "In people with little alpha, wake is scored from eye blinks at about 0.5-2 Hz, reading eye movements, or rapid eye movements with normal or high chin tone. Slow rolling eye movements and vertex waves support N1, and sawtooth waves belong to REM.",
+      "learningObjective": "Score wake in a patient without alpha.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Slow rolling eye movements",
+        "Blinks at about 1 per second",
+        "Vertex waves at Cz",
+        "Sawtooth waves at Cz"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-015",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "arousal",
+        "hypnopompic-hypersynchrony",
+        "child"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy 4-year-old wakes from sleep, and for several seconds the EEG shows diffuse rhythmic high-voltage 3-4 Hz activity before the waking rhythm returns. What is this?",
+      "explanation": "Rhythmic high-voltage slow activity on arousal in young children is hypnopompic (arousal) hypersynchrony, the waking counterpart of hypnagogic hypersynchrony, and it is normal. It is diffuse and brief and has no spikes or evolution. A breach rhythm is focal, sharp fast activity over a skull defect.",
+      "learningObjective": "Recognise the normal arousal pattern of young children.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A generalized seizure on arousal",
+        "N3 slow waves persisting after waking",
+        "Normal hypnopompic hypersynchrony",
+        "A breach rhythm from a skull defect"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-016",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "hypnagogic-hypersynchrony",
+        "maturation"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "In which patient would bursts of hypnagogic hypersynchrony at sleep onset be most expected?",
+      "explanation": "Hypnagogic hypersynchrony appears from about 3-6 months, is most common at about 1-3 years and usually disappears by about 11-12 years. A 1-month-old is too young, and it is unusual in adults. It is a drowsiness pattern, not an N2 pattern.",
+      "learningObjective": "Place hypnagogic hypersynchrony at the right age and state.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "A 1-month-old in active sleep",
+        "A 30-year-old becoming drowsy",
+        "A 70-year-old in N2 sleep",
+        "An 18-month-old becoming drowsy"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-017",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-cycle",
+        "infant",
+        "sleep-architecture"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "About how long is one sleep cycle in a term newborn, compared with an adult?",
+      "explanation": "A term newborn's sleep cycle lasts about 50-60 minutes, and it lengthens to about 90-110 minutes in adults. The other pairs are either too short or reverse the direction of change.",
+      "learningObjective": "Compare sleep cycle length in infants and adults.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "About 50-60 min, compared with about 90 min",
+        "About 20 min, compared with about 45 min",
+        "About 90 min, compared with about 120 min",
+        "About 120 min, compared with about 90 min"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-018",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "n1",
+        "aging",
+        "sleep-architecture"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Compared with a 25-year-old, which change is typical in a healthy 75-year-old's sleep?",
+      "explanation": "Older adults spend more time in N1 and wake more often, while N3 shrinks and spindles become fewer and smaller. REM within minutes of sleep onset is not a normal ageing change; in an adult it suggests a disorder such as narcolepsy.",
+      "learningObjective": "Describe normal sleep changes in older adults.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Less N1 and fewer awakenings",
+        "More N3 and larger spindles",
+        "More N1 and more awakenings",
+        "REM onset within 5 minutes"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-019",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-spindle",
+        "infant",
+        "maturation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "A healthy 4-week-old (term-born) has 30 minutes of quiet sleep with no spindles. What does this mean?",
+      "explanation": "Spindles first appear at about 6-8 weeks post-term, so their absence at 4 weeks is expected. They are not present at birth. They do not wait until 2 years; 2 years is when they should become synchronous.",
+      "learningObjective": "Know when spindles first appear.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Abnormal, suggesting thalamic injury",
+        "Expected, as spindles start at 6-8 weeks",
+        "Abnormal, as spindles are present from birth",
+        "Expected, as spindles start at 2 years"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-020",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-spindle",
+        "infant",
+        "morphology"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Compared with an adult's, how do the spindles of a healthy 4-month-old usually look?",
+      "explanation": "Infant spindles are long trains, often several seconds, 12-14 Hz, central and frequently asynchronous between the hemispheres, sometimes with a comb-like shape. They are not occipital, not 6-8 Hz, and they appear (at 6-8 weeks) before vertex waves (4-6 months).",
+      "learningObjective": "Describe the morphology of infant spindles.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Longer trains, often asynchronous",
+        "Shorter, under 0.5 s, and occipital",
+        "Slower, about 6-8 Hz, and frontal",
+        "Absent until vertex waves appear"
+      ],
+      "answerIndex": 0,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-021",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "vertex-wave",
+        "child",
+        "pitfall"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 5-year-old in N2 has very sharp 200 uV vertex waves, sometimes in short runs, symmetric over C3, Cz and C4 and only during sleep. What should the technologist note?",
+      "explanation": "Children's vertex waves are often tall, very sharp and in runs, and they can be mistaken for spikes. Symmetric, vertex-maximal transients that occur only in sleep are normal. Centrotemporal spikes are lateralised, with a horizontal dipole, and there is no artifact here: a single bad electrode would not be symmetric across C3, Cz and C4.",
+      "learningObjective": "Avoid over-reading normal childhood vertex waves.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Centrotemporal spikes, to mark as such",
+        "A left-sided focus, as runs mean spikes",
+        "Electrode artifact at Cz, to re-glue",
+        "Normal childhood vertex waves"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-022",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "sleep-onset-rem",
+        "adult",
+        "pitfall"
+      ],
+      "cognitiveLevel": 5,
+      "competency": "clinical",
+      "reasoningSteps": 3,
+      "stem": "A 45-year-old has REM 8 minutes after falling asleep during a daytime EEG. Which history would best explain this without narcolepsy?",
+      "explanation": "Early REM in an adult suggests narcolepsy but can also follow sleep deprivation or REM rebound after stopping REM-suppressing drugs such as many antidepressants. Taking the drug suppresses REM rather than bringing it early. A full night's sleep makes early REM less likely. Filter settings do not change sleep stages.",
+      "learningObjective": "List causes of a sleep-onset REM period in adults.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "hard",
+      "options": [
+        "Taking an antidepressant regularly for 2 years",
+        "Just stopping a REM-suppressing antidepressant",
+        "Having slept 9 hours the night before",
+        "Being given a 0.3 Hz low-frequency filter"
+      ],
+      "answerIndex": 1,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "n3",
+        "measurement",
+        "derivation"
+      ],
+      "cognitiveLevel": 3,
+      "competency": "clinical",
+      "reasoningSteps": 1,
+      "stem": "Where should slow-wave amplitude be measured when deciding whether an epoch meets the N3 criteria?",
+      "explanation": "The AASM measures slow waves over the frontal regions, with F4-M1 as the recommended derivation, because slow waves are largest frontally. Central derivations are used mainly for spindles and K-complexes, occipital for alpha, and the chin EMG shows muscle tone.",
+      "learningObjective": "Name the derivation used to measure N3 slow waves.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Over the occipital regions (O2-M1)",
+        "Over the central regions (C4-M1)",
+        "Over the frontal regions (F4-M1)",
+        "In the chin EMG channel"
+      ],
+      "answerIndex": 2,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-sl-024",
+      "domainId": "domain-2",
+      "sectionId": "d2-s6",
+      "topicTags": [
+        "aging",
+        "sleep-spindle",
+        "k-complex"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "clinical",
+      "reasoningSteps": 2,
+      "stem": "Which change in sleep spindles and K-complexes is typical of healthy ageing?",
+      "explanation": "With age, spindles become fewer, smaller and shorter, and K-complexes become fewer and smaller. Spindles do not lose their synchrony with normal ageing; new asymmetry would need explaining. POSTS are less common in old age, and they do not replace K-complexes.",
+      "learningObjective": "Describe age-related changes in N2 transients.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "Both become larger and longer",
+        "Spindles become asynchronous again",
+        "K-complexes are replaced by POSTS",
+        "Both become fewer and smaller"
+      ],
+      "answerIndex": 3,
+      "author": "NeuroLinea sleep staging set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    }
+  ]
+}

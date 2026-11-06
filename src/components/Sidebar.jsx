@@ -151,6 +151,12 @@ function Sidebar({ isOpen, onClose }) {
               </svg>
               Neonatal &amp; Pediatric
             </NavLink>
+            <NavLink to="/sleep-staging" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+              Sleep Staging
+            </NavLink>
             <NavLink to="/lab-safety" className={navLinkClasses} onClick={handleNavClick}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" />
