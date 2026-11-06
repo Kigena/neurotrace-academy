@@ -285,6 +285,7 @@ function Filters() {
         <Card title="The notch is a last resort" tone="amber">
           <p>Before using a notch filter, remove the cause of the 60 Hz: check electrode impedances and attachment, the ground electrode, cables and connectors, and nearby equipment.</p>
           <p>A notch hides a technical fault and also removes any real activity at that frequency, so use it only when the cause cannot be fixed, and say so in your notes.</p>
+          <p><strong>Which waves does it affect?</strong> Convert duration to frequency: frequency (Hz) = 1000 ÷ duration (ms). A 60 Hz notch acts most on components lasting about <strong>16.7 ms</strong> (1000 ÷ 60), so it can blunt the fast parts of spikes. A 10 ms component (100 Hz) or a 50 ms component (20 Hz) is barely touched. Where the mains is 50 Hz, the notch sits at 20 ms.</p>
         </Card>
       </div>
     </div>

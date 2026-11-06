@@ -4,7 +4,7 @@
   "bank": "challenge",
   "focus": "domain-2",
   "description": "Original questions on digital recording (sampling rate, Nyquist, aliasing, vertical and horizontal resolution, clipping), amplifier input impedance, filter rolloff and EMG versus EKG artifact. Text only; not yet medically verified.",
-  "totalQuestions": 22,
+  "totalQuestions": 23,
   "questions": [
     {
       "id": "ch-dg-001",
@@ -602,6 +602,33 @@
         "Lowering the display sensitivity"
       ],
       "answerIndex": 0,
+      "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "ch-dg-023",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "notch-filter",
+        "period-frequency"
+      ],
+      "cognitiveLevel": 4,
+      "competency": "technical",
+      "reasoningSteps": 2,
+      "stem": "A 60 Hz notch filter will attenuate most strongly a waveform component lasting about how long?",
+      "explanation": "Frequency (Hz) = 1000 / duration (ms), so the notch acts most on components lasting 1000 / 60, about 16.7 ms. A 10 ms component is 100 Hz and a 50 ms component is 20 Hz, both away from the notch; 60 ms is the common mix-up of hertz with milliseconds and corresponds to about 17 Hz.",
+      "learningObjective": "Convert a waveform duration to frequency to predict the effect of the 60 Hz notch.",
+      "questionType": "application",
+      "references": [],
+      "difficulty": "medium",
+      "options": [
+        "10 ms",
+        "50 ms",
+        "16.7 ms",
+        "60 ms"
+      ],
+      "answerIndex": 2,
       "author": "NeuroLinea digital instrumentation set (AI-drafted; requires expert review)",
       "qaStatus": "UNREVIEWED"
     }
