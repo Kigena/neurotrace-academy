@@ -7,6 +7,7 @@ describe("Focus Drills question bank", () => {
     expect(new Set(ids).size).toBe(ids.length);
     for (const t of ["neuro", "peds", "meds"]) expect(DRILL.filter((q) => q.t === t)).toHaveLength(30);
     expect(DRILL.filter((q) => q.t === "acns").length).toBeGreaterThanOrEqual(60);
+    expect(DRILL.filter((q) => q.t === "patterns").length).toBeGreaterThanOrEqual(70);
   });
 
   it("gives every question four distinct options, an explanation and a memory aid", () => {
@@ -49,5 +50,17 @@ describe("ACNS focus set", () => {
     expect(sections.size).toBe(7);
     const longest = ACNS_DRILL.filter((q) => q.o[0].length > 1.25 * Math.max(...q.o.slice(1).map((o) => o.length)));
     expect(longest.length / ACNS_DRILL.length).toBeLessThan(0.2);
+  });
+});
+
+describe("EEG patterns focus set", () => {
+  it("has one question per pattern in the library, balanced option lengths and ABRET sections", async () => {
+    const { PATTERN_DRILL } = await import("../../src/data/drill/patternQuestions.js");
+    const lib = await import("../../src/data/neurotrace_patterns_library_v2.json");
+    const patterns = lib.default; // the library file is a top-level array
+    expect(PATTERN_DRILL).toHaveLength(patterns.length);
+    for (const q of PATTERN_DRILL) expect(q.sec, q.id).toMatch(/^d[1-4]-/);
+    const longest = PATTERN_DRILL.filter((q) => q.o[0].length > 1.25 * Math.max(...q.o.slice(1).map((o) => o.length)));
+    expect(longest.length / PATTERN_DRILL.length).toBeLessThan(0.2);
   });
 });

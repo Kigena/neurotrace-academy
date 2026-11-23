@@ -42,7 +42,7 @@ const questionSchema = new mongoose.Schema({
     //                mixed into practice, mocks, reviews or analytics
     bank: { type: String, enum: ['foundation', 'challenge', 'drill'], default: 'foundation', index: true },
     // Drill only: which drill set the question belongs to, and its memory aid.
-    drillSet: { type: String, enum: ['neuro', 'peds', 'meds', 'acns', null], default: null },
+    drillSet: { type: String, enum: ['neuro', 'peds', 'meds', 'acns', 'patterns', null], default: null },
     memoryAid: { type: String, default: null, select: false },
 
     // Editorial QA state. NEEDS_REVISION and REJECTED questions are never

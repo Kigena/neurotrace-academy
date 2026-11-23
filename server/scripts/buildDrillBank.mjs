@@ -19,7 +19,7 @@ import { fileURLToPath } from 'url';
 const serverRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const { DRILL } = await import(new URL('../../src/data/drill/drillQuestions.js', import.meta.url));
 
-const SET_OF = { neuro: 'neuro', peds: 'peds', meds: 'meds', acns: 'acns' };
+const SET_OF = { neuro: 'neuro', peds: 'peds', meds: 'meds', acns: 'acns', patterns: 'patterns' };
 
 // Default section per drill set, then per-question overrides.
 const DEFAULT_SECTION = {
@@ -27,6 +27,7 @@ const DEFAULT_SECTION = {
     peds: 'd3-eeg-syndromes-classification',
     meds: 'd1-neurophysiology-seizure-mechanisms',
     acns: 'd2-s8',
+    patterns: 'd2-s6',
 };
 const SECTION_OVERRIDES = {
     // Neuroanatomy and correlation
@@ -65,7 +66,7 @@ function seededOrder(id, n) {
 }
 
 const questions = DRILL.map((q) => {
-    // ACNS questions carry their own section (sec) in the source.
+    // ACNS and EEG patterns questions carry their own section (sec) in the source.
     const sectionId = q.sec || SECTION_OVERRIDES[q.id] || DEFAULT_SECTION[q.t];
     const order = seededOrder(q.id, q.o.length);
     return {
@@ -89,7 +90,7 @@ const out = {
     version: '1.0.0',
     generatedAt: '2026-11-14',
     bank: 'drill',
-    description: 'Focus Drills: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG, and the ACNS guidelines (2016 Guidelines 1-7, 2021 Critical Care EEG Terminology, 2015 cEEG consensus). Kept apart from the main question bank and served only on the drill page.',
+    description: 'Focus Drills: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG, the ACNS guidelines (2016 Guidelines 1-7, 2021 Critical Care EEG Terminology, 2015 cEEG consensus), and EEG patterns (one question per pattern in the pattern library). Kept apart from the main question bank and served only on the drill page.',
     totalQuestions: questions.length,
     questions,
 };

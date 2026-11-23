@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "generatedAt": "2026-11-14",
   "bank": "drill",
-  "description": "Focus Drills: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG, and the ACNS guidelines (2016 Guidelines 1-7, 2021 Critical Care EEG Terminology, 2015 cEEG consensus). Kept apart from the main question bank and served only on the drill page.",
-  "totalQuestions": 161,
+  "description": "Focus Drills: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG, the ACNS guidelines (2016 Guidelines 1-7, 2021 Critical Care EEG Terminology, 2015 cEEG consensus), and EEG patterns (one question per pattern in the pattern library). Kept apart from the main question bank and served only on the drill page.",
+  "totalQuestions": 235,
   "questions": [
     {
       "id": "drill-n01",
@@ -3705,6 +3705,1708 @@
       "answerIndex": 3,
       "explanation": "Use at least 16 electrodes, note skull defects, drains and bolts, and when an electrode must be moved, move its homologue symmetrically so the hemispheres can still be compared. Over a skull defect, a breach effect (higher-amplitude, sharper, faster activity) is expected and its location should be given.",
       "memoryAid": "MOVE ONE, MOVE ITS TWIN: keep left and right comparable.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e01",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Which feature is required for a posterior rhythm to count as the posterior dominant rhythm (PDR)?",
+      "options": [
+        "It attenuates with eye opening",
+        "It is maximal over the vertex",
+        "It is faster than 13 Hz",
+        "It persists in deep sleep"
+      ],
+      "answerIndex": 0,
+      "explanation": "The PDR is a sinusoidal, symmetric rhythm maximal posteriorly in relaxed wakefulness with eyes closed, 8 to 13 Hz in adults (slower in young children), and it must attenuate with eye opening. A posterior rhythm that does not react is not called a PDR, and poor reactivity can be significant in context.",
+      "memoryAid": "PDR = Posterior, Drowsy-eyes-shut, Reacts to eyes opening.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e02",
+      "domainId": "domain-3",
+      "sectionId": "d3-sleep-graphoelements",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Rhythmic 11 to 15 Hz bursts lasting 0.5 to 2 seconds, maximal centrally in N2 sleep, are what?",
+      "options": [
+        "Sleep spindles",
+        "Fast alpha variant",
+        "Excess beta",
+        "Mu rhythm"
+      ],
+      "answerIndex": 0,
+      "explanation": "Sleep spindles are 11 to 15 Hz rhythmic bursts of 0.5 to 2 s, maximal centrally and frontally, in N2 and N3. They are a normal sleep element; mu is awake and blocks with movement, and drug beta is faster (18 to 25 Hz) and more continuous.",
+      "memoryAid": "SPINDLES spin for a SECOND at about 12-14 Hz in N2.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e03",
+      "domainId": "domain-3",
+      "sectionId": "d3-sleep-graphoelements",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "In N2 sleep, a high-amplitude sharp negative wave followed by a positive wave, maximal frontocentrally, is what?",
+      "options": [
+        "An eye-blink artifact",
+        "A K-complex",
+        "A frontal spike",
+        "A vertex sharp wave"
+      ],
+      "answerIndex": 1,
+      "explanation": "A K-complex is a sharp negative wave followed by a positive wave, maximal frontally and centrally, spontaneous or evoked by a sound, and a marker of N2. It is broader and larger than a vertex sharp wave and has no after-going slow wave of a spike-and-wave.",
+      "memoryAid": "K-complex = a big frontal 'K' kick, often after a noise, in N2.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e04",
+      "domainId": "domain-3",
+      "sectionId": "d3-sleep-graphoelements",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Which finding marks REM sleep on the EEG?",
+      "options": [
+        "Sawtooth waves with rapid eye movements",
+        "Spindles with K-complexes in bursts",
+        "Tracé alternant with frontal transients",
+        "Vertex waves with positive POSTS"
+      ],
+      "answerIndex": 0,
+      "explanation": "REM shows a low-voltage mixed-frequency background like drowsiness, rapid conjugate eye movements (opposite polarity at F7 and F8), notched 2 to 6 Hz sawtooth waves maximal centrally, and loss of chin EMG tone. Spindles, K-complexes and vertex waves are absent. Sleep-onset REM on a routine EEG is reportable.",
+      "memoryAid": "REM = Rapid eyes, sawtooth on the vertex, no spindles.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e05",
+      "domainId": "domain-3",
+      "sectionId": "d3-activation-procedures",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "During photic stimulation, posterior waves follow each flash at the flash rate and stop when the flashes stop. What is this?",
+      "options": [
+        "A photoparoxysmal response",
+        "Photic driving (normal)",
+        "A photomyogenic response",
+        "Occipital spikes (abnormal)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Photic driving is posterior activity time-locked to each flash at the flash rate or a harmonic, present only during the train. It is normal, and its absence is not abnormal; marked persistent asymmetry may suggest a lesion on the side with the lower response.",
+      "memoryAid": "DRIVING follows the flash like a car follows the road.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e06",
+      "domainId": "domain-3",
+      "sectionId": "d3-activation-procedures",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "In a child, where is the hyperventilation build-up usually maximal, and when should it resolve?",
+      "options": [
+        "Over one temporal lobe; immediately",
+        "Posteriorly; within about 1 minute of stopping",
+        "Frontally; only after 5 minutes",
+        "Centrally; it persists for 10 minutes"
+      ],
+      "answerIndex": 1,
+      "explanation": "HV build-up is diffuse rhythmic delta or theta that grows during HV: posterior maximum in children, frontal in adolescents and adults. It resolves within about 1 minute of stopping and is enhanced by hypoglycaemia. Asymmetry, spikes or persistence afterwards are reportable.",
+      "memoryAid": "Kids build at the BACK, adults at the FRONT; gone within a minute.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e07",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "An arch-shaped 8 to 10 Hz rhythm at C3 blocks when the patient moves the right hand. What is it?",
+      "options": [
+        "Midline theta",
+        "Wicket spikes",
+        "Mu rhythm",
+        "Breach rhythm"
+      ],
+      "answerIndex": 2,
+      "explanation": "Mu is a central (C3, C4, Cz) arch-shaped 8 to 10 Hz rhythm that blocks with movement, or intention to move, of the opposite limb. It is a normal variant with no after-going slow wave.",
+      "memoryAid": "MU = Move yoUr hand and it stops.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e08",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Trains of monophasic arciform 6 to 11 Hz waves over the left temporal region in drowsiness, with no after-going slow wave, are what?",
+      "options": [
+        "Temporal spikes",
+        "RMTD",
+        "TIRDA",
+        "Wicket spikes"
+      ],
+      "answerIndex": 3,
+      "explanation": "Wicket spikes occur in trains (or singly) over the temporal regions, left more than right or shifting, in wakefulness, drowsiness and light sleep, and vanish in deep sleep. They lack after-going slow waves and do not disrupt the background. A single one should be compared with a train elsewhere.",
+      "memoryAid": "WICKETS come in a ROW, like a cricket wicket, with no slow wave behind.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e09",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Sharp, triangular, positive occipital waves appear while an awake patient reads and vanish with eye closure. What are they?",
+      "options": [
+        "Occipital spikes",
+        "Lambda waves",
+        "Alpha squeak",
+        "POSTS"
+      ],
+      "answerIndex": 1,
+      "explanation": "Lambda waves are positive occipital sharp transients during visual scanning and disappear when the eyes close. POSTS look similar but occur in sleep. The reactivity to vision distinguishes them from epileptiform activity.",
+      "memoryAid": "LAMBDA = Looking. POSTS = Sleeping.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e10",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Positive sharp transients at O1 and O2 during N2 sleep in an adult are most likely what?",
+      "options": [
+        "Photic driving",
+        "Occipital spikes",
+        "Lambda waves",
+        "POSTS (normal)"
+      ],
+      "answerIndex": 3,
+      "explanation": "Positive occipital sharp transients of sleep (POSTS) are positive, triangular, occipital, often bilateral, seen in N2 and N3. They are normal; their positive polarity and sleep state separate them from occipital spikes.",
+      "memoryAid": "POSTS = Positive Occipital Sharp Transients of Sleep: the name says it all.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e11",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Notched rhythmic 5 to 7 Hz theta, maximal mid-temporally with shifting sides in drowsiness, that never evolves, is what?",
+      "options": [
+        "RMTD (psychomotor variant)",
+        "A temporal lobe seizure",
+        "TIRDA",
+        "Slow alpha variant"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rhythmic mid-temporal theta of drowsiness (RMTD, psychomotor variant) is monomorphic and monorhythmic, often notched, bilateral with shifting emphasis, in relaxed wakefulness and drowsiness. It does not evolve, which separates it from a seizure.",
+      "memoryAid": "RMTD: Rhythmic, Mid-Temporal, Drowsy, and it never changes.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e12",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Low-voltage (under 50 µV), very brief (under 50 ms) temporal spikes in an adult's light sleep, single and without a slow wave, are what?",
+      "options": [
+        "Wicket spikes",
+        "Centrotemporal spikes",
+        "BETS (small sharp spikes)",
+        "Temporal interictal spikes"
+      ],
+      "answerIndex": 2,
+      "explanation": "Benign epileptiform transients of sleep (BETS, small sharp spikes) are under 50 µV and under 50 ms, mono- or diphasic, single rather than in trains, in drowsiness and light sleep, often independent on each side. They disappear in deeper sleep and lack after-going slow waves.",
+      "memoryAid": "BETS are SMALL and SHORT: under 50 and under 50.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e13",
+      "domainId": "domain-3",
+      "sectionId": "d3-sleep-graphoelements",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Sharp waves maximal at Cz during light sleep in a child are most likely what?",
+      "options": [
+        "Mu rhythm",
+        "Midline spikes",
+        "Centrotemporal spikes",
+        "Vertex sharp waves"
+      ],
+      "answerIndex": 3,
+      "explanation": "Vertex sharp waves are normal sleep elements maximal at Cz, often prominent and sharp in children, and may be asymmetric. They mark drowsiness and N1 to N2.",
+      "memoryAid": "VERTEX = top of the head, top of sleep (N1-N2).",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e14",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A notched posterior rhythm runs at exactly twice the patient's alpha frequency and blocks with eye opening. What is it?",
+      "options": [
+        "Central mu rhythm",
+        "Fast alpha variant",
+        "Breach rhythm",
+        "Frontal beta activity"
+      ],
+      "answerIndex": 1,
+      "explanation": "The fast alpha variant is a harmonic of the PDR at twice its frequency (16 to 26 Hz), notched, posterior and reactive to eye opening. Ordinary beta is frontocentral and does not share the alpha's reactivity.",
+      "memoryAid": "FAST alpha = DOUBLE the alpha, still at the back.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e15",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A notched 4.5 Hz posterior rhythm appears at half the alpha frequency and blocks with eye opening. What is the key to calling it a normal variant?",
+      "options": [
+        "Its reactivity to eye opening, like alpha",
+        "Its presence only in deep sleep",
+        "A slow wave after each notch",
+        "Its location over the temporal lobes"
+      ],
+      "answerIndex": 0,
+      "explanation": "The slow alpha variant is a subharmonic at half the PDR (4 to 6.5 Hz), posterior and notched. Reactivity to eye opening and closing is the key; without it, it can be hard to tell from pathological slowing.",
+      "memoryAid": "SLOW alpha = HALF the alpha; prove it by opening the eyes.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e16",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "How should alpha squeak be handled when measuring the PDR?",
+      "options": [
+        "Measure the PDR only while it lasts",
+        "Use it as the true PDR frequency",
+        "Report it as an abnormal finding",
+        "Skip the first 0.5-1 s after eye closure"
+      ],
+      "answerIndex": 3,
+      "explanation": "Alpha squeak is a brief rise in alpha frequency right after eye closure. Measuring the PDR during it overestimates the frequency, so the first 0.5 to 1 s after closure is skipped.",
+      "memoryAid": "The alpha SQUEAKS when the eyes shut: wait a second, then measure.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e17",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Rhythmic 5 to 7 Hz activity maximal at Cz in an awake adult, with variable reactivity, is most likely what?",
+      "options": [
+        "A midline focal seizure",
+        "Vertex sharp waves",
+        "Mu rhythm (central)",
+        "Midline theta (Ciganek)"
+      ],
+      "answerIndex": 3,
+      "explanation": "Midline theta (Ciganek rhythm) is 5 to 7 Hz, most prominent at Cz, smooth, arciform or spiky, with variable reactivity, in wakefulness and drowsiness. Mu is faster (8 to 10 Hz) and blocks with movement.",
+      "memoryAid": "CIGANEK sits in the MIDDLE (Cz) at theta speed.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e18",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A 62-year-old has an abrupt-onset rhythmic 5 to 7 Hz pattern with a parietal maximum for 2 minutes during HV, with no clinical change. What is it most likely?",
+      "options": [
+        "RMTD",
+        "SREDA",
+        "Hypnagogic hypersynchrony",
+        "A focal seizure"
+      ],
+      "answerIndex": 1,
+      "explanation": "Subclinical rhythmic electrographic discharge of adults (SREDA) occurs over age 50, begins abruptly with mixed delta and theta that becomes rhythmic 5 to 7 Hz, lasts 20 s to a few minutes, is maximal parietally and posterior temporally, and usually has no clinical correlate (though this is debated).",
+      "memoryAid": "SREDA = Seniors, Rhythmic, Evolves, Does no harm (usually), Abrupt.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e19",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A 13-year-old in light sleep has arch-shaped bursts with positive spiky components, maximal posterior-temporally. Which montage shows them best?",
+      "options": [
+        "Referential to the ears",
+        "Average reference only",
+        "Longitudinal bipolar",
+        "Transverse bipolar"
+      ],
+      "answerIndex": 0,
+      "explanation": "14 and 6 Hz positive bursts (ctenoids) peak at ages 13 to 14, occur in drowsiness and light sleep, are maximal posterior-temporally with shifting sides, and are best seen with long interelectrode distances in referential (ear) montages. They may be enhanced in Reye syndrome.",
+      "memoryAid": "14 and 6 at age 14: look with the EARS (ear reference).",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e20",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Which type of 6 Hz spike-and-wave (phantom spike-and-wave) is more likely to be linked with seizures?",
+      "options": [
+        "Any type that vanishes in deep sleep",
+        "FOLD: female, occipital, low, drowsy",
+        "WHAM: wake, high-amplitude, anterior, male",
+        "Any type seen in drowsiness"
+      ],
+      "answerIndex": 2,
+      "explanation": "Phantom spike-and-wave is brief 5 to 7 Hz bursts of tiny spikes with a more obvious slow wave, in relaxed wakefulness and drowsiness, gone in deep sleep. FOLD is benign; WHAM is more often associated with seizures.",
+      "memoryAid": "FOLD is fine; WHAM can hit hard.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e21",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A 3-year-old drifting off to sleep has bursts of high-voltage rhythmic 3 to 5 Hz waves without spikes. What is this?",
+      "options": [
+        "Generalized spike-and-wave",
+        "Hypsarrhythmia",
+        "Hypnagogic hypersynchrony",
+        "Slow spike-and-wave"
+      ],
+      "answerIndex": 2,
+      "explanation": "Hypnagogic hypersynchrony is normal in infants and children (about 3 months to 13 years, most prominent at 1 to 5): bursts of high-voltage rhythmic 3 to 5 Hz waves at the onset of drowsiness that disappear in deeper sleep and on arousal. True embedded spikes or bursts in full wakefulness would be concerning.",
+      "memoryAid": "HYPNAGOGIC = sleepy-onset hello wave in toddlers, no spikes.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e22",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "An awake 11-year-old has single delta waves fused with the posterior alpha that block with eye opening. What are they?",
+      "options": [
+        "Occipital intermittent rhythmic delta",
+        "Lambda waves",
+        "Posterior slow waves of youth",
+        "Posterior focal slowing"
+      ],
+      "answerIndex": 2,
+      "explanation": "Posterior slow waves of youth are single 2.5 to 4.5 Hz delta waves with the alpha riding on them, bilateral (sometimes asymmetric), most common at 8 to 14 and rare after 21. They share the alpha's reactivity and disappear in sleep.",
+      "memoryAid": "YOUTH waves ride WITH the alpha and BLOCK with it.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e23",
+      "domainId": "domain-3",
+      "sectionId": "d3-normal-variants",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "After a right craniotomy, higher-amplitude, sharper, faster activity appears over the right central region with no slow waves or evolution. What is it?",
+      "options": [
+        "Breach rhythm",
+        "Right central spikes",
+        "Right focal slowing",
+        "Mu rhythm on the left"
+      ],
+      "answerIndex": 0,
+      "explanation": "A breach rhythm is higher-amplitude (up to three times), sharper, arciform, mu-like activity with more beta over a skull defect, because bone normally attenuates the EEG. It is not epileptiform by itself; document the skull defect.",
+      "memoryAid": "A HOLE in the bone lets the brain SHOUT louder.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e24",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Which feature best separates a true temporal spike from a benign variant such as a wicket?",
+      "options": [
+        "A frequency of 6 to 11 Hz in trains",
+        "A slow wave after it that disrupts the background",
+        "Appearing only in drowsiness or light sleep",
+        "Positive polarity at the scalp surface"
+      ],
+      "answerIndex": 1,
+      "explanation": "Epileptiform spikes are followed by a slow wave and disrupt the background; benign variants such as wickets and BETS lack both. Focal temporal spikes are associated with temporal lobe epilepsy and are seen awake and asleep.",
+      "memoryAid": "A real spike drags a SLOW WAVE behind it and DISTURBS the background.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e25",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Frontal spikes in a frontal lobe epilepsy patient are best brought out by what?",
+      "options": [
+        "Eye opening",
+        "Photic stimulation",
+        "Mental arithmetic",
+        "Sleep"
+      ],
+      "answerIndex": 3,
+      "explanation": "Frontal spikes have after-going slow waves, may disrupt the background and are enhanced by sleep, so a sleep recording raises the yield.",
+      "memoryAid": "Frontal spikes WAKE UP when the patient SLEEPS.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e26",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A 7-year-old's staring spell coincides with generalized spike-and-wave of abrupt onset and offset. What frequency is typical, and what provokes it?",
+      "options": [
+        "1.5 to 2.5 Hz; sleep",
+        "3 Hz; hyperventilation",
+        "4 to 6 Hz; awakening",
+        "6 Hz; drowsiness"
+      ],
+      "answerIndex": 1,
+      "explanation": "Typical absence seizures show 3 Hz generalized spike-and-wave, frontally predominant, with abrupt onset and offset, provoked by hyperventilation, in childhood and juvenile absence epilepsy.",
+      "memoryAid": "ABSENCE = 3 Hz, and HV calls it out.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e27",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A 4-year-old with tonic seizures has generalized spike-and-wave at 2 Hz, most prominent in sleep. What is it?",
+      "options": [
+        "Typical 3 Hz absence spike-and-wave",
+        "Phantom 6 Hz spike-and-wave",
+        "Hypnagogic hypersynchrony of sleep",
+        "Slow spike-and-wave of Lennox-Gastaut"
+      ],
+      "answerIndex": 3,
+      "explanation": "Slow spike-and-wave at 1.5 to 2.5 Hz, generalized and sometimes asymmetric, is characteristic of Lennox-Gastaut syndrome (onset 1 to 8 years). It is most prominent in sleep, so a sleep recording is important.",
+      "memoryAid": "LGS is SLOW: under 3 Hz, and worse asleep.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e28",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "During sleep in a child with Lennox-Gastaut syndrome, generalized bursts of 20 to 50 Hz activity appear. What are they?",
+      "options": [
+        "Muscle artifact from tonic jaw",
+        "Sleep spindles of normal N2",
+        "Excess beta from sedative drugs",
+        "GPFA (paroxysmal fast activity)"
+      ],
+      "answerIndex": 3,
+      "explanation": "GPFA is paroxysmal generalized fast activity (20 to 50 Hz) in sleep, highly characteristic of LGS and often associated with tonic seizures.",
+      "memoryAid": "GPFA = Lennox's FAST signature during sleep, with tonic seizures.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e29",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A teenager with morning myoclonic jerks has generalized discharges of several spikes followed by a slow wave. What is the pattern, and what activates it?",
+      "options": [
+        "Polyspike-and-wave; sleep deprivation",
+        "3 Hz spike-and-wave; eye closure",
+        "Periodic sharp waves; loud noise",
+        "Slow spike-and-wave; deep sleep"
+      ],
+      "answerIndex": 0,
+      "explanation": "Polyspike-and-wave (2 to 5 or more spikes then a slow wave), generalized and symmetric, is typical of juvenile myoclonic epilepsy and is activated by sleep deprivation and awakening.",
+      "memoryAid": "JME = many SPIKES in the MORNING after a short night.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e30",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Chaotic, very high-amplitude slow waves with multifocal spikes in a 6-month-old with spasms is called what?",
+      "options": [
+        "Hypsarrhythmia",
+        "Slow spike-and-wave",
+        "Burst suppression",
+        "Tracé alternant"
+      ],
+      "answerIndex": 0,
+      "explanation": "Hypsarrhythmia is the interictal pattern of West syndrome: chaotic, high-amplitude slow waves with multifocal spikes. Spasms need urgent treatment (ACTH or steroids, vigabatrin especially in tuberous sclerosis); success means the spasms stop and the hypsarrhythmia resolves.",
+      "memoryAid": "HYPS = HIGH and CHAOTIC, with spikes everywhere.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e31",
+      "domainId": "domain-3",
+      "sectionId": "d3-eeg-syndromes-classification",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "In a school-age child, where are centrotemporal spikes maximal and what dipole do they show?",
+      "options": [
+        "Cz; radial, negative at the vertex",
+        "C3/C4-T3/T4; horizontal, positive frontally",
+        "O1/O2; positive occipitally",
+        "Fp1/Fp2; vertical, negative frontally"
+      ],
+      "answerIndex": 1,
+      "explanation": "Centrotemporal spikes of SeLECTS are high-amplitude diphasic spikes with a slow wave, maximal at central and mid-temporal electrodes, with a tangential dipole (negative centrotemporally, positive frontally), on a normal background and markedly activated by sleep.",
+      "memoryAid": "ROLANDIC spikes lie SIDEWAYS: negative at the side, positive in front.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e32",
+      "domainId": "domain-3",
+      "sectionId": "d3-activation-procedures",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Generalized spike-and-wave appears during photic stimulation at 16 flashes/s. What should the technologist do first?",
+      "options": [
+        "Switch to a bipolar montage",
+        "Stop the stimulation",
+        "Ask the patient to hyperventilate",
+        "Continue to 30 flashes/s"
+      ],
+      "answerIndex": 1,
+      "explanation": "A photoparoxysmal response is generalized spike or polyspike-and-wave provoked by photic stimulation, not time-locked to the flashes, most often at 14 to 20 Hz, and linked with genetic generalized epilepsies. Stop the stimulation as soon as it appears and record the provoking rates and whether it outlasted the stimulus.",
+      "memoryAid": "Spikes in the strobe? STOP the strobe.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e33",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Runs of sinusoidal 1 to 3 Hz delta confined to one anterior temporal region, on a normal background, carry what significance?",
+      "options": [
+        "None; it is a normal variant",
+        "The same as temporal spikes (TIRDA)",
+        "Diffuse encephalopathy",
+        "A sleep transient"
+      ],
+      "answerIndex": 1,
+      "explanation": "Temporal intermittent rhythmic delta activity (TIRDA) is rhythmic sinusoidal delta at F7/T3 or F8/T4 and carries the same epileptogenic significance as temporal spikes, often with mesial temporal sclerosis. It is rhythmic, unlike the polymorphic delta of a structural lesion.",
+      "memoryAid": "TIRDA = a temporal SPIKE in disguise.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e34",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A child has unilateral focal slowing and spikes on the side of a facial port-wine stain. Which condition fits?",
+      "options": [
+        "Tuberous sclerosis",
+        "Lennox-Gastaut syndrome",
+        "Sturge-Weber syndrome",
+        "Rasmussen encephalitis"
+      ],
+      "answerIndex": 2,
+      "explanation": "In Sturge-Weber syndrome the EEG shows unilateral focal slowing, spikes and background asymmetry on the side of the leptomeningeal angioma, with a port-wine stain (V1) from birth and seizures beginning in infancy.",
+      "memoryAid": "PORT-WINE stain → abnormal EEG on the SAME side.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e35",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Bilateral spike-and-wave is always preceded by a left frontal spike and stays larger on the left. What does this suggest?",
+      "options": [
+        "A benign normal variant",
+        "Primary generalized epilepsy",
+        "Electrode artifact on the left",
+        "Secondary bilateral synchrony"
+      ],
+      "answerIndex": 3,
+      "explanation": "A consistent focal lead-in and persistent asymmetry suggest secondary bilateral synchrony: a focal (often mesial frontal) discharge spreading rapidly across the corpus callosum. Describe the lead-in and asymmetry; ACNS 2021 calls such a pattern lateralized.",
+      "memoryAid": "A LEAD-IN from one side means it STARTED on that side.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e36",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A child with prior measles has huge stereotyped generalized complexes every 4 to 15 seconds with myoclonic jerks. What is it?",
+      "options": [
+        "Burst suppression",
+        "CJD periodic sharp waves",
+        "Hypsarrhythmia",
+        "SSPE periodic complexes"
+      ],
+      "answerIndex": 3,
+      "explanation": "Subacute sclerosing panencephalitis shows very high-amplitude stereotyped generalized complexes at long, regular intervals (usually 4 to 15 s), often time-locked to myoclonic jerks, on a progressively slow background. CJD complexes repeat about once a second.",
+      "memoryAid": "SSPE = Slow Spacing (4-15 s). CJD = about every second.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e37",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A 64-year-old with dementia progressing over weeks and startle myoclonus has bilateral synchronous sharp waves at about 1 Hz. What do they suggest?",
+      "options": [
+        "Subacute sclerosing panencephalitis",
+        "Alzheimer disease",
+        "Herpes simplex encephalitis",
+        "Creutzfeldt-Jakob disease"
+      ],
+      "answerIndex": 3,
+      "explanation": "Periodic sharp wave complexes at 0.5 to 2 Hz (typically about 1 Hz), bilateral and synchronous, are highly characteristic of CJD, with rapidly progressive dementia and stimulus-sensitive myoclonus. They may be absent early, so their absence does not exclude CJD.",
+      "memoryAid": "CJD = 1 per second, and a mind failing in WEEKS.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e38",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Periodic sharp waves at 1 Hz over the left hemisphere only, in a patient with acute stroke, are called what?",
+      "options": [
+        "GPDs (generalized)",
+        "BIPDs (both sides)",
+        "PSWCs (CJD type)",
+        "LPDs (once PLEDs)"
+      ],
+      "answerIndex": 3,
+      "explanation": "Lateralized periodic discharges are sharp waves or spikes recurring at regular intervals (typically 0.5 to 2 Hz) over one hemisphere, indicating acute or subacute focal cortical dysfunction: most often stroke, also herpes encephalitis, tumour and trauma. They may be ictal or interictal; notify the team.",
+      "memoryAid": "L-P-D = Lesion on one side, Periodic, Discharges.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e39",
+      "domainId": "domain-3",
+      "sectionId": "d3-diffuse-slowing",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Bilateral symmetric theta and delta persisting in alert wakefulness indicates what?",
+      "options": [
+        "Normal drowsiness in an adult",
+        "A single focal structural lesion",
+        "Generalized brain dysfunction",
+        "A benzodiazepine beta effect"
+      ],
+      "answerIndex": 2,
+      "explanation": "Diffuse slowing is bilateral and symmetric and persists when the patient is fully alert, which separates it from drowsy slowing. It indicates generalized dysfunction such as metabolic or toxic encephalopathy.",
+      "memoryAid": "Slow while ALERT = the whole brain is struggling.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e40",
+      "domainId": "domain-3",
+      "sectionId": "d3-focal-generalized-patterns",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Irregular delta confined to one region that persists across all states most likely indicates what?",
+      "options": [
+        "A diffuse encephalopathy",
+        "A benign variant",
+        "Focal cortical dysfunction",
+        "Normal drowsiness"
+      ],
+      "answerIndex": 2,
+      "explanation": "Focal slowing is regional and persists across states, unlike drowsy slowing, and indicates focal cortical dysfunction, usually a structural lesion. Polymorphic (irregular) delta points to structure; rhythmic delta has other meanings.",
+      "memoryAid": "STAYS in one place and STAYS in every state = a lesion.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e41",
+      "domainId": "domain-3",
+      "sectionId": "d3-diffuse-slowing",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Intermittent rhythmic 1 to 3 Hz delta, frontally predominant, in an encephalopathic adult is now called what?",
+      "options": [
+        "Frontal TIRDA (temporal)",
+        "Frontally predominant GRDA",
+        "Frontal LRDA (lateralized)",
+        "Frontal polymorphic slowing"
+      ],
+      "answerIndex": 1,
+      "explanation": "FIRDA (frontal intermittent rhythmic delta activity) is renamed frontally predominant GRDA in the 2021 terminology. It is seen in encephalopathy and is distinct from irregular pathological slowing.",
+      "memoryAid": "FIRDA is now GRDA with a FRONT seat.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e42",
+      "domainId": "domain-3",
+      "sectionId": "d3-diffuse-slowing",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Intermittent rhythmic delta over the occipital regions is more common in which age group?",
+      "options": [
+        "Children (OIRDA)",
+        "Adolescents in REM",
+        "Older adults",
+        "Neonates"
+      ],
+      "answerIndex": 0,
+      "explanation": "Occipital intermittent rhythmic delta activity (OIRDA) is rhythmic posterior delta, more common in children than adults, and is seen in encephalopathy and with generalized epilepsies such as absence.",
+      "memoryAid": "OIRDA = Occipital In the young; FIRDA = Front in adults.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e43",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Generalized frontally predominant negative-positive-negative waves at about 2 Hz in a jaundiced, confused patient suggest what?",
+      "options": [
+        "3 Hz absence spike-and-wave",
+        "CJD periodic sharp waves",
+        "Triphasic GPDs (metabolic)",
+        "Normal drowsy vertex waves"
+      ],
+      "answerIndex": 2,
+      "explanation": "Triphasic waves (now GPDs with triphasic morphology) are three-phase, frontally predominant, about 1.5 to 2.5 Hz and often reactive to stimulation. They are highly characteristic of hepatic encephalopathy but also occur in uraemia, hyperglycaemia and lithium toxicity.",
+      "memoryAid": "TRI-phasic = three phases, think LIVER first.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e44",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "After cardiac arrest, the EEG alternates bursts of mixed activity with flat periods. What is this, and what does persistence mean?",
+      "options": [
+        "Burst suppression; a poor prognosis",
+        "Alpha squeak; no meaning",
+        "Tracé alternant; normal",
+        "Sleep cycling; good recovery"
+      ],
+      "answerIndex": 0,
+      "explanation": "Burst suppression alternates bursts of mixed frequencies with flat or near-flat suppression. It indicates severe cortical dysfunction (anoxia, deep anaesthesia, severe metabolic or toxic states); a persistent pattern after anoxia carries a poor prognosis.",
+      "memoryAid": "BURST then FLAT, BURST then FLAT = a brain barely holding on.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e45",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A comatose patient after cardiac arrest has widespread 10 Hz activity that does not change with stimulation. What is this?",
+      "options": [
+        "Alpha coma (very poor prognosis)",
+        "Excess beta from sedation",
+        "A normal reactive PDR",
+        "Fast alpha variant (normal)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Alpha coma is generalized, non-reactive alpha-frequency activity in a comatose patient, linked with severe hypoxic or brainstem injury and a very poor prognosis. A normal PDR is posterior and reactive.",
+      "memoryAid": "ALPHA in a COMA that does not REACT = bad news.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e46",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A young woman with psychiatric symptoms, dyskinesias and seizures has rhythmic delta with superimposed 20 to 30 Hz beta. What is it, and what does it suggest?",
+      "options": [
+        "Breach rhythm; a skull defect",
+        "Extreme delta brush; anti-NMDA encephalitis",
+        "Spindle coma; a brainstem lesion",
+        "Delta brushes of prematurity; normal finding"
+      ],
+      "answerIndex": 1,
+      "explanation": "Extreme delta brush (rhythmic 1 to 3 Hz delta with superimposed beta) is characteristic of anti-NMDA receptor encephalitis. In the 2021 terminology it is a subtype of the +F modifier.",
+      "memoryAid": "EXTREME delta brush = NMDA: young, psychiatric, moving, seizing.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e47",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "What is required to report electrocerebral inactivity (ECI)?",
+      "options": [
+        "No activity over 10 µV at 7 µV/mm",
+        "Burst suppression for 30 minutes",
+        "Alpha activity that does not react",
+        "No cerebral activity over 2 µV at 2 µV/mm"
+      ],
+      "answerIndex": 3,
+      "explanation": "ECI is no electrocerebral activity over 2 µV at a sensitivity of 2 µV/mm, with double-distance electrodes, for at least 30 minutes, impedances 100 to 10,000 Ω, reactivity testing and a touch test. Remaining waveforms (EKG, ventilator) must be identified as artifact; drug intoxication and hypothermia must be excluded.",
+      "memoryAid": "ECI = nothing over 2 µV at 2 µV/mm.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e48",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "What defines a focal electrographic seizure arising from the temporal lobe?",
+      "options": [
+        "Slowing that stays unchanged for an hour",
+        "Rhythm that evolves in speed, size and spread",
+        "A single high-amplitude spike with slow wave",
+        "Notched theta in drowsiness that never evolves"
+      ],
+      "answerIndex": 1,
+      "explanation": "A focal seizure shows abrupt rhythmic activity distinct from the background that evolves in frequency (often faster to slower), amplitude (rising) and field (spreading), sometimes starting with attenuation or low-voltage fast activity, often with post-ictal slowing. Notify per protocol and test responsiveness.",
+      "memoryAid": "A SEIZURE CHANGES: speed, size and spread.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e49",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "During an infantile spasm, what is the typical ictal EEG correlate?",
+      "options": [
+        "Burst suppression lasting several minutes",
+        "A big slow wave, then diffuse attenuation",
+        "Continuous 3 Hz spike-and-wave for minutes",
+        "An evolving focal theta rhythm over C3"
+      ],
+      "answerIndex": 1,
+      "explanation": "The electrodecremental event: a generalized high-amplitude slow transient followed by abrupt diffuse attenuation for one to several seconds, often with low-amplitude fast activity, on a hypsarrhythmic background, time-locked to the spasm. Video and deltoid EMG help confirm it.",
+      "memoryAid": "A SPASM = a big wave, then the background goes QUIET.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e50",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Which statement about neonatal electrographic seizures is correct?",
+      "options": [
+        "Need only 2 s of rhythmic activity",
+        "Mostly generalized 3 Hz spike-and-wave",
+        "Always seen with visible clinical jerking",
+        "Mostly focal, often silent, 10 s or more"
+      ],
+      "answerIndex": 3,
+      "explanation": "Neonatal seizures are mostly focal (often central or temporal), evolve in frequency, amplitude, morphology or field, last at least 10 s, and are frequently electrographic only. Generalized 3 Hz spike-and-wave does not occur in newborns, so continuous EEG is needed.",
+      "memoryAid": "NEWBORN seizures: FOCAL, SILENT, 10 seconds or more.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e51",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "During a blink, why do Fp1 and Fp2 become positive?",
+      "options": [
+        "The positive cornea rolls up under the eyelid",
+        "The electrodes lose contact",
+        "The frontalis muscle discharges",
+        "The negative retina moves toward the forehead"
+      ],
+      "answerIndex": 0,
+      "explanation": "The cornea is positive relative to the retina. During a blink the eyes roll up (Bell phenomenon), bringing the cornea toward Fp1/Fp2, so they become positive: a downward deflection in Fp1-F3 and Fp1-F7. The field falls off quickly behind the frontal poles.",
+      "memoryAid": "CORNEA is a PLUS sign; blink = eyes UP = Fp goes positive.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e52",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A patient looks to the left. What happens at F7 and F8?",
+      "options": [
+        "F7 becomes negative and F8 positive",
+        "Both become positive",
+        "Neither changes",
+        "F7 becomes positive and F8 negative"
+      ],
+      "answerIndex": 3,
+      "explanation": "The eye turning toward an electrode brings its positive cornea near it. Looking left, F7 becomes positive and F8 negative, so the two temporal chains deflect in opposite directions; lateral rectus spikes may appear at the start of the saccade.",
+      "memoryAid": "LOOK LEFT, LEFT goes POSITIVE (F7).",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e53",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Very fast spiky activity over 20 Hz in dense runs over the temporal regions during jaw clenching is what?",
+      "options": [
+        "Breach rhythm",
+        "Excess drug beta",
+        "GPFA bursts",
+        "Muscle (EMG) artifact"
+      ],
+      "answerIndex": 3,
+      "explanation": "Muscle artifact is dense, very short (under 20 ms) spiky potentials over the temporalis and frontalis, gone with relaxation or sleep. Lowering the HFF reduces but does not remove it, and over-filtering can make it look like cerebral beta. It can hide seizures.",
+      "memoryAid": "CLENCH = TEMPORAL BUZZ. Relax the jaw, not the filter.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e54",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A steep deflection with a slow exponential return appears only in channels containing T4, with no field around it. What is it?",
+      "options": [
+        "A T4 spike",
+        "Sweat artifact",
+        "Pulse artifact",
+        "Electrode pop"
+      ],
+      "answerIndex": 3,
+      "explanation": "Electrode pop is an abrupt change in impedance at one electrode (drying gel, loose contact): a sudden steep deflection with exponential decay, confined to that electrode's channels with no surrounding field. Re-gel or re-apply the electrode.",
+      "memoryAid": "ONE electrode, NO field = a POP, not the brain.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e55",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A perfectly regular 60 Hz band appears in every channel. What should be suspected first?",
+      "options": [
+        "One high-impedance electrode",
+        "A cerebral fast rhythm",
+        "Muscle tension",
+        "A poor ground or the environment"
+      ],
+      "answerIndex": 3,
+      "explanation": "60 Hz interference is monotonous and exactly at mains frequency. In a few channels it points to one high- or unequal-impedance electrode; in all channels, suspect the ground or nearby equipment. The notch removes it but can hide a bad electrode.",
+      "memoryAid": "60 Hz in ONE = bad electrode; in ALL = bad ground.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e56",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Small sharp transients in the left temporal and ear-referenced channels line up exactly with each R wave. What are they?",
+      "options": [
+        "PSWCs",
+        "Temporal spikes",
+        "EKG artifact",
+        "Pulse artifact"
+      ],
+      "answerIndex": 2,
+      "explanation": "EKG artifact coincides with the QRS complex, is most prominent in ear-referenced and left temporal channels, is regular at the heart rate and can mimic periodic sharp waves. Always record an EKG channel to identify it.",
+      "memoryAid": "ON the R wave = EKG. AFTER it = pulse.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e57",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A smooth slow wave at one electrode recurs about 250 ms after each QRS. What is it, and how is it fixed?",
+      "options": [
+        "Pulse artifact; move the electrode",
+        "Focal slow wave; report it as such",
+        "EKG artifact; switch to linked ears",
+        "Sweat artifact; raise the LFF to 5 Hz"
+      ],
+      "answerIndex": 0,
+      "explanation": "Pulse artifact is mechanical: the electrode moves over a pulsating artery, giving a slow or triangular wave a fixed delay (about 200 to 300 ms) after each QRS. Moving the electrode slightly removes it. EKG artifact, by contrast, coincides with the QRS.",
+      "memoryAid": "PULSE comes a beat LATE; move the electrode off the artery.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e58",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Broad delta-like waves appear over frontal and temporal regions whenever the patient talks. How can the technologist confirm the cause?",
+      "options": [
+        "Ask the patient to look left",
+        "Ask the patient to clench the jaw",
+        "Lower the high-frequency filter",
+        "Ask the patient to say 'la la la'"
+      ],
+      "answerIndex": 3,
+      "explanation": "Glossokinetic artifact comes from the tongue (tip negative relative to base): broad slow waves with talking, chewing or swallowing, in phase on both sides, gone when the tongue is still. Repeating 'la la la' reproduces it.",
+      "memoryAid": "TONGUE waves: make them say LA LA LA.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e59",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Very slow (under 0.5 Hz) high-amplitude sways at a few forehead electrodes in a warm room are most likely what?",
+      "options": [
+        "Eye-blink artifact",
+        "Frontal delta from a lesion",
+        "Sweat artifact",
+        "Glossokinetic artifact"
+      ],
+      "answerIndex": 2,
+      "explanation": "Sweat changes the electrode-skin potential, producing very slow baseline sways with a period of 2 s or longer at a few electrodes. A higher LFF reduces it, but the patient should be cooled; severe sweat can bridge electrodes.",
+      "memoryAid": "SLOW SWAY + WARM room = SWEAT. Cool the patient.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e60",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Brief muscle spikes at Fp1, Fp2, F7 and F8 follow each photic flash by about 50 ms and stop as soon as the flashes stop. What is this?",
+      "options": [
+        "Frontal spikes (epileptiform)",
+        "Photic driving (normal response)",
+        "Photoparoxysmal (epileptic) response",
+        "Photomyogenic (muscle) response"
+      ],
+      "answerIndex": 3,
+      "explanation": "The photomyogenic (photomyoclonic) response is frontal muscle activity time-locked to each flash, often with visible eyelid or facial twitching, ending when stimulation ends. It is muscle, not epileptiform; it is commoner with anxiety and alcohol or drug withdrawal.",
+      "memoryAid": "MYO = MUSCLE at the FRONT, locked to each flash.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e61",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "One channel between two adjacent electrodes is nearly flat while its neighbours look normal. What is the likely cause?",
+      "options": [
+        "Electrocerebral inactivity",
+        "A focal suppression from a lesion",
+        "A salt bridge between the two electrodes",
+        "A broken amplifier"
+      ],
+      "answerIndex": 2,
+      "explanation": "A salt bridge (sweat, gel or paste joining two electrodes) makes both record the same potential, so the channel between them is nearly isoelectric. The impedance check shows low impedance between them; clean and re-apply.",
+      "memoryAid": "A FLAT channel between two neighbours = they are BRIDGED.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e62",
+      "domainId": "domain-3",
+      "sectionId": "d3-artifacts-recognition",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Rhythmic bursts of muscle activity over both temporal regions, about one per second, appear during a temporal lobe seizure. Why must the technologist look carefully?",
+      "options": [
+        "Chewing artifact is cerebral activity",
+        "Chewing automatisms can hide the ictal pattern",
+        "Chewing proves the event is not a seizure",
+        "Chewing stops all EEG activity"
+      ],
+      "answerIndex": 1,
+      "explanation": "Chewing artifact is regular bursts of temporalis muscle activity at the chewing rate with a clean background between bursts. Chewing during an event may be an automatism of a temporal lobe seizure, and the muscle can mask the ictal rhythm underneath.",
+      "memoryAid": "CHEWING in an event: look UNDER the muscle for the seizure.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e63",
+      "domainId": "domain-1",
+      "sectionId": "d1-normal-eeg-rhythms",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Abundant 18 to 25 Hz frontocentral beta over 25 µV in a patient on lorazepam is what, and what does a focal loss of it suggest?",
+      "options": [
+        "A seizure; status epilepticus",
+        "A drug effect; lesion on the low side",
+        "Muscle artifact; jaw tension",
+        "Normal sleep; no significance"
+      ],
+      "answerIndex": 1,
+      "explanation": "Excess beta is the commonest medication effect on the EEG (benzodiazepines, barbiturates, chloral hydrate), usually frontocentral or diffuse, often more prominent in drowsiness. Beta that is reduced on one side points to an abnormality, such as a lesion or fluid collection, on that side.",
+      "memoryAid": "BENZO = BETA. Less beta on one side = trouble on that side.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e64",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A neonate at 27 weeks postmenstrual age has bursts separated by long very low-voltage intervals in all states. How is this interpreted?",
+      "options": [
+        "Electrocerebral inactivity",
+        "Tracé alternant of a term infant",
+        "Tracé discontinu, normal for the age",
+        "Burst suppression, a poor prognosis"
+      ],
+      "answerIndex": 2,
+      "explanation": "Tracé discontinu is the normal discontinuous background of prematurity: bursts with delta brushes, temporal theta and sharp transients separated by very low-voltage intervals. The longest normal interburst interval shortens with age, so always judge against postmenstrual age.",
+      "memoryAid": "PREMATURE = DIScontinuous is OK; check the gaps for age.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e65",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "In which state is tracé alternant normally seen in a term newborn?",
+      "options": [
+        "Only during feeding",
+        "Active (REM) sleep",
+        "Awake with eyes open",
+        "Quiet (NREM) sleep"
+      ],
+      "answerIndex": 3,
+      "explanation": "Tracé alternant is the normal quiet-sleep pattern of term and near-term newborns (about 37 to 44 weeks): 3 to 8 s bursts alternating with lower-voltage (not suppressed) segments. It is replaced by continuous slow-wave sleep by about 46 weeks.",
+      "memoryAid": "ALTERNANT = Quiet sleep at term: loud, soft, loud, soft.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e66",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "At what postmenstrual age are delta brushes most abundant?",
+      "options": [
+        "About 32 to 34 weeks",
+        "About 24 weeks",
+        "About 44 weeks",
+        "About 3 months post-term"
+      ],
+      "answerIndex": 0,
+      "explanation": "Delta brushes (0.5 to 1.5 Hz delta with superimposed 8 to 20 Hz fast activity) appear around 26 weeks, are most abundant at 32 to 34 weeks, decrease toward term and are gone by about 44 weeks. Persistence beyond term suggests dysmaturity.",
+      "memoryAid": "BRUSHES peak in the early 30s (weeks), gone by 44.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e67",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Brief, sharply contoured 4 to 6 Hz runs over both temporal regions in a 28-week infant are what?",
+      "options": [
+        "Temporal theta of prematurity",
+        "Wicket spikes of adults",
+        "Neonatal temporal seizures",
+        "RMTD (psychomotor variant)"
+      ],
+      "answerIndex": 0,
+      "explanation": "Temporal theta of prematurity (temporal sawtooth) is a normal marker of early prematurity (about 26 to 30 weeks): short runs of sharply contoured theta, often asynchronous, embedded in the bursts. They disappear by about 32 to 33 weeks.",
+      "memoryAid": "TEMPORAL THETA = the very YOUNG preemie's signature.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e68",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Broad, bilaterally synchronous diphasic frontal sharp transients in a term newborn's quiet sleep are what?",
+      "options": [
+        "Frontal spikes, epileptiform",
+        "Encoches frontales, normal",
+        "Frontal LPDs",
+        "Eye-blink artifact"
+      ],
+      "answerIndex": 1,
+      "explanation": "Encoches frontales are normal frontal sharp transients of newborns (about 35 to 44 weeks), bilateral and synchronous, often with anterior slow dysrhythmia. A strictly one-sided frontal focus, or persistence beyond about 48 weeks, is not normal.",
+      "memoryAid": "ENCOCHES = 'notches' in the FRONT, on BOTH sides, in the newborn.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e69",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Generalized, bilaterally synchronous periodic discharges at 2 Hz with a clear interval between them are what, under the 2021 terminology?",
+      "options": [
+        "An electrographic seizure (ESz)",
+        "GPDs on the ictal-interictal continuum",
+        "Normal sleep transients of N2",
+        "LPDs (lateralized discharges)"
+      ],
+      "answerIndex": 1,
+      "explanation": "GPDs are periodic discharges over both hemispheres, synchronous and symmetric, with an interval between them. Above 2.5 Hz for 10 s or more is an electrographic seizure; more than 1 and up to 2.5 Hz is on the IIC. GPDs replace the old GPEDs/PEDs.",
+      "memoryAid": "Count in 10 s: over 25 = seizure; 11-25 = IIC.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e70",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Rhythmic 1.5 Hz delta with no gap between waves, consistently over the left hemisphere, is named what?",
+      "options": [
+        "LRDA",
+        "LPDs",
+        "GRDA",
+        "Polymorphic delta"
+      ],
+      "answerIndex": 0,
+      "explanation": "Lateralized rhythmic delta activity is rhythmic delta (0.5 to 4 Hz) of uniform shape with no interval between waves, over one hemisphere, for at least 6 cycles. It is strongly associated with acute seizures, like LPDs; GRDA is never on the IIC, but LRDA can be.",
+      "memoryAid": "LRDA = left or right, rhythmic, no gaps, seizure risk.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e71",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Periodic discharges run independently over each hemisphere at the same time in a comatose patient. What are they, and what do they imply?",
+      "options": [
+        "Sleep transients; a normal finding",
+        "LPDs; one small focal lesion",
+        "BIPDs; worse injury than LPDs",
+        "GPDs; usually a metabolic cause"
+      ],
+      "answerIndex": 2,
+      "explanation": "Bilateral independent periodic discharges are two independent lateralized periodic patterns, one in each hemisphere, at the same time (asynchronous, often at different rates). They replace BIPLEDs and are associated with more severe injury and coma than LPDs. Independent patterns at different times are two separate LPDs.",
+      "memoryAid": "BI = BOTH sides, INDEPENDENT, at the SAME time.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e72",
+      "domainId": "domain-3",
+      "sectionId": "d3-ictal-eeg-seizure-patterns",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "A 6 Hz evolving rhythm lasting 4 seconds appears over T7 in an ICU patient with no clinical change. What is it?",
+      "options": [
+        "LPDs (periodic discharges)",
+        "A benign normal variant",
+        "Definite BIRDs",
+        "An electrographic seizure"
+      ],
+      "answerIndex": 2,
+      "explanation": "BIRDs are rhythmic activity over 4 Hz lasting 0.5 s to under 10 s, not a normal variant, with no clinical correlate. Evolution (or a match to the patient's seizures) makes them definite; sharp contour alone makes them possible. The same rhythm lasting 10 s or more is a seizure.",
+      "memoryAid": "FAST and BRIEF: over 4 Hz, under 10 s. Evolving = definite.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e73",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "Periodic discharges appear every time the nurse suctions a comatose patient. How should they be coded?",
+      "options": [
+        "Normal arousal response; no code",
+        "SI- prefix (SIRPIDs); note the stimulus",
+        "Nothing; suctioning effects are ignored",
+        "ST- prefix (stimulus-terminated)"
+      ],
+      "answerIndex": 1,
+      "explanation": "Stimulus-induced patterns are reproducibly brought on by alerting stimuli (suctioning, exam, noise). Code the specific pattern with SI- (for example SI-GPDs), annotate the stimulus and its time, and report ictal-appearing SIRPIDs because they can be seizures.",
+      "memoryAid": "Suction brings it ON = SI-. Write what you did and when.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-e74",
+      "domainId": "domain-3",
+      "sectionId": "d3-encephalopathy-differentials",
+      "topicTags": [
+        "focus-drills",
+        "drill-patterns"
+      ],
+      "drillSet": "patterns",
+      "difficulty": "medium",
+      "stem": "LPDs run at about 2 Hz in a critically ill patient without definite seizure criteria. How is this classed?",
+      "options": [
+        "A benign normal variant",
+        "An electrographic seizure",
+        "Not reportable at all",
+        "IIC (criterion A)"
+      ],
+      "answerIndex": 3,
+      "explanation": "PDs or SW averaging more than 1 and up to 2.5 Hz over 10 s (more than 10 and up to 25 discharges) meet IIC criterion A, as long as seizure criteria are not met. IIC is an electrographic term (possible seizure), not a diagnosis; notify per protocol.",
+      "memoryAid": "2 Hz LPDs sit on the FENCE between interictal and ictal.",
       "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
       "qaStatus": "UNREVIEWED"
     }

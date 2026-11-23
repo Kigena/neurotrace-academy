@@ -14,11 +14,12 @@ const SETS = [
   { key: "peds", tag: "Focus 2", name: "Paediatric syndromes" },
   { key: "meds", tag: "Focus 3", name: "Medications and the EEG" },
   { key: "acns", tag: "Focus 4", name: "ACNS guidelines" },
+  { key: "patterns", tag: "Focus 5", name: "EEG patterns" },
   { key: "mixed", tag: "All topics", name: "Mixed" },
   { key: "missed", tag: "Review", name: "My missed questions" },
 ];
-const TOPIC = { neuro: "Neuroanatomy", peds: "Paediatrics", meds: "Medications", acns: "ACNS guidelines" };
-const SHEET_TABS = [["neuro", "Neuroanatomy"], ["peds", "Paediatrics"], ["meds", "Medications"], ["acns", "ACNS guidelines"]];
+const TOPIC = { neuro: "Neuroanatomy", peds: "Paediatrics", meds: "Medications", acns: "ACNS guidelines", patterns: "EEG patterns" };
+const SHEET_TABS = [["neuro", "Neuroanatomy"], ["peds", "Paediatrics"], ["meds", "Medications"], ["acns", "ACNS guidelines"], ["patterns", "EEG patterns"]];
 const EXAM = new Date(2026, 11, 14);
 const EMPTY = { stats: {}, missed: [] };
 
@@ -193,8 +194,9 @@ export default function FocusDrills() {
           <span className="tdd-eyebrow">R. EEG T. exam prep</span>
           <h1>Focus Drills</h1>
           <p className="tdd-lede">
-            Four focused sets: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG,
-            and the ACNS guidelines (Guidelines 1 to 7, the 2021 critical care terminology and cEEG duties).
+            Five focused sets: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG,
+            the ACNS guidelines (Guidelines 1 to 7, the 2021 critical care terminology and cEEG duties), and EEG patterns
+            (normal rhythms, variants, epileptiform, slowing, seizures, artifacts, neonatal and ICU patterns).
             Every answer comes with the reasoning and a hook to remember it. Anything you miss goes into your review pile until you get it right.
           </p>
           <span className="tdd-count">{days > 0 ? `${days} days to the exam (14 December 2026)` : "Exam day has arrived. Good luck."}</span>

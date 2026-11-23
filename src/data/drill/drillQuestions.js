@@ -1,7 +1,9 @@
 // Focus Drills question bank (fact-checked).
-// Question bank: t = topic (neuro | peds | meds | acns), q, o = options (first is correct; shuffled at runtime),
-// why = explanation, mem = memory aid. The ACNS set lives in acnsQuestions.js.
+// Question bank: t = topic (neuro | peds | meds | acns | patterns), q, o = options (first is correct; shuffled at runtime),
+// why = explanation, mem = memory aid. The ACNS and EEG patterns sets live in
+// acnsQuestions.js and patternQuestions.js.
 import { ACNS_DRILL, ACNS_SHEETS } from "./acnsQuestions.js";
+import { PATTERN_DRILL, PATTERN_SHEETS } from "./patternQuestions.js";
 
 const CORE = [
 // ───────────── DAY 1: NEUROANATOMY AND CLINICAL CORRELATION ─────────────
@@ -371,11 +373,12 @@ why:"Barbiturates at high levels, especially with hypothermia, can suppress the 
 mem:"PENTO-BARB + COLD = 'PRETEND flat'. Never confirm brain death until both are gone."},
 ];
 
-export const DRILL = [...CORE, ...ACNS_DRILL];
+export const DRILL = [...CORE, ...ACNS_DRILL, ...PATTERN_DRILL];
 
 // Memory sheets: [title, head[], rows[][]]
 export const SHEETS = {
 acns: ACNS_SHEETS,
+patterns: PATTERN_SHEETS,
 neuro: [
  ["Arteries and deficits", ["Artery","Deficit (opposite side)","Hook"], [
   ["ACA","Leg > arm weakness and numbness, abulia, incontinence","ACA = Ankles"],
