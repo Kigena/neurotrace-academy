@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useNavigationType } from "react-router-dom";
 import { AuthProvider, useAuth } from "./contexts/AuthContext.jsx";
 import { ThemeProvider } from "./contexts/ThemeContext.jsx";
 import { SocketProvider } from "./contexts/SocketContext.jsx";
@@ -68,6 +68,16 @@ function AppContent() {
   const { user } = useAuth();
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = React.useState(true);
+  const navigationType = useNavigationType();
+
+  // Open every new page at the top. The window keeps its scroll position across
+  // route changes, so a link low in the sidebar used to land at the bottom of the
+  // next page. Back/forward (POP) keeps the browser's own position, links to an
+  // #anchor keep theirs, and in-page tabs (search params) are left to each page.
+  React.useEffect(() => {
+    if (navigationType === "POP" || location.hash) return;
+    window.scrollTo(0, 0);
+  }, [location.pathname, location.hash, navigationType]);
 
 
   // Show login page without sidebar
