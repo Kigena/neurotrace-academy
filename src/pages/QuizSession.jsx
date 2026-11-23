@@ -1053,7 +1053,7 @@ function QuizSession() {
                     className={optionClass}
                   >
                     <span className="font-semibold mr-2">{String.fromCharCode(65 + idx)}.</span>
-                    <MedicalText interactive={false}>{option}</MedicalText>
+                    <MedicalText interactive={false} enabled={hasFeedback}>{option}</MedicalText>
                   </button>
                 );
               })}

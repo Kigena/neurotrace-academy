@@ -241,7 +241,7 @@ export default function FocusDrills() {
                       : o.idx === result.correctIndex ? " is-right" : i === picked ? " is-wrong" : " is-dim";
                   return (
                     <button key={o.text} ref={i === 0 ? firstOptRef : undefined} type="button" className={`tdd-opt${cls}`} disabled={picked !== null} onClick={() => answer(i)}>
-                      <kbd>{i + 1}</kbd><span><MedicalText interactive={false}>{o.text}</MedicalText></span>
+                      <kbd>{i + 1}</kbd><span><MedicalText interactive={false} enabled={!!result}>{o.text}</MedicalText></span>
                     </button>
                   );
                 })}

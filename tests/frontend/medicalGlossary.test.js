@@ -63,4 +63,10 @@ describe("medical glossary tokenization", () => {
     expect(html).toContain('role="tooltip"');
     expect(html).toContain("Plain-language definition");
   });
+
+  it("adds nothing when disabled, so unanswered options cannot give the answer away", () => {
+    const html = renderToStaticMarkup(React.createElement(MedicalText, { enabled: false }, "Radiculopathy"));
+
+    expect(html).toBe("Radiculopathy");
+  });
 });

@@ -23,9 +23,12 @@ function MedicalTerm({ children, definition, interactive }) {
 /**
  * Adds inline definitions to known terms in a string. Set interactive={false}
  * inside an existing button so the tooltip does not add a nested tab stop.
+ * Set enabled={false} on answer options until the question is answered: a
+ * definition on an option can give the answer away (e.g. "radiculopathy" for
+ * "a disease of the nerve roots is termed").
  */
-export default function MedicalText({ children, interactive = true }) {
-  if (typeof children !== "string") return children;
+export default function MedicalText({ children, interactive = true, enabled = true }) {
+  if (!enabled || typeof children !== "string") return children;
 
   return tokenizeMedicalText(children).map((part, index) =>
     part.definition ? (

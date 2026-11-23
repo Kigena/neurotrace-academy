@@ -23,7 +23,7 @@ function OptionList({ options, selectedIndex, correctIndex, onPick, disabled }) 
         const content = (
           <>
             <span className="font-semibold mr-2">{String.fromCharCode(65 + idx)}.</span>
-            <MedicalText interactive={!onPick}>{opt}</MedicalText>
+            <MedicalText enabled={!onPick}>{opt}</MedicalText>
             {correctIndex !== undefined && idx === correctIndex && <span className="ml-2 text-xs font-semibold">✓ correct</span>}
             {correctIndex !== undefined && selectedIndex === idx && idx !== correctIndex && (
               <span className="ml-2 text-xs font-semibold">✗ your answer</span>
