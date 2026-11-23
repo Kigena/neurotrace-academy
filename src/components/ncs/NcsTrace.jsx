@@ -37,7 +37,7 @@ export default function NcsTrace({ rows, gain, sweepMsPerDiv, markMode, onMark }
     <svg
       ref={svgRef}
       viewBox={`0 0 ${width} ${height}`}
-      className={`block h-auto w-full select-none rounded-lg bg-slate-950 ${markMode ? "cursor-crosshair" : ""}`}
+      className={`palette-light block h-auto w-full select-none rounded-lg bg-slate-950 ${markMode ? "cursor-crosshair" : ""}`}
       onClick={click}
       role="img"
       aria-label="Nerve conduction responses"

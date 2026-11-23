@@ -500,6 +500,26 @@
   --color-gray-950: #0b1413;
 }
 
+/* Dark theme: SVG drawings (EEG tracings, filter stack, diagrams) use fixed colours
+   meant for white paper. CSS beats SVG presentation attributes, so remap them here:
+   dark traces and text become the drill's ink, greys become muted, grid lines go
+   dark, light fills become card surfaces, indigo markers become the teal accent.
+   An SVG marked .palette-light (the NCS scope screen) keeps its own colours. */
+:root[data-theme="dark"] svg:not(.palette-light) :is([stroke="#0f172a"], [stroke="#111827"], [stroke="#1f2937"], [stroke="#1e293b"]) { stroke: #e3ece9; }
+:root[data-theme="dark"] svg:not(.palette-light) [stroke="#334155"] { stroke: #b9c6c3; }
+:root[data-theme="dark"] svg:not(.palette-light) :is([fill="#0f172a"], [fill="#111827"], [fill="#1e293b"]) { fill: #e3ece9; }
+:root[data-theme="dark"] svg:not(.palette-light) [fill="#334155"] { fill: #b9c6c3; }
+:root[data-theme="dark"] svg:not(.palette-light) :is([fill="#475569"], [fill="#64748b"]) { fill: #97a8a4; }
+:root[data-theme="dark"] svg:not(.palette-light) :is([stroke="#475569"], [stroke="#64748b"]) { stroke: #97a8a4; }
+:root[data-theme="dark"] svg:not(.palette-light) [fill="#94a3b8"] { fill: #6f817d; }
+:root[data-theme="dark"] svg:not(.palette-light) [stroke="#94a3b8"] { stroke: #4a5c58; }
+:root[data-theme="dark"] svg:not(.palette-light) :is([stroke="#cbd5e1"], [stroke="#e2e8f0"], [stroke="#f1f5f9"]) { stroke: #2f3f3c; }
+:root[data-theme="dark"] svg:not(.palette-light) :is([fill="#f8fafc"], [fill="#f1f5f9"]) { fill: #1b2826; }
+:root[data-theme="dark"] svg:not(.palette-light) :is([stroke="#4f46e5"], [stroke="#6366f1"]) { stroke: #5fd0b8; }
+:root[data-theme="dark"] svg:not(.palette-light) [fill="#4338ca"] { fill: #5fd0b8; }
+/* Badge boxes behind white text: deep teal keeps the white text readable. */
+:root[data-theme="dark"] svg:not(.palette-light) :is([fill="#4f46e5"], [fill="#6366f1"]) { fill: #0e7c6b; }
+
 /* Smooth theme transitions */
 .theme-transitioning,
 .theme-transitioning * {
