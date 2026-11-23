@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { useTheme } from "../contexts/ThemeContext";
 import drillApi from "../services/drillApi";
 import { domainTitle, sectionTitle } from "../utils/studyLabels";
+import MedicalText from "../components/MedicalText.jsx";
 import "./focusDrills.css";
 
 // Built-in copy, used only when the server cannot be reached. Option 0 is right.
@@ -232,7 +233,7 @@ export default function FocusDrills() {
           ) : current && (
             <>
               <div className="tdd-meta"><span className="tdd-chip">{TOPIC[current.t]}</span><span>Question {pos + 1} of {queue.length} · score {score.right}/{score.total}</span></div>
-              <p className="tdd-q">{current.q}</p>
+              <p className="tdd-q"><MedicalText>{current.q}</MedicalText></p>
               <div className="tdd-opts" role="group" aria-label="Answer options">
                 {current.order.map((o, i) => {
                   const cls = picked === null ? ""
@@ -240,7 +241,7 @@ export default function FocusDrills() {
                       : o.idx === result.correctIndex ? " is-right" : i === picked ? " is-wrong" : " is-dim";
                   return (
                     <button key={o.text} ref={i === 0 ? firstOptRef : undefined} type="button" className={`tdd-opt${cls}`} disabled={picked !== null} onClick={() => answer(i)}>
-                      <kbd>{i + 1}</kbd><span>{o.text}</span>
+                      <kbd>{i + 1}</kbd><span><MedicalText interactive={false}>{o.text}</MedicalText></span>
                     </button>
                   );
                 })}
@@ -250,8 +251,8 @@ export default function FocusDrills() {
                 <div className="tdd-fb">
                   <div className={`tdd-verdict ${ok ? "ok" : "no"}`}>{ok ? "Correct" : "Not quite"}</div>
                   {current.domainId && <span className="tdd-where">{domainTitle(current.domainId)} · {sectionTitle(current.sectionId)}</span>}
-                  <p className="tdd-why">{result.explanation}</p>
-                  <div className="tdd-mem"><b>Remember it</b>{result.memoryAid}</div>
+                  <p className="tdd-why"><MedicalText>{result.explanation}</MedicalText></p>
+                  <div className="tdd-mem"><b>Remember it</b><MedicalText>{result.memoryAid}</MedicalText></div>
                   <div className="tdd-row">
                     <span className="tdd-hint">
                       {ok ? "" : source === "server"

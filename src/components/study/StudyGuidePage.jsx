@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Card, Table } from "./ui.jsx";
 import SectionQuiz from "./SectionQuiz.jsx";
 import EegTracing from "../EegTracing.jsx";
+import MedicalText from "../MedicalText.jsx";
 
 /**
  * Generic tabbed study guide rendered from a JSON content file
@@ -16,20 +17,20 @@ function TracingQuiz({ s }) {
     <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-4">
       {s.title && <h3 className="text-base font-semibold text-slate-900">{s.title}</h3>}
       <EegTracing scene={s.scene} caption={s.caption || "NeuroLinea synthetic tracing."} />
-      <p className="text-sm font-medium text-slate-900">{s.question}</p>
+      <p className="text-sm font-medium text-slate-900"><MedicalText>{s.question}</MedicalText></p>
       <div className="grid gap-2">
         {s.options.map((o, i) => {
           const tone = !done ? "border-slate-300 bg-white hover:bg-slate-50" : i === s.answer ? "border-emerald-500 bg-emerald-50" : i === pick ? "border-rose-400 bg-rose-50" : "border-slate-200 bg-white opacity-70";
           return (
             <button key={o} type="button" disabled={done} onClick={() => setPick(i)} className={`rounded-lg border px-3 py-2 text-left text-sm ${tone}`}>
-              <span className="mr-2 font-semibold">{String.fromCharCode(65 + i)}.</span>{o}
+              <span className="mr-2 font-semibold">{String.fromCharCode(65 + i)}.</span><MedicalText interactive={false}>{o}</MedicalText>
             </button>
           );
         })}
       </div>
       {done && (
         <div className={`rounded-lg px-3 py-2 text-sm ${pick === s.answer ? "bg-emerald-50 text-emerald-900" : "bg-rose-50 text-rose-900"}`}>
-          <strong>{pick === s.answer ? "Correct. " : "Not quite. "}</strong>{s.explanation}
+          <strong>{pick === s.answer ? "Correct. " : "Not quite. "}</strong><MedicalText>{s.explanation}</MedicalText>
           <button type="button" onClick={() => setPick(null)} className="ml-2 font-semibold underline">Try again</button>
         </div>
       )}
@@ -40,7 +41,7 @@ function TracingQuiz({ s }) {
 function ReadingLinks({ s }) {
   return (
     <Card title={s.title} tone="slate">
-      {s.intro && <p>{s.intro}</p>}
+      {s.intro && <p><MedicalText>{s.intro}</MedicalText></p>}
       <ul className="space-y-3 pt-1">
         {s.items.map((it) => (
           <li key={it.url}>
@@ -50,7 +51,7 @@ function ReadingLinks({ s }) {
               <span className="sr-only"> (opens in a new tab)</span>
             </a>
             <div className="text-xs text-slate-500">{it.source}</div>
-            {it.note && <p className="text-sm text-slate-700">{it.note}</p>}
+            {it.note && <p className="text-sm text-slate-700"><MedicalText>{it.note}</MedicalText></p>}
           </li>
         ))}
       </ul>
@@ -76,7 +77,7 @@ function Section({ s }) {
         <ol className="flex flex-wrap items-center gap-2" aria-label={s.title}>
           {s.items.map((x, i) => (
             <li key={x} className="flex items-center gap-2">
-              <span className="rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-medium text-indigo-900">{x}</span>
+              <span className="rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-medium text-indigo-900"><MedicalText>{x}</MedicalText></span>
               {i < s.items.length - 1 && <span aria-hidden="true" className="text-lg font-bold text-indigo-400">&rarr;</span>}
             </li>
           ))}
@@ -99,9 +100,9 @@ function Section({ s }) {
         <div className="grid gap-3 md:grid-cols-2">
           {s.cards.map((c) => (
             <Card key={c.title} title={c.title}>
-              {c.body && <p>{c.body}</p>}
+              {c.body && <p><MedicalText>{c.body}</MedicalText></p>}
               {c.points && c.points.length > 0 && (
-                <ul className="list-disc space-y-1 pl-5">{c.points.map((p) => <li key={p}>{p}</li>)}</ul>
+                <ul className="list-disc space-y-1 pl-5">{c.points.map((p) => <li key={p}><MedicalText>{p}</MedicalText></li>)}</ul>
               )}
             </Card>
           ))}
@@ -114,14 +115,14 @@ function Section({ s }) {
     return (
       <Card title={s.title}>
         <ListTag className={`${s.kind === "steps" ? "list-decimal" : "list-disc"} space-y-1 pl-5`}>
-          {s.items.map((x) => <li key={x}>{x}</li>)}
+          {s.items.map((x) => <li key={x}><MedicalText>{x}</MedicalText></li>)}
         </ListTag>
       </Card>
     );
   }
   return (
     <Card title={s.title}>
-      <p>{s.text}</p>
+      <p><MedicalText>{s.text}</MedicalText></p>
     </Card>
   );
 }
@@ -129,14 +130,14 @@ function Section({ s }) {
 function GuideTab({ t }) {
   return (
     <div className="space-y-5">
-      {t.intro && <p className="max-w-3xl text-slate-600">{t.intro}</p>}
+      {t.intro && <p className="max-w-3xl text-slate-600"><MedicalText>{t.intro}</MedicalText></p>}
       {t.sections.map((s, i) => <Section key={`${s.title}-${i}`} s={s} />)}
       {t.eegLink && (
-        <p className="rounded-lg border border-indigo-200 bg-indigo-50/60 px-4 py-3 text-sm text-indigo-900"><strong>At the EEG machine:</strong> {t.eegLink}</p>
+        <p className="rounded-lg border border-indigo-200 bg-indigo-50/60 px-4 py-3 text-sm text-indigo-900"><strong>At the EEG machine:</strong> <MedicalText>{t.eegLink}</MedicalText></p>
       )}
       {t.pearls && t.pearls.length > 0 && (
         <Card title="Exam pearls" tone="emerald">
-          <ul className="list-disc space-y-1 pl-5">{t.pearls.map((p) => <li key={p}>{p}</li>)}</ul>
+          <ul className="list-disc space-y-1 pl-5">{t.pearls.map((p) => <li key={p}><MedicalText>{p}</MedicalText></li>)}</ul>
         </Card>
       )}
     </div>
@@ -150,8 +151,8 @@ function Mistakes({ mistakes, memory }) {
       <div className="space-y-3">
         {mistakes.map(([wrong, right]) => (
           <div key={wrong} className="grid gap-2 rounded-xl border border-slate-200 bg-white p-4 md:grid-cols-2">
-            <div className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-900"><span className="mr-1 font-semibold">Wrong idea:</span>{wrong}</div>
-            <div className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-900"><span className="mr-1 font-semibold">Correct:</span>{right}</div>
+            <div className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-900"><span className="mr-1 font-semibold">Wrong idea:</span><MedicalText>{wrong}</MedicalText></div>
+            <div className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-900"><span className="mr-1 font-semibold">Correct:</span><MedicalText>{right}</MedicalText></div>
           </div>
         ))}
       </div>
@@ -165,7 +166,7 @@ function Practice({ practice }) {
     <div className="space-y-5">
       {practice.studySet && <SectionQuiz setKey={practice.studySet} />}
       <Card title={practice.studySet ? "More practice" : "Practice questions"} tone={practice.studySet ? "slate" : "indigo"}>
-        <p>{practice.text}</p>
+        <p><MedicalText>{practice.text}</MedicalText></p>
         <div className="flex flex-wrap gap-2 pt-1">
           <Link to="/quiz" className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Start a quiz</Link>
           <Link to="/review" className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">Review incorrect</Link>
@@ -209,7 +210,7 @@ export default function StudyGuidePage({ data, crumb, practice }) {
           <span className="font-medium text-slate-900">{crumb}</span>
         </div>
         <h1 className="text-2xl font-bold text-slate-900 md:text-3xl">{data.title}</h1>
-        {data.subtitle && <p className="mt-1 max-w-3xl text-sm text-slate-600">{data.subtitle}</p>}
+        {data.subtitle && <p className="mt-1 max-w-3xl text-sm text-slate-600"><MedicalText>{data.subtitle}</MedicalText></p>}
       </header>
 
       <div className="sticky top-[57px] z-20 -mx-4 border-b border-slate-200 bg-slate-50/95 px-4 backdrop-blur-sm">

@@ -5,6 +5,7 @@ import { Card, Table } from "../study/ui.jsx";
 import RecordingPlan from "./RecordingPlan.jsx";
 import { hasRecordingPlan } from "./recordingPlanUtils.js";
 import patternsData from "../../data/neurotrace_patterns_library_v2.json";
+import MedicalText from "../MedicalText.jsx";
 
 /**
  * Syndrome browser: search and classification filter, one syndrome at a time with six sub-sections.
@@ -40,14 +41,14 @@ function Bullets({ items }) {
   if (!items || items.length === 0) return null;
   return (
     <ul className="list-disc space-y-1 pl-5">
-      {items.map((x) => <li key={x}>{x}</li>)}
+      {items.map((x) => <li key={x}><MedicalText>{x}</MedicalText></li>)}
     </ul>
   );
 }
 
 function Field({ label, children }) {
   if (!children) return null;
-  return <p><strong>{label}:</strong> {children}</p>;
+  return <p><strong>{label}:</strong> <MedicalText>{children}</MedicalText></p>;
 }
 
 function SyndromeDetail({ s, scenes, syndromes, onSelect, hasSection }) {
@@ -104,7 +105,7 @@ function SyndromeDetail({ s, scenes, syndromes, onSelect, hasSection }) {
       {section === "eeg" && (
         <div className="space-y-4">
           <Card title="EEG findings" tone="indigo">
-            <p>{s.eeg}</p>
+            <p><MedicalText>{s.eeg}</MedicalText></p>
           </Card>
           {s.scene ? (
             <>
@@ -174,7 +175,7 @@ function SyndromeDetail({ s, scenes, syndromes, onSelect, hasSection }) {
       {section === "pearls" && (
         <div className="space-y-4">
           <Card title="What you do" tone="indigo">
-            <p>{s.technologist}</p>
+            <p><MedicalText>{s.technologist}</MedicalText></p>
           </Card>
           {s.pearls && s.pearls.length > 0 && (
             <Card title="Exam pearls">

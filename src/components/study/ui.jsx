@@ -1,4 +1,5 @@
 import React from "react";
+import MedicalText from "../MedicalText.jsx";
 
 const TONES = {
   slate: "border-slate-200 bg-white",
@@ -10,7 +11,7 @@ const TONES = {
 export function Card({ title, children, tone = "slate" }) {
   return (
     <section className={`rounded-xl border p-5 ${TONES[tone]}`}>
-      {title && <h3 className="mb-2 text-base font-semibold text-slate-900">{title}</h3>}
+      {title && <h3 className="mb-2 text-base font-semibold text-slate-900"><MedicalText>{title}</MedicalText></h3>}
       <div className="space-y-2 text-sm leading-relaxed text-slate-700">{children}</div>
     </section>
   );
@@ -30,12 +31,12 @@ export function Table({ head, rows, note }) {
         <tbody>
           {rows.map((r, i) => (
             <tr key={i} className="border-t border-slate-100 align-top">
-              {r.map((c, j) => <td key={j} className={`px-3 py-2 ${j === 0 ? "font-semibold text-slate-900" : "text-slate-700"}`}>{c}</td>)}
+              {r.map((c, j) => <td key={j} className={`px-3 py-2 ${j === 0 ? "font-semibold text-slate-900" : "text-slate-700"}`}><MedicalText>{c}</MedicalText></td>)}
             </tr>
           ))}
         </tbody>
       </table>
-      {note && <p className="border-t border-slate-100 px-3 py-2 text-xs text-slate-500">{note}</p>}
+      {note && <p className="border-t border-slate-100 px-3 py-2 text-xs text-slate-500"><MedicalText>{note}</MedicalText></p>}
     </div>
   );
 }

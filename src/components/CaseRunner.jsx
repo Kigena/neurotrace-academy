@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { normalizeStep, stepHeading } from "../utils/caseSteps";
 import EegTracing from "./EegTracing.jsx";
 import FilterStack from "./amplifier/FilterStack.jsx";
+import MedicalText from "./MedicalText.jsx";
 
 /**
  * CaseRunner Component
@@ -178,7 +179,7 @@ function CaseRunner({ caseData, onComplete }) {
             </div>
             <h3 className="text-sm font-semibold text-slate-900 mb-1">{stepHeading(currentStep, currentStepIndex)}</h3>
             {currentStep.description && (
-              <p className="text-sm text-slate-600 mb-2">{currentStep.description}</p>
+              <p className="text-sm text-slate-600 mb-2"><MedicalText>{currentStep.description}</MedicalText></p>
             )}
             {currentStep.tracing && caseData.tracings?.[currentStep.tracing] && (
               <div className="my-3">
@@ -189,7 +190,7 @@ function CaseRunner({ caseData, onComplete }) {
                 )}
               </div>
             )}
-            <p className="text-sm text-slate-700">{currentStep.prompt}</p>
+            <p className="text-sm text-slate-700"><MedicalText>{currentStep.prompt}</MedicalText></p>
           </div>
 
           <div className="space-y-2 mb-4">
@@ -226,7 +227,7 @@ function CaseRunner({ caseData, onComplete }) {
                   <span className="font-semibold mr-2">
                     {String.fromCharCode(65 + idx)}.
                   </span>
-                  {option}
+                  <MedicalText interactive={false}>{option}</MedicalText>
                 </button>
               );
             })}
@@ -261,7 +262,7 @@ function CaseRunner({ caseData, onComplete }) {
                 {currentStep.explanation && (
                   <div className="mt-2 text-sm text-slate-700 bg-slate-50 p-3 rounded">
                     <span className="font-semibold">Explanation:</span>{" "}
-                    {currentStep.explanation}
+                    <MedicalText>{currentStep.explanation}</MedicalText>
                   </div>
                 )}
               </div>

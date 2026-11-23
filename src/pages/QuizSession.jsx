@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import questionCatalog from "../data/question-catalog.json";
 import workflowData from "../data/workflow-domains.json";
 import ContextualAI from "../components/ContextualAI.jsx";
+import MedicalText from "../components/MedicalText.jsx";
 import useGamification from "../hooks/useGamification";
 import quizApi, { secondsRemaining } from "../services/quizApi";
 import { levelLabel } from "../utils/studyLabels";
@@ -848,7 +849,7 @@ function QuizSession() {
                     {q.isCorrect ? "Correct" : q.selectedIndex === null ? "Unanswered" : "Incorrect"}
                   </span>
                 </div>
-                <p className="text-sm font-medium text-slate-900 mb-3">{q.stem}</p>
+                <p className="text-sm font-medium text-slate-900 mb-3"><MedicalText>{q.stem}</MedicalText></p>
                 <div className="space-y-2">
                   {q.options.map((option, optIdx) => {
                     const isSelected = q.selectedIndex === optIdx;
@@ -864,14 +865,14 @@ function QuizSession() {
                     return (
                       <div key={optIdx} className={optionClass}>
                         <span className="font-semibold mr-2">{String.fromCharCode(65 + optIdx)}.</span>
-                        {option}
+                        <MedicalText>{option}</MedicalText>
                       </div>
                     );
                   })}
                 </div>
                 {q.explanation && (
                   <div className="mt-3 text-sm text-slate-700 bg-slate-50 p-3 rounded">
-                    <span className="font-semibold">Explanation:</span> {q.explanation}
+                    <span className="font-semibold">Explanation:</span> <MedicalText>{q.explanation}</MedicalText>
                   </div>
                 )}
               </div>
@@ -1021,7 +1022,7 @@ function QuizSession() {
               </button>
             </div>
 
-            <p className="text-sm font-medium text-slate-900 mb-4">{currentQuestion.stem}</p>
+            <p className="text-sm font-medium text-slate-900 mb-4"><MedicalText>{currentQuestion.stem}</MedicalText></p>
 
             <div className="space-y-2">
               {currentQuestion.options.map((option, idx) => {
@@ -1052,7 +1053,7 @@ function QuizSession() {
                     className={optionClass}
                   >
                     <span className="font-semibold mr-2">{String.fromCharCode(65 + idx)}.</span>
-                    {option}
+                    <MedicalText interactive={false}>{option}</MedicalText>
                   </button>
                 );
               })}
@@ -1070,7 +1071,7 @@ function QuizSession() {
                   {answer.isCorrect ? "Correct" : "Incorrect"}
                   {answer.confidence && <ConfidenceNote isCorrect={answer.isCorrect} confidence={answer.confidence} />}
                 </div>
-                {answer.explanation && <div className="text-slate-700">{answer.explanation}</div>}
+                {answer.explanation && <div className="text-slate-700"><MedicalText>{answer.explanation}</MedicalText></div>}
                 {answer.misconception && <MisconceptionTip misconception={answer.misconception} />}
               </div>
             )}

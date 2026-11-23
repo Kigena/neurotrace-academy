@@ -12,6 +12,7 @@ import SyndromeBrowser from "../components/neuro/SyndromeBrowser.jsx";
 import RecordingPlan from "../components/neuro/RecordingPlan.jsx";
 import { hasRecordingPlan } from "../components/neuro/recordingPlanUtils.js";
 import ContextualAI from "../components/ContextualAI.jsx";
+import MedicalText from "../components/MedicalText.jsx";
 
 /**
  * Neuroanatomy, pathophysiology and syndromes, each tied to a NeuroLinea synthetic tracing.
@@ -164,9 +165,9 @@ function Anatomy() {
         </div>
         <Card title={r.name} tone="indigo">
           <p><strong>Electrodes:</strong> {r.electrodes.join(", ")}</p>
-          <p><strong>Blood supply:</strong> {r.supply}</p>
-          <p><strong>Functions:</strong> {r.functions}</p>
-          <p><strong>Normal EEG:</strong> {r.normal}</p>
+          <p><strong>Blood supply:</strong> <MedicalText>{r.supply}</MedicalText></p>
+          <p><strong>Functions:</strong> <MedicalText>{r.functions}</MedicalText></p>
+          <p><strong>Normal EEG:</strong> <MedicalText>{r.normal}</MedicalText></p>
         </Card>
       </div>
       <Card title="Hemispheric dominance and the 10-20 shortcut">
@@ -189,7 +190,7 @@ function Physiology() {
       <div className="grid gap-4 md:grid-cols-2">
         {data.generators.map((g) => (
           <Card key={g.title} title={g.title}>
-            <p>{g.text}</p>
+            <p><MedicalText>{g.text}</MedicalText></p>
           </Card>
         ))}
       </div>
@@ -222,9 +223,9 @@ function Regions() {
         </div>
         <div className="space-y-3">
           <Card title={`${r.name}: deficit and EEG`} tone="indigo">
-            <p><strong>If it is damaged:</strong> {r.lesion}</p>
-            <p><strong>When it seizes:</strong> {r.seizure}</p>
-            <p><strong>Localizing on the EEG:</strong> {r.eegNote}</p>
+            <p><strong>If it is damaged:</strong> <MedicalText>{r.lesion}</MedicalText></p>
+            <p><strong>When it seizes:</strong> <MedicalText>{r.seizure}</MedicalText></p>
+            <p><strong>Localizing on the EEG:</strong> <MedicalText>{r.eegNote}</MedicalText></p>
           </Card>
         </div>
       </div>
@@ -253,10 +254,10 @@ function GeneCard({ s }) {
       <Card title={s.name} tone="indigo">
         <p><strong>Gene:</strong> {s.gene}</p>
         <p><strong>Typical onset:</strong> {s.age}</p>
-        <p><strong>Clinical picture:</strong> {s.clinical}</p>
-        <p><strong>Mechanism:</strong> {s.mechanism}</p>
-        <p><strong>EEG:</strong> {s.eeg}</p>
-        <p><strong>Your role:</strong> {s.technologist}</p>
+        <p><strong>Clinical picture:</strong> <MedicalText>{s.clinical}</MedicalText></p>
+        <p><strong>Mechanism:</strong> <MedicalText>{s.mechanism}</MedicalText></p>
+        <p><strong>EEG:</strong> <MedicalText>{s.eeg}</MedicalText></p>
+        <p><strong>Your role:</strong> <MedicalText>{s.technologist}</MedicalText></p>
       </Card>
       {(s.clinicalDetail || s.course) && (
         <Card title="Clinical course and recording">

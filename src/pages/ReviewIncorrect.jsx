@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import studyApi from "../services/studyApi";
 import { DOMAIN_SHORT, domainTitle, sectionTitle, tagTitle } from "../utils/studyLabels";
 import { SOURCE_LABELS, SOURCE_TONE, accuracyTone, groupByDomain } from "../utils/incorrectGroups";
+import MedicalText from "../components/MedicalText.jsx";
 
 /**
  * Review Incorrect: questions whose most recent attempt was wrong, from any
@@ -22,7 +23,7 @@ function OptionList({ options, selectedIndex, correctIndex, onPick, disabled }) 
         const content = (
           <>
             <span className="font-semibold mr-2">{String.fromCharCode(65 + idx)}.</span>
-            {opt}
+            <MedicalText interactive={!onPick}>{opt}</MedicalText>
             {correctIndex !== undefined && idx === correctIndex && <span className="ml-2 text-xs font-semibold">✓ correct</span>}
             {correctIndex !== undefined && selectedIndex === idx && idx !== correctIndex && (
               <span className="ml-2 text-xs font-semibold">✗ your answer</span>
@@ -46,7 +47,7 @@ function MemoryAid({ text }) {
   return (
     <div className="rounded-md bg-amber-50 p-3 text-sm text-slate-800">
       <span className="block text-xs font-semibold uppercase tracking-wide text-amber-800">Remember it</span>
-      {text}
+      <MedicalText>{text}</MedicalText>
     </div>
   );
 }
@@ -105,7 +106,7 @@ function IncorrectCard({ item }) {
         </span>
       </div>
 
-      <p className="text-sm font-medium text-slate-900">{(retry || item).stem}</p>
+      <p className="text-sm font-medium text-slate-900"><MedicalText>{(retry || item).stem}</MedicalText></p>
 
       {mode === "review" && (
         <>
@@ -115,7 +116,7 @@ function IncorrectCard({ item }) {
           )}
           {item.explanation && (
             <div className="rounded bg-slate-50 p-3 text-sm text-slate-700">
-              <span className="font-semibold">Explanation:</span> {item.explanation}
+              <span className="font-semibold">Explanation:</span> <MedicalText>{item.explanation}</MedicalText>
             </div>
           )}
           <MemoryAid text={item.memoryAid} />
@@ -134,11 +135,11 @@ function IncorrectCard({ item }) {
           <OptionList options={retry.options} selectedIndex={result.selectedIndex} correctIndex={result.correctIndex} />
           <div className={`rounded p-3 text-sm ${result.isCorrect ? "bg-green-50 text-green-900" : "bg-red-50 text-red-900"}`}>
             <div className="font-semibold">{result.isCorrect ? "Correct — recorded as a new study attempt." : "Still incorrect — recorded."}</div>
-            {result.explanation && <div className="text-slate-700 mt-1">{result.explanation}</div>}
+            {result.explanation && <div className="text-slate-700 mt-1"><MedicalText>{result.explanation}</MedicalText></div>}
             {result.misconception && (
               <div className="mt-2 rounded border border-amber-300 bg-amber-50 p-2 text-amber-900">
                 <div className="text-xs font-semibold uppercase tracking-wide">Common mistake: {result.misconception.title}</div>
-                <div className="mt-1">{result.misconception.tip}</div>
+                <div className="mt-1"><MedicalText>{result.misconception.tip}</MedicalText></div>
               </div>
             )}
           </div>

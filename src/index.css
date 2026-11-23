@@ -92,6 +92,80 @@
   --color-warning: #f59e0b;
 }
 
+/* Inline medical glossary. A definition appears on pointer hover, keyboard
+   focus, or tap (which focuses the term on touch devices). */
+.medical-term {
+  position: relative;
+  display: inline;
+  border-bottom: 1.5px dotted currentColor;
+  color: inherit;
+  font-style: normal;
+  cursor: help;
+  text-decoration: none;
+  outline: none;
+}
+
+.medical-term:focus-visible {
+  border-radius: 0.15rem;
+  box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-primary);
+}
+
+.medical-tooltip {
+  position: absolute;
+  z-index: 80;
+  bottom: calc(100% + 0.6rem);
+  left: 50%;
+  width: max-content;
+  max-width: min(19rem, calc(100vw - 2rem));
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.6rem;
+  background: var(--color-text);
+  color: var(--color-surface);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-align: left;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 0.2rem);
+  transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+}
+
+.medical-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 0.4rem solid transparent;
+  border-top-color: var(--color-text);
+  transform: translateX(-50%);
+}
+
+.medical-tooltip-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: #7dd0bd;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.medical-term:hover > .medical-tooltip,
+.medical-term:focus > .medical-tooltip,
+.medical-term:focus-within > .medical-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
 /* Dark theme (the Focus Drills dark look), app-wide.
    ThemeContext sets data-theme on <html>. Redefining the palette here flips every
    white card, grey border and dark text at once: neutrals and white become the
