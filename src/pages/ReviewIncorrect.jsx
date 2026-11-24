@@ -106,7 +106,9 @@ function IncorrectCard({ item }) {
         </span>
       </div>
 
-      <p className="text-sm font-medium text-slate-900"><MedicalText>{(retry || item).stem}</MedicalText></p>
+      <p className="text-sm font-medium text-slate-900">
+        <MedicalText enabled={mode !== "retry"}>{(retry || item).stem}</MedicalText>
+      </p>
 
       {mode === "review" && (
         <>

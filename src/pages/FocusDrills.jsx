@@ -235,7 +235,7 @@ export default function FocusDrills() {
           ) : current && (
             <>
               <div className="tdd-meta"><span className="tdd-chip">{TOPIC[current.t]}</span><span>Question {pos + 1} of {queue.length} · score {score.right}/{score.total}</span></div>
-              <p className="tdd-q"><MedicalText>{current.q}</MedicalText></p>
+              <p className="tdd-q"><MedicalText enabled={!!result}>{current.q}</MedicalText></p>
               <div className="tdd-opts" role="group" aria-label="Answer options">
                 {current.order.map((o, i) => {
                   const cls = picked === null ? ""

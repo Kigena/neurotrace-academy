@@ -110,41 +110,64 @@
   box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-primary);
 }
 
+/* Screen-reader copy of the definition (MedicalText). The visible bubble is
+   .medical-tooltip-float, portalled to <body> so overflow cannot clip it. */
 .medical-tooltip {
   position: absolute;
-  z-index: 80;
-  bottom: calc(100% + 0.6rem);
-  left: 50%;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.medical-tooltip-float {
+  position: fixed;
+  z-index: 1000;
   width: max-content;
-  max-width: min(19rem, calc(100vw - 2rem));
+  max-width: min(19rem, calc(100vw - 1rem));
   padding: 0.65rem 0.75rem;
   border: 1px solid var(--color-border);
   border-radius: 0.6rem;
   background: var(--color-text);
   color: var(--color-surface);
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
+  font-family: var(--font-sans, inherit);
   font-size: 0.78rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: normal;
   text-align: left;
+  text-transform: none;
   white-space: normal;
-  opacity: 0;
-  visibility: hidden;
   pointer-events: none;
-  transform: translate(-50%, 0.2rem);
-  transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+  animation: medical-tooltip-in 120ms ease;
 }
 
-.medical-tooltip::after {
+.medical-tooltip-float::after {
   content: "";
   position: absolute;
   top: 100%;
-  left: 50%;
+  left: var(--arrow-x, 50%);
   border: 0.4rem solid transparent;
   border-top-color: var(--color-text);
   transform: translateX(-50%);
+}
+
+.medical-tooltip-float.is-below::after {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--color-text);
+}
+
+@keyframes medical-tooltip-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .medical-tooltip-label {
@@ -156,14 +179,6 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-}
-
-.medical-term:hover > .medical-tooltip,
-.medical-term:focus > .medical-tooltip,
-.medical-term:focus-within > .medical-tooltip {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(-50%, 0);
 }
 
 /* Dark theme (the Focus Drills dark look), app-wide.

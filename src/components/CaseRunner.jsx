@@ -179,7 +179,9 @@ function CaseRunner({ caseData, onComplete }) {
             </div>
             <h3 className="text-sm font-semibold text-slate-900 mb-1">{stepHeading(currentStep, currentStepIndex)}</h3>
             {currentStep.description && (
-              <p className="text-sm text-slate-600 mb-2"><MedicalText>{currentStep.description}</MedicalText></p>
+              <p className="text-sm text-slate-600 mb-2">
+                <MedicalText enabled={Boolean(submittedSteps[currentStep.stepId])}>{currentStep.description}</MedicalText>
+              </p>
             )}
             {currentStep.tracing && caseData.tracings?.[currentStep.tracing] && (
               <div className="my-3">
@@ -190,7 +192,9 @@ function CaseRunner({ caseData, onComplete }) {
                 )}
               </div>
             )}
-            <p className="text-sm text-slate-700"><MedicalText>{currentStep.prompt}</MedicalText></p>
+            <p className="text-sm text-slate-700">
+              <MedicalText enabled={Boolean(submittedSteps[currentStep.stepId])}>{currentStep.prompt}</MedicalText>
+            </p>
           </div>
 
           <div className="space-y-2 mb-4">

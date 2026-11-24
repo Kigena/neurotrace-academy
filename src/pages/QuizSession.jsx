@@ -1022,7 +1022,9 @@ function QuizSession() {
               </button>
             </div>
 
-            <p className="text-sm font-medium text-slate-900 mb-4"><MedicalText>{currentQuestion.stem}</MedicalText></p>
+            <p className="text-sm font-medium text-slate-900 mb-4">
+              <MedicalText enabled={hasFeedback}>{currentQuestion.stem}</MedicalText>
+            </p>
 
             <div className="space-y-2">
               {currentQuestion.options.map((option, idx) => {
