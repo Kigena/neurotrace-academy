@@ -20,7 +20,8 @@ export default function SectionQuiz({ setKey }) {
         const set = (res.sets || []).find((s) => s.key === setKey);
         setState({ loading: false, count: set ? set.count : 0, error: null });
       })
-      .catch((err) => !cancelled && setState({ loading: false, count: 0, error: err.message || "Unable to load the question count" }));
+      // Raw API messages ("Not found") mean nothing to a learner; the card explains instead.
+      .catch((err) => !cancelled && setState({ loading: false, count: 0, error: err?.message || "unavailable" }));
     return () => {
       cancelled = true;
     };
@@ -33,7 +34,11 @@ export default function SectionQuiz({ setKey }) {
   return (
     <Card title="Section quiz" tone="indigo">
       {loading && <p>Loading the questions for this section...</p>}
-      {!loading && error && <p className="text-rose-700">{error}</p>}
+      {!loading && error && (
+        <p className="text-slate-600">
+          The section quiz can't be loaded right now. Use the general quizzes below for now, and try again later.
+        </p>
+      )}
       {!loading && !error && count === 0 && <p>Questions for this section are being prepared. Use the general quizzes for now.</p>}
       {!loading && !error && count > 0 && (
         <>

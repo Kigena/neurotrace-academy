@@ -395,7 +395,8 @@ export function generateReferential(scene) {
           for (const [a, b] of runs) g = Math.max(g, gateValue(t, a, b, 0.4));
           sig[i] = -amp * g * (Math.sin(phi) + 0.22 * Math.sin(2 * phi + 0.9));
         }
-        addSource(V, field(f.center ?? (f.type === "rhythmicDelta" ? [0, -0.65] : [0, 0.62]), f.sigma ?? 0.42), sig);
+        // `side` confines the field to one hemisphere (LRDA); without it the field spreads across the midline.
+        addSource(V, field(f.center ?? (f.type === "rhythmicDelta" ? [0, -0.65] : [0, 0.62]), f.sigma ?? 0.42, f.side ? { side: f.side } : {}), sig);
         break;
       }
       case "rhythm": {
@@ -471,7 +472,7 @@ export function generateReferential(scene) {
           const u = Math.min(1, Math.max(0, (t - start) / Math.max(0.1, end - start)));
           const hz = hz0 + (hz1 - hz0) * u;
           phi += (2 * Math.PI * hz) / FS;
-          const g = gateValue(t, start, end, 0.6);
+          const g = gateValue(t, start, end, f.rampS ?? 0.6); // a short ramp keeps brief runs (BIRDs) measurable
           const a = amp0 + (amp1 - amp0) * u;
           sig[i] = -a * g * (Math.sin(phi) + 0.35 * Math.sin(2 * phi + 0.7));
         }

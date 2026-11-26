@@ -164,6 +164,7 @@ function Mistakes({ mistakes, memory }) {
 function Practice({ practice }) {
   return (
     <div className="space-y-5">
+      {practice.lead}
       {practice.studySet && <SectionQuiz setKey={practice.studySet} />}
       <Card title={practice.studySet ? "More practice" : "Practice questions"} tone={practice.studySet ? "slate" : "indigo"}>
         <p><MedicalText>{practice.text}</MedicalText></p>
