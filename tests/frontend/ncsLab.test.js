@@ -159,3 +159,84 @@ describe("NCS cases on the interactive workspace", () => {
     }
   });
 });
+
+describe("NCS pathology cases", () => {
+  const byId = (id) => data.cases.find((c) => c.id === id);
+  const rec = (studyId, siteId, id) => idealRecord(WORKSPACES[studyId], siteId, byId(id).ws || {});
+  const lim = (studyId) => WORKSPACES[studyId].protocol.limits;
+  const segCv = (a, b) => Math.abs(a.geo.stim.target.pc.s - b.geo.stim.target.pc.s) / (b.truth.onset - a.truth.onset);
+
+  it("vary the position of the correct answer", () => {
+    const fresh = data.cases.filter((c) => !["ncs-cts", "ncs-une", "ncs-cold", "ncs-axonal", "ncs-aidp", "ncs-fibular", "ncs-dip", "ncs-root"].includes(c.id));
+    expect(fresh.length).toBeGreaterThanOrEqual(14);
+    const pos = new Set(fresh.flatMap((c) => c.questions.map((q) => q.answer)));
+    expect(pos.size).toBe(4);
+  });
+
+  it("severe CTS: absent median SNAP, long latency and low CMAP, normal ulnar", () => {
+    const m = rec("medianMotor", "distal", "ncs-cts-severe");
+    expect(m.truth.onset).toBeGreaterThan(lim("medianMotor").lat);
+    expect(m.truth.amp / 1000).toBeLessThan(lim("medianMotor").amp);
+    expect(rec("medianSensory", "distal", "ncs-cts-severe").truth.present).toBe(false);
+    expect(rec("ulnarSensory", "distal", "ncs-cts-severe").truth.peak).toBeLessThan(lim("ulnarSensory").peak);
+  });
+
+  it("early CTS: wrist peak within limits but 0.5 ms slower than ulnar, normal palm", () => {
+    const wrist = rec("medianSensory", "distal", "ncs-cts-palm").truth.peak;
+    expect(wrist).toBeLessThan(lim("medianSensory").peak);
+    expect(wrist - rec("ulnarSensory", "distal", "ncs-cts-palm").truth.peak).toBeGreaterThanOrEqual(0.5);
+    expect(rec("medianSensory", "palm", "ncs-cts-palm").truth.peak).toBeLessThan(WORKSPACES.medianSensory.protocol.siteLimits.palm.peak);
+  });
+
+  it("Guyon's canal and tarsal tunnel: distal motor abnormality with normal proximal velocity and normal SNAPs", () => {
+    const w = rec("ulnarMotor", "distal", "ncs-guyon"), be = rec("ulnarMotor", "be", "ncs-guyon");
+    expect(w.truth.onset).toBeGreaterThan(lim("ulnarMotor").lat);
+    expect(w.truth.amp / 1000).toBeLessThan(lim("ulnarMotor").amp);
+    expect(segCv(w, be)).toBeGreaterThan(lim("ulnarMotor").cv);
+    expect(rec("ulnarSensory", "distal", "ncs-guyon").truth.amp).toBeGreaterThan(lim("ulnarSensory").amp);
+    const t = rec("tibialMotor", "distal", "ncs-tarsal"), k = rec("tibialMotor", "knee", "ncs-tarsal");
+    expect(t.truth.onset).toBeGreaterThan(lim("tibialMotor").lat);
+    expect(segCv(t, k)).toBeGreaterThan(lim("tibialMotor").cv);
+    expect(rec("sural", "distal", "ncs-tarsal").truth.amp).toBeGreaterThan(lim("sural").amp);
+  });
+
+  it("CMT1A: uniform slowing under 30 m/s without block; MMN: forearm block with a normal SNAP", () => {
+    for (const [s, prox] of [["medianMotor", "elbow"], ["ulnarMotor", "be"], ["fibularMotor", "bfh"]]) {
+      const d = rec(s, "distal", "ncs-cmt"), p = rec(s, prox, "ncs-cmt");
+      expect(segCv(d, p), s).toBeLessThan(30);
+      expect(p.truth.amp / d.truth.amp, s).toBeGreaterThan(0.8);
+    }
+    const w = rec("ulnarMotor", "distal", "ncs-mmn"), be = rec("ulnarMotor", "be", "ncs-mmn");
+    expect(w.truth.amp / 1000).toBeGreaterThan(lim("ulnarMotor").amp);
+    expect(be.truth.amp).toBeLessThan(0.5 * w.truth.amp);
+    expect(rec("ulnarSensory", "distal", "ncs-mmn").truth.amp).toBeGreaterThan(lim("ulnarSensory").amp);
+  });
+
+  it("low CMAPs with normal latencies and SNAPs (AMAN, LEMS, ALS split hand, axonal foot drop)", () => {
+    for (const id of ["ncs-aman", "ncs-lems", "ncs-als"]) {
+      const m = rec("medianMotor", "distal", id);
+      expect(m.truth.amp / 1000, id).toBeLessThan(lim("medianMotor").amp);
+      expect(m.truth.onset, id).toBeLessThan(lim("medianMotor").lat);
+      expect(rec("medianSensory", "distal", id).truth.amp, id).toBeGreaterThan(lim("medianSensory").amp);
+    }
+    expect(rec("medianMotor", "distal", "ncs-als").truth.amp).toBeLessThan(0.5 * rec("ulnarMotor", "distal", "ncs-als").truth.amp);
+    const f = rec("fibularMotor", "distal", "ncs-footdrop"), b = rec("fibularMotor", "bfh", "ncs-footdrop"), p = rec("fibularMotor", "pop", "ncs-footdrop");
+    expect(f.truth.amp / 1000).toBeLessThan(lim("fibularMotor").amp);
+    expect(segCv(b, p)).toBeGreaterThan(lim("fibularMotor").cvAcross);
+    expect(p.truth.amp / b.truth.amp).toBeGreaterThan(0.8);
+    expect(rec("sural", "distal", "ncs-footdrop").truth.amp).toBeGreaterThan(lim("sural").amp);
+  });
+
+  it("sensory patterns: ganglionopathy, lower trunk plexus, superficial radial, diabetes plus CTS", () => {
+    expect(rec("radialSensory", "distal", "ncs-ganglion").truth.amp).toBeLessThan(lim("radialSensory").amp);
+    expect(rec("sural", "distal", "ncs-ganglion").truth.amp).toBeGreaterThan(lim("sural").amp);
+    expect(rec("ulnarSensory", "distal", "ncs-ntos").truth.amp).toBeLessThan(lim("ulnarSensory").amp);
+    expect(rec("medianSensory", "distal", "ncs-ntos").truth.amp).toBeGreaterThan(lim("medianSensory").amp);
+    expect(rec("medianMotor", "distal", "ncs-ntos").truth.amp / 1000).toBeLessThan(lim("medianMotor").amp);
+    expect(rec("radialSensory", "distal", "ncs-radial").truth.amp).toBeLessThan(lim("radialSensory").amp);
+    expect(rec("medianSensory", "distal", "ncs-radial").truth.amp).toBeGreaterThan(lim("medianSensory").amp);
+    expect(rec("sural", "distal", "ncs-dm-cts").truth.amp).toBeLessThan(lim("sural").amp);
+    expect(rec("medianMotor", "distal", "ncs-dm-cts").truth.onset).toBeGreaterThan(lim("medianMotor").lat);
+    expect(rec("ulnarMotor", "distal", "ncs-dm-cts").truth.onset).toBeLessThan(lim("ulnarMotor").lat);
+  });
+});

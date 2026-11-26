@@ -458,6 +458,821 @@
         }
       ],
       "ws": {}
+    },
+    {
+      "id": "ncs-cts-severe",
+      "title": "A wasted thumb muscle",
+      "referral": "71F, years of numb R thumb/index/middle, now drops cups; thenar wasting on exam. NCS R arm, r/o severe CTS.",
+      "temp": {
+        "arm": 32.4,
+        "leg": 30.8
+      },
+      "required": [
+        "medianMotor",
+        "medianSensory",
+        "ulnarMotor",
+        "ulnarSensory"
+      ],
+      "why": "Median motor and sensory studies answer the question, and ulnar motor and sensory studies in the same hand show whether the problem is confined to the median nerve.",
+      "questions": [
+        {
+          "q": "The median SNAP is not seen at the standard settings. What should you do before recording it as absent?",
+          "options": [
+            "Report it as absent straight away, since the patient has wasting",
+            "Increase the sensitivity, average several sweeps, and confirm placement and supramaximal stimulation",
+            "Switch to a 500 Hz high filter so the response becomes broader and easier to see",
+            "Move the recording rings to the little finger and record from there instead"
+          ],
+          "answer": 1,
+          "explanation": "An absent response is a strong finding, so make sure it is real: raise the sensitivity (for example 10 µV/division), average sweeps to lift a tiny response out of the noise, check the ring positions and skin, and make sure the current is supramaximal. A 500 Hz high filter distorts and shrinks a SNAP, and the little finger is ulnar territory."
+        },
+        {
+          "q": "What pattern do the results show?",
+          "options": [
+            "A normal study with a technical problem in the median sensory set-up",
+            "Diffuse demyelinating polyneuropathy affecting both median and ulnar nerves",
+            "Ulnar neuropathy at the wrist with secondary median involvement",
+            "Severe median abnormality at the wrist: absent SNAP, long distal motor latency and a low CMAP, with normal ulnar studies"
+          ],
+          "answer": 3,
+          "explanation": "The median distal motor latency is markedly prolonged and the thenar CMAP is small, the median SNAP is absent, and the ulnar studies in the same hand are normal. That is severe focal median involvement at the wrist with axonal loss (the small CMAP and the wasting). Interpreting and grading severity belongs to the physician; EMG of the abductor pollicis brevis is often added."
+        }
+      ],
+      "ws": {
+        "lesions": [
+          {
+            "nerve": "median",
+            "yFrom": 383,
+            "yTo": 414,
+            "motorCvFactor": 0.2,
+            "sensoryCvFactor": 0.2
+          }
+        ],
+        "nerves": {
+          "median": {
+            "motorAmp": 0.28,
+            "sensoryAbsent": true
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-cts-palm",
+      "title": "Tingling fingers, borderline numbers",
+      "referral": "39F, data entry clerk, intermittent R index/middle tingling for 3 months, normal exam. NCS R arm, r/o early CTS.",
+      "temp": {
+        "arm": 32.9,
+        "leg": 31
+      },
+      "required": [
+        "medianSensory",
+        "medianMotor",
+        "ulnarSensory"
+      ],
+      "optional": [
+        "ulnarMotor"
+      ],
+      "why": "Early carpal tunnel syndrome first slows the median sensory fibres across the wrist. Median sensory (wrist and palm), median motor and an ulnar sensory study in the same hand give the comparison you need.",
+      "questions": [
+        {
+          "q": "Record the median sensory response from the wrist (14 cm) and from the palm (7 cm). Which segment shows the slowing?",
+          "options": [
+            "The palm-to-digit segment, which is slow as well as the wrist",
+            "Neither: both latencies are well inside the reference limits",
+            "The wrist-to-palm segment across the carpal tunnel, while palm-to-digit is normal",
+            "The forearm segment above the wrist, proximal to the stimulation site"
+          ],
+          "answer": 2,
+          "explanation": "The palm peak latency is normal (about 1.8 ms), so the nerve from the palm to the finger conducts normally. The wrist response takes about 1.8 ms longer than the palm response for its extra 7 cm, where a healthy hand needs about 1.3 ms, so the delay sits in the 7 cm between wrist and palm, across the carpal tunnel. Splitting the nerve into segments like this localizes slowing that a single wrist-to-digit study can only hint at."
+        },
+        {
+          "q": "Why is the palm study useful when routine values are only borderline?",
+          "options": [
+            "It replaces the need for the ulnar sensory study in the same hand",
+            "It isolates the short segment across the carpal tunnel, where early slowing is concentrated",
+            "It removes the effect of a cold hand, so temperature no longer matters",
+            "It measures motor fibres, which are affected before sensory fibres in CTS"
+          ],
+          "answer": 1,
+          "explanation": "Slowing confined to a few centimetres is diluted over a 14 cm wrist-to-digit study. The palm site lets you compare the palm-to-digit and wrist-to-palm halves directly, so focal slowing across the wrist stands out. Temperature still matters, sensory fibres are usually affected first, and the ulnar comparison is still needed."
+        },
+        {
+          "q": "The median wrist peak latency is about 3.6 ms and the ulnar wrist peak latency, over the same 14 cm, is about 3.1 ms. How is that difference usually judged?",
+          "options": [
+            "Not significant, because both values are under the 4.0 ms limit",
+            "Significant only if the median amplitude is also low",
+            "Not comparable, because the median and ulnar nerves always differ by about 1 ms",
+            "Abnormal: a median-ulnar difference of about 0.5 ms or more over the same distance supports focal median slowing"
+          ],
+          "answer": 3,
+          "explanation": "Each value alone is within the reference limit, but the two nerves were tested in the same hand, at the same temperature, over the same distance. In this app's reference a median-ulnar difference of 0.5 ms or more is abnormal, so a difference of about 0.5 ms supports early median slowing at the wrist. Amplitude can still be normal in early CTS; your lab's comparison cut-offs take precedence."
+        }
+      ],
+      "ws": {
+        "lesions": [
+          {
+            "nerve": "median",
+            "yFrom": 383,
+            "yTo": 414,
+            "motorCvFactor": 0.75,
+            "sensoryCvFactor": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "ncs-guyon",
+      "title": "A long-distance cyclist with a weak hand",
+      "referral": "34M, cycles 300 km a week on drop handlebars; 6 weeks of R hand weakness and clumsiness, no numbness. NCS R arm.",
+      "temp": {
+        "arm": 32.6,
+        "leg": 31
+      },
+      "required": [
+        "ulnarMotor",
+        "ulnarSensory",
+        "medianMotor",
+        "medianSensory"
+      ],
+      "why": "Hand weakness in the ulnar distribution needs ulnar motor studies at the wrist, below and above the elbow, the ulnar SNAP, and median studies to show the problem is confined to the ulnar nerve.",
+      "questions": [
+        {
+          "q": "Where do the ulnar results place the problem?",
+          "options": [
+            "Distal to the wrist, in motor fibres: long distal latency and low CMAP at every site, normal velocities, normal ulnar SNAP",
+            "Across the elbow: slowing and a drop in amplitude between below- and above-elbow sites",
+            "In the C8 root: normal motor studies and an absent ulnar SNAP",
+            "In a polyneuropathy: all four nerves are equally abnormal"
+          ],
+          "answer": 0,
+          "explanation": "Every ulnar motor response is small and the distal latency is prolonged, but the forearm and across-elbow velocities are normal and there is no extra drop across the elbow, so the abnormality lies distal to the wrist stimulation site. The ulnar SNAP is normal, so the sensory fibres to the little finger are spared. That fits compression of the motor branch at the wrist or palm (Guyon's canal), common with handlebar pressure."
+        },
+        {
+          "q": "Which sensory study helps separate an ulnar lesion at the wrist from one at the elbow?",
+          "options": [
+            "The median sensory response to the index finger",
+            "The sural sensory response on the same side",
+            "The dorsal ulnar cutaneous sensory response, which branches off above the wrist",
+            "The superficial radial sensory response at the snuffbox"
+          ],
+          "answer": 2,
+          "explanation": "The dorsal ulnar cutaneous branch leaves the ulnar nerve in the forearm, above Guyon's canal. It is spared by lesions at the wrist but often abnormal with lesions at the elbow. Median, radial and sural responses come from other nerves."
+        }
+      ],
+      "ws": {
+        "lesions": [
+          {
+            "nerve": "ulnar",
+            "yFrom": 385,
+            "yTo": 420,
+            "motorCvFactor": 0.35,
+            "motorBlock": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "ncs-tarsal",
+      "title": "A burning sole after an ankle fracture",
+      "referral": "48F, R medial ankle fracture last year; now burning and numbness of the R sole, worse when standing. NCS R leg, r/o tarsal tunnel.",
+      "temp": {
+        "arm": 32.5,
+        "leg": 30.6
+      },
+      "required": [
+        "tibialMotor",
+        "fibularMotor",
+        "sural"
+      ],
+      "why": "The tibial motor study to the abductor hallucis crosses the tarsal tunnel. The fibular motor and sural studies on the same leg show whether the problem is confined to the tibial nerve at the ankle or part of a wider neuropathy.",
+      "questions": [
+        {
+          "q": "What pattern do your results show?",
+          "options": [
+            "A length-dependent polyneuropathy affecting all three nerves",
+            "Fibular neuropathy at the fibular head",
+            "Focal tibial abnormality at the ankle: prolonged distal latency and small AH response, with normal fibular and sural studies",
+            "Normal studies, because the popliteal-to-ankle velocity is normal"
+          ],
+          "answer": 2,
+          "explanation": "The tibial distal motor latency to the abductor hallucis is prolonged and the response is small, while the tibial velocity from knee to ankle is normal and the fibular and sural studies are normal. The abnormality is in the short segment from the ankle stimulation site to the foot, where the nerve runs through the tarsal tunnel. A normal proximal velocity does not exclude a distal lesion."
+        },
+        {
+          "q": "Which additional studies are commonly added for suspected tarsal tunnel syndrome?",
+          "options": [
+            "Medial and lateral plantar sensory or mixed studies, compared with the other foot",
+            "Repetitive stimulation of the abductor hallucis at 3 Hz",
+            "Median and ulnar F-waves in both arms",
+            "Blink reflexes and facial motor studies"
+          ],
+          "answer": 0,
+          "explanation": "The medial and lateral plantar nerves are the terminal branches of the tibial nerve beyond the tarsal tunnel; their sensory or mixed responses, compared side to side, are more sensitive than the motor study. Plantar responses can be small even in healthy older adults, so the comparison with the asymptomatic foot matters."
+        }
+      ],
+      "ws": {
+        "lesions": [
+          {
+            "nerve": "tibial",
+            "yFrom": 405,
+            "yTo": 455,
+            "motorCvFactor": 0.3,
+            "motorBlock": 0.45
+          }
+        ]
+      }
+    },
+    {
+      "id": "ncs-cmt",
+      "title": "High arches and a family history",
+      "referral": "24M, lifelong clumsy running, high arches and hammer toes; father and aunt similar. NCS R arm and leg.",
+      "temp": {
+        "arm": 32.7,
+        "leg": 30.9
+      },
+      "required": [
+        "medianMotor",
+        "ulnarMotor",
+        "fibularMotor",
+        "medianSensory",
+        "sural"
+      ],
+      "optional": [
+        "tibialMotor",
+        "ulnarSensory"
+      ],
+      "why": "A suspected inherited neuropathy needs motor studies with proximal and distal sites in arm and leg (to judge whether slowing is uniform) and sensory studies in arm and leg.",
+      "questions": [
+        {
+          "q": "How would you describe the conduction velocities?",
+          "options": [
+            "Normal in the arm and slow only in the leg",
+            "Slow only across the elbow and the fibular head",
+            "Uniformly and markedly slow in every nerve and segment, with no conduction block or temporal dispersion",
+            "Normal everywhere, with only low amplitudes"
+          ],
+          "answer": 2,
+          "explanation": "Velocities are less than half of normal (in the low 20s m/s) in every nerve and every segment, and the proximal responses are similar in shape and size to the distal ones: no conduction block, no excess dispersion. Uniform slowing like this is typical of an inherited demyelinating neuropathy such as Charcot-Marie-Tooth type 1A, because every myelinated fibre is affected in the same way."
+        },
+        {
+          "q": "Which feature would instead point toward an acquired demyelinating neuropathy such as CIDP?",
+          "options": [
+            "Conduction block and temporal dispersion at sites that are not usual compression points",
+            "Velocities that are equally slow in every nerve",
+            "High arches and a positive family history",
+            "Absent sural responses"
+          ],
+          "answer": 0,
+          "explanation": "Acquired demyelination is patchy: some segments are slowed more than others, and conduction block or excess temporal dispersion appears at non-compression sites. Inherited demyelination is uniform. High arches and a family history support an inherited cause; absent SNAPs occur in both."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "median": {
+            "cvFactor": 0.42,
+            "termAdd": 2.4,
+            "motorAmp": 0.55,
+            "sensoryAmp": 0.35
+          },
+          "ulnar": {
+            "cvFactor": 0.42,
+            "termAdd": 2,
+            "motorAmp": 0.6,
+            "sensoryAmp": 0.35
+          },
+          "fibular": {
+            "cvFactor": 0.45,
+            "termAdd": 3,
+            "motorAmp": 0.3
+          },
+          "tibial": {
+            "cvFactor": 0.45,
+            "termAdd": 3,
+            "motorAmp": 0.45
+          },
+          "sural": {
+            "sensoryAbsent": true
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-aman",
+      "title": "Weak in a week, but no numbness",
+      "referral": "19M, 6 days of rapidly ascending weakness after a diarrhoeal illness; no sensory symptoms, areflexia. NCS, r/o GBS.",
+      "temp": {
+        "arm": 32.6,
+        "leg": 30.8
+      },
+      "required": [
+        "medianMotor",
+        "ulnarMotor",
+        "fibularMotor",
+        "medianSensory",
+        "sural"
+      ],
+      "optional": [
+        "tibialMotor",
+        "ulnarSensory"
+      ],
+      "why": "Suspected Guillain-Barré syndrome needs motor studies with proximal sites in arm and leg and sensory studies in arm and leg, to decide whether the process is demyelinating or axonal and whether sensory fibres are involved.",
+      "questions": [
+        {
+          "q": "Which pattern fits your results?",
+          "options": [
+            "Demyelinating GBS (AIDP): long latencies, slow velocities and dispersion",
+            "Low motor amplitudes with normal latencies and velocities, and normal sensory responses",
+            "Length-dependent sensory axonal polyneuropathy",
+            "Normal motor and sensory studies"
+          ],
+          "answer": 1,
+          "explanation": "Every motor response is small, but distal latencies and velocities are normal and there is no dispersion, while median and sural SNAPs are normal. That pure motor axonal pattern fits the acute motor axonal neuropathy (AMAN) form of GBS, which often follows Campylobacter infection. AIDP would show demyelinating features."
+        },
+        {
+          "q": "Why may the reader ask for a repeat study in 1 to 2 weeks?",
+          "options": [
+            "Because AMAN never shows abnormalities on the first study",
+            "Because the low amplitudes may be a technical error that time will correct",
+            "To measure whether the fever has affected limb temperature",
+            "Because early reversible conduction failure and evolving changes can change the classification"
+          ],
+          "answer": 3,
+          "explanation": "In early GBS the findings evolve. Some axonal-looking patients have reversible conduction failure at the nodes and recover amplitude quickly, while others show more axonal loss. Serial studies help classify the subtype and follow recovery. Technical checks belong in the first study, not in a repeat."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "median": {
+            "motorAmp": 0.14
+          },
+          "ulnar": {
+            "motorAmp": 0.2
+          },
+          "fibular": {
+            "motorAmp": 0.1
+          },
+          "tibial": {
+            "motorAmp": 0.15
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-lems",
+      "title": "Weak legs, dry mouth, a long smoking history",
+      "referral": "62M, 40 pack-years, 4 months of difficulty climbing stairs, dry mouth; reflexes reduced but improve after brief effort. NCS R arm and leg.",
+      "temp": {
+        "arm": 32.5,
+        "leg": 30.7
+      },
+      "required": [
+        "medianMotor",
+        "ulnarMotor",
+        "medianSensory",
+        "ulnarSensory"
+      ],
+      "optional": [
+        "fibularMotor",
+        "sural"
+      ],
+      "why": "Proximal weakness with reduced reflexes needs motor and sensory studies first, to see whether nerves, the neuromuscular junction or muscle is the likely level.",
+      "questions": [
+        {
+          "q": "The CMAPs are small everywhere with normal latencies and velocities, and the SNAPs are normal. Which quick test should you be ready to add at the reader's request?",
+          "options": [
+            "A second sural sensory study on the other leg",
+            "Repeat the ADM response immediately after 10 seconds of maximal voluntary contraction",
+            "Lower the high filter to 1 kHz and repeat each motor study",
+            "Stimulate the ulnar nerve at the axilla to look for a proximal block"
+          ],
+          "answer": 1,
+          "explanation": "Small resting CMAPs with normal sensory responses raise the possibility of a presynaptic neuromuscular junction disorder such as Lambert-Eaton myasthenic syndrome. After 10 seconds of maximal exercise the CMAP amplitude increases markedly; an increase of about 100% or more strongly suggests LEMS. Repetitive stimulation (decrement at 3 Hz, increment at high rates) is the formal test."
+        },
+        {
+          "q": "Which group of conditions fits low CMAPs with normal SNAPs?",
+          "options": [
+            "Motor neuron disease, motor radiculopathy, motor neuropathy, NMJ disorders and some myopathies",
+            "Carpal tunnel syndrome and ulnar neuropathy at the elbow",
+            "Sensory neuronopathy and small-fibre neuropathy",
+            "A cold limb or submaximal stimulation, and nothing else"
+          ],
+          "answer": 0,
+          "explanation": "SNAPs stay normal whenever the lesion spares the sensory fibres beyond the dorsal root ganglion. Low CMAPs then point to the anterior horn cell, motor roots, motor axons, the neuromuscular junction or muscle. The pattern narrows the list; EMG, exercise testing and repetitive stimulation take it further. Technical causes must be excluded first but do not explain a consistent pattern."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "median": {
+            "motorAmp": 0.22
+          },
+          "ulnar": {
+            "motorAmp": 0.25
+          },
+          "fibular": {
+            "motorAmp": 0.3
+          },
+          "tibial": {
+            "motorAmp": 0.3
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-als",
+      "title": "A thin hand and muscle twitching",
+      "referral": "58M, 8 months of R hand weakness, visible twitching in both arms, no numbness; brisk reflexes. NCS R arm and leg.",
+      "temp": {
+        "arm": 32.6,
+        "leg": 30.8
+      },
+      "required": [
+        "medianMotor",
+        "ulnarMotor",
+        "medianSensory",
+        "ulnarSensory",
+        "fibularMotor"
+      ],
+      "optional": [
+        "sural",
+        "tibialMotor"
+      ],
+      "why": "Progressive weakness without sensory loss needs motor studies with proximal sites (to exclude conduction block) and sensory studies (to show the sensory fibres are spared), in more than one limb.",
+      "questions": [
+        {
+          "q": "The median (APB) response is much smaller than the ulnar (ADM) response. What is this pattern called?",
+          "options": [
+            "Martin-Gruber anastomosis",
+            "Conduction block of the median nerve",
+            "Sural sparing",
+            "The split hand: the thenar side wasted more than the hypothenar side"
+          ],
+          "answer": 3,
+          "explanation": "In motor neuron disease the thenar muscles (APB, first dorsal interosseous) are often more affected than the hypothenar muscles, although they share the C8-T1 roots: the 'split hand'. On NCS it shows as a disproportionately small median (APB) CMAP compared with the ulnar (ADM) CMAP, with normal SNAPs."
+        },
+        {
+          "q": "Why do you stimulate the motor nerves at proximal sites for this referral?",
+          "options": [
+            "To look for conduction block outside compression sites, which suggests multifocal motor neuropathy, a treatable mimic",
+            "To measure the sural nerve indirectly through the leg",
+            "Because distal stimulation is not reliable in thin patients",
+            "To produce F-waves, which replace the need for EMG"
+          ],
+          "answer": 0,
+          "explanation": "Multifocal motor neuropathy can look like motor neuron disease clinically, but it shows motor conduction block in segments that are not usual compression sites, and it responds to immunoglobulin treatment. Normal proximal responses without block, with normal SNAPs, fit a motor neuron disorder; EMG is needed to show widespread denervation."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "median": {
+            "motorAmp": 0.18,
+            "cvFactor": 0.93
+          },
+          "ulnar": {
+            "motorAmp": 0.6
+          },
+          "fibular": {
+            "motorAmp": 0.4,
+            "cvFactor": 0.95
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-ganglion",
+      "title": "Numb hands, unsteady in the dark",
+      "referral": "55F, dry eyes and dry mouth, 6 months of numb hands and face, unsteady with eyes closed; strength normal. NCS R arm and leg.",
+      "temp": {
+        "arm": 32.4,
+        "leg": 30.6
+      },
+      "required": [
+        "medianSensory",
+        "ulnarSensory",
+        "radialSensory",
+        "sural",
+        "medianMotor",
+        "fibularMotor"
+      ],
+      "optional": [
+        "ulnarMotor",
+        "tibialMotor"
+      ],
+      "why": "Sensory loss needs sensory studies in the arm (median, ulnar, radial) and leg (sural), with motor studies to show whether motor fibres are involved.",
+      "questions": [
+        {
+          "q": "Compare the arm and leg sensory responses. What pattern do you see?",
+          "options": [
+            "Length-dependent: sural absent, arm responses normal",
+            "Non-length-dependent: arm SNAPs (including radial) absent or very low, sural relatively preserved, motor studies normal",
+            "Focal median abnormality at the wrist only",
+            "Pure motor involvement with normal sensory responses"
+          ],
+          "answer": 1,
+          "explanation": "In a length-dependent axonal neuropathy the longest nerves (sural) fail first. Here the arm SNAPs, including the short superficial radial nerve, are worse than the sural, and motor studies are normal. That non-length-dependent, pure sensory pattern points to the dorsal root ganglion cell bodies: a sensory neuronopathy (ganglionopathy), as seen with Sjögren syndrome, paraneoplastic syndromes or some toxins."
+        },
+        {
+          "q": "Why is the radial sensory study particularly useful here?",
+          "options": [
+            "It is a short nerve rarely trapped, so a very low radial SNAP argues against length dependence or entrapment",
+            "It replaces the need for the sural study",
+            "It tests motor fibres to the thumb extensors",
+            "It is the only sensory study unaffected by temperature"
+          ],
+          "answer": 0,
+          "explanation": "The superficial radial nerve is short and seldom compressed. If it is very low while the much longer sural is still present, the pattern cannot be explained by length dependence or by entrapment of the median and ulnar nerves, which supports a ganglionopathy. It is a purely sensory nerve, and temperature affects it like any other."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "median": {
+            "sensoryAbsent": true
+          },
+          "ulnar": {
+            "sensoryAmp": 0.12
+          },
+          "radial": {
+            "sensoryAmp": 0.12
+          },
+          "sural": {
+            "sensoryAmp": 0.55
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-ntos",
+      "title": "A thin hand and a cervical rib",
+      "referral": "27F, 2 years of R hand weakness and aching inner forearm; thenar wasting; cervical rib on X-ray. NCS R arm.",
+      "temp": {
+        "arm": 32.8,
+        "leg": 31
+      },
+      "required": [
+        "medianMotor",
+        "medianSensory",
+        "ulnarMotor",
+        "ulnarSensory"
+      ],
+      "why": "Hand weakness and wasting with ulnar-side sensory symptoms need median and ulnar motor and sensory studies, so a lower brachial plexus lesion can be separated from carpal tunnel syndrome and ulnar neuropathy.",
+      "questions": [
+        {
+          "q": "Which pattern do your results show?",
+          "options": [
+            "Carpal tunnel syndrome: slow median latencies with a normal ulnar SNAP",
+            "Ulnar neuropathy at the elbow: slowing across the elbow",
+            "Lower trunk plexus pattern: low median (APB) CMAP and low ulnar SNAP, normal median SNAP and normal latencies",
+            "C6 radiculopathy: normal sensory studies with a low radial SNAP"
+          ],
+          "answer": 2,
+          "explanation": "The thenar (APB) CMAP is small though the median latency is normal, and the ulnar SNAP is low while the median SNAP (C6-C7 fibres through the upper and middle trunks) is normal. APB motor fibres (C8-T1) and the ulnar sensory fibres both run through the lower trunk, so this combination points to the lower trunk of the brachial plexus, as in true neurogenic thoracic outlet syndrome with a cervical rib or band."
+        },
+        {
+          "q": "Which extra sensory study supports a lower trunk or medial cord lesion?",
+          "options": [
+            "The sural sensory response",
+            "The medial antebrachial cutaneous (MABC) sensory response, compared with the other arm",
+            "The superficial radial sensory response",
+            "The median sensory response from the palm"
+          ],
+          "answer": 1,
+          "explanation": "The medial antebrachial cutaneous nerve carries T1 (and C8) sensory fibres from the lower trunk and medial cord and supplies the inner forearm. A low MABC SNAP compared with the other side supports a lower plexus lesion; it is normal in ulnar neuropathy at the elbow and in C8 radiculopathy."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "median": {
+            "motorAmp": 0.3
+          },
+          "ulnar": {
+            "motorAmp": 0.65,
+            "sensoryAmp": 0.18
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-radial",
+      "title": "Numb back of the thumb after handcuffs",
+      "referral": "30M, numbness and tingling over the back of the R thumb and first web space since being handcuffed 3 weeks ago; strength normal. NCS R arm.",
+      "temp": {
+        "arm": 32.7,
+        "leg": 31
+      },
+      "required": [
+        "radialSensory",
+        "medianSensory"
+      ],
+      "optional": [
+        "ulnarSensory",
+        "medianMotor"
+      ],
+      "why": "Numbness on the back of the thumb is in superficial radial territory. The radial sensory study answers the question, and a median sensory study in the same hand checks that the problem is not more widespread.",
+      "questions": [
+        {
+          "q": "What do the results show?",
+          "options": [
+            "A low superficial radial SNAP with normal median sensory responses",
+            "Absent median and radial SNAPs, as in a polyneuropathy",
+            "Prolonged median sensory latency, as in carpal tunnel syndrome",
+            "A normal radial SNAP, which excludes a nerve injury"
+          ],
+          "answer": 0,
+          "explanation": "The superficial radial SNAP is low while the median sensory response is normal. An isolated low radial SNAP fits a lesion of the superficial radial nerve, which lies just under the skin at the wrist and is easily compressed by handcuffs, tight watch straps or casts (cheiralgia paresthetica)."
+        },
+        {
+          "q": "In a similar patient the radial SNAP is in the low-normal range. Which comparison helps most?",
+          "options": [
+            "The sural response on the same side",
+            "The ulnar motor response at the wrist",
+            "The same radial study on the asymptomatic side",
+            "A median motor study at the elbow"
+          ],
+          "answer": 2,
+          "explanation": "Normal ranges are wide. A side-to-side comparison of the same nerve over the same distance is more sensitive: an amplitude less than about half that of the other side is commonly treated as significant. Sural, ulnar motor and median motor studies do not test the superficial radial nerve."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "radial": {
+            "sensoryAmp": 0.18
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-footdrop",
+      "title": "Foot drop with back pain",
+      "referral": "52M, 5 weeks of R foot drop after lifting; back pain radiating down the lateral leg. NCS R leg, fibular neuropathy vs L5 radiculopathy.",
+      "temp": {
+        "arm": 32.5,
+        "leg": 30.8
+      },
+      "required": [
+        "fibularMotor",
+        "tibialMotor",
+        "sural"
+      ],
+      "why": "Foot drop needs the fibular motor study with stimulation below and above the fibular head (to look for a focal lesion there), plus tibial motor and sural studies on the same leg.",
+      "questions": [
+        {
+          "q": "The EDB response is low at the ankle, below the fibular head and at the popliteal fossa, with no drop or slowing across the fibular head. What does this tell you?",
+          "options": [
+            "It proves a fibular neuropathy at the fibular head",
+            "There is axonal loss in fibular fibres, but NCS alone cannot say where: fibular nerve, sciatic nerve or L5 root",
+            "It proves an L5 radiculopathy, because the sural is normal",
+            "The study is technically invalid and must be repeated"
+          ],
+          "answer": 1,
+          "explanation": "A low CMAP at every site without focal slowing or block means axonal loss somewhere proximal to the ankle, but motor NCS cannot show where the axons were damaged. A demyelinating lesion at the fibular head would show slowing or block across it. EMG (including muscles supplied by L5 but not by the fibular nerve, and the paraspinals) is needed to localize."
+        },
+        {
+          "q": "Which sensory study helps separate an L5 root lesion from a fibular nerve lesion?",
+          "options": [
+            "The superficial fibular sensory response: normal in L5 radiculopathy, often low in fibular nerve lesions",
+            "The median sensory response to the index finger",
+            "The sural response, which is always absent in L5 radiculopathy",
+            "The radial sensory response at the snuffbox"
+          ],
+          "answer": 0,
+          "explanation": "Root lesions are proximal to the dorsal root ganglion, so the SNAP of the matching sensory nerve stays normal even with numbness. The superficial fibular nerve carries mostly L5 fibres; it is often low with fibular nerve or sciatic lesions but normal with an L5 root lesion. The sural is mainly S1 and is normal in both; median and radial responses come from the arm."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "fibular": {
+            "motorAmp": 0.22
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-dm-cts",
+      "title": "Diabetes and night-time hand numbness",
+      "referral": "64F, T2DM x12 yr with numb feet; now R thumb/index/middle numbness that wakes her at night. NCS R arm and leg.",
+      "temp": {
+        "arm": 32.5,
+        "leg": 30.5
+      },
+      "required": [
+        "medianMotor",
+        "medianSensory",
+        "ulnarMotor",
+        "ulnarSensory",
+        "sural",
+        "fibularMotor"
+      ],
+      "optional": [
+        "tibialMotor"
+      ],
+      "why": "Two questions need answering: is there a polyneuropathy (sural and fibular studies), and is there carpal tunnel syndrome on top of it (median studies compared with ulnar studies in the same hand)?",
+      "questions": [
+        {
+          "q": "What do your results show?",
+          "options": [
+            "A polyneuropathy alone, which explains the hand symptoms",
+            "Carpal tunnel syndrome alone, with normal leg studies",
+            "Ulnar neuropathy at the elbow with a normal leg",
+            "A length-dependent axonal polyneuropathy plus a median abnormality at the wrist out of proportion to the ulnar studies"
+          ],
+          "answer": 3,
+          "explanation": "The sural SNAP is low and the fibular CMAP small: a length-dependent axonal polyneuropathy. In the arm, the median latencies are clearly prolonged while the ulnar studies in the same hand are near normal. A polyneuropathy would affect median and ulnar nerves similarly, so the disproportionate median slowing at the wrist suggests superimposed carpal tunnel syndrome."
+        },
+        {
+          "q": "Why is the ulnar comparison essential in a patient with a polyneuropathy?",
+          "options": [
+            "Because the ulnar nerve is never affected by diabetes",
+            "Because a polyneuropathy can slow the median nerve on its own; only a disproportionate median abnormality supports CTS",
+            "Because ulnar studies are required by every insurance protocol",
+            "Because ulnar studies show the severity of the polyneuropathy better than the sural"
+          ],
+          "answer": 1,
+          "explanation": "A diffuse neuropathy can prolong median latencies by itself. Carpal tunnel syndrome is supported when the median is clearly worse than another nerve in the same hand (or than its own palm segment), not just abnormal. Diabetes can affect the ulnar nerve too, which is why the comparison is relative."
+        }
+      ],
+      "ws": {
+        "lesions": [
+          {
+            "nerve": "median",
+            "yFrom": 383,
+            "yTo": 414,
+            "motorCvFactor": 0.32,
+            "sensoryCvFactor": 0.25,
+            "sensoryBlock": 0.35
+          }
+        ],
+        "nerves": {
+          "median": {
+            "cvFactor": 0.9,
+            "sensoryAmp": 0.7
+          },
+          "ulnar": {
+            "cvFactor": 0.9,
+            "sensoryAmp": 0.7
+          },
+          "sural": {
+            "sensoryAmp": 0.15,
+            "cvFactor": 0.88
+          },
+          "fibular": {
+            "motorAmp": 0.22,
+            "cvFactor": 0.88
+          },
+          "tibial": {
+            "motorAmp": 0.35,
+            "cvFactor": 0.9
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-mmn",
+      "title": "A weak hand, no numbness, slowly worse",
+      "referral": "41M, 18 months of slowly worsening R hand weakness (finger spreading, grip), no sensory symptoms, little wasting. NCS R arm.",
+      "temp": {
+        "arm": 32.7,
+        "leg": 31
+      },
+      "required": [
+        "ulnarMotor",
+        "ulnarSensory",
+        "medianMotor",
+        "medianSensory"
+      ],
+      "why": "Weakness in ulnar-supplied hand muscles needs ulnar motor studies at the wrist, below and above the elbow, plus the ulnar SNAP and median studies for comparison.",
+      "questions": [
+        {
+          "q": "Where is the abnormality in the ulnar motor study?",
+          "options": [
+            "Across the elbow: the amplitude drops only between below- and above-elbow sites",
+            "In the forearm: the CMAP drops by more than half between the wrist and below-elbow sites, with a normal ulnar SNAP",
+            "At the wrist: the distal latency is long and every response is small",
+            "Nowhere: all ulnar values are within limits"
+          ],
+          "answer": 1,
+          "explanation": "The wrist response is normal, but stimulating below the elbow gives a much smaller response without much change in duration: conduction block in the forearm segment, which is not a usual compression site. The ulnar SNAP is normal. Motor conduction block at a non-entrapment site with normal sensory responses is the hallmark of multifocal motor neuropathy, a treatable condition."
+        },
+        {
+          "q": "When is an amplitude drop between two sites usually accepted as conduction block rather than normal loss?",
+          "options": [
+            "Any drop of more than 5%",
+            "Only when the distal latency is also prolonged",
+            "A large drop (for example 50% or more in arm nerves) without excessive temporal dispersion",
+            "Only when the drop is in the leg"
+          ],
+          "answer": 2,
+          "explanation": "Some fall in amplitude over a long segment is normal, especially in the legs. A large proximal-to-distal drop (commonly 50% or more for definite block in arm nerves) with little increase in response duration means impulses are failing to pass. If the response is also much longer and more dispersed, phase cancellation may explain part of the drop."
+        }
+      ],
+      "ws": {
+        "lesions": [
+          {
+            "nerve": "ulnar",
+            "yFrom": 200,
+            "yTo": 290,
+            "motorBlock": 0.32,
+            "motorCvFactor": 0.85
+          }
+        ]
+      }
     }
   ]
 }
