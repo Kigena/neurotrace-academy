@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { curveLength, smoothPath, thinPath } from "../../ncs/geometry.js";
 import { stimPoles } from "../../ncs/fieldSim.js";
+import { skinPath, surfaceArtFor } from "../../ncs/anatomy/surfaceArt.js";
+import LimbSurface from "./LimbSurface.jsx";
 
 /**
  * Interactive anatomy workspace. Everything is drawn in model coordinates
@@ -10,8 +12,6 @@ import { stimPoles } from "../../ncs/fieldSim.js";
  */
 
 const LAYER_STYLE = {
-  skin: { fill: "#f3dfcf", stroke: "#a98a74" },
-  surface: "#c9a68e",
   muscle: { fill: "rgba(190, 80, 70, 0.22)", stroke: "rgba(150, 50, 45, 0.7)" },
   tendon: { fill: "rgba(235, 225, 200, 0.75)", stroke: "rgba(140, 120, 90, 0.8)" },
   bone: { fill: "rgba(250, 246, 230, 0.85)", stroke: "#8a7f63" },
@@ -206,6 +206,7 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
   const live = tool === "tape" && tapeActive && tape?.length && hover && !tracing ? [...tape, [hover.x, hover.y]] : null;
   const liveLen = live ? curveLength(live) : 0;
   const editing = tool === "tape" && !tapeActive;
+  const { cutStarts, contours = [], ...skinPaint } = surfaceArtFor(model.SKIN) || {};
 
   return (
     <svg
@@ -222,10 +223,8 @@ export default function AnatomyCanvas({ model, view, setView, layers, setup, onP
       role="img"
       aria-label={model.ORIENTATION.title}
     >
-      <path d={smoothPath(model.SKIN)} fill={LAYER_STYLE.skin.fill} stroke={LAYER_STYLE.skin.stroke} strokeWidth="1.5" />
-      {Object.values(model.SURFACE).map((pts, i) => (
-        <path key={i} d={smoothPath(pts, false)} fill="none" stroke={LAYER_STYLE.surface} strokeWidth="1.2" strokeDasharray="4 3" opacity="0.8" />
-      ))}
+      <LimbSurface {...skinPaint} outline={skinPath(model.SKIN, cutStarts)}
+        contours={[...Object.values(model.SURFACE).map((pts) => smoothPath(pts, false)), ...contours]} />
       {layers.muscle && model.MUSCLES.map((m) => {
         const fill = m.tendon ? LAYER_STYLE.tendon.fill : LAYER_STYLE.muscle.fill;
         const stroke = m.tendon ? LAYER_STYLE.tendon.stroke : LAYER_STYLE.muscle.stroke;
