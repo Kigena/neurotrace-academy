@@ -175,6 +175,12 @@ function Sidebar({ isOpen, onClose }) {
               </svg>
               Standards
             </NavLink>
+            <NavLink to="/abbreviations" className={navLinkClasses} onClick={handleNavClick}>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 19V7a2 2 0 012-2h12a2 2 0 012 2v12M4 19h16M8 9h3M8 13h8M14 9h2" />
+              </svg>
+              Abbreviations
+            </NavLink>
           </div>
 
           <div className="mb-4">

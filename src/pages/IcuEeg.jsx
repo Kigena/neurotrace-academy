@@ -9,6 +9,7 @@ const PRACTICE = {
     ["ACNS Guidelines and Terminology (seizure, IIC and status criteria)", "/acns"],
     ["Diffuse abnormalities and coma patterns", "/diffuse-abnormalities"],
     ["Encephalopathy patterns with tracings", "/neuro-syndromes?tab=patterns"],
+    ["All abbreviations: EEG lab, evoked potentials, NCS/EMG, sleep, IONM", "/abbreviations"],
   ],
 };
 

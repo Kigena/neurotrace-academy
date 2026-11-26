@@ -30,6 +30,7 @@ import NeonatalPediatric from "./pages/NeonatalPediatric.jsx";
 import NcsLab from "./pages/NcsLab.jsx";
 import HeadMeasureLabPage from "./pages/HeadMeasureLabPage.jsx";
 import Standards from "./pages/Standards.jsx";
+import Abbreviations from "./pages/Abbreviations.jsx";
 import Quiz from "./pages/Quiz.jsx";
 import QuizSession from "./pages/QuizSession.jsx";
 import PatternRecognitionQuiz from "./pages/PatternRecognitionQuiz.jsx";
@@ -151,6 +152,11 @@ function AppContent() {
             <Route path="/share-case" element={
               <ProtectedRoute>
                 <ShareCase />
+              </ProtectedRoute>
+            } />
+            <Route path="/abbreviations" element={
+              <ProtectedRoute>
+                <Abbreviations />
               </ProtectedRoute>
             } />
             <Route path="/standards" element={
