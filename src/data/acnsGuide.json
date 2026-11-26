@@ -824,15 +824,39 @@
           ]
         },
         {
+          "title": "Abbreviations used in the ictal-interictal continuum section",
+          "kind": "table",
+          "head": ["Short form", "Full meaning", "Plain-language explanation"],
+          "rows": [
+            ["IIC", "Ictal-interictal continuum", "An EEG pattern that may be contributing to symptoms but does not meet definite seizure criteria; it needs clinical interpretation."],
+            ["ESz", "Electrographic seizure", "A seizure defined by the electrical recording."],
+            ["ESE", "Electrographic status epilepticus", "Electrographic seizures that meet the duration or seizure-burden threshold for status epilepticus."],
+            ["PD / PDs", "Periodic discharge / periodic discharges", "Repeating waveforms with a gap between them."],
+            ["SW", "Spike-and-wave or sharp-and-wave", "A repeating spike or sharp wave followed by a slow wave, without a gap between complexes."],
+            ["RDA", "Rhythmic delta activity", "Regularly repeating slow waves without gaps between waves."],
+            ["LRDA", "Lateralized rhythmic delta activity", "Rhythmic slow activity on one side, consistently stronger on one side, or consistently starting on the same side."],
+            ["BIRDA", "Bilateral independent rhythmic delta activity", "Two independent slow-wave rhythms occurring at the same time, one in each half of the brain."],
+            ["UIRDA", "Unilateral independent rhythmic delta activity", "Two independent slow-wave rhythms occurring at the same time within one half of the brain."],
+            ["MfRDA", "Multifocal rhythmic delta activity", "At least three independent slow-wave rhythms occurring at the same time, with at least one in each half of the brain."],
+            ["GRDA", "Generalized rhythmic delta activity", "Slow-wave activity occurring together across both sides; excluded from criterion C below."],
+            ["SI-", "Stimulus-induced", "The pattern is reproducibly triggered or made stronger by an alerting stimulus."],
+            ["Hz / s", "Hertz / seconds", "Hertz measures cycles per second; s is the time unit seconds."]
+          ],
+          "note": "BIRDA describes a location pattern. BIRDs means brief potentially ictal rhythmic discharges, a different term discussed above."
+        },
+        {
           "title": "Ictal-interictal continuum (IIC)",
           "kind": "list",
           "items": [
-            "A purely electrographic term (synonym: possible ESz or possible ESE), not a diagnosis.",
-            "Criterion A: any PD or SW pattern averaging more than 1.0 and up to 2.5 Hz over 10 s (more than 10 and up to 25 discharges in 10 s).",
-            "Criterion B: any PD or SW pattern averaging 0.5 to 1.0 Hz over 10 s (5 to 10 discharges) WITH a plus modifier or fluctuation.",
-            "Criterion C: any lateralized RDA (LRDA, BIRDA, UIRDA, MfRDA, not GRDA) averaging more than 1 Hz for at least 10 s WITH a plus modifier or fluctuation.",
-            "And the pattern must not already qualify as ESz or ESE.",
-            "Stimulus-induced IIC patterns take the SI- prefix."
+            "What it means: an electrical brain-wave pattern that may be contributing to symptoms but falls short of a definite electrographic seizure. Ictal means during a seizure; interictal means between seizures. This is a description of the recording, not a diagnosis.",
+            "Other names: possible electrographic seizure (ESz) or possible electrographic status epilepticus (ESE).",
+            "Criterion A: periodic discharges (PDs) or spike-and-wave / sharp-and-wave (SW) averaging more than 1.0 and up to 2.5 cycles per second (Hz), measured over 10 seconds. That is more than 10 and up to 25 discharges in 10 seconds.",
+            "Criterion B: periodic discharges or spike-and-wave / sharp-and-wave averaging 0.5 to 1.0 cycles per second over 10 seconds (5 to 10 discharges), AND a plus modifier or fluctuation. See the explanations below.",
+            "Criterion C: lateralized rhythmic delta activity averaging more than 1 cycle per second for at least 10 seconds, AND a plus modifier or fluctuation. Eligible patterns are lateralized (LRDA), bilateral independent (BIRDA), unilateral independent (UIRDA), or multifocal rhythmic delta activity (MfRDA); the key above explains each location pattern. Generalized rhythmic delta activity (GRDA) is excluded.",
+            "Plus modifier: an extra feature that makes the pattern look more seizure-like, such as added fast activity, rhythmic activity, or spikes/sharp waves. Which modifier applies depends on the underlying pattern (see the Plus modifiers table).",
+            "Fluctuation: repeated changes in the pattern's rate, shape, or location that do not meet the formal criteria for evolution. The formal thresholds are in the Fluctuating card on the terminology tab.",
+            "For all three criteria, the pattern must not already meet the definition of electrographic seizure or electrographic status epilepticus.",
+            "If an alerting stimulus reproducibly triggers or strengthens the pattern, add the stimulus-induced prefix (SI-)."
           ]
         },
         {
