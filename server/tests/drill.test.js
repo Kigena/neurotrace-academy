@@ -32,6 +32,7 @@ describe('drill import file', () => {
         for (const set of ['neuro', 'peds', 'meds']) expect(qs.filter((q) => q.drillSet === set)).toHaveLength(30);
         expect(qs.filter((q) => q.drillSet === 'acns').length).toBeGreaterThanOrEqual(60);
         expect(qs.filter((q) => q.drillSet === 'patterns').length).toBeGreaterThanOrEqual(70);
+        expect(qs.filter((q) => q.drillSet === 'calc').length).toBeGreaterThanOrEqual(40);
         for (const q of qs) {
             expect(q.domainId).toMatch(/^domain-[1-4]$/);
             expect(q.sectionId.startsWith(`d${q.domainId.slice(-1)}-`)).toBe(true);

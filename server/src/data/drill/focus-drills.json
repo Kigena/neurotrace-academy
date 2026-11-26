@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "generatedAt": "2026-11-14",
   "bank": "drill",
-  "description": "Focus Drills: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG, the ACNS guidelines (2016 Guidelines 1-7, 2021 Critical Care EEG Terminology, 2015 cEEG consensus), and EEG patterns (one question per pattern in the pattern library). Kept apart from the main question bank and served only on the drill page.",
-  "totalQuestions": 235,
+  "description": "Focus Drills: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG, the ACNS guidelines (2016 Guidelines 1-7, 2021 Critical Care EEG Terminology, 2015 cEEG consensus), EEG patterns (one question per pattern in the pattern library), and no-calculator maths (exam-style calculations with mental shortcuts). Kept apart from the main question bank and served only on the drill page.",
+  "totalQuestions": 276,
   "questions": [
     {
       "id": "drill-n01",
@@ -5407,6 +5407,949 @@
       "answerIndex": 3,
       "explanation": "PDs or SW averaging more than 1 and up to 2.5 Hz over 10 s (more than 10 and up to 25 discharges) meet IIC criterion A, as long as seizure criteria are not met. IIC is an electrographic term (possible seizure), not a diagnosis; notify per protocol.",
       "memoryAid": "2 Hz LPDs sit on the FENCE between interictal and ictal.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c01",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "At a sensitivity of 7 µV/mm, a wave measures 8 mm from peak to trough. What is its amplitude?",
+      "options": [
+        "0.9 µV",
+        "15 µV",
+        "112 µV",
+        "56 µV"
+      ],
+      "answerIndex": 3,
+      "explanation": "Amplitude = sensitivity × deflection: 7 µV/mm × 8 mm = 56 µV. The millimetres cancel and microvolts are left. Adding the numbers (15) or dividing them (0.9) are the usual slips; 112 doubles the answer for no reason.",
+      "memoryAid": "µV/mm × mm = µV. Let the units tell you to MULTIPLY.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c02",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A 70 µV alpha rhythm is displayed at 10 µV/mm. How tall is it on the screen?",
+      "options": [
+        "7 mm",
+        "80 mm",
+        "700 mm",
+        "0.14 mm"
+      ],
+      "answerIndex": 0,
+      "explanation": "Height = amplitude ÷ sensitivity: 70 µV ÷ 10 µV/mm = 7 mm. Multiplying gives an impossible 700 mm; the microvolts must cancel, which only happens when you divide.",
+      "memoryAid": "Going from µV to mm: DIVIDE by the µV/mm.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c03",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A 50 µV calibration pulse produces a 10 mm deflection. What is the sensitivity?",
+      "options": [
+        "0.2 µV/mm",
+        "60 µV/mm",
+        "500 µV/mm",
+        "5 µV/mm"
+      ],
+      "answerIndex": 3,
+      "explanation": "Sensitivity = µV ÷ mm: 50 ÷ 10 = 5 µV/mm. Each millimetre of pen travel stands for 5 microvolts. 0.2 is the answer upside down (mm per µV).",
+      "memoryAid": "Sensitivity reads as its units: µV PER mm, so µV ÷ mm.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c04",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A wave is 10 mm tall at 7 µV/mm. The sensitivity is changed to 14 µV/mm. How tall is the same wave now?",
+      "options": [
+        "10 mm",
+        "20 mm",
+        "2 mm",
+        "5 mm"
+      ],
+      "answerIndex": 3,
+      "explanation": "The wave is 70 µV (7 × 10). At 14 µV/mm it is 70 ÷ 14 = 5 mm. Doubling the µV/mm number halves the picture; the brain signal has not changed, only the display.",
+      "memoryAid": "Bigger µV/mm number = SMALLER picture. Double the number, halve the height.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c05",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "For an electrocerebral inactivity recording you want a 2 µV signal to show as a 1 mm deflection. What sensitivity is that?",
+      "options": [
+        "7 µV/mm",
+        "20 µV/mm",
+        "2 µV/mm",
+        "0.5 µV/mm"
+      ],
+      "answerIndex": 2,
+      "explanation": "2 µV ÷ 1 mm = 2 µV/mm, the sensitivity the ACNS protocol requires for ECI recordings, so that very low-voltage activity is not missed. 7 µV/mm is the routine setting.",
+      "memoryAid": "ECI: TWO µV per mm so you can see TOO little activity.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c06",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-sensitivity",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "At 10 µV/mm, a sharp wave rises 6 mm above the baseline and then falls 3 mm below it. What is its peak-to-peak amplitude?",
+      "options": [
+        "9 µV",
+        "90 µV",
+        "60 µV",
+        "30 µV"
+      ],
+      "answerIndex": 1,
+      "explanation": "Peak to peak is the full excursion: 6 + 3 = 9 mm, and 9 × 10 = 90 µV. Using only the part above the baseline (60) or subtracting the two parts (30) under-measures it.",
+      "memoryAid": "Peak to peak = TOP to BOTTOM: add both sides of the baseline.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c07",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "At 30 mm/s, one complete wave spans 3 mm. What is its frequency?",
+      "options": [
+        "0.1 Hz",
+        "90 Hz",
+        "10 Hz",
+        "3 Hz"
+      ],
+      "answerIndex": 2,
+      "explanation": "3 mm at 30 mm/s lasts 3 ÷ 30 = 0.1 s, and 1 ÷ 0.1 = 10 Hz. Shortcut: at 30 mm/s, Hz = 30 ÷ wavelength in mm. 0.1 is the period in seconds, not the frequency.",
+      "memoryAid": "At 30 mm/s: Hz = 30 ÷ mm. Three-millimetre waves = TEN Hz alpha.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c08",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "At 30 mm/s, each wave in a run is 5 mm long. What frequency is the run, and what band?",
+      "options": [
+        "0.17 Hz, delta",
+        "6 Hz, theta",
+        "150 Hz, beta",
+        "5 Hz, theta"
+      ],
+      "answerIndex": 1,
+      "explanation": "30 ÷ 5 = 6 Hz, which is theta (4 to under 8 Hz). 5 Hz just reads the millimetres as hertz; 150 multiplies instead of dividing.",
+      "memoryAid": "Hz = 30 ÷ mm. Five-millimetre waves are six per second.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c09",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "At 30 mm/s, a transient is 3 mm wide at its base. How long does it last, and what is it called?",
+      "options": [
+        "100 ms: a spike",
+        "10 ms: a spike",
+        "100 ms: a sharp wave",
+        "300 ms: a slow wave"
+      ],
+      "answerIndex": 2,
+      "explanation": "At 30 mm/s each millimetre is about 33 ms, so 3 mm = 100 ms. Spikes last 20 to under 70 ms and sharp waves 70 to 200 ms, so 100 ms is a sharp wave.",
+      "memoryAid": "At 30 mm/s, 1 mm ≈ 33 ms, so 3 mm = 100 ms. SPIKE under 70, SHARP 70 to 200.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c10",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "At 30 mm/s, an epileptiform transient is 1.5 mm wide. How long is it, and what is it called?",
+      "options": [
+        "50 ms: a spike",
+        "50 ms: a sharp wave",
+        "20 ms: a spike",
+        "150 ms: a sharp wave"
+      ],
+      "answerIndex": 0,
+      "explanation": "1.5 mm × 33 ms ≈ 50 ms (or 1.5 ÷ 30 = 0.05 s). Under 70 ms makes it a spike. Reading 1.5 mm as 150 ms is a slip of the decimal point.",
+      "memoryAid": "Half of 3 mm (100 ms) is 1.5 mm (50 ms): under 70 = SPIKE.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c11",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "At 30 mm/s, periodic discharges recur every 45 mm. How often do they repeat?",
+      "options": [
+        "Every 1.5 s (about 0.7 Hz)",
+        "Every 4.5 s (about 0.2 Hz)",
+        "Every 0.67 s (about 1.5 Hz)",
+        "Every 15 s (about 0.07 Hz)"
+      ],
+      "answerIndex": 0,
+      "explanation": "45 mm ÷ 30 mm/s = 1.5 s between discharges, and 1 ÷ 1.5 ≈ 0.67 Hz. Writing the frequency as 1.5 Hz confuses the interval with the rate.",
+      "memoryAid": "Interval in seconds = mm ÷ 30. Rate = 1 ÷ interval.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c12",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A neonatal EEG is displayed at 15 mm/s. A quiet interburst stretch measures 60 mm. How long is it?",
+      "options": [
+        "0.25 s",
+        "4 s",
+        "8 s",
+        "2 s"
+      ],
+      "answerIndex": 1,
+      "explanation": "60 mm ÷ 15 mm/s = 4 s. Neonatal records are often reviewed at 15 mm/s; dividing by 30 out of habit gives 2 s and halves every interburst interval.",
+      "memoryAid": "CHECK THE SPEED first: at 15 mm/s, every mm is TWICE as long in time.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c13",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A display is 300 mm wide and set to 30 mm/s. How many seconds does one page show?",
+      "options": [
+        "20 s",
+        "3 s",
+        "10 s",
+        "30 s"
+      ],
+      "answerIndex": 2,
+      "explanation": "300 mm ÷ 30 mm/s = 10 s per page, the standard routine EEG page. At 15 mm/s the same width would show 20 s.",
+      "memoryAid": "30 mm/s = the 10-second page.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c14",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A 10 Hz rhythm is viewed at 30 mm/s, then the timebase is changed to 15 mm/s. What happens?",
+      "options": [
+        "Each wave is 6 mm wide; the rhythm is now 5 Hz",
+        "Each wave is 1.5 mm wide; the rhythm is still 10 Hz",
+        "Each wave is 3 mm wide; the rhythm is unchanged",
+        "Each wave is 1.5 mm wide; the rhythm is now 20 Hz"
+      ],
+      "answerIndex": 1,
+      "explanation": "At 15 mm/s, a 0.1 s wave takes 15 × 0.1 = 1.5 mm, so the waves are squeezed together and look faster, but the brain is still producing 10 Hz. The timebase changes the picture, never the frequency.",
+      "memoryAid": "Slower paper = SQUASHED waves that only LOOK faster.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c15",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "From one peak to the next, a wave takes 0.25 s. What is its frequency?",
+      "options": [
+        "0.25 Hz",
+        "2.5 Hz",
+        "4 Hz",
+        "25 Hz"
+      ],
+      "answerIndex": 2,
+      "explanation": "Frequency = 1 ÷ period = 1 ÷ 0.25 = 4 Hz. Think: four quarters of a second fit into one second.",
+      "memoryAid": "Hz = 1 ÷ seconds. A quarter-second wave = FOUR per second.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c16",
+      "domainId": "domain-2",
+      "sectionId": "d2-s7",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "At 30 mm/s, the R waves in the ECG channel are 25 mm apart. What is the heart rate?",
+      "options": [
+        "125 beats/min",
+        "72 beats/min",
+        "36 beats/min",
+        "83 beats/min"
+      ],
+      "answerIndex": 1,
+      "explanation": "25 ÷ 30 ≈ 0.83 s per beat, and 60 ÷ 0.83 ≈ 72 per minute. Shortcut at 30 mm/s: rate = 1800 ÷ R-R in mm, and 1800 ÷ 25 = 72. 83 reads the 0.83 s as a rate.",
+      "memoryAid": "Heart rate at 30 mm/s = 1800 ÷ mm between R waves.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c17",
+      "domainId": "domain-3",
+      "sectionId": "d3-epileptiform-discharges",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A seizure begins at 01:12:40 and ends at 01:13:25. How long did it last?",
+      "options": [
+        "13 s",
+        "25 s",
+        "85 s",
+        "45 s"
+      ],
+      "answerIndex": 3,
+      "explanation": "From 01:12:40 to 01:13:00 is 20 s, and from 01:13:00 to 01:13:25 is 25 s: 45 s in total. Count up to the whole minute first, then add the rest. 85 s comes from subtracting the times as plain numbers (1325 − 1240), forgetting that a minute has 60 seconds.",
+      "memoryAid": "Times: COUNT UP to the next whole minute, then add the leftover seconds.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c18",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "An EEG is sampled at 256 Hz. What is the highest frequency it can represent without aliasing?",
+      "options": [
+        "256 Hz",
+        "85 Hz",
+        "512 Hz",
+        "128 Hz"
+      ],
+      "answerIndex": 3,
+      "explanation": "The Nyquist frequency is half the sampling rate: 256 ÷ 2 = 128 Hz. Faster activity aliases, appearing falsely as slower waves.",
+      "memoryAid": "NYQUIST = HALF. You need at least two samples per wave.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c19",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "An EEG is sampled at 200 Hz. How much time passes between samples?",
+      "options": [
+        "0.5 ms",
+        "200 ms",
+        "50 ms",
+        "5 ms"
+      ],
+      "answerIndex": 3,
+      "explanation": "1000 ms ÷ 200 samples = 5 ms between samples. 200 ms would be one sample every fifth of a second, far too slow for EEG.",
+      "memoryAid": "Sample interval (ms) = 1000 ÷ sampling rate.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c20",
+      "domainId": "domain-2",
+      "sectionId": "d2-timebase-sampling",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "The high-frequency filter is set to 70 Hz. Using the guideline that the sampling rate should be at least three times the HFF, what is the minimum sampling rate?",
+      "options": [
+        "23 Hz",
+        "140 Hz",
+        "210 Hz",
+        "70 Hz"
+      ],
+      "answerIndex": 2,
+      "explanation": "3 × 70 = 210 Hz. Twice the HFF (140) is the bare theoretical Nyquist limit; the extra margin keeps waveforms like spikes from being distorted.",
+      "memoryAid": "Sampling ≥ 3 × HFF: 70 Hz HFF needs over 200 Hz sampling.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c21",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "The low-frequency filter is set to 1 Hz. What is the equivalent time constant?",
+      "options": [
+        "About 6.3 s",
+        "About 1 s",
+        "About 0.16 s",
+        "About 0.03 s"
+      ],
+      "answerIndex": 2,
+      "explanation": "TC = 1 ÷ (2π × LFF) = 1 ÷ 6.28 ≈ 0.16 s. Shortcut: TC ≈ 0.16 ÷ LFF. 6.3 s multiplies by 2π instead of dividing.",
+      "memoryAid": "TC ≈ 0.16 ÷ LFF. 1 Hz LFF = 0.16 s, the routine pair.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c22",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "The low-frequency filter is set to 0.5 Hz. What is the equivalent time constant?",
+      "options": [
+        "About 3.1 s",
+        "About 0.32 s",
+        "About 2 s",
+        "About 0.08 s"
+      ],
+      "answerIndex": 1,
+      "explanation": "0.16 ÷ 0.5 = 0.32 s (often written as 0.3 s). Halving the LFF doubles the time constant, letting more slow activity through.",
+      "memoryAid": "LOWER LFF = LONGER time constant. Halve one, double the other.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c23",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A recording uses a time constant of 0.1 s. What low-frequency filter setting is that?",
+      "options": [
+        "About 1.6 Hz",
+        "About 0.6 Hz",
+        "About 0.1 Hz",
+        "About 10 Hz"
+      ],
+      "answerIndex": 0,
+      "explanation": "LFF ≈ 0.16 ÷ TC = 0.16 ÷ 0.1 = 1.6 Hz. The same 0.16 rule works in both directions.",
+      "memoryAid": "0.16 ÷ one = the other (TC and LFF swap places).",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c24",
+      "domainId": "domain-2",
+      "sectionId": "d2-filters-time-constants",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "The low-frequency filter is raised from 1 Hz to 5 Hz. What happens to 1 Hz delta activity?",
+      "options": [
+        "It is converted into 5 Hz theta",
+        "It is unchanged, because the LFF only affects fast activity",
+        "It becomes larger and sharper",
+        "It is strongly reduced, so real slowing can be missed"
+      ],
+      "answerIndex": 3,
+      "explanation": "The LFF (high-pass filter) removes activity below its setting. A 5 Hz LFF strongly attenuates 1 Hz delta, which can hide focal slowing. Filters reduce amplitude; they never change a wave's frequency.",
+      "memoryAid": "The LOW filter LOSES the LOW frequencies. Raise it and delta fades.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c25",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "An amplifier has a common mode rejection ratio of 10,000:1. A 20 mV mains signal appears equally at both inputs. How big is it at the output?",
+      "options": [
+        "2 µV",
+        "200 µV",
+        "0.2 µV",
+        "20 µV"
+      ],
+      "answerIndex": 0,
+      "explanation": "20 mV = 20,000 µV, and 20,000 ÷ 10,000 = 2 µV. Converting millivolts to microvolts first (× 1000) avoids the decimal-point slips in the other answers.",
+      "memoryAid": "Convert first: 1 mV = 1000 µV. Then divide by the CMRR.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c26",
+      "domainId": "domain-2",
+      "sectionId": "d2-amplifiers-impedance-grounding",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A CMRR is quoted as 80 dB. What ratio is that?",
+      "options": [
+        "80:1",
+        "10,000:1",
+        "100,000:1",
+        "1,000:1"
+      ],
+      "answerIndex": 1,
+      "explanation": "For voltage ratios, every 20 dB is a factor of 10: 20 dB = 10, 40 dB = 100, 60 dB = 1,000, 80 dB = 10,000.",
+      "memoryAid": "Every 20 dB adds a ZERO. 80 dB = four zeros = 10,000.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c27",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "Input 1 is at −50 µV and input 2 is at −20 µV. What does the channel show?",
+      "options": [
+        "30 µV, upward",
+        "70 µV, downward",
+        "70 µV, upward",
+        "30 µV, downward"
+      ],
+      "answerIndex": 0,
+      "explanation": "Output = input 1 − input 2 = −50 − (−20) = −30 µV. By convention a negative output deflects upward. Adding the two (70) ignores that the amplifier subtracts.",
+      "memoryAid": "Output = G1 − G2. NEGATIVE goes UP.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c28",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "During a discharge F3 is at −100 µV and C3 is at −40 µV. What does the F3-C3 channel show?",
+      "options": [
+        "140 µV downward",
+        "60 µV upward",
+        "140 µV upward",
+        "60 µV downward"
+      ],
+      "answerIndex": 1,
+      "explanation": "F3 − C3 = −100 − (−40) = −60 µV, a 60 µV upward deflection. Subtracting a negative number means adding it back.",
+      "memoryAid": "Minus a minus is a plus: −100 − (−40) = −60.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c29",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A spike gives F7 −40 µV, T3 −80 µV, T5 −40 µV, and 0 µV elsewhere. What do F7-T3 and T3-T5 show?",
+      "options": [
+        "Both flat: the spike is equal in both",
+        "Both 40 µV up: no phase reversal",
+        "F7-T3 40 µV down and T3-T5 40 µV up: negative phase reversal at T3",
+        "F7-T3 40 µV up and T3-T5 40 µV down: positive phase reversal at T3"
+      ],
+      "answerIndex": 2,
+      "explanation": "F7 − T3 = −40 − (−80) = +40 (down); T3 − T5 = −80 − (−40) = −40 (up). The deflections point toward each other at the shared electrode, T3: a negative phase reversal, which localises the spike's maximum to T3.",
+      "memoryAid": "Pens POINT AT the negative peak in a bipolar chain.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c30",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "In a bipolar chain, F3 and C3 are both at −70 µV during a widespread discharge. What does F3-C3 show?",
+      "options": [
+        "70 µV downward: the second input wins",
+        "Flat: the equal potentials cancel out",
+        "70 µV upward: each shows its own value",
+        "140 µV upward: the two inputs add"
+      ],
+      "answerIndex": 1,
+      "explanation": "F3 − C3 = −70 − (−70) = 0. A bipolar channel shows only the difference between its two electrodes, so activity equal at both disappears. That is why broad fields can look small in bipolar montages.",
+      "memoryAid": "Same at both ends = NOTHING in the middle.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c31",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "In an average reference of 19 electrodes, F4 is at −190 µV during a discharge and every other electrode is at 0 µV. What do the channels show?",
+      "options": [
+        "F4 10 µV up; every other channel 180 µV down",
+        "F4 180 µV up; every other channel 10 µV down",
+        "F4 190 µV up; every other channel flat",
+        "F4 180 µV down; every other channel 10 µV up"
+      ],
+      "answerIndex": 1,
+      "explanation": "The average is −190 ÷ 19 = −10 µV. F4 − avg = −190 − (−10) = −180 (up). Every other channel is 0 − (−10) = +10 (down): a small false positive deflection everywhere, inherited from the average.",
+      "memoryAid": "Average reference: every channel = electrode MINUS the mean. A big negative pulls the mean down and paints a fake positive everywhere else.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c32",
+      "domainId": "domain-2",
+      "sectionId": "d2-montages-referencing",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "In an ear reference montage, a left temporal spike also reaches A1 (−40 µV). T3 is at −100 µV and C3 at −20 µV. What do T3-A1 and C3-A1 show?",
+      "options": [
+        "T3-A1 140 µV up; C3-A1 60 µV up",
+        "T3-A1 100 µV up; C3-A1 20 µV up",
+        "T3-A1 60 µV down; C3-A1 20 µV up",
+        "T3-A1 60 µV up; C3-A1 20 µV down"
+      ],
+      "answerIndex": 3,
+      "explanation": "T3 − A1 = −100 − (−40) = −60 (up, smaller than the true 100). C3 − A1 = −20 − (−40) = +20 (down, the wrong direction). An active reference shrinks nearby spikes and makes quiet channels deflect falsely; check with a bipolar or distant reference.",
+      "memoryAid": "An ACTIVE ear is a liar: it shrinks the spike next to it and flips the quiet channels.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c33",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "The nasion-to-inion distance is 35 cm. How far from the nasion is Cz?",
+      "options": [
+        "35 cm",
+        "17.5 cm",
+        "10.5 cm",
+        "7 cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "Cz is at 50% of the nasion-inion line: 35 ÷ 2 = 17.5 cm. The line runs Fpz 10%, Fz 30%, Cz 50%, Pz 70%, Oz 90%.",
+      "memoryAid": "10, then 20s: Fp 10, F 30, C 50, P 70, O 90 percent.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c34",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "The nasion-to-inion distance is 35 cm. How far from the nasion is Fz?",
+      "options": [
+        "17.5 cm",
+        "7 cm",
+        "3.5 cm",
+        "10.5 cm"
+      ],
+      "answerIndex": 3,
+      "explanation": "Fz is at 30%: 10% of 35 is 3.5, so 30% is 3 × 3.5 = 10.5 cm. 3.5 cm is Fpz (10%) and 7 cm is 20%, a point with no midline electrode.",
+      "memoryAid": "Find 10% first (move the decimal), then multiply.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c35",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "The preauricular-to-preauricular distance is 38 cm. How far from the left preauricular point is C3?",
+      "options": [
+        "7.6 cm",
+        "3.8 cm",
+        "11.4 cm",
+        "19 cm"
+      ],
+      "answerIndex": 2,
+      "explanation": "Along the coronal line: T3 at 10%, C3 at 30%, Cz at 50%. 10% of 38 = 3.8, so 30% = 11.4 cm. 3.8 cm is T3 and 19 cm is Cz.",
+      "memoryAid": "Ear to ear: T 10, C 30, Cz 50 percent.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c36",
+      "domainId": "domain-1",
+      "sectionId": "d1-eeg-10-20-system",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "The head circumference is 56 cm. What is the distance from Fp1 to F7 along the circumference?",
+      "options": [
+        "2.8 cm",
+        "5.6 cm",
+        "11.2 cm",
+        "8.4 cm"
+      ],
+      "answerIndex": 1,
+      "explanation": "Around the circumference, Fp1 sits 5% from the midline and then F7, T3, T5 and O1 follow at 10% steps. 10% of 56 = 5.6 cm. 2.8 cm (5%) is the distance from Fpz to Fp1.",
+      "memoryAid": "Circumference: 5% from the midline to Fp1, then 10% steps.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c37",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "Epileptiform discharges occur every 0.3 s for 15 s. What frequency is that, and does it meet the ACNS electrographic seizure criterion?",
+      "options": [
+        "About 3.3 Hz for 15 s: it meets the criterion",
+        "About 0.3 Hz: periodic discharges, not a seizure",
+        "About 1.5 Hz: an ictal-interictal pattern",
+        "About 3.3 Hz, but too short to count"
+      ],
+      "answerIndex": 0,
+      "explanation": "1 ÷ 0.3 ≈ 3.3 Hz. An electrographic seizure is epileptiform discharges averaging more than 2.5 Hz for at least 10 s (or a pattern with definite evolution lasting at least 10 s). 3.3 Hz for 15 s meets it.",
+      "memoryAid": "Seizure = MORE THAN 2.5 Hz for 10 s or more.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c38",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "Discharges occur exactly every 0.4 s for 20 s, without evolution. How does this fit the ACNS seizure criterion?",
+      "options": [
+        "2.5 Hz: not above 2.5 Hz, so not a seizure on frequency alone",
+        "0.4 Hz: periodic discharges, far below the seizure range",
+        "2.5 Hz: reaching 2.5 Hz is enough, so it is a seizure",
+        "4 Hz: well above 2.5 Hz, so it is clearly a seizure"
+      ],
+      "answerIndex": 0,
+      "explanation": "1 ÷ 0.4 = 2.5 Hz. The criterion needs MORE than 2.5 Hz, so exactly 2.5 Hz without evolution does not meet it on frequency; periodic discharges between 1 and 2.5 Hz fall in the ictal-interictal continuum.",
+      "memoryAid": "2.5 is the line, not the answer: you must be ABOVE it.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c39",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "Lateralized periodic discharges are present for 21 minutes of a 60-minute epoch. What prevalence term applies?",
+      "options": [
+        "35%: frequent",
+        "21%: occasional",
+        "60%: abundant",
+        "35%: abundant"
+      ],
+      "answerIndex": 0,
+      "explanation": "21 ÷ 60 = 35%. ACNS prevalence bands: continuous 90% or more, abundant 50 to 89%, frequent 10 to 49%, occasional 1 to 9%, rare under 1%. 35% is frequent.",
+      "memoryAid": "Prevalence: Rare <1, Occasional 1-9, Frequent 10-49, Abundant 50-89, Continuous 90+.",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c40",
+      "domainId": "domain-2",
+      "sectionId": "d2-s8",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "Three separate electrographic seizures of 4, 5 and 6 minutes occur within one hour. Is this electrographic status epilepticus?",
+      "options": [
+        "Only if one seizure lasts 30 minutes",
+        "Yes: 15 minutes is 25% of the hour",
+        "No: it is judged on the longest seizure",
+        "No: none of them lasted 10 minutes"
+      ],
+      "answerIndex": 1,
+      "explanation": "Electrographic status epilepticus is seizure activity for 10 or more continuous minutes, or for a total of 20% or more of any 60-minute period. 4 + 5 + 6 = 15 minutes = 25% of the hour, so it qualifies even though no single seizure lasted 10 minutes.",
+      "memoryAid": "ESE = 10 straight minutes OR 20% of an hour (12 minutes in total).",
+      "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
+      "qaStatus": "UNREVIEWED"
+    },
+    {
+      "id": "drill-c41",
+      "domainId": "domain-1",
+      "sectionId": "d1-age-related-eeg-development",
+      "topicTags": [
+        "focus-drills",
+        "drill-calc"
+      ],
+      "drillSet": "calc",
+      "difficulty": "medium",
+      "stem": "A baby was born at 34 weeks' gestation and is now 4 weeks old. What is the postmenstrual age used to interpret the EEG?",
+      "options": [
+        "38 weeks",
+        "4 weeks",
+        "34 weeks",
+        "30 weeks"
+      ],
+      "answerIndex": 0,
+      "explanation": "Postmenstrual age = gestational age at birth + age since birth: 34 + 4 = 38 weeks. Neonatal EEG norms are judged by PMA, not by gestational age alone or by weeks since birth.",
+      "memoryAid": "PMA = born-at + weeks-since. ADD them.",
       "author": "NeuroLinea Focus Drills (AI-drafted, fact-checked; requires expert review)",
       "qaStatus": "UNREVIEWED"
     }

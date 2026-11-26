@@ -64,3 +64,30 @@ describe("EEG patterns focus set", () => {
     expect(longest.length / PATTERN_DRILL.length).toBeLessThan(0.2);
   });
 });
+
+describe("No-calculator maths focus set", () => {
+  it("has at least 40 questions, each mapped to a real ABRET section", async () => {
+    const { CALC_DRILL } = await import("../../src/data/drill/calcQuestions.js");
+    const wf = (await import("../../src/data/workflow-domains.json")).default;
+    const ids = new Set();
+    (function walk(o) {
+      if (Array.isArray(o)) o.forEach(walk);
+      else if (o && typeof o === "object") {
+        if (typeof o.id === "string" && /^d\d-/.test(o.id)) ids.add(o.id);
+        Object.values(o).forEach(walk);
+      }
+    })(wf);
+    expect(CALC_DRILL.length).toBeGreaterThanOrEqual(40);
+    for (const q of CALC_DRILL) {
+      expect(q.t).toBe("calc");
+      expect(ids.has(q.sec), `${q.id} ${q.sec}`).toBe(true);
+    }
+    expect(SHEETS.calc.length).toBeGreaterThan(0);
+  });
+
+  it("does not give the answer away by length", async () => {
+    const { CALC_DRILL } = await import("../../src/data/drill/calcQuestions.js");
+    const giveaways = CALC_DRILL.filter((q) => q.o[0].length > 1.25 * Math.max(...q.o.slice(1).map((o) => o.length)));
+    expect(giveaways.map((q) => q.id)).toEqual([]);
+  });
+});

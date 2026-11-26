@@ -19,7 +19,7 @@ import { fileURLToPath } from 'url';
 const serverRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const { DRILL } = await import(new URL('../../src/data/drill/drillQuestions.js', import.meta.url));
 
-const SET_OF = { neuro: 'neuro', peds: 'peds', meds: 'meds', acns: 'acns', patterns: 'patterns' };
+const SET_OF = { neuro: 'neuro', peds: 'peds', meds: 'meds', acns: 'acns', patterns: 'patterns', calc: 'calc' };
 
 // Default section per drill set, then per-question overrides.
 const DEFAULT_SECTION = {
@@ -28,6 +28,7 @@ const DEFAULT_SECTION = {
     meds: 'd1-neurophysiology-seizure-mechanisms',
     acns: 'd2-s8',
     patterns: 'd2-s6',
+    calc: 'd2-amplifiers-sensitivity',
 };
 const SECTION_OVERRIDES = {
     // Neuroanatomy and correlation
@@ -66,7 +67,7 @@ function seededOrder(id, n) {
 }
 
 const questions = DRILL.map((q) => {
-    // ACNS and EEG patterns questions carry their own section (sec) in the source.
+    // ACNS, EEG patterns and maths questions carry their own section (sec) in the source.
     const sectionId = q.sec || SECTION_OVERRIDES[q.id] || DEFAULT_SECTION[q.t];
     const order = seededOrder(q.id, q.o.length);
     return {
@@ -90,7 +91,7 @@ const out = {
     version: '1.0.0',
     generatedAt: '2026-11-14',
     bank: 'drill',
-    description: 'Focus Drills: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG, the ACNS guidelines (2016 Guidelines 1-7, 2021 Critical Care EEG Terminology, 2015 cEEG consensus), and EEG patterns (one question per pattern in the pattern library). Kept apart from the main question bank and served only on the drill page.',
+    description: 'Focus Drills: neuroanatomy and clinical correlation, paediatric epilepsy syndromes, medication effects on the EEG, the ACNS guidelines (2016 Guidelines 1-7, 2021 Critical Care EEG Terminology, 2015 cEEG consensus), EEG patterns (one question per pattern in the pattern library), and no-calculator maths (exam-style calculations with mental shortcuts). Kept apart from the main question bank and served only on the drill page.',
     totalQuestions: questions.length,
     questions,
 };
