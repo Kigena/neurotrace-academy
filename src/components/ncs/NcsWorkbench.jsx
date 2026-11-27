@@ -185,20 +185,19 @@ export default function NcsWorkbench({ studyIds, patient, env, setEnv, states, s
             </button>
             <button type="button" onClick={stimulate} className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Stimulate</button>
           </div>
-          {last && <p className="text-xs text-slate-500">Tip: raise the current until the response stops growing, then add about 20% for a supramaximal response.</p>}
-          {last?.sweep.problems.some((p) => p.code === "current-spread") && (
-            <p className="rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
-              <strong>Observation:</strong> muscles supplied by the {study.spread.nerve} nerve twitched as well. {last.sweep.problems.find((p) => p.code === "current-spread").text}
-            </p>
-          )}
-
-          <NcsTrace rows={rows} gain={st.machine.gain} sweepMsPerDiv={st.machine.sweep} markMode={markMode} onMark={onMark} />
+          <NcsTrace rows={rows} activeSiteId={st.stimSite} gain={st.machine.gain} sweepMsPerDiv={st.machine.sweep} markMode={markMode} onMark={onMark} />
           <div className="flex flex-wrap gap-2">
             <button type="button" onClick={() => setMarkMode(markMode === "onset" ? null : "onset")} className={`rounded-md px-3 py-1.5 text-xs font-semibold ${markMode === "onset" ? "bg-sky-600 text-white" : "border border-slate-300 bg-white text-slate-700"}`}>Mark onset (O)</button>
             <button type="button" onClick={() => setMarkMode(markMode === "peak" ? null : "peak")} className={`rounded-md px-3 py-1.5 text-xs font-semibold ${markMode === "peak" ? "bg-pink-600 text-white" : "border border-slate-300 bg-white text-slate-700"}`}>Mark negative peak (P)</button>
             <button type="button" onClick={autoMarkAll} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700">Machine auto-mark</button>
             {markMode && <span className="self-center text-xs text-slate-500">Click on a trace to place the {markMode} cursor.</span>}
           </div>
+          {last && <p className="text-xs text-slate-500">Tip: raise the current until the response stops growing, then add about 20% for a supramaximal response.</p>}
+          {last?.sweep.problems.some((p) => p.code === "current-spread") && (
+            <p className="rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
+              <strong>Observation:</strong> muscles supplied by the {study.spread.nerve} nerve twitched as well. {last.sweep.problems.find((p) => p.code === "current-spread").text}
+            </p>
+          )}
         </section>
       </div>
 

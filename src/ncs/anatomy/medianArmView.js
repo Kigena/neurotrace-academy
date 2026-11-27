@@ -144,7 +144,7 @@ export const PLACES = {
 
 export const VIEWS = [
   { id: "full", label: "Forearm and hand", box: { x: 30, y: -20, w: 240, h: 610 } },
-  { id: "hand", label: "Hand close-up", box: { x: 60, y: 370, w: 160, h: 200 } },
+  { id: "hand", label: "Hand close-up", box: { x: 60, y: 370, w: 160, h: 220 } },
   { id: "wrist", label: "Wrist close-up", box: { x: 85, y: 290, w: 140, h: 150 } },
   { id: "elbow", label: "Elbow close-up", box: { x: 80, y: 60, w: 150, h: 150 } },
 ];

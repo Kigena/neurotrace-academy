@@ -122,7 +122,7 @@ export const KNEE_ANCHORS = {
 export const VIEWS = [
   { id: "full", label: "Knee to foot", box: { x: -10, y: -20, w: 330, h: 560 } },
   { id: "calf", label: "Knee and calf", box: { x: 100, y: -10, w: 200, h: 280 } },
-  { id: "foot", label: "Ankle and foot", box: { x: 40, y: 370, w: 230, h: 160 } },
+  { id: "foot", label: "Ankle and foot", box: { x: 0, y: 370, w: 270, h: 160 } },
 ];
 
 export const ORIENTATION = { title: "Right leg · medial view", top: "Proximal (knee)", bottom: "Distal (sole)", left: "Anterior (shin, toes)", right: "Posterior (calf, heel)" };

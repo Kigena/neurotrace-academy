@@ -110,9 +110,9 @@ export const PLACES = {
 
 const box = (b) => ({ ...b, x: W - (b.x + b.w) });
 export const VIEWS = [
-  { id: "full", label: "Forearm and hand", box: box({ x: 30, y: 180, w: 240, h: 360 }) },
+  { id: "full", label: "Forearm and hand", box: box({ x: 30, y: 180, w: 240, h: 410 }) },
   { id: "snuffbox", label: "Snuffbox close-up", box: box({ x: 70, y: 330, w: 110, h: 140 }) },
-  { id: "hand", label: "Back of the hand", box: box({ x: 60, y: 350, w: 170, h: 200 }) },
+  { id: "hand", label: "Back of the hand", box: box({ x: 60, y: 350, w: 170, h: 240 }) },
 ];
 
 export const ORIENTATION = { title: "Right forearm and hand · dorsal view (back of the hand)", top: "Proximal (elbow)", bottom: "Distal (fingers)", left: "Medial (ulnar side)", right: "Lateral (radial, thumb side)" };

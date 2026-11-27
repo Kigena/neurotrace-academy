@@ -12,8 +12,10 @@ const DIV = 54;
 const ROW_DIVS = 4;
 const TOP = 26;
 
-export default function NcsTrace({ rows, gain, sweepMsPerDiv, markMode, onMark }) {
+export default function NcsTrace({ rows, activeSiteId, gain, sweepMsPerDiv, markMode, onMark }) {
   const svgRef = useRef(null);
+  const activeRow = rows.find((row) => row.id === activeSiteId);
+  const displayedRows = activeRow ? [activeRow, ...rows.filter((row) => row !== activeRow)] : rows;
   const traceW = DIV * 10;
   const rowH = DIV * ROW_DIVS;
   const height = TOP + Math.max(1, rows.length) * rowH + 22;
@@ -29,8 +31,8 @@ export default function NcsTrace({ rows, gain, sweepMsPerDiv, markMode, onMark }
     pt.y = e.clientY;
     const p = pt.matrixTransform(svg.getScreenCTM().inverse());
     const r = Math.floor((p.y - TOP) / rowH);
-    if (r < 0 || r >= rows.length || p.x < LABEL_W || p.x > LABEL_W + traceW) return;
-    onMark(rows[r].id, markMode, +((p.x - LABEL_W) / pxPerMs).toFixed(2));
+    if (r < 0 || r >= displayedRows.length || p.x < LABEL_W || p.x > LABEL_W + traceW) return;
+    onMark(displayedRows[r].id, markMode, +((p.x - LABEL_W) / pxPerMs).toFixed(2));
   };
 
   return (
@@ -50,7 +52,7 @@ export default function NcsTrace({ rows, gain, sweepMsPerDiv, markMode, onMark }
           Place the electrodes, choose a site and press Stimulate.
         </text>
       )}
-      {rows.map((row, r) => {
+      {displayedRows.map((row, r) => {
         const y0 = TOP + r * rowH;
         const base = y0 + DIV * 2.3;
         const sw = row.sweep;

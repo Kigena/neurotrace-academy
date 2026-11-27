@@ -58,6 +58,6 @@ export const LANDMARKS = [
 
 export const VIEWS = [
   { id: "full", label: "Forearm and hand", box: { x: 30, y: 200, w: 240, h: 390 } },
-  { id: "hand", label: "Hand and fingers", box: { x: 90, y: 370, w: 160, h: 200 } },
+  { id: "hand", label: "Hand and fingers", box: { x: 60, y: 370, w: 160, h: 220 } },
   { id: "wrist", label: "Wrist close-up", box: { x: 110, y: 290, w: 140, h: 150 } },
 ];

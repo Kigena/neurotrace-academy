@@ -10,8 +10,8 @@ import { AVERAGES, HFFS, LFFS, SWEEPS, gainLabel } from "../../ncs/studies.js";
 
 /**
  * Interactive NCS workspace for one study configuration (src/ncs/workspaces.js):
- * the limb is the main interactive area, machine and patient controls sit
- * beside it and the waveform below. Modes: Guided (targets, nerve layer,
+ * patient and machine setup sit beside the limb, and the recording panel
+ * keeps stimulation next to the waveform. Modes: Guided (targets, nerve layer,
  * explanations), Practice (feedback after each stimulation) and Assessment
  * (no help until submission, then a breakdown of errors).
  */
@@ -310,7 +310,7 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
 
       <div className="grid gap-4 lg:grid-cols-3">
         {anatomy}
-        <section className="space-y-3 rounded-xl border border-slate-200 bg-white p-4">
+        <section className="self-start space-y-3 rounded-xl border border-slate-200 bg-white p-4">
           <h3 className="text-sm font-semibold text-slate-900">{P.label}</h3>
           <div className="flex flex-wrap items-center gap-2 rounded-lg bg-slate-50 p-2 text-sm">
             <span className="text-slate-600">{config.limb === "hand" ? "Hand" : "Foot"} temperature:</span>
@@ -349,22 +349,6 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
             <Field label="Averages">
               <select className={sel} value={machine.averages} onChange={(e) => setMachine((m) => ({ ...m, averages: +e.target.value }))}>{AVERAGES.map((g) => <option key={g} value={g}>{g}</option>)}</select>
             </Field>
-            {config.sites.length > 1 && (
-              <Field label="Record this stimulation as">
-                <select className={sel} value={site} onChange={(e) => setSite(e.target.value)}>{config.sites.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}</select>
-              </Field>
-            )}
-          </div>
-          <Field label={`Current: ${intensity} mA (0.2 ms)`}>
-            <input type="range" min={0} max={100} step={1} value={intensity} onChange={(e) => setIntensity(+e.target.value)} />
-          </Field>
-          <div className="flex flex-wrap gap-2">
-            <button type="button" onClick={stimulate} disabled={!!submitted} className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-40">Stimulate</button>
-            <button type="button" onClick={savePlacement} disabled={!records[site]} className="rounded-md border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 disabled:opacity-40">Save placement</button>
-          </div>
-          <div>
-            <h4 className="mb-1 text-xs font-semibold uppercase tracking-wide text-slate-500">Recruitment at this placement</h4>
-            <RecruitPlot unit={motor ? "mV" : "µV"} points={recruit.key === posKey(setup) + site ? recruit.points.map((p) => ({ ...p, amp: motor ? p.amp / 1000 : p.amp })) : []} />
           </div>
           {mode === "guided" && (
             <details open className="text-sm text-slate-700">
@@ -375,15 +359,43 @@ export default function NerveWorkspace({ config, patient: casePatient, initialTe
         </section>
       </div>
 
-      <section className="space-y-3 rounded-xl border border-slate-200 bg-white p-4">
-        <NcsTrace rows={rows} gain={machine.gain} sweepMsPerDiv={machine.sweep} markMode={markMode} onMark={(sid, m, ms) => setMarks((x) => ({ ...x, [sid]: { ...(x[sid] || {}), [m]: ms } }))} />
-        <div className="flex flex-wrap gap-2">
-          <button type="button" onClick={() => setMarkMode(markMode === "onset" ? null : "onset")} className={`rounded-md px-3 py-1.5 text-xs font-semibold ${markMode === "onset" ? "bg-sky-600 text-white" : "border border-slate-300 bg-white text-slate-700"}`}>Mark onset (O)</button>
-          <button type="button" onClick={() => setMarkMode(markMode === "peak" ? null : "peak")} className={`rounded-md px-3 py-1.5 text-xs font-semibold ${markMode === "peak" ? "bg-pink-600 text-white" : "border border-slate-300 bg-white text-slate-700"}`}>Mark negative peak (P)</button>
-          {!assessment && <button type="button" disabled={!rows.length} onClick={autoMarkAll} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 disabled:opacity-40">Machine auto-mark</button>}
-          {markMode && <span className="self-center text-xs text-slate-500">Click on a trace to place the {markMode} cursor.</span>}
+      <section aria-label="Stimulation and responses" className="space-y-3 rounded-xl border border-slate-200 bg-white p-4">
+        <h3 className="text-sm font-semibold text-slate-900">Stimulation and responses</h3>
+        <div className="flex flex-wrap items-end gap-x-4 gap-y-2 rounded-lg bg-slate-50 p-3">
+          {config.sites.length > 1 && (
+            <Field label="Record this stimulation as">
+              <select className={sel} value={site} onChange={(e) => setSite(e.target.value)}>{config.sites.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}</select>
+            </Field>
+          )}
+          <div className="min-w-36 flex-1 sm:max-w-xs">
+            <Field label={`Current: ${intensity} mA (0.2 ms)`}>
+              <input type="range" min={0} max={100} step={1} value={intensity} onChange={(e) => setIntensity(+e.target.value)} />
+            </Field>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button type="button" onClick={stimulate} disabled={!!submitted} className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-40">Stimulate</button>
+            <button type="button" onClick={savePlacement} disabled={!records[site]} className="rounded-md border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 disabled:opacity-40">Save placement</button>
+          </div>
         </div>
+        <div className="grid items-start gap-3 lg:grid-cols-[minmax(0,1fr)_14rem]">
+          <div className="min-w-0 space-y-2">
+            <NcsTrace rows={rows} activeSiteId={site} gain={machine.gain} sweepMsPerDiv={machine.sweep} markMode={markMode} onMark={(sid, m, ms) => setMarks((x) => ({ ...x, [sid]: { ...(x[sid] || {}), [m]: ms } }))} />
+            <div className="flex flex-wrap gap-2">
+              <button type="button" onClick={() => setMarkMode(markMode === "onset" ? null : "onset")} className={`rounded-md px-3 py-1.5 text-xs font-semibold ${markMode === "onset" ? "bg-sky-600 text-white" : "border border-slate-300 bg-white text-slate-700"}`}>Mark onset (O)</button>
+              <button type="button" onClick={() => setMarkMode(markMode === "peak" ? null : "peak")} className={`rounded-md px-3 py-1.5 text-xs font-semibold ${markMode === "peak" ? "bg-pink-600 text-white" : "border border-slate-300 bg-white text-slate-700"}`}>Mark negative peak (P)</button>
+              {!assessment && <button type="button" disabled={!rows.length} onClick={autoMarkAll} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 disabled:opacity-40">Machine auto-mark</button>}
+              {markMode && <span className="self-center text-xs text-slate-500">Click on a trace to place the {markMode} cursor.</span>}
+            </div>
+          </div>
+          <div className="rounded-lg border border-slate-200 p-3">
+            <h4 className="mb-1 text-xs font-semibold text-slate-700">Recruitment at this placement</h4>
+            <RecruitPlot unit={motor ? "mV" : "µV"} points={recruit.key === posKey(setup) + site ? recruit.points.map((p) => ({ ...p, amp: motor ? p.amp / 1000 : p.amp })) : []} />
+          </div>
+        </div>
+      </section>
 
+      <section className="space-y-3 rounded-xl border border-slate-200 bg-white p-4">
+        <h3 className="text-sm font-semibold text-slate-900">Measurements</h3>
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm">
             <thead className="text-left text-xs uppercase tracking-wide text-slate-500">
