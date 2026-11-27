@@ -1273,6 +1273,596 @@
           }
         ]
       }
+    },
+    {
+      "id": "ncs-cidp",
+      "title": "Slowly weaker for five months",
+      "referral": "56M, 5 months of progressive weakness of hands and feet, tingling, areflexia; no recent infection. NCS R arm and leg, r/o CIDP.",
+      "temp": {
+        "arm": 32.6,
+        "leg": 30.8
+      },
+      "required": [
+        "medianMotor",
+        "ulnarMotor",
+        "fibularMotor",
+        "medianSensory",
+        "sural"
+      ],
+      "optional": [
+        "tibialMotor",
+        "ulnarSensory"
+      ],
+      "why": "A suspected acquired demyelinating neuropathy needs motor studies with proximal sites in arm and leg (to look for slowing, conduction block and dispersion) and sensory studies in arm and leg.",
+      "questions": [
+        {
+          "q": "Which combination of findings supports an acquired demyelinating neuropathy here?",
+          "options": [
+            "Low amplitudes with normal latencies and velocities",
+            "Uniform slowing to the same degree in every nerve and segment",
+            "Prolonged distal latencies, slow velocities, and conduction block with dispersion in forearm and leg segments",
+            "Normal motor studies with absent SNAPs everywhere"
+          ],
+          "answer": 2,
+          "explanation": "The distal latencies are prolonged and velocities slowed, and the proximal responses are much smaller and broader than the distal ones over segments that are not usual compression sites. Patchy slowing with conduction block and temporal dispersion is the signature of acquired demyelination. Uniform slowing without block suggests an inherited neuropathy; low amplitudes with normal conduction suggest axonal loss."
+        },
+        {
+          "q": "This pattern looks like AIDP. What mainly separates CIDP?",
+          "options": [
+            "CIDP never affects the sural nerve",
+            "The time course: CIDP progresses for more than 8 weeks, AIDP reaches its worst within 4 weeks",
+            "CIDP has normal distal latencies",
+            "CIDP shows conduction block only at the elbow and fibular head"
+          ],
+          "answer": 1,
+          "explanation": "On a single study AIDP and CIDP can look alike. AIDP peaks within about 4 weeks of onset; CIDP keeps progressing or relapsing for more than 8 weeks. That clinical time course, not a single study, separates them, and it matters because CIDP needs long-term immunotherapy. Both can affect sensory nerves and both prolong distal latencies."
+        },
+        {
+          "q": "A response at the elbow is much smaller than at the wrist. What should you check before calling it conduction block?",
+          "options": [
+            "That the elbow stimulation is supramaximal and the electrodes and stimulator have not moved",
+            "That the high filter is set to 500 Hz",
+            "That the sweep speed is 10 ms per division",
+            "That the ground electrode has been moved to the other arm"
+          ],
+          "answer": 0,
+          "explanation": "Submaximal stimulation at a deep proximal site is the commonest cause of a false drop in amplitude. Raise the current until the proximal response stops growing, and confirm that G1, G2 and the ground have not shifted. Only then is a large drop real. Filters and sweep do not create block, and the ground belongs on the same limb."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "median": {
+            "cvFactor": 0.62,
+            "termAdd": 1.8,
+            "sensoryAmp": 0.4
+          },
+          "ulnar": {
+            "cvFactor": 0.65,
+            "termAdd": 1.4
+          },
+          "fibular": {
+            "cvFactor": 0.62,
+            "termAdd": 1.6,
+            "motorAmp": 0.6
+          },
+          "tibial": {
+            "cvFactor": 0.65,
+            "termAdd": 1.6,
+            "motorAmp": 0.6
+          },
+          "sural": {
+            "sensoryAmp": 0.5
+          }
+        },
+        "lesions": [
+          {
+            "nerve": "median",
+            "yFrom": 170,
+            "yTo": 320,
+            "motorBlock": 0.42,
+            "disp": 1.7
+          },
+          {
+            "nerve": "ulnar",
+            "yFrom": 190,
+            "yTo": 310,
+            "motorBlock": 0.45,
+            "disp": 1.6
+          },
+          {
+            "nerve": "fibular",
+            "yFrom": 170,
+            "yTo": 330,
+            "motorBlock": 0.5,
+            "disp": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ncs-hnpp",
+      "title": "Numb after sitting cross-legged, again",
+      "referral": "29F, third episode in 2 years of numbness after pressure (foot drop after crossing legs, numb little finger after leaning on elbows); mother similar. NCS R arm and leg.",
+      "temp": {
+        "arm": 32.7,
+        "leg": 30.9
+      },
+      "required": [
+        "medianMotor",
+        "medianSensory",
+        "ulnarMotor",
+        "ulnarSensory",
+        "fibularMotor",
+        "sural"
+      ],
+      "why": "Recurrent pressure palsies need studies of the nerves at the common compression sites (median at the wrist, ulnar at the elbow, fibular at the fibular head) plus a sural study to look for a mild generalized neuropathy.",
+      "questions": [
+        {
+          "q": "What pattern do your results show?",
+          "options": [
+            "A single ulnar neuropathy at the elbow with otherwise normal studies",
+            "Uniform marked slowing in every nerve, as in CMT1A",
+            "Low motor amplitudes with normal conduction, as in motor neuron disease",
+            "Slowing at several compression sites (wrist, elbow, fibular head) on top of a mild generalized neuropathy"
+          ],
+          "answer": 3,
+          "explanation": "The median latencies across the wrist, the ulnar velocity across the elbow and the fibular velocity across the fibular head are all slow, while the forearm and leg segments are near normal and the sural is mildly low. Focal slowing at several entrapment sites plus a mild generalized neuropathy, with recurrent pressure palsies and a family history, is the typical picture of hereditary neuropathy with liability to pressure palsies (HNPP)."
+        },
+        {
+          "q": "What practical advice follows for the technologist and the patient's care team?",
+          "options": [
+            "Use higher current than usual, because the nerves are hard to stimulate",
+            "Avoid prolonged pressure on vulnerable nerves, including during positioning and testing",
+            "Avoid all sensory studies, which can damage the nerves",
+            "Warm the limb to 40 °C before testing"
+          ],
+          "answer": 1,
+          "explanation": "In HNPP, nerves are easily injured by pressure or stretch. Care with positioning (in the lab, during surgery and in bed), avoiding leaning on elbows or crossing legs, and avoiding tight casts help prevent new palsies. Routine NCS is safe; use normal supramaximal currents and the usual limb temperature targets."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "median": {
+            "cvFactor": 0.9,
+            "sensoryAmp": 0.6
+          },
+          "ulnar": {
+            "cvFactor": 0.9,
+            "sensoryAmp": 0.6
+          },
+          "fibular": {
+            "cvFactor": 0.9,
+            "motorAmp": 0.7
+          },
+          "sural": {
+            "sensoryAmp": 0.2
+          }
+        },
+        "lesions": [
+          {
+            "nerve": "median",
+            "yFrom": 383,
+            "yTo": 414,
+            "motorCvFactor": 0.4,
+            "sensoryCvFactor": 0.35,
+            "sensoryBlock": 0.6
+          },
+          {
+            "nerve": "ulnar",
+            "yFrom": 95,
+            "yTo": 140,
+            "cvFactor": 0.5,
+            "block": 0.85
+          },
+          {
+            "nerve": "fibular",
+            "yFrom": 40,
+            "yTo": 105,
+            "cvFactor": 0.5,
+            "block": 0.85
+          }
+        ]
+      }
+    },
+    {
+      "id": "ncs-cip",
+      "title": "Cannot wean from the ventilator",
+      "referral": "68M, ICU day 21 with sepsis and multi-organ failure; flaccid limbs, cannot wean from the ventilator; legs swollen. Portable NCS R arm and leg.",
+      "temp": {
+        "arm": 31.6,
+        "leg": 29.5
+      },
+      "required": [
+        "medianMotor",
+        "ulnarMotor",
+        "fibularMotor",
+        "medianSensory",
+        "sural"
+      ],
+      "optional": [
+        "tibialMotor",
+        "ulnarSensory"
+      ],
+      "why": "Weakness in critical illness needs motor and sensory studies in arm and leg: the sensory results separate a polyneuropathy from a myopathy or a neuromuscular junction problem.",
+      "questions": [
+        {
+          "q": "Motor and sensory amplitudes are low in arm and leg, with near-normal latencies and velocities. Which condition fits best?",
+          "options": [
+            "Critical illness polyneuropathy: an axonal sensorimotor neuropathy",
+            "Critical illness myopathy, which lowers SNAPs first",
+            "AIDP, because the patient is weak and areflexic",
+            "Carpal tunnel syndrome made worse by bed rest"
+          ],
+          "answer": 0,
+          "explanation": "Low CMAPs and low SNAPs with preserved conduction velocities mean axonal loss in both motor and sensory fibres: critical illness polyneuropathy. Critical illness myopathy lowers CMAPs (often with long-duration responses) but leaves SNAPs normal. AIDP would show demyelinating slowing and block. The two critical illness conditions often coexist, and EMG or direct muscle stimulation may be added."
+        },
+        {
+          "q": "The legs are swollen and cool. How should you handle the low sural response?",
+          "options": [
+            "Report it as absent without further checks",
+            "Use the opposite leg only, without noting why",
+            "Raise the high filter to 10 kHz to sharpen the response",
+            "Warm the limb, press firmly or use needle electrodes, average, and note oedema and temperature on the report"
+          ],
+          "answer": 3,
+          "explanation": "Oedema increases the distance between nerve and electrode and lowers the recorded amplitude, and cold slows and changes responses. Warm the limb, improve contact (firm pressure, or subdermal needles if your lab uses them), average to lift small responses out of noise, and record the oedema and temperature so the reader can weigh the result. ICU electrical noise often needs extra care with grounding."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "median": {
+            "motorAmp": 0.3,
+            "sensoryAmp": 0.2
+          },
+          "ulnar": {
+            "motorAmp": 0.32,
+            "sensoryAmp": 0.18
+          },
+          "fibular": {
+            "motorAmp": 0.18,
+            "cvFactor": 0.92
+          },
+          "tibial": {
+            "motorAmp": 0.25,
+            "cvFactor": 0.92
+          },
+          "sural": {
+            "sensoryAmp": 0.18
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-sciatic",
+      "title": "A weak foot after hip replacement",
+      "referral": "70F, R total hip replacement 4 weeks ago; since then weak R foot dorsiflexion and plantar flexion, numb lateral foot. NCS R leg.",
+      "temp": {
+        "arm": 32.5,
+        "leg": 30.7
+      },
+      "required": [
+        "fibularMotor",
+        "tibialMotor",
+        "sural"
+      ],
+      "why": "Weakness of both foot dorsiflexion and plantar flexion needs fibular and tibial motor studies plus the sural, to separate a sciatic nerve lesion from a fibular neuropathy or a root lesion.",
+      "questions": [
+        {
+          "q": "Fibular and tibial CMAPs are both low (fibular worse) and the sural SNAP is low, with no focal slowing. Where does this place the lesion?",
+          "options": [
+            "Fibular nerve at the fibular head only",
+            "L5 and S1 roots, because both CMAPs are low",
+            "Sciatic nerve, or below the dorsal root ganglia above the knee: both divisions and sensory axons are affected",
+            "Tarsal tunnel, because the tibial response is low"
+          ],
+          "answer": 2,
+          "explanation": "Both the fibular and tibial divisions are affected, so a lesion at the fibular head cannot explain it. The low sural SNAP shows axonal loss beyond the dorsal root ganglion, which argues against a root lesion (roots spare SNAPs). The fibular division of the sciatic nerve is often hit harder, as here, which is typical after hip surgery. EMG of the short head of biceps femoris helps confirm a sciatic lesion."
+        },
+        {
+          "q": "Why is the fibular division of the sciatic nerve often more affected than the tibial division?",
+          "options": [
+            "It has fewer, larger fascicles with less protective tissue and is tethered at the sciatic notch and fibular head",
+            "It is the only division that carries sensory fibres",
+            "It is stimulated at a higher current during the study",
+            "It lies deeper in the thigh than the tibial division"
+          ],
+          "answer": 0,
+          "explanation": "The fibular division has fewer and larger fascicles with less connective tissue, and it is relatively fixed at the sciatic notch and the fibular head, so it tolerates stretch and compression poorly. That is why sciatic lesions can mimic a fibular neuropathy; studying the tibial nerve and the sural reveals the wider lesion."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "fibular": {
+            "motorAmp": 0.15
+          },
+          "tibial": {
+            "motorAmp": 0.42
+          },
+          "sural": {
+            "sensoryAmp": 0.15
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-s1",
+      "title": "Back pain down the back of the leg",
+      "referral": "45M, 6 weeks of low back pain radiating to the R calf and sole, numb lateral foot, absent R ankle jerk. NCS R leg, r/o S1 radiculopathy.",
+      "temp": {
+        "arm": 32.5,
+        "leg": 30.8
+      },
+      "required": [
+        "tibialMotor",
+        "sural",
+        "fibularMotor"
+      ],
+      "why": "For a suspected S1 radiculopathy, tibial motor and sural studies cover the S1 territory and a fibular motor study covers L5; the sensory result separates a root lesion from a peripheral nerve lesion.",
+      "questions": [
+        {
+          "q": "The tibial CMAP is a little low with normal conduction, and the sural SNAP is normal despite a numb lateral foot. What does the normal sural tell you?",
+          "options": [
+            "The patient's numbness is not real",
+            "The study was done at the wrong temperature",
+            "The sural nerve is too small to be affected by any disease",
+            "The lesion is likely proximal to the dorsal root ganglion, as in a root lesion"
+          ],
+          "answer": 3,
+          "explanation": "A root is compressed proximal to the dorsal root ganglion, so the sensory cell bodies and their peripheral axons stay intact and the SNAP remains normal even when the skin is numb. A normal SNAP in a numb area therefore points to a root (or more central) lesion, while a low SNAP points to the plexus or peripheral nerve."
+        },
+        {
+          "q": "Which additional study, done in many labs, is sensitive to an S1 root lesion?",
+          "options": [
+            "Repetitive stimulation of the abductor hallucis",
+            "The tibial H-reflex recorded from the soleus, compared with the other side",
+            "The median sensory response from the palm",
+            "The superficial radial sensory response"
+          ],
+          "answer": 1,
+          "explanation": "The H-reflex is the electrical equivalent of the ankle jerk and travels through the S1 root. An absent H-reflex, or a latency more than about 1.5 ms longer than on the other side, supports an S1 lesion. It can also be abnormal in polyneuropathy and after old radiculopathy, so EMG is still needed."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "tibial": {
+            "motorAmp": 0.46
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-upper-trunk",
+      "title": "Shoulder pain, then a weak arm",
+      "referral": "38M, sudden severe R shoulder pain 3 weeks ago after the flu; pain eased, now weak shoulder abduction and elbow flexion, numb lateral forearm and thumb. NCS R arm.",
+      "temp": {
+        "arm": 32.7,
+        "leg": 31
+      },
+      "required": [
+        "radialSensory",
+        "medianSensory",
+        "ulnarSensory",
+        "medianMotor",
+        "ulnarMotor"
+      ],
+      "why": "Weakness of shoulder and elbow muscles with lateral arm numbness needs the sensory nerves that carry upper trunk fibres (radial, median to the index finger) and those that do not (ulnar), plus median and ulnar motor studies.",
+      "questions": [
+        {
+          "q": "The superficial radial SNAP is low, the median SNAP is reduced, and the ulnar studies are normal. Where does that place the lesion?",
+          "options": [
+            "The C6 root, because the thumb is numb",
+            "The lower trunk of the brachial plexus",
+            "The upper trunk of the brachial plexus, distal to the dorsal root ganglia",
+            "The median nerve at the wrist"
+          ],
+          "answer": 2,
+          "explanation": "Low SNAPs mean the lesion is distal to the dorsal root ganglion. The radial and median-to-index fibres travel through the upper trunk (C5-C6, with some C7 through the middle trunk), while the ulnar SNAP (C8, lower trunk) is normal. Severe shoulder pain followed by weakness after an infection is typical of neuralgic amyotrophy (Parsonage-Turner syndrome). A C6 root lesion would leave the SNAPs normal."
+        },
+        {
+          "q": "Which sensory study is especially useful for the upper trunk and lateral cord?",
+          "options": [
+            "The medial antebrachial cutaneous nerve",
+            "The lateral antebrachial cutaneous nerve, compared with the other arm",
+            "The sural nerve",
+            "The dorsal ulnar cutaneous nerve"
+          ],
+          "answer": 1,
+          "explanation": "The lateral antebrachial cutaneous nerve (the end of the musculocutaneous nerve) carries C5-C6 fibres through the upper trunk and lateral cord. A low response compared with the other arm supports an upper trunk lesion. The medial antebrachial and dorsal ulnar cutaneous nerves test the lower plexus and ulnar nerve; the sural is in the leg."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "radial": {
+            "sensoryAmp": 0.18
+          },
+          "median": {
+            "sensoryAmp": 0.21
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-spiral",
+      "title": "Wrist drop after a deep sleep",
+      "referral": "33M, woke 4 days ago with a R wrist and finger drop after falling asleep with the arm over a chair; numb back of the hand. NCS R arm.",
+      "temp": {
+        "arm": 32.6,
+        "leg": 31
+      },
+      "required": [
+        "radialSensory",
+        "medianMotor",
+        "ulnarMotor",
+        "medianSensory"
+      ],
+      "why": "Wrist drop is in radial territory. The superficial radial sensory study is available here; median and ulnar studies show whether other nerves are involved.",
+      "questions": [
+        {
+          "q": "The superficial radial SNAP is normal although the patient has a wrist drop and numbness. What does this most likely mean?",
+          "options": [
+            "The radial nerve is normal and the weakness is functional",
+            "There is a C7 root lesion",
+            "The SNAP was recorded from the wrong finger",
+            "The lesion is a conduction block (neurapraxia) above the forearm site, so the distal axons still conduct"
+          ],
+          "answer": 3,
+          "explanation": "After compression at the spiral groove ('Saturday night palsy') the injury is often a focal conduction block. The nerve below the block is intact, so stimulating and recording below it gives a normal SNAP even though the patient cannot extend the wrist. If axons had degenerated, the SNAP would fall after about 7 to 10 days. A normal SNAP early on does not exclude a radial nerve lesion."
+        },
+        {
+          "q": "Which motor study shows the block directly?",
+          "options": [
+            "Radial motor to the extensor indicis, stimulating below and above the spiral groove",
+            "Median motor to the APB with stimulation at the axilla",
+            "Tibial motor to the abductor hallucis",
+            "Ulnar motor across the elbow with the elbow straight"
+          ],
+          "answer": 0,
+          "explanation": "Recording from the extensor indicis (or another radial-innervated forearm muscle) and stimulating at the forearm, elbow and above the spiral groove shows a normal response below the lesion and a much smaller response above it: conduction block at the spiral groove. Good recovery is expected in weeks when the injury is mainly a block."
+        }
+      ],
+      "ws": {
+        "nerves": {
+          "radial": {
+            "sensoryAmp": 0.9
+          }
+        }
+      }
+    },
+    {
+      "id": "ncs-small-fibre",
+      "title": "Burning feet, normal reflexes",
+      "referral": "47F, 9 months of burning and pins-and-needles in both feet, worse at night; reflexes, strength and vibration normal; pin sensation reduced. NCS R leg and arm, r/o neuropathy.",
+      "temp": {
+        "arm": 32.6,
+        "leg": 30.9
+      },
+      "required": [
+        "sural",
+        "fibularMotor",
+        "tibialMotor",
+        "medianSensory"
+      ],
+      "optional": [
+        "ulnarSensory",
+        "medianMotor"
+      ],
+      "why": "Burning feet need the standard polyneuropathy screen: sural and leg motor studies, and an arm sensory study for comparison.",
+      "questions": [
+        {
+          "q": "All your studies are within the reference limits, and the feet were warm. How should this be understood?",
+          "options": [
+            "The patient has no neuropathy of any kind",
+            "Routine NCS tests large myelinated fibres; a small-fibre neuropathy can cause these symptoms with normal studies",
+            "The study must be technically wrong, because the patient has symptoms",
+            "The normal sural proves a root lesion"
+          ],
+          "answer": 1,
+          "explanation": "NCS records the large, fast myelinated fibres that carry vibration, position sense and motor signals. Pain and temperature travel in small thinly myelinated and unmyelinated fibres that NCS cannot measure. Burning feet with reduced pin sensation but normal reflexes, vibration and NCS suggest a small-fibre neuropathy."
+        },
+        {
+          "q": "Which tests are used to look for small-fibre neuropathy?",
+          "options": [
+            "Repetitive nerve stimulation and single-fibre EMG",
+            "Somatosensory evoked potentials from the median nerve",
+            "Skin biopsy for intraepidermal nerve fibre density and autonomic tests such as QSART",
+            "H-reflexes and F-waves"
+          ],
+          "answer": 2,
+          "explanation": "A punch skin biopsy counts the small nerve fibres in the epidermis, and autonomic tests (such as the quantitative sudomotor axon reflex test) measure small-fibre sweat function. RNS and single-fibre EMG test the neuromuscular junction; SSEPs, H-reflexes and F-waves depend on large fibres."
+        }
+      ],
+      "ws": {}
+    },
+    {
+      "id": "ncs-mg",
+      "title": "Droopy eyelids by evening",
+      "referral": "34F, 3 months of drooping eyelids and double vision that worsen through the day, tired arms when combing hair. NCS R arm, r/o neuromuscular junction disorder.",
+      "temp": {
+        "arm": 32.8,
+        "leg": 31
+      },
+      "required": [
+        "medianMotor",
+        "ulnarMotor",
+        "medianSensory",
+        "ulnarSensory"
+      ],
+      "why": "Before testing the neuromuscular junction, routine motor and sensory studies show whether the nerves themselves are normal and give a baseline CMAP for repetitive stimulation.",
+      "questions": [
+        {
+          "q": "The routine motor and sensory studies are normal. Which test should the reader ask you to add?",
+          "options": [
+            "A sural sensory study on both legs",
+            "Median sensory study from the palm",
+            "Repeat the same studies with the hand cooled to 28 °C",
+            "Repetitive nerve stimulation at 2-3 Hz, looking for a decrement"
+          ],
+          "answer": 3,
+          "explanation": "In myasthenia gravis the resting CMAP is usually normal, because a single impulse still releases enough acetylcholine to fire most muscle fibres. Trains of 2-3 Hz stimulation deplete the releasable transmitter, and in MG the CMAP falls; a decrement of more than about 10% from the first to the fourth or fifth response is abnormal. Proximal or facial muscles are more sensitive than hand muscles."
+        },
+        {
+          "q": "Why should the hand be warm for repetitive stimulation?",
+          "options": [
+            "Cooling makes the CMAP disappear completely",
+            "Cooling improves neuromuscular transmission and can hide a decrement",
+            "Warm muscles do not respond to 3 Hz stimulation",
+            "Temperature only affects sensory studies"
+          ],
+          "answer": 1,
+          "explanation": "Cold slows acetylcholinesterase and improves transmission, which is why symptoms ease with an ice pack. A cool limb can therefore make a real decrement look normal. Keep the limb warm (at least 33 °C on the skin in many labs), immobilize it to avoid movement artifact, and stop acetylcholinesterase inhibitors beforehand if the physician allows."
+        }
+      ],
+      "ws": {}
+    },
+    {
+      "id": "ncs-ant-tarsal",
+      "title": "Numb toes after ski boots",
+      "referral": "26M, ski instructor; aching top of the R foot and numb first web space, worse in tight boots. NCS R leg.",
+      "temp": {
+        "arm": 32.6,
+        "leg": 30.6
+      },
+      "required": [
+        "fibularMotor",
+        "tibialMotor",
+        "sural"
+      ],
+      "why": "Symptoms on the top of the foot need the fibular motor study to the EDB with stimulation at the ankle and around the fibular head, plus tibial motor and sural studies for comparison.",
+      "questions": [
+        {
+          "q": "Where do the fibular results place the problem?",
+          "options": [
+            "At the fibular head: slowing and a drop across the knee",
+            "In the L5 root, because the sural is normal",
+            "In a polyneuropathy affecting all three nerves",
+            "At the ankle: long distal latency and low EDB response, with normal leg and across-knee velocities"
+          ],
+          "answer": 3,
+          "explanation": "The distal latency from the ankle to the EDB is prolonged and the response is small, while the velocities in the leg and across the fibular head are normal and the tibial and sural studies are normal. The abnormality lies in the deep fibular nerve beyond the ankle site, under the inferior extensor retinaculum: anterior tarsal tunnel syndrome, which tight boots or straps can cause."
+        },
+        {
+          "q": "In a similar patient the EDB is wasted and gives a tiny response. Which alternative recording helps?",
+          "options": [
+            "Recording from the tibialis anterior with stimulation below and above the fibular head",
+            "Recording from the abductor hallucis with fibular stimulation",
+            "Recording the sural nerve at a higher gain",
+            "Recording from the soleus with tibial stimulation"
+          ],
+          "answer": 0,
+          "explanation": "The EDB is often small or atrophic, even in healthy feet. Recording from the tibialis anterior with stimulation below and above the fibular head tests the fibular nerve with a larger, more reliable muscle. It does not test the segment at the ankle, so the EDB result and the clinical picture are read together. The abductor hallucis is tibial, and the soleus is used for the H-reflex."
+        }
+      ],
+      "ws": {
+        "lesions": [
+          {
+            "nerve": "fibular",
+            "yFrom": 392,
+            "yTo": 450,
+            "motorCvFactor": 0.3,
+            "motorBlock": 0.2
+          }
+        ]
+      }
     }
   ]
 }

@@ -167,7 +167,7 @@ describe("NCS pathology cases", () => {
   const segCv = (a, b) => Math.abs(a.geo.stim.target.pc.s - b.geo.stim.target.pc.s) / (b.truth.onset - a.truth.onset);
 
   it("spread the correct answer across positions A to D", () => {
-    expect(data.cases.length).toBeGreaterThanOrEqual(22);
+    expect(data.cases.length).toBeGreaterThanOrEqual(32);
     const pos = [0, 0, 0, 0];
     for (const c of data.cases) for (const q of c.questions) pos[q.answer]++;
     const total = pos.reduce((a, b) => a + b, 0);
@@ -227,6 +227,54 @@ describe("NCS pathology cases", () => {
     expect(segCv(b, p)).toBeGreaterThan(lim("fibularMotor").cvAcross);
     expect(p.truth.amp / b.truth.amp).toBeGreaterThan(0.8);
     expect(rec("sural", "distal", "ncs-footdrop").truth.amp).toBeGreaterThan(lim("sural").amp);
+  });
+
+  it("CIDP and HNPP: patchy demyelination with block, and slowing at several compression sites", () => {
+    const md = rec("medianMotor", "distal", "ncs-cidp"), me = rec("medianMotor", "elbow", "ncs-cidp");
+    expect(md.truth.onset).toBeGreaterThan(lim("medianMotor").lat);
+    expect(me.truth.amp).toBeLessThan(0.5 * md.truth.amp);
+    expect(segCv(md, me)).toBeLessThan(lim("medianMotor").cv);
+    const fb = rec("fibularMotor", "bfh", "ncs-cidp");
+    expect(fb.truth.amp).toBeLessThan(0.5 * rec("fibularMotor", "distal", "ncs-cidp").truth.amp);
+    expect(rec("medianMotor", "distal", "ncs-hnpp").truth.onset).toBeGreaterThan(lim("medianMotor").lat);
+    expect(segCv(rec("ulnarMotor", "be", "ncs-hnpp"), rec("ulnarMotor", "ae", "ncs-hnpp"))).toBeLessThan(lim("ulnarMotor").cvAcross);
+    expect(segCv(rec("ulnarMotor", "distal", "ncs-hnpp"), rec("ulnarMotor", "be", "ncs-hnpp"))).toBeGreaterThan(lim("ulnarMotor").cv);
+    expect(segCv(rec("fibularMotor", "bfh", "ncs-hnpp"), rec("fibularMotor", "pop", "ncs-hnpp"))).toBeLessThan(lim("fibularMotor").cvAcross);
+    expect(rec("sural", "distal", "ncs-hnpp").truth.amp).toBeLessThan(lim("sural").amp);
+  });
+
+  it("critical illness polyneuropathy and sciatic lesion: motor and sensory axonal loss", () => {
+    for (const s of ["medianSensory", "sural"]) expect(rec(s, "distal", "ncs-cip").truth.amp, s).toBeLessThan(lim(s).amp);
+    const m = rec("medianMotor", "distal", "ncs-cip");
+    expect(m.truth.amp / 1000).toBeLessThan(lim("medianMotor").amp);
+    expect(m.truth.onset).toBeLessThan(lim("medianMotor").lat);
+    expect(rec("fibularMotor", "distal", "ncs-sciatic").truth.amp / 1000).toBeLessThan(lim("fibularMotor").amp);
+    expect(rec("tibialMotor", "distal", "ncs-sciatic").truth.amp / 1000).toBeLessThan(lim("tibialMotor").amp);
+    expect(rec("sural", "distal", "ncs-sciatic").truth.amp).toBeLessThan(lim("sural").amp);
+  });
+
+  it("root, plexus and radial cases: SNAPs separate pre- from post-ganglionic lesions", () => {
+    expect(rec("tibialMotor", "distal", "ncs-s1").truth.amp / 1000).toBeLessThan(lim("tibialMotor").amp);
+    expect(rec("sural", "distal", "ncs-s1").truth.amp).toBeGreaterThan(lim("sural").amp);
+    expect(rec("radialSensory", "distal", "ncs-upper-trunk").truth.amp).toBeLessThan(lim("radialSensory").amp);
+    expect(rec("medianSensory", "distal", "ncs-upper-trunk").truth.amp).toBeLessThan(lim("medianSensory").amp);
+    expect(rec("ulnarSensory", "distal", "ncs-upper-trunk").truth.amp).toBeGreaterThan(lim("ulnarSensory").amp);
+    expect(rec("radialSensory", "distal", "ncs-spiral").truth.amp).toBeGreaterThan(lim("radialSensory").amp);
+  });
+
+  it("anterior tarsal tunnel: distal fibular abnormality with normal leg velocity; normal studies for small-fibre and MG", () => {
+    const d = rec("fibularMotor", "distal", "ncs-ant-tarsal"), b = rec("fibularMotor", "bfh", "ncs-ant-tarsal");
+    expect(d.truth.onset).toBeGreaterThan(lim("fibularMotor").lat);
+    expect(d.truth.amp / 1000).toBeLessThan(lim("fibularMotor").amp);
+    expect(segCv(d, b)).toBeGreaterThan(lim("fibularMotor").cv);
+    for (const id of ["ncs-small-fibre", "ncs-mg"]) {
+      for (const sid of byId(id).required) {
+        const cfg = WORKSPACES[sid];
+        const r = rec(sid, "distal", id);
+        if (cfg.kind === "motor") expect(r.truth.amp / 1000, `${id} ${sid}`).toBeGreaterThan(cfg.protocol.limits.amp);
+        else expect(r.truth.amp, `${id} ${sid}`).toBeGreaterThan(cfg.protocol.limits.amp);
+      }
+    }
   });
 
   it("sensory patterns: ganglionopathy, lower trunk plexus, superficial radial, diabetes plus CTS", () => {
