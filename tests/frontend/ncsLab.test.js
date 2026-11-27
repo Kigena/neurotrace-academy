@@ -166,11 +166,13 @@ describe("NCS pathology cases", () => {
   const lim = (studyId) => WORKSPACES[studyId].protocol.limits;
   const segCv = (a, b) => Math.abs(a.geo.stim.target.pc.s - b.geo.stim.target.pc.s) / (b.truth.onset - a.truth.onset);
 
-  it("vary the position of the correct answer", () => {
-    const fresh = data.cases.filter((c) => !["ncs-cts", "ncs-une", "ncs-cold", "ncs-axonal", "ncs-aidp", "ncs-fibular", "ncs-dip", "ncs-root"].includes(c.id));
-    expect(fresh.length).toBeGreaterThanOrEqual(14);
-    const pos = new Set(fresh.flatMap((c) => c.questions.map((q) => q.answer)));
-    expect(pos.size).toBe(4);
+  it("spread the correct answer across positions A to D", () => {
+    expect(data.cases.length).toBeGreaterThanOrEqual(22);
+    const pos = [0, 0, 0, 0];
+    for (const c of data.cases) for (const q of c.questions) pos[q.answer]++;
+    const total = pos.reduce((a, b) => a + b, 0);
+    for (const n of pos) expect(n / total).toBeLessThan(0.4);
+    for (const n of pos) expect(n).toBeGreaterThan(0);
   });
 
   it("severe CTS: absent median SNAP, long latency and low CMAP, normal ulnar", () => {
